@@ -13,11 +13,15 @@ export const SYSTEM_PROMPT = `あなたは、中小企業のブログ記事の�
 - 素材にない経験・事例・実績・数値・価格・お客様の声・引用元を作らないでください。足りない情報は書かずに、needs_info に質問として挙げてください。
 - 会社プロフィールの「文体」に合わせ、「禁止表現」と指導メモの「避ける内容」は使わないでください。
 - 本文中の数値・実績・価格・お客様の名前は、すべて fact_checks に挙げてください。
+- 本文を書くときは、見出し（level 2）ごとに画像案を1つ、image_suggestions に挙げてください。
+  - photo_idea：会社が自分で撮れる写真の提案（日本語、1〜2文）
+  - alt：画像の代替テキスト（日本語、短く）
+  - image_prompt：画像を生成する場合の指示（英語）。文字・数字・ロゴ・看板を入れず、実在の人物や特定の施工事例に見えない、説明用のイメージにしてください。
 - 返答は指定したJSONだけにしてください。HTMLやMarkdownは使わないでください。`;
 
 const OUTPUT_SPEC: Record<GenerationKind, string> = {
   outline: `{"title_candidates": string[3], "outline": [{"heading": string}], "needs_info": string[]}`,
-  body: `{"title_candidates": string[3], "body": [{"type":"heading","level":2|3,"text":string} | {"type":"paragraph","text":string} | {"type":"list","ordered":boolean,"items":string[]}], "fact_checks": [{"excerpt": string, "kind": "number"|"achievement"|"price"|"customer_name"|"other"}], "needs_info": string[]}`,
+  body: `{"title_candidates": string[3], "body": [{"type":"heading","level":2|3,"text":string} | {"type":"paragraph","text":string} | {"type":"list","ordered":boolean,"items":string[]}], "fact_checks": [{"excerpt": string, "kind": "number"|"achievement"|"price"|"customer_name"|"other"}], "needs_info": string[], "image_suggestions": [{"heading": string, "photo_idea": string, "alt": string, "image_prompt": string}]}`,
 };
 
 export function buildUserPrompt(kind: GenerationKind, input: GenerationInput, headings: string[] = []): string {
@@ -41,11 +45,20 @@ export interface OutlineResult {
   needsInfo: string[];
 }
 
+/** 見出しごとの画像案。初期は「撮るとよい写真」の提案として使い、生成はオプション */
+export interface ImageSuggestion {
+  heading: string;
+  photoIdea: string;
+  alt: string;
+  imagePrompt: string;
+}
+
 export interface BodyResult {
   titleCandidates: string[];
   body: Block[];
   factChecks: { excerpt: string; kind: FactCheckKind }[];
   needsInfo: string[];
+  imageSuggestions: ImageSuggestion[];
 }
 
 export class ParseError extends Error {}
@@ -101,10 +114,16 @@ export function parseBodyResult(text: string): BodyResult {
     if (!isStr(x?.excerpt) || !FACT_KINDS.includes(x.kind as FactCheckKind)) throw new ParseError("要確認箇所の形が違います");
     return { excerpt: x.excerpt, kind: x.kind as FactCheckKind };
   });
+  const imageSuggestions = (Array.isArray(v.image_suggestions) ? v.image_suggestions : []).map((i) => {
+    const x = i as Record<string, unknown>;
+    if (!isStr(x?.heading) || !isStr(x.photo_idea) || !isStr(x.alt) || !isStr(x.image_prompt)) throw new ParseError("画像案の形が違います");
+    return { heading: x.heading, photoIdea: x.photo_idea, alt: x.alt, imagePrompt: x.image_prompt };
+  });
   return {
     titleCandidates: strArray(v.title_candidates, "title_candidates"),
     body: v.body.map(parseBlock),
     factChecks,
     needsInfo: strArray(v.needs_info, "needs_info"),
+    imageSuggestions,
   };
 }

@@ -1,23 +1,53 @@
-// AIの提供元を差し替えるための境界。提供元はまだ決めていない（docs/DECISIONS.md「未決定」）。
+// AIの提供元を差し替えるための境界。文章は Anthropic（docs/DECISIONS.md）。
 // 提供元ごとの実装はこの interface を満たし、サーバー側（APIキーを持つ側）でだけ使う。
 
 import type { FactCheckKind } from "@/types/domain";
 import { buildGenerationInput, type GenerationContext } from "./input";
-import { buildUserPrompt, parseBodyResult, parseOutlineResult, SYSTEM_PROMPT, type BodyResult, type OutlineResult } from "./prompt";
+import {
+  buildUserPrompt,
+  parseBodyResult,
+  parseOutlineResult,
+  SYSTEM_PROMPT,
+  type BodyResult,
+  type GenerationKind,
+  type OutlineResult,
+} from "./prompt";
 
 export interface AiUsage {
   inputTokens: number;
   outputTokens: number;
 }
 
+/** draft＝普段の生成（速く安い）、finish＝仕上げ（上位モデル） */
+export type AiQuality = "draft" | "finish";
+
+export interface AiCompletionRequest {
+  kind: GenerationKind;
+  system: string;
+  user: string;
+  maxOutputTokens: number;
+  quality?: AiQuality;
+  signal?: AbortSignal;
+}
+
 export interface AiProvider {
   readonly name: string;
-  complete(req: { system: string; user: string; maxOutputTokens: number; signal?: AbortSignal }): Promise<{ text: string; usage: AiUsage }>;
+  complete(req: AiCompletionRequest): Promise<{ text: string; usage: AiUsage }>;
+}
+
+/** 提供元の失敗を、画面で出し分けられる種類にまとめる */
+export class AiProviderError extends Error {
+  constructor(
+    public readonly code: "auth" | "rate_limited" | "refused" | "truncated" | "unavailable",
+    message: string,
+  ) {
+    super(message);
+  }
 }
 
 export async function generateOutline(provider: AiProvider, ctx: GenerationContext, signal?: AbortSignal): Promise<OutlineResult & { usage: AiUsage }> {
   const input = buildGenerationInput(ctx);
-  const res = await provider.complete({ system: SYSTEM_PROMPT, user: buildUserPrompt("outline", input), maxOutputTokens: 1500, signal });
+  const res = await provider.complete({ kind: "outline", system: SYSTEM_PROMPT, user: buildUserPrompt("outline", input), maxOutputTokens: 4000, signal });
   return { ...parseOutlineResult(res.text), usage: res.usage };
 }
 
@@ -25,10 +55,17 @@ export async function generateBody(
   provider: AiProvider,
   ctx: GenerationContext,
   headings: string[],
-  signal?: AbortSignal,
+  opts: { quality?: AiQuality; signal?: AbortSignal } = {},
 ): Promise<BodyResult & { usage: AiUsage }> {
   const input = buildGenerationInput(ctx);
-  const res = await provider.complete({ system: SYSTEM_PROMPT, user: buildUserPrompt("body", input, headings), maxOutputTokens: 6000, signal });
+  const res = await provider.complete({
+    kind: "body",
+    system: SYSTEM_PROMPT,
+    user: buildUserPrompt("body", input, headings),
+    maxOutputTokens: 16000,
+    quality: opts.quality,
+    signal: opts.signal,
+  });
   const result = parseBodyResult(res.text);
   return { ...result, factChecks: mergeFactChecks(result), usage: res.usage };
 }
