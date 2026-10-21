@@ -11,7 +11,7 @@ import { sampleImageProvider, sampleTextProvider } from "./providers/sample";
 export const DEFAULTS = {
   textModel: "claude-sonnet-5-5",
   finishModel: "claude-opus-5-5",
-  googleImageModel: "imagen-4.0-fast-generate-001",
+  googleImageModel: "gemini-3.1-flash-image",
   openaiImageModel: "gpt-image-2.5",
   openaiImageSize: "1536x1024",
 } as const;

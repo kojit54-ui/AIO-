@@ -85,13 +85,21 @@ describe("画像", () => {
     expect(IMAGE_RULES).toContain("Do not include any text");
   });
 
-  it("Google は 16:9 で1枚作り、返ってこなければ断られた扱いにする", async () => {
-    const generateImages = vi.fn().mockResolvedValueOnce({ generatedImages: [{ image: { imageBytes: "AAA", mimeType: "image/png" } }] });
-    const p = createGoogleImageProvider({ apiKey: "k", model: "imagen", generateImages });
+  it("Google は 16:9 で画像を1枚作り、返ってこなければ断られた扱いにする", async () => {
+    const generateContent = vi
+      .fn()
+      .mockResolvedValueOnce({ candidates: [{ content: { parts: [{ text: "ok" }, { inlineData: { data: "AAA", mimeType: "image/png" } }] } }] });
+    const p = createGoogleImageProvider({ apiKey: "k", model: "gemini-image", generateContent });
     expect(await p.generate({ prompt: "x" })).toEqual({ base64: "AAA", mimeType: "image/png" });
-    expect(generateImages.mock.calls[0][0]).toMatchObject({ model: "imagen", config: { numberOfImages: 1, aspectRatio: "16:9" } });
-    generateImages.mockResolvedValueOnce({ generatedImages: [] });
+    expect(generateContent.mock.calls[0][0]).toMatchObject({
+      model: "gemini-image",
+      contents: "x",
+      config: { responseModalities: ["IMAGE"], imageConfig: { aspectRatio: "16:9" } },
+    });
+    generateContent.mockResolvedValueOnce({ candidates: [{ content: { parts: [{ text: "できません" }] } }] });
     await expect(p.generate({ prompt: "x" })).rejects.toMatchObject({ code: "refused" });
+    generateContent.mockRejectedValueOnce(Object.assign(new Error("quota"), { status: 429 }));
+    await expect(p.generate({ prompt: "x" })).rejects.toMatchObject({ code: "rate_limited" });
   });
 
   it("OpenAI に切り替えても同じ形で返す", async () => {
