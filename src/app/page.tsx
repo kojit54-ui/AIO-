@@ -4,12 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
-import { CURRENT_MONTH } from "@/mock/data";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
 
 export default function HomePage() {
-  const { db, user } = useStore();
+  const { db, user, month } = useStore();
   const router = useRouter();
 
   useEffect(() => {
@@ -18,7 +17,7 @@ export default function HomePage() {
   if (!user || user.role === "coach") return null;
 
   const orgId = user.organizationIds[0];
-  const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === CURRENT_MONTH);
+  const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === month);
   const list = articleSummaries(db, orgId);
   const inProgress = list.find((a) => a.status === "drafting" || a.status === "changes_requested");
   const org = db.organizations.find((o) => o.id === orgId);
@@ -35,7 +34,7 @@ export default function HomePage() {
       )}
       <section className="card" aria-labelledby="policy-heading">
         <h1 id="policy-heading" className="text-sm font-semibold text-muted">
-          {monthLabel(CURRENT_MONTH)}の指導方針
+          {monthLabel(month)}の指導方針
         </h1>
         {note ? (
           <>

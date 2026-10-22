@@ -4,13 +4,12 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { Forbidden, NotFound, Notice, monthLabel } from "@/components/ui";
-import { CURRENT_MONTH } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { CoachingNoteForm, PROFILE_FIELDS, ProfileForm, ReferenceArticleForm } from "@/components/CoachForms";
 
 export default function CoachOrgPage() {
   const { orgId } = useParams<{ orgId: string }>();
-  const { db, user, api } = useStore();
+  const { db, user, api, month } = useStore();
   const [message, setMessage] = useState<{ tone: "ok" | "danger"; text: string } | null>(null);
   const [editing, setEditing] = useState<null | "profile" | "note" | "ref">(null);
 
@@ -20,9 +19,9 @@ export default function CoachOrgPage() {
   // 担当外の会社は表示しない（本番はサーバー側でも拒否する）
   if (user.role !== "coach" || !user.organizationIds.includes(orgId)) return <Forbidden />;
 
-  const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === CURRENT_MONTH);
-  const internal = db.internalNotes.find((n) => n.organizationId === orgId && n.targetMonth === CURRENT_MONTH);
-  const themes = db.themes.filter((t) => t.organizationId === orgId && t.targetMonth === CURRENT_MONTH);
+  const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === month);
+  const internal = db.internalNotes.find((n) => n.organizationId === orgId && n.targetMonth === month);
+  const themes = db.themes.filter((t) => t.organizationId === orgId && t.targetMonth === month);
   const refs = db.referenceArticles.filter((r) => r.organizationId === orgId);
 
   async function run(fn: () => Promise<void>, ok: string): Promise<boolean> {
@@ -103,7 +102,7 @@ export default function CoachOrgPage() {
 
       <section className="card" aria-labelledby="note">
         <h2 id="note" className="mb-3 text-lg font-bold">
-          {monthLabel(CURRENT_MONTH)}の指導メモ
+          {monthLabel(month)}の指導メモ
         </h2>
         {editing === "note" || !note ? (
           <CoachingNoteForm

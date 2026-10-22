@@ -9,6 +9,10 @@
 | 検証 | cotam-blog-staging（組織 co-tam、Free） | South Asia (Mumbai) | https://yxpteazaakcpyfvuikap.supabase.co | 2026-10-22 |
 | 本番 | 未作成。Northeast Asia (Tokyo) で作る | | | |
 
+検証用のアプリは Vercel のプロジェクト aio（kojit54-ui's projects、Hobby）で、https://aio-roan.vercel.app 。main に入ると自動で公開される。
+環境変数は NEXT_PUBLIC_SUPABASE_URL・NEXT_PUBLIC_SUPABASE_ANON_KEY・SUPABASE_SERVICE_ROLE_KEY の3つ（2026-10-22）。AIのキーは未設定のため、生成はサンプルになる。
+お客様に使ってもらう前に Pro に切り替える（Hobby は商用利用不可）。
+
 ## 手順（新しいプロジェクトを作るとき）
 
 1. 組織の画面で「New project」。Region は `Northeast Asia (Tokyo)`。DBのパスワードは「Generate a password」で作り、パスワード管理にだけ保存する

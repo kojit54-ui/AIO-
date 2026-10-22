@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BlockEditor } from "@/components/BlockEditor";
 import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, StatusBadge, formatDate } from "@/components/ui";
-import { CURRENT_MONTH, FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
+import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { blocksToHtml, blocksToPlainText } from "@/lib/exportText";
 import { canApply } from "@/lib/workflow";
@@ -460,8 +460,8 @@ function AnswerPanel({ version }: { version: ArticleVersion }) {
 }
 
 function PolicyPanel({ orgId }: { orgId: string }) {
-  const { db } = useStore();
-  const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === CURRENT_MONTH);
+  const { db, month } = useStore();
+  const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === month);
   if (!note) return <p className="text-sm text-muted">今月の指導方針はまだありません。</p>;
   const rows: [string, string][] = [
     ["重点テーマ", note.focus],
