@@ -91,6 +91,29 @@ describe("受付", () => {
     expect(r.error_code).toBe("timeout");
   });
 
+  it("時間切れの判定は、続く判定で例外になっても効く（上限にも実行中にも数えない）", async () => {
+    await db.exec("update public.organizations set monthly_generation_limit = 1 where id = '" + ORG + "'");
+    try {
+      const old = await start(U.client, ART, "body");
+      await db.query("update public.generation_runs set created_at = now() - interval '11 minutes' where id = $1", [old.id]);
+      await db.exec("update public.app_settings set monthly_budget_yen = 0");
+      await expect(start(U.client, ART, "body")).rejects.toThrow("budget_exceeded");
+      await db.exec("update public.app_settings set monthly_budget_yen = 10000");
+      expect((await start(U.client, ART, "body")).status).toBe("queued");
+    } finally {
+      await db.exec("update public.organizations set monthly_generation_limit = 3 where id = '" + ORG + "'");
+    }
+  });
+
+  it("状態の問い合わせで、時間を過ぎた受付は失敗になる。他社の受付は見えない", async () => {
+    const run = await start(U.client, ART, "body");
+    const get = (u: string) => as<Run>(u, "select * from public.get_generation($1)", [run.id]).then((r) => r[0]);
+    expect((await get(U.client)).status).toBe("queued");
+    await db.query("update public.generation_runs set created_at = now() - interval '11 minutes' where id = $1", [run.id]);
+    expect(await get(U.client)).toMatchObject({ status: "failed", error_code: "timeout" });
+    await expect(get(U.other)).rejects.toThrow("not_found");
+  });
+
   it("他社の記事・所属なしは受け付けない", async () => {
     await expect(start(U.other, ART, "body")).rejects.toThrow("forbidden");
     await expect(start("00000000-0000-0000-0000-0000000000ff", ART, "body")).rejects.toThrow("forbidden");
@@ -157,11 +180,19 @@ describe("予算", () => {
     await expect(start(U.other, ART_B, "body")).rejects.toThrow("budget_exceeded");
   });
 
-  it("時間切れの後に結果が届いても、状態は変えずに費用だけ足す", async () => {
+  it("時間切れの後に結果が届いても、状態は変えずに費用だけ記録する", async () => {
     const run = await start(U.client, ART, "body");
     await finish(run.id, "failed");
     const r = await finish(run.id, "succeeded", 5);
     expect(r.status).toBe("failed");
     expect(Number(r.cost_yen)).toBe(5);
+  });
+
+  it("同じ完了報告を再送しても費用は増えない", async () => {
+    const run = await start(U.client, ART, "body");
+    await finish(run.id, "succeeded", 7);
+    const r = await finish(run.id, "succeeded", 7);
+    expect(r.status).toBe("succeeded");
+    expect(Number(r.cost_yen)).toBe(7);
   });
 });

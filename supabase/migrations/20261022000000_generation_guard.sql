@@ -43,6 +43,7 @@ declare
   org_limit int;
   used int;
   spent numeric;
+  cutoff timestamptz;
 begin
   select * into a from articles where id = p_article_id;
   if not found or coalesce(app.role_in(a.organization_id), '') not in ('client_member', 'coach') then
@@ -66,13 +67,14 @@ begin
     return run;
   end if;
 
-  -- 応答が無いまま時間が過ぎた受付は失敗にする（入力は記事側に残っている）
+  -- 応答が無いまま時間が過ぎた受付は失敗にする（入力は記事側に残っている）。
+  -- この後の判定で例外になるとこの更新も取り消されるため、判定そのものは cutoff で行う
+  cutoff := now() - make_interval(secs => s.generation_timeout_seconds);
   update generation_runs set status = 'failed', error_code = 'timeout', finished_at = now()
-  where organization_id = a.organization_id and status in ('queued', 'running')
-    and created_at < now() - make_interval(secs => s.generation_timeout_seconds);
+  where organization_id = a.organization_id and status in ('queued', 'running') and created_at < cutoff;
 
   if exists (select 1 from generation_runs
-             where organization_id = a.organization_id and status in ('queued', 'running')) then
+             where organization_id = a.organization_id and status in ('queued', 'running') and created_at >= cutoff) then
     raise exception 'busy' using errcode = 'P0001';
   end if;
 
@@ -81,17 +83,18 @@ begin
     raise exception 'budget_exceeded' using errcode = 'P0001';
   end if;
 
-  -- 上限に数えるのは本文の生成だけ。失敗した回は数えない
+  -- 上限に数えるのは本文の生成だけ。失敗した回と時間切れの回は数えない
   if p_kind = 'body' then
     select monthly_generation_limit into org_limit from organizations where id = a.organization_id;
     select count(*) into used from generation_runs
-    where organization_id = a.organization_id and kind = 'body' and status <> 'failed'
-      and created_at >= app.month_start();
+    where organization_id = a.organization_id and kind = 'body' and created_at >= app.month_start()
+      and (status = 'succeeded' or (status in ('queued', 'running') and created_at >= cutoff));
     if used >= org_limit then
       raise exception 'limit_reached' using errcode = 'P0001';
     end if;
     select count(*) into used from generation_runs
-    where article_id = p_article_id and kind = 'body' and status <> 'failed';
+    where article_id = p_article_id and kind = 'body'
+      and (status = 'succeeded' or (status in ('queued', 'running') and created_at >= cutoff));
     if used >= s.article_body_limit then
       raise exception 'limit_reached' using errcode = 'P0001';
     end if;
@@ -104,8 +107,29 @@ begin
 end;
 $$;
 
+-- 生成の状態を確認する（画面の問い合わせ）。時間を過ぎた受付は、ここで失敗にして返す
+create or replace function public.get_generation(p_run_id uuid) returns public.generation_runs
+language plpgsql security definer set search_path = public as $$
+declare
+  run public.generation_runs;
+  timeout_s int;
+begin
+  select * into run from generation_runs where id = p_run_id;
+  if not found or not app.is_member(run.organization_id) then
+    raise exception 'not_found' using errcode = 'P0002';
+  end if;
+  select generation_timeout_seconds into timeout_s from app_settings where id;
+  if run.status in ('queued', 'running') and run.created_at < now() - make_interval(secs => timeout_s) then
+    update generation_runs set status = 'failed', error_code = 'timeout', finished_at = now()
+    where id = p_run_id and status in ('queued', 'running') returning * into run;
+  end if;
+  return run;
+end;
+$$;
+
 -- 生成の結果を記録する。サーバー（service role）だけが呼ぶ。
--- 時間切れで失敗にした後に結果が届いた場合も、費用だけは足す（実際に払っているため）
+-- p_cost_yen はその回の費用の合計（増分ではない）。同じ報告を再送しても費用は増えない。
+-- 時間切れで失敗にした後に結果が届いた場合も、費用だけは記録する（実際に払っているため）
 create or replace function public.finish_generation(
   p_run_id uuid,
   p_status text,
@@ -126,14 +150,14 @@ begin
     raise exception 'not_found' using errcode = 'P0002';
   end if;
   if run.status in ('succeeded', 'failed') or (run.status = 'running' and p_status = 'running') then
-    update generation_runs set cost_yen = cost_yen + coalesce(p_cost_yen, 0)
+    update generation_runs set cost_yen = greatest(cost_yen, coalesce(p_cost_yen, 0))
     where id = p_run_id returning * into run;
     return run;
   end if;
   update generation_runs set
     status = p_status,
     usage = coalesce(p_usage, '{}'),
-    cost_yen = cost_yen + coalesce(p_cost_yen, 0),
+    cost_yen = greatest(cost_yen, coalesce(p_cost_yen, 0)),
     error_code = case when p_status = 'failed' then coalesce(p_error_code, 'provider_error') end,
     result_version_id = case when p_status = 'succeeded' then p_result_version_id end,
     finished_at = case when p_status = 'running' then null else now() end
@@ -163,11 +187,13 @@ $$;
 
 -- 関数は作成時に誰でも実行できるため、呼べる役割を絞る
 revoke execute on function public.start_generation(uuid, text, text, int) from public;
+revoke execute on function public.get_generation(uuid) from public;
 revoke execute on function public.finish_generation(uuid, text, jsonb, numeric, text, uuid) from public;
 revoke execute on function public.budget_status() from public;
 revoke execute on function public.mark_budget_notified() from public;
 revoke execute on function app.month_start() from public;
 grant execute on function public.start_generation(uuid, text, text, int) to authenticated;
+grant execute on function public.get_generation(uuid) to authenticated;
 do $$
 declare r text;
 begin
@@ -181,6 +207,7 @@ begin
   end loop;
   if exists (select 1 from pg_roles where rolname = 'anon') then
     execute 'revoke execute on function public.start_generation(uuid, text, text, int) from anon';
+    execute 'revoke execute on function public.get_generation(uuid) from anon';
     execute 'revoke all on public.app_settings from anon';
   end if;
   if exists (select 1 from pg_roles where rolname = 'service_role') then
