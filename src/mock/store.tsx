@@ -24,6 +24,8 @@ import type {
   Theme,
 } from "@/types/domain";
 import { applyAction, type ArticleAction, TransitionError } from "@/lib/workflow";
+import { getSupabaseEnv } from "@/lib/supabase/env";
+import { RemoteBackend } from "@/lib/remote/backend";
 import * as seed from "./data";
 import { buildBody, buildOutline, buildTitleCandidates, extractFactChecks } from "./sampleGenerator";
 
@@ -98,16 +100,24 @@ const uid = (p: string) => `${p}_${Math.random().toString(36).slice(2, 9)}`;
 const now = () => new Date().toISOString();
 
 interface StoreValue {
+  /** mock＝ブラウザ内の架空データ、remote＝Supabase の本物のデータ */
+  mode: "mock" | "remote";
   ready: boolean;
   db: MockDb;
   user: SessionUser | null;
   sim: Simulation;
+  /** 今月（YYYY-MM）。架空データでは固定、本物のデータでは日本時間の今月 */
+  month: string;
+  /** 本物のデータを読めなかった・所属が無いときの表示 */
+  loadError: string | null;
   setSim: (s: Partial<Simulation>) => void;
   login: (userId: string) => void;
   logout: () => void;
   resetDemo: () => void;
-  api: ReturnType<typeof createApi>;
+  api: MockApi;
 }
+
+export type MockApi = ReturnType<typeof createApi>;
 
 const StoreContext = createContext<StoreValue | null>(null);
 
@@ -552,10 +562,33 @@ const actions = {
   resetDemo: () => backend.set({ db: seedDb() }),
 };
 
-export function StoreProvider({ children }: { children: React.ReactNode }) {
+// Supabase の接続先があれば本物のデータ、無ければ架空データで動かす
+let remote: RemoteBackend | null = null;
+function getRemote(): RemoteBackend | null {
+  const env = getSupabaseEnv();
+  if (!env) return null;
+  remote ??= new RemoteBackend(env);
+  return remote;
+}
+
+function MockStoreProvider({ children }: { children: React.ReactNode }) {
   const state = useSyncExternalStore(backend.subscribe, backend.get, () => backend.serverState);
-  const value = useMemo<StoreValue>(() => ({ ...state, ...actions, api }), [state]);
+  const value = useMemo<StoreValue>(
+    () => ({ ...state, ...actions, api, mode: "mock", month: seed.CURRENT_MONTH, loadError: null }),
+    [state],
+  );
   return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>;
+}
+
+function RemoteStoreProvider({ remote, children }: { remote: RemoteBackend; children: React.ReactNode }) {
+  const state = useSyncExternalStore(remote.subscribe, remote.get, () => remote.serverState);
+  const value = useMemo<StoreValue>(() => ({ ...state, ...remote.actions, api: remote.api, mode: "remote" }), [state, remote]);
+  return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>;
+}
+
+export function StoreProvider({ children }: { children: React.ReactNode }) {
+  const r = getRemote();
+  return r ? <RemoteStoreProvider remote={r}>{children}</RemoteStoreProvider> : <MockStoreProvider>{children}</MockStoreProvider>;
 }
 
 export function useStore(): StoreValue {

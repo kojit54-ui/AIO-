@@ -84,6 +84,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | published_at | timestamptz | |
 | published_without_approval | bool | 任意設定の会社で未承認のまま公開した記録 |
 | lock_version | int | 編集競合の検知用（楽観ロック） |
+| draft_answers, draft_step | jsonb, int | 質問への回答の下書きと、何問目まで進んだか |
 
 ### article_versions
 | 列 | 型 | 説明 |
@@ -116,6 +117,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | reviewer_id | uuid | |
 | comment | text | 本文全体へのコメント |
 | decision | text | `comment` / `changes_requested` / `approved` |
+| reviewer_name | text | 書いた時点の表示名（auth.users は利用者から読めないため） |
 
 ### generation_runs
 | 列 | 型 | 説明 |
@@ -236,6 +238,14 @@ interface GenerationRun {
   resultVersionId?: string;
 }
 ```
+
+## 画面とデータのつなぎ方（T2-9）
+
+- Supabase の値（NEXT_PUBLIC_SUPABASE_URL・NEXT_PUBLIC_SUPABASE_ANON_KEY）があれば src/lib/remote/backend.ts、無ければ src/mock/ の架空データ。画面は同じ `useStore()` を使う
+- 読み書きはブラウザからログイン中の利用者として行う。記事の更新は `lock_version` が読んだ時点と一致するときだけ書き、ずれていれば競合
+- 確認依頼・承認した版は、記事の更新に合わせてDBのトリガー（freeze_requested_version）が固定する
+- 顧客のプロフィール確認は `approve_profile(organization_id)`（会社の行は顧客から更新できないため）
+- 生成は POST /api/articles/[id]/generations `{ kind, headings, idempotencyKey }` → `{ versionId }`。サーバーが start_generation → AI → 版・要確認箇所の保存 → 記事の更新 → finish_generation を行う（src/lib/generation/server.ts）
 
 ## API案（T1-9、CXのレビュー待ち）
 

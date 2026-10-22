@@ -35,6 +35,14 @@
 
 ## 記録
 
+### 2026-10-22 CC（Claude、プロジェクトのスレッド）その7
+- ブランチ / コミット：claude/project-thread-rey7mz（PR #7 のマージ後の main から）
+- 変更点：画面を本物のデータにつなぐ（T2-9）。src/lib/remote/（DBの行と画面の型の変換、Supabase を使う store）、src/mock/store.tsx は Supabase の値があれば本物のデータに切り替え、`month`（日本時間の今月）と `loadError` を追加。生成のサーバー処理 src/lib/generation/server.ts と /api/articles/[id]/generations、概算費用 src/lib/ai/cost.ts。マイグレーション 20261024000000_app_data.sql（回答の下書き列、レビューの表示名、確認依頼・承認した版の固定、approve_profile）。本物のデータのときは試作確認パネルを出さない
+- 確認結果：単体テスト104件（DBテストに下書き保存・版の固定・プロフィール確認を追加）、型検査、lint、本番ビルドが通過。仮の Supabase 値でホームからログイン画面への転送を、値なしで架空データのログインからホームまでを、ブラウザで確認。本物の Supabase での主導線は未確認
+- 気づいた点：approve_profile の権限判定で、所属の無い会社だと is_client が null になり判定をすり抜けていたのをテストで見つけて修正（coalesce）
+- 未完了：Vercel（T3-1）で環境変数を入れ、招待 → ログイン → テーマ選択 → 質問 → 見出し → 本文 → 確認依頼 → 承認 → 書き出しを実際に通す
+- 次の作業と担当：タムさんが SQL Editor で 20261024000000_app_data.sql を実行 → Vercel を作成 → CC が検証環境で主導線を確認
+
 ### 2026-10-22 CC（Claude、プロジェクトのスレッド）その6
 - ブランチ / コミット：claude/project-thread-rey7mz（main から作り直し）
 - 変更点：招待制ログイン（T2-3）。supabase/migrations/20261023000000_invitations.sql（invitation_status、accept_invitation、revoke_membership、list_members）。src/lib/supabase/（接続先、ログイン中の利用者用、service role 用）、src/lib/auth/（トークン、招待の受諾）、src/proxy.ts（セッション更新）、/auth/confirm、/auth/signout、/login と /invite/[token] は Supabase 設定時にメールでのログインに切り替え、/admin/invitations（会社の追加、招待リンクの発行、所属を外す）。依存追加：@supabase/supabase-js、@supabase/ssr。docs/SUPABASE_SETUP.md を追加

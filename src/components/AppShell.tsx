@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/mock/store";
-import { PageSkeleton } from "./ui";
+import { EmptyState, PageSkeleton } from "./ui";
 
 /** ログイン必須の画面を包む。未ログインならログイン画面へ */
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const { ready, user, db, logout } = useStore();
+  const { ready, user, db, logout, mode, loadError } = useStore();
   const pathname = usePathname();
   const router = useRouter();
   // ログイン・招待・認証の処理と、全社管理者の画面は架空データのログインを使わない
@@ -17,12 +17,22 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const loggingOut = useRef(false);
 
   useEffect(() => {
-    if (!ready || user || isLogin) return;
+    if (!ready || user || isLogin || loadError) return;
     router.replace(loggingOut.current ? "/login" : `/login?next=${encodeURIComponent(pathname)}`);
     loggingOut.current = false;
-  }, [ready, user, isLogin, pathname, router]);
+  }, [ready, user, isLogin, loadError, pathname, router]);
 
-  if (isLogin) return <>{children}<DemoPanel /></>;
+  const demo = mode === "mock" ? <DemoPanel /> : null;
+  if (isLogin) return <>{children}{demo}</>;
+  if (ready && !user && loadError) {
+    return (
+      <main className="page max-w-xl">
+        <EmptyState title="表示できません" action={<button type="button" className="btn-secondary" onClick={logout}>ログアウト</button>}>
+          {loadError}
+        </EmptyState>
+      </main>
+    );
+  }
   if (!ready || !user) return <PageSkeleton />;
 
   const org = user.role === "client_member" ? db.organizations.find((o) => o.id === user.organizationIds[0]) : null;
@@ -51,7 +61,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       {children}
-      <DemoPanel />
+      {demo}
     </>
   );
 }

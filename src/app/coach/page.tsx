@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { EmptyState, StatusBadge, formatDate } from "@/components/ui";
-import { CURRENT_MONTH } from "@/mock/data";
 import { useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
 
 export default function CoachHome() {
-  const { db, user } = useStore();
+  const { db, user, month } = useStore();
   if (!user) return null;
   if (user.role !== "coach") {
     return (
@@ -60,7 +59,7 @@ export default function CoachHome() {
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {orgs.map((o) => {
             const articles = db.articles.filter((a) => a.organizationId === o.id);
-            const ready = isOrgReady(db, o.id, CURRENT_MONTH);
+            const ready = isOrgReady(db, o.id, month);
             return (
               <li key={o.id}>
                 <Link href={`/coach/orgs/${o.id}`} className="card block h-full hover:border-brand">

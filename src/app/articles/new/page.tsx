@@ -4,12 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { EmptyState, Notice, monthLabel } from "@/components/ui";
-import { CURRENT_MONTH } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
 
 export default function NewArticlePage() {
-  const { db, user, api } = useStore();
+  const { db, user, api, month } = useStore();
   const router = useRouter();
   const [custom, setCustom] = useState(false);
   const [title, setTitle] = useState("");
@@ -39,7 +38,7 @@ export default function NewArticlePage() {
     );
   }
 
-  if (!isOrgReady(db, orgId, CURRENT_MONTH)) {
+  if (!isOrgReady(db, orgId, month)) {
     return (
       <main className="page">
         <EmptyState title="コタムが準備中です">会社情報と今月の指導方針が登録されると、記事を書き始められます。</EmptyState>
@@ -48,7 +47,7 @@ export default function NewArticlePage() {
   }
 
   const themes = db.themes
-    .filter((t) => t.organizationId === orgId && t.targetMonth === CURRENT_MONTH && t.source === "coach")
+    .filter((t) => t.organizationId === orgId && t.targetMonth === month && t.source === "coach")
     .sort((a, b) => a.sortOrder - b.sortOrder);
 
   async function start(input: Parameters<typeof api.createArticle>[0]) {
@@ -67,7 +66,7 @@ export default function NewArticlePage() {
     <main className="page space-y-5">
       <div>
         <h1 className="text-2xl font-bold">テーマを選ぶ</h1>
-        <p className="text-muted">{monthLabel(CURRENT_MONTH)}にコタムと決めたテーマです。書きやすいものを1つ選んでください。</p>
+        <p className="text-muted">{monthLabel(month)}にコタムと決めたテーマです。書きやすいものを1つ選んでください。</p>
       </div>
       {error && <Notice tone="danger" title={error} />}
 
