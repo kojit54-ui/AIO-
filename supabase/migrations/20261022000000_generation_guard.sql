@@ -114,7 +114,8 @@ declare
   run public.generation_runs;
   timeout_s int;
 begin
-  select * into run from generation_runs where id = p_run_id;
+  -- 行をロックして読む（同時の問い合わせや完了報告と競合しても、最新の状態を返す）
+  select * into run from generation_runs where id = p_run_id for update;
   if not found or not app.is_member(run.organization_id) then
     raise exception 'not_found' using errcode = 'P0002';
   end if;
