@@ -17,7 +17,7 @@ export function EmailLogin({ next, linkError }: { next: string; linkError: boole
       )}
       {state.sent ? (
         <Notice tone="ok" title="ログイン用のメールを送りました">
-          招待されたメールアドレスであれば、数分以内にメールが届きます。メールのリンクを開いてください。
+          招待されたメールアドレスであれば、数分以内にメールが届きます。このブラウザで、メールのリンクを開いてください。
         </Notice>
       ) : (
         <form action={action} className="card space-y-3">

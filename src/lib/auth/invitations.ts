@@ -2,6 +2,7 @@
 // 受諾の流れ：利用者が無ければ作る → DBで期限・使用済みを検査して所属を作る → ログイン用のメールを送る。
 
 import { createAdminSupabase } from "@/lib/supabase/admin";
+import { createServerSupabase } from "@/lib/supabase/server";
 import { hashInviteToken, isWellFormedToken } from "./token";
 
 export type InvitationStatus = "valid" | "expired" | "used" | "invalid";
@@ -54,8 +55,9 @@ export async function acceptInvitation(token: string, origin: string): Promise<A
     return { ok: false, reason: reason ?? "error" };
   }
 
-  // 本人のメールに届くリンクでログインしてもらう（招待リンクを知っているだけではログインできない）
-  const sent = await admin.auth.signInWithOtp({
+  // 本人のメールに届くリンクでログインしてもらう（招待リンクを知っているだけではログインできない）。
+  // 本人のブラウザのセッションで送り、メールのリンク（code）をこのブラウザで受け取れるようにする
+  const sent = await (await createServerSupabase()).auth.signInWithOtp({
     email: inv.email,
     options: { shouldCreateUser: false, emailRedirectTo: `${origin}/auth/confirm?next=/` },
   });

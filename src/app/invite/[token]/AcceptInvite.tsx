@@ -20,7 +20,7 @@ export function AcceptInvite({ token, organizationName, maskedEmail }: { token: 
     return (
       <main className="page max-w-xl space-y-4">
         <Notice tone="ok" title="ログイン用のメールを送りました">
-          {maskedEmail} にメールが届きます。メールのリンクを開くと、ログインして使いはじめられます。
+          {maskedEmail} にメールが届きます。このブラウザでメールのリンクを開くと、ログインして使いはじめられます。
         </Notice>
       </main>
     );

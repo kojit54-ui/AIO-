@@ -14,7 +14,7 @@
 1. 組織の画面で「New project」。Region は `Northeast Asia (Tokyo)`。DBのパスワードは「Generate a password」で作り、パスワード管理にだけ保存する
 2. SQL Editor で supabase/migrations/ のファイルを古い順に実行する（「Success. No rows returned」で完了）
 3. Authentication → Sign In / Providers で「Allow new users to sign up」をオフにして Save（招待した人だけがログインできる）
-4. Authentication → Emails → Magic Link を次に差し替える（別の端末でメールを開いてもログインできるよう、token_hash で確認する）
+4. メールの文面は、独自ドメインの SMTP を設定するまで変えられない（Supabase の制限）。標準の文面のままだと、ログイン用のメールは**送ったのと同じブラウザで**開く必要がある（/auth/confirm は code で受ける）。SMTP の設定後（T3-2）に Authentication → Emails → Magic Link を次に差し替えると、別の端末で開いてもログインできる
    - Subject：`コタム ブログ執筆支援 ログイン用のリンク`
    - Body：
      ```
