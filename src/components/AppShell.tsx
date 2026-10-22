@@ -11,7 +11,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const { ready, user, db, logout } = useStore();
   const pathname = usePathname();
   const router = useRouter();
-  const isLogin = pathname === "/login" || pathname.startsWith("/invite/");
+  // ログイン・招待・認証の処理と、全社管理者の画面は架空データのログインを使わない
+  const isLogin = pathname === "/login" || pathname.startsWith("/invite/") || pathname.startsWith("/auth/") || pathname.startsWith("/admin/");
   // 明示的なログアウトでは戻り先を付けない
   const loggingOut = useRef(false);
 

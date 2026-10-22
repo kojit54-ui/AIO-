@@ -35,6 +35,14 @@
 
 ## 記録
 
+### 2026-10-22 CC（Claude、プロジェクトのスレッド）その6
+- ブランチ / コミット：claude/project-thread-rey7mz（main から作り直し）
+- 変更点：招待制ログイン（T2-3）。supabase/migrations/20261023000000_invitations.sql（invitation_status、accept_invitation、revoke_membership、list_members）。src/lib/supabase/（接続先、ログイン中の利用者用、service role 用）、src/lib/auth/（トークン、招待の受諾）、src/proxy.ts（セッション更新）、/auth/confirm、/auth/signout、/login と /invite/[token] は Supabase 設定時にメールでのログインに切り替え、/admin/invitations（会社の追加、招待リンクの発行、所属を外す）。依存追加：@supabase/supabase-js、@supabase/ssr。docs/SUPABASE_SETUP.md を追加
+- 検証プロジェクト：タムさんが cotam-blog-staging を作成（ムンバイ）。最初の2つのマイグレーション、新規登録オフまで済み。メール文面は独自SMTPの設定まで変えられないため、当面は標準の文面（同じブラウザで開く）
+- 確認結果：単体テスト94件（招待・退会のDBテスト8件を含む）、型検査、lint、本番ビルドが通過。Supabase の値を仮に入れて /login・/invite・/admin・/auth/confirm の表示と転送を確認。本物の Supabase での操作は未確認
+- 未完了：環境変数を入れた環境（Vercel、T3-1）での実際の招待→ログイン、ログイン後の画面を本物のデータにつなぐ（T2-9。今は Supabase を設定してもログイン後の画面は架空データのまま）
+- 次の作業と担当：タムさんが PR をマージ → SQL Editor で 20261023000000_invitations.sql を実行 → Vercel を作成（T3-1）→ CC が画面を本物のデータにつなぐ（T2-9）
+
 ### 2026-10-22 CC（Claude、プロジェクトのスレッド）その5
 - ブランチ / コミット：claude/project-thread-rey7mz（main から）
 - 変更点：supabase/migrations/20261022000000_generation_guard.sql。生成の受付 start_generation（二重クリック、1社1件の同時実行、本文の月の上限と記事ごとの上限、全社の月額予算で停止、10分で時間切れ）、結果の記録 finish_generation、予算の確認 budget_status と mark_budget_notified、全社設定 app_settings、generation_runs.cost_yen。エラーコードに busy と budget_exceeded を追加（src/types/domain.ts、docs/DATA.md、docs/UI.md）。依存の追加なし
