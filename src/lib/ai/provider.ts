@@ -1,4 +1,4 @@
-// AIの提供元を差し替えるための境界。文章は Anthropic（docs/DECISIONS.md）。
+// AIの提供元を差し替えるための境界。文章は OpenAI（Anthropic に切り替え可）、画像は Google（docs/DECISIONS.md）。
 // 提供元ごとの実装はこの interface を満たし、サーバー側（APIキーを持つ側）でだけ使う。
 
 import type { FactCheckKind } from "@/types/domain";

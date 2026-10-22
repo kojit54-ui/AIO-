@@ -1,6 +1,6 @@
 # AI_SETUP：APIキーの取り方と設定方法
 
-文章は Anthropic（Claude）、画像は Google を使います（docs/DECISIONS.md）。
+文章は OpenAI（ChatGPT）、画像は Google を使います（docs/DECISIONS.md）。
 どちらも、会社名義のアカウントと支払い方法の登録が必要なため、タムさんの作業です。所要時間は合わせて20〜30分ほどです。
 
 キーが未設定のあいだも、アプリは「サンプル（AIは未接続）」を表示して動きます。
@@ -12,16 +12,18 @@
 - 支払いの上限を必ず設定します。予算は全社合計で月1万円です。
 - キーは「開発用」と「本番用」を分けて作ると、漏れたときに片方だけ止められます。
 
-## 1. Anthropic（文章）のキー
+## 1. OpenAI（文章）のキー
 
-1. https://platform.claude.com を開き、会社のメールアドレスでアカウントを作ります。
+1. https://platform.openai.com を開き、会社のメールアドレスでアカウントを作ります（ChatGPT の個人アカウントとは別に、組織を作るのがおすすめです）。
 2. 組織名（例：株式会社コタム）を設定します。
 3. 「Billing（請求）」で、クレジットカードを登録してクレジットを購入します（前払い制です）。まずは 20ドル程度で十分です。
-4. 「Limits（上限）」で、月の利用上限を設定します。目安は 40ドル（約6,000円）です。
-5. 「API Keys」で「Create Key」を押し、名前を `cotam-blog-dev` にして作ります。
-6. 表示されたキー（`sk-ant-` で始まる文字列）を、下の「3. キーを入れる場所」にすぐ入れます。**キーはこの画面で一度しか表示されません。**
+4. 「Limits（上限）」で、月の予算と通知を設定します。目安は 40ドル（約6,000円）です。
+5. 「API keys」で「Create new secret key」を押し、名前を `cotam-blog-dev` にして作ります。
+6. 表示されたキー（`sk-` で始まる文字列）を、下の「3. キーを入れる場所」にすぐ入れます。**キーはこの画面で一度しか表示されません。**
 
-API の入出力は、Anthropic の学習には使われません（商用規約）。
+API の入出力は、OpenAI の学習には使われません（オプトインしない限り）。アプリは会話を OpenAI 側に保存しない設定（store: false）で呼びます。不正監視のためのログは最大30日保存されます。
+
+Anthropic（Claude）に戻す場合は、https://platform.claude.com で同じようにキーを作り、`TEXT_PROVIDER=anthropic` と `ANTHROPIC_API_KEY` を設定します。
 
 ## 2. Google（画像）のキー
 
@@ -31,7 +33,7 @@ API の入出力は、Anthropic の学習には使われません（商用規約
 4. Google Cloud の「お支払い」→「予算とアラート」で、月の予算（目安：4,000円）と通知を設定します。
 5. 作ったキー（`AIza` で始まる文字列）を、下の「3. キーを入れる場所」に入れます。
 
-OpenAI に切り替える場合だけ、https://platform.openai.com で同じようにキーを作り、`IMAGE_PROVIDER=openai` と `OPENAI_API_KEY` を設定します。
+画像も OpenAI にする場合は、`IMAGE_PROVIDER=openai` にするだけです（キーは文章と同じ `OPENAI_API_KEY`）。
 
 ## 3. キーを入れる場所
 
@@ -39,7 +41,7 @@ OpenAI に切り替える場合だけ、https://platform.openai.com で同じよ
 
 | 変数名 | 中身 |
 |---|---|
-| `ANTHROPIC_API_KEY` | Anthropic のキー |
+| `OPENAI_API_KEY` | OpenAI のキー |
 | `GEMINI_API_KEY` | Google のキー |
 
 ### A. Claude に動作確認してもらう場合（いちばん手軽）
@@ -47,13 +49,14 @@ OpenAI に切り替える場合だけ、https://platform.openai.com で同じよ
 プロジェクトの設定に入れると、Claude が本物のAPIで試せるようになります。
 
 1. プロジェクトの設定を開き、「Cloud environment」のメニューから、選ばれている環境の歯車を押します。
-2. 環境変数として `ANTHROPIC_API_KEY=…` と `GEMINI_API_KEY=…` を1行ずつ追加して保存します。
-3. 保存したら、スレッドで「キーを入れた」とだけ書いてください。キーの中身は書かないでください。
+2. 環境変数として `OPENAI_API_KEY=…` と `GEMINI_API_KEY=…` を1行ずつ追加して保存します。
+3. 同じ画面の「Network access」で、`api.openai.com` が通るようにします（「Allowed domains」に追加するか、制限のない設定にします）。
+4. 保存したら、スレッドで「キーを入れた」とだけ書いてください。キーの中身は書かないでください。
 
 ### B. 自分のパソコンで動かす場合
 
 1. リポジトリの `.env.example` をコピーして、`.env.local` という名前で保存します（このファイルは Git に入りません）。
-2. `ANTHROPIC_API_KEY=` と `GEMINI_API_KEY=` の右側にキーを貼ります。
+2. `OPENAI_API_KEY=` と `GEMINI_API_KEY=` の右側にキーを貼ります。
 3. `npm run test:live` を実行すると、本物のAPIで見出し案と本文を1回作ります（費用は数円〜数十円）。画像も試すときは、`.env.local` の `IMAGE_MODE=generate` にしてから実行します。画像は `test-results/` に保存されます。
 
 ### C. 公開環境（Vercel）
