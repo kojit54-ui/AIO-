@@ -70,9 +70,10 @@ export async function runGeneration(
     db.from("reference_articles").select("*").eq("organization_id", orgId).eq("usable_for_ai", true),
     article.currentVersionId
       ? db.from("article_versions").select("*").eq("id", article.currentVersionId).maybeSingle()
-      : Promise.resolve({ data: null }),
+      : Promise.resolve({ data: null, error: null }),
   ]);
-  if (orgRes.error || themeRes.error || refsRes.error) return fail(500, "save_failed", "データを読み込めませんでした");
+  // 1つでも読めなければ、足りない材料で（費用をかけて）作らない
+  if (orgRes.error || themeRes.error || noteRes.error || refsRes.error || currentRes.error || (article.currentVersionId && !currentRes.data)) return fail(500, "save_failed", "データを読み込めませんでした");
   const org = toOrganization(orgRes.data, 0);
   const theme = toTheme(themeRes.data);
   const base = currentRes.data ? toVersion(currentRes.data) : null;
@@ -112,15 +113,22 @@ export async function runGeneration(
   const { data: claimed } = await admin.from("generation_runs").update({ status: "running" }).eq("id", run.id).eq("status", "queued").select("id");
   if (!claimed?.length) return fail(409, "busy", START_ERRORS.busy[1]);
 
-  const finish = (status: "succeeded" | "failed", extra: { usage?: unknown; cost?: number; error?: string; versionId?: string }) =>
-    admin.rpc("finish_generation", {
-      p_run_id: run.id,
-      p_status: status,
-      p_usage: extra.usage ?? {},
-      p_cost_yen: extra.cost ?? 0,
-      p_error_code: extra.error ?? null,
-      p_result_version_id: extra.versionId ?? null,
-    });
+  // 結果の記録は費用の集計と「実行中」の解除に使うため、失敗したらやり直す。
+  // それでも記録できなければログに残す（実行中のままの受付は generation_timeout_seconds 後に失敗扱いになる）
+  const finish = async (status: "succeeded" | "failed", extra: { usage?: unknown; cost?: number; error?: string; versionId?: string }) => {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const { error } = await admin.rpc("finish_generation", {
+        p_run_id: run.id,
+        p_status: status,
+        p_usage: extra.usage ?? {},
+        p_cost_yen: extra.cost ?? 0,
+        p_error_code: extra.error ?? null,
+        p_result_version_id: extra.versionId ?? null,
+      });
+      if (!error) return;
+    }
+    console.error("generation finish not recorded", { runId: run.id, status });
+  };
 
   let usage = { inputTokens: 0, outputTokens: 0 };
   try {

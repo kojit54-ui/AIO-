@@ -39,3 +39,88 @@ do $$ begin
     execute 'revoke execute on function public.approve_profile(uuid) from anon';
   end if;
 end $$;
+
+-- 記事の変更と、それに伴う版・要確認箇所・レビューの追加を1つのトランザクションで行う。
+-- 利用者の権限で動き（security invoker）、RLSと状態遷移のトリガーはそのまま効く。
+-- 版番号はDBの中で決めるため、別の画面が先に版を作っても番号はぶつからない。
+-- p_article：記事の新しい値（src/lib/remote/mapping.ts fromArticle の形）。null なら記事は変えない。
+--   版を作るときは current_version_id を新しい版の id に置き換える。
+-- 失敗は例外で返す：not_found / conflict（lock_version が違う）
+create or replace function public.save_article_change(
+  p_article_id uuid,
+  p_expected_lock int,
+  p_article jsonb,
+  p_version jsonb default null,
+  p_fact_checks jsonb default '[]',
+  p_review jsonb default null
+) returns uuid
+language plpgsql security invoker set search_path = public as $$
+declare
+  a public.articles;
+  art jsonb := p_article;
+  vid uuid;
+begin
+  select * into a from articles where id = p_article_id for update;
+  if not found then
+    raise exception 'not_found' using errcode = 'P0002';
+  end if;
+  if art is not null and a.lock_version <> p_expected_lock then
+    raise exception 'conflict' using errcode = '40001';
+  end if;
+
+  if p_version is not null then
+    insert into article_versions (article_id, organization_id, version_no, title, title_candidates, outline, body, answers, parent_version_id, generation_settings, created_by)
+    values (
+      a.id,
+      a.organization_id,
+      coalesce((select max(version_no) from article_versions where article_id = a.id), 0) + 1,
+      coalesce(p_version->>'title', ''),
+      coalesce(p_version->'title_candidates', '[]'),
+      coalesce(p_version->'outline', '[]'),
+      coalesce(p_version->'body', '[]'),
+      coalesce(p_version->'answers', '[]'),
+      nullif(p_version->>'parent_version_id', '')::uuid,
+      coalesce(p_version->'generation_settings', '{}'),
+      auth.uid()
+    )
+    returning id into vid;
+    insert into fact_checks (version_id, organization_id, excerpt, kind, status)
+    select vid, a.organization_id, x.excerpt, x.kind, coalesce(x.status, 'unchecked')
+    from jsonb_to_recordset(coalesce(p_fact_checks, '[]')) as x(excerpt text, kind text, status text);
+    if art is not null then
+      art := art || jsonb_build_object('current_version_id', vid);
+    end if;
+  end if;
+
+  if art is not null then
+    update articles set
+      (status, current_version_id, approved_version_id, review_requested_version_id, published_url, published_at, published_without_approval)
+      = (select r.status, r.current_version_id, r.approved_version_id, r.review_requested_version_id, r.published_url, r.published_at, r.published_without_approval
+         from jsonb_populate_record(a, art) r),
+      lock_version = p_expected_lock + 1
+    where id = a.id;
+  end if;
+
+  if p_review is not null then
+    insert into reviews (article_id, version_id, organization_id, reviewer_id, reviewer_name, comment, decision)
+    values (
+      a.id,
+      (p_review->>'version_id')::uuid,
+      a.organization_id,
+      auth.uid(),
+      coalesce(p_review->>'reviewer_name', ''),
+      coalesce(p_review->>'comment', ''),
+      p_review->>'decision'
+    );
+  end if;
+  return vid;
+end;
+$$;
+
+revoke execute on function public.save_article_change(uuid, int, jsonb, jsonb, jsonb, jsonb) from public;
+grant execute on function public.save_article_change(uuid, int, jsonb, jsonb, jsonb, jsonb) to authenticated;
+do $$ begin
+  if exists (select 1 from pg_roles where rolname = 'anon') then
+    execute 'revoke execute on function public.save_article_change(uuid, int, jsonb, jsonb, jsonb, jsonb) from anon';
+  end if;
+end $$;

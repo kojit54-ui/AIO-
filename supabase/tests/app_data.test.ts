@@ -82,3 +82,55 @@ describe("プロフィールの確認", () => {
     expect(r.ok).toBe(true);
   });
 });
+
+describe("記事の変更をまとめて保存する（save_article_change）", () => {
+  const ART2 = "30000000-0000-0000-0000-0000000000a2";
+  const V21 = "40000000-0000-0000-0000-0000000000b1";
+  const lock2 = async () => (await db.query<{ lock_version: number; status: string; current_version_id: string }>("select lock_version, status, current_version_id from public.articles where id = $1", [ART2])).rows[0];
+  const versions = async () => (await db.query<{ version_no: number }>("select version_no from public.article_versions where article_id = $1 order by version_no", [ART2])).rows.map((r) => r.version_no);
+  const change = (user: string, lockVersion: number, article: unknown, version: unknown = null, checks: unknown = [], review: unknown = null) =>
+    as<{ save_article_change: string | null }>(user, "select public.save_article_change($1, $2, $3, $4, $5, $6)", [ART2, lockVersion, article, version, checks, review]);
+
+  beforeAll(async () => {
+    await db.exec(`
+      insert into public.articles (id, organization_id, theme_id) values ('${ART2}', '${ORG}', '20000000-0000-0000-0000-00000000000a');
+      insert into public.article_versions (id, article_id, organization_id, version_no, title) values ('${V21}', '${ART2}', '${ORG}', 1, 'v1');
+      update public.articles set current_version_id = '${V21}' where id = '${ART2}';
+    `);
+  });
+
+  it("版の番号をDBで決め、要確認箇所と記事を一緒に保存する", async () => {
+    const before = await lock2();
+    const [r] = await change(CLIENT, before.lock_version, { status: "drafting", current_version_id: V21 }, { title: "v2", parent_version_id: V21 }, [{ excerpt: "100件", kind: "number" }]);
+    const vid = r.save_article_change;
+    expect(await versions()).toEqual([1, 2]);
+    const after = await lock2();
+    expect(after).toMatchObject({ lock_version: before.lock_version + 1, current_version_id: vid });
+    expect((await db.query("select 1 from public.fact_checks where version_id = $1", [vid])).rows).toHaveLength(1);
+  });
+
+  it("古い lock_version では何も保存しない", async () => {
+    const before = await lock2();
+    await expect(change(CLIENT, before.lock_version - 1, { status: "drafting" }, { title: "stale" })).rejects.toThrow("conflict");
+    expect(await versions()).toEqual([1, 2]);
+    expect(await lock2()).toEqual(before);
+  });
+
+  it("レビューを残せなければ、承認も取り消される", async () => {
+    let s = await lock2();
+    await change(CLIENT, s.lock_version, { status: "in_review", review_requested_version_id: s.current_version_id });
+    s = await lock2();
+    const review = { version_id: s.current_version_id, decision: "not_a_decision", comment: "" };
+    await expect(change(COACH, s.lock_version, { status: "approved", approved_version_id: s.current_version_id }, null, [], review)).rejects.toThrow();
+    expect(await lock2()).toEqual(s);
+    const ok = { ...review, decision: "approved", reviewer_name: "コタム担当者A" };
+    await change(COACH, s.lock_version, { status: "approved", approved_version_id: s.current_version_id, review_requested_version_id: null }, null, [], ok);
+    expect((await lock2()).status).toBe("approved");
+    expect((await db.query("select 1 from public.reviews where article_id = $1 and decision = 'approved'", [ART2])).rows).toHaveLength(1);
+  });
+
+  it("他社の利用者には記事が見えない", async () => {
+    const s = await lock2();
+    await expect(change(OTHER, s.lock_version, { status: "drafting" })).rejects.toThrow("not_found");
+  });
+});

@@ -200,8 +200,33 @@ export class RemoteBackend {
       .eq("id", before.id)
       .eq("lock_version", before.lockVersion)
       .select("id");
-    if (error) throw toApiError(error);
-    if (!data?.length) throw new ApiError("conflict", "別の画面でこの記事が更新されました");
+    if (error) throw await this.failed(error);
+    if (!data?.length) throw await this.failed({ code: "40001" });
+  }
+
+  /** 記事の変更と版・要確認箇所・レビューの追加を1つのトランザクションで行う（DBの save_article_change） */
+  private async saveChange(
+    before: Article,
+    next: Article | null,
+    extra: { version?: Record<string, unknown>; factChecks?: Record<string, unknown>[]; review?: Record<string, unknown> } = {},
+  ): Promise<string | null> {
+    const { data, error } = await this.client.rpc("save_article_change", {
+      p_article_id: before.id,
+      p_expected_lock: before.lockVersion,
+      p_article: next ? fromArticle(next) : null,
+      p_version: extra.version ?? null,
+      p_fact_checks: extra.factChecks ?? [],
+      p_review: extra.review ?? null,
+    });
+    if (error) throw await this.failed(error);
+    return data as string | null;
+  }
+
+  /** 競合したら最新の状態を読み直してから伝える（「自分の内容を新しい版として残す」が最新の lock_version を使えるように） */
+  private async failed(error: { code?: string; message?: string }): Promise<ApiError> {
+    const e = toApiError(error);
+    if (e.code === "conflict") await this.load().catch(() => undefined);
+    return e;
   }
 
   private async generate(articleId: string, body: Record<string, unknown>) {
@@ -271,18 +296,22 @@ export class RemoteBackend {
     generateBody: (articleId, headings) => this.generate(articleId, { kind: "body", headings }),
 
     saveVersion: async (articleId, input: { title: string; body: Block[]; outline?: { heading: string }[] }, expectedLock) => {
-      const user = this.requireUser();
+      this.requireUser();
       const a = this.article(articleId);
       if (a.lockVersion !== expectedLock) throw new ApiError("conflict", "別の画面でこの記事が更新されました");
       const { db } = this.state;
       const base = db.versions.find((v) => v.id === a.currentVersionId);
-      const versionNo = Math.max(0, ...db.versions.filter((v) => v.articleId === articleId).map((v) => v.versionNo)) + 1;
-      const { data: row, error } = await this.client
-        .from("article_versions")
-        .insert({
-          article_id: articleId,
-          organization_id: a.organizationId,
-          version_no: versionNo,
+      // 要確認箇所の確認結果は、同じ箇所が残っていれば引き継ぐ
+      const prev = db.factChecks.filter((f) => f.versionId === base?.id);
+      const factChecks = extractFactChecks(input.body, "new").map((c) => ({
+        excerpt: c.excerpt,
+        kind: c.kind,
+        status: prev.find((p) => p.excerpt === c.excerpt)?.status ?? "unchecked",
+      }));
+      // 新しい版の id はDBが決め、記事の current_version_id にも入れる
+      const next = this.transition(a, { type: "edit", newVersionId: "new" });
+      const versionId = await this.saveChange(a, next, {
+        version: {
           title: input.title,
           title_candidates: base?.titleCandidates ?? [input.title],
           outline: input.outline ?? base?.outline ?? [],
@@ -290,28 +319,13 @@ export class RemoteBackend {
           answers: base?.answers ?? [],
           parent_version_id: base?.id ?? null,
           generation_settings: { sample: base?.isSample ?? false, edited: true },
-          created_by: user.id,
-        })
-        .select("*")
-        .single();
-      if (error) throw toApiError(error);
-      // 要確認箇所の確認結果は、同じ箇所が残っていれば引き継ぐ
-      const prev = db.factChecks.filter((f) => f.versionId === base?.id);
-      const checks = extractFactChecks(input.body, row.id).map((c) => ({
-        version_id: row.id,
-        organization_id: a.organizationId,
-        excerpt: c.excerpt,
-        kind: c.kind,
-        status: prev.find((p) => p.excerpt === c.excerpt)?.status ?? "unchecked",
-      }));
-      if (checks.length) {
-        const { error: fe } = await this.client.from("fact_checks").insert(checks);
-        if (fe) throw toApiError(fe);
-      }
-      const next = this.transition(a, { type: "edit", newVersionId: row.id });
-      await this.writeArticle(a, next);
+        },
+        factChecks,
+      });
       await this.load();
-      return { article: this.article(articleId), version: toVersion(row) };
+      const version = this.state.db.versions.find((v) => v.id === versionId);
+      if (!version) throw new ApiError("not_found", "版が見つかりません");
+      return { article: this.article(articleId), version };
     },
 
     restoreVersion: async (articleId, versionId, expectedLock) => {
@@ -342,19 +356,8 @@ export class RemoteBackend {
       if (user.role !== "coach") throw new ApiError("forbidden", "コメントはコタム担当者が行います");
       const versionId = a.reviewRequestedVersionId ?? a.currentVersionId;
       if (!versionId) throw new ApiError("invalid_state", "確認する版がありません");
-      if (decision !== "comment") {
-        await this.writeArticle(a, this.transition(a, { type: decision === "approved" ? "approve" : "request_changes" }));
-      }
-      const { error } = await this.client.from("reviews").insert({
-        article_id: articleId,
-        version_id: versionId,
-        organization_id: a.organizationId,
-        reviewer_id: user.id,
-        reviewer_name: user.name,
-        comment,
-        decision,
-      });
-      if (error) throw toApiError(error);
+      const next = decision === "comment" ? null : this.transition(a, { type: decision === "approved" ? "approve" : "request_changes" });
+      await this.saveChange(a, next, { review: { version_id: versionId, reviewer_name: user.name, comment, decision } });
       await this.load();
     },
 

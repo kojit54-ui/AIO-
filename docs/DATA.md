@@ -245,6 +245,7 @@ interface GenerationRun {
 - 読み書きはブラウザからログイン中の利用者として行う。記事の更新は `lock_version` が読んだ時点と一致するときだけ書き、ずれていれば競合
 - 確認依頼・承認した版は、記事の更新に合わせてDBのトリガー（freeze_requested_version）が固定する
 - 顧客のプロフィール確認は `approve_profile(organization_id)`（会社の行は顧客から更新できないため）
+- 手動の保存（新しい版＋要確認箇所＋記事の更新）とレビュー（記事の状態＋レビューの行）は `save_article_change` で1つのトランザクションにする。版番号はDBで決め、lock_version が違えば `conflict` を返す。競合したら画面は最新を読み直してから選択肢を出す
 - 生成は POST /api/articles/[id]/generations `{ kind, headings, idempotencyKey }` → `{ versionId }`。サーバーが start_generation → AI → 版・要確認箇所の保存 → 記事の更新 → finish_generation を行う（src/lib/generation/server.ts）
 
 ## API案（T1-9、CXのレビュー待ち）
