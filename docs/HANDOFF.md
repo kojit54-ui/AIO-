@@ -35,6 +35,14 @@
 
 ## 記録
 
+### 2026-10-22 CC（Claude、プロジェクトのスレッド）その5
+- ブランチ / コミット：claude/project-thread-rey7mz（main から）
+- 変更点：supabase/migrations/20261022000000_generation_guard.sql。生成の受付 start_generation（二重クリック、1社1件の同時実行、本文の月の上限と記事ごとの上限、全社の月額予算で停止、10分で時間切れ）、結果の記録 finish_generation、予算の確認 budget_status と mark_budget_notified、全社設定 app_settings、generation_runs.cost_yen。エラーコードに busy と budget_exceeded を追加（src/types/domain.ts、docs/DATA.md、docs/UI.md）。依存の追加なし
+- 確認結果：supabase/tests/generation.test.ts（12件、PGlite 上の PostgreSQL）を含め、単体テスト・型検査・lint が通過
+- 未完了：サーバーからの呼び出し（T2-9）、80％の通知の送り先（T3-3）、費用の円換算の単価表
+- ver1 までの残り：①ログインと招待をSupabaseにつなぐ（T2-3、タムさんの Supabase 作成が先）②画面を本物の保存とAIにつなぐ（T2-9）③Vercel・メール・監視（T3-1〜T3-3）④利用規約など（T3-4、タムさん）⑤バックアップと復旧（T3-5）⑥リリース判定（T3-6）
+- 次の作業と担当：CX がこのDB関数をレビュー → タムさんが Supabase の検証プロジェクトを作成 → CC が T2-3 に着手
+
 ### 2026-10-20 CC（Claude、プロジェクトのスレッド）その2
 - ブランチ / コミット：feat/db-foundation（feat/blog-ui の上。ローカルのみ、push待ち）
 - 変更点：

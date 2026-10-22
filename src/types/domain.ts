@@ -146,7 +146,8 @@ export interface ArticleSummary {
   hasCoachComment: boolean;
 }
 
-export type GenerationErrorCode = "limit_reached" | "timeout" | "provider_error" | "invalid_input";
+// busy：同じ会社で生成を実行中。budget_exceeded：全社の月額予算に達して停止中
+export type GenerationErrorCode = "limit_reached" | "timeout" | "provider_error" | "invalid_input" | "busy" | "budget_exceeded";
 
 export interface GenerationRun {
   id: string;
