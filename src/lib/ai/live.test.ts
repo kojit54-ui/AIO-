@@ -31,7 +31,7 @@ const ctx = {
 
 describe.skipIf(!live)("本物のAPI", () => {
   it("文章：見出し案と本文を作る", async () => {
-    expect(setup.textIsSample, "ANTHROPIC_API_KEY が設定されていません").toBe(false);
+    expect(setup.textIsSample, "文章AIのキー（OPENAI_API_KEY、TEXT_PROVIDER=anthropic なら ANTHROPIC_API_KEY）が設定されていません").toBe(false);
     const outline = await generateOutline(setup.text, ctx);
     const body = await generateBody(setup.text, ctx, outline.outline.map((o) => o.heading));
     console.log(JSON.stringify({ outline, body }, null, 2));

@@ -5,6 +5,13 @@
 ## 記録の書式
 
 ```
+### 2026-10-22 CC（Claude、プロジェクトのスレッド）その4
+- ブランチ / コミット：claude/project-thread-iawszb（claude/project-thread-g8uiym の上）
+- 変更点：文章の既定を OpenAI に変更。src/lib/ai/providers/openaiText.ts（Responses API を HTTP で呼ぶ。JSONで返させ、store: false）。config.ts に TEXT_PROVIDER（openai／anthropic）を追加。.env.example、docs/AI_SETUP.md、docs/DECISIONS.md を更新。依存の追加なし
+- 確認結果：単体テスト67件、型検査、lint が通過。本物のAPIでの確認は OPENAI_API_KEY 待ち
+- 未完了：本物のAPIでの確認、画面からの呼び出し（認証の後）
+- 次の作業と担当：タムさんが OPENAI_API_KEY を設定 → CC が `npm run test:live` で確認 → CX が接続部分をレビュー
+
 ### 2026-10-20 CC（Claude、プロジェクトのスレッド）その3
 - ブランチ / コミット：feat/ai-providers（feat/prototype の上）
 - 変更点：

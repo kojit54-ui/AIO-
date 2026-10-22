@@ -1,4 +1,4 @@
-// 画像生成：OpenAI。Google から切り替えられるように用意しておく（IMAGE_PROVIDER=openai）。
+// 画像生成：OpenAI。Google から切り替えられるように用意しておく（IMAGE_PROVIDER=openai）。文章は openaiText.ts。
 // 画像の1エンドポイントだけなので、SDK を入れずに HTTP で呼ぶ。
 
 import type { ImageProvider } from "../images";
