@@ -6,11 +6,15 @@ import type { AiProvider } from "./provider";
 import { createAnthropicProvider } from "./providers/anthropic";
 import { createGoogleImageProvider } from "./providers/google";
 import { createOpenAiImageProvider } from "./providers/openai";
+import { createOpenAiTextProvider } from "./providers/openaiText";
 import { sampleImageProvider, sampleTextProvider } from "./providers/sample";
 
 export const DEFAULTS = {
-  textModel: "claude-sonnet-5-5",
-  finishModel: "claude-opus-5-5",
+  textProvider: "openai",
+  openaiTextModel: "gpt-6.1-sol",
+  openaiFinishModel: "gpt-6.1-sol",
+  anthropicTextModel: "claude-sonnet-5-5",
+  anthropicFinishModel: "claude-opus-5-5",
   googleImageModel: "gemini-3.1-flash-image",
   openaiImageModel: "gpt-image-2.5",
   openaiImageSize: "1536x1024",
@@ -30,15 +34,7 @@ type Env = Record<string, string | undefined>;
 const val = (env: Env, key: string) => env[key]?.trim() || undefined;
 
 export function getAiSetup(env: Env = process.env): AiSetup {
-  const anthropicKey = val(env, "ANTHROPIC_API_KEY");
-  const text = anthropicKey
-    ? createAnthropicProvider({
-        apiKey: anthropicKey,
-        draftModel: val(env, "AI_TEXT_MODEL") ?? DEFAULTS.textModel,
-        finishModel: val(env, "AI_FINISH_MODEL") ?? DEFAULTS.finishModel,
-      })
-    : sampleTextProvider;
-
+  const text = pickTextProvider(env);
   const image = pickImageProvider(env);
   return {
     text,
@@ -47,6 +43,27 @@ export function getAiSetup(env: Env = process.env): AiSetup {
     textIsSample: text === sampleTextProvider,
     imageIsSample: image === sampleImageProvider,
   };
+}
+
+function pickTextProvider(env: Env): AiProvider {
+  if ((val(env, "TEXT_PROVIDER") ?? DEFAULTS.textProvider) === "anthropic") {
+    const key = val(env, "ANTHROPIC_API_KEY");
+    return key
+      ? createAnthropicProvider({
+          apiKey: key,
+          draftModel: val(env, "AI_TEXT_MODEL") ?? DEFAULTS.anthropicTextModel,
+          finishModel: val(env, "AI_FINISH_MODEL") ?? DEFAULTS.anthropicFinishModel,
+        })
+      : sampleTextProvider;
+  }
+  const key = val(env, "OPENAI_API_KEY");
+  return key
+    ? createOpenAiTextProvider({
+        apiKey: key,
+        draftModel: val(env, "AI_TEXT_MODEL") ?? DEFAULTS.openaiTextModel,
+        finishModel: val(env, "AI_FINISH_MODEL") ?? DEFAULTS.openaiFinishModel,
+      })
+    : sampleTextProvider;
 }
 
 function pickImageProvider(env: Env): ImageProvider {

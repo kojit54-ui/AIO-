@@ -1,4 +1,4 @@
-// 文章生成：Anthropic（Claude）。普段は Sonnet、仕上げは Opus（docs/DECISIONS.md）。
+// 文章生成：Anthropic（Claude）。TEXT_PROVIDER=anthropic のときに使う。普段は Sonnet、仕上げは Opus。
 // サーバー側でだけ使う。APIキーは環境変数から受け取り、ログや返り値に出さない。
 
 import Anthropic from "@anthropic-ai/sdk";
