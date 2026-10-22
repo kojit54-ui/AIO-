@@ -6,6 +6,8 @@
 
 | 日付 | 決定 | 理由 | 見直し |
 |---|---|---|---|
+| 2026-10-22 | ログインはパスワードを使わず、メールのリンクで行う。招待リンクはアプリがメールで送らず、全社管理者が画面に1回だけ表示されるリンクをコピーして本人に送る。リンクを開いた本人には、招待先のメールアドレスにログイン用のメールを送る | 招待リンクだけではログインできず、本人のメールを確認できる。招待メールの送信の仕組み（独自ドメインのSMTP）を待たずに試験を始められる。コタムは顧客と普段からメールでやり取りしている | 試験1か月目 |
+| 2026-10-22 | 検証用の Supabase はムンバイ（South Asia）で作成済みのまま使う。本番は東京（Northeast Asia）で作る | 作成時の選択ミスだが、検証用は架空データだけで、作り直す手間を省く。場所は作成後に変えられない | 本番作成時 |
 | 2026-10-22 | 文章の提供元を Anthropic から OpenAI に変える（普段も仕上げも gpt-6.1-sol、仕上げは考える量を high に）。Anthropic は TEXT_PROVIDER=anthropic で使えるまま残す。画像は Google のまま。会話は OpenAI 側に保存させない（store: false） | タムさんが Claude と ChatGPT に同じ素材で書かせて読み比べ、ChatGPT を選んだ。単価は Claude Sonnet 5.5 と同じ（入力 $2／出力 $10、100万トークンあたり）。ver1 の完成を優先し、画像の生成（Gemini）は ver1 の後（docs/TASKS.md T4-1） | 試験1か月目 |
 | 2026-10-21 | 画像のモデルを Imagen（imagen-4.0-fast-generate-001）から Gemini の画像モデル（gemini-3.1-flash-image）に変える。呼び出しは generateContent | Imagen の generateImages は Gemini API のキーでは使えない（Vertex AI 専用）と実APIで確認したため。SDK でも非推奨になった | 試験1か月目 |
 | 2026-10-20 | AIの提供元：文章は Anthropic（普段は claude-sonnet-5-5、仕上げは claude-opus-5-5）、画像は Google（imagen-4.0-fast-generate-001）。OpenAI の画像に切り替えられる作りにする | 文章は指示どおりに書き、素材にない事実を作りにくい。Anthropic には画像生成がないため別の会社にする。比較は /mnt/project-files/research/ai-provider-comparison.md | 試験1か月目 |

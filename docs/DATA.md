@@ -33,6 +33,14 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | expires_at | timestamptz | 発行から7日（提案） |
 | accepted_at | timestamptz | |
 
+リンクのトークンはサーバーで作り（32バイトの乱数）、DBには SHA-256 のハッシュだけを保存する。関数：
+- `invitation_status(token_hash)`：valid / expired / used / invalid と会社名（service role だけ）
+- `accept_invitation(token_hash)`：期限・使用済みを検査し、同じメールアドレスの auth.users に所属を作る。外された人の再招待では所属を戻す（service role だけ）
+- `revoke_membership(membership_id)`：所属を外し、その人の未使用の招待も無効にする（全社管理者だけ）
+- `list_members(organization_id)`：所属者とメールアドレス（全社管理者だけ）
+
+流れは docs/SUPABASE_SETUP.md「招待とログインの流れ」。
+
 ### coaching_notes
 | 列 | 型 | 説明 |
 |---|---|---|
