@@ -120,6 +120,27 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | usage | jsonb | トークン数・概算費用 |
 | error_code | text | 本文や個人情報はログに残さない |
 | result_version_id | uuid | |
+| cost_yen | numeric | 概算費用（円）。月額予算の判定に使う |
+
+受付は `start_generation(article_id, kind, idempotency_key, input_chars)` だけで行い、利用者は generation_runs に直接書けない。判定の順番：
+1. 所属（顧客担当者かコタム担当者）と入力（8,000字まで、キー8〜200字）。違えば `forbidden` / `invalid_input`
+2. 同じキーの受付があれば、それをそのまま返す（二重クリック）
+3. 10分（app_settings.generation_timeout_seconds）を過ぎた実行中の受付は `timeout` で失敗にする
+4. 同じ会社で実行中があれば `busy`
+5. 全社の今月の費用が予算に達していれば `budget_exceeded`
+6. 本文（kind=body）だけ、会社の月の上限（organizations.monthly_generation_limit）と記事ごとの上限（app_settings.article_body_limit、初期値10）。失敗した回は数えない。超えれば `limit_reached`
+
+結果は `finish_generation(run_id, status, usage, cost_yen, error_code, result_version_id)` でサーバーだけが記録する。予算は `budget_status()` で確認し、通知したら `mark_budget_notified()`。月の区切りは日本時間。
+
+### app_settings
+全社共通の設定（1行）。利用者からは読み書きできない。
+| 列 | 型 | 説明 |
+|---|---|---|
+| monthly_budget_yen | int | 全社の月額予算。初期値 10000 |
+| budget_notify_ratio | numeric | 通知する割合。初期値 0.80 |
+| budget_notified_month | date | 今月通知済みか |
+| article_body_limit | int | 同じ記事の本文生成の上限。初期値 10 |
+| generation_timeout_seconds | int | 実行中のまま失敗とみなすまでの秒数。初期値 600 |
 
 ### audit_logs
 | 列 | 型 | 説明 |
@@ -201,7 +222,7 @@ interface FactCheck {
 
 interface GenerationRun {
   id: string; status: 'queued' | 'running' | 'succeeded' | 'failed';
-  errorCode?: 'limit_reached' | 'timeout' | 'provider_error' | 'invalid_input';
+  errorCode?: 'limit_reached' | 'timeout' | 'provider_error' | 'invalid_input' | 'busy' | 'budget_exceeded';
   resultVersionId?: string;
 }
 ```
