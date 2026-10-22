@@ -48,7 +48,13 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
 
   return (
     <main className="page max-w-3xl space-y-6">
-      <h1 className="text-2xl font-bold">招待と所属の管理</h1>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h1 className="text-2xl font-bold">招待と所属の管理</h1>
+        <form action="/auth/signout" method="post" className="flex items-center gap-3 text-sm">
+          <span className="text-muted">{auth.user.email}</span>
+          <button type="submit" className="btn-secondary min-h-9 px-3 py-1 text-sm">ログアウト</button>
+        </form>
+      </div>
 
       <section className="card space-y-3">
         <h2 className="text-lg font-semibold">会社</h2>
