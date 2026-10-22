@@ -5,6 +5,18 @@
 ## 記録の書式
 
 ```
+### 2026-10-20 CC（Claude、プロジェクトのスレッド）その3
+- ブランチ / コミット：feat/ai-providers（feat/prototype の上）
+- 変更点：
+  - 文章：src/lib/ai/providers/anthropic.ts（公式SDK。普段は Sonnet、仕上げは Opus。断られたときはサーバー側の代替モデル）
+  - 画像：src/lib/ai/images.ts と providers/google.ts（既定）、providers/openai.ts（切り替え用）。見出しごとの画像案（撮るとよい写真・代替テキスト・生成用の指示）を本文と一緒に返す
+  - src/lib/ai/config.ts：環境変数で提供元を選ぶ。キーが無ければ providers/sample.ts のサンプルを返す
+  - .env.example、docs/AI_SETUP.md（キーの取り方と設定場所）、`npm run test:live`（本物のAPIで1回試す）
+  - 依存追加：@anthropic-ai/sdk、@google/genai
+- 確認結果：単体テスト65件、型検査、lint が通過。本物のAPIでの確認はキー待ち
+- 未完了：画面からの呼び出し（認証と generation_runs の記録が先。T2-1〜T2-3）、画像の保存先（Supabase Storage）
+- 次の作業と担当：タムさんがキーを作って設定（docs/AI_SETUP.md）→ CC が `npm run test:live` で確認 → CX が接続部分をレビュー
+
 ### YYYY-MM-DD 担当（CC / CX）
 - ブランチ / コミット：
 - 変更点：

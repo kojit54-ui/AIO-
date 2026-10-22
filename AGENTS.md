@@ -31,6 +31,7 @@ npm run lint
 npm run typecheck
 npm test           # 状態遷移・HTML書き出し・サンプル生成の単体テスト
 npm run build
+npm run test:live  # 本物のAIで1回試す（.env.local にキーが必要。docs/AI_SETUP.md）
 ```
 
 画面試作の段階では、データはブラウザ内の架空データ（src/mock/）だけを使う。右下の「試作の確認用」から保存失敗・生成失敗・編集競合・セッション切れを再現できる。
