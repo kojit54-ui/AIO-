@@ -8,6 +8,7 @@ import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, S
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { blocksToHtml, blocksToPlainText } from "@/lib/exportText";
+import { slotOf } from "@/lib/imageSlot";
 import { canApply } from "@/lib/workflow";
 import type { AiReviewCategory, Article, ArticleImage, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
 
@@ -502,7 +503,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
   if (!ideas || (!ideas.eyecatch && !ideas.perHeading.length)) {
     return <p className="text-sm text-muted">{version.body.length ? "この版には画像の提案がありません。" : "本文を作ると、画像の提案が出ます。"}</p>;
   }
-  const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, slot: "eyecatch", label: "アイキャッチ" }] : []), ...ideas.perHeading.map((i) => ({ ...i, slot: i.heading, label: i.heading }))];
+  const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, slot: "eyecatch", label: "アイキャッチ" }] : []), ...ideas.perHeading.map((i) => ({ ...i, slot: slotOf(i.heading), label: i.heading }))];
   const missing = items.filter((i) => !images.some((m) => m.slot === i.slot));
 
   async function generate(slots: string[], key: string) {

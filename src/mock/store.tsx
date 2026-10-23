@@ -24,6 +24,7 @@ import type {
   SessionUser,
   Theme,
 } from "@/types/domain";
+import { slotOf } from "@/lib/imageSlot";
 import { applyAction, type ArticleAction, TransitionError } from "@/lib/workflow";
 import { getSupabaseEnv } from "@/lib/supabase/env";
 import { RemoteBackend } from "@/lib/remote/backend";
@@ -277,7 +278,7 @@ function createApi(
       const db = getDb();
       const article = getArticleForUser(db, user, articleId);
       const ideas = db.versions.find((v) => v.id === article.currentVersionId)?.imageIdeas;
-      const all = [...(ideas?.eyecatch ? [{ slot: "eyecatch", alt: ideas.eyecatch.alt }] : []), ...(ideas?.perHeading ?? []).map((i) => ({ slot: i.heading, alt: i.alt }))];
+      const all = [...(ideas?.eyecatch ? [{ slot: "eyecatch", alt: ideas.eyecatch.alt }] : []), ...(ideas?.perHeading ?? []).map((i) => ({ slot: slotOf(i.heading), alt: i.alt }))];
       const targets = slots.length ? all.filter((x) => slots.includes(x.slot)) : all;
       if (!targets.length) throw new ApiError("invalid_input", "先に本文を作ってください（画像の提案がありません）");
       await delay(1600);

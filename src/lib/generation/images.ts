@@ -6,17 +6,24 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { generateHeadingImage, type ImageProvider } from "@/lib/ai/images";
 import { AiProviderError } from "@/lib/ai/provider";
+import { slotOf } from "@/lib/imageSlot";
 import { toArticle, toVersion } from "@/lib/remote/mapping";
 import type { ArticleImage, ImageIdea } from "@/types/domain";
 
 export const IMAGE_BUCKET = "article-images";
-/** 1枚の概算費用（円）。gemini-3.1-flash-image の1K画像は約 $0.067（docs/DECISIONS.md）。1ドル150円で切り上げ */
-export const IMAGE_COST_YEN = 11;
-/** 1回に作る枚数の上限（アイキャッチ＋見出し） */
-export const MAX_IMAGES_PER_RUN = 8;
+/**
+ * 1枚の概算費用（円）。提供元（ImageProvider.name）ごと。1ドル150円で切り上げ（docs/DECISIONS.md）。
+ * google：gemini-3.1-flash-image の1K画像 約$0.067。openai：gpt-image の大きい画像は公式の単価を確認できていないため、予算を少なく見積もらないよう多めに $0.25
+ */
+export const IMAGE_COST_YEN: Record<string, number> = { google: 11, openai: 38, sample: 0 };
+export const imageCostYen = (provider: string) => IMAGE_COST_YEN[provider] ?? IMAGE_COST_YEN.openai;
+/** 1回に作る枚数の上限（アイキャッチ＋見出し12個まで。本文の見出しの上限と同じ） */
+export const MAX_IMAGES_PER_RUN = 13;
+
 export const IMAGE_TIMEOUT_MS = 240_000;
 const URL_SECONDS = 60 * 60;
 
+/** failed は作れなかった枚数（上限を超えて作らなかった分も含む） */
 export type ImageOutcome = { ok: true; images: ArticleImage[]; failed: number } | { ok: false; status: number; code: string; message: string };
 
 const fail = (status: number, code: string, message: string): Extract<ImageOutcome, { ok: false }> => ({ ok: false, status, code, message });
@@ -34,7 +41,7 @@ const EXT: Record<string, string> = { "image/png": "png", "image/jpeg": "jpg", "
 /** 今の版の画像の提案を、枠（eyecatch または見出し）ごとに並べる */
 export function ideasBySlot(ideas: { eyecatch: ImageIdea | null; perHeading: ImageIdea[] } | undefined): { slot: string; idea: ImageIdea }[] {
   if (!ideas) return [];
-  const out = [...(ideas.eyecatch ? [{ slot: "eyecatch", idea: ideas.eyecatch }] : []), ...ideas.perHeading.map((idea) => ({ slot: idea.heading, idea }))];
+  const out = [...(ideas.eyecatch ? [{ slot: "eyecatch", idea: ideas.eyecatch }] : []), ...ideas.perHeading.map((idea) => ({ slot: slotOf(idea.heading), idea }))];
   // 同じ見出しが2回あっても1枠にする
   return out.filter((x, i) => x.slot && out.findIndex((y) => y.slot === x.slot) === i);
 }
@@ -90,7 +97,9 @@ export async function runImageGeneration(
     : { data: null };
   const all = ideasBySlot(versionRow ? toVersion(versionRow).imageIdeas : undefined);
   if (!all.length) return fail(400, "invalid_input", "先に本文を作ってください（画像の提案がありません）");
-  const targets = (req.slots.length ? all.filter((x) => req.slots.includes(x.slot)) : all).slice(0, MAX_IMAGES_PER_RUN);
+  const wanted = req.slots.length ? all.filter((x) => req.slots.includes(x.slot)) : all;
+  const targets = wanted.slice(0, MAX_IMAGES_PER_RUN);
+  const skipped = wanted.length - targets.length;
   if (!targets.length) return fail(400, "invalid_input", "作る画像を選んでください");
 
   const inputChars = Math.min(8000, targets.reduce((n, t) => n + t.idea.imagePrompt.length, 0));
@@ -113,7 +122,7 @@ export async function runImageGeneration(
         p_run_id: run.id,
         p_status: status,
         p_usage: { images: made },
-        p_cost_yen: deps.isSample ? 0 : made * IMAGE_COST_YEN,
+        p_cost_yen: deps.isSample ? 0 : made * imageCostYen(deps.provider.name),
         p_error_code: error ?? null,
         p_result_version_id: null,
       });
@@ -157,5 +166,5 @@ export async function runImageGeneration(
     const first = results.find((r): r is PromiseRejectedResult => r.status === "rejected")?.reason;
     return fail(502, "provider_error", first instanceof AiProviderError ? first.message : "画像を作れませんでした。もう一度お試しください");
   }
-  return { ok: true, images: await listArticleImages(db, admin, req.articleId), failed: targets.length - made };
+  return { ok: true, images: await listArticleImages(db, admin, req.articleId), failed: targets.length - made + skipped };
 }

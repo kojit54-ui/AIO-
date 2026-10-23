@@ -3,7 +3,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getAiSetup } from "@/lib/ai/config";
 import { sampleImageProvider } from "@/lib/ai/providers/sample";
-import { listArticleImages, MAX_IMAGES_PER_RUN, runImageGeneration } from "@/lib/generation/images";
+import { listArticleImages, runImageGeneration } from "@/lib/generation/images";
 import { createAdminSupabase } from "@/lib/supabase/admin";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
@@ -27,7 +27,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   if (!isSupabaseConfigured()) return notConfigured();
   const { id } = await params;
   const body = (await request.json().catch(() => null)) as { slots?: unknown; idempotencyKey?: unknown } | null;
-  const slots = Array.isArray(body?.slots) ? body.slots.filter((s): s is string => typeof s === "string").slice(0, MAX_IMAGES_PER_RUN) : [];
+  const slots = Array.isArray(body?.slots) ? body.slots.filter((s): s is string => typeof s === "string").slice(0, 50) : []; // 枚数の上限はサーバー側で数え、作らなかった分は failed で返す
   const idempotencyKey = typeof body?.idempotencyKey === "string" ? body.idempotencyKey : "";
   if (!idempotencyKey) return NextResponse.json({ code: "invalid_input", message: "入力の内容を確認してください" }, { status: 400 });
   const setup = getAiSetup();
