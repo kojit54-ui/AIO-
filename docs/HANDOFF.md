@@ -54,6 +54,12 @@
 - 気づいた点：レビューの表示名がメールアドレスになる（利用者の名前を持っていないため）。テストで作ったテーマの題名が長いまま残っている（検証環境のみ）
 - 次の作業と担当：タムさんが漏れた Anthropic・Gemini のキーを作り直し、新しいキーを Vercel の環境変数に入れる → CC が実際の生成を確認。並行して SMTP（T3-2）、監視と予算の通知（T3-3）、利用規約（T3-4、タムさん）、バックアップ（T3-5）
 
+### 2026-10-23 CC（Claude、プロジェクトのスレッド）
+- ブランチ / コミット：claude/project-thread-v1jf2e
+- 変更点：講演資料「印刷業界におけるAI活用」の考え方（経験を手順・ルール・テストに残す）を取り入れ、docs/LESSONS.md（経験から決めたルールと用語集）を追加。AGENTS.md と CLAUDE.md に「経験をルールに残す」を追加し、最初に読むものに LESSONS.md を入れた。コードの変更なし
+- 未完了：なし
+- 次の作業と担当：CX がレビュー → タムさんがマージ。以後、不具合やレビュー指摘で分かったことは CC・CX が LESSONS.md に追記する
+
 ### 2026-10-22 CC（Claude、プロジェクトのスレッド）その7
 - ブランチ / コミット：claude/project-thread-rey7mz（PR #7 のマージ後の main から）
 - 変更点：画面を本物のデータにつなぐ（T2-9）。src/lib/remote/（DBの行と画面の型の変換、Supabase を使う store）、src/mock/store.tsx は Supabase の値があれば本物のデータに切り替え、`month`（日本時間の今月）と `loadError` を追加。生成のサーバー処理 src/lib/generation/server.ts と /api/articles/[id]/generations、概算費用 src/lib/ai/cost.ts。マイグレーション 20261024000000_app_data.sql（回答の下書き列、レビューの表示名、確認依頼・承認した版の固定、approve_profile）。本物のデータのときは試作確認パネルを出さない
