@@ -24,7 +24,7 @@ describe("深掘りの質問", () => {
 
   it("質問が無いときは null、長すぎる・形が違う返答は受け付けない", () => {
     expect(parseFollowUp('{"follow_up": null}')).toBeNull();
-    expect(parseFollowUp('{"follow_up": "  "}')).toBeNull();
+    expect(() => parseFollowUp('{"follow_up": "  "}')).toThrow(ParseError);
     expect(() => parseFollowUp("{}")).toThrow(ParseError);
     expect(() => parseFollowUp('{"followup": null}')).toThrow(ParseError);
     expect(parseFollowUp('ここから {"follow_up": "例えば、どんな場面でしたか"}')).toBe("例えば、どんな場面でしたか");

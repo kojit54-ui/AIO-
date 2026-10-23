@@ -58,7 +58,7 @@ export function parseFollowUp(text: string): string | null {
   if (v.follow_up === null) return null;
   if (typeof v.follow_up !== "string") throw new ParseError("follow_up の形が違います");
   const q = v.follow_up.trim();
-  if (!q) return null;
+  if (!q) throw new ParseError("follow_up が空です");
   // 長すぎる質問は答えにくいので受け付けない（40字の目安に余裕を持たせる）
   if (Array.from(q).length > 80) throw new ParseError("質問が長すぎます");
   return q;
