@@ -35,6 +35,14 @@
 
 ## 記録
 
+### 2026-10-23 CC（Claude、プロジェクトのスレッド）その8
+- ブランチ / コミット：claude/project-thread-rey7mz（PR #8 のマージ後の main から）
+- 変更点：PR #8（T2-9）に Codex の指摘を反映。手動の保存とレビューを `save_article_change`（1つのトランザクション、版番号はDBで決める）に、生成の材料が1つでも読めなければ止める、結果の記録は3回までやり直す。検証環境を作成：Vercel のプロジェクト aio（https://aio-roan.vercel.app）、Supabase の URL 設定、最初の全社管理者（tamura@co-tam.co.jp）
+- 確認結果：検証環境で、会社の追加 → 招待（kojit54@gmail.com）→ メールのリンクでログイン → プロフィール確認 → テーマ選択 → 質問 → 見出し案 → 本文 → 確認依頼 → コタムの承認 まで本物のデータで通った。生成はAIのキー未設定のためサンプル
+- 未確認：本文の手動編集と保存、公開済みにする・書き出し、修正依頼、AIの実際の生成
+- 気づいた点：レビューの表示名がメールアドレスになる（利用者の名前を持っていないため）。テストで作ったテーマの題名が長いまま残っている（検証環境のみ）
+- 次の作業と担当：タムさんが漏れた Anthropic・Gemini のキーを作り直し、新しいキーを Vercel の環境変数に入れる → CC が実際の生成を確認。並行して SMTP（T3-2）、監視と予算の通知（T3-3）、利用規約（T3-4、タムさん）、バックアップ（T3-5）
+
 ### 2026-10-22 CC（Claude、プロジェクトのスレッド）その7
 - ブランチ / コミット：claude/project-thread-rey7mz（PR #7 のマージ後の main から）
 - 変更点：画面を本物のデータにつなぐ（T2-9）。src/lib/remote/（DBの行と画面の型の変換、Supabase を使う store）、src/mock/store.tsx は Supabase の値があれば本物のデータに切り替え、`month`（日本時間の今月）と `loadError` を追加。生成のサーバー処理 src/lib/generation/server.ts と /api/articles/[id]/generations、概算費用 src/lib/ai/cost.ts。マイグレーション 20261024000000_app_data.sql（回答の下書き列、レビューの表示名、確認依頼・承認した版の固定、approve_profile）。本物のデータのときは試作確認パネルを出さない
