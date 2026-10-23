@@ -112,6 +112,16 @@ export interface ImageIdea {
   imagePrompt: string;
 }
 
+/** 作った画像（ナノバナナ）。記事ごと・枠（eyecatch または見出し）ごとに1枚。URLは期限付き */
+export interface ArticleImage {
+  slot: string;
+  alt: string;
+  url: string;
+  downloadUrl: string;
+  isSample: boolean;
+  createdAt: string;
+}
+
 export type AiReviewCategory = "originality" | "aio" | "ai_tone" | "facts" | "style";
 
 export interface AiReview {

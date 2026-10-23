@@ -30,12 +30,13 @@ const req = { kind: "body" as const, system: "s", user: "u", maxOutputTokens: 10
 describe("getAiSetup", () => {
   it("キーが無ければサンプルを使う", () => {
     const s = getAiSetup({});
-    expect(s).toMatchObject({ textIsSample: true, imageIsSample: true, imageMode: "suggest" });
+    expect(s).toMatchObject({ textIsSample: true, imageIsSample: true, imageMode: "generate" });
   });
 
   it("文章は OpenAI、画像は Google を使い、それぞれ切り替えられる", () => {
     const s = getAiSetup({ OPENAI_API_KEY: "o", GEMINI_API_KEY: "g", IMAGE_MODE: "generate" });
     expect([s.text.name, s.image.name, s.imageMode]).toEqual(["openai", "google", "generate"]);
+    expect(getAiSetup({ IMAGE_MODE: "suggest" }).imageMode).toBe("suggest");
     expect(getAiSetup({ ANTHROPIC_API_KEY: "a" }).textIsSample).toBe(true);
     expect(getAiSetup({ TEXT_PROVIDER: "anthropic", ANTHROPIC_API_KEY: "a" }).text.name).toBe("anthropic");
     expect(getAiSetup({ IMAGE_PROVIDER: "openai", OPENAI_API_KEY: "o" }).image.name).toBe("openai");

@@ -35,6 +35,17 @@
 
 ## 記録
 
+### 2026-10-23 CC（Claude、プロジェクトのスレッド）その10
+- ブランチ / コミット：claude/project-thread-rey7mz（PR #10 のマージ後に main から作り直し）
+- 変更点：画像の生成（T4-1、docs/DECISIONS.md 2026-10-23）
+  - DB：supabase/migrations/20261025000000_article_images.sql（article_images、generation_runs.kind に image、app_settings.article_image_limit、start_generation に画像の回数の判定）
+  - サーバー：src/lib/generation/images.ts（今の版の画像の提案からナノバナナで作り、Storage の非公開バケット article-images に置く。1枚失敗しても残りは残す）、/api/articles/[id]/images（GET 一覧、POST 生成）
+  - 画面：「画像」タブに、まだ無い画像をまとめて作る・1枚ずつ作り直す・ダウンロードのボタン。型 ArticleImage。架空データでは灰色のサンプル画像
+  - IMAGE_MODE の既定を generate に
+- 確認結果：単体テスト（DBの画像の回数とRLS、画像の生成の流れ）、型検査、lint が通過。架空データで画像を作り、375px・1280pxで横スクロールが無いことを確認。本物の Storage と Gemini での確認は、マイグレーションの実行とキー待ち
+- 未完了：検証環境への 20261025000000_article_images.sql の実行（タムさん、SQL Editor）、本物のAIでの確認、HTML書き出しへの画像の埋め込み（ver1 はダウンロードで渡す）
+- 次の作業と担当：CX がレビュー → タムさんがマージとSQLの実行、3社のキーを Vercel に入れる → CC が1本作って確認
+
 ### 2026-10-23 CC（Claude、プロジェクトのスレッド）その9
 - ブランチ / コミット：claude/project-thread-rey7mz（PR #10 に追加）
 - 変更点：

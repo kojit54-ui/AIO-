@@ -123,7 +123,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | 列 | 型 | 説明 |
 |---|---|---|
 | organization_id, article_id | uuid | |
-| kind | text | `outline` / `body` / `rewrite` / `followup_questions` |
+| kind | text | `outline` / `body` / `rewrite` / `followup_questions` / `image` |
 | status | text | `queued` / `running` / `succeeded` / `failed` |
 | idempotency_key | text | 二重クリック防止（unique） |
 | input_chars | int | |
@@ -139,6 +139,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 4. 同じ会社で実行中があれば `busy`
 5. 全社の今月の費用が予算に達していれば `budget_exceeded`
 6. 本文（kind=body）だけ、会社の月の上限（organizations.monthly_generation_limit）と記事ごとの上限（app_settings.article_body_limit、初期値10）。失敗した回と時間切れの回は数えない。超えれば `limit_reached`
+7. 画像（kind=image）は記事ごとの回数（app_settings.article_image_limit、初期値10）。1回でアイキャッチと見出しごとの画像をまとめて作る。失敗した回は数えない。費用は作れた枚数×11円
 
 画面は `get_generation(run_id)` で状態を問い合わせる。時間を過ぎた受付はここでも失敗（timeout）になるので、次の生成を押さなくても「生成中」のままにならない。
 
@@ -153,6 +154,19 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | budget_notified_month | date | 今月通知済みか |
 | article_body_limit | int | 同じ記事の本文生成の上限。初期値 10 |
 | generation_timeout_seconds | int | 実行中のまま失敗とみなすまでの秒数。初期値 600 |
+| article_image_limit | int | 同じ記事で画像を作れる回数。初期値 10 |
+
+### article_images
+記事の画像（ナノバナナで作ったもの）。記事ごと・枠ごとに1枚で、作り直すと置き換わる。ファイルは Supabase Storage の非公開バケット `article-images`（`{organization_id}/{article_id}/{eyecatch|h番号}-{時刻}.{拡張子}`）に置く。書き込みはサーバー（service role）だけ。画面には、この表をRLSで読めた行についてだけ、サーバーが1時間有効のURL（表示用とダウンロード用）を渡す（GET/POST `/api/articles/[id]/images`）。
+| 列 | 型 | 説明 |
+|---|---|---|
+| article_id, organization_id | uuid | |
+| slot | text | `eyecatch` または見出しの文字列（unique(article_id, slot)） |
+| alt | text | 代替テキスト |
+| storage_path | text | Storage の場所 |
+| mime_type | text | |
+| is_sample | boolean | キーが無いときのサンプル |
+| created_by, created_at | | |
 
 ### audit_logs
 | 列 | 型 | 説明 |

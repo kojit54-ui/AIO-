@@ -5,6 +5,7 @@
 
 import { createContext, useContext, useMemo, useSyncExternalStore } from "react";
 import type {
+  ArticleImage,
   Answer,
   Article,
   ArticleVersion,
@@ -120,6 +121,12 @@ interface StoreValue {
 export type MockApi = ReturnType<typeof createApi>;
 
 const StoreContext = createContext<StoreValue | null>(null);
+
+/** 画面試作で作った画像（ブラウザの中だけ。再読み込みで消える） */
+const mockImages = new Map<string, ArticleImage[]>();
+const SAMPLE_IMAGE_URL = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360"><rect width="640" height="360" fill="#e5e7eb"/><text x="320" y="190" font-size="28" text-anchor="middle" fill="#6b7280" font-family="sans-serif">サンプル（AIは未接続）</text></svg>',
+)}`;
 
 function createApi(
   getDb: () => MockDb,
@@ -255,6 +262,33 @@ function createApi(
         draftAnswers: { ...db.draftAnswers, [articleId]: { answers, step } },
         articles: db.articles.map((a) => (a.id === articleId ? { ...a, updatedAt: now() } : a)),
       });
+    },
+
+    /** 記事の画像の一覧。enabled が false なら生成のボタンを出さない */
+    async listImages(articleId: string): Promise<{ enabled: boolean; images: ArticleImage[] }> {
+      const user = requireUser();
+      getArticleForUser(getDb(), user, articleId);
+      return { enabled: true, images: mockImages.get(articleId) ?? [] };
+    },
+
+    /** 画像を作る（サンプル）。slots が空なら、今の版の提案すべて */
+    async generateImages(articleId: string, slots: string[]): Promise<{ images: ArticleImage[]; failed: number }> {
+      const user = requireUser();
+      const db = getDb();
+      const article = getArticleForUser(db, user, articleId);
+      const ideas = db.versions.find((v) => v.id === article.currentVersionId)?.imageIdeas;
+      const all = [...(ideas?.eyecatch ? [{ slot: "eyecatch", alt: ideas.eyecatch.alt }] : []), ...(ideas?.perHeading ?? []).map((i) => ({ slot: i.heading, alt: i.alt }))];
+      const targets = slots.length ? all.filter((x) => slots.includes(x.slot)) : all;
+      if (!targets.length) throw new ApiError("invalid_input", "先に本文を作ってください（画像の提案がありません）");
+      await delay(1600);
+      if (getSim().generationError) {
+        clearSim("generationError");
+        throw new ApiError("provider_error", "画像を作れませんでした。もう一度お試しください");
+      }
+      const made = targets.map((t) => ({ slot: t.slot, alt: t.alt, url: SAMPLE_IMAGE_URL, downloadUrl: SAMPLE_IMAGE_URL, isSample: true, createdAt: now() }));
+      const keep = (mockImages.get(articleId) ?? []).filter((x) => !made.some((m) => m.slot === x.slot));
+      mockImages.set(articleId, [...keep, ...made]);
+      return { images: mockImages.get(articleId)!, failed: 0 };
     },
 
     /** 見出し案を作る（サンプル）。新しい版を作る */
