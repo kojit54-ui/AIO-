@@ -206,10 +206,13 @@ function parseImage(i: unknown, needHeading: boolean): ImageSuggestion {
   return { heading: isStr(x.heading) ? x.heading : "", photoIdea: x.photo_idea, alt: x.alt, imagePrompt: x.image_prompt };
 }
 
+/** 見出しごとの画像の提案の上限（本文の見出しの上限と同じ）。AIが多く返しても、ここで切る */
+export const MAX_IMAGE_SUGGESTIONS = 12;
+
 export function parseImageIdeas(text: string): ImageIdeas {
   const v = parseJson(text);
   return {
     eyecatch: v.eyecatch ? parseImage(v.eyecatch, false) : null,
-    imageSuggestions: (Array.isArray(v.image_suggestions) ? v.image_suggestions : []).map((i) => parseImage(i, true)),
+    imageSuggestions: (Array.isArray(v.image_suggestions) ? v.image_suggestions : []).slice(0, MAX_IMAGE_SUGGESTIONS).map((i) => parseImage(i, true)),
   };
 }

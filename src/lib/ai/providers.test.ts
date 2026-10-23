@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { getAiSetup } from "./config";
 import { buildImagePrompt, IMAGE_RULES } from "./images";
-import { parseBodyResult, parseImageIdeas, parseReviewResult, ParseError } from "./prompt";
+import { MAX_IMAGE_SUGGESTIONS, parseBodyResult, parseImageIdeas, parseReviewResult, ParseError } from "./prompt";
 import { AiProviderError } from "./provider";
 import { createAnthropicProvider } from "./providers/anthropic";
 import { createGoogleImageProvider } from "./providers/google";
@@ -207,6 +207,8 @@ describe("画像", () => {
     expect(ok.imageSuggestions).toEqual([{ heading: "h", photoIdea: "p", alt: "a", imagePrompt: "i" }]);
     expect(ok.eyecatch).toEqual({ heading: "", photoIdea: "e", alt: "a", imagePrompt: "i" });
     expect(() => parseImageIdeas(JSON.stringify({ image_suggestions: [{ heading: "h" }] }))).toThrow(ParseError);
+    // AIが上限より多く返しても、上限で切る（画像の1回の上限を超えて黙って捨てられないように）
+    expect(parseImageIdeas(JSON.stringify({ image_suggestions: Array.from({ length: MAX_IMAGE_SUGGESTIONS + 5 }, () => img) })).imageSuggestions).toHaveLength(MAX_IMAGE_SUGGESTIONS);
     expect(() => parseBodyResult(JSON.stringify({ body: [] }))).toThrow(ParseError);
   });
 });

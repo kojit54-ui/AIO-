@@ -32,7 +32,9 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   if (!isSupabaseConfigured()) return notConfigured();
   const { id } = await params;
   const body = (await request.json().catch(() => null)) as { slots?: unknown; idempotencyKey?: unknown } | null;
-  const slots = Array.isArray(body?.slots) ? body.slots.filter((s): s is string => typeof s === "string").slice(0, 50) : []; // 枚数の上限はサーバー側で数え、作らなかった分は failed で返す
+  // 枚数の上限はサーバー側で数え、作らなかった分は failed で返す。ありえない数の指定は黙って切らずに断る
+  const slots = Array.isArray(body?.slots) ? body.slots.filter((s): s is string => typeof s === "string") : [];
+  if (slots.length > 50) return NextResponse.json({ code: "invalid_input", message: "一度に選べる画像の数を超えています" }, { status: 400 });
   const idempotencyKey = typeof body?.idempotencyKey === "string" ? body.idempotencyKey : "";
   if (!idempotencyKey) return NextResponse.json({ code: "invalid_input", message: "入力の内容を確認してください" }, { status: 400 });
   const setup = getAiSetup();
