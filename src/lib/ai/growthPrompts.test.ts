@@ -50,6 +50,8 @@ describe("キーワードの提案", () => {
     expect(r[0].reasons).toEqual(["sales", "aio"]);
     expect(() => parseProposals(JSON.stringify({ proposals: [good, good, { ...good, clusters: [idea("a")] }] }))).toThrow(ParseError);
     expect(() => parseProposals(JSON.stringify({ proposals: [good, good, { ...good, reasons: ["x"] }] }))).toThrow(ParseError);
+    expect(() => parseProposals(JSON.stringify({ proposals: [good, good, { ...good, why: " " }] }))).toThrow(ParseError);
+    expect(() => parseProposals(JSON.stringify({ proposals: [good, good, { ...good, why: undefined }] }))).toThrow(ParseError);
     expect(() => parseProposals(JSON.stringify({ proposals: [] }))).toThrow(ParseError);
     expect(() => parseProposals(JSON.stringify({ proposals: [good, good] }))).toThrow(ParseError);
   });

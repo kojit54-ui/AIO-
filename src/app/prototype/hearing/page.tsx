@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
-import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, answeredCount, collectedAio, nextDeepDive } from "@/prototype/growth";
+import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, answeredCount, collectedAio, nextDeepDive, withNewText } from "@/prototype/growth";
 import { growActions, useGrow } from "@/prototype/store";
 
 /** 顧客が1問ずつ答えるヒアリング。答えが短いと、深掘りの質問が返ってくる */
@@ -68,8 +68,7 @@ export default function HearingPage() {
       return;
     }
     // 答えを書き直したら、深掘りは聞き直す
-    const changed = value.trim() !== saved.text.trim();
-    const next = { ...saved, text: value.trim(), followUps: changed ? [] : saved.followUps };
+    const next = withNewText(saved, value);
     growActions.saveAnswer(next);
     const dd = nextDeepDive(q, next);
     if (dd) {

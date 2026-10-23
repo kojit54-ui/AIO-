@@ -107,6 +107,8 @@ export function parseProposals(text: string): ParsedProposal[] {
     if (clusters.length < 3) throw new ParseError(`proposals[${i}] の周りの記事が少なすぎます`);
     const reasons = Array.isArray(o.reasons) ? o.reasons.filter((r): r is ProposalReason => REASONS.includes(r as ProposalReason)) : [];
     if (!reasons.length) throw new ParseError(`proposals[${i}].reasons の形が違います`);
-    return { pillar: parseIdea(o.pillar, `proposals[${i}].pillar`), clusters, reasons: [...new Set(reasons)], why: typeof o.why === "string" ? o.why.trim() : "" };
+    const why = typeof o.why === "string" ? o.why.trim() : "";
+    if (!why) throw new ParseError(`proposals[${i}].why がありません`);
+    return { pillar: parseIdea(o.pillar, `proposals[${i}].pillar`), clusters, reasons: [...new Set(reasons)], why };
   });
 }

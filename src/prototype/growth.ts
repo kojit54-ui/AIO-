@@ -95,6 +95,12 @@ export interface HearingAnswer {
   followUps: { question: string; answer: string }[];
 }
 
+/** 答えを書き直す。中身が変わったら、前の答えへの深掘りは消して聞き直す */
+export function withNewText(prev: HearingAnswer, text: string): HearingAnswer {
+  const next = text.trim();
+  return { ...prev, text: next, followUps: next === prev.text.trim() ? prev.followUps : [] };
+}
+
 /** 深掘りは1問につき2回まで */
 export const MAX_DEEP_DIVES = 2;
 

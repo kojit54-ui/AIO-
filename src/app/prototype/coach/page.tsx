@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
-import { HEARING_QUESTIONS, type HearingAnswer, answeredCount, computeGrowth } from "@/prototype/growth";
+import { HEARING_QUESTIONS, type HearingAnswer, answeredCount, computeGrowth, withNewText } from "@/prototype/growth";
 import { growActions, useGrow } from "@/prototype/store";
 
 /** コタムの画面。顧客と話しながらヒアリングをまとめて入力でき、顧客が一問一答で答えた内容も同じ欄に出る */
@@ -19,7 +19,7 @@ export default function CoachPrototypePage() {
   function save() {
     for (const [id, text] of Object.entries(edits)) {
       const prev: HearingAnswer = g.answers[id] ?? { questionId: id, text: "", followUps: [] };
-      growActions.saveAnswer({ ...prev, text: text.trim() });
+      growActions.saveAnswer(withNewText(prev, text));
     }
     setEdits({});
     setSaved(true);

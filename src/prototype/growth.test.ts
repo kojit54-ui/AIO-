@@ -11,6 +11,7 @@ import {
   nextDeepDive,
   planFromProposal,
   sampleProposals,
+  withNewText,
 } from "./growth";
 
 const q = (id: string) => HEARING_QUESTIONS.find((x) => x.id === id)!;
@@ -36,6 +37,12 @@ describe("ヒアリングの深掘り", () => {
     expect(twice.followUps).toHaveLength(MAX_DEEP_DIVES);
     expect(nextDeepDive(q("strengths"), twice)).toBeNull();
     expect(nextDeepDive(q("avoid"), ans("avoid", "なし"))).toBeNull();
+  });
+
+  it("答えを書き直したら前の深掘りは消し、同じ答えなら残す（顧客の画面・コタムの画面とも）", () => {
+    const prev = ans("strengths", "丁寧", [{ question: "a", answer: "はい" }]);
+    expect(withNewText(prev, "早い").followUps).toEqual([]);
+    expect(withNewText(prev, " 丁寧 ")).toEqual(prev);
   });
 
   it("深掘りに答えると、次の深掘りは答えの量を見て決める", () => {
