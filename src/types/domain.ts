@@ -188,10 +188,15 @@ export interface GenerationRun {
   resultVersionId?: string;
 }
 
+/** AIO（AIに紹介されるための工夫）で集めたい材料。docs/AIO.md、src/lib/aio.ts */
+export type AioPoint = "experience" | "numbers" | "entity" | "qa" | "comparison" | "expertise" | "action" | "trust";
+
 export interface Question {
   id: string;
   label: string;
   example: string;
   /** 答えやすくするためのコツ */
   tip?: string;
+  /** この質問で集めるAIOの材料。画面で「なぜ聞くの？」を出す */
+  aio?: AioPoint;
 }

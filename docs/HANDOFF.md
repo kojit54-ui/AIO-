@@ -35,6 +35,13 @@
 
 ## 記録
 
+### 2026-10-23 CC（Claude、プロジェクトのスレッド）その12
+- ブランチ / コミット：claude/project-thread-rey7mz（PR #12 に追加）
+- 変更点：docs/AIO.md を最新の公式情報で更新（Google の2026年5月の案内、やらなくてよいこと、ChatGPT の検索の条件）し、「最終更新」「更新の決まり」「更新履歴」を追加。毎週月曜 8:41（日本時間）に AIO.md を更新して PR を作る定期の作業を設定。AIOの材料を src/lib/aio.ts と src/components/aio.tsx に移し、今の記事作成の質問（S3）にも「なぜ聞くの？」・答えた後のひとこと・集まった材料を表示（Question.aio）。書き手と点検役の指示（src/lib/ai/prompt.ts）にAIOの8つの材料を入れた
+- 確認結果：単体テスト、型検査、lint が通過。S3 を 375px・1280px で確認し、横スクロールなし
+- 未完了：深掘りの質問とキーワードの提案の本物のAI（T5-4）、試作の保存（T5-3、CX）
+- 次の作業と担当：CX が PR #12 をレビュー → 田村さんがマージ。点検の指示の変更は、本物のAIで1本作って確かめる（キー待ち）
+
 ### 2026-10-23 CC（Claude、プロジェクトのスレッド）その11
 - ブランチ / コミット：claude/project-thread-rey7mz（PR #12 に追加）
 - 変更点：仕切り直しの計画（docs/DECISIONS.md 2026-10-23「仕切り直し」、計画書 https://claude.ai/artifact/AEPQ3RXGbzeQnyMpzVABAs）の第1段階を画面試作にした。/prototype（ホームとレベルアップ）、/prototype/hearing（一問一答のヒアリング。答えが短いと深掘りの質問を返す）、/prototype/plan（キーワードの提案3つ → ピラーとクラスターの図 → キーワード管理表）、/prototype/write/[rowId]（1本ずつの一問一答。例とコツつき）、/prototype/coach（コタムが聞きながらまとめて入力、担当企業の様子）。ロジックは src/prototype/growth.ts、状態は src/prototype/store.ts（localStorage だけ。本物のデータとAIにはつながない）。/prototype はログイン不要で、すべての画面に「サンプル（AIは未接続）」を表示。今の記事作成の質問（S3）にもコツを足した（Question.tip）。画像の提案は12件まで、50件を超える指定は断る（Codex の指摘）
