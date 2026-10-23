@@ -485,6 +485,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
   const { api } = useStore();
   const [images, setImages] = useState<ArticleImage[]>([]);
   const [enabled, setEnabled] = useState(false);
+  const [unitCost, setUnitCost] = useState(0);
   const [busy, setBusy] = useState<string | null>(null);
   const [message, setMessage] = useState<{ tone: "danger" | "warn"; text: string } | null>(null);
 
@@ -492,7 +493,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
     let alive = true;
     api
       .listImages(article.id)
-      .then((r) => alive && (setImages(r.images), setEnabled(r.enabled)))
+      .then((r) => alive && (setImages(r.images), setEnabled(r.enabled), setUnitCost(r.unitCostYen)))
       .catch(() => alive && setMessage({ tone: "danger", text: "画像を読み込めませんでした" }));
     return () => {
       alive = false;
@@ -526,7 +527,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
       {showButtons && (
         <div className="space-y-1">
           <button type="button" className="btn-primary w-full" disabled={busy !== null || !missing.length} onClick={() => generate(missing.map((i) => i.slot), "all")}>
-            {busy === "all" ? "画像を作っています…" : missing.length ? `まだ無い画像を作る（${missing.length}枚・約${missing.length * 11}円）` : "すべての画像があります"}
+            {busy === "all" ? "画像を作っています…" : missing.length ? `まだ無い画像を作る（${missing.length}枚${unitCost ? `・約${missing.length * unitCost}円` : ""}）` : "すべての画像があります"}
           </button>
           <p className="text-xs text-muted">文字の入らない説明用のイラストを作ります。実際の写真があれば、そちらを使ってください。</p>
         </div>
@@ -556,7 +557,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
                   )}
                   {showButtons && (
                     <button type="button" className="btn-secondary min-h-9 px-3 py-1 text-sm" disabled={busy !== null} onClick={() => generate([s.slot], s.slot)}>
-                      {busy === s.slot ? "作っています…" : img ? "作り直す（約11円）" : "この画像を作る（約11円）"}
+                      {busy === s.slot ? "作っています…" : `${img ? "作り直す" : "この画像を作る"}${unitCost ? `（約${unitCost}円）` : ""}`}
                     </button>
                   )}
                 </div>

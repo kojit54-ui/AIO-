@@ -56,7 +56,9 @@ describe("画像の枠", () => {
     expect(ideasBySlot({ eyecatch: ideas.eyecatch, perHeading: [idea("a"), idea("a"), idea("")] }).map((x) => x.slot)).toEqual(["eyecatch", "a"]);
     expect(ideasBySlot(undefined)).toEqual([]);
     // 長い見出しは枠の名前の上限で切る（DBの slot は200字まで）
-    expect(ideasBySlot({ eyecatch: null, perHeading: [idea("あ".repeat(300))] })[0].slot).toHaveLength(200);
+    const long = ideasBySlot({ eyecatch: null, perHeading: [idea("あ".repeat(300)), idea(`${"あ".repeat(299)}い`)] });
+    expect(long.map((x) => x.slot.length)).toEqual([200, 200]);
+    expect(long[0].slot).not.toBe(long[1].slot);
   });
 });
 

@@ -265,11 +265,12 @@ function createApi(
       });
     },
 
-    /** 記事の画像の一覧。enabled が false なら生成のボタンを出さない */
-    async listImages(articleId: string): Promise<{ enabled: boolean; images: ArticleImage[] }> {
+    /** 記事の画像の一覧。enabled が false なら生成のボタンを出さない。unitCostYen は1枚の費用の目安 */
+    async listImages(articleId: string): Promise<{ enabled: boolean; unitCostYen: number; images: ArticleImage[] }> {
       const user = requireUser();
       getArticleForUser(getDb(), user, articleId);
-      return { enabled: true, images: mockImages.get(articleId) ?? [] };
+      // サンプルは費用がかからない
+      return { enabled: true, unitCostYen: 0, images: mockImages.get(articleId) ?? [] };
     },
 
     /** 画像を作る（サンプル）。slots が空なら、今の版の提案すべて */

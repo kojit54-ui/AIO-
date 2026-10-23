@@ -3,7 +3,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getAiSetup } from "@/lib/ai/config";
 import { sampleImageProvider } from "@/lib/ai/providers/sample";
-import { listArticleImages, runImageGeneration } from "@/lib/generation/images";
+import { imageCostYen, listArticleImages, runImageGeneration } from "@/lib/generation/images";
 import { createAdminSupabase } from "@/lib/supabase/admin";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
@@ -20,7 +20,12 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   const { data: auth } = await user.auth.getUser();
   if (!auth.user) return NextResponse.json({ code: "session_expired", message: "ログインの有効期限が切れました" }, { status: 401 });
   const setup = getAiSetup();
-  return NextResponse.json({ enabled: setup.imageMode === "generate", images: await listArticleImages(user, createAdminSupabase(), id) });
+  return NextResponse.json({
+    enabled: setup.imageMode === "generate",
+    // 画面の費用の目安に使う。記録する費用と同じ単価
+    unitCostYen: setup.image === sampleImageProvider ? 0 : imageCostYen(setup.image.name),
+    images: await listArticleImages(user, createAdminSupabase(), id),
+  });
 }
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
