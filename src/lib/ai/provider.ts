@@ -98,7 +98,7 @@ export interface ReviewedBodyResult extends BodyResult, ImageIdeas {
 }
 
 /**
- * 本文を作る：書き手が書く → 点検役が指摘する（同時に画像の提案役が画像を考える）→ 指摘があれば書き手が1回だけ書き直す。
+ * 本文を作る：書き手が書く → 点検役が指摘し、指摘があれば書き手が1回だけ書き直す。並行して画像の提案役が画像を考える。
  * 書き手の最初の1回が失敗したときだけ全体を失敗にする。点検・書き直し・画像の提案が失敗・時間切れになっても、
  * それまでにできた本文で返す。optionalSignal は点検以降に使い、保存の時間を残して打ち切るためのもの。
  */
@@ -130,21 +130,23 @@ export async function generateReviewedBody(
     }
   };
 
-  const [review, images] = await Promise.all([
-    optional("review", roles.reviewer, { kind: "review", system: REVIEW_SYSTEM_PROMPT, user: buildUserPrompt("review", input, headings, { draft }), maxOutputTokens: 6000 }, parseReviewResult),
-    optional("images", roles.imageIdeas, { kind: "images", system: IMAGE_SYSTEM_PROMPT, user: buildUserPrompt("images", input, headings, { draft }), maxOutputTokens: 6000 }, parseImageIdeas),
-  ]);
-
-  let final: BodyResult = draftRes;
-  if (review?.findings.length) {
+  // 画像の提案は点検・書き直しと並べて進め、書き直しが画像の提案の終わりを待たないようにする
+  const reviewAndRewrite = async () => {
+    const review = await optional("review", roles.reviewer, { kind: "review", system: REVIEW_SYSTEM_PROMPT, user: buildUserPrompt("review", input, headings, { draft }), maxOutputTokens: 6000 }, parseReviewResult);
+    if (!review?.findings.length) return { review, final: draftRes as BodyResult };
     const rewritten = await optional(
       "rewrite",
       roles.writer,
       { kind: "rewrite", system: SYSTEM_PROMPT, user: buildUserPrompt("rewrite", input, headings, { draft, findings: review.findings }), maxOutputTokens: 16000 },
       parseBodyResult,
     );
-    if (rewritten) final = rewritten;
-  }
+    return { review, final: rewritten ?? draftRes };
+  };
+  const [{ review, final }, images] = await Promise.all([
+    reviewAndRewrite(),
+    optional("images", roles.imageIdeas, { kind: "images", system: IMAGE_SYSTEM_PROMPT, user: buildUserPrompt("images", input, headings, { draft }), maxOutputTokens: 6000 }, parseImageIdeas),
+  ]);
+
   return {
     ...final,
     factChecks: mergeFactChecks(final),

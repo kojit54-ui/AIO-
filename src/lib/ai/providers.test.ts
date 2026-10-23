@@ -243,12 +243,31 @@ describe("役割分担（書く → 点検 → 書き直し、画像の提案）
     expect(reviewer.calls[0].user).toContain("<draft>");
     expect(r.review).toMatchObject({ provider: "anthropic", rewritten: true });
     expect(r.eyecatch?.photoIdea).toBe("e");
-    expect(r.steps.map((s) => [s.step, s.provider, s.ok])).toEqual([
-      ["write", "openai", true],
-      ["review", "anthropic", true],
+    // 画像の提案は点検・書き直しと並行するため、終わった順は決まらない
+    expect(r.steps.map((s) => [s.step, s.provider, s.ok]).sort()).toEqual([
       ["images", "google", true],
+      ["review", "anthropic", true],
       ["rewrite", "openai", true],
+      ["write", "openai", true],
     ]);
+  });
+
+  it("書き直しは画像の提案の終わりを待たない", async () => {
+    let releaseImages = () => {};
+    const imagesDone = new Promise<void>((r) => (releaseImages = r));
+    const writer = fake("openai", (kind) => bodyJson(kind === "rewrite" ? "直した本文" : "下書き"));
+    const reviewer = fake("anthropic", () => JSON.stringify({ summary: "", findings: [{ category: "aio", excerpt: "x", advice: "y" }] }));
+    const slowImages: AiProvider = {
+      name: "google",
+      async complete() {
+        await imagesDone;
+        return { text: JSON.stringify({ image_suggestions: [] }), usage: { inputTokens: 0, outputTokens: 0 } };
+      },
+    };
+    const pending = generateReviewedBody({ writer, reviewer, imageIdeas: slowImages }, ctx, ["h1"]);
+    await vi.waitFor(() => expect(writer.calls.map((c) => c.kind)).toEqual(["body", "rewrite"]));
+    releaseImages();
+    expect((await pending).review?.rewritten).toBe(true);
   });
 
   it("点検・書き直し・画像の提案が失敗しても、下書きで返す", async () => {
