@@ -2,6 +2,8 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { describe, expect, it } from "vitest";
 import type { ImageProvider } from "@/lib/ai/images";
 import { AiProviderError } from "@/lib/ai/provider";
+import { MAX_IMAGE_SUGGESTIONS } from "@/lib/ai/prompt";
+import { MAX_HEADINGS } from "@/lib/limits";
 import { IMAGE_COST_YEN, ideasBySlot, MAX_IMAGES_PER_RUN, runImageGeneration } from "./images";
 
 const idea = (heading: string) => ({ heading, photoIdea: "p", alt: `alt-${heading}`, imagePrompt: "prompt" });
@@ -50,6 +52,13 @@ function fakeDb(tables: Record<string, unknown>, opts: { rpc?: Record<string, un
 
 const article = { id: "a1", organization_id: "o1", theme_id: "t1", status: "drafting", current_version_id: "v1", lock_version: 0, published_without_approval: false, updated_at: "x" };
 const version = { id: "v1", article_id: "a1", frozen: false, generation_settings: { eyecatch: ideas.eyecatch, image_suggestions: ideas.perHeading } };
+
+describe("見出しと画像の上限", () => {
+  it("見出しの上限・画像の提案の上限・1回の枚数（＋アイキャッチ）がそろっている", () => {
+    expect(MAX_IMAGE_SUGGESTIONS).toBe(MAX_HEADINGS);
+    expect(MAX_IMAGES_PER_RUN).toBe(MAX_HEADINGS + 1);
+  });
+});
 
 describe("画像の枠", () => {
   it("アイキャッチと見出しを枠にし、同じ見出しは1つにする", () => {

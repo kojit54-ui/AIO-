@@ -9,6 +9,7 @@ import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { blocksToHtml, blocksToPlainText } from "@/lib/exportText";
 import { slotOf } from "@/lib/imageSlot";
+import { MAX_HEADINGS } from "@/lib/limits";
 import { canApply } from "@/lib/workflow";
 import type { AiReviewCategory, Article, ArticleImage, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
 
@@ -381,9 +382,12 @@ function OutlineEditor({ headings, onChange, onGenerate, busy }: { headings: str
           </li>
         ))}
       </ol>
-      <button type="button" className="btn-secondary" onClick={() => onChange([...headings, ""])}>
-        見出しを追加
-      </button>
+      <div className="flex flex-wrap items-center gap-2">
+        <button type="button" className="btn-secondary" onClick={() => onChange([...headings, ""])} disabled={headings.length >= MAX_HEADINGS}>
+          見出しを追加
+        </button>
+        {headings.length >= MAX_HEADINGS && <p className="text-sm text-muted">見出しは{MAX_HEADINGS}個までです</p>}
+      </div>
       <div className="border-t border-line pt-4">
         <button type="button" className="btn-primary" disabled={busy || headings.filter((h) => h.trim()).length === 0} onClick={onGenerate}>
           この見出しで本文を作る

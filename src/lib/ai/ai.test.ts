@@ -3,7 +3,8 @@ import { COACHING_NOTES, INTERNAL_NOTES, ORGANIZATIONS, QUESTIONS, REFERENCE_ART
 import type { ReferenceArticle } from "@/types/domain";
 import { buildGenerationInput, InputError, MAX_INPUT_CHARS, type GenerationContext } from "./input";
 import { AIO_MATERIAL_NAMES } from "@/lib/aio";
-import { buildUserPrompt, parseBodyResult, ParseError, REVIEW_SYSTEM_PROMPT, SYSTEM_PROMPT } from "./prompt";
+import { MAX_HEADINGS } from "@/lib/limits";
+import { buildUserPrompt, parseBodyResult, parseOutlineResult, ParseError, REVIEW_SYSTEM_PROMPT, SYSTEM_PROMPT } from "./prompt";
 import { generateBody, type AiProvider } from "./provider";
 
 const sakura = ORGANIZATIONS.find((o) => o.id === "org_sakura")!;
@@ -90,5 +91,13 @@ describe("generateBody", () => {
     };
     const res = await generateBody(provider, ctx(), ["ご相談の内容"]);
     expect(res.factChecks.map((f) => f.excerpt)).toEqual(["5度", "30万円"]);
+  });
+});
+
+describe("見出し案の上限", () => {
+  it("AIが上限より多く返しても、見出し案は上限までにする", () => {
+    const outline = Array.from({ length: MAX_HEADINGS + 3 }, (_, i) => ({ heading: `見出し${i}` }));
+    const r = parseOutlineResult(JSON.stringify({ title_candidates: ["a", "b", "c"], outline, needs_info: [] }));
+    expect(r.outline).toHaveLength(MAX_HEADINGS);
   });
 });

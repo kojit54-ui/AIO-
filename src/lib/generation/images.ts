@@ -9,6 +9,7 @@ import { AiProviderError } from "@/lib/ai/provider";
 import { slotOf } from "@/lib/imageSlot";
 import { toArticle, toVersion } from "@/lib/remote/mapping";
 import type { ArticleImage, ImageIdea } from "@/types/domain";
+import { MAX_HEADINGS } from "@/lib/limits";
 
 export const IMAGE_BUCKET = "article-images";
 /**
@@ -18,7 +19,7 @@ export const IMAGE_BUCKET = "article-images";
 export const IMAGE_COST_YEN: Record<string, number> = { google: 11, openai: 38, sample: 0 };
 export const imageCostYen = (provider: string) => IMAGE_COST_YEN[provider] ?? IMAGE_COST_YEN.openai;
 /** 1回に作る枚数の上限（アイキャッチ＋見出し12個まで。本文の見出しの上限と同じ） */
-export const MAX_IMAGES_PER_RUN = 13;
+export const MAX_IMAGES_PER_RUN = MAX_HEADINGS + 1;
 
 export const IMAGE_TIMEOUT_MS = 240_000;
 const URL_SECONDS = 60 * 60;

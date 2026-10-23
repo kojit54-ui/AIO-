@@ -45,6 +45,9 @@ const subscribe = (fn: () => void) => {
   return () => listeners.delete(fn);
 };
 
+/** 今の状態を読む（画面の外、テスト用） */
+export const readGrowState = (): GrowState => load();
+
 export const growActions = {
   saveAnswer(answer: HearingAnswer) {
     const s = load();
@@ -53,8 +56,9 @@ export const growActions = {
   setProposals(proposals: PillarProposal[]) {
     set({ ...load(), proposals });
   },
+  /** 設計図を選ぶ・選び直す。前の設計図で書いた記事の答えは消す（行の id が同じでも持ち越さない） */
   choosePlan(plan: KeywordPlan | null) {
-    set({ ...load(), plan });
+    set({ ...load(), plan, articleAnswers: {} });
   },
   setRowStatus(rowId: string, status: RowStatus) {
     const s = load();

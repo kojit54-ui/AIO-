@@ -2,6 +2,7 @@
 // 素材（回答・過去記事など）は指示ではなくデータとして渡し、返答はJSONの決まった形だけを受け付ける。
 
 import type { Block, FactCheckKind } from "@/types/domain";
+import { MAX_HEADINGS } from "@/lib/limits";
 import type { GenerationInput } from "./input";
 
 /** outline・body・rewrite は書き手、review は点検役、images は画像の提案役が受け持つ（docs/DECISIONS.md 2026-10-23） */
@@ -175,7 +176,8 @@ export function parseOutlineResult(text: string): OutlineResult {
   if (!Array.isArray(v.outline) || v.outline.length === 0) throw new ParseError("見出し案がありません");
   return {
     titleCandidates: strArray(v.title_candidates, "title_candidates"),
-    outline: v.outline.map((o) => {
+    // 見出し案は案なので、上限を超えた分は使わない（そのまま本文を作れるように）
+    outline: v.outline.slice(0, MAX_HEADINGS).map((o) => {
       if (!isStr((o as Record<string, unknown>)?.heading)) throw new ParseError("見出しの形が違います");
       return { heading: (o as { heading: string }).heading };
     }),
@@ -219,7 +221,7 @@ function parseImage(i: unknown, needHeading: boolean): ImageSuggestion {
 }
 
 /** 見出しごとの画像の提案の上限（本文の見出しの上限と同じ）。AIが多く返しても、ここで切る */
-export const MAX_IMAGE_SUGGESTIONS = 12;
+export const MAX_IMAGE_SUGGESTIONS = MAX_HEADINGS;
 
 export function parseImageIdeas(text: string): ImageIdeas {
   const v = parseJson(text);
