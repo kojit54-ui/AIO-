@@ -9,7 +9,7 @@ import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { blocksToHtml, blocksToPlainText } from "@/lib/exportText";
 import { canApply } from "@/lib/workflow";
-import type { AiReviewCategory, Article, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
+import type { AiReviewCategory, Article, ArticleImage, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
 
 type Banner = { tone: "danger" | "ok" | "info"; message: string; session?: boolean } | null;
 
@@ -276,7 +276,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
             {tab === "facts" && <FactPanel facts={facts} readOnly={isCoach} />}
             {tab === "comments" && <CommentPanel reviews={reviews} />}
             {tab === "aiReview" && <AiReviewPanel version={version} />}
-            {tab === "images" && <ImagePanel version={version} />}
+            {tab === "images" && <ImagePanel article={article} version={version} canGenerate={!isCoach} />}
             {tab === "answers" && <AnswerPanel version={version} />}
             {tab === "policy" && <PolicyPanel orgId={article.organizationId} />}
           </div>
@@ -479,23 +479,92 @@ function AiReviewPanel({ version }: { version: ArticleVersion }) {
   );
 }
 
-/** 画像の提案（Gemini）：アイキャッチと見出しごと */
-function ImagePanel({ version }: { version: ArticleVersion }) {
+/** 画像（Gemini）：アイキャッチと見出しごとの提案と、ナノバナナで作った画像 */
+function ImagePanel({ article, version, canGenerate }: { article: Article; version: ArticleVersion; canGenerate: boolean }) {
+  const { api } = useStore();
+  const [images, setImages] = useState<ArticleImage[]>([]);
+  const [enabled, setEnabled] = useState(false);
+  const [busy, setBusy] = useState<string | null>(null);
+  const [message, setMessage] = useState<{ tone: "danger" | "warn"; text: string } | null>(null);
+
+  useEffect(() => {
+    let alive = true;
+    api
+      .listImages(article.id)
+      .then((r) => alive && (setImages(r.images), setEnabled(r.enabled)))
+      .catch(() => alive && setMessage({ tone: "danger", text: "画像を読み込めませんでした" }));
+    return () => {
+      alive = false;
+    };
+  }, [api, article.id, version.id]);
+
   const ideas = version.imageIdeas;
   if (!ideas || (!ideas.eyecatch && !ideas.perHeading.length)) {
     return <p className="text-sm text-muted">{version.body.length ? "この版には画像の提案がありません。" : "本文を作ると、画像の提案が出ます。"}</p>;
   }
-  const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, heading: "アイキャッチ" }] : []), ...ideas.perHeading];
+  const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, slot: "eyecatch", label: "アイキャッチ" }] : []), ...ideas.perHeading.map((i) => ({ ...i, slot: i.heading, label: i.heading }))];
+  const missing = items.filter((i) => !images.some((m) => m.slot === i.slot));
+
+  async function generate(slots: string[], key: string) {
+    setBusy(key);
+    setMessage(null);
+    try {
+      const r = await api.generateImages(article.id, slots);
+      setImages(r.images);
+      if (r.failed) setMessage({ tone: "warn", text: `${r.failed}枚は作れませんでした。もう一度お試しください` });
+    } catch (e) {
+      setMessage({ tone: "danger", text: e instanceof ApiError ? e.message : "画像を作れませんでした。もう一度お試しください" });
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  const showButtons = canGenerate && enabled;
   return (
-    <ul className="space-y-2 text-sm">
-      {items.map((s, i) => (
-        <li key={i} className="rounded-md bg-canvas p-2">
-          <p className="font-semibold">{s.heading}</p>
-          <p>{s.photoIdea}</p>
-          <p className="text-xs text-muted">代替テキスト：{s.alt}</p>
-        </li>
-      ))}
-    </ul>
+    <div className="space-y-3 text-sm">
+      {showButtons && (
+        <div className="space-y-1">
+          <button type="button" className="btn-primary w-full" disabled={busy !== null || !missing.length} onClick={() => generate(missing.map((i) => i.slot), "all")}>
+            {busy === "all" ? "画像を作っています…" : missing.length ? `まだ無い画像を作る（${missing.length}枚・約${missing.length * 11}円）` : "すべての画像があります"}
+          </button>
+          <p className="text-xs text-muted">文字の入らない説明用のイラストを作ります。実際の写真があれば、そちらを使ってください。</p>
+        </div>
+      )}
+      {message && <Notice tone={message.tone} title={message.text} />}
+      <ul className="space-y-3">
+        {items.map((s) => {
+          const img = images.find((m) => m.slot === s.slot);
+          return (
+            <li key={s.slot} className="space-y-2 rounded-md bg-canvas p-2">
+              <p className="font-semibold">{s.label}</p>
+              {img && (
+                <figure className="space-y-1">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- 期限付きURLの画像をそのまま表示する */}
+                  <img src={img.url} alt={img.alt} className="aspect-video w-full rounded object-cover" />
+                  {img.isSample && <figcaption className="text-xs text-warn">サンプル（AIは未接続）</figcaption>}
+                </figure>
+              )}
+              <p>{s.photoIdea}</p>
+              <p className="text-xs text-muted">代替テキスト：{s.alt}</p>
+              {(img || showButtons) && (
+                <div className="flex flex-wrap gap-2">
+                  {img && (
+                    <a className="btn-secondary min-h-9 px-3 py-1 text-sm" href={img.downloadUrl} download={`${s.slot === "eyecatch" ? "eyecatch" : s.label}.png`}>
+                      ダウンロード
+                    </a>
+                  )}
+                  {showButtons && (
+                    <button type="button" className="btn-secondary min-h-9 px-3 py-1 text-sm" disabled={busy !== null} onClick={() => generate([s.slot], s.slot)}>
+                      {busy === s.slot ? "作っています…" : img ? "作り直す（約11円）" : "この画像を作る（約11円）"}
+                    </button>
+                  )}
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 

@@ -7,7 +7,7 @@
 
 import { createBrowserClient } from "@supabase/ssr";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { Answer, Article, Block, CompanyProfile, FactCheckStatus, GenerationErrorCode, ReviewDecision, SessionUser } from "@/types/domain";
+import type { Answer, Article, ArticleImage, Block, CompanyProfile, FactCheckStatus, GenerationErrorCode, ReviewDecision, SessionUser } from "@/types/domain";
 import { applyAction, type ArticleAction, TransitionError } from "@/lib/workflow";
 import { extractFactChecks } from "@/mock/sampleGenerator";
 import type { MockApi, MockDb, Simulation } from "@/mock/store";
@@ -295,6 +295,26 @@ export class RemoteBackend {
     generateOutline: (articleId) => this.generate(articleId, { kind: "outline" }),
 
     generateBody: (articleId, headings) => this.generate(articleId, { kind: "body", headings }),
+
+    listImages: async (articleId) => {
+      this.requireUser();
+      const res = await fetch(`/api/articles/${encodeURIComponent(articleId)}/images`).catch(() => null);
+      const json = (await res?.json().catch(() => ({}))) as { enabled?: boolean; images?: ArticleImage[]; code?: string; message?: string };
+      if (!res?.ok) throw new ApiError((json.code ?? "save_failed") as "save_failed", json.message ?? "画像を読み込めませんでした");
+      return { enabled: json.enabled === true, images: json.images ?? [] };
+    },
+
+    generateImages: async (articleId, slots) => {
+      this.requireUser();
+      const res = await fetch(`/api/articles/${encodeURIComponent(articleId)}/images`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ slots, idempotencyKey: crypto.randomUUID() }),
+      }).catch(() => null);
+      const json = (await res?.json().catch(() => ({}))) as { images?: ArticleImage[]; failed?: number; code?: string; message?: string };
+      if (!res?.ok) throw new ApiError((json.code ?? "provider_error") as "provider_error", json.message ?? "画像を作れませんでした。もう一度お試しください");
+      return { images: json.images ?? [], failed: json.failed ?? 0 };
+    },
 
     saveVersion: async (articleId, input: { title: string; body: Block[]; outline?: { heading: string }[] }, expectedLock) => {
       this.requireUser();

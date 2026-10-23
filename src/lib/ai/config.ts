@@ -71,7 +71,8 @@ export function getAiSetup(env: Env = process.env): AiSetup {
       return p === sampleTextProvider && (step === "review" || step === "images") ? stepProvider("body") : p;
     },
     image,
-    imageMode: val(env, "IMAGE_MODE") === "generate" ? "generate" : "suggest",
+    // 画像の生成は ver1 から使う（docs/DECISIONS.md 2026-10-23）。IMAGE_MODE=suggest で提案だけにできる
+    imageMode: val(env, "IMAGE_MODE") === "suggest" ? "suggest" : "generate",
     textIsSample: stepProvider("outline") === sampleTextProvider || stepProvider("body") === sampleTextProvider,
     imageIsSample: image === sampleImageProvider,
   };

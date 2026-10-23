@@ -60,7 +60,9 @@ beforeAll(async () => {
 }, 60_000);
 
 beforeEach(async () => {
-  await db.exec("delete from public.generation_runs; update public.app_settings set monthly_budget_yen = 10000, budget_notified_month = null, article_body_limit = 10");
+  await db.exec(
+    "delete from public.generation_runs; delete from public.article_images; update public.app_settings set monthly_budget_yen = 10000, budget_notified_month = null, article_body_limit = 10, article_image_limit = 10",
+  );
 });
 
 describe("受付", () => {
@@ -121,7 +123,7 @@ describe("受付", () => {
 
   it("入力が8,000字を超える、種類が不正、キーが短いときは受け付けない", async () => {
     await expect(start(U.client, ART, "body", key(), 8001)).rejects.toThrow("invalid_input");
-    await expect(start(U.client, ART, "image", key())).rejects.toThrow("invalid_input");
+    await expect(start(U.client, ART, "video", key())).rejects.toThrow("invalid_input");
     await expect(start(U.client, ART, "body", "short")).rejects.toThrow("invalid_input");
   });
 
@@ -194,5 +196,29 @@ describe("予算", () => {
     const r = await finish(run.id, "succeeded", 7);
     expect(r.status).toBe("succeeded");
     expect(Number(r.cost_yen)).toBe(7);
+  });
+});
+
+describe("画像", () => {
+  it("画像の生成は記事ごとの回数で止まり、本文の月の上限には数えない", async () => {
+    await db.exec("update public.app_settings set article_image_limit = 2");
+    await finish((await start(U.client, ART, "image")).id, "succeeded", 60);
+    await finish((await start(U.client, ART, "image")).id, "failed", 10); // 失敗は数えない
+    await finish((await start(U.client, ART, "image")).id, "succeeded", 60);
+    await expect(start(U.client, ART, "image")).rejects.toThrow("limit_reached");
+    // 別の記事と本文は止まらない
+    await finish((await start(U.client, ART2, "image")).id, "succeeded");
+    await finish((await start(U.client, ART, "body")).id, "succeeded");
+  });
+
+  it("画像の記録は自社の行だけ読め、利用者は書けない", async () => {
+    await db.exec(`insert into public.article_images (article_id, organization_id, slot, storage_path, mime_type)
+      values ('${ART}', '${ORG}', 'eyecatch', '${ORG}/${ART}/eyecatch.png', 'image/png')`);
+    expect(await as(U.client, "select slot from public.article_images")).toEqual([{ slot: "eyecatch" }]);
+    expect(await as(U.other, "select slot from public.article_images")).toEqual([]);
+    await expect(
+      as(U.client, `insert into public.article_images (article_id, organization_id, slot, storage_path, mime_type) values ('${ART}', '${ORG}', 'x', 'p', 'image/png')`),
+    ).rejects.toThrow();
+    await expect(as(U.client, "delete from public.article_images")).rejects.toThrow();
   });
 });
