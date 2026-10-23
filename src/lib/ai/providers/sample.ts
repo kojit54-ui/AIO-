@@ -9,28 +9,28 @@ export const sampleTextProvider: AiProvider = {
   name: "sample",
   async complete(req) {
     const headings = parseHeadings(req.user);
+    const titles = [`${SAMPLE_LABEL} タイトル案1`, `${SAMPLE_LABEL} タイトル案2`, `${SAMPLE_LABEL} タイトル案3`];
+    const image = (h: string) => ({ heading: h, photo_idea: `${SAMPLE_LABEL}：「${h}」に合う写真の提案が入ります。`, alt: h, image_prompt: "A simple illustration" });
     const text =
       req.kind === "outline"
         ? {
-            title_candidates: [`${SAMPLE_LABEL} タイトル案1`, `${SAMPLE_LABEL} タイトル案2`, `${SAMPLE_LABEL} タイトル案3`],
+            title_candidates: titles,
             outline: ["ご相談の内容", "行った対応", "お客様の変化", "同じお悩みの方へ"].map((heading) => ({ heading })),
             needs_info: [],
           }
-        : {
-            title_candidates: [`${SAMPLE_LABEL} タイトル案1`, `${SAMPLE_LABEL} タイトル案2`, `${SAMPLE_LABEL} タイトル案3`],
-            body: headings.flatMap((h) => [
-              { type: "heading", level: 2, text: h },
-              { type: "paragraph", text: `${SAMPLE_LABEL}：ここに「${h}」の本文が入ります。` },
-            ]),
-            fact_checks: [],
-            needs_info: [],
-            image_suggestions: headings.map((h) => ({
-              heading: h,
-              photo_idea: `${SAMPLE_LABEL}：「${h}」に合う写真の提案が入ります。`,
-              alt: h,
-              image_prompt: "A simple illustration",
-            })),
-          };
+        : req.kind === "review"
+          ? { summary: `${SAMPLE_LABEL}：点検の結果が入ります。`, findings: [] }
+          : req.kind === "images"
+            ? { eyecatch: image("アイキャッチ"), image_suggestions: headings.map(image) }
+            : {
+                title_candidates: titles,
+                body: headings.flatMap((h) => [
+                  { type: "heading", level: 2, text: h },
+                  { type: "paragraph", text: `${SAMPLE_LABEL}：ここに「${h}」の本文が入ります。` },
+                ]),
+                fact_checks: [],
+                needs_info: [],
+              };
     return { text: JSON.stringify(text), usage: { inputTokens: 0, outputTokens: 0 } };
   },
 };

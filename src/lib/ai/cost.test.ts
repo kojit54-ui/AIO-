@@ -9,3 +9,12 @@ describe("概算費用", () => {
     expect(estimateCostYen({ inputTokens: 1, outputTokens: 0 })).toBe(0.01);
   });
 });
+
+describe("提供元ごとの単価", () => {
+  it("Gemini は導入価格の後の単価で、サンプルは0円で見積もる", () => {
+    expect(estimateCostYen({ inputTokens: 10_000, outputTokens: 5_000 }, "anthropic")).toBe(10.5);
+    expect(estimateCostYen({ inputTokens: 10_000, outputTokens: 5_000 }, "google")).toBe(21);
+    expect(estimateCostYen({ inputTokens: 10_000, outputTokens: 5_000 }, "sample")).toBe(0);
+    expect(estimateCostYen({ inputTokens: 10_000, outputTokens: 5_000 }, "unknown")).toBe(21);
+  });
+});

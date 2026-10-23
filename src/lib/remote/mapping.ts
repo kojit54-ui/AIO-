@@ -1,6 +1,7 @@
 // DBの行（snake_case）と画面の型（src/types/domain.ts）の変換。権限はDBのRLSで絞られた行だけが来る前提。
 
 import type {
+  AiReview,
   Answer,
   Article,
   ArticleVersion,
@@ -9,6 +10,7 @@ import type {
   CoachingNote,
   CompanyProfile,
   FactCheck,
+  ImageIdea,
   Organization,
   ReferenceArticle,
   Review,
@@ -117,6 +119,16 @@ export const toVersion = (r: Row): ArticleVersion => ({
   createdAt: r.created_at,
   createdBy: r.created_by ?? "",
   isSample: r.generation_settings?.sample === true,
+  ...(r.generation_settings?.image_suggestions || r.generation_settings?.eyecatch
+    ? { imageIdeas: { eyecatch: (r.generation_settings.eyecatch as ImageIdea) ?? null, perHeading: (r.generation_settings.image_suggestions as ImageIdea[]) ?? [] } }
+    : {}),
+  ...(r.generation_settings?.review ? { aiReview: r.generation_settings.review as AiReview } : {}),
+});
+
+/** 手で直して新しい版にするとき、画像の提案と点検の結果を引き継ぐ */
+export const carriedSettings = (v: ArticleVersion | undefined) => ({
+  ...(v?.imageIdeas ? { eyecatch: v.imageIdeas.eyecatch, image_suggestions: v.imageIdeas.perHeading } : {}),
+  ...(v?.aiReview ? { review: v.aiReview } : {}),
 });
 
 export const toFactCheck = (r: Row): FactCheck => ({

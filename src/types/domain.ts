@@ -97,6 +97,28 @@ export interface ArticleVersion {
   createdBy: string;
   /** 画面試作で作ったサンプルかどうか（AI未接続の表示に使う） */
   isSample: boolean;
+  /** 画像の提案（Gemini）。本文を作ったときだけある */
+  imageIdeas?: { eyecatch: ImageIdea | null; perHeading: ImageIdea[] };
+  /** 公開前の点検（Claude）。指摘があれば書き手が書き直した後の本文が body に入る */
+  aiReview?: AiReview | null;
+}
+
+export interface ImageIdea {
+  /** アイキャッチは空 */
+  heading: string;
+  photoIdea: string;
+  alt: string;
+  /** 画像を生成するときの指示（英語） */
+  imagePrompt: string;
+}
+
+export type AiReviewCategory = "originality" | "aio" | "ai_tone" | "facts" | "style";
+
+export interface AiReview {
+  provider: string;
+  summary: string;
+  findings: { category: AiReviewCategory; excerpt: string; advice: string }[];
+  rewritten: boolean;
 }
 
 export type FactCheckKind = "number" | "achievement" | "price" | "customer_name" | "other";

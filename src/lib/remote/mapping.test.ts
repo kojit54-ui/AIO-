@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { countBodyRunsThisMonth, currentMonthJst, fromArticle, fromMonth, toArticle, toMonth, toVersion } from "./mapping";
+import { carriedSettings, countBodyRunsThisMonth, currentMonthJst, fromArticle, fromMonth, toArticle, toMonth, toVersion } from "./mapping";
 
 describe("DBの行と画面の型", () => {
   it("月の形を変換し、今月は日本時間で決める", () => {
@@ -19,6 +19,16 @@ describe("DBの行と画面の型", () => {
   it("サンプルで作った版を見分ける", () => {
     expect(toVersion({ id: "v", generation_settings: { sample: true }, frozen: false }).isSample).toBe(true);
     expect(toVersion({ id: "v", generation_settings: {}, frozen: false }).isSample).toBe(false);
+  });
+
+  it("画像の提案と点検の結果を読み、手で直した版にも引き継ぐ", () => {
+    const img = { heading: "h", photoIdea: "p", alt: "a", imagePrompt: "i" };
+    const review = { provider: "anthropic", summary: "s", findings: [], rewritten: false };
+    const v = toVersion({ id: "v", generation_settings: { eyecatch: img, image_suggestions: [img], review }, frozen: false });
+    expect(v.imageIdeas).toEqual({ eyecatch: img, perHeading: [img] });
+    expect(v.aiReview).toEqual(review);
+    expect(toVersion({ id: "v", generation_settings: carriedSettings(v), frozen: false })).toMatchObject({ imageIdeas: v.imageIdeas, aiReview: review });
+    expect(toVersion({ id: "v", generation_settings: {}, frozen: false }).imageIdeas).toBeUndefined();
   });
 
   it("今月の本文生成の回数は、失敗を除いて会社ごとに数える", () => {

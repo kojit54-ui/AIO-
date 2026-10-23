@@ -9,7 +9,7 @@ import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { blocksToHtml, blocksToPlainText } from "@/lib/exportText";
 import { canApply } from "@/lib/workflow";
-import type { Article, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
+import type { AiReviewCategory, Article, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
 
 type Banner = { tone: "danger" | "ok" | "info"; message: string; session?: boolean } | null;
 
@@ -52,7 +52,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
   const [conflict, setConflict] = useState(false);
   const [publishOpen, setPublishOpen] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
-  const [tab, setTab] = useState<"answers" | "policy" | "facts" | "comments">(isCoach ? "comments" : "facts");
+  const [tab, setTab] = useState<"answers" | "policy" | "facts" | "comments" | "images" | "aiReview">(isCoach ? "comments" : "facts");
   const [mobileView, setMobileView] = useState<"body" | "side">("body");
 
   // 未保存のまま閉じようとしたら確認する
@@ -256,6 +256,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
                 [
                   ["facts", `要確認${unchecked ? `(${unchecked})` : ""}`],
                   ["comments", `コメント${reviews.length ? `(${reviews.length})` : ""}`],
+                  ["aiReview", "AIの点検"],
+                  ["images", "画像"],
                   ["answers", "回答"],
                   ["policy", "指導方針"],
                 ] as const
@@ -273,6 +275,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
             </div>
             {tab === "facts" && <FactPanel facts={facts} readOnly={isCoach} />}
             {tab === "comments" && <CommentPanel reviews={reviews} />}
+            {tab === "aiReview" && <AiReviewPanel version={version} />}
+            {tab === "images" && <ImagePanel version={version} />}
             {tab === "answers" && <AnswerPanel version={version} />}
             {tab === "policy" && <PolicyPanel orgId={article.organizationId} />}
           </div>
@@ -438,6 +442,57 @@ function CommentPanel({ reviews }: { reviews: ReturnType<typeof useStore>["db"][
             {r.reviewerName}・{label[r.decision]}・{formatDate(r.createdAt)}
           </p>
           <p>{r.comment || "（コメントなし）"}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+const REVIEW_CATEGORY_LABEL: Record<AiReviewCategory, string> = {
+  originality: "独自性",
+  aio: "AI検索への対策",
+  ai_tone: "AIが書いたように見える",
+  facts: "事実",
+  style: "文体",
+};
+
+/** 公開前の点検（Claude）。指摘を受けて書き手が書き直した場合は、そう示す */
+function AiReviewPanel({ version }: { version: ArticleVersion }) {
+  const r = version.aiReview;
+  if (!r) return <p className="text-sm text-muted">{version.body.length ? "この版には点検の結果がありません。" : "本文を作ると、AIが記事を点検します。"}</p>;
+  return (
+    <div className="space-y-3 text-sm">
+      {r.summary && <p>{r.summary}</p>}
+      <p className="text-muted">
+        {r.findings.length === 0 ? "直すところは見つかりませんでした。" : r.rewritten ? "次の指摘に沿って本文を書き直しました。" : "次の指摘がありました（書き直しはできませんでした）。"}
+      </p>
+      <ul className="space-y-2">
+        {r.findings.map((f, i) => (
+          <li key={i} className="rounded-md bg-canvas p-2">
+            <p className="font-semibold">{REVIEW_CATEGORY_LABEL[f.category] ?? f.category}</p>
+            {f.excerpt && <p className="text-muted">「{f.excerpt}」</p>}
+            <p>{f.advice}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** 画像の提案（Gemini）：アイキャッチと見出しごと */
+function ImagePanel({ version }: { version: ArticleVersion }) {
+  const ideas = version.imageIdeas;
+  if (!ideas || (!ideas.eyecatch && !ideas.perHeading.length)) {
+    return <p className="text-sm text-muted">{version.body.length ? "この版には画像の提案がありません。" : "本文を作ると、画像の提案が出ます。"}</p>;
+  }
+  const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, heading: "アイキャッチ" }] : []), ...ideas.perHeading];
+  return (
+    <ul className="space-y-2 text-sm">
+      {items.map((s, i) => (
+        <li key={i} className="rounded-md bg-canvas p-2">
+          <p className="font-semibold">{s.heading}</p>
+          <p>{s.photoIdea}</p>
+          <p className="text-xs text-muted">代替テキスト：{s.alt}</p>
         </li>
       ))}
     </ul>

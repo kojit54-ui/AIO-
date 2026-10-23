@@ -95,7 +95,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | outline | jsonb | 見出し案 |
 | title | text | |
 | body | jsonb | 構造化本文（見出し・段落・箇条書き）。HTMLは書き出し時に生成 |
-| generation_settings | jsonb | モデル、プロンプト版、使用した過去記事ID |
+| generation_settings | jsonb | 提供元（provider）、サンプルか（sample）、手で直したか（edited）、足りない情報（needs_info）、画像の提案（eyecatch、image_suggestions）、点検の結果（review：provider・summary・findings・rewritten）、工程ごとの提供元と成否（steps）。手で直した版にも画像の提案と点検の結果を引き継ぐ |
 | parent_version_id | uuid | 元にした版 |
 | created_by | uuid | |
 | frozen | bool | 確認依頼中・承認済みの版は true（以後編集不可） |

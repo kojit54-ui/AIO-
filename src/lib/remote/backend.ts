@@ -27,6 +27,7 @@ import {
   toReview,
   toTheme,
   toVersion,
+  carriedSettings,
 } from "./mapping";
 
 export interface RemoteState {
@@ -318,7 +319,7 @@ export class RemoteBackend {
           body: input.body,
           answers: base?.answers ?? [],
           parent_version_id: base?.id ?? null,
-          generation_settings: { sample: base?.isSample ?? false, edited: true },
+          generation_settings: { sample: base?.isSample ?? false, edited: true, ...carriedSettings(base) },
         },
         factChecks,
       });
