@@ -141,10 +141,15 @@ export default function QuestionsPage() {
           <p id="answer-example" className="mb-2 text-sm text-muted">
             {question.example}
           </p>
+          {question.tip && (
+            <p id="answer-tip" className="mb-2 rounded-md bg-brand-soft px-3 py-2 text-sm text-brand-dark">
+              コツ：{question.tip}
+            </p>
+          )}
           <textarea
             id="answer"
             ref={inputRef}
-            aria-describedby="answer-example"
+            aria-describedby={question.tip ? "answer-example answer-tip" : "answer-example"}
             className="field min-h-36"
             value={current.unknown ? "" : current.text}
             disabled={current.unknown}

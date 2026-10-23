@@ -192,4 +192,6 @@ export interface Question {
   id: string;
   label: string;
   example: string;
+  /** 答えやすくするためのコツ */
+  tip?: string;
 }

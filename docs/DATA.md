@@ -284,3 +284,17 @@ interface GenerationRun {
 
 - 生成は受付後すぐ `GenerationRun`（queued）を返し、画面は状態を問い合わせる。画面試作では待ち時間を擬似的に入れて完了まで待っている
 - エラーは `{ code, message }` で返す。`code` は src/mock/store.tsx の `ApiError` と同じ値を使う
+
+## 育つブログ（案、T5-3。CXのレビュー待ち）
+
+画面試作（src/prototype/growth.ts）の型をもとにした案。どのテーブルも organization_id を持ち、RLS は既存と同じく `app.is_member` で会社ごとに絞る。
+
+| テーブル | 主な列 | 書ける人 |
+|---|---|---|
+| hearing_answers | organization_id、question_id、text、follow_ups（jsonb：深掘りの質問と答えの配列）、updated_by、updated_at。unique(organization_id, question_id) | 顧客担当者とコタム（同じ行を両方が直せる。最後に保存した内容が残る） |
+| keyword_plans | id、organization_id、proposal（jsonb：選んだ提案の柱・クラスター・ねらい）、chosen_by、chosen_at、archived_at | 顧客担当者 |
+| keyword_rows | id、plan_id、organization_id、kind（pillar／cluster）、keyword、reader_question、status（todo／writing／published）、article_id（記事ができたら）、sort_order | 顧客担当者。status は記事の状態から自動で変える（記事が published になったら published） |
+
+- 深掘りの質問とキーワードの提案は、生成と同じくサーバーで作り、generation_runs に kind（hearing_followup／keyword_proposal）で記録して予算に数える
+- レベルとバッジは保存せず、keyword_rows と hearing_answers から毎回計算する（computeGrowth と同じ式）
+- 第2段階で search_console_daily（organization_id、date、query、page、clicks、impressions、position）を足す。書き込みは service role だけ
