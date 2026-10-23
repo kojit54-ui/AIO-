@@ -59,6 +59,10 @@ describe("画像の枠", () => {
     const long = ideasBySlot({ eyecatch: null, perHeading: [idea("あ".repeat(300)), idea(`${"あ".repeat(299)}い`)] });
     expect(long.map((x) => x.slot.length)).toEqual([200, 200]);
     expect(long[0].slot).not.toBe(long[1].slot);
+    // 絵文字（サロゲートペア）を途中で切らない
+    const emoji = ideasBySlot({ eyecatch: null, perHeading: [idea("😀".repeat(201))] })[0].slot;
+    expect(Array.from(emoji)).toHaveLength(200);
+    expect(emoji.isWellFormed()).toBe(true);
   });
 });
 

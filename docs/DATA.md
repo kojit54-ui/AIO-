@@ -139,7 +139,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 4. 同じ会社で実行中があれば `busy`
 5. 全社の今月の費用が予算に達していれば `budget_exceeded`
 6. 本文（kind=body）だけ、会社の月の上限（organizations.monthly_generation_limit）と記事ごとの上限（app_settings.article_body_limit、初期値10）。失敗した回と時間切れの回は数えない。超えれば `limit_reached`
-7. 画像（kind=image）は記事ごとの回数（app_settings.article_image_limit、初期値10）。1回でアイキャッチと見出しごとの画像をまとめて作る。失敗した回は数えない。費用は作れた枚数×11円
+7. 画像（kind=image）は記事ごとの回数（app_settings.article_image_limit、初期値10）。1回でアイキャッチと見出しごとの画像をまとめて作る。失敗した回は数えない。費用は作れた枚数×画像の提供元の単価（google 11円、openai 38円。src/lib/generation/images.ts の IMAGE_COST_YEN）
 
 画面は `get_generation(run_id)` で状態を問い合わせる。時間を過ぎた受付はここでも失敗（timeout）になるので、次の生成を押さなくても「生成中」のままにならない。
 

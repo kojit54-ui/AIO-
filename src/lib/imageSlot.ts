@@ -10,6 +10,11 @@ function fingerprint(s: string): string {
   return (h >>> 0).toString(16).padStart(8, "0");
 }
 
-/** 見出しから枠の名前を作る。アイキャッチは "eyecatch"。長い見出しは先頭と指紋にして、上限の中でも見出しごとに別の名前にする */
-export const slotOf = (heading: string) =>
-  heading.length <= MAX_SLOT_CHARS ? heading : `${heading.slice(0, MAX_SLOT_CHARS - 9)}#${fingerprint(heading)}`;
+/**
+ * 見出しから枠の名前を作る。アイキャッチは "eyecatch"。長い見出しは先頭と指紋にして、上限の中でも見出しごとに別の名前にする。
+ * 文字数はDBと同じく1文字（コードポイント）ずつ数え、絵文字などを途中で切らない
+ */
+export function slotOf(heading: string): string {
+  const chars = Array.from(heading);
+  return chars.length <= MAX_SLOT_CHARS ? heading : `${chars.slice(0, MAX_SLOT_CHARS - 9).join("")}#${fingerprint(heading)}`;
+}
