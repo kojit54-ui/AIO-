@@ -12,14 +12,14 @@ import { growActions, useGrow } from "@/prototype/store";
 export default function WritePage() {
   const { rowId } = useParams<{ rowId: string }>();
   const g = useGrow();
-  const [step, setStep] = useState(0);
+  const [stepState, setStep] = useState<number | null>(null);
   const [draft, setDraft] = useState<Record<string, string> | null>(null);
   const [result, setResult] = useState<string | null>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     inputRef.current?.focus();
-  }, [step]);
+  }, [stepState]);
 
   if (!g.ready) return <PageSkeleton />;
   const row = g.plan?.rows.find((r) => r.id === rowId);
@@ -27,6 +27,9 @@ export default function WritePage() {
 
   const qs = articleQuestions(row);
   const answers = draft ?? g.articleAnswers[row.id] ?? {};
+  // 「続きを書く」で戻ったときは、まだ答えていない最初の問いから。全部答えていれば最後の画面
+  const firstOpen = qs.findIndex((x) => !answers[x.id]?.trim());
+  const step = stepState ?? (firstOpen === -1 ? qs.length : firstOpen);
   const finished = step >= qs.length;
 
   function save(next: Record<string, string>) {
@@ -56,9 +59,14 @@ export default function WritePage() {
             <Notice tone="info" title="おつかれさまでした！質問はここまでです">
               本番では、ここから今ある記事作成の流れにつながります。見出し案を作り、GPT が本文を書き、Claude が点検し、Gemini が画像を作ります。試作では、この先を省略しています。
             </Notice>
-            <button type="button" className="btn-primary" onClick={publish} disabled={row.status === "published"}>
-              公開したことにする（試作）
-            </button>
+            <div className="flex flex-wrap gap-2">
+              <button type="button" className="btn-primary" onClick={publish} disabled={row.status === "published"}>
+                公開したことにする（試作）
+              </button>
+              <button type="button" className="btn-secondary" onClick={() => setStep(0)}>
+                答えを見直す
+              </button>
+            </div>
           </>
         )}
         <div className="flex flex-wrap gap-2">
@@ -118,7 +126,11 @@ export default function WritePage() {
             aria-describedby="answer-example answer-tip"
             className="field min-h-36"
             value={value}
-            onChange={(e) => save({ ...answers, [q.id]: e.target.value })}
+            onChange={(e) => {
+              // 書き始めたら位置を固定し、答えが埋まっても次の問いへ勝手に移らないようにする
+              setStep(step);
+              save({ ...answers, [q.id]: e.target.value });
+            }}
           />
         </div>
         <div className="flex flex-wrap justify-between gap-2">
