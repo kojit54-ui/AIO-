@@ -9,7 +9,8 @@
 1. docs/HANDOFF.md：前回の作業と次の作業
 2. docs/TASKS.md：担当と完了条件（Claude Code の担当は「CC」）
 3. docs/LESSONS.md：経験から決めたルールと用語集
-4. 作業内容に応じて docs/PRD.md、docs/UI.md、docs/DATA.md、docs/DECISIONS.md、docs/RELEASE.md
+4. docs/AIO.md：このサービスが目指すこと（AI時代に売上を上げるためのAIO）。画面・質問・AIへの指示はここに合わせる
+5. 作業内容に応じて docs/PRD.md、docs/UI.md、docs/DATA.md、docs/DECISIONS.md、docs/RELEASE.md
 
 ## 役割
 

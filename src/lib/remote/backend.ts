@@ -299,9 +299,9 @@ export class RemoteBackend {
     listImages: async (articleId) => {
       this.requireUser();
       const res = await fetch(`/api/articles/${encodeURIComponent(articleId)}/images`).catch(() => null);
-      const json = (await res?.json().catch(() => ({}))) as { enabled?: boolean; images?: ArticleImage[]; code?: string; message?: string };
+      const json = (await res?.json().catch(() => ({}))) as { enabled?: boolean; unitCostYen?: number; images?: ArticleImage[]; code?: string; message?: string };
       if (!res?.ok) throw new ApiError((json.code ?? "save_failed") as "save_failed", json.message ?? "画像を読み込めませんでした");
-      return { enabled: json.enabled === true, images: json.images ?? [] };
+      return { enabled: json.enabled === true, unitCostYen: json.unitCostYen ?? 0, images: json.images ?? [] };
     },
 
     generateImages: async (articleId, slots) => {

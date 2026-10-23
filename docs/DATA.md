@@ -139,7 +139,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 4. 同じ会社で実行中があれば `busy`
 5. 全社の今月の費用が予算に達していれば `budget_exceeded`
 6. 本文（kind=body）だけ、会社の月の上限（organizations.monthly_generation_limit）と記事ごとの上限（app_settings.article_body_limit、初期値10）。失敗した回と時間切れの回は数えない。超えれば `limit_reached`
-7. 画像（kind=image）は記事ごとの回数（app_settings.article_image_limit、初期値10）。1回でアイキャッチと見出しごとの画像をまとめて作る。失敗した回は数えない。費用は作れた枚数×11円
+7. 画像（kind=image）は記事ごとの回数（app_settings.article_image_limit、初期値10）。1回でアイキャッチと見出しごとの画像をまとめて作る。失敗した回は数えない。費用は作れた枚数×画像の提供元の単価（google 11円、openai 38円。src/lib/generation/images.ts の IMAGE_COST_YEN）
 
 画面は `get_generation(run_id)` で状態を問い合わせる。時間を過ぎた受付はここでも失敗（timeout）になるので、次の生成を押さなくても「生成中」のままにならない。
 
@@ -284,3 +284,18 @@ interface GenerationRun {
 
 - 生成は受付後すぐ `GenerationRun`（queued）を返し、画面は状態を問い合わせる。画面試作では待ち時間を擬似的に入れて完了まで待っている
 - エラーは `{ code, message }` で返す。`code` は src/mock/store.tsx の `ApiError` と同じ値を使う
+
+## 育つブログ（案、T5-3。CXのレビュー待ち）
+
+画面試作（src/prototype/growth.ts）の型をもとにした案。どのテーブルも organization_id を持ち、RLS は既存と同じく `app.is_member` で会社ごとに絞る。
+
+| テーブル | 主な列 | 書ける人 |
+|---|---|---|
+| hearing_answers | organization_id、question_id、text、follow_ups（jsonb：深掘りの質問と答えの配列。飛ばした深掘りは答えを空で残す）、is_draft（boolean、既定 true。「次へ」を押すまで書きかけ）、updated_by、updated_at。unique(organization_id, question_id) | 顧客担当者とコタム（同じ行を両方が直せる。最後に保存した内容が残る） |
+| keyword_plans | id、organization_id、proposal（jsonb：選んだ提案の柱・クラスター・ねらい）、chosen_by、chosen_at、archived_at | 顧客担当者 |
+| keyword_rows | id、plan_id、organization_id、kind（pillar／cluster）、keyword、reader_question、status（todo／writing／published）、article_id（記事ができたら）、sort_order | 顧客担当者。status は記事の状態から自動で変える（記事が published になったら published） |
+
+- 深掘りの質問とキーワードの提案の指示と返答の検査は src/lib/ai/growthPrompts.ts（FOLLOWUP_SYSTEM_PROMPT・PROPOSAL_SYSTEM_PROMPT、parseFollowUp・parseProposals）。生成と同じくサーバーで作り、generation_runs に kind（hearing_followup／keyword_proposal）で記録して予算に数える
+- 答え終わったか（isAnswerDone）は「text がある・is_draft が false・深掘りが残っていない」で決め、続きの位置、答えた数、ヒアリングの点、提案を作れるかに同じ判定を使う
+- レベルとバッジは保存せず、keyword_rows と hearing_answers から毎回計算する（computeGrowth と同じ式）
+- 第2段階で search_console_daily（organization_id、date、query、page、clicks、impressions、position）を足す。書き込みは service role だけ

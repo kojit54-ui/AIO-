@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { AioMeter, AioWhy, Cheer, WhyAio } from "@/components/aio";
 import { Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice } from "@/components/ui";
+import { collectedAio } from "@/lib/aio";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { needsFollowUp } from "@/mock/sampleGenerator";
@@ -38,6 +40,11 @@ export default function QuestionsPage() {
   const question = showFollowUp ? FOLLOW_UP_QUESTION : QUESTIONS[step];
   const total = QUESTIONS.length;
   const current = answers.find((a) => a.questionId === question.id) ?? { questionId: question.id, text: "", unknown: false };
+  const allQuestions = [...QUESTIONS, FOLLOW_UP_QUESTION];
+  // 前の質問に答えて進んだときだけ、ひとこと添える
+  const prevQuestion = showFollowUp ? QUESTIONS[total - 1] : step > 0 ? QUESTIONS[step - 1] : null;
+  const prevAnswer = prevQuestion && answers.find((a) => a.questionId === prevQuestion.id);
+  const prevAio = prevQuestion?.aio && prevAnswer && !prevAnswer.unknown && prevAnswer.text.trim() ? prevQuestion.aio : null;
 
   function setCurrent(patch: Partial<Answer>) {
     setSaveState("idle");
@@ -114,6 +121,8 @@ export default function QuestionsPage() {
         </div>
       </div>
 
+      {prevAio && <Cheer point={prevAio} />}
+
       {error && (
         <Notice tone="danger" title={error.message}>
           {error.session ? (
@@ -141,10 +150,20 @@ export default function QuestionsPage() {
           <p id="answer-example" className="mb-2 text-sm text-muted">
             {question.example}
           </p>
+          {question.tip && (
+            <p id="answer-tip" className="mb-2 rounded-md bg-brand-soft px-3 py-2 text-sm text-brand-dark">
+              コツ：{question.tip}
+            </p>
+          )}
+          {question.aio && (
+            <div className="mb-2">
+              <AioWhy point={question.aio} />
+            </div>
+          )}
           <textarea
             id="answer"
             ref={inputRef}
-            aria-describedby="answer-example"
+            aria-describedby={question.tip ? "answer-example answer-tip" : "answer-example"}
             className="field min-h-36"
             value={current.unknown ? "" : current.text}
             disabled={current.unknown}
@@ -171,6 +190,8 @@ export default function QuestionsPage() {
         </div>
       </form>
 
+      <AioMeter points={allQuestions.flatMap((q) => (q.aio ? [q.aio] : []))} collected={collectedAio(allQuestions, (qid) => answers.some((a) => a.questionId === qid && !a.unknown && a.text.trim().length > 0))} />
+      {step === 0 && !showFollowUp && <WhyAio compact />}
       {isLast && <SampleNotice />}
       <Link href="/" className="inline-block text-brand-dark underline">
         ホームへ戻る（回答は保存した所まで残ります）

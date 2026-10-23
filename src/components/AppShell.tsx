@@ -13,16 +13,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   // ログイン・招待・認証の処理と、全社管理者の画面は架空データのログインを使わない
   const isLogin = pathname === "/login" || pathname.startsWith("/invite/") || pathname.startsWith("/auth/") || pathname.startsWith("/admin/");
+  // 新しい流れの画面試作は、ログインせずに架空の会社で見られる（データはブラウザの中だけ）
+  const isPrototype = pathname === "/prototype" || pathname.startsWith("/prototype/");
   // 明示的なログアウトでは戻り先を付けない
   const loggingOut = useRef(false);
 
   useEffect(() => {
-    if (!ready || user || isLogin || loadError) return;
+    if (!ready || user || isLogin || isPrototype || loadError) return;
     router.replace(loggingOut.current ? "/login" : `/login?next=${encodeURIComponent(pathname)}`);
     loggingOut.current = false;
-  }, [ready, user, isLogin, loadError, pathname, router]);
+  }, [ready, user, isLogin, isPrototype, loadError, pathname, router]);
 
   const demo = mode === "mock" ? <DemoPanel /> : null;
+  if (isPrototype) return <>{children}</>;
   if (isLogin) return <>{children}{demo}</>;
   if (ready && !user && loadError) {
     return (

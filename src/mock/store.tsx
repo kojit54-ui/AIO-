@@ -24,6 +24,7 @@ import type {
   SessionUser,
   Theme,
 } from "@/types/domain";
+import { slotOf } from "@/lib/imageSlot";
 import { applyAction, type ArticleAction, TransitionError } from "@/lib/workflow";
 import { getSupabaseEnv } from "@/lib/supabase/env";
 import { RemoteBackend } from "@/lib/remote/backend";
@@ -264,11 +265,12 @@ function createApi(
       });
     },
 
-    /** 記事の画像の一覧。enabled が false なら生成のボタンを出さない */
-    async listImages(articleId: string): Promise<{ enabled: boolean; images: ArticleImage[] }> {
+    /** 記事の画像の一覧。enabled が false なら生成のボタンを出さない。unitCostYen は1枚の費用の目安 */
+    async listImages(articleId: string): Promise<{ enabled: boolean; unitCostYen: number; images: ArticleImage[] }> {
       const user = requireUser();
       getArticleForUser(getDb(), user, articleId);
-      return { enabled: true, images: mockImages.get(articleId) ?? [] };
+      // サンプルは費用がかからない
+      return { enabled: true, unitCostYen: 0, images: mockImages.get(articleId) ?? [] };
     },
 
     /** 画像を作る（サンプル）。slots が空なら、今の版の提案すべて */
@@ -277,7 +279,7 @@ function createApi(
       const db = getDb();
       const article = getArticleForUser(db, user, articleId);
       const ideas = db.versions.find((v) => v.id === article.currentVersionId)?.imageIdeas;
-      const all = [...(ideas?.eyecatch ? [{ slot: "eyecatch", alt: ideas.eyecatch.alt }] : []), ...(ideas?.perHeading ?? []).map((i) => ({ slot: i.heading, alt: i.alt }))];
+      const all = [...(ideas?.eyecatch ? [{ slot: "eyecatch", alt: ideas.eyecatch.alt }] : []), ...(ideas?.perHeading ?? []).map((i) => ({ slot: slotOf(i.heading), alt: i.alt }))];
       const targets = slots.length ? all.filter((x) => slots.includes(x.slot)) : all;
       if (!targets.length) throw new ApiError("invalid_input", "先に本文を作ってください（画像の提案がありません）");
       await delay(1600);

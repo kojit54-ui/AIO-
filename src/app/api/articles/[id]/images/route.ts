@@ -3,7 +3,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getAiSetup } from "@/lib/ai/config";
 import { sampleImageProvider } from "@/lib/ai/providers/sample";
-import { listArticleImages, MAX_IMAGES_PER_RUN, runImageGeneration } from "@/lib/generation/images";
+import { imageCostYen, listArticleImages, runImageGeneration } from "@/lib/generation/images";
 import { createAdminSupabase } from "@/lib/supabase/admin";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
@@ -20,14 +20,21 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   const { data: auth } = await user.auth.getUser();
   if (!auth.user) return NextResponse.json({ code: "session_expired", message: "ログインの有効期限が切れました" }, { status: 401 });
   const setup = getAiSetup();
-  return NextResponse.json({ enabled: setup.imageMode === "generate", images: await listArticleImages(user, createAdminSupabase(), id) });
+  return NextResponse.json({
+    enabled: setup.imageMode === "generate",
+    // 画面の費用の目安に使う。記録する費用と同じ単価
+    unitCostYen: setup.image === sampleImageProvider ? 0 : imageCostYen(setup.image.name),
+    images: await listArticleImages(user, createAdminSupabase(), id),
+  });
 }
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!isSupabaseConfigured()) return notConfigured();
   const { id } = await params;
   const body = (await request.json().catch(() => null)) as { slots?: unknown; idempotencyKey?: unknown } | null;
-  const slots = Array.isArray(body?.slots) ? body.slots.filter((s): s is string => typeof s === "string").slice(0, MAX_IMAGES_PER_RUN) : [];
+  // 枚数の上限はサーバー側で数え、作らなかった分は failed で返す。ありえない数の指定は黙って切らずに断る
+  const slots = Array.isArray(body?.slots) ? body.slots.filter((s): s is string => typeof s === "string") : [];
+  if (slots.length > 50) return NextResponse.json({ code: "invalid_input", message: "一度に選べる画像の数を超えています" }, { status: 400 });
   const idempotencyKey = typeof body?.idempotencyKey === "string" ? body.idempotencyKey : "";
   if (!idempotencyKey) return NextResponse.json({ code: "invalid_input", message: "入力の内容を確認してください" }, { status: 400 });
   const setup = getAiSetup();

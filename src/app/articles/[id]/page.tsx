@@ -8,6 +8,8 @@ import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, S
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { blocksToHtml, blocksToPlainText } from "@/lib/exportText";
+import { slotOf } from "@/lib/imageSlot";
+import { MAX_HEADINGS } from "@/lib/limits";
 import { canApply } from "@/lib/workflow";
 import type { AiReviewCategory, Article, ArticleImage, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
 
@@ -380,9 +382,12 @@ function OutlineEditor({ headings, onChange, onGenerate, busy }: { headings: str
           </li>
         ))}
       </ol>
-      <button type="button" className="btn-secondary" onClick={() => onChange([...headings, ""])}>
-        見出しを追加
-      </button>
+      <div className="flex flex-wrap items-center gap-2">
+        <button type="button" className="btn-secondary" onClick={() => onChange([...headings, ""])} disabled={headings.length >= MAX_HEADINGS}>
+          見出しを追加
+        </button>
+        {headings.length >= MAX_HEADINGS && <p className="text-sm text-muted">見出しは{MAX_HEADINGS}個までです</p>}
+      </div>
       <div className="border-t border-line pt-4">
         <button type="button" className="btn-primary" disabled={busy || headings.filter((h) => h.trim()).length === 0} onClick={onGenerate}>
           この見出しで本文を作る
@@ -484,6 +489,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
   const { api } = useStore();
   const [images, setImages] = useState<ArticleImage[]>([]);
   const [enabled, setEnabled] = useState(false);
+  const [unitCost, setUnitCost] = useState(0);
   const [busy, setBusy] = useState<string | null>(null);
   const [message, setMessage] = useState<{ tone: "danger" | "warn"; text: string } | null>(null);
 
@@ -491,7 +497,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
     let alive = true;
     api
       .listImages(article.id)
-      .then((r) => alive && (setImages(r.images), setEnabled(r.enabled)))
+      .then((r) => alive && (setImages(r.images), setEnabled(r.enabled), setUnitCost(r.unitCostYen)))
       .catch(() => alive && setMessage({ tone: "danger", text: "画像を読み込めませんでした" }));
     return () => {
       alive = false;
@@ -502,7 +508,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
   if (!ideas || (!ideas.eyecatch && !ideas.perHeading.length)) {
     return <p className="text-sm text-muted">{version.body.length ? "この版には画像の提案がありません。" : "本文を作ると、画像の提案が出ます。"}</p>;
   }
-  const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, slot: "eyecatch", label: "アイキャッチ" }] : []), ...ideas.perHeading.map((i) => ({ ...i, slot: i.heading, label: i.heading }))];
+  const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, slot: "eyecatch", label: "アイキャッチ" }] : []), ...ideas.perHeading.map((i) => ({ ...i, slot: slotOf(i.heading), label: i.heading }))];
   const missing = items.filter((i) => !images.some((m) => m.slot === i.slot));
 
   async function generate(slots: string[], key: string) {
@@ -525,7 +531,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
       {showButtons && (
         <div className="space-y-1">
           <button type="button" className="btn-primary w-full" disabled={busy !== null || !missing.length} onClick={() => generate(missing.map((i) => i.slot), "all")}>
-            {busy === "all" ? "画像を作っています…" : missing.length ? `まだ無い画像を作る（${missing.length}枚・約${missing.length * 11}円）` : "すべての画像があります"}
+            {busy === "all" ? "画像を作っています…" : missing.length ? `まだ無い画像を作る（${missing.length}枚${unitCost ? `・約${missing.length * unitCost}円` : ""}）` : "すべての画像があります"}
           </button>
           <p className="text-xs text-muted">文字の入らない説明用のイラストを作ります。実際の写真があれば、そちらを使ってください。</p>
         </div>
@@ -555,7 +561,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
                   )}
                   {showButtons && (
                     <button type="button" className="btn-secondary min-h-9 px-3 py-1 text-sm" disabled={busy !== null} onClick={() => generate([s.slot], s.slot)}>
-                      {busy === s.slot ? "作っています…" : img ? "作り直す（約11円）" : "この画像を作る（約11円）"}
+                      {busy === s.slot ? "作っています…" : `${img ? "作り直す" : "この画像を作る"}${unitCost ? `（約${unitCost}円）` : ""}`}
                     </button>
                   )}
                 </div>

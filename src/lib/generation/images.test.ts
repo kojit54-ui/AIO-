@@ -2,7 +2,9 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { describe, expect, it } from "vitest";
 import type { ImageProvider } from "@/lib/ai/images";
 import { AiProviderError } from "@/lib/ai/provider";
-import { IMAGE_COST_YEN, ideasBySlot, runImageGeneration } from "./images";
+import { MAX_IMAGE_SUGGESTIONS } from "@/lib/ai/prompt";
+import { MAX_HEADINGS } from "@/lib/limits";
+import { IMAGE_COST_YEN, ideasBySlot, MAX_IMAGES_PER_RUN, runImageGeneration } from "./images";
 
 const idea = (heading: string) => ({ heading, photoIdea: "p", alt: `alt-${heading}`, imagePrompt: "prompt" });
 const ideas = { eyecatch: idea(""), perHeading: [idea("見出し1"), idea("見出し2")] };
@@ -51,10 +53,25 @@ function fakeDb(tables: Record<string, unknown>, opts: { rpc?: Record<string, un
 const article = { id: "a1", organization_id: "o1", theme_id: "t1", status: "drafting", current_version_id: "v1", lock_version: 0, published_without_approval: false, updated_at: "x" };
 const version = { id: "v1", article_id: "a1", frozen: false, generation_settings: { eyecatch: ideas.eyecatch, image_suggestions: ideas.perHeading } };
 
+describe("見出しと画像の上限", () => {
+  it("見出しの上限・画像の提案の上限・1回の枚数（＋アイキャッチ）がそろっている", () => {
+    expect(MAX_IMAGE_SUGGESTIONS).toBe(MAX_HEADINGS);
+    expect(MAX_IMAGES_PER_RUN).toBe(MAX_HEADINGS + 1);
+  });
+});
+
 describe("画像の枠", () => {
   it("アイキャッチと見出しを枠にし、同じ見出しは1つにする", () => {
     expect(ideasBySlot({ eyecatch: ideas.eyecatch, perHeading: [idea("a"), idea("a"), idea("")] }).map((x) => x.slot)).toEqual(["eyecatch", "a"]);
     expect(ideasBySlot(undefined)).toEqual([]);
+    // 長い見出しは枠の名前の上限で切る（DBの slot は200字まで）
+    const long = ideasBySlot({ eyecatch: null, perHeading: [idea("あ".repeat(300)), idea(`${"あ".repeat(299)}い`)] });
+    expect(long.map((x) => x.slot.length)).toEqual([200, 200]);
+    expect(long[0].slot).not.toBe(long[1].slot);
+    // 絵文字（サロゲートペア）を途中で切らない
+    const emoji = ideasBySlot({ eyecatch: null, perHeading: [idea("😀".repeat(201))] })[0].slot;
+    expect(Array.from(emoji)).toHaveLength(200);
+    expect(emoji.isWellFormed()).toBe(true);
   });
 });
 
@@ -78,7 +95,7 @@ describe("画像の生成", () => {
     const upserts = admin.calls.filter((c) => c.table === "article_images" && c.op === "upsert").map((c) => (c.args[0] as { slot: string }).slot);
     expect(upserts).toEqual(["eyecatch", "見出し2"]);
     const finish = admin.calls.find((c) => c.op === "finish_generation")!.args[0] as { p_status: string; p_cost_yen: number };
-    expect(finish).toMatchObject({ p_status: "succeeded", p_cost_yen: 2 * IMAGE_COST_YEN });
+    expect(finish).toMatchObject({ p_status: "succeeded", p_cost_yen: 2 * IMAGE_COST_YEN.google });
     const start = user.calls.find((c) => c.op === "start_generation")!.args[0] as { p_kind: string };
     expect(start.p_kind).toBe("image");
   });
@@ -90,7 +107,17 @@ describe("画像の生成", () => {
     const user = fakeDb({ articles: article, memberships: { role: "client_member" }, article_versions: v, article_images: [] }, { rpc: { start_generation: { id: "r1", status: "queued" } } });
     const r = await runImageGeneration({ user: user.client, admin: admin.client, provider: failing, isSample: false }, { articleId: "a1", slots: [], idempotencyKey: "k-123456789" });
     expect(r).toMatchObject({ ok: true, failed: 1 });
-    expect((admin.calls.find((c) => c.op === "finish_generation")!.args[0] as { p_cost_yen: number }).p_cost_yen).toBe(IMAGE_COST_YEN);
+    expect((admin.calls.find((c) => c.op === "finish_generation")!.args[0] as { p_cost_yen: number }).p_cost_yen).toBe(IMAGE_COST_YEN.google);
+  });
+
+  it("上限を超えた枚数は作らず、作れなかった枚数に数える。提供元ごとの単価で費用を記録する", async () => {
+    const many = { ...version, generation_settings: { image_suggestions: Array.from({ length: MAX_IMAGES_PER_RUN + 2 }, (_, i) => idea(`見出し${i}`)) } };
+    const user = fakeDb({ articles: article, memberships: { role: "client_member" }, article_versions: many, article_images: [] }, { rpc: { start_generation: { id: "r1", status: "queued" } } });
+    const admin = fakeDb({ generation_runs: [{ id: "r1" }], article_images: null });
+    const openai: ImageProvider = { ...provider(), name: "openai" };
+    const r = await runImageGeneration({ user: user.client, admin: admin.client, provider: openai, isSample: false }, { articleId: "a1", slots: [], idempotencyKey: "k-123456789" });
+    expect(r).toMatchObject({ ok: true, failed: 2 });
+    expect((admin.calls.find((c) => c.op === "finish_generation")!.args[0] as { p_cost_yen: number }).p_cost_yen).toBe(MAX_IMAGES_PER_RUN * IMAGE_COST_YEN.openai);
   });
 
   it("顧客担当者でない、画像の提案が無いときは作らない", async () => {

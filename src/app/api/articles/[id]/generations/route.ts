@@ -7,6 +7,7 @@ import { runGeneration } from "@/lib/generation/server";
 import { createAdminSupabase } from "@/lib/supabase/admin";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
+import { MAX_HEADINGS } from "@/lib/limits";
 
 // AIの応答を待つため、関数の実行時間を長めにとる（Vercel の上限内）
 export const maxDuration = 300;
@@ -16,9 +17,10 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   const { id } = await params;
   const body = (await request.json().catch(() => null)) as { kind?: unknown; headings?: unknown; idempotencyKey?: unknown } | null;
   const kind = body?.kind;
-  const headings = Array.isArray(body?.headings) ? body.headings.filter((h): h is string => typeof h === "string").slice(0, 12) : [];
+  const headings = Array.isArray(body?.headings) ? body.headings.filter((h): h is string => typeof h === "string") : [];
   const idempotencyKey = typeof body?.idempotencyKey === "string" ? body.idempotencyKey : "";
-  if ((kind !== "outline" && kind !== "body") || !idempotencyKey) {
+  // 上限を超えた見出しは黙って捨てず、断る（画像の枠と食い違わないように）
+  if ((kind !== "outline" && kind !== "body") || !idempotencyKey || headings.length > MAX_HEADINGS) {
     return NextResponse.json({ code: "invalid_input", message: "入力の内容を確認してください" }, { status: 400 });
   }
 
