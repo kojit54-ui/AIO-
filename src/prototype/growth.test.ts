@@ -80,7 +80,10 @@ describe("ヒアリングの深掘り", () => {
 describe("キーワードの提案", () => {
   it("必要な答えがそろうまで提案を作らない", () => {
     expect(canPropose({})).toBe(false);
-    expect(canPropose(full)).toBe(true);
+    expect(canPropose(finished)).toBe(true);
+    // 深掘りが残っている・書きかけの答えでは提案しない
+    expect(canPropose(full)).toBe(false);
+    expect(canPropose({ ...finished, area: { ...finished.area, draft: true } })).toBe(false);
   });
 
   it("3つの提案を作り、柱とクラスターにヒアリングの言葉を使う", () => {

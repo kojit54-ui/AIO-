@@ -291,10 +291,11 @@ interface GenerationRun {
 
 | テーブル | 主な列 | 書ける人 |
 |---|---|---|
-| hearing_answers | organization_id、question_id、text、follow_ups（jsonb：深掘りの質問と答えの配列）、updated_by、updated_at。unique(organization_id, question_id) | 顧客担当者とコタム（同じ行を両方が直せる。最後に保存した内容が残る） |
+| hearing_answers | organization_id、question_id、text、follow_ups（jsonb：深掘りの質問と答えの配列。飛ばした深掘りは答えを空で残す）、is_draft（boolean、既定 true。「次へ」を押すまで書きかけ）、updated_by、updated_at。unique(organization_id, question_id) | 顧客担当者とコタム（同じ行を両方が直せる。最後に保存した内容が残る） |
 | keyword_plans | id、organization_id、proposal（jsonb：選んだ提案の柱・クラスター・ねらい）、chosen_by、chosen_at、archived_at | 顧客担当者 |
 | keyword_rows | id、plan_id、organization_id、kind（pillar／cluster）、keyword、reader_question、status（todo／writing／published）、article_id（記事ができたら）、sort_order | 顧客担当者。status は記事の状態から自動で変える（記事が published になったら published） |
 
 - 深掘りの質問とキーワードの提案の指示と返答の検査は src/lib/ai/growthPrompts.ts（FOLLOWUP_SYSTEM_PROMPT・PROPOSAL_SYSTEM_PROMPT、parseFollowUp・parseProposals）。生成と同じくサーバーで作り、generation_runs に kind（hearing_followup／keyword_proposal）で記録して予算に数える
+- 答え終わったか（isAnswerDone）は「text がある・is_draft が false・深掘りが残っていない」で決め、続きの位置、答えた数、ヒアリングの点、提案を作れるかに同じ判定を使う
 - レベルとバッジは保存せず、keyword_rows と hearing_answers から毎回計算する（computeGrowth と同じ式）
 - 第2段階で search_console_daily（organization_id、date、query、page、clicks、impressions、position）を足す。書き込みは service role だけ

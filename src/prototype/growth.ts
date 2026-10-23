@@ -139,7 +139,12 @@ export function answeredCount(answers: Record<string, HearingAnswer>) {
 
 /** キーワードの提案を作るのに必要な答え */
 export const REQUIRED_FOR_PROPOSALS = ["business", "services", "customers", "area"];
-export const canPropose = (answers: Record<string, HearingAnswer>) => REQUIRED_FOR_PROPOSALS.every((id) => answers[id]?.text.trim());
+/** 提案に要る問いが、書きかけや深掘りの残りなく答え終わっているか */
+export const canPropose = (answers: Record<string, HearingAnswer>) =>
+  REQUIRED_FOR_PROPOSALS.every((id) => {
+    const q = HEARING_QUESTIONS.find((x) => x.id === id);
+    return !!q && isAnswerDone(q, answers[id]);
+  });
 
 export type ProposalReason = "sales" | "competition" | "aio";
 export const REASON_LABEL: Record<ProposalReason, string> = {

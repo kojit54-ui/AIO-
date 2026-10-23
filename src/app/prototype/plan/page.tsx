@@ -26,7 +26,7 @@ export default function PlanPage() {
       <main className="page max-w-3xl space-y-4">
         <h1 className="text-2xl font-bold">記事の設計図</h1>
         <Notice tone="info" title="先にヒアリングに答えてください">
-          お仕事、売りたいサービス、お客様、地域の4つが分かると、キーワードと記事の組み立てを提案できます。
+          お仕事、売りたいサービス、お客様、地域の4つに答え終わる（「次へ」を押し、もう少し教えての質問にも答えるか飛ばす）と、キーワードと記事の組み立てを提案できます。
         </Notice>
         <Link href="/prototype/hearing" className="btn-primary">
           ヒアリングに答える
