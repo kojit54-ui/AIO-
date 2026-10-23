@@ -99,10 +99,7 @@ export interface HearingAnswer {
 
 /** ヒアリングの続きの位置。まだ答えていない問いか、深掘りが残っている問い。全部済んだら問いの数 */
 export function resumeIndex(answers: Record<string, HearingAnswer>): number {
-  const i = HEARING_QUESTIONS.findIndex((q) => {
-    const a = answers[q.id];
-    return !a?.text.trim() || a.draft || nextDeepDive(q, a) !== null;
-  });
+  const i = HEARING_QUESTIONS.findIndex((q) => !isAnswerDone(q, answers[q.id]));
   return i === -1 ? HEARING_QUESTIONS.length : i;
 }
 
@@ -131,8 +128,13 @@ export function nextDeepDive(question: HearingQuestion, answer: HearingAnswer | 
   return thin ? question.deepDives[asked] : null;
 }
 
+/** 答え終わった問いか。書きかけや、深掘りが残っているものは数えない */
+export function isAnswerDone(question: HearingQuestion, answer: HearingAnswer | undefined): boolean {
+  return !!answer?.text.trim() && !answer.draft && nextDeepDive(question, answer) === null;
+}
+
 export function answeredCount(answers: Record<string, HearingAnswer>) {
-  return HEARING_QUESTIONS.filter((q) => answers[q.id]?.text.trim()).length;
+  return HEARING_QUESTIONS.filter((q) => isAnswerDone(q, answers[q.id])).length;
 }
 
 /** キーワードの提案を作るのに必要な答え */

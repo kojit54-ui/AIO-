@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   AIO_POINTS,
   HEARING_QUESTIONS,
+  answeredCount,
   articleQuestions,
   collectedAio,
   type HearingAnswer,
@@ -20,6 +21,10 @@ const ans = (questionId: string, text: string, followUps: HearingAnswer["followU
 
 const full: Record<string, HearingAnswer> = Object.fromEntries(
   HEARING_QUESTIONS.map((x) => [x.id, ans(x.id, x.example.replace(/^例：/, ""))]),
+);
+// 深掘りも済ませた（飛ばした）ヒアリング
+const finished: Record<string, HearingAnswer> = Object.fromEntries(
+  Object.values(full).map((a) => [a.questionId, { ...a, followUps: [{ question: "深掘り", answer: "" }] }]),
 );
 
 describe("ヒアリングの深掘り", () => {
@@ -58,6 +63,12 @@ describe("ヒアリングの深掘り", () => {
     expect(resumeIndex({ ...rich, strengths: skipped })).toBe(HEARING_QUESTIONS.length);
     expect(resumeIndex({ ...rich, strengths: { ...ans("strengths", text), draft: true } })).toBe(i);
     expect(withNewText({ ...ans("strengths", text), draft: true }, text).draft).toBe(false);
+    // 答えた数とヒアリングの点も、書きかけと深掘りの残りを数えない
+    expect(answeredCount(rich)).toBe(HEARING_QUESTIONS.length);
+    expect(answeredCount({ ...rich, strengths: ans("strengths", "丁寧") })).toBe(HEARING_QUESTIONS.length - 1);
+    expect(answeredCount({ ...rich, strengths: { ...ans("strengths", text), draft: true } })).toBe(HEARING_QUESTIONS.length - 1);
+    expect(computeGrowth({ ...rich, strengths: ans("strengths", "丁寧") }, null).points).toBe(0);
+    expect(computeGrowth(rich, null).points).toBe(5);
   });
 
   it("深掘りに答えると、次の深掘りは答えの量を見て決める", () => {
@@ -88,16 +99,16 @@ describe("レベルアップ", () => {
   it("公開した記事でレベルが上がり、バッジが付く", () => {
     const plan = planFromProposal(sampleProposals(full)[0]);
     expect(computeGrowth({}, null)).toMatchObject({ level: 1, points: 0 });
-    expect(computeGrowth(full, plan)).toMatchObject({ level: 1, points: 5 });
+    expect(computeGrowth(finished, plan)).toMatchObject({ level: 1, points: 5 });
 
     const one = { ...plan, rows: plan.rows.map((r, i) => (i === 1 ? { ...r, status: "published" as const } : r)) };
-    const g1 = computeGrowth(full, one);
+    const g1 = computeGrowth(finished, one);
     expect(g1).toMatchObject({ level: 2, points: 15, nextAt: 30 });
     expect(g1.badges.find((b) => b.id === "first")?.earned).toBe(true);
     expect(g1.badges.find((b) => b.id === "pillar")?.earned).toBe(false);
 
     const all = { ...plan, rows: plan.rows.map((r) => ({ ...r, status: "published" as const })) };
-    const g2 = computeGrowth(full, all);
+    const g2 = computeGrowth(finished, all);
     expect(g2.points).toBe(5 + 30 + 5 * 10);
     expect(g2.badges.every((b) => b.earned)).toBe(true);
   });
