@@ -10,6 +10,7 @@ import {
   computeGrowth,
   nextDeepDive,
   planFromProposal,
+  resumeIndex,
   sampleProposals,
   withNewText,
 } from "./growth";
@@ -42,7 +43,21 @@ describe("ヒアリングの深掘り", () => {
   it("答えを書き直したら前の深掘りは消し、同じ答えなら残す（顧客の画面・コタムの画面とも）", () => {
     const prev = ans("strengths", "丁寧", [{ question: "a", answer: "はい" }]);
     expect(withNewText(prev, "早い").followUps).toEqual([]);
-    expect(withNewText(prev, " 丁寧 ")).toEqual(prev);
+    expect(withNewText(prev, " 丁寧 ")).toEqual({ ...prev, draft: false });
+  });
+
+  it("続きの位置は、深掘りが残っている問いも含める。飛ばした深掘りは聞き直さない", () => {
+    const text = "一級建築士が現地調査から工事の管理まで担当する\n工事後の点検が無料で、10年続けている";
+    const rich = Object.fromEntries(HEARING_QUESTIONS.map((x) => [x.id, ans(x.id, text)]));
+    expect(resumeIndex({})).toBe(0);
+    expect(resumeIndex(rich)).toBe(HEARING_QUESTIONS.length);
+    const i = HEARING_QUESTIONS.findIndex((x) => x.id === "strengths");
+    expect(resumeIndex({ ...rich, strengths: ans("strengths", "丁寧") })).toBe(i);
+    const skipped = ans("strengths", "丁寧", [{ question: q("strengths").deepDives[0], answer: "" }]);
+    expect(nextDeepDive(q("strengths"), skipped)).toBeNull();
+    expect(resumeIndex({ ...rich, strengths: skipped })).toBe(HEARING_QUESTIONS.length);
+    expect(resumeIndex({ ...rich, strengths: { ...ans("strengths", text), draft: true } })).toBe(i);
+    expect(withNewText({ ...ans("strengths", text), draft: true }, text).draft).toBe(false);
   });
 
   it("深掘りに答えると、次の深掘りは答えの量を見て決める", () => {

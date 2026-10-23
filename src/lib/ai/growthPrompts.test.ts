@@ -45,13 +45,17 @@ describe("キーワードの提案", () => {
   });
 
   it("3案まで受け付け、知らないねらいは捨てる。周りの記事が少ない案は受け付けない", () => {
-    const r = parseProposals(JSON.stringify({ proposals: [good, good, good, good] }));
+    const alt = (k: string) => ({ ...good, pillar: idea(k) });
+    const r = parseProposals(JSON.stringify({ proposals: [good, alt("さくら市 断熱"), alt("さくら市 外壁"), alt("さくら市 屋根")] }));
     expect(r).toHaveLength(3);
+    expect(r.map((p) => p.pillar.keyword)).toEqual(["さくら市 内窓", "さくら市 断熱", "さくら市 外壁"]);
+    expect(() => parseProposals(JSON.stringify({ proposals: [good, good, good] }))).toThrow(ParseError);
+    expect(() => parseProposals(JSON.stringify({ proposals: [good, alt("さくら市  内窓"), alt("さくら市 断熱")] }))).toThrow(ParseError);
     expect(r[0].reasons).toEqual(["sales", "aio"]);
-    expect(() => parseProposals(JSON.stringify({ proposals: [good, good, { ...good, clusters: [idea("a")] }] }))).toThrow(ParseError);
-    expect(() => parseProposals(JSON.stringify({ proposals: [good, good, { ...good, reasons: ["x"] }] }))).toThrow(ParseError);
-    expect(() => parseProposals(JSON.stringify({ proposals: [good, good, { ...good, why: " " }] }))).toThrow(ParseError);
-    expect(() => parseProposals(JSON.stringify({ proposals: [good, good, { ...good, why: undefined }] }))).toThrow(ParseError);
+    expect(() => parseProposals(JSON.stringify({ proposals: [good, alt("さくら市 断熱"), { ...good, pillar: idea("さくら市 外壁"), clusters: [idea("a")] }] }))).toThrow(ParseError);
+    expect(() => parseProposals(JSON.stringify({ proposals: [good, alt("さくら市 断熱"), { ...good, pillar: idea("さくら市 外壁"), reasons: ["x"] }] }))).toThrow(ParseError);
+    expect(() => parseProposals(JSON.stringify({ proposals: [good, alt("さくら市 断熱"), { ...good, pillar: idea("さくら市 外壁"), why: " " }] }))).toThrow(ParseError);
+    expect(() => parseProposals(JSON.stringify({ proposals: [good, alt("さくら市 断熱"), { ...good, pillar: idea("さくら市 外壁"), why: undefined }] }))).toThrow(ParseError);
     expect(() => parseProposals(JSON.stringify({ proposals: [] }))).toThrow(ParseError);
     expect(() => parseProposals(JSON.stringify({ proposals: [good, good] }))).toThrow(ParseError);
   });

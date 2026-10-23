@@ -100,7 +100,7 @@ export function parseProposals(text: string): ParsedProposal[] {
   const v = parseJson(text);
   // 画面は3案から選ぶ形なので、3案そろわない返答は受け付けない
   if (!Array.isArray(v.proposals) || v.proposals.length < 3) throw new ParseError("proposals が3案ありません");
-  return v.proposals.slice(0, 3).map((p, i) => {
+  const parsed = v.proposals.slice(0, 6).map((p, i) => {
     const o = p as Record<string, unknown>;
     if (!Array.isArray(o?.clusters)) throw new ParseError(`proposals[${i}].clusters の形が違います`);
     const clusters = o.clusters.slice(0, 8).map((c, j) => parseIdea(c, `proposals[${i}].clusters[${j}]`));
@@ -111,4 +111,14 @@ export function parseProposals(text: string): ParsedProposal[] {
     if (!why) throw new ParseError(`proposals[${i}].why がありません`);
     return { pillar: parseIdea(o.pillar, `proposals[${i}].pillar`), clusters, reasons: [...new Set(reasons)], why };
   });
+  // 同じ柱の案が重なったら1つにまとめ、違う3案がそろわなければ受け付けない
+  const seen = new Set<string>();
+  const distinct = parsed.filter((p) => {
+    const key = p.pillar.keyword.replace(/\s+/g, " ").toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  if (distinct.length < 3) throw new ParseError("柱の違う提案が3案ありません");
+  return distinct.slice(0, 3);
 }

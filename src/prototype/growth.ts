@@ -93,12 +93,23 @@ export interface HearingAnswer {
   text: string;
   /** AIが返した深掘りの質問と、その答え */
   followUps: { question: string; answer: string }[];
+  /** 書いている途中で、まだ「次へ」を押していない */
+  draft?: boolean;
+}
+
+/** ヒアリングの続きの位置。まだ答えていない問いか、深掘りが残っている問い。全部済んだら問いの数 */
+export function resumeIndex(answers: Record<string, HearingAnswer>): number {
+  const i = HEARING_QUESTIONS.findIndex((q) => {
+    const a = answers[q.id];
+    return !a?.text.trim() || a.draft || nextDeepDive(q, a) !== null;
+  });
+  return i === -1 ? HEARING_QUESTIONS.length : i;
 }
 
 /** 答えを書き直す。中身が変わったら、前の答えへの深掘りは消して聞き直す */
 export function withNewText(prev: HearingAnswer, text: string): HearingAnswer {
   const next = text.trim();
-  return { ...prev, text: next, followUps: next === prev.text.trim() ? prev.followUps : [] };
+  return { ...prev, text: next, followUps: next === prev.text.trim() ? prev.followUps : [], draft: false };
 }
 
 /** 深掘りは1問につき2回まで */
@@ -112,6 +123,8 @@ export function nextDeepDive(question: HearingQuestion, answer: HearingAnswer | 
   if (!answer || !answer.text.trim()) return null;
   const asked = answer.followUps.length;
   if (asked >= MAX_DEEP_DIVES || asked >= question.deepDives.length) return null;
+  // 深掘りを飛ばしたら（空の答え）、その問いではもう聞かない
+  if (asked && !answer.followUps[asked - 1].answer.trim()) return null;
   const all = [answer.text, ...answer.followUps.map((f) => f.answer)].join("\n").trim();
   const lines = all.split(/\n|、|。|／/).filter((l) => l.trim()).length;
   const thin = Array.from(all).length < 30 * (asked + 1) || lines < 2 + asked;

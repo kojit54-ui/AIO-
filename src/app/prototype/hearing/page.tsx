@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
-import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, answeredCount, collectedAio, nextDeepDive, withNewText } from "@/prototype/growth";
+import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, collectedAio, nextDeepDive, resumeIndex, withNewText } from "@/prototype/growth";
 import { growActions, useGrow } from "@/prototype/store";
 
 /** 顧客が1問ずつ答えるヒアリング。答えが短いと、深掘りの質問が返ってくる */
@@ -22,9 +22,9 @@ export default function HearingPage() {
 
   if (!g.ready) return <PageSkeleton />;
   const total = HEARING_QUESTIONS.length;
-  // 最初は、まだ答えていない最初の問いから始める
-  const current = step ?? Math.max(0, HEARING_QUESTIONS.findIndex((q) => !g.answers[q.id]?.text.trim()));
-  const done = current >= total || (step === null && answeredCount(g.answers) === total);
+  // 最初は、まだ答えていない問いか、深掘りが残っている問いから始める（読み込み直しても続きから）
+  const current = step ?? resumeIndex(g.answers);
+  const done = current >= total;
 
   if (done) {
     return (
@@ -46,7 +46,8 @@ export default function HearingPage() {
 
   const q = HEARING_QUESTIONS[current];
   const saved: HearingAnswer = g.answers[q.id] ?? { questionId: q.id, text: "", followUps: [] };
-  const value = step === null && !deep ? saved.text : text;
+  const activeDeep = deep ?? (step === null && !saved.draft ? nextDeepDive(q, saved) : null);
+  const value = step === null && !activeDeep ? saved.text : text;
 
   function go(to: number, cheerFor: AioPoint | null = null) {
     setCheer(cheerFor);
@@ -55,16 +56,18 @@ export default function HearingPage() {
     setText(to < total ? (g.answers[HEARING_QUESTIONS[to].id]?.text ?? "") : "");
   }
 
-  function submit() {
-    if (deep) {
-      const next = { ...saved, followUps: [...saved.followUps, { question: deep, answer: value.trim() }] };
+  function submit(answer = value) {
+    if (activeDeep) {
+      // 飛ばした深掘りも空の答えとして残し、読み込み直しても同じ質問を聞き直さない
+      const next = { ...saved, followUps: [...saved.followUps, { question: activeDeep, answer: answer.trim() }] };
       growActions.saveAnswer(next);
-      const more = value.trim() ? nextDeepDive(q, next) : null;
+      const more = answer.trim() ? nextDeepDive(q, next) : null;
       if (more) {
+        setStep(current);
         setDeep(more);
         setText("");
         setCheer(null);
-      } else go(current + 1, value.trim() ? q.aio : null);
+      } else go(current + 1, answer.trim() ? q.aio : null);
       return;
     }
     // 答えを書き直したら、深掘りは聞き直す
@@ -102,10 +105,10 @@ export default function HearingPage() {
         className="card space-y-4"
         onSubmit={(e) => {
           e.preventDefault();
-          if (value.trim() || deep) submit();
+          if (value.trim() || activeDeep) submit();
         }}
       >
-        {deep ? (
+        {activeDeep ? (
           <>
             <div className="rounded-lg bg-canvas px-3 py-2 text-sm">
               <p className="text-muted">{q.label}</p>
@@ -116,7 +119,7 @@ export default function HearingPage() {
             </Notice>
             <div>
               <label htmlFor="answer" className="field-label text-lg">
-                {deep}
+                {activeDeep}
               </label>
               <textarea id="answer" ref={inputRef} className="field min-h-28" value={value} onChange={(e) => setText(e.target.value)} />
             </div>
@@ -142,8 +145,10 @@ export default function HearingPage() {
               className="field min-h-36"
               value={value}
               onChange={(e) => {
+                // 書いている途中の答えも保存し、ほかの画面へ移っても消えないようにする
                 setStep(current);
                 setText(e.target.value);
+                growActions.saveAnswer({ ...withNewText(saved, e.target.value), draft: true });
               }}
             />
           </div>
@@ -151,11 +156,11 @@ export default function HearingPage() {
 
         <div className="flex flex-wrap justify-between gap-2">
           <div className="flex flex-wrap gap-2">
-            <button type="button" className="btn-secondary" onClick={() => (deep ? go(current) : go(Math.max(0, current - 1)))} disabled={current === 0 && !deep}>
+            <button type="button" className="btn-secondary" onClick={() => (activeDeep ? go(current) : go(Math.max(0, current - 1)))} disabled={current === 0 && !activeDeep}>
               戻る
             </button>
-            <button type="button" className="btn-secondary" onClick={() => go(current + 1)}>
-              {deep ? "この質問は飛ばす" : "あとで答える"}
+            <button type="button" className="btn-secondary" onClick={() => (activeDeep ? submit("") : go(current + 1))}>
+              {activeDeep ? "この質問は飛ばす" : "あとで答える"}
             </button>
           </div>
           <button type="submit" className="btn-primary" disabled={!value.trim()}>
@@ -165,7 +170,7 @@ export default function HearingPage() {
       </form>
 
       <AioMeter points={HEARING_QUESTIONS.map((x) => x.aio)} collected={collectedAio(HEARING_QUESTIONS, (id) => !!g.answers[id]?.text.trim())} />
-      {current === 0 && !deep && <WhyAio compact />}
+      {current === 0 && !activeDeep && <WhyAio compact />}
 
       <Link href="/prototype" className="inline-block text-brand-dark underline">
         ホームへ戻る（答えは保存されています）
