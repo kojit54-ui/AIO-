@@ -6,7 +6,7 @@ import { describe, expect, it } from "vitest";
 import { COACHING_NOTES, ORGANIZATIONS, QUESTIONS, REFERENCE_ARTICLES, THEMES } from "@/mock/data";
 import { getAiSetup } from "./config";
 import { generateHeadingImage } from "./images";
-import { generateBody, generateOutline } from "./provider";
+import { generateReviewedBody, generateOutline } from "./provider";
 
 const live = process.env.npm_lifecycle_event === "test:live" || process.env.AI_LIVE === "1";
 if (live) {
@@ -33,7 +33,8 @@ describe.skipIf(!live)("本物のAPI", () => {
   it("文章：見出し案と本文を作る", async () => {
     expect(setup.textIsSample, "文章AIのキー（OPENAI_API_KEY、TEXT_PROVIDER=anthropic なら ANTHROPIC_API_KEY）が設定されていません").toBe(false);
     const outline = await generateOutline(setup.text, ctx);
-    const body = await generateBody(setup.text, ctx, outline.outline.map((o) => o.heading));
+    const roles = { writer: setup.textFor("body"), reviewer: setup.textFor("review"), imageIdeas: setup.textFor("images") };
+    const body = await generateReviewedBody(roles, ctx, outline.outline.map((o) => o.heading));
     console.log(JSON.stringify({ outline, body }, null, 2));
     expect(body.body.length).toBeGreaterThan(0);
     expect(body.imageSuggestions.length).toBeGreaterThan(0);

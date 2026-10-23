@@ -5,7 +5,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { estimateCostYen } from "@/lib/ai/cost";
 import { buildGenerationInput, type GenerationContext, InputError } from "@/lib/ai/input";
-import { AiProviderError, type AiProvider, generateBody, generateOutline } from "@/lib/ai/provider";
+import { AiProviderError, type AiProvider, type BodyRoles, type StepUsage, generateOutline, generateReviewedBody } from "@/lib/ai/provider";
 import { ParseError } from "@/lib/ai/prompt";
 import { fromArticle, fromMonth, toArticle, toCoachingNote, toOrganization, toReferenceArticle, toTheme, toVersion, currentMonthJst } from "@/lib/remote/mapping";
 import { applyAction } from "@/lib/workflow";
@@ -25,7 +25,7 @@ export type GenerationOutcome =
   | { ok: true; versionId: string }
   | { ok: false; status: number; code: string; message: string };
 
-const fail = (status: number, code: string, message: string): GenerationOutcome => ({ ok: false, status, code, message });
+const fail = (status: number, code: string, message: string): Extract<GenerationOutcome, { ok: false }> => ({ ok: false, status, code, message });
 
 /** start_generation の例外メッセージ（エラーコード）を画面の応答にする */
 const START_ERRORS: Record<string, [number, string]> = {
@@ -36,10 +36,18 @@ const START_ERRORS: Record<string, [number, string]> = {
   forbidden: [403, "この記事で文章を作る権限がありません"],
 };
 
+/** 書き手の最初の1回の上限。点検・書き直し・画像の提案は OPTIONAL_TIMEOUT_MS で打ち切り、保存の時間を残す（関数の上限は300秒） */
 export const TIMEOUT_MS = 240_000;
+export const OPTIONAL_TIMEOUT_MS = 270_000;
+
+const sumUsage = (steps: StepUsage[]) => ({
+  inputTokens: steps.reduce((n, s) => n + s.usage.inputTokens, 0),
+  outputTokens: steps.reduce((n, s) => n + s.usage.outputTokens, 0),
+});
+const sumCost = (steps: StepUsage[]) => Math.round(steps.reduce((n, s) => n + estimateCostYen(s.usage, s.provider), 0) * 100) / 100;
 
 export async function runGeneration(
-  deps: { user: SupabaseClient; admin: SupabaseClient; provider: AiProvider; isSample: boolean },
+  deps: { user: SupabaseClient; admin: SupabaseClient; provider: AiProvider; isSample: boolean; roles?: Omit<BodyRoles, "writer"> },
   req: GenerationRequest,
 ): Promise<GenerationOutcome> {
   const { user: db, admin } = deps;
@@ -62,33 +70,9 @@ export async function runGeneration(
     .maybeSingle();
   if (membership?.role !== "client_member") return fail(403, "forbidden", "文章を作れるのは顧客担当者です");
 
-  const month = currentMonthJst();
-  const [orgRes, themeRes, noteRes, refsRes, currentRes] = await Promise.all([
-    db.from("organizations").select("*").eq("id", orgId).single(),
-    db.from("themes").select("*").eq("id", article.themeId).single(),
-    db.from("coaching_notes").select("*").eq("organization_id", orgId).eq("target_month", fromMonth(month)).maybeSingle(),
-    db.from("reference_articles").select("*").eq("organization_id", orgId).eq("usable_for_ai", true),
-    article.currentVersionId
-      ? db.from("article_versions").select("*").eq("id", article.currentVersionId).maybeSingle()
-      : Promise.resolve({ data: null, error: null }),
-  ]);
-  // 1つでも読めなければ、足りない材料で（費用をかけて）作らない
-  if (orgRes.error || themeRes.error || noteRes.error || refsRes.error || currentRes.error || (article.currentVersionId && !currentRes.data)) return fail(500, "save_failed", "データを読み込めませんでした");
-  const org = toOrganization(orgRes.data, 0);
-  const theme = toTheme(themeRes.data);
-  const base = currentRes.data ? toVersion(currentRes.data) : null;
-  const draft = (articleRow.draft_answers as Answer[]) ?? [];
-  // 見出し案は質問の回答（下書き）から、本文は今の版の回答から作る（まだ版が無ければ下書き）
-  const answers = req.kind === "outline" || !base?.answers.length ? draft : base.answers;
-
-  const ctx: GenerationContext = {
-    organization: org,
-    note: noteRes.data ? toCoachingNote(noteRes.data) : undefined,
-    theme,
-    questions: [...QUESTIONS, FOLLOW_UP_QUESTION],
-    answers,
-    referenceArticles: (refsRes.data ?? []).map(toReferenceArticle),
-  };
+  const loaded = await loadGenerationContext(db, articleRow, req.kind);
+  if (!loaded.ok) return loaded;
+  const { ctx, org, theme, base, answers } = loaded;
   let inputChars: number;
   try {
     inputChars = JSON.stringify(buildGenerationInput(ctx)).length;
@@ -131,14 +115,17 @@ export async function runGeneration(
   };
 
   let usage = { inputTokens: 0, outputTokens: 0 };
+  let cost = 0;
   try {
     const signal = AbortSignal.timeout(TIMEOUT_MS);
+    const optionalSignal = AbortSignal.timeout(OPTIONAL_TIMEOUT_MS);
     const common = { sample: deps.isSample, provider: deps.provider.name, kind: req.kind };
     let version: Record<string, unknown>;
     let checks: { excerpt: string; kind: string }[] = [];
     if (req.kind === "outline") {
       const r = await generateOutline(deps.provider, ctx, signal);
       usage = r.usage;
+      cost = estimateCostYen(usage, deps.provider.name);
       version = {
         title: base?.title || theme.title,
         title_candidates: r.titleCandidates,
@@ -152,18 +139,26 @@ export async function runGeneration(
         await finish("failed", { error: "invalid_input" });
         return fail(400, "invalid_input", "見出しを1つ以上入れてください");
       }
-      const r = await generateBody(deps.provider, ctx, headings, { signal });
-      usage = r.usage;
+      const roles = { writer: deps.provider, reviewer: deps.roles?.reviewer ?? deps.provider, imageIdeas: deps.roles?.imageIdeas ?? deps.provider };
+      const r = await generateReviewedBody(roles, ctx, headings, { signal, optionalSignal });
+      usage = sumUsage(r.steps);
+      cost = sumCost(r.steps);
       checks = r.factChecks;
       version = {
         title: base?.title || r.titleCandidates[0] || theme.title,
         title_candidates: r.titleCandidates.length ? r.titleCandidates : (base?.titleCandidates ?? []),
         outline: headings.map((heading) => ({ heading })),
         body: r.body,
-        generation_settings: { ...common, needs_info: r.needsInfo, image_suggestions: r.imageSuggestions },
+        generation_settings: {
+          ...common,
+          needs_info: r.needsInfo,
+          eyecatch: r.eyecatch,
+          image_suggestions: r.imageSuggestions,
+          review: r.review,
+          steps: r.steps.map((s) => ({ step: s.step, provider: s.provider, ok: s.ok })),
+        },
       };
     }
-    const cost = estimateCostYen(usage);
 
     // 版の保存はサーバー（service role）で行う。版番号は記事ごとの連番
     const { data: last } = await admin
@@ -213,10 +208,44 @@ export async function runGeneration(
   } catch (e) {
     const timedOut = e instanceof DOMException && (e.name === "TimeoutError" || e.name === "AbortError");
     const code = timedOut ? "timeout" : e instanceof InputError ? "invalid_input" : "provider_error";
-    await finish("failed", { usage, cost: estimateCostYen(usage), error: code });
+    await finish("failed", { usage, cost: cost || estimateCostYen(usage, deps.provider.name), error: code });
     // 原因の種類だけを記録する（本文や回答は出さない）
     console.error("generation failed", { runId: run.id, code, reason: e instanceof AiProviderError ? e.code : e instanceof ParseError ? "parse" : "other" });
     if (code === "timeout") return fail(504, "timeout", "時間内に文章を作れませんでした。入力内容は残っています");
     return fail(502, code, "文章を作れませんでした。入力内容は残っています");
   }
+}
+
+/** 生成に渡す材料（会社・今月の指導メモ・テーマ・使ってよい過去記事・回答）を読む。読み込みは呼び出し側の権限（RLS）で行う */
+export async function loadGenerationContext(db: SupabaseClient, articleRow: Record<string, unknown>, kind: GenerationKindInput) {
+  const article = toArticle(articleRow);
+  const orgId = article.organizationId;
+  const month = currentMonthJst();
+  const [orgRes, themeRes, noteRes, refsRes, currentRes] = await Promise.all([
+    db.from("organizations").select("*").eq("id", orgId).single(),
+    db.from("themes").select("*").eq("id", article.themeId).single(),
+    db.from("coaching_notes").select("*").eq("organization_id", orgId).eq("target_month", fromMonth(month)).maybeSingle(),
+    db.from("reference_articles").select("*").eq("organization_id", orgId).eq("usable_for_ai", true),
+    article.currentVersionId
+      ? db.from("article_versions").select("*").eq("id", article.currentVersionId).maybeSingle()
+      : Promise.resolve({ data: null, error: null }),
+  ]);
+  // 1つでも読めなければ、足りない材料で（費用をかけて）作らない
+  if (orgRes.error || themeRes.error || noteRes.error || refsRes.error || currentRes.error || (article.currentVersionId && !currentRes.data)) return fail(500, "save_failed", "データを読み込めませんでした");
+  const org = toOrganization(orgRes.data, 0);
+  const theme = toTheme(themeRes.data);
+  const base = currentRes.data ? toVersion(currentRes.data) : null;
+  const draft = (articleRow.draft_answers as Answer[]) ?? [];
+  // 見出し案は質問の回答（下書き）から、本文は今の版の回答から作る（まだ版が無ければ下書き）
+  const answers = kind === "outline" || !base?.answers.length ? draft : base.answers;
+
+  const ctx: GenerationContext = {
+    organization: org,
+    note: noteRes.data ? toCoachingNote(noteRes.data) : undefined,
+    theme,
+    questions: [...QUESTIONS, FOLLOW_UP_QUESTION],
+    answers,
+    referenceArticles: (refsRes.data ?? []).map(toReferenceArticle),
+  };
+  return { ok: true as const, ctx, org, theme, base, answers };
 }

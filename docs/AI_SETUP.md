@@ -23,9 +23,31 @@
 
 API の入出力は、OpenAI の学習には使われません（オプトインしない限り）。アプリは会話を OpenAI 側に保存しない設定（store: false）で呼びます。不正監視のためのログは最大30日保存されます。
 
-Anthropic（Claude）に戻す場合は、https://platform.claude.com で同じようにキーを作り、`TEXT_PROVIDER=anthropic` と `ANTHROPIC_API_KEY` を設定します。
+## 1-2. Anthropic（Claude、点検役）のキー
 
-## 2. Google（画像）のキー
+書いた記事の点検（独自性・AI検索への対策・AIが書いたように見えないか・事実・文体）は Claude が受け持ちます。
+
+1. https://platform.claude.com を開き、会社のメールアドレスでアカウントを作ります。
+2. 「Billing」でクレジットを購入します（前払い制）。まずは 20ドル程度で十分です。
+3. 「Limits」で月の上限を設定します。目安は 20ドルです。
+4. 「API keys」で「Create Key」を押し、名前を `cotam-blog` にして作ります。表示されたキー（`sk-ant-` で始まる文字列）を `ANTHROPIC_API_KEY` に入れます。
+
+キーが無いあいだは、書き手（OpenAI）が自分で点検します。
+
+### 役割の切り替え
+
+役割ごとのAIは環境変数だけで変えられます（値は `openai`・`anthropic`・`google`）。
+
+| 役割 | 環境変数 | 既定 |
+|---|---|---|
+| 見出し案を作る | `OUTLINE_PROVIDER` | `TEXT_PROVIDER`（openai） |
+| 本文を書く・指摘を受けて書き直す | `BODY_PROVIDER` | `TEXT_PROVIDER`（openai） |
+| 書いた記事を点検する | `REVIEW_PROVIDER` | anthropic |
+| アイキャッチと見出しごとの画像を提案する | `IMAGE_IDEA_PROVIDER` | google |
+
+点検と画像の提案は、その会社のキーが無ければ本文の書き手が受け持ちます。
+
+## 2. Google（Gemini、画像の提案と生成）のキー
 
 1. https://aistudio.google.com を開き、会社の Google アカウントでログインします。
 2. 左のメニューの「Get API key（APIキーを取得）」から「Create API key」を押します。Google Cloud のプロジェクトを聞かれたら、新しく作ります（例：`cotam-blog`）。

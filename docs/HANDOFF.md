@@ -35,6 +35,17 @@
 
 ## 記録
 
+### 2026-10-23 CC（Claude、プロジェクトのスレッド）その9
+- ブランチ / コミット：claude/project-thread-rey7mz（PR #10 に追加）
+- 変更点：
+  - AIの役割分担（docs/DECISIONS.md 2026-10-23）：src/lib/ai/provider.ts の generateReviewedBody（書く → 点検と画像の提案を同時に → 指摘があれば1回書き直す）、prompt.ts に点検・書き直し・画像の提案の指示文と検査、config.ts に役割ごとの提供元（REVIEW_PROVIDER・IMAGE_IDEA_PROVIDER など）
+  - Gemini でも文章を書ける（providers/googleText.ts）。費用は工程ごとの会社の単価で合計（cost.ts）
+  - 生成の保存（src/lib/generation/server.ts）：generation_settings に eyecatch・image_suggestions・review・steps。手で直した版にも引き継ぐ（mapping.ts の carriedSettings）
+  - 画面：記事の補助情報に「AIの点検」と「画像」のタブ。型 ArticleVersion に imageIdeas と aiReview（src/types/domain.ts）
+- 確認結果：単体テスト、型検査、lint が通過。架空データで本文を作り直し、2つのタブを375px・1280pxで表示して横スクロールが無いことを確認。本物のAIでの確認は3社のキー待ち
+- 未完了：画像の生成と保存・表示・ダウンロード（T4-1）、本物のAIでの確認
+- 次の作業と担当：タムさんが Vercel に OPENAI_API_KEY・ANTHROPIC_API_KEY・GEMINI_API_KEY を入れる → CC が1本作って確認 → CC が T4-1
+
 ### 2026-10-23 CC（Claude、プロジェクトのスレッド）その8
 - ブランチ / コミット：claude/project-thread-rey7mz（PR #8 のマージ後の main から）
 - 変更点：PR #8（T2-9）に Codex の指摘を反映。手動の保存とレビューを `save_article_change`（1つのトランザクション、版番号はDBで決める）に、生成の材料が1つでも読めなければ止める、結果の記録は3回までやり直す。検証環境を作成：Vercel のプロジェクト aio（https://aio-roan.vercel.app）、Supabase の URL 設定、最初の全社管理者（tamura@co-tam.co.jp）

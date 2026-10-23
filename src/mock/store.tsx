@@ -310,6 +310,7 @@ function createApi(
         createdAt: now(),
         createdBy: user.id,
         isSample: true,
+        ...sampleAiExtras(headings),
       };
       const next = transition(db, user, article, { type: "edit", newVersionId: id });
       commit(
@@ -340,6 +341,8 @@ function createApi(
         createdAt: now(),
         createdBy: user.id,
         isSample: base?.isSample ?? false,
+        imageIdeas: base?.imageIdeas,
+        aiReview: base?.aiReview,
       };
       // 要確認箇所の確認結果は、同じ箇所が残っていれば引き継ぐ
       const prevChecks = db.factChecks.filter((f) => f.versionId === base?.id);
@@ -595,4 +598,19 @@ export function useStore(): StoreValue {
   const v = useContext(StoreContext);
   if (!v) throw new Error("StoreProvider の内側で使ってください");
   return v;
+}
+
+/** 画像の提案と点検のサンプル。本物のAIと見間違えないよう、すべてに「サンプル（AIは未接続）」を付ける */
+function sampleAiExtras(headings: string[]): Pick<ArticleVersion, "imageIdeas" | "aiReview"> {
+  const label = "サンプル（AIは未接続）";
+  const idea = (heading: string) => ({ heading, photoIdea: `${label}：「${heading || "記事全体"}」に合う写真の提案が入ります。`, alt: heading || "アイキャッチ", imagePrompt: "A simple illustration" });
+  return {
+    imageIdeas: { eyecatch: idea(""), perHeading: headings.map(idea) },
+    aiReview: {
+      provider: "sample",
+      summary: `${label}：独自性・AI検索への対策・AIらしさなどの点検結果が入ります。`,
+      findings: [{ category: "ai_tone", excerpt: headings[0] ?? "", advice: `${label}：指摘の例。本物のAIでは、指摘に沿って書き直した本文になります。` }],
+      rewritten: false,
+    },
+  };
 }

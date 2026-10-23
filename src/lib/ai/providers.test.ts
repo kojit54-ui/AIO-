@@ -1,14 +1,15 @@
 import { describe, expect, it, vi } from "vitest";
 import { getAiSetup } from "./config";
 import { buildImagePrompt, IMAGE_RULES } from "./images";
-import { parseBodyResult, ParseError } from "./prompt";
+import { parseBodyResult, parseImageIdeas, parseReviewResult, ParseError } from "./prompt";
 import { AiProviderError } from "./provider";
 import { createAnthropicProvider } from "./providers/anthropic";
 import { createGoogleImageProvider } from "./providers/google";
+import { createGoogleTextProvider } from "./providers/googleText";
 import { createOpenAiImageProvider } from "./providers/openai";
 import { createOpenAiTextProvider } from "./providers/openaiText";
 import { sampleImageProvider, sampleTextProvider, SAMPLE_LABEL } from "./providers/sample";
-import { generateBody, generateOutline } from "./provider";
+import { type AiProvider, generateOutline, generateReviewedBody } from "./provider";
 import { COACHING_NOTES, ORGANIZATIONS, QUESTIONS, THEMES } from "@/mock/data";
 
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json" } });
@@ -38,6 +39,23 @@ describe("getAiSetup", () => {
     expect(getAiSetup({ ANTHROPIC_API_KEY: "a" }).textIsSample).toBe(true);
     expect(getAiSetup({ TEXT_PROVIDER: "anthropic", ANTHROPIC_API_KEY: "a" }).text.name).toBe("anthropic");
     expect(getAiSetup({ IMAGE_PROVIDER: "openai", OPENAI_API_KEY: "o" }).image.name).toBe("openai");
+    expect(getAiSetup({ TEXT_PROVIDER: "google", GEMINI_API_KEY: "g" }).text.name).toBe("google");
+  });
+
+  it("役割ごとに提供元を選ぶ：既定は 書き手＝OpenAI、点検＝Anthropic、画像の提案＝Google", () => {
+    const all = getAiSetup({ OPENAI_API_KEY: "o", ANTHROPIC_API_KEY: "a", GEMINI_API_KEY: "g" });
+    expect((["outline", "body", "review", "images"] as const).map((k) => all.textFor(k).name)).toEqual(["openai", "openai", "anthropic", "google"]);
+    // 点検・画像の提案の会社のキーが無ければ、本文の書き手が受け持つ
+    const onlyOpenAi = getAiSetup({ OPENAI_API_KEY: "o" });
+    expect([onlyOpenAi.textFor("review").name, onlyOpenAi.textFor("images").name]).toEqual(["openai", "openai"]);
+    expect(getAiSetup({ OPENAI_API_KEY: "o", GEMINI_API_KEY: "g", REVIEW_PROVIDER: "google" }).textFor("review").name).toBe("google");
+
+    const env = { OPENAI_API_KEY: "o", ANTHROPIC_API_KEY: "a", OUTLINE_PROVIDER: "anthropic" };
+    const s = getAiSetup(env);
+    expect([s.textFor("outline").name, s.textFor("body").name, s.text.name]).toEqual(["anthropic", "openai", "openai"]);
+    expect(s.textIsSample).toBe(false);
+    // 指定した提供元のキーが無ければ、その手順はサンプルになり、画面にもそう出す
+    expect(getAiSetup({ OPENAI_API_KEY: "o", BODY_PROVIDER: "google" }).textIsSample).toBe(true);
   });
 });
 
@@ -52,9 +70,12 @@ describe("サンプル（キー未設定のとき）", () => {
       referenceArticles: [],
     };
     const outline = await generateOutline(sampleTextProvider, ctx);
-    const body = await generateBody(sampleTextProvider, ctx, outline.outline.map((o) => o.heading));
+    const roles = { writer: sampleTextProvider, reviewer: sampleTextProvider, imageIdeas: sampleTextProvider };
+    const body = await generateReviewedBody(roles, ctx, outline.outline.map((o) => o.heading));
     expect(outline.titleCandidates[0]).toContain(SAMPLE_LABEL);
     expect(body.imageSuggestions.map((i) => i.heading)).toEqual(outline.outline.map((o) => o.heading));
+    expect(body.eyecatch?.photoIdea).toContain(SAMPLE_LABEL);
+    expect(body.review).toMatchObject({ findings: [], rewritten: false });
     expect((await sampleImageProvider.generate({ prompt: "x" })).mimeType).toBe("image/svg+xml");
   });
 });
@@ -120,6 +141,33 @@ describe("OpenAI（文章）", () => {
   });
 });
 
+describe("Google（文章）", () => {
+  it("JSONで返させ、仕上げでは考える量を増やし、考えた分も出力として数える", async () => {
+    const ok = { candidates: [{ finishReason: "STOP", content: { parts: [{ text: "…", thought: true }, { text: '{"ok":true}' }] } }], usageMetadata: { promptTokenCount: 10, candidatesTokenCount: 5, thoughtsTokenCount: 3 } };
+    const generateContent = vi.fn().mockResolvedValue(ok);
+    const p = createGoogleTextProvider({ apiKey: "k", draftModel: "gemini-draft", finishModel: "gemini-finish", generateContent });
+    const res = await p.complete(req);
+    await p.complete({ ...req, quality: "finish" });
+    const calls = generateContent.mock.calls.map((c) => c[0]);
+    expect(calls.map((c) => [c.model, c.config.thinkingConfig.thinkingLevel])).toEqual([
+      ["gemini-draft", "MEDIUM"],
+      ["gemini-finish", "HIGH"],
+    ]);
+    expect(calls[0]).toMatchObject({ contents: "u", config: { systemInstruction: "s", maxOutputTokens: 100, responseMimeType: "application/json" } });
+    expect(res).toEqual({ text: '{"ok":true}', usage: { inputTokens: 10, outputTokens: 8 } });
+  });
+
+  it("断られた・途中で切れた・キー違い・上限を区別する", async () => {
+    const make = (r: unknown, reject = false) =>
+      createGoogleTextProvider({ apiKey: "k", draftModel: "m", finishModel: "m", generateContent: vi.fn()[reject ? "mockRejectedValue" : "mockResolvedValue"](r) });
+    await expect(make({ promptFeedback: { blockReason: "SAFETY" } }).complete(req)).rejects.toMatchObject({ code: "refused" });
+    await expect(make({ candidates: [{ finishReason: "SAFETY" }] }).complete(req)).rejects.toMatchObject({ code: "refused" });
+    await expect(make({ candidates: [{ finishReason: "MAX_TOKENS" }] }).complete(req)).rejects.toMatchObject({ code: "truncated" });
+    await expect(make(Object.assign(new Error("x"), { status: 403 }), true).complete(req)).rejects.toMatchObject({ code: "auth" });
+    await expect(make(Object.assign(new Error("x"), { status: 429 }), true).complete(req)).rejects.toMatchObject({ code: "rate_limited" });
+  });
+});
+
 describe("画像", () => {
   it("どの画像にも文字を入れない条件を最後に付ける", () => {
     const p = buildImagePrompt({ imagePrompt: "A warm bathroom" });
@@ -153,9 +201,75 @@ describe("画像", () => {
   });
 
   it("画像案は決まった形だけ受け付ける", () => {
-    const base = { body: [{ type: "paragraph", text: "a" }] };
-    const ok = parseBodyResult(JSON.stringify({ ...base, image_suggestions: [{ heading: "h", photo_idea: "p", alt: "a", image_prompt: "i" }] }));
+    const img = { heading: "h", photo_idea: "p", alt: "a", image_prompt: "i" };
+    const ok = parseImageIdeas(JSON.stringify({ eyecatch: { photo_idea: "e", alt: "a", image_prompt: "i" }, image_suggestions: [img] }));
     expect(ok.imageSuggestions).toEqual([{ heading: "h", photoIdea: "p", alt: "a", imagePrompt: "i" }]);
-    expect(() => parseBodyResult(JSON.stringify({ ...base, image_suggestions: [{ heading: "h" }] }))).toThrow(ParseError);
+    expect(ok.eyecatch).toEqual({ heading: "", photoIdea: "e", alt: "a", imagePrompt: "i" });
+    expect(() => parseImageIdeas(JSON.stringify({ image_suggestions: [{ heading: "h" }] }))).toThrow(ParseError);
+    expect(() => parseBodyResult(JSON.stringify({ body: [] }))).toThrow(ParseError);
+  });
+});
+
+describe("役割分担（書く → 点検 → 書き直し、画像の提案）", () => {
+  const ctx = {
+    organization: ORGANIZATIONS.find((o) => o.id === "org_sakura")!,
+    note: COACHING_NOTES.find((n) => n.organizationId === "org_sakura"),
+    theme: THEMES[0],
+    questions: QUESTIONS,
+    answers: [],
+    referenceArticles: [],
+  };
+  const bodyJson = (text: string) => JSON.stringify({ title_candidates: ["t"], body: [{ type: "heading", level: 2, text: "h1" }, { type: "paragraph", text }], fact_checks: [], needs_info: [] });
+  const fake = (name: string, reply: (kind: string, user: string) => string): AiProvider & { calls: { kind: string; user: string }[] } => {
+    const calls: { kind: string; user: string }[] = [];
+    return {
+      name,
+      calls,
+      async complete(r) {
+        calls.push({ kind: r.kind, user: r.user });
+        return { text: reply(r.kind, r.user), usage: { inputTokens: 1000, outputTokens: 100 } };
+      },
+    };
+  };
+
+  it("点検の指摘を書き手に渡して1回だけ書き直し、工程ごとの使用量を返す", async () => {
+    const writer = fake("openai", (kind) => bodyJson(kind === "rewrite" ? "直した本文" : "下書き"));
+    const reviewer = fake("anthropic", () => JSON.stringify({ summary: "s", findings: [{ category: "ai_tone", excerpt: "下書き", advice: "具体的に" }] }));
+    const images = fake("google", () => JSON.stringify({ eyecatch: { photo_idea: "e", alt: "a", image_prompt: "i" }, image_suggestions: [{ heading: "h1", photo_idea: "p", alt: "a", image_prompt: "i" }] }));
+    const r = await generateReviewedBody({ writer, reviewer, imageIdeas: images }, ctx, ["h1"]);
+    expect(r.body[1]).toEqual({ type: "paragraph", text: "直した本文" });
+    expect(writer.calls.map((c) => c.kind)).toEqual(["body", "rewrite"]);
+    expect(writer.calls[1].user).toContain("具体的に");
+    expect(reviewer.calls[0].user).toContain("<draft>");
+    expect(r.review).toMatchObject({ provider: "anthropic", rewritten: true });
+    expect(r.eyecatch?.photoIdea).toBe("e");
+    expect(r.steps.map((s) => [s.step, s.provider, s.ok])).toEqual([
+      ["write", "openai", true],
+      ["review", "anthropic", true],
+      ["images", "google", true],
+      ["rewrite", "openai", true],
+    ]);
+  });
+
+  it("点検・書き直し・画像の提案が失敗しても、下書きで返す", async () => {
+    const writer = fake("openai", (kind) => (kind === "rewrite" ? "読めない" : bodyJson("下書き")));
+    const reviewer = fake("anthropic", () => JSON.stringify({ summary: "", findings: [{ category: "aio", excerpt: "x", advice: "y" }] }));
+    const broken: AiProvider = { name: "google", complete: async () => { throw new AiProviderError("unavailable", "x"); } };
+    const r = await generateReviewedBody({ writer, reviewer, imageIdeas: broken }, ctx, ["h1"]);
+    expect(r.body[1]).toEqual({ type: "paragraph", text: "下書き" });
+    expect(r.review?.rewritten).toBe(false);
+    expect(r.imageSuggestions).toEqual([]);
+    // 返答が読めなかった書き直しも、使った分は残す
+    expect(r.steps.find((s) => s.step === "rewrite")).toMatchObject({ ok: false, usage: { inputTokens: 1000 } });
+    expect(r.steps.find((s) => s.step === "images")).toMatchObject({ ok: false });
+  });
+
+  it("指摘が無ければ書き直さない。点検結果は決まった形だけ受け付ける", async () => {
+    const writer = fake("openai", () => bodyJson("下書き"));
+    const reviewer = fake("anthropic", () => JSON.stringify({ summary: "良い", findings: [] }));
+    const r = await generateReviewedBody({ writer, reviewer, imageIdeas: reviewer }, ctx, ["h1"]);
+    expect(writer.calls).toHaveLength(1);
+    expect(r.review?.rewritten).toBe(false);
+    expect(() => parseReviewResult(JSON.stringify({ findings: [{ category: "unknown", excerpt: "x", advice: "y" }] }))).toThrow(ParseError);
   });
 });
