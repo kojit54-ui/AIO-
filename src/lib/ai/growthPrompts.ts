@@ -4,7 +4,7 @@
 
 import { AIO_MATERIAL_NAMES, AIO_POINTS } from "@/lib/aio";
 import type { AioPoint } from "@/types/domain";
-import { ParseError, parseJson } from "./prompt";
+import { ParseError, asData, parseJson } from "./prompt";
 
 /** 深掘りの聞き手。答えが具体的でないときだけ、短い質問を1つ返す */
 export const FOLLOWUP_SYSTEM_PROMPT = `あなたは、中小企業の社長や担当者からブログの材料を聞き出す、やさしい聞き手です。
@@ -44,7 +44,7 @@ export function buildFollowUpPrompt(input: FollowUpInput): string {
   return `<materials> の答えに、深掘りの質問が必要か考えてください。
 
 <materials>
-${JSON.stringify(materials, null, 2)}
+${asData(materials)}
 </materials>
 
 次の形のJSONで返してください：
@@ -53,7 +53,9 @@ ${JSON.stringify(materials, null, 2)}
 
 export function parseFollowUp(text: string): string | null {
   const v = parseJson(text);
-  if (v.follow_up === null || v.follow_up === undefined) return null;
+  // null だけが「深掘りは要らない」。項目が無いのは形の誤りとして扱い、呼び出し側でやり直せるようにする
+  if (!("follow_up" in v)) throw new ParseError("follow_up がありません");
+  if (v.follow_up === null) return null;
   if (typeof v.follow_up !== "string") throw new ParseError("follow_up の形が違います");
   const q = v.follow_up.trim();
   if (!q) return null;
@@ -69,7 +71,7 @@ export function buildProposalPrompt(hearing: HearingForPrompt): string {
   return `<materials> のヒアリングをもとに、記事の組み立てを3案作ってください。
 
 <materials>
-${JSON.stringify({ hearing }, null, 2)}
+${asData({ hearing })}
 </materials>
 
 次の形のJSONで返してください：
@@ -96,7 +98,8 @@ function parseIdea(v: unknown, field: string): { keyword: string; question: stri
 
 export function parseProposals(text: string): ParsedProposal[] {
   const v = parseJson(text);
-  if (!Array.isArray(v.proposals) || v.proposals.length === 0) throw new ParseError("proposals がありません");
+  // 画面は3案から選ぶ形なので、3案そろわない返答は受け付けない
+  if (!Array.isArray(v.proposals) || v.proposals.length < 3) throw new ParseError("proposals が3案ありません");
   return v.proposals.slice(0, 3).map((p, i) => {
     const o = p as Record<string, unknown>;
     if (!Array.isArray(o?.clusters)) throw new ParseError(`proposals[${i}].clusters の形が違います`);

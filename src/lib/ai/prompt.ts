@@ -64,6 +64,14 @@ export interface DraftForPrompt {
   body: Block[];
 }
 
+/**
+ * 素材をJSONにして、指示文の中にデータとして入れる。
+ * 「<」を \u003c にして、素材の中の </materials> などで区切りが閉じないようにする（JSONとしては同じ値のまま）
+ */
+export function asData(value: unknown, indent = 2): string {
+  return JSON.stringify(value, null, indent).replace(/</g, "\\u003c");
+}
+
 export function buildUserPrompt(
   kind: GenerationKind,
   input: GenerationInput,
@@ -72,18 +80,18 @@ export function buildUserPrompt(
 ): string {
   const task = {
     outline: "素材をもとに、記事のタイトル候補3つと見出し案（4〜6個）を作ってください。",
-    body: `素材をもとに、次の見出しで本文を書いてください。見出し：${JSON.stringify(headings)}`,
-    rewrite: `<draft> の本文を、<review> の指摘に沿って書き直してください。見出しは変えないでください。見出し：${JSON.stringify(headings)}
+    body: `素材をもとに、次の見出しで本文を書いてください。見出し：${asData(headings, 0)}`,
+    rewrite: `<draft> の本文を、<review> の指摘に沿って書き直してください。見出しは変えないでください。見出し：${asData(headings, 0)}
 指摘のうち、素材にない事実が必要なものは書き足さず、needs_info に質問として挙げてください。`,
     review: "<draft> の記事を、素材と照らし合わせて点検してください。",
-    images: `<draft> の記事に付ける画像を提案してください。見出し：${JSON.stringify(headings)}`,
+    images: `<draft> の記事に付ける画像を提案してください。見出し：${asData(headings, 0)}`,
   }[kind];
-  const draft = extra.draft ? `\n\n<draft>\n${JSON.stringify(extra.draft, null, 2)}\n</draft>` : "";
-  const review = extra.findings ? `\n\n<review>\n${JSON.stringify(extra.findings, null, 2)}\n</review>` : "";
+  const draft = extra.draft ? `\n\n<draft>\n${asData(extra.draft)}\n</draft>` : "";
+  const review = extra.findings ? `\n\n<review>\n${asData(extra.findings)}\n</review>` : "";
   return `${task}
 
 <materials>
-${JSON.stringify(input, null, 2)}
+${asData(input)}
 </materials>${draft}${review}
 
 次の形のJSONで返してください：
