@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
-import { ProgressBar } from "@/prototype/components";
-import { HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, answeredCount, nextDeepDive } from "@/prototype/growth";
+import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
+import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, answeredCount, collectedAio, nextDeepDive } from "@/prototype/growth";
 import { growActions, useGrow } from "@/prototype/store";
 
 /** 顧客が1問ずつ答えるヒアリング。答えが短いと、深掘りの質問が返ってくる */
@@ -13,6 +13,7 @@ export default function HearingPage() {
   const [step, setStep] = useState<number | null>(null);
   const [deep, setDeep] = useState<string | null>(null);
   const [text, setText] = useState("");
+  const [cheer, setCheer] = useState<AioPoint | null>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function HearingPage() {
     return (
       <main className="page max-w-3xl space-y-4">
         <Notice tone="ok" title="ヒアリングが終わりました">
-          ありがとうございました。この内容をもとに、記事の設計図を提案します。答えはあとから直せます。
+          おつかれさまでした！AIに「どこの、どんな会社か」を伝える材料がそろいました。この内容をもとに、記事の設計図を提案します。答えはあとから直せます。
         </Notice>
         <div className="flex flex-wrap gap-2">
           <Link href="/prototype/plan" className="btn-primary">
@@ -47,7 +48,8 @@ export default function HearingPage() {
   const saved: HearingAnswer = g.answers[q.id] ?? { questionId: q.id, text: "", followUps: [] };
   const value = step === null && !deep ? saved.text : text;
 
-  function go(to: number) {
+  function go(to: number, cheerFor: AioPoint | null = null) {
+    setCheer(cheerFor);
     setStep(to);
     setDeep(null);
     setText(to < total ? (g.answers[HEARING_QUESTIONS[to].id]?.text ?? "") : "");
@@ -61,7 +63,8 @@ export default function HearingPage() {
       if (more) {
         setDeep(more);
         setText("");
-      } else go(current + 1);
+        setCheer(null);
+      } else go(current + 1, value.trim() ? q.aio : null);
       return;
     }
     // 答えを書き直したら、深掘りは聞き直す
@@ -73,7 +76,8 @@ export default function HearingPage() {
       setStep(current);
       setDeep(dd);
       setText("");
-    } else go(current + 1);
+      setCheer(null);
+    } else go(current + 1, q.aio);
   }
 
   return (
@@ -92,6 +96,8 @@ export default function HearingPage() {
         </div>
         <ProgressBar value={current + 1} max={total} label="ヒアリングの進み具合" />
       </div>
+
+      {cheer && <Cheer point={cheer} />}
 
       <form
         className="card space-y-4"
@@ -127,6 +133,9 @@ export default function HearingPage() {
             <p id="answer-tip" className="mb-2 rounded-md bg-brand-soft px-3 py-2 text-sm text-brand-dark">
               コツ：{q.tip}
             </p>
+            <div className="mb-2">
+              <AioWhy point={q.aio} />
+            </div>
             <textarea
               id="answer"
               ref={inputRef}
@@ -155,6 +164,9 @@ export default function HearingPage() {
           </button>
         </div>
       </form>
+
+      <AioMeter points={HEARING_QUESTIONS.map((x) => x.aio)} collected={collectedAio(HEARING_QUESTIONS, (id) => !!g.answers[id]?.text.trim())} />
+      {current === 0 && !deep && <WhyAio compact />}
 
       <Link href="/prototype" className="inline-block text-brand-dark underline">
         ホームへ戻る（答えは保存されています）

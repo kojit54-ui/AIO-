@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { NotFound, Notice, PageSkeleton } from "@/components/ui";
-import { ProgressBar } from "@/prototype/components";
-import { articleQuestions, computeGrowth } from "@/prototype/growth";
+import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
+import { articleQuestions, collectedAio, computeGrowth } from "@/prototype/growth";
 import { growActions, useGrow } from "@/prototype/store";
 
 /** 設計図の1本を書く。質問は1問ずつ、例とコツつき */
@@ -52,7 +52,8 @@ export default function WritePage() {
           </Notice>
         ) : (
           <>
-            <Notice tone="info" title="質問はここまでです">
+            <AioMeter points={qs.map((x) => x.aio)} collected={collectedAio(qs, (id) => !!answers[id]?.trim())} />
+            <Notice tone="info" title="おつかれさまでした！質問はここまでです">
               本番では、ここから今ある記事作成の流れにつながります。見出し案を作り、GPT が本文を書き、Claude が点検し、Gemini が画像を作ります。試作では、この先を省略しています。
             </Notice>
             <button type="button" className="btn-primary" onClick={publish} disabled={row.status === "published"}>
@@ -90,6 +91,7 @@ export default function WritePage() {
         </p>
         <ProgressBar value={step + 1} max={qs.length} label="回答の進み具合" />
       </div>
+      {step > 0 && answers[qs[step - 1].id]?.trim() && <Cheer point={qs[step - 1].aio} />}
       <form
         className="card space-y-4"
         onSubmit={(e) => {
@@ -107,6 +109,9 @@ export default function WritePage() {
           <p id="answer-tip" className="mb-2 rounded-md bg-brand-soft px-3 py-2 text-sm text-brand-dark">
             コツ：{q.tip}
           </p>
+          <div className="mb-2">
+            <AioWhy point={q.aio} />
+          </div>
           <textarea
             id="answer"
             ref={inputRef}
@@ -125,6 +130,8 @@ export default function WritePage() {
           </button>
         </div>
       </form>
+      <AioMeter points={qs.map((x) => x.aio)} collected={collectedAio(qs, (id) => !!answers[id]?.trim())} />
+      {step === 0 && <WhyAio compact />}
     </main>
   );
 }

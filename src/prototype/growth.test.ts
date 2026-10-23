@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
+  AIO_POINTS,
   HEARING_QUESTIONS,
+  articleQuestions,
+  collectedAio,
   type HearingAnswer,
   MAX_DEEP_DIVES,
   canPropose,
@@ -75,5 +78,17 @@ describe("レベルアップ", () => {
     const g2 = computeGrowth(full, all);
     expect(g2.points).toBe(5 + 30 + 5 * 10);
     expect(g2.badges.every((b) => b.earned)).toBe(true);
+  });
+});
+
+describe("AIOの材料", () => {
+  it("どの質問も、何のために聞くか（AIOの材料）を持つ", () => {
+    const qs = [...HEARING_QUESTIONS, ...articleQuestions({ id: "x", keyword: "k", question: "q" })];
+    for (const x of qs) expect(AIO_POINTS[x.aio]).toBeDefined();
+  });
+
+  it("答えた質問の材料だけを、重ねずに数える", () => {
+    expect(collectedAio(HEARING_QUESTIONS, (id) => id === "business" || id === "area" || id === "faq")).toEqual(["entity", "qa"]);
+    expect(collectedAio(HEARING_QUESTIONS, () => false)).toEqual([]);
   });
 });

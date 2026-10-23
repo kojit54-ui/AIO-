@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { PageSkeleton } from "@/components/ui";
-import { GrowthCard, ProgressBar } from "@/prototype/components";
+import { GrowthCard, ProgressBar, WhyAio } from "@/prototype/components";
 import { HEARING_QUESTIONS, answeredCount, computeGrowth } from "@/prototype/growth";
 import { useGrow } from "@/prototype/store";
 
@@ -50,6 +50,7 @@ export default function PrototypeHome() {
   return (
     <main className="page space-y-6">
       <GrowthCard growth={growth} />
+      <WhyAio />
       <section aria-labelledby="steps-heading" className="space-y-3">
         <h1 id="steps-heading" className="text-lg font-bold">
           進め方

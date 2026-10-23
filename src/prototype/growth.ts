@@ -4,9 +4,60 @@
 
 export const SAMPLE_LABEL = "サンプル（AIは未接続）";
 
+/**
+ * AIO（AI検索に紹介されるための工夫）で集めたい材料。docs/AIO.md。
+ * 質問ごとに「どの材料のために聞いているか」を画面で伝え、書く人にもAIOを分かってもらう
+ */
+export type AioPoint = "experience" | "numbers" | "entity" | "qa" | "comparison" | "expertise" | "action" | "trust";
+
+export const AIO_POINTS: Record<AioPoint, { label: string; why: string; cheer: string }> = {
+  experience: {
+    label: "体験（一次情報）",
+    why: "AIは一般論よりも、その会社にしかない体験を紹介したがります。ほかの会社には書けない、いちばんの武器です。",
+    cheer: "いいですね！ほかの会社には書けない体験です。AIが紹介したくなる材料が増えました。",
+  },
+  numbers: {
+    label: "具体的な数字",
+    why: "価格、期間、件数などの数字は、AIが答えの中で引用しやすい材料です。分かる範囲で大丈夫です。",
+    cheer: "数字が入りました！AIが答えに使いやすい形になっています。",
+  },
+  entity: {
+    label: "誰が・どこで",
+    why: "会社のこと、地域、資格がはっきりしていると、AIが「この地域ならこの会社」と紹介しやすくなります。",
+    cheer: "会社と地域のことが伝わりました。AIに「どこの誰か」を覚えてもらう第一歩です。",
+  },
+  qa: {
+    label: "質問と答え",
+    why: "お客様がAIに聞く質問は、ふだん会社が聞かれている質問と同じです。そのまま答える記事は、AIの答えに使われやすくなります。",
+    cheer: "お客様の質問が集まりました。そのままAIに聞かれる質問です。",
+  },
+  comparison: {
+    label: "比べる材料",
+    why: "「どこに頼むか」で迷っている人は、AIに違いや選び方を聞きます。比べる材料があると、選ばれる理由が伝わります。",
+    cheer: "選ばれる理由がはっきりしてきました。比べて迷っている人に届きます。",
+  },
+  expertise: {
+    label: "プロの知見",
+    why: "注意点やよくある誤解は、プロだから書けることです。AIは信頼できる情報源として扱いやすくなります。",
+    cheer: "プロならではの知見です。記事の信頼がぐっと上がります。",
+  },
+  action: {
+    label: "次の一歩",
+    why: "AIに紹介されて来た人が、迷わず問い合わせできるようにします。ここが売上につながる出口です。",
+    cheer: "出口ができました。読んだ人が問い合わせしやすくなります。",
+  },
+  trust: {
+    label: "信頼",
+    why: "大げさな言葉や根拠のない言い切りは、読む人にもAIにも信頼されにくくなります。正確さが紹介される近道です。",
+    cheer: "ありがとうございます。正確で信頼される記事にします。",
+  },
+};
+
 export interface HearingQuestion {
   id: string;
   label: string;
+  /** この質問で集めるAIOの材料 */
+  aio: AioPoint;
   example: string;
   /** 答えやすくするためのコツ */
   tip: string;
@@ -18,6 +69,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
   {
     id: "business",
     label: "どんなお仕事をしていますか",
+    aio: "entity",
     example: "例：戸建て住宅のリフォーム。断熱、水回り、手すりの取り付けが多い",
     tip: "初めて会う人に30秒で説明するつもりで。業界の言葉でなくて大丈夫です。",
     deepDives: ["いちばん依頼が多いお仕事は何ですか", "反対に、受けていないお仕事はありますか"],
@@ -25,6 +77,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
   {
     id: "services",
     label: "これから特に売りたい商品やサービスは何ですか",
+    aio: "action",
     example: "例：内窓の取り付け、浴室の断熱リフォーム",
     tip: "2〜3個までで大丈夫です。利益が出やすいもの、もっと知ってほしいものを優先してください。",
     deepDives: ["それを選んだお客様は、最初にどんな困りごとを話されますか", "おおよその価格帯や工期を教えてください（書ける範囲で）"],
@@ -32,6 +85,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
   {
     id: "customers",
     label: "どんなお客様が多いですか",
+    aio: "qa",
     example: "例：市内の60代のご夫婦。子どもが独立して、家を住みやすくしたい",
     tip: "実際によく来るお客様を1人思い浮かべてください。年代、家族、きっかけなど。",
     deepDives: ["そのお客様は、何がきっかけで相談に来られますか", "依頼の前に、どんなことで迷われていましたか"],
@@ -39,6 +93,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
   {
     id: "area",
     label: "お仕事をしている地域はどこですか",
+    aio: "entity",
     example: "例：さくら市と、となりの南町・北町",
     tip: "市や町の名前で。検索されるときの地名になります。",
     deepDives: ["特に力を入れたい地域はありますか"],
@@ -46,6 +101,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
   {
     id: "strengths",
     label: "ほかの会社ではなく、選ばれる理由は何ですか",
+    aio: "experience",
     example: "例：一級建築士が現地調査から工事の管理まで担当する。工事後の点検が無料",
     tip: "お客様に言われてうれしかった言葉を思い出すと書きやすいです。",
     deepDives: ["その強みが伝わったお客様の、具体的なエピソードを1つ教えてください", "その強みを数字で表せますか（年数、件数など）"],
@@ -53,6 +109,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
   {
     id: "competitors",
     label: "よく比べられる会社やサービスはありますか",
+    aio: "comparison",
     example: "例：大手のリフォームチェーン、ホームセンターの工事受付",
     tip: "会社名でなくても、「ネットの格安業者」のような書き方で大丈夫です。",
     deepDives: ["比べられたとき、お客様はどこを気にされますか"],
@@ -60,6 +117,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
   {
     id: "faq",
     label: "お客様からよく聞かれる質問は何ですか",
+    aio: "qa",
     example: "例：工事中も住めますか／補助金は使えますか／どのくらい暖かくなりますか",
     tip: "そのまま記事のテーマになります。思いつくだけ箇条書きで並べてください。",
     deepDives: ["その中で、答えるのにいちばん時間がかかる質問はどれですか"],
@@ -67,6 +125,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
   {
     id: "avoid",
     label: "記事で使ってほしくない言葉や、気をつけることはありますか",
+    aio: "trust",
     example: "例：「業界最安」「絶対」は使わない。お客様の名前は出さない",
     tip: "無ければ「特になし」で大丈夫です。",
     deepDives: [],
@@ -269,6 +328,7 @@ export function computeGrowth(answers: Record<string, HearingAnswer>, plan: Keyw
 export interface ArticleQuestion {
   id: string;
   label: string;
+  aio: AioPoint;
   example: string;
   tip: string;
 }
@@ -276,10 +336,15 @@ export interface ArticleQuestion {
 /** 1本の記事を書くときの一問一答。キーワードの「読む人が知りたいこと」に合わせて言い方を変える */
 export function articleQuestions(row: KeywordIdea): ArticleQuestion[] {
   return [
-    { id: "a1", label: `「${row.question}」について、お客様からどんな相談がありましたか`, example: "例：去年の冬、70代のご夫婦から「脱衣所が寒い」と相談された", tip: "実際にあった1件を思い出すと書きやすいです。名前は書かなくて大丈夫です。" },
-    { id: "a2", label: "そのとき、どう答えましたか・どう対応しましたか", example: "例：・まず現地で窓と床を見た\n・内窓を提案した\n・工事は1日", tip: "箇条書きで大丈夫です。順番どおりに並べてください。" },
-    { id: "a3", label: "結果はどうでしたか", example: "例：お風呂に入る前の寒さが気にならなくなったと言われた", tip: "お客様の言葉や、分かる範囲の数字があると記事の説得力が上がります。" },
-    { id: "a4", label: "よくある誤解や、気をつけることはありますか", example: "例：暖房を増やすだけでは結露が増えることがある", tip: "プロだから知っていることが、記事のいちばんの価値になります。" },
-    { id: "a5", label: "読んだ人に、次に何をしてほしいですか", example: "例：無料の住まい点検に申し込んでほしい", tip: "電話、フォーム、来店など。1つに絞ると伝わりやすいです。" },
+    { id: "a1", label: `「${row.question}」について、お客様からどんな相談がありましたか`, aio: "experience", example: "例：去年の冬、70代のご夫婦から「脱衣所が寒い」と相談された", tip: "実際にあった1件を思い出すと書きやすいです。名前は書かなくて大丈夫です。" },
+    { id: "a2", label: "そのとき、どう答えましたか・どう対応しましたか", aio: "qa", example: "例：・まず現地で窓と床を見た\n・内窓を提案した\n・工事は1日", tip: "箇条書きで大丈夫です。順番どおりに並べてください。" },
+    { id: "a3", label: "結果はどうでしたか", aio: "numbers", example: "例：お風呂に入る前の寒さが気にならなくなったと言われた", tip: "お客様の言葉や、分かる範囲の数字があると記事の説得力が上がります。" },
+    { id: "a4", label: "よくある誤解や、気をつけることはありますか", aio: "expertise", example: "例：暖房を増やすだけでは結露が増えることがある", tip: "プロだから知っていることが、記事のいちばんの価値になります。" },
+    { id: "a5", label: "読んだ人に、次に何をしてほしいですか", aio: "action", example: "例：無料の住まい点検に申し込んでほしい", tip: "電話、フォーム、来店など。1つに絞ると伝わりやすいです。" },
   ];
+}
+
+/** 答えた問いから、集まったAIOの材料 */
+export function collectedAio(questions: { id: string; aio: AioPoint }[], answered: (id: string) => boolean): AioPoint[] {
+  return [...new Set(questions.filter((q) => answered(q.id)).map((q) => q.aio))];
 }
