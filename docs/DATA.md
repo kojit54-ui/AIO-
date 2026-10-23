@@ -295,6 +295,6 @@ interface GenerationRun {
 | keyword_plans | id、organization_id、proposal（jsonb：選んだ提案の柱・クラスター・ねらい）、chosen_by、chosen_at、archived_at | 顧客担当者 |
 | keyword_rows | id、plan_id、organization_id、kind（pillar／cluster）、keyword、reader_question、status（todo／writing／published）、article_id（記事ができたら）、sort_order | 顧客担当者。status は記事の状態から自動で変える（記事が published になったら published） |
 
-- 深掘りの質問とキーワードの提案は、生成と同じくサーバーで作り、generation_runs に kind（hearing_followup／keyword_proposal）で記録して予算に数える
+- 深掘りの質問とキーワードの提案の指示と返答の検査は src/lib/ai/growthPrompts.ts（FOLLOWUP_SYSTEM_PROMPT・PROPOSAL_SYSTEM_PROMPT、parseFollowUp・parseProposals）。生成と同じくサーバーで作り、generation_runs に kind（hearing_followup／keyword_proposal）で記録して予算に数える
 - レベルとバッジは保存せず、keyword_rows と hearing_answers から毎回計算する（computeGrowth と同じ式）
 - 第2段階で search_console_daily（organization_id、date、query、page、clicks、impressions、position）を足す。書き込みは service role だけ

@@ -140,7 +140,7 @@ const strArray = (v: unknown, field: string): string[] => {
   return v;
 };
 
-function parseJson(text: string): Record<string, unknown> {
+export function parseJson(text: string): Record<string, unknown> {
   // 前後に余計な文字が付いても、最初の { から最後の } までを読む
   const start = text.indexOf("{");
   const end = text.lastIndexOf("}");
