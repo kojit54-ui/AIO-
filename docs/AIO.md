@@ -20,8 +20,8 @@ AIO（AI検索に紹介されるための工夫）は、このサービスを作
 - 公式の説明ページは「AI features and your website」（https://developers.google.com/search/docs/appearance/ai-features）。AIによる概要は関連サイトへのリンクを出し、1つの質問を関連する複数の検索に広げて（クエリ・ファンアウト）答えを作る。通常の検索より役に立つときだけ出る。SEOの基本はAIの機能にもそのまま当てはまる
 - 2026年5月15日に、生成AIの機能に向けた最適化の案内が出た（その後も更新）。要点は「AIへの最適化も検索への最適化であり、SEOのまま」。検索に出られる状態（クロールでき、スニペットを出せる）と、独自の内容、画像と動画の質が大事
 - やらなくてよいと明言されたこと：llms.txt（Google検索は使わない）、記事を細かく区切ること（理想の長さは無い）、AI専用の構造化データ、不自然な言及集め（スパムとして除かれる）
-- 2026年6月の報道：AIの機能に自分のサイトを使わせるかを選べる設定を、Search Console で試している。使わせない場合、AIの機能からの表示と流入は無くなる。英国の競争当局（CMA）の命令を受けて英国から先に始まり（2026年6月）、ほかの国への広がりは未確認。対象は AIによる概要・AIモード・Discover のAIによる概要で、Gemini アプリは対象外（報道）
-- 2026年6月3日の公式ブログ：Search Console に「生成AIの掲載結果」のレポートができた。AIによる概要・AIモードでの表示回数、ページ、国、日付が見られる（2026年5月18日以降のデータ）。クリック数と検索語はまだ無い。使えるサイトは少しずつ広がっている途中（公式＋報道）
+- 2026年6月の報道：AIの機能に自分のサイトを使わせるかを選べる設定を、Search Console で試している。使わせない場合、AIの機能からの表示と流入は無くなる。英国の競争当局（CMA）の命令を受けて英国から先に始まり（2026年6月）、2026年8月31日に世界中に広がったと報道されている（公式の確認は未確認）。対象は AIによる概要・AIモード・Discover のAIによる概要で、Gemini アプリは対象外（報道）
+- 2026年6月3日の公式ブログ：Search Console に「生成AIの掲載結果」のレポートができた。AIによる概要・AIモードでの表示回数、ページ、国、日付が見られる（2026年5月18日以降のデータ）。クリック数と検索語は無い。はじめは一部のサイトだけだったが、2026年8月31日にすべてのサイトに広がったと公式ブログに追記された（報道で確認）。データが少ないサイトには出ないことがある。Search Console の API ではまだ取り出せない（報道）
 - 2026年10月15日の公式の発表（Google の Keyword ブログ「More ways to connect with the web from Search」）：AIモードとAIによる概要で、文中のリンクをより上に、より多く出す。答えの終わりのリンクに画像を付ける。手続きなどで「公式の場所」になる1〜2サイトを答えの上に出す枠を試験中。ニュースの記事の並び（カルーセル）を国と言語を広げて出す。「優先するソース」の利用は年初から7倍超。流入が増えたかの数字は出していない（公式ページは未読、報道で確認）
 
 **OpenAI（ChatGPT の検索）**
@@ -59,7 +59,7 @@ AIO（AI検索に紹介されるための工夫）は、このサービスを作
 - 顧客には「AIOのためにくわしく聞いている。AI時代に売上を上げるため」を、明るく、励ましながら伝える。答えるたびに、集まった材料を見せる
 - 材料が無いのに、数字や実績をAIに作らせない（作り話はAIOにも信頼にも逆効果）
 - 点検役（Claude）は、この8つの材料が記事に入っているかを見る。足りなければ、顧客に追加で聞く質問を返す（T5-4）
-- 効果は、第2段階から Search Console の表示回数と検索語で確かめる。Google のAIの機能での表示回数は、Search Console の「生成AIの掲載結果」で見られるようになった（2026年6月から順に公開。クリック数と検索語は無い）。ChatGPT などでの紹介回数を直接測る方法は未確認
+- 効果は、第2段階から Search Console の表示回数と検索語で確かめる。Google のAIの機能での表示回数は、Search Console の「生成AIの掲載結果」で見られるようになった（2026年8月31日から全サイト。クリック数と検索語は無く、API でも取り出せない）。ChatGPT などでの紹介回数を直接測る方法は未確認
 
 ## 更新の決まり
 
@@ -81,6 +81,7 @@ AIO（AI検索に紹介されるための工夫）は、このサービスを作
 - Google「More ways to connect with the web from Search」（公式、2026-10-15）：https://blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web/
 - 同じ発表の報道：https://9to5google.com/2026/10/15/google-ai-mode-overviews-links/ 、https://ppc.land/google-pushes-links-higher-in-ai-answers-as-preferred-sources-use-rises-7x/
 - Search Console の生成AIのレポート（公式、2026-06-03）：https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports
+- Search Console の生成AIのレポートとAIを使わせない設定が世界に広がった報道（2026-08-31）：https://www.searchenginejournal.com/google-search-console-ai-reports-rolled-out-worldwide/587836/
 - AIを使わせない設定の報道（2026-06）：https://www.techtimes.com/articles/317979/20260608/google-ai-overviews-opt-out-hits-search-console-gemini-excluded-publishers-weigh-trade-offs.htm 、https://digiday.com/media/googles-ai-opt-out-leaves-publishers-with-a-choice-they-cant-safely-use/
 - ChatGPT の引用先の変化（調査会社の集計の紹介）：https://www.marketingprofs.com/opinions/2026/56192/ai-update-october-16-2026-ai-news-and-views-from-the-past-week
 - 2026年6月の Google の案内の報道：https://www.digitalinformationworld.com/2026/06/google-says-ai-overviews-has-over-25.html
