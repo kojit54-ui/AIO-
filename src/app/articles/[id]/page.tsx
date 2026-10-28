@@ -505,9 +505,32 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
     };
   }, [api, article.id, version.id]);
 
+  async function makeIdeas() {
+    setBusy("ideas");
+    setMessage(null);
+    try {
+      await api.generateImageIdeas(article.id);
+    } catch (e) {
+      setMessage({ tone: "danger", text: e instanceof ApiError ? e.message : "画像の提案を作れませんでした。もう一度お試しください" });
+    } finally {
+      setBusy(null);
+    }
+  }
+
   const ideas = version.imageIdeas;
   if (!ideas || (!ideas.eyecatch && !ideas.perHeading.length)) {
-    return <p className="text-sm text-muted">{version.body.length ? "この版には画像の提案がありません。" : "本文を作ると、画像の提案が出ます。"}</p>;
+    if (!version.body.length) return <p className="text-sm text-muted">本文を作ると、画像の提案が出ます。</p>;
+    return (
+      <div className="space-y-2 text-sm">
+        <p className="text-muted">この版には画像の提案がありません。本文を作ったときに、画像の提案だけ作れなかったようです。</p>
+        {canGenerate && (
+          <button type="button" className="btn-primary w-full" disabled={busy !== null} onClick={makeIdeas}>
+            {busy === "ideas" ? "画像の提案を作っています…" : "画像の提案を作る"}
+          </button>
+        )}
+        {message && <Notice tone={message.tone} title={message.text} />}
+      </div>
+    );
   }
   const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, slot: "eyecatch", label: "アイキャッチ" }] : []), ...ideas.perHeading.map((i) => ({ ...i, slot: slotOf(i.heading), label: i.heading }))];
   const missing = items.filter((i) => !images.some((m) => m.slot === i.slot));
