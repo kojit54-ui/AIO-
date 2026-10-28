@@ -253,7 +253,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           {isCoach && <CoachReview article={article} onError={handleError} />}
 
           <div className="card">
-            <div className="mb-3 flex flex-wrap gap-1" role="tablist" aria-label="補助情報">
+            <p className="mb-2 text-sm text-muted">見たいものを選んでください</p>
+            <div className="mb-3 grid grid-cols-3 gap-2" role="tablist" aria-label="補助情報">
               {(
                 [
                   ["facts", `要確認${unchecked ? `(${unchecked})` : ""}`],
@@ -268,7 +269,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
                   key={key}
                   role="tab"
                   aria-selected={tab === key}
-                  className={`rounded-md px-3 py-1 text-sm ${tab === key ? "bg-brand text-white" : "bg-canvas"}`}
+                  className={`rounded-md border px-2 py-2 text-sm font-medium ${tab === key ? "border-brand bg-brand text-white" : "border-line bg-surface text-brand hover:bg-brand-soft"}`}
                   onClick={() => setTab(key)}
                 >
                   {label}
@@ -504,9 +505,32 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
     };
   }, [api, article.id, version.id]);
 
+  async function makeIdeas() {
+    setBusy("ideas");
+    setMessage(null);
+    try {
+      await api.generateImageIdeas(article.id);
+    } catch (e) {
+      setMessage({ tone: "danger", text: e instanceof ApiError ? e.message : "画像の提案を作れませんでした。もう一度お試しください" });
+    } finally {
+      setBusy(null);
+    }
+  }
+
   const ideas = version.imageIdeas;
   if (!ideas || (!ideas.eyecatch && !ideas.perHeading.length)) {
-    return <p className="text-sm text-muted">{version.body.length ? "この版には画像の提案がありません。" : "本文を作ると、画像の提案が出ます。"}</p>;
+    if (!version.body.length) return <p className="text-sm text-muted">本文を作ると、画像の提案が出ます。</p>;
+    return (
+      <div className="space-y-2 text-sm">
+        <p className="text-muted">この版には画像の提案がありません。本文を作ったときに、画像の提案だけ作れなかったようです。</p>
+        {canGenerate && (
+          <button type="button" className="btn-primary w-full" disabled={busy !== null} onClick={makeIdeas}>
+            {busy === "ideas" ? "画像の提案を作っています…" : "画像の提案を作る"}
+          </button>
+        )}
+        {message && <Notice tone={message.tone} title={message.text} />}
+      </div>
+    );
   }
   const items = [...(ideas.eyecatch ? [{ ...ideas.eyecatch, slot: "eyecatch", label: "アイキャッチ" }] : []), ...ideas.perHeading.map((i) => ({ ...i, slot: slotOf(i.heading), label: i.heading }))];
   const missing = items.filter((i) => !images.some((m) => m.slot === i.slot));

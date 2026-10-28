@@ -316,6 +316,18 @@ export class RemoteBackend {
       return { images: json.images ?? [], failed: json.failed ?? 0 };
     },
 
+    generateImageIdeas: async (articleId) => {
+      this.requireUser();
+      const res = await fetch(`/api/articles/${encodeURIComponent(articleId)}/image-ideas`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ idempotencyKey: crypto.randomUUID() }),
+      }).catch(() => null);
+      const json = (await res?.json().catch(() => ({}))) as { code?: string; message?: string };
+      await this.load();
+      if (!res?.ok) throw new ApiError((json.code ?? "provider_error") as "provider_error", json.message ?? "画像の提案を作れませんでした。もう一度お試しください");
+    },
+
     saveVersion: async (articleId, input: { title: string; body: Block[]; outline?: { heading: string }[] }, expectedLock) => {
       this.requireUser();
       const a = this.article(articleId);

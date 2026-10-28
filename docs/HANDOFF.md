@@ -35,6 +35,16 @@
 
 ## 記録
 
+### 2026-10-28 CC（Claude、プロジェクトのスレッド）その15
+- ブランチ / コミット：claude/project-thread-rey7mz（PR #14 マージ後の main から作り直し）
+- 変更点：
+  - 記事の画面の補助情報タブ（要確認・コメント・AIの点検・画像・回答・指導方針）を、枠付きのボタン3列にし、上に「見たいものを選んでください」を付けた。田村さんが「画像」タブを見つけられなかったため
+  - 検証環境の第2版で、画像の提案（Gemini）の工程だけが失敗していた（generation_settings.steps の images が ok:false）。返答の上限を 6000 → 16000 に広げ（IMAGE_IDEAS_MAX_TOKENS）、失敗の種類を steps[].error に残すようにした
+  - 「画像」タブに提案が無いとき「画像の提案を作る」ボタンを出し、提案だけを作り直す（src/app/api/articles/[id]/image-ideas/route.ts、server.ts の runImageIdeas）。試作（src/mock/store.tsx）にも同じ操作を足した
+- 確認結果：単体テスト145件、型検査、lint が通過。試作で 375px・1280px の表示と「画像の提案を作る」→ 提案と「この画像を作る」が出ることを確認
+- 未完了：検証環境で田村さんが「画像の提案を作る」→ 画像を1枚作って確かめる。失敗したら generation_runs の error_code とサーバーのログ（reason）で種類を見る
+- 次の作業と担当：CX がレビュー → 田村さんがマージ
+
 ### 2026-10-28 CC（Claude、プロジェクトのスレッド）その14
 - ブランチ / コミット：claude/project-thread-rey7mz（main から作り直し）
 - 変更点：田村さんがClaude・Geminiのキーを作り直し、OpenAIのキー（cotam-blog-vercel）と合わせて Vercel（Production・Preview）に登録。検証環境で 20261025000000_article_images.sql を実行。本物のAIで記事を1本作り、見出し案→本文→点検→書き直し（第2版）まで動いた。タイトル欄にテーマの文が残る問題を直した（src/lib/generation/server.ts の pickTitle）

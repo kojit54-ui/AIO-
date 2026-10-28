@@ -5,7 +5,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { estimateCostYen } from "@/lib/ai/cost";
 import { buildGenerationInput, type GenerationContext, InputError } from "@/lib/ai/input";
-import { AiProviderError, type AiProvider, type BodyRoles, type StepUsage, generateOutline, generateReviewedBody } from "@/lib/ai/provider";
+import { AiProviderError, type AiProvider, type BodyRoles, type StepUsage, failureReason, generateImageIdeas, generateOutline, generateReviewedBody } from "@/lib/ai/provider";
 import { ParseError } from "@/lib/ai/prompt";
 import { fromArticle, fromMonth, toArticle, toCoachingNote, toOrganization, toReferenceArticle, toTheme, toVersion, currentMonthJst } from "@/lib/remote/mapping";
 import { applyAction } from "@/lib/workflow";
@@ -165,7 +165,7 @@ export async function runGeneration(
           eyecatch: r.eyecatch,
           image_suggestions: r.imageSuggestions,
           review: r.review,
-          steps: r.steps.map((s) => ({ step: s.step, provider: s.provider, ok: s.ok })),
+          steps: r.steps.map((s) => ({ step: s.step, provider: s.provider, ok: s.ok, ...(s.error ? { error: s.error } : {}) })),
         },
       };
     }
@@ -224,6 +224,95 @@ export async function runGeneration(
     if (code === "timeout") return fail(504, "timeout", "時間内に文章を作れませんでした。入力内容は残っています");
     return fail(502, code, "文章を作れませんでした。入力内容は残っています");
   }
+}
+
+/** 画像の提案の作り直しで、失敗の種類ごとに画面へ出す文 */
+const IDEA_ERRORS: Record<string, string> = {
+  auth: "画像の提案役のAIのキーが使えません。コタムにご連絡ください",
+  rate_limited: "AIの利用上限に達しました。少し待ってからもう一度お試しください",
+  timeout: "時間内に画像の提案を作れませんでした。もう一度お試しください",
+};
+
+/**
+ * 今の版の画像の提案（アイキャッチと見出しごと）だけを作り直し、その版に書き込む。本文は変えないので新しい版は作らない。
+ * 本文を作ったときに画像の提案だけ失敗した版で使う。受付は画像の生成と同じ kind = image で数える（予算・二重実行の判定を通す）
+ */
+export async function runImageIdeas(
+  deps: { user: SupabaseClient; admin: SupabaseClient; provider: AiProvider; isSample: boolean },
+  req: { articleId: string; idempotencyKey: string },
+): Promise<GenerationOutcome> {
+  const { user: db, admin } = deps;
+  const { data: auth } = await db.auth.getUser();
+  if (!auth.user) return fail(401, "session_expired", "ログインの有効期限が切れました");
+
+  const { data: articleRow } = await db.from("articles").select("*").eq("id", req.articleId).maybeSingle();
+  if (!articleRow) return fail(404, "not_found", "記事が見つかりません");
+  const article = toArticle(articleRow);
+  const { data: membership } = await db
+    .from("memberships")
+    .select("role")
+    .eq("user_id", auth.user.id)
+    .eq("organization_id", article.organizationId)
+    .is("revoked_at", null)
+    .maybeSingle();
+  if (membership?.role !== "client_member") return fail(403, "forbidden", "画像の提案を作れるのは顧客担当者です");
+
+  const loaded = await loadGenerationContext(db, articleRow, "body");
+  if (!loaded.ok) return loaded;
+  const { ctx, base } = loaded;
+  const headings = (base?.body ?? []).flatMap((b) => (b.type === "heading" && b.level === 2 && b.text.trim() ? [b.text.trim()] : []));
+  if (!base || !headings.length) return fail(400, "invalid_input", "先に本文を作ってください");
+  let inputChars: number;
+  try {
+    inputChars = JSON.stringify(buildGenerationInput(ctx)).length;
+  } catch (e) {
+    if (e instanceof InputError) return fail(400, "invalid_input", e.message);
+    throw e;
+  }
+
+  const { data: run, error: startError } = await db
+    .rpc("start_generation", { p_article_id: req.articleId, p_kind: "image", p_idempotency_key: req.idempotencyKey, p_input_chars: inputChars })
+    .single<{ id: string; status: string }>();
+  if (startError || !run) {
+    const code = Object.keys(START_ERRORS).find((k) => startError?.message?.includes(k));
+    if (code) return fail(START_ERRORS[code][0], code, START_ERRORS[code][1]);
+    return fail(500, "provider_error", "受け付けられませんでした。もう一度お試しください");
+  }
+  if (run.status === "succeeded") return { ok: true, versionId: base.id };
+  const { data: claimed } = await admin.from("generation_runs").update({ status: "running" }).eq("id", run.id).eq("status", "queued").select("id");
+  if (!claimed?.length) return fail(409, "busy", START_ERRORS.busy[1]);
+
+  const signal = AbortSignal.timeout(TIMEOUT_MS);
+  let usage = { inputTokens: 0, outputTokens: 0 };
+  let status: "succeeded" | "failed" = "failed";
+  let reason = "other";
+  try {
+    const r = await generateImageIdeas(deps.provider, ctx, headings, { title: base.title, body: base.body }, signal);
+    usage = r.usage;
+    if (!r.eyecatch && !r.imageSuggestions.length) throw new ParseError("no ideas");
+    const { data: row } = await admin.from("article_versions").select("generation_settings").eq("id", base.id).single();
+    const { error } = await admin
+      .from("article_versions")
+      .update({ generation_settings: { ...(row?.generation_settings ?? {}), eyecatch: r.eyecatch, image_suggestions: r.imageSuggestions } })
+      .eq("id", base.id);
+    if (error) throw new Error("version update failed");
+    status = "succeeded";
+  } catch (e) {
+    reason = failureReason(e, signal);
+    // 原因の種類だけを記録する（本文や回答は出さない）
+    console.error("image ideas failed", { runId: run.id, reason });
+  }
+  const { error: finishError } = await admin.rpc("finish_generation", {
+    p_run_id: run.id,
+    p_status: status,
+    p_usage: usage,
+    p_cost_yen: Math.round(estimateCostYen(usage, deps.provider.name) * 100) / 100,
+    p_error_code: status === "failed" ? (reason === "timeout" ? "timeout" : "provider_error") : null,
+    p_result_version_id: status === "succeeded" ? base.id : null,
+  });
+  if (finishError) console.error("image ideas finish not recorded", { runId: run.id, status });
+  if (status === "succeeded") return { ok: true, versionId: base.id };
+  return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", IDEA_ERRORS[reason] ?? "画像の提案を作れませんでした。もう一度お試しください");
 }
 
 /** 生成に渡す材料（会社・今月の指導メモ・テーマ・使ってよい過去記事・回答）を読む。読み込みは呼び出し側の権限（RLS）で行う */

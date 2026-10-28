@@ -293,6 +293,23 @@ function createApi(
       return { images: mockImages.get(articleId)!, failed: 0 };
     },
 
+    /** 今の版の画像の提案だけを作り直す（サンプル）。新しい版は作らない */
+    async generateImageIdeas(articleId: string): Promise<void> {
+      const user = requireUser();
+      const db = getDb();
+      const article = getArticleForUser(db, user, articleId);
+      const version = db.versions.find((v) => v.id === article.currentVersionId);
+      const headings = (version?.body ?? []).flatMap((b) => (b.type === "heading" && b.level === 2 ? [b.text] : []));
+      if (!version || !headings.length) throw new ApiError("invalid_input", "先に本文を作ってください");
+      await delay(1200);
+      if (getSim().generationError) {
+        clearSim("generationError");
+        throw new ApiError("provider_error", "画像の提案を作れませんでした。もう一度お試しください");
+      }
+      const latest = getDb();
+      commit({ ...latest, versions: latest.versions.map((v) => (v.id === version.id ? { ...v, imageIdeas: sampleAiExtras(headings).imageIdeas } : v)) });
+    },
+
     /** 見出し案を作る（サンプル）。新しい版を作る */
     async generateOutline(articleId: string) {
       const user = requireUser();
