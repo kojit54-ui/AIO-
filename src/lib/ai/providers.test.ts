@@ -166,6 +166,8 @@ describe("Google（文章）", () => {
     await expect(make({ candidates: [{ finishReason: "MAX_TOKENS" }] }).complete(req)).rejects.toMatchObject({ code: "truncated" });
     await expect(make(Object.assign(new Error("x"), { status: 403 }), true).complete(req)).rejects.toMatchObject({ code: "auth" });
     await expect(make(Object.assign(new Error("x"), { status: 429 }), true).complete(req)).rejects.toMatchObject({ code: "rate_limited" });
+    // 前払いのクレジットが無いときは、キー違いと分けて伝える
+    await expect(make(Object.assign(new Error("x"), { status: 402 }), true).complete(req)).rejects.toMatchObject({ code: "billing" });
   });
 });
 
