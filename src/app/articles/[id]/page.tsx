@@ -54,7 +54,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
   const [conflict, setConflict] = useState(false);
   const [publishOpen, setPublishOpen] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
-  const [tab, setTab] = useState<"answers" | "policy" | "facts" | "comments" | "images" | "aiReview">(isCoach ? "comments" : "facts");
+  const [tab, setTab] = useState<"answers" | "policy" | "facts" | "comments" | "aiReview">(isCoach ? "comments" : "facts");
   const [mobileView, setMobileView] = useState<"body" | "side">("body");
 
   // 未保存のまま閉じようとしたら確認する
@@ -186,7 +186,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           本文
         </button>
         <button role="tab" aria-selected={mobileView === "side"} className={mobileView === "side" ? "btn-primary" : "btn-secondary"} onClick={() => setMobileView("side")}>
-          {isCoach ? "レビュー・コメント" : `確認事項・回答${unchecked > 0 ? `（未確認${unchecked}）` : ""}`}
+          {isCoach ? "レビュー・コメント" : `画像・確認事項${unchecked > 0 ? `（未確認${unchecked}）` : ""}`}
         </button>
       </div>
 
@@ -252,6 +252,12 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
 
           {isCoach && <CoachReview article={article} onError={handleError} />}
 
+          <section className="card" aria-labelledby="images-heading">
+            <h2 id="images-heading" className="mb-1 font-semibold">画像</h2>
+            <p className="mb-3 text-sm text-muted">アイキャッチと、見出しごとの画像です。</p>
+            <ImagePanel article={article} version={version} canGenerate={!isCoach} />
+          </section>
+
           <div className="card">
             <p className="mb-2 text-sm text-muted">見たいものを選んでください</p>
             <div className="mb-3 grid grid-cols-3 gap-2" role="tablist" aria-label="補助情報">
@@ -260,7 +266,6 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
                   ["facts", `要確認${unchecked ? `(${unchecked})` : ""}`],
                   ["comments", `コメント${reviews.length ? `(${reviews.length})` : ""}`],
                   ["aiReview", "AIの点検"],
-                  ["images", "画像"],
                   ["answers", "回答"],
                   ["policy", "指導方針"],
                 ] as const
@@ -279,7 +284,6 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
             {tab === "facts" && <FactPanel facts={facts} readOnly={isCoach} />}
             {tab === "comments" && <CommentPanel reviews={reviews} />}
             {tab === "aiReview" && <AiReviewPanel version={version} />}
-            {tab === "images" && <ImagePanel article={article} version={version} canGenerate={!isCoach} />}
             {tab === "answers" && <AnswerPanel version={version} />}
             {tab === "policy" && <PolicyPanel orgId={article.organizationId} />}
           </div>

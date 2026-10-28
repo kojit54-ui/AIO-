@@ -231,6 +231,9 @@ const IDEA_ERRORS: Record<string, string> = {
   auth: "画像の提案役のAIのキーが使えません。コタムにご連絡ください",
   rate_limited: "AIの利用上限に達しました。少し待ってからもう一度お試しください",
   timeout: "時間内に画像の提案を作れませんでした。もう一度お試しください",
+  truncated: "画像の提案を作れませんでした（AIの返事が途中で切れました）。もう一度お試しください",
+  parse: "画像の提案を作れませんでした（AIの返事を読み取れませんでした）。もう一度お試しください",
+  refused: "画像の提案を作れませんでした（AIが断りました）。もう一度お試しください",
 };
 
 /**
@@ -286,6 +289,8 @@ export async function runImageIdeas(
   let usage = { inputTokens: 0, outputTokens: 0 };
   let status: "succeeded" | "failed" = "failed";
   let reason = "other";
+  // 提供元の失敗の文（状態コードだけを含み、本文やキーは含まない）。原因を画面で確かめられるようにする
+  let detail = "";
   try {
     const r = await generateImageIdeas(deps.provider, ctx, headings, { title: base.title, body: base.body }, signal);
     usage = r.usage;
@@ -299,6 +304,7 @@ export async function runImageIdeas(
     status = "succeeded";
   } catch (e) {
     reason = failureReason(e, signal);
+    if (e instanceof AiProviderError && e.code === "unavailable") detail = e.message;
     // 原因の種類だけを記録する（本文や回答は出さない）
     console.error("image ideas failed", { runId: run.id, reason });
   }
@@ -312,7 +318,7 @@ export async function runImageIdeas(
   });
   if (finishError) console.error("image ideas finish not recorded", { runId: run.id, status });
   if (status === "succeeded") return { ok: true, versionId: base.id };
-  return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", IDEA_ERRORS[reason] ?? "画像の提案を作れませんでした。もう一度お試しください");
+  return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", IDEA_ERRORS[reason] ?? `画像の提案を作れませんでした（${detail || reason}）。もう一度お試しください`);
 }
 
 /** 生成に渡す材料（会社・今月の指導メモ・テーマ・使ってよい過去記事・回答）を読む。読み込みは呼び出し側の権限（RLS）で行う */
