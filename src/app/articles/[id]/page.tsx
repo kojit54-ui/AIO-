@@ -253,7 +253,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           {isCoach && <CoachReview article={article} onError={handleError} />}
 
           <div className="card">
-            <div className="mb-3 flex flex-wrap gap-1" role="tablist" aria-label="補助情報">
+            <p className="mb-2 text-sm text-muted">見たいものを選んでください</p>
+            <div className="mb-3 grid grid-cols-3 gap-2" role="tablist" aria-label="補助情報">
               {(
                 [
                   ["facts", `要確認${unchecked ? `(${unchecked})` : ""}`],
@@ -268,7 +269,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
                   key={key}
                   role="tab"
                   aria-selected={tab === key}
-                  className={`rounded-md px-3 py-1 text-sm ${tab === key ? "bg-brand text-white" : "bg-canvas"}`}
+                  className={`rounded-md border px-2 py-2 text-sm font-medium ${tab === key ? "border-brand bg-brand text-white" : "border-line bg-surface text-brand hover:bg-brand-soft"}`}
                   onClick={() => setTab(key)}
                 >
                   {label}
