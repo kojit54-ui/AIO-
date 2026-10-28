@@ -304,12 +304,12 @@ export class RemoteBackend {
       return { enabled: json.enabled === true, unitCostYen: json.unitCostYen ?? 0, images: json.images ?? [] };
     },
 
-    generateImages: async (articleId, slots) => {
+    generateImages: async (articleId, slots, look) => {
       this.requireUser();
       const res = await fetch(`/api/articles/${encodeURIComponent(articleId)}/images`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ slots, idempotencyKey: crypto.randomUUID() }),
+        body: JSON.stringify({ slots, idempotencyKey: crypto.randomUUID(), ...look }),
       }).catch(() => null);
       const json = (await res?.json().catch(() => ({}))) as { images?: ArticleImage[]; failed?: number; code?: string; message?: string };
       if (!res?.ok) throw new ApiError((json.code ?? "provider_error") as "provider_error", json.message ?? "画像を作れませんでした。もう一度お試しください");

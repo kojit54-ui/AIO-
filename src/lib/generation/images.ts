@@ -4,7 +4,7 @@
 // 受付の判定（二重実行・記事ごとの回数・予算）はDBの start_generation が行う（kind = image）。
 
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { generateHeadingImage, type ImageProvider } from "@/lib/ai/images";
+import { generateHeadingImage, type ImageProvider, type ImageStyle } from "@/lib/ai/images";
 import { AiProviderError } from "@/lib/ai/provider";
 import { slotOf } from "@/lib/imageSlot";
 import { toArticle, toVersion } from "@/lib/remote/mapping";
@@ -75,7 +75,7 @@ async function ensureBucket(admin: SupabaseClient) {
 
 export async function runImageGeneration(
   deps: { user: SupabaseClient; admin: SupabaseClient; provider: ImageProvider; isSample: boolean },
-  req: { articleId: string; slots: string[]; idempotencyKey: string },
+  req: { articleId: string; slots: string[]; idempotencyKey: string; style?: ImageStyle; mood?: string },
 ): Promise<ImageOutcome> {
   const { user: db, admin } = deps;
   const { data: auth } = await db.auth.getUser();
@@ -144,7 +144,7 @@ export async function runImageGeneration(
   // 枠ごとに並べて作る。1枚が失敗しても、できた分は残す
   const results = await Promise.allSettled(
     targets.map(async ({ slot, idea }, i) => {
-      const img = await generateHeadingImage(deps.provider, idea, signal);
+      const img = await generateHeadingImage(deps.provider, idea, signal, { style: req.style, mood: req.mood });
       const path = `${article.organizationId}/${article.id}/${slot === "eyecatch" ? "eyecatch" : `h${i}`}-${stamp}.${EXT[img.mimeType] ?? "png"}`;
       const { error: upErr } = await admin.storage.from(IMAGE_BUCKET).upload(path, Buffer.from(img.base64, "base64"), { contentType: img.mimeType });
       if (upErr) throw new Error("upload failed");
