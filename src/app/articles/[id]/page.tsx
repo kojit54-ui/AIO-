@@ -10,6 +10,7 @@ import { ApiError, useStore } from "@/mock/store";
 import { blocksToHtml, blocksToPlainText } from "@/lib/exportText";
 import { slotOf } from "@/lib/imageSlot";
 import { MAX_HEADINGS } from "@/lib/limits";
+import { MAX_IMAGE_MOOD, type ImageStyle } from "@/lib/ai/images";
 import { canApply } from "@/lib/workflow";
 import type { AiReviewCategory, Article, ArticleImage, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
 
@@ -489,6 +490,24 @@ function AiReviewPanel({ version }: { version: ArticleVersion }) {
   );
 }
 
+const IMAGE_STYLE_OPTIONS: readonly (readonly [ImageStyle, string])[] = [
+  ["photo", "写真風"],
+  ["illustration", "イラスト風"],
+  ["site", "サイトに合わせる"],
+];
+
+type ImageLook = { style: ImageStyle; mood: string };
+
+function readLook(key: string): ImageLook {
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) ?? "null") as Partial<ImageLook> | null;
+    if (saved && IMAGE_STYLE_OPTIONS.some(([k]) => k === saved.style)) return { style: saved.style!, mood: (saved.mood ?? "").slice(0, MAX_IMAGE_MOOD) };
+  } catch {
+    // 読めない環境（サーバー側の描画、保存の禁止）ではイラスト風から始める
+  }
+  return { style: "illustration", mood: "" };
+}
+
 /** 画像（Gemini）：アイキャッチと見出しごとの提案と、ナノバナナで作った画像 */
 function ImagePanel({ article, version, canGenerate }: { article: Article; version: ArticleVersion; canGenerate: boolean }) {
   const { api } = useStore();
@@ -497,6 +516,18 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
   const [unitCost, setUnitCost] = useState(0);
   const [busy, setBusy] = useState<string | null>(null);
   const [message, setMessage] = useState<{ tone: "danger" | "warn"; text: string } | null>(null);
+  const lookKey = `imageLook:${article.organizationId}`;
+  // 作風とサイトの雰囲気は、この端末で会社ごとに覚えておく（毎回選び直さなくてよいように）
+  const [look, setLook] = useState(() => readLook(lookKey));
+
+  function changeLook(next: ImageLook) {
+    setLook(next);
+    try {
+      localStorage.setItem(lookKey, JSON.stringify(next));
+    } catch {
+      // 覚えられなくても作るのには困らない
+    }
+  }
 
   useEffect(() => {
     let alive = true;
@@ -543,7 +574,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
     setBusy(key);
     setMessage(null);
     try {
-      const r = await api.generateImages(article.id, slots);
+      const r = await api.generateImages(article.id, slots, look);
       setImages(r.images);
       if (r.failed) setMessage({ tone: "warn", text: `${r.failed}枚は作れませんでした。もう一度お試しください` });
     } catch (e) {
@@ -557,11 +588,40 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
   return (
     <div className="space-y-3 text-sm">
       {showButtons && (
+        <fieldset className="space-y-2">
+          <legend className="mb-1 font-semibold">作風を選んでから作ります</legend>
+          <div className="grid grid-cols-3 gap-2">
+            {IMAGE_STYLE_OPTIONS.map(([key, label]) => (
+              <label
+                key={key}
+                className={`flex cursor-pointer items-center justify-center rounded-md border px-2 py-2 text-center font-medium ${look.style === key ? "border-brand bg-brand text-white" : "border-line bg-surface text-brand hover:bg-brand-soft"}`}
+              >
+                <input type="radio" name="image-style" value={key} className="sr-only" checked={look.style === key} onChange={() => changeLook({ ...look, style: key })} />
+                {label}
+              </label>
+            ))}
+          </div>
+          {look.style === "site" && (
+            <label className="block space-y-1">
+              <span className="block text-xs text-muted">サイトの雰囲気（色・質感・明るさなど）。一度書けば、この端末では次回も使います</span>
+              <textarea
+                className="field"
+                rows={2}
+                maxLength={MAX_IMAGE_MOOD}
+                placeholder="例：白と若草色が基調。木のぬくもりがある明るい写真が多い"
+                value={look.mood}
+                onChange={(e) => changeLook({ ...look, mood: e.target.value })}
+              />
+            </label>
+          )}
+        </fieldset>
+      )}
+      {showButtons && (
         <div className="space-y-1">
-          <button type="button" className="btn-primary w-full" disabled={busy !== null || !missing.length} onClick={() => generate(missing.map((i) => i.slot), "all")}>
+          <button type="button" className="btn-primary w-full" disabled={busy !== null || !missing.length || (look.style === "site" && !look.mood.trim())} onClick={() => generate(missing.map((i) => i.slot), "all")}>
             {busy === "all" ? "画像を作っています…" : missing.length ? `まだ無い画像を作る（${missing.length}枚${unitCost ? `・約${missing.length * unitCost}円` : ""}）` : "すべての画像があります"}
           </button>
-          <p className="text-xs text-muted">文字の入らない説明用のイラストを作ります。実際の写真があれば、そちらを使ってください。</p>
+          <p className="text-xs text-muted">文字は入れずに作ります。実際の写真があれば、そちらを使ってください。</p>
         </div>
       )}
       {message && <Notice tone={message.tone} title={message.text} />}
@@ -588,7 +648,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
                     </a>
                   )}
                   {showButtons && (
-                    <button type="button" className="btn-secondary min-h-9 px-3 py-1 text-sm" disabled={busy !== null} onClick={() => generate([s.slot], s.slot)}>
+                    <button type="button" className="btn-secondary min-h-9 px-3 py-1 text-sm" disabled={busy !== null || (look.style === "site" && !look.mood.trim())} onClick={() => generate([s.slot], s.slot)}>
                       {busy === s.slot ? "作っています…" : `${img ? "作り直す" : "この画像を作る"}${unitCost ? `（約${unitCost}円）` : ""}`}
                     </button>
                   )}

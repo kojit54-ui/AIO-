@@ -2,6 +2,7 @@
 
 import { type NextRequest, NextResponse } from "next/server";
 import { getAiSetup } from "@/lib/ai/config";
+import { IMAGE_STYLES, MAX_IMAGE_MOOD, type ImageStyle } from "@/lib/ai/images";
 import { sampleImageProvider } from "@/lib/ai/providers/sample";
 import { imageCostYen, listArticleImages, runImageGeneration } from "@/lib/generation/images";
 import { createAdminSupabase } from "@/lib/supabase/admin";
@@ -31,18 +32,22 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
 export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!isSupabaseConfigured()) return notConfigured();
   const { id } = await params;
-  const body = (await request.json().catch(() => null)) as { slots?: unknown; idempotencyKey?: unknown } | null;
+  const body = (await request.json().catch(() => null)) as { slots?: unknown; idempotencyKey?: unknown; style?: unknown; mood?: unknown } | null;
   // 枚数の上限はサーバー側で数え、作らなかった分は failed で返す。ありえない数の指定は黙って切らずに断る
   const slots = Array.isArray(body?.slots) ? body.slots.filter((s): s is string => typeof s === "string") : [];
   if (slots.length > 50) return NextResponse.json({ code: "invalid_input", message: "一度に選べる画像の数を超えています" }, { status: 400 });
   const idempotencyKey = typeof body?.idempotencyKey === "string" ? body.idempotencyKey : "";
   if (!idempotencyKey) return NextResponse.json({ code: "invalid_input", message: "入力の内容を確認してください" }, { status: 400 });
+  // 作風は決まった値だけ受け付ける。雰囲気のメモは長すぎれば断る
+  const style = IMAGE_STYLES.includes(body?.style as ImageStyle) ? (body!.style as ImageStyle) : "illustration";
+  const mood = typeof body?.mood === "string" ? body.mood.trim() : "";
+  if (mood.length > MAX_IMAGE_MOOD) return NextResponse.json({ code: "invalid_input", message: `サイトの雰囲気は${MAX_IMAGE_MOOD}文字までです` }, { status: 400 });
   const setup = getAiSetup();
   if (setup.imageMode !== "generate") return NextResponse.json({ code: "forbidden", message: "画像の生成は止めてあります" }, { status: 403 });
 
   const result = await runImageGeneration(
     { user: await createServerSupabase(), admin: createAdminSupabase(), provider: setup.image, isSample: setup.image === sampleImageProvider },
-    { articleId: id, slots, idempotencyKey },
+    { articleId: id, slots, idempotencyKey, style, mood },
   );
   return result.ok
     ? NextResponse.json({ images: result.images, failed: result.failed })

@@ -25,6 +25,7 @@ import type {
   Theme,
 } from "@/types/domain";
 import { slotOf } from "@/lib/imageSlot";
+import type { ImageStyle } from "@/lib/ai/images";
 import { applyAction, type ArticleAction, TransitionError } from "@/lib/workflow";
 import { getSupabaseEnv } from "@/lib/supabase/env";
 import { RemoteBackend } from "@/lib/remote/backend";
@@ -274,7 +275,9 @@ function createApi(
     },
 
     /** 画像を作る（サンプル）。slots が空なら、今の版の提案すべて */
-    async generateImages(articleId: string, slots: string[]): Promise<{ images: ArticleImage[]; failed: number }> {
+    // look（作風とサイトの雰囲気）はサンプルでは使わない。本番と同じ形で受け取る
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async generateImages(articleId: string, slots: string[], look?: { style: ImageStyle; mood: string }): Promise<{ images: ArticleImage[]; failed: number }> {
       const user = requireUser();
       const db = getDb();
       const article = getArticleForUser(db, user, articleId);
