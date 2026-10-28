@@ -46,6 +46,16 @@ const sumUsage = (steps: StepUsage[]) => ({
 });
 const sumCost = (steps: StepUsage[]) => Math.round(steps.reduce((n, s) => n + estimateCostYen(s.usage, s.provider), 0) * 100) / 100;
 
+/**
+ * 版のタイトル。利用者が直したタイトルは残し、まだテーマの文のままならAIのタイトル案の1つ目を使う。
+ * テーマの文は「読者の悩み」まで含む長い説明のことがあり、そのまま記事のタイトルにすると読みにくい
+ */
+export function pickTitle(current: string | undefined, themeTitle: string, candidates: string[]): string {
+  const edited = current?.trim() && current.trim() !== themeTitle.trim();
+  if (edited) return current!.trim();
+  return candidates.find((c) => c.trim())?.trim() ?? current?.trim() ?? themeTitle;
+}
+
 export async function runGeneration(
   deps: { user: SupabaseClient; admin: SupabaseClient; provider: AiProvider; isSample: boolean; roles?: Omit<BodyRoles, "writer"> },
   req: GenerationRequest,
@@ -127,7 +137,7 @@ export async function runGeneration(
       usage = r.usage;
       cost = estimateCostYen(usage, deps.provider.name);
       version = {
-        title: base?.title || theme.title,
+        title: pickTitle(base?.title, theme.title, r.titleCandidates),
         title_candidates: r.titleCandidates,
         outline: r.outline,
         body: [],
@@ -145,7 +155,7 @@ export async function runGeneration(
       cost = sumCost(r.steps);
       checks = r.factChecks;
       version = {
-        title: base?.title || r.titleCandidates[0] || theme.title,
+        title: pickTitle(base?.title, theme.title, r.titleCandidates),
         title_candidates: r.titleCandidates.length ? r.titleCandidates : (base?.titleCandidates ?? []),
         outline: headings.map((heading) => ({ heading })),
         body: r.body,
