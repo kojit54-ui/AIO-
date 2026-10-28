@@ -229,6 +229,7 @@ export async function runGeneration(
 /** 画像の提案の作り直しで、失敗の種類ごとに画面へ出す文 */
 const IDEA_ERRORS: Record<string, string> = {
   auth: "画像の提案役のAIのキーが使えません。コタムにご連絡ください",
+  billing: "画像の提案役のAI（Google）のクレジット残高が足りません。コタムにご連絡ください",
   rate_limited: "AIの利用上限に達しました。少し待ってからもう一度お試しください",
   timeout: "時間内に画像の提案を作れませんでした。もう一度お試しください",
   truncated: "画像の提案を作れませんでした（AIの返事が途中で切れました）。もう一度お試しください",

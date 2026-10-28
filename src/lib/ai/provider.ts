@@ -45,7 +45,7 @@ export interface AiProvider {
 /** 提供元の失敗を、画面で出し分けられる種類にまとめる */
 export class AiProviderError extends Error {
   constructor(
-    public readonly code: "auth" | "rate_limited" | "refused" | "truncated" | "unavailable",
+    public readonly code: "auth" | "billing" | "rate_limited" | "refused" | "truncated" | "unavailable",
     message: string,
   ) {
     super(message);
