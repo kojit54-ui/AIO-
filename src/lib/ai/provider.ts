@@ -10,6 +10,7 @@ import {
   parseImageIdeas,
   parseOutlineResult,
   parseReviewResult,
+  ParseError,
   REVIEW_SYSTEM_PROMPT,
   SYSTEM_PROMPT,
   type BodyResult,
@@ -44,7 +45,7 @@ export interface AiProvider {
 /** 提供元の失敗を、画面で出し分けられる種類にまとめる */
 export class AiProviderError extends Error {
   constructor(
-    public readonly code: "auth" | "rate_limited" | "refused" | "truncated" | "unavailable",
+    public readonly code: "auth" | "billing" | "rate_limited" | "refused" | "truncated" | "unavailable",
     message: string,
   ) {
     super(message);
@@ -76,6 +77,35 @@ export async function generateBody(
   return { ...result, factChecks: mergeFactChecks(result), usage: res.usage };
 }
 
+/**
+ * 画像の提案の返答の上限。Gemini は考えた分も上限に数えるため、アイキャッチと見出し12個分の提案に考える分を足しても切れない量にする。
+ * 2026-10-28 に 6000 では途中で切れ、提案が空になった（docs/LESSONS.md）
+ */
+export const IMAGE_IDEAS_MAX_TOKENS = 16000;
+
+const imageIdeasRequest = (input: ReturnType<typeof buildGenerationInput>, headings: string[], draft: { title: string; body: BodyResult["body"] }) =>
+  ({ kind: "images", system: IMAGE_SYSTEM_PROMPT, user: buildUserPrompt("images", input, headings, { draft }), maxOutputTokens: IMAGE_IDEAS_MAX_TOKENS }) as const;
+
+/** 画像の提案だけを作る。本文を作ったときに提案が作れなかった版で、あとから作り直すときに使う */
+export async function generateImageIdeas(
+  provider: AiProvider,
+  ctx: GenerationContext,
+  headings: string[],
+  draft: { title: string; body: BodyResult["body"] },
+  signal?: AbortSignal,
+): Promise<ImageIdeas & { usage: AiUsage }> {
+  const res = await provider.complete({ ...imageIdeasRequest(buildGenerationInput(ctx), headings, draft), signal });
+  return { ...parseImageIdeas(res.text), usage: res.usage };
+}
+
+/** 失敗の種類だけを記録用にまとめる（本文や返答の中身は残さない） */
+export function failureReason(e: unknown, signal?: AbortSignal): string {
+  if (e instanceof AiProviderError) return e.code;
+  if (e instanceof ParseError) return "parse";
+  if (signal?.aborted) return "timeout";
+  return "other";
+}
+
 /** 本文の工程の役割。見出し案は書き手だけで作る */
 export interface BodyRoles {
   writer: AiProvider;
@@ -89,6 +119,8 @@ export interface StepUsage {
   provider: string;
   usage: AiUsage;
   ok: boolean;
+  /** 失敗したときの種類（failureReason） */
+  error?: string;
 }
 
 export interface ReviewedBodyResult extends BodyResult, ImageIdeas {
@@ -124,8 +156,8 @@ export async function generateReviewedBody(
       const parsed = parse(res.text);
       steps.push({ step, provider: provider.name, usage, ok: true });
       return parsed;
-    } catch {
-      steps.push({ step, provider: provider.name, usage, ok: false });
+    } catch (e) {
+      steps.push({ step, provider: provider.name, usage, ok: false, error: failureReason(e, signal) });
       return null;
     }
   };
@@ -144,7 +176,7 @@ export async function generateReviewedBody(
   };
   const [{ review, final }, images] = await Promise.all([
     reviewAndRewrite(),
-    optional("images", roles.imageIdeas, { kind: "images", system: IMAGE_SYSTEM_PROMPT, user: buildUserPrompt("images", input, headings, { draft }), maxOutputTokens: 6000 }, parseImageIdeas),
+    optional("images", roles.imageIdeas, imageIdeasRequest(input, headings, draft), parseImageIdeas),
   ]);
 
   return {

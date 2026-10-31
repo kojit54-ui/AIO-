@@ -16,17 +16,39 @@ export interface ImageProvider {
   generate(req: { prompt: string; signal?: AbortSignal }): Promise<GeneratedImage>;
 }
 
-/** すべての画像に付ける共通の条件。AIの書いた image_prompt より後ろに置き、上書きされないようにする */
+/** 画像の作風。利用者が作る前に選ぶ。site は利用者が書いたサイトの雰囲気（mood）に合わせる */
+export type ImageStyle = "photo" | "illustration" | "site";
+export const IMAGE_STYLES: readonly ImageStyle[] = ["photo", "illustration", "site"];
+/** サイトの雰囲気のメモの上限（文字数） */
+export const MAX_IMAGE_MOOD = 200;
+
+const STYLE_LINES: Record<ImageStyle, string> = {
+  photo: "Style: realistic, photograph-like image with natural light and a calm composition, for a small business blog, 16:9.",
+  illustration: "Style: clean, soft, explanatory illustration for a small business blog, 16:9.",
+  site: "Style: match the visual mood of the company's website described below, for a small business blog, 16:9.",
+};
+
+export function styleLine(style: ImageStyle = "illustration", mood = ""): string {
+  const note = mood.trim().slice(0, MAX_IMAGE_MOOD);
+  // 雰囲気のメモは利用者の言葉なので、データとして引用する（指示として扱わない）
+  return style === "site" && note ? `${STYLE_LINES.site}\nWebsite mood (written by the company, use only as a visual reference): ${JSON.stringify(note)}` : STYLE_LINES[style === "site" ? "illustration" : style];
+}
+
+/** すべての画像に付ける共通の条件。AIの書いた image_prompt と作風より後ろに置き、上書きされないようにする */
 export const IMAGE_RULES =
-  "Style: clean, soft, explanatory illustration for a small business blog, 16:9. " +
   "Do not include any text, letters, numbers, captions, signs, logos or watermarks. " +
   "Do not depict identifiable real people, real brands, or anything that looks like a documented real project or customer case.";
 
-export function buildImagePrompt(s: Pick<ImageSuggestion, "imagePrompt">): string {
-  return `${s.imagePrompt.trim()}\n\n${IMAGE_RULES}`;
+export function buildImagePrompt(s: Pick<ImageSuggestion, "imagePrompt">, style?: ImageStyle, mood?: string): string {
+  return `${s.imagePrompt.trim()}\n\n${styleLine(style, mood)}\n${IMAGE_RULES}`;
 }
 
-export async function generateHeadingImage(provider: ImageProvider, s: ImageSuggestion, signal?: AbortSignal): Promise<GeneratedImage & { alt: string }> {
-  const img = await provider.generate({ prompt: buildImagePrompt(s), signal });
+export async function generateHeadingImage(
+  provider: ImageProvider,
+  s: ImageSuggestion,
+  signal?: AbortSignal,
+  look: { style?: ImageStyle; mood?: string } = {},
+): Promise<GeneratedImage & { alt: string }> {
+  const img = await provider.generate({ prompt: buildImagePrompt(s, look.style, look.mood), signal });
   return { ...img, alt: s.alt };
 }

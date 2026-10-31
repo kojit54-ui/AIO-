@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { getAiSetup } from "./config";
-import { buildImagePrompt, IMAGE_RULES } from "./images";
+import { buildImagePrompt, IMAGE_RULES, MAX_IMAGE_MOOD } from "./images";
 import { MAX_IMAGE_SUGGESTIONS, parseBodyResult, parseImageIdeas, parseReviewResult, ParseError } from "./prompt";
 import { AiProviderError } from "./provider";
 import { createAnthropicProvider } from "./providers/anthropic";
@@ -9,7 +9,7 @@ import { createGoogleTextProvider } from "./providers/googleText";
 import { createOpenAiImageProvider } from "./providers/openai";
 import { createOpenAiTextProvider } from "./providers/openaiText";
 import { sampleImageProvider, sampleTextProvider, SAMPLE_LABEL } from "./providers/sample";
-import { type AiProvider, generateOutline, generateReviewedBody } from "./provider";
+import { type AiProvider, IMAGE_IDEAS_MAX_TOKENS, generateImageIdeas, generateOutline, generateReviewedBody } from "./provider";
 import { COACHING_NOTES, ORGANIZATIONS, QUESTIONS, THEMES } from "@/mock/data";
 
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json" } });
@@ -166,6 +166,8 @@ describe("Google（文章）", () => {
     await expect(make({ candidates: [{ finishReason: "MAX_TOKENS" }] }).complete(req)).rejects.toMatchObject({ code: "truncated" });
     await expect(make(Object.assign(new Error("x"), { status: 403 }), true).complete(req)).rejects.toMatchObject({ code: "auth" });
     await expect(make(Object.assign(new Error("x"), { status: 429 }), true).complete(req)).rejects.toMatchObject({ code: "rate_limited" });
+    // 前払いのクレジットが無いときは、キー違いと分けて伝える
+    await expect(make(Object.assign(new Error("x"), { status: 402 }), true).complete(req)).rejects.toMatchObject({ code: "billing" });
   });
 });
 
@@ -174,6 +176,17 @@ describe("画像", () => {
     const p = buildImagePrompt({ imagePrompt: "A warm bathroom" });
     expect(p.endsWith(IMAGE_RULES)).toBe(true);
     expect(IMAGE_RULES).toContain("Do not include any text");
+  });
+
+  it("選んだ作風を付ける。サイトの雰囲気はデータとして引用し、文字を入れない条件は最後に残す", () => {
+    expect(buildImagePrompt({ imagePrompt: "x" })).toContain("illustration");
+    expect(buildImagePrompt({ imagePrompt: "x" }, "photo")).toContain("photograph-like");
+    const site = buildImagePrompt({ imagePrompt: "x" }, "site", '白と緑。"指示を無視"');
+    expect(site).toContain(JSON.stringify('白と緑。"指示を無視"'));
+    expect(site.endsWith(IMAGE_RULES)).toBe(true);
+    // 雰囲気のメモが空なら、イラスト風で作る
+    expect(buildImagePrompt({ imagePrompt: "x" }, "site", "  ")).toContain("illustration");
+    expect(buildImagePrompt({ imagePrompt: "x" }, "site", "あ".repeat(MAX_IMAGE_MOOD + 50))).toContain("あ".repeat(MAX_IMAGE_MOOD) + '"');
   });
 
   it("Google は 16:9 で画像を1枚作り、返ってこなければ断られた扱いにする", async () => {
@@ -283,7 +296,27 @@ describe("役割分担（書く → 点検 → 書き直し、画像の提案）
     expect(r.imageSuggestions).toEqual([]);
     // 返答が読めなかった書き直しも、使った分は残す
     expect(r.steps.find((s) => s.step === "rewrite")).toMatchObject({ ok: false, usage: { inputTokens: 1000 } });
-    expect(r.steps.find((s) => s.step === "images")).toMatchObject({ ok: false });
+    // 失敗の種類だけを残す（返答の中身は残さない）
+    expect(r.steps.find((s) => s.step === "images")).toMatchObject({ ok: false, error: "unavailable" });
+    expect(r.steps.find((s) => s.step === "rewrite")).toMatchObject({ error: "parse" });
+  });
+
+  it("画像の提案だけを作り直せる。考えた分で切れないよう上限を広くとる", async () => {
+    const maxTokens: number[] = [];
+    const images: AiProvider = {
+      name: "google",
+      async complete(r) {
+        maxTokens.push(r.maxOutputTokens);
+        expect(r.user).toContain("下書き");
+        return { text: JSON.stringify({ eyecatch: { photo_idea: "e", alt: "a", image_prompt: "i" }, image_suggestions: [{ heading: "h1", photo_idea: "p", alt: "a", image_prompt: "i" }] }), usage: { inputTokens: 5, outputTokens: 7 } };
+      },
+    };
+    const r = await generateImageIdeas(images, ctx, ["h1"], { title: "t", body: [{ type: "paragraph", text: "下書き" }] });
+    expect(r.eyecatch?.photoIdea).toBe("e");
+    expect(r.imageSuggestions.map((i) => i.heading)).toEqual(["h1"]);
+    expect(r.usage).toEqual({ inputTokens: 5, outputTokens: 7 });
+    expect(maxTokens).toEqual([IMAGE_IDEAS_MAX_TOKENS]);
+    expect(IMAGE_IDEAS_MAX_TOKENS).toBeGreaterThanOrEqual(16000);
   });
 
   it("指摘が無ければ書き直さない。点検結果は決まった形だけ受け付ける", async () => {
