@@ -122,12 +122,15 @@ export default function QuestionsPage() {
       {celebrate && <Confetti />}
       {generating && <GeneratingOverlay label="見出し案を作っています" />}
       {cheer && <Cheer key={question.id} point={cheer} />}
-      <div className="animate-rise">
-        <h1 className="text-2xl font-black leading-snug sm:text-3xl">
-          {step === 0 && !showFollowUp ? "今日の1本、いっしょに書きましょう" : "その調子です！"} <Wave />
-        </h1>
-        <p className="text-muted">テーマ：{theme?.title}</p>
-        <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。</p>
+      <div className="flex animate-rise items-end justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-black leading-snug sm:text-3xl">
+            {step === 0 && !showFollowUp ? "今日の1本、いっしょに書きましょう" : "その調子です！"} <Wave />
+          </h1>
+          <p className="text-muted">テーマ：{theme?.title}</p>
+          <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。</p>
+        </div>
+        <Shiori mood={step === 0 && !showFollowUp ? "jersey-stretch" : "jersey-cheer"} className="hidden h-32 w-auto shrink-0 animate-float sm:block" />
       </div>
 
       <Road total={total} current={doneCount} label="答えは「次へ進む」で保存されます" />

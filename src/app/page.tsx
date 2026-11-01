@@ -40,7 +40,7 @@ export default function HomePage() {
           </h1>
           <p className="text-muted">今月も1本、いっしょに書きましょう。質問に答えるだけで記事になります。</p>
         </div>
-        <Shiori mood="cheer" className="hidden h-36 w-auto shrink-0 animate-float sm:block" />
+        <Shiori mood="jersey-cheer" className="hidden h-36 w-auto shrink-0 animate-float sm:block" />
       </div>
       <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
         <h2 id="policy-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">

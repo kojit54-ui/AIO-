@@ -15,7 +15,7 @@ export function EmailLogin({ next, linkError }: { next: string; linkError: boole
           <h1 className="text-2xl font-black sm:text-3xl">ようこそ</h1>
           <p className="text-muted">コタムといっしょに、AIに紹介される記事を書きましょう。</p>
         </div>
-        <Shiori mood="ask" className="h-32 w-auto shrink-0 animate-float" />
+        <Shiori mood="bow" className="h-32 w-auto shrink-0 animate-float" />
       </div>
       {linkError && (
         <Notice tone="warn" title="ログイン用のリンクが使えませんでした">

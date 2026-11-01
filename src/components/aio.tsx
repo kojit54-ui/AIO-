@@ -4,7 +4,7 @@
 
 import { AIO_POINTS } from "@/lib/aio";
 import type { AioPoint } from "@/types/domain";
-import { Toast } from "./fun";
+import { Shiori, Toast } from "./fun";
 
 const ICON_PATHS: Record<AioPoint, React.ReactNode> = {
   // 吹き出し
@@ -96,6 +96,12 @@ export function AioMeter({ points, collected }: { points: AioPoint[]; collected:
           );
         })}
       </ul>
+      {all.length > 0 && have === all.length && (
+        <div className="flex animate-pop items-center gap-3 rounded-2xl bg-sun-soft p-2">
+          <Shiori mood="right" className="h-24 w-auto shrink-0" />
+          <p className="font-bold">材料がぜんぶそろいました！AIに紹介されやすい記事になります。</p>
+        </div>
+      )}
       <div className="h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>
         <div className="h-full rounded-full bg-gradient-to-r from-sun to-brand transition-[width] duration-700" style={{ width: `${all.length ? (have / all.length) * 100 : 0}%` }} />
       </div>

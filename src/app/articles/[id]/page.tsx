@@ -136,7 +136,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
     <main className="page">
       {busy === "generate" && <GeneratingOverlay label={outlineMode ? "本文を作っています" : "新しい版を作っています"} />}
       {fresh && !outlineMode && <Confetti count={50} />}
-      {fresh && <Toast>{outlineMode ? "見出し案ができました！順番や言葉を整えましょう" : "記事ができました！読みながら整えていきましょう"}</Toast>}
+      {fresh && outlineMode && <Toast>見出し案ができました！順番や言葉を整えましょう</Toast>}
       {banner?.tone === "ok" && <Toast key={banner.message}>{banner.message}</Toast>}
       {!isCoach && <ArticleSteps article={article} outlineMode={outlineMode} />}
 
@@ -187,6 +187,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           hasNewer={db.versions.some((v) => v.articleId === article.id && v.versionNo > version.versionNo)}
         />
       </div>
+
+      {!isCoach && !outlineMode && <ShioriNote status={article.status} fresh={fresh} />}
 
       {/* スマートフォンでは本文と補助情報をタブで切り替える */}
       <div className="mb-3 grid grid-cols-2 gap-2 lg:hidden" role="tablist" aria-label="表示の切り替え">
@@ -314,6 +316,25 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
       {publishOpen && <PublishDialog article={article} policy={policy} onClose={() => setPublishOpen(false)} onError={handleError} />}
       {historyOpen && <HistoryDialog article={article} isCoach={isCoach} dirty={dirty} onClose={() => setHistoryOpen(false)} onError={handleError} />}
     </main>
+  );
+}
+
+/** しおりのひとこと。本文ができた直後・確認中・公開後だけ出す */
+function ShioriNote({ status, fresh }: { status: Article["status"]; fresh: boolean }) {
+  const note =
+    status === "published"
+      ? { mood: "jersey-done" as const, text: "公開おめでとうございます！次の1本も、いっしょに書きましょう。" }
+      : status === "in_review"
+        ? { mood: "coffee" as const, text: "コタムが確認しています。おつかれさまでした。ひと息ついてくださいね。" }
+        : fresh
+          ? { mood: "jersey-done" as const, text: "記事ができました！読みながら、言葉を自分らしく整えましょう。" }
+          : null;
+  if (!note) return null;
+  return (
+    <div className="mb-4 flex animate-rise items-end gap-3 rounded-3xl bg-surface/70 px-4 pt-2">
+      <Shiori mood={note.mood} className="h-24 w-auto shrink-0 animate-float" />
+      <p className="mb-3 font-bold">{note.text}</p>
+    </div>
   );
 }
 

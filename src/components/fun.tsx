@@ -122,9 +122,40 @@ export function Wave() {
   );
 }
 
-// 案内役の「しおり」。田村さんが用意した表情8種（public/guide/shiori-*.webp、高さ400px）
-export type ShioriMood = "ask" | "joy" | "sad" | "right" | "welldone" | "think" | "surprise" | "cheer";
-const SHIORI_WIDTH: Record<ShioriMood, number> = { ask: 323, joy: 232, sad: 216, right: 241, welldone: 237, think: 201, surprise: 266, cheer: 209 };
+// 案内役の「しおり」。田村さんが用意した表情15種（public/guide/shiori-*.webp、高さ400px）。使い分けは docs/UI.md
+export type ShioriMood =
+  | "ask"
+  | "joy"
+  | "sad"
+  | "right"
+  | "welldone"
+  | "think"
+  | "surprise"
+  | "cheer"
+  | "idea"
+  | "coffee"
+  | "point"
+  | "bow"
+  | "jersey-cheer"
+  | "jersey-stretch"
+  | "jersey-done";
+const SHIORI_WIDTH: Record<ShioriMood, number> = {
+  ask: 323,
+  joy: 232,
+  sad: 216,
+  right: 241,
+  welldone: 237,
+  think: 201,
+  surprise: 266,
+  cheer: 209,
+  idea: 231,
+  coffee: 212,
+  point: 250,
+  bow: 131,
+  "jersey-cheer": 240,
+  "jersey-stretch": 246,
+  "jersey-done": 255,
+};
 
 /** しおりの絵。場面に合わせて表情を選ぶ */
 export function Shiori({ mood, className = "h-32 w-auto" }: { mood: ShioriMood; className?: string }) {
@@ -177,7 +208,7 @@ const SCENES: Record<AioPoint, React.ReactNode> = {
   ),
   qa: (
     <>
-      <Secretary x={20} mood="joy" />
+      <Secretary x={14} mood="point" />
       <g className="animate-float" style={{ animationDelay: ".3s", transformBox: "fill-box" }}>
         <rect x={98} y={40} width={58} height={72} rx={10} fill="#fff" stroke="var(--color-line)" strokeWidth={2} />
         <path d="M108 58h38M108 72h38M108 86h26" stroke={GREEN} strokeWidth={4} strokeLinecap="round" />
@@ -200,7 +231,7 @@ const SCENES: Record<AioPoint, React.ReactNode> = {
   ),
   expertise: (
     <>
-      <Secretary x={52} mood="think" />
+      <Secretary x={50} mood="idea" />
       <text x={128} y={52} fontSize={40} fontWeight={900} fill={BLUE} className="animate-float" style={{ transformBox: "fill-box" }}>
         !
       </text>
