@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BlockEditor } from "@/components/BlockEditor";
+import { Confetti, Shiori, Toast } from "@/components/fun";
 import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, StatusBadge, formatDate } from "@/components/ui";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
@@ -67,6 +68,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
   }, [dirty]);
 
   const outlineMode = version.body.length === 0;
+  // できたばかりの版を開いたときだけ、ひとこと添える
+  const [fresh] = useState(() => !isCoach && Date.now() - new Date(version.createdAt).getTime() < 60_000);
   const readOnly = isCoach;
   const facts = db.factChecks.filter((f) => f.versionId === version.id);
   const unchecked = facts.filter((f) => f.status === "unchecked").length;
@@ -132,13 +135,17 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
   return (
     <main className="page">
       {busy === "generate" && <GeneratingOverlay label={outlineMode ? "本文を作っています" : "新しい版を作っています"} />}
+      {fresh && !outlineMode && <Confetti count={50} />}
+      {fresh && outlineMode && <Toast>見出し案ができました！順番や言葉を整えましょう</Toast>}
+      {banner?.tone === "ok" && <Toast key={banner.message}>{banner.message}</Toast>}
+      {!isCoach && <ArticleSteps article={article} outlineMode={outlineMode} />}
 
       <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <Link href={isCoach ? "/coach" : "/"} className="text-sm text-brand-dark underline">
             {isCoach ? "管理画面へ戻る" : "ホームへ戻る"}
           </Link>
-          <h1 className="text-2xl font-bold">{outlineMode ? "見出し案を確認する" : isCoach ? "記事を確認する" : "記事を整える"}</h1>
+          <h1 className="text-2xl font-black sm:text-3xl">{outlineMode ? "見出し案ができました" : isCoach ? "記事を確認する" : "記事を整える"}</h1>
           <p className="flex flex-wrap items-center gap-2 text-sm text-muted">
             <StatusBadge status={article.status} />
             <span>第{version.versionNo}版</span>
@@ -162,7 +169,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
 
       <div className="mb-4 space-y-2">
         {version.isSample && <SampleNotice />}
-        {banner && (
+        {banner && banner.tone !== "ok" && (
           <Notice tone={banner.tone} title={banner.message}>
             {banner.session && (
               <button type="button" className="underline" onClick={() => { login(user!.id); setBanner(null); }}>
@@ -180,6 +187,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           hasNewer={db.versions.some((v) => v.articleId === article.id && v.versionNo > version.versionNo)}
         />
       </div>
+
+      {!isCoach && !outlineMode && <ShioriNote status={article.status} fresh={fresh} />}
 
       {/* スマートフォンでは本文と補助情報をタブで切り替える */}
       <div className="mb-3 grid grid-cols-2 gap-2 lg:hidden" role="tablist" aria-label="表示の切り替え">
@@ -222,13 +231,13 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
         <aside className={`space-y-4 ${mobileView === "side" ? "" : "hidden lg:block"}`} aria-label="補助情報">
           {!outlineMode && !isCoach && (
             <div className="card space-y-3">
-              <p className="font-semibold">次の操作</p>
+              <p className="text-lg font-bold">次にやること</p>
               {unchecked > 0 && <Notice tone="warn" title={`未確認の箇所が${unchecked}件あります`}>確認依頼や書き出しはできますが、先に確認するのがおすすめです。</Notice>}
               <button type="button" className="btn-primary w-full" disabled={!canRequestReview || busy !== null} onClick={requestReview}>
                 コタムに確認を頼む
               </button>
               <div className="space-y-2">
-                <p className="text-sm text-muted">{approved ? "承認済みの内容です" : "承認前の下書きです"}</p>
+                <p className="text-sm text-muted">ブログに貼る文をコピー（{approved ? "承認済みの内容です" : "承認前の下書きです"}）</p>
                 <div className="grid grid-cols-3 gap-2">
                   <button type="button" className="btn-secondary px-2 text-sm" disabled={dirty} onClick={() => copy("title")}>
                     タイトル
@@ -254,7 +263,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           {isCoach && <CoachReview article={article} onError={handleError} />}
 
           <section className="card" aria-labelledby="images-heading">
-            <h2 id="images-heading" className="mb-1 font-semibold">画像</h2>
+            <h2 id="images-heading" className="mb-1 text-lg font-bold">画像</h2>
             <p className="mb-3 text-sm text-muted">アイキャッチと、見出しごとの画像です。</p>
             <ImagePanel article={article} version={version} canGenerate={!isCoach} />
           </section>
@@ -275,7 +284,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
                   key={key}
                   role="tab"
                   aria-selected={tab === key}
-                  className={`rounded-md border px-2 py-2 text-sm font-medium ${tab === key ? "border-brand bg-brand text-white" : "border-line bg-surface text-brand hover:bg-brand-soft"}`}
+                  className={`rounded-full border-2 px-2 py-1.5 text-sm font-bold transition-colors ${tab === key ? "border-brand bg-brand text-white" : "border-line bg-surface text-brand hover:border-brand"}`}
                   onClick={() => setTab(key)}
                 >
                   {label}
@@ -307,6 +316,56 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
       {publishOpen && <PublishDialog article={article} policy={policy} onClose={() => setPublishOpen(false)} onError={handleError} />}
       {historyOpen && <HistoryDialog article={article} isCoach={isCoach} dirty={dirty} onClose={() => setHistoryOpen(false)} onError={handleError} />}
     </main>
+  );
+}
+
+/** しおりのひとこと。本文ができた直後・確認中・公開後だけ出す */
+function ShioriNote({ status, fresh }: { status: Article["status"]; fresh: boolean }) {
+  const note =
+    status === "published"
+      ? { mood: "jersey-done" as const, text: "公開おめでとうございます！次の1本も、いっしょに書きましょう。" }
+      : status === "in_review"
+        ? { mood: "coffee" as const, text: "コタムが確認しています。おつかれさまでした。ひと息ついてくださいね。" }
+        : fresh
+          ? { mood: "jersey-done" as const, text: "記事ができました！読みながら、言葉を自分らしく整えましょう。" }
+          : null;
+  if (!note) return null;
+  return (
+    <div className="mb-4 flex animate-rise items-end gap-3 rounded-3xl bg-surface/70 px-4 pt-2">
+      <Shiori mood={note.mood} className="h-24 w-auto shrink-0 animate-float" />
+      <p className="mb-3 font-bold">{note.text}</p>
+    </div>
+  );
+}
+
+/** 記事ができるまでの道のり。今どこにいるかを示す */
+function ArticleSteps({ article, outlineMode }: { article: Article; outlineMode: boolean }) {
+  const steps = ["質問に答える", "見出しを決める", "本文を整える", "コタムに確認", "公開"];
+  const now = article.status === "published" ? 5 : article.status === "approved" ? 4 : article.status === "in_review" ? 3 : outlineMode ? 1 : 2;
+  return (
+    <ol className="mb-4 flex flex-wrap gap-x-1 gap-y-1.5 text-xs sm:text-sm" aria-label="記事ができるまで">
+      {steps.map((label, i) => {
+        const state = i < now ? "done" : i === now ? "now" : "todo";
+        return (
+          <li key={label} className="flex items-center gap-1">
+            <span
+              className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 font-bold sm:gap-1.5 sm:px-3 ${
+                state === "done" ? "bg-brand-soft text-brand-dark" : state === "now" ? "bg-brand text-white shadow-[0_3px_0_var(--color-brand-dark)]" : "bg-surface text-muted"
+              }`}
+              aria-current={state === "now" ? "step" : undefined}
+            >
+              <span aria-hidden>{state === "done" ? "✓" : i + 1}</span>
+              {label}
+            </span>
+            {i < steps.length - 1 && (
+              <span className="hidden text-line sm:inline" aria-hidden>
+                ━
+              </span>
+            )}
+          </li>
+        );
+      })}
+    </ol>
   );
 }
 
@@ -371,11 +430,16 @@ function TitleEditor({ title, candidates, readOnly, onChange }: { title: string;
 function OutlineEditor({ headings, onChange, onGenerate, busy }: { headings: string[]; onChange: (h: string[]) => void; onGenerate: () => void; busy: boolean }) {
   return (
     <div className="space-y-4">
-      <p>回答をもとに見出し案を作りました。順番や言葉を直してから本文を作れます。</p>
+      <div className="flex items-end gap-4">
+        <Shiori mood="welldone" className="hidden h-32 w-auto shrink-0 animate-float sm:block" />
+        <p>
+          答えてもらった内容から、記事の見出し案を作りました。順番を入れ替えたり、言葉を直したりしてから「本文を作る」を押してください。
+        </p>
+      </div>
       <ol className="space-y-2">
         {headings.map((h, i) => (
-          <li key={i} className="flex items-center gap-2">
-            <label htmlFor={`h-${i}`} className="w-8 shrink-0 text-right text-muted">
+          <li key={i} className="flex animate-rise items-center gap-2" style={{ animationDelay: `${i * 0.07}s` }}>
+            <label htmlFor={`h-${i}`} className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand font-black text-white">
               {i + 1}
             </label>
             <input id={`h-${i}`} className="field" value={h} onChange={(e) => onChange(headings.map((x, n) => (n === i ? e.target.value : x)))} />
@@ -395,8 +459,11 @@ function OutlineEditor({ headings, onChange, onGenerate, busy }: { headings: str
         {headings.length >= MAX_HEADINGS && <p className="text-sm text-muted">見出しは{MAX_HEADINGS}個までです</p>}
       </div>
       <div className="border-t border-line pt-4">
-        <button type="button" className="btn-primary" disabled={busy || headings.filter((h) => h.trim()).length === 0} onClick={onGenerate}>
+        <button type="button" className="btn-primary text-lg" disabled={busy || headings.filter((h) => h.trim()).length === 0} onClick={onGenerate}>
           この見出しで本文を作る
+          <span className="inline-block animate-nudge" aria-hidden>
+            ✨
+          </span>
         </button>
       </div>
     </div>
@@ -416,7 +483,7 @@ function FactPanel({ facts, readOnly }: { facts: ReturnType<typeof useStore>["db
   return (
     <ul className="space-y-3">
       {facts.map((f) => (
-        <li key={f.id} className="rounded-lg border border-line p-3">
+        <li key={f.id} className={`animate-rise rounded-2xl border-2 p-3 transition-colors ${f.status === "unchecked" ? "border-sun bg-sun-soft" : "border-line"}`}>
           <p className="text-xs text-muted">{KIND_LABEL[f.kind]}</p>
           <p className="font-semibold">「{f.excerpt}」</p>
           {readOnly ? (
@@ -428,7 +495,7 @@ function FactPanel({ facts, readOnly }: { facts: ReturnType<typeof useStore>["db
                   key={s.value}
                   type="button"
                   aria-pressed={f.status === s.value}
-                  className={`rounded-md border px-2 py-1 text-sm ${f.status === s.value ? "border-ok bg-ok-soft text-ok" : "border-line"}`}
+                  className={`rounded-full border-2 px-3 py-1 text-sm font-bold transition-transform active:scale-95 ${f.status === s.value ? "border-ok bg-ok-soft text-ok" : "border-line bg-surface"}`}
                   onClick={() => api.setFactCheck(f.id, f.status === s.value ? "unchecked" : s.value)}
                 >
                   {s.label}
@@ -448,7 +515,7 @@ function CommentPanel({ reviews }: { reviews: ReturnType<typeof useStore>["db"][
   return (
     <ul className="space-y-3">
       {reviews.map((r) => (
-        <li key={r.id} className="rounded-lg bg-canvas p-3">
+        <li key={r.id} className="rounded-2xl bg-canvas p-3">
           <p className="text-xs text-muted">
             {r.reviewerName}・{label[r.decision]}・{formatDate(r.createdAt)}
           </p>
@@ -479,7 +546,7 @@ function AiReviewPanel({ version }: { version: ArticleVersion }) {
       </p>
       <ul className="space-y-2">
         {r.findings.map((f, i) => (
-          <li key={i} className="rounded-md bg-canvas p-2">
+          <li key={i} className="rounded-2xl bg-canvas p-3">
             <p className="font-semibold">{REVIEW_CATEGORY_LABEL[f.category] ?? f.category}</p>
             {f.excerpt && <p className="text-muted">「{f.excerpt}」</p>}
             <p>{f.advice}</p>
@@ -594,7 +661,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
             {IMAGE_STYLE_OPTIONS.map(([key, label]) => (
               <label
                 key={key}
-                className={`flex cursor-pointer items-center justify-center rounded-md border px-2 py-2 text-center font-medium ${look.style === key ? "border-brand bg-brand text-white" : "border-line bg-surface text-brand hover:bg-brand-soft"}`}
+                className={`flex cursor-pointer items-center justify-center rounded-full border-2 px-2 py-1.5 text-center font-bold ${look.style === key ? "border-brand bg-brand text-white" : "border-line bg-surface text-brand hover:border-brand"}`}
               >
                 <input type="radio" name="image-style" value={key} className="sr-only" checked={look.style === key} onChange={() => changeLook({ ...look, style: key })} />
                 {label}
@@ -629,12 +696,12 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
         {items.map((s) => {
           const img = images.find((m) => m.slot === s.slot);
           return (
-            <li key={s.slot} className="space-y-2 rounded-md bg-canvas p-2">
+            <li key={s.slot} className="space-y-2 rounded-2xl bg-canvas p-3">
               <p className="font-semibold">{s.label}</p>
               {img && (
                 <figure className="space-y-1">
                   {/* eslint-disable-next-line @next/next/no-img-element -- 期限付きURLの画像をそのまま表示する */}
-                  <img src={img.url} alt={img.alt} className="aspect-video w-full rounded object-cover" />
+                  <img src={img.url} alt={img.alt} className="aspect-video w-full animate-pop rounded-xl object-cover" />
                   {img.isSample && <figcaption className="text-xs text-warn">サンプル（AIは未接続）</figcaption>}
                 </figure>
               )}
@@ -797,7 +864,7 @@ function HistoryDialog({ article, isCoach, dirty, onClose, onError }: { article:
     <Dialog title="版の履歴" onClose={onClose}>
       <ul className="max-h-80 space-y-2 overflow-y-auto">
         {versions.map((v) => (
-          <li key={v.id} className="flex items-center justify-between gap-2 rounded-lg border border-line p-2">
+          <li key={v.id} className="flex items-center justify-between gap-2 rounded-2xl border border-line p-3">
             <span className="min-w-0">
               <span className="block font-semibold">
                 第{v.versionNo}版{v.id === article.currentVersionId && "（表示中）"}

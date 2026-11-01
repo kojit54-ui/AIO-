@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { Scene, Wave } from "@/components/fun";
+import { Shiori, Wave } from "@/components/fun";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
@@ -40,7 +40,7 @@ export default function HomePage() {
           </h1>
           <p className="text-muted">今月も1本、いっしょに書きましょう。質問に答えるだけで記事になります。</p>
         </div>
-        <Scene point="experience" className="hidden h-28 w-36 shrink-0 sm:block" />
+        <Shiori mood="jersey-cheer" className="hidden h-36 w-auto shrink-0 animate-float sm:block" />
       </div>
       <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
         <h2 id="policy-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">
