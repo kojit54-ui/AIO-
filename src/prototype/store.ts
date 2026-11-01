@@ -185,6 +185,8 @@ export const readGrowSync = (): GrowSync => sync;
 let sellSeq = 0;
 /** 画面で作った売りたいものの仮の id → DB の id */
 const sellIdMap = new Map<string, string>();
+/** 足すために列に並んでいて、まだDBに入っていない行（kind と言葉） */
+const pendingAdds = new Set<string>();
 
 const rowKey = (x: KeywordRow) => `${x.kind}\n${x.keyword}`;
 
@@ -213,7 +215,7 @@ function adoptSavedPlan(r: GrowRemote, sent: KeywordPlan, saved: KeywordPlan | n
   });
   // 保存を待つあいだに足した行（まだ列に並んでいる）は消さずに残す
   const savedKeys = new Set(saved.rows.map(rowKey));
-  const pending = cur.rows.filter((x) => !savedKeys.has(rowKey(x)) && !sentBy.has(rowKey(x)));
+  const pending = cur.rows.filter((x) => !savedKeys.has(rowKey(x)) && pendingAdds.has(rowKey(x)));
   set({ ...load(), plan: { ...saved, rows: [...rows, ...pending] } });
   for (const [id, patch] of patches) persist(r, () => r.updateRow(id, patch));
 }
@@ -270,7 +272,16 @@ export const growActions = {
       timers.delete("sell");
       sell.run();
     }
+    pendingAdds.add(rowKey(row));
     persist(r, async () => {
+      try {
+        await sendAdd();
+      } finally {
+        pendingAdds.delete(rowKey(row));
+      }
+    });
+    async function sendAdd() {
+      if (!r) return;
       // 送る時点の組み立てで、柱と売りたいものの id を DB の id に直す（組み立てを選ぶ保存が先に終わっていることがある）
       const now = remote === r ? load().plan : plan; // 会社を切りかえていたら、足したときの組み立てで送る
       if (!now || !now.rows.some((x) => rowKey(x) === rowKey(row))) return; // 送る前に選び直した
@@ -279,8 +290,10 @@ export const growActions = {
       const sellItemId = row.sellItemId && !isUuid(row.sellItemId) ? (sellIdMap.get(row.sellItemId) ?? null) : row.sellItemId;
       const current = now?.rows.find((x) => rowKey(x) === rowKey(row)) ?? row;
       const sent = now ?? plan;
-      adoptSavedPlan(r, sent, await r.addRow({ ...current, pillarId, sellItemId }));
-    });
+      const saved = await r.addRow({ ...current, pillarId, sellItemId });
+      pendingAdds.delete(rowKey(row));
+      adoptSavedPlan(r, sent, saved);
+    }
   },
   /** 「やめておく」にする・戻す。消さずに残す */
   setRowParked(rowId: string, parked: boolean) {
@@ -298,8 +311,10 @@ export const growActions = {
     const seq = ++sellSeq;
     later("sell", () =>
       persist(r, async () => {
-        const saved = await r.saveSellItems(items);
-        items.forEach((x, i) => {
+        // 先に送った保存で DB の id が分かった仮の id は、DB の id で送る（作り直して記事の札が外れないように）
+        const resolved = items.map((x) => (isUuid(x.id) ? x : { ...x, id: sellIdMap.get(x.id) ?? x.id }));
+        const saved = await r.saveSellItems(resolved);
+        resolved.forEach((x, i) => {
           if (!isUuid(x.id) && saved[i]?.name === x.name) sellIdMap.set(x.id, saved[i].id);
         });
         // 保存のあいだにまた並べかえていたら、新しいほうを残す

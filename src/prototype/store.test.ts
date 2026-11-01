@@ -206,6 +206,49 @@ describe("本物のデータにつないだとき", () => {
     expect(readGrowState().plan!.rows.some((x) => x.keyword === "自分で足した記事")).toBe(true);
   });
 
+  it("前の保存を待つあいだに2本足しても、2本とも保存する", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    const plan: KeywordPlan = { proposalId: "55555555-5555-4555-8555-555555555555", rows: [{ id: "66666666-6666-4666-8666-666666666666", keyword: "柱", question: "", kind: "pillar", status: "todo" }] };
+    let db = plan;
+    r.load = async () => ({ answers: {}, plan: db, sellItems: null });
+    const sent: string[] = [];
+    r.saveAnswer = () => new Promise((ok) => setTimeout(ok, 300));
+    r.addRow = async (row) => {
+      sent.push(row.keyword);
+      db = { ...db, rows: [...db.rows, { ...row, id: `77777777-7777-4777-8777-00000000000${sent.length}` }] };
+      return db;
+    };
+    connectGrow(r);
+    await flush();
+    growActions.saveAnswer({ questionId: "business", text: "待たせる", followUps: [] });
+    growActions.addRow({ id: "a", keyword: "A", question: "", kind: "cluster", status: "todo", pillarId: plan.rows[0].id });
+    growActions.addRow({ id: "b", keyword: "B", question: "", kind: "cluster", status: "todo", pillarId: plan.rows[0].id });
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(sent).toEqual(["A", "B"]);
+    expect(readGrowState().plan!.rows.map((x) => x.keyword)).toEqual(["柱", "A", "B"]);
+  });
+
+  it("売りたいものを保存する途中で並べかえても、DB の id で送る（作り直さない）", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    const sentIds: string[][] = [];
+    let n = 0;
+    r.saveSellItems = async (items) => {
+      sentIds.push(items.map((x) => x.id));
+      await new Promise((ok) => setTimeout(ok, 300));
+      return items.map((x) => ({ id: /^0{8}-/.test(x.id) ? x.id : `00000000-0000-4000-8000-${String(++n).padStart(12, "0")}`, name: x.name }));
+    };
+    connectGrow(r);
+    await flush();
+    growActions.setSellItems([{ id: "sell_0", name: "内窓" }, { id: "sell_1", name: "外壁" }]);
+    await vi.advanceTimersByTimeAsync(SAVE_DELAY_MS); // 1回目を送りはじめる
+    growActions.setSellItems([{ id: "sell_1", name: "外壁" }, { id: "sell_0", name: "内窓" }]);
+    await vi.advanceTimersByTimeAsync(2000);
+    expect(sentIds).toHaveLength(2);
+    expect(sentIds[1].every((id) => /^0{8}-/.test(id))).toBe(true);
+  });
+
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {
     vi.useFakeTimers();
     const r = fakeRemote({ answers: { business: { questionId: "business", text: "工務店", followUps: [] } }, plan: null, sellItems: null });
