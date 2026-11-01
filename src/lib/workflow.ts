@@ -42,7 +42,7 @@ export function applyAction(article: Article, action: ArticleAction, role: Role,
 
   switch (action.type) {
     case "edit": {
-      if (role !== "client_member") throw new TransitionError("forbidden", "記事を編集できるのは顧客担当者です");
+      if (role !== "client_member") throw new TransitionError("forbidden", "記事を直せるのは、会社の担当の方です");
       next.currentVersionId = action.newVersionId;
       // 確認待ち中の編集は別版として保存し、確認待ちの版と状態は変えない
       if (article.status === "in_review") return next;
@@ -51,9 +51,9 @@ export function applyAction(article: Article, action: ArticleAction, role: Role,
       return next;
     }
     case "request_review": {
-      if (role !== "client_member") throw new TransitionError("forbidden", "確認依頼は顧客担当者が行います");
+      if (role !== "client_member") throw new TransitionError("forbidden", "コタムに見てもらう依頼は、会社の担当の方が行います");
       if (article.status !== "drafting" && article.status !== "changes_requested") {
-        throw new TransitionError("invalid_state", "この状態では確認依頼できません");
+        throw new TransitionError("invalid_state", "今はコタムに見てもらう依頼ができません");
       }
       next.status = "in_review";
       next.reviewRequestedVersionId = article.currentVersionId;
@@ -75,16 +75,16 @@ export function applyAction(article: Article, action: ArticleAction, role: Role,
       return next;
     }
     case "publish": {
-      if (role !== "client_member") throw new TransitionError("forbidden", "公開済みの登録は顧客担当者が行います");
-      if (!isHttpUrl(action.url)) throw new TransitionError("invalid_url", "公開URLを正しく入力してください");
+      if (role !== "client_member") throw new TransitionError("forbidden", "ブログに載せた記事の登録は、会社の担当の方が行います");
+      if (!isHttpUrl(action.url)) throw new TransitionError("invalid_url", "載せたページのURL（https:// から始まるアドレス）を貼りつけてください");
       if (article.status === "approved") {
         next.publishedWithoutApproval = false;
       } else if (policy === "required") {
-        throw new TransitionError("approval_required", "この会社では承認済みの記事だけを公開済みにできます");
+        throw new TransitionError("approval_required", "この会社では、コタムのOKが出た記事だけをブログに載せられます");
       } else if (article.status === "drafting") {
         next.publishedWithoutApproval = true;
       } else {
-        throw new TransitionError("invalid_state", "この状態では公開済みにできません");
+        throw new TransitionError("invalid_state", "今はブログに載せた登録ができません");
       }
       next.status = "published";
       next.publishedUrl = action.url;
