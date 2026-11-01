@@ -4,7 +4,7 @@
 // キーボードや細かい操作がしにくい人のために、▲▼のボタンでも動かせる。
 
 import { useRef, useState } from "react";
-import { type SellItem, moveItem } from "./keywords";
+import { MAX_SELL_ITEMS, MAX_SELL_NAME, type SellItem, moveItem } from "./keywords";
 
 const MEDALS = ["🥇", "🥈", "🥉"];
 
@@ -50,6 +50,8 @@ export function SellRanking({ items, onChange, onMoved }: { items: SellItem[]; o
     e.preventDefault();
     const name = draft.replace(/\s+/g, " ").trim();
     if (!name) return setError("売りたいものの名前を入れてください。");
+    if (items.length >= MAX_SELL_ITEMS) return setError(`売りたいものは${MAX_SELL_ITEMS}個までです。どれかを消してから足してください。`);
+    if (name.length > MAX_SELL_NAME) return setError(`名前は${MAX_SELL_NAME}字までにしてください。`);
     if (items.some((x) => x.name.replace(/\s+/g, "") === name.replace(/\s+/g, ""))) return setError("それは、もう入っています。");
     onChange([...items, { id: `sell_${Date.now().toString(36)}`, name }]);
     setDraft("");
@@ -114,6 +116,7 @@ export function SellRanking({ items, onChange, onMoved }: { items: SellItem[]; o
           className="field min-w-[10rem] flex-1"
           placeholder="例：浴室の断熱リフォーム"
           value={draft}
+          maxLength={MAX_SELL_NAME}
           onChange={(e) => setDraft(e.target.value)}
           aria-invalid={!!error}
           aria-describedby={error ? "sell-error" : undefined}

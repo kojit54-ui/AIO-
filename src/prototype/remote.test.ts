@@ -51,6 +51,8 @@ describe("本物のデータとの変換", () => {
   it("売りたいもの：画面で作った仮の id は渡さず、DBの id はそのまま渡す（名前を変えても同じもの）", () => {
     expect(sellItemsForRpc([{ id: U1, name: "内窓" }, { id: "sell_0", name: "外壁" }])).toEqual([{ id: U1, name: "内窓" }, { name: "外壁" }]);
     expect(isUuid("sell_0")).toBe(false);
+    // 11個目を黙って切り捨てない（外れたものがDBで消えるため）
+    expect(() => sellItemsForRpc(Array.from({ length: 11 }, (_, i) => ({ id: `sell_${i}`, name: `品${i}` })))).toThrow(GrowSyncError);
     expect(new GrowSyncError("x").name).toBe("GrowSyncError");
   });
 });

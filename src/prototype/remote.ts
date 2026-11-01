@@ -5,7 +5,7 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { HearingAnswer, KeywordPlan, KeywordPriority, KeywordRow, KeywordSource, PillarProposal, ProposalReason, RowStatus } from "./growth";
-import type { SellItem } from "./keywords";
+import { MAX_SELL_ITEMS, type SellItem } from "./keywords";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export const isUuid = (v: unknown): v is string => typeof v === "string" && UUID.test(v);
@@ -92,7 +92,11 @@ export function planRowsForRpc(plan: KeywordPlan) {
 }
 
 /** save_sell_items に渡す形。画面で作った仮の id（sell_0 など）は渡さず、DBで新しく作らせる */
-export const sellItemsForRpc = (items: SellItem[]) => items.slice(0, 10).map((x) => (isUuid(x.id) ? { id: x.id, name: x.name } : { name: x.name }));
+export function sellItemsForRpc(items: SellItem[]) {
+  // 黙って切り捨てると、外れたものがDBで消えて記事の札も外れる。多すぎるときは保存せずに知らせる
+  if (items.length > MAX_SELL_ITEMS) throw new GrowSyncError(`売りたいものは${MAX_SELL_ITEMS}個までです。どれかを消してください`);
+  return items.map((x) => (isUuid(x.id) ? { id: x.id, name: x.name } : { name: x.name }));
+}
 
 export interface GrowSnapshot {
   answers: Record<string, HearingAnswer>;

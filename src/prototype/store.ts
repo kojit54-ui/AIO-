@@ -183,8 +183,9 @@ export const readGrowState = (): GrowState => load();
 export const readGrowSync = (): GrowSync => sync;
 
 let sellSeq = 0;
-/** 画面で作った売りたいものの仮の id → DB の id */
+/** 画面で作った売りたいものの仮の id → DB の id。仮の id（sell_0 など）は会社ごとに重なるので、会社の id と組にする */
 const sellIdMap = new Map<string, string>();
+const sellKey = (r: GrowRemote, tempId: string) => `${r.organizationId}:${tempId}`;
 /** 足すために列に並んでいて、まだDBに入っていない行（kind と言葉） */
 const pendingAdds = new Set<string>();
 
@@ -287,7 +288,7 @@ export const growActions = {
       if (!now || !now.rows.some((x) => rowKey(x) === rowKey(row))) return; // 送る前に選び直した
       const pillarKey = plan.rows.find((x) => x.id === row.pillarId);
       const pillarId = isUuid(row.pillarId) ? row.pillarId : now?.rows.find((x) => pillarKey && rowKey(x) === rowKey(pillarKey))?.id;
-      const sellItemId = row.sellItemId && !isUuid(row.sellItemId) ? (sellIdMap.get(row.sellItemId) ?? null) : row.sellItemId;
+      const sellItemId = row.sellItemId && !isUuid(row.sellItemId) ? (sellIdMap.get(sellKey(r, row.sellItemId)) ?? null) : row.sellItemId;
       const current = now?.rows.find((x) => rowKey(x) === rowKey(row)) ?? row;
       const sent = now ?? plan;
       const saved = await r.addRow({ ...current, pillarId, sellItemId });
@@ -312,10 +313,10 @@ export const growActions = {
     later("sell", () =>
       persist(r, async () => {
         // 先に送った保存で DB の id が分かった仮の id は、DB の id で送る（作り直して記事の札が外れないように）
-        const resolved = items.map((x) => (isUuid(x.id) ? x : { ...x, id: sellIdMap.get(x.id) ?? x.id }));
+        const resolved = items.map((x) => (isUuid(x.id) ? x : { ...x, id: sellIdMap.get(sellKey(r, x.id)) ?? x.id }));
         const saved = await r.saveSellItems(resolved);
         resolved.forEach((x, i) => {
-          if (!isUuid(x.id) && saved[i]?.name === x.name) sellIdMap.set(x.id, saved[i].id);
+          if (!isUuid(x.id) && saved[i]?.name === x.name) sellIdMap.set(sellKey(r, x.id), saved[i].id);
         });
         // 保存のあいだにまた並べかえていたら、新しいほうを残す
         if (remote === r && seq === sellSeq) set({ ...load(), sellItems: saved });

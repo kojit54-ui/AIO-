@@ -249,6 +249,26 @@ describe("本物のデータにつないだとき", () => {
     expect(sentIds[1].every((id) => /^0{8}-/.test(id))).toBe(true);
   });
 
+  it("仮の id が同じでも、別の会社の売りたいものの DB の id は使わない", async () => {
+    vi.useFakeTimers();
+    const a = fakeRemote();
+    connectGrow(a);
+    await flush();
+    growActions.setSellItems([{ id: "sell_0", name: "内窓" }]);
+    await vi.advanceTimersByTimeAsync(SAVE_DELAY_MS);
+    const b = { ...fakeRemote(), organizationId: "44444444-4444-4444-8444-444444444444" };
+    const sent: string[] = [];
+    b.saveSellItems = async (items) => {
+      sent.push(...items.map((x) => x.id));
+      return items.map((x) => ({ id: "88888888-8888-4888-8888-888888888888", name: x.name }));
+    };
+    connectGrow(b);
+    await flush();
+    growActions.setSellItems([{ id: "sell_0", name: "外壁" }]);
+    await vi.advanceTimersByTimeAsync(SAVE_DELAY_MS);
+    expect(sent).toEqual(["sell_0"]);
+  });
+
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {
     vi.useFakeTimers();
     const r = fakeRemote({ answers: { business: { questionId: "business", text: "工務店", followUps: [] } }, plan: null, sellItems: null });

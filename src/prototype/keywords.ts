@@ -27,11 +27,16 @@ export interface SellItem {
 }
 
 /** 「売りたい商品やサービス」の答えから、最初の売りたいものの並びを作る（読点・改行・「／」で区切る。最大5つ） */
+/** 今売りたいものは10個まで、名前は60字まで（DBの決まりと同じ。supabase/migrations/20261101000000_growth.sql） */
+export const MAX_SELL_ITEMS = 10;
+export const MAX_SELL_NAME = 60;
+
 export function sellItemsFromAnswer(text: string): SellItem[] {
   const names = text
     .split(/\n|、|，|,|／|\//)
     .map((x) => x.replace(/^例：|^[-・\s]+/, "").trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .map((x) => x.slice(0, MAX_SELL_NAME));
   return [...new Set(names)].slice(0, 5).map((name, i) => ({ id: `sell_${i}`, name }));
 }
 
