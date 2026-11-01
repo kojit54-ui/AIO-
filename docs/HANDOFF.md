@@ -36,6 +36,19 @@
 
 ## 記録
 
+### 2026-11-01 CC（Claude、プロジェクトのスレッド）その26
+- ブランチ / コミット：claude/project-thread-n66pdb（PR #25 に追加）
+- 変更点：ラッコキーワード API の呼び出しを追加（src/lib/keywords/rakko.ts。サジェスト・よくある質問・アカウント情報。キーはヘッダーだけ、エラーは種類ごとに日本語で、402 はクレジット切れ）。下調べ（research.ts）で1回3語まで集め、検索数は「多い・ふつう・少ない」に丸めて、提案役の指示（growthPrompts.ts の buildProposalPrompt）に research として渡す。本物で試すテスト rakko.live.test.ts（RAKKO_LIVE=1 のときだけ）。DECISIONS・LESSONS・KEYWORD_TOOLS_SETUP・TASKS・.env.example を更新
+- 確認結果：単体テスト、型検査、lint が通過。常時稼働PCで本物の API のテストが通過（スタンダードプラン、「断熱リフォーム」で質問10件・サジェスト10件、月間検索数は全件に数字あり）。空白だけ違うサジェストが別々に返るので、1つにまとめるよう直した
+- 未完了：提案の保存と画面へのつなぎ込み（ヒアリングの保存 T5-3 の後）。公開の前にラッコへ問い合わせ（下書き /mnt/project-files/keyword-tools/rakko-inquiry-draft.md）
+- 次の作業と担当：CX がレビュー → 田村さんがマージ。田村さんがラッコへ問い合わせ
+
+### 2026-11-01 CC（Claude、プロジェクトのスレッド）その25
+- ブランチ / コミット：claude/project-thread-n66pdb（PR #24 のマージ後の main から）
+- 変更点：顧客の画面に出るエラー文の古い言葉（確認依頼・承認・公開済み・版・生成回数など）を、用語集の「顧客向けの言い方」に合わせた。src/lib/workflow.ts、src/lib/remote/backend.ts、src/mock/store.tsx の文言だけで、処理は変えていない（backend.ts は CX の担当範囲なので CX が確認）
+- 確認結果：単体テスト、型検査、lint が通過
+- 次の作業と担当：CX が文言の変更を確認 → 田村さんがマージ
+
 ### 2026-11-01 CC（Claude、プロジェクトのスレッド）その24
 - ブランチ / コミット：claude/project-thread-n66pdb（PR #23 のマージ後の main から）
 - 変更点：本番の顧客向け画面（ホーム、テーマ選び、質問、記事を整える、会社の情報）の言葉を「やること」ベースに言い換え。記事の状態の表示名（src/lib/workflow.ts の STATUS_LABEL）も変更。言い換えの一覧は LESSONS の用語集「顧客向けの言い方」。コタムだけが見る文言とサーバーのエラー文は変えていない

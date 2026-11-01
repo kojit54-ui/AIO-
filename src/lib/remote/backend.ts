@@ -55,7 +55,7 @@ const EMPTY_DB: MockDb = {
 const NO_SIM: Simulation = { saveError: false, generationError: false, conflict: false, sessionExpired: false, slow: false };
 
 const GENERATION_MESSAGES: Record<GenerationErrorCode, string> = {
-  limit_reached: "今月の生成回数の上限に達しました。コタムにご相談ください",
+  limit_reached: "今月、AIで文章を作れる回数を使い切りました。コタムにご相談ください",
   busy: "同じ会社で文章を作っている途中です。終わってからもう一度お試しください",
   budget_exceeded: "今月は新しい文章を作れなくなっています。コタムにご連絡ください",
   timeout: "時間内に文章を作れませんでした。入力内容は残っています",
@@ -65,8 +65,8 @@ const GENERATION_MESSAGES: Record<GenerationErrorCode, string> = {
 
 /** supabase-js のエラーを画面のエラーに変える。本文や個人情報はログに出さない */
 function toApiError(error: { code?: string; message?: string } | null, fallback = "保存できませんでした。通信状態を確認して、もう一度お試しください"): ApiError {
-  if (error?.code === "40001" || error?.code === "23505") return new ApiError("conflict", "別の画面でこの記事が更新されました");
-  if (error?.code === "42501" || error?.code === "PGRST301") return new ApiError("forbidden", "この操作を行う権限がありません");
+  if (error?.code === "40001" || error?.code === "23505") return new ApiError("conflict", "別の画面で、この記事が先に直されました");
+  if (error?.code === "42501" || error?.code === "PGRST301") return new ApiError("forbidden", "この操作はできません");
   if (error?.code === "PGRST303" || error?.message?.includes("JWT")) return new ApiError("session_expired", "ログインの有効期限が切れました");
   return new ApiError("save_failed", fallback);
 }
@@ -249,7 +249,7 @@ export class RemoteBackend {
       throw new ApiError(code, json.message ?? GENERATION_MESSAGES[code as GenerationErrorCode] ?? GENERATION_MESSAGES.provider_error);
     }
     const v = this.state.db.versions.find((x) => x.id === json.versionId);
-    if (!v) throw new ApiError("not_found", "版が見つかりません");
+    if (!v) throw new ApiError("not_found", "前の内容が見つかりません");
     return v;
   }
 
@@ -331,7 +331,7 @@ export class RemoteBackend {
     saveVersion: async (articleId, input: { title: string; body: Block[]; outline?: { heading: string }[] }, expectedLock) => {
       this.requireUser();
       const a = this.article(articleId);
-      if (a.lockVersion !== expectedLock) throw new ApiError("conflict", "別の画面でこの記事が更新されました");
+      if (a.lockVersion !== expectedLock) throw new ApiError("conflict", "別の画面で、この記事が先に直されました");
       const { db } = this.state;
       const base = db.versions.find((v) => v.id === a.currentVersionId);
       // 要確認箇所の確認結果は、同じ箇所が残っていれば引き継ぐ
@@ -357,13 +357,13 @@ export class RemoteBackend {
       });
       await this.load();
       const version = this.state.db.versions.find((v) => v.id === versionId);
-      if (!version) throw new ApiError("not_found", "版が見つかりません");
+      if (!version) throw new ApiError("not_found", "前の内容が見つかりません");
       return { article: this.article(articleId), version };
     },
 
     restoreVersion: async (articleId, versionId, expectedLock) => {
       const v = this.state.db.versions.find((x) => x.id === versionId && x.articleId === articleId);
-      if (!v) throw new ApiError("not_found", "版が見つかりません");
+      if (!v) throw new ApiError("not_found", "前の内容が見つかりません");
       return this.api.saveVersion(articleId, { title: v.title, body: v.body, outline: v.outline }, expectedLock);
     },
 

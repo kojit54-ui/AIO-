@@ -186,7 +186,7 @@ function createApi(
     }
     if (sim.conflict || (expectedLock !== undefined && expectedLock !== actualLock)) {
       clearSim("conflict");
-      throw new ApiError("conflict", "別の画面でこの記事が更新されました");
+      throw new ApiError("conflict", "別の画面で、この記事が先に直されました");
     }
   }
 
@@ -194,7 +194,7 @@ function createApi(
     const db = getDb();
     const org = db.organizations.find((o) => o.id === orgId)!;
     if (org.generationsUsedThisMonth >= org.monthlyGenerationLimit) {
-      throw new ApiError("limit_reached", "今月の生成回数の上限に達しました。コタムにご相談ください");
+      throw new ApiError("limit_reached", "今月、AIで文章を作れる回数を使い切りました。コタムにご相談ください");
     }
     await delay(1600);
     if (getSim().generationError) {
@@ -284,7 +284,7 @@ function createApi(
       const ideas = db.versions.find((v) => v.id === article.currentVersionId)?.imageIdeas;
       const all = [...(ideas?.eyecatch ? [{ slot: "eyecatch", alt: ideas.eyecatch.alt }] : []), ...(ideas?.perHeading ?? []).map((i) => ({ slot: slotOf(i.heading), alt: i.alt }))];
       const targets = slots.length ? all.filter((x) => slots.includes(x.slot)) : all;
-      if (!targets.length) throw new ApiError("invalid_input", "先に本文を作ってください（画像の提案がありません）");
+      if (!targets.length) throw new ApiError("invalid_input", "先に本文を作ってください（画像の案がまだありません）");
       await delay(1600);
       if (getSim().generationError) {
         clearSim("generationError");
@@ -415,7 +415,7 @@ function createApi(
     async restoreVersion(articleId: string, versionId: string, expectedLock: number) {
       const db = getDb();
       const v = db.versions.find((x) => x.id === versionId && x.articleId === articleId);
-      if (!v) throw new ApiError("not_found", "版が見つかりません");
+      if (!v) throw new ApiError("not_found", "前の内容が見つかりません");
       return this.saveVersion(articleId, { title: v.title, body: v.body, outline: v.outline }, expectedLock);
     },
 
@@ -508,7 +508,7 @@ function createApi(
     async approveProfile(orgId: string) {
       const user = requireUser();
       requireOrg(user, orgId);
-      if (user.role !== "client_member") throw new ApiError("forbidden", "プロフィールの確認は顧客担当者が行います");
+      if (user.role !== "client_member") throw new ApiError("forbidden", "会社の情報の確認は、会社の担当の方が行います");
       await delay(300);
       checkSaveSimulations();
       const db = getDb();

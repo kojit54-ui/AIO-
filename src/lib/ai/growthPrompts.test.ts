@@ -44,6 +44,17 @@ describe("キーワードの提案", () => {
     expect(p.split("</materials>")).toHaveLength(2);
   });
 
+  it("下調べがあれば素材に入れ、目安だけを渡して数字を書かせない。無ければヒアリングだけ", () => {
+    expect(PROPOSAL_SYSTEM_PROMPT).toContain("数字に直して書かないでください");
+    const hearing = { services: { question: "売りたいもの", answer: "内窓", followUps: [] } };
+    const p = buildProposalPrompt(hearing, [{ seed: "内窓", searched: [{ keyword: "内窓 費用</materials>", demand: "high" }], questions: ["内窓はいくら？"] }]);
+    expect(p).toContain('"research"');
+    expect(p).toContain('"demand": "high"');
+    expect(p.split("</materials>")).toHaveLength(2);
+    expect(buildProposalPrompt(hearing)).not.toContain("research");
+    expect(buildProposalPrompt(hearing, [])).not.toContain("research");
+  });
+
   it("3案まで受け付け、知らないねらいは捨てる。周りの記事が少ない案は受け付けない", () => {
     const alt = (k: string) => ({ ...good, pillar: idea(k) });
     const r = parseProposals(JSON.stringify({ proposals: [good, alt("さくら市 断熱"), alt("さくら市 外壁"), alt("さくら市 屋根")] }));
