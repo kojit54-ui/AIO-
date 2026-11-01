@@ -14,6 +14,8 @@ const ORG = "10000000-0000-0000-0000-00000000000a";
 const ORG_B = "10000000-0000-0000-0000-00000000000b";
 const ART = "30000000-0000-0000-0000-00000000000a";
 const ART_B = "30000000-0000-0000-0000-00000000000b";
+// A社とB社の両方を担当するコタム
+const COACH_AB = "00000000-0000-0000-0000-0000000000cb";
 
 let db: PGlite;
 
@@ -40,10 +42,11 @@ beforeAll(async () => {
   await db.exec(sql(new URL("./auth_stub.sql", import.meta.url)));
   for (const f of readdirSync(dir).filter((f) => f.endsWith(".sql")).sort()) await db.exec(sql(new URL(f, dir)));
   await db.exec(`
-    insert into auth.users (id) values ('${CLIENT}'), ('${COACH}'), ('${OTHER}');
+    insert into auth.users (id) values ('${CLIENT}'), ('${COACH}'), ('${OTHER}'), ('${COACH_AB}');
     insert into public.organizations (id, name) values ('${ORG}', 'A社'), ('${ORG_B}', 'B社');
     insert into public.memberships (user_id, organization_id, role) values
-      ('${CLIENT}', '${ORG}', 'client_member'), ('${COACH}', '${ORG}', 'coach'), ('${OTHER}', '${ORG_B}', 'client_member');
+      ('${CLIENT}', '${ORG}', 'client_member'), ('${COACH}', '${ORG}', 'coach'), ('${OTHER}', '${ORG_B}', 'client_member'),
+      ('${COACH_AB}', '${ORG}', 'coach'), ('${COACH_AB}', '${ORG_B}', 'coach');
     insert into public.themes (id, organization_id, target_month, title, source) values
       ('20000000-0000-0000-0000-00000000000a', '${ORG}', '2026-11-01', 'A', 'coach'),
       ('20000000-0000-0000-0000-00000000000b', '${ORG_B}', '2026-11-01', 'B', 'coach');
@@ -81,6 +84,11 @@ describe("今売りたいもの", () => {
     await as(CLIENT, "select public.save_sell_items($1, $2)", [ORG, JSON.stringify([{ id: first[1].id, name: "浴室の断熱" }, { id: first[0].id, name: "内窓" }])]);
     const next = await as<{ id: string; name: string }>(CLIENT, "select id, name from public.sell_items where organization_id = $1 order by rank", [ORG]);
     expect(next).toEqual([first[1], first[0]]);
+  });
+
+  it("両社を担当するコタムでも、売りたいもの・答えを他社へ移せない", async () => {
+    await expect(as(COACH_AB, "update public.sell_items set organization_id = $2 where organization_id = $1", [ORG, ORG_B])).rejects.toThrow("immutable");
+    await expect(as(COACH_AB, "update public.hearing_answers set organization_id = $2 where organization_id = $1", [ORG, ORG_B])).rejects.toThrow("immutable");
   });
 
   it("他社は読めず、置きかえられない", async () => {

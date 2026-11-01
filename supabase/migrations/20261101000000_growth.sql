@@ -140,6 +140,22 @@ $$;
 create trigger keyword_plans_guard before update on public.keyword_plans
   for each row execute function app.guard_keyword_plan();
 
+-- 会社をまたぐ移動を防ぐ。複数の会社を担当するコタムでも、行の organization_id は変えられない
+-- （売りたいものを他社へ移すと、元の会社の記事リストの行が他社の行を指したまま残るため）
+create or replace function app.keep_organization() returns trigger
+language plpgsql as $$
+begin
+  if new.organization_id <> old.organization_id then
+    raise exception 'immutable column' using errcode = '42501';
+  end if;
+  return new;
+end;
+$$;
+create trigger sell_items_keep_org before update on public.sell_items
+  for each row execute function app.keep_organization();
+create trigger hearing_answers_keep_org before update on public.hearing_answers
+  for each row execute function app.keep_organization();
+
 -- 記事を公開したら、その記事の行を「やった」にする。公開をやめても手で戻せるよう、戻す方向は自動にしない
 create or replace function app.mark_keyword_published() returns trigger
 language plpgsql security definer set search_path = public as $$
@@ -241,6 +257,7 @@ grant execute on function public.save_sell_items(uuid, jsonb) to authenticated;
 grant execute on function app.guard_keyword_row() to authenticated;
 grant execute on function app.guard_keyword_plan() to authenticated;
 grant execute on function app.mark_keyword_published() to authenticated;
+grant execute on function app.keep_organization() to authenticated;
 do $$ begin
   if exists (select 1 from pg_roles where rolname = 'anon') then
     execute 'revoke execute on function public.choose_keyword_plan(uuid, jsonb, jsonb) from anon';
