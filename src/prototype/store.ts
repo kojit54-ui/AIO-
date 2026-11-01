@@ -3,7 +3,7 @@
 // 「育つブログ」の試作の状態。ブラウザの中（localStorage）だけに置き、本物のデータやAIにはつながない。
 
 import { useSyncExternalStore } from "react";
-import { type HearingAnswer, type KeywordPlan, type PillarProposal, type RowStatus } from "./growth";
+import { type HearingAnswer, type KeywordPlan, type KeywordRow, type PillarProposal, type RowStatus } from "./growth";
 
 export interface GrowState {
   answers: Record<string, HearingAnswer>;
@@ -64,6 +64,18 @@ export const growActions = {
     const s = load();
     if (!s.plan) return;
     set({ ...s, plan: { ...s.plan, rows: s.plan.rows.map((r) => (r.id === rowId ? { ...r, status } : r)) } });
+  },
+  /** 管理表にキーワードを足す */
+  addRow(row: KeywordRow) {
+    const s = load();
+    if (!s.plan) return;
+    set({ ...s, plan: { ...s.plan, rows: [...s.plan.rows, row] } });
+  },
+  /** 「やめておく」にする・戻す。消さずに残す */
+  setRowParked(rowId: string, parked: boolean) {
+    const s = load();
+    if (!s.plan) return;
+    set({ ...s, plan: { ...s.plan, rows: s.plan.rows.map((r) => (r.id === rowId ? { ...r, parked } : r)) } });
   },
   saveArticleAnswers(rowId: string, answers: Record<string, string>) {
     const s = load();

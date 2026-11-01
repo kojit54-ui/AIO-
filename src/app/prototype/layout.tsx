@@ -7,8 +7,9 @@ import { growActions } from "@/prototype/store";
 
 const NAV = [
   { href: "/prototype", label: "ホーム" },
-  { href: "/prototype/hearing", label: "ヒアリング" },
-  { href: "/prototype/plan", label: "記事の設計図" },
+  { href: "/prototype/hearing", label: "会社のことを教える" },
+  { href: "/prototype/plan", label: "書く記事を決める" },
+  { href: "/prototype/keywords", label: "書く記事リスト" },
   { href: "/prototype/coach", label: "コタムの画面" },
 ];
 

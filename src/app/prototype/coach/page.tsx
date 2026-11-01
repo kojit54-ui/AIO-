@@ -36,8 +36,8 @@ export default function CoachPrototypePage() {
             <thead className="bg-canvas text-sm text-muted">
               <tr>
                 <th className="px-4 py-2 font-semibold">企業</th>
-                <th className="px-4 py-2 font-semibold">ヒアリング</th>
-                <th className="px-4 py-2 font-semibold">設計図</th>
+                <th className="px-4 py-2 font-semibold">会社のこと</th>
+                <th className="px-4 py-2 font-semibold">書く記事</th>
                 <th className="px-4 py-2 font-semibold">公開</th>
                 <th className="px-4 py-2 font-semibold">レベル</th>
                 <th className="px-4 py-2 font-semibold">検索の様子</th>
@@ -49,7 +49,7 @@ export default function CoachPrototypePage() {
                 <td className="px-4 py-3">
                   {answeredCount(g.answers)} / {HEARING_QUESTIONS.length}
                 </td>
-                <td className="px-4 py-3">{g.plan ? "選択済み" : "まだ"}</td>
+                <td className="px-4 py-3">{g.plan ? "決めた" : "まだ"}</td>
                 <td className="px-4 py-3">
                   {rows.filter((r) => r.status === "published").length} / {rows.length || "-"}
                 </td>
@@ -64,7 +64,7 @@ export default function CoachPrototypePage() {
       <section aria-labelledby="hearing-heading" className="space-y-3">
         <div>
           <h2 id="hearing-heading" className="text-lg font-bold">
-            ヒアリング（コタムが聞きながら入力）
+            会社のこと（コタムが聞きながら入力）
           </h2>
           <p className="text-muted">顧客が一問一答で答えた内容も、ここに出ます。どちらから入力しても同じ答えになります。</p>
         </div>

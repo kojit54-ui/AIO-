@@ -149,8 +149,8 @@ export const canPropose = (answers: Record<string, HearingAnswer>) =>
 export type ProposalReason = "sales" | "competition" | "aio";
 export const REASON_LABEL: Record<ProposalReason, string> = {
   sales: "売上につながる",
-  competition: "競合に勝てる",
-  aio: "AI検索で紹介されやすい",
+  competition: "ライバルに勝てる",
+  aio: "AIに紹介されやすい",
 };
 
 export interface KeywordIdea {
@@ -206,7 +206,7 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
         k("p_sales_5", `${service} 事例`, "実際に頼んだ人はどう変わったか"),
       ],
       reasons: ["sales", "aio"],
-      why: `売りたい「${service}」を、地域名と一緒に探す人に向けた組み立てです。依頼の直前に読まれる記事が中心です。`,
+      why: `売りたい「${service}」を、地域名と一緒に探す人に向けた記事のセットです。頼む直前に読まれる記事が中心です。`,
     },
     {
       id: "p_compare",
@@ -218,7 +218,7 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
         k("p_compare_4", `${service} 保証`, "工事の後の保証や点検"),
       ],
       reasons: ["competition", "sales"],
-      why: "よく比べられる相手との違いを、読む人の判断基準として伝える組み立てです。選ばれる理由が生きます。",
+      why: "よく比べられる相手との違いを伝える記事のセットです。選ばれる理由が生きます。",
     },
     {
       id: "p_faq",
@@ -229,17 +229,37 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
         k(`p_faq_${faqs.length + 2}`, `${business} 注意点`, "頼む前に気をつけること"),
       ],
       reasons: ["aio"],
-      why: "お客様の質問にそのまま答える組み立てです。質問と答えがはっきりした記事は、AI検索で紹介されやすくなります。",
+      why: "お客様の質問にそのまま答える記事のセットです。質問と答えがはっきりした記事は、AIに紹介されやすくなります。",
     },
   ];
 }
 
 export type RowStatus = "todo" | "writing" | "published";
-export const ROW_STATUS_LABEL: Record<RowStatus, string> = { todo: "まだ", writing: "書いている", published: "公開済み" };
+/** 「公開済み」は、利用者の言葉に合わせて「やった」と出す（docs/LESSONS.md 用語集） */
+export const ROW_STATUS_LABEL: Record<RowStatus, string> = { todo: "まだ", writing: "書いている", published: "やった" };
+
+/** 柱（ピラー）／周り（クラスター）の、顧客向けの呼び方 */
+export const KIND_LABEL: Record<"pillar" | "cluster", string> = { pillar: "まとめ記事", cluster: "くわしい記事" };
+
+/** キーワードがどこから来たか。SEMrush・Search Console は後からつなぐ（docs/DATA.md「キーワード管理表」） */
+export type KeywordSource = "proposal" | "customer" | "cotam" | "site" | "search_console" | "semrush";
+
+/** 優先度。3 がいちばん高い */
+export type KeywordPriority = 1 | 2 | 3;
 
 export interface KeywordRow extends KeywordIdea {
   kind: "pillar" | "cluster";
   status: RowStatus;
+  /** 以下は管理表で使う。前の試作で保存した行には無いので、src/prototype/keywords.ts の normalizeRow で補う */
+  /** 属する柱の記事の行 id（柱の記事は自分の id） */
+  pillarId?: string;
+  priority?: KeywordPriority;
+  reasons?: ProposalReason[];
+  source?: KeywordSource;
+  /** 月間検索数。キーワードツールをつなぐまでは null（数字を作らない） */
+  monthlySearches?: number | null;
+  /** 「やめておく」にしたもの。消さずに残す */
+  parked?: boolean;
 }
 
 export interface KeywordPlan {
@@ -247,10 +267,19 @@ export interface KeywordPlan {
   rows: KeywordRow[];
 }
 
+/**
+ * 選んだ提案から管理表を作る。優先度はサンプルの決まり：柱の記事と最初の2本は 3、次の2本は 2、残りは 1。
+ * 本物では、AIが売上への近さ・競合・AI検索で紹介されやすさから付け、キーワードツールの数字も加える
+ */
 export function planFromProposal(p: PillarProposal): KeywordPlan {
+  const base = { pillarId: p.pillar.id, reasons: p.reasons, source: "proposal" as const, monthlySearches: null, parked: false };
+  const clusterPriority = (i: number): KeywordPriority => (i < 2 ? 3 : i < 4 ? 2 : 1);
   return {
     proposalId: p.id,
-    rows: [{ ...p.pillar, kind: "pillar", status: "todo" }, ...p.clusters.map((c) => ({ ...c, kind: "cluster" as const, status: "todo" as const }))],
+    rows: [
+      { ...p.pillar, ...base, kind: "pillar", status: "todo", priority: 3 },
+      ...p.clusters.map((c, i) => ({ ...c, ...base, kind: "cluster" as const, status: "todo" as const, priority: clusterPriority(i) })),
+    ],
   };
 }
 
@@ -282,7 +311,8 @@ export const LEVELS: { at: number; name: string }[] = [
 
 /** 点の付け方：ヒアリングを終えた 5点、書き始めた記事 1本 2点、公開したクラスター 1本 10点、公開した柱の記事 30点 */
 export function computeGrowth(answers: Record<string, HearingAnswer>, plan: KeywordPlan | null): Growth {
-  const rows = plan?.rows ?? [];
+  // 「やめておく」にしたキーワードは数えない
+  const rows = (plan?.rows ?? []).filter((r) => !r.parked);
   const hearingDone = answeredCount(answers) === HEARING_QUESTIONS.length;
   const published = rows.filter((r) => r.status === "published");
   const pillarPublished = published.some((r) => r.kind === "pillar");
@@ -298,11 +328,11 @@ export function computeGrowth(answers: Record<string, HearingAnswer>, plan: Keyw
     levelStart: LEVELS[idx].at,
     nextAt: idx + 1 < LEVELS.length ? LEVELS[idx + 1].at : null,
     badges: [
-      { id: "hearing", label: "ヒアリングを終えた", earned: hearingDone },
+      { id: "hearing", label: "会社のことを教えた", earned: hearingDone },
       { id: "first", label: "最初の記事を公開した", earned: published.length > 0 },
-      { id: "pillar", label: "柱の記事を公開した", earned: pillarPublished },
-      { id: "five", label: "周りの記事を5本公開した", earned: clustersPublished >= 5 },
-      { id: "all", label: "設計図を全部埋めた", earned: rows.length > 0 && published.length === rows.length && clusters > 0 },
+      { id: "pillar", label: "まとめ記事を公開した", earned: pillarPublished },
+      { id: "five", label: "くわしい記事を5本公開した", earned: clustersPublished >= 5 },
+      { id: "all", label: "記事リストを全部やった", earned: rows.length > 0 && published.length === rows.length && clusters > 0 },
     ],
   };
 }
@@ -318,7 +348,7 @@ export interface ArticleQuestion {
 /** 1本の記事を書くときの一問一答。キーワードの「読む人が知りたいこと」に合わせて言い方を変える */
 export function articleQuestions(row: KeywordIdea): ArticleQuestion[] {
   return [
-    { id: "a1", label: `「${row.question}」について、お客様からどんな相談がありましたか`, aio: "experience", example: "例：去年の冬、70代のご夫婦から「脱衣所が寒い」と相談された", tip: "実際にあった1件を思い出すと書きやすいです。名前は書かなくて大丈夫です。" },
+    { id: "a1", label: `「${row.question || row.keyword}」について、お客様からどんな相談がありましたか`, aio: "experience", example: "例：去年の冬、70代のご夫婦から「脱衣所が寒い」と相談された", tip: "実際にあった1件を思い出すと書きやすいです。名前は書かなくて大丈夫です。" },
     { id: "a2", label: "そのとき、どう答えましたか・どう対応しましたか", aio: "qa", example: "例：・まず現地で窓と床を見た\n・内窓を提案した\n・工事は1日", tip: "箇条書きで大丈夫です。順番どおりに並べてください。" },
     { id: "a3", label: "結果はどうでしたか", aio: "numbers", example: "例：お風呂に入る前の寒さが気にならなくなったと言われた", tip: "お客様の言葉や、分かる範囲の数字があると記事の説得力が上がります。" },
     { id: "a4", label: "よくある誤解や、気をつけることはありますか", aio: "expertise", example: "例：暖房を増やすだけでは結露が増えることがある", tip: "プロだから知っていることが、記事のいちばんの価値になります。" },

@@ -29,12 +29,12 @@ export default function HearingPage() {
   if (done) {
     return (
       <main className="page max-w-3xl space-y-4">
-        <Notice tone="ok" title="ヒアリングが終わりました">
-          おつかれさまでした！AIに「どこの、どんな会社か」を伝える材料がそろいました。この内容をもとに、記事の設計図を提案します。答えはあとから直せます。
+        <Notice tone="ok" title="答え終わりました">
+          おつかれさまでした！AIに「どこの、どんな会社か」を伝える材料がそろいました。この内容をもとに、しおりが書く記事をおすすめします。答えはあとから直せます。
         </Notice>
         <div className="flex flex-wrap gap-2">
           <Link href="/prototype/plan" className="btn-primary">
-            記事の設計図を見る
+            書く記事を決める
           </Link>
           <button type="button" className="btn-secondary" onClick={() => { setStep(0); setDeep(null); setText(g.answers[HEARING_QUESTIONS[0].id]?.text ?? ""); }}>
             答えを見直す
@@ -85,7 +85,7 @@ export default function HearingPage() {
   return (
     <main className="page max-w-3xl space-y-5">
       <div>
-        <h1 className="text-2xl font-bold">ヒアリング</h1>
+        <h1 className="text-2xl font-bold">会社のことを教える</h1>
         <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。分からない問いは「あとで答える」で進めます。</p>
       </div>
 
@@ -96,7 +96,7 @@ export default function HearingPage() {
           </span>
           <span aria-live="polite">答えは自動で保存されます</span>
         </div>
-        <ProgressBar value={current + 1} max={total} label="ヒアリングの進み具合" />
+        <ProgressBar value={current + 1} max={total} label="答えた進み具合" />
       </div>
 
       {cheer && <Cheer point={cheer} />}
@@ -115,7 +115,7 @@ export default function HearingPage() {
               <p className="whitespace-pre-wrap">{saved.text}</p>
             </div>
             <Notice tone="info" title="もう少しだけ教えてください">
-              具体的に分かると、ほかの会社には書けない記事になります。（深掘りの質問は{SAMPLE_LABEL}）
+              具体的に分かると、ほかの会社には書けない記事になります。（追加の質問は{SAMPLE_LABEL}）
             </Notice>
             <div>
               <label htmlFor="answer" className="field-label text-lg">
