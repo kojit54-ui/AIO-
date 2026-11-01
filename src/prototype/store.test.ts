@@ -360,6 +360,34 @@ describe("本物のデータにつないだとき", () => {
     expect(readGrowState().articleAnswers[dbId]).toEqual({ a1: "去年の冬の相談" });
   });
 
+  it("設計図の選び直しがDBで断られたら、前の設計図で書いた記事の答えを戻す", async () => {
+    vi.useFakeTimers();
+    const mem = new Map<string, string>();
+    vi.stubGlobal("window", { localStorage: { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v) } });
+    try {
+      const r = fakeRemote();
+      connectGrow(r);
+      await flush();
+      const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
+      const p = sampleProposals(answers)[0];
+      growActions.choosePlan(planFromProposal(p), p);
+      await flush();
+      const rowId = readGrowState().plan!.rows[0].id;
+      growActions.saveArticleAnswers(rowId, { a1: "去年の冬の相談" });
+      r.choosePlan = async () => {
+        throw new GrowSyncError("保存できませんでした");
+      };
+      growActions.choosePlan(null);
+      expect(readGrowState().articleAnswers).toEqual({});
+      await flush();
+      await flush();
+      expect(readGrowSync().error).toBeTruthy();
+      expect(readGrowState().articleAnswers[rowId]).toEqual({ a1: "去年の冬の相談" });
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
   it("ほかの保存が失敗して読み直しても、保存待ちの売りたいものの変更は残す", async () => {
     vi.useFakeTimers();
     const r = fakeRemote();

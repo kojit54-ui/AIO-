@@ -164,7 +164,7 @@ let queue: Promise<void> = Promise.resolve();
  * うしろで保存する。job は DB に送り、終わったら server を直す関数を返す（会社を切りかえていたら呼ばない）。
  * 失敗したらその操作を外し、知らせて、DBの内容を読み直す。
  */
-function persist(r: GrowRemote, job: () => Promise<((srv: Synced) => Synced) | void>, done: (o: Op) => boolean = () => false) {
+function persist(r: GrowRemote, job: () => Promise<((srv: Synced) => Synced) | void>, done: (o: Op) => boolean = () => false, onFail?: () => void) {
   inFlight += 1;
   setSync({ saving: true });
   // 会社を切りかえたあとでも、並んでいた保存は前の会社に対して最後まで送る
@@ -182,6 +182,8 @@ function persist(r: GrowRemote, job: () => Promise<((srv: Synced) => Synced) | v
       // 前の失敗のお知らせは、ほかの保存が成功しても消さない（消えた入力に気づけるように）。「読み込み直す」で消す
     })
     .catch((e: unknown) => {
+      // 失敗したときの戻しは、読み直し（列のあと）より先にする
+      onFail?.();
       if (remote !== r) return;
       dropOps(done);
       setSync({ error: e instanceof GrowSyncError ? e.message : "保存できませんでした。通信状態を確かめて、もう一度お試しください" });
@@ -191,6 +193,22 @@ function persist(r: GrowRemote, job: () => Promise<((srv: Synced) => Synced) | v
       inFlight -= 1;
       if (remote === r) setSync({ saving: inFlight > 0 || timers.size > 0 });
     });
+}
+
+function restoreArticleAnswers(r: GrowRemote, before: GrowState["articleAnswers"]) {
+  if (remote === r) {
+    const s = load();
+    set({ ...s, articleAnswers: { ...before, ...s.articleAnswers } });
+    return;
+  }
+  // 会社を切りかえたあとなら、その会社のこのブラウザの控えを直す
+  try {
+    const key = remoteLocalKey(r.organizationId);
+    const kept = JSON.parse(window.localStorage.getItem(key) ?? "{}") as { articleAnswers?: GrowState["articleAnswers"] };
+    window.localStorage.setItem(key, JSON.stringify({ ...kept, articleAnswers: { ...before, ...(kept.articleAnswers ?? {}) } }));
+  } catch {
+    // 控えを直せなくても画面は動かす
+  }
 }
 
 /** 同じ種類の保存は最後の1回だけにまとめる */
@@ -344,6 +362,7 @@ export const growActions = {
   },
   /** 設計図を選ぶ・選び直す。前の設計図で書いた記事の答えは消す（行の id が同じでも持ち越さない） */
   choosePlan(plan: KeywordPlan | null, proposal: PillarProposal | null = null) {
+    const before = load().articleAnswers;
     set({ ...load(), articleAnswers: {} });
     const r = remote;
     if (!r) {
@@ -359,6 +378,8 @@ export const growActions = {
         return (srv) => ({ ...srv, plan: saved });
       },
       (o) => o.id === id,
+      // 選び直しがDBで断られたら、前の設計図で書いていた記事の答えを戻す（そのあと書いた答えは残す）
+      () => restoreArticleAnswers(r, before),
     );
   },
   setRowStatus(rowId: string, status: RowStatus) {
