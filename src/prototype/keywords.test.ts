@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { HEARING_QUESTIONS, type KeywordPlan, type KeywordRow, computeGrowth, planFromProposal, sampleProposals } from "./growth";
-import { countByStatus, cycleStatus, groupByPillar, newKeywordRow, nextKeyword, normalizeRows, shioriMessage, sortByRecommendation, toggleDone } from "./keywords";
+import { countByStatus, cycleStatus, groupByPillar, moveItem, newKeywordRow, nextKeyword, normalizeRows, sellItemOf, sellItemsFromAnswer, shioriMessage, sortByRecommendation, toggleDone } from "./keywords";
 
 const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
 const plan = planFromProposal(sampleProposals(answers)[0]);
@@ -58,5 +58,49 @@ describe("キーワード管理表", () => {
     expect(newKeywordRow(plan.rows, plan.rows[1].keyword.replace(" ", "　 "), "p")).toBeNull();
     const row = newKeywordRow(plan.rows, " 内窓  結露 ", plan.rows[0].id)!;
     expect(row).toMatchObject({ keyword: "内窓 結露", source: "customer", priority: 2, status: "todo", monthlySearches: null });
+  });
+});
+
+describe("今売りたいものの順番", () => {
+  const rows = (): ReturnType<typeof normalizeRows> =>
+    normalizeRows({
+      proposalId: "x",
+      rows: [
+        { id: "a", keyword: "内窓 費用", question: "", kind: "cluster", status: "todo", priority: 2 },
+        { id: "b", keyword: "浴室 断熱 費用", question: "", kind: "cluster", status: "todo", priority: 2 },
+        { id: "c", keyword: "外壁塗装 時期", question: "", kind: "cluster", status: "todo", priority: 3 },
+      ],
+    });
+
+  it("ヒアリングの答えから売りたいものを作る（重なりは1つ、最大5つ）", () => {
+    expect(sellItemsFromAnswer("内窓、浴室 断熱\n内窓").map((x) => x.name)).toEqual(["内窓", "浴室 断熱"]);
+    expect(sellItemsFromAnswer("a、b、c、d、e、f")).toHaveLength(5);
+    expect(sellItemsFromAnswer("")).toEqual([]);
+  });
+
+  it("記事の言葉に売りたいものの名前が入っていれば、その記事とみなす（空白の違いは無視）。決めてあればそれを使う", () => {
+    const items = sellItemsFromAnswer("内窓、浴室断熱");
+    const r = rows();
+    expect(sellItemOf(r[0], items)?.rank).toBe(0);
+    expect(sellItemOf(r[1], items)?.rank).toBe(1);
+    expect(sellItemOf(r[2], items)).toBeNull();
+    expect(sellItemOf({ ...r[2], sellItemId: items[1].id }, items)?.rank).toBe(1);
+  });
+
+  it("順番を入れかえると、おすすめ順と次の1本が変わる", () => {
+    const items = sellItemsFromAnswer("内窓、浴室断熱");
+    // 内窓1位：2+3=5 が先、外壁(3+0)より浴室(2+2)が上
+    expect(sortByRecommendation(rows(), items).map((r) => r.id)).toEqual(["a", "b", "c"]);
+    const swapped = moveItem(items, 1, 0);
+    expect(nextKeyword(rows(), swapped)!.id).toBe("b");
+    // 売りたいものが無ければ、しおりのおすすめ度だけで決まる
+    expect(nextKeyword(rows(), [])!.id).toBe("c");
+  });
+
+  it("並べかえは元の配列を変えず、範囲の外は端に置く", () => {
+    const list = [1, 2, 3];
+    expect(moveItem(list, 0, 2)).toEqual([2, 3, 1]);
+    expect(moveItem(list, 2, -5)).toEqual([3, 1, 2]);
+    expect(list).toEqual([1, 2, 3]);
   });
 });

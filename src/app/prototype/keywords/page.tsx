@@ -15,10 +15,14 @@ import {
   newKeywordRow,
   nextKeyword,
   normalizeRows,
+  sellItemOf,
+  sellItemsFromAnswer,
   shioriMessage,
   sortByRecommendation,
   toggleDone,
+  type SellItem,
 } from "@/prototype/keywords";
+import { SellRanking } from "@/prototype/SellRanking";
 import { growActions, useGrow } from "@/prototype/store";
 
 type Filter = RowStatus | "all";
@@ -78,12 +82,14 @@ function Stars({ n }: { n: 1 | 2 | 3 }) {
 export default function KeywordsPage() {
   const g = useGrow();
   const [filter, setFilter] = useState<Filter>("all");
-  const [order, setOrder] = useState<"pillar" | "recommend">("pillar");
+  const [order, setOrder] = useState<"pillar" | "recommend">("recommend");
   const [draft, setDraft] = useState("");
   const [addError, setAddError] = useState<string | null>(null);
   const [showParked, setShowParked] = useState(false);
   const [flash, fire] = useFlash();
   const [cheer, setCheer] = useState("");
+  const [party, setParty] = useState(false);
+  const [sellFor, setSellFor] = useState("");
   if (!g.ready) return <PageSkeleton />;
 
   if (!g.plan) {
@@ -103,7 +109,9 @@ export default function KeywordsPage() {
   const plan = g.plan;
   const rows = normalizeRows(plan);
   const counts = countByStatus(rows);
-  const next = nextKeyword(rows);
+  const sellItems = g.sellItems ?? sellItemsFromAnswer(g.answers.services?.text ?? "");
+  const next = nextKeyword(rows, sellItems);
+  const nextSell = next ? sellItemOf(next, sellItems) : null;
   const parked = rows.filter((r) => r.parked);
   const visible = (list: Row[]) => list.filter((r) => filter === "all" || r.status === filter);
   const groups = groupByPillar(rows);
@@ -114,13 +122,14 @@ export default function KeywordsPage() {
     growActions.setRowStatus(r.id, status);
     if (status !== "published") return;
     const after = computeGrowth(g.answers, { ...plan, rows: plan.rows.map((x) => (x.id === r.id ? { ...x, status } : x)) });
+    setParty(true);
     setCheer(after.level > before ? `「${r.keyword}」やったね！サイトがレベル ${after.level}「${after.name}」に上がったよ` : `「${r.keyword}」やったね！`);
     fire();
   }
 
   function add(e: React.FormEvent) {
     e.preventDefault();
-    const row = newKeywordRow(plan.rows, draft, pillarIdForNew);
+    const row = newKeywordRow(plan.rows, draft, pillarIdForNew, "customer", sellFor || null);
     if (!row) {
       setAddError(draft.trim() ? "その記事は、もうリストにあります。" : "書きたいことを入れてください。");
       return;
@@ -128,6 +137,12 @@ export default function KeywordsPage() {
     growActions.addRow(row);
     setDraft("");
     setAddError(null);
+  }
+
+  function moved(top: SellItem) {
+    setParty(false);
+    setCheer(`1位は「${top.name}」。おすすめ順を入れかえたよ`);
+    fire();
   }
 
   const row = (r: Row, i: number) => (
@@ -165,6 +180,14 @@ export default function KeywordsPage() {
               {REASON_LABEL[x]}
             </li>
           ))}
+          {(() => {
+            const sell = sellItemOf(r, sellItems);
+            return sell ? (
+              <li className="rounded bg-sun-soft px-1.5 py-0.5 font-bold text-warn">
+                売りたい {sell.rank + 1}位：{sell.item.name}
+              </li>
+            ) : null;
+          })()}
           <li className="rounded border border-dashed border-line px-1.5 py-0.5 text-muted">{SOURCE_LABEL[r.source]}</li>
         </ul>
       </div>
@@ -196,7 +219,7 @@ export default function KeywordsPage() {
     <main className="page space-y-5">
       {flash > 0 && (
         <>
-          <Confetti key={`c${flash}`} />
+          {party && <Confetti key={`c${flash}`} />}
           <Toast key={`t${flash}`}>{cheer}</Toast>
         </>
       )}
@@ -205,7 +228,7 @@ export default function KeywordsPage() {
       <section className="card flex animate-rise flex-wrap items-center gap-4" aria-label="しおりから">
         <Shiori mood={counts.all > 0 && counts.published === counts.all ? "welldone" : counts.published > 0 ? "cheer" : "point"} className="h-28 w-auto animate-float sm:h-32" />
         <p className="relative min-w-[12rem] flex-1 rounded-2xl bg-sun-soft px-4 py-3 font-bold" role="status">
-          {shioriMessage(rows)}
+          {shioriMessage(rows, sellItems)}
         </p>
         <Ring done={counts.published} total={counts.all} />
       </section>
@@ -218,12 +241,21 @@ export default function KeywordsPage() {
             </h2>
             <p className="text-xl font-bold">{next.keyword}</p>
             {next.question && <p className="text-sm text-muted">お客様が知りたいこと：{next.question}</p>}
+            {nextSell && <p className="text-sm font-bold text-warn">今売りたい {nextSell.rank + 1}位「{nextSell.item.name}」の記事です</p>}
           </div>
           <Link href={`/prototype/write/${next.id}`} className="btn-primary">
             {next.status === "writing" ? "続きを書く" : "この記事を書く"}
           </Link>
         </section>
       )}
+
+      <section className="card space-y-2" aria-labelledby="sell-heading">
+        <h2 id="sell-heading" className="font-bold">
+          今売りたいものの順番を決める
+        </h2>
+        <p className="text-sm text-muted">上にあるものほど、関係する記事がおすすめの上に来ます。つまみ（⠿）をドラッグするか、▲▼で入れかえてください。季節や忙しさに合わせて、いつでも変えられます。</p>
+        <SellRanking items={sellItems} onChange={(items) => growActions.setSellItems(items)} onMoved={moved} />
+      </section>
 
       <div className="flex flex-wrap items-center gap-2">
         <div className="flex flex-wrap gap-1.5" role="group" aria-label="絞り込み">
@@ -240,7 +272,7 @@ export default function KeywordsPage() {
           ))}
         </div>
         <div className="ml-auto flex gap-1.5" role="group" aria-label="並べ方">
-          {(["pillar", "recommend"] as const).map((o) => (
+          {(["recommend", "pillar"] as const).map((o) => (
             <button
               key={o}
               type="button"
@@ -277,8 +309,8 @@ export default function KeywordsPage() {
         })
       ) : (
         <section className="card" aria-label="おすすめ順">
-          {visible(sortByRecommendation(rows.filter((r) => !r.parked))).length ? (
-            <ul className="grid gap-2">{visible(sortByRecommendation(rows.filter((r) => !r.parked))).map(row)}</ul>
+          {visible(sortByRecommendation(rows.filter((r) => !r.parked), sellItems)).length ? (
+            <ul className="grid gap-2">{visible(sortByRecommendation(rows.filter((r) => !r.parked), sellItems)).map(row)}</ul>
           ) : (
             <p className="text-sm text-muted">ここに入る記事はありません。</p>
           )}
@@ -289,7 +321,7 @@ export default function KeywordsPage() {
         <h2 id="add-heading" className="font-bold">
           書きたい記事を足す
         </h2>
-        <p className="text-sm text-muted">思いついたことや、お客様によく聞かれることを、短い言葉で足せます。足したものは「おすすめ度 中」で入ります。</p>
+        <p className="text-sm text-muted">思いついたことや、お客様によく聞かれることを、短い言葉で足せます。足したものは「しおりのおすすめ度 中」で入ります。</p>
         <form onSubmit={add} className="flex flex-wrap gap-2">
           <label htmlFor="new-keyword" className="sr-only">
             足す記事
@@ -303,6 +335,21 @@ export default function KeywordsPage() {
             aria-invalid={!!addError}
             aria-describedby={addError ? "add-error" : undefined}
           />
+          {sellItems.length > 0 && (
+            <>
+              <label htmlFor="new-keyword-sell" className="sr-only">
+                どの売りたいものの記事か
+              </label>
+              <select id="new-keyword-sell" className="field w-auto" value={sellFor} onChange={(e) => setSellFor(e.target.value)}>
+                <option value="">売りたいもの：おまかせ</option>
+                {sellItems.map((x) => (
+                  <option key={x.id} value={x.id}>
+                    {x.name}
+                  </option>
+                ))}
+              </select>
+            </>
+          )}
           <button type="submit" className="btn-primary">
             足す
           </button>
@@ -335,7 +382,7 @@ export default function KeywordsPage() {
       )}
 
       <p className="text-sm text-muted">
-        記事とおすすめ度は{SAMPLE_LABEL}。月の検索回数は、検索の数を調べる道具（SEMrush など）をつなぐと入ります。それまでは数字を作らず「—」と出します。
+        記事としおりのおすすめ度は{SAMPLE_LABEL}。おすすめ順は、しおりのおすすめ度（★）と、今売りたいものの順番を合わせて決めます。月の検索回数は、検索の数を調べる道具（SEMrush など）をつなぐと入ります。それまでは数字を作らず「—」と出します。
       </p>
     </main>
   );

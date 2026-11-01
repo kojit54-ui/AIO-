@@ -3,6 +3,7 @@
 // 「育つブログ」の試作の状態。ブラウザの中（localStorage）だけに置き、本物のデータやAIにはつながない。
 
 import { useSyncExternalStore } from "react";
+import type { SellItem } from "./keywords";
 import { type HearingAnswer, type KeywordPlan, type KeywordRow, type PillarProposal, type RowStatus } from "./growth";
 
 export interface GrowState {
@@ -11,10 +12,12 @@ export interface GrowState {
   plan: KeywordPlan | null;
   /** 記事ごとの一問一答の答え（キーワードの行 id → 質問 id → 答え） */
   articleAnswers: Record<string, Record<string, string>>;
+  /** 今売りたいもの（順位順）。null はまだ触っていない（ヒアリングの答えから作って見せる） */
+  sellItems: SellItem[] | null;
 }
 
 const KEY = "cotam-grow-prototype-v1";
-const EMPTY: GrowState = { answers: {}, proposals: null, plan: null, articleAnswers: {} };
+const EMPTY: GrowState = { answers: {}, proposals: null, plan: null, articleAnswers: {}, sellItems: null };
 
 let state: GrowState | null = null;
 const listeners = new Set<() => void>();
@@ -76,6 +79,10 @@ export const growActions = {
     const s = load();
     if (!s.plan) return;
     set({ ...s, plan: { ...s.plan, rows: s.plan.rows.map((r) => (r.id === rowId ? { ...r, parked } : r)) } });
+  },
+  /** 今売りたいものと、その順位を保存する */
+  setSellItems(items: SellItem[]) {
+    set({ ...load(), sellItems: items });
   },
   saveArticleAnswers(rowId: string, answers: Record<string, string>) {
     const s = load();
