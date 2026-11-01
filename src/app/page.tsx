@@ -27,8 +27,8 @@ export default function HomePage() {
   return (
     <main className="page space-y-6">
       {org?.profile && !org.profileApprovedAt && (
-        <Notice tone="warn" title="会社プロフィールの確認をお願いします">
-          記事を作り始める前に、コタムが登録した会社の情報をご確認ください。{" "}
+        <Notice tone="warn" title="まず、会社の情報を確かめてください">
+          記事を書き始める前に、コタムが登録した会社の情報に間違いがないか見てください。{" "}
           <Link href="/profile" className="font-semibold underline">
             確認する
           </Link>
@@ -45,7 +45,7 @@ export default function HomePage() {
       </div>
       <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
         <h2 id="policy-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">
-          {monthLabel(month)}の指導方針
+          {monthLabel(month)}の方針（コタムより）
         </h2>
         {note ? (
           <>
@@ -53,7 +53,7 @@ export default function HomePage() {
             <p className="mt-2">{note.clientVisibleNote}</p>
           </>
         ) : (
-          <p className="mt-1">今月の指導方針は、コタムが準備中です。</p>
+          <p className="mt-1">今月の方針は、コタムが準備中です。</p>
         )}
       </section>
 
@@ -79,7 +79,7 @@ export default function HomePage() {
 
       <section aria-labelledby="list-heading">
         <h2 id="list-heading" className="mb-3 text-lg font-bold">
-          記事一覧
+          これまでの記事
         </h2>
         {list.length === 0 ? (
           <EmptyState title="まだ記事はありません">「今月の記事を書く」から始めましょう。</EmptyState>

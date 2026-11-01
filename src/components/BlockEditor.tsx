@@ -59,7 +59,7 @@ export function BlockEditor({ blocks, onChange, readOnly }: { blocks: Block[]; o
   return (
     <div className="space-y-3">
       <div className="sticky top-2 z-10 flex flex-wrap items-center gap-2 rounded-2xl border border-line bg-surface/95 p-2 shadow-[0_4px_0_var(--color-line)] backdrop-blur" role="toolbar" aria-label="選んだ段落の書き直し">
-        <span className="text-sm text-muted">{selected === null ? "段落を選ぶと書き直しの提案を出せます" : `第${selected + 1}ブロックを選択中`}</span>
+        <span className="text-sm text-muted">{selected === null ? "段落を選ぶと書き直しの提案を出せます" : `${selected + 1}番目を選択中`}</span>
         <button type="button" className="btn-secondary min-h-9 px-3 py-1 text-sm" disabled={selected === null || blocks[selected]?.type === "heading"} onClick={() => suggest("短くする")}>
           短くする
         </button>

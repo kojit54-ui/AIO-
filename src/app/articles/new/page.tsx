@@ -31,7 +31,7 @@ export default function NewArticlePage() {
   if (org?.profile && !org.profileApprovedAt) {
     return (
       <main className="page">
-        <EmptyState title="先に会社プロフィールをご確認ください" action={<Link href="/profile" className="btn-primary">確認する</Link>}>
+        <EmptyState title="先に会社の情報を確かめてください" action={<Link href="/profile" className="btn-primary">確認する</Link>}>
           確認した会社の情報だけを、記事づくりに使います。
         </EmptyState>
       </main>
@@ -41,7 +41,7 @@ export default function NewArticlePage() {
   if (!isOrgReady(db, orgId, month)) {
     return (
       <main className="page">
-        <EmptyState title="コタムが準備中です">会社情報と今月の指導方針が登録されると、記事を書き始められます。</EmptyState>
+        <EmptyState title="コタムが準備中です">会社の情報と今月の方針をコタムが登録すると、記事を書き始められます。</EmptyState>
       </main>
     );
   }

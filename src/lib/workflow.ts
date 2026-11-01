@@ -17,11 +17,11 @@ export class TransitionError extends Error {
 }
 
 export const STATUS_LABEL: Record<ArticleStatus, string> = {
-  drafting: "作成中",
-  in_review: "確認待ち",
-  changes_requested: "修正依頼あり",
-  approved: "承認済み",
-  published: "公開済み",
+  drafting: "書いている",
+  in_review: "コタムが確認中",
+  changes_requested: "直してほしい所あり",
+  approved: "コタムのOK",
+  published: "ブログに載せた",
 };
 
 function isHttpUrl(value: string): boolean {
