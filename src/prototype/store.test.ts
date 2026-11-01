@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { HEARING_QUESTIONS, planFromProposal, sampleProposals, type KeywordPlan } from "./growth";
+import { HEARING_QUESTIONS, planFromProposal, sampleProposals, type KeywordPlan, type KeywordRow } from "./growth";
 import { GrowSyncError, type GrowRemote, type GrowSnapshot } from "./remote";
 import { connectGrow, growActions, readGrowState, readGrowSync, SAVE_DELAY_MS } from "./store";
 
@@ -160,6 +160,50 @@ describe("本物のデータにつないだとき", () => {
     growActions.setSellItems([]);
     await vi.advanceTimersByTimeAsync(SAVE_DELAY_MS);
     expect(readGrowState().sellItems).toEqual([]);
+  });
+
+  it("書きかけのまま会社を切りかえても、前の会社の答えは前の会社に保存する", async () => {
+    vi.useFakeTimers();
+    const a = fakeRemote();
+    connectGrow(a);
+    await flush();
+    growActions.saveAnswer({ questionId: "business", text: "途中", followUps: [], draft: true });
+    const b = { ...fakeRemote(), organizationId: "44444444-4444-4444-8444-444444444444" };
+    connectGrow(b);
+    await flush();
+    expect(a.calls).toContain("answer:business:途中");
+    expect(readGrowState().answers.business).toBeUndefined();
+  });
+
+  it("組み立てを選ぶ保存の途中で足した記事も、柱と売りたいものの札をつけて保存し、消えない", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    let added: KeywordRow | null = null;
+    let chosen: KeywordPlan | null = null;
+    const choose = r.choosePlan;
+    r.choosePlan = async (plan, proposal) => {
+      await new Promise((ok) => setTimeout(ok, 300));
+      chosen = await choose(plan, proposal);
+      return chosen;
+    };
+    r.addRow = async (row) => {
+      added = row;
+      return chosen && { ...chosen, rows: [...chosen.rows, { ...row, id: "99999999-9999-4999-8999-999999999999" }] };
+    };
+    connectGrow(r);
+    await flush();
+    const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
+    const p = sampleProposals(answers)[0];
+    const plan = planFromProposal(p);
+    growActions.choosePlan(plan, p);
+    growActions.setSellItems([{ id: "sell_0", name: "内窓" }]);
+    growActions.addRow({ id: "new1", keyword: "自分で足した記事", question: "", kind: "cluster", status: "todo", pillarId: plan.rows[0].id, sellItemId: "sell_0" });
+    expect(readGrowState().plan!.rows.at(-1)!.keyword).toBe("自分で足した記事");
+    await vi.advanceTimersByTimeAsync(1000);
+    const pillar = readGrowState().plan!.rows[0];
+    expect(added!.pillarId).toBe(pillar.id);
+    expect(added!.sellItemId).toMatch(/^0{8}-/);
+    expect(readGrowState().plan!.rows.some((x) => x.keyword === "自分で足した記事")).toBe(true);
   });
 
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {

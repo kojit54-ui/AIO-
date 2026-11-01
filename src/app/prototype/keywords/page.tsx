@@ -134,6 +134,8 @@ export default function KeywordsPage() {
       setAddError(draft.trim() ? "その記事は、もうリストにあります。" : "書きたいことを入れてください。");
       return;
     }
+    // 答えから作った売りたいもの（まだ保存していない）を選んだときは、先に保存して記事との札を残す
+    if (sellFor && g.sellItems === null) growActions.setSellItems(sellItems);
     growActions.addRow(row);
     setDraft("");
     setAddError(null);

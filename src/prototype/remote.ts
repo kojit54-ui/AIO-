@@ -202,6 +202,8 @@ export function createGrowRemote(client: SupabaseClient, organizationId: string)
         reasons: row.reasons ?? [],
         source: row.source ?? "customer",
         sell_item_id: isUuid(row.sellItemId) ? row.sellItemId : null,
+        status: row.status,
+        parked: !!row.parked,
         sort_order: ((last?.[0]?.sort_order as number | undefined) ?? 0) + 1,
       });
       if (e2) fail(e2);
