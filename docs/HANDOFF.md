@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-01 CC（Claude、プロジェクトのスレッド）その27
+- ブランチ / コミット：claude/project-thread-n66pdb（PR #25 のマージ後の main から）
+- 変更点：T5-3 の保存を追加（supabase/migrations/20261101000000_growth.sql）。hearing_answers・sell_items・keyword_plans・keyword_rows と RLS、関数 choose_keyword_plan（組み立てを選ぶ。前の組み立てをしまい、書いた・やった行を引き継ぐ）と save_sell_items（売りたいものの順番を置きかえる）。トリガーで、会社の違う組み立て・記事・売りたいものを指せない、月の検索回数は利用者が書けない、記事を公開したら行を「やった」にする。DATA・TASKS・DECISIONS を更新。ラッコへの問い合わせはしない（田村さんの判断）
+- 確認結果：supabase/tests/growth.test.ts（12件）を含む単体テスト、型検査、lint が通過
+- 未完了：画面（/prototype の書く記事リスト・会社のことを教える）を本物のデータにつなぐ（T5-5）。ラッコの下調べつきの提案を作るサーバーの入口
+- 次の作業と担当：CX が点検 → 田村さんがマージし、Supabase の SQL Editor で 20261101000000_growth.sql を実行 → CC が T5-5
+
 ### 2026-11-01 CC（Claude、プロジェクトのスレッド）その26
 - ブランチ / コミット：claude/project-thread-n66pdb（PR #25 に追加）
 - 変更点：ラッコキーワード API の呼び出しを追加（src/lib/keywords/rakko.ts。サジェスト・よくある質問・アカウント情報。キーはヘッダーだけ、エラーは種類ごとに日本語で、402 はクレジット切れ）。下調べ（research.ts）で1回3語まで集め、検索数は「多い・ふつう・少ない」に丸めて、提案役の指示（growthPrompts.ts の buildProposalPrompt）に research として渡す。本物で試すテスト rakko.live.test.ts（RAKKO_LIVE=1 のときだけ）。DECISIONS・LESSONS・KEYWORD_TOOLS_SETUP・TASKS・.env.example を更新
