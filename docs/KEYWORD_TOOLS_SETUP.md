@@ -12,9 +12,9 @@
 2. スタンダードプラン（月2,475円〜、2026年2月25日以降の新プラン）を契約する。古いプランのままだと API は使えません
 3. API キーを作る（作り方：https://rakkokeyword.com/knowledge/78/ 。キーは5個まで作れる。IP制限は任意）
 4. キーを Vercel の環境変数 `RAKKO_API_KEY` と、常時稼働PCの `.env.local` に入れる（Vercel はプロジェクト aio → Settings → Environments → Production の下の Environment Variables）
-5. 常時稼働PCで本物を1回試す：`RAKKO_LIVE=1 npx vitest run src/lib/keywords/rakko.live.test.ts`（3クレジット。プランと残高、質問とサジェストが表示される）
+5. 常時稼働PCで本物を1回試す：`RAKKO_LIVE=1 npx vitest run src/lib/keywords/rakko.live.test.ts --silent=false`（3クレジット。プランと残高、質問とサジェストが表示される）
 
-状況（2026-11-01）：スタンダードを年額で契約済み、Vercel の Production に `RAKKO_API_KEY` を登録済み。
+状況（2026-11-01）：スタンダードを年額で契約済み。Vercel の Production と常時稼働PCの `.env.local` に `RAKKO_API_KEY` を登録済み。常時稼働PCで本物のテストが通った（「断熱リフォーム」で質問10件、サジェスト10件、検索数は全件に数字あり）。
 
 使ってよい範囲：API利用ガイドライン（https://rakkokeyword.com/knowledge/9510/）。コタムが加工して特定の顧客に渡すのは申し込み不要。コタムのキー1つで顧客にデータを出すのは個別ライセンス（月55,000円・1年契約）。このサービスの使い方は docs/DECISIONS.md 2026-11-01 のとおりで、公開の前にラッコへ問い合わせる。
 

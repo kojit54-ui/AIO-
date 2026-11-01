@@ -28,6 +28,7 @@ describe("ラッコキーワード API", () => {
         ok([
           { keyword: "浴室 断熱 リフォーム", metrics: { searchVolume: 1300, seoDifficulty: 32 } },
           { keyword: "浴室 断熱 リフォーム", metrics: { searchVolume: 1300, seoDifficulty: 32 } },
+          { keyword: "浴室断熱　リフォーム", metrics: { searchVolume: 1300, seoDifficulty: 32 } },
           { keyword: "浴室 断熱 diy", metrics: { searchVolume: null, seoDifficulty: null } },
           { keyword: "", metrics: {} },
           "壊れた行",

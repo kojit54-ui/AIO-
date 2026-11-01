@@ -139,8 +139,10 @@ export function createRakkoClient(opts: RakkoClientOptions): RakkoClient {
       const seen = new Set<string>();
       return list(json, (it) => {
         const kw = typeof it.keyword === "string" ? it.keyword.trim() : "";
-        if (!kw || seen.has(kw)) return null;
-        seen.add(kw);
+        // 「断熱リフォームの匠」と「断熱リフォーム の匠」のように、空白だけ違うものは1つにまとめる（多い順なので先のものを残す）
+        const key = kw.replace(/[\s\u3000]+/g, "").toLowerCase();
+        if (!kw || seen.has(key)) return null;
+        seen.add(key);
         const m = isObj(it.metrics) ? it.metrics : {};
         return { keyword: kw, monthlySearches: numOrNull(m.searchVolume), seoDifficulty: numOrNull(m.seoDifficulty) };
       });

@@ -1,6 +1,7 @@
 // 本物のラッコキーワード API で1回だけ試す。通常の npm test では飛ばす。
 // 使い方：.env.local に RAKKO_API_KEY を入れてから
-//   RAKKO_LIVE=1 npx vitest run src/lib/keywords/rakko.live.test.ts
+//   RAKKO_LIVE=1 npx vitest run src/lib/keywords/rakko.live.test.ts --silent=false
+// （--silent=false を付けないと、取れた中身が表示されない）
 // 消費クレジット：アカウント情報 0、よくある質問 1.5、サジェスト 1.5（合計3）。
 
 import { describe, expect, it } from "vitest";
