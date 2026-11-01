@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AioMeter, AioWhy, Cheer, WhyAio } from "@/components/aio";
-import { Confetti, Road, Scene, Wave } from "@/components/fun";
+import { Confetti, Road, Scene, Shiori, ShioriFace, Wave } from "@/components/fun";
 import { Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice } from "@/components/ui";
 import { collectedAio } from "@/lib/aio";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
@@ -122,12 +122,15 @@ export default function QuestionsPage() {
       {celebrate && <Confetti />}
       {generating && <GeneratingOverlay label="見出し案を作っています" />}
       {cheer && <Cheer key={question.id} point={cheer} />}
-      <div className="animate-rise">
-        <h1 className="text-2xl font-black leading-snug sm:text-3xl">
-          {step === 0 && !showFollowUp ? "今日の1本、いっしょに書きましょう" : "その調子です！"} <Wave />
-        </h1>
-        <p className="text-muted">テーマ：{theme?.title}</p>
-        <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。</p>
+      <div className="flex animate-rise items-end justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-black leading-snug sm:text-3xl">
+            {step === 0 && !showFollowUp ? "今日の1本、いっしょに書きましょう" : "その調子です！"} <Wave />
+          </h1>
+          <p className="text-muted">テーマ：{theme?.title}</p>
+          <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。</p>
+        </div>
+        <Shiori mood={step === 0 && !showFollowUp ? "jersey-stretch" : "jersey-cheer"} className="hidden h-32 w-auto shrink-0 animate-float sm:block" />
       </div>
 
       <Road total={total} current={doneCount} label="答えは「次へ進む」で保存されます" />
@@ -136,15 +139,20 @@ export default function QuestionsPage() {
       </div>
 
       {error && (
-        <Notice tone="danger" title={error.message}>
-          {error.session ? (
-            <button type="button" className="mt-2 underline" onClick={() => { login(user.id); setError(null); }}>
-              もう一度ログインする（回答はこの画面に残っています）
-            </button>
-          ) : (
-            "入力した内容は消えていません。もう一度お試しください。"
-          )}
-        </Notice>
+        <div className="flex items-end gap-3">
+          <Shiori mood="sad" className="h-24 w-auto shrink-0" />
+          <div className="min-w-0 flex-1">
+            <Notice tone="danger" title={error.message}>
+              {error.session ? (
+                <button type="button" className="mt-2 underline" onClick={() => { login(user.id); setError(null); }}>
+                  もう一度ログインする（回答はこの画面に残っています）
+                </button>
+              ) : (
+                "入力した内容は消えていません。もう一度お試しください。"
+              )}
+            </Notice>
+          </div>
+        </div>
       )}
 
       <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
@@ -212,11 +220,9 @@ export default function QuestionsPage() {
         <aside className="space-y-4">
           <AioMeter points={allQuestions.flatMap((q) => (q.aio ? [q.aio] : []))} collected={collectedAio(allQuestions, (qid) => answers.some((a) => a.questionId === qid && !a.unknown && a.text.trim().length > 0))} />
           <p className="flex items-center gap-3 rounded-2xl bg-surface/70 px-4 py-3 text-sm">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-sky text-xl" aria-hidden>
-              🧑‍🏫
-            </span>
+            <ShioriFace className="h-12 w-12" />
             <span>
-              <b className="block">コタムより</b>
+              <b className="block">しおり（コタム）より</b>
               くわしい体験ほど、AIが紹介しやすくなります。
             </span>
           </p>
