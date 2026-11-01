@@ -64,7 +64,7 @@ function set(next: GrowState) {
   try {
     if (remote) {
       // DBに表が無いものだけをこのブラウザに置く
-      window.localStorage.setItem(remoteLocalKey(remote.organizationId), JSON.stringify({ proposals: next.proposals, articleAnswers: next.articleAnswers }));
+      window.localStorage.setItem(remoteLocalKey(remote.organizationId), JSON.stringify({ proposals: next.proposals, articleAnswers: next.articleAnswers, sellEmptied: next.sellItems?.length === 0 }));
     } else {
       window.localStorage.setItem(KEY, JSON.stringify(next));
     }
@@ -89,11 +89,16 @@ const subscribe = (fn: () => void) => {
 let inFlight = 0;
 const timers = new Map<string, { timer: ReturnType<typeof setTimeout>; run: () => void }>();
 
+/** 保存は1本の列に並べて順番に送る。先に送った古い内容があとから届いて新しい内容を上書きしないようにする */
+let queue: Promise<void> = Promise.resolve();
+
 /** うしろで保存する。失敗したら知らせて、DBの内容に戻す */
 function persist(r: GrowRemote, job: () => Promise<void>) {
   inFlight += 1;
   setSync({ saving: true });
-  job()
+  const run = queue.then(() => (remote === r ? job() : undefined));
+  queue = run.catch(() => undefined);
+  run
     .then(() => {
       if (remote === r && sync.error) setSync({ error: null });
     })
@@ -135,7 +140,9 @@ async function reloadRemote(r: GrowRemote) {
     const snap = await r.load();
     if (remote !== r || seq !== loadSeq) return;
     const keep = readLocal(remoteLocalKey(r.organizationId));
-    state = { answers: snap.answers, plan: snap.plan, sellItems: snap.sellItems, proposals: keep.proposals, articleAnswers: keep.articleAnswers };
+    // 売りたいものを全部消したことはDBでは「行が無い」としか分からないので、このブラウザの印で区別する
+    const emptied = (keep as GrowState & { sellEmptied?: boolean }).sellEmptied === true;
+    state = { answers: snap.answers, plan: snap.plan, sellItems: snap.sellItems ?? (emptied ? [] : null), proposals: keep.proposals, articleAnswers: keep.articleAnswers };
     setSync({ loaded: true });
   } catch (e) {
     if (remote !== r || seq !== loadSeq) return;
@@ -149,7 +156,6 @@ export function connectGrow(next: GrowRemote | null) {
   flushGrow();
   remote = next;
   state = null;
-  inFlight = 0;
   sync = next ? { mode: "remote", loaded: false, saving: false, error: null } : { mode: "local", loaded: true, saving: false, error: null };
   emit();
   if (next) void reloadRemote(next);
@@ -271,7 +277,7 @@ export const growActions = {
       persist(r, async () => {
         const saved = await r.saveSellItems(items);
         // 保存のあいだにまた並べかえていたら、新しいほうを残す
-        if (remote === r && seq === sellSeq) set({ ...load(), sellItems: saved.length ? saved : null });
+        if (remote === r && seq === sellSeq) set({ ...load(), sellItems: saved });
       }),
     );
   },

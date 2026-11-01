@@ -134,6 +134,34 @@ describe("本物のデータにつないだとき", () => {
     expect(readGrowState().sellItems?.every((x) => /^0{8}-/.test(x.id))).toBe(true);
   });
 
+  it("前の保存が届く前に次の保存をしても、順番どおりに送る（古い途中の答えで上書きしない）", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    const order: string[] = [];
+    r.saveAnswer = async (a) => {
+      // 途中の答えだけ届くのが遅い
+      await new Promise((ok) => setTimeout(ok, a.draft ? 500 : 10));
+      order.push(`${a.text}:${a.draft ? "draft" : "done"}`);
+    };
+    connectGrow(r);
+    await flush();
+    growActions.saveAnswer({ questionId: "business", text: "工務", followUps: [], draft: true });
+    await vi.advanceTimersByTimeAsync(SAVE_DELAY_MS);
+    growActions.saveAnswer({ questionId: "business", text: "工務店", followUps: [] });
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(order).toEqual(["工務:draft", "工務店:done"]);
+  });
+
+  it("売りたいものを全部消したら、空のまま残す（答えから作った候補を出し直さない）", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    connectGrow(r);
+    await flush();
+    growActions.setSellItems([]);
+    await vi.advanceTimersByTimeAsync(SAVE_DELAY_MS);
+    expect(readGrowState().sellItems).toEqual([]);
+  });
+
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {
     vi.useFakeTimers();
     const r = fakeRemote({ answers: { business: { questionId: "business", text: "工務店", followUps: [] } }, plan: null, sellItems: null });

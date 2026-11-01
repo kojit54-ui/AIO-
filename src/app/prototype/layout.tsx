@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { createBrowserClient } from "@supabase/ssr";
 import { getSupabaseEnv } from "@/lib/supabase/env";
 import { useStore } from "@/mock/store";
@@ -147,7 +147,8 @@ export default function PrototypeLayout({ children }: { children: React.ReactNod
           </div>
         )}
       </div>
-      {children}
+      {/* 会社を切りかえたら画面を作り直し、前の会社の書きかけが新しい会社に保存されないようにする */}
+      <Fragment key={orgId ?? "local"}>{children}</Fragment>
     </>
   );
 }
