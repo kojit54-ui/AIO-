@@ -416,6 +416,32 @@ describe("本物のデータにつないだとき", () => {
     expect(r.calls).toContain(`row:${old.rows[1].id}:{"status":"published"}`);
   });
 
+  it("会社を切りかえたあとに前の会社の保存が失敗したら、戻ったときに知らせる", async () => {
+    vi.useFakeTimers();
+    const a = fakeRemote();
+    const b = { ...fakeRemote(), organizationId: "66666666-6666-4666-8666-666666666666" };
+    let reject!: (e: unknown) => void;
+    a.saveAnswer = () => new Promise<void>((_, rj) => (reject = rj));
+    connectGrow(a);
+    await flush();
+    growActions.saveAnswer({ questionId: "business", text: "工務店", followUps: [] });
+    await flush();
+    connectGrow(b);
+    await flush();
+    reject(new GrowSyncError("保存できませんでした"));
+    await flush();
+    expect(readGrowSync().error).toBeNull();
+    connectGrow(a);
+    await flush();
+    expect(readGrowSync().error).toBe("保存できませんでした");
+    // 見ているあいだの失敗も、切りかえて戻るまで残す
+    connectGrow(b);
+    await flush();
+    expect(readGrowSync().error).toBeNull();
+    connectGrow(a);
+    expect(readGrowSync().error).toBe("保存できませんでした");
+  });
+
   it("ほかの保存が失敗して読み直しても、保存待ちの売りたいものの変更は残す", async () => {
     vi.useFakeTimers();
     const r = fakeRemote();

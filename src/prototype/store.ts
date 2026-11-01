@@ -109,6 +109,8 @@ let opSeq = 0;
 let planGen = 0;
 /** DBで断られた組み立ての選び直し。そのあとに並んだ行の変更・追加は、元の組み立てに入れずに捨てる */
 const failedPlanGens = new Set<number>();
+/** 見ていない会社の保存の失敗。その会社に戻ったときに知らせる（入力が消えたことに気づけるように） */
+const hiddenErrors = new Map<string, string>();
 
 const rowKey = (x: KeywordRow) => `${x.kind}\n${x.keyword}`;
 
@@ -186,9 +188,13 @@ function persist(r: GrowRemote, job: () => Promise<((srv: Synced) => Synced) | v
     .catch((e: unknown) => {
       // 失敗したときの戻しは、読み直し（列のあと）より先にする
       onFail?.();
-      if (remote !== r) return;
+      const message = e instanceof GrowSyncError ? e.message : "保存できませんでした。通信状態を確かめて、もう一度お試しください";
+      if (remote !== r) {
+        hiddenErrors.set(r.organizationId, message);
+        return;
+      }
       dropOps(done);
-      setSync({ error: e instanceof GrowSyncError ? e.message : "保存できませんでした。通信状態を確かめて、もう一度お試しください" });
+      setSync({ error: message });
       void reloadRemote(r);
     })
     .finally(() => {
@@ -269,10 +275,14 @@ async function readRemote(r: GrowRemote) {
 export function connectGrow(next: GrowRemote | null) {
   if (next?.organizationId === remote?.organizationId && (next === null) === (remote === null)) return;
   flushGrow();
+  // まだ「読み込み直す」を押していない失敗のお知らせは、会社を切りかえても持っておく
+  if (remote && sync.error) hiddenErrors.set(remote.organizationId, sync.error);
   remote = next;
   state = null;
   ops = [];
-  sync = next ? { mode: "remote", loaded: false, saving: false, error: null } : { mode: "local", loaded: true, saving: false, error: null };
+  const error = next ? (hiddenErrors.get(next.organizationId) ?? null) : null;
+  if (next) hiddenErrors.delete(next.organizationId);
+  sync = next ? { mode: "remote", loaded: false, saving: false, error } : { mode: "local", loaded: true, saving: false, error: null };
   emit();
   if (next) void reloadRemote(next);
 }
