@@ -2,9 +2,11 @@
 
 // AIO（AIに紹介されるための工夫）を書く人に伝える部品。docs/AIO.md。
 
+import { useState } from "react";
 import { AIO_POINTS } from "@/lib/aio";
+import { AIO_NEWS_UPDATED, SOURCE_LABEL, aioNewsFor, formatNewsDate, latestAioNews, type AioNewsItem } from "@/lib/aioNews";
 import type { AioPoint } from "@/types/domain";
-import { Shiori, Toast } from "./fun";
+import { Shiori, ShioriFace, Toast } from "./fun";
 
 const ICON_PATHS: Record<AioPoint, React.ReactNode> = {
   // 吹き出し
@@ -51,6 +53,7 @@ export function AioIcon({ point, className = "h-6 w-6" }: { point: AioPoint; cla
 /** 質問の横に出す「なぜ聞くの？」。AIOのどの材料のために聞いているかを伝える */
 export function AioWhy({ point }: { point: AioPoint }) {
   const p = AIO_POINTS[point];
+  const news = aioNewsFor(point);
   return (
     <div className="flex gap-3 rounded-2xl bg-ok-soft px-4 py-3 text-[0.95rem]">
       <span className="mt-0.5 flex h-10 w-10 shrink-0 animate-nod items-center justify-center rounded-xl bg-ok-bright text-white">
@@ -59,8 +62,86 @@ export function AioWhy({ point }: { point: AioPoint }) {
       <p>
         <span className="block font-bold text-ok">なぜ聞くの？　「{p.label}」が集まるからです</span>
         <span className="block">{p.why}</span>
+        {news && (
+          <span className="mt-1.5 block rounded-xl bg-surface/80 px-3 py-1.5 text-sm">
+            <span className="font-bold text-brand-dark">最新情報（{formatNewsDate(news.date)}）</span> {news.title}。<SourceTag item={news} />
+          </span>
+        )}
       </p>
     </div>
+  );
+}
+
+/** 公式か報道かの小さな札。出典へのリンク付き */
+function SourceTag({ item }: { item: AioNewsItem }) {
+  return (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`ml-1 inline-block rounded-full px-2 text-xs font-bold underline-offset-2 hover:underline ${item.source === "official" ? "bg-ok-soft text-ok" : "bg-canvas text-muted"}`}
+    >
+      {item.sourceName}・{SOURCE_LABEL[item.source]}
+    </a>
+  );
+}
+
+/** しおりのAIOニュース。AI検索の最新の変化と、だから何を聞くのかを伝える。中身は src/lib/aioNews.ts */
+export function AioNews({ count = 3 }: { count?: number }) {
+  const items = latestAioNews(count);
+  const [open, setOpen] = useState(false);
+  if (items.length === 0) return null;
+  // 見出しには公式の発表を優先する。報道は「ほかのニュース」へ
+  const top = items.find((n) => n.source === "official") ?? items[0];
+  const rest = items.filter((n) => n !== top);
+  return (
+    <section className="card animate-rise space-y-3" aria-labelledby="aio-news-heading">
+      <div className="flex items-start gap-3">
+        <Shiori mood="idea" className="h-16 w-auto shrink-0 animate-float sm:h-28" />
+        <div className="min-w-0 space-y-1.5">
+          <h2 id="aio-news-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">
+            しおりのAIOニュース
+          </h2>
+          <p className="text-lg font-black leading-snug">{top.title}</p>
+          <p className="text-[0.95rem]">{top.forClient}</p>
+          {top.point && top.soWeAsk && (
+            <p className="flex items-start gap-2 rounded-2xl bg-ok-soft px-3 py-2 text-[0.95rem] font-bold text-ok">
+              <AioIcon point={top.point} className="mt-0.5 h-5 w-5 shrink-0" />
+              <span>だから、{top.soWeAsk}をくわしく聞いています。</span>
+            </p>
+          )}
+          <p className="text-xs text-muted">
+            {formatNewsDate(top.date)}
+            <SourceTag item={top} />
+          </p>
+        </div>
+      </div>
+      {rest.length > 0 && (
+        <div>
+          <button type="button" className="text-sm font-bold text-brand-dark underline" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+            {open ? "とじる" : `ほかのニュースも見る（${rest.length}件）`}
+          </button>
+          {open && (
+            <ul className="mt-2 space-y-2">
+              {rest.map((n) => (
+                <li key={n.id} className="flex animate-rise gap-2 rounded-2xl bg-canvas p-3 text-[0.95rem]">
+                  <ShioriFace className="h-8 w-8 shrink-0" />
+                  <span>
+                    <b className="block">{n.title}</b>
+                    {n.forClient}
+                    <span className="mt-1 block text-xs text-muted">
+                      {formatNewsDate(n.date)}
+                      <SourceTag item={n} />
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+      <p className="text-xs text-muted">AI検索の情報は毎週確かめて、記事を書くAIへの指示にも反映しています（最終確認：{formatNewsDate(AIO_NEWS_UPDATED)}）。</p>
+    </section>
   );
 }
 

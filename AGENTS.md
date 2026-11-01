@@ -60,3 +60,13 @@ AIは優秀でも、この会社とこのサービスの前提を知らない。
 - 検証用と本番用のDB・秘密情報を分ける
 - ログに記事本文や個人情報を出さない
 - AIへ渡すのは、当該企業の確認済みプロフィール、顧客向け指導メモ、今回の回答、選択した過去記事だけ。内部メモと他社データは渡さない
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
