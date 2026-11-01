@@ -107,6 +107,8 @@ let ops: Op[] = [];
 let opSeq = 0;
 /** 組み立てを選び直した回数。足す操作は、足したあとに選び直していたら送らない */
 let planGen = 0;
+/** DBで断られた組み立ての選び直し。そのあとに並んだ行の変更・追加は、元の組み立てに入れずに捨てる */
+const failedPlanGens = new Set<number>();
 
 const rowKey = (x: KeywordRow) => `${x.kind}\n${x.keyword}`;
 
@@ -313,10 +315,12 @@ function changeRow(rowId: string, patch: { status?: RowStatus; parked?: boolean 
     return;
   }
   const key = rowKey(target);
+  const gen = planGen;
   const id = track({ apply: (acc) => patchRow(acc, key, patch) });
   persist(
     r,
     async () => {
+      if (failedPlanGens.has(gen)) return; // 変えた行の組み立てがDBで断られた。元の組み立ての同じ言葉の行は変えない
       // その会社の DB の組み立てから探す（会社を切りかえたあとでも、前の会社の分で探せる）
       const dbId = serverOf(r).plan?.rows.find((x) => rowKey(x) === key)?.id;
       if (!isUuid(dbId)) return; // 送る前に組み立てを選び直した
@@ -369,13 +373,21 @@ export const growActions = {
       set({ ...load(), plan });
       return;
     }
-    planGen += 1;
+    const gen = ++planGen;
     const id = track({ apply: (acc) => ({ ...acc, plan }) });
     persist(
       r,
       async () => {
-        const saved = await r.choosePlan(plan, proposal);
-        return (srv) => ({ ...srv, plan: saved });
+        try {
+          const saved = await r.choosePlan(plan, proposal);
+          return (srv) => ({ ...srv, plan: saved });
+        } catch (e) {
+          // 列の次の仕事が始まる前に印をつける（失敗のお知らせの処理より先に次が走ることがある）
+          failedPlanGens.add(gen);
+          // 読み直したあとの元の組み立てへの変更は、新しい番号で受け付ける
+          if (planGen === gen) planGen += 1;
+          throw e;
+        }
       },
       (o) => o.id === id,
       // 選び直しがDBで断られたら、前の設計図で書いていた記事の答えを戻す（そのあと書いた答えは残す）
@@ -406,6 +418,7 @@ export const growActions = {
       r,
       async () => {
         if (gen !== planGen && remote === r) return; // 足したあとに組み立てを選び直した
+        if (failedPlanGens.has(gen)) return; // 足した先の組み立てがDBで断られた。元の組み立てには入れない
         // 送る時点の DB の組み立てで、柱と売りたいものの id を直す（組み立てを選ぶ保存が先に終わっていることがある）
         const base = serverOf(r).plan;
         const pillarId = isUuid(row.pillarId) ? row.pillarId : base?.rows.find((x) => pillar && rowKey(x) === rowKey(pillar))?.id;

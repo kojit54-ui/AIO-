@@ -388,6 +388,34 @@ describe("本物のデータにつないだとき", () => {
     }
   });
 
+  it("組み立ての選び直しがDBで断られたら、そのあとに並んだ追加と変更を元の組み立てに入れない", async () => {
+    vi.useFakeTimers();
+    const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
+    const p = sampleProposals(answers)[0];
+    const fresh = planFromProposal(p);
+    const old: KeywordPlan = { proposalId: "44444444-4444-4444-8444-444444444444", rows: fresh.rows.map((x, i) => ({ ...x, id: `55555555-5555-4555-8555-${String(i).padStart(12, "0")}` })) };
+    old.rows = old.rows.map((x) => (x.kind === "cluster" ? { ...x, pillarId: old.rows[0].id } : x));
+    const r = fakeRemote({ answers: {}, plan: old, sellItems: null });
+    connectGrow(r);
+    await flush();
+    r.choosePlan = async () => {
+      r.calls.push("choose");
+      throw new GrowSyncError("保存できませんでした");
+    };
+    growActions.choosePlan(fresh, p);
+    growActions.addRow({ ...fresh.rows[1], id: "kw_new", keyword: "新しい言葉", pillarId: fresh.rows[0].id });
+    growActions.setRowStatus(fresh.rows[1].id, "published");
+    await flush();
+    await flush();
+    expect(r.calls.filter((c) => c === "add" || c.startsWith("row:"))).toEqual([]);
+    expect(readGrowSync().error).toBeTruthy();
+    // 読み直したあとの元の組み立てへの変更は送る
+    expect(readGrowState().plan!.proposalId).toBe(old.proposalId);
+    growActions.setRowStatus(old.rows[1].id, "published");
+    await flush();
+    expect(r.calls).toContain(`row:${old.rows[1].id}:{"status":"published"}`);
+  });
+
   it("ほかの保存が失敗して読み直しても、保存待ちの売りたいものの変更は残す", async () => {
     vi.useFakeTimers();
     const r = fakeRemote();
