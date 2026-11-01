@@ -8,10 +8,17 @@
 
 ## 1. ラッコキーワード（スタンダードプラン）
 
-1. ラッコキーワード（https://related-keywords.com/）に、コタムのアカウントでログインする
+1. ラッコキーワード（https://rakkokeyword.com/）に、コタムのアカウントでログインする
 2. スタンダードプラン（月2,475円〜、2026年2月25日以降の新プラン）を契約する。古いプランのままだと API は使えません
-3. マイページで API の画面を開き、API キーを作る（画面の名前と場所は未確認。見つからなければ、そこで止めて教えてください）
-4. キーを Vercel の環境変数 `RAKKO_API_KEY` と、常時稼働PCの `.env.local` に入れる
+3. API キーを作る（作り方：https://rakkokeyword.com/knowledge/78/ 。キーは5個まで作れる。IP制限は任意）
+4. キーを Vercel の環境変数 `RAKKO_API_KEY` と、常時稼働PCの `.env.local` に入れる（Vercel はプロジェクト aio → Settings → Environments → Production の下の Environment Variables）
+5. 常時稼働PCで本物を1回試す：`RAKKO_LIVE=1 npx vitest run src/lib/keywords/rakko.live.test.ts`（3クレジット。プランと残高、質問とサジェストが表示される）
+
+状況（2026-11-01）：スタンダードを年額で契約済み、Vercel の Production に `RAKKO_API_KEY` を登録済み。
+
+使ってよい範囲：API利用ガイドライン（https://rakkokeyword.com/knowledge/9510/）。コタムが加工して特定の顧客に渡すのは申し込み不要。コタムのキー1つで顧客にデータを出すのは個別ライセンス（月55,000円・1年契約）。このサービスの使い方は docs/DECISIONS.md 2026-11-01 のとおりで、公開の前にラッコへ問い合わせる。
+
+API の仕様：https://api.rakkokeyword.com/docs （写し /mnt/project-files/keyword-tools/rakko-openapi-1.26.0.json）。認証はヘッダー `X-API-Key`。クレジットはサジェスト・よくある質問が1回1.5、アカウント情報は0。レート制限は60回/60秒
 
 ## 2. Google キーワードプランナー（Google 広告 API）
 
