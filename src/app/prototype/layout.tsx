@@ -79,7 +79,7 @@ export default function PrototypeLayout({ children }: { children: React.ReactNod
           {remoteMode ? (
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-sm text-muted" role="status" aria-live="polite">
-                {sync.saving ? "保存しています…" : sync.loaded ? "保存しました" : "読み込んでいます…"}
+                {sync.saving ? "保存しています…" : sync.loaded ? "保存しました" : sync.error ? "読み込めませんでした" : "読み込んでいます…"}
               </span>
               {orgs.length > 1 && (
                 <label className="flex items-center gap-1 text-sm">

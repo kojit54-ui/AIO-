@@ -267,7 +267,8 @@ async function readRemote(r: GrowRemote) {
     setSync({ loaded: true });
   } catch (e) {
     if (remote !== r || seq !== loadSeq) return;
-    setSync({ loaded: true, error: e instanceof GrowSyncError ? e.message : "読み込めませんでした。通信状態を確かめて、読み込み直してください" });
+    // 一度も読めていないうちは入力させない。空の画面で保存すると、このブラウザの控え（提案・記事の答え）を上書きしてしまう
+    setSync({ loaded: servers.has(r), error: e instanceof GrowSyncError ? e.message : "読み込めませんでした。通信状態を確かめて、読み込み直してください" });
   }
 }
 

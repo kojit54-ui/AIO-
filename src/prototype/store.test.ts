@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { HEARING_QUESTIONS, planFromProposal, sampleProposals, type HearingAnswer, type KeywordPlan, type KeywordRow } from "./growth";
 import { GrowSyncError, type GrowRemote, type GrowSnapshot } from "./remote";
-import { connectGrow, growActions, readGrowState, readGrowSync, resolveRowId, SAVE_DELAY_MS } from "./store";
+import { connectGrow, growActions, readGrowState, readGrowSync, reloadGrow, resolveRowId, SAVE_DELAY_MS } from "./store";
 
 describe("試作の状態", () => {
   it("設計図を選び直すと、前の設計図で書いた記事の答えは残らない", () => {
@@ -440,6 +440,29 @@ describe("本物のデータにつないだとき", () => {
     expect(readGrowSync().error).toBeNull();
     connectGrow(a);
     expect(readGrowSync().error).toBe("保存できませんでした");
+  });
+
+  it("最初の読み込みに失敗したら入力させず、このブラウザの控えを上書きしない", async () => {
+    vi.useFakeTimers();
+    const mem = new Map<string, string>([[`cotam-grow-local-v1:${ORG}`, JSON.stringify({ proposals: null, articleAnswers: { row1: { a1: "去年の冬の相談" } }, sellEmptied: false })]]);
+    vi.stubGlobal("window", { localStorage: { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v) } });
+    try {
+      const r = fakeRemote();
+      const realLoad = r.load.bind(r);
+      r.load = async () => {
+        throw new GrowSyncError("読み込めませんでした");
+      };
+      connectGrow(r);
+      await flush();
+      expect(readGrowSync()).toMatchObject({ loaded: false, error: "読み込めませんでした" });
+      r.load = realLoad;
+      reloadGrow();
+      await flush();
+      expect(readGrowSync()).toMatchObject({ loaded: true, error: null });
+      expect(readGrowState().articleAnswers.row1).toEqual({ a1: "去年の冬の相談" });
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 
   it("ほかの保存が失敗して読み直しても、保存待ちの売りたいものの変更は残す", async () => {
