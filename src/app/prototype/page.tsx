@@ -19,7 +19,7 @@ export default function PrototypeHome() {
   const steps = [
     {
       no: 1,
-      title: "ヒアリングに答える",
+      title: "会社のことを教える",
       body: "お仕事やお客様のことを、1問ずつ教えてください。箇条書きで大丈夫です。",
       status: `${answered} / ${HEARING_QUESTIONS.length} 問`,
       done: answered === HEARING_QUESTIONS.length,
@@ -29,21 +29,21 @@ export default function PrototypeHome() {
     },
     {
       no: 2,
-      title: "記事の設計図を選ぶ",
-      body: "ヒアリングをもとに、売上や集客につながるキーワードと記事の組み立てを提案します。",
-      status: g.plan ? "選びました" : "まだ",
+      title: "書く記事を決める",
+      body: "教えてもらった内容から、売上につながりそうな記事のセットを、しおりがおすすめします。",
+      status: g.plan ? "決めました" : "まだ",
       done: !!g.plan,
       href: "/prototype/plan",
-      action: g.plan ? "設計図を見る" : "提案を見る",
+      action: g.plan ? "決めた記事を見る" : "おすすめを見る",
     },
     {
       no: 3,
       title: "1本ずつ書いて公開する",
-      body: "設計図の記事を1本ずつ書きます。公開するたびにサイトのレベルが上がります。",
-      status: rows.length ? `${published} / ${rows.length} 本 公開` : "設計図を選ぶと始められます",
+      body: "決めた記事を1本ずつ書きます。公開するたびにサイトのレベルが上がります。",
+      status: rows.length ? `${published} / ${rows.length} 本 公開` : "書く記事を決めると始められます",
       done: rows.length > 0 && published === rows.length,
       href: next ? `/prototype/write/${next.id}` : rows.length ? "/prototype/keywords" : "/prototype/plan",
-      action: next ? `次の記事を書く：${next.keyword}` : rows.length ? "キーワード管理表へ" : "設計図へ",
+      action: next ? `次の記事を書く：${next.keyword}` : rows.length ? "書く記事リストへ" : "書く記事を決める",
       progress: rows.length ? { value: published, max: rows.length } : undefined,
     },
   ];
@@ -54,7 +54,7 @@ export default function PrototypeHome() {
       <WhyAio />
       <section aria-labelledby="steps-heading" className="space-y-3">
         <h1 id="steps-heading" className="text-lg font-bold">
-          進め方
+          やること
         </h1>
         <ol className="grid gap-3 lg:grid-cols-3">
           {steps.map((s) => (
@@ -78,10 +78,10 @@ export default function PrototypeHome() {
       </section>
       <section className="card space-y-1" aria-labelledby="later-heading">
         <h2 id="later-heading" className="font-semibold">
-          これから足すもの（第2・第3段階）
+          これからできるようになること
         </h2>
         <p className="text-muted">
-          Google の Search Console をつなぐと、実際に検索された言葉と表示回数がここに出て、レベルにも加わります。アナリティクスとキーワードツールは第3段階でつなぎます。
+          Google で実際にどんな言葉で探されたか、ホームページを何人が見たかが、ここに出るようになります。
         </p>
       </section>
     </main>

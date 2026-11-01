@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { NotFound, Notice, PageSkeleton } from "@/components/ui";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
-import { articleQuestions, collectedAio, computeGrowth } from "@/prototype/growth";
+import { KIND_LABEL, articleQuestions, collectedAio, computeGrowth } from "@/prototype/growth";
 import { growActions, useGrow } from "@/prototype/store";
 
 /** 設計図の1本を書く。質問は1問ずつ、例とコツつき */
@@ -23,7 +23,7 @@ export default function WritePage() {
 
   if (!g.ready) return <PageSkeleton />;
   const row = g.plan?.rows.find((r) => r.id === rowId);
-  if (!g.plan || !row) return <NotFound what="記事の設計図" />;
+  if (!g.plan || !row) return <NotFound what="書く記事" />;
 
   const qs = articleQuestions(row);
   const answers = draft ?? g.articleAnswers[row.id] ?? {};
@@ -48,16 +48,16 @@ export default function WritePage() {
   if (finished) {
     return (
       <main className="page max-w-3xl space-y-4">
-        <p className="text-sm text-muted">{row.kind === "pillar" ? "柱の記事" : "周りの記事"}：{row.keyword}</p>
+        <p className="text-sm text-muted">{KIND_LABEL[row.kind]}：{row.keyword}</p>
         {result ? (
           <Notice tone="ok" title={result}>
-            設計図の色が変わりました。次の記事も1本ずつ増やしていきましょう。
+            書く記事リストに「やった」が1本増えました。次の記事も1本ずつ増やしていきましょう。
           </Notice>
         ) : (
           <>
             <AioMeter points={qs.map((x) => x.aio)} collected={collectedAio(qs, (id) => !!answers[id]?.trim())} />
             <Notice tone="info" title="おつかれさまでした！質問はここまでです">
-              本番では、ここから今ある記事作成の流れにつながります。見出し案を作り、GPT が本文を書き、Claude が点検し、Gemini が画像を作ります。試作では、この先を省略しています。
+              本番では、ここからAIが記事の下書き（見出し・本文・画像）を作ります。試作では、この先を省略しています。
             </Notice>
             <div className="flex flex-wrap gap-2">
               <button type="button" className="btn-primary" onClick={publish} disabled={row.status === "published"}>
@@ -70,8 +70,8 @@ export default function WritePage() {
           </>
         )}
         <div className="flex flex-wrap gap-2">
-          <Link href="/prototype/plan" className="btn-secondary">
-            設計図に戻る
+          <Link href="/prototype/keywords" className="btn-secondary">
+            書く記事リストに戻る
           </Link>
           <Link href="/prototype" className="btn-secondary">
             ホームへ
@@ -88,7 +88,7 @@ export default function WritePage() {
     <main className="page max-w-3xl space-y-5">
       <div>
         <p className="text-sm text-muted">
-          {row.kind === "pillar" ? "柱の記事" : "周りの記事"}：{row.keyword}
+          {KIND_LABEL[row.kind]}：{row.keyword}
         </p>
         <h1 className="text-2xl font-bold">質問に答える</h1>
         <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。</p>

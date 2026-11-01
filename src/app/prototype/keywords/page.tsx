@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Confetti, Shiori, Toast, useFlash } from "@/components/fun";
 import { Notice, PageSkeleton } from "@/components/ui";
-import { REASON_LABEL, type RowStatus, SAMPLE_LABEL, computeGrowth } from "@/prototype/growth";
+import { KIND_LABEL, REASON_LABEL, type RowStatus, SAMPLE_LABEL, computeGrowth } from "@/prototype/growth";
 import {
   LIST_STATUS_LABEL,
   PRIORITY_LABEL,
@@ -89,12 +89,12 @@ export default function KeywordsPage() {
   if (!g.plan) {
     return (
       <main className="page max-w-3xl space-y-4">
-        <h1 className="text-2xl font-bold">キーワード管理表</h1>
-        <Notice tone="info" title="先に記事の設計図を選んでください">
-          設計図を選ぶと、書く記事のキーワードがここに並びます。やった・まだを一覧で見ながら、1本ずつ進められます。
+        <h1 className="text-2xl font-bold">書く記事リスト</h1>
+        <Notice tone="info" title="先に書く記事を決めてください">
+          書く記事を決めると、ここに並びます。やった・まだを見ながら、1本ずつ進められます。
         </Notice>
         <Link href="/prototype/plan" className="btn-primary">
-          記事の設計図へ
+          書く記事を決める
         </Link>
       </main>
     );
@@ -122,7 +122,7 @@ export default function KeywordsPage() {
     e.preventDefault();
     const row = newKeywordRow(plan.rows, draft, pillarIdForNew);
     if (!row) {
-      setAddError(draft.trim() ? "そのキーワードは、もう表にあります。" : "キーワードを入れてください。");
+      setAddError(draft.trim() ? "その記事は、もうリストにあります。" : "書きたいことを入れてください。");
       return;
     }
     growActions.addRow(row);
@@ -155,10 +155,10 @@ export default function KeywordsPage() {
       </button>
       <div className="min-w-0 flex-1">
         <p className={`font-bold ${r.status === "published" ? "text-ok" : ""}`}>{r.keyword}</p>
-        {r.question && <p className="text-sm text-muted">読む人が知りたいこと：{r.question}</p>}
-        <ul className="mt-1 flex flex-wrap gap-1 text-xs" aria-label="このキーワードについて">
+        {r.question && <p className="text-sm text-muted">お客様が知りたいこと：{r.question}</p>}
+        <ul className="mt-1 flex flex-wrap gap-1 text-xs" aria-label="この記事について">
           <li className={`rounded px-1.5 py-0.5 ${r.kind === "pillar" ? "bg-sun font-bold text-ink" : "bg-canvas text-muted"}`}>
-            {r.kind === "pillar" ? "柱の記事" : "周りの記事"}
+            {KIND_LABEL[r.kind]}
           </li>
           {r.reasons.map((x) => (
             <li key={x} className="rounded bg-brand-soft px-1.5 py-0.5 text-brand-dark">
@@ -170,7 +170,7 @@ export default function KeywordsPage() {
       </div>
       <div className="flex w-full flex-wrap items-center gap-x-3 gap-y-1 pl-14 sm:w-auto sm:flex-col sm:flex-nowrap sm:items-end sm:pl-0">
         <Stars n={r.priority} />
-        <span className="whitespace-nowrap text-xs text-muted">月間検索数 {r.monthlySearches === null ? "—" : r.monthlySearches.toLocaleString()}</span>
+        <span className="whitespace-nowrap text-xs text-muted">月の検索回数 {r.monthlySearches === null ? "—" : r.monthlySearches.toLocaleString()}</span>
         <div className="ml-auto flex items-center gap-1 sm:ml-0">
           <button
             type="button"
@@ -201,7 +201,7 @@ export default function KeywordsPage() {
         </>
       )}
 
-      <h1 className="sr-only">キーワード管理表</h1>
+      <h1 className="sr-only">書く記事リスト</h1>
       <section className="card flex animate-rise flex-wrap items-center gap-4" aria-label="しおりから">
         <Shiori mood={counts.all > 0 && counts.published === counts.all ? "welldone" : counts.published > 0 ? "cheer" : "point"} className="h-28 w-auto animate-float sm:h-32" />
         <p className="relative min-w-[12rem] flex-1 rounded-2xl bg-sun-soft px-4 py-3 font-bold" role="status">
@@ -217,7 +217,7 @@ export default function KeywordsPage() {
               しおりのおすすめ：次に書くならこれ
             </h2>
             <p className="text-xl font-bold">{next.keyword}</p>
-            {next.question && <p className="text-sm text-muted">読む人が知りたいこと：{next.question}</p>}
+            {next.question && <p className="text-sm text-muted">お客様が知りたいこと：{next.question}</p>}
           </div>
           <Link href={`/prototype/write/${next.id}`} className="btn-primary">
             {next.status === "writing" ? "続きを書く" : "この記事を書く"}
@@ -248,7 +248,7 @@ export default function KeywordsPage() {
               onClick={() => setOrder(o)}
               className={`rounded-full border px-3 py-1 text-sm ${order === o ? "border-brand bg-brand font-semibold text-white" : "border-line bg-surface"}`}
             >
-              {o === "pillar" ? "柱ごと" : "おすすめ順"}
+              {o === "pillar" ? "テーマごと" : "おすすめ順"}
             </button>
           ))}
         </div>
@@ -258,10 +258,10 @@ export default function KeywordsPage() {
         groups.map((gr, gi) => {
           const list = visible(gr.rows);
           return (
-            <section key={gr.pillar?.id ?? gi} className="card space-y-3" aria-label={`柱 ${gi + 1}：${gr.pillar?.keyword ?? ""}`}>
+            <section key={gr.pillar?.id ?? gi} className="card space-y-3" aria-label={`テーマ ${gi + 1}：${gr.pillar?.keyword ?? ""}`}>
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
-                  <p className="text-sm text-muted">柱 {gi + 1}</p>
+                  <p className="text-sm text-muted">テーマ {gi + 1}</p>
                   <h2 className="text-lg font-bold">{gr.pillar?.keyword ?? "そのほか"}</h2>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted">
@@ -271,7 +271,7 @@ export default function KeywordsPage() {
                   </span>
                 </div>
               </div>
-              {list.length ? <ul className="grid gap-2">{list.map(row)}</ul> : <p className="text-sm text-muted">この条件のキーワードはありません。</p>}
+              {list.length ? <ul className="grid gap-2">{list.map(row)}</ul> : <p className="text-sm text-muted">ここに入る記事はありません。</p>}
             </section>
           );
         })
@@ -280,19 +280,19 @@ export default function KeywordsPage() {
           {visible(sortByRecommendation(rows.filter((r) => !r.parked))).length ? (
             <ul className="grid gap-2">{visible(sortByRecommendation(rows.filter((r) => !r.parked))).map(row)}</ul>
           ) : (
-            <p className="text-sm text-muted">この条件のキーワードはありません。</p>
+            <p className="text-sm text-muted">ここに入る記事はありません。</p>
           )}
         </section>
       )}
 
       <section className="card space-y-2" aria-labelledby="add-heading">
         <h2 id="add-heading" className="font-bold">
-          キーワードを足す
+          書きたい記事を足す
         </h2>
-        <p className="text-sm text-muted">思いついた言葉や、お客様によく聞かれることを足せます。足したものは「優先度 中」で入ります。</p>
+        <p className="text-sm text-muted">思いついたことや、お客様によく聞かれることを、短い言葉で足せます。足したものは「おすすめ度 中」で入ります。</p>
         <form onSubmit={add} className="flex flex-wrap gap-2">
           <label htmlFor="new-keyword" className="sr-only">
-            足すキーワード
+            足す記事
           </label>
           <input
             id="new-keyword"
@@ -317,7 +317,7 @@ export default function KeywordsPage() {
       {parked.length > 0 && (
         <section className="space-y-2">
           <button type="button" className="text-sm text-muted underline" aria-expanded={showParked} onClick={() => setShowParked(!showParked)}>
-            やめておいたキーワード（{parked.length}）を{showParked ? "閉じる" : "見る"}
+            やめておいた記事（{parked.length}）を{showParked ? "閉じる" : "見る"}
           </button>
           {showParked && (
             <ul className="grid gap-2">
@@ -325,7 +325,7 @@ export default function KeywordsPage() {
                 <li key={r.id} className="flex items-center justify-between gap-2 rounded-xl border border-dashed border-line bg-surface px-3 py-2">
                   <span className="text-muted">{r.keyword}</span>
                   <button type="button" className="btn-secondary min-h-9 px-3 py-1 text-sm" onClick={() => growActions.setRowParked(r.id, false)}>
-                    表に戻す
+                    リストに戻す
                   </button>
                 </li>
               ))}
@@ -335,7 +335,7 @@ export default function KeywordsPage() {
       )}
 
       <p className="text-sm text-muted">
-        キーワードと優先度は{SAMPLE_LABEL}。月間検索数は、キーワードツール（SEMrush など）をつなぐと入ります。それまでは数字を作らず「—」と出します。
+        記事とおすすめ度は{SAMPLE_LABEL}。月の検索回数は、検索の数を調べる道具（SEMrush など）をつなぐと入ります。それまでは数字を作らず「—」と出します。
       </p>
     </main>
   );

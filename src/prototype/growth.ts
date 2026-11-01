@@ -149,8 +149,8 @@ export const canPropose = (answers: Record<string, HearingAnswer>) =>
 export type ProposalReason = "sales" | "competition" | "aio";
 export const REASON_LABEL: Record<ProposalReason, string> = {
   sales: "売上につながる",
-  competition: "競合に勝てる",
-  aio: "AI検索で紹介されやすい",
+  competition: "ライバルに勝てる",
+  aio: "AIに紹介されやすい",
 };
 
 export interface KeywordIdea {
@@ -206,7 +206,7 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
         k("p_sales_5", `${service} 事例`, "実際に頼んだ人はどう変わったか"),
       ],
       reasons: ["sales", "aio"],
-      why: `売りたい「${service}」を、地域名と一緒に探す人に向けた組み立てです。依頼の直前に読まれる記事が中心です。`,
+      why: `売りたい「${service}」を、地域名と一緒に探す人に向けた記事のセットです。頼む直前に読まれる記事が中心です。`,
     },
     {
       id: "p_compare",
@@ -218,7 +218,7 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
         k("p_compare_4", `${service} 保証`, "工事の後の保証や点検"),
       ],
       reasons: ["competition", "sales"],
-      why: "よく比べられる相手との違いを、読む人の判断基準として伝える組み立てです。選ばれる理由が生きます。",
+      why: "よく比べられる相手との違いを伝える記事のセットです。選ばれる理由が生きます。",
     },
     {
       id: "p_faq",
@@ -229,13 +229,17 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
         k(`p_faq_${faqs.length + 2}`, `${business} 注意点`, "頼む前に気をつけること"),
       ],
       reasons: ["aio"],
-      why: "お客様の質問にそのまま答える組み立てです。質問と答えがはっきりした記事は、AI検索で紹介されやすくなります。",
+      why: "お客様の質問にそのまま答える記事のセットです。質問と答えがはっきりした記事は、AIに紹介されやすくなります。",
     },
   ];
 }
 
 export type RowStatus = "todo" | "writing" | "published";
-export const ROW_STATUS_LABEL: Record<RowStatus, string> = { todo: "まだ", writing: "書いている", published: "公開済み" };
+/** 「公開済み」は、利用者の言葉に合わせて「やった」と出す（docs/LESSONS.md 用語集） */
+export const ROW_STATUS_LABEL: Record<RowStatus, string> = { todo: "まだ", writing: "書いている", published: "やった" };
+
+/** 柱（ピラー）／周り（クラスター）の、顧客向けの呼び方 */
+export const KIND_LABEL: Record<"pillar" | "cluster", string> = { pillar: "まとめ記事", cluster: "くわしい記事" };
 
 /** キーワードがどこから来たか。SEMrush・Search Console は後からつなぐ（docs/DATA.md「キーワード管理表」） */
 export type KeywordSource = "proposal" | "customer" | "cotam" | "site" | "search_console" | "semrush";
@@ -324,11 +328,11 @@ export function computeGrowth(answers: Record<string, HearingAnswer>, plan: Keyw
     levelStart: LEVELS[idx].at,
     nextAt: idx + 1 < LEVELS.length ? LEVELS[idx + 1].at : null,
     badges: [
-      { id: "hearing", label: "ヒアリングを終えた", earned: hearingDone },
+      { id: "hearing", label: "会社のことを教えた", earned: hearingDone },
       { id: "first", label: "最初の記事を公開した", earned: published.length > 0 },
-      { id: "pillar", label: "柱の記事を公開した", earned: pillarPublished },
-      { id: "five", label: "周りの記事を5本公開した", earned: clustersPublished >= 5 },
-      { id: "all", label: "設計図を全部埋めた", earned: rows.length > 0 && published.length === rows.length && clusters > 0 },
+      { id: "pillar", label: "まとめ記事を公開した", earned: pillarPublished },
+      { id: "five", label: "くわしい記事を5本公開した", earned: clustersPublished >= 5 },
+      { id: "all", label: "記事リストを全部やった", earned: rows.length > 0 && published.length === rows.length && clusters > 0 },
     ],
   };
 }

@@ -2,21 +2,21 @@
 // 今は架空データとブラウザ内の保存だけ。SEMrush や Search Console をつなぐときは、
 // source と monthlySearches を埋めた行を足すだけで画面はそのまま使える。
 
-import { type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type RowStatus } from "./growth";
+import { ROW_STATUS_LABEL, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type RowStatus } from "./growth";
 
 export const SOURCE_LABEL: Record<KeywordSource, string> = {
-  proposal: "しおりの提案",
+  proposal: "しおりのおすすめ",
   customer: "自分で足した",
   cotam: "コタムが追加",
-  site: "サイトの読み込み",
+  site: "ホームページから",
   search_console: "Search Console",
   semrush: "SEMrush",
 };
 
-/** 管理表での呼び方。「公開済み」は、利用者の言葉に合わせて「やった」と出す */
-export const LIST_STATUS_LABEL: Record<RowStatus, string> = { todo: "まだ", writing: "書いている", published: "やった" };
+/** 記事リストでの呼び方（ROW_STATUS_LABEL と同じ） */
+export const LIST_STATUS_LABEL: Record<RowStatus, string> = ROW_STATUS_LABEL;
 
-export const PRIORITY_LABEL: Record<KeywordPriority, string> = { 3: "優先度 高", 2: "優先度 中", 1: "優先度 低" };
+export const PRIORITY_LABEL: Record<KeywordPriority, string> = { 3: "おすすめ度 高", 2: "おすすめ度 中", 1: "おすすめ度 低" };
 
 /** 前の試作で保存した行（優先度などが無い）を、管理表で使える形にそろえる */
 export function normalizeRow(r: KeywordRow, pillarId: string | undefined): Required<KeywordRow> {
@@ -119,8 +119,8 @@ export function newKeywordRow(rows: KeywordRow[], keyword: string, pillarId: str
 export function shioriMessage(rows: Row[]): string {
   const c = countByStatus(rows);
   const next = nextKeyword(rows);
-  if (c.all === 0) return "まだキーワードがありません。記事の設計図を選ぶと、ここに並びます。";
+  if (c.all === 0) return "まだ記事がありません。書く記事を決めると、ここに並びます。";
   if (c.published === c.all) return `${c.all}本ぜんぶ、やったね！サイトがすっかり育ったよ。`;
-  const head = c.published === 0 ? `${c.all}本のキーワードが並んだよ。` : `${c.all}本のうち ${c.published}本 やったね！`;
+  const head = c.published === 0 ? `書く記事が${c.all}本 並んだよ。` : `${c.all}本のうち ${c.published}本 やったね！`;
   return next ? `${head}次は「${next.keyword}」がおすすめ。` : head;
 }

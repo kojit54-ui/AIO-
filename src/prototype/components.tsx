@@ -2,7 +2,7 @@
 
 export { AioIcon, AioMeter, AioWhy, Cheer, WhyAio } from "@/components/aio";
 
-import { type Growth, type KeywordRow, ROW_STATUS_LABEL, type RowStatus, SAMPLE_LABEL } from "./growth";
+import { type Growth, KIND_LABEL, type KeywordRow, ROW_STATUS_LABEL, type RowStatus, SAMPLE_LABEL } from "./growth";
 
 export function PrototypeNotice() {
   return (
@@ -53,7 +53,7 @@ export function GrowthCard({ growth }: { growth: Growth }) {
           </li>
         ))}
       </ul>
-      <p className="text-sm text-muted">点の付け方：ヒアリング 5点、書き始めた記事 2点、公開した周りの記事 10点、公開した柱の記事 30点</p>
+      <p className="text-sm text-muted">点の付け方：会社のことを教える 5点、書き始めた記事 2点、公開したくわしい記事 10点、公開したまとめ記事 30点</p>
     </section>
   );
 }
@@ -97,14 +97,14 @@ export function PillarDiagram({ rows }: { rows: KeywordRow[] }) {
   );
   return (
     <figure className="space-y-3">
-      <div className="relative hidden aspect-[16/10] w-full sm:block" role="img" aria-label={`柱の記事「${pillar.keyword}」と、その周りの記事${clusters.length}本の図`}>
+      <div className="relative hidden aspect-[16/10] w-full sm:block" role="img" aria-label={`まとめ記事「${pillar.keyword}」と、くわしい記事${clusters.length}本の図`}>
         <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
           {pos.map((p, i) => (
             <line key={i} x1="50" y1="50" x2={p.x} y2={p.y} stroke="var(--color-line)" strokeWidth="0.6" vectorEffect="non-scaling-stroke" />
           ))}
         </svg>
         <div className={`absolute left-1/2 top-1/2 w-48 -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 px-3 py-3 text-center shadow-sm ${NODE_STYLE[pillar.status]}`}>
-          <span className="block text-xs">柱の記事</span>
+          <span className="block text-xs">{KIND_LABEL.pillar}</span>
           {node(pillar, true)}
         </div>
         {clusters.map((c, i) => (
@@ -119,10 +119,10 @@ export function PillarDiagram({ rows }: { rows: KeywordRow[] }) {
       </div>
       <div className="space-y-2 sm:hidden">
         <div className={`rounded-xl border-2 px-3 py-3 text-center ${NODE_STYLE[pillar.status]}`}>
-          <span className="block text-xs">柱の記事</span>
+          <span className="block text-xs">{KIND_LABEL.pillar}</span>
           {node(pillar, true)}
         </div>
-        <ul className="ml-4 space-y-2 border-l-2 border-line pl-4" aria-label="周りの記事">
+        <ul className="ml-4 space-y-2 border-l-2 border-line pl-4" aria-label={KIND_LABEL.cluster}>
           {clusters.map((c) => (
             <li key={c.id} className={`rounded-lg border px-3 py-2 ${NODE_STYLE[c.status]}`}>
               {node(c, false)}
@@ -141,16 +141,16 @@ export function PillarDiagram({ rows }: { rows: KeywordRow[] }) {
 export function PillarExplainer() {
   return (
     <details className="card">
-      <summary className="cursor-pointer font-semibold">「柱の記事」と「周りの記事」とは？</summary>
+      <summary className="cursor-pointer font-semibold">「まとめ記事」と「くわしい記事」とは？</summary>
       <div className="mt-3 space-y-2">
         <p>
-          <strong>柱の記事（ピラー）</strong>は、大きなテーマをひととおり説明する記事です。例えば「さくら市の断熱リフォーム」。
+          <strong>まとめ記事</strong>は、大きなテーマをひととおり説明する記事です。例えば「さくら市の断熱リフォーム」。
         </p>
         <p>
-          <strong>周りの記事（クラスター）</strong>は、そのテーマの細かい疑問に1つずつ答える記事です。例えば「断熱リフォームの費用」「工事の期間」。
+          <strong>くわしい記事</strong>は、そのテーマの細かい疑問に1つずつ答える記事です。例えば「断熱リフォームの費用」「工事の期間」。
         </p>
         <p>
-          柱と周りの記事をリンクでつなぐと、Google や AI に「この会社はこのテーマにくわしい」と伝わりやすくなります。AIO（AIに紹介されるための工夫）の土台になる組み立て方です。1本ずつ書いていくと、図の色が変わっていきます。
+          まとめ記事とくわしい記事をリンクでつなぐと、Google や AI に「この会社はこのテーマにくわしい」と伝わりやすくなります。AIに紹介してもらうための土台です。1本ずつ書いていくと、図の色が変わっていきます。
         </p>
       </div>
     </details>

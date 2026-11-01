@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { PillarDiagram, PillarExplainer } from "@/prototype/components";
 import {
+  KIND_LABEL,
   REASON_LABEL,
   SAMPLE_LABEL,
   canPropose,
@@ -19,12 +20,12 @@ export default function PlanPage() {
   if (!canPropose(g.answers)) {
     return (
       <main className="page max-w-3xl space-y-4">
-        <h1 className="text-2xl font-bold">記事の設計図</h1>
-        <Notice tone="info" title="先にヒアリングに答えてください">
-          お仕事、売りたいサービス、お客様、地域の4つに答え終わる（「次へ」を押し、もう少し教えての質問にも答えるか飛ばす）と、キーワードと記事の組み立てを提案できます。
+        <h1 className="text-2xl font-bold">書く記事を決める</h1>
+        <Notice tone="info" title="先に会社のことを教えてください">
+          お仕事、売りたいサービス、お客様、地域の4つに答えると、しおりが書く記事をおすすめできます。
         </Notice>
         <Link href="/prototype/hearing" className="btn-primary">
-          ヒアリングに答える
+          会社のことを教える
         </Link>
       </main>
     );
@@ -34,21 +35,21 @@ export default function PlanPage() {
     return (
       <main className="page space-y-5">
         <div>
-          <h1 className="text-2xl font-bold">記事の設計図を選ぶ</h1>
-          <p className="text-muted">ヒアリングの答えから、記事の組み立てを3つ提案します。いちばん「書けそう」「売りたい」に近いものを選んでください。</p>
+          <h1 className="text-2xl font-bold">書く記事を決める</h1>
+          <p className="text-muted">教えてもらった内容から、記事のセットを3つおすすめします。いちばん「書けそう」「売りたい」に近いものを選んでください。</p>
         </div>
         <PillarExplainer />
         {!g.proposals ? (
           <button type="button" className="btn-primary" onClick={() => growActions.setProposals(sampleProposals(g.answers))}>
-            キーワードの提案を作る
+            しおりにおすすめを出してもらう
           </button>
         ) : (
           <>
-            <p className="text-sm text-warn">提案は{SAMPLE_LABEL}。本物では、AIがヒアリング全体を読んで作り、第2段階から Search Console の実際の検索語、第3段階からキーワードツールの検索回数を加えます。</p>
+            <p className="text-sm text-warn">おすすめは{SAMPLE_LABEL}。本番では、AIが教えてもらった内容を全部読んで作り、実際に Google で探されている言葉も使います。</p>
             <ul className="grid gap-3 lg:grid-cols-3">
               {g.proposals.map((p) => (
                 <li key={p.id} className="card flex flex-col gap-3">
-                  <ul className="flex flex-wrap gap-1" aria-label="この提案のねらい">
+                  <ul className="flex flex-wrap gap-1" aria-label="このセットのねらい">
                     {p.reasons.map((r) => (
                       <li key={r} className="rounded-full bg-brand-soft px-2 py-0.5 text-sm font-semibold text-brand-dark">
                         {REASON_LABEL[r]}
@@ -56,11 +57,11 @@ export default function PlanPage() {
                     ))}
                   </ul>
                   <div>
-                    <p className="text-sm text-muted">柱の記事</p>
+                    <p className="text-sm text-muted">{KIND_LABEL.pillar}</p>
                     <p className="text-lg font-bold">{p.pillar.keyword}</p>
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm text-muted">周りの記事（{p.clusters.length}本）</p>
+                    <p className="text-sm text-muted">{KIND_LABEL.cluster}（{p.clusters.length}本）</p>
                     <ul className="list-disc pl-5">
                       {p.clusters.map((c) => (
                         <li key={c.id}>{c.keyword}</li>
@@ -69,13 +70,13 @@ export default function PlanPage() {
                   </div>
                   <p className="text-sm text-muted">{p.why}</p>
                   <button type="button" className="btn-primary" onClick={() => growActions.choosePlan(planFromProposal(p))}>
-                    この設計図にする
+                    このセットで書いていく
                   </button>
                 </li>
               ))}
             </ul>
             <button type="button" className="btn-secondary" onClick={() => growActions.setProposals(sampleProposals(g.answers))}>
-              提案を作り直す
+              おすすめを出し直す
             </button>
           </>
         )}
@@ -89,17 +90,17 @@ export default function PlanPage() {
     <main className="page space-y-5">
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div>
-          <h1 className="text-2xl font-bold">記事の設計図</h1>
-          <p className="text-muted">真ん中が柱の記事、周りが細かい疑問に答える記事です。書いた記事から色が変わります。</p>
+          <h1 className="text-2xl font-bold">書いていく記事</h1>
+          <p className="text-muted">真ん中がまとめ記事、まわりが細かい疑問に答えるくわしい記事です。書いた記事から色が変わります。</p>
         </div>
         <button
           type="button"
           className="btn-secondary"
           onClick={() => {
-            if (window.confirm("いまの設計図と進み具合を消して、提案から選び直します。よろしいですか？")) growActions.choosePlan(null);
+            if (window.confirm("いまの記事のセットと進み具合を消して、おすすめから選び直します。よろしいですか？")) growActions.choosePlan(null);
           }}
         >
-          設計図を選び直す
+          記事のセットを選び直す
         </button>
       </div>
       <section className="card">
@@ -110,14 +111,14 @@ export default function PlanPage() {
       <section className="card flex flex-wrap items-center justify-between gap-3" aria-labelledby="sheet-heading">
         <div>
           <h2 id="sheet-heading" className="text-lg font-bold">
-            キーワード管理表
+            書く記事リスト
           </h2>
           <p className="text-muted">
-            {rows.filter((r) => !r.parked).length}本のうち {rows.filter((r) => !r.parked && r.status === "published").length}本 やりました。やった・まだの管理と、次に書く1本は管理表で。
+            {rows.filter((r) => !r.parked).length}本のうち {rows.filter((r) => !r.parked && r.status === "published").length}本 やりました。やった・まだを見ながら、次に書く1本を決められます。
           </p>
         </div>
         <Link href="/prototype/keywords" className="btn-primary">
-          キーワード管理表を開く
+          書く記事リストを開く
         </Link>
       </section>
     </main>
