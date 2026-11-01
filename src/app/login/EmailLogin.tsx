@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { Scene } from "@/components/fun";
 import { Notice } from "@/components/ui";
 import { type LoginState, sendLoginLink } from "./actions";
 
@@ -9,7 +10,13 @@ export function EmailLogin({ next, linkError }: { next: string; linkError: boole
 
   return (
     <main className="page max-w-xl space-y-4">
-      <h1 className="text-2xl font-bold">ログイン</h1>
+      <div className="flex animate-rise items-end gap-3">
+        <div className="flex-1">
+          <h1 className="text-2xl font-black sm:text-3xl">ようこそ</h1>
+          <p className="text-muted">コタムといっしょに、AIに紹介される記事を書きましょう。</p>
+        </div>
+        <Scene point="experience" className="h-24 w-32 shrink-0" />
+      </div>
       {linkError && (
         <Notice tone="warn" title="ログイン用のリンクが使えませんでした">
           有効期限が切れたか、すでに使われています。もう一度メールを送ってください。

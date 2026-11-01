@@ -4,6 +4,7 @@
 
 import { AIO_POINTS } from "@/lib/aio";
 import type { AioPoint } from "@/types/domain";
+import { Toast } from "./fun";
 
 const ICON_PATHS: Record<AioPoint, React.ReactNode> = {
   // 吹き出し
@@ -51,56 +52,60 @@ export function AioIcon({ point, className = "h-6 w-6" }: { point: AioPoint; cla
 export function AioWhy({ point }: { point: AioPoint }) {
   const p = AIO_POINTS[point];
   return (
-    <div className="flex gap-3 rounded-lg border border-line bg-canvas px-3 py-2 text-sm">
-      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand-dark">
-        <AioIcon point={point} className="h-5 w-5" />
+    <div className="flex gap-3 rounded-2xl bg-ok-soft px-4 py-3 text-[0.95rem]">
+      <span className="mt-0.5 flex h-10 w-10 shrink-0 animate-nod items-center justify-center rounded-xl bg-ok-bright text-white">
+        <AioIcon point={point} className="h-6 w-6" />
       </span>
       <p>
-        <span className="font-semibold">なぜ聞くの？　AIOの「{p.label}」のためです。</span>
-        <span className="block text-muted">{p.why}</span>
+        <span className="block font-bold text-ok">なぜ聞くの？　「{p.label}」が集まるからです</span>
+        <span className="block">{p.why}</span>
       </p>
     </div>
   );
 }
 
-/** 答えるたびに集まる「AIに紹介される材料」 */
+/** 答えるたびに集まる「AIに紹介される材料」。集まった材料はポンと黄色に変わる */
 export function AioMeter({ points, collected }: { points: AioPoint[]; collected: AioPoint[] }) {
   const all = [...new Set(points)];
   const have = all.filter((p) => collected.includes(p)).length;
   return (
-    <section className="card space-y-2" aria-labelledby="aio-meter-heading">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h2 id="aio-meter-heading" className="font-semibold">
+    <section className="card space-y-3" aria-labelledby="aio-meter-heading">
+      <div>
+        <h2 id="aio-meter-heading" className="text-lg font-bold">
           AIに紹介される材料
         </h2>
-        <span className="text-sm text-muted">
-          {have} / {all.length} 集まりました
-        </span>
+        <p className="text-sm text-muted">
+          答えるたびに、ここに集まります（{have} / {all.length}）
+        </p>
       </div>
-      <ul className="flex flex-wrap gap-2">
+      <ul className="grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-3">
         {all.map((p) => {
           const ok = collected.includes(p);
           return (
-            <li key={p} className={`flex items-center gap-1 rounded-full border px-2.5 py-1 text-sm ${ok ? "border-ok-soft bg-ok-soft font-semibold text-ok" : "border-line text-muted"}`}>
-              <AioIcon point={p} className="h-4 w-4" />
+            <li
+              key={`${p}-${ok}`}
+              className={`relative flex min-h-20 flex-col items-center justify-center gap-0.5 rounded-2xl p-1.5 text-center text-xs leading-tight ${
+                ok ? "animate-pop bg-sun font-bold text-ink" : "border-2 border-dashed border-line text-muted"
+              }`}
+            >
+              {ok && <span className="absolute -inset-1 animate-ring rounded-[1.2rem] border-[3px] border-sun opacity-0" aria-hidden />}
+              <AioIcon point={p} className="h-6 w-6" />
               {AIO_POINTS[p].label}
               <span className="sr-only">{ok ? "（集まった）" : "（まだ）"}</span>
             </li>
           );
         })}
       </ul>
+      <div className="h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>
+        <div className="h-full rounded-full bg-gradient-to-r from-sun to-brand transition-[width] duration-700" style={{ width: `${all.length ? (have / all.length) * 100 : 0}%` }} />
+      </div>
     </section>
   );
 }
 
-/** 答えた直後のひとこと */
+/** 答えた直後のひとこと。画面の上にふわっと出て消える */
 export function Cheer({ point }: { point: AioPoint }) {
-  return (
-    <p className="flex items-center gap-2 rounded-lg bg-ok-soft px-3 py-2 text-sm font-semibold text-ok" role="status">
-      <AioIcon point={point} className="h-5 w-5 shrink-0" />
-      {AIO_POINTS[point].cheer}
-    </p>
-  );
+  return <Toast>{AIO_POINTS[point].cheer}</Toast>;
 }
 
 /** なぜAIOが必要か。お客様がAIに聞く → AIが会社を紹介する → 問い合わせ → 売上 */
@@ -124,8 +129,8 @@ export function WhyAio({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <ol className="grid gap-2 sm:grid-cols-4" aria-label="AIに紹介されて売上になるまで">
           {steps.map((st, i) => (
-            <li key={st.title} className="flex gap-2 rounded-lg bg-canvas p-3 sm:flex-col sm:items-center sm:text-center">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand-dark">
+            <li key={st.title} className="flex animate-rise gap-2 rounded-2xl bg-canvas p-3 sm:flex-col sm:items-center sm:text-center" style={{ animationDelay: `${i * 0.12}s` }}>
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand text-white">
                 <AioIcon point={st.icon} />
               </span>
               <span>
@@ -138,7 +143,7 @@ export function WhyAio({ compact = false }: { compact?: boolean }) {
           ))}
         </ol>
       )}
-      <p className="font-semibold text-brand-dark">1本書くごとに、AIに紹介される材料が増えていきます。一緒にがんばりましょう！</p>
+      <p className="font-bold text-brand-dark">1本書くごとに、AIに紹介される材料が増えていきます。一緒にがんばりましょう！</p>
     </section>
   );
 }

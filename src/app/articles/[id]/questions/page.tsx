@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AioMeter, AioWhy, Cheer, WhyAio } from "@/components/aio";
+import { Confetti, Road, Scene, Wave } from "@/components/fun";
 import { Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice } from "@/components/ui";
 import { collectedAio } from "@/lib/aio";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { needsFollowUp } from "@/mock/sampleGenerator";
-import type { Answer } from "@/types/domain";
+import type { AioPoint, Answer } from "@/types/domain";
 
 type SaveState = "idle" | "saving" | "saved" | "error";
 
@@ -26,10 +27,15 @@ export default function QuestionsPage() {
   const [saveState, setSaveState] = useState<SaveState>("idle");
   const [error, setError] = useState<{ message: string; session?: boolean } | null>(null);
   const [generating, setGenerating] = useState(false);
+  // 全部答えたときの紙吹雪
+  const [celebrate, setCelebrate] = useState(false);
+  const [cheer, setCheer] = useState<AioPoint | null>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    inputRef.current?.focus();
+    // 次の質問に進んだら上に戻し、えんぴつが進むのとほめる言葉を見せる
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    inputRef.current?.focus({ preventScroll: true });
   }, [step, showFollowUp]);
 
   if (!user) return null;
@@ -41,10 +47,8 @@ export default function QuestionsPage() {
   const total = QUESTIONS.length;
   const current = answers.find((a) => a.questionId === question.id) ?? { questionId: question.id, text: "", unknown: false };
   const allQuestions = [...QUESTIONS, FOLLOW_UP_QUESTION];
-  // 前の質問に答えて進んだときだけ、ひとこと添える
-  const prevQuestion = showFollowUp ? QUESTIONS[total - 1] : step > 0 ? QUESTIONS[step - 1] : null;
-  const prevAnswer = prevQuestion && answers.find((a) => a.questionId === prevQuestion.id);
-  const prevAio = prevQuestion?.aio && prevAnswer && !prevAnswer.unknown && prevAnswer.text.trim() ? prevQuestion.aio : null;
+  // 答えて進んだ直後だけ、ひとこと添える（開き直したときは出さない）
+  const answeredAio = question.aio && !current.unknown && current.text.trim() ? question.aio : null;
 
   function setCurrent(patch: Partial<Answer>) {
     setSaveState("idle");
@@ -76,25 +80,34 @@ export default function QuestionsPage() {
   async function goNext() {
     if (showFollowUp || step === total - 1) {
       if (!showFollowUp && needsFollowUp(answers)) {
-        if (await save(step)) setShowFollowUp(true);
+        if (await save(step)) {
+          setCheer(answeredAio);
+          setShowFollowUp(true);
+        }
         return;
       }
       if (!(await save(step))) return;
+      setCelebrate(true);
       setGenerating(true);
       try {
         await api.generateOutline(id);
         router.push(`/articles/${id}`);
       } catch (e) {
         setGenerating(false);
+        setCelebrate(false);
         handleError(e, "見出し案を作れませんでした。回答は残っています");
       }
       return;
     }
     const nextStep = step + 1;
-    if (await save(nextStep)) setStep(nextStep);
+    if (await save(nextStep)) {
+      setCheer(answeredAio);
+      setStep(nextStep);
+    }
   }
 
   function goBack() {
+    setCheer(null);
     if (showFollowUp) setShowFollowUp(false);
     else setStep((s) => Math.max(0, s - 1));
   }
@@ -102,26 +115,25 @@ export default function QuestionsPage() {
   const isLast = showFollowUp || step === total - 1;
   const canProceed = current.unknown || current.text.trim().length > 0;
 
+  const doneCount = showFollowUp ? total : step;
+
   return (
-    <main className="page max-w-3xl space-y-5">
+    <main className="page max-w-5xl space-y-5">
+      {celebrate && <Confetti />}
       {generating && <GeneratingOverlay label="見出し案を作っています" />}
-      <div>
-        <p className="text-sm text-muted">テーマ：{theme?.title}</p>
-        <h1 className="text-2xl font-bold">質問に答える</h1>
+      {cheer && <Cheer key={question.id} point={cheer} />}
+      <div className="animate-rise">
+        <h1 className="text-2xl font-black leading-snug sm:text-3xl">
+          {step === 0 && !showFollowUp ? "今日の1本、いっしょに書きましょう" : "その調子です！"} <Wave />
+        </h1>
+        <p className="text-muted">テーマ：{theme?.title}</p>
         <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。</p>
       </div>
 
-      <div>
-        <div className="mb-1 flex justify-between text-sm text-muted">
-          <span>{showFollowUp ? "追加の質問" : `${step + 1} / ${total}`}</span>
-          <SaveIndicator state={saveState} />
-        </div>
-        <div className="h-2 overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={showFollowUp ? total : step + 1} aria-label="回答の進み具合">
-          <div className="h-full bg-brand transition-all" style={{ width: `${((showFollowUp ? total : step + 1) / total) * 100}%` }} />
-        </div>
+      <Road total={total} current={doneCount} label="答えは「次へ進む」で保存されます" />
+      <div className="-mt-3 flex min-h-6 justify-end text-sm">
+        <SaveIndicator state={saveState} />
       </div>
-
-      {prevAio && <Cheer point={prevAio} />}
 
       {error && (
         <Notice tone="danger" title={error.message}>
@@ -135,62 +147,82 @@ export default function QuestionsPage() {
         </Notice>
       )}
 
-      <form
-        className="card space-y-4"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (canProceed) goNext();
-        }}
-      >
-        {showFollowUp && <Notice tone="info" title="もう少しだけ教えてください">具体的な場面があると、読み手に伝わる記事になります。分からなければ「まだ分からない」で進めます。</Notice>}
-        <div>
-          <label htmlFor="answer" className="field-label text-lg">
-            {question.label}
-          </label>
-          <p id="answer-example" className="mb-2 text-sm text-muted">
-            {question.example}
-          </p>
-          {question.tip && (
-            <p id="answer-tip" className="mb-2 rounded-md bg-brand-soft px-3 py-2 text-sm text-brand-dark">
-              コツ：{question.tip}
-            </p>
-          )}
-          {question.aio && (
-            <div className="mb-2">
-              <AioWhy point={question.aio} />
-            </div>
-          )}
-          <textarea
-            id="answer"
-            ref={inputRef}
-            aria-describedby={question.tip ? "answer-example answer-tip" : "answer-example"}
-            className="field min-h-36"
-            value={current.unknown ? "" : current.text}
-            disabled={current.unknown}
-            onChange={(e) => setCurrent({ text: e.target.value })}
-          />
-          <label className="mt-2 inline-flex items-center gap-2">
-            <input type="checkbox" checked={current.unknown} onChange={(e) => setCurrent({ unknown: e.target.checked })} />
-            まだ分からない
-          </label>
-        </div>
-
-        <div className="flex flex-wrap justify-between gap-2">
-          <div className="flex flex-wrap gap-2">
-            <button type="button" className="btn-secondary" onClick={goBack} disabled={step === 0 && !showFollowUp}>
-              戻る
-            </button>
-            <button type="button" className="btn-secondary" onClick={() => save()} disabled={saveState === "saving"}>
-              下書き保存
-            </button>
+      <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <form
+          key={question.id}
+          className="card animate-enter overflow-hidden p-0"
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (canProceed) goNext();
+          }}
+        >
+          <div className="flex items-end gap-4 bg-gradient-to-b from-brand-soft to-surface px-5 pt-4">
+            <Scene point={question.aio} className="h-24 w-32 shrink-0 sm:h-32 sm:w-44" />
+            {showFollowUp && <p className="mb-3 rounded-2xl bg-surface px-3 py-2 text-sm font-bold text-brand-dark">もう少しだけ教えてください。具体的な場面があると、読み手に伝わる記事になります。</p>}
           </div>
-          <button type="submit" className="btn-primary" disabled={!canProceed || saveState === "saving"}>
-            {isLast ? "見出し案を作る" : "次へ"}
-          </button>
-        </div>
-      </form>
+          <div className="space-y-3 p-5 pt-3">
+            <span className="inline-block rounded-full bg-brand px-3.5 py-0.5 text-sm font-black text-white">{showFollowUp ? "追加の質問" : `質問 ${step + 1}`}</span>
+            <label htmlFor="answer" className="block text-xl font-black leading-snug sm:text-2xl">
+              {question.label}
+            </label>
+            <p id="answer-example" className="rounded-2xl bg-canvas px-4 py-2.5 text-[0.95rem] text-muted">
+              {question.example}
+            </p>
+            {question.tip && (
+              <p id="answer-tip" className="rounded-2xl bg-sun-soft px-4 py-2.5 text-[0.95rem]">
+                <span className="font-bold">コツ：</span>
+                {question.tip}
+              </p>
+            )}
+            {question.aio && <AioWhy point={question.aio} />}
+            <textarea
+              id="answer"
+              ref={inputRef}
+              aria-describedby={question.tip ? "answer-example answer-tip" : "answer-example"}
+              className="field min-h-36"
+              placeholder="思いついたことを、短い言葉や箇条書きで"
+              value={current.unknown ? "" : current.text}
+              disabled={current.unknown}
+              onChange={(e) => setCurrent({ text: e.target.value })}
+            />
+            <label className={`inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-dashed px-4 py-1.5 text-[0.95rem] transition-colors ${current.unknown ? "border-brand bg-brand-soft text-brand-dark" : "border-line text-muted hover:border-brand"}`}>
+              <input type="checkbox" className="h-4 w-4 accent-brand" checked={current.unknown} onChange={(e) => setCurrent({ unknown: e.target.checked })} />
+              まだ分からない
+            </label>
 
-      <AioMeter points={allQuestions.flatMap((q) => (q.aio ? [q.aio] : []))} collected={collectedAio(allQuestions, (qid) => answers.some((a) => a.questionId === qid && !a.unknown && a.text.trim().length > 0))} />
+            <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
+              <div className="flex flex-wrap gap-2">
+                <button type="button" className="btn-secondary" onClick={goBack} disabled={step === 0 && !showFollowUp}>
+                  ← 戻る
+                </button>
+                <button type="button" className="btn-secondary" onClick={() => save()} disabled={saveState === "saving"}>
+                  下書き保存
+                </button>
+              </div>
+              <button type="submit" className="btn-primary text-lg" disabled={!canProceed || saveState === "saving"}>
+                {isLast ? "見出し案を作る" : "次へ進む"}
+                <span className="inline-block animate-nudge" aria-hidden>
+                  {isLast ? "✨" : "→"}
+                </span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <aside className="space-y-4">
+          <AioMeter points={allQuestions.flatMap((q) => (q.aio ? [q.aio] : []))} collected={collectedAio(allQuestions, (qid) => answers.some((a) => a.questionId === qid && !a.unknown && a.text.trim().length > 0))} />
+          <p className="flex items-center gap-3 rounded-2xl bg-surface/70 px-4 py-3 text-sm">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-sky text-xl" aria-hidden>
+              🧑‍🏫
+            </span>
+            <span>
+              <b className="block">コタムより</b>
+              くわしい体験ほど、AIが紹介しやすくなります。
+            </span>
+          </p>
+        </aside>
+      </div>
+
       {step === 0 && !showFollowUp && <WhyAio compact />}
       {isLast && <SampleNotice />}
       <Link href="/" className="inline-block text-brand-dark underline">

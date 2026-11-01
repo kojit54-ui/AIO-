@@ -22,7 +22,7 @@ export function StatusBadge({ status }: { status: ArticleStatus }) {
 
 export function SampleNotice({ className = "" }: { className?: string }) {
   return (
-    <p className={`rounded-lg border border-warn-soft bg-warn-soft px-3 py-2 text-sm text-warn ${className}`} role="note">
+    <p className={`rounded-2xl border border-warn-soft bg-warn-soft px-3 py-2 text-sm text-warn ${className}`} role="note">
       画面試作のサンプルです。AIはまだ接続していません。文章は回答を並べ替えて作っています。
     </p>
   );
@@ -36,7 +36,7 @@ export function Notice({ tone = "info", title, children }: { tone?: "info" | "wa
     ok: "border-ok-soft bg-ok-soft text-ok",
   }[tone];
   return (
-    <div className={`rounded-lg border px-4 py-3 ${style}`} role={tone === "danger" ? "alert" : "status"}>
+    <div className={`animate-rise rounded-2xl border px-4 py-3 ${style}`} role={tone === "danger" ? "alert" : "status"}>
       {title && <p className="font-semibold">{title}</p>}
       {children && <div className="text-sm">{children}</div>}
     </div>
@@ -65,8 +65,8 @@ export function PageSkeleton() {
 
 export function EmptyState({ title, children, action }: { title: string; children?: React.ReactNode; action?: React.ReactNode }) {
   return (
-    <div className="card text-center">
-      <p className="text-lg font-semibold">{title}</p>
+    <div className="card animate-rise text-center">
+      <p className="text-lg font-bold">{title}</p>
       {children && <div className="mt-1 text-muted">{children}</div>}
       {action && <div className="mt-4">{action}</div>}
     </div>
@@ -105,10 +105,25 @@ export function monthLabel(ym: string) {
 export function GeneratingOverlay({ label }: { label: string }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4" role="alertdialog" aria-live="assertive" aria-label={label}>
-      <div className="card max-w-sm text-center">
-        <div className="mx-auto mb-3 h-10 w-10 animate-spin rounded-full border-4 border-brand-soft border-t-brand" aria-hidden />
-        <p className="font-semibold">{label}</p>
-        <p className="mt-1 text-sm text-muted">この画面を閉じても続きます。</p>
+      <div className="card w-full max-w-sm animate-pop text-center">
+        <div className="relative mx-auto mb-4 h-20 w-36" aria-hidden>
+          <div className="absolute inset-x-2 bottom-3 space-y-2">
+            <div className="h-2 w-full rounded-full bg-brand-soft" />
+            <div className="h-2 w-4/5 rounded-full bg-brand-soft" />
+            <div className="h-2 w-3/5 rounded-full bg-sun-soft" />
+          </div>
+          <span className="absolute left-4 top-0 inline-block animate-write text-4xl">✏️</span>
+        </div>
+        <p className="text-lg font-bold">{label}</p>
+        <p className="mt-1 flex items-center justify-center gap-1 text-sm text-muted">
+          AIが考えています
+          <span className="inline-flex gap-0.5" aria-hidden>
+            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand" />
+            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand [animation-delay:.15s]" />
+            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand [animation-delay:.3s]" />
+          </span>
+        </p>
+        <p className="mt-2 text-sm text-muted">この画面を閉じても続きます。</p>
       </div>
     </div>
   );
@@ -123,7 +138,7 @@ export function Dialog({ title, children, onClose }: { title: string; children: 
       aria-labelledby="dialog-title"
       onKeyDown={(e) => e.key === "Escape" && onClose()}
     >
-      <div className="card w-full max-w-md">
+      <div className="card w-full max-w-md animate-pop">
         <h2 id="dialog-title" className="mb-3 text-lg font-bold">
           {title}
         </h2>

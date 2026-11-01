@@ -1,21 +1,91 @@
 @import "tailwindcss";
 
+/* 見た目：案B「さわやか」（2026-11-01 田村さん）。明るい青・黄色・丸ゴシック。docs/UI.md「見た目」 */
 @theme {
-  --color-ink: #1f2933;
-  --color-muted: #52606d;
-  --color-line: #d9e2ec;
+  --color-ink: #1f2b3d;
+  --color-muted: #55637a;
+  --color-line: #dce8f7;
   --color-surface: #ffffff;
-  --color-canvas: #f5f7fa;
-  --color-brand: #1d5fa8;
-  --color-brand-dark: #154a85;
-  --color-brand-soft: #e6f0fb;
+  --color-canvas: #f2f8ff;
+  --color-canvas-deep: #e2efff;
+  --color-brand: #2f6fdb;
+  --color-brand-dark: #2258b8;
+  --color-brand-soft: #e3edff;
+  --color-sun: #ffc93c;
+  --color-sun-dark: #e0a800;
+  --color-sun-soft: #fff4d1;
+  --color-sky: #9bd3ff;
   --color-warn: #8a5300;
   --color-warn-soft: #fff4e0;
   --color-danger: #b42318;
   --color-danger-soft: #fdecea;
-  --color-ok: #1e6b3a;
-  --color-ok-soft: #e7f5ec;
-  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+  --color-ok: #17804f;
+  --color-ok-bright: #22a06b;
+  --color-ok-soft: #ddf5ea;
+  --font-sans: var(--font-maru), "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+
+  --animate-enter: enter 0.55s cubic-bezier(0.2, 1.3, 0.4, 1) both;
+  --animate-rise: rise 0.5s cubic-bezier(0.2, 1.2, 0.4, 1) both;
+  --animate-pop: pop 0.7s cubic-bezier(0.2, 1.8, 0.4, 1) both;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-nudge: nudge 1.2s ease-in-out infinite;
+  --animate-hop: hop 1s ease-in-out infinite;
+  --animate-nod: nod 3.2s ease-in-out infinite;
+  --animate-wave: wave 2.4s ease-in-out infinite;
+  --animate-ring: ring 0.9s ease-out 0.15s both;
+  --animate-toast: toast 3.2s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  --animate-fall: fall 2.6s linear both;
+  --animate-write: write 1.4s ease-in-out infinite;
+
+  @keyframes enter {
+    from { opacity: 0; transform: translateX(48px) rotate(1.5deg); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes pop {
+    0% { transform: scale(0.3) rotate(-25deg); }
+    100% { transform: none; }
+  }
+  @keyframes float {
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes nudge {
+    50% { transform: translateX(5px); }
+  }
+  @keyframes hop {
+    50% { transform: translateY(-5px); }
+  }
+  @keyframes nod {
+    0%, 80%, 100% { transform: rotate(0); }
+    85% { transform: rotate(-10deg); }
+    90% { transform: rotate(10deg); }
+  }
+  @keyframes wave {
+    0%, 60%, 100% { transform: rotate(0); }
+    10%, 30% { transform: rotate(16deg); }
+    20%, 40% { transform: rotate(-8deg); }
+  }
+  @keyframes ring {
+    from { opacity: 1; transform: scale(0.9); }
+    to { opacity: 0; transform: scale(1.35); }
+  }
+  @keyframes toast {
+    0% { opacity: 0; transform: translate(-50%, -120%); }
+    12%, 85% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -120%); }
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); }
+  }
+  @keyframes write {
+    0%, 100% { transform: translate(0, 0) rotate(0); }
+    25% { transform: translate(8px, 2px) rotate(6deg); }
+    50% { transform: translate(16px, 0) rotate(0); }
+    75% { transform: translate(8px, -2px) rotate(-6deg); }
+  }
 }
 
 html {
@@ -27,10 +97,29 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.75;
+  font-weight: 500;
+  line-height: 1.8;
   overflow-wrap: anywhere;
+  overflow-x: hidden;
   /* 右下の試作確認パネルが本文の最後に重ならないよう余白を取る */
   padding-bottom: 4rem;
+}
+
+/* 背景のやわらかい丸。ゆっくり漂う */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 18%, var(--color-canvas-deep) 0 120px, transparent 121px),
+    radial-gradient(circle at 88% 70%, var(--color-canvas-deep) 0 180px, transparent 181px),
+    radial-gradient(circle at 70% 8%, var(--color-sun-soft) 0 60px, transparent 61px);
+  animation: drift 18s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  to { transform: translate(30px, -20px); }
 }
 
 :focus-visible {
@@ -38,26 +127,33 @@ body {
   outline-offset: 2px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 @utility btn {
-  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border px-4 py-2 font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 px-5 py-2 font-bold transition-transform duration-150 active:translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 disabled:active:translate-y-0;
 }
 @utility btn-primary {
-  @apply btn border-brand bg-brand text-white hover:bg-brand-dark;
+  @apply btn border-brand bg-brand text-white shadow-[0_4px_0_var(--color-brand-dark)] hover:-translate-y-0.5 hover:bg-brand-dark active:shadow-[0_1px_0_var(--color-brand-dark)] disabled:hover:translate-y-0 disabled:hover:bg-brand;
 }
 @utility btn-secondary {
-  @apply btn border-line bg-surface text-ink hover:bg-canvas;
+  @apply btn border-line bg-surface text-ink shadow-[0_3px_0_var(--color-line)] hover:border-brand hover:text-brand-dark;
 }
 @utility btn-danger {
   @apply btn border-danger bg-surface text-danger hover:bg-danger-soft;
 }
 @utility card {
-  @apply rounded-xl border border-line bg-surface p-5;
+  @apply rounded-3xl border border-line bg-surface p-5 shadow-[0_6px_0_var(--color-line)];
 }
 @utility field-label {
-  @apply mb-1 block font-semibold;
+  @apply mb-1 block font-bold;
 }
 @utility field {
-  @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-base text-ink;
+  @apply w-full rounded-2xl border-2 border-line bg-surface px-4 py-2.5 text-base text-ink transition-shadow focus:border-brand focus:shadow-[0_0_0_5px_var(--color-brand-soft)] focus:outline-none focus-visible:outline-none;
 }
 @utility page {
   @apply mx-auto w-full max-w-6xl px-4 py-6 sm:px-6;
