@@ -285,18 +285,19 @@ interface GenerationRun {
 - 生成は受付後すぐ `GenerationRun`（queued）を返し、画面は状態を問い合わせる。画面試作では待ち時間を擬似的に入れて完了まで待っている
 - エラーは `{ code, message }` で返す。`code` は src/mock/store.tsx の `ApiError` と同じ値を使う
 
-## 育つブログ（案、T5-3。CXのレビュー待ち）
+## 育つブログ（T5-3。supabase/migrations/20261101000000_growth.sql）
 
-画面試作（src/prototype/growth.ts）の型をもとにした案。どのテーブルも organization_id を持ち、RLS は既存と同じく `app.is_member` で会社ごとに絞る。
+画面試作（src/prototype/growth.ts）の型をもとにした。テストは supabase/tests/growth.test.ts。どのテーブルも organization_id を持ち、RLS は既存と同じく `app.is_member` で会社ごとに絞る。
 
 | テーブル | 主な列 | 書ける人 |
 |---|---|---|
-| hearing_answers | organization_id、question_id、text、follow_ups（jsonb：深掘りの質問と答えの配列。飛ばした深掘りは答えを空で残す）、is_draft（boolean、既定 true。「次へ」を押すまで書きかけ）、updated_by、updated_at。unique(organization_id, question_id) | 顧客担当者とコタム（同じ行を両方が直せる。最後に保存した内容が残る） |
-| keyword_plans | id、organization_id、proposal（jsonb：選んだ提案の柱・クラスター・ねらい）、chosen_by、chosen_at、archived_at | 顧客担当者 |
-| keyword_rows | id、plan_id、organization_id、kind（pillar／cluster）、pillar_row_id（属する柱の行）、keyword、reader_question、status（todo／writing／published）、priority（1〜3、3が高い）、reasons（text[]：sales／competition／aio）、source（proposal／customer／cotam／site／search_console／semrush）、monthly_searches（int、null＝未取得）、parked（やめておく）、sell_item_id（どの売りたいものの記事か。null なら記事の言葉から自動で決める）、article_id（記事ができたら）、sort_order | 顧客担当者。status は記事の状態から自動で変える（記事が published になったら published）。顧客が手で「やった」にもできる（サイトの外で書いた記事など）。monthly_searches はキーワードツールの値だけを入れ、AIに作らせない。試作の型は src/prototype/growth.ts の KeywordRow、表の考え方は src/prototype/keywords.ts |
-| sell_items | id、organization_id、name、rank（0が1位）、updated_at | 顧客担当者。「今売りたいもの」とその順位。並べかえのたびに rank を書き直す。試作の型は src/prototype/keywords.ts の SellItem |
+| hearing_answers | organization_id、question_id、text、follow_ups（jsonb：深掘りの質問と答えの配列。飛ばした深掘りは答えを空で残す）、is_draft（boolean、既定 true。「次へ」を押すまで書きかけ）、updated_by、updated_at。unique(organization_id, question_id) | 顧客担当者とコタム（同じ行を両方が直せる。最後に保存した内容が残る）。question_id は英小文字・数字・_ の40字まで、text は4,000字まで |
+| keyword_plans | id、organization_id、proposal（jsonb：選んだ提案の柱・クラスター・ねらい）、chosen_by、chosen_at、archived_at。使っている組み立て（archived_at が null）は1社に1つ | 顧客担当者とコタム。選ぶのは関数 choose_keyword_plan（前の組み立てをしまい、新しい組み立てと行を1つのトランザクションで作る。書いた・やった行は同じキーワードの新しい行に引き継ぐ）。proposal は後から変えられない |
+| keyword_rows | id、plan_id、organization_id、kind（pillar／cluster）、pillar_row_id（属する柱の行）、keyword、reader_question、status（todo／writing／published）、priority（1〜3、3が高い）、reasons（text[]：sales／competition／aio）、source（proposal／customer／cotam／site／search_console／semrush／rakko／keyword_planner）、monthly_searches（int、null＝未取得）、parked（やめておく）、sell_item_id（どの売りたいものの記事か。null なら記事の言葉から自動で決める）、article_id（記事ができたら）、sort_order | 顧客担当者。status は記事の状態から自動で変える（記事が published になったら published）。顧客が手で「やった」にもできる（サイトの外で書いた記事など）。monthly_searches はキーワードツールの値だけを入れ、AIに作らせない（利用者の権限では書けない。トリガー app.guard_keyword_row。サーバー処理の service role だけが書く）。組み立て・柱の行・売りたいもの・記事は同じ会社のものしか指せない。試作の型は src/prototype/growth.ts の KeywordRow、表の考え方は src/prototype/keywords.ts |
+| sell_items | id、organization_id、name、rank（0が1位）、updated_at | 顧客担当者とコタム。「今売りたいもの」とその順位。並べかえは関数 save_sell_items で全体を置きかえる（id を渡した行は残し、記事の札が外れないようにする）。試作の型は src/prototype/keywords.ts の SellItem |
 
 - 深掘りの質問とキーワードの提案の指示と返答の検査は src/lib/ai/growthPrompts.ts（FOLLOWUP_SYSTEM_PROMPT・PROPOSAL_SYSTEM_PROMPT、parseFollowUp・parseProposals）。生成と同じくサーバーで作り、generation_runs に kind（hearing_followup／keyword_proposal）で記録して予算に数える
 - 答え終わったか（isAnswerDone）は「text がある・is_draft が false・深掘りが残っていない」で決め、続きの位置、答えた数、ヒアリングの点、提案を作れるかに同じ判定を使う
-- レベルとバッジは保存せず、keyword_rows と hearing_answers から毎回計算する（computeGrowth と同じ式）
+- レベルとバッジは保存せず、keyword_rows と hearing_answers から毎回計算する（computeGrowth と同じ式）。組み立てを選び直しても下がらないよう、「やった」の数はしまった組み立ての行も数える（同じキーワードは1つと数える）
+- 記事を公開すると、その記事をつないだ行は自動で「やった」になる（トリガー app.mark_keyword_published）。公開をやめても自動では戻さない
 - 第2段階で search_console_daily（organization_id、date、query、page、clicks、impressions、position）を足す。書き込みは service role だけ
