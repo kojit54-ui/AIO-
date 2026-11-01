@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AioMeter, AioWhy, Cheer, WhyAio } from "@/components/aio";
-import { Confetti, Road, Scene, Wave } from "@/components/fun";
+import { Confetti, Road, Scene, SecretaryFace, Wave } from "@/components/fun";
 import { Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice } from "@/components/ui";
 import { collectedAio } from "@/lib/aio";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
@@ -212,9 +212,7 @@ export default function QuestionsPage() {
         <aside className="space-y-4">
           <AioMeter points={allQuestions.flatMap((q) => (q.aio ? [q.aio] : []))} collected={collectedAio(allQuestions, (qid) => answers.some((a) => a.questionId === qid && !a.unknown && a.text.trim().length > 0))} />
           <p className="flex items-center gap-3 rounded-2xl bg-surface/70 px-4 py-3 text-sm">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-sky text-xl" aria-hidden>
-              🧑‍🏫
-            </span>
+            <SecretaryFace className="h-12 w-12" />
             <span>
               <b className="block">コタムより</b>
               くわしい体験ほど、AIが紹介しやすくなります。

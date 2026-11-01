@@ -122,16 +122,86 @@ export function Wave() {
   );
 }
 
-// 質問ごとの小さな絵。どの材料のための質問かで場面を変える
-function Person({ x, body, hair }: { x: number; body: string; hair: string }) {
+// 案内役の秘書。質問ごとの絵と「コタムより」に出す（2026-11-01 田村さん「女性の秘書的なかわいいのに」）
+const HAIR = "#5b3a2e";
+const SKIN = "#ffe3d0";
+
+/** 顔だけ。0〜80 の正方形に描く */
+function SecretaryHead() {
   return (
-    <g className="animate-float" style={{ transformBox: "fill-box" }}>
-      <circle cx={x} cy={62} r={18} fill="#FFDCC2" />
-      <path d={`M${x - 18} 58a18 18 0 0 1 36 0q-6-12-18-12t-18 12z`} fill={hair} />
-      <rect x={x - 24} y={82} width={48} height={48} rx={20} fill={body} />
+    <>
+      {/* 後ろ髪（ボブ） */}
+      <path d="M14 40c0-18 12-30 26-30s26 12 26 30v20c0 6-4 9-8 9H22c-4 0-8-3-8-9z" fill={HAIR} />
+      <circle cx={40} cy={40} r={21} fill={SKIN} />
+      {/* 前髪 */}
+      <path d="M18 38c0-15 10-24 22-24s22 9 22 24c-6-2-11-7-13-13-3 7-12 12-24 13z" fill={HAIR} />
+      {/* 髪かざり */}
+      <g fill="var(--color-sun)">
+        <path d="M54 20l8-5v10z" />
+        <path d="M54 20l-6-6v10z" />
+        <circle cx={54} cy={20} r={2.6} />
+      </g>
+      {/* 目・ほお・口 */}
+      <ellipse cx={32} cy={42} rx={2.8} ry={3.6} fill="#3a2a25" />
+      <ellipse cx={48} cy={42} rx={2.8} ry={3.6} fill="#3a2a25" />
+      <circle cx={33} cy={40.6} r={1} fill="#fff" />
+      <circle cx={49} cy={40.6} r={1} fill="#fff" />
+      <ellipse cx={26} cy={49} rx={4} ry={2.4} fill="#ffb3b3" opacity={0.75} />
+      <ellipse cx={54} cy={49} rx={4} ry={2.4} fill="#ffb3b3" opacity={0.75} />
+      <path d="M36 50q4 4 8 0" stroke="#c0605a" strokeWidth={1.8} fill="none" strokeLinecap="round" />
+    </>
+  );
+}
+
+type Pose = "listen" | "note" | "point" | "wave";
+
+/** 秘書の全身。x, y は左上、0〜80 × 0〜130 の大きさ */
+function Secretary({ x, y = 0, pose = "listen", delay = 0 }: { x: number; y?: number; pose?: Pose; delay?: number }) {
+  return (
+    <g transform={`translate(${x} ${y})`}>
+      <g className="animate-float" style={{ animationDelay: `${delay}s`, transformBox: "fill-box" }}>
+        {/* 体：紺のジャケットに白いブラウス、黄色いリボン */}
+        <path d="M14 130v-30c0-16 11-26 26-26s26 10 26 26v30z" fill="var(--color-brand)" />
+        <path d="M30 75l10 22 10-22z" fill="#fff" />
+        <path d="M40 84l-6-4v8zM40 84l6-4v8z" fill="var(--color-sun)" />
+        <rect x={36} y={62} width={8} height={10} rx={3} fill={SKIN} />
+        <SecretaryHead />
+        {pose === "note" && (
+          <g>
+            <rect x={44} y={92} width={26} height={32} rx={4} fill="#fff" stroke="var(--color-line)" strokeWidth={2} />
+            <rect x={51} y={89} width={12} height={6} rx={2} fill="var(--color-sun)" />
+            <path d="M49 104h16M49 111h16M49 118h10" stroke="var(--color-ok-bright)" strokeWidth={2.5} strokeLinecap="round" />
+            <circle cx={46} cy={112} r={5} fill={SKIN} />
+          </g>
+        )}
+        {pose === "point" && (
+          <g>
+            <path d="M60 96q12-8 18-22" stroke="var(--color-brand)" strokeWidth={10} fill="none" strokeLinecap="round" />
+            <circle cx={78} cy={72} r={5} fill={SKIN} />
+          </g>
+        )}
+        {pose === "wave" && (
+          <g className="animate-wave" style={{ transformBox: "fill-box", transformOrigin: "0% 100%" }}>
+            <path d="M60 96q10-10 12-26" stroke="var(--color-brand)" strokeWidth={10} fill="none" strokeLinecap="round" />
+            <circle cx={72} cy={66} r={5.5} fill={SKIN} />
+          </g>
+        )}
+        {(pose === "listen" || pose === "note") && <circle cx={22} cy={112} r={5} fill={SKIN} />}
+      </g>
     </g>
   );
 }
+
+/** 「コタムより」などに出す、秘書の顔のアイコン */
+export function SecretaryFace({ className = "h-10 w-10" }: { className?: string }) {
+  return (
+    <svg viewBox="4 4 72 72" className={`${className} shrink-0 rounded-full bg-sky`} aria-hidden>
+      <SecretaryHead />
+      <path d="M14 80c0-10 11-16 26-16s26 6 26 16z" fill="var(--color-brand)" />
+    </svg>
+  );
+}
+
 function Bubble({ x, y, text }: { x: number; y: number; text: string }) {
   return (
     <g className="animate-float" style={{ animationDelay: ".6s", transformBox: "fill-box" }}>
@@ -151,19 +221,18 @@ const SKY = "var(--color-sky)";
 const SCENES: Record<AioPoint, React.ReactNode> = {
   experience: (
     <>
-      <Person x={48} body={GREEN} hair="#5a4038" />
-      <Person x={122} body={BLUE} hair="#2d2d2d" />
-      <Bubble x={10} y={4} text="実は…" />
+      <Secretary x={84} pose="note" />
+      <Bubble x={8} y={20} text="実は…" />
     </>
   ),
   qa: (
     <>
-      <Person x={56} body={BLUE} hair="#2d2d2d" />
+      <Secretary x={14} pose="point" />
       <g className="animate-float" style={{ animationDelay: ".3s", transformBox: "fill-box" }}>
         <rect x={98} y={40} width={58} height={72} rx={10} fill="#fff" stroke="var(--color-line)" strokeWidth={2} />
         <path d="M108 58h38M108 72h38M108 86h26" stroke={GREEN} strokeWidth={4} strokeLinecap="round" />
       </g>
-      <Bubble x={4} y={4} text="こうして" />
+
     </>
   ),
   numbers: (
@@ -180,7 +249,7 @@ const SCENES: Record<AioPoint, React.ReactNode> = {
   ),
   expertise: (
     <>
-      <Person x={85} body={GREEN} hair="#5a4038" />
+      <Secretary x={46} pose="listen" />
       <text x={128} y={52} fontSize={40} fontWeight={900} fill={BLUE} className="animate-float" style={{ transformBox: "fill-box" }}>
         !
       </text>
@@ -191,7 +260,7 @@ const SCENES: Record<AioPoint, React.ReactNode> = {
   ),
   action: (
     <>
-      <Person x={50} body={BLUE} hair="#2d2d2d" />
+      <Secretary x={10} pose="wave" />
       <g className="animate-float" style={{ transformBox: "fill-box" }}>
         <rect x={96} y={50} width={58} height={44} rx={10} fill={SUN} />
         <path d="M104 62l21 14 21-14" stroke="#fff" strokeWidth={4} fill="none" strokeLinecap="round" />
