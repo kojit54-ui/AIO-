@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageSkeleton } from "@/components/ui";
 import { GrowthCard, ProgressBar, WhyAio } from "@/prototype/components";
 import { HEARING_QUESTIONS, answeredCount, computeGrowth } from "@/prototype/growth";
-import { nextKeyword, normalizeRows } from "@/prototype/keywords";
+import { nextKeyword, normalizeRows, sellItemsFromAnswer } from "@/prototype/keywords";
 import { useGrow } from "@/prototype/store";
 
 export default function PrototypeHome() {
@@ -14,7 +14,7 @@ export default function PrototypeHome() {
   const growth = computeGrowth(g.answers, g.plan);
   const rows = normalizeRows(g.plan).filter((r) => !r.parked);
   const published = rows.filter((r) => r.status === "published").length;
-  const next = nextKeyword(rows);
+  const next = nextKeyword(rows, g.sellItems ?? sellItemsFromAnswer(g.answers.services?.text ?? ""));
 
   const steps = [
     {

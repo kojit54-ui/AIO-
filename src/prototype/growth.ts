@@ -260,6 +260,8 @@ export interface KeywordRow extends KeywordIdea {
   monthlySearches?: number | null;
   /** 「やめておく」にしたもの。消さずに残す */
   parked?: boolean;
+  /** どの「今売りたいもの」の記事か（src/prototype/keywords.ts の SellItem の id）。null なら記事の言葉から自動で決める */
+  sellItemId?: string | null;
 }
 
 export interface KeywordPlan {
