@@ -1,0 +1,56 @@
+import { describe, expect, it } from "vitest";
+import { HEARING_QUESTIONS, planFromProposal, sampleProposals } from "./growth";
+import { answerFromDb, answerToDb, GrowSyncError, isUuid, planRowsForRpc, rowFromDb, sellItemsForRpc, toQuestionId } from "./remote";
+
+const U1 = "11111111-1111-4111-8111-111111111111";
+const U2 = "22222222-2222-4222-8222-222222222222";
+
+describe("本物のデータとの変換", () => {
+  it("答え：DBの決まり（質問 id の形・4000字・深掘り10件）に合わせて渡し、読んだら元の形に戻す", () => {
+    const row = answerToDb(U1, {
+      questionId: "Biz-Area",
+      text: "あ".repeat(4100),
+      followUps: Array.from({ length: 12 }, (_, i) => ({ question: `q${i}`, answer: `a${i}` })),
+      draft: true,
+    });
+    expect(row.question_id).toBe("biz_area");
+    expect(row.text).toHaveLength(4000);
+    expect(row.follow_ups).toHaveLength(10);
+    expect(row.is_draft).toBe(true);
+    expect(toQuestionId("business")).toBe("business");
+
+    expect(answerFromDb({ question_id: "business", text: "工務店", follow_ups: [{ question: "q", answer: "a" }, "壊れた", { answer: "x" }], is_draft: false })).toEqual({
+      questionId: "business",
+      text: "工務店",
+      followUps: [{ question: "q", answer: "a" }],
+    });
+    expect(answerFromDb({ question_id: "faq", text: "", follow_ups: null, is_draft: true })).toMatchObject({ followUps: [], draft: true });
+  });
+
+  it("答え：画面の質問 id はそのままDBの形になっている（読み直しても同じ質問に戻る）", () => {
+    for (const q of HEARING_QUESTIONS) expect(toQuestionId(q.id)).toBe(q.id);
+  });
+
+  it("組み立て：柱を先に、周りの記事は柱の key を指して渡す（30行まで）", () => {
+    const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
+    const plan = planFromProposal(sampleProposals(answers)[0]);
+    const rows = planRowsForRpc(plan);
+    expect(rows[0]).toMatchObject({ key: "k0", kind: "pillar", pillar_key: null, sort_order: 0 });
+    expect(rows.slice(1).every((r) => r.kind === "cluster" && r.pillar_key === "k0")).toBe(true);
+    expect(rows.every((r) => r.keyword.length <= 80 && r.reader_question.length <= 200)).toBe(true);
+    const many = { ...plan, rows: Array.from({ length: 40 }, () => plan.rows[1]) };
+    expect(planRowsForRpc(many)).toHaveLength(30);
+  });
+
+  it("行：DBの行を画面の行にし、知らない値は安全な値にする（検索数は数字のまま、作らない）", () => {
+    const base = { kind: "cluster" as const, pillar_row_id: U1, keyword: "断熱", reader_question: "寒い？", status: "todo" as const, monthly_searches: null, parked: false, sell_item_id: null, sort_order: 1 };
+    expect(rowFromDb({ ...base, id: U2, priority: 9, reasons: ["sales", "謎"], source: "謎" })).toMatchObject({ id: U2, pillarId: U1, priority: 2, reasons: ["sales"], source: "proposal", monthlySearches: null });
+    expect(rowFromDb({ ...base, id: U1, kind: "pillar", pillar_row_id: null, priority: 3, reasons: [], source: "rakko", monthly_searches: 1300 })).toMatchObject({ pillarId: U1, source: "rakko", monthlySearches: 1300 });
+  });
+
+  it("売りたいもの：画面で作った仮の id は渡さず、DBの id はそのまま渡す（名前を変えても同じもの）", () => {
+    expect(sellItemsForRpc([{ id: U1, name: "内窓" }, { id: "sell_0", name: "外壁" }])).toEqual([{ id: U1, name: "内窓" }, { name: "外壁" }]);
+    expect(isUuid("sell_0")).toBe(false);
+    expect(new GrowSyncError("x").name).toBe("GrowSyncError");
+  });
+});

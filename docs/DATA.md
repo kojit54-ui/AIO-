@@ -300,4 +300,5 @@ interface GenerationRun {
 - 答え終わったか（isAnswerDone）は「text がある・is_draft が false・深掘りが残っていない」で決め、続きの位置、答えた数、ヒアリングの点、提案を作れるかに同じ判定を使う
 - レベルとバッジは保存せず、keyword_rows と hearing_answers から毎回計算する（computeGrowth と同じ式）。組み立てを選び直しても下がらないよう、「やった」の数はしまった組み立ての行も数える（同じキーワードは1つと数える）
 - 記事を公開すると、その記事をつないだ行は自動で「やった」になる（トリガー app.mark_keyword_published）。公開をやめても自動では戻さない
+- 画面からの読み書きは src/prototype/remote.ts（ログイン中の利用者の権限。RLS とトリガーが守る）。おすすめの案と記事ごとの一問一答の答えはまだ表が無く、会社ごとにブラウザに置いている
 - 第2段階で search_console_daily（organization_id、date、query、page、clicks、impressions、position）を足す。書き込みは service role だけ

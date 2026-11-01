@@ -69,7 +69,7 @@ export default function PlanPage() {
                     </ul>
                   </div>
                   <p className="text-sm text-muted">{p.why}</p>
-                  <button type="button" className="btn-primary" onClick={() => growActions.choosePlan(planFromProposal(p))}>
+                  <button type="button" className="btn-primary" onClick={() => growActions.choosePlan(planFromProposal(p), p)}>
                     このセットで書いていく
                   </button>
                 </li>

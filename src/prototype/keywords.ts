@@ -11,6 +11,8 @@ export const SOURCE_LABEL: Record<KeywordSource, string> = {
   site: "ホームページから",
   search_console: "Search Console",
   semrush: "SEMrush",
+  rakko: "検索のしらべ",
+  keyword_planner: "検索のしらべ",
 };
 
 /** 記事リストでの呼び方（ROW_STATUS_LABEL と同じ） */

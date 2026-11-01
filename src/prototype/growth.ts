@@ -242,7 +242,7 @@ export const ROW_STATUS_LABEL: Record<RowStatus, string> = { todo: "まだ", wri
 export const KIND_LABEL: Record<"pillar" | "cluster", string> = { pillar: "まとめ記事", cluster: "くわしい記事" };
 
 /** キーワードがどこから来たか。SEMrush・Search Console は後からつなぐ（docs/DATA.md「キーワード管理表」） */
-export type KeywordSource = "proposal" | "customer" | "cotam" | "site" | "search_console" | "semrush";
+export type KeywordSource = "proposal" | "customer" | "cotam" | "site" | "search_console" | "semrush" | "rakko" | "keyword_planner";
 
 /** 優先度。3 がいちばん高い */
 export type KeywordPriority = 1 | 2 | 3;
