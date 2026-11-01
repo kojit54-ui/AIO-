@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { HEARING_QUESTIONS, planFromProposal, sampleProposals } from "./growth";
 import { sellItemsFromAnswer } from "./keywords";
-import { answerFromDb, answerToDb, GrowSyncError, isUuid, planRowsForRpc, rowFromDb, sellItemsForRpc, toQuestionId } from "./remote";
+import { answerFromDb, answerToDb, createGrowRemote, GrowSyncError, isUuid, planRowsForRpc, proposalSetFromDb, rowFromDb, sellItemsForRpc, toQuestionId } from "./remote";
 
 const U1 = "11111111-1111-4111-8111-111111111111";
 const U2 = "22222222-2222-4222-8222-222222222222";
@@ -82,5 +82,35 @@ describe("本物のデータとの変換", () => {
     // 11個目を黙って切り捨てない（外れたものがDBで消えるため）
     expect(() => sellItemsForRpc(Array.from({ length: 11 }, (_, i) => ({ id: `sell_${i}`, name: `品${i}` })))).toThrow(GrowSyncError);
     expect(new GrowSyncError("x").name).toBe("GrowSyncError");
+  });
+
+  it("コタムからの提案：DBの行を画面の提案にし、提案ごと・言葉ごとに別の id を付ける", () => {
+    const set = proposalSetFromDb({
+      id: "kp1",
+      proposals: [
+        { pillar: { keyword: "内窓 札幌", question: "内窓とは" }, clusters: [{ keyword: "内窓 費用", question: "いくら？" }, { keyword: "", question: "空" }], reasons: ["sales", "謎"], why: "売上" },
+        { pillar: { keyword: "" }, clusters: [] },
+      ],
+      is_sample: true,
+      used_research: false,
+      created_at: "2026-11-02T00:00:00Z",
+    });
+    expect(set.list).toHaveLength(1);
+    expect(set.list[0]).toMatchObject({ id: "kp1-0", pillar: { id: "kp1-0-p", keyword: "内窓 札幌" }, clusters: [{ id: "kp1-0-c0", keyword: "内窓 費用" }], reasons: ["sales"] });
+    expect(set.info).toEqual({ isSample: true, usedResearch: false, createdAt: "2026-11-02T00:00:00Z" });
+    // 選ぶと、柱の id を周りの記事が指す
+    const plan = planFromProposal(set.list[0]);
+    expect(plan.rows[1].pillarId).toBe(plan.rows[0].id);
+  });
+
+  it("コタムからの提案を頼む：サーバーの言葉をそのまま知らせ、通信の失敗はやさしい言葉にする", async () => {
+    const ok = createGrowRemote({} as never, U1, async () => new Response(JSON.stringify({ id: "kp2", proposals: [{ pillar: { keyword: "柱", question: "q" }, clusters: [], reasons: ["aio"], why: "w" }], isSample: false, usedResearch: true, createdAt: "x" })));
+    expect((await ok.requestProposals()).info).toEqual({ isSample: false, usedResearch: true, createdAt: "x" });
+    const limited = createGrowRemote({} as never, U1, async () => new Response(JSON.stringify({ code: "limit_reached", message: "今月のおすすめを作れる回数に達しました" }), { status: 429 }));
+    await expect(limited.requestProposals()).rejects.toThrow("回数に達しました");
+    const offline = createGrowRemote({} as never, U1, async () => {
+      throw new TypeError("fetch failed");
+    });
+    await expect(offline.requestProposals()).rejects.toThrow(GrowSyncError);
   });
 });

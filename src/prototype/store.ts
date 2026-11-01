@@ -4,16 +4,19 @@
 // - 試作（Supabase の接続先が無いとき）：ブラウザの中（localStorage）だけ
 // - 本物のデータ（connectGrow で GrowRemote を渡したとき）：会社ごとにDBへ保存する（T5-5）
 //   画面はすぐ書きかえ、保存はうしろで行う。失敗したら知らせて、DBの内容を読み直す。
-//   おすすめ（proposals）と記事ごとの一問一答の答えはまだ表が無いので、会社ごとにこのブラウザに置く。
+//   おすすめ（proposals）はコタムからの提案としてDB（keyword_proposals）から読み、新しく作るのはサーバー（T5-4）。
+//   記事ごとの一問一答の答えはまだ表が無いので、会社ごとにこのブラウザに置く。
 
 import { useSyncExternalStore } from "react";
 import type { SellItem } from "./keywords";
 import { type HearingAnswer, type KeywordPlan, type KeywordRow, type PillarProposal, type RowStatus } from "./growth";
-import { GrowSyncError, isUuid, type GrowRemote } from "./remote";
+import { GrowSyncError, isUuid, type GrowRemote, type ProposalInfo } from "./remote";
 
 export interface GrowState {
   answers: Record<string, HearingAnswer>;
   proposals: PillarProposal[] | null;
+  /** 本物のデータのときの、コタムからの提案の情報（試作では null） */
+  proposalInfo?: ProposalInfo | null;
   plan: KeywordPlan | null;
   /** 記事ごとの一問一答の答え（キーワードの行 id → 質問 id → 答え） */
   articleAnswers: Record<string, Record<string, string>>;
@@ -26,6 +29,8 @@ export interface GrowSync {
   /** remote で、DBから読み終わったか */
   loaded: boolean;
   saving: boolean;
+  /** コタムからの提案を作っている途中か */
+  proposing?: boolean;
   error: string | null;
 }
 
@@ -64,7 +69,7 @@ function set(next: GrowState) {
   try {
     if (remote) {
       // DBに表が無いものだけをこのブラウザに置く
-      window.localStorage.setItem(remoteLocalKey(remote.organizationId), JSON.stringify({ proposals: next.proposals, articleAnswers: next.articleAnswers, sellEmptied: next.sellItems?.length === 0 }));
+      window.localStorage.setItem(remoteLocalKey(remote.organizationId), JSON.stringify({ articleAnswers: next.articleAnswers, sellEmptied: next.sellItems?.length === 0 }));
     } else {
       window.localStorage.setItem(KEY, JSON.stringify(next));
     }
@@ -109,6 +114,8 @@ let opSeq = 0;
 let planGen = 0;
 /** DBで断られた組み立ての選び直し。そのあとに並んだ行の変更・追加は、元の組み立てに入れずに捨てる */
 const failedPlanGens = new Set<number>();
+/** 開いただけで提案を頼んだ会社（同じ会社では1回だけ） */
+const autoProposed = new Set<string>();
 /** 見ていない会社の保存の失敗。その会社に戻ったときに知らせる（入力が消えたことに気づけるように） */
 const hiddenErrors = new Map<string, string>();
 
@@ -263,7 +270,11 @@ async function readRemote(r: GrowRemote) {
     servers.set(r, { answers: snap.answers, plan: snap.plan });
     // 売りたいものの保存待ちがあれば、画面の並べかえを残す（あとの保存でDBにも入る）
     const sellItems = sellSettled < sellSeq && state ? state.sellItems : (snap.sellItems ?? (emptied ? [] : null));
-    state = { ...rebase(), sellItems, proposals: keep.proposals, articleAnswers: keep.articleAnswers };
+    // 読みはじめたあとに届いた新しい提案を、古い読み込みで消さない
+    const shown = state?.proposals && state.proposalInfo ? { list: state.proposals, info: state.proposalInfo } : null;
+    const read = snap.proposals ?? null;
+    const proposals = shown && (!read || shown.info.createdAt > read.info.createdAt) ? shown : read;
+    state = { ...rebase(), sellItems, proposals: proposals?.list ?? null, proposalInfo: proposals?.info ?? null, articleAnswers: keep.articleAnswers };
     setSync({ loaded: true });
   } catch (e) {
     if (remote !== r || seq !== loadSeq) return;
@@ -373,7 +384,38 @@ export const growActions = {
     }
   },
   setProposals(proposals: PillarProposal[]) {
+    if (remote) return; // 本物のデータでは、提案はサーバーが作って保存する（requestProposals）
     set({ ...load(), proposals });
+  },
+  /**
+   * コタムからの提案を新しく作ってもらう（本物のデータのときだけ）。できた提案はDBに残り、同じ会社の画面に出る。
+   * auto のときは、その会社でまだ1回も頼んでいなければ頼む（画面を開いただけで何度も作らない）
+   */
+  requestProposals(opts: { auto?: boolean } = {}) {
+    const r = remote;
+    if (!r || sync.proposing) return;
+    if (opts.auto) {
+      if (autoProposed.has(r.organizationId)) return;
+      autoProposed.add(r.organizationId);
+    }
+    setSync({ proposing: true });
+    // 先に並んでいる答えの保存が終わってから頼む（サーバーはDBの答えを読む）。あとの保存は待たせない
+    flushGrow();
+    const ready = queue;
+    void ready
+      .then(() => r.requestProposals())
+      .then((set_) => {
+        if (remote !== r) return;
+        set({ ...load(), proposals: set_.list, proposalInfo: set_.info });
+      })
+      .catch((e: unknown) => {
+        const message = e instanceof GrowSyncError ? e.message : "おすすめを作れませんでした。もう一度お試しください";
+        if (remote !== r) hiddenErrors.set(r.organizationId, message);
+        else setSync({ error: message });
+      })
+      .finally(() => {
+        if (remote === r) setSync({ proposing: false });
+      });
   },
   /** 設計図を選ぶ・選び直す。前の設計図で書いた記事の答えは消す（行の id が同じでも持ち越さない） */
   choosePlan(plan: KeywordPlan | null, proposal: PillarProposal | null = null) {
