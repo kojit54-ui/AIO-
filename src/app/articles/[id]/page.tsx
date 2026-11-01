@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BlockEditor } from "@/components/BlockEditor";
-import { Confetti, Scene, Toast } from "@/components/fun";
+import { Confetti, Shiori, Toast } from "@/components/fun";
 import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, StatusBadge, formatDate } from "@/components/ui";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
@@ -410,7 +410,7 @@ function OutlineEditor({ headings, onChange, onGenerate, busy }: { headings: str
   return (
     <div className="space-y-4">
       <div className="flex items-end gap-4">
-        <Scene point="qa" className="hidden h-24 w-32 shrink-0 sm:block" />
+        <Shiori mood="welldone" className="hidden h-32 w-auto shrink-0 animate-float sm:block" />
         <p>
           答えてもらった内容から、記事の見出し案を作りました。順番を入れ替えたり、言葉を直したりしてから「本文を作る」を押してください。
         </p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AioMeter, AioWhy, Cheer, WhyAio } from "@/components/aio";
-import { Confetti, Road, Scene, SecretaryFace, Wave } from "@/components/fun";
+import { Confetti, Road, Scene, Shiori, ShioriFace, Wave } from "@/components/fun";
 import { Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice } from "@/components/ui";
 import { collectedAio } from "@/lib/aio";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
@@ -136,15 +136,20 @@ export default function QuestionsPage() {
       </div>
 
       {error && (
-        <Notice tone="danger" title={error.message}>
-          {error.session ? (
-            <button type="button" className="mt-2 underline" onClick={() => { login(user.id); setError(null); }}>
-              もう一度ログインする（回答はこの画面に残っています）
-            </button>
-          ) : (
-            "入力した内容は消えていません。もう一度お試しください。"
-          )}
-        </Notice>
+        <div className="flex items-end gap-3">
+          <Shiori mood="sad" className="h-24 w-auto shrink-0" />
+          <div className="min-w-0 flex-1">
+            <Notice tone="danger" title={error.message}>
+              {error.session ? (
+                <button type="button" className="mt-2 underline" onClick={() => { login(user.id); setError(null); }}>
+                  もう一度ログインする（回答はこの画面に残っています）
+                </button>
+              ) : (
+                "入力した内容は消えていません。もう一度お試しください。"
+              )}
+            </Notice>
+          </div>
+        </div>
       )}
 
       <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
@@ -212,9 +217,9 @@ export default function QuestionsPage() {
         <aside className="space-y-4">
           <AioMeter points={allQuestions.flatMap((q) => (q.aio ? [q.aio] : []))} collected={collectedAio(allQuestions, (qid) => answers.some((a) => a.questionId === qid && !a.unknown && a.text.trim().length > 0))} />
           <p className="flex items-center gap-3 rounded-2xl bg-surface/70 px-4 py-3 text-sm">
-            <SecretaryFace className="h-12 w-12" />
+            <ShioriFace className="h-12 w-12" />
             <span>
-              <b className="block">コタムより</b>
+              <b className="block">しおり（コタム）より</b>
               くわしい体験ほど、AIが紹介しやすくなります。
             </span>
           </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Shiori } from "./fun";
 import type { ArticleStatus } from "@/types/domain";
 import { STATUS_LABEL } from "@/lib/workflow";
 
@@ -106,13 +107,8 @@ export function GeneratingOverlay({ label }: { label: string }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4" role="alertdialog" aria-live="assertive" aria-label={label}>
       <div className="card w-full max-w-sm animate-pop text-center">
-        <div className="relative mx-auto mb-4 h-20 w-36" aria-hidden>
-          <div className="absolute inset-x-2 bottom-3 space-y-2">
-            <div className="h-2 w-full rounded-full bg-brand-soft" />
-            <div className="h-2 w-4/5 rounded-full bg-brand-soft" />
-            <div className="h-2 w-3/5 rounded-full bg-sun-soft" />
-          </div>
-          <span className="absolute left-4 top-0 inline-block animate-write text-4xl">✏️</span>
+        <div className="mx-auto mb-2 w-fit animate-float">
+          <Shiori mood="think" className="h-36 w-auto" />
         </div>
         <p className="text-lg font-bold">{label}</p>
         <p className="mt-1 flex items-center justify-center gap-1 text-sm text-muted">

@@ -68,8 +68,8 @@ export function Toast({ children }: { children: React.ReactNode }) {
       role="status"
       className="fixed left-1/2 top-3 z-50 flex w-max max-w-[min(calc(100vw-2rem),36rem)] animate-toast items-center gap-2 rounded-2xl bg-ink px-4 py-2.5 text-sm font-bold leading-snug text-white shadow-lg sm:px-5 sm:text-base"
     >
-      <span className="inline-block animate-pop text-xl text-sun" aria-hidden>
-        ★
+      <span className="inline-block animate-pop">
+        <ShioriFace className="h-8 w-8" />
       </span>
       {children}
     </p>
@@ -122,21 +122,33 @@ export function Wave() {
   );
 }
 
-// 案内役の秘書。田村さんが用意した絵（public/guide/、背景を抜いたもの）。質問ごとの絵と「コタムより」に出す
-/** 秘書の上半身。x, y は左上、高さ130に収まる大きさ */
-function Secretary({ x, y = 0, delay = 0 }: { x: number; y?: number; delay?: number }) {
+// 案内役の「しおり」。田村さんが用意した表情8種（public/guide/shiori-*.webp、高さ400px）
+export type ShioriMood = "ask" | "joy" | "sad" | "right" | "welldone" | "think" | "surprise" | "cheer";
+const SHIORI_WIDTH: Record<ShioriMood, number> = { ask: 323, joy: 232, sad: 216, right: 241, welldone: 237, think: 201, surprise: 266, cheer: 209 };
+
+/** しおりの絵。場面に合わせて表情を選ぶ */
+export function Shiori({ mood, className = "h-32 w-auto" }: { mood: ShioriMood; className?: string }) {
   return (
-    <g className="animate-float" style={{ animationDelay: `${delay}s`, transformBox: "fill-box" }}>
-      <image href="/guide/secretary-upper.webp" x={x} y={y} width={71} height={130} />
-    </g>
+    // eslint-disable-next-line @next/next/no-img-element -- 透過の固定の絵。最適化は不要
+    <img src={`/guide/shiori-${mood}.webp`} width={SHIORI_WIDTH[mood]} height={400} alt="" className={className} aria-hidden />
   );
 }
 
-/** 「コタムより」などに出す、秘書の顔のアイコン */
-export function SecretaryFace({ className = "h-10 w-10" }: { className?: string }) {
+/** 「しおりより」などに出す顔のアイコン */
+export function ShioriFace({ className = "h-10 w-10" }: { className?: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element -- 小さな固定の絵。最適化は不要
-    <img src="/guide/secretary-face.webp" alt="" className={`${className} shrink-0 rounded-full bg-sky object-cover`} aria-hidden />
+    <img src="/guide/shiori-face.webp" width={192} height={192} alt="" className={`${className} shrink-0 rounded-full bg-sky object-cover`} aria-hidden />
+  );
+}
+
+/** 絵の中のしおり。x は左端、高さ130に収める */
+function Secretary({ x, mood, delay = 0 }: { x: number; mood: ShioriMood; delay?: number }) {
+  const w = Math.round((SHIORI_WIDTH[mood] / 400) * 130);
+  return (
+    <g className="animate-float" style={{ animationDelay: `${delay}s`, transformBox: "fill-box" }}>
+      <image href={`/guide/shiori-${mood}.webp`} x={x} y={0} width={w} height={130} />
+    </g>
   );
 }
 
@@ -159,13 +171,13 @@ const SKY = "var(--color-sky)";
 const SCENES: Record<AioPoint, React.ReactNode> = {
   experience: (
     <>
-      <Secretary x={84} />
-      <Bubble x={8} y={20} text="実は…" />
+      <Secretary x={66} mood="ask" />
+      <Bubble x={0} y={20} text="実は…" />
     </>
   ),
   qa: (
     <>
-      <Secretary x={14} />
+      <Secretary x={20} mood="joy" />
       <g className="animate-float" style={{ animationDelay: ".3s", transformBox: "fill-box" }}>
         <rect x={98} y={40} width={58} height={72} rx={10} fill="#fff" stroke="var(--color-line)" strokeWidth={2} />
         <path d="M108 58h38M108 72h38M108 86h26" stroke={GREEN} strokeWidth={4} strokeLinecap="round" />
@@ -176,18 +188,19 @@ const SCENES: Record<AioPoint, React.ReactNode> = {
   numbers: (
     <>
       <g className="animate-float" style={{ transformBox: "fill-box" }}>
-        <rect x={24} y={78} width={22} height={40} rx={5} fill="var(--color-line)" />
-        <rect x={56} y={58} width={22} height={60} rx={5} fill={SKY} />
-        <rect x={88} y={34} width={22} height={84} rx={5} fill={BLUE} />
+        <rect x={88} y={88} width={18} height={32} rx={5} fill="var(--color-line)" />
+        <rect x={112} y={68} width={18} height={52} rx={5} fill={SKY} />
+        <rect x={136} y={44} width={18} height={76} rx={5} fill={BLUE} />
       </g>
-      <text x={124} y={48} fontSize={34} className="animate-float" style={{ transformBox: "fill-box" }}>
+      <text x={136} y={36} fontSize={26} className="animate-float" style={{ transformBox: "fill-box" }}>
         ✨
       </text>
+      <Secretary x={0} mood="surprise" delay={0.3} />
     </>
   ),
   expertise: (
     <>
-      <Secretary x={46} />
+      <Secretary x={52} mood="think" />
       <text x={128} y={52} fontSize={40} fontWeight={900} fill={BLUE} className="animate-float" style={{ transformBox: "fill-box" }}>
         !
       </text>
@@ -198,7 +211,7 @@ const SCENES: Record<AioPoint, React.ReactNode> = {
   ),
   action: (
     <>
-      <Secretary x={10} />
+      <Secretary x={14} mood="cheer" />
       <g className="animate-float" style={{ transformBox: "fill-box" }}>
         <rect x={96} y={50} width={58} height={44} rx={10} fill={SUN} />
         <path d="M104 62l21 14 21-14" stroke="#fff" strokeWidth={4} fill="none" strokeLinecap="round" />
