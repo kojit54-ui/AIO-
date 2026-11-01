@@ -111,9 +111,9 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
     setBusy("review");
     try {
       await api.requestReview(article.id);
-      setBanner({ tone: "ok", message: "コタムに確認を依頼しました" });
+      setBanner({ tone: "ok", message: "コタムに見てもらうよう頼みました" });
     } catch (e) {
-      handleError(e, "確認依頼を送れませんでした");
+      handleError(e, "コタムに頼めませんでした");
     }
     setBusy(null);
   }
@@ -134,9 +134,9 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
 
   return (
     <main className="page">
-      {busy === "generate" && <GeneratingOverlay label={outlineMode ? "本文を作っています" : "新しい版を作っています"} />}
+      {busy === "generate" && <GeneratingOverlay label={outlineMode ? "本文を作っています" : "もう一度書いています"} />}
       {fresh && !outlineMode && <Confetti count={50} />}
-      {fresh && outlineMode && <Toast>見出し案ができました！順番や言葉を整えましょう</Toast>}
+      {fresh && outlineMode && <Toast>見出しができました！順番や言葉を整えましょう</Toast>}
       {banner?.tone === "ok" && <Toast key={banner.message}>{banner.message}</Toast>}
       {!isCoach && <ArticleSteps article={article} outlineMode={outlineMode} />}
 
@@ -145,12 +145,12 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           <Link href={isCoach ? "/coach" : "/"} className="text-sm text-brand-dark underline">
             {isCoach ? "管理画面へ戻る" : "ホームへ戻る"}
           </Link>
-          <h1 className="text-2xl font-black sm:text-3xl">{outlineMode ? "見出し案ができました" : isCoach ? "記事を確認する" : "記事を整える"}</h1>
+          <h1 className="text-2xl font-black sm:text-3xl">{outlineMode ? "見出しができました" : isCoach ? "記事を確認する" : "記事を整える"}</h1>
           <p className="flex flex-wrap items-center gap-2 text-sm text-muted">
             <StatusBadge status={article.status} />
-            <span>第{version.versionNo}版</span>
+            <span>{version.versionNo}回目の保存</span>
             <button type="button" className="underline" onClick={() => setHistoryOpen(true)}>
-              版の履歴
+              前の内容に戻す
             </button>
             {isCoach && <span>{org.name}</span>}
           </p>
@@ -219,7 +219,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
                       generate();
                     }}
                   >
-                    もう一度作る（今の版は残ります）
+                    もう一度作る（今の文章も残ります）
                   </button>
                   {dirty && <p className="mt-1 text-sm text-muted">先に下書きを保存してください。</p>}
                 </div>
@@ -232,12 +232,12 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           {!outlineMode && !isCoach && (
             <div className="card space-y-3">
               <p className="text-lg font-bold">次にやること</p>
-              {unchecked > 0 && <Notice tone="warn" title={`未確認の箇所が${unchecked}件あります`}>確認依頼や書き出しはできますが、先に確認するのがおすすめです。</Notice>}
+              {unchecked > 0 && <Notice tone="warn" title={`確かめてほしいところが${unchecked}か所あります`}>数字や名前が正しいか、先に確かめるのがおすすめです。</Notice>}
               <button type="button" className="btn-primary w-full" disabled={!canRequestReview || busy !== null} onClick={requestReview}>
-                コタムに確認を頼む
+                コタムに見てもらう
               </button>
               <div className="space-y-2">
-                <p className="text-sm text-muted">ブログに貼る文をコピー（{approved ? "承認済みの内容です" : "承認前の下書きです"}）</p>
+                <p className="text-sm text-muted">ブログに貼る文をコピーする（{approved ? "コタムのOKが出た内容です" : "まだコタムのOK前の下書きです"}）</p>
                 <div className="grid grid-cols-3 gap-2">
                   <button type="button" className="btn-secondary px-2 text-sm" disabled={dirty} onClick={() => copy("title")}>
                     タイトル
@@ -249,13 +249,13 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
                     HTML
                   </button>
                 </div>
-                <p className="text-xs text-muted">コピーしても公開済みにはなりません。</p>
+                <p className="text-xs text-muted">ブログに載せたら、下のボタンを押してください。</p>
               </div>
               <button type="button" className="btn-secondary w-full" disabled={!canPublish || busy !== null} onClick={() => setPublishOpen(true)}>
-                公開済みにする
+                ブログに載せた
               </button>
               {!canPublish && policy === "required" && article.status !== "approved" && article.status !== "published" && (
-                <p className="text-xs text-muted">この会社では、承認済みの記事だけを公開済みにできます。</p>
+                <p className="text-xs text-muted">この会社では、コタムのOKが出た記事だけをブログに載せられます。</p>
               )}
             </div>
           )}
@@ -264,7 +264,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
 
           <section className="card" aria-labelledby="images-heading">
             <h2 id="images-heading" className="mb-1 text-lg font-bold">画像</h2>
-            <p className="mb-3 text-sm text-muted">アイキャッチと、見出しごとの画像です。</p>
+            <p className="mb-3 text-sm text-muted">記事のいちばん上の画像（アイキャッチ）と、見出しごとの画像です。</p>
             <ImagePanel article={article} version={version} canGenerate={!isCoach} />
           </section>
 
@@ -273,11 +273,11 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
             <div className="mb-3 grid grid-cols-3 gap-2" role="tablist" aria-label="補助情報">
               {(
                 [
-                  ["facts", `要確認${unchecked ? `(${unchecked})` : ""}`],
+                  ["facts", `確かめる${unchecked ? `(${unchecked})` : ""}`],
                   ["comments", `コメント${reviews.length ? `(${reviews.length})` : ""}`],
                   ["aiReview", "AIの点検"],
-                  ["answers", "回答"],
-                  ["policy", "指導方針"],
+                  ["answers", "答えた内容"],
+                  ["policy", "今月の方針"],
                 ] as const
               ).map(([key, label]) => (
                 <button
@@ -301,14 +301,14 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
       </div>
 
       {conflict && (
-        <Dialog title="別の画面で更新されました" onClose={() => setConflict(false)}>
-          <p className="mb-4">この記事は、別の画面や別の人によって更新されています。どちらにしますか。</p>
+        <Dialog title="別の画面で直されています" onClose={() => setConflict(false)}>
+          <p className="mb-4">この記事は、別の画面かほかの人が先に直しています。どちらにしますか。</p>
           <div className="flex flex-col gap-2">
             <button type="button" className="btn-secondary" onClick={() => { setConflict(false); setTitle(version.title); setBlocks(version.body); setDirty(false); setBusy(null); }}>
-              最新の版を開く（この画面の変更は破棄）
+              新しいほうを開く（この画面で直した分は消えます）
             </button>
             <button type="button" className="btn-primary" onClick={() => { setConflict(false); save(true); }}>
-              自分の内容を新しい版として残す
+              この画面の内容も残す
             </button>
           </div>
         </Dialog>
@@ -340,7 +340,7 @@ function ShioriNote({ status, fresh }: { status: Article["status"]; fresh: boole
 
 /** 記事ができるまでの道のり。今どこにいるかを示す */
 function ArticleSteps({ article, outlineMode }: { article: Article; outlineMode: boolean }) {
-  const steps = ["質問に答える", "見出しを決める", "本文を整える", "コタムに確認", "公開"];
+  const steps = ["質問に答える", "見出しを決める", "本文を整える", "コタムに見てもらう", "ブログに載せる"];
   const now = article.status === "published" ? 5 : article.status === "approved" ? 4 : article.status === "in_review" ? 3 : outlineMode ? 1 : 2;
   return (
     <ol className="mb-4 flex flex-wrap gap-x-1 gap-y-1.5 text-xs sm:text-sm" aria-label="記事ができるまで">
@@ -374,30 +374,30 @@ function StatusNotice({ article, frozenNo, isCoach, policy, hasNewer }: { articl
     case "in_review":
       return (
         <Notice tone="info" title={isCoach ? "確認を依頼されています" : "コタムが確認しています"}>
-          {isCoach ? `第${frozenNo}版が確認の対象です。` : `確認中の第${frozenNo}版は固定されています。編集すると新しい版として保存され、確認中の版は変わりません。`}
+          {isCoach ? `第${frozenNo}版が確認の対象です。` : `コタムが見ているのは${frozenNo}回目の保存の内容です。ここで直しても、コタムが見ている内容は変わりません。`}
         </Notice>
       );
     case "changes_requested":
-      return <Notice tone="warn" title="修正の依頼があります">「コメント」タブを確認してください。編集すると作成中に戻り、もう一度確認を依頼できます。</Notice>;
+      return <Notice tone="warn" title="修正の依頼があります">「コメント」を見て直してください。直したら、もう一度コタムに見てもらえます。</Notice>;
     case "approved":
       return (
-        <Notice tone="ok" title={isCoach ? "承認済みです" : "承認されました"}>
-          {!isCoach && "編集すると承認は取り消され、作成中に戻ります。"}
-          {hasNewer && " 確認中に作った新しい版は「版の履歴」に残っています。"}
+        <Notice tone="ok" title={isCoach ? "承認済みです" : "コタムのOKが出ました"}>
+          {!isCoach && "ここから直すと、もう一度コタムに見てもらうことになります。"}
+          {hasNewer && (isCoach ? " 確認中に作った新しい版は「前の内容に戻す」に残っています。" : " コタムが見ている間に直した内容は「前の内容に戻す」に残っています。")}
         </Notice>
       );
     case "published":
       return (
-        <Notice tone={article.publishedWithoutApproval ? "warn" : "ok"} title="公開済み">
+        <Notice tone={article.publishedWithoutApproval ? "warn" : "ok"} title="ブログに載せました">
           <a href={article.publishedUrl ?? "#"} className="underline" target="_blank" rel="noopener noreferrer">
             {article.publishedUrl}
           </a>
           {article.publishedAt && `（${formatDate(article.publishedAt)}）`}
-          {article.publishedWithoutApproval && " コタムの確認を受けずに公開した記事です。"}
+          {article.publishedWithoutApproval && " コタムに見てもらう前に載せた記事です。"}
         </Notice>
       );
     default:
-      return policy === "required" && !isCoach ? <Notice tone="info" title="この会社では、公開前にコタムの確認が必要です" /> : null;
+      return policy === "required" && !isCoach ? <Notice tone="info" title="この会社では、ブログに載せる前にコタムに見てもらいます" /> : null;
   }
 }
 
@@ -433,7 +433,7 @@ function OutlineEditor({ headings, onChange, onGenerate, busy }: { headings: str
       <div className="flex items-end gap-4">
         <Shiori mood="welldone" className="hidden h-32 w-auto shrink-0 animate-float sm:block" />
         <p>
-          答えてもらった内容から、記事の見出し案を作りました。順番を入れ替えたり、言葉を直したりしてから「本文を作る」を押してください。
+          答えてもらった内容から、記事の見出しを作りました。順番を入れ替えたり、言葉を直したりしてから「本文を作る」を押してください。
         </p>
       </div>
       <ol className="space-y-2">
@@ -479,7 +479,7 @@ const FACT_STATUS: { value: FactCheckStatus; label: string }[] = [
 
 function FactPanel({ facts, readOnly }: { facts: ReturnType<typeof useStore>["db"]["factChecks"]; readOnly: boolean }) {
   const { api } = useStore();
-  if (facts.length === 0) return <p className="text-sm text-muted">確認が必要な箇所は見つかりませんでした。</p>;
+  if (facts.length === 0) return <p className="text-sm text-muted">確かめてほしいところは見つかりませんでした。</p>;
   return (
     <ul className="space-y-3">
       {facts.map((f) => (
@@ -487,7 +487,7 @@ function FactPanel({ facts, readOnly }: { facts: ReturnType<typeof useStore>["db
           <p className="text-xs text-muted">{KIND_LABEL[f.kind]}</p>
           <p className="font-semibold">「{f.excerpt}」</p>
           {readOnly ? (
-            <p className="text-sm">{f.status === "unchecked" ? "未確認" : FACT_STATUS.find((s) => s.value === f.status)?.label}</p>
+            <p className="text-sm">{f.status === "unchecked" ? "まだ確かめていない" : FACT_STATUS.find((s) => s.value === f.status)?.label}</p>
           ) : (
             <div className="mt-2 flex flex-wrap gap-1" role="group" aria-label={`「${f.excerpt}」の確認`}>
               {FACT_STATUS.map((s) => (
@@ -527,17 +527,17 @@ function CommentPanel({ reviews }: { reviews: ReturnType<typeof useStore>["db"][
 }
 
 const REVIEW_CATEGORY_LABEL: Record<AiReviewCategory, string> = {
-  originality: "独自性",
-  aio: "AI検索への対策",
+  originality: "この会社らしさ",
+  aio: "AIに紹介されやすいか",
   ai_tone: "AIが書いたように見える",
-  facts: "事実",
-  style: "文体",
+  facts: "事実が正しいか",
+  style: "言葉づかい",
 };
 
 /** 公開前の点検（Claude）。指摘を受けて書き手が書き直した場合は、そう示す */
 function AiReviewPanel({ version }: { version: ArticleVersion }) {
   const r = version.aiReview;
-  if (!r) return <p className="text-sm text-muted">{version.body.length ? "この版には点検の結果がありません。" : "本文を作ると、AIが記事を点検します。"}</p>;
+  if (!r) return <p className="text-sm text-muted">{version.body.length ? "この保存の内容には、点検の結果がありません。" : "本文を作ると、AIが記事を点検します。"}</p>;
   return (
     <div className="space-y-3 text-sm">
       {r.summary && <p>{r.summary}</p>}
@@ -613,7 +613,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
     try {
       await api.generateImageIdeas(article.id);
     } catch (e) {
-      setMessage({ tone: "danger", text: e instanceof ApiError ? e.message : "画像の提案を作れませんでした。もう一度お試しください" });
+      setMessage({ tone: "danger", text: e instanceof ApiError ? e.message : "画像の案を作れませんでした。もう一度お試しください" });
     } finally {
       setBusy(null);
     }
@@ -621,13 +621,13 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
 
   const ideas = version.imageIdeas;
   if (!ideas || (!ideas.eyecatch && !ideas.perHeading.length)) {
-    if (!version.body.length) return <p className="text-sm text-muted">本文を作ると、画像の提案が出ます。</p>;
+    if (!version.body.length) return <p className="text-sm text-muted">本文を作ると、画像の案が出ます。</p>;
     return (
       <div className="space-y-2 text-sm">
-        <p className="text-muted">この版には画像の提案がありません。本文を作ったときに、画像の提案だけ作れなかったようです。</p>
+        <p className="text-muted">画像の案がまだありません。本文を作ったときに、画像の案だけ作れなかったようです。</p>
         {canGenerate && (
           <button type="button" className="btn-primary w-full" disabled={busy !== null} onClick={makeIdeas}>
-            {busy === "ideas" ? "画像の提案を作っています…" : "画像の提案を作る"}
+            {busy === "ideas" ? "画像の案を作っています…" : "画像の案を作る"}
           </button>
         )}
         {message && <Notice tone={message.tone} title={message.text} />}
@@ -656,7 +656,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
     <div className="space-y-3 text-sm">
       {showButtons && (
         <fieldset className="space-y-2">
-          <legend className="mb-1 font-semibold">作風を選んでから作ります</legend>
+          <legend className="mb-1 font-semibold">画像の雰囲気を選んでから作ります</legend>
           <div className="grid grid-cols-3 gap-2">
             {IMAGE_STYLE_OPTIONS.map(([key, label]) => (
               <label
@@ -706,7 +706,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
                 </figure>
               )}
               <p>{s.photoIdea}</p>
-              <p className="text-xs text-muted">代替テキスト：{s.alt}</p>
+              <p className="text-xs text-muted">画像の説明（代替テキスト）：{s.alt}</p>
               {(img || showButtons) && (
                 <div className="flex flex-wrap gap-2">
                   {img && (
@@ -731,7 +731,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
 
 function AnswerPanel({ version }: { version: ArticleVersion }) {
   const all = [...QUESTIONS, FOLLOW_UP_QUESTION];
-  if (version.answers.length === 0) return <p className="text-sm text-muted">回答の記録はありません。</p>;
+  if (version.answers.length === 0) return <p className="text-sm text-muted">答えた内容の記録はありません。</p>;
   return (
     <dl className="space-y-3">
       {version.answers.map((a) => (
@@ -747,7 +747,7 @@ function AnswerPanel({ version }: { version: ArticleVersion }) {
 function PolicyPanel({ orgId }: { orgId: string }) {
   const { db, month } = useStore();
   const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === month);
-  if (!note) return <p className="text-sm text-muted">今月の指導方針はまだありません。</p>;
+  if (!note) return <p className="text-sm text-muted">今月の方針は、コタムが準備中です。</p>;
   const rows: [string, string][] = [
     ["重点テーマ", note.focus],
     ["想定読者", note.audience],
@@ -820,7 +820,7 @@ function PublishDialog({ article, policy, onClose, onError }: { article: Article
   const [busy, setBusy] = useState(false);
   const withoutApproval = article.status !== "approved" && policy === "optional";
   return (
-    <Dialog title="公開済みにする" onClose={onClose}>
+    <Dialog title="ブログに載せた記事を登録する" onClose={onClose}>
       <form
         className="space-y-3"
         onSubmit={async (e) => {
@@ -836,11 +836,11 @@ function PublishDialog({ article, policy, onClose, onError }: { article: Article
           }
         }}
       >
-        <p>ブログに公開した記事のURLを入力してください。</p>
-        {withoutApproval && <Notice tone="warn" title="コタムの確認を受けていない記事です">公開済みにすると、未承認のまま公開したことが記録されます。</Notice>}
+        <p>ブログに載せたページのURL（アドレス）を貼りつけてください。</p>
+        {withoutApproval && <Notice tone="warn" title="コタムに見てもらう前の記事です">登録すると、コタムに見てもらう前に載せたことが記録されます。</Notice>}
         <div>
           <label htmlFor="published-url" className="field-label">
-            公開URL
+            載せたページのURL
           </label>
           <input id="published-url" type="url" required className="field" placeholder="https://" value={url} onChange={(e) => setUrl(e.target.value)} />
         </div>
@@ -849,7 +849,7 @@ function PublishDialog({ article, policy, onClose, onError }: { article: Article
             やめる
           </button>
           <button type="submit" className="btn-primary" disabled={busy}>
-            公開済みにする
+            登録する
           </button>
         </div>
       </form>
@@ -861,13 +861,13 @@ function HistoryDialog({ article, isCoach, dirty, onClose, onError }: { article:
   const { db, api } = useStore();
   const versions = db.versions.filter((v) => v.articleId === article.id).sort((a, b) => b.versionNo - a.versionNo);
   return (
-    <Dialog title="版の履歴" onClose={onClose}>
+    <Dialog title="前の内容に戻す" onClose={onClose}>
       <ul className="max-h-80 space-y-2 overflow-y-auto">
         {versions.map((v) => (
           <li key={v.id} className="flex items-center justify-between gap-2 rounded-2xl border border-line p-3">
             <span className="min-w-0">
               <span className="block font-semibold">
-                第{v.versionNo}版{v.id === article.currentVersionId && "（表示中）"}
+                {v.versionNo}回目の保存{v.id === article.currentVersionId && "（表示中）"}
                 {v.id === article.approvedVersionId && "・承認"}
                 {v.id === article.reviewRequestedVersionId && "・確認中"}
               </span>
@@ -884,7 +884,7 @@ function HistoryDialog({ article, isCoach, dirty, onClose, onError }: { article:
                     onClose();
                   } catch (e) {
                     onClose();
-                    onError(e, "復元できませんでした");
+                    onError(e, "戻せませんでした");
                   }
                 }}
               >
@@ -894,7 +894,7 @@ function HistoryDialog({ article, isCoach, dirty, onClose, onError }: { article:
           </li>
         ))}
       </ul>
-      {dirty && <p className="mt-2 text-sm text-muted">保存していない変更があるため、復元できません。</p>}
+      {dirty && <p className="mt-2 text-sm text-muted">保存していない変更があるため、戻せません。先に保存してください。</p>}
       <div className="mt-4 flex justify-end">
         <button type="button" className="btn-secondary" onClick={onClose}>
           閉じる

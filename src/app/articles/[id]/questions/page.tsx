@@ -95,7 +95,7 @@ export default function QuestionsPage() {
       } catch (e) {
         setGenerating(false);
         setCelebrate(false);
-        handleError(e, "見出し案を作れませんでした。回答は残っています");
+        handleError(e, "見出しを作れませんでした。答えは残っています");
       }
       return;
     }
@@ -120,7 +120,7 @@ export default function QuestionsPage() {
   return (
     <main className="page max-w-5xl space-y-5">
       {celebrate && <Confetti />}
-      {generating && <GeneratingOverlay label="見出し案を作っています" />}
+      {generating && <GeneratingOverlay label="見出しを作っています" />}
       {cheer && <Cheer key={question.id} point={cheer} />}
       <div className="flex animate-rise items-end justify-between gap-4">
         <div>
@@ -208,7 +208,7 @@ export default function QuestionsPage() {
                 </button>
               </div>
               <button type="submit" className="btn-primary text-lg" disabled={!canProceed || saveState === "saving"}>
-                {isLast ? "見出し案を作る" : "次へ進む"}
+                {isLast ? "見出しを作る" : "次へ進む"}
                 <span className="inline-block animate-nudge" aria-hidden>
                   {isLast ? "✨" : "→"}
                 </span>

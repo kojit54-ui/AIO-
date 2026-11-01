@@ -14,7 +14,7 @@ export default function ProfilePage() {
   if (!user) return null;
   const org = db.organizations.find((o) => o.id === user.organizationIds[0]);
   if (user.role !== "client_member" || !org) return <main className="page"><EmptyState title="この画面は顧客担当者向けです" /></main>;
-  if (!org.profile) return <main className="page"><EmptyState title="会社プロフィールはコタムが準備中です" /></main>;
+  if (!org.profile) return <main className="page"><EmptyState title="会社の情報は、コタムが準備中です" /></main>;
 
   return (
     <main className="page max-w-3xl space-y-5">
@@ -22,7 +22,7 @@ export default function ProfilePage() {
         <Link href="/" className="text-sm text-brand-dark underline">
           ホームへ戻る
         </Link>
-        <h1 className="text-2xl font-bold">会社プロフィールの確認</h1>
+        <h1 className="text-2xl font-bold">会社の情報を確かめる</h1>
         <p className="text-muted">記事を作るときに使う会社の情報です。違うところがあれば、コタムの担当者にお知らせください。</p>
       </div>
       {error && <Notice tone="danger" title={error} />}
