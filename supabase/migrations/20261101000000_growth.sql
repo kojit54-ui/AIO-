@@ -193,7 +193,8 @@ begin
   if not coalesce(app.is_member(p_organization_id), false) then
     raise exception 'forbidden' using errcode = '42501';
   end if;
-  if jsonb_typeof(p_rows) <> 'array' or jsonb_array_length(p_rows) = 0 or jsonb_array_length(p_rows) > 30 then
+  -- SQL の NULL は条件式も NULL になり素通りするので、先に断る（素通りすると前の組み立てだけがしまわれる）
+  if p_rows is null or p_proposal is null or jsonb_typeof(p_rows) <> 'array' or jsonb_array_length(p_rows) = 0 or jsonb_array_length(p_rows) > 30 then
     raise exception 'invalid_input' using errcode = '22023';
   end if;
 
@@ -236,7 +237,8 @@ begin
   if not coalesce(app.is_member(p_organization_id), false) then
     raise exception 'forbidden' using errcode = '42501';
   end if;
-  if jsonb_typeof(p_items) <> 'array' or jsonb_array_length(p_items) > 10 then
+  -- NULL を素通りさせると全件消えるので断る。全部消すときは空の配列を渡す
+  if p_items is null or jsonb_typeof(p_items) <> 'array' or jsonb_array_length(p_items) > 10 then
     raise exception 'invalid_input' using errcode = '22023';
   end if;
   select coalesce(array_agg((x->>'id')::uuid), '{}') into keep

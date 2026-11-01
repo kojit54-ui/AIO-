@@ -91,6 +91,11 @@ describe("今売りたいもの", () => {
     await expect(as(COACH_AB, "update public.hearing_answers set organization_id = $2 where organization_id = $1", [ORG, ORG_B])).rejects.toThrow("immutable");
   });
 
+  it("NULL を渡しても消さずに断る（全部消すのは空の配列のときだけ）", async () => {
+    await expect(as(CLIENT, "select public.save_sell_items($1, null)", [ORG])).rejects.toThrow("invalid_input");
+    expect((await db.query("select 1 from public.sell_items where organization_id = $1", [ORG])).rows).toHaveLength(2);
+  });
+
   it("他社は読めず、置きかえられない", async () => {
     expect(await as(OTHER, "select * from public.sell_items where organization_id = $1", [ORG])).toEqual([]);
     await expect(as(OTHER, "select public.save_sell_items($1, '[]')", [ORG])).rejects.toThrow("forbidden");
@@ -158,5 +163,8 @@ describe("記事の組み立てと書く記事リスト", () => {
   it("組み立ての中身は後から書きかえられない。行の数は1〜30", async () => {
     await expect(as(CLIENT, "update public.keyword_plans set proposal = '{}' where organization_id = $1", [ORG])).rejects.toThrow("immutable");
     await expect(as(CLIENT, "select public.choose_keyword_plan($1, '{}', '[]')", [ORG])).rejects.toThrow("invalid_input");
+    await expect(as(CLIENT, "select public.choose_keyword_plan($1, '{}', null)", [ORG])).rejects.toThrow("invalid_input");
+    await expect(as(CLIENT, "select public.choose_keyword_plan($1, null, '[{\"kind\":\"pillar\",\"keyword\":\"x\"}]')", [ORG])).rejects.toThrow("invalid_input");
+    expect(await as(CLIENT, "select 1 from public.keyword_plans where organization_id = $1 and archived_at is null", [ORG])).toHaveLength(1);
   });
 });
