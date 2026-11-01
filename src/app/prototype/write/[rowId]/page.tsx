@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { NotFound, Notice, PageSkeleton } from "@/components/ui";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
 import { KIND_LABEL, articleQuestions, collectedAio, computeGrowth } from "@/prototype/growth";
-import { growActions, useGrow } from "@/prototype/store";
+import { growActions, resolveRowId, useGrow } from "@/prototype/store";
 
 /** 設計図の1本を書く。質問は1問ずつ、例とコツつき */
 export default function WritePage() {
@@ -22,7 +22,8 @@ export default function WritePage() {
   }, [stepState]);
 
   if (!g.ready) return <PageSkeleton />;
-  const row = g.plan?.rows.find((r) => r.id === rowId);
+  // 保存が終わって行の id が DB の id に変わっても、開いている画面のまま書きつづけられるようにする
+  const row = g.plan?.rows.find((r) => r.id === rowId) ?? g.plan?.rows.find((r) => r.id === resolveRowId(rowId));
   if (!g.plan || !row) return <NotFound what="書く記事" />;
 
   const qs = articleQuestions(row);

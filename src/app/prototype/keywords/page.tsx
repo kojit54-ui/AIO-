@@ -9,6 +9,7 @@ import {
   LIST_STATUS_LABEL,
   PRIORITY_LABEL,
   SOURCE_LABEL,
+  MAX_KEYWORD,
   countByStatus,
   cycleStatus,
   groupByPillar,
@@ -131,9 +132,11 @@ export default function KeywordsPage() {
     e.preventDefault();
     const row = newKeywordRow(plan.rows, draft, pillarIdForNew, "customer", sellFor || null);
     if (!row) {
-      setAddError(draft.trim() ? "その記事は、もうリストにあります。" : "書きたいことを入れてください。");
+      setAddError(!draft.trim() ? "書きたいことを入れてください。" : draft.trim().length > MAX_KEYWORD ? `${MAX_KEYWORD}字までの短い言葉にしてください。` : "その記事は、もうリストにあります。");
       return;
     }
+    // 答えから作った売りたいもの（まだ保存していない）を選んだときは、先に保存して記事との札を残す
+    if (sellFor && g.sellItems === null) growActions.setSellItems(sellItems);
     growActions.addRow(row);
     setDraft("");
     setAddError(null);
@@ -331,6 +334,7 @@ export default function KeywordsPage() {
             className="field min-w-[12rem] flex-1"
             placeholder="例：内窓 結露"
             value={draft}
+            maxLength={MAX_KEYWORD}
             onChange={(e) => setDraft(e.target.value)}
             aria-invalid={!!addError}
             aria-describedby={addError ? "add-error" : undefined}

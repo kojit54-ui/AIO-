@@ -2,7 +2,7 @@
 // 今は架空データとブラウザ内の保存だけ。SEMrush や Search Console をつなぐときは、
 // source と monthlySearches を埋めた行を足すだけで画面はそのまま使える。
 
-import { ROW_STATUS_LABEL, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type RowStatus } from "./growth";
+import { MAX_ROW_KEYWORD, fitText, ROW_STATUS_LABEL, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type RowStatus } from "./growth";
 
 export const SOURCE_LABEL: Record<KeywordSource, string> = {
   proposal: "しおりのおすすめ",
@@ -11,6 +11,8 @@ export const SOURCE_LABEL: Record<KeywordSource, string> = {
   site: "ホームページから",
   search_console: "Search Console",
   semrush: "SEMrush",
+  rakko: "検索のしらべ",
+  keyword_planner: "検索のしらべ",
 };
 
 /** 記事リストでの呼び方（ROW_STATUS_LABEL と同じ） */
@@ -25,10 +27,16 @@ export interface SellItem {
 }
 
 /** 「売りたい商品やサービス」の答えから、最初の売りたいものの並びを作る（読点・改行・「／」で区切る。最大5つ） */
+/** 今売りたいものは10個まで、名前は60字まで（DBの決まりと同じ。supabase/migrations/20261101000000_growth.sql） */
+export const MAX_SELL_ITEMS = 10;
+export const MAX_SELL_NAME = 60;
+
 export function sellItemsFromAnswer(text: string): SellItem[] {
   const names = text
     .split(/\n|、|，|,|／|\//)
     .map((x) => x.replace(/^例：|^[-・\s]+/, "").trim())
+    .filter(Boolean)
+    .map((x) => fitText(x, MAX_SELL_NAME))
     .filter(Boolean);
   return [...new Set(names)].slice(0, 5).map((name, i) => ({ id: `sell_${i}`, name }));
 }
@@ -138,9 +146,12 @@ export const toggleDone = (s: RowStatus): RowStatus => (s === "published" ? "tod
 export const cycleStatus = (s: RowStatus): RowStatus => (s === "todo" ? "writing" : s === "writing" ? "published" : "todo");
 
 /** 自分でキーワードを足す。空や、すでにある言葉（空白の違いは無視）は足さない */
+/** 記事の言葉は80字まで（DBの決まりと同じ）。長すぎるものは足さない（切って保存すると、画面の行とDBの行が別物になる） */
+export const MAX_KEYWORD = MAX_ROW_KEYWORD;
+
 export function newKeywordRow(rows: KeywordRow[], keyword: string, pillarId: string, source: KeywordSource = "customer", sellItemId: string | null = null): KeywordRow | null {
   const clean = keyword.replace(/\s+/g, " ").trim();
-  if (!clean) return null;
+  if (!clean || Array.from(clean).length > MAX_KEYWORD) return null;
   const key = (s: string) => s.replace(/\s+/g, "");
   if (rows.some((r) => key(r.keyword) === key(clean))) return null;
   return {

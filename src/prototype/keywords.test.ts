@@ -56,6 +56,9 @@ describe("キーワード管理表", () => {
   it("キーワードを足すとき、空や同じ言葉（空白の違いは無視）は足さない", () => {
     expect(newKeywordRow(plan.rows, "  ", "p")).toBeNull();
     expect(newKeywordRow(plan.rows, plan.rows[1].keyword.replace(" ", "　 "), "p")).toBeNull();
+    // 80字を超える言葉は足さない（切って保存すると画面の行とDBの行が別物になる）
+    expect(newKeywordRow(plan.rows, "あ".repeat(81), "p")).toBeNull();
+    expect(newKeywordRow(plan.rows, "あ".repeat(80), "p")).not.toBeNull();
     const row = newKeywordRow(plan.rows, " 内窓  結露 ", plan.rows[0].id)!;
     expect(row).toMatchObject({ keyword: "内窓 結露", source: "customer", priority: 2, status: "todo", monthlySearches: null });
   });

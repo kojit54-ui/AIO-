@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
-import { HEARING_QUESTIONS, type HearingAnswer, answeredCount, computeGrowth, withNewText } from "@/prototype/growth";
+import { HEARING_QUESTIONS, type HearingAnswer, answeredCount, computeGrowth, withNewText, MAX_ANSWER } from "@/prototype/growth";
 import { growActions, useGrow } from "@/prototype/store";
 
 /** コタムの画面。顧客と話しながらヒアリングをまとめて入力でき、顧客が一問一答で答えた内容も同じ欄に出る */
@@ -83,7 +83,7 @@ export default function CoachPrototypePage() {
                 <label htmlFor={`h-${q.id}`} className="field-label">
                   {q.label}
                 </label>
-                <textarea
+                <textarea maxLength={MAX_ANSWER}
                   id={`h-${q.id}`}
                   className="field min-h-20"
                   placeholder={q.example}

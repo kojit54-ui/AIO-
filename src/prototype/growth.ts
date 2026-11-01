@@ -3,6 +3,16 @@
 // AIは未接続。提案と深掘りの質問は、決まった規則で作るサンプル。保存はブラウザの中だけ。
 
 export const SAMPLE_LABEL = "サンプル（AIは未接続）";
+/** 答えは4,000字まで、記事の言葉は80字、読む人の疑問は200字まで（DBの決まりと同じ） */
+export const MAX_ANSWER = 4000;
+export const MAX_ROW_KEYWORD = 80;
+export const MAX_ROW_QUESTION = 200;
+/** 文字（コードポイント）単位で切る。絵文字の途中で切ると、DBが受け付けない文字になる */
+export const cutText = (s: string, n: number) => Array.from(s).slice(0, n).join("");
+/** DBの btrim と同じく前後の半角スペースを落とす（PostgreSQL の btrim(x) は半角スペースだけを落とす） */
+export const trimSpaces = (s: string) => s.replace(/^ +| +$/g, "");
+/** DBに入る形と同じ言葉にする。行は「種類＋言葉」で見分けるので、画面とDBで1字でもずれると対応が取れなくなる */
+export const fitText = (s: string, n: number) => trimSpaces(cutText(trimSpaces(s), n));
 
 export { AIO_POINTS, collectedAio } from "@/lib/aio";
 export type { AioPoint } from "@/types/domain";
@@ -242,7 +252,7 @@ export const ROW_STATUS_LABEL: Record<RowStatus, string> = { todo: "まだ", wri
 export const KIND_LABEL: Record<"pillar" | "cluster", string> = { pillar: "まとめ記事", cluster: "くわしい記事" };
 
 /** キーワードがどこから来たか。SEMrush・Search Console は後からつなぐ（docs/DATA.md「キーワード管理表」） */
-export type KeywordSource = "proposal" | "customer" | "cotam" | "site" | "search_console" | "semrush";
+export type KeywordSource = "proposal" | "customer" | "cotam" | "site" | "search_console" | "semrush" | "rakko" | "keyword_planner";
 
 /** 優先度。3 がいちばん高い */
 export type KeywordPriority = 1 | 2 | 3;
@@ -276,11 +286,16 @@ export interface KeywordPlan {
 export function planFromProposal(p: PillarProposal): KeywordPlan {
   const base = { pillarId: p.pillar.id, reasons: p.reasons, source: "proposal" as const, monthlySearches: null, parked: false };
   const clusterPriority = (i: number): KeywordPriority => (i < 2 ? 3 : i < 4 ? 2 : 1);
+  // DBに入る長さにここでそろえる（保存のときに切ると、画面の行とDBの行が別物になる）
+  const fit = <T extends { keyword: string; question: string }>(x: T): T => ({ ...x, keyword: fitText(x.keyword, MAX_ROW_KEYWORD), question: cutText(x.question, MAX_ROW_QUESTION) });
+  // 切りそろえて同じ言葉になったものは1つにする（行は「種類＋言葉」で見分けるため）
+  const seen = new Set([fit(p.pillar).keyword]);
+  const clusters = p.clusters.map(fit).filter((c) => c.keyword && !seen.has(c.keyword) && seen.add(c.keyword));
   return {
     proposalId: p.id,
     rows: [
-      { ...p.pillar, ...base, kind: "pillar", status: "todo", priority: 3 },
-      ...p.clusters.map((c, i) => ({ ...c, ...base, kind: "cluster" as const, status: "todo" as const, priority: clusterPriority(i) })),
+      { ...fit(p.pillar), ...base, kind: "pillar", status: "todo", priority: 3 },
+      ...clusters.map((c, i) => ({ ...c, ...base, kind: "cluster" as const, status: "todo" as const, priority: clusterPriority(i) })),
     ],
   };
 }
