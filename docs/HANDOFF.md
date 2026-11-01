@@ -33,7 +33,15 @@
 - 次の作業と担当：
 ```
 
+
 ## 記録
+
+### 2026-11-01 CC（Claude、プロジェクトのスレッド）その21
+- ブランチ / コミット：claude/project-thread-n66pdb（main の上）
+- 変更点：試作に「キーワード管理表」（/prototype/keywords）を追加。考え方は src/prototype/keywords.ts（次の1本、おすすめ順、柱ごと、足す・やめておく、前の保存データの補い）。KeywordRow に優先度・ねらい・出どころ・月間検索数（null）・やめておく・柱の id を追加（任意の項目なので前の保存データも動く）。設計図の画面の表は管理表への入口に置き換え。ホームの「次の記事」もおすすめ順に。docs/UI.md・DATA.md・TASKS.md を更新
+- 確認結果：単体テスト（keywords.test.ts 7件を追加）、型検査、lint が通過。375px・1280px で表示を確認
+- 未完了：保存（T5-3 の keyword_rows に priority などの列を足す案を DATA.md に書いた）、SEMrush・Search Console からの取り込み
+- 次の作業と担当：タムさんが画面を確認 → CX が DATA.md の列の案をレビュー
 
 ### 2026-11-01 CC（Claude、プロジェクトのスレッド）その20
 - ブランチ / コミット：claude/project-thread-fxmdf9（main と、AIO.md の週次更新 claude/project-thread-e5mw2e＝PR #13 を取り込み）

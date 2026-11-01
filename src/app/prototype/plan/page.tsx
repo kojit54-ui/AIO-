@@ -1,16 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { PillarDiagram, PillarExplainer } from "@/prototype/components";
 import {
   REASON_LABEL,
-  ROW_STATUS_LABEL,
-  type RowStatus,
   SAMPLE_LABEL,
   canPropose,
-  computeGrowth,
   planFromProposal,
   sampleProposals,
 } from "@/prototype/growth";
@@ -18,7 +14,6 @@ import { growActions, useGrow } from "@/prototype/store";
 
 export default function PlanPage() {
   const g = useGrow();
-  const [levelUp, setLevelUp] = useState<string | null>(null);
   if (!g.ready) return <PageSkeleton />;
 
   if (!canPropose(g.answers)) {
@@ -89,12 +84,6 @@ export default function PlanPage() {
   }
 
   const rows = g.plan.rows;
-  function setStatus(rowId: string, status: RowStatus) {
-    const before = computeGrowth(g.answers, g.plan).level;
-    growActions.setRowStatus(rowId, status);
-    const after = computeGrowth(g.answers, { ...g.plan!, rows: rows.map((r) => (r.id === rowId ? { ...r, status } : r)) });
-    setLevelUp(after.level > before ? `レベル ${after.level}「${after.name}」に上がりました！` : null);
-  }
 
   return (
     <main className="page space-y-5">
@@ -113,47 +102,23 @@ export default function PlanPage() {
           設計図を選び直す
         </button>
       </div>
-      {levelUp && <Notice tone="ok" title={levelUp}>この調子で、周りの記事も1本ずつ増やしていきましょう。</Notice>}
       <section className="card">
-        <PillarDiagram rows={rows} />
+        <PillarDiagram rows={rows.filter((r) => !r.parked)} />
       </section>
       <PillarExplainer />
 
-      <section aria-labelledby="sheet-heading" className="space-y-2">
-        <h2 id="sheet-heading" className="text-lg font-bold">
-          キーワード管理表
-        </h2>
-        <ul className="divide-y divide-line overflow-hidden rounded-xl border border-line bg-surface">
-          {rows.map((r) => (
-            <li key={r.id} className="flex flex-col gap-2 px-4 py-3 md:flex-row md:items-center md:gap-4">
-              <div className="min-w-0 flex-1">
-                <p className="font-semibold">
-                  <span className="mr-2 rounded bg-canvas px-1.5 py-0.5 text-xs font-normal text-muted">{r.kind === "pillar" ? "柱" : "周り"}</span>
-                  {r.keyword}
-                </p>
-                <p className="text-sm text-muted">読む人が知りたいこと：{r.question}</p>
-              </div>
-              <div className="flex flex-wrap items-center gap-2">
-                <label className="sr-only" htmlFor={`status-${r.id}`}>
-                  {r.keyword}の状態
-                </label>
-                <select id={`status-${r.id}`} className="field w-auto py-1" value={r.status} onChange={(e) => setStatus(r.id, e.target.value as RowStatus)}>
-                  {(Object.keys(ROW_STATUS_LABEL) as RowStatus[]).map((s) => (
-                    <option key={s} value={s}>
-                      {ROW_STATUS_LABEL[s]}
-                    </option>
-                  ))}
-                </select>
-                {r.status !== "published" && (
-                  <Link href={`/prototype/write/${r.id}`} className="btn-primary min-h-9 px-3 py-1">
-                    {r.status === "writing" ? "続きを書く" : "書く"}
-                  </Link>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
-        <p className="text-sm text-muted">第3段階でキーワードツールをつなぐと、この表に毎月の検索回数が加わります。</p>
+      <section className="card flex flex-wrap items-center justify-between gap-3" aria-labelledby="sheet-heading">
+        <div>
+          <h2 id="sheet-heading" className="text-lg font-bold">
+            キーワード管理表
+          </h2>
+          <p className="text-muted">
+            {rows.filter((r) => !r.parked).length}本のうち {rows.filter((r) => !r.parked && r.status === "published").length}本 やりました。やった・まだの管理と、次に書く1本は管理表で。
+          </p>
+        </div>
+        <Link href="/prototype/keywords" className="btn-primary">
+          キーワード管理表を開く
+        </Link>
       </section>
     </main>
   );

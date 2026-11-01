@@ -237,9 +237,25 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
 export type RowStatus = "todo" | "writing" | "published";
 export const ROW_STATUS_LABEL: Record<RowStatus, string> = { todo: "まだ", writing: "書いている", published: "公開済み" };
 
+/** キーワードがどこから来たか。SEMrush・Search Console は後からつなぐ（docs/DATA.md「キーワード管理表」） */
+export type KeywordSource = "proposal" | "customer" | "cotam" | "site" | "search_console" | "semrush";
+
+/** 優先度。3 がいちばん高い */
+export type KeywordPriority = 1 | 2 | 3;
+
 export interface KeywordRow extends KeywordIdea {
   kind: "pillar" | "cluster";
   status: RowStatus;
+  /** 以下は管理表で使う。前の試作で保存した行には無いので、src/prototype/keywords.ts の normalizeRow で補う */
+  /** 属する柱の記事の行 id（柱の記事は自分の id） */
+  pillarId?: string;
+  priority?: KeywordPriority;
+  reasons?: ProposalReason[];
+  source?: KeywordSource;
+  /** 月間検索数。キーワードツールをつなぐまでは null（数字を作らない） */
+  monthlySearches?: number | null;
+  /** 「やめておく」にしたもの。消さずに残す */
+  parked?: boolean;
 }
 
 export interface KeywordPlan {
@@ -247,10 +263,19 @@ export interface KeywordPlan {
   rows: KeywordRow[];
 }
 
+/**
+ * 選んだ提案から管理表を作る。優先度はサンプルの決まり：柱の記事と最初の2本は 3、次の2本は 2、残りは 1。
+ * 本物では、AIが売上への近さ・競合・AI検索で紹介されやすさから付け、キーワードツールの数字も加える
+ */
 export function planFromProposal(p: PillarProposal): KeywordPlan {
+  const base = { pillarId: p.pillar.id, reasons: p.reasons, source: "proposal" as const, monthlySearches: null, parked: false };
+  const clusterPriority = (i: number): KeywordPriority => (i < 2 ? 3 : i < 4 ? 2 : 1);
   return {
     proposalId: p.id,
-    rows: [{ ...p.pillar, kind: "pillar", status: "todo" }, ...p.clusters.map((c) => ({ ...c, kind: "cluster" as const, status: "todo" as const }))],
+    rows: [
+      { ...p.pillar, ...base, kind: "pillar", status: "todo", priority: 3 },
+      ...p.clusters.map((c, i) => ({ ...c, ...base, kind: "cluster" as const, status: "todo" as const, priority: clusterPriority(i) })),
+    ],
   };
 }
 
@@ -282,7 +307,8 @@ export const LEVELS: { at: number; name: string }[] = [
 
 /** 点の付け方：ヒアリングを終えた 5点、書き始めた記事 1本 2点、公開したクラスター 1本 10点、公開した柱の記事 30点 */
 export function computeGrowth(answers: Record<string, HearingAnswer>, plan: KeywordPlan | null): Growth {
-  const rows = plan?.rows ?? [];
+  // 「やめておく」にしたキーワードは数えない
+  const rows = (plan?.rows ?? []).filter((r) => !r.parked);
   const hearingDone = answeredCount(answers) === HEARING_QUESTIONS.length;
   const published = rows.filter((r) => r.status === "published");
   const pillarPublished = published.some((r) => r.kind === "pillar");
@@ -318,7 +344,7 @@ export interface ArticleQuestion {
 /** 1本の記事を書くときの一問一答。キーワードの「読む人が知りたいこと」に合わせて言い方を変える */
 export function articleQuestions(row: KeywordIdea): ArticleQuestion[] {
   return [
-    { id: "a1", label: `「${row.question}」について、お客様からどんな相談がありましたか`, aio: "experience", example: "例：去年の冬、70代のご夫婦から「脱衣所が寒い」と相談された", tip: "実際にあった1件を思い出すと書きやすいです。名前は書かなくて大丈夫です。" },
+    { id: "a1", label: `「${row.question || row.keyword}」について、お客様からどんな相談がありましたか`, aio: "experience", example: "例：去年の冬、70代のご夫婦から「脱衣所が寒い」と相談された", tip: "実際にあった1件を思い出すと書きやすいです。名前は書かなくて大丈夫です。" },
     { id: "a2", label: "そのとき、どう答えましたか・どう対応しましたか", aio: "qa", example: "例：・まず現地で窓と床を見た\n・内窓を提案した\n・工事は1日", tip: "箇条書きで大丈夫です。順番どおりに並べてください。" },
     { id: "a3", label: "結果はどうでしたか", aio: "numbers", example: "例：お風呂に入る前の寒さが気にならなくなったと言われた", tip: "お客様の言葉や、分かる範囲の数字があると記事の説得力が上がります。" },
     { id: "a4", label: "よくある誤解や、気をつけることはありますか", aio: "expertise", example: "例：暖房を増やすだけでは結露が増えることがある", tip: "プロだから知っていることが、記事のいちばんの価値になります。" },

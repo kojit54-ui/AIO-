@@ -9,6 +9,7 @@ const NAV = [
   { href: "/prototype", label: "ホーム" },
   { href: "/prototype/hearing", label: "ヒアリング" },
   { href: "/prototype/plan", label: "記事の設計図" },
+  { href: "/prototype/keywords", label: "キーワード管理表" },
   { href: "/prototype/coach", label: "コタムの画面" },
 ];
 

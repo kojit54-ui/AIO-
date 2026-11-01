@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageSkeleton } from "@/components/ui";
 import { GrowthCard, ProgressBar, WhyAio } from "@/prototype/components";
 import { HEARING_QUESTIONS, answeredCount, computeGrowth } from "@/prototype/growth";
+import { nextKeyword, normalizeRows } from "@/prototype/keywords";
 import { useGrow } from "@/prototype/store";
 
 export default function PrototypeHome() {
@@ -11,9 +12,9 @@ export default function PrototypeHome() {
   if (!g.ready) return <PageSkeleton />;
   const answered = answeredCount(g.answers);
   const growth = computeGrowth(g.answers, g.plan);
-  const rows = g.plan?.rows ?? [];
+  const rows = normalizeRows(g.plan).filter((r) => !r.parked);
   const published = rows.filter((r) => r.status === "published").length;
-  const next = rows.find((r) => r.status === "writing") ?? rows.find((r) => r.status === "todo");
+  const next = nextKeyword(rows);
 
   const steps = [
     {
@@ -41,8 +42,8 @@ export default function PrototypeHome() {
       body: "設計図の記事を1本ずつ書きます。公開するたびにサイトのレベルが上がります。",
       status: rows.length ? `${published} / ${rows.length} 本 公開` : "設計図を選ぶと始められます",
       done: rows.length > 0 && published === rows.length,
-      href: next ? `/prototype/write/${next.id}` : "/prototype/plan",
-      action: next ? `次の記事を書く：${next.keyword}` : "設計図へ",
+      href: next ? `/prototype/write/${next.id}` : rows.length ? "/prototype/keywords" : "/prototype/plan",
+      action: next ? `次の記事を書く：${next.keyword}` : rows.length ? "キーワード管理表へ" : "設計図へ",
       progress: rows.length ? { value: published, max: rows.length } : undefined,
     },
   ];
