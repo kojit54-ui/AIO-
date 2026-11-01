@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { Scene, Wave } from "@/components/fun";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
@@ -32,10 +33,19 @@ export default function HomePage() {
           </Link>
         </Notice>
       )}
-      <section className="card" aria-labelledby="policy-heading">
-        <h1 id="policy-heading" className="text-sm font-semibold text-muted">
+      <div className="flex animate-rise items-end justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-black leading-snug sm:text-3xl">
+            {user.name}さん、こんにちは <Wave />
+          </h1>
+          <p className="text-muted">今月も1本、いっしょに書きましょう。質問に答えるだけで記事になります。</p>
+        </div>
+        <Scene point="experience" className="hidden h-28 w-36 shrink-0 sm:block" />
+      </div>
+      <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
+        <h2 id="policy-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">
           {monthLabel(month)}の指導方針
-        </h1>
+        </h2>
         {note ? (
           <>
             <p className="mt-1 text-xl font-bold">{note.focus}</p>
@@ -47,15 +57,18 @@ export default function HomePage() {
       </section>
 
       <section className="grid gap-3 sm:grid-cols-2" aria-label="記事を書く">
-        <Link href="/articles/new" className="btn-primary min-h-16 text-lg">
+        <Link href="/articles/new" className="btn-primary min-h-16 text-xl">
           今月の記事を書く
+          <span className="inline-block animate-nudge" aria-hidden>
+            →
+          </span>
         </Link>
         {inProgress ? (
           <Link href={articleHref(db, inProgress.id)} className="btn-secondary min-h-16 text-lg">
             書きかけの記事を続ける
           </Link>
         ) : (
-          <p className="flex min-h-16 items-center justify-center rounded-lg border border-dashed border-line px-4 text-muted">
+          <p className="flex min-h-16 items-center justify-center rounded-full border-2 border-dashed border-line px-4 text-muted">
             書きかけの記事はありません
           </p>
         )}
@@ -68,10 +81,10 @@ export default function HomePage() {
         {list.length === 0 ? (
           <EmptyState title="まだ記事はありません">「今月の記事を書く」から始めましょう。</EmptyState>
         ) : (
-          <ul className="divide-y divide-line overflow-hidden rounded-xl border border-line bg-surface">
-            {list.map((a) => (
-              <li key={a.id}>
-                <Link href={articleHref(db, a.id)} className="flex flex-col gap-1 px-4 py-3 hover:bg-canvas sm:flex-row sm:items-center sm:gap-4">
+          <ul className="space-y-3">
+            {list.map((a, i) => (
+              <li key={a.id} className="animate-rise" style={{ animationDelay: `${0.15 + i * 0.06}s` }}>
+                <Link href={articleHref(db, a.id)} className="card flex flex-col gap-1 px-5 py-4 transition-transform hover:-translate-y-0.5 hover:border-brand sm:flex-row sm:items-center sm:gap-4">
                   <span className="min-w-0 flex-1">
                     <span className="block font-semibold">{a.title}</span>
                     <span className="block text-sm text-muted">テーマ：{a.themeTitle}</span>

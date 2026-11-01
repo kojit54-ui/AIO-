@@ -42,11 +42,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <header className="border-b border-line bg-surface">
+      <header className="border-b border-line bg-surface/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 sm:px-6">
-          <Link href={user.role === "coach" ? "/coach" : "/"} className="min-w-0 font-bold">
-            <span className="block text-sm font-normal text-muted">コタム ブログ執筆支援</span>
-            <span className="block truncate text-lg">{org ? org.name : "コタム管理画面"}</span>
+          <Link href={user.role === "coach" ? "/coach" : "/"} className="group flex min-w-0 items-center gap-3 font-bold">
+            <span className="grid h-10 w-10 shrink-0 -rotate-6 place-items-center rounded-xl bg-brand text-lg text-white transition-transform group-hover:rotate-6" aria-hidden>
+              ✎
+            </span>
+            <span className="min-w-0">
+              <span className="block text-sm font-medium text-muted">コタム ブログ執筆支援</span>
+              <span className="block truncate text-lg font-black">{org ? org.name : "コタム管理画面"}</span>
+            </span>
           </Link>
           <div className="flex items-center gap-3 text-sm">
             <span className="text-muted">{user.name}</span>

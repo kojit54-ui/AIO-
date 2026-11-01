@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import { Zen_Maru_Gothic } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
 import { StoreProvider } from "@/mock/store";
 import "./globals.css";
+
+// 丸ゴシックで、事務の書類っぽさを消す（docs/UI.md「見た目」）
+const maru = Zen_Maru_Gothic({ weight: ["500", "700", "900"], subsets: ["latin"], variable: "--font-maru", display: "swap", preload: false });
 
 export const metadata: Metadata = {
   title: "コタム ブログ執筆支援（試作）",
@@ -16,7 +20,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={maru.variable}>
       <body>
         <StoreProvider>
           <AppShell>{children}</AppShell>
