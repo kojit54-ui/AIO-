@@ -7,6 +7,8 @@ export const SAMPLE_LABEL = "サンプル（AIは未接続）";
 export const MAX_ANSWER = 4000;
 export const MAX_ROW_KEYWORD = 80;
 export const MAX_ROW_QUESTION = 200;
+/** 文字（コードポイント）単位で切る。絵文字の途中で切ると、DBが受け付けない文字になる */
+export const cutText = (s: string, n: number) => Array.from(s).slice(0, n).join("");
 
 export { AIO_POINTS, collectedAio } from "@/lib/aio";
 export type { AioPoint } from "@/types/domain";
@@ -281,7 +283,7 @@ export function planFromProposal(p: PillarProposal): KeywordPlan {
   const base = { pillarId: p.pillar.id, reasons: p.reasons, source: "proposal" as const, monthlySearches: null, parked: false };
   const clusterPriority = (i: number): KeywordPriority => (i < 2 ? 3 : i < 4 ? 2 : 1);
   // DBに入る長さにここでそろえる（保存のときに切ると、画面の行とDBの行が別物になる）
-  const fit = <T extends { keyword: string; question: string }>(x: T): T => ({ ...x, keyword: x.keyword.slice(0, MAX_ROW_KEYWORD), question: x.question.slice(0, MAX_ROW_QUESTION) });
+  const fit = <T extends { keyword: string; question: string }>(x: T): T => ({ ...x, keyword: cutText(x.keyword, MAX_ROW_KEYWORD), question: cutText(x.question, MAX_ROW_QUESTION) });
   // 切りそろえて同じ言葉になったものは1つにする（行は「種類＋言葉」で見分けるため）
   const seen = new Set([fit(p.pillar).keyword]);
   const clusters = p.clusters.map(fit).filter((c) => !seen.has(c.keyword) && seen.add(c.keyword));

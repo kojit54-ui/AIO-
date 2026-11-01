@@ -4,7 +4,7 @@
 // 画面の型（src/prototype/growth.ts・keywords.ts）とDBの行の変換は、テストできるように純粋な関数にしておく。
 
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { MAX_ANSWER, type HearingAnswer, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type PillarProposal, type ProposalReason, type RowStatus } from "./growth";
+import { MAX_ANSWER, MAX_ROW_KEYWORD, MAX_ROW_QUESTION, cutText, type HearingAnswer, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type PillarProposal, type ProposalReason, type RowStatus } from "./growth";
 import { MAX_SELL_ITEMS, type SellItem } from "./keywords";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -84,8 +84,8 @@ export function planRowsForRpc(plan: KeywordPlan) {
     key: `k${i}`,
     kind: r.kind,
     pillar_key: r.kind === "cluster" && r.pillarId ? `k${plan.rows.findIndex((x) => x.id === r.pillarId)}` : null,
-    keyword: r.keyword.slice(0, 80),
-    reader_question: r.question.slice(0, 200),
+    keyword: cutText(r.keyword, MAX_ROW_KEYWORD),
+    reader_question: cutText(r.question, MAX_ROW_QUESTION),
     priority: r.priority ?? 2,
     reasons: r.reasons ?? [],
     source: r.source ?? "proposal",
@@ -202,8 +202,8 @@ export function createGrowRemote(client: SupabaseClient, organizationId: string)
         organization_id: organizationId,
         kind: row.kind,
         pillar_row_id: row.kind === "cluster" && isUuid(row.pillarId) ? row.pillarId : null,
-        keyword: row.keyword.slice(0, 80),
-        reader_question: row.question.slice(0, 200),
+        keyword: cutText(row.keyword, MAX_ROW_KEYWORD),
+        reader_question: cutText(row.question, MAX_ROW_QUESTION),
         priority: row.priority ?? 2,
         reasons: row.reasons ?? [],
         source: row.source ?? "customer",

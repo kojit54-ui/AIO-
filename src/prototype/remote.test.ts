@@ -42,6 +42,10 @@ describe("本物のデータとの変換", () => {
     // 81字目から違うだけの言葉は、切りそろえると同じになるので1つにする
     const twins = planFromProposal({ id: "p", pillar: { id: "x", keyword: "柱", question: "" }, clusters: [{ id: "a", keyword: long + "A", question: "" }, { id: "b", keyword: long + "B", question: "" }], reasons: [], why: "" } as never);
     expect(twins.rows).toHaveLength(2);
+    // 絵文字の途中で切らない（片割れの文字はDBが受け付けない）
+    const emoji = planFromProposal({ id: "p", pillar: { id: "x", keyword: "あ".repeat(79) + "😀😀", question: "" }, clusters: [], reasons: [], why: "" } as never);
+    expect(emoji.rows[0].keyword).toBe("あ".repeat(79) + "😀");
+    expect(planRowsForRpc(emoji)[0].keyword).toBe("あ".repeat(79) + "😀");
   });
 
   it("組み立て：柱を先に、周りの記事は柱の key を指して渡す（30行まで）", () => {
