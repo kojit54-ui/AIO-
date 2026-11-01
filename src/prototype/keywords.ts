@@ -2,7 +2,7 @@
 // 今は架空データとブラウザ内の保存だけ。SEMrush や Search Console をつなぐときは、
 // source と monthlySearches を埋めた行を足すだけで画面はそのまま使える。
 
-import { ROW_STATUS_LABEL, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type RowStatus } from "./growth";
+import { MAX_ROW_KEYWORD, ROW_STATUS_LABEL, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type RowStatus } from "./growth";
 
 export const SOURCE_LABEL: Record<KeywordSource, string> = {
   proposal: "しおりのおすすめ",
@@ -146,7 +146,7 @@ export const cycleStatus = (s: RowStatus): RowStatus => (s === "todo" ? "writing
 
 /** 自分でキーワードを足す。空や、すでにある言葉（空白の違いは無視）は足さない */
 /** 記事の言葉は80字まで（DBの決まりと同じ）。長すぎるものは足さない（切って保存すると、画面の行とDBの行が別物になる） */
-export const MAX_KEYWORD = 80;
+export const MAX_KEYWORD = MAX_ROW_KEYWORD;
 
 export function newKeywordRow(rows: KeywordRow[], keyword: string, pillarId: string, source: KeywordSource = "customer", sellItemId: string | null = null): KeywordRow | null {
   const clean = keyword.replace(/\s+/g, " ").trim();

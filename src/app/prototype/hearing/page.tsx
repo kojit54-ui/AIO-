@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
-import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, collectedAio, nextDeepDive, resumeIndex, withNewText } from "@/prototype/growth";
+import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, collectedAio, nextDeepDive, resumeIndex, withNewText, MAX_ANSWER } from "@/prototype/growth";
 import { growActions, useGrow } from "@/prototype/store";
 
 /** 顧客が1問ずつ答えるヒアリング。答えが短いと、深掘りの質問が返ってくる */
@@ -121,7 +121,7 @@ export default function HearingPage() {
               <label htmlFor="answer" className="field-label text-lg">
                 {activeDeep}
               </label>
-              <textarea id="answer" ref={inputRef} className="field min-h-28" value={value} onChange={(e) => setText(e.target.value)} />
+              <textarea maxLength={MAX_ANSWER} id="answer" ref={inputRef} className="field min-h-28" value={value} onChange={(e) => setText(e.target.value)} />
             </div>
           </>
         ) : (
@@ -138,7 +138,7 @@ export default function HearingPage() {
             <div className="mb-2">
               <AioWhy point={q.aio} />
             </div>
-            <textarea
+            <textarea maxLength={MAX_ANSWER}
               id="answer"
               ref={inputRef}
               aria-describedby="answer-example answer-tip"

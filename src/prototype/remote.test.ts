@@ -7,9 +7,11 @@ const U2 = "22222222-2222-4222-8222-222222222222";
 
 describe("本物のデータとの変換", () => {
   it("答え：DBの決まり（質問 id の形・4000字・深掘り10件）に合わせて渡し、読んだら元の形に戻す", () => {
+    // 4,000字を超える答えは切らずに断る（切ると読み直したときに消える）
+    expect(() => answerToDb(U1, { questionId: "business", text: "あ".repeat(4001), followUps: [] })).toThrow(GrowSyncError);
     const row = answerToDb(U1, {
       questionId: "Biz-Area",
-      text: "あ".repeat(4100),
+      text: "あ".repeat(4000),
       followUps: Array.from({ length: 12 }, (_, i) => ({ question: `q${i}`, answer: `a${i}` })),
       draft: true,
     });
@@ -29,6 +31,14 @@ describe("本物のデータとの変換", () => {
 
   it("答え：画面の質問 id はそのままDBの形になっている（読み直しても同じ質問に戻る）", () => {
     for (const q of HEARING_QUESTIONS) expect(toQuestionId(q.id)).toBe(q.id);
+  });
+
+  it("組み立て：長すぎる提案の言葉は、組み立てを作るときにDBの長さにそろえる（保存の前後で同じ行と分かる）", () => {
+    const long = "あ".repeat(120);
+    const plan = planFromProposal({ id: "p", pillar: { id: "x", keyword: long, question: long + long }, clusters: [{ id: "y", keyword: long, question: "" }], reasons: [], why: "" } as never);
+    expect(plan.rows.every((r) => r.keyword.length === 80)).toBe(true);
+    expect(plan.rows[0].question.length).toBe(200);
+    expect(planRowsForRpc(plan).map((r) => r.keyword)).toEqual(plan.rows.map((r) => r.keyword));
   });
 
   it("組み立て：柱を先に、周りの記事は柱の key を指して渡す（30行まで）", () => {

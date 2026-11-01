@@ -3,6 +3,10 @@
 // AIは未接続。提案と深掘りの質問は、決まった規則で作るサンプル。保存はブラウザの中だけ。
 
 export const SAMPLE_LABEL = "サンプル（AIは未接続）";
+/** 答えは4,000字まで、記事の言葉は80字、読む人の疑問は200字まで（DBの決まりと同じ） */
+export const MAX_ANSWER = 4000;
+export const MAX_ROW_KEYWORD = 80;
+export const MAX_ROW_QUESTION = 200;
 
 export { AIO_POINTS, collectedAio } from "@/lib/aio";
 export type { AioPoint } from "@/types/domain";
@@ -276,11 +280,13 @@ export interface KeywordPlan {
 export function planFromProposal(p: PillarProposal): KeywordPlan {
   const base = { pillarId: p.pillar.id, reasons: p.reasons, source: "proposal" as const, monthlySearches: null, parked: false };
   const clusterPriority = (i: number): KeywordPriority => (i < 2 ? 3 : i < 4 ? 2 : 1);
+  // DBに入る長さにここでそろえる（保存のときに切ると、画面の行とDBの行が別物になる）
+  const fit = <T extends { keyword: string; question: string }>(x: T): T => ({ ...x, keyword: x.keyword.slice(0, MAX_ROW_KEYWORD), question: x.question.slice(0, MAX_ROW_QUESTION) });
   return {
     proposalId: p.id,
     rows: [
-      { ...p.pillar, ...base, kind: "pillar", status: "todo", priority: 3 },
-      ...p.clusters.map((c, i) => ({ ...c, ...base, kind: "cluster" as const, status: "todo" as const, priority: clusterPriority(i) })),
+      { ...fit(p.pillar), ...base, kind: "pillar", status: "todo", priority: 3 },
+      ...p.clusters.map((c, i) => ({ ...fit(c), ...base, kind: "cluster" as const, status: "todo" as const, priority: clusterPriority(i) })),
     ],
   };
 }

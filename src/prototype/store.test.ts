@@ -376,6 +376,26 @@ describe("本物のデータにつないだとき", () => {
     expect(r.calls).toContain("sell:内窓,外壁");
   });
 
+  it("組み立てを選ぶ保存の途中で進み具合を変えて会社を切りかえても、前の会社に送る", async () => {
+    vi.useFakeTimers();
+    const a = fakeRemote();
+    const choose = a.choosePlan;
+    a.choosePlan = async (plan, proposal) => {
+      await new Promise((ok) => setTimeout(ok, 300));
+      return choose(plan, proposal);
+    };
+    connectGrow(a);
+    await flush();
+    const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
+    const p = sampleProposals(answers)[0];
+    const plan = planFromProposal(p);
+    growActions.choosePlan(plan, p);
+    growActions.setRowStatus(plan.rows[1].id, "writing");
+    connectGrow({ ...fakeRemote(), organizationId: "44444444-4444-4444-8444-444444444444" });
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(a.calls.some((c) => c.startsWith("row:") && c.endsWith('{"status":"writing"}'))).toBe(true);
+  });
+
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {
     vi.useFakeTimers();
     const r = fakeRemote({ answers: { business: { questionId: "business", text: "工務店", followUps: [] } }, plan: null, sellItems: null });

@@ -99,7 +99,10 @@ interface Op {
   apply: (s: Synced) => Synced;
 }
 
-let server: Synced = { answers: {}, plan: null };
+/** 会社ごとの「DBで確かめた内容」。会社を切りかえたあとに終わった前の会社の保存も、前の会社の分を直す */
+const servers = new WeakMap<GrowRemote, Synced>();
+const EMPTY_SYNCED: Synced = { answers: {}, plan: null };
+const serverOf = (r: GrowRemote | null): Synced => (r && servers.get(r)) || EMPTY_SYNCED;
 let ops: Op[] = [];
 let opSeq = 0;
 /** 組み立てを選び直した回数。足す操作は、足したあとに選び直していたら送らない */
@@ -108,7 +111,7 @@ let planGen = 0;
 const rowKey = (x: KeywordRow) => `${x.kind}\n${x.keyword}`;
 
 function rebase(): Synced {
-  return ops.reduce((acc, o) => o.apply(acc), server);
+  return ops.reduce((acc, o) => o.apply(acc), serverOf(remote));
 }
 
 /** 仮の行 id → DB の行 id。書いている途中の画面（URL に仮の id）からも同じ行を開けるようにする */
@@ -172,8 +175,8 @@ function persist(r: GrowRemote, job: () => Promise<((srv: Synced) => Synced) | v
   );
   run
     .then((update) => {
+      if (update) servers.set(r, update(serverOf(r)));
       if (remote !== r) return;
-      if (update) server = update(server);
       dropOps(done);
       refresh();
       if (sync.error) setSync({ error: null });
@@ -231,7 +234,7 @@ async function readRemote(r: GrowRemote) {
     const keep = readLocal(remoteLocalKey(r.organizationId));
     // 売りたいものを全部消したことはDBでは「行が無い」としか分からないので、このブラウザの印で区別する
     const emptied = (keep as GrowState & { sellEmptied?: boolean }).sellEmptied === true;
-    server = { answers: snap.answers, plan: snap.plan };
+    servers.set(r, { answers: snap.answers, plan: snap.plan });
     // 売りたいものの保存待ちがあれば、画面の並べかえを残す（あとの保存でDBにも入る）
     const sellItems = sellSettled < sellSeq && state ? state.sellItems : (snap.sellItems ?? (emptied ? [] : null));
     state = { ...rebase(), sellItems, proposals: keep.proposals, articleAnswers: keep.articleAnswers };
@@ -248,7 +251,6 @@ export function connectGrow(next: GrowRemote | null) {
   flushGrow();
   remote = next;
   state = null;
-  server = { answers: {}, plan: null };
   ops = [];
   sync = next ? { mode: "remote", loaded: false, saving: false, error: null } : { mode: "local", loaded: true, saving: false, error: null };
   emit();
@@ -297,8 +299,8 @@ function changeRow(rowId: string, patch: { status?: RowStatus; parked?: boolean 
   persist(
     r,
     async () => {
-      // 会社を切りかえたあとは、今の server は別の会社のものなので、変えたときの行の id で送る
-      const dbId = remote === r ? server.plan?.rows.find((x) => rowKey(x) === key)?.id : target.id;
+      // その会社の DB の組み立てから探す（会社を切りかえたあとでも、前の会社の分で探せる）
+      const dbId = serverOf(r).plan?.rows.find((x) => rowKey(x) === key)?.id;
       if (!isUuid(dbId)) return; // 送る前に組み立てを選び直した
       await r.updateRow(dbId, patch);
       return (srv) => patchRow(srv, key, patch);
@@ -384,7 +386,7 @@ export const growActions = {
       async () => {
         if (gen !== planGen && remote === r) return; // 足したあとに組み立てを選び直した
         // 送る時点の DB の組み立てで、柱と売りたいものの id を直す（組み立てを選ぶ保存が先に終わっていることがある）
-        const base = remote === r ? server.plan : null; // 会社を切りかえたあとは、今の server は別の会社のもの
+        const base = serverOf(r).plan;
         const pillarId = isUuid(row.pillarId) ? row.pillarId : base?.rows.find((x) => pillar && rowKey(x) === rowKey(pillar))?.id;
         const sellItemId = row.sellItemId && !isUuid(row.sellItemId) ? (sellIdMap.get(sellKey(r, row.sellItemId)) ?? null) : row.sellItemId;
         const saved = await r.addRow({ ...row, pillarId, sellItemId });

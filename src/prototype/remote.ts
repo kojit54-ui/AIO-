@@ -4,7 +4,7 @@
 // 画面の型（src/prototype/growth.ts・keywords.ts）とDBの行の変換は、テストできるように純粋な関数にしておく。
 
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { HearingAnswer, KeywordPlan, KeywordPriority, KeywordRow, KeywordSource, PillarProposal, ProposalReason, RowStatus } from "./growth";
+import { MAX_ANSWER, type HearingAnswer, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type PillarProposal, type ProposalReason, type RowStatus } from "./growth";
 import { MAX_SELL_ITEMS, type SellItem } from "./keywords";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -31,10 +31,12 @@ export function answerFromDb(r: HearingAnswerRow): HearingAnswer {
 }
 
 export function answerToDb(orgId: string, a: HearingAnswer) {
+  // 黙って切ると、画面では保存できたように見えて読み直すと消える。長すぎるときは保存せずに知らせる
+  if (a.text.length > MAX_ANSWER) throw new GrowSyncError(`答えは${MAX_ANSWER}字までです。少し短くしてください`);
   return {
     organization_id: orgId,
     question_id: toQuestionId(a.questionId),
-    text: a.text.slice(0, 4000),
+    text: a.text,
     follow_ups: a.followUps.slice(0, 10).map((f) => ({ question: f.question, answer: f.answer })),
     is_draft: a.draft === true,
   };
