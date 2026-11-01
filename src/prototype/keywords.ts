@@ -2,7 +2,7 @@
 // 今は架空データとブラウザ内の保存だけ。SEMrush や Search Console をつなぐときは、
 // source と monthlySearches を埋めた行を足すだけで画面はそのまま使える。
 
-import { MAX_ROW_KEYWORD, ROW_STATUS_LABEL, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type RowStatus } from "./growth";
+import { MAX_ROW_KEYWORD, fitText, ROW_STATUS_LABEL, type KeywordPlan, type KeywordPriority, type KeywordRow, type KeywordSource, type RowStatus } from "./growth";
 
 export const SOURCE_LABEL: Record<KeywordSource, string> = {
   proposal: "しおりのおすすめ",
@@ -36,7 +36,8 @@ export function sellItemsFromAnswer(text: string): SellItem[] {
     .split(/\n|、|，|,|／|\//)
     .map((x) => x.replace(/^例：|^[-・\s]+/, "").trim())
     .filter(Boolean)
-    .map((x) => x.slice(0, MAX_SELL_NAME));
+    .map((x) => fitText(x, MAX_SELL_NAME))
+    .filter(Boolean);
   return [...new Set(names)].slice(0, 5).map((name, i) => ({ id: `sell_${i}`, name }));
 }
 
@@ -150,7 +151,7 @@ export const MAX_KEYWORD = MAX_ROW_KEYWORD;
 
 export function newKeywordRow(rows: KeywordRow[], keyword: string, pillarId: string, source: KeywordSource = "customer", sellItemId: string | null = null): KeywordRow | null {
   const clean = keyword.replace(/\s+/g, " ").trim();
-  if (!clean || clean.length > MAX_KEYWORD) return null;
+  if (!clean || Array.from(clean).length > MAX_KEYWORD) return null;
   const key = (s: string) => s.replace(/\s+/g, "");
   if (rows.some((r) => key(r.keyword) === key(clean))) return null;
   return {

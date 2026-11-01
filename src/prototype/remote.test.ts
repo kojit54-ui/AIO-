@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { HEARING_QUESTIONS, planFromProposal, sampleProposals } from "./growth";
+import { sellItemsFromAnswer } from "./keywords";
 import { answerFromDb, answerToDb, GrowSyncError, isUuid, planRowsForRpc, rowFromDb, sellItemsForRpc, toQuestionId } from "./remote";
 
 const U1 = "11111111-1111-4111-8111-111111111111";
@@ -46,6 +47,16 @@ describe("本物のデータとの変換", () => {
     const emoji = planFromProposal({ id: "p", pillar: { id: "x", keyword: "あ".repeat(79) + "😀😀", question: "" }, clusters: [], reasons: [], why: "" } as never);
     expect(emoji.rows[0].keyword).toBe("あ".repeat(79) + "😀");
     expect(planRowsForRpc(emoji)[0].keyword).toBe("あ".repeat(79) + "😀");
+    // 切った末尾の半角スペースは、DB（btrim）と同じく落とす。画面とDBで言葉がずれると行の対応が取れない
+    const spaced = planFromProposal({ id: "p", pillar: { id: "x", keyword: " " + "あ".repeat(79) + " いう", question: "" }, clusters: [{ id: "a", keyword: "   ", question: "" }], reasons: [], why: "" } as never);
+    expect(spaced.rows.map((r) => r.keyword)).toEqual(["あ".repeat(79)]);
+    expect(planRowsForRpc(spaced)[0].keyword).toBe("あ".repeat(79));
+  });
+
+  it("売りたいもの：名前は文字単位で60字に切り、前後の半角スペースを落とす", () => {
+    const items = sellItemsFromAnswer("あ".repeat(59) + "😀😀、" + "い".repeat(59) + " う");
+    expect(items.map((x) => x.name)).toEqual(["あ".repeat(59) + "😀", "い".repeat(59)]);
+    expect(sellItemsForRpc([{ id: "sell_0", name: " 家 " }])).toEqual([{ name: "家" }]);
   });
 
   it("組み立て：柱を先に、周りの記事は柱の key を指して渡す（30行まで）", () => {
