@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { HEARING_QUESTIONS, planFromProposal, sampleProposals, type KeywordPlan, type KeywordRow } from "./growth";
+import { HEARING_QUESTIONS, planFromProposal, sampleProposals, type HearingAnswer, type KeywordPlan, type KeywordRow } from "./growth";
 import { GrowSyncError, type GrowRemote, type GrowSnapshot } from "./remote";
-import { connectGrow, growActions, readGrowState, readGrowSync, SAVE_DELAY_MS } from "./store";
+import { connectGrow, growActions, readGrowState, readGrowSync, resolveRowId, SAVE_DELAY_MS } from "./store";
 
 describe("試作の状態", () => {
   it("設計図を選び直すと、前の設計図で書いた記事の答えは残らない", () => {
@@ -316,6 +316,48 @@ describe("本物のデータにつないだとき", () => {
     await vi.advanceTimersByTimeAsync(1000);
     expect(db.rows[0].status).toBe("published");
     expect(readGrowState().plan!.rows[0].status).toBe("published");
+  });
+
+  it("失敗後の読み直しが遅くても、そのあと保存できた答えを古い内容で消さない", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    const db: Record<string, HearingAnswer> = {};
+    let slow = false;
+    r.load = async () => {
+      const snap = { answers: { ...db }, plan: null, sellItems: null };
+      if (slow) await new Promise((ok) => setTimeout(ok, 500));
+      return snap;
+    };
+    r.saveAnswer = async (a) => {
+      if (a.questionId === "fail") throw new GrowSyncError("保存できませんでした");
+      db[a.questionId] = a;
+    };
+    connectGrow(r);
+    await flush();
+    slow = true;
+    growActions.saveAnswer({ questionId: "fail", text: "x", followUps: [] });
+    await flush();
+    growActions.saveAnswer({ questionId: "business", text: "工務店", followUps: [] });
+    await vi.advanceTimersByTimeAsync(2000);
+    expect(readGrowState().answers.business?.text).toBe("工務店");
+  });
+
+  it("保存で行の id が DB の id に変わっても、書いている途中の答えと画面の行を付けかえる", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    connectGrow(r);
+    await flush();
+    const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
+    const p = sampleProposals(answers)[0];
+    const plan = planFromProposal(p);
+    growActions.choosePlan(plan, p);
+    const tempId = plan.rows[1].id;
+    growActions.saveArticleAnswers(tempId, { a1: "去年の冬の相談" });
+    await flush();
+    const dbId = resolveRowId(tempId);
+    expect(dbId).not.toBe(tempId);
+    expect(readGrowState().plan!.rows.some((x) => x.id === dbId)).toBe(true);
+    expect(readGrowState().articleAnswers[dbId]).toEqual({ a1: "去年の冬の相談" });
   });
 
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {

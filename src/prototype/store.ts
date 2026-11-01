@@ -111,9 +111,28 @@ function rebase(): Synced {
   return ops.reduce((acc, o) => o.apply(acc), server);
 }
 
-/** server と ops から画面の内容を作り直す */
+/** 仮の行 id → DB の行 id。書いている途中の画面（URL に仮の id）からも同じ行を開けるようにする */
+const rowAlias = new Map<string, string>();
+export const resolveRowId = (id: string) => rowAlias.get(id) ?? id;
+
+/** server と ops から画面の内容を作り直す。仮の id の行が DB の id になったら、記事ごとの答えも付けかえる */
 function refresh() {
-  set({ ...load(), ...rebase() });
+  const prev = load();
+  const next = rebase();
+  let articleAnswers = prev.articleAnswers;
+  if (prev.plan && next.plan) {
+    const byKey = new Map(next.plan.rows.map((x) => [rowKey(x), x.id]));
+    for (const old of prev.plan.rows) {
+      const now = byKey.get(rowKey(old));
+      if (isUuid(old.id) || !now || now === old.id) continue;
+      rowAlias.set(old.id, now);
+      if (articleAnswers[old.id] && !articleAnswers[now]) {
+        const { [old.id]: moved, ...rest } = articleAnswers;
+        articleAnswers = { ...rest, [now]: moved };
+      }
+    }
+  }
+  set({ ...prev, ...next, articleAnswers });
 }
 
 function track(op: Omit<Op, "id">): number {
@@ -197,7 +216,14 @@ export function flushGrow() {
 }
 
 let loadSeq = 0;
-async function reloadRemote(r: GrowRemote) {
+/** 読み直しも保存と同じ列に並べる。読みはじめたあとに終わった保存を、古い読み直しで消さないため */
+function reloadRemote(r: GrowRemote): Promise<void> {
+  const run = queue.then(() => readRemote(r));
+  queue = run;
+  return run;
+}
+
+async function readRemote(r: GrowRemote) {
   const seq = ++loadSeq;
   try {
     const snap = await r.load();
