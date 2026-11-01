@@ -185,4 +185,21 @@ describe("提案を作る", () => {
     expect(res).toMatchObject({ ok: false, status: 502, message: expect.stringContaining("クレジット") });
     expect(finishArgs(admin)).toMatchObject({ p_status: "failed" });
   });
+
+  it("結果の記録に失敗したら、やり直す（実行中のままにしない）", async () => {
+    const { user, admin } = setup();
+    const rpc = admin.client.rpc.bind(admin.client);
+    let failures = 2;
+    (admin.client as unknown as { rpc: unknown }).rpc = (name: string, args: unknown) => {
+      if (name === "finish_generation" && failures-- > 0) {
+        admin.calls.push({ table: "rpc", op: "finish_failed", args: [] });
+        return Object.assign(Promise.resolve({ data: null, error: { message: "network" } }), { single: async () => ({ data: null, error: { message: "network" } }) });
+      }
+      return rpc(name, args);
+    };
+    const res = await runKeywordProposal({ user: user.client, admin: admin.client, provider: provider([]).p, isSample: false, rakko: null }, { organizationId: "o1", idempotencyKey: "key-12345678" });
+    expect(res.ok).toBe(true);
+    expect(admin.calls.filter((c) => c.op === "finish_failed")).toHaveLength(2);
+    expect(finishArgs(admin)).toMatchObject({ p_status: "succeeded" });
+  });
 });

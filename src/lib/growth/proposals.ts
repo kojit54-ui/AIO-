@@ -154,7 +154,8 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
     } else {
       if (deps.rakko) {
         try {
-          const r = await collectResearch(deps.rakko, researchSeeds(answers, sellNames), AbortSignal.any([signal, AbortSignal.timeout(RESEARCH_TIMEOUT_MS)]));
+          // 持ち時間を過ぎたら、そこまでに取れた下調べ（とクレジット）で進める
+          const r = await collectResearch(deps.rakko, researchSeeds(answers, sellNames), signal, AbortSignal.timeout(RESEARCH_TIMEOUT_MS));
           research = r.research;
           rakkoCredit = r.consumedCredit;
           // 理由の種類だけを記録する（言葉やキーは出さない）
@@ -180,14 +181,19 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
     reason = failureReason(e, signal);
     console.error("keyword proposal failed", { runId: run.id, reason });
   }
-  const { error: finishError } = await admin.rpc("finish_generation", {
-    p_run_id: run.id,
-    p_status: status,
-    p_usage: { ...usage, rakko_credit: rakkoCredit },
-    p_cost_yen: Math.round(estimateCostYen(usage, deps.provider.name) * 100) / 100,
-    p_error_code: status === "failed" ? (reason === "timeout" ? "timeout" : "provider_error") : null,
-  });
-  if (finishError) console.error("keyword proposal finish not recorded", { runId: run.id, status });
+  // 結果の記録は費用の集計・月の回数・「実行中」の解除に使うため、失敗したらやり直す（src/lib/generation/server.ts と同じ）
+  let recorded = false;
+  for (let attempt = 0; attempt < 3 && !recorded; attempt++) {
+    const { error: finishError } = await admin.rpc("finish_generation", {
+      p_run_id: run.id,
+      p_status: status,
+      p_usage: { ...usage, rakko_credit: rakkoCredit },
+      p_cost_yen: Math.round(estimateCostYen(usage, deps.provider.name) * 100) / 100,
+      p_error_code: status === "failed" ? (reason === "timeout" ? "timeout" : "provider_error") : null,
+    });
+    recorded = !finishError;
+  }
+  if (!recorded) console.error("keyword proposal finish not recorded", { runId: run.id, status });
   if (saved) return { ok: true, set: saved };
   return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "おすすめを作れませんでした。もう一度お試しください");
 }

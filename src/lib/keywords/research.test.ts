@@ -82,4 +82,25 @@ describe("書く記事の提案のための下調べ", () => {
       expect(calls.some((c) => c.endsWith("外壁"))).toBe(false);
     }
   });
+
+  it("持ち時間が来たら、そこまでに取れた下調べとクレジットを返す（全体の打ち切りは例外にする）", async () => {
+    const { client } = fakeClient();
+    const deadline = new AbortController();
+    const slow = (o?: { signal?: AbortSignal }) =>
+      new Promise<never>((_, reject) => {
+        const stop = () => reject(new DOMException("aborted", "AbortError"));
+        if (o?.signal?.aborted) stop();
+        else o?.signal?.addEventListener("abort", stop);
+      });
+    const base = { ...client };
+    client.suggestKeywords = async (seed, o) => (seed === "外壁" ? (deadline.abort(), slow(o)) : base.suggestKeywords(seed, o));
+    client.questionSearch = async (seed, o) => (seed === "外壁" ? slow(o) : base.questionSearch(seed, o));
+    const r = await collectResearch(client, ["内窓", "外壁", "屋根"], undefined, deadline.signal);
+    expect(r.research.map((x) => x.seed)).toEqual(["内窓"]);
+    expect(r.consumedCredit).toBe(3);
+
+    const all = new AbortController();
+    client.suggestKeywords = async (seed, o) => (seed === "外壁" ? (all.abort(new Error("stop")), slow(o)) : base.suggestKeywords(seed, o));
+    await expect(collectResearch(client, ["内窓", "外壁"], all.signal, new AbortController().signal)).rejects.toThrow("stop");
+  });
 });
