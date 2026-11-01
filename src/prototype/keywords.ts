@@ -145,9 +145,12 @@ export const toggleDone = (s: RowStatus): RowStatus => (s === "published" ? "tod
 export const cycleStatus = (s: RowStatus): RowStatus => (s === "todo" ? "writing" : s === "writing" ? "published" : "todo");
 
 /** 自分でキーワードを足す。空や、すでにある言葉（空白の違いは無視）は足さない */
+/** 記事の言葉は80字まで（DBの決まりと同じ）。長すぎるものは足さない（切って保存すると、画面の行とDBの行が別物になる） */
+export const MAX_KEYWORD = 80;
+
 export function newKeywordRow(rows: KeywordRow[], keyword: string, pillarId: string, source: KeywordSource = "customer", sellItemId: string | null = null): KeywordRow | null {
   const clean = keyword.replace(/\s+/g, " ").trim();
-  if (!clean) return null;
+  if (!clean || clean.length > MAX_KEYWORD) return null;
   const key = (s: string) => s.replace(/\s+/g, "");
   if (rows.some((r) => key(r.keyword) === key(clean))) return null;
   return {

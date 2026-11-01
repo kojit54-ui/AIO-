@@ -360,6 +360,22 @@ describe("本物のデータにつないだとき", () => {
     expect(readGrowState().articleAnswers[dbId]).toEqual({ a1: "去年の冬の相談" });
   });
 
+  it("ほかの保存が失敗して読み直しても、保存待ちの売りたいものの変更は残す", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    r.saveAnswer = async () => {
+      throw new GrowSyncError("保存できませんでした");
+    };
+    connectGrow(r);
+    await flush();
+    growActions.setSellItems([{ id: "sell_0", name: "内窓" }, { id: "sell_1", name: "外壁" }]);
+    growActions.saveAnswer({ questionId: "business", text: "失敗する", followUps: [] });
+    await flush();
+    expect(readGrowState().sellItems?.map((x) => x.name)).toEqual(["内窓", "外壁"]);
+    await vi.advanceTimersByTimeAsync(SAVE_DELAY_MS);
+    expect(r.calls).toContain("sell:内窓,外壁");
+  });
+
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {
     vi.useFakeTimers();
     const r = fakeRemote({ answers: { business: { questionId: "business", text: "工務店", followUps: [] } }, plan: null, sellItems: null });

@@ -232,7 +232,9 @@ async function readRemote(r: GrowRemote) {
     // 売りたいものを全部消したことはDBでは「行が無い」としか分からないので、このブラウザの印で区別する
     const emptied = (keep as GrowState & { sellEmptied?: boolean }).sellEmptied === true;
     server = { answers: snap.answers, plan: snap.plan };
-    state = { ...rebase(), sellItems: snap.sellItems ?? (emptied ? [] : null), proposals: keep.proposals, articleAnswers: keep.articleAnswers };
+    // 売りたいものの保存待ちがあれば、画面の並べかえを残す（あとの保存でDBにも入る）
+    const sellItems = sellSettled < sellSeq && state ? state.sellItems : (snap.sellItems ?? (emptied ? [] : null));
+    state = { ...rebase(), sellItems, proposals: keep.proposals, articleAnswers: keep.articleAnswers };
     setSync({ loaded: true });
   } catch (e) {
     if (remote !== r || seq !== loadSeq) return;
@@ -274,6 +276,8 @@ export const readGrowState = (): GrowState => load();
 export const readGrowSync = (): GrowSync => sync;
 
 let sellSeq = 0;
+/** 保存し終わった（または失敗した）売りたいものの保存の番号。sellSeq より小さければ、まだ保存待ちの並べかえがある */
+let sellSettled = 0;
 /** 画面で作った売りたいものの仮の id → DB の id。仮の id（sell_0 など）は会社ごとに重なるので、会社の id と組にする */
 const sellIdMap = new Map<string, string>();
 const sellKey = (r: GrowRemote, tempId: string) => `${r.organizationId}:${tempId}`;
@@ -401,16 +405,24 @@ export const growActions = {
     const seq = ++sellSeq;
     later("sell", () =>
       persist(r, async () => {
-        // 先に送った保存で DB の id が分かった仮の id は、DB の id で送る（作り直して記事の札が外れないように）
-        const resolved = items.map((x) => (isUuid(x.id) ? x : { ...x, id: sellIdMap.get(sellKey(r, x.id)) ?? x.id }));
-        const saved = await r.saveSellItems(resolved);
-        resolved.forEach((x, i) => {
-          if (!isUuid(x.id) && saved[i]?.name === x.name) sellIdMap.set(sellKey(r, x.id), saved[i].id);
-        });
-        // 保存のあいだにまた並べかえていたら、新しいほうを残す
-        if (remote === r && seq === sellSeq) set({ ...load(), sellItems: saved });
+        try {
+          await sendSell();
+        } finally {
+          sellSettled = Math.max(sellSettled, seq);
+        }
       }),
     );
+    async function sendSell() {
+      if (!r) return;
+      // 先に送った保存で DB の id が分かった仮の id は、DB の id で送る（作り直して記事の札が外れないように）
+      const resolved = items.map((x) => (isUuid(x.id) ? x : { ...x, id: sellIdMap.get(sellKey(r, x.id)) ?? x.id }));
+      const saved = await r.saveSellItems(resolved);
+      resolved.forEach((x, i) => {
+        if (!isUuid(x.id) && saved[i]?.name === x.name) sellIdMap.set(sellKey(r, x.id), saved[i].id);
+      });
+      // 保存のあいだにまた並べかえていたら、新しいほうを残す
+      if (remote === r && seq === sellSeq) set({ ...load(), sellItems: saved });
+    }
   },
   saveArticleAnswers(rowId: string, answers: Record<string, string>) {
     const s = load();
