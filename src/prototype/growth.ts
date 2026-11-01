@@ -282,11 +282,14 @@ export function planFromProposal(p: PillarProposal): KeywordPlan {
   const clusterPriority = (i: number): KeywordPriority => (i < 2 ? 3 : i < 4 ? 2 : 1);
   // DBに入る長さにここでそろえる（保存のときに切ると、画面の行とDBの行が別物になる）
   const fit = <T extends { keyword: string; question: string }>(x: T): T => ({ ...x, keyword: x.keyword.slice(0, MAX_ROW_KEYWORD), question: x.question.slice(0, MAX_ROW_QUESTION) });
+  // 切りそろえて同じ言葉になったものは1つにする（行は「種類＋言葉」で見分けるため）
+  const seen = new Set([fit(p.pillar).keyword]);
+  const clusters = p.clusters.map(fit).filter((c) => !seen.has(c.keyword) && seen.add(c.keyword));
   return {
     proposalId: p.id,
     rows: [
       { ...fit(p.pillar), ...base, kind: "pillar", status: "todo", priority: 3 },
-      ...p.clusters.map((c, i) => ({ ...fit(c), ...base, kind: "cluster" as const, status: "todo" as const, priority: clusterPriority(i) })),
+      ...clusters.map((c, i) => ({ ...c, ...base, kind: "cluster" as const, status: "todo" as const, priority: clusterPriority(i) })),
     ],
   };
 }

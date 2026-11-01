@@ -396,6 +396,20 @@ describe("本物のデータにつないだとき", () => {
     expect(a.calls.some((c) => c.startsWith("row:") && c.endsWith('{"status":"writing"}'))).toBe(true);
   });
 
+  it("ある答えの保存に失敗したら、ほかの答えの保存が成功してもお知らせを消さない", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    r.saveAnswer = async (a) => {
+      if (a.questionId === "business") throw new GrowSyncError("保存できませんでした");
+    };
+    connectGrow(r);
+    await flush();
+    growActions.saveAnswer({ questionId: "business", text: "x", followUps: [] });
+    growActions.saveAnswer({ questionId: "area", text: "市内", followUps: [] });
+    await vi.advanceTimersByTimeAsync(100);
+    expect(readGrowSync().error).toBe("保存できませんでした");
+  });
+
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {
     vi.useFakeTimers();
     const r = fakeRemote({ answers: { business: { questionId: "business", text: "工務店", followUps: [] } }, plan: null, sellItems: null });

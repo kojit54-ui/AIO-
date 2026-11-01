@@ -179,7 +179,7 @@ function persist(r: GrowRemote, job: () => Promise<((srv: Synced) => Synced) | v
       if (remote !== r) return;
       dropOps(done);
       refresh();
-      if (sync.error) setSync({ error: null });
+      // 前の失敗のお知らせは、ほかの保存が成功しても消さない（消えた入力に気づけるように）。「読み込み直す」で消す
     })
     .catch((e: unknown) => {
       if (remote !== r) return;
