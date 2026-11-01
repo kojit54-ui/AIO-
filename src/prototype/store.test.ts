@@ -269,6 +269,55 @@ describe("本物のデータにつないだとき", () => {
     expect(sent).toEqual(["sell_0"]);
   });
 
+  it("ほかの保存が失敗して読み直しても、列に並んでいる追加は消さずに送る", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    const plan: KeywordPlan = { proposalId: "55555555-5555-4555-8555-555555555555", rows: [{ id: "66666666-6666-4666-8666-666666666666", keyword: "柱", question: "", kind: "pillar", status: "todo" }] };
+    let db = plan;
+    r.load = async () => ({ answers: {}, plan: db, sellItems: null });
+    const sent: string[] = [];
+    r.saveAnswer = () => new Promise((_, ng) => setTimeout(() => ng(new GrowSyncError("保存できませんでした")), 100));
+    r.addRow = async (row) => {
+      await new Promise((ok) => setTimeout(ok, 50));
+      sent.push(row.keyword);
+      db = { ...db, rows: [...db.rows, { ...row, id: `77777777-7777-4777-8777-00000000000${sent.length}` }] };
+      return db;
+    };
+    connectGrow(r);
+    await flush();
+    growActions.saveAnswer({ questionId: "business", text: "失敗する", followUps: [] });
+    growActions.addRow({ id: "a", keyword: "A", question: "", kind: "cluster", status: "todo", pillarId: plan.rows[0].id });
+    growActions.addRow({ id: "b", keyword: "B", question: "", kind: "cluster", status: "todo", pillarId: plan.rows[0].id });
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(sent).toEqual(["A", "B"]);
+    expect(readGrowState().plan!.rows.map((x) => x.keyword)).toEqual(["柱", "A", "B"]);
+  });
+
+  it("足す保存の前に変えた進み具合は、足した結果が返ってきても戻らない", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    const pillarId = "66666666-6666-4666-8666-666666666666";
+    const plan: KeywordPlan = { proposalId: "55555555-5555-4555-8555-555555555555", rows: [{ id: pillarId, keyword: "柱", question: "", kind: "pillar", status: "todo" }] };
+    let db = plan;
+    r.load = async () => ({ answers: {}, plan: db, sellItems: null });
+    r.saveAnswer = () => new Promise((ok) => setTimeout(ok, 100));
+    r.addRow = async (row) => {
+      db = { ...db, rows: [...db.rows, { ...row, id: "77777777-7777-4777-8777-000000000001" }] };
+      return db;
+    };
+    r.updateRow = async (id, patch) => {
+      db = { ...db, rows: db.rows.map((x) => (x.id === id ? { ...x, ...patch } : x)) };
+    };
+    connectGrow(r);
+    await flush();
+    growActions.saveAnswer({ questionId: "business", text: "待たせる", followUps: [] });
+    growActions.addRow({ id: "a", keyword: "A", question: "", kind: "cluster", status: "todo", pillarId });
+    growActions.setRowStatus(pillarId, "published");
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(db.rows[0].status).toBe("published");
+    expect(readGrowState().plan!.rows[0].status).toBe("published");
+  });
+
   it("本物のデータでは「最初からやり直す」で会社の記録を消さない", async () => {
     vi.useFakeTimers();
     const r = fakeRemote({ answers: { business: { questionId: "business", text: "工務店", followUps: [] } }, plan: null, sellItems: null });

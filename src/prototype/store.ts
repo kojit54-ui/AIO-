@@ -85,6 +85,52 @@ const subscribe = (fn: () => void) => {
 };
 
 // ---- 本物のデータとの行き来 ----
+//
+// 画面に出す内容 = DBで確かめた内容（server）＋ まだ保存し終わっていない操作（ops）を順に当てたもの。
+// 保存が終わったら server を更新して、その操作を ops から外す。読み直したときも ops を当て直すので、
+// 保存を待っているあいだの変更（足した記事、進み具合）が消えない。行は id ではなく「種類＋言葉」で指す
+// （足したばかりの行や選んだばかりの組み立ては、保存が終わるまで DB の id が無いため）。
+
+type Synced = Pick<GrowState, "answers" | "plan">;
+interface Op {
+  id: number;
+  /** 答えの保存なら質問 id（同じ質問の古い途中の答えを、新しい保存が終わったときにまとめて外す） */
+  question?: string;
+  apply: (s: Synced) => Synced;
+}
+
+let server: Synced = { answers: {}, plan: null };
+let ops: Op[] = [];
+let opSeq = 0;
+/** 組み立てを選び直した回数。足す操作は、足したあとに選び直していたら送らない */
+let planGen = 0;
+
+const rowKey = (x: KeywordRow) => `${x.kind}\n${x.keyword}`;
+
+function rebase(): Synced {
+  return ops.reduce((acc, o) => o.apply(acc), server);
+}
+
+/** server と ops から画面の内容を作り直す */
+function refresh() {
+  set({ ...load(), ...rebase() });
+}
+
+function track(op: Omit<Op, "id">): number {
+  const id = ++opSeq;
+  ops.push({ ...op, id });
+  refresh();
+  return id;
+}
+
+function dropOps(pred: (o: Op) => boolean) {
+  ops = ops.filter((o) => !pred(o));
+}
+
+function patchRow(s: Synced, key: string, patch: Partial<KeywordRow>): Synced {
+  if (!s.plan) return s;
+  return { ...s, plan: { ...s.plan, rows: s.plan.rows.map((x) => (rowKey(x) === key ? { ...x, ...patch } : x)) } };
+}
 
 let inFlight = 0;
 const timers = new Map<string, { timer: ReturnType<typeof setTimeout>; run: () => void }>();
@@ -92,19 +138,30 @@ const timers = new Map<string, { timer: ReturnType<typeof setTimeout>; run: () =
 /** 保存は1本の列に並べて順番に送る。先に送った古い内容があとから届いて新しい内容を上書きしないようにする */
 let queue: Promise<void> = Promise.resolve();
 
-/** うしろで保存する。失敗したら知らせて、DBの内容に戻す */
-function persist(r: GrowRemote, job: () => Promise<void>) {
+/**
+ * うしろで保存する。job は DB に送り、終わったら server を直す関数を返す（会社を切りかえていたら呼ばない）。
+ * 失敗したらその操作を外し、知らせて、DBの内容を読み直す。
+ */
+function persist(r: GrowRemote, job: () => Promise<((srv: Synced) => Synced) | void>, done: (o: Op) => boolean = () => false) {
   inFlight += 1;
   setSync({ saving: true });
-  // 会社を切りかえたあとでも、並んでいた保存は前の会社に対して最後まで送る（画面への反映は各処理が remote === r で確かめる）
+  // 会社を切りかえたあとでも、並んでいた保存は前の会社に対して最後まで送る
   const run = queue.then(job);
-  queue = run.catch(() => undefined);
+  queue = run.then(
+    () => undefined,
+    () => undefined,
+  );
   run
-    .then(() => {
-      if (remote === r && sync.error) setSync({ error: null });
+    .then((update) => {
+      if (remote !== r) return;
+      if (update) server = update(server);
+      dropOps(done);
+      refresh();
+      if (sync.error) setSync({ error: null });
     })
     .catch((e: unknown) => {
       if (remote !== r) return;
+      dropOps(done);
       setSync({ error: e instanceof GrowSyncError ? e.message : "保存できませんでした。通信状態を確かめて、もう一度お試しください" });
       void reloadRemote(r);
     })
@@ -126,12 +183,17 @@ function later(key: string, run: () => void) {
   setSync({ saving: true });
 }
 
+function runNow(key: string) {
+  const t = timers.get(key);
+  if (!t) return;
+  clearTimeout(t.timer);
+  timers.delete(key);
+  t.run();
+}
+
 /** 待っている保存をすぐ行う（画面を閉じる前、別の会社に切りかえる前） */
 export function flushGrow() {
-  const pending = [...timers.values()];
-  pending.forEach((p) => clearTimeout(p.timer));
-  timers.clear();
-  pending.forEach((p) => p.run());
+  [...timers.keys()].forEach(runNow);
 }
 
 let loadSeq = 0;
@@ -143,7 +205,8 @@ async function reloadRemote(r: GrowRemote) {
     const keep = readLocal(remoteLocalKey(r.organizationId));
     // 売りたいものを全部消したことはDBでは「行が無い」としか分からないので、このブラウザの印で区別する
     const emptied = (keep as GrowState & { sellEmptied?: boolean }).sellEmptied === true;
-    state = { answers: snap.answers, plan: snap.plan, sellItems: snap.sellItems ?? (emptied ? [] : null), proposals: keep.proposals, articleAnswers: keep.articleAnswers };
+    server = { answers: snap.answers, plan: snap.plan };
+    state = { ...rebase(), sellItems: snap.sellItems ?? (emptied ? [] : null), proposals: keep.proposals, articleAnswers: keep.articleAnswers };
     setSync({ loaded: true });
   } catch (e) {
     if (remote !== r || seq !== loadSeq) return;
@@ -157,6 +220,8 @@ export function connectGrow(next: GrowRemote | null) {
   flushGrow();
   remote = next;
   state = null;
+  server = { answers: {}, plan: null };
+  ops = [];
   sync = next ? { mode: "remote", loaded: false, saving: false, error: null } : { mode: "local", loaded: true, saving: false, error: null };
   emit();
   if (next) void reloadRemote(next);
@@ -186,49 +251,53 @@ let sellSeq = 0;
 /** 画面で作った売りたいものの仮の id → DB の id。仮の id（sell_0 など）は会社ごとに重なるので、会社の id と組にする */
 const sellIdMap = new Map<string, string>();
 const sellKey = (r: GrowRemote, tempId: string) => `${r.organizationId}:${tempId}`;
-/** 足すために列に並んでいて、まだDBに入っていない行（kind と言葉） */
-const pendingAdds = new Set<string>();
 
-const rowKey = (x: KeywordRow) => `${x.kind}\n${x.keyword}`;
-
-/**
- * 保存のあとに返ってきた組み立て（DB の id つき）に置きかえる。
- * 保存を待つあいだに画面で変えた進み具合・「やめておく」は、置きかえたあとにも残して保存し直す。
- * 待つあいだに別の組み立てを選んでいたら置きかえない。
- */
-function adoptSavedPlan(r: GrowRemote, sent: KeywordPlan, saved: KeywordPlan | null) {
-  const cur = load().plan;
-  if (remote !== r || !cur || cur.proposalId !== sent.proposalId) return;
-  if (!saved) return;
-  const sentBy = new Map(sent.rows.map((x) => [rowKey(x), x]));
-  const curBy = new Map(cur.rows.map((x) => [rowKey(x), x]));
-  const patches: [string, { status?: RowStatus; parked?: boolean }][] = [];
-  const rows = saved.rows.map((x) => {
-    const before = sentBy.get(rowKey(x));
-    const now = curBy.get(rowKey(x));
-    if (!before || !now) return x;
-    const patch: { status?: RowStatus; parked?: boolean } = {};
-    if (now.status !== before.status) patch.status = now.status;
-    if (!!now.parked !== !!before.parked) patch.parked = !!now.parked;
-    if (!Object.keys(patch).length) return x;
-    patches.push([x.id, patch]);
-    return { ...x, ...patch };
-  });
-  // 保存を待つあいだに足した行（まだ列に並んでいる）は消さずに残す
-  const savedKeys = new Set(saved.rows.map(rowKey));
-  const pending = cur.rows.filter((x) => !savedKeys.has(rowKey(x)) && pendingAdds.has(rowKey(x)));
-  set({ ...load(), plan: { ...saved, rows: [...rows, ...pending] } });
-  for (const [id, patch] of patches) persist(r, () => r.updateRow(id, patch));
+/** 行の進み具合・「やめておく」を変える。送る時点で DB の id を探す（足したばかりの行は、足す保存のあとで id が分かる） */
+function changeRow(rowId: string, patch: { status?: RowStatus; parked?: boolean }) {
+  const s = load();
+  const target = s.plan?.rows.find((x) => x.id === rowId);
+  if (!s.plan || !target) return;
+  const r = remote;
+  if (!r) {
+    set({ ...s, plan: { ...s.plan, rows: s.plan.rows.map((x) => (x.id === rowId ? { ...x, ...patch } : x)) } });
+    return;
+  }
+  const key = rowKey(target);
+  const id = track({ apply: (acc) => patchRow(acc, key, patch) });
+  persist(
+    r,
+    async () => {
+      // 会社を切りかえたあとは、今の server は別の会社のものなので、変えたときの行の id で送る
+      const dbId = remote === r ? server.plan?.rows.find((x) => rowKey(x) === key)?.id : target.id;
+      if (!isUuid(dbId)) return; // 送る前に組み立てを選び直した
+      await r.updateRow(dbId, patch);
+      return (srv) => patchRow(srv, key, patch);
+    },
+    (o) => o.id === id,
+  );
 }
 
 export const growActions = {
   saveAnswer(answer: HearingAnswer) {
-    const s = load();
-    set({ ...s, answers: { ...s.answers, [answer.questionId]: answer } });
     const r = remote;
-    if (!r) return;
-    const key = `answer:${answer.questionId}`;
-    const run = () => persist(r, () => r.saveAnswer(answer));
+    if (!r) {
+      const s = load();
+      set({ ...s, answers: { ...s.answers, [answer.questionId]: answer } });
+      return;
+    }
+    const q = answer.questionId;
+    const id = track({ question: q, apply: (acc) => ({ ...acc, answers: { ...acc.answers, [q]: answer } }) });
+    const key = `answer:${q}`;
+    // 保存が終わったら、それより前の同じ質問の操作（まとめて捨てた途中の答え）も外す
+    const run = () =>
+      persist(
+        r,
+        async () => {
+          await r.saveAnswer(answer);
+          return (srv) => ({ ...srv, answers: { ...srv.answers, [q]: answer } });
+        },
+        (o) => o.question === q && o.id <= id,
+      );
     if (answer.draft) later(key, run);
     else {
       // 決まった答えは待たずに保存し、その前の途中の答えは捨てる
@@ -243,66 +312,60 @@ export const growActions = {
   },
   /** 設計図を選ぶ・選び直す。前の設計図で書いた記事の答えは消す（行の id が同じでも持ち越さない） */
   choosePlan(plan: KeywordPlan | null, proposal: PillarProposal | null = null) {
-    set({ ...load(), plan, articleAnswers: {} });
+    set({ ...load(), articleAnswers: {} });
     const r = remote;
-    if (!r) return;
-    persist(r, async () => {
-      const saved = await r.choosePlan(plan, proposal);
-      if (plan) adoptSavedPlan(r, plan, saved);
-    });
+    if (!r) {
+      set({ ...load(), plan });
+      return;
+    }
+    planGen += 1;
+    const id = track({ apply: (acc) => ({ ...acc, plan }) });
+    persist(
+      r,
+      async () => {
+        const saved = await r.choosePlan(plan, proposal);
+        return (srv) => ({ ...srv, plan: saved });
+      },
+      (o) => o.id === id,
+    );
   },
   setRowStatus(rowId: string, status: RowStatus) {
-    const s = load();
-    if (!s.plan) return;
-    set({ ...s, plan: { ...s.plan, rows: s.plan.rows.map((r) => (r.id === rowId ? { ...r, status } : r)) } });
-    const r = remote;
-    if (r) persist(r, () => r.updateRow(rowId, { status }));
+    changeRow(rowId, { status });
   },
   /** 管理表にキーワードを足す */
   addRow(row: KeywordRow) {
     const s = load();
     if (!s.plan) return;
-    const plan = { ...s.plan, rows: [...s.plan.rows, row] };
-    set({ ...s, plan });
     const r = remote;
-    if (!r) return;
-    // 売りたいものの並べかえを待っていたら先に送り、仮の id を DB の id に直せるようにする
-    const sell = timers.get("sell");
-    if (sell) {
-      clearTimeout(sell.timer);
-      timers.delete("sell");
-      sell.run();
+    if (!r) {
+      set({ ...s, plan: { ...s.plan, rows: [...s.plan.rows, row] } });
+      return;
     }
-    pendingAdds.add(rowKey(row));
-    persist(r, async () => {
-      try {
-        await sendAdd();
-      } finally {
-        pendingAdds.delete(rowKey(row));
-      }
+    const key = rowKey(row);
+    const pillar = s.plan.rows.find((x) => x.id === row.pillarId);
+    const gen = planGen;
+    const id = track({
+      apply: (acc) => (acc.plan && !acc.plan.rows.some((x) => rowKey(x) === key) ? { ...acc, plan: { ...acc.plan, rows: [...acc.plan.rows, row] } } : acc),
     });
-    async function sendAdd() {
-      if (!r) return;
-      // 送る時点の組み立てで、柱と売りたいものの id を DB の id に直す（組み立てを選ぶ保存が先に終わっていることがある）
-      const now = remote === r ? load().plan : plan; // 会社を切りかえていたら、足したときの組み立てで送る
-      if (!now || !now.rows.some((x) => rowKey(x) === rowKey(row))) return; // 送る前に選び直した
-      const pillarKey = plan.rows.find((x) => x.id === row.pillarId);
-      const pillarId = isUuid(row.pillarId) ? row.pillarId : now?.rows.find((x) => pillarKey && rowKey(x) === rowKey(pillarKey))?.id;
-      const sellItemId = row.sellItemId && !isUuid(row.sellItemId) ? (sellIdMap.get(sellKey(r, row.sellItemId)) ?? null) : row.sellItemId;
-      const current = now?.rows.find((x) => rowKey(x) === rowKey(row)) ?? row;
-      const sent = now ?? plan;
-      const saved = await r.addRow({ ...current, pillarId, sellItemId });
-      pendingAdds.delete(rowKey(row));
-      adoptSavedPlan(r, sent, saved);
-    }
+    // 売りたいものの並べかえを待っていたら先に送り、仮の id を DB の id に直せるようにする
+    runNow("sell");
+    persist(
+      r,
+      async () => {
+        if (gen !== planGen && remote === r) return; // 足したあとに組み立てを選び直した
+        // 送る時点の DB の組み立てで、柱と売りたいものの id を直す（組み立てを選ぶ保存が先に終わっていることがある）
+        const base = remote === r ? server.plan : null; // 会社を切りかえたあとは、今の server は別の会社のもの
+        const pillarId = isUuid(row.pillarId) ? row.pillarId : base?.rows.find((x) => pillar && rowKey(x) === rowKey(pillar))?.id;
+        const sellItemId = row.sellItemId && !isUuid(row.sellItemId) ? (sellIdMap.get(sellKey(r, row.sellItemId)) ?? null) : row.sellItemId;
+        const saved = await r.addRow({ ...row, pillarId, sellItemId });
+        return saved ? (srv) => ({ ...srv, plan: saved }) : undefined;
+      },
+      (o) => o.id === id,
+    );
   },
   /** 「やめておく」にする・戻す。消さずに残す */
   setRowParked(rowId: string, parked: boolean) {
-    const s = load();
-    if (!s.plan) return;
-    set({ ...s, plan: { ...s.plan, rows: s.plan.rows.map((r) => (r.id === rowId ? { ...r, parked } : r)) } });
-    const r = remote;
-    if (r) persist(r, () => r.updateRow(rowId, { parked }));
+    changeRow(rowId, { parked });
   },
   /** 今売りたいものと、その順位を保存する */
   setSellItems(items: SellItem[]) {
