@@ -58,7 +58,7 @@ export function BlockEditor({ blocks, onChange, readOnly }: { blocks: Block[]; o
 
   return (
     <div className="space-y-3">
-      <div className="sticky top-0 z-10 flex flex-wrap items-center gap-2 rounded-lg border border-line bg-surface p-2" role="toolbar" aria-label="選んだ段落の書き直し">
+      <div className="sticky top-2 z-10 flex flex-wrap items-center gap-2 rounded-2xl border border-line bg-surface/95 p-2 shadow-[0_4px_0_var(--color-line)] backdrop-blur" role="toolbar" aria-label="選んだ段落の書き直し">
         <span className="text-sm text-muted">{selected === null ? "段落を選ぶと書き直しの提案を出せます" : `第${selected + 1}ブロックを選択中`}</span>
         <button type="button" className="btn-secondary min-h-9 px-3 py-1 text-sm" disabled={selected === null || blocks[selected]?.type === "heading"} onClick={() => suggest("短くする")}>
           短くする
@@ -69,16 +69,16 @@ export function BlockEditor({ blocks, onChange, readOnly }: { blocks: Block[]; o
       </div>
 
       {suggestion && (
-        <div className="rounded-lg border border-brand bg-brand-soft p-3" role="region" aria-label="変更案">
+        <div className="animate-pop rounded-2xl border-2 border-brand bg-brand-soft p-3" role="region" aria-label="変更案">
           <p className="mb-2 font-semibold">「{suggestion.kind}」の変更案（サンプル）</p>
           <div className="grid gap-2 sm:grid-cols-2">
             <div>
               <p className="text-sm text-muted">いまの文章</p>
-              <p className="rounded bg-surface p-2 line-through decoration-danger/60">{suggestion.before}</p>
+              <p className="rounded-xl bg-surface p-2 line-through decoration-danger/60">{suggestion.before}</p>
             </div>
             <div>
               <p className="text-sm text-muted">変更案</p>
-              <p className="rounded bg-surface p-2">{suggestion.after}</p>
+              <p className="rounded-xl bg-surface p-2">{suggestion.after}</p>
             </div>
           </div>
           <div className="mt-3 flex gap-2">
@@ -105,7 +105,7 @@ export function BlockEditor({ blocks, onChange, readOnly }: { blocks: Block[]; o
         return (
           <div
             key={i}
-            className={`group rounded-lg border p-2 ${selected === i ? "border-brand bg-brand-soft/40" : "border-transparent hover:border-line"}`}
+            className={`group rounded-2xl border-2 p-2 transition-colors ${selected === i ? "border-brand bg-brand-soft/40" : "border-transparent hover:border-line"}`}
             onFocus={() => setSelected(i)}
           >
             <div className="mb-1 flex items-center justify-between gap-2">
