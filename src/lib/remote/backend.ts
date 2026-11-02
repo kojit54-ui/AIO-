@@ -481,6 +481,11 @@ export class RemoteBackend {
       await this.load();
     },
 
+    buildProfileFromHearing: async (orgId) => {
+      this.requireUser();
+      await this.post(`/api/organizations/${encodeURIComponent(orgId)}/profile-from-hearing`, {}, "会社の情報をまとめられませんでした。もう一度お試しください");
+    },
+
     approveProfile: async (orgId) => {
       const { error } = await this.client.rpc("approve_profile", { p_organization_id: orgId });
       if (error) throw toApiError(error);

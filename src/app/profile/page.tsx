@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { PROFILE_FIELDS } from "@/components/CoachForms";
+import { ProfileSetup } from "@/components/ProfileSetup";
 import { EmptyState, Notice, formatDate } from "@/components/ui";
 import { ApiError, useStore } from "@/mock/store";
 
@@ -14,7 +15,7 @@ export default function ProfilePage() {
   if (!user) return null;
   const org = db.organizations.find((o) => o.id === user.organizationIds[0]);
   if (user.role !== "client_member" || !org) return <main className="page"><EmptyState title="この画面は顧客担当者向けです" /></main>;
-  if (!org.profile) return <main className="page"><EmptyState mood="coffee" title="会社の情報は、コタムが準備中です" /></main>;
+  if (!org.profile) return <main className="page"><ProfileSetup orgId={org.id} /></main>;
 
   return (
     <main className="page max-w-3xl space-y-5">
@@ -23,7 +24,7 @@ export default function ProfilePage() {
           ホームへ戻る
         </Link>
         <h1 className="text-2xl font-black sm:text-3xl">会社の情報を確かめる</h1>
-        <p className="text-muted">記事を作るときに使う会社の情報です。違うところがあれば、コタムの担当者にお知らせください。</p>
+        <p className="text-muted">記事を作るときに使う会社の情報です。違うところがあれば、「会社のことを教える」の答えを直してから、下の「答えからまとめ直す」を押してください。</p>
       </div>
       {error && <Notice tone="danger" title={error} />}
       <dl className="card grid gap-x-4 gap-y-3 sm:grid-cols-[10rem_1fr]">
@@ -55,6 +56,28 @@ export default function ProfilePage() {
           この内容で問題ありません
         </button>
       )}
+      <div className="flex flex-wrap gap-2 border-t border-line pt-4">
+        <Link href="/prototype/hearing" className="btn-secondary">
+          「会社のことを教える」の答えを直す
+        </Link>
+        <button
+          type="button"
+          className="btn-secondary"
+          disabled={busy}
+          onClick={async () => {
+            setBusy(true);
+            setError(null);
+            try {
+              await api.buildProfileFromHearing(org.id);
+            } catch (e) {
+              setError(e instanceof ApiError ? e.message : "会社の情報をまとめられませんでした");
+            }
+            setBusy(false);
+          }}
+        >
+          答えからまとめ直す
+        </button>
+      </div>
     </main>
   );
 }

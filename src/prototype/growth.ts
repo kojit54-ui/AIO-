@@ -101,10 +101,19 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
 export interface HearingAnswer {
   questionId: string;
   text: string;
-  /** AIが返した深掘りの質問と、その答え */
-  followUps: { question: string; answer: string }[];
+  /** 深掘りの質問と、その答え。why は聞く理由（AIが添える）、pending は答え待ち */
+  followUps: HearingFollowUp[];
   /** 書いている途中で、まだ「次へ」を押していない */
   draft?: boolean;
+  /** AIが「もう深掘りは要らない」と決めたか、深掘りを飛ばした */
+  deepDiveDone?: boolean;
+}
+
+export interface HearingFollowUp {
+  question: string;
+  answer: string;
+  why?: string;
+  pending?: boolean;
 }
 
 /** ヒアリングの続きの位置。まだ答えていない問いか、深掘りが残っている問い。全部済んだら問いの数 */
@@ -116,11 +125,26 @@ export function resumeIndex(answers: Record<string, HearingAnswer>): number {
 /** 答えを書き直す。中身が変わったら、前の答えへの深掘りは消して聞き直す */
 export function withNewText(prev: HearingAnswer, text: string): HearingAnswer {
   const next = text.trim();
-  return { ...prev, text: next, followUps: next === prev.text.trim() ? prev.followUps : [], draft: false };
+  const same = next === prev.text.trim();
+  return { ...prev, text: next, followUps: same ? prev.followUps : [], // 立っていたときだけ戻す（列を足す SQL の前でも保存できるように）
+    deepDiveDone: same ? prev.deepDiveDone : prev.deepDiveDone ? false : undefined, draft: false };
 }
 
-/** 深掘りは1問につき2回まで */
+/** 決まった深掘り（AIが無いとき）は1問につき2回まで */
 export const MAX_DEEP_DIVES = 2;
+/** AIの深掘りは1問につき4回まで。かなり深いところまで聞く（2026-11-02 田村さん） */
+export const MAX_AI_DEEP_DIVES = 4;
+
+/** 答え待ちの深掘り（AIが作った質問）。無ければ null */
+export function pendingDeepDive(answer: HearingAnswer | undefined): HearingFollowUp | null {
+  const last = answer?.followUps[answer.followUps.length - 1];
+  return last?.pending ? last : null;
+}
+
+/** 決まった深掘りで聞く理由。AIの深掘りは質問ごとに理由が付く */
+export function deepDiveWhy(question: HearingQuestion, answer: HearingAnswer | undefined): string {
+  return pendingDeepDive(answer)?.why || `具体的な場面や数字があると、ほかの会社には書けない記事になり、AIにも紹介されやすくなります。`;
+}
 
 /**
  * 答えが短いときに返す深掘りの質問。無ければ null。
@@ -128,6 +152,9 @@ export const MAX_DEEP_DIVES = 2;
  */
 export function nextDeepDive(question: HearingQuestion, answer: HearingAnswer | undefined): string | null {
   if (!answer || !answer.text.trim()) return null;
+  const pending = pendingDeepDive(answer);
+  if (pending) return pending.question;
+  if (answer.deepDiveDone) return null;
   const asked = answer.followUps.length;
   if (asked >= MAX_DEEP_DIVES || asked >= question.deepDives.length) return null;
   // 深掘りを飛ばしたら（空の答え）、その問いではもう聞かない

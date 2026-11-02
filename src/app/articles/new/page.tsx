@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { ProfileSetup } from "@/components/ProfileSetup";
 import { EmptyState, Notice, monthLabel } from "@/components/ui";
 import { ApiError, useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
@@ -38,10 +39,10 @@ export default function NewArticlePage() {
     );
   }
 
-  if (!isOrgReady(db, orgId, month)) {
+  if (!isOrgReady(db, orgId)) {
     return (
       <main className="page">
-        <EmptyState mood="coffee" title="コタムが準備中です">会社の情報と今月の方針をコタムが登録すると、記事を書き始められます。</EmptyState>
+        <ProfileSetup orgId={orgId} />
       </main>
     );
   }
@@ -66,7 +67,14 @@ export default function NewArticlePage() {
     <main className="page space-y-5">
       <div>
         <h1 className="text-2xl font-black sm:text-3xl">どのテーマで書きますか？</h1>
-        <p className="text-muted">{monthLabel(month)}にコタムと決めたテーマです。書きやすいものを1つ選んでください。</p>
+        <p className="text-muted">
+          {themes.length > 0 ? `${monthLabel(month)}にコタムと決めたテーマです。書きやすいものを1つ選んでください。` : "書きたいテーマを自分で決めるか、しおりのおすすめから選べます。"}
+        </p>
+        {themes.length === 0 && (
+          <Link href="/prototype/plan" className="mt-2 inline-block font-bold text-brand-dark underline">
+            しおりのおすすめから選ぶ（書く記事を決める）
+          </Link>
+        )}
       </div>
       {error && <Notice tone="danger" title={error} />}
 

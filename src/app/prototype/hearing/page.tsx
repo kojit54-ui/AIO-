@@ -2,14 +2,25 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Shiori } from "@/components/fun";
 import { Notice, PageSkeleton } from "@/components/ui";
+import { useStore } from "@/mock/store";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
-import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, SAMPLE_LABEL, collectedAio, nextDeepDive, resumeIndex, withNewText, MAX_ANSWER } from "@/prototype/growth";
-import { growActions, useGrow } from "@/prototype/store";
+import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, collectedAio, deepDiveWhy, nextDeepDive, pendingDeepDive, resumeIndex, withNewText, MAX_ANSWER } from "@/prototype/growth";
+import { growActions, useGrow, useGrowSync } from "@/prototype/store";
 
-/** 顧客が1問ずつ答えるヒアリング。答えが短いと、深掘りの質問が返ってくる */
+/**
+ * 顧客が1問ずつ答えるヒアリング。答えるたびに、AIが聞く理由を添えて深掘りの質問を返す（1問につき4回まで。2026-11-02）。
+ * 本物のデータ（remote）ではAIが答えを読んで聞き、試作（local）では決まった深掘りを返す
+ */
 export default function HearingPage() {
   const g = useGrow();
+  const sync = useGrowSync();
+  const { user } = useStore();
+  const ai = sync.mode === "remote" && !!user;
+  const orgId = user?.organizationIds[0];
+  const [thinking, setThinking] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
   const [step, setStep] = useState<number | null>(null);
   const [deep, setDeep] = useState<string | null>(null);
   const [text, setText] = useState("");
@@ -56,7 +67,53 @@ export default function HearingPage() {
     setText(to < total ? (g.answers[HEARING_QUESTIONS[to].id]?.text ?? "") : "");
   }
 
-  function submit(answer = value) {
+  /** AIに次の深掘りを聞く。質問が来たら答え待ちとして保存して true を返す。要らない・失敗したら深掘りを終える */
+  async function askAi(next: HearingAnswer): Promise<boolean> {
+    if (!ai || !orgId) return false;
+    setThinking(true);
+    setAiError(null);
+    try {
+      const res = await fetch(`/api/organizations/${encodeURIComponent(orgId)}/hearing-follow-up`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ questionId: q.id, answer: { text: next.text, followUps: next.followUps }, idempotencyKey: crypto.randomUUID() }),
+      }).catch(() => null);
+      const json = ((await res?.json().catch(() => null)) ?? {}) as { followUp?: { question: string; why: string } | null; message?: string };
+      if (res?.ok && json.followUp) {
+        growActions.saveAnswer({ ...next, followUps: [...next.followUps, { question: json.followUp.question, why: json.followUp.why, answer: "", pending: true }] });
+        setStep(current);
+        setDeep(json.followUp.question);
+        setText("");
+        setCheer(null);
+        return true;
+      }
+      if (!res?.ok) setAiError(json.message ?? "AIが聞き返せませんでした。このまま次へ進めます");
+      growActions.saveAnswer({ ...next, deepDiveDone: true });
+      return false;
+    } finally {
+      setThinking(false);
+    }
+  }
+
+  async function submit(answer = value) {
+    if (ai) {
+      let next: HearingAnswer;
+      if (activeDeep) {
+        // 答え待ちの深掘りに答えを入れる。飛ばしたら（空の答え）、この問いではもう聞かない
+        const prev = saved.followUps.slice(0, -1);
+        const last = saved.followUps[saved.followUps.length - 1];
+        next = { ...saved, followUps: [...prev, { question: activeDeep, why: last?.why, answer: answer.trim() }] };
+        if (!answer.trim()) {
+          growActions.saveAnswer({ ...next, deepDiveDone: true });
+          return go(current + 1);
+        }
+      } else {
+        next = withNewText(saved, value);
+      }
+      growActions.saveAnswer(next);
+      if (!(await askAi(next))) go(current + 1, q.aio);
+      return;
+    }
     if (activeDeep) {
       // 飛ばした深掘りも空の答えとして残し、読み込み直しても同じ質問を聞き直さない
       const next = { ...saved, followUps: [...saved.followUps, { question: activeDeep, answer: answer.trim() }] };
@@ -100,6 +157,7 @@ export default function HearingPage() {
       </div>
 
       {cheer && <Cheer point={cheer} />}
+      {aiError && <Notice tone="warn" title={aiError} />}
 
       <form
         className="card space-y-4"
@@ -114,9 +172,13 @@ export default function HearingPage() {
               <p className="text-muted">{q.label}</p>
               <p className="whitespace-pre-wrap">{saved.text}</p>
             </div>
-            <Notice tone="info" title="もう少しだけ教えてください">
-              具体的に分かると、ほかの会社には書けない記事になります。（追加の質問は{SAMPLE_LABEL}）
-            </Notice>
+            <div className="flex animate-pop items-end gap-3 rounded-2xl bg-ok-soft px-3 pt-2">
+              <Shiori mood="think" className="h-24 w-auto shrink-0" />
+              <p className="mb-3 text-sm">
+                <b className="block text-ok">もう少しくわしく教えてください（{saved.followUps.length + (pendingDeepDive(saved) ? 0 : 1)}回目の質問）</b>
+                <b>なぜ聞くの？</b>　{deepDiveWhy(q, saved)}
+              </p>
+            </div>
             <div>
               <label htmlFor="answer" className="field-label text-lg">
                 {activeDeep}
@@ -159,12 +221,12 @@ export default function HearingPage() {
             <button type="button" className="btn-secondary" onClick={() => (activeDeep ? go(current) : go(Math.max(0, current - 1)))} disabled={current === 0 && !activeDeep}>
               戻る
             </button>
-            <button type="button" className="btn-secondary" onClick={() => (activeDeep ? submit("") : go(current + 1))}>
+            <button type="button" className="btn-secondary" disabled={thinking} onClick={() => (activeDeep ? submit("") : go(current + 1))}>
               {activeDeep ? "この質問は飛ばす" : "あとで答える"}
             </button>
           </div>
-          <button type="submit" className="btn-primary" disabled={!value.trim()}>
-            次へ
+          <button type="submit" className="btn-primary" disabled={!value.trim() || thinking}>
+            {thinking ? "しおりが答えを読んでいます…" : "次へ"}
           </button>
         </div>
       </form>

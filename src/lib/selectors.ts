@@ -27,7 +27,8 @@ export function articleHref(db: MockDb, articleId: string): string {
   return a?.currentVersionId ? `/articles/${articleId}` : `/articles/${articleId}/questions`;
 }
 
-export function isOrgReady(db: MockDb, orgId: string, month: string): boolean {
+export function isOrgReady(db: MockDb, orgId: string): boolean {
   const org = db.organizations.find((o) => o.id === orgId);
-  return !!org?.profile && !!org.profileApprovedAt && db.coachingNotes.some((n) => n.organizationId === orgId && n.targetMonth === month);
+  // 今月の指導方針は、あれば使う（無くても書き始められる。2026-11-02 コタムを待たずに書き始める）
+  return !!org?.profile && !!org.profileApprovedAt;
 }

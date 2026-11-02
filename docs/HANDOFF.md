@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-02 CC（Claude、プロジェクトのスレッド）その21
+- ブランチ / コミット：claude/self-start（PR #28 の上。PR #32 も含む）
+- 変更点：コタムを待たずに書き始める（DECISIONS 2026-11-02）。src/components/ProfileSetup.tsx、isOrgReady（今月の方針は任意）、/profile のまとめ直し、src/lib/growth/hearingAi.ts と /api/organizations/[id]/hearing-follow-up・profile-from-hearing、growthPrompts の深掘り（理由つき）と会社の情報の指示、growth.ts の pending・deepDiveDone・MAX_AI_DEEP_DIVES、ヒアリングの画面、マイグレーション 20261102130000_hearing_ai.sql
+- 確認結果：単体テスト276件、型検査、lint、build。架空データで、会社の情報が無い会社として 会社のことを教える → 深掘り（理由つき）→ まとめる → 確かめる → テーマを選ぶ、まで確認
+- 未完了：検証環境で 20261102130000_hearing_ai.sql を実行（田村さん）。本物のAIの深掘りの質の確認
+- 次の作業と担当：PR #32・#28 のあとにマージ → 田村さんが SQL を実行して試す → CX がレビュー
+
 ### 2026-11-02 CC（Claude、プロジェクトのスレッド）その29
 - ブランチ / コミット：claude/project-thread-n66pdb（PR #27 のマージ後の main から）
 - 変更点：T5-4 の提案の入口（田村さんの判断で CC が作り、Codex が点検）。supabase/migrations/20261102000000_keyword_proposals.sql（generation_runs に記事を指さない種類 keyword_proposal、受付 start_keyword_proposal、できた提案を残す keyword_proposals、1社の月の回数 app_settings.keyword_proposal_limit＝10、start_generation が提案の受付のキーを返さないよう修正）。src/lib/growth/proposals.ts（ヒアリングと今売りたいもの → ラッコの下調べ → AI → 保存 → 記録。返事の形が違えば1回だけ聞き直す。キーが無ければサンプルを保存し、下調べもしない）。POST /api/organizations/:id/keyword-proposals。画面は「書く記事を決める」を開くと、答えがそろっていて提案が無ければ自動で作り、「コタムからの提案」として出す。提案はDBから読み、同じ会社の人（顧客・コタム）に同じものが出る
