@@ -49,7 +49,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
   return (
     <main className="page max-w-3xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h1 className="text-2xl font-bold">招待と所属の管理</h1>
+        <h1 className="text-2xl font-black sm:text-3xl">招待と所属の管理</h1>
         <form action="/auth/signout" method="post" className="flex items-center gap-3 text-sm">
           <span className="text-muted">{auth.user.email}</span>
           <button type="submit" className="btn-secondary min-h-9 px-3 py-1 text-sm">ログアウト</button>
@@ -57,7 +57,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
       </div>
 
       <section className="card space-y-3">
-        <h2 className="text-lg font-semibold">会社</h2>
+        <h2 className="text-lg font-bold">会社</h2>
         <ul className="flex flex-wrap gap-2">
           {orgs?.map((o) => (
             <li key={o.id}>
@@ -76,11 +76,11 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
       {current && (
         <>
           <section className="card space-y-3">
-            <h2 className="text-lg font-semibold">{current.name}に招待する</h2>
+            <h2 className="text-lg font-bold">{current.name}に招待する</h2>
             <InviteForm organizationId={current.id} />
             {pending && pending.length > 0 && (
               <div>
-                <h3 className="font-semibold">未使用の招待</h3>
+                <h3 className="font-bold">未使用の招待</h3>
                 <ul className="text-sm text-muted">
                   {pending.map((i) => (
                     <li key={i.id}>
@@ -93,7 +93,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
           </section>
 
           <section className="card space-y-3">
-            <h2 className="text-lg font-semibold">所属している人</h2>
+            <h2 className="text-lg font-bold">所属している人</h2>
             {!members?.length && <p className="text-muted">まだいません。</p>}
             <ul className="divide-y divide-line">
               {members?.map((m: { membership_id: string; email: string; role: string; revoked_at: string | null }) => (

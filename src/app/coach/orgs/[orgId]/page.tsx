@@ -42,11 +42,11 @@ export default function CoachOrgPage() {
         <Link href="/coach" className="text-sm text-brand-dark underline">
           管理画面へ戻る
         </Link>
-        <h1 className="text-2xl font-bold">{org.name}</h1>
+        <h1 className="text-2xl font-black sm:text-3xl">{org.name}</h1>
       </div>
       {message && <Notice tone={message.tone} title={message.text} />}
 
-      <section className="card space-y-3" aria-labelledby="settings">
+      <section className="card animate-rise space-y-3" aria-labelledby="settings">
         <h2 id="settings" className="text-lg font-bold">
           設定
         </h2>
@@ -66,7 +66,7 @@ export default function CoachOrgPage() {
         </p>
       </section>
 
-      <section className="card" aria-labelledby="profile">
+      <section className="card animate-rise" aria-labelledby="profile">
         <h2 id="profile" className="mb-3 text-lg font-bold">
           会社プロフィール
         </h2>
@@ -100,7 +100,7 @@ export default function CoachOrgPage() {
         )}
       </section>
 
-      <section className="card" aria-labelledby="note">
+      <section className="card animate-rise" aria-labelledby="note">
         <h2 id="note" className="mb-3 text-lg font-bold">
           {monthLabel(month)}の指導メモ
         </h2>
@@ -136,7 +136,7 @@ export default function CoachOrgPage() {
                 </div>
               ))}
             </dl>
-            <div className="rounded-lg border border-dashed border-line p-3">
+            <div className="rounded-2xl border-2 border-dashed border-line bg-canvas/60 p-3">
               <p className="text-sm font-semibold text-muted">コタム内部メモ（顧客には見えません。AIにも渡しません）</p>
               <p>{internal?.note ?? "なし"}</p>
             </div>
@@ -147,7 +147,7 @@ export default function CoachOrgPage() {
         )}
       </section>
 
-      <section className="card" aria-labelledby="themes">
+      <section className="card animate-rise" aria-labelledby="themes">
         <h2 id="themes" className="mb-3 text-lg font-bold">
           テーマ
         </h2>
@@ -156,8 +156,8 @@ export default function CoachOrgPage() {
         ) : (
           <ul className="space-y-2">
             {themes.map((t) => (
-              <li key={t.id} className="rounded-lg border border-line p-3">
-                <p className="font-semibold">
+              <li key={t.id} className="animate-rise rounded-2xl border-2 border-line p-3">
+                <p className="font-bold">
                   {t.title}
                   {t.source === "client" && <span className="ml-2 text-sm font-normal text-muted">（顧客が自分で決めたテーマ）</span>}
                 </p>
@@ -169,7 +169,7 @@ export default function CoachOrgPage() {
         <ThemeForm onSubmit={async (input) => { await run(() => api.addTheme(orgId, input), "テーマを追加しました"); }} />
       </section>
 
-      <section className="card" aria-labelledby="refs">
+      <section className="card animate-rise" aria-labelledby="refs">
         <h2 id="refs" className="mb-3 text-lg font-bold">
           過去記事
         </h2>
@@ -178,8 +178,8 @@ export default function CoachOrgPage() {
         ) : (
           <ul className="space-y-2">
             {refs.map((r) => (
-              <li key={r.id} className="rounded-lg border border-line p-3">
-                <p className="font-semibold">{r.title}</p>
+              <li key={r.id} className="animate-rise rounded-2xl border-2 border-line p-3">
+                <p className="font-bold">{r.title}</p>
                 <p className="text-sm text-muted">{r.publishedOn ?? "公開日なし"}</p>
                 <label className="mt-1 inline-flex items-center gap-2 text-sm">
                   <input type="checkbox" checked={r.usableForAi} onChange={(e) => run(() => api.setReferenceUsable(r.id, e.target.checked), "設定を保存しました")} />
@@ -214,7 +214,7 @@ function ThemeForm({ onSubmit }: { onSubmit: (input: { title: string; readerProb
     );
   return (
     <form
-      className="mt-3 space-y-3 rounded-lg bg-canvas p-3"
+      className="mt-3 animate-pop space-y-3 rounded-2xl bg-canvas p-4"
       onSubmit={async (e) => {
         e.preventDefault();
         await onSubmit({ title: title.trim(), readerProblem: readerProblem.trim(), message: message.trim() });

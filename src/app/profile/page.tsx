@@ -22,7 +22,7 @@ export default function ProfilePage() {
         <Link href="/" className="text-sm text-brand-dark underline">
           ホームへ戻る
         </Link>
-        <h1 className="text-2xl font-bold">会社の情報を確かめる</h1>
+        <h1 className="text-2xl font-black sm:text-3xl">会社の情報を確かめる</h1>
         <p className="text-muted">記事を作るときに使う会社の情報です。違うところがあれば、コタムの担当者にお知らせください。</p>
       </div>
       {error && <Notice tone="danger" title={error} />}
