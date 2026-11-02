@@ -65,6 +65,6 @@ describe("記事の質問の記入例", () => {
     const { sampleQuestionExamples } = await import("./questionExamples");
     const ex = sampleQuestionExamples({ business: "歯科医院。子どもの矯正" });
     expect(ex.q1).toContain("歯科医院");
-    expect(Object.keys(ex)).toEqual(["q1", "q2", "q3", "q4", "q5", "q2_followup"]);
+    expect(Object.keys(ex)).toEqual(["q1", "q2", "q3", "q4", "q5", "q2_followup", "prev_followup"]);
   });
 });

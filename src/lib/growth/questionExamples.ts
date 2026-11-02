@@ -12,6 +12,7 @@ export function sampleQuestionExamples(profile: Pick<CompanyProfile, "business">
     q4: "例：自分で調べて決めてしまう前に、一度相談してもらうほうが結局早い",
     q5: "例：気になることがあれば、まず電話かフォームで気軽に相談してほしい",
     q2_followup: "例：最初に話を聞いたとき、お客様は不安そうに何度も同じことを確かめていた",
+    prev_followup: "例：半年たって様子を聞いたら「あのとき相談してよかった」と言ってもらえた",
   };
 }
 

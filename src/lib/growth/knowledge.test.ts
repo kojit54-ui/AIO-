@@ -36,3 +36,21 @@ describe("会社の知識", () => {
     expect(input.companyKnowledge).toEqual([{ label: "強み", text: "丁寧" }]);
   });
 });
+
+describe("言い回しを覚える", () => {
+  const p = (text: string) => ({ type: "paragraph" as const, text });
+  it("AIが作った版の直後にお客様が直した段落だけを、新しい順に拾う", async () => {
+    const { editPairs } = await import("./knowledge");
+    const pairs = editPairs([
+      { articleId: "a", versionNo: 1, aiMade: true, body: [p("冬の浴室は寒くなりがちで、多くの方がお困りです。"), p("同じ")] },
+      { articleId: "a", versionNo: 2, aiMade: false, body: [p("冬のお風呂場、ヒヤッとしませんか。よく相談されます。"), p("同じ")] },
+      { articleId: "a", versionNo: 3, aiMade: false, body: [p("まったく別の話をここに書きました。長さも違う文章です。ほかにもいろいろ"), p("同じ")] },
+    ]);
+    expect(pairs).toEqual([{ before: "冬の浴室は寒くなりがちで、多くの方がお困りです。", after: "冬のお風呂場、ヒヤッとしませんか。よく相談されます。" }]);
+  });
+
+  it("直した言い回しは、会社の知識の先頭に入る", () => {
+    const items = buildKnowledge({ hearing: {}, aioAnswers: [], pastArticles: [], questions, edits: [{ before: "a", after: "b" }] });
+    expect(items[0].source).toBe("style");
+  });
+});

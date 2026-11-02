@@ -9,8 +9,8 @@ import { AiProviderError, type AiProvider, type BodyRoles, type StepUsage, failu
 import { ParseError } from "@/lib/ai/prompt";
 import { fromArticle, fromMonth, toArticle, toCoachingNote, toOrganization, toReferenceArticle, toTheme, toVersion, currentMonthJst } from "@/lib/remote/mapping";
 import { applyAction } from "@/lib/workflow";
-import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
-import { buildKnowledge, pickKnowledge, type KnowledgeItem, type PastArticle } from "@/lib/growth/knowledge";
+import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
+import { buildKnowledge, editPairs, pickKnowledge, type KnowledgeItem, type PastArticle } from "@/lib/growth/knowledge";
 import { type HearingAnswer } from "@/prototype/growth";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
 import type { Answer, Block } from "@/types/domain";
@@ -356,13 +356,13 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
   // 見出し案は質問の回答（下書き）から、本文は今の版の回答から作る（まだ版が無ければ下書き）
   const answers = kind === "outline" || !base?.answers.length ? draft : base.answers;
 
-  const knowledge = await loadKnowledge(db, hearingRes.data, aioRes.data, pastRes.data);
+  const knowledge = await loadKnowledge(db, article.id, hearingRes.data, aioRes.data, pastRes.data);
 
   const ctx: GenerationContext = {
     organization: org,
     note: noteRes.data ? toCoachingNote(noteRes.data) : undefined,
     theme,
-    questions: [...QUESTIONS, FOLLOW_UP_QUESTION],
+    questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION],
     answers,
     referenceArticles: (refsRes.data ?? []).map(toReferenceArticle),
     knowledge,
@@ -371,7 +371,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
 }
 
 /** 会社の知識を集める。どれかが読めなくても、読めた分だけで作る（記事づくりは止めない） */
-async function loadKnowledge(db: SupabaseClient, hearingRows: unknown[] | null, aioRows: unknown[] | null, pastRows: unknown[] | null): Promise<KnowledgeItem[]> {
+async function loadKnowledge(db: SupabaseClient, currentArticleId: string, hearingRows: unknown[] | null, aioRows: unknown[] | null, pastRows: unknown[] | null): Promise<KnowledgeItem[]> {
   try {
     const hearing: Record<string, HearingAnswer> = {};
     for (const r of (hearingRows ?? []) as HearingAnswerRow[]) hearing[r.question_id] = answerFromDb(r);
@@ -390,7 +390,23 @@ async function loadKnowledge(db: SupabaseClient, hearingRows: unknown[] | null, 
         return v ? [{ articleId: p.id, title: v.title ?? "", published: p.status === "published", answers: (v.answers as Answer[]) ?? [], body: (v.body as Block[]) ?? [] }] : [];
       });
     }
-    return pickKnowledge(buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION] }));
+    // 言い回しの好み：AIが作った版と、その次にお客様が直した版を比べる（今の記事も含め、最近の記事から）
+    const articleIds = [...past.map((p) => p.id), currentArticleId];
+    const { data: allVersions } = await db
+      .from("article_versions")
+      .select("article_id, version_no, body, generation_settings")
+      .in("article_id", articleIds)
+      .order("version_no", { ascending: false })
+      .limit(60);
+    const edits = editPairs(
+      ((allVersions ?? []) as { article_id: string; version_no: number; body: Block[] | null; generation_settings: { kind?: string } | null }[]).map((v) => ({
+        articleId: v.article_id,
+        versionNo: v.version_no,
+        aiMade: !!v.generation_settings?.kind,
+        body: v.body ?? [],
+      })),
+    );
+    return pickKnowledge(buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION], edits }));
   } catch {
     return [];
   }

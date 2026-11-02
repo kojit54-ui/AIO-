@@ -7,7 +7,7 @@ import { AioMeter, AioWhy, Cheer, WhyAio } from "@/components/aio";
 import { Confetti, Road, Scene, Shiori, ShioriFace, Wave } from "@/components/fun";
 import { Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice } from "@/components/ui";
 import { collectedAio } from "@/lib/aio";
-import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
+import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
 import { needsFollowUp } from "@/mock/sampleGenerator";
 import type { AioPoint, Answer } from "@/types/domain";
@@ -55,6 +55,18 @@ export default function QuestionsPage() {
   const exampleOf = (q: { id: string; example: string }) => orgForExamples?.profile?.questionExamples?.[q.id] ?? q.example;
   const current = answers.find((a) => a.questionId === question.id) ?? { questionId: question.id, text: "", unknown: false };
   const allQuestions = [...QUESTIONS, FOLLOW_UP_QUESTION];
+  // 前回の続き：同じ会社の前の記事で話してくれたお客様の「その後」を聞く（任意）
+  const previous = db.articles
+    .filter((a) => a.organizationId === article.organizationId && a.id !== article.id && a.currentVersionId)
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+    .map((a) => db.versions.find((v) => v.id === a.currentVersionId))
+    .find((v) => v?.answers.some((x) => x.questionId === "q1" && !x.unknown && x.text.trim()));
+  const previousCase = previous?.answers.find((x) => x.questionId === "q1")?.text.trim();
+  const prevAnswer = answers.find((a) => a.questionId === PREVIOUS_CASE_QUESTION.id)?.text ?? "";
+  function setPrevAnswer(text: string) {
+    setSaveState("idle");
+    setAnswers((list) => [...list.filter((a) => a.questionId !== PREVIOUS_CASE_QUESTION.id), { questionId: PREVIOUS_CASE_QUESTION.id, text, unknown: false }]);
+  }
   // 答えて進んだ直後だけ、ひとこと添える（開き直したときは出さない）
   const answeredAio = question.aio && !current.unknown && current.text.trim() ? question.aio : null;
 
@@ -237,6 +249,26 @@ export default function QuestionsPage() {
         </aside>
       </div>
 
+      {step === 0 && !showFollowUp && previous && previousCase && (
+        <section className="card animate-rise space-y-2 border-2 border-sun" aria-labelledby="prev-case-heading">
+          <div className="flex items-end gap-3">
+            <Shiori mood="ask" className="h-20 w-auto shrink-0 animate-float" />
+            <div>
+              <h2 id="prev-case-heading" className="font-black">
+                前回の続き（答えなくても大丈夫です）
+              </h2>
+              <p className="text-sm">
+                前の記事「{previous.title}」で話してくれたお客様（{Array.from(previousCase).slice(0, 40).join("")}…）、その後どうなりましたか？
+              </p>
+            </div>
+          </div>
+          <p className="text-sm text-muted">なぜ聞くの？　その後の様子は、ほかの会社には書けない一番の材料です。記事に厚みが出て、AIにも紹介されやすくなります。</p>
+          <label htmlFor="prev-followup" className="sr-only">
+            {PREVIOUS_CASE_QUESTION.label}
+          </label>
+          <textarea id="prev-followup" className="field min-h-24" placeholder={exampleOf(PREVIOUS_CASE_QUESTION)} value={prevAnswer} onChange={(e) => setPrevAnswer(e.target.value)} />
+        </section>
+      )}
       {step === 0 && !showFollowUp && <WhyAio compact />}
       {isLast && <SampleNotice />}
       <Link href="/" className="inline-block text-brand-dark underline">
