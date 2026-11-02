@@ -6,6 +6,7 @@
 import { createContext, useContext, useMemo, useSyncExternalStore } from "react";
 import type {
   AioCheck,
+  AioMention,
   KnowledgeNote,
   ArticleImage,
   Answer,
@@ -36,6 +37,8 @@ import { buildBody, buildOutline, buildTitleCandidates, extractFactChecks } from
 import { sampleApplyAnswers, sampleAioCheck } from "@/lib/aioCheck";
 import { sampleQuestionExamples } from "@/lib/growth/questionExamples";
 import { splitByHeadings } from "@/lib/growth/aiImport";
+import { mentionQuestions } from "@/lib/growth/mentionQuestions";
+import { localHearing } from "@/lib/growth/localKnowledge";
 import { pickKnowledge } from "@/lib/growth/knowledge";
 import { companyKnowledge } from "@/lib/growth/localKnowledge";
 import type { HearingAnswer } from "@/prototype/growth";
@@ -56,6 +59,8 @@ export interface MockDb {
   hearing?: Record<string, HearingAnswer>;
   /** ChatGPT などから取り込んだ会社の知識 */
   knowledgeNotes?: KnowledgeNote[];
+  /** AIに紹介されたかのチェックの結果 */
+  aioMentions?: AioMention[];
   draftAnswers: Record<string, { answers: Answer[]; step: number }>;
 }
 
@@ -606,6 +611,19 @@ function createApi(
     },
 
     /** 顧客がプロフィールの内容を確認した。確認済みのものだけがAIに渡る */
+    /** AIに紹介されたかを調べる（サンプル：検索はしない） */
+    async runMentionCheck(orgId: string) {
+      const user = requireUser();
+      requireOrg(user, orgId);
+      await runGeneration(orgId);
+      const db = getDb();
+      const hearing = localHearing();
+      const qs = mentionQuestions(hearing);
+      if (!qs.length) throw new ApiError("save_failed", "先に「会社のことを教える」で、売りたいものと地域に答えてください");
+      const rows: AioMention[] = qs.map((q) => ({ id: uid("am"), organizationId: orgId, question: q, mentioned: false, excerpt: "サンプル（AIは未接続）：検索できるAIのキーが入ると、ここに答えが入ります。", sources: [], isSample: true, createdAt: now() }));
+      commit({ ...db, aioMentions: [...(db.aioMentions ?? []), ...rows] });
+    },
+
     /** ChatGPT などのまとめを読み取って、会社の知識の候補にする（サンプル：【見出し】ごとに分けるだけ） */
     async readImport(orgId: string, text: string) {
       const user = requireUser();

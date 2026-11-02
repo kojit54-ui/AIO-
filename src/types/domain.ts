@@ -251,3 +251,15 @@ export interface KnowledgeNote {
   text: string;
   createdAt: string;
 }
+
+/** AIに紹介されたかのチェックの結果（1問ずつ）。src/lib/growth/mentions.ts */
+export interface AioMention {
+  id: string;
+  organizationId: string;
+  question: string;
+  mentioned: boolean;
+  excerpt: string;
+  sources: { url: string; title: string }[];
+  isSample: boolean;
+  createdAt: string;
+}
