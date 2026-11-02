@@ -52,3 +52,19 @@ describe("ヒアリングから会社の情報", () => {
     expect(p.business).toBe("リフォーム");
   });
 });
+
+describe("記事の質問の記入例", () => {
+  it("質問ごとの記入例を読み、「例：」をそろえる。空は落とす", async () => {
+    const { parseExamples } = await import("@/lib/ai/growthPrompts");
+    const r = parseExamples(JSON.stringify({ examples: { q1: "6歳の子の受け口を相談された", q2: "", other: "x" } }), ["q1", "q2"]);
+    expect(r).toEqual({ q1: "例：6歳の子の受け口を相談された" });
+    expect(() => parseExamples(JSON.stringify({ examples: {} }), ["q1"])).toThrow();
+  });
+
+  it("試作の記入例は、会社の業種の言葉を入れて全部の質問に出す", async () => {
+    const { sampleQuestionExamples } = await import("./questionExamples");
+    const ex = sampleQuestionExamples({ business: "歯科医院。子どもの矯正" });
+    expect(ex.q1).toContain("歯科医院");
+    expect(Object.keys(ex)).toEqual(["q1", "q2", "q3", "q4", "q5", "q2_followup"]);
+  });
+});

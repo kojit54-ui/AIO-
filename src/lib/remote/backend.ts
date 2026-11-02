@@ -474,11 +474,20 @@ export class RemoteBackend {
     },
 
     saveProfile: async (orgId, profile: CompanyProfile) => {
-      // 内容を変えたら、顧客の確認を取り直す
-      const { data, error } = await this.client.from("organizations").update({ profile, profile_approved_at: null }).eq("id", orgId).select("id");
+      // 内容を変えたら、顧客の確認を取り直す。記入例は新しい内容で作り直す
+      const { questionExamples: _old, ...fresh } = profile;
+      void _old;
+      const { data, error } = await this.client.from("organizations").update({ profile: fresh, profile_approved_at: null }).eq("id", orgId).select("id");
       if (error) throw toApiError(error);
       if (!data?.length) throw new ApiError("forbidden", "プロフィールを編集できるのはコタム担当者です");
       await this.load();
+    },
+
+    ensureQuestionExamples: async (orgId) => {
+      this.requireUser();
+      const org = this.state.db.organizations.find((o) => o.id === orgId);
+      if (!org?.profile || org.profile.questionExamples) return;
+      await this.post(`/api/organizations/${encodeURIComponent(orgId)}/question-examples`, {}, "記入例を作れませんでした");
     },
 
     buildProfileFromHearing: async (orgId) => {

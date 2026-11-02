@@ -4,7 +4,9 @@
 // 受付（start_hearing_ai）→ 実行の確保 → AI → 結果の記録、の順。答えはログに出さない。
 
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { buildFollowUpPrompt, buildProfilePrompt, FOLLOWUP_SYSTEM_PROMPT, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
+import { buildExamplesPrompt, buildFollowUpPrompt, buildProfilePrompt, EXAMPLES_SYSTEM_PROMPT, FOLLOWUP_SYSTEM_PROMPT, parseExamples, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
+import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
+import { sampleQuestionExamples } from "./questionExamples";
 import { estimateCostYen } from "@/lib/ai/cost";
 import { failureReason, type AiProvider, type AiUsage } from "@/lib/ai/provider";
 import { HEARING_QUESTIONS, MAX_AI_DEEP_DIVES, MAX_ANSWER, REQUIRED_FOR_PROPOSALS, isAnswerDone, nextDeepDive, type HearingAnswer } from "@/prototype/growth";
@@ -173,5 +175,46 @@ export async function runProfileFromHearing(deps: HearingDeps, req: { organizati
     console.error("profile from hearing failed", { runId: b.runId, reason });
     await b.finish("failed", usage, reason);
     return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "会社の情報をまとめられませんでした。もう一度お試しください");
+  }
+}
+
+/**
+ * 記事の質問の記入例を、その会社の情報に合わせて作り、会社の情報（profile.questionExamples）に残す。
+ * すでにあればそれを返す。会社の情報が無ければ作らない
+ */
+export async function runQuestionExamples(deps: HearingDeps, req: { organizationId: string; idempotencyKey: string }): Promise<{ ok: true; examples: Record<string, string> } | Fail> {
+  const { user: db, admin } = deps;
+  if (!(await requireUser(db))) return fail(401, "session_expired", "ログインの有効期限が切れました");
+  const { data: org, error } = await db.from("organizations").select("profile").eq("id", req.organizationId).maybeSingle();
+  if (error || !org) return fail(404, "not_found", "会社が見つかりません");
+  const profile = org.profile as CompanyProfile | null;
+  if (!profile?.business) return fail(400, "invalid_input", "先に会社の情報を作ってください");
+  if (profile.questionExamples && Object.keys(profile.questionExamples).length) return { ok: true, examples: profile.questionExamples };
+
+  const questions = [...QUESTIONS, FOLLOW_UP_QUESTION].map((q) => ({ id: q.id, label: q.label }));
+  const { questionExamples: _old, ...forPrompt } = profile;
+  void _old;
+  const b = await begin(deps, req.organizationId, req.idempotencyKey, JSON.stringify({ forPrompt, questions }).length);
+  if (!b.ok) return b;
+  const signal = AbortSignal.timeout(FOLLOWUP_TIMEOUT_MS);
+  let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
+  try {
+    let examples: Record<string, string>;
+    if (deps.isSample) examples = sampleQuestionExamples(profile);
+    else {
+      const res = await deps.provider.complete({ kind: "hearing", system: EXAMPLES_SYSTEM_PROMPT, user: buildExamplesPrompt(forPrompt, questions), maxOutputTokens: 1500, signal });
+      usage = res.usage;
+      examples = parseExamples(res.text, questions.map((q) => q.id));
+    }
+    // 記入例だけを足す。確かめ済みかどうか（profile_approved_at）は変えない
+    const { error: saveError } = await admin.from("organizations").update({ profile: { ...profile, questionExamples: examples } }).eq("id", req.organizationId);
+    if (saveError) throw new Error("examples update failed");
+    await b.finish("succeeded", usage, null);
+    return { ok: true, examples };
+  } catch (e) {
+    const reason = failureReason(e, signal);
+    console.error("question examples failed", { runId: b.runId, reason });
+    await b.finish("failed", usage, reason);
+    return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "記入例を作れませんでした");
   }
 }

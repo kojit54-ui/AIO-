@@ -20,6 +20,8 @@ export interface CompanyProfile {
   tone: string;
   bannedExpressions: string;
   contact: string;
+  /** 記事の質問（q1〜q5・q2_followup）の記入例。会社に合わせてAIが作る（2026-11-02）。無ければ決まった例を出す */
+  questionExamples?: Record<string, string>;
 }
 
 export interface Organization {
