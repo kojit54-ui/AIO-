@@ -51,6 +51,7 @@ export function shioriLevel(xp: number) {
 }
 
 const SOURCE_STYLE: Record<KnowledgeSource, string> = {
+  style: "bg-sky/40 text-ink",
   hearing: "bg-brand-soft text-brand-dark",
   aio_check: "bg-ok-soft text-ok",
   published: "bg-sun-soft text-ink",

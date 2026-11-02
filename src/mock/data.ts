@@ -33,6 +33,15 @@ export const FOLLOW_UP_QUESTION: Question = {
   aio: "experience",
 };
 
+/** 前の記事のお客様の「その後」を聞く質問（任意。前の記事があるときだけ出す。2026-11-02「前回の続き」） */
+export const PREVIOUS_CASE_QUESTION: Question = {
+  id: "prev_followup",
+  label: "前の記事のお客様の、その後の様子",
+  example: "例：半年たって様子を聞いたら「あのとき相談してよかった」と言ってもらえた",
+  tip: "その後の様子は、ほかの会社には書けない一番の材料です。分かる範囲で大丈夫です。",
+  aio: "experience",
+};
+
 export const USERS: SessionUser[] = [
   { id: "u_sakura", name: "佐藤（さくら住まい工房）", role: "client_member", organizationIds: ["org_sakura"] },
   { id: "u_minato", name: "高橋（みなと会計事務所）", role: "client_member", organizationIds: ["org_minato"] },

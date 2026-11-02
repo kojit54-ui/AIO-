@@ -5,7 +5,7 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { buildExamplesPrompt, buildFollowUpPrompt, buildProfilePrompt, EXAMPLES_SYSTEM_PROMPT, FOLLOWUP_SYSTEM_PROMPT, parseExamples, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
-import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
+import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import { sampleQuestionExamples } from "./questionExamples";
 import { estimateCostYen } from "@/lib/ai/cost";
 import { failureReason, type AiProvider, type AiUsage } from "@/lib/ai/provider";
@@ -191,7 +191,7 @@ export async function runQuestionExamples(deps: HearingDeps, req: { organization
   if (!profile?.business) return fail(400, "invalid_input", "先に会社の情報を作ってください");
   if (profile.questionExamples && Object.keys(profile.questionExamples).length) return { ok: true, examples: profile.questionExamples };
 
-  const questions = [...QUESTIONS, FOLLOW_UP_QUESTION].map((q) => ({ id: q.id, label: q.label }));
+  const questions = [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION].map((q) => ({ id: q.id, label: q.label }));
   const { questionExamples: _old, ...forPrompt } = profile;
   void _old;
   const b = await begin(deps, req.organizationId, req.idempotencyKey, JSON.stringify({ forPrompt, questions }).length);

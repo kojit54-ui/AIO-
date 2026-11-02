@@ -1,7 +1,7 @@
 // 画面で使う「会社の知識」。本物のデータでは読み込んだヒアリングの答え（db.hearing）、試作ではブラウザの中のヒアリングを使う。
 // 記事を作るときにAIへ渡す知識（src/lib/generation/server.ts）と同じ組み立て方にする。
 
-import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
+import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import type { MockDb } from "@/mock/store";
 import type { HearingAnswer } from "@/prototype/growth";
 import { buildKnowledge, type KnowledgeItem, type PastArticle } from "./knowledge";
@@ -36,5 +36,5 @@ export function companyKnowledge(db: MockDb, orgId: string, excludeArticleId?: s
       const v = db.versions.find((x) => x.id === a.currentVersionId);
       return v ? [{ articleId: a.id, title: v.title, published: a.status === "published", answers: v.answers, body: v.body }] : [];
     });
-  return buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION] });
+  return buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION] });
 }

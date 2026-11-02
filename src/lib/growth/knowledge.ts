@@ -6,7 +6,7 @@
 import { HEARING_QUESTIONS, type HearingAnswer } from "@/prototype/growth";
 import type { Answer, Block, Question } from "@/types/domain";
 
-export type KnowledgeSource = "hearing" | "article" | "aio_check" | "published";
+export type KnowledgeSource = "hearing" | "article" | "aio_check" | "published" | "style";
 
 export interface KnowledgeItem {
   /** 何から来た知識か。画面のしるしに使う */
@@ -45,6 +45,43 @@ export interface PastArticle {
   body: Block[];
 }
 
+/** 記事の版（言い回しを覚えるのに使う）。aiMade＝AIが作った版、そうでなければお客様が直して保存した版 */
+export interface VersionForStyle {
+  articleId: string;
+  versionNo: number;
+  aiMade: boolean;
+  body: Block[];
+}
+
+/** AIが作った版と、その直後にお客様が直した版を比べ、書き直した段落の組を新しい順に返す */
+export function editPairs(versions: VersionForStyle[], max = 4): { before: string; after: string }[] {
+  const byArticle = new Map<string, VersionForStyle[]>();
+  for (const v of versions) byArticle.set(v.articleId, [...(byArticle.get(v.articleId) ?? []), v]);
+  const pairs: { before: string; after: string; order: number }[] = [];
+  for (const list of byArticle.values()) {
+    const sorted = [...list].sort((a, b) => a.versionNo - b.versionNo);
+    for (let i = 0; i + 1 < sorted.length; i++) {
+      const ai = sorted[i];
+      const mine = sorted[i + 1];
+      if (!ai.aiMade || mine.aiMade) continue;
+      const before = ai.body.flatMap((b) => (b.type === "paragraph" ? [b.text.trim()] : []));
+      const after = mine.body.flatMap((b) => (b.type === "paragraph" ? [b.text.trim()] : []));
+      // 同じ位置の段落で、言い回しを直したもの（中身を丸ごと変えたものは除く）
+      before.forEach((t, k) => {
+        const u = after[k];
+        if (!u || t === u) return;
+        const ratio = Math.min(t.length, u.length) / Math.max(t.length, u.length);
+        if (ratio < 0.5 || t.length < 15) return;
+        pairs.push({ before: t, after: u, order: mine.versionNo });
+      });
+    }
+  }
+  return pairs
+    .sort((a, b) => b.order - a.order)
+    .slice(0, max)
+    .map(({ before, after }) => ({ before, after }));
+}
+
 export interface PastAioAnswer {
   question: string;
   answer: string;
@@ -59,8 +96,14 @@ export function buildKnowledge(input: {
   aioAnswers: PastAioAnswer[];
   pastArticles: PastArticle[];
   questions: Question[];
+  /** お客様がAIの文を直した組（editPairs） */
+  edits?: { before: string; after: string }[];
 }): KnowledgeItem[] {
   const items: KnowledgeItem[] = [];
+  // 言い回しの好みは、どの記事にも効くので先頭に置く
+  if (input.edits?.length) {
+    items.push({ source: "style", label: "直してもらった言い回し", text: cut(input.edits.map((e) => `「${cut(e.before, 70)}」→「${cut(e.after, 70)}」`).join("／"), 480) });
+  }
   for (const q of HEARING_QUESTIONS) {
     const a = input.hearing[q.id];
     if (!a?.text.trim() || a.draft) continue;
@@ -99,6 +142,7 @@ export function pickKnowledge(items: KnowledgeItem[], budget = MAX_KNOWLEDGE_CHA
 }
 
 export const KNOWLEDGE_SOURCE_LABEL: Record<KnowledgeSource, string> = {
+  style: "言い回し",
   hearing: "会社のこと",
   aio_check: "AIOのチェック",
   published: "公開した記事",
