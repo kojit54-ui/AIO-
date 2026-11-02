@@ -7,7 +7,7 @@ import { KnowledgeUsed } from "@/components/ShioriGrowth";
 import { AioCheckBanner, AioCheckOverlays, AioCheckPanel, useAioCheck } from "@/components/AioCheckPanel";
 import { BlockEditor } from "@/components/BlockEditor";
 import { Confetti, ShioriFace, Toast } from "@/components/fun";
-import { ShioriTalk } from "@/components/talk";
+import { type GuideStep, ShioriTalk, StepGuide } from "@/components/talk";
 import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, StatusBadge, formatDate } from "@/components/ui";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
@@ -115,14 +115,16 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
   }
 
 
-  async function copy(kind: "title" | "body" | "html") {
+  async function copy(kind: CopyKind): Promise<boolean> {
     const text = kind === "title" ? title : kind === "body" ? blocksToPlainText(blocks) : blocksToHtml(blocks);
     try {
       await navigator.clipboard.writeText(text);
       const label = { title: "タイトル", body: "本文", html: "HTML" }[kind];
       setBanner({ tone: "ok", message: `${label}をコピーしました${approved ? "" : "（承認前の下書きです）"}` });
+      return true;
     } catch {
       setBanner({ tone: "danger", message: "コピーできませんでした。ブラウザの設定を確認してください" });
+      return false;
     }
   }
 
@@ -246,9 +248,14 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
             <div className="card space-y-3">
               <p className="text-lg font-bold">ブログに載せる</p>
               {unchecked > 0 && <Notice tone="warn" title={`確かめてほしいところが${unchecked}か所あります`}>数字や名前が正しいか、先に確かめるのがおすすめです。</Notice>}
-              <div className="space-y-2">
-                <p className="text-sm text-muted">ブログに貼る文をコピーする{aioDone ? "（AIOのチェック済み）" : "（AIOのチェックがまだです。上の「AIOのチェックを実施」がおすすめです）"}</p>
-                <div className="grid grid-cols-3 gap-2">
+              {!aioDone && <p className="text-sm text-muted">AIOのチェックがまだです。先にチェックしておくのがおすすめです。</p>}
+              <button type="button" className="btn-primary w-full" disabled={!canPublish || busy !== null} onClick={() => setPublishOpen(true)}>
+                ブログに載せる（1つずつ案内します）
+              </button>
+              {dirty && <p className="text-xs text-muted">先に下書きを保存してください。</p>}
+              <details className="space-y-2">
+                <summary className="cursor-pointer text-sm text-brand-dark">コピーだけしたいとき</summary>
+                <div className="mt-2 grid grid-cols-3 gap-2">
                   <button type="button" className="btn-secondary px-2 text-sm" disabled={dirty} onClick={() => copy("title")}>
                     タイトル
                   </button>
@@ -259,11 +266,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
                     HTML
                   </button>
                 </div>
-                <p className="text-xs text-muted">ブログに載せたら、下のボタンを押してください。</p>
-              </div>
-              <button type="button" className="btn-secondary w-full" disabled={!canPublish || busy !== null} onClick={() => setPublishOpen(true)}>
-                ブログに載せた
-              </button>
+              </details>
             </div>
           )}
 
@@ -320,7 +323,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           </div>
         </Dialog>
       )}
-      {publishOpen && <PublishDialog article={article} onClose={() => setPublishOpen(false)} onError={handleError} />}
+      {publishOpen && <PublishDialog article={article} onCopy={copy} onClose={() => setPublishOpen(false)} onError={handleError} />}
       {historyOpen && <HistoryDialog article={article} isCoach={isCoach} dirty={dirty} onClose={() => setHistoryOpen(false)} onError={handleError} />}
     </main>
   );
@@ -807,43 +810,108 @@ function CoachComment({ article, onError }: { article: Article; onError: (e: unk
   );
 }
 
-function PublishDialog({ article, onClose, onError }: { article: Article; onClose: () => void; onError: (e: unknown, f: string) => void }) {
+type CopyKind = "title" | "body" | "html";
+
+/** ブログに載せる案内。ブログを開く → タイトル → 本文 → 画像 → 公開 → URL を、1つずつ進める（2026-11-02 田村さん） */
+function PublishDialog({ article, onCopy, onClose, onError }: { article: Article; onCopy: (k: CopyKind) => Promise<boolean>; onClose: () => void; onError: (e: unknown, f: string) => void }) {
   const { api } = useStore();
   const [url, setUrl] = useState("");
   const [busy, setBusy] = useState(false);
-  return (
-    <Dialog title="ブログに載せた記事を登録する" onClose={onClose}>
-      <form
-        className="space-y-3"
-        onSubmit={async (e) => {
-          e.preventDefault();
-          setBusy(true);
-          try {
-            await api.markPublished(article.id, url.trim());
-            onClose();
-          } catch (err) {
-            onError(err, "登録できませんでした");
-            setBusy(false);
-            onClose();
-          }
-        }}
-      >
-        <p>ブログに載せたページのURL（アドレス）を貼りつけてください。</p>
-        <div>
-          <label htmlFor="published-url" className="field-label">
-            載せたページのURL
-          </label>
-          <input id="published-url" type="url" required className="field" placeholder="https://" value={url} onChange={(e) => setUrl(e.target.value)} />
+  const [step, setStep] = useState(0);
+  const [copied, setCopied] = useState<Partial<Record<CopyKind, boolean>>>({});
+  const copy = async (k: CopyKind) => {
+    if (await onCopy(k)) setCopied((c) => ({ ...c, [k]: true }));
+  };
+  const copyButton = (k: CopyKind, label: string, primary = true) => (
+    <button type="button" className={copied[k] ? "btn-secondary" : primary ? "btn-primary" : "btn-secondary"} onClick={() => copy(k)}>
+      {copied[k] ? `${label}をコピーしました ✓` : `${label}をコピー`}
+    </button>
+  );
+  const valid = /^https?:\/\/\S+\.\S+/.test(url.trim());
+
+  async function register() {
+    setBusy(true);
+    try {
+      await api.markPublished(article.id, url.trim());
+      setStep(6);
+    } catch (err) {
+      onError(err, "登録できませんでした");
+      onClose();
+    }
+    setBusy(false);
+  }
+
+  const steps: GuideStep[] = [
+    {
+      title: "ブログを開く",
+      mood: "point",
+      say: ["いつも記事を書いているブログの管理画面を、新しい画面で開いてください。", "「新しく書く」を押します。WordPress なら「投稿」→「新規投稿を追加」です。"],
+      next: "開けた！",
+    },
+    {
+      title: "タイトル",
+      mood: "right",
+      say: ["まずタイトルです。下のボタンでコピーして、ブログの「タイトル」の欄に貼ってください。", "貼るときは、欄を押してから Ctrl と V を同時に押します。"],
+      body: copyButton("title", "タイトル"),
+      next: copied.title ? "貼れた！" : null,
+    },
+    {
+      title: "本文",
+      mood: "right",
+      say: ["次は本文です。コピーして、ブログの本文の欄に貼ってください。", "見出しの太さがくずれたら、「HTMLでコピー」を使ってみてくださいね。"],
+      body: (
+        <div className="flex flex-wrap gap-2">
+          {copyButton("body", "本文")}
+          {copyButton("html", "HTMLで", false)}
         </div>
-        <div className="flex justify-end gap-2">
-          <button type="button" className="btn-secondary" onClick={onClose}>
-            やめる
-          </button>
-          <button type="submit" className="btn-primary" disabled={busy}>
+      ),
+      next: copied.body || copied.html ? "貼れた！" : null,
+    },
+    {
+      title: "画像",
+      mood: "idea",
+      say: ["画像を作ってあれば、記事のいちばん上の画像（アイキャッチ）に入れましょう。", "この画面の「画像」から保存できます。画像がなくても大丈夫ですよ。"],
+      next: "できた！（なしでもOK）",
+    },
+    {
+      title: "公開",
+      mood: "jersey-cheer",
+      say: ["いよいよです！ブログの「公開」ボタンを押してください。"],
+      next: "公開した！",
+    },
+    {
+      title: "URL",
+      mood: "ask",
+      say: ["最後に、公開したページのアドレス（URL）を教えてください。", "ブログで公開したページを開いて、画面のいちばん上のアドレスをコピーして貼ります。"],
+      body: (
+        <div className="space-y-2">
+          <label htmlFor="published-url" className="field-label">
+            公開したページのURL
+          </label>
+          <input id="published-url" type="url" className="field" placeholder="例：https://www.sakura-reform.jp/blog/winter-bath/" value={url} onChange={(e) => setUrl(e.target.value)} />
+          <button type="button" className="btn-primary" disabled={busy || !valid} onClick={register}>
             登録する
           </button>
+          {url.trim() && !valid && <p className="text-xs text-warn">https:// から始まるアドレスを貼ってください</p>}
         </div>
-      </form>
+      ),
+      next: null,
+    },
+  ];
+
+  return (
+    <Dialog title="ブログに載せる" wide onClose={onClose}>
+      <StepGuide
+        steps={steps}
+        step={step}
+        onStep={setStep}
+        doneSay={["公開おめでとうございます！", "しおりも記事のことを覚えました。検索やAIにどう見られるか、これから一緒に見ていきましょう。"].join("")}
+        doneBody={
+          <button type="button" className="btn-primary" onClick={onClose}>
+            記事の画面に戻る
+          </button>
+        }
+      />
     </Dialog>
   );
 }

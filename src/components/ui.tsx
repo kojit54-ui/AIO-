@@ -112,16 +112,16 @@ export function GeneratingOverlay({ label }: { label: string }) {
   return <WaitingScreen label={label} />;
 }
 
-export function Dialog({ title, children, onClose }: { title: string; children: React.ReactNode; onClose: () => void }) {
+export function Dialog({ title, children, onClose, wide = false }: { title: string; children: React.ReactNode; onClose: () => void; wide?: boolean }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-ink/40 p-4 sm:items-center"
       role="dialog"
       aria-modal="true"
       aria-labelledby="dialog-title"
       onKeyDown={(e) => e.key === "Escape" && onClose()}
     >
-      <div className="card w-full max-w-md animate-pop">
+      <div className={`card my-auto w-full animate-pop ${wide ? "max-w-2xl" : "max-w-md"}`}>
         <h2 id="dialog-title" className="mb-3 text-lg font-bold">
           {title}
         </h2>
