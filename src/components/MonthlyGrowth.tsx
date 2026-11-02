@@ -4,7 +4,7 @@
 // どれも実際の記事・チェック・取り込みの記録から出す。
 
 import { useState } from "react";
-import { Shiori } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice } from "@/components/ui";
 import { MONTHLY_MENTION_CHECKS } from "@/lib/growth/mentionQuestions";
@@ -90,16 +90,16 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
       </ul>
 
       <div className="space-y-2 rounded-2xl border-2 border-brand-soft p-3">
-        <div className="flex flex-wrap items-end gap-3">
-          <Shiori mood={ever ? "jersey-done" : "think"} className="h-20 w-auto shrink-0 animate-float" />
-          <div className="min-w-0 flex-1 basis-56">
-            <p className="font-black">AIに紹介されているか、しおりが調べます</p>
-            <p className="text-sm text-muted">お客様がAIに聞きそうな質問を、検索できるAI（ChatGPT）に聞いて、答えや出典にあなたの会社が出てくるかを確かめます。月{MONTHLY_MENTION_CHECKS}回まで。</p>
-          </div>
+        <p className="font-black">AIに紹介されているか、しおりが調べます</p>
+        <ShioriTalk
+          mood={ever ? "jersey-done" : "think"}
+          size="sm"
+          lines={[ever ? "AIに紹介されたことがありますよ！" : "お客様がAIに聞きそうな質問を、しおりが代わりに聞いてみます。", `答えや出典に、あなたの会社が出てくるか確かめますね。月${MONTHLY_MENTION_CHECKS}回まで調べられます。`]}
+        >
           <button type="button" className="btn-primary" disabled={busy || runsThisMonth >= MONTHLY_MENTION_CHECKS} onClick={check}>
             {runsThisMonth >= MONTHLY_MENTION_CHECKS ? "今月は調べ終わりました" : `今月のチェックをする（残り${MONTHLY_MENTION_CHECKS - runsThisMonth}回）`}
           </button>
-        </div>
+        </ShioriTalk>
         {error && <Notice tone="warn" title={error} />}
         {latest.length > 0 && (
           <ul className="space-y-2">

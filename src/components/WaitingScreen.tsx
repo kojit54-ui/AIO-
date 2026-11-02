@@ -44,11 +44,8 @@ export function WaitingScreen({ label, note = "この画面を閉じても続き
           {/* しおりのうしろで回る輪 */}
           <span className="absolute inset-0 animate-spin-slow rounded-full border-4 border-dashed border-sun" aria-hidden />
           <span className="absolute inset-3 rounded-full bg-sun-soft" aria-hidden />
-          <div key={mood} className="relative animate-pop">
-            <div className="animate-float">
-              <Shiori mood={mood} className="h-32 w-auto" />
-            </div>
-          </div>
+          {/* しおりは動かさず、表情だけ変える */}
+          <Shiori mood={mood} className="relative h-32 w-auto" />
         </div>
         <div>
           <p className="text-lg font-black">{label}</p>

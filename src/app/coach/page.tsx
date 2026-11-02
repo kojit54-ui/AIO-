@@ -39,7 +39,7 @@ export default function CoachHome() {
               : "まだAIOのチェックをした記事はありません。担当企業の様子を見ておきましょう。"}
           </p>
         </div>
-        <Shiori mood={latestChecks.length > 0 ? "point" : "coffee"} className="hidden h-36 w-auto shrink-0 animate-float sm:block" />
+        <Shiori mood={latestChecks.length > 0 ? "point" : "coffee"} className="hidden h-36 w-auto shrink-0 sm:block" />
       </div>
 
       <section aria-labelledby="checks-heading">

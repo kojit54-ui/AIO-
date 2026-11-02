@@ -7,6 +7,7 @@
 import { useState } from "react";
 import { AioIcon } from "@/components/aio";
 import { Confetti, Shiori, Toast } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { GeneratingOverlay, formatDate } from "@/components/ui";
 import { AIO_CHECK_LIST, aioCheckLabel } from "@/lib/aioCheck";
 import { useStore } from "@/mock/store";
@@ -259,7 +260,7 @@ export function AioCheckBanner({ ctl, dirty }: { ctl: AioCheckControl; dirty: bo
   const open = asking ? forCurrent.questions.filter((q) => !forCurrent.answers.some((a) => a.questionId === q.id)).length : 0;
   return (
     <div className={`mb-4 flex animate-rise flex-wrap items-end gap-3 rounded-3xl border-2 px-4 pt-2 ${asking ? "border-sun bg-sun-soft" : "border-brand bg-brand-soft"}`}>
-      <Shiori mood={asking ? "ask" : "point"} className="h-24 w-auto shrink-0 animate-float" />
+      <Shiori mood={asking ? "ask" : "point"} className="h-24 w-auto shrink-0" />
       <div className="mb-3 min-w-0 flex-1 basis-56">
         <p className="text-lg font-black">{asking ? `AIから質問が${forCurrent.questions.length}つ届いています` : "ブログに載せる前に、AIOのチェックをしましょう"}</p>
         <p className="text-sm">
@@ -298,7 +299,7 @@ function AskDialog({ ctl, check }: { ctl: AioCheckControl; check: AioCheck }) {
       <div className="card my-4 w-full max-w-2xl animate-pop space-y-4 p-5 sm:p-6">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-end gap-3">
-            <Shiori mood="surprise" className="h-20 w-auto shrink-0 animate-float sm:h-24" />
+            <Shiori mood="surprise" className="h-20 w-auto shrink-0 sm:h-24" />
             <div>
               <h2 id="aio-ask-title" className="text-xl font-black sm:text-2xl">
                 チェックが終わりました！
@@ -364,14 +365,10 @@ export function AioCheckPanel({ ctl, isCoach, dirty }: { ctl: AioCheckControl; i
 
       {!forCurrent && (
         <>
-          <div className="flex items-end gap-3">
-            <Shiori mood="point" className="h-24 w-auto shrink-0 animate-float" />
-            <p className="text-sm">
-              {isCoach
-                ? "この内容は、まだAIOのチェックをしていません。"
-                : "ブログに載せる前に、AIが記事をチェックします。AIの検索に紹介されやすいか、足りない所はないかを見て、必要なら質問します。"}
-            </p>
-          </div>
+          <ShioriTalk
+            mood="point"
+            lines={isCoach ? "この内容は、まだAIOのチェックをしていません。" : ["ブログに載せる前に、AIが記事をチェックします。", "AIの検索に紹介されやすいか、足りない所はないかを見て、必要なら質問しますね。"]}
+          />
           <AioCheckList />
           {latest && <p className="text-xs text-muted">前回のチェック：{formatDate(latest.createdAt)}（そのあと記事が直されています）</p>}
           {!isCoach && (

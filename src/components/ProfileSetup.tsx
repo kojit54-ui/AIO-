@@ -6,7 +6,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Shiori } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { GeneratingOverlay, Notice } from "@/components/ui";
 import { ApiError, useStore } from "@/mock/store";
 
@@ -37,15 +37,12 @@ export function ProfileSetup({ orgId }: { orgId: string }) {
   return (
     <section className="card animate-rise space-y-4">
       {busy && <GeneratingOverlay label="会社の情報をまとめています" />}
-      <div className="flex flex-wrap items-end gap-4">
-        <Shiori mood="bow" className="h-32 w-auto shrink-0 animate-float" />
-        <div className="min-w-0 flex-1 basis-60">
-          <h1 className="text-2xl font-black">まず、会社のことを教えてください</h1>
-          <p className="text-muted">
-            AIに「どこの、どんな会社か」が伝わると、AIの検索に紹介されやすい記事になります。答えた内容から会社の情報をまとめるので、そのあとすぐに記事を書き始められます。
-          </p>
-        </div>
-      </div>
+      <h1 className="text-2xl font-black">まず、会社のことを教えてください</h1>
+      <ShioriTalk
+        mood="bow"
+        size="lg"
+        lines={["はじめまして、しおりです！", "AIに「どこの、どんな会社か」が伝わると、AIの検索に紹介されやすい記事になります。", "答えてもらった内容から、会社の情報をまとめますね。そのあとすぐに記事を書き始められますよ。"]}
+      />
       <ol className="grid gap-3 sm:grid-cols-3">
         {steps.map((s, i) => (
           <li key={s.title} className="flex animate-rise gap-2 rounded-2xl bg-canvas p-3" style={{ animationDelay: `${i * 0.08}s` }}>

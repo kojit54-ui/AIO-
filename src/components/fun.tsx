@@ -174,18 +174,16 @@ export function ShioriFace({ className = "h-10 w-10" }: { className?: string }) 
 }
 
 /** 絵の中のしおり。x は左端、高さ130に収める */
-function Secretary({ x, mood, delay = 0 }: { x: number; mood: ShioriMood; delay?: number }) {
+function Secretary({ x, mood }: { x: number; mood: ShioriMood; delay?: number }) {
   const w = Math.round((SHIORI_WIDTH[mood] / 400) * 130);
-  return (
-    <g className="animate-float" style={{ animationDelay: `${delay}s`, transformBox: "fill-box" }}>
-      <image href={`/guide/shiori-${mood}.webp`} x={x} y={0} width={w} height={130} />
-    </g>
-  );
+  // しおりは動かさない（2026-11-02 田村さん）。動くのは周りの小物と吹き出しだけ
+  return <image href={`/guide/shiori-${mood}.webp`} x={x} y={0} width={w} height={130} />;
 }
 
+/** しおりのひとこと。口もとから、ぽんと出る */
 function Bubble({ x, y, text }: { x: number; y: number; text: string }) {
   return (
-    <g className="animate-float" style={{ animationDelay: ".6s", transformBox: "fill-box" }}>
+    <g className="animate-bubble" style={{ animationDelay: ".4s", transformBox: "fill-box", transformOrigin: "right bottom" }}>
       <rect x={x} y={y} width={62} height={32} rx={14} fill="#fff" stroke="var(--color-line)" strokeWidth={2} />
       <text x={x + 31} y={y + 22} fontSize={15} textAnchor="middle" fill="var(--color-ink)">
         {text}
