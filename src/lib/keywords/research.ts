@@ -60,12 +60,15 @@ export function pickSeeds(candidates: string[]): string[] {
  * 言葉ごとにサジェストとよくある質問を取る。1語が失敗しても残りは続ける。
  * ただしクレジット切れとキーの誤りは、続けても同じなのでそこで止める。
  */
-export async function collectResearch(client: RakkoClient, candidates: string[], signal?: AbortSignal): Promise<ResearchResult> {
+export async function collectResearch(client: RakkoClient, candidates: string[], signal?: AbortSignal, deadline?: AbortSignal): Promise<ResearchResult> {
   const result: ResearchResult = { research: [], consumedCredit: 0, problems: [] };
+  // deadline（下調べの持ち時間）が来たら、そこまでに取れた分とクレジットを返す。signal は全体の打ち切りで、そのときは例外にする
+  const callSignal = signal && deadline ? AbortSignal.any([signal, deadline]) : (deadline ?? signal);
   for (const seed of pickSeeds(candidates)) {
+    if (deadline?.aborted) break;
     const [suggest, questions] = await Promise.allSettled([
-      client.suggestKeywords(seed, { limit: KEYWORDS_PER_SEED, signal }),
-      client.questionSearch(seed, { limit: QUESTIONS_PER_SEED, signal }),
+      client.suggestKeywords(seed, { limit: KEYWORDS_PER_SEED, signal: callSignal }),
+      client.questionSearch(seed, { limit: QUESTIONS_PER_SEED, signal: callSignal }),
     ]);
     const searched = suggest.status === "fulfilled" ? suggest.value.items.map((k) => ({ keyword: k.keyword, demand: demandOf(k.monthlySearches) })) : [];
     const qs = questions.status === "fulfilled" ? questions.value.items.map((q) => q.question) : [];
@@ -75,6 +78,7 @@ export async function collectResearch(client: RakkoClient, candidates: string[],
     const errors = [suggest, questions].flatMap((r) => (r.status === "rejected" ? [r.reason as unknown] : []));
     if (!errors.length) continue;
     if (signal?.aborted) throw signal.reason;
+    if (deadline?.aborted) break;
     const other = errors.find((e) => !(e instanceof RakkoError));
     if (other) throw other;
     const codes = [...new Set(errors.map((e) => (e as RakkoError).code))];

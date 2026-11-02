@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { PillarDiagram, PillarExplainer } from "@/prototype/components";
 import {
@@ -11,11 +12,19 @@ import {
   planFromProposal,
   sampleProposals,
 } from "@/prototype/growth";
-import { growActions, useGrow } from "@/prototype/store";
+import { growActions, useGrow, useGrowSync } from "@/prototype/store";
 
 export default function PlanPage() {
   const g = useGrow();
+  const sync = useGrowSync();
+  const remote = sync.mode === "remote";
+  const ready = g.ready && canPropose(g.answers);
+  // 本物のデータでは、答えがそろって提案がまだ無ければ、開いただけでコタムからの提案を作ってもらう（人の手を介さない）
+  useEffect(() => {
+    if (remote && ready && !g.plan && !g.proposals) growActions.requestProposals({ auto: true });
+  }, [remote, ready, g.plan, g.proposals]);
   if (!g.ready) return <PageSkeleton />;
+  const propose = () => (remote ? growActions.requestProposals() : growActions.setProposals(sampleProposals(g.answers)));
 
   if (!canPropose(g.answers)) {
     return (
@@ -39,13 +48,27 @@ export default function PlanPage() {
           <p className="text-muted">教えてもらった内容から、記事のセットを3つおすすめします。いちばん「書けそう」「売りたい」に近いものを選んでください。</p>
         </div>
         <PillarExplainer />
-        {!g.proposals ? (
-          <button type="button" className="btn-primary" onClick={() => growActions.setProposals(sampleProposals(g.answers))}>
+        {sync.proposing ? (
+          <div className="card flex items-center gap-3" role="status" aria-live="polite">
+            <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-brand border-t-transparent motion-reduce:animate-none" aria-hidden="true" />
+            <p>しおりが、教えてもらった内容と、実際に検索されている言葉からおすすめを考えています。1分ほどお待ちください。</p>
+          </div>
+        ) : !g.proposals ? (
+          <button type="button" className="btn-primary" onClick={propose}>
             しおりにおすすめを出してもらう
           </button>
         ) : (
           <>
-            <p className="text-sm text-warn">おすすめは{SAMPLE_LABEL}。本番では、AIが教えてもらった内容を全部読んで作り、実際に Google で探されている言葉も使います。</p>
+            {remote && g.proposalInfo && !g.proposalInfo.isSample ? (
+              <div>
+                <h2 className="text-lg font-bold">コタムからの提案</h2>
+                <p className="text-sm text-muted">
+                  教えてもらった内容{g.proposalInfo.usedResearch ? "と、実際に検索されている言葉" : ""}をもとに、AIが作りました。
+                </p>
+              </div>
+            ) : (
+              <p className="text-sm text-warn">おすすめは{SAMPLE_LABEL}。本番では、AIが教えてもらった内容を全部読んで作り、実際に Google で探されている言葉も使います。</p>
+            )}
             <ul className="grid gap-3 lg:grid-cols-3">
               {g.proposals.map((p) => (
                 <li key={p.id} className="card flex flex-col gap-3">
@@ -75,7 +98,7 @@ export default function PlanPage() {
                 </li>
               ))}
             </ul>
-            <button type="button" className="btn-secondary" onClick={() => growActions.setProposals(sampleProposals(g.answers))}>
+            <button type="button" className="btn-secondary" onClick={propose}>
               おすすめを出し直す
             </button>
           </>

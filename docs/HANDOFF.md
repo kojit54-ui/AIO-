@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-02 CC（Claude、プロジェクトのスレッド）その29
+- ブランチ / コミット：claude/project-thread-n66pdb（PR #27 のマージ後の main から）
+- 変更点：T5-4 の提案の入口（田村さんの判断で CC が作り、Codex が点検）。supabase/migrations/20261102000000_keyword_proposals.sql（generation_runs に記事を指さない種類 keyword_proposal、受付 start_keyword_proposal、できた提案を残す keyword_proposals、1社の月の回数 app_settings.keyword_proposal_limit＝10、start_generation が提案の受付のキーを返さないよう修正）。src/lib/growth/proposals.ts（ヒアリングと今売りたいもの → ラッコの下調べ → AI → 保存 → 記録。返事の形が違えば1回だけ聞き直す。キーが無ければサンプルを保存し、下調べもしない）。POST /api/organizations/:id/keyword-proposals。画面は「書く記事を決める」を開くと、答えがそろっていて提案が無ければ自動で作り、「コタムからの提案」として出す。提案はDBから読み、同じ会社の人（顧客・コタム）に同じものが出る
+- 確認結果：DBのテスト（受付・回数・予算・他社・キーの使い回し・書き込み不可）、提案の作り方のテスト（下調べの渡し方、検索数の数字を渡さない、聞き直し、サンプル、失敗の記録）、画面の状態のテストを含む単体テスト、型検査、lint、build が通過。試作のままの画面を 375px・1280px で確認。本物のAI・ラッコ・ステージングでの確認はまだ（ステージングに SQL の適用が要る）
+- 未完了：ステージングへの SQL 適用と通し確認、コタムの画面からの作り直し、深掘りの質問をAIで作る（hearing_followup）
+- 次の作業と担当：Codex が点検 → マージ後にステージングへ SQL を適用 → ログインして「書く記事を決める」を開いて確かめる
+
 ### 2026-11-02 CC（Claude、プロジェクトのスレッド）その20
 - ブランチ / コミット：claude/coach-friendly（PR #30）
 - 変更点：

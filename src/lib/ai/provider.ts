@@ -29,7 +29,8 @@ export interface AiUsage {
 export type AiQuality = "draft" | "finish";
 
 export interface AiCompletionRequest {
-  kind: GenerationKind;
+  /** keyword_proposal は書く記事の提案（src/lib/growth/proposals.ts） */
+  kind: GenerationKind | "keyword_proposal";
   system: string;
   user: string;
   maxOutputTokens: number;

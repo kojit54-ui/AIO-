@@ -100,10 +100,59 @@ export function sellItemsForRpc(items: SellItem[]) {
   return items.map((x) => (isUuid(x.id) ? { id: x.id, name: fitText(x.name, MAX_SELL_NAME) } : { name: fitText(x.name, MAX_SELL_NAME) }));
 }
 
+/** コタムからの提案（keyword_proposals の1行）について、画面に出す情報 */
+export interface ProposalInfo {
+  /** AIのキーが無いときのサンプル。「サンプル（AIは未接続）」と出す */
+  isSample: boolean;
+  /** 実際に検索されている言葉を参考にしたか */
+  usedResearch: boolean;
+  createdAt: string;
+}
+
+export interface ProposalSet {
+  list: PillarProposal[];
+  info: ProposalInfo;
+}
+
+interface ProposalRecord {
+  id: string;
+  proposals: unknown;
+  is_sample?: boolean;
+  isSample?: boolean;
+  used_research?: boolean;
+  usedResearch?: boolean;
+  created_at?: string;
+  createdAt?: string;
+}
+
+const idea = (v: unknown, id: string) => {
+  const o = v as Record<string, unknown>;
+  return { id, keyword: typeof o?.keyword === "string" ? o.keyword : "", question: typeof o?.question === "string" ? o.question : "" };
+};
+
+/** DBの行（またはサーバーの返事）を画面の提案にする。行の id は提案ごと・言葉ごとに別にする（選んだあとの行の仮の id になる） */
+export function proposalSetFromDb(r: ProposalRecord): ProposalSet {
+  const list = (Array.isArray(r.proposals) ? r.proposals : []).flatMap((p, i): PillarProposal[] => {
+    const o = p as Record<string, unknown>;
+    const pid = `${r.id}-${i}`;
+    const pillar = idea(o?.pillar, `${pid}-p`);
+    if (!pillar.keyword) return [];
+    const clusters = (Array.isArray(o?.clusters) ? o.clusters : []).map((c, j) => idea(c, `${pid}-c${j}`)).filter((c) => c.keyword);
+    const reasons = (Array.isArray(o?.reasons) ? o.reasons : []).filter((x): x is ProposalReason => REASONS.includes(x as ProposalReason));
+    return [{ id: pid, pillar, clusters, reasons, why: typeof o?.why === "string" ? o.why : "" }];
+  });
+  return {
+    list,
+    info: { isSample: (r.is_sample ?? r.isSample) === true, usedResearch: (r.used_research ?? r.usedResearch) === true, createdAt: r.created_at ?? r.createdAt ?? "" },
+  };
+}
+
 export interface GrowSnapshot {
   answers: Record<string, HearingAnswer>;
   plan: KeywordPlan | null;
   sellItems: SellItem[] | null;
+  /** いちばん新しいコタムからの提案。まだ無ければ null */
+  proposals?: ProposalSet | null;
 }
 
 export interface GrowRemote {
@@ -117,6 +166,8 @@ export interface GrowRemote {
   addRow(row: KeywordRow): Promise<KeywordPlan | null>;
   /** 売りたいものを置きかえる。DBの id つきで返す */
   saveSellItems(items: SellItem[]): Promise<SellItem[]>;
+  /** コタムからの提案を新しく作ってもらう（サーバーで下調べとAI。1分ほどかかる） */
+  requestProposals(): Promise<ProposalSet>;
 }
 
 /** 失敗は画面にそのまま出せる日本語にする。DBのエラー文や本文はログにも画面にも出さない */
@@ -135,7 +186,9 @@ function fail(error: { code?: string; message?: string } | null): never {
 
 const ROW_COLUMNS = "id, kind, pillar_row_id, keyword, reader_question, status, priority, reasons, source, monthly_searches, parked, sell_item_id, sort_order";
 
-export function createGrowRemote(client: SupabaseClient, organizationId: string): GrowRemote {
+const PROPOSAL_ERROR = "おすすめを作れませんでした。少し待ってから、もう一度お試しください";
+
+export function createGrowRemote(client: SupabaseClient, organizationId: string, fetchImpl: typeof fetch = (...a) => fetch(...a)): GrowRemote {
   async function loadPlan(): Promise<KeywordPlan | null> {
     const { data: plan, error } = await client.from("keyword_plans").select("id").eq("organization_id", organizationId).is("archived_at", null).maybeSingle();
     if (error) fail(error);
@@ -151,19 +204,53 @@ export function createGrowRemote(client: SupabaseClient, organizationId: string)
     return data && data.length ? data.map((x) => ({ id: x.id as string, name: x.name as string })) : null;
   }
 
+  async function loadProposals(): Promise<ProposalSet | null> {
+    const { data, error } = await client
+      .from("keyword_proposals")
+      .select("id, proposals, is_sample, used_research, created_at")
+      .eq("organization_id", organizationId)
+      .order("created_at", { ascending: false })
+      .limit(1);
+    if (error) fail(error);
+    const row = (data ?? [])[0] as ProposalRecord | undefined;
+    if (!row) return null;
+    const set = proposalSetFromDb(row);
+    return set.list.length ? set : null;
+  }
+
   return {
     organizationId,
 
     async load() {
-      const [{ data: answers, error }, plan, sellItems] = await Promise.all([
+      const [{ data: answers, error }, plan, sellItems, proposals] = await Promise.all([
         client.from("hearing_answers").select("question_id, text, follow_ups, is_draft").eq("organization_id", organizationId),
         loadPlan(),
         loadSellItems(),
+        loadProposals(),
       ]);
       if (error) fail(error);
       const map: Record<string, HearingAnswer> = {};
       for (const r of (answers ?? []) as HearingAnswerRow[]) map[r.question_id] = answerFromDb(r);
-      return { answers: map, plan, sellItems };
+      return { answers: map, plan, sellItems, proposals };
+    },
+
+    async requestProposals() {
+      let res: Response;
+      try {
+        res = await fetchImpl(`/api/organizations/${organizationId}/keyword-proposals`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ idempotencyKey: crypto.randomUUID() }),
+        });
+      } catch {
+        throw new GrowSyncError(PROPOSAL_ERROR);
+      }
+      const body = (await res.json().catch(() => null)) as (ProposalRecord & { message?: unknown }) | null;
+      // サーバーの言葉（回数の上限・AIの失敗の種類）はそのまま出す。キーや本文は入っていない
+      if (!res.ok || !body) throw new GrowSyncError(typeof body?.message === "string" && body.message ? body.message : PROPOSAL_ERROR);
+      const set = proposalSetFromDb(body);
+      if (!set.list.length) throw new GrowSyncError(PROPOSAL_ERROR);
+      return set;
     },
 
     async saveAnswer(a) {

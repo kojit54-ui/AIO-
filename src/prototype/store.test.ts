@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { HEARING_QUESTIONS, planFromProposal, sampleProposals, type HearingAnswer, type KeywordPlan, type KeywordRow } from "./growth";
-import { GrowSyncError, type GrowRemote, type GrowSnapshot } from "./remote";
+import { GrowSyncError, type GrowRemote, type GrowSnapshot, type ProposalSet } from "./remote";
 import { connectGrow, growActions, readGrowState, readGrowSync, reloadGrow, resolveRowId, SAVE_DELAY_MS } from "./store";
 
 describe("試作の状態", () => {
@@ -24,7 +24,8 @@ function fakeRemote(snap: GrowSnapshot = { answers: {}, plan: null, sellItems: n
   const calls: string[] = [];
   let n = 0;
   const uuid = () => `00000000-0000-4000-8000-${String(++n).padStart(12, "0")}`;
-  const r: GrowRemote & { calls: string[]; failNext: boolean } = {
+  const r: GrowRemote & { calls: string[]; failNext: boolean; nextProposals: ProposalSet | Error } = {
+    nextProposals: { list: [], info: { isSample: false, usedResearch: true, createdAt: "2026-11-02T00:00:00Z" } },
     organizationId: ORG,
     calls,
     failNext: false,
@@ -53,6 +54,11 @@ function fakeRemote(snap: GrowSnapshot = { answers: {}, plan: null, sellItems: n
     async saveSellItems(items) {
       calls.push(`sell:${items.map((x) => x.name).join(",")}`);
       return items.map((x) => ({ id: uuid(), name: x.name }));
+    },
+    async requestProposals() {
+      calls.push("propose");
+      if (r.nextProposals instanceof Error) throw r.nextProposals;
+      return r.nextProposals;
     },
   };
   return r;
@@ -463,6 +469,51 @@ describe("本物のデータにつないだとき", () => {
     } finally {
       vi.unstubAllGlobals();
     }
+  });
+
+  it("コタムからの提案：DBの提案を読み、新しく頼むと先に並んだ答えの保存が終わってから頼む", async () => {
+    vi.useFakeTimers();
+    const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
+    const [a, b] = sampleProposals(answers);
+    const old: ProposalSet = { list: [a], info: { isSample: false, usedResearch: false, createdAt: "2026-11-01T00:00:00Z" } };
+    const r = fakeRemote({ answers: {}, plan: null, sellItems: null, proposals: old });
+    connectGrow(r);
+    await flush();
+    expect(readGrowState().proposals).toEqual([a]);
+    // ほかのブラウザで作ったおすすめは、読み込みで消さずに出す。試作用の setProposals は使わない
+    growActions.setProposals([b]);
+    expect(readGrowState().proposals).toEqual([a]);
+
+    r.nextProposals = { list: [b], info: { isSample: true, usedResearch: false, createdAt: "2026-11-02T00:00:00Z" } };
+    growActions.saveAnswer({ questionId: "business", text: "工務店", followUps: [] });
+    growActions.requestProposals();
+    expect(readGrowSync().proposing).toBe(true);
+    // 2回押しても1回だけ頼む
+    growActions.requestProposals();
+    await flush();
+    expect(r.calls.filter((c) => c.startsWith("answer:") || c === "propose")).toEqual(["answer:business:工務店", "propose"]);
+    expect(readGrowState().proposals).toEqual([b]);
+    expect(readGrowState().proposalInfo?.isSample).toBe(true);
+    expect(readGrowSync().proposing).toBe(false);
+    // 古い読み込みが届いても、新しい提案を消さない
+    reloadGrow();
+    await flush();
+    expect(readGrowState().proposals).toEqual([b]);
+  });
+
+  it("コタムからの提案：開いただけで頼むのは会社ごとに1回。失敗は知らせる", async () => {
+    vi.useFakeTimers();
+    const r = fakeRemote();
+    Object.assign(r, { organizationId: "77777777-7777-4777-8777-777777777777" });
+    r.nextProposals = new GrowSyncError("今月のおすすめを作れる回数に達しました。来月またお試しください");
+    connectGrow(r);
+    await flush();
+    growActions.requestProposals({ auto: true });
+    await flush();
+    growActions.requestProposals({ auto: true });
+    await flush();
+    expect(r.calls.filter((c) => c === "propose")).toHaveLength(1);
+    expect(readGrowSync().error).toContain("回数に達しました");
   });
 
   it("ほかの保存が失敗して読み直しても、保存待ちの売りたいものの変更は残す", async () => {
