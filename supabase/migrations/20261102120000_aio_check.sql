@@ -1,6 +1,7 @@
 -- AIOのチェック（docs/DECISIONS.md 2026-11-02、田村さん「コタムの人の確認は完全になくす」）。
 -- 公開前のコタムの確認をやめ、AIが記事を点検して足りない所をお客様に一問一答で聞き返す。
 -- コタムはチェックの結果とやり取りを読み、コメント（reviews の comment）を残せる。
+-- 書く記事の提案（20261102000000_keyword_proposals.sql）の後に流す。生成の種類と start_generation は、提案の変更を含めて定義し直す。
 
 -- 1. チェックの記録。作るのと結果を書くのはサーバー（service role）。お客様は答え（answers）だけを書ける
 create table public.aio_checks (
@@ -66,7 +67,7 @@ alter table public.organizations alter column review_policy set default 'optiona
 -- 3. 生成の受付に「AIOのチェック」（aio_check）を足す。チェックと答えの反映の両方で使う
 alter table public.generation_runs drop constraint generation_runs_kind_check;
 alter table public.generation_runs
-  add constraint generation_runs_kind_check check (kind in ('outline', 'body', 'rewrite', 'followup_questions', 'image', 'aio_check'));
+  add constraint generation_runs_kind_check check (kind in ('outline', 'body', 'rewrite', 'followup_questions', 'image', 'keyword_proposal', 'aio_check'));
 
 alter table public.app_settings
   add column article_aio_check_limit int not null default 20 check (article_aio_check_limit >= 0);
@@ -103,7 +104,8 @@ begin
   -- 同じキーでの再送は、最初の受付をそのまま返す
   select * into run from generation_runs where idempotency_key = p_idempotency_key;
   if found then
-    if run.article_id <> p_article_id then
+    -- 記事を指さない受付（書く記事の提案）と同じキーを渡されても、それを返さない
+    if run.article_id is distinct from p_article_id then
       raise exception 'invalid_input' using errcode = 'P0001';
     end if;
     return run;

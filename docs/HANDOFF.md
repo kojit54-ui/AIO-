@@ -40,10 +40,10 @@
 - ブランチ / コミット：claude/coach-friendly（PR #30）
 - 変更点：
   - コタム側の画面を顧客側と同じ見た目に（管理画面のあいさつとしおり、カード、生成回数の棒）
-  - 公開前のコタムの確認をなくし「AIOのチェック」に置き換え（DECISIONS 2026-11-02、UI.md S4・S5、DATA.md aio_checks）。src/lib/aioCheck.ts（11項目・試作のサンプル）、src/lib/ai/aioCheckPrompt.ts（チェックと反映の指示・返答の検査）、src/lib/generation/aioCheck.ts と /api/articles/[id]/aio-check（実施）・/aio-check/apply（反映）、src/components/AioCheckPanel.tsx、マイグレーション 20261102000000_aio_check.sql（aio_checks、kind aio_check、review_policy をすべて optional）
+  - 公開前のコタムの確認をなくし「AIOのチェック」に置き換え（DECISIONS 2026-11-02、UI.md S4・S5、DATA.md aio_checks）。src/lib/aioCheck.ts（11項目・試作のサンプル）、src/lib/ai/aioCheckPrompt.ts（チェックと反映の指示・返答の検査）、src/lib/generation/aioCheck.ts と /api/articles/[id]/aio-check（実施）・/aio-check/apply（反映）、src/components/AioCheckPanel.tsx、マイグレーション 20261102120000_aio_check.sql（aio_checks、kind aio_check、review_policy をすべて optional）
   - コタム：記事の画面で結果とやり取りを読み、「コメントを残す」。お客様の記事の画面の上にコメントを出す
 - 確認結果：単体テスト241件（aio_checks の権限と受付のテストを追加）、型検査、lint、build が通過。架空データで、チェック→聞き返し→反映→コタムのコメント→お客様の画面に表示、まで確認
-- 未完了：検証環境で 20261102000000_aio_check.sql を SQL Editor で実行（田村さん）。実行前でも画面は動き、チェックだけが失敗する。本物のAIでのチェックの質の確認
+- 未完了：検証環境で 20261102120000_aio_check.sql を SQL Editor で実行（田村さん）。実行前でも画面は動き、チェックだけが失敗する。本物のAIでのチェックの質の確認
 - 次の作業と担当：田村さんが SQL を実行 → 検証環境で1本チェック → CX がレビュー
 
 ### 2026-11-01 CC（Claude、プロジェクトのスレッド）その28

@@ -168,7 +168,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | is_sample | boolean | キーが無いときのサンプル |
 | created_by, created_at | | |
 
-### aio_checks（supabase/migrations/20261102000000_aio_check.sql）
+### aio_checks（supabase/migrations/20261102120000_aio_check.sql）
 
 AIOのチェック（人の確認の代わり。DECISIONS 2026-11-02）。記事の版ごとに、チェックの結果と聞き返しの質問・答えを残す。
 

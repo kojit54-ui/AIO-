@@ -166,7 +166,7 @@ export class RemoteBackend {
         versions: (versions.data ?? []).map(toVersion),
         factChecks: (facts.data ?? []).map(toFactCheck),
         reviews: (reviews.data ?? []).map(toReview),
-        // 表を足す SQL（20261102000000_aio_check.sql）をまだ流していない環境でも、ほかの画面は動かす
+        // 表を足す SQL（20261102120000_aio_check.sql）をまだ流していない環境でも、ほかの画面は動かす
         aioChecks: aioChecks.error ? [] : (aioChecks.data ?? []).map(toAioCheck),
         draftAnswers: Object.fromEntries(
           articleRows.map((a) => [a.id as string, { answers: (a.draft_answers as Answer[]) ?? [], step: (a.draft_step as number) ?? 0 }]),
