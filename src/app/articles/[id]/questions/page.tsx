@@ -188,7 +188,7 @@ export default function QuestionsPage() {
               ref={inputRef}
               aria-describedby={question.tip ? "answer-example answer-tip" : "answer-example"}
               className="field min-h-36"
-              placeholder="思いついたことを、短い言葉や箇条書きで"
+              placeholder={question.example}
               value={current.unknown ? "" : current.text}
               disabled={current.unknown}
               onChange={(e) => setCurrent({ text: e.target.value })}

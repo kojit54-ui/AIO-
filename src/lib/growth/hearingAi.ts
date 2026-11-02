@@ -84,7 +84,7 @@ export interface FollowUpRequest {
 }
 
 /** 深掘りの質問を1つ作る。もう十分なら null */
-export async function runHearingFollowUp(deps: HearingDeps, req: FollowUpRequest): Promise<{ ok: true; followUp: { question: string; why: string } | null } | Fail> {
+export async function runHearingFollowUp(deps: HearingDeps, req: FollowUpRequest): Promise<{ ok: true; followUp: { question: string; why: string; example: string } | null } | Fail> {
   if (!(await requireUser(deps.user))) return fail(401, "session_expired", "ログインの有効期限が切れました");
   const q = HEARING_QUESTIONS.find((x) => x.id === req.questionId);
   const text = typeof req.answer?.text === "string" ? req.answer.text.trim() : "";
@@ -103,11 +103,11 @@ export async function runHearingFollowUp(deps: HearingDeps, req: FollowUpRequest
   const signal = AbortSignal.timeout(FOLLOWUP_TIMEOUT_MS);
   let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
   try {
-    let followUp: { question: string; why: string } | null;
+    let followUp: { question: string; why: string; example: string } | null;
     if (deps.isSample) {
       // キーが無いときは、決まった深掘りを返す
       const question = nextDeepDive(q, { questionId: q.id, text, followUps });
-      followUp = question ? { question, why: "" } : null;
+      followUp = question ? { question, why: "", example: "" } : null;
     } else {
       const res = await deps.provider.complete({ kind: "hearing", system: FOLLOWUP_SYSTEM_PROMPT, user: buildFollowUpPrompt(input), maxOutputTokens: 600, signal });
       usage = res.usage;

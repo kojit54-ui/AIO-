@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Shiori } from "@/components/fun";
+import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
@@ -78,9 +79,9 @@ export default function HearingPage() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ questionId: q.id, answer: { text: next.text, followUps: next.followUps }, idempotencyKey: crypto.randomUUID() }),
       }).catch(() => null);
-      const json = ((await res?.json().catch(() => null)) ?? {}) as { followUp?: { question: string; why: string } | null; message?: string };
+      const json = ((await res?.json().catch(() => null)) ?? {}) as { followUp?: { question: string; why: string; example?: string } | null; message?: string };
       if (res?.ok && json.followUp) {
-        growActions.saveAnswer({ ...next, followUps: [...next.followUps, { question: json.followUp.question, why: json.followUp.why, answer: "", pending: true }] });
+        growActions.saveAnswer({ ...next, followUps: [...next.followUps, { question: json.followUp.question, why: json.followUp.why, example: json.followUp.example || undefined, answer: "", pending: true }] });
         setStep(current);
         setDeep(json.followUp.question);
         setText("");
@@ -102,7 +103,7 @@ export default function HearingPage() {
         // 答え待ちの深掘りに答えを入れる。飛ばしたら（空の答え）、この問いではもう聞かない
         const prev = saved.followUps.slice(0, -1);
         const last = saved.followUps[saved.followUps.length - 1];
-        next = { ...saved, followUps: [...prev, { question: activeDeep, why: last?.why, answer: answer.trim() }] };
+        next = { ...saved, followUps: [...prev, { question: activeDeep, why: last?.why, example: last?.example, answer: answer.trim() }] };
         if (!answer.trim()) {
           growActions.saveAnswer({ ...next, deepDiveDone: true });
           return go(current + 1);
@@ -158,6 +159,7 @@ export default function HearingPage() {
 
       {cheer && <Cheer point={cheer} />}
       {aiError && <Notice tone="warn" title={aiError} />}
+      {thinking && <WaitingScreen label="しおりが答えを読んでいます" note="答えを読んで、もう少し聞きたいことがあるか考えています。" />}
 
       <form
         className="card space-y-4"
@@ -183,7 +185,7 @@ export default function HearingPage() {
               <label htmlFor="answer" className="field-label text-lg">
                 {activeDeep}
               </label>
-              <textarea maxLength={MAX_ANSWER} id="answer" ref={inputRef} className="field min-h-28" value={value} onChange={(e) => setText(e.target.value)} />
+              <textarea maxLength={MAX_ANSWER} id="answer" ref={inputRef} className="field min-h-28" placeholder={pendingDeepDive(saved)?.example || "例：去年の冬に、築30年のお宅で。お客様は「朝の脱衣所がつらい」と話していた"} value={value} onChange={(e) => setText(e.target.value)} />
             </div>
           </>
         ) : (
@@ -205,6 +207,7 @@ export default function HearingPage() {
               ref={inputRef}
               aria-describedby="answer-example answer-tip"
               className="field min-h-36"
+              placeholder={q.example}
               value={value}
               onChange={(e) => {
                 // 書いている途中の答えも保存し、ほかの画面へ移っても消えないようにする

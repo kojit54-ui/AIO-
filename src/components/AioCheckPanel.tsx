@@ -186,7 +186,7 @@ function Questions({ check, onApply, onError }: { check: AioCheck; onApply: () =
       <textarea
         id="aio-answer"
         className="field min-h-28"
-        placeholder="短い言葉や箇条書きで大丈夫です"
+        placeholder={q.example || "短い言葉や箇条書きで大丈夫です"}
         value={current.unknown ? "" : current.text}
         disabled={current.unknown}
         onChange={(e) => set({ text: e.target.value })}

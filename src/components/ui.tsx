@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Shiori, type ShioriMood } from "./fun";
+import { WaitingScreen } from "./WaitingScreen";
 import type { ArticleStatus } from "@/types/domain";
 import { STATUS_LABEL } from "@/lib/workflow";
 
@@ -106,27 +107,9 @@ export function monthLabel(ym: string) {
   return `${y}年${Number(m)}月`;
 }
 
-/** 生成中の表示。画面を閉じても続く前提の文言にする */
+/** 生成中の表示。待ち時間はゲームのような画面とワンポイントコラム（WaitingScreen）。画面を閉じても続く前提の文言にする */
 export function GeneratingOverlay({ label }: { label: string }) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4" role="alertdialog" aria-live="assertive" aria-label={label}>
-      <div className="card w-full max-w-sm animate-pop text-center">
-        <div className="mx-auto mb-2 w-fit animate-float">
-          <Shiori mood="think" className="h-36 w-auto" />
-        </div>
-        <p className="text-lg font-bold">{label}</p>
-        <p className="mt-1 flex items-center justify-center gap-1 text-sm text-muted">
-          AIが考えています
-          <span className="inline-flex gap-0.5" aria-hidden>
-            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand" />
-            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand [animation-delay:.15s]" />
-            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand [animation-delay:.3s]" />
-          </span>
-        </p>
-        <p className="mt-2 text-sm text-muted">この画面を閉じても続きます。</p>
-      </div>
-    </div>
-  );
+  return <WaitingScreen label={label} />;
 }
 
 export function Dialog({ title, children, onClose }: { title: string; children: React.ReactNode; onClose: () => void }) {

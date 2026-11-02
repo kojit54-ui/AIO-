@@ -38,8 +38,9 @@ describe("ヒアリングのAIの深掘り", () => {
 
   it("AIの返事から、質問と聞く理由を読む", () => {
     expect(parseFollowUpWithWhy('{"follow_up": null, "why": ""}')).toBeNull();
-    expect(parseFollowUpWithWhy('{"follow_up": "例えば価格は？", "why": "価格があるとAIが引用しやすいためです"}')).toEqual({ question: "例えば価格は？", why: "価格があるとAIが引用しやすいためです" });
-    expect(parseFollowUpWithWhy('{"follow_up": "例えば価格は？"}')).toEqual({ question: "例えば価格は？", why: "" });
+    expect(parseFollowUpWithWhy('{"follow_up": "例えば価格は？", "why": "価格があるとAIが引用しやすいためです"}')).toEqual({ question: "例えば価格は？", why: "価格があるとAIが引用しやすいためです", example: "" });
+    expect(parseFollowUpWithWhy('{"follow_up": "例えば価格は？"}')).toEqual({ question: "例えば価格は？", why: "", example: "" });
+    expect(parseFollowUpWithWhy('{"follow_up": "q", "why": "w", "example": "例：約45万円、2日"}')?.example).toBe("例：約45万円、2日");
   });
 });
 

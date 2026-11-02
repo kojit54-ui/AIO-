@@ -36,6 +36,8 @@
   --animate-toast: toast 3.2s cubic-bezier(0.2, 1.4, 0.4, 1) both;
   --animate-fall: fall 2.6s linear both;
   --animate-write: write 1.4s ease-in-out infinite;
+  --animate-stripe: stripe 0.8s linear infinite;
+  --animate-spin-slow: spin 6s linear infinite;
 
   @keyframes enter {
     from { opacity: 0; transform: translateX(48px) rotate(1.5deg); }
@@ -79,6 +81,9 @@
   }
   @keyframes fall {
     to { transform: translateY(110vh) rotate(720deg); }
+  }
+  @keyframes stripe {
+    to { background-position: 28px 0; }
   }
   @keyframes write {
     0%, 100% { transform: translate(0, 0) rotate(0); }
@@ -153,7 +158,7 @@ body::before {
   @apply mb-1 block font-bold;
 }
 @utility field {
-  @apply w-full rounded-2xl border-2 border-line bg-surface px-4 py-2.5 text-base text-ink transition-shadow focus:border-brand focus:shadow-[0_0_0_5px_var(--color-brand-soft)] focus:outline-none focus-visible:outline-none;
+  @apply w-full rounded-2xl border-2 border-line bg-surface px-4 py-2.5 text-base text-ink transition-shadow focus:border-brand focus:shadow-[0_0_0_5px_var(--color-brand-soft)] focus:outline-none focus-visible:outline-none placeholder:text-muted/55;
 }
 @utility page {
   @apply mx-auto w-full max-w-6xl px-4 py-6 sm:px-6;

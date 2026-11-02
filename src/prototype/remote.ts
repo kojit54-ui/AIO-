@@ -31,6 +31,7 @@ export function answerFromDb(r: HearingAnswerRow): HearingAnswer {
             question: o.question,
             answer: typeof o.answer === "string" ? o.answer : "",
             ...(typeof o.why === "string" && o.why ? { why: o.why } : {}),
+            ...(typeof o.example === "string" && o.example ? { example: o.example } : {}),
             ...(o.pending === true ? { pending: true } : {}),
           },
         ];
@@ -46,7 +47,7 @@ export function answerToDb(orgId: string, a: HearingAnswer) {
     organization_id: orgId,
     question_id: toQuestionId(a.questionId),
     text: a.text,
-    follow_ups: a.followUps.slice(0, 10).map((f) => ({ question: f.question, answer: f.answer, ...(f.why ? { why: f.why } : {}), ...(f.pending ? { pending: true } : {}) })),
+    follow_ups: a.followUps.slice(0, 10).map((f) => ({ question: f.question, answer: f.answer, ...(f.why ? { why: f.why } : {}), ...(f.example ? { example: f.example } : {}), ...(f.pending ? { pending: true } : {}) })),
     is_draft: a.draft === true,
     // 列を足す SQL（20261102130000_hearing_ai.sql）を流す前でも保存できるよう、立てたときだけ送る。戻すときは false を送る
     ...(a.deepDiveDone !== undefined ? { deep_dive_done: a.deepDiveDone } : {}),

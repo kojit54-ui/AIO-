@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { WaitingScreen } from "@/components/WaitingScreen";
 import { useEffect } from "react";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { PillarDiagram, PillarExplainer } from "@/prototype/components";
@@ -48,6 +49,7 @@ export default function PlanPage() {
           <p className="text-muted">教えてもらった内容から、記事のセットを3つおすすめします。いちばん「書けそう」「売りたい」に近いものを選んでください。</p>
         </div>
         <PillarExplainer />
+        {sync.proposing && <WaitingScreen label="しおりがおすすめを考えています" note="教えてもらった内容と、実際に検索されている言葉から考えています。1分ほどお待ちください。" />}
         {sync.proposing ? (
           <div className="card flex items-center gap-3" role="status" aria-live="polite">
             <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-brand border-t-transparent motion-reduce:animate-none" aria-hidden="true" />
