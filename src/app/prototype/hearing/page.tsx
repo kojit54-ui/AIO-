@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Shiori } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { useStore } from "@/mock/store";
@@ -174,13 +174,11 @@ export default function HearingPage() {
               <p className="text-muted">{q.label}</p>
               <p className="whitespace-pre-wrap">{saved.text}</p>
             </div>
-            <div className="flex animate-pop items-end gap-3 rounded-2xl bg-ok-soft px-3 pt-2">
-              <Shiori mood="think" className="h-24 w-auto shrink-0" />
-              <p className="mb-3 text-sm">
-                <b className="block text-ok">もう少しくわしく教えてください（{saved.followUps.length + (pendingDeepDive(saved) ? 0 : 1)}回目の質問）</b>
-                <b>なぜ聞くの？</b>　{deepDiveWhy(q, saved)}
-              </p>
-            </div>
+            <ShioriTalk
+              mood="think"
+              className="rounded-2xl bg-ok-soft px-3 pt-2"
+              lines={[`もう少しくわしく教えてください（${saved.followUps.length + (pendingDeepDive(saved) ? 0 : 1)}回目の質問）`, `なぜ聞くの？　${deepDiveWhy(q, saved)}`]}
+            />
             <div>
               <label htmlFor="answer" className="field-label text-lg">
                 {activeDeep}
