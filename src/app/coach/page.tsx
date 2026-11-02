@@ -12,7 +12,7 @@ export default function CoachHome() {
   if (user.role !== "coach") {
     return (
       <main className="page">
-        <EmptyState title="この画面を表示する権限がありません" action={<Link href="/" className="btn-secondary">ホームへ戻る</Link>} />
+        <EmptyState mood="sad" title="この画面を表示する権限がありません" action={<Link href="/" className="btn-secondary">ホームへ戻る</Link>} />
       </main>
     );
   }
@@ -47,7 +47,7 @@ export default function CoachHome() {
           最近のAIOのチェック
         </h2>
         {latestChecks.length === 0 ? (
-          <EmptyState title="AIOのチェックをした記事はまだありません" />
+          <EmptyState mood="coffee" title="AIOのチェックをした記事はまだありません" />
         ) : (
           <ul className="space-y-3">
             {latestChecks.map((c, i) => {

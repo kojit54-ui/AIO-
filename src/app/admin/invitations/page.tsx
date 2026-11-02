@@ -25,7 +25,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
   if (!admin) {
     return (
       <main className="page max-w-3xl">
-        <EmptyState title="この画面を表示する権限がありません">全社管理者だけが使えます。</EmptyState>
+        <EmptyState mood="sad" title="この画面を表示する権限がありません">全社管理者だけが使えます。</EmptyState>
       </main>
     );
   }

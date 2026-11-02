@@ -18,14 +18,14 @@ export function MockInvite() {
   if (!invite || !user || !org) {
     return (
       <main className="page max-w-xl">
-        <EmptyState title="この招待リンクは使えません">リンクが正しいか確認するか、コタムの担当者にお問い合わせください。</EmptyState>
+        <EmptyState mood="sad" title="この招待リンクは使えません">リンクが正しいか確認するか、コタムの担当者にお問い合わせください。</EmptyState>
       </main>
     );
   }
   if (invite.expired) {
     return (
       <main className="page max-w-xl">
-        <EmptyState title="招待リンクの有効期限が切れています">お手数ですが、コタムの担当者に招待の再送をご依頼ください。</EmptyState>
+        <EmptyState mood="sad" title="招待リンクの有効期限が切れています">お手数ですが、コタムの担当者に招待の再送をご依頼ください。</EmptyState>
       </main>
     );
   }
