@@ -7,6 +7,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { estimateCostYen } from "@/lib/ai/cost";
 import { buildProposalPrompt, parseProposals, PROPOSAL_SYSTEM_PROMPT, type HearingForPrompt, type ParsedProposal, type SearchSignalForPrompt } from "@/lib/ai/growthPrompts";
 import type { ScSnapshot } from "@/types/domain";
+import { MIN_IMPRESSIONS, NEAR_POSITION, STRONG_POSITION } from "./nearQueries";
 import { ParseError } from "@/lib/ai/prompt";
 import { failureReason, type AiProvider, type AiUsage } from "@/lib/ai/provider";
 import type { RakkoClient } from "@/lib/keywords/rakko";
@@ -98,10 +99,10 @@ export const MAX_SEARCH_SIGNALS = 15;
 export function searchSignals(snapshot: ScSnapshot | null | undefined): SearchSignalForPrompt[] {
   if (!snapshot) return [];
   return [...snapshot.queries]
-    .filter((q) => q.impressions >= 5 && q.position <= 30 && q.query.trim())
+    .filter((q) => q.impressions >= MIN_IMPRESSIONS && q.position <= NEAR_POSITION && q.query.trim())
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, MAX_SEARCH_SIGNALS)
-    .map((q) => ({ query: q.query.trim(), status: q.position <= 8 ? "strong" : "near" }));
+    .map((q) => ({ query: q.query.trim(), status: q.position <= STRONG_POSITION ? "strong" : "near" }));
 }
 
 /** サンプル（AIは未接続）の提案。画面と同じ作り方で、ヒアリングの言葉から作る */

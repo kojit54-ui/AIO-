@@ -7,6 +7,8 @@ import { ProfileSetup } from "@/components/ProfileSetup";
 import { EmptyState, Notice, monthLabel } from "@/components/ui";
 import { ApiError, useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
+import { nearQueries } from "@/lib/growth/nearQueries";
+import { ShioriTalk } from "@/components/talk";
 
 export default function NewArticlePage() {
   const { db, user, api, month } = useStore();
@@ -51,6 +53,10 @@ export default function NewArticlePage() {
     .filter((t) => t.organizationId === orgId && t.targetMonth === month && t.source === "coach")
     .sort((a, b) => a.sortOrder - b.sortOrder);
 
+  // Search Console の伸びしろのある言葉（つながっている会社だけ）。会社名だけの言葉は外す
+  const sc = (db.searchConsole ?? []).find((x) => x.organizationId === orgId && x.verifiedAt);
+  const near = nearQueries(sc?.snapshot, { exclude: [org?.name ?? ""] });
+
   async function start(input: Parameters<typeof api.createArticle>[0]) {
     setBusy(true);
     setError(null);
@@ -77,6 +83,38 @@ export default function NewArticlePage() {
         )}
       </div>
       {error && <Notice tone="danger" title={error} />}
+
+      {near.length > 0 && (
+        <section className="card animate-rise space-y-3 border-2 border-sun" aria-labelledby="near-heading">
+          <h2 id="near-heading" className="font-black">
+            🔍 検索で、あと一歩の言葉
+          </h2>
+          <ShioriTalk mood="idea" size="sm" lines={["Search Console を見ていて気づきました！", "この言葉で、あなたのサイトはもう検索に出ています。記事を書けば、もっと上に行けそうですよ。"]} />
+          <ul className="grid gap-2 sm:grid-cols-3">
+            {near.map((q, i) => (
+              <li key={q.query} className="animate-pop" style={{ animationDelay: `${0.2 + i * 0.08}s` }}>
+                <button
+                  type="button"
+                  disabled={busy}
+                  className="group flex h-full w-full flex-col items-start gap-1 rounded-2xl border-2 border-line bg-surface p-3 text-left transition-transform hover:-translate-y-0.5 hover:border-brand disabled:opacity-60"
+                  onClick={() => start({ customTheme: { title: q.query, readerProblem: `「${q.query}」で検索して、くわしく知りたい人` } })}
+                >
+                  <span className="font-black">「{q.query}」</span>
+                  <span className="text-xs text-muted">
+                    いま{Math.round(q.position)}位・28日で{q.impressions.toLocaleString("ja-JP")}回 検索に出ました
+                  </span>
+                  <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-brand">
+                    この言葉で書く
+                    <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>
+                      →
+                    </span>
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <ul className="grid gap-4 md:grid-cols-2">
         {themes.map((t, i) => (

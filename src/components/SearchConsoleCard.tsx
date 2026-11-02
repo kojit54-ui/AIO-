@@ -6,6 +6,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { ShioriTalk } from "@/components/talk";
+import { nearQueries } from "@/lib/growth/nearQueries";
 import { type MockDb, useStore } from "@/mock/store";
 
 const num = (n: number) => n.toLocaleString("ja-JP");
@@ -102,6 +103,14 @@ export function SearchConsoleCard({ db, orgId }: { db: MockDb; orgId: string }) 
           )}
         </div>
       </div>
+      {nearQueries(s).length > 0 && (
+        <p className="flex flex-wrap items-center gap-2 rounded-2xl bg-sun-soft px-3 py-2 text-sm font-bold">
+          💡 あと一歩で上位の言葉が{nearQueries(s).length}つあります。
+          <Link href="/articles/new" className="text-brand-dark underline">
+            その言葉で書く →
+          </Link>
+        </p>
+      )}
       <p className="text-xs text-muted">検索に出た回数が増えている記事は、AIにも読まれやすくなります。出ていない言葉は、次のテーマの候補になります。</p>
     </section>
   );
