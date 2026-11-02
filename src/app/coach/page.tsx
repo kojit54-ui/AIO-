@@ -18,9 +18,13 @@ export default function CoachHome() {
   }
 
   const orgs = db.organizations.filter((o) => user.organizationIds.includes(o.id));
-  const waiting = db.articles
-    .filter((a) => a.status === "in_review" && user.organizationIds.includes(a.organizationId))
-    .sort((a, b) => a.updatedAt.localeCompare(b.updatedAt));
+  // 記事ごとの最新のAIOのチェック（人の確認の代わり。docs/DECISIONS.md 2026-11-02）
+  const latestChecks = [...db.aioChecks]
+    .filter((c) => user.organizationIds.includes(c.organizationId))
+    .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+    .filter((c, i, all) => all.findIndex((x) => x.articleId === c.articleId) === i)
+    .slice(0, 10);
+  const commentedAfter = (articleId: string, at: string) => db.reviews.some((r) => r.articleId === articleId && r.createdAt >= at);
 
   return (
     <main className="page space-y-6">
@@ -30,34 +34,50 @@ export default function CoachHome() {
             {user.name}さん、おつかれさまです <Wave />
           </h1>
           <p className="text-muted">
-            {waiting.length > 0 ? `確認を待っている記事が${waiting.length}件あります。古い順に並んでいます。` : "確認待ちの記事はありません。担当企業の様子を見ておきましょう。"}
+            {latestChecks.length > 0
+              ? "お客様の記事は、AIがチェックしています。結果とやり取りを見て、気になる所があればコメントを残せます。"
+              : "まだAIOのチェックをした記事はありません。担当企業の様子を見ておきましょう。"}
           </p>
         </div>
-        <Shiori mood={waiting.length > 0 ? "point" : "coffee"} className="hidden h-36 w-auto shrink-0 animate-float sm:block" />
+        <Shiori mood={latestChecks.length > 0 ? "point" : "coffee"} className="hidden h-36 w-auto shrink-0 animate-float sm:block" />
       </div>
 
-      <section aria-labelledby="waiting-heading">
-        <h2 id="waiting-heading" className="mb-3 flex items-center gap-2 text-lg font-bold">
-          確認待ちの記事
-          <span className={`grid h-7 min-w-7 place-items-center rounded-full px-2 text-sm font-black ${waiting.length ? "animate-pop bg-sun text-ink" : "bg-line text-muted"}`}>{waiting.length}</span>
+      <section aria-labelledby="checks-heading">
+        <h2 id="checks-heading" className="mb-3 text-lg font-bold">
+          最近のAIOのチェック
         </h2>
-        {waiting.length === 0 ? (
-          <EmptyState title="確認待ちの記事はありません" />
+        {latestChecks.length === 0 ? (
+          <EmptyState title="AIOのチェックをした記事はまだありません" />
         ) : (
           <ul className="space-y-3">
-            {waiting.map((a, i) => {
-              const v = db.versions.find((x) => x.id === a.reviewRequestedVersionId);
-              const org = db.organizations.find((o) => o.id === a.organizationId);
+            {latestChecks.map((c, i) => {
+              const article = db.articles.find((a) => a.id === c.articleId);
+              const title = db.versions.find((v) => v.id === (article?.currentVersionId ?? c.versionId))?.title;
+              const org = db.organizations.find((o) => o.id === c.organizationId);
+              const good = c.items.filter((x) => x.ok).length;
               return (
-                <li key={a.id} className="animate-rise" style={{ animationDelay: `${i * 0.06}s` }}>
-                  <Link href={`/articles/${a.id}`} className="card group flex flex-col gap-1 border-2 border-sun px-5 py-4 transition-transform hover:-translate-y-0.5 sm:flex-row sm:items-center sm:gap-4">
+                <li key={c.id} className="animate-rise" style={{ animationDelay: `${i * 0.06}s` }}>
+                  <Link href={`/articles/${c.articleId}`} className="card group flex flex-col gap-2 px-5 py-4 transition-transform hover:-translate-y-0.5 hover:border-brand sm:flex-row sm:items-center sm:gap-4">
                     <span className="min-w-0 flex-1">
-                      <span className="block font-bold">{v?.title}</span>
-                      <span className="block text-sm text-muted">{org?.name}</span>
+                      <span className="block font-bold">{title}</span>
+                      <span className="block text-sm text-muted">
+                        {org?.name}・{formatDate(c.createdAt)}
+                      </span>
                     </span>
-                    <span className="text-sm text-muted">依頼 {formatDate(a.updatedAt)}</span>
+                    <span className="w-full sm:w-36">
+                      <span className="block text-sm">
+                        {good} / {c.items.length} 項目OK
+                      </span>
+                      <span className="mt-1 block h-2 overflow-hidden rounded-full bg-canvas" aria-hidden>
+                        <span className="block h-full rounded-full bg-gradient-to-r from-sun to-ok-bright" style={{ width: `${c.items.length ? (good / c.items.length) * 100 : 0}%` }} />
+                      </span>
+                    </span>
+                    <span className="flex flex-wrap items-center gap-2 text-sm">
+                      <span className={`rounded-full px-2.5 font-bold ${c.status === "done" ? "bg-ok-soft text-ok" : "bg-sun-soft"}`}>{c.status === "done" ? "チェック済み" : "答え待ち"}</span>
+                      {commentedAfter(c.articleId, c.createdAt) && <span className="rounded-full bg-brand-soft px-2.5 font-bold text-brand-dark">コメント済み</span>}
+                    </span>
                     <span className="inline-flex items-center gap-1 font-bold text-brand">
-                      確認する
+                      見る
                       <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>
                         →
                       </span>
@@ -84,8 +104,8 @@ export default function CoachHome() {
                   <span className="block text-lg font-black">{o.name}</span>
                   {!ready && <span className="mt-1 inline-block rounded-full bg-warn-soft px-3 text-sm font-bold text-warn">初期設定が必要です</span>}
                   <span className="mt-2 grid grid-cols-2 gap-1 text-sm">
-                    <span className="text-muted">確認待ち</span>
-                    <span>{articles.filter((a) => a.status === "in_review").length}件</span>
+                    <span className="text-muted">AIOチェック済み</span>
+                    <span>{articles.filter((a) => db.aioChecks.some((c) => c.status === "done" && (c.versionId === a.currentVersionId || c.resultVersionId === a.currentVersionId))).length}件</span>
                     <span className="text-muted">公開済み</span>
                     <span>{articles.filter((a) => a.status === "published").length}件</span>
                     <span className="text-muted">今月の生成</span>
@@ -98,8 +118,6 @@ export default function CoachHome() {
                         />
                       </span>
                     </span>
-                    <span className="text-muted">確認依頼</span>
-                    <span>{o.reviewPolicy === "required" ? "必須" : "任意"}</span>
                   </span>
                 </Link>
               </li>

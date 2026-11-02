@@ -50,17 +50,7 @@ export default function CoachOrgPage() {
         <h2 id="settings" className="text-lg font-bold">
           設定
         </h2>
-        <fieldset>
-          <legend className="field-label">公開前のコタムの確認</legend>
-          <div className="flex flex-wrap gap-4">
-            {(["optional", "required"] as const).map((p) => (
-              <label key={p} className="inline-flex items-center gap-2">
-                <input type="radio" name="policy" checked={org.reviewPolicy === p} onChange={() => run(() => api.updateOrganization(orgId, { reviewPolicy: p }), "設定を保存しました")} />
-                {p === "optional" ? "任意（未承認でも公開済みにできる。記録は残る）" : "必須（承認済みの記事だけ公開済みにできる）"}
-              </label>
-            ))}
-          </div>
-        </fieldset>
+        <p>公開前の確認は、AIOのチェック（AI）が行います。コタムは記事の画面で結果とやり取りを見て、コメントを残せます。</p>
         <p className="text-sm text-muted">
           今月の生成回数：{org.generationsUsedThisMonth} / {org.monthlyGenerationLimit}回
         </p>

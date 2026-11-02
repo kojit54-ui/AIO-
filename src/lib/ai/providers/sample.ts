@@ -1,6 +1,7 @@
 // APIキーが無いときの代わり。決まった形のサンプルを返し、AIが動いているようには見せない。
 
 import type { ImageProvider } from "../images";
+import { AIO_CHECK_LIST } from "@/lib/aioCheck";
 import type { AiProvider } from "../provider";
 
 export const SAMPLE_LABEL = "サンプル（AIは未接続）";
@@ -18,6 +19,12 @@ export const sampleTextProvider: AiProvider = {
             outline: ["ご相談の内容", "行った対応", "お客様の変化", "同じお悩みの方へ"].map((heading) => ({ heading })),
             needs_info: [],
           }
+        : req.kind === "aio_check"
+          ? {
+              summary: `${SAMPLE_LABEL}：チェックの結果が入ります。`,
+              items: AIO_CHECK_LIST.map((c) => ({ key: c.key, ok: c.key !== "comparison", note: `${SAMPLE_LABEL}：ひとことが入ります。` })),
+              questions: [{ key: "comparison", text: `${SAMPLE_LABEL}：ほかの頼み先と比べて、選ばれる理由は何ですか`, example: "例：同じ担当者が最後まで見る" }],
+            }
         : req.kind === "review"
           ? { summary: `${SAMPLE_LABEL}：点検の結果が入ります。`, findings: [] }
           : req.kind === "images"
