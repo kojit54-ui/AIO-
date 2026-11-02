@@ -114,7 +114,7 @@ export class RemoteBackend {
       return;
     }
     const uid = auth.user.id;
-    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, knowledgeNotes, runs] = await Promise.all([
+    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, knowledgeNotes, aioMentions, runs] = await Promise.all([
       c.from("memberships").select("organization_id, role").eq("user_id", uid).is("revoked_at", null),
       c.from("app_admins").select("user_id").eq("user_id", uid).maybeSingle(),
       c.from("organizations").select("*").order("name"),
@@ -129,6 +129,7 @@ export class RemoteBackend {
       c.from("aio_checks").select("*").order("created_at"),
       c.from("hearing_answers").select("*"),
       c.from("knowledge_notes").select("*").order("created_at", { ascending: false }),
+      c.from("aio_mentions").select("*").order("created_at", { ascending: false }).limit(60),
       c.from("generation_runs").select("organization_id, kind, status, created_at").gte("created_at", new Date(Date.now() - 32 * 864e5).toISOString()),
     ]);
     const failed = [members, orgs, notes, themes, refs, articles, versions, facts, reviews, runs].find((r) => r.error);
@@ -171,6 +172,18 @@ export class RemoteBackend {
         reviews: (reviews.data ?? []).map(toReview),
         // 表を足す SQL（20261102120000_aio_check.sql）をまだ流していない環境でも、ほかの画面は動かす
         aioChecks: aioChecks.error ? [] : (aioChecks.data ?? []).map(toAioCheck),
+        aioMentions: aioMentions.error
+          ? []
+          : (aioMentions.data ?? []).map((r) => ({
+              id: r.id as string,
+              organizationId: r.organization_id as string,
+              question: r.question as string,
+              mentioned: !!r.mentioned,
+              excerpt: (r.excerpt as string) ?? "",
+              sources: Array.isArray(r.sources) ? (r.sources as { url: string; title: string }[]) : [],
+              isSample: !!r.is_sample,
+              createdAt: r.created_at as string,
+            })),
         knowledgeNotes: knowledgeNotes.error
           ? []
           : (knowledgeNotes.data ?? []).map((r) => ({ id: r.id as string, organizationId: r.organization_id as string, source: r.source as "ai_import" | "manual", label: r.label as string, text: r.text as string, createdAt: r.created_at as string })),
@@ -489,6 +502,11 @@ export class RemoteBackend {
       if (error) throw toApiError(error);
       if (!data?.length) throw new ApiError("forbidden", "プロフィールを編集できるのはコタム担当者です");
       await this.load();
+    },
+
+    runMentionCheck: async (orgId) => {
+      this.requireUser();
+      await this.post(`/api/organizations/${encodeURIComponent(orgId)}/mention-check`, {}, "AIに聞けませんでした。少し待ってからもう一度お試しください");
     },
 
     readImport: async (orgId, text) => {

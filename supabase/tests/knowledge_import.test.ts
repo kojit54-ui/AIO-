@@ -46,3 +46,12 @@ describe("取り込んだ会社の知識", () => {
     await expect(as(U.other, "insert into public.reference_articles (organization_id, title, body) values ($1, 't', 'b')", [ORG])).rejects.toThrow();
   });
 });
+
+describe("AIに紹介されたかのチェックの記録", () => {
+  it("自社の記録だけ読め、お客様は書けない（書くのはサーバー）", async () => {
+    await db.exec(`insert into public.aio_mentions (organization_id, question) values ('${ORG}', 'q')`);
+    expect(await as(U.client, "select id from public.aio_mentions")).toHaveLength(1);
+    expect(await as(U.other, "select id from public.aio_mentions")).toHaveLength(0);
+    await expect(as(U.client, "insert into public.aio_mentions (organization_id, question) values ($1, 'q')", [ORG])).rejects.toThrow();
+  });
+});
