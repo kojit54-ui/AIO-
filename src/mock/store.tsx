@@ -33,6 +33,7 @@ import { RemoteBackend } from "@/lib/remote/backend";
 import * as seed from "./data";
 import { buildBody, buildOutline, buildTitleCandidates, extractFactChecks } from "./sampleGenerator";
 import { sampleApplyAnswers, sampleAioCheck } from "@/lib/aioCheck";
+import { sampleQuestionExamples } from "@/lib/growth/questionExamples";
 
 export interface MockDb {
   organizations: Organization[];
@@ -587,10 +588,24 @@ function createApi(
       await delay(400);
       checkSaveSimulations();
       const db = getDb();
-      commit({ ...db, organizations: db.organizations.map((o) => (o.id === orgId ? { ...o, profile, profileApprovedAt: null } : o)) });
+      // 記入例は新しい内容で作り直す
+      const { questionExamples: _old, ...fresh } = profile;
+      void _old;
+      commit({ ...db, organizations: db.organizations.map((o) => (o.id === orgId ? { ...o, profile: fresh, profileApprovedAt: null } : o)) });
     },
 
     /** 顧客がプロフィールの内容を確認した。確認済みのものだけがAIに渡る */
+    /** 記事の質問の記入例を、会社に合わせて作る（サンプル） */
+    async ensureQuestionExamples(orgId: string) {
+      requireUser();
+      const org = getDb().organizations.find((o) => o.id === orgId);
+      if (!org?.profile || org.profile.questionExamples) return;
+      await delay(600);
+      const db = getDb();
+      const examples = sampleQuestionExamples(org.profile);
+      commit({ ...db, organizations: db.organizations.map((o) => (o.id === orgId && o.profile ? { ...o, profile: { ...o.profile, questionExamples: examples } } : o)) });
+    },
+
     /** ヒアリングの答えから会社の情報をまとめる（サンプル）。試作のヒアリングはブラウザの中にある */
     async buildProfileFromHearing(orgId: string) {
       const user = requireUser();

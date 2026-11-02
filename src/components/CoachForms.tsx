@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { CoachingInternalNote, CoachingNote, CompanyProfile, ReferenceArticle } from "@/types/domain";
 
-export const PROFILE_FIELDS: [keyof CompanyProfile, string, string][] = [
+export const PROFILE_FIELDS: [Exclude<keyof CompanyProfile, "questionExamples">, string, string][] = [
   ["business", "事業内容", "例：戸建て住宅のリフォーム（断熱・水回り）"],
   ["targetCustomers", "対象顧客", "例：市内在住の50〜70代の持ち家世帯"],
   ["strengths", "強み", "例：一級建築士が現地調査から施工管理まで担当"],

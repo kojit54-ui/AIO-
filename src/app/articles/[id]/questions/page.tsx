@@ -32,6 +32,13 @@ export default function QuestionsPage() {
   const [cheer, setCheer] = useState<AioPoint | null>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
+  // 記入例は会社の情報に合わせてAIが作る（2026-11-02）。まだ無ければ裏で作ってもらう
+  const orgForExamples = article ? db.organizations.find((o) => o.id === article.organizationId) : undefined;
+  const needExamples = !!orgForExamples?.profile && !orgForExamples.profile.questionExamples && user?.role === "client_member";
+  useEffect(() => {
+    if (needExamples && orgForExamples) api.ensureQuestionExamples(orgForExamples.id).catch(() => undefined);
+  }, [needExamples, orgForExamples, api]);
+
   useEffect(() => {
     // 次の質問に進んだら上に戻し、えんぴつが進むのとほめる言葉を見せる
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -45,6 +52,7 @@ export default function QuestionsPage() {
   const theme = db.themes.find((t) => t.id === article.themeId);
   const question = showFollowUp ? FOLLOW_UP_QUESTION : QUESTIONS[step];
   const total = QUESTIONS.length;
+  const exampleOf = (q: { id: string; example: string }) => orgForExamples?.profile?.questionExamples?.[q.id] ?? q.example;
   const current = answers.find((a) => a.questionId === question.id) ?? { questionId: question.id, text: "", unknown: false };
   const allQuestions = [...QUESTIONS, FOLLOW_UP_QUESTION];
   // 答えて進んだ直後だけ、ひとこと添える（開き直したときは出さない）
@@ -174,7 +182,7 @@ export default function QuestionsPage() {
               {question.label}
             </label>
             <p id="answer-example" className="rounded-2xl bg-canvas px-4 py-2.5 text-[0.95rem] text-muted">
-              {question.example}
+              {exampleOf(question)}
             </p>
             {question.tip && (
               <p id="answer-tip" className="rounded-2xl bg-sun-soft px-4 py-2.5 text-[0.95rem]">
@@ -188,7 +196,7 @@ export default function QuestionsPage() {
               ref={inputRef}
               aria-describedby={question.tip ? "answer-example answer-tip" : "answer-example"}
               className="field min-h-36"
-              placeholder={question.example}
+              placeholder={exampleOf(question)}
               value={current.unknown ? "" : current.text}
               disabled={current.unknown}
               onChange={(e) => setCurrent({ text: e.target.value })}
