@@ -1,10 +1,10 @@
 -- AIOのチェック（docs/DECISIONS.md 2026-11-02、田村さん「コタムの人の確認は完全になくす」）。
 -- 公開前のコタムの確認をやめ、AIが記事を点検して足りない所をお客様に一問一答で聞き返す。
 -- コタムはチェックの結果とやり取りを読み、コメント（reviews の comment）を残せる。
--- 書く記事の提案（20261102000000_keyword_proposals.sql）の後に流す。生成の種類と start_generation は、提案の変更を含めて定義し直す。
+-- 書く記事の提案（20261102000000_keyword_proposals.sql）の後に流す。何度流しても同じ結果になるように書いてある（先に流した後で提案の SQL を流したら、もう一度流す）。生成の種類と start_generation は、提案の変更を含めて定義し直す。
 
 -- 1. チェックの記録。作るのと結果を書くのはサーバー（service role）。お客様は答え（answers）だけを書ける
-create table public.aio_checks (
+create table if not exists public.aio_checks (
   id uuid primary key default gen_random_uuid(),
   article_id uuid not null references public.articles (id) on delete cascade,
   organization_id uuid not null references public.organizations (id) on delete cascade,
@@ -23,11 +23,13 @@ create table public.aio_checks (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
-create index aio_checks_article_idx on public.aio_checks (article_id, created_at);
-create index aio_checks_org_idx on public.aio_checks (organization_id, created_at);
+create index if not exists aio_checks_article_idx on public.aio_checks (article_id, created_at);
+create index if not exists aio_checks_org_idx on public.aio_checks (organization_id, created_at);
 alter table public.aio_checks enable row level security;
 
+drop policy if exists aio_checks_select on public.aio_checks;
 create policy aio_checks_select on public.aio_checks for select to authenticated using (app.is_member(organization_id));
+drop policy if exists aio_checks_client_answer on public.aio_checks;
 create policy aio_checks_client_answer on public.aio_checks for update to authenticated
   using (app.is_client(organization_id)) with check (app.is_client(organization_id));
 grant select, update on public.aio_checks to authenticated;
@@ -55,8 +57,10 @@ begin
   return new;
 end;
 $$;
+drop trigger if exists aio_checks_answer on public.aio_checks;
 create trigger aio_checks_answer before update on public.aio_checks
   for each row execute function app.guard_aio_check_answer();
+drop trigger if exists aio_checks_org on public.aio_checks;
 create trigger aio_checks_org before insert or update on public.aio_checks
   for each row execute function app.check_article_org();
 
@@ -65,12 +69,12 @@ update public.organizations set review_policy = 'optional' where review_policy <
 alter table public.organizations alter column review_policy set default 'optional';
 
 -- 3. 生成の受付に「AIOのチェック」（aio_check）を足す。チェックと答えの反映の両方で使う
-alter table public.generation_runs drop constraint generation_runs_kind_check;
+alter table public.generation_runs drop constraint if exists generation_runs_kind_check;
 alter table public.generation_runs
   add constraint generation_runs_kind_check check (kind in ('outline', 'body', 'rewrite', 'followup_questions', 'image', 'keyword_proposal', 'aio_check'));
 
 alter table public.app_settings
-  add column article_aio_check_limit int not null default 20 check (article_aio_check_limit >= 0);
+  add column if not exists article_aio_check_limit int not null default 20 check (article_aio_check_limit >= 0);
 
 create or replace function public.start_generation(
   p_article_id uuid,
