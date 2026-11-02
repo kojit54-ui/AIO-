@@ -591,6 +591,27 @@ function createApi(
     },
 
     /** 顧客がプロフィールの内容を確認した。確認済みのものだけがAIに渡る */
+    /** ヒアリングの答えから会社の情報をまとめる（サンプル）。試作のヒアリングはブラウザの中にある */
+    async buildProfileFromHearing(orgId: string) {
+      const user = requireUser();
+      requireOrg(user, orgId);
+      if (user.role !== "client_member") throw new ApiError("forbidden", "会社の情報を作れるのは、会社の担当の方です");
+      await delay(1200);
+      const grow = readStorage<{ answers?: Record<string, { text?: string }> }>("cotam-grow-prototype-v1");
+      const t = (id: string) => grow?.answers?.[id]?.text?.trim() ?? "";
+      if (!t("business") || !t("customers")) throw new ApiError("save_failed", "先に「会社のことを教える」で、お仕事とお客様について答えてください");
+      const profile: CompanyProfile = {
+        business: [t("business"), t("area") && `地域：${t("area")}`].filter(Boolean).join("　"),
+        targetCustomers: t("customers"),
+        strengths: t("strengths"),
+        tone: "ですます調。専門用語には短い説明を添える",
+        bannedExpressions: t("avoid") || "根拠を示せない言い切り（業界最安・絶対に など）",
+        contact: "",
+      };
+      const db = getDb();
+      commit({ ...db, organizations: db.organizations.map((o) => (o.id === orgId ? { ...o, profile, profileApprovedAt: null } : o)) });
+    },
+
     async approveProfile(orgId: string) {
       const user = requireUser();
       requireOrg(user, orgId);

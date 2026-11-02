@@ -18,16 +18,25 @@ export interface HearingAnswerRow {
   text: string;
   follow_ups: unknown;
   is_draft: boolean;
+  deep_dive_done?: boolean | null;
 }
 
 export function answerFromDb(r: HearingAnswerRow): HearingAnswer {
   const followUps = Array.isArray(r.follow_ups)
     ? r.follow_ups.flatMap((f) => {
         const o = f as Record<string, unknown>;
-        return typeof o?.question === "string" ? [{ question: o.question, answer: typeof o.answer === "string" ? o.answer : "" }] : [];
+        if (typeof o?.question !== "string") return [];
+        return [
+          {
+            question: o.question,
+            answer: typeof o.answer === "string" ? o.answer : "",
+            ...(typeof o.why === "string" && o.why ? { why: o.why } : {}),
+            ...(o.pending === true ? { pending: true } : {}),
+          },
+        ];
       })
     : [];
-  return { questionId: r.question_id, text: r.text, followUps, ...(r.is_draft ? { draft: true } : {}) };
+  return { questionId: r.question_id, text: r.text, followUps, ...(r.is_draft ? { draft: true } : {}), ...(r.deep_dive_done ? { deepDiveDone: true } : {}) };
 }
 
 export function answerToDb(orgId: string, a: HearingAnswer) {
@@ -37,8 +46,10 @@ export function answerToDb(orgId: string, a: HearingAnswer) {
     organization_id: orgId,
     question_id: toQuestionId(a.questionId),
     text: a.text,
-    follow_ups: a.followUps.slice(0, 10).map((f) => ({ question: f.question, answer: f.answer })),
+    follow_ups: a.followUps.slice(0, 10).map((f) => ({ question: f.question, answer: f.answer, ...(f.why ? { why: f.why } : {}), ...(f.pending ? { pending: true } : {}) })),
     is_draft: a.draft === true,
+    // 列を足す SQL（20261102130000_hearing_ai.sql）を流す前でも保存できるよう、立てたときだけ送る。戻すときは false を送る
+    ...(a.deepDiveDone !== undefined ? { deep_dive_done: a.deepDiveDone } : {}),
   };
 }
 
@@ -223,7 +234,7 @@ export function createGrowRemote(client: SupabaseClient, organizationId: string,
 
     async load() {
       const [{ data: answers, error }, plan, sellItems, proposals] = await Promise.all([
-        client.from("hearing_answers").select("question_id, text, follow_ups, is_draft").eq("organization_id", organizationId),
+        client.from("hearing_answers").select("*").eq("organization_id", organizationId),
         loadPlan(),
         loadSellItems(),
         loadProposals(),

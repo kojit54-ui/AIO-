@@ -112,7 +112,7 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
 
   // 読み込みは利用者の権限（RLS）。他社の答えは読めない
   const [{ data: answerRows, error: e1 }, { data: sellRows, error: e2 }] = await Promise.all([
-    db.from("hearing_answers").select("question_id, text, follow_ups, is_draft").eq("organization_id", req.organizationId),
+    db.from("hearing_answers").select("*").eq("organization_id", req.organizationId),
     db.from("sell_items").select("name").eq("organization_id", req.organizationId).order("rank"),
   ]);
   if (e1 || e2) return fail(500, "provider_error", "会社のことを読み込めませんでした。もう一度お試しください");

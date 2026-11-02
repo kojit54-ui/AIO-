@@ -183,6 +183,12 @@ AIOのチェック（人の確認の代わり。DECISIONS 2026-11-02）。記事
 
 読むのは自社の人（お客様・コタム）だけ。作るのはサーバーだけ。生成の受付の kind に aio_check を足し、app_settings.article_aio_check_limit（既定20）で1記事あたりの回数を止める。
 
+### ヒアリングのAI（supabase/migrations/20261102130000_hearing_ai.sql）
+
+- generation_runs の種類に hearing（記事を指さない）。受付は start_hearing_ai（会社単位。二重実行・予算・app_settings.hearing_ai_limit）
+- hearing_answers.deep_dive_done：AIが深掘りは要らないと決めた、または飛ばした答え。follow_ups の各要素に why（聞く理由）と pending（答え待ち）を足せる
+- 会社の情報は /api/organizations/[id]/profile-from-hearing がサーバー（service role）で organizations.profile に書き、profile_approved_at を空にする（お客様が確かめる）
+
 ### audit_logs
 | 列 | 型 | 説明 |
 |---|---|---|
