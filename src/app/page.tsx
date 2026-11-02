@@ -9,6 +9,7 @@ import { ShioriTalk } from "@/components/talk";
 import { MonthlyGrowth } from "@/components/MonthlyGrowth";
 import { SearchConsoleCard } from "@/components/SearchConsoleCard";
 import { ShioriGrowth } from "@/components/ShioriGrowth";
+import { StampBook } from "@/components/StampBook";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
@@ -78,6 +79,7 @@ export default function HomePage() {
 
       <AioNews />
 
+      <StampBook db={db} orgId={orgId} />
       <ShioriGrowth db={db} orgId={orgId} />
       <MonthlyGrowth db={db} orgId={orgId} month={month} />
       <SearchConsoleCard db={db} orgId={orgId} />
