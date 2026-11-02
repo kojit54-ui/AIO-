@@ -14,7 +14,7 @@ export default function ProfilePage() {
   if (!user) return null;
   const org = db.organizations.find((o) => o.id === user.organizationIds[0]);
   if (user.role !== "client_member" || !org) return <main className="page"><EmptyState title="この画面は顧客担当者向けです" /></main>;
-  if (!org.profile) return <main className="page"><EmptyState title="会社の情報は、コタムが準備中です" /></main>;
+  if (!org.profile) return <main className="page"><EmptyState mood="coffee" title="会社の情報は、コタムが準備中です" /></main>;
 
   return (
     <main className="page max-w-3xl space-y-5">

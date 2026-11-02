@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { AioCheckPanel } from "@/components/AioCheckPanel";
+import { AioCheckBanner, AioCheckOverlays, AioCheckPanel, useAioCheck } from "@/components/AioCheckPanel";
 import { BlockEditor } from "@/components/BlockEditor";
 import { Confetti, Shiori, ShioriFace, Toast } from "@/components/fun";
 import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, StatusBadge, formatDate } from "@/components/ui";
@@ -85,6 +85,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
     if (e instanceof ApiError && e.code === "session_expired") return setBanner({ tone: "danger", message: e.message, session: true });
     setBanner({ tone: "danger", message: e instanceof ApiError ? e.message : fallback });
   }
+
+  const aio = useAioCheck(article, version, handleError);
 
   async function save(force = false) {
     setBusy("save");
@@ -179,6 +181,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
         />
       </div>
 
+      {!isCoach && !outlineMode && <AioCheckOverlays ctl={aio} />}
+      {!isCoach && !outlineMode && <AioCheckBanner ctl={aio} dirty={dirty} />}
       {!isCoach && !outlineMode && <ShioriNote status={article.status} fresh={fresh} />}
       {!isCoach && reviews.length > 0 && (
         <div className="mb-4 flex animate-rise items-start gap-3 rounded-3xl border-2 border-sun bg-sun-soft px-4 py-3" role="status">
@@ -233,7 +237,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
         </section>
 
         <aside className={`space-y-4 ${mobileView === "side" ? "" : "hidden lg:block"}`} aria-label="補助情報">
-          {!outlineMode && <AioCheckPanel article={article} version={version} isCoach={isCoach} dirty={dirty} onError={handleError} />}
+          {!outlineMode && <AioCheckPanel ctl={aio} isCoach={isCoach} dirty={dirty} />}
 
           {!outlineMode && !isCoach && (
             <div className="card space-y-3">

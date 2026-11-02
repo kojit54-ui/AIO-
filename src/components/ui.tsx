@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Shiori } from "./fun";
+import { Shiori, type ShioriMood } from "./fun";
 import type { ArticleStatus } from "@/types/domain";
 import { STATUS_LABEL } from "@/lib/workflow";
 
@@ -64,9 +64,13 @@ export function PageSkeleton() {
   );
 }
 
-export function EmptyState({ title, children, action }: { title: string; children?: React.ReactNode; action?: React.ReactNode }) {
+/** 空の画面・止めの画面。しおりが場面に合った表情で案内する */
+export function EmptyState({ title, children, action, mood = "bow" }: { title: string; children?: React.ReactNode; action?: React.ReactNode; mood?: ShioriMood }) {
   return (
     <div className="card animate-rise text-center">
+      <div className="mx-auto mb-2 w-fit animate-float">
+        <Shiori mood={mood} className="h-32 w-auto" />
+      </div>
       <p className="text-lg font-bold">{title}</p>
       {children && <div className="mt-1 text-muted">{children}</div>}
       {action && <div className="mt-4">{action}</div>}
@@ -77,7 +81,7 @@ export function EmptyState({ title, children, action }: { title: string; childre
 export function Forbidden() {
   return (
     <main className="page">
-      <EmptyState title="この記事を表示する権限がありません" action={<Link className="btn-secondary" href="/">ホームへ戻る</Link>}>
+      <EmptyState mood="sad" title="この記事を表示する権限がありません" action={<Link className="btn-secondary" href="/">ホームへ戻る</Link>}>
         別の会社の記事か、担当から外れた会社の記事です。
       </EmptyState>
     </main>
@@ -87,7 +91,7 @@ export function Forbidden() {
 export function NotFound({ what = "記事" }: { what?: string }) {
   return (
     <main className="page">
-      <EmptyState title={`${what}が見つかりません`} action={<Link className="btn-secondary" href="/">ホームへ戻る</Link>} />
+      <EmptyState mood="sad" title={`${what}が見つかりません`} action={<Link className="btn-secondary" href="/">ホームへ戻る</Link>} />
     </main>
   );
 }

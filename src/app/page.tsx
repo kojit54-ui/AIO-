@@ -82,7 +82,7 @@ export default function HomePage() {
           これまでの記事
         </h2>
         {list.length === 0 ? (
-          <EmptyState title="まだ記事はありません">「今月の記事を書く」から始めましょう。</EmptyState>
+          <EmptyState mood="jersey-cheer" title="まだ記事はありません">「今月の記事を書く」から始めましょう。</EmptyState>
         ) : (
           <ul className="space-y-3">
             {list.map((a, i) => (

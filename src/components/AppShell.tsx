@@ -30,7 +30,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   if (ready && !user && loadError) {
     return (
       <main className="page max-w-xl">
-        <EmptyState title="表示できません" action={<button type="button" className="btn-secondary" onClick={logout}>ログアウト</button>}>
+        <EmptyState mood="sad" title="表示できません" action={<button type="button" className="btn-secondary" onClick={logout}>ログアウト</button>}>
           {loadError}
         </EmptyState>
       </main>
