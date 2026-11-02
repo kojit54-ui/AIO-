@@ -180,6 +180,14 @@ function Questions({ check, onApply, onError }: { check: AioCheck; onApply: () =
         </span>
         <span className="text-muted">「{aioCheckLabel(q.key)}」のため</span>
       </p>
+      {/* 答えた質問に星。あと何問かが一目で分かるように */}
+      <p className="flex flex-wrap gap-1" aria-hidden>
+        {check.questions.map((x, i) => (
+          <span key={x.id} className={`grid h-7 w-7 place-items-center rounded-full border-2 text-xs font-black ${i < step ? "animate-stamp border-ok-bright bg-ok-soft" : i === step ? "animate-shine border-sun bg-sun-soft" : "border-line text-muted"}`}>
+            {i < step ? "⭐" : i + 1}
+          </span>
+        ))}
+      </p>
       <label htmlFor="aio-answer" className="block text-lg font-black leading-snug">
         {q.text}
       </label>

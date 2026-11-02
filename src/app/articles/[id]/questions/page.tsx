@@ -188,7 +188,8 @@ export default function QuestionsPage() {
         >
           <div className="flex items-end gap-4 bg-gradient-to-b from-brand-soft to-surface px-5 pt-4">
             <Scene point={question.aio} className="h-24 w-32 shrink-0 sm:h-32 sm:w-44" />
-            {showFollowUp && <p className="mb-3 rounded-2xl bg-surface px-3 py-2 text-sm font-bold text-brand-dark">もう少しだけ教えてください。具体的な場面があると、読み手に伝わる記事になります。</p>}
+            {showFollowUp && <ShioriBubble text="もう少しだけ教えてください。具体的な場面があると、読み手に伝わる記事になります。" />}
+            {!showFollowUp && <ShioriBubble key={question.id} text={step === 0 ? "1問目です。気楽にどうぞ！" : isLast ? "最後の質問です！" : `${step + 1}問目です。いい調子ですよ！`} />}
           </div>
           <div className="space-y-3 p-5 pt-3">
             <span className="inline-block rounded-full bg-brand px-3.5 py-0.5 text-sm font-black text-white">{showFollowUp ? "追加の質問" : `質問 ${step + 1}`}</span>
@@ -279,5 +280,15 @@ function SaveIndicator({ state }: { state: SaveState }) {
     <span aria-live="polite" className={state === "error" ? "font-semibold text-danger" : ""}>
       {text}
     </span>
+  );
+}
+
+/** 絵の中のしおりの横に出る、短いひとこと */
+function ShioriBubble({ text }: { text: string }) {
+  return (
+    <p className="relative mb-4 w-fit origin-bottom-left animate-bubble rounded-3xl rounded-bl-md border-2 border-brand-soft bg-surface px-3 py-2 text-sm font-bold text-brand-dark shadow-sm">
+      <span aria-hidden className="absolute -left-2 bottom-2 h-3 w-3 rotate-45 border-b-2 border-l-2 border-brand-soft bg-surface" />
+      {text}
+    </p>
   );
 }
