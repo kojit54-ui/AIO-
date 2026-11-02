@@ -4,7 +4,7 @@ import type { AiProvider } from "@/lib/ai/provider";
 import { AiProviderError } from "@/lib/ai/provider";
 import type { RakkoClient } from "@/lib/keywords/rakko";
 import { HEARING_QUESTIONS, type HearingAnswer } from "@/prototype/growth";
-import { MAX_HEARING_CHARS, hearingForPrompt, researchSeeds, runKeywordProposal } from "./proposals";
+import { MAX_HEARING_CHARS, hearingForPrompt, researchSeeds, runKeywordProposal, searchSignals } from "./proposals";
 
 // 深掘りを飛ばした答え（答え終わった扱い）
 const SKIPPED = [{ question: "深掘り", answer: "" }];
@@ -201,5 +201,47 @@ describe("提案を作る", () => {
     expect(res.ok).toBe(true);
     expect(admin.calls.filter((c) => c.op === "finish_failed")).toHaveLength(2);
     expect(finishArgs(admin)).toMatchObject({ p_status: "succeeded" });
+  });
+});
+
+describe("Search Console の言葉を提案に使う", () => {
+  const q = (query: string, impressions: number, position: number) => ({ query, clicks: 0, impressions, position });
+  const snapshot = {
+    range: { start: "2026-10-03", end: "2026-10-30" },
+    totals: { clicks: 1, impressions: 100, ctr: 1, position: 20 },
+    queries: [q("内窓 札幌", 300, 15.2), q("内窓 費用", 120, 4.1), q("たまたま", 2, 9), q("遠すぎる", 500, 48)],
+    pages: [],
+  };
+
+  it("表示の多い順に、上位は strong・30位までは near。少なすぎる・遠すぎる言葉は外す", () => {
+    expect(searchSignals(snapshot)).toEqual([
+      { query: "内窓 札幌", status: "near" },
+      { query: "内窓 費用", status: "strong" },
+    ]);
+    expect(searchSignals(null)).toEqual([]);
+  });
+
+  it("つながっている会社では、言葉を AI に渡す（数字は渡さない）", async () => {
+    const user = fakeDb(
+      { hearing_answers: HEARING, sell_items: [], search_console: { verified_at: "2026-11-02T00:00:00Z", snapshot } },
+      { rpc: { start_keyword_proposal: { id: "run1", status: "queued" } } },
+    );
+    const admin = fakeDb({ generation_runs: [{ id: "run1" }] });
+    const ai = provider([]);
+    await runKeywordProposal({ user: user.client, admin: admin.client, provider: ai.p, isSample: false, rakko: null }, { organizationId: "o1", idempotencyKey: "key-12345678" });
+    expect(ai.prompts[0]).toContain("search_console");
+    expect(ai.prompts[0]).toContain("内窓 札幌");
+    expect(ai.prompts[0]).not.toContain("300");
+  });
+
+  it("つながっていない会社では渡さない", async () => {
+    const user = fakeDb(
+      { hearing_answers: HEARING, sell_items: [], search_console: { verified_at: null, snapshot } },
+      { rpc: { start_keyword_proposal: { id: "run1", status: "queued" } } },
+    );
+    const admin = fakeDb({ generation_runs: [{ id: "run1" }] });
+    const ai = provider([]);
+    await runKeywordProposal({ user: user.client, admin: admin.client, provider: ai.p, isSample: false, rakko: null }, { organizationId: "o1", idempotencyKey: "key-12345678" });
+    expect(ai.prompts[0]).not.toContain("search_console");
   });
 });

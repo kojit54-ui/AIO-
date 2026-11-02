@@ -35,7 +35,14 @@ export const PROPOSAL_SYSTEM_PROMPT = `あなたは、中小企業のブログ�
 - 3案のねらいは重ならないようにしてください。ねらい（reasons）は sales（売上につながる）・competition（競合に勝てる）・aio（AI検索で紹介されやすい）から選びます。
 - 周りの記事は1案につき3〜8本。それぞれ、読む人が知りたいこと（question）を1文で書いてください。
 - 使ってほしくない言葉（ヒアリングの avoid）は使わないでください。
+- 素材に search_console があるときは、この会社のサイトが実際に Google の検索に出ている言葉です。near は「検索には出ているが、まだ上位にない言葉」で、記事を書くと伸びやすいので、優先して柱か周りの記事に生かしてください。strong は「すでに上位にある言葉」なので、同じ言葉の記事は重ねず、関連する質問へ広げてください。会社名だけの言葉や、ヒアリングの内容に合わない言葉は使わないでください。数字は書かないでください。
 - 返答は指定したJSONだけにしてください。`;
+
+/** Search Console の言葉（数字は渡さず、伸びしろの種類だけ） */
+export interface SearchSignalForPrompt {
+  query: string;
+  status: "near" | "strong";
+}
 
 export interface FollowUpInput {
   question: string;
@@ -83,9 +90,10 @@ export function parseFollowUp(text: string): string | null {
 export type HearingForPrompt = Record<string, { question: string; answer: string; followUps: { question: string; answer: string }[] }>;
 
 /** research はラッコキーワードの下調べ（src/lib/keywords/research.ts）。無ければヒアリングだけで作る */
-export function buildProposalPrompt(hearing: HearingForPrompt, research: ResearchForPrompt[] = []): string {
-  const materials = research.length ? { hearing, research } : { hearing };
-  return `<materials> のヒアリング${research.length ? "と下調べ" : ""}をもとに、記事の組み立てを3案作ってください。
+export function buildProposalPrompt(hearing: HearingForPrompt, research: ResearchForPrompt[] = [], searchConsole: SearchSignalForPrompt[] = []): string {
+  const materials = { hearing, ...(research.length ? { research } : {}), ...(searchConsole.length ? { search_console: searchConsole } : {}) };
+  const extra = [research.length ? "下調べ" : "", searchConsole.length ? "Search Console の言葉" : ""].filter(Boolean).join("と");
+  return `<materials> のヒアリング${extra ? `と${extra}` : ""}をもとに、記事の組み立てを3案作ってください。
 
 <materials>
 ${asData(materials)}
