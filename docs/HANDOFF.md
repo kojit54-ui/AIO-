@@ -43,6 +43,16 @@
 - 未完了：ステージングへの SQL 適用と通し確認、コタムの画面からの作り直し、深掘りの質問をAIで作る（hearing_followup）
 - 次の作業と担当：Codex が点検 → マージ後にステージングへ SQL を適用 → ログインして「書く記事を決める」を開いて確かめる
 
+### 2026-11-02 CC（Claude、プロジェクトのスレッド）その20
+- ブランチ / コミット：claude/coach-friendly（PR #30）
+- 変更点：
+  - コタム側の画面を顧客側と同じ見た目に（管理画面のあいさつとしおり、カード、生成回数の棒）
+  - 公開前のコタムの確認をなくし「AIOのチェック」に置き換え（DECISIONS 2026-11-02、UI.md S4・S5、DATA.md aio_checks）。src/lib/aioCheck.ts（11項目・試作のサンプル）、src/lib/ai/aioCheckPrompt.ts（チェックと反映の指示・返答の検査）、src/lib/generation/aioCheck.ts と /api/articles/[id]/aio-check（実施）・/aio-check/apply（反映）、src/components/AioCheckPanel.tsx、マイグレーション 20261102120000_aio_check.sql（aio_checks、kind aio_check、review_policy をすべて optional）
+  - コタム：記事の画面で結果とやり取りを読み、「コメントを残す」。お客様の記事の画面の上にコメントを出す
+- 確認結果：単体テスト241件（aio_checks の権限と受付のテストを追加）、型検査、lint、build が通過。架空データで、チェック→聞き返し→反映→コタムのコメント→お客様の画面に表示、まで確認
+- 未完了：検証環境で 20261102120000_aio_check.sql を SQL Editor で実行（田村さん）。実行前でも画面は動き、チェックだけが失敗する。本物のAIでのチェックの質の確認
+- 次の作業と担当：田村さんが SQL を実行 → 検証環境で1本チェック → CX がレビュー
+
 ### 2026-11-01 CC（Claude、プロジェクトのスレッド）その28
 - ブランチ / コミット：claude/project-thread-n66pdb（PR #26 のマージ後の main から）
 - 変更点：T5-5 の前半。/prototype の画面を、Supabase の接続先があるときはログイン中の会社のデータにつないだ。src/prototype/remote.ts（DBとの変換と読み書き。エラーは日本語にして本文を出さない）、store.ts（試作ではブラウザ、本物ではDB。画面はすぐ書きかえ、保存はうしろで。失敗したら知らせて読み直す。途中の答えと並べかえは0.8秒まとめる。組み立てを選んだら DB の id に置きかえ、待つあいだの進み具合も残す）。layout.tsx（未ログインなら案内、会社が複数なら切りかえ、保存の状態と失敗の表示、本物では「最初からやり直す」を出さない）。書く記事リストの「どこから」にラッコ・キーワードプランナーを追加（表示は「検索のしらべ」）

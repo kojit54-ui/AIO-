@@ -69,7 +69,7 @@ export const ORGANIZATIONS: Organization[] = [
       contact: "初回30分の無料相談",
     },
     profileApprovedAt: "2026-10-05T10:00:00+09:00",
-    reviewPolicy: "required",
+    reviewPolicy: "optional",
     monthlyGenerationLimit: 30,
     generationsUsedThisMonth: 30,
   },

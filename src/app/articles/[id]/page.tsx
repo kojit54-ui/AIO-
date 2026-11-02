@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { AioCheckPanel } from "@/components/AioCheckPanel";
 import { BlockEditor } from "@/components/BlockEditor";
-import { Confetti, Shiori, Toast } from "@/components/fun";
+import { Confetti, Shiori, ShioriFace, Toast } from "@/components/fun";
 import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, StatusBadge, formatDate } from "@/components/ui";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
@@ -76,6 +77,8 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
   const reviews = db.reviews.filter((r) => r.articleId === article.id).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   const frozenVersion = article.reviewRequestedVersionId ? db.versions.find((v) => v.id === article.reviewRequestedVersionId) : null;
   const approved = article.status === "approved" || (article.status === "published" && !article.publishedWithoutApproval);
+  // 今の版がAIOのチェックを終えているか（チェックした版、または答えを反映して作った版）
+  const aioDone = db.aioChecks.some((c) => c.status === "done" && (c.versionId === version.id || c.resultVersionId === version.id));
 
   function handleError(e: unknown, fallback: string) {
     if (e instanceof ApiError && e.code === "conflict") return setConflict(true);
@@ -107,16 +110,6 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
     }
   }
 
-  async function requestReview() {
-    setBusy("review");
-    try {
-      await api.requestReview(article.id);
-      setBanner({ tone: "ok", message: "コタムに見てもらうよう頼みました" });
-    } catch (e) {
-      handleError(e, "コタムに頼めませんでした");
-    }
-    setBusy(null);
-  }
 
   async function copy(kind: "title" | "body" | "html") {
     const text = kind === "title" ? title : kind === "body" ? blocksToPlainText(blocks) : blocksToHtml(blocks);
@@ -129,7 +122,6 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
     }
   }
 
-  const canRequestReview = !isCoach && !dirty && canApply(article, { type: "request_review" }, "client_member", policy);
   const canPublish = !isCoach && !dirty && canApply(article, { type: "publish", url: "https://example.com", at: "" }, "client_member", policy);
 
   return (
@@ -138,7 +130,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
       {fresh && !outlineMode && <Confetti count={50} />}
       {fresh && outlineMode && <Toast>見出しができました！順番や言葉を整えましょう</Toast>}
       {banner?.tone === "ok" && <Toast key={banner.message}>{banner.message}</Toast>}
-      {!isCoach && <ArticleSteps article={article} outlineMode={outlineMode} />}
+      {!isCoach && <ArticleSteps article={article} outlineMode={outlineMode} aioDone={aioDone} />}
 
       <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
@@ -183,12 +175,24 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           article={article}
           frozenNo={frozenVersion?.versionNo}
           isCoach={isCoach}
-          policy={policy}
           hasNewer={db.versions.some((v) => v.articleId === article.id && v.versionNo > version.versionNo)}
         />
       </div>
 
       {!isCoach && !outlineMode && <ShioriNote status={article.status} fresh={fresh} />}
+      {!isCoach && reviews.length > 0 && (
+        <div className="mb-4 flex animate-rise items-start gap-3 rounded-3xl border-2 border-sun bg-sun-soft px-4 py-3" role="status">
+          <ShioriFace className="h-12 w-12" />
+          <div className="min-w-0 flex-1">
+            <p className="font-bold">コタムからコメントが届いています</p>
+            <p className="whitespace-pre-wrap">{reviews[0].comment}</p>
+            <p className="text-xs text-muted">
+              {reviews[0].reviewerName}・{formatDate(reviews[0].createdAt)}
+              {reviews.length > 1 && `（ほかに${reviews.length - 1}件。「コメント」で見られます）`}
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* スマートフォンでは本文と補助情報をタブで切り替える */}
       <div className="mb-3 grid grid-cols-2 gap-2 lg:hidden" role="tablist" aria-label="表示の切り替え">
@@ -196,7 +200,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           本文
         </button>
         <button role="tab" aria-selected={mobileView === "side"} className={mobileView === "side" ? "btn-primary" : "btn-secondary"} onClick={() => setMobileView("side")}>
-          {isCoach ? "レビュー・コメント" : `画像・確認事項${unchecked > 0 ? `（未確認${unchecked}）` : ""}`}
+          {isCoach ? "AIOのチェック・コメント" : `画像・確認事項${unchecked > 0 ? `（未確認${unchecked}）` : ""}`}
         </button>
       </div>
 
@@ -229,15 +233,14 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
         </section>
 
         <aside className={`space-y-4 ${mobileView === "side" ? "" : "hidden lg:block"}`} aria-label="補助情報">
+          {!outlineMode && <AioCheckPanel article={article} version={version} isCoach={isCoach} dirty={dirty} onError={handleError} />}
+
           {!outlineMode && !isCoach && (
             <div className="card space-y-3">
-              <p className="text-lg font-bold">次にやること</p>
+              <p className="text-lg font-bold">ブログに載せる</p>
               {unchecked > 0 && <Notice tone="warn" title={`確かめてほしいところが${unchecked}か所あります`}>数字や名前が正しいか、先に確かめるのがおすすめです。</Notice>}
-              <button type="button" className="btn-primary w-full" disabled={!canRequestReview || busy !== null} onClick={requestReview}>
-                コタムに見てもらう
-              </button>
               <div className="space-y-2">
-                <p className="text-sm text-muted">ブログに貼る文をコピーする（{approved ? "コタムのOKが出た内容です" : "まだコタムのOK前の下書きです"}）</p>
+                <p className="text-sm text-muted">ブログに貼る文をコピーする{aioDone ? "（AIOのチェック済み）" : "（AIOのチェックがまだです。上の「AIOのチェックを実施」がおすすめです）"}</p>
                 <div className="grid grid-cols-3 gap-2">
                   <button type="button" className="btn-secondary px-2 text-sm" disabled={dirty} onClick={() => copy("title")}>
                     タイトル
@@ -254,13 +257,10 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
               <button type="button" className="btn-secondary w-full" disabled={!canPublish || busy !== null} onClick={() => setPublishOpen(true)}>
                 ブログに載せた
               </button>
-              {!canPublish && policy === "required" && article.status !== "approved" && article.status !== "published" && (
-                <p className="text-xs text-muted">この会社では、コタムのOKが出た記事だけをブログに載せられます。</p>
-              )}
             </div>
           )}
 
-          {isCoach && <CoachReview article={article} onError={handleError} />}
+          {isCoach && <CoachComment article={article} onError={handleError} />}
 
           <section className="card" aria-labelledby="images-heading">
             <h2 id="images-heading" className="mb-1 text-lg font-bold">画像</h2>
@@ -313,7 +313,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           </div>
         </Dialog>
       )}
-      {publishOpen && <PublishDialog article={article} policy={policy} onClose={() => setPublishOpen(false)} onError={handleError} />}
+      {publishOpen && <PublishDialog article={article} onClose={() => setPublishOpen(false)} onError={handleError} />}
       {historyOpen && <HistoryDialog article={article} isCoach={isCoach} dirty={dirty} onClose={() => setHistoryOpen(false)} onError={handleError} />}
     </main>
   );
@@ -339,9 +339,9 @@ function ShioriNote({ status, fresh }: { status: Article["status"]; fresh: boole
 }
 
 /** 記事ができるまでの道のり。今どこにいるかを示す */
-function ArticleSteps({ article, outlineMode }: { article: Article; outlineMode: boolean }) {
-  const steps = ["質問に答える", "見出しを決める", "本文を整える", "コタムに見てもらう", "ブログに載せる"];
-  const now = article.status === "published" ? 5 : article.status === "approved" ? 4 : article.status === "in_review" ? 3 : outlineMode ? 1 : 2;
+function ArticleSteps({ article, outlineMode, aioDone }: { article: Article; outlineMode: boolean; aioDone: boolean }) {
+  const steps = ["質問に答える", "見出しを決める", "本文を整える", "AIOのチェック", "ブログに載せる"];
+  const now = article.status === "published" ? 5 : aioDone ? 4 : outlineMode ? 1 : 2;
   return (
     <ol className="mb-4 flex flex-wrap gap-x-1 gap-y-1.5 text-xs sm:text-sm" aria-label="記事ができるまで">
       {steps.map((label, i) => {
@@ -369,7 +369,7 @@ function ArticleSteps({ article, outlineMode }: { article: Article; outlineMode:
   );
 }
 
-function StatusNotice({ article, frozenNo, isCoach, policy, hasNewer }: { article: Article; frozenNo?: number; isCoach: boolean; policy: "optional" | "required"; hasNewer: boolean }) {
+function StatusNotice({ article, frozenNo, isCoach, hasNewer }: { article: Article; frozenNo?: number; isCoach: boolean; hasNewer: boolean }) {
   switch (article.status) {
     case "in_review":
       return (
@@ -393,11 +393,11 @@ function StatusNotice({ article, frozenNo, isCoach, policy, hasNewer }: { articl
             {article.publishedUrl}
           </a>
           {article.publishedAt && `（${formatDate(article.publishedAt)}）`}
-          {article.publishedWithoutApproval && " コタムに見てもらう前に載せた記事です。"}
         </Notice>
       );
     default:
-      return policy === "required" && !isCoach ? <Notice tone="info" title="この会社では、ブログに載せる前にコタムに見てもらいます" /> : null;
+      // 公開前のコタムの確認はやめ、AIOのチェックに置き換えた（docs/DECISIONS.md 2026-11-02）
+      return null;
   }
 }
 
@@ -769,19 +769,19 @@ function PolicyPanel({ orgId }: { orgId: string }) {
   );
 }
 
-function CoachReview({ article, onError }: { article: Article; onError: (e: unknown, f: string) => void }) {
+/** コタムのコメント。AIOのチェックの結果を見て、気になる所をお客様に伝える。お客様の記事の画面に出る */
+function CoachComment({ article, onError }: { article: Article; onError: (e: unknown, f: string) => void }) {
   const { api } = useStore();
   const [comment, setComment] = useState("");
   const [busy, setBusy] = useState(false);
-  const [done, setDone] = useState<string | null>(null);
-  const inReview = article.status === "in_review";
+  const [done, setDone] = useState(false);
 
-  async function submit(decision: "comment" | "changes_requested" | "approved") {
+  async function submit() {
     setBusy(true);
     try {
-      await api.review(article.id, decision, comment.trim());
+      await api.review(article.id, "comment", comment.trim());
       setComment("");
-      setDone({ comment: "コメントを送りました", changes_requested: "修正を依頼しました", approved: "承認しました" }[decision]);
+      setDone(true);
     } catch (e) {
       onError(e, "送れませんでした");
     }
@@ -790,35 +790,26 @@ function CoachReview({ article, onError }: { article: Article; onError: (e: unkn
 
   return (
     <div className="card space-y-3">
-      <p className="font-semibold">レビュー</p>
-      {done && <Notice tone="ok" title={done} />}
+      <p className="text-lg font-bold">コメントを残す</p>
+      <p className="text-sm text-muted">AIOのチェックの結果ややり取りを見て、気になる所があれば伝えられます。お客様の記事の画面に表示されます。</p>
+      {done && <Notice tone="ok" title="コメントを送りました" />}
       <div>
         <label htmlFor="review-comment" className="field-label">
-          本文全体へのコメント
+          コメント
         </label>
         <textarea id="review-comment" className="field" rows={4} value={comment} onChange={(e) => setComment(e.target.value)} />
       </div>
-      <div className="grid gap-2">
-        <button type="button" className="btn-primary" disabled={busy || !inReview} onClick={() => submit("approved")}>
-          承認する
-        </button>
-        <button type="button" className="btn-secondary" disabled={busy || !inReview || !comment.trim()} onClick={() => submit("changes_requested")}>
-          修正を依頼する
-        </button>
-        <button type="button" className="btn-secondary" disabled={busy || !comment.trim()} onClick={() => submit("comment")}>
-          コメントだけ送る
-        </button>
-      </div>
-      {!inReview && <p className="text-xs text-muted">承認と修正依頼は、確認を依頼された記事にだけ行えます。</p>}
+      <button type="button" className="btn-primary w-full" disabled={busy || !comment.trim()} onClick={submit}>
+        コメントを送る
+      </button>
     </div>
   );
 }
 
-function PublishDialog({ article, policy, onClose, onError }: { article: Article; policy: "optional" | "required"; onClose: () => void; onError: (e: unknown, f: string) => void }) {
+function PublishDialog({ article, onClose, onError }: { article: Article; onClose: () => void; onError: (e: unknown, f: string) => void }) {
   const { api } = useStore();
   const [url, setUrl] = useState("");
   const [busy, setBusy] = useState(false);
-  const withoutApproval = article.status !== "approved" && policy === "optional";
   return (
     <Dialog title="ブログに載せた記事を登録する" onClose={onClose}>
       <form
@@ -837,7 +828,6 @@ function PublishDialog({ article, policy, onClose, onError }: { article: Article
         }}
       >
         <p>ブログに載せたページのURL（アドレス）を貼りつけてください。</p>
-        {withoutApproval && <Notice tone="warn" title="コタムに見てもらう前の記事です">登録すると、コタムに見てもらう前に載せたことが記録されます。</Notice>}
         <div>
           <label htmlFor="published-url" className="field-label">
             載せたページのURL

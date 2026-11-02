@@ -1,6 +1,7 @@
 // DBの行（snake_case）と画面の型（src/types/domain.ts）の変換。権限はDBのRLSで絞られた行だけが来る前提。
 
 import type {
+  AioCheck,
   AiReview,
   Answer,
   Article,
@@ -150,6 +151,22 @@ export const toReview = (r: Row): Review => ({
 });
 
 /** 本文の生成として今月の上限に数える回（成功・実行中）。DBの start_generation と同じ数え方 */
+/** AIOのチェック。items・questions・answers はサーバーが検査して書いた JSON */
+export const toAioCheck = (r: Row): AioCheck => ({
+  id: r.id,
+  articleId: r.article_id,
+  organizationId: r.organization_id,
+  versionId: r.version_id,
+  status: r.status === "done" ? "done" : "asking",
+  summary: r.summary ?? "",
+  items: Array.isArray(r.items) ? r.items : [],
+  questions: Array.isArray(r.questions) ? r.questions : [],
+  answers: Array.isArray(r.answers) ? r.answers : [],
+  resultVersionId: r.result_version_id ?? null,
+  isSample: !!r.is_sample,
+  createdAt: r.created_at,
+});
+
 export function countBodyRunsThisMonth(runs: Row[], orgId: string, month: string): number {
   return runs.filter(
     (r) => r.organization_id === orgId && r.kind === "body" && r.status !== "failed" && currentMonthJst(new Date(r.created_at)) === month,
