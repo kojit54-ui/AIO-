@@ -103,6 +103,8 @@ export interface ArticleVersion {
   imageIdeas?: { eyecatch: ImageIdea | null; perHeading: ImageIdea[] };
   /** 公開前の点検（Claude）。指摘があれば書き手が書き直した後の本文が body に入る */
   aiReview?: AiReview | null;
+  /** この版を作るときにAIに渡した、会社の知識の見出し（src/lib/growth/knowledge.ts） */
+  knowledgeUsed?: string[];
 }
 
 export interface ImageIdea {

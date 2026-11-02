@@ -34,6 +34,9 @@ import * as seed from "./data";
 import { buildBody, buildOutline, buildTitleCandidates, extractFactChecks } from "./sampleGenerator";
 import { sampleApplyAnswers, sampleAioCheck } from "@/lib/aioCheck";
 import { sampleQuestionExamples } from "@/lib/growth/questionExamples";
+import { pickKnowledge } from "@/lib/growth/knowledge";
+import { companyKnowledge } from "@/lib/growth/localKnowledge";
+import type { HearingAnswer } from "@/prototype/growth";
 
 export interface MockDb {
   organizations: Organization[];
@@ -47,6 +50,8 @@ export interface MockDb {
   reviews: Review[];
   /** AIOのチェック（人の確認の代わり） */
   aioChecks: AioCheck[];
+  /** 会社のこと（ヒアリング）の答え。本物のデータでだけ読み込む。試作ではブラウザの中のヒアリングを使う */
+  hearing?: Record<string, HearingAnswer>;
   draftAnswers: Record<string, { answers: Answer[]; step: number }>;
 }
 
@@ -373,6 +378,7 @@ function createApi(
         createdBy: user.id,
         isSample: true,
         ...sampleAiExtras(headings),
+        knowledgeUsed: pickKnowledge(companyKnowledge(db, articleId, articleId)).map((k) => k.label),
       };
       const next = transition(db, user, article, { type: "edit", newVersionId: id });
       commit(
@@ -405,6 +411,7 @@ function createApi(
         isSample: base?.isSample ?? false,
         imageIdeas: base?.imageIdeas,
         aiReview: base?.aiReview,
+        knowledgeUsed: base?.knowledgeUsed,
       };
       // 要確認箇所の確認結果は、同じ箇所が残っていれば引き継ぐ
       const prevChecks = db.factChecks.filter((f) => f.versionId === base?.id);
