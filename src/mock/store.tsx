@@ -5,6 +5,7 @@
 
 import { createContext, useContext, useMemo, useSyncExternalStore } from "react";
 import type {
+  AioCheck,
   ArticleImage,
   Answer,
   Article,
@@ -31,6 +32,7 @@ import { getSupabaseEnv } from "@/lib/supabase/env";
 import { RemoteBackend } from "@/lib/remote/backend";
 import * as seed from "./data";
 import { buildBody, buildOutline, buildTitleCandidates, extractFactChecks } from "./sampleGenerator";
+import { sampleApplyAnswers, sampleAioCheck } from "@/lib/aioCheck";
 
 export interface MockDb {
   organizations: Organization[];
@@ -42,6 +44,8 @@ export interface MockDb {
   versions: ArticleVersion[];
   factChecks: FactCheck[];
   reviews: Review[];
+  /** AIOのチェック（人の確認の代わり） */
+  aioChecks: AioCheck[];
   draftAnswers: Record<string, { answers: Answer[]; step: number }>;
 }
 
@@ -77,6 +81,7 @@ function seedDb(): MockDb {
     versions: seed.VERSIONS,
     factChecks: seed.FACT_CHECKS,
     reviews: seed.REVIEWS,
+    aioChecks: [],
     draftAnswers: seed.DRAFT_ANSWERS,
   });
 }
@@ -456,6 +461,87 @@ function createApi(
       commit({ ...db, reviews: [...db.reviews, r] });
     },
 
+    /** AIOのチェックを実施（サンプル）。今の版を点検し、足りない所を聞き返す質問を作る */
+    async runAioCheck(articleId: string) {
+      const user = requireUser();
+      const article = getArticleForUser(getDb(), user, articleId);
+      if (user.role !== "client_member") throw new ApiError("forbidden", "AIOのチェックは会社の担当の方が行います");
+      await runGeneration(article.organizationId);
+      const db = getDb();
+      const version = db.versions.find((v) => v.id === article.currentVersionId);
+      if (!version || version.body.length === 0) throw new ApiError("invalid_state", "本文ができてからチェックできます");
+      const org = db.organizations.find((o) => o.id === article.organizationId);
+      const result = sampleAioCheck({ body: version.body, answers: version.answers, profile: org?.profile ?? null, facts: db.factChecks.filter((f) => f.versionId === version.id) });
+      const check: AioCheck = {
+        id: uid("ac"),
+        articleId,
+        organizationId: article.organizationId,
+        versionId: version.id,
+        status: result.questions.length ? "asking" : "done",
+        ...result,
+        answers: [],
+        resultVersionId: null,
+        isSample: true,
+        createdAt: now(),
+      };
+      commit({ ...db, aioChecks: [...db.aioChecks, check] });
+      return check;
+    },
+
+    /** 聞き返しへの答えを、答えるたびに保存する */
+    async saveAioAnswers(checkId: string, answers: Answer[]) {
+      const user = requireUser();
+      const db0 = getDb();
+      const check = db0.aioChecks.find((c) => c.id === checkId);
+      if (!check) throw new ApiError("not_found", "チェックが見つかりません");
+      requireOrg(user, check.organizationId);
+      await delay(300);
+      checkSaveSimulations();
+      const db = getDb();
+      commit({ ...db, aioChecks: db.aioChecks.map((c) => (c.id === checkId ? { ...c, answers } : c)) });
+    },
+
+    /** 答えを記事に反映（サンプル）。新しい版を作り、チェックを終わりにする */
+    async applyAioCheck(checkId: string) {
+      const user = requireUser();
+      const check = getDb().aioChecks.find((c) => c.id === checkId);
+      if (!check) throw new ApiError("not_found", "チェックが見つかりません");
+      const article = getArticleForUser(getDb(), user, check.articleId);
+      await runGeneration(article.organizationId);
+      const db = getDb();
+      const base = db.versions.find((v) => v.id === article.currentVersionId)!;
+      const body = sampleApplyAnswers(base.body, check.questions, check.answers);
+      const id = uid("v");
+      const v: ArticleVersion = {
+        ...base,
+        id,
+        versionNo: db.versions.filter((x) => x.articleId === article.id).length + 1,
+        body,
+        frozen: false,
+        createdAt: now(),
+        createdBy: user.id,
+        isSample: true,
+      };
+      const next = transition(db, user, article, { type: "edit", newVersionId: id });
+      const prevChecks = db.factChecks.filter((f) => f.versionId === base.id);
+      const checks = extractFactChecks(body, id).map((c) => {
+        const same = prevChecks.find((p) => p.excerpt === c.excerpt);
+        return same ? { ...c, status: same.status } : c;
+      });
+      commit(
+        replaceArticle(
+          {
+            ...db,
+            versions: [...db.versions, v],
+            factChecks: [...db.factChecks, ...checks],
+            aioChecks: db.aioChecks.map((c) => (c.id === checkId ? { ...c, status: "done" as const, resultVersionId: id } : c)),
+          },
+          next,
+        ),
+      );
+      return v;
+    },
+
     async markPublished(articleId: string, url: string) {
       const user = requireUser();
       const article = getArticleForUser(getDb(), user, articleId);
@@ -573,6 +659,10 @@ interface BackendState {
   sim: Simulation;
 }
 
+function withDefaults(db: MockDb | null): MockDb | null {
+  return db ? { ...db, aioChecks: db.aioChecks ?? [] } : null;
+}
+
 /** ブラウザ内の擬似バックエンド。React の外に状態を持ち、useSyncExternalStore で読む */
 class MockBackend {
   private state: BackendState | null = null;
@@ -584,7 +674,8 @@ class MockBackend {
       const userId = readStorage<string>(SESSION_KEY);
       this.state = {
         ready: true,
-        db: readStorage<MockDb>(STORAGE_KEY) ?? seedDb(),
+        // AIOのチェックを足す前に保存した架空データにも、空の一覧を足して読む
+        db: withDefaults(readStorage<MockDb>(STORAGE_KEY)) ?? seedDb(),
         user: seed.USERS.find((x) => x.id === userId) ?? null,
         sim: DEFAULT_SIM,
       };

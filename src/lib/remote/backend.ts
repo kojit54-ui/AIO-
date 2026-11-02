@@ -28,6 +28,7 @@ import {
   toTheme,
   toVersion,
   carriedSettings,
+  toAioCheck,
 } from "./mapping";
 
 export interface RemoteState {
@@ -50,6 +51,7 @@ const EMPTY_DB: MockDb = {
   versions: [],
   factChecks: [],
   reviews: [],
+  aioChecks: [],
   draftAnswers: {},
 };
 const NO_SIM: Simulation = { saveError: false, generationError: false, conflict: false, sessionExpired: false, slow: false };
@@ -111,7 +113,7 @@ export class RemoteBackend {
       return;
     }
     const uid = auth.user.id;
-    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, runs] = await Promise.all([
+    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, runs] = await Promise.all([
       c.from("memberships").select("organization_id, role").eq("user_id", uid).is("revoked_at", null),
       c.from("app_admins").select("user_id").eq("user_id", uid).maybeSingle(),
       c.from("organizations").select("*").order("name"),
@@ -123,6 +125,7 @@ export class RemoteBackend {
       c.from("article_versions").select("*").order("version_no"),
       c.from("fact_checks").select("*"),
       c.from("reviews").select("*").order("created_at"),
+      c.from("aio_checks").select("*").order("created_at"),
       c.from("generation_runs").select("organization_id, kind, status, created_at").gte("created_at", new Date(Date.now() - 32 * 864e5).toISOString()),
     ]);
     const failed = [members, orgs, notes, themes, refs, articles, versions, facts, reviews, runs].find((r) => r.error);
@@ -163,6 +166,8 @@ export class RemoteBackend {
         versions: (versions.data ?? []).map(toVersion),
         factChecks: (facts.data ?? []).map(toFactCheck),
         reviews: (reviews.data ?? []).map(toReview),
+        // 表を足す SQL（20261102120000_aio_check.sql）をまだ流していない環境でも、ほかの画面は動かす
+        aioChecks: aioChecks.error ? [] : (aioChecks.data ?? []).map(toAioCheck),
         draftAnswers: Object.fromEntries(
           articleRows.map((a) => [a.id as string, { answers: (a.draft_answers as Answer[]) ?? [], step: (a.draft_step as number) ?? 0 }]),
         ),
@@ -228,6 +233,19 @@ export class RemoteBackend {
     const e = toApiError(error);
     if (e.code === "conflict") await this.load().catch(() => undefined);
     return e;
+  }
+
+  /** AIを使うサーバーの処理を呼び、終わったら読み直す。失敗はサーバーの文をそのまま出す */
+  private async post<T>(url: string, body: Record<string, unknown>, fallback: string): Promise<T> {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ ...body, idempotencyKey: crypto.randomUUID() }),
+    }).catch(() => null);
+    const json = ((await res?.json().catch(() => ({}))) ?? {}) as T & { code?: string; message?: string };
+    await this.load();
+    if (!res?.ok) throw new ApiError((json.code ?? "provider_error") as "provider_error", json.message ?? fallback);
+    return json;
   }
 
   private async generate(articleId: string, body: Record<string, unknown>) {
@@ -314,6 +332,35 @@ export class RemoteBackend {
       const json = (await res?.json().catch(() => ({}))) as { images?: ArticleImage[]; failed?: number; code?: string; message?: string };
       if (!res?.ok) throw new ApiError((json.code ?? "provider_error") as "provider_error", json.message ?? "画像を作れませんでした。もう一度お試しください");
       return { images: json.images ?? [], failed: json.failed ?? 0 };
+    },
+
+    runAioCheck: async (articleId) => {
+      this.requireUser();
+      const json = await this.post<{ checkId?: string }>(`/api/articles/${encodeURIComponent(articleId)}/aio-check`, {}, "AIOのチェックができませんでした。もう一度お試しください");
+      const check = this.state.db.aioChecks.find((c) => c.id === json.checkId);
+      if (!check) throw new ApiError("not_found", "チェックの結果を読み込めませんでした。再読み込みしてください");
+      return check;
+    },
+
+    saveAioAnswers: async (checkId, answers) => {
+      this.requireUser();
+      const { error } = await this.client.from("aio_checks").update({ answers }).eq("id", checkId);
+      if (error) throw toApiError(error, "答えを保存できませんでした");
+      this.set({ db: { ...this.state.db, aioChecks: this.state.db.aioChecks.map((c) => (c.id === checkId ? { ...c, answers } : c)) } });
+    },
+
+    applyAioCheck: async (checkId) => {
+      this.requireUser();
+      const check = this.state.db.aioChecks.find((c) => c.id === checkId);
+      if (!check) throw new ApiError("not_found", "チェックが見つかりません");
+      const json = await this.post<{ versionId?: string }>(
+        `/api/articles/${encodeURIComponent(check.articleId)}/aio-check/apply`,
+        { checkId },
+        "記事に反映できませんでした。答えは残っています",
+      );
+      const v = this.state.db.versions.find((x) => x.id === json.versionId);
+      if (!v) throw new ApiError("not_found", "新しい内容を読み込めませんでした。再読み込みしてください");
+      return v;
     },
 
     generateImageIdeas: async (articleId) => {

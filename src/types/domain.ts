@@ -200,3 +200,40 @@ export interface Question {
   /** この質問で集めるAIOの材料。画面で「なぜ聞くの？」を出す */
   aio?: AioPoint;
 }
+
+/** AIOのチェックで見る項目。AIOの8つの材料に、数字の確かさ・使ってほしくない言葉・AIっぽさを足したもの（src/lib/aioCheck.ts） */
+export type AioCheckKey = AioPoint | "facts" | "words" | "ai_tone";
+
+export interface AioCheckItem {
+  key: AioCheckKey;
+  ok: boolean;
+  /** 書けている所、または足りない所をひとことで */
+  note: string;
+}
+
+/** 足りない所を埋めるために、AIがお客様に聞き返す質問 */
+export interface AioCheckQuestion {
+  id: string;
+  key: AioCheckKey;
+  text: string;
+  example: string;
+}
+
+/**
+ * AIOのチェック。人（コタム）の確認の代わりに、AIが記事を点検して足りない所を一問一答で聞き返す（docs/DECISIONS.md 2026-11-02）。
+ * asking＝聞き返しの答え待ち、done＝終わり（答えを反映した版は resultVersionId）
+ */
+export interface AioCheck {
+  id: string;
+  articleId: string;
+  organizationId: string;
+  versionId: string;
+  status: "asking" | "done";
+  summary: string;
+  items: AioCheckItem[];
+  questions: AioCheckQuestion[];
+  answers: Answer[];
+  resultVersionId: string | null;
+  isSample: boolean;
+  createdAt: string;
+}

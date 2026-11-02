@@ -168,6 +168,21 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | is_sample | boolean | キーが無いときのサンプル |
 | created_by, created_at | | |
 
+### aio_checks（supabase/migrations/20261102120000_aio_check.sql）
+
+AIOのチェック（人の確認の代わり。DECISIONS 2026-11-02）。記事の版ごとに、チェックの結果と聞き返しの質問・答えを残す。
+
+| 列 | 内容 |
+|---|---|
+| article_id / organization_id / version_id | チェックした記事と版 |
+| status | asking（答え待ち）／ done（終わり） |
+| summary / items / questions | AIの結果。items は [{key, ok, note}]、questions は [{id, key, text, example}]（最大3問）。サーバー（service role）だけが書く |
+| answers | お客様の答え [{questionId, text, unknown}]。お客様（client_member）は答え待ちの間、この列だけを書ける（トリガーで検査） |
+| result_version_id | 答えを反映して作った版 |
+| is_sample | AI未接続のサンプルか |
+
+読むのは自社の人（お客様・コタム）だけ。作るのはサーバーだけ。生成の受付の kind に aio_check を足し、app_settings.article_aio_check_limit（既定20）で1記事あたりの回数を止める。
+
 ### audit_logs
 | 列 | 型 | 説明 |
 |---|---|---|

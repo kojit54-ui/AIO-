@@ -104,7 +104,7 @@ export function CoachingNoteForm({
           </div>
         ))}
       </div>
-      <div className="rounded-lg border border-dashed border-line p-3">
+      <div className="rounded-2xl border border-dashed border-line p-3">
         <label htmlFor="note-internal" className="field-label">
           コタム内部メモ（顧客には見えません。AIにも渡しません）
         </label>
@@ -131,7 +131,7 @@ export function ReferenceArticleForm({ onSave, onCancel }: { onSave: (r: RefInpu
   const [busy, setBusy] = useState(false);
   return (
     <form
-      className="mt-3 space-y-3 rounded-lg bg-canvas p-3"
+      className="mt-3 space-y-3 rounded-2xl bg-canvas p-3"
       onSubmit={async (e) => {
         e.preventDefault();
         setBusy(true);

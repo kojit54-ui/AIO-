@@ -6,8 +6,8 @@ import { MAX_HEADINGS } from "@/lib/limits";
 import { aioReviewerRules, aioWriterRules } from "@/lib/aioNews";
 import type { GenerationInput } from "./input";
 
-/** outline・body・rewrite は書き手、review は点検役、images は画像の提案役が受け持つ（docs/DECISIONS.md 2026-10-23） */
-export type GenerationKind = "outline" | "body" | "review" | "rewrite" | "images";
+/** outline・body・rewrite は書き手、review と aio_check は点検役、images は画像の提案役が受け持つ（docs/DECISIONS.md 2026-10-23、2026-11-02） */
+export type GenerationKind = "outline" | "body" | "review" | "rewrite" | "images" | "aio_check";
 
 export const SYSTEM_PROMPT = `あなたは、中小企業のブログ記事の下書きを手伝う編集者です。
 
@@ -58,6 +58,8 @@ const OUTPUT_SPEC: Record<GenerationKind, string> = {
   rewrite: BODY_SPEC,
   review: `{"summary": string, "findings": [{"category": "originality"|"aio"|"ai_tone"|"facts"|"style", "excerpt": string, "advice": string}]}`,
   images: `{"eyecatch": ${IMAGE_SPEC}, "image_suggestions": [${IMAGE_SPEC}]}`,
+  // AIOのチェックは src/lib/ai/aioCheckPrompt.ts が指示文を組み立てる
+  aio_check: `{"summary": string, "items": [{"key": string, "ok": boolean, "note": string}], "questions": [{"key": string, "text": string, "example": string}]}`,
 };
 
 /** 書き直し・点検・画像の提案に渡す下書き */
@@ -87,6 +89,7 @@ export function buildUserPrompt(
 指摘のうち、素材にない事実が必要なものは書き足さず、needs_info に質問として挙げてください。`,
     review: "<draft> の記事を、素材と照らし合わせて点検してください。",
     images: `<draft> の記事に付ける画像を提案してください。見出し：${asData(headings, 0)}`,
+    aio_check: "<draft> の記事を、素材と照らし合わせてチェックしてください。",
   }[kind];
   const draft = extra.draft ? `\n\n<draft>\n${asData(extra.draft)}\n</draft>` : "";
   const review = extra.findings ? `\n\n<review>\n${asData(extra.findings)}\n</review>` : "";
