@@ -1,18 +1,28 @@
 "use client";
 
 // AIを待つあいだの画面（2026-11-02 田村さん「待ちが長いので、ゲーム画面のように。ワンポイントコラムをポコッと」）。
-// しおりが考えている動き、進んでいる感じの帯、経過時間、AIOのワンポイントコラム（自動で切り替わり、自分でもめくれる）。
+// しおりが考えている動き、進んでいる感じの帯、経過時間、コラム（コタムのこだわりとAIOのワンポイントを交互に。自動で切り替わり、自分でもめくれる）。
 
 import { useEffect, useState } from "react";
 import { Shiori, type ShioriMood } from "@/components/fun";
-import { AIO_TIPS } from "@/lib/tips";
+import { AIO_TIPS, SERVICE_TIPS } from "@/lib/tips";
 
 const MOODS: ShioriMood[] = ["think", "idea", "point", "cheer"];
 const TIP_SECONDS = 7;
 
+/** コタムのこだわりと、AIOのワンポイントを交互に並べる */
+const COLUMNS: { kind: "service" | "aio"; title: string; body: string }[] = Array.from({ length: Math.max(SERVICE_TIPS.length, AIO_TIPS.length) }, (_, i) => [
+  ...(SERVICE_TIPS[i] ? [{ kind: "service" as const, ...SERVICE_TIPS[i] }] : []),
+  ...(AIO_TIPS[i] ? [{ kind: "aio" as const, ...AIO_TIPS[i] }] : []),
+]).flat();
+
 export function WaitingScreen({ label, note = "この画面を閉じても続きます。" }: { label: string; note?: string }) {
   // 毎回ちがうコラムから始める（この画面は操作のあとにだけ出るので、サーバーの描画とは食い違わない）
-  const [start] = useState(() => Math.floor(Math.random() * AIO_TIPS.length));
+  // コタムのこだわりから始める
+  const [start] = useState(() => {
+    const services = COLUMNS.flatMap((c, i) => (c.kind === "service" ? [i] : []));
+    return services[Math.floor(Math.random() * services.length)] ?? 0;
+  });
   // 「次のコラム」で自分でめくった数
   const [flipped, setFlipped] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -22,8 +32,9 @@ export function WaitingScreen({ label, note = "この画面を閉じても続き
     return () => clearInterval(t);
   }, []);
 
-  const tip = (start + flipped + Math.floor(seconds / TIP_SECONDS)) % AIO_TIPS.length;
-  const t = AIO_TIPS[tip];
+  const tip = (start + flipped + Math.floor(seconds / TIP_SECONDS)) % COLUMNS.length;
+  const t = COLUMNS[tip];
+  const service = t.kind === "service";
   const mood = MOODS[Math.floor(seconds / TIP_SECONDS) % MOODS.length];
 
   return (
@@ -55,11 +66,11 @@ export function WaitingScreen({ label, note = "この画面を閉じても続き
           <div className="h-full w-full animate-stripe rounded-full bg-[length:28px_100%] bg-[repeating-linear-gradient(45deg,var(--color-brand)_0_7px,var(--color-sky)_7px_14px)]" />
         </div>
 
-        <div key={tip} className="animate-enter rounded-2xl border-2 border-sun bg-sun-soft p-4 text-left">
+        <div key={tip} className={`animate-enter rounded-2xl border-2 p-4 text-left ${service ? "border-brand bg-brand-soft" : "border-sun bg-sun-soft"}`}>
           <p className="mb-1 flex items-center justify-between gap-2 text-xs font-bold">
-            <span className="rounded-full bg-sun px-2.5 py-0.5 text-ink">💡 ワンポイントコラム</span>
+            <span className={`rounded-full px-2.5 py-0.5 ${service ? "bg-brand text-white" : "bg-sun text-ink"}`}>{service ? "✨ コタムのこだわり" : "💡 AIOワンポイント"}</span>
             <span className="tabular-nums text-muted">
-              {tip + 1} / {AIO_TIPS.length}
+              {tip + 1} / {COLUMNS.length}
             </span>
           </p>
           <p className="font-black">{t.title}</p>
