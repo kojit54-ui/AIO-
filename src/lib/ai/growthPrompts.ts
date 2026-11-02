@@ -17,6 +17,7 @@ export const FOLLOWUP_SYSTEM_PROMPT = `あなたは、中小企業の社長や�
 - かなり深いところまで聞いてください（2026-11-02）。実際の場面（いつ・誰が・何に困って・どうなった）、数字（価格・期間・件数・年数）、お客様の言葉、そう言える理由、ほかとの違いのうち、まだ答えに無いものを1つずつ掘り下げます。これらが十分にそろって、ほかの会社には書けない材料になったときだけ、follow_up は null にしてください。
 - 聞くときは、質問を1つだけ、40字以内の短いやさしい日本語で。専門用語を使わず、「例えば」で答えやすくしてください。
 - why には、なぜそれを聞くのかを、お客様に伝わる言葉で60字以内で書いてください（例：「価格の目安があると、AIが答えの中でそのまま紹介しやすくなるためです」）。follow_up が null なら why は空にしてください。
+- example には、答えの長さと書き方の目安になる記入例を、この会社の業種に合わせて「例：」から60字以内で書いてください（実在の名前や数字は作らず、いかにもありそうな例にする）。
 - 質問のねらいの材料（aio）を考え、その材料が足りないところを聞いてください。すでに聞いたこと（follow_ups）は聞き直さないでください。
 - お客様の氏名・住所・連絡先など、個人を特定する情報は聞かないでください。
 - 返答は指定したJSONだけにしてください。`;
@@ -52,16 +53,17 @@ ${asData(materials)}
 </materials>
 
 次の形のJSONで返してください：
-{"follow_up": string | null, "why": string}`;
+{"follow_up": string | null, "why": string, "example": string}`;
 }
 
 /** 深掘りの質問と、聞く理由。理由が無ければ空にする（画面が決まった理由を出す） */
-export function parseFollowUpWithWhy(text: string): { question: string; why: string } | null {
+export function parseFollowUpWithWhy(text: string): { question: string; why: string; example: string } | null {
   const question = parseFollowUp(text);
   if (question === null) return null;
   const v = parseJson(text);
   const why = typeof v.why === "string" ? v.why.trim() : "";
-  return { question, why: Array.from(why).length > 120 ? "" : why };
+  const example = typeof v.example === "string" ? v.example.trim() : "";
+  return { question, why: Array.from(why).length > 120 ? "" : why, example: Array.from(example).length > 120 ? "" : example };
 }
 
 export function parseFollowUp(text: string): string | null {

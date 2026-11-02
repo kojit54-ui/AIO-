@@ -113,6 +113,8 @@ export interface HearingFollowUp {
   question: string;
   answer: string;
   why?: string;
+  /** 記入例（薄いグレーで入力欄に出す） */
+  example?: string;
   pending?: boolean;
 }
 

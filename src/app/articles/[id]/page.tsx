@@ -628,6 +628,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
     if (!version.body.length) return <p className="text-sm text-muted">本文を作ると、画像の案が出ます。</p>;
     return (
       <div className="space-y-2 text-sm">
+        {busy === "ideas" && <GeneratingOverlay label="画像の案を作っています" />}
         <p className="text-muted">画像の案がまだありません。本文を作ったときに、画像の案だけ作れなかったようです。</p>
         {canGenerate && (
           <button type="button" className="btn-primary w-full" disabled={busy !== null} onClick={makeIdeas}>
@@ -658,6 +659,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
   const showButtons = canGenerate && enabled;
   return (
     <div className="space-y-3 text-sm">
+      {busy && busy !== "ideas" && <GeneratingOverlay label={busy === "all" ? "画像を作っています" : "画像を1枚作っています"} />}
       {showButtons && (
         <fieldset className="space-y-2">
           <legend className="mb-1 font-semibold">画像の雰囲気を選んでから作ります</legend>
