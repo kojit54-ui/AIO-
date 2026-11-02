@@ -6,10 +6,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { ChatExportImport } from "@/components/ChatExportImport";
 import { Confetti, Shiori, Toast } from "@/components/fun";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { EmptyState, Notice } from "@/components/ui";
 import { IMPORT_PROMPT, MAX_IMPORT_CHARS, type ImportCandidate } from "@/lib/growth/aiImport";
+import { localHearing } from "@/lib/growth/localKnowledge";
 import { ApiError, useStore } from "@/mock/store";
 
 const AI_LINKS = [
@@ -40,6 +42,9 @@ export default function KnowledgePage() {
   const orgId = user.organizationIds[0];
   const notes = (db.knowledgeNotes ?? []).filter((n) => n.organizationId === orgId);
   const blogs = db.referenceArticles.filter((r) => r.organizationId === orgId);
+  const org = db.organizations.find((o) => o.id === orgId);
+  // 会社に関係する会話を探す言葉：会社名・会社の情報・ヒアリングの答え
+  const hints = [org?.name ?? "", org?.profile?.business ?? "", org?.profile?.strengths ?? "", ...Object.values(db.hearing ?? localHearing()).map((a) => a.text)];
 
   const fail = (e: unknown, fallback: string) => setError(e instanceof ApiError ? e.message : fallback);
 
@@ -52,11 +57,11 @@ export default function KnowledgePage() {
     }
   }
 
-  async function read() {
+  async function read(text = pasted) {
     setReading(true);
     setError(null);
     try {
-      const items = await api.readImport(orgId, pasted);
+      const items = await api.readImport(orgId, text);
       setCandidates(items.map((x) => ({ ...x, on: true })));
       if (!items.length) setError("覚えられることが見つかりませんでした。頼み文をそのまま貼って、もう一度AIに聞いてみてください");
     } catch (e) {
@@ -161,7 +166,7 @@ export default function KnowledgePage() {
                 value={pasted}
                 onChange={(e) => setPasted(e.target.value)}
               />
-              <button type="button" className="btn-primary" disabled={!pasted.trim() || reading} onClick={read}>
+              <button type="button" className="btn-primary" disabled={!pasted.trim() || reading} onClick={() => read()}>
                 しおりに読んでもらう
                 <span className="inline-block animate-nudge" aria-hidden>
                   ✨
@@ -197,7 +202,7 @@ export default function KnowledgePage() {
             </button>
           </div>
         )}
-        <p className="text-xs text-muted">会話の記録をまるごと取り込む機能（各AIの「データのエクスポート」のファイルから）は準備中です。</p>
+        <ChatExportImport hints={hints} busy={reading} onRead={read} />
       </section>
 
       <section className="card animate-rise space-y-3" aria-labelledby="blog-import-heading">
