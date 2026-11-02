@@ -6,7 +6,7 @@
 import { HEARING_QUESTIONS, type HearingAnswer } from "@/prototype/growth";
 import type { Answer, Block, Question } from "@/types/domain";
 
-export type KnowledgeSource = "hearing" | "article" | "aio_check" | "published" | "style";
+export type KnowledgeSource = "hearing" | "article" | "aio_check" | "published" | "style" | "imported";
 
 export interface KnowledgeItem {
   /** 何から来た知識か。画面のしるしに使う */
@@ -98,6 +98,8 @@ export function buildKnowledge(input: {
   questions: Question[];
   /** お客様がAIの文を直した組（editPairs） */
   edits?: { before: string; after: string }[];
+  /** ChatGPT などから取り込んだ知識（新しい順） */
+  notes?: { label: string; text: string }[];
 }): KnowledgeItem[] {
   const items: KnowledgeItem[] = [];
   // 言い回しの好みは、どの記事にも効くので先頭に置く
@@ -109,6 +111,9 @@ export function buildKnowledge(input: {
     if (!a?.text.trim() || a.draft) continue;
     const deep = a.followUps.filter((f) => f.answer.trim()).map((f) => `${f.question}→${f.answer.trim()}`);
     items.push({ source: "hearing", label: HEARING_SHORT[q.id] ?? q.label.replace(/[？?]$/, ""), text: cut([a.text, ...deep].join("／")) });
+  }
+  for (const n of input.notes ?? []) {
+    items.push({ source: "imported", label: cut(n.label, 40), text: cut(n.text) });
   }
   for (const x of input.aioAnswers) {
     if (!x.answer.trim()) continue;
@@ -142,6 +147,7 @@ export function pickKnowledge(items: KnowledgeItem[], budget = MAX_KNOWLEDGE_CHA
 }
 
 export const KNOWLEDGE_SOURCE_LABEL: Record<KnowledgeSource, string> = {
+  imported: "取り込み",
   style: "言い回し",
   hearing: "会社のこと",
   aio_check: "AIOのチェック",

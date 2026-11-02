@@ -36,5 +36,6 @@ export function companyKnowledge(db: MockDb, orgId: string, excludeArticleId?: s
       const v = db.versions.find((x) => x.id === a.currentVersionId);
       return v ? [{ articleId: a.id, title: v.title, published: a.status === "published", answers: v.answers, body: v.body }] : [];
     });
-  return buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION] });
+  const notes = (db.knowledgeNotes ?? []).filter((n) => n.organizationId === orgId).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  return buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION], notes });
 }

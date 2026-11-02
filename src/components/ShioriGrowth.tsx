@@ -51,6 +51,7 @@ export function shioriLevel(xp: number) {
 }
 
 const SOURCE_STYLE: Record<KnowledgeSource, string> = {
+  imported: "bg-ok-soft text-ok",
   style: "bg-sky/40 text-ink",
   hearing: "bg-brand-soft text-brand-dark",
   aio_check: "bg-ok-soft text-ok",
@@ -94,6 +95,9 @@ export function ShioriGrowth({ db, orgId }: { db: MockDb; orgId: string }) {
             </p>
           </div>
           <p className="text-sm">答えるほど、書くほど、しおりはあなたの会社に詳しくなり、次の記事があなたらしくなります。</p>
+          <Link href="/knowledge" className="btn-secondary min-h-10 px-4 text-sm">
+            ChatGPT・Claude・Gemini やブログから取り込む →
+          </Link>
         </div>
       </div>
 

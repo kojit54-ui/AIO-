@@ -334,7 +334,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
   const article = toArticle(articleRow);
   const orgId = article.organizationId;
   const month = currentMonthJst();
-  const [orgRes, themeRes, noteRes, refsRes, currentRes, hearingRes, aioRes, pastRes] = await Promise.all([
+  const [orgRes, themeRes, noteRes, refsRes, currentRes, hearingRes, aioRes, notesRes, pastRes] = await Promise.all([
     db.from("organizations").select("*").eq("id", orgId).single(),
     db.from("themes").select("*").eq("id", article.themeId).single(),
     db.from("coaching_notes").select("*").eq("organization_id", orgId).eq("target_month", fromMonth(month)).maybeSingle(),
@@ -345,6 +345,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
     // 会社の知識の材料（読めなくても記事は作る。知識なしで進める）
     db.from("hearing_answers").select("*").eq("organization_id", orgId),
     db.from("aio_checks").select("questions, answers, created_at").eq("organization_id", orgId).order("created_at", { ascending: false }).limit(10),
+    db.from("knowledge_notes").select("label, text, created_at").eq("organization_id", orgId).order("created_at", { ascending: false }).limit(40),
     db.from("articles").select("id, status, current_version_id, updated_at").eq("organization_id", orgId).neq("id", article.id).not("current_version_id", "is", null).order("updated_at", { ascending: false }).limit(8),
   ]);
   // 1つでも読めなければ、足りない材料で（費用をかけて）作らない
@@ -356,7 +357,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
   // 見出し案は質問の回答（下書き）から、本文は今の版の回答から作る（まだ版が無ければ下書き）
   const answers = kind === "outline" || !base?.answers.length ? draft : base.answers;
 
-  const knowledge = await loadKnowledge(db, article.id, hearingRes.data, aioRes.data, pastRes.data);
+  const knowledge = await loadKnowledge(db, article.id, hearingRes.data, aioRes.data, pastRes.data, notesRes.error ? [] : (notesRes.data as { label: string; text: string }[]));
 
   const ctx: GenerationContext = {
     organization: org,
@@ -371,7 +372,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
 }
 
 /** 会社の知識を集める。どれかが読めなくても、読めた分だけで作る（記事づくりは止めない） */
-async function loadKnowledge(db: SupabaseClient, currentArticleId: string, hearingRows: unknown[] | null, aioRows: unknown[] | null, pastRows: unknown[] | null): Promise<KnowledgeItem[]> {
+async function loadKnowledge(db: SupabaseClient, currentArticleId: string, hearingRows: unknown[] | null, aioRows: unknown[] | null, pastRows: unknown[] | null, notes: { label: string; text: string }[] = []): Promise<KnowledgeItem[]> {
   try {
     const hearing: Record<string, HearingAnswer> = {};
     for (const r of (hearingRows ?? []) as HearingAnswerRow[]) hearing[r.question_id] = answerFromDb(r);
@@ -406,7 +407,7 @@ async function loadKnowledge(db: SupabaseClient, currentArticleId: string, heari
         body: v.body ?? [],
       })),
     );
-    return pickKnowledge(buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION], edits }));
+    return pickKnowledge(buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION], edits, notes }));
   } catch {
     return [];
   }

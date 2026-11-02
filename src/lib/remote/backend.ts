@@ -114,7 +114,7 @@ export class RemoteBackend {
       return;
     }
     const uid = auth.user.id;
-    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, runs] = await Promise.all([
+    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, knowledgeNotes, runs] = await Promise.all([
       c.from("memberships").select("organization_id, role").eq("user_id", uid).is("revoked_at", null),
       c.from("app_admins").select("user_id").eq("user_id", uid).maybeSingle(),
       c.from("organizations").select("*").order("name"),
@@ -128,6 +128,7 @@ export class RemoteBackend {
       c.from("reviews").select("*").order("created_at"),
       c.from("aio_checks").select("*").order("created_at"),
       c.from("hearing_answers").select("*"),
+      c.from("knowledge_notes").select("*").order("created_at", { ascending: false }),
       c.from("generation_runs").select("organization_id, kind, status, created_at").gte("created_at", new Date(Date.now() - 32 * 864e5).toISOString()),
     ]);
     const failed = [members, orgs, notes, themes, refs, articles, versions, facts, reviews, runs].find((r) => r.error);
@@ -170,6 +171,9 @@ export class RemoteBackend {
         reviews: (reviews.data ?? []).map(toReview),
         // 表を足す SQL（20261102120000_aio_check.sql）をまだ流していない環境でも、ほかの画面は動かす
         aioChecks: aioChecks.error ? [] : (aioChecks.data ?? []).map(toAioCheck),
+        knowledgeNotes: knowledgeNotes.error
+          ? []
+          : (knowledgeNotes.data ?? []).map((r) => ({ id: r.id as string, organizationId: r.organization_id as string, source: r.source as "ai_import" | "manual", label: r.label as string, text: r.text as string, createdAt: r.created_at as string })),
         // 会社のこと（ヒアリング）。担当の会社が複数あるコタムでは混ざるので、お客様（1社）のときだけ使う
         hearing: hearing.error || role !== "client_member" ? {} : Object.fromEntries((hearing.data ?? []).map((r) => [r.question_id as string, answerFromDb(r as HearingAnswerRow)])),
         draftAnswers: Object.fromEntries(
@@ -484,6 +488,33 @@ export class RemoteBackend {
       const { data, error } = await this.client.from("organizations").update({ profile: fresh, profile_approved_at: null }).eq("id", orgId).select("id");
       if (error) throw toApiError(error);
       if (!data?.length) throw new ApiError("forbidden", "プロフィールを編集できるのはコタム担当者です");
+      await this.load();
+    },
+
+    readImport: async (orgId, text) => {
+      this.requireUser();
+      const json = await this.post<{ items?: { label: string; text: string }[] }>(`/api/organizations/${encodeURIComponent(orgId)}/knowledge-import`, { text }, "読み取れませんでした。もう一度お試しください");
+      return json.items ?? [];
+    },
+
+    saveKnowledgeNotes: async (orgId, items) => {
+      const user = this.requireUser();
+      const { error } = await this.client.from("knowledge_notes").insert(items.map((x) => ({ organization_id: orgId, source: "ai_import", label: x.label, text: x.text, created_by: user.id })));
+      if (error) throw toApiError(error, error.message?.includes("limit_reached") ? "覚えられる数（200件）に達しました。古いものを消してください" : "保存できませんでした");
+      await this.load();
+    },
+
+    deleteKnowledgeNote: async (noteId) => {
+      this.requireUser();
+      const { error } = await this.client.from("knowledge_notes").delete().eq("id", noteId);
+      if (error) throw toApiError(error, "消せませんでした");
+      await this.load();
+    },
+
+    addBlogArticle: async (orgId, input) => {
+      this.requireUser();
+      const { error } = await this.client.from("reference_articles").insert({ organization_id: orgId, title: input.title, body: input.body, url: input.url, usable_for_ai: true });
+      if (error) throw toApiError(error, "保存できませんでした");
       await this.load();
     },
 
