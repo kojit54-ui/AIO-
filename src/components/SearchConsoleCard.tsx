@@ -71,12 +71,12 @@ export function SearchConsoleCard({ db, orgId }: { db: MockDb; orgId: string }) 
       </ul>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <h3 className="mb-1 text-sm font-black">どんな言葉で見つけてもらえたか</h3>
+          <h3 className="mb-1 text-sm font-black">どんな言葉で見つけてもらえたか（検索に出た回数の多い順）</h3>
           {s.queries.length === 0 ? (
             <p className="text-sm text-muted">まだデータがありません。記事が増えると出てきます。</p>
           ) : (
             <ol className="space-y-1 text-sm">
-              {s.queries.slice(0, 5).map((q, i) => (
+              {[...s.queries].sort((a, b) => b.impressions - a.impressions).slice(0, 5).map((q, i) => (
                 <li key={q.query} className="flex items-baseline gap-2">
                   <span className="w-5 shrink-0 font-black text-brand">{i + 1}</span>
                   <span className="min-w-0 flex-1 truncate">{q.query}</span>
