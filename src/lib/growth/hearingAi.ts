@@ -4,6 +4,8 @@
 // 受付（start_hearing_ai）→ 実行の確保 → AI → 結果の記録、の順。答えはログに出さない。
 
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { buildImportPrompt, IMPORT_SYSTEM_PROMPT, parseImport } from "@/lib/ai/growthPrompts";
+import { MAX_IMPORT_CHARS, splitByHeadings, type ImportCandidate } from "./aiImport";
 import { buildExamplesPrompt, buildFollowUpPrompt, buildProfilePrompt, EXAMPLES_SYSTEM_PROMPT, FOLLOWUP_SYSTEM_PROMPT, parseExamples, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
 import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import { sampleQuestionExamples } from "./questionExamples";
@@ -216,5 +218,34 @@ export async function runQuestionExamples(deps: HearingDeps, req: { organization
     console.error("question examples failed", { runId: b.runId, reason });
     await b.finish("failed", usage, reason);
     return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "記入例を作れませんでした");
+  }
+}
+
+/** ChatGPT などのまとめから、会社の知識の候補を読み取る。保存はしない（お客様が選んでから画面が保存する） */
+export async function runImportRead(deps: HearingDeps, req: { organizationId: string; text: string; idempotencyKey: string }): Promise<{ ok: true; items: ImportCandidate[] } | Fail> {
+  if (!(await requireUser(deps.user))) return fail(401, "session_expired", "ログインの有効期限が切れました");
+  const pasted = typeof req.text === "string" ? req.text.trim() : "";
+  if (!pasted) return fail(400, "invalid_input", "AIの返事を貼り付けてください");
+  if (pasted.length > MAX_IMPORT_CHARS) return fail(400, "invalid_input", `長すぎます。${MAX_IMPORT_CHARS.toLocaleString()}字までにしてください`);
+  // 受付の文字数（8,000字まで）には、長い貼り付けも上限で数える
+  const b = await begin(deps, req.organizationId, req.idempotencyKey, Math.min(pasted.length, 8000));
+  if (!b.ok) return b;
+  const signal = AbortSignal.timeout(PROFILE_TIMEOUT_MS);
+  let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
+  try {
+    let items: ImportCandidate[];
+    if (deps.isSample) items = splitByHeadings(pasted);
+    else {
+      const res = await deps.provider.complete({ kind: "hearing", system: IMPORT_SYSTEM_PROMPT, user: buildImportPrompt(pasted), maxOutputTokens: 4000, signal });
+      usage = res.usage;
+      items = parseImport(res.text);
+    }
+    await b.finish("succeeded", usage, null);
+    return { ok: true, items };
+  } catch (e) {
+    const reason = failureReason(e, signal);
+    console.error("ai import read failed", { runId: b.runId, reason });
+    await b.finish("failed", usage, reason);
+    return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "読み取れませんでした。もう一度お試しください");
   }
 }

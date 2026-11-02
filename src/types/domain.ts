@@ -241,3 +241,13 @@ export interface AioCheck {
   isSample: boolean;
   createdAt: string;
 }
+
+/** お客様が取り込んだ会社の知識（ChatGPT・Claude・Gemini のまとめから選んだもの）。記事を作るたびにAIへ渡す */
+export interface KnowledgeNote {
+  id: string;
+  organizationId: string;
+  source: "ai_import" | "manual";
+  label: string;
+  text: string;
+  createdAt: string;
+}

@@ -6,6 +6,7 @@
 import { createContext, useContext, useMemo, useSyncExternalStore } from "react";
 import type {
   AioCheck,
+  KnowledgeNote,
   ArticleImage,
   Answer,
   Article,
@@ -34,6 +35,7 @@ import * as seed from "./data";
 import { buildBody, buildOutline, buildTitleCandidates, extractFactChecks } from "./sampleGenerator";
 import { sampleApplyAnswers, sampleAioCheck } from "@/lib/aioCheck";
 import { sampleQuestionExamples } from "@/lib/growth/questionExamples";
+import { splitByHeadings } from "@/lib/growth/aiImport";
 import { pickKnowledge } from "@/lib/growth/knowledge";
 import { companyKnowledge } from "@/lib/growth/localKnowledge";
 import type { HearingAnswer } from "@/prototype/growth";
@@ -52,6 +54,8 @@ export interface MockDb {
   aioChecks: AioCheck[];
   /** 会社のこと（ヒアリング）の答え。本物のデータでだけ読み込む。試作ではブラウザの中のヒアリングを使う */
   hearing?: Record<string, HearingAnswer>;
+  /** ChatGPT などから取り込んだ会社の知識 */
+  knowledgeNotes?: KnowledgeNote[];
   draftAnswers: Record<string, { answers: Answer[]; step: number }>;
 }
 
@@ -602,6 +606,45 @@ function createApi(
     },
 
     /** 顧客がプロフィールの内容を確認した。確認済みのものだけがAIに渡る */
+    /** ChatGPT などのまとめを読み取って、会社の知識の候補にする（サンプル：【見出し】ごとに分けるだけ） */
+    async readImport(orgId: string, text: string) {
+      const user = requireUser();
+      requireOrg(user, orgId);
+      await delay(1200);
+      if (!text.trim()) throw new ApiError("save_failed", "AIの返事を貼り付けてください");
+      return splitByHeadings(text);
+    },
+
+    /** 選んだ知識を覚える */
+    async saveKnowledgeNotes(orgId: string, items: { label: string; text: string }[]) {
+      const user = requireUser();
+      requireOrg(user, orgId);
+      if (user.role !== "client_member") throw new ApiError("forbidden", "取り込めるのは会社の担当の方です");
+      await delay(400);
+      checkSaveSimulations();
+      const db = getDb();
+      const notes: KnowledgeNote[] = items.map((x) => ({ id: uid("kn"), organizationId: orgId, source: "ai_import", label: x.label, text: x.text, createdAt: now() }));
+      commit({ ...db, knowledgeNotes: [...(db.knowledgeNotes ?? []), ...notes] });
+    },
+
+    async deleteKnowledgeNote(noteId: string) {
+      requireUser();
+      await delay(200);
+      const db = getDb();
+      commit({ ...db, knowledgeNotes: (db.knowledgeNotes ?? []).filter((n) => n.id !== noteId) });
+    },
+
+    /** これまでのブログ記事を、過去記事として足す（次の記事づくりに使う） */
+    async addBlogArticle(orgId: string, input: { title: string; body: string; url: string | null }) {
+      const user = requireUser();
+      requireOrg(user, orgId);
+      await delay(400);
+      checkSaveSimulations();
+      const db = getDb();
+      const r: ReferenceArticle = { id: uid("ref"), organizationId: orgId, title: input.title, body: input.body, url: input.url, publishedOn: null, usableForAi: true };
+      commit({ ...db, referenceArticles: [...db.referenceArticles, r] });
+    },
+
     /** 記事の質問の記入例を、会社に合わせて作る（サンプル） */
     async ensureQuestionExamples(orgId: string) {
       requireUser();
