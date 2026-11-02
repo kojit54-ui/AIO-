@@ -31,15 +31,16 @@ export function StampBook({ db, orgId }: { db: MockDb; orgId: string }) {
     const ids = gotKey ? gotKey.split(",") : [];
     // はじめて開いたときは、今までの分をお祝いせずに覚えるだけ
     const news = seen === null ? [] : newlyGot(list, seen).map((b) => b.id);
-    try {
-      window.localStorage.setItem(KEY(orgId), JSON.stringify(ids));
-    } catch {
-      // 覚えられなくても表示はできる
-    }
-    if (news.length) {
-      const t = setTimeout(() => setFresh(news), 0);
-      return () => clearTimeout(t);
-    }
+    // 覚えるのとお祝いは同じタイミングで。開発中の二度呼び（StrictMode）で、先に覚えてお祝いが消えないように
+    const t = setTimeout(() => {
+      try {
+        window.localStorage.setItem(KEY(orgId), JSON.stringify(ids));
+      } catch {
+        // 覚えられなくても表示はできる
+      }
+      if (news.length) setFresh(news);
+    }, 0);
+    return () => clearTimeout(t);
     // バッジがそろったときだけ確かめ直す
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orgId, gotKey]);
