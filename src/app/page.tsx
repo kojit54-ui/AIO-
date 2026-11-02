@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { AioNews } from "@/components/aio";
 import { Shiori, Wave } from "@/components/fun";
 import { MonthlyGrowth } from "@/components/MonthlyGrowth";
+import { SearchConsoleCard } from "@/components/SearchConsoleCard";
 import { ShioriGrowth } from "@/components/ShioriGrowth";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
@@ -81,6 +82,7 @@ export default function HomePage() {
 
       <ShioriGrowth db={db} orgId={orgId} />
       <MonthlyGrowth db={db} orgId={orgId} month={month} />
+      <SearchConsoleCard db={db} orgId={orgId} />
 
       <section aria-labelledby="list-heading">
         <h2 id="list-heading" className="mb-3 text-lg font-bold">

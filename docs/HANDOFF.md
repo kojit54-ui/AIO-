@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-02 CC（Claude、プロジェクトのスレッド）Search Console
+- ブランチ / コミット：claude/search-console（main から）
+- 変更点：Search Console のつなぎ方A（DECISIONS 2026-11-02）。src/lib/searchConsole.ts（サービス用アカウントの JWT、URL をそろえる、28日分を読む）、src/lib/growth/searchConsoleServer.ts、/api/organizations/[id]/search-console（+/refresh）、/api/search-console-account、/search-console の画面、ホームの SearchConsoleCard、試作のサンプルの数字、マイグレーション 20261102160000_search_console.sql
+- 確認結果：単体テスト（URL、JWT とトークン、28日の範囲、403・404）、DBの権限テスト、型検査、lint、build。試作で つなぐ → ホームに数字 を確認
+- 未完了：田村さんの Google Cloud の準備（docs/KEYWORD_TOOLS_SETUP.md の 3）と SQL の実行。本物のサイトでの確認
+- 次の作業と担当：田村さんが準備 → CC が検証環境で確かめる → CX がレビュー
+
 ### 2026-11-02 CC（Claude、プロジェクトのスレッド）その21
 - ブランチ / コミット：claude/self-start（PR #28 の上。PR #32 も含む）
 - 変更点：コタムを待たずに書き始める（DECISIONS 2026-11-02）。src/components/ProfileSetup.tsx、isOrgReady（今月の方針は任意）、/profile のまとめ直し、src/lib/growth/hearingAi.ts と /api/organizations/[id]/hearing-follow-up・profile-from-hearing、growthPrompts の深掘り（理由つき）と会社の情報の指示、growth.ts の pending・deepDiveDone・MAX_AI_DEEP_DIVES、ヒアリングの画面、マイグレーション 20261102130000_hearing_ai.sql

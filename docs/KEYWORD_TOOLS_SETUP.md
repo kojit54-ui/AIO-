@@ -37,7 +37,18 @@ API の仕様：https://api.rakkokeyword.com/docs （写し /mnt/project-files/k
 
 ## 3. Google Search Console
 
-つなぎ方（顧客がコタムのアカウントを閲覧者に追加する案がおすすめ）は、まだ決めていません（docs/DECISIONS.md 2026-10-23）。キーワードプランナーとラッコの後に決めます。
+つなぎ方はA（お客様が、コタムのサービス用アカウントを「制限付き」で足す）に決めました（docs/DECISIONS.md 2026-11-02）。コタムの準備は1回だけです。
+
+1. Google Cloud（https://console.cloud.google.com/）に、コタムの Google アカウントでログインし、上の「プロジェクトを選択」→「新しいプロジェクト」で「cotam-aio」を作る
+2. 左上のメニュー →「APIとサービス」→「ライブラリ」で「Google Search Console API」を探して「有効にする」
+3. 「APIとサービス」→「認証情報」→「認証情報を作成」→「サービス アカウント」。名前は「aio-reader」。役割（ロール）は付けずに完了
+4. できたサービスアカウントを開き、「鍵」→「鍵を追加」→「新しい鍵を作成」→「JSON」。JSON のファイルがダウンロードされる（これが鍵です。チャットや GitHub に貼らない）
+5. JSON の中の client_email を Vercel の環境変数 `GOOGLE_SERVICE_ACCOUNT_EMAIL` に、private_key（-----BEGIN から END PRIVATE KEY-----
+ まで）を `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` に入れる（Production と Preview）。常時稼働PCの `.env.local` にも同じ2つ。入れたら Vercel で Redeploy
+6. Supabase の SQL Editor で supabase/migrations/20261102160000_search_console.sql を流す
+7. コタムの Search Console で試す：お客様の画面の「つなぐ」から、client_email を「制限付き」で足し、サイトのURLを入れる
+
+お客様の手順は画面（/search-console）に出ます。料金はかかりません（Search Console API は無料。1日あたりの回数の上限は十分）。
 
 ## 出典
 

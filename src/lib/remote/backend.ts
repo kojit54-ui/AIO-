@@ -8,7 +8,7 @@
 import { createBrowserClient } from "@supabase/ssr";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { Answer, Article, ArticleImage, Block, CompanyProfile, FactCheckStatus, GenerationErrorCode, ReviewDecision, SessionUser } from "@/types/domain";
+import type { Answer, Article, ArticleImage, Block, CompanyProfile, FactCheckStatus, GenerationErrorCode, ReviewDecision, ScSnapshot, SessionUser } from "@/types/domain";
 import { applyAction, type ArticleAction, TransitionError } from "@/lib/workflow";
 import { extractFactChecks } from "@/mock/sampleGenerator";
 import type { MockApi, MockDb, Simulation } from "@/mock/store";
@@ -114,7 +114,7 @@ export class RemoteBackend {
       return;
     }
     const uid = auth.user.id;
-    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, knowledgeNotes, aioMentions, runs] = await Promise.all([
+    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, knowledgeNotes, aioMentions, searchConsole, runs] = await Promise.all([
       c.from("memberships").select("organization_id, role").eq("user_id", uid).is("revoked_at", null),
       c.from("app_admins").select("user_id").eq("user_id", uid).maybeSingle(),
       c.from("organizations").select("*").order("name"),
@@ -130,6 +130,7 @@ export class RemoteBackend {
       c.from("hearing_answers").select("*"),
       c.from("knowledge_notes").select("*").order("created_at", { ascending: false }),
       c.from("aio_mentions").select("*").order("created_at", { ascending: false }).limit(60),
+      c.from("search_console").select("*"),
       c.from("generation_runs").select("organization_id, kind, status, created_at").gte("created_at", new Date(Date.now() - 32 * 864e5).toISOString()),
     ]);
     const failed = [members, orgs, notes, themes, refs, articles, versions, facts, reviews, runs].find((r) => r.error);
@@ -183,6 +184,18 @@ export class RemoteBackend {
               sources: Array.isArray(r.sources) ? (r.sources as { url: string; title: string }[]) : [],
               isSample: !!r.is_sample,
               createdAt: r.created_at as string,
+            })),
+        // 表を足す SQL（20261102160000_search_console.sql）をまだ流していない環境では、つながっていない扱い
+        searchConsole: searchConsole.error
+          ? []
+          : (searchConsole.data ?? []).map((r) => ({
+              organizationId: r.organization_id as string,
+              siteUrl: r.site_url as string,
+              verifiedAt: (r.verified_at as string | null) ?? null,
+              lastError: (r.last_error as string | null) ?? null,
+              snapshot: (r.snapshot as ScSnapshot | null) ?? null,
+              fetchedAt: (r.fetched_at as string | null) ?? null,
+              isSample: false,
             })),
         knowledgeNotes: knowledgeNotes.error
           ? []
@@ -507,6 +520,25 @@ export class RemoteBackend {
     runMentionCheck: async (orgId) => {
       this.requireUser();
       await this.post(`/api/organizations/${encodeURIComponent(orgId)}/mention-check`, {}, "AIに聞けませんでした。少し待ってからもう一度お試しください");
+    },
+
+    searchConsoleAccount: async () => {
+      const res = await fetch("/api/search-console-account").catch(() => null);
+      const json = ((await res?.json().catch(() => null)) ?? null) as { email?: string | null } | null;
+      return json?.email ?? null;
+    },
+
+    connectSearchConsole: async (orgId, siteUrl) => {
+      this.requireUser();
+      const json = await this.post<{ connected?: boolean; message?: string }>(`/api/organizations/${encodeURIComponent(orgId)}/search-console`, { siteUrl }, "つなげませんでした。少し待ってからもう一度お試しください");
+      return { connected: !!json.connected, message: json.message };
+    },
+
+    refreshSearchConsole: async (orgId) => {
+      this.requireUser();
+      const res = await fetch(`/api/organizations/${encodeURIComponent(orgId)}/search-console/refresh`, { method: "POST" }).catch(() => null);
+      const json = ((await res?.json().catch(() => null)) ?? null) as { refreshed?: boolean } | null;
+      if (json?.refreshed) await this.load();
     },
 
     readImport: async (orgId, text) => {
