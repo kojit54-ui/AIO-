@@ -5,7 +5,8 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { estimateCostYen } from "@/lib/ai/cost";
-import { buildProposalPrompt, parseProposals, PROPOSAL_SYSTEM_PROMPT, type HearingForPrompt, type ParsedProposal } from "@/lib/ai/growthPrompts";
+import { buildProposalPrompt, parseProposals, PROPOSAL_SYSTEM_PROMPT, type HearingForPrompt, type ParsedProposal, type SearchSignalForPrompt } from "@/lib/ai/growthPrompts";
+import type { ScSnapshot } from "@/types/domain";
 import { ParseError } from "@/lib/ai/prompt";
 import { failureReason, type AiProvider, type AiUsage } from "@/lib/ai/provider";
 import type { RakkoClient } from "@/lib/keywords/rakko";
@@ -87,6 +88,22 @@ export function researchSeeds(answers: Record<string, HearingAnswer>, sellNames:
   return [...sellNames, ...services];
 }
 
+/** AIに渡す Search Console の言葉の数 */
+export const MAX_SEARCH_SIGNALS = 15;
+
+/**
+ * Search Console の言葉を、伸びしろの種類に分けて渡す。数字は渡さない。
+ * 表示が少ない言葉はたまたまのことが多いので外す。順位が8位より上は strong、30位までは near、それより下は外す
+ */
+export function searchSignals(snapshot: ScSnapshot | null | undefined): SearchSignalForPrompt[] {
+  if (!snapshot) return [];
+  return [...snapshot.queries]
+    .filter((q) => q.impressions >= 5 && q.position <= 30 && q.query.trim())
+    .sort((a, b) => b.impressions - a.impressions)
+    .slice(0, MAX_SEARCH_SIGNALS)
+    .map((q) => ({ query: q.query.trim(), status: q.position <= 8 ? "strong" : "near" }));
+}
+
 /** サンプル（AIは未接続）の提案。画面と同じ作り方で、ヒアリングの言葉から作る */
 function sampleSet(answers: Record<string, HearingAnswer>): ParsedProposal[] {
   return sampleProposals(answers).map((p) => ({
@@ -111,10 +128,13 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
   if (!auth.user) return fail(401, "session_expired", "ログインの有効期限が切れました");
 
   // 読み込みは利用者の権限（RLS）。他社の答えは読めない
-  const [{ data: answerRows, error: e1 }, { data: sellRows, error: e2 }] = await Promise.all([
+  const [{ data: answerRows, error: e1 }, { data: sellRows, error: e2 }, { data: scRow }] = await Promise.all([
     db.from("hearing_answers").select("*").eq("organization_id", req.organizationId),
     db.from("sell_items").select("name").eq("organization_id", req.organizationId).order("rank"),
+    // つながっていない会社や、表がまだ無い環境では使わない
+    db.from("search_console").select("snapshot, verified_at").eq("organization_id", req.organizationId).maybeSingle(),
   ]);
+  const search = scRow?.verified_at ? searchSignals(scRow.snapshot as ScSnapshot | null) : [];
   if (e1 || e2) return fail(500, "provider_error", "会社のことを読み込めませんでした。もう一度お試しください");
   const answers: Record<string, HearingAnswer> = {};
   for (const r of (answerRows ?? []) as HearingAnswerRow[]) answers[r.question_id] = answerFromDb(r);
@@ -165,7 +185,7 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
           console.error("keyword research failed", { runId: run.id, reason: e instanceof Error ? e.name : "other" });
         }
       }
-      proposals = await askProposals(deps.provider, hearing, research, signal, (u) => {
+      proposals = await askProposals(deps.provider, hearing, research, search, signal, (u) => {
         usage = { inputTokens: usage.inputTokens + u.inputTokens, outputTokens: usage.outputTokens + u.outputTokens };
       });
     }
@@ -199,8 +219,8 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
 }
 
 /** 返事の形が違ったときは1回だけ聞き直す */
-async function askProposals(provider: AiProvider, hearing: HearingForPrompt, research: ResearchForPrompt[], signal: AbortSignal, onUsage: (u: AiUsage) => void): Promise<ParsedProposal[]> {
-  const user = buildProposalPrompt(hearing, research);
+async function askProposals(provider: AiProvider, hearing: HearingForPrompt, research: ResearchForPrompt[], search: SearchSignalForPrompt[], signal: AbortSignal, onUsage: (u: AiUsage) => void): Promise<ParsedProposal[]> {
+  const user = buildProposalPrompt(hearing, research, search);
   for (let attempt = 0; ; attempt++) {
     const res = await provider.complete({ kind: "keyword_proposal", system: PROPOSAL_SYSTEM_PROMPT, user, maxOutputTokens: 6000, signal });
     onUsage(res.usage);
