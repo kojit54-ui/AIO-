@@ -325,3 +325,8 @@ interface GenerationRun {
 - 記事を公開すると、その記事をつないだ行は自動で「やった」になる（トリガー app.mark_keyword_published）。公開をやめても自動では戻さない
 - 画面からの読み書きは src/prototype/remote.ts（ログイン中の利用者の権限。RLS とトリガーが守る）。おすすめの案は keyword_proposals から読む。記事ごとの一問一答の答えはまだ表が無く、会社ごとにブラウザに置いている
 - 第2段階で search_console_daily（organization_id、date、query、page、clicks、impressions、position）を足す。書き込みは service role だけ
+
+## Search Console（supabase/migrations/20261102160000_search_console.sql）
+
+- search_console：1社1行。site_url（https://example.jp/ か sc-domain:example.jp）、verified_at（読めたら入る。権限を外されたら空に戻す）、last_error（お客様に見せる文）、snapshot（{range, totals, queries, pages}、src/types/domain.ts の ScSnapshot）、fetched_at
+- 読めるのは同じ会社の人（お客様・コタム）。書くのはサーバー（service role）だけ。入口は POST /api/organizations/:id/search-console（つなぐ。お客様だけ）と /search-console/refresh（12時間より古ければ読み直す）、GET /api/search-console-account（足してもらうアドレス）

@@ -263,3 +263,22 @@ export interface AioMention {
   isSample: boolean;
   createdAt: string;
 }
+
+/** Search Console の28日分のまとめ。src/lib/searchConsole.ts */
+export interface ScSnapshot {
+  range: { start: string; end: string };
+  totals: { clicks: number; impressions: number; ctr: number; position: number };
+  queries: { query: string; clicks: number; impressions: number; position: number }[];
+  pages: { page: string; clicks: number; impressions: number; position: number }[];
+}
+
+/** Search Console とのつながり（1社1つ） */
+export interface SearchConsoleLink {
+  organizationId: string;
+  siteUrl: string;
+  verifiedAt: string | null;
+  lastError: string | null;
+  snapshot: ScSnapshot | null;
+  fetchedAt: string | null;
+  isSample: boolean;
+}

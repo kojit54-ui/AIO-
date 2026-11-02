@@ -7,6 +7,7 @@ import { createContext, useContext, useMemo, useSyncExternalStore } from "react"
 import type {
   AioCheck,
   AioMention,
+  SearchConsoleLink,
   KnowledgeNote,
   ArticleImage,
   Answer,
@@ -38,6 +39,7 @@ import { sampleApplyAnswers, sampleAioCheck } from "@/lib/aioCheck";
 import { sampleQuestionExamples } from "@/lib/growth/questionExamples";
 import { splitByHeadings } from "@/lib/growth/aiImport";
 import { mentionQuestions } from "@/lib/growth/mentionQuestions";
+import { SAMPLE_SC_EMAIL, sampleSnapshot } from "@/lib/growth/searchConsoleSample";
 import { localHearing } from "@/lib/growth/localKnowledge";
 import { pickKnowledge } from "@/lib/growth/knowledge";
 import { companyKnowledge } from "@/lib/growth/localKnowledge";
@@ -61,6 +63,8 @@ export interface MockDb {
   knowledgeNotes?: KnowledgeNote[];
   /** AIに紹介されたかのチェックの結果 */
   aioMentions?: AioMention[];
+  /** Search Console とのつながりと、最後に読んだ数字 */
+  searchConsole?: SearchConsoleLink[];
   draftAnswers: Record<string, { answers: Answer[]; step: number }>;
 }
 
@@ -622,6 +626,32 @@ function createApi(
       if (!qs.length) throw new ApiError("save_failed", "先に「会社のことを教える」で、売りたいものと地域に答えてください");
       const rows: AioMention[] = qs.map((q) => ({ id: uid("am"), organizationId: orgId, question: q, mentioned: false, excerpt: "サンプル（AIは未接続）：検索できるAIのキーが入ると、ここに答えが入ります。", sources: [], isSample: true, createdAt: now() }));
       commit({ ...db, aioMentions: [...(db.aioMentions ?? []), ...rows] });
+    },
+
+    /** お客様が Search Console に足す、コタムのアドレス。準備がまだなら null */
+    async searchConsoleAccount(): Promise<string | null> {
+      await delay(200);
+      return SAMPLE_SC_EMAIL;
+    },
+
+    /** Search Console をつなぐ（サンプル：URLの形だけ確かめて、それらしい数字を入れる） */
+    async connectSearchConsole(orgId: string, siteUrl: string): Promise<{ connected: boolean; message?: string }> {
+      const user = requireUser();
+      requireOrg(user, orgId);
+      if (user.role !== "client_member") throw new ApiError("forbidden", "つなげるのは会社の担当の方です");
+      await delay(1200);
+      const site = siteUrl.trim();
+      if (!/^(sc-domain:)?(https?:\/\/)?[^\s/]+\.[^\s/]+/i.test(site)) throw new ApiError("save_failed", "サイトのURLを確かめてください（例：https://example.jp/）");
+      const db = getDb();
+      const services = (localHearing().services?.text ?? "").split(/[\n、,／/。]/).map((x) => x.trim()).filter((x) => x && x.length <= 16).slice(0, 2);
+      const link: SearchConsoleLink = { organizationId: orgId, siteUrl: site, verifiedAt: now(), lastError: null, snapshot: sampleSnapshot(db.articles.filter((a) => a.organizationId === orgId && a.status === "published"), services), fetchedAt: now(), isSample: true };
+      commit({ ...db, searchConsole: [...(db.searchConsole ?? []).filter((x) => x.organizationId !== orgId), link] });
+      return { connected: true };
+    },
+
+    /** 古くなった数字を読み直す（サンプルでは何もしない） */
+    async refreshSearchConsole(orgId: string) {
+      requireOrg(requireUser(), orgId);
     },
 
     /** ChatGPT などのまとめを読み取って、会社の知識の候補にする（サンプル：【見出し】ごとに分けるだけ） */
