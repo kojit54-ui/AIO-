@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import { KnowledgeUsed } from "@/components/ShioriGrowth";
 import { AioCheckBanner, AioCheckOverlays, AioCheckPanel, useAioCheck } from "@/components/AioCheckPanel";
 import { BlockEditor } from "@/components/BlockEditor";
-import { Confetti, Shiori, ShioriFace, Toast } from "@/components/fun";
+import { Confetti, ShioriFace, Toast } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, StatusBadge, formatDate } from "@/components/ui";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
 import { ApiError, useStore } from "@/mock/store";
@@ -337,10 +338,7 @@ function ShioriNote({ status, fresh }: { status: Article["status"]; fresh: boole
           : null;
   if (!note) return null;
   return (
-    <div className="mb-4 flex animate-rise items-end gap-3 rounded-3xl bg-surface/70 px-4 pt-2">
-      <Shiori mood={note.mood} className="h-24 w-auto shrink-0 animate-float" />
-      <p className="mb-3 font-bold">{note.text}</p>
-    </div>
+    <ShioriTalk mood={note.mood} lines={note.text} size="md" className="mb-4 animate-rise rounded-3xl bg-surface/70 px-4 pt-2" />
   );
 }
 
@@ -436,12 +434,7 @@ function TitleEditor({ title, candidates, readOnly, onChange }: { title: string;
 function OutlineEditor({ headings, onChange, onGenerate, busy }: { headings: string[]; onChange: (h: string[]) => void; onGenerate: () => void; busy: boolean }) {
   return (
     <div className="space-y-4">
-      <div className="flex items-end gap-4">
-        <Shiori mood="welldone" className="hidden h-32 w-auto shrink-0 animate-float sm:block" />
-        <p>
-          答えてもらった内容から、記事の見出しを作りました。順番を入れ替えたり、言葉を直したりしてから「本文を作る」を押してください。
-        </p>
-      </div>
+      <ShioriTalk mood="welldone" lines={["答えてもらった内容から、記事の見出しを作りました！", "順番を入れ替えたり、言葉を直したりしてから「本文を作る」を押してくださいね。"]} />
       <ol className="space-y-2">
         {headings.map((h, i) => (
           <li key={i} className="flex animate-rise items-center gap-2" style={{ animationDelay: `${i * 0.07}s` }}>

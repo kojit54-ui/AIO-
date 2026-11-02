@@ -1,13 +1,16 @@
 "use client";
 
-// しおりに教える（取り込み）。docs/DECISIONS.md 2026-11-02。
+// しおりに教える（取り込み）。docs/DECISIONS.md 2026-11-02・11-03。
+// やり方を3つから選び、どれも手順を1つずつ進める（2026-11-02 田村さん：リテラシーの低い人が使う。ゲームのように）。
 // 1. いつものAI（ChatGPT・Claude・Gemini）に頼み文を貼り、返事をここに貼る → しおりが読み取り → 選んだものを覚える
-// 2. これまでのブログ記事を、過去記事として足す（次の記事づくりに使う）
+// 2. 会話の記録をまるごと（各AIの書き出しファイル）→ 関係する会話を選ぶ → しおりが読み取り
+// 3. これまでのブログ記事を、過去記事として足す（次の記事づくりに使う）
 
 import Link from "next/link";
 import { useState } from "react";
 import { ChatExportImport } from "@/components/ChatExportImport";
-import { Confetti, Shiori, Toast } from "@/components/fun";
+import { Confetti, Toast } from "@/components/fun";
+import { type GuideStep, ShioriTalk, StepGuide } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { EmptyState, Notice } from "@/components/ui";
 import { IMPORT_PROMPT, MAX_IMPORT_CHARS, type ImportCandidate } from "@/lib/growth/aiImport";
@@ -20,8 +23,18 @@ const AI_LINKS = [
   { name: "Gemini", url: "https://gemini.google.com/" },
 ];
 
+type Mode = "ask" | "file" | "blog";
+const MODES: { id: Mode; icon: string; title: string; note: string; time: string }[] = [
+  { id: "ask", icon: "💬", title: "いつものAIに、まとめてもらう", note: "ChatGPT などに頼み文を送って、返事を貼るだけ", time: "かんたん・5分" },
+  { id: "file", icon: "📦", title: "会話の記録を、まるごと渡す", note: "AIの「データのエクスポート」のファイルから", time: "じっくり・メール待ちあり" },
+  { id: "blog", icon: "📝", title: "これまでのブログ記事を渡す", note: "書いてきた記事を1本ずつ貼り付け", time: "1本1分" },
+];
+
 export default function KnowledgePage() {
   const { db, user, api } = useStore();
+  const [mode, setMode] = useState<Mode | null>(null);
+  const [ai, setAi] = useState(AI_LINKS[0].name);
+  const [askStep, setAskStep] = useState(0);
   const [copied, setCopied] = useState(false);
   const [pasted, setPasted] = useState("");
   const [reading, setReading] = useState(false);
@@ -53,7 +66,7 @@ export default function KnowledgePage() {
       await navigator.clipboard.writeText(IMPORT_PROMPT);
       setCopied(true);
     } catch {
-      setError("コピーできませんでした。下の頼み文を選んでコピーしてください");
+      setError("コピーできませんでした。下の「頼み文の中身を見る」から選んでコピーしてください");
     }
   }
 
@@ -64,6 +77,7 @@ export default function KnowledgePage() {
       const items = await api.readImport(orgId, text);
       setCandidates(items.map((x) => ({ ...x, on: true })));
       if (!items.length) setError("覚えられることが見つかりませんでした。頼み文をそのまま貼って、もう一度AIに聞いてみてください");
+      else if (mode === "ask") setAskStep(4);
     } catch (e) {
       fail(e, "読み取れませんでした。もう一度お試しください");
     }
@@ -99,6 +113,88 @@ export default function KnowledgePage() {
     setSaving(false);
   }
 
+  const aiUrl = AI_LINKS.find((a) => a.name === ai)?.url ?? AI_LINKS[0].url;
+  const askSteps: GuideStep[] = [
+    {
+      title: "AIを選ぶ",
+      mood: "ask",
+      say: ["いつもどのAIを使っていますか？", "押すと、そのAIが新しい画面で開きます。"],
+      body: (
+        <div className="flex flex-wrap gap-2">
+          {AI_LINKS.map((a) => (
+            <a
+              key={a.name}
+              href={a.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+              onClick={() => {
+                setAi(a.name);
+                setAskStep(1);
+              }}
+            >
+              {a.name} ↗
+            </a>
+          ))}
+        </div>
+      ),
+      next: null,
+    },
+    {
+      title: "コピー",
+      mood: "point",
+      say: [`${ai}が開きましたね。`, "こちらの画面に戻って、しおりが用意した「頼み文」をコピーしてください。"],
+      body: (
+        <div className="space-y-2">
+          <button type="button" className={copied ? "btn-secondary" : "btn-primary"} onClick={copyPrompt}>
+            {copied ? "コピーしました ✓" : "頼み文をコピー"}
+          </button>
+          <details className="rounded-2xl bg-canvas p-3 text-sm">
+            <summary className="cursor-pointer font-bold text-brand-dark">頼み文の中身を見る</summary>
+            <pre className="mt-2 whitespace-pre-wrap font-sans">{IMPORT_PROMPT}</pre>
+          </details>
+        </div>
+      ),
+      next: copied ? "コピーできた！" : null,
+    },
+    {
+      title: "送る",
+      mood: "right",
+      say: [`${ai}の画面で、いつも質問を書く欄に貼り付けて、送ってください。`, "貼り付けは、欄を押してから Ctrl と V を同時に押すとできます。"],
+      body: (
+        <a href={aiUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-brand-dark underline">
+          {ai}をもう一度開く ↗
+        </a>
+      ),
+      next: "送った！",
+    },
+    {
+      title: "貼る",
+      mood: "jersey-cheer",
+      say: ["答えが返ってきたら、その答えを全部コピーして、ここに貼ってください。", "答えの下にある「コピー」の印を押すと、まとめてコピーできます。"],
+      body: (
+        <div className="space-y-2">
+          <textarea
+            id="ai-reply"
+            aria-label="AIの答え"
+            className="field min-h-40"
+            maxLength={MAX_IMPORT_CHARS}
+            placeholder={"例：\n【会社・お仕事の内容】\n市内で戸建てのリフォーム。断熱と水回りが多い\n【選ばれる理由・強み】\n一級建築士が現地調査から工事まで担当する…"}
+            value={pasted}
+            onChange={(e) => setPasted(e.target.value)}
+          />
+          <button type="button" className="btn-primary" disabled={!pasted.trim() || reading} onClick={() => read()}>
+            しおりに読んでもらう
+            <span className="inline-block animate-nudge" aria-hidden>
+              ✨
+            </span>
+          </button>
+        </div>
+      ),
+      next: null,
+    },
+  ];
+
   return (
     <main className="page max-w-4xl space-y-6">
       {reading && <WaitingScreen label="しおりがAIの返事を読んでいます" note="会社の知識として覚えられることを探しています。" />}
@@ -108,137 +204,114 @@ export default function KnowledgePage() {
           <Toast key={done}>{done}</Toast>
         </>
       )}
-      <div className="flex animate-rise flex-wrap items-end gap-4">
-        <Shiori mood="ask" className="h-32 w-auto shrink-0 animate-float" />
-        <div className="min-w-0 flex-1 basis-60">
-          <Link href="/" className="text-sm text-brand-dark underline">
-            ホームへ戻る
-          </Link>
-          <h1 className="text-2xl font-black sm:text-3xl">しおりに教える</h1>
-          <p className="text-muted">ChatGPT・Claude・Gemini で相談してきたことや、これまでのブログ記事を取り込めます。しおりが覚えて、次の記事から使います。</p>
-        </div>
+      <div className="animate-rise space-y-2">
+        <Link href="/" className="text-sm text-brand-dark underline">
+          ホームへ戻る
+        </Link>
+        <h1 className="text-2xl font-black sm:text-3xl">しおりに教える</h1>
+        <ShioriTalk mood="ask" size="lg" lines={["会社のことを教えてもらえたら、次の記事からもっとあなたらしく書けます。", "やり方を3つ用意しました。どれから教えてくれますか？"]} />
       </div>
       {error && <Notice tone="warn" title={error} />}
 
-      <section className="card animate-rise space-y-4" aria-labelledby="ai-import-heading">
-        <h2 id="ai-import-heading" className="text-xl font-black">
-          いつものAIから取り込む
-        </h2>
-        <ol className="space-y-4">
-          <li className="flex gap-3">
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand font-black text-white">1</span>
-            <div className="min-w-0 flex-1 space-y-2">
-              <p className="font-bold">頼み文をコピーする</p>
-              <button type="button" className="btn-primary" onClick={copyPrompt}>
-                {copied ? "コピーしました ✓" : "頼み文をコピー"}
-              </button>
-              <details className="rounded-2xl bg-canvas p-3 text-sm">
-                <summary className="cursor-pointer font-bold text-brand-dark">頼み文の中身を見る</summary>
-                <pre className="mt-2 whitespace-pre-wrap font-sans">{IMPORT_PROMPT}</pre>
-              </details>
-            </div>
-          </li>
-          <li className="flex gap-3">
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand font-black text-white">2</span>
-            <div className="min-w-0 flex-1 space-y-2">
-              <p className="font-bold">いつも使っているAIに貼り付けて送る</p>
-              <p className="text-sm text-muted">これまでに会社のことを相談してきたAIで送ってください。会話を覚えているAIほど、くわしくまとめてくれます。</p>
-              <div className="flex flex-wrap gap-2">
-                {AI_LINKS.map((a) => (
-                  <a key={a.name} href={a.url} target="_blank" rel="noopener noreferrer" className="btn-secondary min-h-10 px-4 text-sm">
-                    {a.name} を開く ↗
-                  </a>
-                ))}
-              </div>
-            </div>
-          </li>
-          <li className="flex gap-3">
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand font-black text-white">3</span>
-            <div className="min-w-0 flex-1 space-y-2">
-              <label htmlFor="ai-reply" className="block font-bold">
-                返ってきた答えを、ここに貼る
-              </label>
-              <textarea
-                id="ai-reply"
-                className="field min-h-40"
-                maxLength={MAX_IMPORT_CHARS}
-                placeholder={"例：\n【会社・お仕事の内容】\n市内で戸建てのリフォーム。断熱と水回りが多い\n【選ばれる理由・強み】\n一級建築士が現地調査から工事まで担当する…"}
-                value={pasted}
-                onChange={(e) => setPasted(e.target.value)}
-              />
-              <button type="button" className="btn-primary" disabled={!pasted.trim() || reading} onClick={() => read()}>
-                しおりに読んでもらう
-                <span className="inline-block animate-nudge" aria-hidden>
-                  ✨
-                </span>
-              </button>
-            </div>
-          </li>
-        </ol>
+      <section aria-label="教え方を選ぶ" className="grid gap-3 sm:grid-cols-3">
+        {MODES.map((m, i) => (
+          <button
+            key={m.id}
+            type="button"
+            onClick={() => {
+              setMode(m.id);
+              setError(null);
+              // スマホでは選んだやり方の手順が下に出るので、そこまで動かす
+              setTimeout(() => document.getElementById("teach-guide")?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+            }}
+            aria-pressed={mode === m.id}
+            className={`card animate-rise flex flex-col items-start gap-1 text-left transition-transform hover:-translate-y-0.5 ${mode === m.id ? "border-brand ring-4 ring-brand-soft" : ""}`}
+            style={{ animationDelay: `${0.1 + i * 0.08}s` }}
+          >
+            <span className="text-3xl" aria-hidden>
+              {m.icon}
+            </span>
+            <span className="font-black">{m.title}</span>
+            <span className="text-sm text-muted">{m.note}</span>
+            <span className="mt-1 rounded-full bg-sun-soft px-2 py-0.5 text-xs font-bold">{m.time}</span>
+          </button>
+        ))}
+      </section>
 
-        {candidates && candidates.length > 0 && (
-          <div className="animate-pop space-y-3 rounded-2xl border-2 border-sun bg-sun-soft p-4">
-            <p className="font-bold">しおりが覚えられそうなこと（{candidates.length}件）。覚えてほしいものに印を付けてください。</p>
-            <ul className="space-y-2">
-              {candidates.map((c, i) => (
-                <li key={i}>
-                  <label className="flex cursor-pointer gap-3 rounded-2xl bg-surface p-3">
-                    <input
-                      type="checkbox"
-                      className="mt-1 h-5 w-5 shrink-0 accent-brand"
-                      checked={c.on}
-                      onChange={(e) => setCandidates(candidates.map((x, n) => (n === i ? { ...x, on: e.target.checked } : x)))}
-                    />
-                    <span>
-                      <b className="block">{c.label}</b>
-                      <span className="whitespace-pre-wrap text-sm text-muted">{c.text}</span>
-                    </span>
-                  </label>
-                </li>
-              ))}
-            </ul>
-            <button type="button" className="btn-primary" disabled={saving || !candidates.some((c) => c.on)} onClick={save}>
-              選んだ{candidates.filter((c) => c.on).length}件を覚えてもらう
-            </button>
+      <div id="teach-guide" className="scroll-mt-4" />
+      {mode === "ask" && (
+        <section className="card animate-pop" aria-label="いつものAIに、まとめてもらう">
+          <StepGuide steps={askSteps} step={askStep} onStep={setAskStep} doneSay="読み終わりました！下の中から、覚えてほしいものを選んでくださいね。" />
+        </section>
+      )}
+      {mode === "file" && (
+        <section className="card animate-pop" aria-label="会話の記録を、まるごと渡す">
+          <ChatExportImport hints={hints} busy={reading} onRead={read} />
+        </section>
+      )}
+      {mode === "blog" && (
+        <section className="card animate-pop space-y-3" aria-labelledby="blog-import-heading">
+          <h2 id="blog-import-heading" className="sr-only">
+            これまでのブログ記事を取り込む
+          </h2>
+          <ShioriTalk mood="point" lines={["書いてきた記事を貼ってもらえたら、文体や扱ってきたテーマを覚えます。", `いまは${blogs.length}本覚えています。1本ずつ貼ってくださいね。`]} />
+          <div>
+            <label htmlFor="blog-title" className="field-label">
+              記事のタイトル
+            </label>
+            <input id="blog-title" className="field" value={blog.title} onChange={(e) => setBlog({ ...blog, title: e.target.value })} placeholder="例：冬の脱衣所が寒い家でできること" />
           </div>
-        )}
-        <ChatExportImport hints={hints} busy={reading} onRead={read} />
-      </section>
+          <div>
+            <label htmlFor="blog-url" className="field-label">
+              記事のURL（あれば）
+            </label>
+            <input id="blog-url" type="url" className="field" value={blog.url} onChange={(e) => setBlog({ ...blog, url: e.target.value })} placeholder="https://" />
+          </div>
+          <div>
+            <label htmlFor="blog-body" className="field-label">
+              本文（ブログの画面からコピーして貼り付け）
+            </label>
+            <textarea id="blog-body" className="field min-h-40" value={blog.body} onChange={(e) => setBlog({ ...blog, body: e.target.value })} placeholder="本文をそのまま貼り付けてください" />
+          </div>
+          <button type="button" className="btn-primary" disabled={saving || !blog.title.trim() || !blog.body.trim()} onClick={addBlog}>
+            この記事を取り込む
+          </button>
+        </section>
+      )}
 
-      <section className="card animate-rise space-y-3" aria-labelledby="blog-import-heading">
-        <h2 id="blog-import-heading" className="text-xl font-black">
-          これまでのブログ記事を取り込む
-        </h2>
-        <p className="text-sm text-muted">書いてきた記事を取り込むと、文体や扱ってきたテーマを、次の記事づくりに生かします。（取り込み済み {blogs.length}本）</p>
-        <div>
-          <label htmlFor="blog-title" className="field-label">
-            記事のタイトル
-          </label>
-          <input id="blog-title" className="field" value={blog.title} onChange={(e) => setBlog({ ...blog, title: e.target.value })} placeholder="例：冬の脱衣所が寒い家でできること" />
-        </div>
-        <div>
-          <label htmlFor="blog-url" className="field-label">
-            記事のURL（あれば）
-          </label>
-          <input id="blog-url" type="url" className="field" value={blog.url} onChange={(e) => setBlog({ ...blog, url: e.target.value })} placeholder="https://" />
-        </div>
-        <div>
-          <label htmlFor="blog-body" className="field-label">
-            本文（ブログの画面からコピーして貼り付け）
-          </label>
-          <textarea id="blog-body" className="field min-h-40" value={blog.body} onChange={(e) => setBlog({ ...blog, body: e.target.value })} placeholder="本文をそのまま貼り付けてください" />
-        </div>
-        <button type="button" className="btn-primary" disabled={saving || !blog.title.trim() || !blog.body.trim()} onClick={addBlog}>
-          この記事を取り込む
-        </button>
-      </section>
+      {candidates && candidates.length > 0 && (
+        <section className="animate-pop space-y-3 rounded-3xl border-2 border-sun bg-sun-soft p-4" aria-label="覚えてほしいものを選ぶ">
+          <ShioriTalk mood="jersey-done" lines={[`${candidates.length}件、覚えられそうなことが見つかりました！`, "覚えてほしいものに印を付けて、下のボタンを押してください。"]} />
+          <ul className="space-y-2">
+            {candidates.map((c, i) => (
+              <li key={i} className="animate-rise" style={{ animationDelay: `${i * 0.05}s` }}>
+                <label className="flex cursor-pointer gap-3 rounded-2xl bg-surface p-3">
+                  <input
+                    type="checkbox"
+                    className="mt-1 h-5 w-5 shrink-0 accent-brand"
+                    checked={c.on}
+                    onChange={(e) => setCandidates(candidates.map((x, n) => (n === i ? { ...x, on: e.target.checked } : x)))}
+                  />
+                  <span>
+                    <b className="block">{c.label}</b>
+                    <span className="whitespace-pre-wrap text-sm text-muted">{c.text}</span>
+                  </span>
+                </label>
+              </li>
+            ))}
+          </ul>
+          <button type="button" className="btn-primary" disabled={saving || !candidates.some((c) => c.on)} onClick={save}>
+            選んだ{candidates.filter((c) => c.on).length}件を覚えてもらう
+          </button>
+        </section>
+      )}
 
       <section className="card animate-rise space-y-3" aria-labelledby="notes-heading">
         <h2 id="notes-heading" className="text-xl font-black">
-          取り込んで覚えていること（{notes.length}件）
+          しおりのノート（覚えていること {notes.length}件）
         </h2>
         {notes.length === 0 ? (
-          <p className="text-sm text-muted">まだありません。上の手順で取り込むと、ここに増えていきます。</p>
+          <p className="text-sm text-muted">まだありません。上のどれかで教えると、ここに増えていきます。</p>
         ) : (
           <ul className="grid gap-2 sm:grid-cols-2">
             {notes.map((n) => (

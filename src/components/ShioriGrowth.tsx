@@ -79,7 +79,7 @@ export function ShioriGrowth({ db, orgId }: { db: MockDb; orgId: string }) {
     <section className="card animate-rise space-y-4" aria-labelledby="shiori-growth-heading">
       <div className="flex flex-wrap items-end gap-4">
         <div className="relative shrink-0">
-          <Shiori mood={lv.mood} className="h-32 w-auto animate-float" />
+          <Shiori mood={lv.mood} className="h-32 w-auto" />
           <span className="absolute -right-2 top-0 animate-pop rounded-full bg-brand px-2.5 py-0.5 text-sm font-black text-white shadow">Lv.{lv.level}</span>
         </div>
         <div className="min-w-0 flex-1 basis-60 space-y-2">

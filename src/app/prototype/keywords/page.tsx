@@ -229,7 +229,7 @@ export default function KeywordsPage() {
 
       <h1 className="sr-only">書く記事リスト</h1>
       <section className="card flex animate-rise flex-wrap items-center gap-4" aria-label="しおりから">
-        <Shiori mood={counts.all > 0 && counts.published === counts.all ? "welldone" : counts.published > 0 ? "cheer" : "point"} className="h-28 w-auto animate-float sm:h-32" />
+        <Shiori mood={counts.all > 0 && counts.published === counts.all ? "welldone" : counts.published > 0 ? "cheer" : "point"} className="h-28 w-auto sm:h-32" />
         <p className="relative min-w-[12rem] flex-1 rounded-2xl bg-sun-soft px-4 py-3 font-bold" role="status">
           {shioriMessage(rows, sellItems)}
         </p>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { Shiori } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { Notice } from "@/components/ui";
 import { type LoginState, sendLoginLink } from "./actions";
 
@@ -13,10 +13,9 @@ export function EmailLogin({ next, linkError }: { next: string; linkError: boole
       <div className="flex animate-rise items-end gap-3">
         <div className="flex-1">
           <h1 className="text-2xl font-black sm:text-3xl">ようこそ</h1>
-          <p className="text-muted">コタムといっしょに、AIに紹介される記事を書きましょう。</p>
         </div>
-        <Shiori mood="bow" className="h-32 w-auto shrink-0 animate-float" />
       </div>
+      <ShioriTalk mood="bow" size="lg" lines={["はじめまして、案内役のしおりです。", "コタムといっしょに、AIに紹介される記事を書きましょう！"]} />
       {linkError && (
         <Notice tone="warn" title="ログイン用のリンクが使えませんでした">
           有効期限が切れたか、すでに使われています。もう一度メールを送ってください。

@@ -5,7 +5,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { Shiori } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { type MockDb, useStore } from "@/mock/store";
 
 const num = (n: number) => n.toLocaleString("ja-JP");
@@ -24,18 +24,18 @@ export function SearchConsoleCard({ db, orgId }: { db: MockDb; orgId: string }) 
 
   if (!connected || !link?.snapshot) {
     return (
-      <section className="card animate-rise flex flex-wrap items-center gap-3" aria-labelledby="sc-heading">
-        <Shiori mood="idea" className="h-20 w-auto shrink-0 animate-float" />
-        <div className="min-w-0 flex-1 basis-56">
-          <h2 id="sc-heading" className="font-black">
-            🔍 検索での見られ方を、しおりに見せてもらえませんか？
-          </h2>
-          <p className="text-sm text-muted">Search Console をつなぐと、記事がどんな言葉で検索に出ているかがここに出ます。見るだけの権限で、3分ほどでつなげます。</p>
-          {link?.lastError && <p className="mt-1 text-sm text-warn">{link.lastError}</p>}
-        </div>
-        <Link href="/search-console" className="btn-primary">
-          つなぐ
-        </Link>
+      <section className="card animate-rise space-y-2" aria-labelledby="sc-heading">
+        <h2 id="sc-heading" className="font-black">
+          🔍 検索での見られ方
+        </h2>
+        <ShioriTalk mood="idea" size="sm" lines={["検索での見られ方を、しおりに見せてもらえませんか？", "Search Console をつなぐと、記事がどんな言葉で検索に出ているかをお見せできます。3分ほどで終わりますよ。"]}>
+          <div className="space-y-1">
+            {link?.lastError && <p className="text-sm text-warn">{link.lastError}</p>}
+            <Link href="/search-console" className="btn-primary">
+              つなぐ（1つずつ案内します）
+            </Link>
+          </div>
+        </ShioriTalk>
       </section>
     );
   }

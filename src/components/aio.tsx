@@ -97,7 +97,7 @@ export function AioNews({ count = 3 }: { count?: number }) {
   return (
     <section className="card animate-rise space-y-3" aria-labelledby="aio-news-heading">
       <div className="flex items-start gap-3">
-        <Shiori mood="idea" className="h-16 w-auto shrink-0 animate-float sm:h-28" />
+        <Shiori mood="idea" className="h-16 w-auto shrink-0 sm:h-28" />
         <div className="min-w-0 space-y-1.5">
           <h2 id="aio-news-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">
             しおりのAIOニュース

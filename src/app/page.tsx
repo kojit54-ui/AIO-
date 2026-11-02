@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { AioNews } from "@/components/aio";
-import { Shiori, Wave } from "@/components/fun";
+import { Wave } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { MonthlyGrowth } from "@/components/MonthlyGrowth";
 import { SearchConsoleCard } from "@/components/SearchConsoleCard";
 import { ShioriGrowth } from "@/components/ShioriGrowth";
@@ -37,14 +38,11 @@ export default function HomePage() {
           </Link>
         </Notice>
       )}
-      <div className="flex animate-rise items-end justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-black leading-snug sm:text-3xl">
-            {user.name}さん、こんにちは <Wave />
-          </h1>
-          <p className="text-muted">今月も1本、いっしょに書きましょう。質問に答えるだけで記事になります。</p>
-        </div>
-        <Shiori mood="jersey-cheer" className="hidden h-36 w-auto shrink-0 animate-float sm:block" />
+      <div className="animate-rise space-y-1">
+        <h1 className="text-2xl font-black leading-snug sm:text-3xl">
+          {user.name}さん、こんにちは <Wave />
+        </h1>
+        <ShioriTalk mood="jersey-cheer" size="lg" lines={["今月も1本、いっしょに書きましょう！", "質問に答えるだけで、記事になりますよ。"]} />
       </div>
       <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
         <h2 id="policy-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">

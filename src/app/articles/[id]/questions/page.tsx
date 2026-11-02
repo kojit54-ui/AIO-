@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AioMeter, AioWhy, Cheer, WhyAio } from "@/components/aio";
 import { Confetti, Road, Scene, Shiori, ShioriFace, Wave } from "@/components/fun";
+import { ShioriTalk } from "@/components/talk";
 import { Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice } from "@/components/ui";
 import { collectedAio } from "@/lib/aio";
 import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
@@ -148,10 +149,11 @@ export default function QuestionsPage() {
             {step === 0 && !showFollowUp ? "今日の1本、いっしょに書きましょう" : "その調子です！"} <Wave />
           </h1>
           <p className="text-muted">テーマ：{theme?.title}</p>
-          <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。</p>
         </div>
-        <Shiori mood={step === 0 && !showFollowUp ? "jersey-stretch" : "jersey-cheer"} className="hidden h-32 w-auto shrink-0 animate-float sm:block" />
       </div>
+      {step === 0 && !showFollowUp && (
+        <ShioriTalk mood="jersey-stretch" lines={["文章を考える必要はありませんよ。", "短い言葉や箇条書きで大丈夫です。いっしょに進めましょう！"]} />
+      )}
 
       <Road total={total} current={doneCount} label="答えは「次へ進む」で保存されます" />
       <div className="-mt-3 flex min-h-6 justify-end text-sm">
@@ -251,17 +253,10 @@ export default function QuestionsPage() {
 
       {step === 0 && !showFollowUp && previous && previousCase && (
         <section className="card animate-rise space-y-2 border-2 border-sun" aria-labelledby="prev-case-heading">
-          <div className="flex items-end gap-3">
-            <Shiori mood="ask" className="h-20 w-auto shrink-0 animate-float" />
-            <div>
-              <h2 id="prev-case-heading" className="font-black">
-                前回の続き（答えなくても大丈夫です）
-              </h2>
-              <p className="text-sm">
-                前の記事「{previous.title}」で話してくれたお客様（{Array.from(previousCase).slice(0, 40).join("")}…）、その後どうなりましたか？
-              </p>
-            </div>
-          </div>
+          <h2 id="prev-case-heading" className="font-black">
+            前回の続き（答えなくても大丈夫です）
+          </h2>
+          <ShioriTalk mood="ask" size="sm" lines={[`前の記事「${previous.title}」で話してくれたお客様（${Array.from(previousCase).slice(0, 40).join("")}…）、`, "その後どうなりましたか？"]} />
           <p className="text-sm text-muted">なぜ聞くの？　その後の様子は、ほかの会社には書けない一番の材料です。記事に厚みが出て、AIにも紹介されやすくなります。</p>
           <label htmlFor="prev-followup" className="sr-only">
             {PREVIOUS_CASE_QUESTION.label}
