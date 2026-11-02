@@ -10,7 +10,10 @@ import { ParseError } from "@/lib/ai/prompt";
 import { fromArticle, fromMonth, toArticle, toCoachingNote, toOrganization, toReferenceArticle, toTheme, toVersion, currentMonthJst } from "@/lib/remote/mapping";
 import { applyAction } from "@/lib/workflow";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
-import type { Answer } from "@/types/domain";
+import { buildKnowledge, pickKnowledge, type KnowledgeItem, type PastArticle } from "@/lib/growth/knowledge";
+import { type HearingAnswer } from "@/prototype/growth";
+import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
+import type { Answer, Block } from "@/types/domain";
 
 export type GenerationKindInput = "outline" | "body";
 
@@ -84,8 +87,12 @@ export async function runGeneration(
   if (!loaded.ok) return loaded;
   const { ctx, org, theme, base, answers } = loaded;
   let inputChars: number;
+  // 今回AIに渡した会社の知識。版に残し、画面で「今回使った知識」として見せる
+  let knowledgeUsed: string[] = [];
   try {
-    inputChars = JSON.stringify(buildGenerationInput(ctx)).length;
+    const built = buildGenerationInput(ctx);
+    inputChars = JSON.stringify(built).length;
+    knowledgeUsed = built.companyKnowledge.map((k) => k.label);
   } catch (e) {
     if (e instanceof InputError) return fail(400, "invalid_input", e.message);
     throw e;
@@ -129,7 +136,7 @@ export async function runGeneration(
   try {
     const signal = AbortSignal.timeout(TIMEOUT_MS);
     const optionalSignal = AbortSignal.timeout(OPTIONAL_TIMEOUT_MS);
-    const common = { sample: deps.isSample, provider: deps.provider.name, kind: req.kind };
+    const common = { sample: deps.isSample, provider: deps.provider.name, kind: req.kind, knowledge_used: knowledgeUsed };
     let version: Record<string, unknown>;
     let checks: { excerpt: string; kind: string }[] = [];
     if (req.kind === "outline") {
@@ -327,7 +334,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
   const article = toArticle(articleRow);
   const orgId = article.organizationId;
   const month = currentMonthJst();
-  const [orgRes, themeRes, noteRes, refsRes, currentRes] = await Promise.all([
+  const [orgRes, themeRes, noteRes, refsRes, currentRes, hearingRes, aioRes, pastRes] = await Promise.all([
     db.from("organizations").select("*").eq("id", orgId).single(),
     db.from("themes").select("*").eq("id", article.themeId).single(),
     db.from("coaching_notes").select("*").eq("organization_id", orgId).eq("target_month", fromMonth(month)).maybeSingle(),
@@ -335,6 +342,10 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
     article.currentVersionId
       ? db.from("article_versions").select("*").eq("id", article.currentVersionId).maybeSingle()
       : Promise.resolve({ data: null, error: null }),
+    // 会社の知識の材料（読めなくても記事は作る。知識なしで進める）
+    db.from("hearing_answers").select("*").eq("organization_id", orgId),
+    db.from("aio_checks").select("questions, answers, created_at").eq("organization_id", orgId).order("created_at", { ascending: false }).limit(10),
+    db.from("articles").select("id, status, current_version_id, updated_at").eq("organization_id", orgId).neq("id", article.id).not("current_version_id", "is", null).order("updated_at", { ascending: false }).limit(8),
   ]);
   // 1つでも読めなければ、足りない材料で（費用をかけて）作らない
   if (orgRes.error || themeRes.error || noteRes.error || refsRes.error || currentRes.error || (article.currentVersionId && !currentRes.data)) return fail(500, "save_failed", "データを読み込めませんでした");
@@ -345,6 +356,8 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
   // 見出し案は質問の回答（下書き）から、本文は今の版の回答から作る（まだ版が無ければ下書き）
   const answers = kind === "outline" || !base?.answers.length ? draft : base.answers;
 
+  const knowledge = await loadKnowledge(db, hearingRes.data, aioRes.data, pastRes.data);
+
   const ctx: GenerationContext = {
     organization: org,
     note: noteRes.data ? toCoachingNote(noteRes.data) : undefined,
@@ -352,6 +365,33 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
     questions: [...QUESTIONS, FOLLOW_UP_QUESTION],
     answers,
     referenceArticles: (refsRes.data ?? []).map(toReferenceArticle),
+    knowledge,
   };
   return { ok: true as const, ctx, org, theme, base, answers };
+}
+
+/** 会社の知識を集める。どれかが読めなくても、読めた分だけで作る（記事づくりは止めない） */
+async function loadKnowledge(db: SupabaseClient, hearingRows: unknown[] | null, aioRows: unknown[] | null, pastRows: unknown[] | null): Promise<KnowledgeItem[]> {
+  try {
+    const hearing: Record<string, HearingAnswer> = {};
+    for (const r of (hearingRows ?? []) as HearingAnswerRow[]) hearing[r.question_id] = answerFromDb(r);
+    const aioAnswers = ((aioRows ?? []) as { questions: { id: string; text: string }[] | null; answers: Answer[] | null }[]).flatMap((c) =>
+      (c.questions ?? []).flatMap((q) => {
+        const a = (c.answers ?? []).find((x) => x.questionId === q.id);
+        return a && !a.unknown && a.text.trim() ? [{ question: q.text, answer: a.text }] : [];
+      }),
+    );
+    const past = (pastRows ?? []) as { id: string; status: string; current_version_id: string }[];
+    let pastArticles: PastArticle[] = [];
+    if (past.length) {
+      const { data: versions } = await db.from("article_versions").select("id, article_id, title, answers, body").in("id", past.map((p) => p.current_version_id));
+      pastArticles = past.flatMap((p) => {
+        const v = (versions ?? []).find((x) => x.id === p.current_version_id);
+        return v ? [{ articleId: p.id, title: v.title ?? "", published: p.status === "published", answers: (v.answers as Answer[]) ?? [], body: (v.body as Block[]) ?? [] }] : [];
+      });
+    }
+    return pickKnowledge(buildKnowledge({ hearing, aioAnswers, pastArticles, questions: [...QUESTIONS, FOLLOW_UP_QUESTION] }));
+  } catch {
+    return [];
+  }
 }

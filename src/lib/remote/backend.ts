@@ -6,6 +6,7 @@
 // 件数が少ない前提（3〜5社）で、変更のたびに見える範囲をまとめて読み直す。
 
 import { createBrowserClient } from "@supabase/ssr";
+import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Answer, Article, ArticleImage, Block, CompanyProfile, FactCheckStatus, GenerationErrorCode, ReviewDecision, SessionUser } from "@/types/domain";
 import { applyAction, type ArticleAction, TransitionError } from "@/lib/workflow";
@@ -113,7 +114,7 @@ export class RemoteBackend {
       return;
     }
     const uid = auth.user.id;
-    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, runs] = await Promise.all([
+    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, runs] = await Promise.all([
       c.from("memberships").select("organization_id, role").eq("user_id", uid).is("revoked_at", null),
       c.from("app_admins").select("user_id").eq("user_id", uid).maybeSingle(),
       c.from("organizations").select("*").order("name"),
@@ -126,6 +127,7 @@ export class RemoteBackend {
       c.from("fact_checks").select("*"),
       c.from("reviews").select("*").order("created_at"),
       c.from("aio_checks").select("*").order("created_at"),
+      c.from("hearing_answers").select("*"),
       c.from("generation_runs").select("organization_id, kind, status, created_at").gte("created_at", new Date(Date.now() - 32 * 864e5).toISOString()),
     ]);
     const failed = [members, orgs, notes, themes, refs, articles, versions, facts, reviews, runs].find((r) => r.error);
@@ -168,6 +170,8 @@ export class RemoteBackend {
         reviews: (reviews.data ?? []).map(toReview),
         // 表を足す SQL（20261102120000_aio_check.sql）をまだ流していない環境でも、ほかの画面は動かす
         aioChecks: aioChecks.error ? [] : (aioChecks.data ?? []).map(toAioCheck),
+        // 会社のこと（ヒアリング）。担当の会社が複数あるコタムでは混ざるので、お客様（1社）のときだけ使う
+        hearing: hearing.error || role !== "client_member" ? {} : Object.fromEntries((hearing.data ?? []).map((r) => [r.question_id as string, answerFromDb(r as HearingAnswerRow)])),
         draftAnswers: Object.fromEntries(
           articleRows.map((a) => [a.id as string, { answers: (a.draft_answers as Answer[]) ?? [], step: (a.draft_step as number) ?? 0 }]),
         ),

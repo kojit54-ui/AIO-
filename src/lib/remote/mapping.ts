@@ -124,12 +124,14 @@ export const toVersion = (r: Row): ArticleVersion => ({
     ? { imageIdeas: { eyecatch: (r.generation_settings.eyecatch as ImageIdea) ?? null, perHeading: (r.generation_settings.image_suggestions as ImageIdea[]) ?? [] } }
     : {}),
   ...(r.generation_settings?.review ? { aiReview: r.generation_settings.review as AiReview } : {}),
+  ...(Array.isArray(r.generation_settings?.knowledge_used) ? { knowledgeUsed: r.generation_settings.knowledge_used as string[] } : {}),
 });
 
 /** 手で直して新しい版にするとき、画像の提案と点検の結果を引き継ぐ */
 export const carriedSettings = (v: ArticleVersion | undefined) => ({
   ...(v?.imageIdeas ? { eyecatch: v.imageIdeas.eyecatch, image_suggestions: v.imageIdeas.perHeading } : {}),
   ...(v?.aiReview ? { review: v.aiReview } : {}),
+  ...(v?.knowledgeUsed ? { knowledge_used: v.knowledgeUsed } : {}),
 });
 
 export const toFactCheck = (r: Row): FactCheck => ({

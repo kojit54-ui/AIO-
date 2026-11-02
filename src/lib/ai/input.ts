@@ -2,6 +2,7 @@
 // 渡すのは：確認済みの会社プロフィール、顧客向け指導メモ、テーマ、今回の回答、AI利用可の過去記事（同じ会社のもの）。
 // 渡さないのは：コタム内部メモ、他社のデータ、未確認のプロフィール。
 
+import type { KnowledgeItem } from "@/lib/growth/knowledge";
 import type { Answer, CoachingNote, Organization, Question, ReferenceArticle, Theme } from "@/types/domain";
 
 /** 1回の入力の上限（docs/DECISIONS.md） */
@@ -14,6 +15,8 @@ export interface GenerationContext {
   questions: Question[];
   answers: Answer[];
   referenceArticles: ReferenceArticle[];
+  /** 会社の知識（これまでに聞いたこと）。src/lib/growth/knowledge.ts で選んだもの */
+  knowledge?: KnowledgeItem[];
 }
 
 export interface GenerationInput {
@@ -21,6 +24,8 @@ export interface GenerationInput {
   coachingNote: Pick<CoachingNote, "focus" | "audience" | "purpose" | "avoid" | "clientVisibleNote"> | null;
   theme: Pick<Theme, "title" | "readerProblem" | "message">;
   answers: { question: string; answer: string }[];
+  /** これまでに聞いた、この会社の知識。今回のテーマに合うものだけを使う */
+  companyKnowledge: { label: string; text: string }[];
   referenceArticles: { title: string; body: string }[];
   /** 文字数の上限で削った過去記事の数 */
   droppedReferenceCount: number;
@@ -59,12 +64,20 @@ export function buildGenerationInput(ctx: GenerationContext): GenerationInput {
       : null,
     theme: { title: ctx.theme.title, readerProblem: ctx.theme.readerProblem, message: ctx.theme.message },
     answers,
+    companyKnowledge: [],
     referenceArticles: [],
     droppedReferenceCount: 0,
   };
 
   if (size(input) > MAX_INPUT_CHARS) {
     throw new InputError("invalid_input", `回答が長すぎます。合計${MAX_INPUT_CHARS.toLocaleString()}字以内にしてください`);
+  }
+
+  // 会社の知識は大事な順に、上限に収まる分だけ入れる（過去記事より先）
+  for (const k of ctx.knowledge ?? []) {
+    const next = { ...input, companyKnowledge: [...input.companyKnowledge, { label: k.label, text: k.text }] };
+    if (size(next) > MAX_INPUT_CHARS) continue;
+    input.companyKnowledge = next.companyKnowledge;
   }
 
   // 過去記事は新しい順に、上限に収まる分だけ入れる

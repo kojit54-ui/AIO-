@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { KnowledgeUsed } from "@/components/ShioriGrowth";
 import { AioCheckBanner, AioCheckOverlays, AioCheckPanel, useAioCheck } from "@/components/AioCheckPanel";
 import { BlockEditor } from "@/components/BlockEditor";
 import { Confetti, Shiori, ShioriFace, Toast } from "@/components/fun";
@@ -184,6 +185,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
       {!isCoach && !outlineMode && <AioCheckOverlays ctl={aio} />}
       {!isCoach && !outlineMode && <AioCheckBanner ctl={aio} dirty={dirty} />}
       {!isCoach && !outlineMode && <ShioriNote status={article.status} fresh={fresh} />}
+      {!outlineMode && <KnowledgeUsed labels={version.knowledgeUsed ?? []} />}
       {!isCoach && reviews.length > 0 && (
         <div className="mb-4 flex animate-rise items-start gap-3 rounded-3xl border-2 border-sun bg-sun-soft px-4 py-3" role="status">
           <ShioriFace className="h-12 w-12" />
