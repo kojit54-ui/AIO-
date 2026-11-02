@@ -173,22 +173,19 @@ function Questions({ check, onApply, onError }: { check: AioCheck; onApply: () =
         if (canGo) next();
       }}
     >
-      <div className="flex items-end gap-2">
-        <Shiori mood={step === 0 ? "ask" : "point"} className="h-20 w-auto shrink-0 animate-float" />
-        <p className="text-sm font-bold">
-          あと少しで、もっとAIに紹介されやすくなります。
-          <span className="block text-muted">
-            質問 {step + 1} / {check.questions.length}・{aioCheckLabel(q.key)}のため
-          </span>
-        </p>
-      </div>
-      <label htmlFor="aio-answer" className="block font-black leading-snug">
+      <p className="flex flex-wrap items-center gap-2 text-sm font-bold">
+        <span className="rounded-full bg-brand px-3 py-0.5 text-white">
+          AIからの質問 {step + 1} / {check.questions.length}
+        </span>
+        <span className="text-muted">「{aioCheckLabel(q.key)}」のため</span>
+      </p>
+      <label htmlFor="aio-answer" className="block text-lg font-black leading-snug">
         {q.text}
       </label>
       {q.example && <p className="rounded-xl bg-canvas px-3 py-2 text-sm text-muted">{q.example}</p>}
       <textarea
         id="aio-answer"
-        className="field min-h-24"
+        className="field min-h-28"
         placeholder="短い言葉や箇条書きで大丈夫です"
         value={current.unknown ? "" : current.text}
         disabled={current.unknown}
@@ -213,11 +210,12 @@ function Questions({ check, onApply, onError }: { check: AioCheck; onApply: () =
   );
 }
 
-/** 記事の画面の「AIOのチェック」の枠 */
-export function AioCheckPanel({ article, version, isCoach, dirty, onError }: { article: Article; version: ArticleVersion; isCoach: boolean; dirty: boolean; onError: (e: unknown, f: string) => void }) {
+/** AIOのチェックの状態と操作。記事の画面の上の知らせ・右の枠・質問のウィンドウで共有する */
+export function useAioCheck(article: Article, version: ArticleVersion, onError: (e: unknown, f: string) => void) {
   const { db, api } = useStore();
   const [busy, setBusy] = useState<null | "check" | "apply">(null);
   const [celebrate, setCelebrate] = useState<string | null>(null);
+  const [askOpen, setAskOpen] = useState(false);
   const checks = db.aioChecks.filter((c) => c.articleId === article.id).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   const latest = checks[0];
   // 今の版をチェックしたもの、または答えを反映して今の版を作ったもの
@@ -229,6 +227,8 @@ export function AioCheckPanel({ article, version, isCoach, dirty, onError }: { a
     try {
       const c = await api.runAioCheck(article.id);
       if (c.status === "done") setCelebrate("チェック完了！AIに紹介されやすい記事です");
+      // 足りない所があれば、すぐに質問のウィンドウを開く
+      else setAskOpen(true);
     } catch (e) {
       onError(e, "AIOのチェックができませんでした。もう一度お試しください");
     }
@@ -239,6 +239,7 @@ export function AioCheckPanel({ article, version, isCoach, dirty, onError }: { a
     setBusy("apply");
     try {
       await api.applyAioCheck(check.id);
+      setAskOpen(false);
       setCelebrate("答えを記事に書き込みました！");
     } catch (e) {
       onError(e, "記事に反映できませんでした。答えは残っています");
@@ -246,15 +247,116 @@ export function AioCheckPanel({ article, version, isCoach, dirty, onError }: { a
     }
   }
 
+  return { checks, latest, forCurrent, applied, busy, celebrate, askOpen, setAskOpen, run, apply, onError };
+}
+export type AioCheckControl = ReturnType<typeof useAioCheck>;
+
+/** 記事の画面のいちばん上の知らせ。チェックがまだなら実施を、質問があれば答えるのをすすめる */
+export function AioCheckBanner({ ctl, dirty }: { ctl: AioCheckControl; dirty: boolean }) {
+  const { forCurrent, busy } = ctl;
+  if (forCurrent?.status === "done") return null;
+  const asking = forCurrent?.status === "asking";
+  const open = asking ? forCurrent.questions.filter((q) => !forCurrent.answers.some((a) => a.questionId === q.id)).length : 0;
   return (
-    <section className="card space-y-3" aria-labelledby="aio-check-heading">
+    <div className={`mb-4 flex animate-rise flex-wrap items-end gap-3 rounded-3xl border-2 px-4 pt-2 ${asking ? "border-sun bg-sun-soft" : "border-brand bg-brand-soft"}`}>
+      <Shiori mood={asking ? "ask" : "point"} className="h-24 w-auto shrink-0 animate-float" />
+      <div className="mb-3 min-w-0 flex-1 basis-56">
+        <p className="text-lg font-black">{asking ? `AIから質問が${forCurrent.questions.length}つ届いています` : "ブログに載せる前に、AIOのチェックをしましょう"}</p>
+        <p className="text-sm">
+          {asking
+            ? `答えると、AIに紹介されやすい記事になります。${open < forCurrent.questions.length ? `（あと${open}問）` : ""}`
+            : "AIの検索に紹介されやすいか、11の項目をAIがチェックします。足りない所は、AIが質問します。"}
+        </p>
+      </div>
+      <button
+        type="button"
+        className="btn-primary mb-3 text-lg"
+        disabled={busy !== null || (!asking && dirty)}
+        onClick={() => (asking ? ctl.setAskOpen(true) : ctl.run())}
+      >
+        {asking ? "質問に答える" : "AIOのチェックを実施"}
+        <span className="inline-block animate-nudge" aria-hidden>
+          {asking ? "→" : "✨"}
+        </span>
+      </button>
+    </div>
+  );
+}
+
+/** チェック後にポコッと出る、質問に答えるウィンドウ */
+function AskDialog({ ctl, check }: { ctl: AioCheckControl; check: AioCheck }) {
+  const ng = check.items.filter((i) => !i.ok);
+  const good = check.items.length - ng.length;
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-ink/50 p-3 sm:items-center sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="aio-ask-title"
+      onKeyDown={(e) => e.key === "Escape" && ctl.setAskOpen(false)}
+    >
+      <div className="card my-4 w-full max-w-2xl animate-pop space-y-4 p-5 sm:p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-end gap-3">
+            <Shiori mood="surprise" className="h-20 w-auto shrink-0 animate-float sm:h-24" />
+            <div>
+              <h2 id="aio-ask-title" className="text-xl font-black sm:text-2xl">
+                チェックが終わりました！
+              </h2>
+              <p className="text-sm text-muted">
+                {check.items.length}項目のうち <b className="text-ink">{good}項目OK</b>。あと少しで、もっとAIに紹介されやすくなります。
+              </p>
+            </div>
+          </div>
+          <button type="button" className="shrink-0 text-sm text-muted underline" onClick={() => ctl.setAskOpen(false)}>
+            あとで答える
+          </button>
+        </div>
+        <div className="h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>
+          <div className="h-full rounded-full bg-gradient-to-r from-sun to-ok-bright" style={{ width: `${check.items.length ? (good / check.items.length) * 100 : 0}%` }} />
+        </div>
+        {check.summary && <p>{check.summary}</p>}
+        {ng.length > 0 && (
+          <div>
+            <p className="mb-1 text-sm font-bold">足りないところ</p>
+            <ul className="flex flex-wrap gap-1.5 text-sm">
+              {ng.map((i) => (
+                <li key={i.key} className="rounded-full bg-sun-soft px-3 py-1 font-bold" title={i.note}>
+                  ！ {aioCheckLabel(i.key)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <Questions check={check} onApply={() => ctl.apply(check)} onError={ctl.onError} />
+        {check.isSample && <p className="text-xs text-warn">サンプル（AIは未接続）</p>}
+      </div>
+    </div>
+  );
+}
+
+/** 生成中の表示・質問のウィンドウ・お祝い。スマホで右の枠が隠れていても出るよう、画面の直下に置く */
+export function AioCheckOverlays({ ctl }: { ctl: AioCheckControl }) {
+  const { busy, askOpen, forCurrent, celebrate } = ctl;
+  return (
+    <>
       {busy && <GeneratingOverlay label={busy === "check" ? "AIOのチェックをしています" : "答えを記事に書き込んでいます"} />}
+      {!busy && askOpen && forCurrent?.status === "asking" && <AskDialog ctl={ctl} check={forCurrent} />}
       {celebrate && (
         <>
           <Confetti count={50} />
           <Toast key={celebrate}>{celebrate}</Toast>
         </>
       )}
+    </>
+  );
+}
+
+/** 記事の画面の「AIOのチェック」の枠 */
+export function AioCheckPanel({ ctl, isCoach, dirty }: { ctl: AioCheckControl; isCoach: boolean; dirty: boolean }) {
+  const { checks, latest, forCurrent, applied, busy, run } = ctl;
+  return (
+    <section className="card space-y-3" aria-labelledby="aio-check-heading">
       <h2 id="aio-check-heading" className="flex items-center gap-2 text-lg font-bold">
         AIOのチェック
         {forCurrent && <span className={`rounded-full px-2.5 text-sm ${forCurrent.status === "done" ? "bg-ok-soft text-ok" : "bg-sun-soft"}`}>{forCurrent.status === "done" ? "チェック済み" : "答え待ち"}</span>}
@@ -297,7 +399,11 @@ export function AioCheckPanel({ article, version, isCoach, dirty, onError }: { a
             </div>
           )}
           <CheckResult check={forCurrent} applied={applied} />
-          {forCurrent.status === "asking" && !isCoach && <Questions check={forCurrent} onApply={() => apply(forCurrent)} onError={onError} />}
+          {forCurrent.status === "asking" && !isCoach && (
+            <button type="button" className="btn-primary w-full" onClick={() => ctl.setAskOpen(true)}>
+              AIからの質問に答える（{forCurrent.questions.length}問）
+            </button>
+          )}
           {(isCoach || forCurrent.status === "done") && <QaLog check={forCurrent} />}
           {!isCoach && forCurrent.status === "done" && (
             <button type="button" className="btn-secondary w-full" disabled={busy !== null || dirty} onClick={run}>
