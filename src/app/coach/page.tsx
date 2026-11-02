@@ -5,9 +5,11 @@ import { Shiori, Wave } from "@/components/fun";
 import { EmptyState, StatusBadge, formatDate } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
+import { writingStreak } from "@/components/MonthlyGrowth";
+import { badges } from "@/lib/growth/badges";
 
 export default function CoachHome() {
-  const { db, user } = useStore();
+  const { db, user, month } = useStore();
   if (!user) return null;
   if (user.role !== "coach") {
     return (
@@ -98,11 +100,26 @@ export default function CoachHome() {
           {orgs.map((o, i) => {
             const articles = db.articles.filter((a) => a.organizationId === o.id);
             const ready = isOrgReady(db, o.id);
+            // 続けてもらうための目印（2026-11-03）。最近書いていない会社は、声をかけるきっかけにする
+            const ids = new Set(articles.map((a) => a.id));
+            const lastWrite = db.versions.filter((v) => ids.has(v.articleId) && v.body.length > 0).reduce((m, v) => (v.createdAt > m ? v.createdAt : m), "");
+            const quiet = !lastWrite || lastWrite.slice(0, 7) < month;
+            const streak = writingStreak(db, o.id);
+            const stamps = badges(db, o.id);
+            const sc = (db.searchConsole ?? []).find((x) => x.organizationId === o.id && x.verifiedAt);
             return (
               <li key={o.id} className="animate-rise" style={{ animationDelay: `${0.1 + i * 0.06}s` }}>
                 <Link href={`/coach/orgs/${o.id}`} className="card block h-full transition-transform hover:-translate-y-1 hover:border-brand">
                   <span className="block text-lg font-black">{o.name}</span>
                   {!ready && <span className="mt-1 inline-block rounded-full bg-warn-soft px-3 text-sm font-bold text-warn">初期設定が必要です</span>}
+                  {ready && quiet && <span className="mt-1 inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">今月はまだ書いていません（声をかけるきっかけに）</span>}
+                  <span className="mt-2 flex flex-wrap gap-1.5 text-xs font-bold">
+                    <span className={`rounded-full px-2 py-0.5 ${streak >= 2 ? "bg-sun text-ink" : "bg-canvas text-muted"}`}>🔥 {streak}か月つづけて</span>
+                    <span className="rounded-full bg-canvas px-2 py-0.5">🎖️ スタンプ {stamps.filter((b) => b.got).length}/{stamps.length}</span>
+                    <span className={`rounded-full px-2 py-0.5 ${sc ? "bg-ok-soft text-ok" : "bg-canvas text-muted"}`}>
+                      🔍 {sc ? `検索に出た ${(sc.snapshot?.totals.impressions ?? 0).toLocaleString("ja-JP")}回` : "Search Console 未接続"}
+                    </span>
+                  </span>
                   <span className="mt-2 grid grid-cols-2 gap-1 text-sm">
                     <span className="text-muted">AIOチェック済み</span>
                     <span>{articles.filter((a) => db.aioChecks.some((c) => c.status === "done" && (c.versionId === a.currentVersionId || c.resultVersionId === a.currentVersionId))).length}件</span>
