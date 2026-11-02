@@ -3,7 +3,7 @@
 // お客様が「閲覧のみ」で足してくれたプロパティの検索の数字を読む。鍵はサーバーの環境変数だけにあり、画面やログに出さない。
 // SDK を入れずに、JWT を自分で署名してアクセストークンをもらう（Google の OAuth 2.0 サービスアカウントの手順）。
 
-import { createSign } from "node:crypto";
+import { createPrivateKey, createSign } from "node:crypto";
 import type { ScSnapshot } from "@/types/domain";
 
 export type { ScSnapshot };
@@ -17,10 +17,25 @@ export class ScError extends Error {
   }
 }
 
-export function scAccount(env: Record<string, string | undefined> = process.env) {
-  const email = env.GOOGLE_SERVICE_ACCOUNT_EMAIL?.trim();
+/** 貼り付けのゆれ（前後の " や , 、\n の2文字、JSON を丸ごと）を吸収して、鍵の文字列に戻す */
+export function cleanPrivateKey(raw: string | undefined): string | undefined {
+  let k = raw?.trim();
+  if (!k) return undefined;
+  if (k.startsWith("{")) {
+    try {
+      k = String((JSON.parse(k) as { private_key?: unknown }).private_key ?? "");
+    } catch {
+      return undefined;
+    }
+  }
+  k = k.replace(/,\s*$/, "").replace(/^"+|"+$/g, "");
   // Vercel の環境変数では改行が \n の2文字になることがあるので戻す
-  const key = env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY?.replace(/\\n/g, "\n").trim();
+  return k.replace(/\\r/g, "").replace(/\\n/g, "\n").replace(/\r/g, "").trim();
+}
+
+export function scAccount(env: Record<string, string | undefined> = process.env) {
+  const email = env.GOOGLE_SERVICE_ACCOUNT_EMAIL?.trim().replace(/^"+|"+$/g, "");
+  const key = cleanPrivateKey(env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY);
   return email && key ? { email, key } : null;
 }
 
@@ -32,9 +47,16 @@ async function accessToken(account: { email: string; key: string }, doFetch: typ
   const claims = b64url(
     JSON.stringify({ iss: account.email, scope: "https://www.googleapis.com/auth/webmasters.readonly", aud: "https://oauth2.googleapis.com/token", iat: now, exp: now + 3600 }),
   );
+  let privateKey;
+  try {
+    privateKey = createPrivateKey(account.key);
+  } catch {
+    // 鍵の中身はログにも出さない
+    throw new ScError("not_configured", "コタムの鍵（GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY）の形が読めません。BEGIN から END PRIVATE KEY までを入れ直してください");
+  }
   const signer = createSign("RSA-SHA256");
   signer.update(`${header}.${claims}`);
-  const jwt = `${header}.${claims}.${b64url(signer.sign(account.key))}`;
+  const jwt = `${header}.${claims}.${b64url(signer.sign(privateKey))}`;
   const res = await doFetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },

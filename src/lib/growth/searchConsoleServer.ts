@@ -7,6 +7,13 @@ import { ScError, fetchSnapshot, normalizeSite, scAccount } from "@/lib/searchCo
 type Fail = { ok: false; status: number; code: string; message: string };
 const fail = (status: number, code: string, message: string): Fail => ({ ok: false, status, code, message });
 
+/** お客様に見せる文。思いがけない失敗は、種類だけをサーバーの記録に残す（鍵や本文は出さない） */
+function describe(e: unknown): string {
+  if (e instanceof ScError) return e.message;
+  console.error("search_console_failed", e instanceof Error ? `${e.name}: ${e.message.slice(0, 200)}` : "unknown");
+  return "Search Console を読めませんでした。少し待ってからもう一度お試しください";
+}
+
 /** 何時間ごとに読み直すか（Search Console のデータは1日に1回ほどしか増えない） */
 export const REFRESH_HOURS = 12;
 
@@ -29,7 +36,7 @@ export async function connectSearchConsole(deps: { user: SupabaseClient; admin: 
     await deps.admin.from("search_console").upsert({ organization_id: req.organizationId, site_url: site, verified_at: new Date().toISOString(), last_error: null, snapshot, fetched_at: new Date().toISOString(), updated_at: new Date().toISOString() });
     return { ok: true as const, connected: true };
   } catch (e) {
-    const message = e instanceof ScError ? e.message : "Search Console を読めませんでした";
+    const message = describe(e);
     await deps.admin.from("search_console").upsert({ organization_id: req.organizationId, site_url: site, verified_at: null, last_error: message, updated_at: new Date().toISOString() });
     return { ok: true as const, connected: false, message };
   }
@@ -47,7 +54,7 @@ export async function refreshSearchConsole(deps: { user: SupabaseClient; admin: 
     await deps.admin.from("search_console").update({ snapshot, fetched_at: new Date().toISOString(), last_error: null, updated_at: new Date().toISOString() }).eq("organization_id", req.organizationId);
     return { ok: true as const, refreshed: true };
   } catch (e) {
-    const message = e instanceof ScError ? e.message : "Search Console を読めませんでした";
+    const message = describe(e);
     // 権限を外されたら、つながっていない状態に戻す
     const lost = e instanceof ScError && (e.code === "no_access" || e.code === "not_found");
     await deps.admin.from("search_console").update({ last_error: message, ...(lost ? { verified_at: null } : {}), updated_at: new Date().toISOString() }).eq("organization_id", req.organizationId);
