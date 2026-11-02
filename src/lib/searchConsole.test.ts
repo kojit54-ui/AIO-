@@ -1,6 +1,6 @@
 import { generateKeyPairSync } from "node:crypto";
 import { describe, expect, it } from "vitest";
-import { ScError, fetchSnapshot, normalizeSite, scAccount } from "./searchConsole";
+import { ScError, cleanPrivateKey, fetchSnapshot, normalizeSite, scAccount } from "./searchConsole";
 
 const { privateKey } = generateKeyPairSync("rsa", { modulusLength: 2048 });
 const env = { GOOGLE_SERVICE_ACCOUNT_EMAIL: "reader@x.iam.gserviceaccount.com", GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY: privateKey.export({ type: "pkcs8", format: "pem" }).toString().replace(/\n/g, "\n") };
@@ -45,5 +45,20 @@ describe("Search Console を読む", () => {
     const respond = (status: number) => (async (url: string) => (url.includes("oauth2") ? Response.json({ access_token: "tok" }) : new Response("", { status }))) as typeof fetch;
     await expect(fetchSnapshot("https://example.jp/", { env, fetch: respond(403) })).rejects.toMatchObject({ code: "no_access" });
     await expect(fetchSnapshot("https://example.jp/", { env, fetch: respond(404) })).rejects.toBeInstanceOf(ScError);
+  });
+});
+
+describe("鍵の貼り付けのゆれ", () => {
+  const pem = env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
+  const real = pem.replace(/\n/g, "\n");
+  it("前後の \" や , 、本当の改行、JSON 丸ごとでも同じ鍵になる", () => {
+    expect(cleanPrivateKey(pem)).toBe(real.trim());
+    expect(cleanPrivateKey(`"${pem}",`)).toBe(real.trim());
+    expect(cleanPrivateKey(real)).toBe(real.trim());
+    expect(cleanPrivateKey(JSON.stringify({ client_email: "x", private_key: real }))).toBe(real.trim());
+  });
+
+  it("壊れた鍵は、読めないと分かる文で止まる", async () => {
+    await expect(fetchSnapshot("https://example.jp/", { env: { ...env, GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY: "-----BEGIN PRIVATE KEY-----abc" }, fetch: (async () => Response.json({})) as typeof fetch })).rejects.toMatchObject({ code: "not_configured" });
   });
 });
