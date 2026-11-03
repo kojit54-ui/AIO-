@@ -26,7 +26,7 @@ function CheckIcon({ k, className = "h-5 w-5" }: { k: AioCheckKey; className?: s
   );
 }
 
-/** 「AIに選ばれる」「人に選ばれる」の札 */
+/** 「AIに選ばれる」「お客様に選ばれる」の札 */
 function StageTag({ stage }: { stage: (typeof AIO_CHECK_GROUPS)[number] }) {
   return (
     <p className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-black ${stage.key === "ai" ? "bg-brand-soft text-brand-dark" : "bg-sun text-ink"}`}>
@@ -255,7 +255,7 @@ export function useAioCheck(article: Article, version: ArticleVersion, onError: 
     setBusy("check");
     try {
       const c = await api.runAioCheck(article.id);
-      if (c.status === "done") setCelebrate("チェック完了！AIにも人にも選ばれやすい記事です");
+      if (c.status === "done") setCelebrate("チェック完了！AIにもお客様にも選ばれやすい記事です");
       // 足りない所があれば、すぐに質問のウィンドウを開く
       else setAskOpen(true);
     } catch (e) {

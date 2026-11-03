@@ -6,13 +6,13 @@
 export const SERVICE_NAME = "コタムのブログ執筆支援";
 
 /** ひとことで言うと */
-export const SERVICE_PROMISE = "AIに選ばれて、人に選ばれる会社へ。";
+export const SERVICE_PROMISE = "AIに選ばれて、これから出会うお客様に選ばれる会社へ。";
 
 /** だれが、何をするか */
 export const SERVICE_COMPANION = "そこまで、案内役のしおり（AI）がずっと伴走します。";
 
 /** いちばん大切なこと */
-export const SERVICE_MOST_IMPORTANT = "いちばん大切なのは、AIに選ばれたあと、人に選ばれることです。";
+export const SERVICE_MOST_IMPORTANT = "いちばん大切なのは、AIに選ばれたあと、これから出会うお客様に選ばれることです。";
 
 export type ChosenStage = "ai" | "people";
 
@@ -28,7 +28,7 @@ export const CHOSEN_STAGES: { key: ChosenStage; step: string; label: string; tex
   {
     key: "people",
     step: "2",
-    label: "人に選ばれる",
+    label: "お客様に選ばれる",
     text: "紹介されて読みに来た人が「ここに頼みたい」と思って、問い合わせる",
     icon: "🤝",
   },
@@ -36,10 +36,10 @@ export const CHOSEN_STAGES: { key: ChosenStage; step: string; label: string; tex
 
 /** ページの説明（検索結果やSNSに出る文） */
 export const SERVICE_DESCRIPTION =
-  "AIに選ばれて、人に選ばれる会社へ。しおりの質問に答えるだけで、AIに紹介されやすく、読んだ人が「ここに頼みたい」と思える記事ができる、ものづくりの会社のためのブログ執筆支援。";
+  "AIに選ばれて、これから出会うお客様に選ばれる会社へ。しおりの質問に答えるだけで、AIに紹介されやすく、読んだ人が「ここに頼みたい」と思える記事ができる、ものづくりの会社のためのブログ執筆支援。";
 
 /** AIへの指示に入れる目的。書き手・点検役・AIOのチェック・30秒でためすで同じ文を使う */
 export const PURPOSE_FOR_AI = `このサービスの目的は2段です。
 1. AIに選ばれる：AIの検索（GoogleのAIによる概要、ChatGPT など）の答えの中で、この会社が紹介されること（AIO）。
-2. 人に選ばれる：紹介されて読みに来た人が「この会社に頼みたい」と思い、問い合わせること。
+2. これから出会うお客様に選ばれる：紹介されて記事を読みに来た見込み客が「この会社に頼みたい」と思い、問い合わせること。
 いちばん大切なのは2です。AIに紹介されても、読んだ人に選ばれなければ売上になりません。AIのための工夫で、人が読みにくくなったり、この会社の人柄や言葉が消えたりしないようにしてください。`;

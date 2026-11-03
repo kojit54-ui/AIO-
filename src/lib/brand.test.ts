@@ -6,17 +6,17 @@ import { REVIEW_SYSTEM_PROMPT, SYSTEM_PROMPT } from "@/lib/ai/prompt";
 import { CHOSEN_STAGES, PURPOSE_FOR_AI } from "@/lib/brand";
 import { TRIAL_SYSTEM_PROMPT } from "@/lib/tryoutAi";
 
-// サービスの定義（AIに選ばれ、人に選ばれる）が、画面とAIへの指示の両方に届いているか（docs/AIO.md「このサービスの定義」）
+// サービスの定義（AIに選ばれ、お客様に選ばれる）が、画面とAIへの指示の両方に届いているか（docs/AIO.md「このサービスの定義」）
 describe("サービスの定義", () => {
   it("書き手・点検役・AIOのチェックの指示に、同じ目的の文が入っている", () => {
     for (const p of [SYSTEM_PROMPT, REVIEW_SYSTEM_PROMPT, AIO_CHECK_SYSTEM_PROMPT]) expect(p).toContain(PURPOSE_FOR_AI);
   });
 
-  it("30秒でためすの指示も、人に選ばれることをいちばん大切にしている", () => {
-    expect(TRIAL_SYSTEM_PROMPT).toContain("読んだ人に選ばれること");
+  it("30秒でためすの指示も、お客様に選ばれることをいちばん大切にしている", () => {
+    expect(TRIAL_SYSTEM_PROMPT).toContain("見込み客（これから出会うお客様）に選ばれること");
   });
 
-  it("AIOの材料はどれも「人に選ばれる」理由を持っている", () => {
+  it("AIOの材料はどれも「お客様に選ばれる」理由を持っている", () => {
     for (const p of Object.values(AIO_POINTS)) {
       expect(p.people.length).toBeGreaterThan(10);
       expect(CHOSEN_STAGES.map((s) => s.key)).toContain(p.stage);

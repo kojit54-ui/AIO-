@@ -24,7 +24,7 @@ describe("AIの町すごろく", () => {
     expect(townLevel(publishedCount(base, "o1")).level.name).toBe("空き地");
   });
 
-  it("最後の2マスは、AIに選ばれる・人に選ばれるの順", () => {
+  it("最後の2マスは、AIに選ばれる・お客様に選ばれるの順", () => {
     const steps = townSteps(base, "o1", false);
     expect(steps.slice(-2).map((s) => s.stage)).toEqual(["ai", "people"]);
   });

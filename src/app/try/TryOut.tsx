@@ -1,6 +1,6 @@
 "use client";
 
-// 30秒でためす（/try）。ログインなしで、AIと人に選ばれる準備度の診断 → 1問答えて記事の書き出し、まで体験する。
+// 30秒でためす（/try）。ログインなしで、AIとお客様に選ばれる準備度の診断 → 1問答えて記事の書き出し、まで体験する。
 // いまはサンプル（AIにはつながない）。src/lib/tryout.ts。入力はこのブラウザの画面の中だけで使い、保存も送信もしない。
 
 import Link from "next/link";
@@ -62,7 +62,7 @@ const CHOICES: { value: ReadinessAnswer; label: string; icon: string }[] = [
 ];
 
 const REACT: Record<ReadinessAnswer, { mood: ShioriMood; say: string }> = {
-  yes: { mood: "right", say: "いいですね！それはAIにも人にも伝わる材料です。" },
+  yes: { mood: "right", say: "いいですね！それはAIにもお客様にも伝わる材料です。" },
   some: { mood: "idea", say: "おしい！もう少し足すと、ぐっと良くなります。" },
   no: { mood: "cheer", say: "大丈夫！ここが伸びしろです。" },
 };
@@ -177,7 +177,7 @@ export function TryOut() {
               <div className="card space-y-2 bg-ink text-white">
                 <p className="text-xs font-black text-sky">お客様が、AIにこう聞いたら…</p>
                 <p className="text-lg font-black">💬 {customerQuestion(region, job)}</p>
-                <p className="text-sm text-white/80">「{company}」がAIに紹介されて、読んだ人に選ばれるための材料が、そろっているか見てみましょう。</p>
+                <p className="text-sm text-white/80">「{company}」がAIに紹介されて、読んだお客様に選ばれるための材料が、そろっているか見てみましょう。</p>
               </div>
               <div className="card space-y-4">
                 <p className="text-sm font-black text-brand-dark">
@@ -306,7 +306,7 @@ function Intro({ onStart }: { onStart: () => void }) {
       <h1 className="relative text-3xl font-black leading-snug">
         あなたの会社、
         <br />
-        AIと人に選ばれる準備は
+        AIとお客様に選ばれる準備は
         <br />
         <span className="text-brand">できてる？</span>
       </h1>

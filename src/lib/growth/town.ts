@@ -1,5 +1,5 @@
 // 案4「AIの町すごろく」（2026-11-03）。記事を書くほど、町に会社の建物が建って大きくなる。
-// マスはどれも実際の記録（スタンプ帳と同じ）から進む。最後の「人に選ばれた（お問い合わせ）」だけは、
+// マスはどれも実際の記録（スタンプ帳と同じ）から進む。最後の「お客様に選ばれた（お問い合わせ）」だけは、
 // このサービスでは分からないので、会社の人が自分で「来た！」と押したときに進む（このブラウザに覚える）。
 
 import type { MockDb } from "@/mock/store";
@@ -12,7 +12,7 @@ export interface TownStep {
   /** マスに止まったときに、次にすること */
   how: string;
   done: boolean;
-  /** AIに選ばれる／人に選ばれる のマス */
+  /** AIに選ばれる／お客様に選ばれる のマス */
   stage?: "ai" | "people";
 }
 
@@ -49,7 +49,7 @@ export function townSteps(db: MockDb, orgId: string, inquiry: boolean, now = new
     s("publish", "🚀", "ブログに載せる", "記事を1本ブログに載せましょう", !!got.get("publish")),
     s("five", "📚", "5本載せる", "記事を5本ブログに載せましょう", !!got.get("five")),
     s("mention", "🤖", "AIに選ばれた", "AIの答えに会社が出てくるか、しおりが調べます", !!got.get("mention"), "ai"),
-    s("inquiry", "🤝", "人に選ばれた", "記事を読んだ人からお問い合わせが来たら、押してください", inquiry, "people"),
+    s("inquiry", "🤝", "お客様に選ばれた", "記事を読んだ人からお問い合わせが来たら、押してください", inquiry, "people"),
   ];
 }
 

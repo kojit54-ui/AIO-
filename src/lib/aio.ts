@@ -7,7 +7,7 @@ import type { AioPoint } from "@/types/domain";
 /**
  * AIO（AI検索に紹介されるための工夫）で集めたい材料。docs/AIO.md。
  * 質問ごとに「どの材料のために聞いているか」を画面で伝え、書く人にもAIOを分かってもらう。
- * why＝AIに選ばれるため、people＝そのあと読んだ人に選ばれるため（src/lib/brand.ts）。stage＝おもに効く段階
+ * why＝AIに選ばれるため、people＝そのあと読んだお客様に選ばれるため（src/lib/brand.ts）。stage＝おもに効く段階
  */
 export const AIO_POINTS: Record<AioPoint, { label: string; why: string; people: string; stage: ChosenStage; cheer: string }> = {
   experience: {

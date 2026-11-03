@@ -2,7 +2,7 @@
 
 // 案4「AIの町すごろく」（2026-11-03）。ホームに出す。
 // 記事をブログに載せるほど、町に会社の建物が建って大きくなる。マスは実際の記録で進み、
-// 最後の「人に選ばれた（お問い合わせ）」は会社の人が自分で押す。進んだときは、コマが1マスずつ跳んで紙吹雪。
+// 最後の「お客様に選ばれた（お問い合わせ）」は会社の人が自分で押す。進んだときは、コマが1マスずつ跳んで紙吹雪。
 // コマは会社の家（しおりの絵は動かさない）。
 
 import { useEffect, useState } from "react";
@@ -116,7 +116,7 @@ export function TownView({
       </ol>
 
       {goal ? (
-        <p className="rounded-2xl bg-sun-soft px-4 py-3 font-black">🎉 ゴール！ AIに選ばれて、人に選ばれました。この調子で、町のシンボルを目指しましょう！</p>
+        <p className="rounded-2xl bg-sun-soft px-4 py-3 font-black">🎉 ゴール！ AIに選ばれて、お客様に選ばれました。この調子で、町のシンボルを目指しましょう！</p>
       ) : (
         <div className="flex flex-wrap items-center gap-3 rounded-2xl bg-canvas px-4 py-3">
           <p className="min-w-0 flex-1">
@@ -238,7 +238,7 @@ function Town({ level, name, mentioned, inquired }: { level: number; name: strin
           </text>
         </g>
       )}
-      {/* 人に選ばれたら、お客様が入り口へ */}
+      {/* お客様に選ばれたら、お客様が入り口へ */}
       {inquired && (
         <g className="animate-nudge" style={{ transformBox: "fill-box" }}>
           <circle cx={140} cy={ground - 14} r={4} fill="var(--color-ink)" />

@@ -17,7 +17,7 @@ const PROFILE: { label: string; value: string; icon: string }[] = [
   { icon: "✨", label: "得意なこと", value: "質問すること、ほめること、AIOのニュース集め" },
   { icon: "🙅", label: "苦手なこと", value: "作り話。だから、あなたの経験をくわしく聞きます" },
   { icon: "📰", label: "毎週月曜日", value: "AIに選ばれるための最新ニュースを読んでいます" },
-  { icon: "💬", label: "口ぐせ", value: "「いいですね！それ、AIにも人にも伝わる話です」" },
+  { icon: "💬", label: "口ぐせ", value: "「いいですね！それ、AIにもお客様にも伝わる話です」" },
   { icon: "❤️", label: "好きなもの", value: "現場の言葉。飾らない話がいちばん伝わります" },
 ];
 
@@ -82,7 +82,7 @@ export function ShioriIntro() {
           <ShioriTalk
             mood="joy"
             hideOnPhone
-            lines={["はじめまして！あなたの会社の記事づくりを、となりで案内します。", "AIに選ばれて、そのあと読んだ人に選ばれるまで、ずっと伴走します。いっしょにがんばりましょう！"]}
+            lines={["はじめまして！あなたの会社の記事づくりを、となりで案内します。", "AIに選ばれて、そのあと記事を読んだ、これから出会うお客様に選ばれるまで、ずっと伴走します。いっしょにがんばりましょう！"]}
           />
           <ChosenPath />
         </div>

@@ -3,7 +3,7 @@
 // 入口のページ（サービスのご紹介）。ログインしていない人が最初に見る。
 // 2026-11-03 田村さん「登録したくなる、ワクワクする、ログインしたくなるページにしたい」。
 // 言葉は“やること”で書く（専門語を使わない）。AIOの考え方は docs/AIO.md（体験と数字が紹介されやすい・作り話をしない）。
-// サービスの定義は src/lib/brand.ts（AIに選ばれて、人に選ばれる。いちばん大切なのは人に選ばれること）。
+// サービスの定義は src/lib/brand.ts（AIに選ばれて、お客様に選ばれる。いちばん大切なのはお客様に選ばれること）。
 // 紹介される・売上が上がると約束はしない（決めるのはAI）。料金はまだ決まっていないので出さない。
 
 import Link from "next/link";
@@ -70,7 +70,7 @@ function TryBanner() {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-xs font-black text-warn">登録なし・30秒</span>
-        <span className="block font-black leading-snug">あなたの会社、AIと人に選ばれる準備はできてる？ 診断してみる</span>
+        <span className="block font-black leading-snug">あなたの会社、AIとお客様に選ばれる準備はできてる？ 診断してみる</span>
       </span>
       <span className="text-2xl text-ink transition-transform group-hover:translate-x-1" aria-hidden>
         →
@@ -86,11 +86,13 @@ function Hero({ startHref, startLabel }: { startHref: string; startLabel: string
         <p className="inline-flex animate-rise items-center gap-2 rounded-full bg-sun-soft px-3 py-1 text-sm font-black">
           <span aria-hidden>✨</span> AIの時代の、会社のブログ
         </p>
-        <h1 className="animate-rise text-[2rem] font-black leading-[1.35] [animation-delay:.08s] sm:text-5xl sm:leading-[1.3]">
+        <h1 className="animate-rise text-[1.7rem] font-black leading-[1.35] [animation-delay:.08s] sm:text-5xl sm:leading-[1.3]">
           AIに選ばれて、
           <br />
+          これから出会う
+          <br />
           <span className="relative inline-block">
-            <span className="relative z-10">人に選ばれる</span>
+            <span className="relative z-10">お客様に選ばれる</span>
             <span className="absolute inset-x-0 bottom-1 z-0 h-3 rounded-full bg-sun/70 sm:h-4" aria-hidden />
           </span>
           会社に。
@@ -98,7 +100,7 @@ function Hero({ startHref, startLabel }: { startHref: string; startLabel: string
         <p className="animate-rise text-lg font-bold text-muted [animation-delay:.16s] sm:text-xl">
           AIに「この会社がいいよ」と紹介されて、
           <br className="hidden sm:inline" />
-          読んだ人に「ここに頼みたい」と思ってもらえる記事を。
+          これから出会うお客様に「ここに頼みたい」と思ってもらえる記事を。
           <br />
           <span className="text-ink">{SERVICE_COMPANION}</span>
         </p>
@@ -130,7 +132,7 @@ function Hero({ startHref, startLabel }: { startHref: string; startLabel: string
           ⭐ スタンプ +1
         </FloatChip>
         <FloatChip className="bottom-6 left-2" delay="1.2s">
-          🤝 人に選ばれた！
+          🤝 お客様に選ばれた！
         </FloatChip>
       </div>
     </section>
@@ -166,11 +168,11 @@ const READER_THINKS = "10個でも、ていねいに相談にのってくれそ�
 
 /**
  * お客様がAIに相談して、あなたの会社が紹介され（AIに選ばれる）、
- * 記事を読んだ人が問い合わせる（人に選ばれる）までの様子（イメージ）。見えたら自動で流れる
+ * 記事を読んだ人が問い合わせる（お客様に選ばれる）までの様子（イメージ）。見えたら自動で流れる
  */
 function AiChat() {
   const [ref, seen] = useInView<HTMLDivElement>(0.35);
-  // 0:待ち 1:お客様が打つ 2:AIが考える 3:AIが答える 4:AIに選ばれた 5:記事を読む 6:人に選ばれた
+  // 0:待ち 1:お客様が打つ 2:AIが考える 3:AIが答える 4:AIに選ばれた 5:記事を読む 6:お客様に選ばれた
   const [step, setStep] = useState(0);
   const [round, setRound] = useState(0);
   useEffect(() => {
@@ -283,7 +285,7 @@ function AiChat() {
               )}
               {step >= 6 && (
                 <div className="flex justify-center">
-                  <span className="animate-stamp rounded-full border-2 border-sun-dark bg-sun px-4 py-1.5 font-black text-ink shadow-[0_4px_0_var(--color-sun-dark)]">🤝 2. 人に選ばれた！ お問い合わせが来ました</span>
+                  <span className="animate-stamp rounded-full border-2 border-sun-dark bg-sun px-4 py-1.5 font-black text-ink shadow-[0_4px_0_var(--color-sun-dark)]">🤝 2. お客様に選ばれた！ お問い合わせが来ました</span>
                 </div>
               )}
             </div>
@@ -351,7 +353,7 @@ const CHOICES = [
   { id: "b", text: "厚さ1mmのステンレス板で、部品を10個、5日でお届けしました。", ok: true },
 ];
 
-/** AIにも人にも選ばれるのはどっち？ 1問だけのクイズ */
+/** AIにもお客様にも選ばれるのはどっち？ 1問だけのクイズ */
 function Quiz() {
   const [picked, setPicked] = useState<string | null>(null);
   const [tries, setTries] = useState(0);
@@ -367,7 +369,7 @@ function Quiz() {
     <section className="py-12">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <Reveal>
-          <SectionTitle kicker="30秒でわかる">AIにも人にも選ばれるのは、どっち？</SectionTitle>
+          <SectionTitle kicker="30秒でわかる">AIにもお客様にも選ばれるのは、どっち？</SectionTitle>
         </Reveal>
         <Reveal className="card space-y-4">
           {right && <Confetti count={50} />}
@@ -559,7 +561,7 @@ function FinalCall({ startHref, startLabel, signedIn }: { startHref: string; sta
               <h2 className="text-2xl font-black leading-snug sm:text-3xl">
                 さあ、AIに選ばれて、
                 <br className="sm:hidden" />
-                人に選ばれる会社になろう！
+                お客様に選ばれる会社になろう！
               </h2>
               <p className="font-bold text-white/90">まずは、しおりの質問に3つ答えるところから。最初のスタンプがもらえます。</p>
               <Link href={startHref} className="btn min-h-14 border-sun bg-sun px-7 text-lg text-ink shadow-[0_4px_0_var(--color-sun-dark)] hover:-translate-y-0.5">

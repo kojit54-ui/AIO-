@@ -1,7 +1,7 @@
 "use client";
 
 // 案3「未来のAIの答えをのぞく」（2026-11-03）。30秒でためすの最後に、1年後にお客様がAIに相談したときのイメージを見せる。
-// AIに選ばれる（答えに会社が出る）→ 人に選ばれる（記事を読んでお問い合わせ）まで、自動で流れる。
+// AIに選ばれる（答えに会社が出る）→ お客様に選ばれる（記事を読んでお問い合わせ）まで、自動で流れる。
 // 入力した言葉だけで作るイメージで、AIは使わない。「イメージ」「そう答えるとは限らない」と必ず書く。
 
 import { useEffect, useRef, useState } from "react";
@@ -9,7 +9,7 @@ import { Confetti } from "@/components/fun";
 import { Typed } from "@/components/talk";
 import type { FutureScene } from "@/lib/tryout";
 
-// 0:時間がすすむ 1:お客様が打つ 2:AIが考える 3:AIが答える 4:AIに選ばれた 5:記事を読む 6:人に選ばれた
+// 0:時間がすすむ 1:お客様が打つ 2:AIが考える 3:AIが答える 4:AIに選ばれた 5:記事を読む 6:お客様に選ばれた
 export function FutureAnswer({ scene, title }: { scene: FutureScene; title: string }) {
   const [step, setStep] = useState(0);
   const [months, setMonths] = useState(0);
@@ -39,7 +39,7 @@ export function FutureAnswer({ scene, title }: { scene: FutureScene; title: stri
 
   const share = async () => {
     // 入力した会社のことは送らない。サービスの紹介とリンクだけ
-    const data = { title: "30秒でためす", text: "AIに選ばれて、人に選ばれる会社へ。会社の準備度を30秒で診断できます。", url: `${window.location.origin}/try` };
+    const data = { title: "30秒でためす", text: "AIに選ばれて、これから出会うお客様に選ばれる会社へ。会社の準備度を30秒で診断できます。", url: `${window.location.origin}/try` };
     try {
       if (navigator.share) {
         await navigator.share(data);
@@ -130,7 +130,7 @@ export function FutureAnswer({ scene, title }: { scene: FutureScene; title: stri
             {step >= 6 && (
               <p className="text-center">
                 <span className="inline-block animate-stamp rounded-full border-2 border-sun-dark bg-sun px-4 py-1.5 font-black text-ink shadow-[0_4px_0_var(--color-sun-dark)]">
-                  🤝 2. 人に選ばれた！ お問い合わせが来ました
+                  🤝 2. お客様に選ばれた！ お問い合わせが来ました
                 </span>
               </p>
             )}
