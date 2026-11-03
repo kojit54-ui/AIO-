@@ -5,7 +5,7 @@
 // - 入力も出力もログに出さない
 
 import { asData, parseJson } from "@/lib/ai/prompt";
-import { READINESS_QUESTIONS, type ReadinessAnswer, type SampleOpening } from "./tryout";
+import { READINESS_QUESTIONS, type ReadinessAnswer, type SampleOpening, storyProblem } from "./tryout";
 
 export const TRIAL_LIMITS = { field: 40, story: 400, minStory: 5 } as const;
 
@@ -42,6 +42,8 @@ export function validateTrialInput(body: unknown): { ok: true; input: TrialInput
   const story = clean(b.story, TRIAL_LIMITS.story);
   if (!company || !region || !job || Array.from(story).length < TRIAL_LIMITS.minStory) return { ok: false, message: "入力の内容を確認してください" };
   if ((raw as string[]).some((v) => Array.from(v).length > TRIAL_LIMITS.story + 50)) return { ok: false, message: "入力が長すぎます" };
+  const problem = storyProblem(story);
+  if (problem) return { ok: false, message: problem };
   if ([company, region, job, story].some((v) => LINK.test(v))) return { ok: false, message: "URLやメールアドレスは入れずに書いてください" };
   const answers: Record<string, ReadinessAnswer> = {};
   const a = (b.answers ?? {}) as Record<string, unknown>;
@@ -109,5 +111,6 @@ export function parseTrialResult(text: string, input: TrialInput): { result: Tri
   // 入力にない数字を出さない（作り話をしない。docs/AIO.md）
   const source = toHalf([input.company, input.region, input.job, input.story].join("\n"));
   if (numbersIn(out).some((n) => !source.includes(toHalf(n)))) return { result: null, reason: "number" };
-  return { result: { title, cheer, paragraphs: paragraphs as string[], nextAsks: asks as string[] }, reason: "" };
+  // 2つ目の段落が、うれしかった仕事を記事の文に整えたところ（TRIAL_SYSTEM_PROMPT）
+  return { result: { title, cheer, paragraphs: paragraphs as string[], storyAt: 1, nextAsks: asks as string[] }, reason: "" };
 }

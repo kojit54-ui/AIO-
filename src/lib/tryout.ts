@@ -71,8 +71,10 @@ export interface TryInput {
 
 export interface SampleOpening {
   title: string;
-  /** 書き出しの段落。answer はそのままの言葉で入る */
+  /** 書き出しの段落。答えはそのまま載せない（AIが整えた文が入る場所を storyAt で示す） */
   paragraphs: string[];
+  /** AIが整えたお話が入る段落の番号 */
+  storyAt: number;
   /** 続きを書くために、しおりが次に聞くこと */
   nextAsks: string[];
 }
@@ -82,21 +84,40 @@ const clip = (s: string, n: number) => {
   return Array.from(t).length > n ? `${Array.from(t).slice(0, n).join("")}…` : t;
 };
 
-/** 記事の書き出し（サンプル）。答えにない事実は足さない */
+/** 見本で、答えの代わりに置く文。答えをそのまま載せると「AIが整える」ことが伝わらないため（2026-11-03 田村さん） */
+export const SAMPLE_STORY_SLOT = "ここに、あなたのお話をAIが読みやすく整えた文が入ります。";
+
+/**
+ * 「最近うれしかった仕事」の答えが、記事にできる文になっているか。だめなときは、直し方を返す。
+ * 意味のない文字（aaaa、ああああ、記号だけ）をAIに送らない・画面に載せないため
+ */
+export function storyProblem(answer: string): string | null {
+  const t = answer.replace(/[\s、。，．,.！!？?・ー〜~\-]/g, "");
+  const chars = Array.from(t);
+  if (chars.length < 5) return "もう少しだけ、くわしく書いてください。";
+  if (!/[\u3041-\u3096\u30a1-\u30fa\u4e00-\u9fff]/.test(t)) return "日本語で、お仕事のことを書いてください。";
+  const counts = new Map<string, number>();
+  for (const c of chars) counts.set(c, (counts.get(c) ?? 0) + 1);
+  const most = Math.max(...counts.values());
+  if (counts.size <= 3 || most / chars.length > 0.5) return "お仕事のことを、話すように書いてください。例）急ぎの試作を間に合わせて、お客様に喜ばれた。";
+  return null;
+}
+
+/** 記事の書き出し（サンプル）。答えにない事実は足さない。答えそのものも載せない */
 export function sampleOpening(input: TryInput): SampleOpening {
   const company = clip(input.company, 30) || "わたしたち";
   const region = clip(input.region, 20);
   const job = clip(input.job, 30) || "ものづくり";
-  const answer = clip(input.answer, 300);
   const where = region ? `${region}で` : "";
   return {
     title: `${region ? `【${region}】` : ""}${job}の現場から｜${company}が最近うれしかった仕事`,
     paragraphs: [
       `こんにちは、${where}${job}をしている${company}です。`,
       "今日は、最近あったお仕事の中から、うれしかったことをお話しします。",
-      `「${answer}」`,
+      SAMPLE_STORY_SLOT,
       "どんなご相談で、どこが難しくて、どう工夫したのか。現場の言葉で、くわしくご紹介します。",
     ],
+    storyAt: 2,
     nextAsks: ["どんなお客様から、どんな相談でしたか？", "いちばん難しかったところは？", "個数・日数・大きさなど、数字で言えることは？"],
   };
 }
@@ -120,12 +141,11 @@ export function futureScene(input: TryInput): FutureScene {
   const company = clip(input.company, 30) || "あなたの会社";
   const region = clip(input.region, 20);
   const job = clip(input.job, 30) || "お仕事";
-  const story = clip(input.answer, 40).replace(/[。、！!？?\s]+$/, "");
   return {
     ask: customerQuestion(region, job),
     before: `${region ? `${region}で` : ""}${job}なら、`,
     company,
-    after: `がよさそうです。ブログに実際のお仕事の話${story ? `（「${story}」）` : ""}が、現場の人の言葉で書かれていて、どんなふうに対応してくれるかが分かります。相談の窓口もあります。`,
+    after: `がよさそうです。ブログに実際のお仕事の話が、現場の人の言葉で書かれていて、どんなふうに対応してくれるかが分かります。相談の窓口もあります。`,
     readerThinks: "現場の人の言葉で書いてあって、安心できそう。ここに相談してみよう！",
   };
 }
