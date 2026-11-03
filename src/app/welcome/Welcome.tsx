@@ -100,7 +100,9 @@ function Hero({ startHref, startLabel }: { startHref: string; startLabel: string
         <p className="animate-rise text-lg font-bold text-muted [animation-delay:.16s] sm:text-xl">
           AIに「この会社がいいよ」と紹介されて、
           <br className="hidden sm:inline" />
-          これから出会うお客様に「ここに頼みたい」と思ってもらえる記事を。
+          これから出会うお客様に
+          <br className="hidden sm:inline" />
+          「ここに頼みたい」と思ってもらえる記事を。
           <br />
           <span className="text-ink">{SERVICE_COMPANION}</span>
         </p>
