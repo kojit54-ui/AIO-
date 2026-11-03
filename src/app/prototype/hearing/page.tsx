@@ -225,7 +225,13 @@ export default function HearingPage() {
       {carried && <Notice tone="ok" title="30秒でためすの内容を入れました">「どんなお仕事」「地域」「選ばれる理由」に入っています。見直して「次へ」を押してください。</Notice>}
       {cheer && <Cheer point={cheer} />}
       {aiError && <Notice tone="warn" title={aiError} />}
-      {thinking && <WaitingScreen label="しおりが答えを読んでいます" note="答えを読んで、もう少し聞きたいことがあるか考えています。" />}
+      {thinking && (
+        <WaitingScreen
+          label="しおりが答えを読んでいます"
+          note="答えを読んで、もう少し聞きたいことがあるか考えています。答えは保存されています。"
+          focus={{ question: q.label, point: q.aio, progress: `${current + 1}問目 / ${total}問・⭐ ${answeredTimes}`, remaining: total - current }}
+        />
+      )}
 
       <form
         className="card space-y-4"
