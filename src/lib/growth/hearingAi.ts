@@ -6,9 +6,10 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { buildImportPrompt, IMPORT_SYSTEM_PROMPT, parseImport } from "@/lib/ai/growthPrompts";
 import { MAX_IMPORT_CHARS, splitByHeadings, type ImportCandidate } from "./aiImport";
-import { buildExamplesPrompt, buildFollowUpPrompt, buildProfilePrompt, EXAMPLES_SYSTEM_PROMPT, FOLLOWUP_SYSTEM_PROMPT, parseExamples, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
+import { ANSWER_IDEAS_SYSTEM_PROMPT, buildAnswerIdeasPrompt, parseAnswerIdeas, buildExamplesPrompt, buildFollowUpPrompt, buildProfilePrompt, EXAMPLES_SYSTEM_PROMPT, FOLLOWUP_SYSTEM_PROMPT, parseExamples, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
 import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import { sampleQuestionExamples } from "./questionExamples";
+import { SAMPLE_ANSWER_IDEAS } from "@/lib/answerIdeas";
 import { estimateCostYen } from "@/lib/ai/cost";
 import { failureReason, type AiProvider, type AiUsage } from "@/lib/ai/provider";
 import { HEARING_QUESTIONS, MAX_AI_DEEP_DIVES, MAX_ANSWER, REQUIRED_FOR_PROPOSALS, isAnswerDone, nextDeepDive, type HearingAnswer } from "@/prototype/growth";
@@ -247,5 +248,50 @@ export async function runImportRead(deps: HearingDeps, req: { organizationId: st
     console.error("ai import read failed", { runId: b.runId, reason });
     await b.finish("failed", usage, reason);
     return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "読み取れませんでした。もう一度お試しください");
+  }
+}
+
+export interface AnswerIdeasRequest {
+  organizationId: string;
+  keyword: string;
+  question: string;
+  goal: string;
+  idempotencyKey: string;
+}
+
+/** 記事の質問への答えのたたき台を3つ作る。保存はしない（お客様が選んで直してから、画面が保存する） */
+export async function runAnswerIdeas(deps: HearingDeps, req: AnswerIdeasRequest): Promise<{ ok: true; ideas: string[]; sample: boolean } | Fail> {
+  const { user: db } = deps;
+  if (!(await requireUser(db))) return fail(401, "session_expired", "ログインの有効期限が切れました");
+  const keyword = typeof req.keyword === "string" ? req.keyword.trim().slice(0, 80) : "";
+  const question = typeof req.question === "string" ? req.question.trim().slice(0, 300) : "";
+  const goal = typeof req.goal === "string" ? req.goal.trim().slice(0, 200) : "";
+  if (!keyword || !question) return fail(400, "invalid_input", "入力の内容を確認してください");
+  const { data: org, error } = await db.from("organizations").select("profile").eq("id", req.organizationId).maybeSingle();
+  if (error || !org) return fail(404, "not_found", "会社が見つかりません");
+  const { questionExamples: _old, ...profile } = (org.profile as CompanyProfile | null) ?? ({} as CompanyProfile);
+  void _old;
+  if (!profile.business) return fail(400, "invalid_input", "先に「会社のことを教える」に答えてください");
+
+  const input = { profile, keyword, question, goal };
+  const b = await begin(deps, req.organizationId, req.idempotencyKey, JSON.stringify(input).length);
+  if (!b.ok) return b;
+  const signal = AbortSignal.timeout(FOLLOWUP_TIMEOUT_MS);
+  let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
+  try {
+    let ideas: string[];
+    if (deps.isSample) ideas = SAMPLE_ANSWER_IDEAS;
+    else {
+      const res = await deps.provider.complete({ kind: "hearing", system: ANSWER_IDEAS_SYSTEM_PROMPT, user: buildAnswerIdeasPrompt(input), maxOutputTokens: 800, signal });
+      usage = res.usage;
+      ideas = parseAnswerIdeas(res.text);
+    }
+    await b.finish("succeeded", usage, null);
+    return { ok: true, ideas, sample: deps.isSample };
+  } catch (e) {
+    const reason = failureReason(e, signal);
+    console.error("answer ideas failed", { runId: b.runId, reason });
+    await b.finish("failed", usage, reason);
+    return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "AIが案を出せませんでした。もう一度お試しください");
   }
 }
