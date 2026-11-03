@@ -78,7 +78,7 @@ export default function PrototypeLayout({ children }: { children: React.ReactNod
               ✎
             </span>
             <span className="min-w-0">
-              <span className="block text-sm font-medium text-muted">{SERVICE_NAME}（新しい流れの試作）</span>
+              <span className="block text-sm font-medium text-muted">{SERVICE_NAME}{remoteMode ? "" : "（新しい流れの試作）"}</span>
               <span className="block truncate text-lg font-black">{orgName}</span>
             </span>
           </Link>
