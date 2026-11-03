@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-03 CC（Claude、プロジェクトのスレッド）30秒でためす
+- ブランチ / コミット：claude/project-thread-ksfvfg（PR #54 のマージ後の main から）
+- 変更点：/try（src/app/try/）、src/lib/tryout.ts（準備度・段・足りない材料・お客さんの質問・書き出しのサンプル）とテスト、入口の見出しの下と最後に /try への入口、AppShell で /try をログインなしに
+- 確認結果：lint、型検査、単体テスト332件、build。375px・1280px で 入口 → 診断 → 結果 → 書き出し まで通し、横はみ出し・エラーなし
+- 未完了：本物のAIにつなぐか（使いすぎ防止と費用）、入力した会社のことをログイン後に引き継ぐか
+- 次の作業と担当：田村さんが触って感想 → CC が手直し → 本物のAIにつなぐなら CX と受付の回数・費用を決める
+
 ### 2026-11-03 CC（Claude、プロジェクトのスレッド）入口とログイン
 - ブランチ / コミット：claude/project-thread-ksfvfg（main から）
 - 変更点：入口のページ /welcome（src/app/welcome/）、共通の部品 src/components/landing.tsx（LoginStage・Reveal・useInView・useGreeting）、ログイン（メール・試作）と招待の画面を LoginStage に。未ログインで / を開くと /welcome へ（AppShell）。globals.css に twinkle・fly・blob。talk.tsx の Typed を export

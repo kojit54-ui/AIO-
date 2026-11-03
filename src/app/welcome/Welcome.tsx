@@ -43,6 +43,27 @@ export function Welcome() {
   );
 }
 
+/** 30秒でためす（/try）への入口。登録の前に、診断と記事の書き出しを体験できる */
+function TryBanner() {
+  return (
+    <Link
+      href="/try"
+      className="group flex animate-rise items-center gap-3 rounded-3xl border-2 border-sun-dark bg-sun-soft p-3 pr-4 shadow-[0_5px_0_var(--color-sun-dark)] transition-transform [animation-delay:.32s] hover:-translate-y-1 sm:max-w-lg"
+    >
+      <span className="grid h-14 w-14 shrink-0 animate-shine place-items-center rounded-2xl bg-sun text-3xl" aria-hidden>
+        🩺
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-xs font-black text-warn">登録なし・30秒</span>
+        <span className="block font-black leading-snug">あなたの会社、AIに紹介される準備はできてる？ 診断してみる</span>
+      </span>
+      <span className="text-2xl text-ink transition-transform group-hover:translate-x-1" aria-hidden>
+        →
+      </span>
+    </Link>
+  );
+}
+
 function Hero({ startHref, startLabel }: { startHref: string; startLabel: string }) {
   return (
     <section className="relative mx-auto grid max-w-6xl items-center gap-4 px-4 pb-10 pt-8 sm:px-6 md:grid-cols-[1.2fr_1fr] md:pb-16 md:pt-14">
@@ -77,6 +98,7 @@ function Hero({ startHref, startLabel }: { startHref: string; startLabel: string
             </span>
           </a>
         </div>
+        <TryBanner />
       </div>
 
       <div className="relative mx-auto mt-2 flex w-full max-w-sm justify-center md:mt-0">
@@ -472,7 +494,15 @@ function FinalCall({ startHref, startLabel, signedIn }: { startHref: string; sta
                   →
                 </span>
               </Link>
-              {!signedIn && <p className="text-sm text-white/85">招待メールが届いていない方は、コタムの担当者にお声がけください。</p>}
+              {!signedIn && (
+                <p className="text-sm text-white/85">
+                  招待メールが届いていない方は、コタムの担当者にお声がけください。
+                  <br />
+                  <Link href="/try" className="font-bold text-white underline">
+                    まずは30秒でためしてみる →
+                  </Link>
+                </p>
+              )}
             </div>
           </div>
         </Reveal>
