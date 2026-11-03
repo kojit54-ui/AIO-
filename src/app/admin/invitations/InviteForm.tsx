@@ -24,6 +24,7 @@ export function InviteForm({ organizationId, organizationName }: { organizationI
           <label className="block">
             <span className="field-label">招待する人のメールアドレス</span>
             <input name="email" type="email" required className="field" />
+            <span className="text-sm text-muted">全社管理者のメールアドレスは、招待してもコタム側の画面になります。お客様の画面をためすときは、別のアドレスを使ってください。</span>
           </label>
           <label className="block">
             <span className="field-label">役割</span>

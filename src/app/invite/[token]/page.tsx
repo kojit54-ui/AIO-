@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { EmptyState } from "@/components/ui";
 import { getInvitation } from "@/lib/auth/invitations";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
@@ -20,7 +21,17 @@ export default async function InvitePage({ params }: { params: Promise<{ token: 
   if (inv.status === "used") {
     return (
       <main className="page max-w-xl">
-        <EmptyState mood="sad" title="この招待リンクはすでに使われています">ログイン画面から、招待されたメールアドレスでログインしてください。</EmptyState>
+        <EmptyState
+          mood="sad"
+          title="この招待リンクはすでに使われています"
+          action={
+            <Link href="/login" className="btn-primary">
+              ログイン画面へ
+            </Link>
+          }
+        >
+          招待の受け付けは済んでいます。ログイン画面から、招待されたメールアドレスでログインしてください。
+        </EmptyState>
       </main>
     );
   }
