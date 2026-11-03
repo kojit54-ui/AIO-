@@ -126,7 +126,7 @@ describe("OpenAI（文章）", () => {
       ["gpt-draft", "medium"],
       ["gpt-finish", "high"],
     ]);
-    expect(bodies[0]).toMatchObject({ instructions: "s", input: "u", max_output_tokens: 100, store: false, text: { format: { type: "json_object" } } });
+    expect(bodies[0]).toMatchObject({ instructions: "s", input: "u\n\n返答はJSONで。", max_output_tokens: 100, store: false, text: { format: { type: "json_object" } } });
     expect(res).toEqual({ text: '{"ok":true}', usage: { inputTokens: 10, outputTokens: 5 } });
   });
 
