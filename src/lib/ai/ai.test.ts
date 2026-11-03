@@ -101,3 +101,16 @@ describe("見出し案の上限", () => {
     expect(r.outline).toHaveLength(MAX_HEADINGS);
   });
 });
+
+describe("記事の作戦（読む人・答え・タイトル）をAIに渡す", () => {
+  it("お客様が決めたことだと分かる名前で渡し、指示文で使い方を伝える", async () => {
+    const { PLAN_QUESTIONS } = await import("@/lib/articlePlan");
+    const { SYSTEM_PROMPT } = await import("./prompt");
+    const input = buildGenerationInput(
+      ctx({ questions: [...QUESTIONS, ...PLAN_QUESTIONS], answers: [{ questionId: "title", text: "脱衣所が寒い家の直し方", unknown: false }, { questionId: "conclusion", text: "まず窓から", unknown: false }] }),
+    );
+    expect(input.answers.map((a) => a.question).join("")).toContain("お客様が選んだ");
+    expect(input.answers.find((a) => a.question.includes("結論"))?.answer).toBe("まず窓から");
+    expect(SYSTEM_PROMPT).toContain("最初の段落");
+  });
+});

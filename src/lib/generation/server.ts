@@ -10,6 +10,7 @@ import { ParseError } from "@/lib/ai/prompt";
 import { fromArticle, fromMonth, toArticle, toCoachingNote, toOrganization, toReferenceArticle, toTheme, toVersion, currentMonthJst } from "@/lib/remote/mapping";
 import { applyAction } from "@/lib/workflow";
 import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
+import { PLAN_QUESTIONS, planOf } from "@/lib/articlePlan";
 import { buildKnowledge, editPairs, pickKnowledge, type KnowledgeItem, type PastArticle } from "@/lib/growth/knowledge";
 import { type HearingAnswer } from "@/prototype/growth";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
@@ -57,6 +58,11 @@ export function pickTitle(current: string | undefined, themeTitle: string, candi
   const edited = current?.trim() && current.trim() !== themeTitle.trim();
   if (edited) return current!.trim();
   return candidates.find((c) => c.trim())?.trim() ?? current?.trim() ?? themeTitle;
+}
+
+/** 選んだタイトルを先頭にして、同じものを重ねない */
+export function withChosen(chosen: string, candidates: string[]): string[] {
+  return chosen ? [chosen, ...candidates.filter((c) => c.trim() && c.trim() !== chosen)].slice(0, 3) : candidates;
 }
 
 export async function runGeneration(
@@ -144,8 +150,9 @@ export async function runGeneration(
       usage = r.usage;
       cost = estimateCostYen(usage, deps.provider.name);
       version = {
-        title: pickTitle(base?.title, theme.title, r.titleCandidates),
-        title_candidates: r.titleCandidates,
+        // お客様が選んだタイトルがあれば、それを使う（AIの案はその次に並べる）
+        title: planOf(answers).title || pickTitle(base?.title, theme.title, r.titleCandidates),
+        title_candidates: withChosen(planOf(answers).title, r.titleCandidates),
         outline: r.outline,
         body: [],
         generation_settings: { ...common, needs_info: r.needsInfo },
@@ -363,7 +370,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
     organization: org,
     note: noteRes.data ? toCoachingNote(noteRes.data) : undefined,
     theme,
-    questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION],
+    questions: [...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, ...PLAN_QUESTIONS],
     answers,
     referenceArticles: (refsRes.data ?? []).map(toReferenceArticle),
     knowledge,

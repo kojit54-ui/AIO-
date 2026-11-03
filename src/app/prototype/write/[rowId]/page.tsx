@@ -12,9 +12,12 @@ import { WaitingScreen } from "@/components/WaitingScreen";
 import { QUESTIONS } from "@/mock/data";
 import { toArticleAnswers } from "@/prototype/articleBridge";
 import { AIO_POINTS } from "@/lib/aio";
-import { SAMPLE_ANSWER_IDEAS, insertIdea } from "@/lib/answerIdeas";
+import { SAMPLE_ANSWER_IDEAS, insertIdea, sampleTitleIdeas } from "@/lib/answerIdeas";
+import { PLAN_IDS, defaultReader } from "@/lib/articlePlan";
+import { ShioriTalk } from "@/components/talk";
 import { SAMPLE_LABEL } from "@/prototype/growth";
 import type { AioPoint } from "@/types/domain";
+import type { ArticleQuestion } from "@/prototype/growth";
 
 /** 設計図の1本を書く。質問は1問ずつ、例とコツつき */
 export default function WritePage() {
@@ -40,7 +43,16 @@ export default function WritePage() {
   const row = g.plan?.rows.find((r) => r.id === rowId) ?? g.plan?.rows.find((r) => r.id === resolveRowId(rowId));
   if (!g.plan || !row) return <NotFound what="書く記事" />;
 
-  const qs = articleQuestions(row, { generic: !!orgId });
+  // 最初に「誰のどんな悩みに答えるか」を決める（2026-11-03 プロの書き方に合わせた順番。docs/DECISIONS.md）
+  const readerDefault = defaultReader(row.keyword, row.question);
+  const readerQ: ArticleQuestion = {
+    id: PLAN_IDS.reader,
+    label: "この記事は、誰のどんな悩みに答えますか",
+    aio: "qa",
+    example: `例：${readerDefault}`,
+    tip: "困っている人を1人思いうかべると、記事がその人に届きます。入っている案のままでも大丈夫です。",
+  };
+  const qs = [readerQ, ...articleQuestions(row, { generic: !!orgId })];
   const answers = draft ?? g.articleAnswers[row.id] ?? {};
   // 「続きを書く」で戻ったときは、まだ答えていない最初の問いから。全部答えていれば最後の画面
   const firstOpen = qs.findIndex((x) => !answers[x.id]?.trim());
@@ -71,10 +83,21 @@ export default function WritePage() {
         ) : (
           <>
             <AioMeter points={qs.map((x) => x.aio)} collected={collectedAio(qs, (id) => !!answers[id]?.trim())} />
+            <PlanStep
+              orgId={orgId}
+              keyword={row.keyword}
+              reader={answers[PLAN_IDS.reader] ?? readerDefault}
+              qa={qs.filter((x) => x.id !== PLAN_IDS.reader).map((x) => ({ question: x.label, answer: answers[x.id] ?? "" }))}
+              conclusion={answers[PLAN_IDS.conclusion] ?? ""}
+              title={answers[PLAN_IDS.title] ?? ""}
+              onChange={(next) => save({ ...answers, ...next })}
+              onEditReader={() => setStep(0)}
+            />
             {orgId ? (
               <WriteWithAi
                 rowId={row.id}
                 approved={!!db.organizations.find((o) => o.id === orgId)?.profileApprovedAt}
+                ready={!!answers[PLAN_IDS.title]?.trim()}
                 busy={writing}
                 error={writeError}
                 existing={(() => {
@@ -104,7 +127,7 @@ export default function WritePage() {
             ) : (
               <>
             <Notice tone="info" title="おつかれさまでした！質問はここまでです">
-              本番では、ここからAIが記事の下書き（見出し・本文・画像）を作ります。試作では、この先を省略しています。
+              本番では、ここで選んだタイトルと答えに合わせて、AIが記事の下書き（見出し・本文・画像）を作ります。試作では、この先を省略しています。
             </Notice>
             <div className="flex flex-wrap gap-2">
               <button type="button" className="btn-primary" onClick={publish} disabled={row.status === "published"}>
@@ -131,7 +154,8 @@ export default function WritePage() {
   }
 
   const q = qs[step];
-  const value = answers[q.id] ?? "";
+  // 読む人の悩みは、書く記事リストの疑問から作った案を最初から入れておく
+  const value = answers[q.id] ?? (q.id === PLAN_IDS.reader ? readerDefault : "");
 
   return (
     <main className="page max-w-3xl space-y-5">
@@ -153,6 +177,7 @@ export default function WritePage() {
         className="card space-y-4"
         onSubmit={(e) => {
           e.preventDefault();
+          if (answers[q.id] === undefined && value) save({ ...answers, [q.id]: value });
           setStep(step + 1);
         }}
       >
@@ -310,7 +335,7 @@ function rememberArticle(rowId: string, articleId: string) {
  * 質問に答え終わったあと、AIに記事を書いてもらう（2026-11-03 田村さん：試作のまま「省略」と出ていた）。
  * 会社の情報を確かめる前は、先にそちらへ案内する（確かめた会社の情報だけを記事に使うため）
  */
-function WriteWithAi({ rowId, approved, busy, error, existing, onWrite, onReview }: { rowId: string; approved: boolean; busy: boolean; error: string | null; existing: string | null; onWrite: () => void; onReview: () => void }) {
+function WriteWithAi({ rowId, approved, ready, busy, error, existing, onWrite, onReview }: { rowId: string; approved: boolean; ready: boolean; busy: boolean; error: string | null; existing: string | null; onWrite: () => void; onReview: () => void }) {
   if (!approved) {
     return (
       <div className="card space-y-3 border-2 border-sun">
@@ -335,11 +360,12 @@ function WriteWithAi({ rowId, approved, busy, error, existing, onWrite, onReview
   return (
     <div className="card space-y-3 border-2 border-brand">
       {busy && <WaitingScreen label="AIが記事の見出しを考えています" note="答えてくれた内容から、記事の見出しを作っています。1分ほどかかります。" />}
-      <p className="text-lg font-black">🎉 おつかれさまでした！質問はここまでです</p>
-      <p className="text-muted">答えてくれた内容から、AIが記事を書きます。まず見出しを作るので、確かめてから本文に進みます。</p>
+      <p className="text-lg font-black">④ この作戦で、AIに記事を書いてもらいましょう</p>
+      <p className="text-muted">選んだタイトルと答えに合わせて、AIが「読む人が知りたい順番」（見出し）を作ります。確かめてから本文に進みます。</p>
       {error && <Notice tone="danger" title={error} />}
+      {!ready && <p className="text-sm font-bold text-brand-dark">上でタイトルを1つ選ぶと、押せるようになります。</p>}
       <div className="flex flex-wrap gap-2">
-        <button type="button" className="btn-primary min-h-14 px-6 text-lg" onClick={onWrite} disabled={busy}>
+        <button type="button" className="btn-primary min-h-14 px-6 text-lg" onClick={onWrite} disabled={busy || !ready}>
           ✨ AIに記事を書いてもらう
         </button>
         {existing && (
@@ -352,5 +378,175 @@ function WriteWithAi({ rowId, approved, busy, error, existing, onWrite, onReview
         </button>
       </div>
     </div>
+  );
+}
+
+/**
+ * 記事の作戦を決める：この記事の答え（結論）とタイトル。質問に答え終わったら、見出しより先に決める。
+ * プロは「誰の悩みに・何と答えるか」を先に決め、タイトルで約束してから見出しを組む（2026-11-03 田村さん：見出しの一覧だけ見せられても分からない）
+ */
+function PlanStep({
+  orgId,
+  keyword,
+  reader,
+  qa,
+  conclusion,
+  title,
+  onChange,
+  onEditReader,
+}: {
+  orgId?: string;
+  keyword: string;
+  reader: string;
+  qa: { question: string; answer: string }[];
+  conclusion: string;
+  title: string;
+  onChange: (next: Record<string, string>) => void;
+  onEditReader: () => void;
+}) {
+  const [ideas, setIdeas] = useState<{ titles: string[]; sample: boolean } | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [own, setOwn] = useState(false);
+  const asked = useRef(false);
+
+  async function ask(fresh: boolean) {
+    setBusy(true);
+    setError(null);
+    try {
+      let out: { conclusion: string; titles: string[]; sample: boolean };
+      if (!orgId) {
+        // 画面試作（架空データ）では、決まったサンプルを出す
+        await new Promise((r) => setTimeout(r, 600));
+        out = { ...sampleTitleIdeas(keyword), sample: true };
+      } else {
+        const res = await fetch(`/api/organizations/${encodeURIComponent(orgId)}/title-ideas`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ keyword, reader, answers: qa.filter((x) => x.answer.trim()), idempotencyKey: crypto.randomUUID() }),
+        }).catch(() => null);
+        const json = ((await res?.json().catch(() => null)) ?? {}) as { conclusion?: string; titles?: string[]; sample?: boolean; message?: string };
+        if (!res?.ok || !json.titles?.length) {
+          setError(json.message ?? "AIがタイトル案を作れませんでした。もう一度お試しください");
+          return;
+        }
+        out = { conclusion: json.conclusion ?? "", titles: json.titles, sample: !!json.sample };
+      }
+      setIdeas({ titles: out.titles, sample: out.sample });
+      setOwn(false);
+      // はじめは1つ目を選んでおく。答えも空ならAIの案を入れる（どちらもあとで直せる）
+      const next: Record<string, string> = {};
+      if (fresh || !title.trim()) next[PLAN_IDS.title] = out.titles[0];
+      if ((fresh || !conclusion.trim()) && out.conclusion) next[PLAN_IDS.conclusion] = out.conclusion;
+      if (Object.keys(next).length) onChange(next);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  useEffect(() => {
+    // 最初に開いたときだけ、自動で案を作る（もう選んであれば作らない）
+    if (asked.current || title.trim()) return;
+    asked.current = true;
+    void ask(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const titles = ideas?.titles ?? (title ? [title] : []);
+  const custom = own || (!!title && !titles.includes(title));
+  const card = (on: boolean) => `w-full rounded-xl border-2 px-3 py-3 text-left font-bold ${on ? "border-brand bg-brand-soft" : "border-line bg-surface hover:border-brand"}`;
+
+  return (
+    <section className="card space-y-5 border-2 border-sun" aria-labelledby="plan-heading">
+      <div className="space-y-2">
+        <h2 id="plan-heading" className="text-xl font-black">
+          🎯 書く前に、記事の作戦を決めましょう
+        </h2>
+        <ol className="flex flex-wrap gap-2 text-sm font-bold" aria-label="記事ができるまで">
+          {["読む人の悩み", "材料（質問）", "答えとタイトル", "見出しと本文はAI"].map((label, i) => (
+            <li key={label} className={`rounded-full px-3 py-1 ${i < 2 ? "bg-brand text-white" : i === 2 ? "bg-sun text-ink" : "bg-canvas text-muted"}`}>
+              {i < 2 ? "✓ " : `${i + 1}. `}
+              {label}
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div className="rounded-xl bg-canvas p-3">
+        <p className="text-sm font-bold text-muted">① この記事を読んでほしい人</p>
+        <p className="mt-1 font-bold">{reader}</p>
+        <button type="button" className="mt-1 text-sm font-bold text-brand-dark underline" onClick={onEditReader}>
+          直す
+        </button>
+      </div>
+
+      {busy && !ideas && (
+        <div className="flex items-center gap-2 rounded-xl bg-brand-soft p-3 font-bold text-brand-dark" role="status">
+          しおりが、答えとタイトル案を考えています
+          <span className="inline-flex gap-0.5" aria-hidden>
+            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand" />
+            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand [animation-delay:.15s]" />
+            <i className="h-1.5 w-1.5 animate-hop rounded-full bg-brand [animation-delay:.3s]" />
+          </span>
+        </div>
+      )}
+      {error && (
+        <Notice tone="warn" title={error}>
+          <button type="button" className="btn-secondary mt-2" onClick={() => ask(false)} disabled={busy}>
+            もう一度作ってもらう
+          </button>
+        </Notice>
+      )}
+
+      {(ideas || title) && (
+        <>
+          <div className="space-y-2">
+            <label htmlFor="plan-conclusion" className="field-label text-lg">
+              ② この記事の答え（結論）
+            </label>
+            <ShioriTalk mood="point" size="sm" lines="記事のはじめに、この答えを書きます。AIは「最初に答えがある記事」を選びやすいです。違っていたら直してください。" />
+            <textarea id="plan-conclusion" className="field min-h-24" value={conclusion} onChange={(e) => onChange({ [PLAN_IDS.conclusion]: e.target.value })} />
+          </div>
+
+          <fieldset className="space-y-2">
+            <legend className="field-label text-lg">③ タイトルを1つ選ぶ</legend>
+            <p className="text-sm text-muted">
+              タイトルは「この記事を読むと何が分かるか」の約束です。「{keyword}」が入っていると、探している人とAIに見つけてもらいやすくなります。
+              {ideas?.sample && <span>（{SAMPLE_LABEL}）</span>}
+            </p>
+            {titles.map((t) => {
+              const on = !custom && t === title;
+              return (
+                <button
+                  key={t}
+                  type="button"
+                  aria-pressed={on}
+                  className={card(on)}
+                  onClick={() => {
+                    setOwn(false);
+                    onChange({ [PLAN_IDS.title]: t });
+                  }}
+                >
+                  <span className="mr-2" aria-hidden>
+                    {on ? "✅" : "⬜"}
+                  </span>
+                  {t}
+                </button>
+              );
+            })}
+            <button type="button" aria-pressed={custom} className={card(custom)} onClick={() => setOwn(true)}>
+              <span className="mr-2" aria-hidden>
+                {custom ? "✅" : "⬜"}
+              </span>
+              自分で書く
+            </button>
+            {custom && <input aria-label="自分で書くタイトル" className="field" value={title} placeholder={`例：${keyword}で迷ったら読む話`} onChange={(e) => onChange({ [PLAN_IDS.title]: e.target.value })} />}
+            <button type="button" className="text-sm font-bold text-brand-dark underline" onClick={() => ask(true)} disabled={busy}>
+              {busy ? "考えています…" : "🔄 別の案を作ってもらう"}
+            </button>
+          </fieldset>
+        </>
+      )}
+    </section>
   );
 }

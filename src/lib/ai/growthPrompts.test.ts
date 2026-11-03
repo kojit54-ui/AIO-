@@ -71,3 +71,19 @@ describe("キーワードの提案", () => {
     expect(() => parseProposals(JSON.stringify({ proposals: [good, good] }))).toThrow(ParseError);
   });
 });
+
+describe("この記事の答えとタイトル案", () => {
+  it("タイトルは3つまで、長すぎる文は切る", async () => {
+    const { parseTitleIdeas } = await import("./growthPrompts");
+    const r = parseTitleIdeas('前置き{"conclusion":"答え","titles":["a","b","c","d"]}');
+    expect(r).toEqual({ conclusion: "答え", titles: ["a", "b", "c"] });
+    expect(Array.from(parseTitleIdeas(`{"titles":["${"あ".repeat(100)}"]}`).titles[0]).length).toBe(60);
+    expect(() => parseTitleIdeas('{"titles":[]}')).toThrow();
+  });
+
+  it("指示文に、作り話をしない決まりと狙う言葉を入れる", async () => {
+    const { TITLE_IDEAS_SYSTEM_PROMPT, buildTitleIdeasPrompt } = await import("./growthPrompts");
+    expect(TITLE_IDEAS_SYSTEM_PROMPT).toContain("作らないでください");
+    expect(buildTitleIdeasPrompt({ profile: {}, keyword: "内窓 費用", reader: "r", answers: [] })).toContain("内窓 費用");
+  });
+});

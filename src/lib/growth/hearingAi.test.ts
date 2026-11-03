@@ -108,4 +108,23 @@ describe("記事の質問の「AIの案」（サーバー）", () => {
     const r = await runAnswerIdeas({ user: db, admin: db, provider: {} as never, isSample: true }, { organizationId: "o1", keyword: "k", question: "q", goal: "", idempotencyKey: "k" });
     expect(r.ok).toBe(false);
   });
+
+  it("この記事の答えとタイトル案を、読む人と答えから作る（保存はしない）", async () => {
+    const { runTitleIdeas } = await import("./hearingAi");
+    let sent = "";
+    const provider = { name: "openai", complete: async (r: { user: string }) => ((sent = r.user), { text: '{"conclusion":"まず相談を","titles":["T1","T2","T3"]}', usage: { inputTokens: 1, outputTokens: 1 } }) } as never;
+    const db = fakeDb({ organizations: { profile: { business: "印刷会社" } }, generation_runs: [{ id: "run1" }] });
+    const r = await runTitleIdeas({ user: db, admin: db, provider, isSample: false }, { organizationId: "o1", keyword: "印刷 ブランディング", reader: "名刺を作り直したい人", answers: [{ question: "相談", answer: "ロゴも直したい" }, { question: "空", answer: "" }], idempotencyKey: "k" });
+    expect(r).toEqual({ ok: true, conclusion: "まず相談を", titles: ["T1", "T2", "T3"], sample: false });
+    expect(sent).toContain("名刺を作り直したい人");
+    expect(sent).toContain("ロゴも直したい");
+    expect(sent).not.toContain('"空"');
+  });
+
+  it("答えが1つも無ければ、タイトル案は作らない", async () => {
+    const { runTitleIdeas } = await import("./hearingAi");
+    const db = fakeDb({ organizations: { profile: { business: "x" } } });
+    const r = await runTitleIdeas({ user: db, admin: db, provider: {} as never, isSample: true }, { organizationId: "o1", keyword: "k", reader: "r", answers: [], idempotencyKey: "k" });
+    expect(r.ok).toBe(false);
+  });
 });

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { pickTitle } from "./server";
+import { pickTitle, withChosen } from "./server";
 
 describe("版のタイトル", () => {
   const theme = "タイトル「冬の結露を防ぐ3つのポイント」、読者の悩み「冬になると窓が濡れる」";
@@ -18,5 +18,12 @@ describe("版のタイトル", () => {
   it("タイトル案が無ければ、今のタイトルかテーマの文を使う", () => {
     expect(pickTitle(undefined, theme, [])).toBe(theme);
     expect(pickTitle(theme, theme, [" "])).toBe(theme);
+  });
+});
+
+describe("お客様が選んだタイトル", () => {
+  it("選んだタイトルを先頭にし、同じ案を重ねない", () => {
+    expect(withChosen("A", ["B", "A", "C", "D"])).toEqual(["A", "B", "C"]);
+    expect(withChosen("", ["B", "C"])).toEqual(["B", "C"]);
   });
 });

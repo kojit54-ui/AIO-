@@ -20,3 +20,12 @@ describe("新しい流れの答えを、AIが記事を書く質問の答えに�
     }
   });
 });
+
+describe("記事の作戦（読む人の悩み・答え・タイトル）", () => {
+  it("決めたものだけを、そのまま記事の答えに入れる", () => {
+    const out = toArticleAnswers({ a1: "相談", reader: "寒い家で困っている人", title: "脱衣所が寒い家の直し方", conclusion: "" });
+    expect(out.find((a) => a.questionId === "reader")?.text).toBe("寒い家で困っている人");
+    expect(out.find((a) => a.questionId === "title")?.text).toBe("脱衣所が寒い家の直し方");
+    expect(out.some((a) => a.questionId === "conclusion")).toBe(false);
+  });
+});

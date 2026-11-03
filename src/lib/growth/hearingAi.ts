@@ -6,10 +6,10 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { buildImportPrompt, IMPORT_SYSTEM_PROMPT, parseImport } from "@/lib/ai/growthPrompts";
 import { MAX_IMPORT_CHARS, splitByHeadings, type ImportCandidate } from "./aiImport";
-import { ANSWER_IDEAS_SYSTEM_PROMPT, buildAnswerIdeasPrompt, parseAnswerIdeas, buildExamplesPrompt, buildFollowUpPrompt, buildProfilePrompt, EXAMPLES_SYSTEM_PROMPT, FOLLOWUP_SYSTEM_PROMPT, parseExamples, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
+import { ANSWER_IDEAS_SYSTEM_PROMPT, TITLE_IDEAS_SYSTEM_PROMPT, buildTitleIdeasPrompt, parseTitleIdeas, buildAnswerIdeasPrompt, parseAnswerIdeas, buildExamplesPrompt, buildFollowUpPrompt, buildProfilePrompt, EXAMPLES_SYSTEM_PROMPT, FOLLOWUP_SYSTEM_PROMPT, parseExamples, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
 import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import { sampleQuestionExamples } from "./questionExamples";
-import { SAMPLE_ANSWER_IDEAS } from "@/lib/answerIdeas";
+import { SAMPLE_ANSWER_IDEAS, sampleTitleIdeas } from "@/lib/answerIdeas";
 import { estimateCostYen } from "@/lib/ai/cost";
 import { failureReason, type AiProvider, type AiUsage } from "@/lib/ai/provider";
 import { HEARING_QUESTIONS, MAX_AI_DEEP_DIVES, MAX_ANSWER, REQUIRED_FOR_PROPOSALS, isAnswerDone, nextDeepDive, type HearingAnswer } from "@/prototype/growth";
@@ -259,6 +259,21 @@ export interface AnswerIdeasRequest {
   idempotencyKey: string;
 }
 
+/** AIに渡す会社の情報。まとめがまだ無くても、ヒアリングの答えがあれば使う（2026-11-03 答えたのに「先に答えて」と出ていた） */
+async function profileForIdeas(db: HearingDeps["user"], organizationId: string): Promise<{ ok: true; profile: unknown } | Fail> {
+  const { data: org, error } = await db.from("organizations").select("profile").eq("id", organizationId).maybeSingle();
+  if (error || !org) return fail(404, "not_found", "会社が見つかりません");
+  const { questionExamples: _old, ...profile } = (org.profile as CompanyProfile | null) ?? ({} as CompanyProfile);
+  void _old;
+  if (profile.business) return { ok: true, profile };
+  const { data: rows } = await db.from("hearing_answers").select("*").eq("organization_id", organizationId);
+  const answers: Record<string, HearingAnswer> = {};
+  for (const r of (rows ?? []) as HearingAnswerRow[]) answers[r.question_id] = answerFromDb(r);
+  const hearing = hearingForPrompt(answers, []);
+  if (!Object.keys(hearing).length) return fail(400, "invalid_input", "先に「会社のことを教える」に答えてください");
+  return { ok: true, profile: { hearing } };
+}
+
 /** 記事の質問への答えのたたき台を3つ作る。保存はしない（お客様が選んで直してから、画面が保存する） */
 export async function runAnswerIdeas(deps: HearingDeps, req: AnswerIdeasRequest): Promise<{ ok: true; ideas: string[]; sample: boolean } | Fail> {
   const { user: db } = deps;
@@ -267,21 +282,10 @@ export async function runAnswerIdeas(deps: HearingDeps, req: AnswerIdeasRequest)
   const question = typeof req.question === "string" ? req.question.trim().slice(0, 300) : "";
   const goal = typeof req.goal === "string" ? req.goal.trim().slice(0, 200) : "";
   if (!keyword || !question) return fail(400, "invalid_input", "入力の内容を確認してください");
-  const { data: org, error } = await db.from("organizations").select("profile").eq("id", req.organizationId).maybeSingle();
-  if (error || !org) return fail(404, "not_found", "会社が見つかりません");
-  const { questionExamples: _old, ...profile } = (org.profile as CompanyProfile | null) ?? ({} as CompanyProfile);
-  void _old;
-  // 会社の情報（まとめ）がまだ無くても、ヒアリングの答えがあれば使う（2026-11-03 答えたのに「先に答えて」と出ていた）
-  let hearing: ReturnType<typeof hearingForPrompt> | undefined;
-  if (!profile.business) {
-    const { data: rows } = await db.from("hearing_answers").select("*").eq("organization_id", req.organizationId);
-    const answers: Record<string, HearingAnswer> = {};
-    for (const r of (rows ?? []) as HearingAnswerRow[]) answers[r.question_id] = answerFromDb(r);
-    hearing = hearingForPrompt(answers, []);
-    if (!Object.keys(hearing).length) return fail(400, "invalid_input", "先に「会社のことを教える」に答えてください");
-  }
+  const loaded = await profileForIdeas(db, req.organizationId);
+  if (!loaded.ok) return loaded;
 
-  const input = { profile: profile.business ? profile : { hearing }, keyword, question, goal };
+  const input = { profile: loaded.profile, keyword, question, goal };
   const b = await begin(deps, req.organizationId, req.idempotencyKey, JSON.stringify(input).length);
   if (!b.ok) return b;
   const signal = AbortSignal.timeout(FOLLOWUP_TIMEOUT_MS);
@@ -301,5 +305,50 @@ export async function runAnswerIdeas(deps: HearingDeps, req: AnswerIdeasRequest)
     console.error("answer ideas failed", { runId: b.runId, reason });
     await b.finish("failed", usage, reason);
     return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "AIが案を出せませんでした。もう一度お試しください");
+  }
+}
+
+export interface TitleIdeasRequest {
+  organizationId: string;
+  keyword: string;
+  reader: string;
+  answers: { question: string; answer: string }[];
+  idempotencyKey: string;
+}
+
+/** 質問に答え終わったあと、この記事の答え（結論）とタイトル案3つを作る。保存はしない（お客様が選んでから、画面が記事の答えに入れる） */
+export async function runTitleIdeas(deps: HearingDeps, req: TitleIdeasRequest): Promise<{ ok: true; conclusion: string; titles: string[]; sample: boolean } | Fail> {
+  const { user: db } = deps;
+  if (!(await requireUser(db))) return fail(401, "session_expired", "ログインの有効期限が切れました");
+  const keyword = typeof req.keyword === "string" ? req.keyword.trim().slice(0, 80) : "";
+  const reader = typeof req.reader === "string" ? req.reader.trim().slice(0, 300) : "";
+  const answers = (Array.isArray(req.answers) ? req.answers : [])
+    .filter((a) => typeof a?.question === "string" && typeof a?.answer === "string" && a.answer.trim())
+    .slice(0, 10)
+    .map((a) => ({ question: a.question.trim().slice(0, 200), answer: a.answer.trim().slice(0, 1200) }));
+  if (!keyword || !answers.length) return fail(400, "invalid_input", "入力の内容を確認してください");
+  const loaded = await profileForIdeas(db, req.organizationId);
+  if (!loaded.ok) return loaded;
+
+  const input = { profile: loaded.profile, keyword, reader, answers };
+  const b = await begin(deps, req.organizationId, req.idempotencyKey, Math.min(JSON.stringify(input).length, 8000));
+  if (!b.ok) return b;
+  const signal = AbortSignal.timeout(FOLLOWUP_TIMEOUT_MS);
+  let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
+  try {
+    let out: { conclusion: string; titles: string[] };
+    if (deps.isSample) out = sampleTitleIdeas(keyword);
+    else {
+      const res = await deps.provider.complete({ kind: "hearing", system: TITLE_IDEAS_SYSTEM_PROMPT, user: buildTitleIdeasPrompt(input), maxOutputTokens: 1000, signal });
+      usage = res.usage;
+      out = parseTitleIdeas(res.text);
+    }
+    await b.finish("succeeded", usage, null);
+    return { ok: true, ...out, sample: deps.isSample };
+  } catch (e) {
+    const reason = failureReason(e, signal);
+    console.error("title ideas failed", { runId: b.runId, reason });
+    await b.finish("failed", usage, reason);
+    return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "AIがタイトル案を作れませんでした。もう一度お試しください");
   }
 }
