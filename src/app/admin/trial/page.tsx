@@ -31,10 +31,10 @@ const REASON: Record<string, string> = {
   budget_exceeded: "月の予算の上限",
 };
 
-/** 「unavailable_400」のように状態コード付きの理由も読めるように */
+/** 「unavailable_400」「unavailable_400:invalid_value:model」のように状態コード付きの理由も読めるように */
 function reasonLabel(code: string): string {
-  const m = /^([a-z_]+?)_(\d{3})$/.exec(code);
-  if (m && REASON[m[1]]) return `${REASON[m[1]]}（${m[2]}）`;
+  const m = /^([a-z_]+?)_(\d{3})(?::(.+))?$/.exec(code);
+  if (m && REASON[m[1]]) return `${REASON[m[1]]}（${m[2]}${m[3] ? `・${m[3]}` : ""}）`;
   return REASON[code] ?? code;
 }
 

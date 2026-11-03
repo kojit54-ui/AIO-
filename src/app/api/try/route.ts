@@ -24,7 +24,7 @@ const MAX_OUTPUT_TOKENS = 4000;
 
 /** 失敗の種類。状態コードが分かるときは付けて残す（例：unavailable_400）。原因を管理画面で見られるように */
 function failureCode(e: unknown, signal: AbortSignal): string {
-  if (e instanceof AiProviderError && e.status) return `${e.code}_${e.status}`;
+  if (e instanceof AiProviderError && e.status) return `${e.code}_${e.status}${e.detail ? `:${e.detail}` : ""}`.slice(0, 40);
   return failureReason(e, signal);
 }
 

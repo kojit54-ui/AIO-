@@ -44,12 +44,27 @@ export interface AiProvider {
 }
 
 /** 提供元の失敗を、画面で出し分けられる種類にまとめる */
+/** 提供元の失敗の答えから、原因の名前（code と param）だけを取り出す。本文や入力は返さない */
+export async function providerErrorDetail(res: Response): Promise<string | undefined> {
+  try {
+    const j = (await res.json()) as { error?: { code?: unknown; param?: unknown; type?: unknown; status?: unknown } };
+    const e = j?.error;
+    const parts = [e?.code, e?.param, e?.type, e?.status].filter((v): v is string => typeof v === "string" && v.length > 0);
+    const clean = parts.map((v) => v.replace(/[^A-Za-z0-9_.]/g, "").slice(0, 30)).filter(Boolean);
+    return clean.length ? [...new Set(clean)].slice(0, 2).join(":") : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export class AiProviderError extends Error {
   constructor(
     public readonly code: "auth" | "billing" | "rate_limited" | "refused" | "truncated" | "unavailable",
     message: string,
     /** 提供元が返した状態コード（分かるときだけ）。原因を調べるために記録する */
     public readonly status?: number,
+    /** 提供元が返した失敗の名前（例：invalid_value・max_output_tokens）。英数字だけで、入力や本文は入れない */
+    public readonly detail?: string,
   ) {
     super(message);
   }
