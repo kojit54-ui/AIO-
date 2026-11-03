@@ -43,3 +43,11 @@ describe("人の心を動かす記事", () => {
     expect(REVIEW_SYSTEM_PROMPT).toContain("心が動くか");
   });
 });
+
+describe("お客様の言葉の扱い", () => {
+  it("意味を変えずに読みやすく整える（そのまま写さない）", () => {
+    expect(SYSTEM_PROMPT).toContain("答えの文をそのまま写さず");
+    expect(TRIAL_SYSTEM_PROMPT).toContain("答えの文をそのまま写さず");
+    expect(SYSTEM_PROMPT).toContain("言っていないことは足さない");
+  });
+});
