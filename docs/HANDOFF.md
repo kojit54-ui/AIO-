@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-03 CC（Claude、プロジェクトのスレッド）1年後のAIの答え・AIの町すごろく
+- ブランチ / コミット：claude/project-thread-ksfvfg
+- 変更点：src/app/try/FutureAnswer.tsx と src/lib/tryout.ts の futureScene（案3）。src/components/TownBoard.tsx と src/lib/growth/town.ts（案4、ホームのスタンプ帳の上）
+- 確認結果：単体テスト・型検査・lint・build、375px・1280px（画面写真 /mnt/project-files/future/）
+- 未完了：お問い合わせの記録はブラウザだけ（DBに持つかは未決）
+- 次の作業と担当：田村さんが最後にまとめて確認
+
 ### 2026-11-03 CC（Claude、プロジェクトのスレッド）人の心を動かす記事と質問
 - ブランチ / コミット：claude/project-thread-ksfvfg
 - 変更点：材料「気持ちと想い」（feeling）を追加して9つ・チェック12項目。記事の質問 q6（試作 a6）、ヒアリングの深掘り候補、深掘りAI・提案AIの指示に目的の文。書き手の指示に「人の心を動かすために」（場面から書き出す・お客様の言葉はそのまま・作り手の想い・読者へのひとこと／AIOの形と両立／気持ちを作らない）、点検役は originality で「心が動くか」
