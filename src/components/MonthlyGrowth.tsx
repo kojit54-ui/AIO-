@@ -3,40 +3,18 @@
 // しおり通信（今月のまとめ）・続けた月の記録・AIに紹介されたか（2026-11-02 提案の3）。
 // どれも実際の記事・チェック・取り込みの記録から出す。
 
+import Link from "next/link";
 import { useState } from "react";
 import { ShioriTalk } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice } from "@/components/ui";
 import { MONTHLY_MENTION_CHECKS } from "@/lib/growth/mentionQuestions";
+import { monthlySummary, writingStreak } from "@/lib/growth/monthly";
 import { ApiError, type MockDb, useStore } from "@/mock/store";
 
 const ym = (iso: string) => iso.slice(0, 7);
 
-/** 記事の本文を作った月が、今月（または先月）から何か月続いているか */
-export function writingStreak(db: MockDb, orgId: string, now = new Date()): number {
-  const articleIds = new Set(db.articles.filter((a) => a.organizationId === orgId).map((a) => a.id));
-  const months = new Set(db.versions.filter((v) => articleIds.has(v.articleId) && v.body.length > 0).map((v) => ym(v.createdAt)));
-  const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1));
-  // 今月まだ書いていなければ、先月から数える（月の初めに0にならないように）
-  if (!months.has(d.toISOString().slice(0, 7))) d.setUTCMonth(d.getUTCMonth() - 1);
-  let n = 0;
-  while (months.has(d.toISOString().slice(0, 7))) {
-    n++;
-    d.setUTCMonth(d.getUTCMonth() - 1);
-  }
-  return n;
-}
-
-export function monthlySummary(db: MockDb, orgId: string, month: string) {
-  const articles = db.articles.filter((a) => a.organizationId === orgId);
-  const ids = new Set(articles.map((a) => a.id));
-  const written = new Set(db.versions.filter((v) => ids.has(v.articleId) && v.body.length > 0 && ym(v.createdAt) === month).map((v) => v.articleId)).size;
-  const published = articles.filter((a) => a.status === "published" && a.publishedAt && ym(a.publishedAt) === month).length;
-  const checks = db.aioChecks.filter((c) => c.organizationId === orgId && ym(c.createdAt) === month);
-  const score = checks.length ? Math.round((checks.reduce((n, c) => n + c.items.filter((i) => i.ok).length / Math.max(1, c.items.length), 0) / checks.length) * 100) : null;
-  const learned = (db.knowledgeNotes ?? []).filter((n) => n.organizationId === orgId && ym(n.createdAt) === month).length + checks.reduce((n, c) => n + c.answers.filter((a) => !a.unknown && a.text.trim()).length, 0);
-  return { written, published, score, learned };
-}
+export { monthlySummary, writingStreak };
 
 export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string; month: string }) {
   const { api } = useStore();
@@ -50,6 +28,15 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
   const runsThisMonth = new Set(mentions.filter((m) => ym(m.createdAt) === month).map((m) => m.createdAt.slice(0, 16))).size;
   const ever = mentions.some((m) => m.mentioned);
   const [y, mo] = month.split("-");
+
+  async function toggleMail(on: boolean) {
+    setError(null);
+    try {
+      await api.setNewsletterOptOut(!on);
+    } catch (e) {
+      setError(e instanceof ApiError ? e.message : "設定を変えられませんでした");
+    }
+  }
 
   async function check() {
     setBusy(true);
@@ -124,6 +111,16 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
             {!ever && <li className="text-xs text-muted">記事を積み重ねるほど、AIに紹介されやすくなります。結果はAIのその時の答えなので、毎回変わることがあります。</li>}
           </ul>
         )}
+      </div>
+      <div className="flex flex-wrap items-center gap-3 rounded-2xl bg-canvas px-3 py-2 text-sm">
+        <span className="font-bold">📬 毎月1日に、このまとめをメールでもお届けします</span>
+        <label className="inline-flex cursor-pointer items-center gap-2">
+          <input type="checkbox" className="h-5 w-5 accent-brand" checked={!db.newsletterOptOut} onChange={(e) => toggleMail(e.target.checked)} />
+          受け取る
+        </label>
+        <Link href="/newsletter" className="text-brand-dark underline">
+          メールの見本を見る
+        </Link>
       </div>
     </section>
   );

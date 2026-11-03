@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { writingStreak } from "@/components/MonthlyGrowth";
+import { writingStreak } from "@/lib/growth/monthly";
 import type { MockDb } from "@/mock/store";
 import { mentionQuestions } from "./mentionQuestions";
 import { findMention } from "./mentions";

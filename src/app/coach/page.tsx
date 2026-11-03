@@ -5,7 +5,7 @@ import { Shiori, Wave } from "@/components/fun";
 import { EmptyState, StatusBadge, formatDate } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
-import { writingStreak } from "@/components/MonthlyGrowth";
+import { writingStreak } from "@/lib/growth/monthly";
 import { badges } from "@/lib/growth/badges";
 
 export default function CoachHome() {
