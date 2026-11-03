@@ -42,6 +42,7 @@ const SAMPLE_REASON: Record<string, string> = {
   budget_exceeded: "今月ためせる分がいっぱいになったので、今回は見本で作りました。",
   disabled: "いまはAIをお休みしているので、見本で作りました。",
   off_topic: "お仕事のお話が読み取れなかったので、見本で作りました。お仕事のことを書いてもう一度ためしてみてください。",
+  unavailable: "いまAIにつながらなかったので、今回は見本で作りました。",
   checked: "AIの文章に確かめきれないところがあったので、今回は見本で作りました。",
 };
 
@@ -424,7 +425,7 @@ function Done({ outcome, story, future, onAgain, onKeep }: { outcome: Outcome; s
   const quote = ai ? -1 : opening.paragraphs.findIndex((p) => p.startsWith("「"));
   const lines = ai
     ? ["できました！あなたの答えから、AIが書き出しを作りました。", opening.cheer].filter(Boolean)
-    : ["できました！これが、あなたの記事の書き出しです。", SAMPLE_REASON[outcome.reason] ?? "あなたの言葉が、そのまま記事になっていますよ。"];
+    : ["できました！これが、あなたの記事の書き出しです。", SAMPLE_REASON[outcome.reason] ?? "あなたのお話が、記事の真ん中になっていますよ。"];
   return (
     <section className="space-y-4">
       <Confetti count={70} />
@@ -440,7 +441,7 @@ function Done({ outcome, story, future, onAgain, onKeep }: { outcome: Outcome; s
             i === quote ? (
               <p key={i}>
                 <mark className="rounded-md bg-sun/60 px-1 font-bold text-ink">{p}</mark>
-                <span className="ml-1 text-xs font-black text-brand-dark">← あなたの言葉</span>
+                <span className="ml-1 text-xs font-black text-brand-dark">← あなたのお話から</span>
               </p>
             ) : (
               <p key={i}>{p}</p>
