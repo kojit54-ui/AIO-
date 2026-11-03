@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-03 CC（Claude、プロジェクトのスレッド）ためすの見守りと引き継ぎ
+- ブランチ / コミット：claude/project-thread-ksfvfg（main から）
+- 変更点：/admin/trial（page・actions・ranges）、src/lib/tryoutCarry.ts（ブラウザに7日）、/try の「覚えておく」、ヒアリングの「入れる」、src/lib/tryoutVisitor.ts（IP だけのハッシュ）、/api/try の大きさの上限（10KB）、招待の管理画面から見守りへのリンク
+- 確認結果：単体テスト359件、lint、型検査、build。/try → 覚えておく → /prototype/hearing → 入れる を 375px・1280px で確認。/admin/trial は本番の SQL の後に確認
+- 未完了：田村さんの SQL 2つ（前の記録）。本番の /admin/trial と /try の確認
+- 次の作業と担当：田村さんが SQL → CC が本番で確認 → CX がレビュー
+
 ### 2026-11-03 CC（Claude、プロジェクトのスレッド）しおりの自己紹介・招待状
 - ブランチ / コミット：claude/project-thread-ksfvfg（main から）
 - 変更点：/shiori（src/app/shiori/）、src/components/InviteLetter.tsx、招待のページ（本番・試作）を招待状に、管理画面の招待に宛名・ひとこと・無料の札・見え方の確認、src/lib/auth/invitations.ts で invitation_letter を読む（SQL前は無しで続く）、管理画面の作成は SQL 前なら宛名なしで作る、マイグレーション 20261103130000_invitation_letter.sql、入口のヘッダーと足もとに /shiori

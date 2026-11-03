@@ -9,6 +9,7 @@ import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
 import { Logo } from "@/components/landing";
 import { ShioriTalk } from "@/components/talk";
 import { SampleNotice } from "@/components/ui";
+import { saveTryCarry } from "@/lib/tryoutCarry";
 import {
   READINESS_QUESTIONS,
   type ReadinessAnswer,
@@ -265,6 +266,7 @@ export function TryOut() {
             <Done
               outcome={outcome ?? { mode: "sample", reason: "unavailable", result: { ...sampleOpening({ company, region, job, answer: story }), cheer: "" } }}
               story={story}
+              onKeep={() => saveTryCarry({ company, region, job, story })}
               onAgain={() => {
                 setPhase("intro");
                 setAnswers({});
@@ -410,7 +412,8 @@ function Making({ onDone }: { onDone: () => void }) {
   );
 }
 
-function Done({ outcome, story, onAgain }: { outcome: Outcome; story: string; onAgain: () => void }) {
+function Done({ outcome, story, onAgain, onKeep }: { outcome: Outcome; story: string; onAgain: () => void; onKeep: () => boolean }) {
+  const [kept, setKept] = useState<boolean | null>(null);
   const opening = outcome.result;
   const ai = outcome.mode === "ai";
   const quote = ai ? -1 : opening.paragraphs.findIndex((p) => p.startsWith("「"));
@@ -476,6 +479,20 @@ function Done({ outcome, story, onAgain }: { outcome: Outcome; story: string; on
         <Link href="/login" className="btn mt-4 min-h-14 border-sun bg-sun px-7 text-lg text-ink shadow-[0_4px_0_var(--color-sun-dark)] hover:-translate-y-0.5">
           続きを書く <span className="inline-block animate-nudge">→</span>
         </Link>
+        <div className="mx-auto mt-4 max-w-md rounded-2xl bg-white/15 px-4 py-3 text-left text-sm">
+          {kept ? (
+            <p className="font-bold">✅ このブラウザに覚えました。ログインしたあと「会社のことを教える」で使えます（7日間）。</p>
+          ) : (
+            <>
+              <p className="font-bold">今入れた会社のことを、ログインしたあとに使いますか？</p>
+              <p className="text-white/85">このブラウザの中にだけ覚えます。サーバーには送りません。</p>
+              <button type="button" className="mt-2 rounded-full bg-white px-4 py-1.5 font-black text-brand-dark" onClick={() => setKept(onKeep())}>
+                このブラウザに覚えておく
+              </button>
+              {kept === false && <p className="mt-1">覚えられませんでした（ブラウザの設定で止められています）。</p>}
+            </>
+          )}
+        </div>
         <p className="mt-3 text-sm text-white/85">招待メールが届いていない方は、コタムの担当者にお声がけください。</p>
       </div>
       <p className="text-center">
