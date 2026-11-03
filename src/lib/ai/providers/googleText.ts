@@ -15,7 +15,7 @@ export interface GoogleTextOptions {
   generateContent?: GenerateContent;
 }
 
-const THINKING: Record<AiQuality, ThinkingLevel> = { draft: ThinkingLevel.MEDIUM, finish: ThinkingLevel.HIGH };
+const THINKING: Record<AiQuality, ThinkingLevel> = { quick: ThinkingLevel.LOW, draft: ThinkingLevel.MEDIUM, finish: ThinkingLevel.HIGH };
 
 export function createGoogleTextProvider(opts: GoogleTextOptions): AiProvider {
   const generateContent: GenerateContent = opts.generateContent ?? ((p) => new GoogleGenAI({ apiKey: opts.apiKey }).models.generateContent(p));

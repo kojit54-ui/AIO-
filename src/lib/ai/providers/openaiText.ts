@@ -20,7 +20,7 @@ export function withJsonHint(user: string): string {
   return /json/i.test(user) ? user : `${user}\n\n返答はJSONで。`;
 }
 
-const EFFORT: Record<AiQuality, "medium" | "high"> = { draft: "medium", finish: "high" };
+const EFFORT: Record<AiQuality, "low" | "medium" | "high"> = { quick: "low", draft: "medium", finish: "high" };
 
 interface ResponsesResult {
   status?: string;

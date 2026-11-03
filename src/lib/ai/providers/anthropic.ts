@@ -12,7 +12,7 @@ export interface AnthropicOptions {
   fetch?: typeof fetch;
 }
 
-const EFFORT: Record<AiQuality, "medium" | "high"> = { draft: "medium", finish: "high" };
+const EFFORT: Record<AiQuality, "low" | "medium" | "high"> = { quick: "low", draft: "medium", finish: "high" };
 
 export function createAnthropicProvider(opts: AnthropicOptions): AiProvider {
   const client = new Anthropic({ apiKey: opts.apiKey, fetch: opts.fetch, maxRetries: 2 });
