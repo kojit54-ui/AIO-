@@ -68,7 +68,7 @@ export function AioWhy({ point }: { point: AioPoint }) {
           <span>{p.why}</span>
         </span>
         <span className="mt-1 flex flex-col items-start gap-0.5 sm:flex-row sm:gap-2">
-          <span className="h-6 shrink-0 self-start whitespace-nowrap rounded-full bg-sun px-2 text-xs font-black leading-6 text-ink">人に選ばれる</span>
+          <span className="h-6 shrink-0 self-start whitespace-nowrap rounded-full bg-sun px-2 text-xs font-black leading-6 text-ink">お客様に選ばれる</span>
           <span>{p.people}</span>
         </span>
         {news && (
@@ -154,7 +154,7 @@ export function AioNews({ count = 3 }: { count?: number }) {
   );
 }
 
-/** 答えるたびに集まる「AIと人に選ばれる材料」。集まった材料はポンと黄色に変わる */
+/** 答えるたびに集まる「AIとお客様に選ばれる材料」。集まった材料はポンと黄色に変わる */
 export function AioMeter({ points, collected }: { points: AioPoint[]; collected: AioPoint[] }) {
   const all = [...new Set(points)];
   const have = all.filter((p) => collected.includes(p)).length;
@@ -162,7 +162,7 @@ export function AioMeter({ points, collected }: { points: AioPoint[]; collected:
     <section className="card space-y-3" aria-labelledby="aio-meter-heading">
       <div>
         <h2 id="aio-meter-heading" className="text-lg font-bold">
-          AIと人に選ばれる材料
+          AIとお客様に選ばれる材料
         </h2>
         <p className="text-sm text-muted">
           答えるたびに、ここに集まります（{have} / {all.length}）
@@ -189,7 +189,7 @@ export function AioMeter({ points, collected }: { points: AioPoint[]; collected:
       {all.length > 0 && have === all.length && (
         <div className="flex animate-pop items-center gap-3 rounded-2xl bg-sun-soft p-2">
           <Shiori mood="right" className="h-24 w-auto shrink-0" />
-          <p className="font-bold">材料がぜんぶそろいました！AIにも人にも選ばれる記事になります。</p>
+          <p className="font-bold">材料がぜんぶそろいました！AIにもお客様にも選ばれる記事になります。</p>
         </div>
       )}
       <div className="h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>
@@ -204,12 +204,12 @@ export function Cheer({ point }: { point: AioPoint }) {
   return <Toast>{AIO_POINTS[point].cheer}</Toast>;
 }
 
-/** なぜAIOが必要か。お客様がAIに聞く → AIに選ばれる → 人に選ばれる（問い合わせ） → 売上 */
+/** なぜAIOが必要か。お客様がAIに聞く → AIに選ばれる → お客様に選ばれる（問い合わせ） → 売上 */
 export function WhyAio({ compact = false }: { compact?: boolean }) {
   const steps = [
     { icon: "qa" as const, title: "お客様がAIに聞く", body: "「さくら市で断熱リフォームを頼むなら？」" },
     { icon: "entity" as const, title: "AIに選ばれる", body: "くわしく正直に書いている会社を、AIが答えの中で紹介" },
-    { icon: "action" as const, title: "人に選ばれる", body: "記事を読んだ人が「ここに頼みたい」と問い合わせ" },
+    { icon: "action" as const, title: "お客様に選ばれる", body: "記事を読んだ人が「ここに頼みたい」と問い合わせ" },
     { icon: "numbers" as const, title: "売上が上がる", body: "AI時代のウェブサイトの役目" },
   ];
   return (
@@ -223,7 +223,7 @@ export function WhyAio({ compact = false }: { compact?: boolean }) {
         </p>
       </div>
       {!compact && (
-        <ol className="grid gap-2 sm:grid-cols-4" aria-label="AIに選ばれ、人に選ばれて売上になるまで">
+        <ol className="grid gap-2 sm:grid-cols-4" aria-label="AIに選ばれ、お客様に選ばれて売上になるまで">
           {steps.map((st, i) => (
             <li key={st.title} className="flex animate-rise gap-2 rounded-2xl bg-canvas p-3 sm:flex-col sm:items-center sm:text-center" style={{ animationDelay: `${i * 0.12}s` }}>
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand text-white">
@@ -239,7 +239,7 @@ export function WhyAio({ compact = false }: { compact?: boolean }) {
           ))}
         </ol>
       )}
-      <p className="font-bold text-brand-dark">1本書くごとに、AIと人に選ばれる材料が増えていきます。いっしょにがんばりましょう！</p>
+      <p className="font-bold text-brand-dark">1本書くごとに、AIとお客様に選ばれる材料が増えていきます。いっしょにがんばりましょう！</p>
     </section>
   );
 }

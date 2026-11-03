@@ -10,7 +10,7 @@ import { Logo } from "@/components/landing";
 import { ChosenPath } from "@/components/ChosenPath";
 import { ShioriTalk } from "@/components/talk";
 
-export const DEFAULT_INVITE_MESSAGE = "いつもありがとうございます。AIに選ばれて、人に選ばれる会社づくりを、いっしょに始めませんか。";
+export const DEFAULT_INVITE_MESSAGE = "いつもありがとうございます。AIに選ばれて、これから出会うお客様に選ばれる会社づくりを、いっしょに始めませんか。";
 
 const WHAT = [
   { icon: "💬", text: "しおりの質問に答えるだけで、記事ができる" },
@@ -87,7 +87,7 @@ export function InviteLetter({ organizationName, recipientName, message, isFree 
 
                 <ShioriTalk
                   mood="bow"
-                  lines={[`${to}、はじめまして！案内役のしおりです。`, "お会いできるのを楽しみにしていました。いっしょに、AIにも人にも選ばれる会社になりましょう！"]}
+                  lines={[`${to}、はじめまして！案内役のしおりです。`, "お会いできるのを楽しみにしていました。いっしょに、AIにもお客様にも選ばれる会社になりましょう！"]}
                 />
 
                 <ChosenPath />

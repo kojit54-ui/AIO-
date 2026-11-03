@@ -530,7 +530,7 @@ function CommentPanel({ reviews }: { reviews: ReturnType<typeof useStore>["db"][
 
 const REVIEW_CATEGORY_LABEL: Record<AiReviewCategory, string> = {
   originality: "この会社らしさ",
-  aio: "AIと人に選ばれるか",
+  aio: "AIとお客様に選ばれるか",
   ai_tone: "AIが書いたように見える",
   facts: "事実が正しいか",
   style: "言葉づかい",

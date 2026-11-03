@@ -20,7 +20,7 @@ const ASK: Record<AioPoint, { ask: string; example: string }> = {
 
 /**
  * チェックする項目。上から画面に並べる。
- * stage＝おもに効く段階。画面では「AIに選ばれる」「人に選ばれる」の2つに分けて見せる（src/lib/brand.ts）
+ * stage＝おもに効く段階。画面では「AIに選ばれる」「お客様に選ばれる」の2つに分けて見せる（src/lib/brand.ts）
  */
 export const AIO_CHECK_LIST: { key: AioCheckKey; stage: ChosenStage; label: string; what: string; ask: string; example: string }[] = [
   ...(Object.keys(AIO_POINTS) as AioPoint[]).map((k) => ({
@@ -50,7 +50,7 @@ export const AIO_CHECK_LIST: { key: AioCheckKey; stage: ChosenStage; label: stri
     key: "ai_tone",
     stage: "people",
     label: "AIっぽさ",
-    what: "どこかで見たような決まり文句や、中身のないまとめになっていないか。その会社の人の言葉で書かれているか。人柄が伝わる文は、読んだ人に選ばれる理由になります。",
+    what: "どこかで見たような決まり文句や、中身のないまとめになっていないか。その会社の人の言葉で書かれているか。人柄が伝わる文は、読んだお客様に選ばれる理由になります。",
     ask: "お客様にいつも話している言い方で、ひとこと添えるなら何と言いますか",
     example: "例：「冬の朝、脱衣所でヒヤッとしたら一度ご相談ください」",
   },

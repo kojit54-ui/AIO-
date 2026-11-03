@@ -20,7 +20,7 @@ export function ChosenPath({ className = "", tone = "light" }: { className?: str
           </span>
         </span>
       ))}
-      <span className={`w-full text-xs font-bold sm:w-auto ${tone === "onBlue" ? "text-white/85" : "text-muted"}`}>いちばん大切なのは、人に選ばれること</span>
+      <span className={`w-full text-xs font-bold sm:w-auto ${tone === "onBlue" ? "text-white/85" : "text-muted"}`}>いちばん大切なのは、お客様に選ばれること</span>
     </div>
   );
 }
