@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { AioNews } from "@/components/aio";
 import { Wave } from "@/components/fun";
 import { ShioriTalk } from "@/components/talk";
+import { ChosenPath } from "@/components/ChosenPath";
 import { MonthlyGrowth } from "@/components/MonthlyGrowth";
 import { SearchConsoleCard } from "@/components/SearchConsoleCard";
 import { ShioriGrowth } from "@/components/ShioriGrowth";
@@ -43,7 +44,8 @@ export default function HomePage() {
         <h1 className="text-2xl font-black leading-snug sm:text-3xl">
           {user.name}さん、こんにちは <Wave />
         </h1>
-        <ShioriTalk mood="jersey-cheer" size="lg" lines={["今月も1本、いっしょに書きましょう！", "質問に答えるだけで、記事になりますよ。"]} />
+        <ShioriTalk mood="jersey-cheer" size="lg" lines={["今月も1本、いっしょに書きましょう！", "AIに選ばれて、読んだ人に「ここに頼みたい」と思ってもらえる記事に。質問に答えるだけで、できますよ。"]} />
+        <ChosenPath className="mt-2" />
       </div>
       <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
         <h2 id="policy-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">

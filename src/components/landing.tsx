@@ -7,6 +7,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Shiori, type ShioriMood } from "@/components/fun";
+import { ChosenPath } from "@/components/ChosenPath";
 import { ShioriTalk } from "@/components/talk";
 
 /** 画面に入ったら true になる（1回だけ） */
@@ -96,6 +97,7 @@ export function LoginStage({ mood, lines, title, children }: { mood: ShioriMood;
           <div className="relative mt-4 text-ink">
             <ShioriTalk mood={mood} lines={lines} size="lg" />
           </div>
+          <ChosenPath tone="onBlue" className="relative mt-4" />
           <ul className="relative mt-4 hidden space-y-2 md:block" aria-label="ログインするとできること">
             {PERKS.map((p, i) => (
               <li key={p.text} className="flex animate-rise items-center gap-3 rounded-2xl bg-white/15 px-4 py-2 font-bold" style={{ animationDelay: `${0.4 + i * 0.12}s` }}>

@@ -3,6 +3,7 @@
 // 入口のページ（サービスのご紹介）。ログインしていない人が最初に見る。
 // 2026-11-03 田村さん「登録したくなる、ワクワクする、ログインしたくなるページにしたい」。
 // 言葉は“やること”で書く（専門語を使わない）。AIOの考え方は docs/AIO.md（体験と数字が紹介されやすい・作り話をしない）。
+// サービスの定義は src/lib/brand.ts（AIに選ばれて、人に選ばれる。いちばん大切なのは人に選ばれること）。
 // 紹介される・売上が上がると約束はしない（決めるのはAI）。料金はまだ決まっていないので出さない。
 
 import Link from "next/link";
@@ -10,6 +11,7 @@ import { useEffect, useState } from "react";
 import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
 import { BigShiori, Logo, Reveal, useInView } from "@/components/landing";
 import { ShioriTalk, Typed } from "@/components/talk";
+import { CHOSEN_STAGES, SERVICE_COMPANION, SERVICE_MOST_IMPORTANT } from "@/lib/brand";
 import { useStore } from "@/mock/store";
 
 export function Welcome() {
@@ -37,6 +39,7 @@ export function Welcome() {
 
       <Hero startHref={startHref} startLabel={startLabel} />
       <AiChat />
+      <TwoChosen />
       <Quiz />
       <ThreeSteps />
       <KeepGoing />
@@ -67,7 +70,7 @@ function TryBanner() {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-xs font-black text-warn">登録なし・30秒</span>
-        <span className="block font-black leading-snug">あなたの会社、AIに紹介される準備はできてる？ 診断してみる</span>
+        <span className="block font-black leading-snug">あなたの会社、AIと人に選ばれる準備はできてる？ 診断してみる</span>
       </span>
       <span className="text-2xl text-ink transition-transform group-hover:translate-x-1" aria-hidden>
         →
@@ -84,17 +87,20 @@ function Hero({ startHref, startLabel }: { startHref: string; startLabel: string
           <span aria-hidden>✨</span> AIの時代の、会社のブログ
         </p>
         <h1 className="animate-rise text-[2rem] font-black leading-[1.35] [animation-delay:.08s] sm:text-5xl sm:leading-[1.3]">
-          AIに
-          <span className="relative mx-1 inline-block">
-            <span className="relative z-10">「この会社がいいよ」</span>
+          AIに選ばれて、
+          <br />
+          <span className="relative inline-block">
+            <span className="relative z-10">人に選ばれる</span>
             <span className="absolute inset-x-0 bottom-1 z-0 h-3 rounded-full bg-sun/70 sm:h-4" aria-hidden />
           </span>
-          と紹介される会社に。
+          会社に。
         </h1>
         <p className="animate-rise text-lg font-bold text-muted [animation-delay:.16s] sm:text-xl">
-          しおりの質問に答えるだけ。
+          AIに「この会社がいいよ」と紹介されて、
+          <br className="hidden sm:inline" />
+          読んだ人に「ここに頼みたい」と思ってもらえる記事を。
           <br />
-          お客さんに見つけてもらえる記事が、できあがります。
+          <span className="text-ink">{SERVICE_COMPANION}</span>
         </p>
         <div className="flex animate-rise flex-wrap items-center gap-3 [animation-delay:.24s]">
           <Link href={startHref} className="btn-primary min-h-14 px-7 text-lg">
@@ -118,13 +124,13 @@ function Hero({ startHref, startLabel }: { startHref: string; startLabel: string
         <span className="absolute right-6 top-10 -z-10 h-24 w-24 animate-blob rounded-full bg-sun-soft [animation-delay:-3s]" aria-hidden />
         <BigShiori mood="jersey-cheer" className="animate-rise [animation-delay:.2s]" />
         <FloatChip className="left-0 top-6" delay="0s">
-          🎉 AIに紹介された！
+          🤖 AIに選ばれた！
         </FloatChip>
         <FloatChip className="-right-1 top-1/3" delay=".6s">
           ⭐ スタンプ +1
         </FloatChip>
         <FloatChip className="bottom-6 left-2" delay="1.2s">
-          📞 お問い合わせ
+          🤝 人に選ばれた！
         </FloatChip>
       </div>
     </section>
@@ -156,10 +162,15 @@ const ANSWER_BEFORE = "小さな数の相談なら、";
 const ANSWER_COMPANY = "〇〇製作所（あなたの会社）";
 const ANSWER_AFTER = "がよさそうです。10個からの試作を受けた例をブログで紹介していて、相談の窓口もあります。";
 
-/** お客さんがAIに相談して、あなたの会社が紹介される様子（イメージ）。見えたら自動で流れる */
+const READER_THINKS = "10個でも、ていねいに相談にのってくれそう。ここに頼もう！";
+
+/**
+ * お客様がAIに相談して、あなたの会社が紹介され（AIに選ばれる）、
+ * 記事を読んだ人が問い合わせる（人に選ばれる）までの様子（イメージ）。見えたら自動で流れる
+ */
 function AiChat() {
   const [ref, seen] = useInView<HTMLDivElement>(0.35);
-  // 0:待ち 1:お客さんが打つ 2:AIが考える 3:AIが答える 4:紹介された
+  // 0:待ち 1:お客様が打つ 2:AIが考える 3:AIが答える 4:AIに選ばれた 5:記事を読む 6:人に選ばれた
   const [step, setStep] = useState(0);
   const [round, setRound] = useState(0);
   useEffect(() => {
@@ -169,8 +180,8 @@ function AiChat() {
     }
   }, [seen, step, round]);
   useEffect(() => {
-    if (step !== 2) return;
-    const t = setTimeout(() => setStep(3), 1300);
+    if (step !== 2 && step !== 4) return;
+    const t = setTimeout(() => setStep(step + 1), step === 2 ? 1300 : 1400);
     return () => clearTimeout(t);
   }, [step]);
 
@@ -178,8 +189,8 @@ function AiChat() {
     <section id="ai" className="scroll-mt-16 bg-surface/60 py-12">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Reveal>
-          <SectionTitle kicker="いま、お客さんの探し方が変わっています">
-            お客さんは、<span className="text-brand">AIに相談</span>しはじめました
+          <SectionTitle kicker="いま、お客様の探し方が変わっています">
+            お客様は、<span className="text-brand">AIに相談</span>しはじめました
           </SectionTitle>
         </Reveal>
 
@@ -210,13 +221,13 @@ function AiChat() {
               mood="point"
               size="md"
               className="pt-2"
-              lines={["AIに紹介される会社に、問い合わせが来るんです。", "そのために、AIが紹介しやすい記事を、いっしょに書きましょう！"]}
+              lines={["AIに紹介されるのは、はじまりです。", "紹介されて読みに来た人に「ここに頼みたい」と思ってもらえて、はじめてお問い合わせが来るんです。", "その両方を、いっしょにつくりましょう！"]}
             />
           </Reveal>
 
           <div ref={ref} className="card relative space-y-3 bg-canvas/60 p-4 sm:p-5">
             <p className="flex items-center justify-between text-xs font-black text-muted">
-              <span>AIに相談している画面（イメージ）</span>
+              <span>{step >= 5 ? "記事を読んでいる人（イメージ）" : "AIに相談している画面（イメージ）"}</span>
               <span className="flex gap-1" aria-hidden>
                 <i className="h-2.5 w-2.5 rounded-full bg-danger/60" />
                 <i className="h-2.5 w-2.5 rounded-full bg-sun" />
@@ -224,11 +235,11 @@ function AiChat() {
               </span>
             </p>
             <p className="sr-only">
-              お客さん：{ASK} AI：{ANSWER_BEFORE}
+              お客様：{ASK} AI：{ANSWER_BEFORE}
               {ANSWER_COMPANY}
-              {ANSWER_AFTER}
+              {ANSWER_AFTER} 記事を読んだ人：{READER_THINKS}
             </p>
-            <div className="min-h-64 space-y-3" aria-hidden key={round}>
+            <div className="min-h-64 space-y-3 sm:min-h-[26rem]" aria-hidden key={round}>
               {step >= 1 && (
                 <div className="ml-auto w-fit max-w-[85%] origin-bottom-right animate-bubble rounded-3xl rounded-br-md bg-brand px-4 py-2.5 font-bold text-white">
                   {step === 1 ? <Typed text={ASK} speed={45} delay={200} onDone={() => setTimeout(() => setStep(2), 400)} /> : ASK}
@@ -258,13 +269,27 @@ function AiChat() {
               )}
               {step >= 4 && (
                 <div className="flex justify-center pt-1">
-                  <span className="animate-stamp rounded-full border-2 border-sun-dark bg-sun px-4 py-1.5 font-black text-ink shadow-[0_4px_0_var(--color-sun-dark)]">🎉 あなたの会社が紹介された！</span>
+                  <span className="animate-stamp rounded-full border-2 border-brand bg-brand-soft px-4 py-1.5 font-black text-brand-dark shadow-[0_4px_0_var(--color-brand)]">🤖 1. AIに選ばれた！</span>
+                </div>
+              )}
+              {step >= 5 && (
+                <div className="animate-rise space-y-2 rounded-3xl border-2 border-line bg-surface p-3">
+                  <p className="text-xs font-black text-muted">〇〇製作所のブログ</p>
+                  <p className="font-black leading-snug">10個からの試作、5日でお届けしたお話</p>
+                  <div className="ml-auto w-fit max-w-[90%] origin-bottom-right animate-bubble rounded-3xl rounded-br-md bg-sun-soft px-4 py-2 text-sm font-bold">
+                    💭 {step === 5 ? <Typed text={READER_THINKS} speed={45} delay={300} onDone={() => setTimeout(() => setStep(6), 400)} /> : READER_THINKS}
+                  </div>
+                </div>
+              )}
+              {step >= 6 && (
+                <div className="flex justify-center">
+                  <span className="animate-stamp rounded-full border-2 border-sun-dark bg-sun px-4 py-1.5 font-black text-ink shadow-[0_4px_0_var(--color-sun-dark)]">🤝 2. 人に選ばれた！ お問い合わせが来ました</span>
                 </div>
               )}
             </div>
             <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line pt-3">
-              <p className="text-xs text-muted">紹介するかどうかを決めるのはAIです。紹介されやすい材料を、いっしょにそろえます。</p>
-              {step >= 4 && (
+              <p className="text-xs text-muted">紹介するかどうかはAIが、頼むかどうかは読んだ人が決めます。選ばれやすい材料を、いっしょにそろえます。</p>
+              {step >= 6 && (
                 <button
                   type="button"
                   className="text-sm font-bold text-brand-dark underline"
@@ -284,28 +309,65 @@ function AiChat() {
   );
 }
 
+/** このサービスの定義。2つの「選ばれる」と、いちばん大切なこと */
+function TwoChosen() {
+  return (
+    <section className="py-12">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <Reveal>
+          <SectionTitle kicker="このサービスが目指すこと">2つの「選ばれる」</SectionTitle>
+        </Reveal>
+        <ol className="grid items-stretch gap-3 sm:grid-cols-[1fr_auto_1fr]">
+          {CHOSEN_STAGES.map((st, i) => (
+            <li key={st.key} className="contents">
+              {i > 0 && (
+                <span className="grid place-items-center text-3xl font-black text-brand" aria-hidden>
+                  <span className="inline-block animate-hop sm:hidden">↓</span>
+                  <span className="hidden animate-nudge sm:inline-block">→</span>
+                </span>
+              )}
+              <Reveal delay={i * 0.15} className={`card flex h-full flex-col items-center gap-2 text-center ${st.key === "people" ? "border-2 border-sun bg-sun-soft" : ""}`}>
+                <span className="grid h-16 w-16 animate-pop place-items-center rounded-full bg-surface text-4xl shadow" aria-hidden>
+                  {st.icon}
+                </span>
+                <p className="text-sm font-black text-brand">ステップ{st.step}</p>
+                <h3 className="text-2xl font-black">{st.label}</h3>
+                <p className="text-muted">{st.text}</p>
+                {st.key === "people" && <span className="mt-auto rounded-full bg-sun px-3 py-0.5 text-sm font-black">いちばん大切</span>}
+              </Reveal>
+            </li>
+          ))}
+        </ol>
+        <Reveal delay={0.3} className="mt-5">
+          <ShioriTalk mood="point" size="md" lines={[SERVICE_MOST_IMPORTANT, "だから、しおりは「AIに伝わる材料」と「読んだ人が安心できる、あなたの会社らしさ」の両方を聞きますね。"]} />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 const CHOICES = [
   { id: "a", text: "高品質・短納期で、どんなご要望にもお応えします。", ok: false },
   { id: "b", text: "厚さ1mmのステンレス板で、部品を10個、5日でお届けしました。", ok: true },
 ];
 
-/** AIに紹介されやすいのはどっち？ 1問だけのクイズ */
+/** AIにも人にも選ばれるのはどっち？ 1問だけのクイズ */
 function Quiz() {
   const [picked, setPicked] = useState<string | null>(null);
   const [tries, setTries] = useState(0);
   const right = CHOICES.find((c) => c.id === picked)?.ok;
   const talk: { mood: ShioriMood; lines: string[] } =
     picked === null
-      ? { mood: "ask", lines: ["ここでクイズです！", "AIに紹介されやすいのは、どっちの書き方だと思いますか？"] }
+      ? { mood: "ask", lines: ["ここでクイズです！", "AIにも、読んだ人にも選ばれるのは、どっちの書き方だと思いますか？"] }
       : right
-        ? { mood: "right", lines: ["正解です！すごい！", "AIは「この会社にしかない経験」と「数字」がある記事を紹介しやすいんです。", "だから、しおりはあなたの会社の経験を、くわしく聞きますね。"] }
+        ? { mood: "right", lines: ["正解です！すごい！", "AIは「この会社にしかない経験」と「数字」がある記事を紹介しやすいんです。", "読んだ人も「ここなら安心して頼める」と思えますよね。だから、しおりはあなたの会社の経験を、くわしく聞きますね。"] }
         : { mood: "think", lines: ["おしい！", "どの会社でも言える言葉だと、AIは紹介しにくいんです。もう一度えらんでみてください。"] };
 
   return (
     <section className="py-12">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <Reveal>
-          <SectionTitle kicker="30秒でわかる">AIに紹介されやすいのは、どっち？</SectionTitle>
+          <SectionTitle kicker="30秒でわかる">AIにも人にも選ばれるのは、どっち？</SectionTitle>
         </Reveal>
         <Reveal className="card space-y-4">
           {right && <Confetti count={50} />}
@@ -340,7 +402,7 @@ function Quiz() {
           </div>
           {right && (
             <p className="animate-rise rounded-2xl bg-sun-soft px-4 py-3 text-sm font-bold">
-              💡 ポイント：Bには「何を・いくつ・何日で」という<b>実際の経験と数字</b>があります。これはAIにはつくれない、あなたの会社だけの材料です。
+              💡 ポイント：Bには「何を・いくつ・何日で」という<b>実際の経験と数字</b>があります。これはAIにはつくれない、あなたの会社だけの材料です。読んだ人にも「頼んだらこうなる」が伝わります。
             </p>
           )}
         </Reveal>
@@ -351,7 +413,7 @@ function Quiz() {
 
 const STEPS: { mood: ShioriMood; title: string; text: string; tag: string }[] = [
   { mood: "ask", title: "しおりの質問に答える", text: "話すように答えるだけ。うまく書こうとしなくて大丈夫です。わからない質問は飛ばせます。", tag: "あなた" },
-  { mood: "think", title: "AIが記事にまとめる", text: "あなたの答えから、AIに紹介されやすい形の記事をつくります。AIOのチェックもおまかせ。", tag: "AIにおまかせ" },
+  { mood: "think", title: "AIが記事にまとめる", text: "あなたの答えから、AIに紹介されやすく、読んだ人に伝わる記事をつくります。AIOのチェックもおまかせ。", tag: "AIにおまかせ" },
   { mood: "jersey-done", title: "ブログに載せる", text: "載せ方も1ステップずつ案内します。載せたらスタンプがもらえます！", tag: "あなた" },
 ];
 
@@ -495,9 +557,9 @@ function FinalCall({ startHref, startLabel, signedIn }: { startHref: string; sta
             <Shiori mood="bow" className="mx-auto h-36 w-auto sm:h-48" />
             <div className="space-y-4">
               <h2 className="text-2xl font-black leading-snug sm:text-3xl">
-                さあ、AIに紹介される
+                さあ、AIに選ばれて、
                 <br className="sm:hidden" />
-                会社になろう！
+                人に選ばれる会社になろう！
               </h2>
               <p className="font-bold text-white/90">まずは、しおりの質問に3つ答えるところから。最初のスタンプがもらえます。</p>
               <Link href={startHref} className="btn min-h-14 border-sun bg-sun px-7 text-lg text-ink shadow-[0_4px_0_var(--color-sun-dark)] hover:-translate-y-0.5">

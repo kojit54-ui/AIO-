@@ -24,7 +24,7 @@ export async function sendMail(mail: Mail, env: Record<string, string | undefine
   const c = smtpConfig(env);
   if (!c) return false;
   const transport = nodemailer.createTransport({ host: c.host, port: c.port, secure: c.port === 465, auth: { user: c.user, pass: c.pass } });
-  await transport.sendMail({ from: `しおり（コタム ブログ執筆支援） <${c.from}>`, to: mail.to, subject: mail.subject, text: mail.text, html: mail.html });
+  await transport.sendMail({ from: `しおり（コタムのブログ執筆支援） <${c.from}>`, to: mail.to, subject: mail.subject, text: mail.text, html: mail.html });
   return true;
 }
 

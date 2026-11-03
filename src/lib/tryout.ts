@@ -1,4 +1,4 @@
-// 入口の「30秒でためす」（/try）。登録の前に、AIに紹介される準備度を診断し、1問答えると記事の書き出しができる。
+// 入口の「30秒でためす」（/try）。登録の前に、AIと人に選ばれる準備度を診断し、1問答えると記事の書き出しができる。
 // 2026-11-03 田村さん「え？楽しそう。やってみたい。とついつい登録しちゃうような案」→ 案1（診断）と案2（その場で書き出し）を続けて。
 // いまはサンプル：AIにはつながない。診断は答えから点数を出し、書き出しは答えをそのまま使って組み立てる。
 // 作り話をしない（docs/AIO.md）：書き出しに、答えにない数字や実績を足さない。
@@ -19,7 +19,7 @@ export const READINESS_QUESTIONS: ReadinessQuestion[] = [
   { id: "case", point: "experience", q: "ホームページに、実際にやった仕事の例を載せていますか？", missing: "実際の仕事の例" },
   { id: "numbers", point: "numbers", q: "値段・納期・個数などの「数字」を載せていますか？", missing: "数字（値段・納期・個数）" },
   { id: "area", point: "entity", q: "会社のある地域や、対応できる地域を書いていますか？", missing: "地域のこと" },
-  { id: "faq", point: "qa", q: "お客さんによく聞かれる質問に、答えを書いていますか？", missing: "よくある質問の答え" },
+  { id: "faq", point: "qa", q: "お客様によく聞かれる質問に、答えを書いていますか？", missing: "よくある質問の答え" },
   { id: "tips", point: "expertise", q: "注意点や、よくある勘違いを書いた記事がありますか？", missing: "プロならではの注意点" },
   { id: "contact", point: "action", q: "どのページからも、問い合わせの方法がすぐ分かりますか？", missing: "問い合わせへの道" },
 ];
@@ -54,7 +54,7 @@ export function readinessRank(score: number): Rank {
   return { icon: "🥚", name: "たまご級", say: "ここからがスタートです！どの会社も最初はここから。いっしょに育てましょう。" };
 }
 
-/** お客さんがAIに聞きそうな質問 */
+/** お客様がAIに聞きそうな質問 */
 export function customerQuestion(region: string, job: string): string {
   const r = region.trim() || "近く";
   const j = job.trim() || "仕事";
@@ -97,6 +97,6 @@ export function sampleOpening(input: TryInput): SampleOpening {
       `「${answer}」`,
       "どんなご相談で、どこが難しくて、どう工夫したのか。現場の言葉で、くわしくご紹介します。",
     ],
-    nextAsks: ["どんなお客さんから、どんな相談でしたか？", "いちばん難しかったところは？", "個数・日数・大きさなど、数字で言えることは？"],
+    nextAsks: ["どんなお客様から、どんな相談でしたか？", "いちばん難しかったところは？", "個数・日数・大きさなど、数字で言えることは？"],
   };
 }

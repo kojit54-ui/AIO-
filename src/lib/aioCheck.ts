@@ -2,6 +2,7 @@
 // 見る項目は画面の「こんなチェックをします」、AIへの指示（src/lib/ai/aioCheckPrompt.ts）、試作のサンプルで同じものを使う。
 
 import { AIO_POINTS } from "@/lib/aio";
+import { CHOSEN_STAGES, type ChosenStage } from "@/lib/brand";
 import type { AioCheck, AioCheckItem, AioCheckKey, AioCheckQuestion, AioPoint, Answer, Block, CompanyProfile, FactCheck } from "@/types/domain";
 
 // AIOの材料ごとの聞き返し（試作のサンプルと、AIが質問を作れなかったときの控え）
@@ -16,16 +17,21 @@ const ASK: Record<AioPoint, { ask: string; example: string }> = {
   trust: { ask: "書いた内容の裏付けになること（資格・年数・お客様の声など）はありますか", example: "例：創業25年、一級建築士が2名" },
 };
 
-/** チェックする項目。上から画面に並べる */
-export const AIO_CHECK_LIST: { key: AioCheckKey; label: string; what: string; ask: string; example: string }[] = [
+/**
+ * チェックする項目。上から画面に並べる。
+ * stage＝おもに効く段階。画面では「AIに選ばれる」「人に選ばれる」の2つに分けて見せる（src/lib/brand.ts）
+ */
+export const AIO_CHECK_LIST: { key: AioCheckKey; stage: ChosenStage; label: string; what: string; ask: string; example: string }[] = [
   ...(Object.keys(AIO_POINTS) as AioPoint[]).map((k) => ({
     key: k,
+    stage: AIO_POINTS[k].stage,
     label: AIO_POINTS[k].label,
-    what: AIO_POINTS[k].why,
+    what: AIO_POINTS[k].stage === "ai" ? AIO_POINTS[k].why : AIO_POINTS[k].people,
     ...ASK[k],
   })),
   {
     key: "facts",
+    stage: "people",
     label: "数字・実績の確かさ",
     what: "価格・期間・件数・実績が、実際の話どおりか。間違った数字はAIにも読む人にも信頼を失います。",
     ask: "記事の中の数字や実績で、確かめておきたいものはありますか。正しい数字を教えてください",
@@ -33,6 +39,7 @@ export const AIO_CHECK_LIST: { key: AioCheckKey; label: string; what: string; as
   },
   {
     key: "words",
+    stage: "people",
     label: "使ってほしくない言葉",
     what: "会社で決めた「使わない言葉」や、根拠を示せない言い切り（業界最安・絶対に など）が入っていないか。",
     ask: "言い切りすぎている所を、実際の言い方に直すとどうなりますか",
@@ -40,12 +47,16 @@ export const AIO_CHECK_LIST: { key: AioCheckKey; label: string; what: string; as
   },
   {
     key: "ai_tone",
+    stage: "people",
     label: "AIっぽさ",
-    what: "どこかで見たような決まり文句や、中身のないまとめになっていないか。その会社の人の言葉で書かれているか。",
+    what: "どこかで見たような決まり文句や、中身のないまとめになっていないか。その会社の人の言葉で書かれているか。人柄が伝わる文は、読んだ人に選ばれる理由になります。",
     ask: "お客様にいつも話している言い方で、ひとこと添えるなら何と言いますか",
     example: "例：「冬の朝、脱衣所でヒヤッとしたら一度ご相談ください」",
   },
 ];
+
+/** 段階ごとに分けた項目（画面の見出し用） */
+export const AIO_CHECK_GROUPS = CHOSEN_STAGES.map((s) => ({ ...s, keys: AIO_CHECK_LIST.filter((c) => c.stage === s.key).map((c) => c.key) }));
 
 export const aioCheckLabel = (key: AioCheckKey) => AIO_CHECK_LIST.find((c) => c.key === key)?.label ?? key;
 
@@ -94,8 +105,8 @@ export function sampleAioCheck(input: { body: Block[]; answers: Answer[]; profil
   const good = items.filter((i) => i.ok).length;
   const summary =
     questions.length === 0
-      ? `${items.length}項目のうち${good}項目が書けています。AIに紹介されやすい記事です。`
-      : `${items.length}項目のうち${good}項目が書けています。あと${questions.length}つ教えてもらえると、もっと紹介されやすくなります。`;
+      ? `${items.length}項目のうち${good}項目が書けています。AIに選ばれて、読んだ人にも選ばれやすい記事です。`
+      : `${items.length}項目のうち${good}項目が書けています。あと${questions.length}つ教えてもらえると、AIにも読んだ人にも、もっと選ばれやすくなります。`;
   return { summary, items, questions };
 }
 

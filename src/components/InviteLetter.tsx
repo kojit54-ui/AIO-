@@ -7,13 +7,14 @@
 import { useEffect, useState } from "react";
 import { Confetti, ShioriFace } from "@/components/fun";
 import { Logo } from "@/components/landing";
+import { ChosenPath } from "@/components/ChosenPath";
 import { ShioriTalk } from "@/components/talk";
 
-export const DEFAULT_INVITE_MESSAGE = "いつもありがとうございます。AIに「この会社がいいよ」と紹介される会社づくりを、いっしょに始めませんか。";
+export const DEFAULT_INVITE_MESSAGE = "いつもありがとうございます。AIに選ばれて、人に選ばれる会社づくりを、いっしょに始めませんか。";
 
 const WHAT = [
   { icon: "💬", text: "しおりの質問に答えるだけで、記事ができる" },
-  { icon: "✨", text: "AIに紹介されやすい形に、AIが整える" },
+  { icon: "✨", text: "AIに紹介されやすく、読んだ人に伝わる形にAIが整える" },
   { icon: "🎖️", text: "書くたびにスタンプが増える" },
 ];
 
@@ -86,8 +87,10 @@ export function InviteLetter({ organizationName, recipientName, message, isFree 
 
                 <ShioriTalk
                   mood="bow"
-                  lines={[`${to}、はじめまして！案内役のしおりです。`, "お会いできるのを楽しみにしていました。いっしょに、AIに紹介される会社になりましょう！"]}
+                  lines={[`${to}、はじめまして！案内役のしおりです。`, "お会いできるのを楽しみにしていました。いっしょに、AIにも人にも選ばれる会社になりましょう！"]}
                 />
+
+                <ChosenPath />
 
                 {isFree && (
                   <div className="flex items-center gap-3 rounded-3xl border-2 border-sun bg-sun-soft px-4 py-3">
