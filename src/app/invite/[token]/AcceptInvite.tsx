@@ -1,7 +1,10 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { Confetti } from "@/components/fun";
+import { LoginStage } from "@/components/landing";
 import { Notice } from "@/components/ui";
+import { InviteWhat } from "./MockInvite";
 import type { AcceptResult } from "@/lib/auth/invitations";
 import { acceptInvite } from "./actions";
 
@@ -18,28 +21,29 @@ export function AcceptInvite({ token, organizationName, maskedEmail }: { token: 
 
   if (result?.ok) {
     return (
-      <main className="page max-w-xl space-y-4">
+      <LoginStage mood="joy" title="メールを送りました！" lines={["メールのリンクを押したら、すぐ始められますよ。", "待ってますね！"]}>
         <Notice tone="ok" title="ログイン用のメールを送りました">
           {maskedEmail} にメールが届きます。このブラウザでメールのリンクを開くと、ログインして使いはじめられます。
         </Notice>
-      </main>
+      </LoginStage>
     );
   }
 
   return (
-    <main className="page max-w-xl space-y-4">
-      <h1 className="text-2xl font-bold">{organizationName}様へのご招待</h1>
-      <div className="card space-y-3">
-        <p>コタムのブログ執筆支援サービスにご招待します。月次指導の方針をもとに、質問に答えるだけで記事の下書きを作れます。</p>
+    <LoginStage mood="bow" title={<>{organizationName}様、<br />ようこそ！</>} lines={["お待ちしていました！案内役のしおりです。", "いっしょに、AIに紹介される会社になりましょう！"]}>
+      <Confetti count={50} />
+      <div className="card space-y-4 p-6">
+        <h2 className="text-xl font-black">🎁 ご招待が届いています</h2>
+        <InviteWhat />
         <p className="text-sm text-muted">
           入力した内容は、記事を作るためにAIへ送信します。他の会社に見られることはありません。利用規約とプライバシーの説明は準備中です。
         </p>
         <p className="text-sm">招待先のメールアドレス：{maskedEmail}</p>
         {result && !result.ok && <Notice tone="danger">{FAILED[result.reason === "valid" ? "error" : result.reason]}</Notice>}
-        <button type="button" className="btn-primary w-full" disabled={pending} onClick={() => start(async () => setResult(await acceptInvite(token)))}>
+        <button type="button" className="btn-primary min-h-14 w-full text-lg" disabled={pending} onClick={() => start(async () => setResult(await acceptInvite(token)))}>
           {pending ? "受付中…" : "同意してはじめる"}
         </button>
       </div>
-    </main>
+    </LoginStage>
   );
 }

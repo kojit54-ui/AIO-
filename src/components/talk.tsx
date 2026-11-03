@@ -10,7 +10,7 @@ import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
 const reduced = () => typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
 /** 文字を1つずつ出す。最初に少し「…」を見せてから */
-function Typed({ text, speed = 38, delay = 350, onDone }: { text: string; speed?: number; delay?: number; onDone?: () => void }) {
+export function Typed({ text, speed = 38, delay = 350, onDone }: { text: string; speed?: number; delay?: number; onDone?: () => void }) {
   const chars = Array.from(text);
   const [shown, setShown] = useState(-1);
   useEffect(() => {

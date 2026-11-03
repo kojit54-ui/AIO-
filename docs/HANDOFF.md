@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-03 CC（Claude、プロジェクトのスレッド）入口とログイン
+- ブランチ / コミット：claude/project-thread-ksfvfg（main から）
+- 変更点：入口のページ /welcome（src/app/welcome/）、共通の部品 src/components/landing.tsx（LoginStage・Reveal・useInView・useGreeting）、ログイン（メール・試作）と招待の画面を LoginStage に。未ログインで / を開くと /welcome へ（AppShell）。globals.css に twinkle・fly・blob。talk.tsx の Typed を export
+- 確認結果：単体テスト316件、型検査、lint、build。375px・1280px で入口・ログイン（試作とメール）・招待を確認、横はみ出しなし
+- 未完了：新規顧客の受付と料金の表示（未決定）、利用規約とプライバシーの説明
+- 次の作業と担当：田村さんが本番で見て感想 → CC が手直し → CX がレビュー
+
 ### 2026-11-02 CC（Claude、プロジェクトのスレッド）Search Console
 - ブランチ / コミット：claude/search-console（main から）
 - 変更点：Search Console のつなぎ方A（DECISIONS 2026-11-02）。src/lib/searchConsole.ts（サービス用アカウントの JWT、URL をそろえる、28日分を読む）、src/lib/growth/searchConsoleServer.ts、/api/organizations/[id]/search-console（+/refresh）、/api/search-console-account、/search-console の画面、ホームの SearchConsoleCard、試作のサンプルの数字、マイグレーション 20261102160000_search_console.sql
