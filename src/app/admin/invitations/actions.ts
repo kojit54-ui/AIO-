@@ -20,13 +20,20 @@ export async function createInvitation(_prev: InviteState, form: FormData): Prom
   const role = String(form.get("role") ?? "");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: "メールアドレスの形を確認してください" };
   if (role !== "client_member" && role !== "coach") return { error: "役割を選んでください" };
+  // 招待状の宛名とひとこと（任意）。無料の札は、顧客担当者への招待だけに付ける
+  const recipientName = String(form.get("recipientName") ?? "").trim().slice(0, 40) || null;
+  const message = String(form.get("message") ?? "").trim().slice(0, 400) || null;
+  const isFree = role === "client_member" && form.get("isFree") === "on";
 
   const supabase = await createServerSupabase();
   const { data: auth } = await supabase.auth.getUser();
   const { token, hash } = newInviteToken();
-  const { error } = await supabase
-    .from("invitations")
-    .insert({ organization_id: organizationId, email, role, token_hash: hash, created_by: auth.user?.id });
+  const base = { organization_id: organizationId, email, role, token_hash: hash, created_by: auth.user?.id };
+  let { error } = await supabase.from("invitations").insert({ ...base, recipient_name: recipientName, message, is_free: isFree });
+  // 招待状の SQL（20261103130000_invitation_letter.sql）を流す前は、宛名とひとことなしで作る
+  if (error && /recipient_name|is_free|message|column/i.test(error.message)) {
+    ({ error } = await supabase.from("invitations").insert(base));
+  }
   if (error) return { error: "招待を作れませんでした。全社管理者でログインしているか確認してください" };
   revalidatePath(PATH);
   return { link: `${await siteOrigin()}/invite/${token}`, email };

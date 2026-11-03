@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-03 CC（Claude、プロジェクトのスレッド）しおりの自己紹介・招待状
+- ブランチ / コミット：claude/project-thread-ksfvfg（main から）
+- 変更点：/shiori（src/app/shiori/）、src/components/InviteLetter.tsx、招待のページ（本番・試作）を招待状に、管理画面の招待に宛名・ひとこと・無料の札・見え方の確認、src/lib/auth/invitations.ts で invitation_letter を読む（SQL前は無しで続く）、管理画面の作成は SQL 前なら宛名なしで作る、マイグレーション 20261103130000_invitation_letter.sql、入口のヘッダーと足もとに /shiori
+- 確認結果：DBのテスト（招待状・権限・長さ）、lint、型検査、build。375px・1280px で /shiori・招待状（閉じた封筒・開いた後）・入口を確認
+- 未完了：田村さんが SQL（20261103120000_trial_ai.sql、20261103130000_invitation_letter.sql）を流す。管理画面の見え方の確認は本番で
+- 次の作業と担当：田村さんが SQL → CC が本番で確認 → CX がレビュー
+
 ### 2026-11-03 CC（Claude、プロジェクトのスレッド）30秒でためすにAI
 - ブランチ / コミット：claude/project-thread-ksfvfg（main から）
 - 変更点：POST /api/try（同じサイトだけ・ロボットよけ・入力の検査・start_trial_run・AI・答えの検査・finish_trial_run。だめなら mode: sample）、src/lib/tryoutAi.ts（入力の検査・指示・答えの検査）、マイグレーション 20261103120000_trial_ai.sql（trial_runs、app_settings の trial_*、start_trial_run・finish_trial_run は service role だけ）、/try の画面（AIの結果・見本の理由）、.env.example に TRIAL_SALT（任意）

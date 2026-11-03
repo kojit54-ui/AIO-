@@ -77,7 +77,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
         <>
           <section className="card space-y-3">
             <h2 className="text-lg font-bold">{current.name}に招待する</h2>
-            <InviteForm organizationId={current.id} />
+            <InviteForm organizationId={current.id} organizationName={current.name} />
             {pending && pending.length > 0 && (
               <div>
                 <h3 className="font-bold">未使用の招待</h3>
