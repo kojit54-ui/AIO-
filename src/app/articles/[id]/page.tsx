@@ -751,7 +751,7 @@ function AnswerPanel({ version }: { version: ArticleVersion }) {
 function PolicyPanel({ orgId }: { orgId: string }) {
   const { db, month } = useStore();
   const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === month);
-  if (!note) return <p className="text-sm text-muted">今月の方針は、コタムが準備中です。</p>;
+  if (!note) return <p className="text-sm text-muted">今月の方針はありません。しおりのおすすめのテーマで、そのまま書けます。</p>;
   const rows: [string, string][] = [
     ["重点テーマ", note.focus],
     ["想定読者", note.audience],

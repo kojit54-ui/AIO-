@@ -48,19 +48,16 @@ export default function HomePage() {
         <ShioriTalk mood="jersey-cheer" size="lg" lines={["今月も1本、いっしょに書きましょう！", "AIに選ばれて、読んだ人に「ここに頼みたい」と思ってもらえる記事に。質問に答えるだけで、できますよ。"]} />
         <ChosenPath className="mt-2" />
       </div>
-      <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
-        <h2 id="policy-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">
-          {monthLabel(month)}の方針（コタムより）
-        </h2>
-        {note ? (
-          <>
-            <p className="mt-1 text-xl font-bold">{note.focus}</p>
-            <p className="mt-2">{note.clientVisibleNote}</p>
-          </>
-        ) : (
-          <p className="mt-1">今月の方針は、コタムが準備中です。</p>
-        )}
-      </section>
+      {/* コタムの方針は、あるときだけ出す（無いときに「準備中」と出して待たせない。2026-11-03） */}
+      {note && (
+        <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
+          <h2 id="policy-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">
+            {monthLabel(month)}の方針（コタムより）
+          </h2>
+          <p className="mt-1 text-xl font-bold">{note.focus}</p>
+          <p className="mt-2">{note.clientVisibleNote}</p>
+        </section>
+      )}
 
       <section className="grid gap-3 sm:grid-cols-2" aria-label="記事を書く">
         <Link href="/articles/new" className="btn-primary min-h-16 text-xl">
