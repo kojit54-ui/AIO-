@@ -43,7 +43,7 @@ const FACES: { mood: ShioriMood; name: string; say: string }[] = [
 const CAN_DO: { icon: string; title: string; text: string }[] = [
   { icon: "💬", title: "質問して、聞き出す", text: "1問ずつ、なぜ聞くのかを添えて質問します。話すように答えてください。" },
   { icon: "📝", title: "記事にまとめる", text: "あなたの答えから、AIといっしょに記事の形にします。" },
-  { icon: "🔍", title: "AIOのチェック", text: "AIに選ばれて、読んだ人にも選ばれる記事か、11のポイントで確かめます。" },
+  { icon: "🔍", title: "AIOのチェック", text: "AIに選ばれて、読んだ人にも選ばれる記事か、12のポイントで確かめます。" },
   { icon: "🎖️", title: "応援する", text: "スタンプやレベルアップで、続けるのを応援します。" },
 ];
 

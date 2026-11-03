@@ -29,3 +29,17 @@ describe("サービスの定義", () => {
     for (const g of AIO_CHECK_GROUPS) expect(g.keys.length).toBeGreaterThan(0);
   });
 });
+
+describe("人の心を動かす記事", () => {
+  it("記事の質問に「気持ちと想い」を聞く問いがあり、次の一歩はいちばん最後", async () => {
+    const { QUESTIONS } = await import("@/mock/data");
+    expect(QUESTIONS.some((q) => q.aio === "feeling")).toBe(true);
+    expect(QUESTIONS[QUESTIONS.length - 1].aio).toBe("action");
+  });
+
+  it("書き手には、心を動かす書き方と、気持ちを作らない約束の両方を伝える", () => {
+    expect(SYSTEM_PROMPT).toContain("人の心を動かすために");
+    expect(SYSTEM_PROMPT).toContain("感動や喜びを大げさに作らない");
+    expect(REVIEW_SYSTEM_PROMPT).toContain("心が動くか");
+  });
+});

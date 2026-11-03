@@ -30,6 +30,7 @@ export function buildOutline(answers: Answer[]): OutlineSection[] {
     sections.push({ heading: "行った対応", sourceQuestionIds: ["q2", "q2_followup"] });
   if (answerText(answers, "q3")) sections.push({ heading: "その後の様子", sourceQuestionIds: ["q3"] });
   if (answerText(answers, "q4")) sections.push({ heading: "気をつけたいこと", sourceQuestionIds: ["q4"] });
+  if (answerText(answers, "q6")) sections.push({ heading: "わたしたちが大切にしたこと", sourceQuestionIds: ["q6"] });
   sections.push({ heading: "ご相談はこちらから", sourceQuestionIds: ["q5"] });
   return sections;
 }

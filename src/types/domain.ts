@@ -193,7 +193,7 @@ export interface GenerationRun {
 }
 
 /** AIO（AIに紹介されるための工夫）で集めたい材料。docs/AIO.md、src/lib/aio.ts */
-export type AioPoint = "experience" | "numbers" | "entity" | "qa" | "comparison" | "expertise" | "action" | "trust";
+export type AioPoint = "experience" | "numbers" | "entity" | "qa" | "comparison" | "expertise" | "feeling" | "action" | "trust";
 
 export interface Question {
   id: string;
@@ -205,7 +205,7 @@ export interface Question {
   aio?: AioPoint;
 }
 
-/** AIOのチェックで見る項目。AIOの8つの材料に、数字の確かさ・使ってほしくない言葉・AIっぽさを足したもの（src/lib/aioCheck.ts） */
+/** AIOのチェックで見る項目。AIOの9つの材料に、数字の確かさ・使ってほしくない言葉・AIっぽさを足したもの（src/lib/aioCheck.ts） */
 export type AioCheckKey = AioPoint | "facts" | "words" | "ai_tone";
 
 export interface AioCheckItem {
