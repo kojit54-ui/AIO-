@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-03 CC（Claude、プロジェクトのスレッド）30秒でためすにAI
+- ブランチ / コミット：claude/project-thread-ksfvfg（main から）
+- 変更点：POST /api/try（同じサイトだけ・ロボットよけ・入力の検査・start_trial_run・AI・答えの検査・finish_trial_run。だめなら mode: sample）、src/lib/tryoutAi.ts（入力の検査・指示・答えの検査）、マイグレーション 20261103120000_trial_ai.sql（trial_runs、app_settings の trial_*、start_trial_run・finish_trial_run は service role だけ）、/try の画面（AIの結果・見本の理由）、.env.example に TRIAL_SALT（任意）
+- 確認結果：単体テスト（入力・答えの検査）、DBのテスト（回数・予算・スイッチ・権限）、型検査、lint、build。本物のAIでの確認は本番で SQL を流した後
+- 未完了：田村さんが SQL を流す。本番で1回ためして確かめる
+- 次の作業と担当：田村さんが SQL → CC が本番で確認 → CX がレビュー
+
 ### 2026-11-03 CC（Claude、プロジェクトのスレッド）30秒でためす
 - ブランチ / コミット：claude/project-thread-ksfvfg（PR #54 のマージ後の main から）
 - 変更点：/try（src/app/try/）、src/lib/tryout.ts（準備度・段・足りない材料・お客さんの質問・書き出しのサンプル）とテスト、入口の見出しの下と最後に /try への入口、AppShell で /try をログインなしに

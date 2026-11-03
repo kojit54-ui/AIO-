@@ -19,6 +19,28 @@ import {
   sampleOpening,
 } from "@/lib/tryout";
 
+interface TrialResultView {
+  title: string;
+  paragraphs: string[];
+  nextAsks: string[];
+  cheer: string;
+}
+interface Outcome {
+  mode: "ai" | "sample";
+  reason: string;
+  result: TrialResultView;
+}
+
+/** 見本で作ったときに、しおりが伝えること */
+const SAMPLE_REASON: Record<string, string> = {
+  visitor_limit: "今日ためせる回数を使いきったので、今回は見本で作りました。",
+  daily_limit: "今日はたくさんの人がためしたので、今回は見本で作りました。",
+  budget_exceeded: "今月ためせる分がいっぱいになったので、今回は見本で作りました。",
+  disabled: "いまはAIをお休みしているので、見本で作りました。",
+  off_topic: "お仕事のお話が読み取れなかったので、見本で作りました。お仕事のことを書いてもう一度ためしてみてください。",
+  checked: "AIの文章に確かめきれないところがあったので、今回は見本で作りました。",
+};
+
 type Phase = "intro" | "company" | "check" | "result" | "write" | "making" | "done";
 
 const STAGES: { title: string; phases: Phase[] }[] = [
@@ -51,6 +73,37 @@ export function TryOut() {
   const [story, setStory] = useState("");
   const [points, setPoints] = useState(0);
   const [bump, setBump] = useState(0);
+  // ロボットよけ：開いた時刻と、人には見えない欄
+  const [startedAt] = useState(() => Date.now());
+  const [website, setWebsite] = useState("");
+  const [outcome, setOutcome] = useState<Outcome | null>(null);
+  const [animDone, setAnimDone] = useState(false);
+
+  // 書き出しを作る。AIを使えないときは見本で続ける
+  const make = async () => {
+    setOutcome(null);
+    setAnimDone(false);
+    setPhase("making");
+    const fallback = (reason: string): Outcome => ({ mode: "sample", reason, result: { ...sampleOpening({ company, region, job, answer: story }), cheer: "" } });
+    try {
+      const res = await fetch("/api/try", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ company, region, job, story, answers, startedAt, website }),
+      });
+      const data = (await res.json().catch(() => null)) as { mode?: string; reason?: string; result?: TrialResultView; message?: string } | null;
+      if (res.ok && data?.mode === "ai" && data.result) setOutcome({ mode: "ai", reason: "", result: data.result });
+      else setOutcome(fallback(data?.reason ?? (res.status === 400 ? "invalid" : "unavailable")));
+    } catch {
+      setOutcome(fallback("unavailable"));
+    }
+  };
+  useEffect(() => {
+    if (phase === "making" && animDone && outcome) {
+      const t = setTimeout(() => setPhase("done"), 0);
+      return () => clearTimeout(t);
+    }
+  }, [phase, animDone, outcome]);
 
   const addPoints = (n: number) => {
     setPoints((p) => p + n);
@@ -168,8 +221,19 @@ export function TryOut() {
           {phase === "result" && <Result company={company} answers={answers} onNext={() => setPhase("write")} />}
 
           {phase === "write" && (
-            <section className="card space-y-4">
+            <section className="card relative space-y-4">
               <ShioriTalk mood="jersey-cheer" lines={["では、さっそく記事を書いてみましょう！", "最近うれしかった仕事を、1つだけ教えてください。話すように書けば大丈夫です。"]} />
+              {/* ロボットよけ。人には見えない */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                className="absolute -left-[9999px] h-px w-px opacity-0"
+              />
               <label className="block">
                 <span className="field-label">最近うれしかった仕事は？</span>
                 <textarea
@@ -187,7 +251,7 @@ export function TryOut() {
                 disabled={story.trim().length < 5}
                 onClick={() => {
                   addPoints(50);
-                  setPhase("making");
+                  void make();
                 }}
               >
                 ✨ 記事にしてもらう
@@ -195,11 +259,11 @@ export function TryOut() {
             </section>
           )}
 
-          {phase === "making" && <Making onDone={() => setPhase("done")} />}
+          {phase === "making" && <Making onDone={() => setAnimDone(true)} />}
 
           {phase === "done" && (
             <Done
-              opening={sampleOpening({ company, region, job, answer: story })}
+              outcome={outcome ?? { mode: "sample", reason: "unavailable", result: { ...sampleOpening({ company, region, job, answer: story }), cheer: "" } }}
               story={story}
               onAgain={() => {
                 setPhase("intro");
@@ -346,13 +410,18 @@ function Making({ onDone }: { onDone: () => void }) {
   );
 }
 
-function Done({ opening, story, onAgain }: { opening: ReturnType<typeof sampleOpening>; story: string; onAgain: () => void }) {
-  const quote = opening.paragraphs.findIndex((p) => p.startsWith("「"));
+function Done({ outcome, story, onAgain }: { outcome: Outcome; story: string; onAgain: () => void }) {
+  const opening = outcome.result;
+  const ai = outcome.mode === "ai";
+  const quote = ai ? -1 : opening.paragraphs.findIndex((p) => p.startsWith("「"));
+  const lines = ai
+    ? ["できました！あなたの答えから、AIが書き出しを作りました。", opening.cheer].filter(Boolean)
+    : ["できました！これが、あなたの記事の書き出しです。", SAMPLE_REASON[outcome.reason] ?? "あなたの言葉が、そのまま記事になっていますよ。"];
   return (
     <section className="space-y-4">
       <Confetti count={70} />
       <div className="card">
-        <ShioriTalk mood="jersey-done" lines={["できました！これが、あなたの記事の書き出しです。", "あなたの言葉が、そのまま記事になっていますよ。"]} />
+        <ShioriTalk mood="jersey-done" lines={lines} />
       </div>
 
       <article className="relative rotate-[-0.6deg] rounded-3xl border-2 border-line bg-surface p-5 shadow-[0_10px_0_var(--color-line)] sm:p-7">
@@ -374,7 +443,19 @@ function Done({ opening, story, onAgain }: { opening: ReturnType<typeof sampleOp
           </p>
         </div>
       </article>
-      <SampleNotice />
+      {ai ? (
+        <div className="space-y-2">
+          <p className="rounded-2xl border border-brand-soft bg-brand-soft px-3 py-2 text-sm text-brand-dark" role="note">
+            ✨ AIが書いた下書きです。事実と違うところがあれば、直してから使います。入力した内容は保存していません。
+          </p>
+          <details className="rounded-2xl bg-canvas px-4 py-2 text-sm">
+            <summary className="cursor-pointer font-bold">あなたの答え</summary>
+            <p className="mt-1 text-muted">{story}</p>
+          </details>
+        </div>
+      ) : (
+        <SampleNotice />
+      )}
 
       <div className="card space-y-2">
         <h3 className="font-black">📝 続きは、しおりがこう聞きます</h3>
