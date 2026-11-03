@@ -12,6 +12,14 @@ export interface InvitationView {
   organizationName?: string;
   /** 本人の確認用。一部を伏せて表示する */
   maskedEmail?: string;
+  /** 招待状の宛名・ひとこと・無料の札（2026-11-03）。SQL を流す前は無い */
+  letter?: InvitationLetter;
+}
+
+export interface InvitationLetter {
+  recipientName: string | null;
+  message: string | null;
+  isFree: boolean;
 }
 
 export function maskEmail(email: string): string {
@@ -28,10 +36,19 @@ export async function getInvitation(token: string): Promise<InvitationView> {
     email: string | null;
   }>();
   if (error || !data) return { status: "invalid" };
+  let letter: InvitationLetter | undefined;
+  if (data.status === "valid") {
+    // 招待状の中身。SQL（20261103130000_invitation_letter.sql）を流す前は読めないので、無しで続ける
+    const { data: l } = await createAdminSupabase()
+      .rpc("invitation_letter", { p_token_hash: hashInviteToken(token) })
+      .maybeSingle<{ recipient_name: string | null; message: string | null; is_free: boolean }>();
+    if (l) letter = { recipientName: l.recipient_name, message: l.message, isFree: l.is_free };
+  }
   return {
     status: data.status,
     organizationName: data.organization_name ?? undefined,
     maskedEmail: data.email ? maskEmail(data.email) : undefined,
+    letter,
   };
 }
 

@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { Confetti } from "@/components/fun";
+import { InviteLetter } from "@/components/InviteLetter";
 import { LoginStage } from "@/components/landing";
 import { Notice } from "@/components/ui";
-import { InviteWhat } from "./MockInvite";
-import type { AcceptResult } from "@/lib/auth/invitations";
+import type { AcceptResult, InvitationLetter } from "@/lib/auth/invitations";
 import { acceptInvite } from "./actions";
 
 const FAILED: Record<Exclude<Exclude<AcceptResult, { ok: true }>["reason"], "valid">, string> = {
@@ -15,7 +14,7 @@ const FAILED: Record<Exclude<Exclude<AcceptResult, { ok: true }>["reason"], "val
   error: "受け付けられませんでした。時間をおいてもう一度お試しください。",
 };
 
-export function AcceptInvite({ token, organizationName, maskedEmail }: { token: string; organizationName: string; maskedEmail: string }) {
+export function AcceptInvite({ token, organizationName, maskedEmail, letter }: { token: string; organizationName: string; maskedEmail: string; letter?: InvitationLetter }) {
   const [result, setResult] = useState<AcceptResult | null>(null);
   const [pending, start] = useTransition();
 
@@ -30,11 +29,8 @@ export function AcceptInvite({ token, organizationName, maskedEmail }: { token: 
   }
 
   return (
-    <LoginStage mood="bow" title={<>{organizationName}様、<br />ようこそ！</>} lines={["お待ちしていました！案内役のしおりです。", "いっしょに、AIに紹介される会社になりましょう！"]}>
-      <Confetti count={50} />
-      <div className="card space-y-4 p-6">
-        <h2 className="text-xl font-black">🎁 ご招待が届いています</h2>
-        <InviteWhat />
+    <InviteLetter organizationName={organizationName} recipientName={letter?.recipientName} message={letter?.message} isFree={letter?.isFree ?? false}>
+      <div className="space-y-3">
         <p className="text-sm text-muted">
           入力した内容は、記事を作るためにAIへ送信します。他の会社に見られることはありません。利用規約とプライバシーの説明は準備中です。
         </p>
@@ -42,8 +38,13 @@ export function AcceptInvite({ token, organizationName, maskedEmail }: { token: 
         {result && !result.ok && <Notice tone="danger">{FAILED[result.reason === "valid" ? "error" : result.reason]}</Notice>}
         <button type="button" className="btn-primary min-h-14 w-full text-lg" disabled={pending} onClick={() => start(async () => setResult(await acceptInvite(token)))}>
           {pending ? "受付中…" : "同意してはじめる"}
+          {!pending && (
+            <span className="inline-block animate-nudge" aria-hidden>
+              →
+            </span>
+          )}
         </button>
       </div>
-    </LoginStage>
+    </InviteLetter>
   );
 }

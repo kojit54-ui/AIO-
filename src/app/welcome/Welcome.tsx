@@ -24,9 +24,14 @@ export function Welcome() {
       <header className="sticky top-0 z-30 border-b border-line/70 bg-canvas/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6">
           <Logo />
-          <Link href={startHref} className="btn-primary min-h-10 px-4 py-1.5 text-sm">
+          <div className="flex items-center gap-3">
+          <Link href="/shiori" className="hidden text-sm font-bold text-brand-dark underline-offset-4 hover:underline sm:inline">
+            しおりって？
+          </Link>
+          <Link href={startHref} className="btn-primary min-h-10 whitespace-nowrap px-4 py-1.5 text-sm">
             {signedIn ? "続きから" : "ログイン"}
           </Link>
+          </div>
         </div>
       </header>
 
@@ -38,7 +43,14 @@ export function Welcome() {
       <ForYou />
       <FinalCall startHref={startHref} startLabel={startLabel} signedIn={signedIn} />
 
-      <footer className="mx-auto max-w-6xl px-4 pb-6 pt-10 text-center text-sm text-muted sm:px-6">株式会社コタム</footer>
+      <footer className="mx-auto max-w-6xl space-y-1 px-4 pb-6 pt-10 text-center text-sm text-muted sm:px-6">
+        <p>
+          <Link href="/shiori" className="font-bold text-brand-dark underline">
+            案内役「しおり」の自己紹介
+          </Link>
+        </p>
+        <p>株式会社コタム</p>
+      </footer>
     </div>
   );
 }

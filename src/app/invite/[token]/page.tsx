@@ -31,5 +31,5 @@ export default async function InvitePage({ params }: { params: Promise<{ token: 
       </main>
     );
   }
-  return <AcceptInvite token={token} organizationName={inv.organizationName} maskedEmail={inv.maskedEmail} />;
+  return <AcceptInvite token={token} organizationName={inv.organizationName} maskedEmail={inv.maskedEmail} letter={inv.letter} />;
 }
