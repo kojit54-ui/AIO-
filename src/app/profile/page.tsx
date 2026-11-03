@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PROFILE_FIELDS } from "@/components/CoachForms";
 import { ProfileSetup } from "@/components/ProfileSetup";
 import { EmptyState, Notice, formatDate } from "@/components/ui";
@@ -12,6 +12,19 @@ export default function ProfilePage() {
   const { db, user, api } = useStore();
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  // 記事を書く画面から来たときは、確かめたあとにそこへ戻れるようにする
+  const [returnTo, setReturnTo] = useState<string | null>(null);
+  useEffect(() => {
+    const t = setTimeout(() => {
+      try {
+        const v = sessionStorage.getItem("aio.returnTo");
+        if (v?.startsWith("/prototype/write/")) setReturnTo(v);
+      } catch {
+        // 読めなくても、確かめる画面は使える
+      }
+    }, 0);
+    return () => clearTimeout(t);
+  }, []);
   if (!user) return null;
   const org = db.organizations.find((o) => o.id === user.organizationIds[0]);
   if (user.role !== "client_member" || !org) return <main className="page"><EmptyState title="この画面は顧客担当者向けです" /></main>;
@@ -36,7 +49,24 @@ export default function ProfilePage() {
         ))}
       </dl>
       {org.profileApprovedAt ? (
-        <Notice tone="ok" title={`${formatDate(org.profileApprovedAt)}に確認済みです`} />
+        <>
+          <Notice tone="ok" title={`${formatDate(org.profileApprovedAt)}に確認済みです`} />
+          {returnTo && (
+            <Link
+              href={returnTo}
+              className="btn-primary min-h-14 px-6 text-lg"
+              onClick={() => {
+                try {
+                  sessionStorage.removeItem("aio.returnTo");
+                } catch {
+                  // 消せなくても戻れる
+                }
+              }}
+            >
+              記事づくりに戻る →
+            </Link>
+          )}
+        </>
       ) : (
         <button
           type="button"
