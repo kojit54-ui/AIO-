@@ -69,3 +69,43 @@ describe("記事の質問の記入例", () => {
     expect(Object.keys(ex).sort()).toEqual([...QUESTIONS, FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION].map((x) => x.id).sort());
   });
 });
+
+describe("記事の質問の「AIの案」（サーバー）", () => {
+  /** 必要な呼び出しだけを返す、Supabase のつくりもの */
+  function fakeDb(tables: Record<string, unknown>) {
+    const query = (result: unknown) => {
+      const q: Record<string, unknown> = {};
+      for (const m of ["select", "eq", "is", "update"]) q[m] = () => q;
+      q.maybeSingle = async () => ({ data: result, error: null });
+      q.single = async () => ({ data: result, error: null });
+      q.then = (ok: (v: unknown) => unknown) => Promise.resolve({ data: result, error: null }).then(ok);
+      return q;
+    };
+    return {
+      auth: { getUser: async () => ({ data: { user: { id: "u1" } } }) },
+      from: (t: string) => query(tables[t]),
+      rpc: (name: string) => query(name === "start_hearing_ai" ? { id: "run1", status: "queued" } : null),
+    } as never;
+  }
+
+  it("会社のまとめがまだ無くても、ヒアリングの答えから案を出す", async () => {
+    const { runAnswerIdeas } = await import("./hearingAi");
+    let sent = "";
+    const provider = { name: "openai", complete: async (r: { user: string }) => ((sent = r.user), { text: '{"ideas":["案1","案2","案3"]}', usage: { inputTokens: 1, outputTokens: 1 } }) } as never;
+    const db = fakeDb({
+      organizations: { profile: null },
+      hearing_answers: [{ question_id: "business", text: "印刷会社。企業のブランディングも", follow_ups: [], is_draft: false, deep_dive_done: true }],
+      generation_runs: [{ id: "run1" }],
+    });
+    const r = await runAnswerIdeas({ user: db, admin: db, provider, isSample: false }, { organizationId: "o1", keyword: "印刷会社 ブランディング", question: "どんな相談がありましたか", goal: "共感", idempotencyKey: "k" });
+    expect(r).toEqual({ ok: true, ideas: ["案1", "案2", "案3"], sample: false });
+    expect(sent).toContain("印刷会社。企業のブランディングも");
+  });
+
+  it("ヒアリングにも答えていなければ、先に答えるよう伝える", async () => {
+    const { runAnswerIdeas } = await import("./hearingAi");
+    const db = fakeDb({ organizations: { profile: null }, hearing_answers: [] });
+    const r = await runAnswerIdeas({ user: db, admin: db, provider: {} as never, isSample: true }, { organizationId: "o1", keyword: "k", question: "q", goal: "", idempotencyKey: "k" });
+    expect(r.ok).toBe(false);
+  });
+});

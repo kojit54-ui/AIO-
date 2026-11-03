@@ -271,9 +271,17 @@ export async function runAnswerIdeas(deps: HearingDeps, req: AnswerIdeasRequest)
   if (error || !org) return fail(404, "not_found", "会社が見つかりません");
   const { questionExamples: _old, ...profile } = (org.profile as CompanyProfile | null) ?? ({} as CompanyProfile);
   void _old;
-  if (!profile.business) return fail(400, "invalid_input", "先に「会社のことを教える」に答えてください");
+  // 会社の情報（まとめ）がまだ無くても、ヒアリングの答えがあれば使う（2026-11-03 答えたのに「先に答えて」と出ていた）
+  let hearing: ReturnType<typeof hearingForPrompt> | undefined;
+  if (!profile.business) {
+    const { data: rows } = await db.from("hearing_answers").select("*").eq("organization_id", req.organizationId);
+    const answers: Record<string, HearingAnswer> = {};
+    for (const r of (rows ?? []) as HearingAnswerRow[]) answers[r.question_id] = answerFromDb(r);
+    hearing = hearingForPrompt(answers, []);
+    if (!Object.keys(hearing).length) return fail(400, "invalid_input", "先に「会社のことを教える」に答えてください");
+  }
 
-  const input = { profile, keyword, question, goal };
+  const input = { profile: profile.business ? profile : { hearing }, keyword, question, goal };
   const b = await begin(deps, req.organizationId, req.idempotencyKey, JSON.stringify(input).length);
   if (!b.ok) return b;
   const signal = AbortSignal.timeout(FOLLOWUP_TIMEOUT_MS);
