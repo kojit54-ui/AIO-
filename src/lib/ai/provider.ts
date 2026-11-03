@@ -48,6 +48,8 @@ export class AiProviderError extends Error {
   constructor(
     public readonly code: "auth" | "billing" | "rate_limited" | "refused" | "truncated" | "unavailable",
     message: string,
+    /** 提供元が返した状態コード（分かるときだけ）。原因を調べるために記録する */
+    public readonly status?: number,
   ) {
     super(message);
   }

@@ -5,7 +5,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getAiSetup } from "@/lib/ai/config";
 import { estimateCostYen } from "@/lib/ai/cost";
-import { type AiUsage, failureReason } from "@/lib/ai/provider";
+import { AiProviderError, type AiUsage, failureReason } from "@/lib/ai/provider";
 import { sampleTextProvider } from "@/lib/ai/providers/sample";
 import { createAdminSupabase } from "@/lib/supabase/admin";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
@@ -19,6 +19,14 @@ const TIMEOUT_MS = 30_000;
 const MAX_BODY_BYTES = 10_000;
 /** 開いてからこれより早い送信はロボットとみなす */
 const MIN_ELAPSED_MS = 8_000;
+/** 考える量も出力に数える提供元があるので、短い書き出しでも余裕を持たせる（docs/LESSONS.md 2026-10-28） */
+const MAX_OUTPUT_TOKENS = 4000;
+
+/** 失敗の種類。状態コードが分かるときは付けて残す（例：unavailable_400）。原因を管理画面で見られるように */
+function failureCode(e: unknown, signal: AbortSignal): string {
+  if (e instanceof AiProviderError && e.status) return `${e.code}_${e.status}`;
+  return failureReason(e, signal);
+}
 
 const sample = (reason: string) => NextResponse.json({ mode: "sample", reason });
 
@@ -76,7 +84,7 @@ export async function POST(request: NextRequest) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const res = await provider.complete({ kind: "trial", system: TRIAL_SYSTEM_PROMPT, user, maxOutputTokens: 1500, quality: "draft", signal: controller.signal });
+    const res = await provider.complete({ kind: "trial", system: TRIAL_SYSTEM_PROMPT, user, maxOutputTokens: MAX_OUTPUT_TOKENS, quality: "draft", signal: controller.signal });
     usage = res.usage;
     const { result, reason } = parseTrialResult(res.text, input);
     if (!result) {
@@ -86,7 +94,7 @@ export async function POST(request: NextRequest) {
     await finish("succeeded", null);
     return NextResponse.json({ mode: "ai", result });
   } catch (e) {
-    await finish("failed", failureReason(e, controller.signal));
+    await finish("failed", failureCode(e, controller.signal));
     return sample("unavailable");
   } finally {
     clearTimeout(timer);

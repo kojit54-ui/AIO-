@@ -54,6 +54,6 @@ function toProviderError(e: unknown): Error {
   }
   if (e instanceof Anthropic.RateLimitError) return new AiProviderError("rate_limited", "AIの利用上限に達しました。少し待ってから再試行してください");
   if (e instanceof Anthropic.APIUserAbortError) return e;
-  if (e instanceof Anthropic.APIError) return new AiProviderError("unavailable", `AIの呼び出しに失敗しました（${e.status ?? "接続エラー"}）`);
+  if (e instanceof Anthropic.APIError) return new AiProviderError("unavailable", `AIの呼び出しに失敗しました（${e.status ?? "接続エラー"}）`, e.status);
   return e instanceof Error ? e : new Error(String(e));
 }
