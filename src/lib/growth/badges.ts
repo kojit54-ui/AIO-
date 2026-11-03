@@ -2,7 +2,7 @@
 // どれも実際の記録（記事・チェック・取り込み・つながり）から出す。作り話の実績にはしない。
 
 import type { MockDb } from "@/mock/store";
-import { writingStreak } from "@/components/MonthlyGrowth";
+import { writingStreak } from "@/lib/growth/monthly";
 import { localHearing } from "./localKnowledge";
 
 export interface Badge {

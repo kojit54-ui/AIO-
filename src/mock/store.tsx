@@ -65,6 +65,8 @@ export interface MockDb {
   aioMentions?: AioMention[];
   /** Search Console とのつながりと、最後に読んだ数字 */
   searchConsole?: SearchConsoleLink[];
+  /** ログインしている人が、しおり通信のメールを受け取らないと決めているか */
+  newsletterOptOut?: boolean;
   draftAnswers: Record<string, { answers: Answer[]; step: number }>;
 }
 
@@ -652,6 +654,13 @@ function createApi(
     /** 古くなった数字を読み直す（サンプルでは何もしない） */
     async refreshSearchConsole(orgId: string) {
       requireOrg(requireUser(), orgId);
+    },
+
+    /** しおり通信のメールを受け取るか */
+    async setNewsletterOptOut(optOut: boolean) {
+      requireUser();
+      await delay(200);
+      commit({ ...getDb(), newsletterOptOut: optOut });
     },
 
     /** ChatGPT などのまとめを読み取って、会社の知識の候補にする（サンプル：【見出し】ごとに分けるだけ） */
