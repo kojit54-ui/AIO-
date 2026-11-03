@@ -6,8 +6,8 @@ import { ShioriTalk } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { useStore } from "@/mock/store";
-import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
-import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, collectedAio, deepDiveWhy, nextDeepDive, pendingDeepDive, resumeIndex, withNewText, MAX_ANSWER } from "@/prototype/growth";
+import { AioMeter, AioWhy, Cheer, WhyAio } from "@/prototype/components";
+import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, collectedAio, deepDiveWhy, nextDeepDive, pendingDeepDive, resumeIndex, withNewText, MAX_ANSWER, MAX_AI_DEEP_DIVES, MAX_DEEP_DIVES, hearingCheer, hearingProgress } from "@/prototype/growth";
 import { growActions, useGrow, useGrowSync } from "@/prototype/store";
 import { type TryCarry, clearTryCarry, loadTryCarry } from "@/lib/tryoutCarry";
 
@@ -68,6 +68,12 @@ export default function HearingPage() {
   const saved: HearingAnswer = g.answers[q.id] ?? { questionId: q.id, text: "", followUps: [] };
   const activeDeep = deep ?? (step === null && !saved.draft ? nextDeepDive(q, saved) : null);
   const value = step === null && !activeDeep ? saved.text : text;
+  // 深掘りの何回目か。深掘りでもバーと励ましが進むようにする（2026-11-03 田村さん「バーが増えないと嫌になる」）
+  const maxDeep = ai ? MAX_AI_DEEP_DIVES : MAX_DEEP_DIVES;
+  const deepNo = activeDeep ? saved.followUps.length + (pendingDeepDive(saved) ? 0 : 1) : 0;
+  const progress = hearingProgress(current, total, deepNo, maxDeep);
+  const answeredTimes = Object.values(g.answers).reduce((n, a) => n + (a.text.trim() && !a.draft ? 1 : 0) + a.followUps.filter((f) => f.answer.trim()).length, 0);
+  const cheerLine = hearingCheer({ remaining: total - current, deepNo, count: answeredTimes });
 
   function go(to: number, cheerFor: AioPoint | null = null) {
     setCheer(cheerFor);
@@ -155,14 +161,25 @@ export default function HearingPage() {
         <p className="text-muted">文章を考える必要はありません。短い言葉や箇条書きで大丈夫です。分からない問いは「あとで答える」で進めます。</p>
       </div>
 
-      <div>
-        <div className="mb-1 flex justify-between text-sm text-muted">
-          <span>
-            {current + 1} / {total}
+      <div className="space-y-2">
+        <div className="flex items-end justify-between gap-2 text-sm text-muted">
+          <span className="font-bold text-ink">
+            {current + 1}問目 / {total}問{deepNo > 0 && <span className="font-normal text-muted">（もう少しだけ {deepNo}回目）</span>}
           </span>
-          <span aria-live="polite">答えは自動で保存されます</span>
+          <span key={answeredTimes} className="animate-pop rounded-full bg-sun-soft px-3 py-0.5 font-bold text-ink" aria-label={`答えた回数 ${answeredTimes}回`}>
+            ⭐ {answeredTimes}
+          </span>
         </div>
-        <ProgressBar value={current + 1} max={total} label="答えた進み具合" />
+        <div className="flex gap-1" role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={Math.round(progress * 10) / 10} aria-label="答えた進み具合">
+          {HEARING_QUESTIONS.map((x, i) => (
+            <div key={x.id} className="h-3 flex-1 overflow-hidden rounded-full bg-line">
+              <div className="h-full rounded-full bg-brand transition-[width] duration-700" style={{ width: `${Math.min(1, Math.max(0, progress - i)) * 100}%` }} />
+            </div>
+          ))}
+        </div>
+        <p key={cheerLine} className="animate-rise text-sm font-bold text-brand-dark" aria-live="polite">
+          {cheerLine}
+        </p>
       </div>
 
       {carry && (() => {
@@ -226,7 +243,7 @@ export default function HearingPage() {
             <ShioriTalk
               mood="think"
               className="rounded-2xl bg-ok-soft px-3 pt-2"
-              lines={[`もう少しくわしく教えてください（${saved.followUps.length + (pendingDeepDive(saved) ? 0 : 1)}回目の質問）`, `なぜ聞くの？　${deepDiveWhy(q, saved)}`]}
+              lines={[`いいですね！もう少しだけ教えてください（${deepNo}回目・多くて${maxDeep}回まで）`, `なぜ聞くの？　${deepDiveWhy(q, saved)}`]}
             />
             <div>
               <label htmlFor="answer" className="field-label text-lg">
@@ -272,13 +289,14 @@ export default function HearingPage() {
               戻る
             </button>
             <button type="button" className="btn-secondary" disabled={thinking} onClick={() => (activeDeep ? submit("") : go(current + 1))}>
-              {activeDeep ? "この質問は飛ばす" : "あとで答える"}
+              {activeDeep ? "この話はここまでにする" : "あとで答える"}
             </button>
           </div>
           <button type="submit" className="btn-primary" disabled={!value.trim() || thinking}>
             {thinking ? "しおりが答えを読んでいます…" : "次へ"}
           </button>
         </div>
+        <p className="text-sm text-muted">答えは自動で保存されています。途中でやめても、次は続きから始まります。</p>
       </form>
 
       <AioMeter points={HEARING_QUESTIONS.map((x) => x.aio)} collected={collectedAio(HEARING_QUESTIONS, (id) => !!g.answers[id]?.text.trim())} />
