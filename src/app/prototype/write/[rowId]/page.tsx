@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { NotFound, Notice, PageSkeleton } from "@/components/ui";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
 import { KIND_LABEL, articleQuestions, collectedAio, computeGrowth } from "@/prototype/growth";
 import { growActions, resolveRowId, useGrow, useGrowSync } from "@/prototype/store";
-import { useStore } from "@/mock/store";
+import { ApiError, useStore } from "@/mock/store";
+import { WaitingScreen } from "@/components/WaitingScreen";
+import { QUESTIONS } from "@/mock/data";
+import { toArticleAnswers } from "@/prototype/articleBridge";
 import { AIO_POINTS } from "@/lib/aio";
 import { SAMPLE_ANSWER_IDEAS, insertIdea } from "@/lib/answerIdeas";
 import { SAMPLE_LABEL } from "@/prototype/growth";
@@ -18,7 +21,10 @@ export default function WritePage() {
   const { rowId } = useParams<{ rowId: string }>();
   const g = useGrow();
   const sync = useGrowSync();
-  const { user } = useStore();
+  const { user, db, api } = useStore();
+  const router = useRouter();
+  const [writing, setWriting] = useState(false);
+  const [writeError, setWriteError] = useState<string | null>(null);
   const orgId = sync.mode === "remote" ? user?.organizationIds[0] : undefined;
   const [stepState, setStep] = useState<number | null>(null);
   const [draft, setDraft] = useState<Record<string, string> | null>(null);
@@ -65,6 +71,38 @@ export default function WritePage() {
         ) : (
           <>
             <AioMeter points={qs.map((x) => x.aio)} collected={collectedAio(qs, (id) => !!answers[id]?.trim())} />
+            {orgId ? (
+              <WriteWithAi
+                rowId={row.id}
+                approved={!!db.organizations.find((o) => o.id === orgId)?.profileApprovedAt}
+                busy={writing}
+                error={writeError}
+                existing={(() => {
+                  const prev = articleFor(row.id);
+                  const a = prev ? db.articles.find((x) => x.id === prev) : undefined;
+                  return a?.currentVersionId ? a.id : null;
+                })()}
+                onReview={() => setStep(0)}
+                onWrite={async () => {
+                  setWriting(true);
+                  setWriteError(null);
+                  try {
+                    // 失敗してやり直すときは、前に作った記事をそのまま使う（同じ記事を2本作らない）
+                    const prev = articleFor(row.id);
+                    const id = prev && db.articles.some((x) => x.id === prev) ? prev : (await api.createArticle({ customTheme: { title: row.keyword, readerProblem: row.question || `「${row.keyword}」について知りたい人` } })).id;
+                    rememberArticle(row.id, id);
+                    await api.saveAnswers(id, toArticleAnswers(answers), QUESTIONS.length - 1);
+                    if (row.status === "todo") growActions.setRowStatus(row.id, "writing");
+                    await api.generateOutline(id);
+                    router.push(`/articles/${id}`);
+                  } catch (e) {
+                    setWriting(false);
+                    setWriteError(e instanceof ApiError ? e.message : "AIが記事を書けませんでした。答えは残っています。もう一度お試しください");
+                  }
+                }}
+              />
+            ) : (
+              <>
             <Notice tone="info" title="おつかれさまでした！質問はここまでです">
               本番では、ここからAIが記事の下書き（見出し・本文・画像）を作ります。試作では、この先を省略しています。
             </Notice>
@@ -76,6 +114,8 @@ export default function WritePage() {
                 答えを見直す
               </button>
             </div>
+              </>
+            )}
           </>
         )}
         <div className="flex flex-wrap gap-2">
@@ -245,6 +285,72 @@ function AnswerIdeas({ orgId, keyword, question, point, onPick }: { orgId?: stri
           )}
         </div>
       )}
+    </div>
+  );
+}
+
+// 書く記事リストの1本と、AIが書いた記事をこのブラウザで結びつけ、2回目は同じ記事を開く
+const ARTICLE_KEY = (rowId: string) => `aio.rowArticle.${rowId}`;
+function articleFor(rowId: string): string | null {
+  try {
+    return localStorage.getItem(ARTICLE_KEY(rowId));
+  } catch {
+    return null;
+  }
+}
+function rememberArticle(rowId: string, articleId: string) {
+  try {
+    localStorage.setItem(ARTICLE_KEY(rowId), articleId);
+  } catch {
+    // 覚えられなくても、記事は作れている
+  }
+}
+
+/**
+ * 質問に答え終わったあと、AIに記事を書いてもらう（2026-11-03 田村さん：試作のまま「省略」と出ていた）。
+ * 会社の情報を確かめる前は、先にそちらへ案内する（確かめた会社の情報だけを記事に使うため）
+ */
+function WriteWithAi({ rowId, approved, busy, error, existing, onWrite, onReview }: { rowId: string; approved: boolean; busy: boolean; error: string | null; existing: string | null; onWrite: () => void; onReview: () => void }) {
+  if (!approved) {
+    return (
+      <div className="card space-y-3 border-2 border-sun">
+        <p className="text-lg font-black">あと一歩です！先に会社の情報を確かめてください（1分）</p>
+        <p className="text-muted">「会社のことを教える」の答えを、AIが会社の情報にまとめています。内容を確かめた会社の情報だけを記事に使います。確かめたら、この画面に戻って「AIに記事を書いてもらう」を押してください。</p>
+        <Link
+          href="/profile"
+          className="btn-primary"
+          onClick={() => {
+            try {
+              sessionStorage.setItem("aio.returnTo", `/prototype/write/${rowId}`);
+            } catch {
+              // 戻り先を覚えられなくても、確かめる画面は開ける
+            }
+          }}
+        >
+          会社の情報を確かめる →
+        </Link>
+      </div>
+    );
+  }
+  return (
+    <div className="card space-y-3 border-2 border-brand">
+      {busy && <WaitingScreen label="AIが記事の見出しを考えています" note="答えてくれた内容から、記事の見出しを作っています。1分ほどかかります。" />}
+      <p className="text-lg font-black">🎉 おつかれさまでした！質問はここまでです</p>
+      <p className="text-muted">答えてくれた内容から、AIが記事を書きます。まず見出しを作るので、確かめてから本文に進みます。</p>
+      {error && <Notice tone="danger" title={error} />}
+      <div className="flex flex-wrap gap-2">
+        <button type="button" className="btn-primary min-h-14 px-6 text-lg" onClick={onWrite} disabled={busy}>
+          ✨ AIに記事を書いてもらう
+        </button>
+        {existing && (
+          <Link href={`/articles/${existing}`} className="btn-secondary">
+            前に書いてもらった記事を開く
+          </Link>
+        )}
+        <button type="button" className="btn-secondary" onClick={onReview} disabled={busy}>
+          答えを見直す
+        </button>
+      </div>
     </div>
   );
 }
