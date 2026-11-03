@@ -145,3 +145,14 @@ describe("ヒアリングの進み具合と励まし", () => {
     expect(hearingCheer({ remaining: 5, deepNo: 0, count: 1 })).toContain("5問");
   });
 });
+
+describe("記事の質問の記入例", () => {
+  it("本物の会社では、リフォーム向けでない記入例を使う", async () => {
+    const { articleQuestions } = await import("./growth");
+    const row = { keyword: "印刷会社 ブランディング", question: "", kind: "pillar" } as never;
+    expect(articleQuestions(row)[0].example).toContain("脱衣所");
+    const generic = articleQuestions(row, { generic: true });
+    expect(generic.map((q) => q.example).join("")).not.toMatch(/脱衣所|住まい|お風呂/);
+    expect(generic.every((q) => q.example.startsWith("例："))).toBe(true);
+  });
+});

@@ -392,8 +392,21 @@ export interface ArticleQuestion {
 }
 
 /** 1本の記事を書くときの一問一答。キーワードの「読む人が知りたいこと」に合わせて言い方を変える */
-export function articleQuestions(row: KeywordIdea): ArticleQuestion[] {
-  return [
+/**
+ * どの業種でも当てはまる記入例。本物の会社（試作の架空会社でない）では、リフォーム向けの例だと
+ * 「うちの話じゃない」と感じるので、こちらを使う（2026-11-03 昇文堂さんで「脱衣所が寒い」が出ていた）
+ */
+export const GENERIC_ARTICLE_EXAMPLES: Record<string, string> = {
+  a1: "例：去年の秋、地元の会社の社長から「何から頼めばいいか分からない」と相談された",
+  a2: "例：・まず今の困りごとを聞いた\n・できること、できないことを説明した\n・見積もりを2案出した",
+  a3: "例：「思っていたより早く、分かりやすかった」と言われた。問い合わせが前より増えた",
+  a4: "例：安さだけで選ぶと、あとで直す手間とお金がかかることがある",
+  a6: "例：「相談してよかった」と言われた。相手の言葉をそのまま形にすることを大切にした",
+  a5: "例：まずは電話かフォームで、気軽に相談してほしい",
+};
+
+export function articleQuestions(row: KeywordIdea, opts: { generic?: boolean } = {}): ArticleQuestion[] {
+  const qs: ArticleQuestion[] = [
     { id: "a1", label: `「${row.question || row.keyword}」について、お客様からどんな相談がありましたか`, aio: "experience", example: "例：去年の冬、70代のご夫婦から「脱衣所が寒い」と相談された", tip: "実際にあった1件を思い出すと書きやすいです。名前は書かなくて大丈夫です。" },
     { id: "a2", label: "そのとき、どう答えましたか・どう対応しましたか", aio: "qa", example: "例：・まず現地で窓と床を見た\n・内窓を提案した\n・工事は1日", tip: "箇条書きで大丈夫です。順番どおりに並べてください。" },
     { id: "a3", label: "結果はどうでしたか", aio: "numbers", example: "例：お風呂に入る前の寒さが気にならなくなったと言われた", tip: "お客様の言葉や、分かる範囲の数字があると記事の説得力が上がります。" },
@@ -401,6 +414,7 @@ export function articleQuestions(row: KeywordIdea): ArticleQuestion[] {
     { id: "a6", label: "お客様が喜んでくれた言葉や、この仕事で大切にしたことはありますか", aio: "feeling", example: "例：「朝のお風呂が怖くなくなった」と言われた。お年寄りの家なので段差に特に気をつけた", tip: "そのときの気持ちや、お客様の言葉そのままが、読んだ人の心を動かします。" },
     { id: "a5", label: "読んだ人に、次に何をしてほしいですか", aio: "action", example: "例：無料の住まい点検に申し込んでほしい", tip: "電話、フォーム、来店など。1つに絞ると伝わりやすいです。" },
   ];
+  return opts.generic ? qs.map((q) => ({ ...q, example: GENERIC_ARTICLE_EXAMPLES[q.id] ?? q.example })) : qs;
 }
 
 

@@ -34,7 +34,7 @@ export default function WritePage() {
   const row = g.plan?.rows.find((r) => r.id === rowId) ?? g.plan?.rows.find((r) => r.id === resolveRowId(rowId));
   if (!g.plan || !row) return <NotFound what="書く記事" />;
 
-  const qs = articleQuestions(row);
+  const qs = articleQuestions(row, { generic: !!orgId });
   const answers = draft ?? g.articleAnswers[row.id] ?? {};
   // 「続きを書く」で戻ったときは、まだ答えていない最初の問いから。全部答えていれば最後の画面
   const firstOpen = qs.findIndex((x) => !answers[x.id]?.trim());
