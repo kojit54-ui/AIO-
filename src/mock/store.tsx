@@ -663,6 +663,13 @@ function createApi(
       commit({ ...getDb(), newsletterOptOut: optOut });
     },
 
+    /** しおり通信を自分あてに試しに送る（試作では送らず、送った形にだけする） */
+    async sendTestNewsletter() {
+      requireUser();
+      await delay(800);
+      return { to: "（試作なので、実際には送りません）" };
+    },
+
     /** ChatGPT などのまとめを読み取って、会社の知識の候補にする（サンプル：【見出し】ごとに分けるだけ） */
     async readImport(orgId: string, text: string) {
       const user = requireUser();

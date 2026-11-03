@@ -543,6 +543,12 @@ export class RemoteBackend {
       await this.load();
     },
 
+    sendTestNewsletter: async () => {
+      this.requireUser();
+      const json = await this.post<{ to?: string }>("/api/newsletter/test", {}, "送れませんでした。少し待ってからもう一度お試しください");
+      return { to: json.to ?? "" };
+    },
+
     refreshSearchConsole: async (orgId) => {
       this.requireUser();
       const res = await fetch(`/api/organizations/${encodeURIComponent(orgId)}/search-console/refresh`, { method: "POST" }).catch(() => null);
