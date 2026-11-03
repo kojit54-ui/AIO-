@@ -13,7 +13,7 @@ import { AIO_CHECK_GROUPS, AIO_CHECK_LIST, aioCheckLabel } from "@/lib/aioCheck"
 import { useStore } from "@/mock/store";
 import type { AioCheck, AioCheckKey, AioPoint, Answer, Article, ArticleVersion } from "@/types/domain";
 
-const AIO_KEYS = new Set<string>(["experience", "numbers", "entity", "qa", "comparison", "expertise", "action", "trust"]);
+const AIO_KEYS = new Set<string>(["experience", "numbers", "entity", "qa", "comparison", "expertise", "feeling", "action", "trust"]);
 
 /** 項目のしるし。AIOの材料は材料のアイコン、ほかは決まった記号 */
 function CheckIcon({ k, className = "h-5 w-5" }: { k: AioCheckKey; className?: string }) {
@@ -293,8 +293,8 @@ export function AioCheckBanner({ ctl, dirty }: { ctl: AioCheckControl; dirty: bo
         <p className="text-lg font-black">{asking ? `AIから質問が${forCurrent.questions.length}つ届いています` : "ブログに載せる前に、AIOのチェックをしましょう"}</p>
         <p className="text-sm">
           {asking
-            ? `答えると、AIに紹介されやすい記事になります。${open < forCurrent.questions.length ? `（あと${open}問）` : ""}`
-            : "AIの検索に紹介されやすいか、11の項目をAIがチェックします。足りない所は、AIが質問します。"}
+            ? `答えると、AIにも読んだ人にも選ばれやすい記事になります。${open < forCurrent.questions.length ? `（あと${open}問）` : ""}`
+            : `AIに選ばれて、読んだ人の心が動く記事か、${AIO_CHECK_LIST.length}の項目をAIがチェックします。足りない所は、AIが質問します。`}
         </p>
       </div>
       <button

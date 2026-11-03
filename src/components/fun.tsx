@@ -238,6 +238,17 @@ const SCENES: Record<AioPoint, React.ReactNode> = {
       </text>
     </>
   ),
+  feeling: (
+    <>
+      <Secretary x={10} mood="joy" />
+      <g className="animate-float" style={{ transformBox: "fill-box" }}>
+        <path d="M128 100s-30-18-30-40a16 16 0 0 1 30-8 16 16 0 0 1 30 8c0 22-30 40-30 40z" fill="var(--color-danger)" opacity={0.85} />
+      </g>
+      <text x={146} y={34} fontSize={20} className="animate-float" style={{ animationDelay: ".5s", transformBox: "fill-box" }}>
+        ✨
+      </text>
+    </>
+  ),
   action: (
     <>
       <Secretary x={14} mood="cheer" />

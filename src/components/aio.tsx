@@ -36,6 +36,8 @@ const ICON_PATHS: Record<AioPoint, React.ReactNode> = {
   comparison: <path d="M12 4v16M6 20h12M5 8h14M5 8l-2.5 5h5zM19 8l-2.5 5h5z" />,
   // 電球
   expertise: <path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z" />,
+  // ハート
+  feeling: <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" />,
   // 矢印
   action: <path d="M4 12h14M13 6l6 6-6 6" />,
   // 盾
@@ -61,11 +63,11 @@ export function AioWhy({ point }: { point: AioPoint }) {
       </span>
       <p>
         <span className="block font-bold text-ok">なぜ聞くの？　「{p.label}」が集まるからです</span>
-        <span className="mt-1 flex gap-2">
+        <span className="mt-1 flex flex-col items-start gap-0.5 sm:flex-row sm:gap-2">
           <span className="h-6 shrink-0 self-start whitespace-nowrap rounded-full bg-surface px-2 text-xs font-black leading-6 text-brand-dark">AIに選ばれる</span>
           <span>{p.why}</span>
         </span>
-        <span className="mt-1 flex gap-2">
+        <span className="mt-1 flex flex-col items-start gap-0.5 sm:flex-row sm:gap-2">
           <span className="h-6 shrink-0 self-start whitespace-nowrap rounded-full bg-sun px-2 text-xs font-black leading-6 text-ink">人に選ばれる</span>
           <span>{p.people}</span>
         </span>
@@ -187,7 +189,7 @@ export function AioMeter({ points, collected }: { points: AioPoint[]; collected:
       {all.length > 0 && have === all.length && (
         <div className="flex animate-pop items-center gap-3 rounded-2xl bg-sun-soft p-2">
           <Shiori mood="right" className="h-24 w-auto shrink-0" />
-          <p className="font-bold">材料がぜんぶそろいました！AIに紹介されやすい記事になります。</p>
+          <p className="font-bold">材料がぜんぶそろいました！AIにも人にも選ばれる記事になります。</p>
         </div>
       )}
       <div className="h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>

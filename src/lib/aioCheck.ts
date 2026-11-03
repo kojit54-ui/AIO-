@@ -13,6 +13,7 @@ const ASK: Record<AioPoint, { ask: string; example: string }> = {
   qa: { ask: "お客様からよく聞かれる質問と、そのときの答えを1つ教えてください", example: "例：「住みながら工事できる？」→「できます。1部屋ずつ進めます」" },
   comparison: { ask: "ほかの頼み先や方法と比べて、選ばれる理由は何ですか", example: "例：現地調査から工事まで同じ一級建築士が担当する" },
   expertise: { ask: "プロとして、よくある誤解や注意点を1つ教えてください", example: "例：暖房を強くするだけでは、床からの冷えは残る" },
+  feeling: { ask: "お客様が喜んでくれた言葉や、この仕事で大切にしたことを教えてください", example: "例：「朝のお風呂が怖くなくなった」と言われた。お年寄りの家なので段差には特に気をつけた" },
   action: { ask: "読んだ人に、次に何をしてほしいですか", example: "例：無料の住まい点検に申し込んでほしい（電話かフォーム）" },
   trust: { ask: "書いた内容の裏付けになること（資格・年数・お客様の声など）はありますか", example: "例：創業25年、一級建築士が2名" },
 };
@@ -87,6 +88,7 @@ export function sampleAioCheck(input: { body: Block[]; answers: Answer[]; profil
     qa: answered(input.answers, "q2") || answered(input.answers, "q2_followup") ? [true, "お客様の質問に答える形になっています"] : [false, "お客様の質問と答えがありません"],
     comparison: /比べ|違い|選び|ほかの/.test(text) ? [true, "選ぶときの材料があります"] : [false, "ほかの頼み先と比べた違いがありません"],
     expertise: answered(input.answers, "q4") ? [true, "プロならではの注意点があります"] : [false, "注意点やよくある誤解がありません"],
+    feeling: answered(input.answers, "q6") || /と言われ|と言って|うれし|喜ん|大切に|気持ち/.test(text) ? [true, "お客様の気持ちや作り手の想いが伝わります"] : [false, "お客様の言葉や、大切にしたことがまだありません"],
     action: answered(input.answers, "q5") || (!!input.profile?.contact && text.includes(input.profile.contact)) ? [true, "問い合わせ先があります"] : [false, "読んだ人が次にすることがありません"],
     trust: usedBanned.length === 0 ? [true, "大げさな言い切りはありません"] : [false, "根拠を示しにくい言い切りがあります"],
     facts: unchecked === 0 ? [true, "数字や実績は確認済みです"] : [false, `数字や実績が${unchecked}か所、まだ確認されていません（「確かめる」から確かめられます）`],
