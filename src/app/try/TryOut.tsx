@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
 import { Logo } from "@/components/landing";
 import { ShioriTalk } from "@/components/talk";
-import { SampleNotice } from "@/components/ui";
 import { saveTryCarry } from "@/lib/tryoutCarry";
 import { FutureAnswer } from "./FutureAnswer";
 import {
@@ -20,12 +19,16 @@ import {
   missingMaterials,
   readinessRank,
   readinessScore,
+  SAMPLE_STORY_SLOT,
   sampleOpening,
+  storyProblem,
 } from "@/lib/tryout";
 
 interface TrialResultView {
   title: string;
   paragraphs: string[];
+  /** AIが整えたお話の段落 */
+  storyAt?: number;
   nextAsks: string[];
   cheer: string;
 }
@@ -82,6 +85,7 @@ export function TryOut() {
   const [startedAt] = useState(() => Date.now());
   const [website, setWebsite] = useState("");
   const [outcome, setOutcome] = useState<Outcome | null>(null);
+  const [writeNote, setWriteNote] = useState("");
   const [animDone, setAnimDone] = useState(false);
 
   // 書き出しを作る。AIを使えないときは見本で続ける
@@ -98,7 +102,11 @@ export function TryOut() {
       });
       const data = (await res.json().catch(() => null)) as { mode?: string; reason?: string; result?: TrialResultView; message?: string } | null;
       if (res.ok && data?.mode === "ai" && data.result) setOutcome({ mode: "ai", reason: "", result: data.result });
-      else setOutcome(fallback(data?.reason ?? (res.status === 400 ? "invalid" : "unavailable")));
+      else if (data?.reason === "off_topic" || res.status === 400) {
+        // 記事にできない答えは、見本にせず書き直してもらう（そのまま載せない）
+        setWriteNote(data?.message ?? "お仕事のお話が読み取れませんでした。どんなお仕事で、何がうれしかったかを書いてみてください。");
+        setPhase("write");
+      } else setOutcome(fallback(data?.reason ?? "unavailable"));
     } catch {
       setOutcome(fallback("unavailable"));
     }
@@ -243,17 +251,26 @@ export function TryOut() {
                 <span className="field-label">最近うれしかった仕事は？</span>
                 <textarea
                   value={story}
-                  onChange={(e) => setStory(e.target.value)}
+                  onChange={(e) => {
+                    setStory(e.target.value);
+                    setWriteNote("");
+                  }}
                   rows={4}
                   maxLength={400}
                   className="field text-lg"
                   placeholder="例）急ぎの試作を頼まれて、なんとか間に合わせた。お客様にとても喜ばれた。"
                 />
               </label>
+              {(writeNote || (story.trim().length >= 5 && storyProblem(story))) && (
+                <p className="flex animate-rise items-start gap-2 rounded-2xl bg-sun-soft px-3 py-2 font-bold" role="status">
+                  <span aria-hidden>💡</span>
+                  <span>{writeNote || storyProblem(story)}</span>
+                </p>
+              )}
               <button
                 type="button"
                 className="btn-primary min-h-14 w-full text-lg"
-                disabled={story.trim().length < 5}
+                disabled={!!storyProblem(story)}
                 onClick={() => {
                   addPoints(50);
                   void make();
@@ -422,10 +439,10 @@ function Done({ outcome, story, future, onAgain, onKeep }: { outcome: Outcome; s
   const [peek, setPeek] = useState(false);
   const opening = outcome.result;
   const ai = outcome.mode === "ai";
-  const quote = ai ? -1 : opening.paragraphs.findIndex((p) => p.startsWith("「"));
+  const storyAt = opening.storyAt ?? -1;
   const lines = ai
-    ? ["できました！あなたの答えから、AIが書き出しを作りました。", opening.cheer].filter(Boolean)
-    : ["できました！これが、あなたの記事の書き出しです。", SAMPLE_REASON[outcome.reason] ?? "あなたのお話が、記事の真ん中になっていますよ。"];
+    ? ["できました！あなたのお話を、AIが記事の文に整えました。", opening.cheer].filter(Boolean)
+    : ["できました！これが、記事の書き出しの見本です。", SAMPLE_REASON[outcome.reason] ?? "AIにつながると、あなたのお話を読みやすく整えて入れます。"];
   return (
     <section className="space-y-4">
       <Confetti count={70} />
@@ -438,10 +455,14 @@ function Done({ outcome, story, future, onAgain, onKeep }: { outcome: Outcome; s
         <h2 className="text-xl font-black leading-snug sm:text-2xl">{opening.title}</h2>
         <div className="mt-3 space-y-3 leading-loose">
           {opening.paragraphs.map((p, i) =>
-            i === quote ? (
+            i === storyAt && p === SAMPLE_STORY_SLOT ? (
+              <p key={i} className="rounded-2xl border-2 border-dashed border-brand/50 bg-brand-soft/50 px-3 py-2 text-sm font-bold text-brand-dark">
+                ✨ {p}
+              </p>
+            ) : i === storyAt ? (
               <p key={i}>
                 <mark className="rounded-md bg-sun/60 px-1 font-bold text-ink">{p}</mark>
-                <span className="ml-1 text-xs font-black text-brand-dark">← あなたのお話から</span>
+                <span className="ml-1 whitespace-nowrap text-xs font-black text-brand-dark">← AIが整えたあなたのお話</span>
               </p>
             ) : (
               <p key={i}>{p}</p>
@@ -457,13 +478,12 @@ function Done({ outcome, story, future, onAgain, onKeep }: { outcome: Outcome; s
           <p className="rounded-2xl border border-brand-soft bg-brand-soft px-3 py-2 text-sm text-brand-dark" role="note">
             ✨ AIが書いた下書きです。事実と違うところがあれば、直してから使います。入力した内容は保存していません。
           </p>
-          <details className="rounded-2xl bg-canvas px-4 py-2 text-sm">
-            <summary className="cursor-pointer font-bold">あなたの答え</summary>
-            <p className="mt-1 text-muted">{story}</p>
-          </details>
+          {storyAt >= 0 && opening.paragraphs[storyAt] && <Polished before={story} after={opening.paragraphs[storyAt]} />}
         </div>
       ) : (
-        <SampleNotice />
+        <p className="rounded-2xl border border-warn-soft bg-warn-soft px-3 py-2 text-sm text-warn" role="note">
+          今回はAIを使わない見本です（AIは未使用）。会社の名前・地域・仕事だけを入れて作りました。AIにつながると、あなたのお話を読みやすく整えて入れます。
+        </p>
       )}
 
       {peek ? (
@@ -528,6 +548,30 @@ function Done({ outcome, story, future, onAgain, onKeep }: { outcome: Outcome; s
         </button>
         <span className="sr-only">（あなたの答え：{story}）</span>
       </p>
+    </section>
+  );
+}
+
+/** AIが何をしたかが分かるように、答えと整えた文を並べる */
+function Polished({ before, after }: { before: string; after: string }) {
+  return (
+    <section className="card animate-rise space-y-2" aria-label="AIが整えたところ">
+      <h3 className="font-black">✨ AIが、こう整えました</h3>
+      <div className="grid items-stretch gap-2 sm:grid-cols-[1fr_auto_1fr]">
+        <div className="rounded-2xl bg-canvas p-3">
+          <p className="text-xs font-black text-muted">あなたの答え</p>
+          <p className="mt-1 text-muted">{before}</p>
+        </div>
+        <span className="self-center text-center text-2xl font-black text-brand" aria-hidden>
+          <span className="sm:hidden">↓</span>
+          <span className="hidden sm:inline">→</span>
+        </span>
+        <div className="rounded-2xl border-2 border-sun bg-sun-soft p-3">
+          <p className="text-xs font-black text-brand-dark">記事の文</p>
+          <p className="mt-1 font-bold">{after}</p>
+        </div>
+      </div>
+      <p className="text-sm text-muted">話し言葉を読みやすい文に直し、意味と事実は変えていません。</p>
     </section>
   );
 }
