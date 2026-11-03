@@ -51,7 +51,7 @@ export function createOpenAiTextProvider(opts: OpenAiTextOptions): AiProvider {
 
       if (res.status === 401 || res.status === 403) throw new AiProviderError("auth", "OpenAIのAPIキーが正しくないか、権限がありません");
       if (res.status === 429) throw new AiProviderError("rate_limited", "AIの利用上限に達しました。少し待ってから再試行してください");
-      if (!res.ok) throw new AiProviderError("unavailable", `AIの呼び出しに失敗しました（${res.status}）`);
+      if (!res.ok) throw new AiProviderError("unavailable", `AIの呼び出しに失敗しました（${res.status}）`, res.status);
 
       const json = (await res.json()) as ResponsesResult;
       const parts = (json.output ?? []).flatMap((o) => (o.type === "message" ? (o.content ?? []) : []));

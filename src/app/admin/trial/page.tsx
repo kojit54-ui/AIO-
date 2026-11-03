@@ -17,7 +17,26 @@ const REASON: Record<string, string> = {
   off_topic: "仕事の話でなかった",
   timeout: "時間切れ",
   provider_error: "AIの失敗",
+  auth: "AIのキーが正しくない",
+  billing: "AIの提供元の残高が足りない",
+  rate_limited: "AIの利用上限",
+  refused: "AIが断った",
+  truncated: "AIの答えが途中で切れた",
+  unavailable: "AIにつながらなかった",
+  parse: "答えの形が違った",
+  other: "そのほかの失敗",
+  disabled: "止めている",
+  visitor_limit: "1人1日の上限",
+  daily_limit: "全体の1日の上限",
+  budget_exceeded: "月の予算の上限",
 };
+
+/** 「unavailable_400」のように状態コード付きの理由も読めるように */
+function reasonLabel(code: string): string {
+  const m = /^([a-z_]+?)_(\d{3})$/.exec(code);
+  if (m && REASON[m[1]]) return `${REASON[m[1]]}（${m[2]}）`;
+  return REASON[code] ?? code;
+}
 
 const jstDay = (d: Date) => new Date(d.getTime() + 9 * 3600_000).toISOString().slice(0, 10);
 
@@ -146,7 +165,7 @@ export default async function AdminTrialPage() {
           <ul className="space-y-1">
             {reasons.map(([k, n]) => (
               <li key={k} className="flex justify-between rounded-xl bg-canvas px-3 py-1">
-                <span>{REASON[k] ?? k}</span>
+                <span>{reasonLabel(k)}</span>
                 <b>{n} 回</b>
               </li>
             ))}
