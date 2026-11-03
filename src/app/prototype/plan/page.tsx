@@ -14,6 +14,8 @@ import {
   sampleProposals,
 } from "@/prototype/growth";
 import { growActions, useGrow, useGrowSync } from "@/prototype/store";
+import { nextKeyword, normalizeRows, sellItemsFromAnswer } from "@/prototype/keywords";
+import { ShioriTalk } from "@/components/talk";
 
 export default function PlanPage() {
   const g = useGrow();
@@ -110,6 +112,9 @@ export default function PlanPage() {
   }
 
   const rows = g.plan.rows;
+  // 決めたあと、次に押すところが分からなかった（2026-11-03 田村さん）。いちばん上で「まず書く1本」を出す
+  const next = nextKeyword(normalizeRows(g.plan).filter((r) => !r.parked), g.sellItems ?? sellItemsFromAnswer(g.answers.services?.text ?? ""));
+  const first = !rows.some((r) => r.status !== "todo");
 
   return (
     <main className="page space-y-5">
@@ -128,6 +133,17 @@ export default function PlanPage() {
           記事のセットを選び直す
         </button>
       </div>
+      {next && (
+        <section className="flex animate-rise flex-col gap-3 rounded-2xl border-2 border-brand bg-gradient-to-r from-brand-soft to-surface p-4 sm:flex-row sm:items-center" aria-labelledby="first-heading">
+          <ShioriTalk mood="cheer" className="w-full min-w-0 sm:flex-1" lines={[first ? "記事のセットが決まりました！さっそく1本目を書きましょう" : "次の1本はこれがおすすめです", `「${next.keyword}」`]} />
+          <h2 id="first-heading" className="sr-only">
+            {first ? "まず書く1本" : "次に書く1本"}
+          </h2>
+          <Link href={`/prototype/write/${next.id}`} className="btn-primary min-h-14 w-full px-6 text-lg sm:w-auto">
+            {next.status === "writing" ? "続きを書く →" : "この記事を書く →"}
+          </Link>
+        </section>
+      )}
       <section className="card">
         <PillarDiagram rows={rows.filter((r) => !r.parked)} />
       </section>
