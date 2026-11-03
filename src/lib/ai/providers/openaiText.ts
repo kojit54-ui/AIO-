@@ -12,6 +12,14 @@ export interface OpenAiTextOptions {
   fetch?: typeof fetch;
 }
 
+/**
+ * json_object で答えさせるとき、OpenAI は input（指示文ではなく）に「json」という語があることを求め、無いと 400（param: input）で断る。
+ * 30秒でためすの入力には無かったので、無いときだけ一言足す（2026-11-03、docs/LESSONS.md）
+ */
+export function withJsonHint(user: string): string {
+  return /json/i.test(user) ? user : `${user}\n\n返答はJSONで。`;
+}
+
 const EFFORT: Record<AiQuality, "medium" | "high"> = { draft: "medium", finish: "high" };
 
 interface ResponsesResult {
@@ -36,7 +44,7 @@ export function createOpenAiTextProvider(opts: OpenAiTextOptions): AiProvider {
           body: JSON.stringify({
             model: quality === "finish" ? opts.finishModel : opts.draftModel,
             instructions: req.system,
-            input: req.user,
+            input: withJsonHint(req.user),
             max_output_tokens: req.maxOutputTokens,
             reasoning: { effort: EFFORT[quality] },
             text: { format: { type: "json_object" } },
