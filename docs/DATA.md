@@ -330,3 +330,8 @@ interface GenerationRun {
 
 - search_console：1社1行。site_url（https://example.jp/ か sc-domain:example.jp）、verified_at（読めたら入る。権限を外されたら空に戻す）、last_error（お客様に見せる文）、snapshot（{range, totals, queries, pages}、src/types/domain.ts の ScSnapshot）、fetched_at
 - 読めるのは同じ会社の人（お客様・コタム）。書くのはサーバー（service role）だけ。入口は POST /api/organizations/:id/search-console（つなぐ。お客様だけ）と /search-console/refresh（12時間より古ければ読み直す）、GET /api/search-console-account（足してもらうアドレス）
+
+## しおり通信（supabase/migrations/20261103090000_newsletter.sql）
+
+- newsletter_optouts：受け取らないと決めた人（user_id）。本人だけが見て、足して、消せる。メールの「受け取らない」のリンクはサーバーが足す
+- newsletter_sends：送った記録（会社・人・月が主キー）。stamp_ids に、送ったときに取っていたスタンプ。同じ会社の人だけ読め、書くのはサーバーだけ
