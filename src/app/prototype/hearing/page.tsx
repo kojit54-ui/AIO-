@@ -9,6 +9,7 @@ import { useStore } from "@/mock/store";
 import { AioMeter, AioWhy, Cheer, ProgressBar, WhyAio } from "@/prototype/components";
 import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, collectedAio, deepDiveWhy, nextDeepDive, pendingDeepDive, resumeIndex, withNewText, MAX_ANSWER } from "@/prototype/growth";
 import { growActions, useGrow, useGrowSync } from "@/prototype/store";
+import { type TryCarry, clearTryCarry, loadTryCarry } from "@/lib/tryoutCarry";
 
 /**
  * 顧客が1問ずつ答えるヒアリング。答えるたびに、AIが聞く理由を添えて深掘りの質問を返す（1問につき4回まで。2026-11-02）。
@@ -27,6 +28,13 @@ export default function HearingPage() {
   const [text, setText] = useState("");
   const [cheer, setCheer] = useState<AioPoint | null>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  // 30秒でためすで入れた会社のこと（本人が覚えておくを選んだときだけ、このブラウザにある）
+  const [carry, setCarry] = useState<TryCarry | null>(null);
+  const [carried, setCarried] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setCarry(loadTryCarry()), 0);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -157,6 +165,47 @@ export default function HearingPage() {
         <ProgressBar value={current + 1} max={total} label="答えた進み具合" />
       </div>
 
+      {carry && (() => {
+        // まだ答えていない問いにだけ、途中の答えとして入れる（「次へ」を押すまで決まらない）
+        const fill = [
+          { id: "business", text: carry.job },
+          { id: "area", text: carry.region },
+          { id: "strengths", text: carry.story ? `最近うれしかった仕事：${carry.story}` : "" },
+        ].filter((f) => f.text.trim() && !g.answers[f.id]?.text.trim());
+        if (!fill.length) return null;
+        return (
+          <div className="card space-y-3 border-2 border-sun bg-sun-soft">
+            <ShioriTalk mood="idea" lines={["30秒でためすで教えてくれたことを、ここに入れましょうか？", "入れたあとで直せます。"]} />
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => {
+                  for (const f of fill) growActions.saveAnswer({ questionId: f.id, text: f.text.slice(0, MAX_ANSWER), followUps: [], draft: true });
+                  clearTryCarry();
+                  setCarry(null);
+                  setCarried(true);
+                  setStep(null);
+                  setText("");
+                }}
+              >
+                入れる
+              </button>
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={() => {
+                  clearTryCarry();
+                  setCarry(null);
+                }}
+              >
+                使わない
+              </button>
+            </div>
+          </div>
+        );
+      })()}
+      {carried && <Notice tone="ok" title="30秒でためすの内容を入れました">「どんなお仕事」「地域」「選ばれる理由」に入っています。見直して「次へ」を押してください。</Notice>}
       {cheer && <Cheer point={cheer} />}
       {aiError && <Notice tone="warn" title={aiError} />}
       {thinking && <WaitingScreen label="しおりが答えを読んでいます" note="答えを読んで、もう少し聞きたいことがあるか考えています。" />}
