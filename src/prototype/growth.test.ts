@@ -128,3 +128,20 @@ describe("AIOの材料", () => {
     expect(collectedAio(HEARING_QUESTIONS, () => false)).toEqual([]);
   });
 });
+
+describe("ヒアリングの進み具合と励まし", () => {
+  it("深掘りに答えるたびに、バーが少しずつ進む", async () => {
+    const { hearingProgress } = await import("./growth");
+    const steps = [0, 1, 2, 3, 4].map((d) => hearingProgress(3, 8, d, 4));
+    for (let i = 1; i < steps.length; i++) expect(steps[i]).toBeGreaterThan(steps[i - 1]);
+    expect(steps[4]).toBeLessThan(4);
+    expect(hearingProgress(8, 8, 0, 4)).toBe(8);
+  });
+
+  it("答えるたびに励ましの言葉が変わり、最後の問いでは最後と伝える", async () => {
+    const { hearingCheer } = await import("./growth");
+    expect(hearingCheer({ remaining: 4, deepNo: 1, count: 1 })).not.toBe(hearingCheer({ remaining: 4, deepNo: 2, count: 2 }));
+    expect(hearingCheer({ remaining: 1, deepNo: 0, count: 5 })).toContain("最後");
+    expect(hearingCheer({ remaining: 5, deepNo: 0, count: 1 })).toContain("5問");
+  });
+});

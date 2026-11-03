@@ -403,3 +403,35 @@ export function articleQuestions(row: KeywordIdea): ArticleQuestion[] {
   ];
 }
 
+
+/**
+ * ヒアリングの進み具合（問いの数で数える）。深掘りに答えるたびにも少しずつ進む。
+ * 深掘りでバーが止まって見えると、やめたくなる（2026-11-03 田村さん）
+ * @param deepNo いま見せている深掘りが何回目か（元の問いなら 0）
+ */
+export function hearingProgress(current: number, total: number, deepNo: number, maxDeep: number): number {
+  const inner = Math.min(Math.max(deepNo, 0), maxDeep) / (maxDeep + 1);
+  return Math.min(total, Math.max(0, current) + inner);
+}
+
+/** 答えている人への励まし。答えるたびに言葉が変わる（count は答えた回数） */
+export function hearingCheer({ remaining, deepNo, count }: { remaining: number; deepNo: number; count: number }): string {
+  if (deepNo > 0) {
+    const lines = [
+      "いい答えです！しおりがもっと知りたくなっています",
+      "その調子です。ほかの会社には書けないお話が集まっています",
+      "この質問はもうすぐおしまいです。あと少しだけ",
+      "答えは保存されています。疲れたら、あとからでも大丈夫です",
+    ];
+    return lines[count % lines.length];
+  }
+  if (remaining <= 1) return "これが最後の質問です！ここまで本当におつかれさまです";
+  if (count === 0) return "1問ずつで大丈夫です。答えは自動で保存されます";
+  const lines = [
+    `進んでいますよ！あと${remaining}問です`,
+    `がんばっていますね。あと${remaining}問で、記事の材料がそろいます`,
+    "答えは保存されています。続きはあとからでも大丈夫です",
+    `いいペースです。あと${remaining}問です`,
+  ];
+  return lines[count % lines.length];
+}
