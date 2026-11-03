@@ -1,13 +1,14 @@
 "use client";
 
 // 30秒でためす（/try）。ログインなしで、AIとお客様に選ばれる準備度の診断 → 1問答えて記事の書き出し、まで体験する。
-// いまはサンプル（AIにはつながない）。src/lib/tryout.ts。入力はこのブラウザの画面の中だけで使い、保存も送信もしない。
+// 書き出しは /api/try でAIが作る（使えないときは見本）。src/lib/tryout.ts・src/lib/tryoutAi.ts。入力はサーバーに残さない。
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
 import { Logo } from "@/components/landing";
 import { ShioriTalk } from "@/components/talk";
+import { AIO_QUIZ } from "@/lib/tips";
 import { saveTryCarry } from "@/lib/tryoutCarry";
 import { FutureAnswer } from "./FutureAnswer";
 import {
@@ -281,7 +282,7 @@ export function TryOut() {
             </section>
           )}
 
-          {phase === "making" && <Making onDone={() => setAnimDone(true)} />}
+          {phase === "making" && <Making ready={!!outcome} onDone={() => setAnimDone(true)} onCorrect={() => addPoints(10)} />}
 
           {phase === "done" && (
             <Done
@@ -412,23 +413,135 @@ function Result({ company, answers, onNext }: { company: string; answers: Record
 
 const MAKING = ["答えを読んでいます", "見出しを考えています", "書き出しを書いています"];
 
-function Making({ onDone }: { onDone: () => void }) {
+/** できてから、自動で結果に進むまでの秒数（豆知識を読み終えられるように、ボタンでもすぐ進める） */
+const READY_SECONDS = 6;
+
+/**
+ * AIが書き出しを作るあいだ（2026-11-03 田村さん「待つ時間が長かったから工夫がほしい。AIOの豆知識とかほしい」）。
+ * 進み具合の3段のあと、「しおりのAIO豆知識」を○×で。正解で +10pt。できたら「書き出しを見る」が出て、少しすると自動で進む
+ */
+function Making({ ready, onDone, onCorrect }: { ready: boolean; onDone: () => void; onCorrect: () => void }) {
   const [i, setI] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  const [first] = useState(() => Math.floor(Math.random() * AIO_QUIZ.length));
+  const [n, setN] = useState(0);
+  const [picked, setPicked] = useState<boolean | null>(null);
+  const [right, setRight] = useState(0);
+  const [left, setLeft] = useState(READY_SECONDS);
+  const stepsDone = i >= MAKING.length - 1 && seconds >= MAKING.length;
+
   useEffect(() => {
-    const t = setTimeout(() => (i + 1 < MAKING.length ? setI(i + 1) : onDone()), 1000);
+    const t = setInterval(() => setSeconds((v) => v + 1), 1000);
+    return () => clearInterval(t);
+  }, []);
+  useEffect(() => {
+    if (i + 1 >= MAKING.length) return;
+    const t = setTimeout(() => setI(i + 1), 1000);
     return () => clearTimeout(t);
-  }, [i, onDone]);
+  }, [i]);
+  // できたら数えはじめ、0になったら進む
+  useEffect(() => {
+    if (!ready || !stepsDone) return;
+    if (left <= 0) {
+      onDone();
+      return;
+    }
+    const t = setTimeout(() => setLeft((v) => v - 1), 1000);
+    return () => clearTimeout(t);
+  }, [ready, stepsDone, left, onDone]);
+
+  const quiz = AIO_QUIZ[(first + n) % AIO_QUIZ.length];
+  const answer = (v: boolean) => {
+    if (picked !== null) return;
+    setPicked(v);
+    if (v === quiz.answer) {
+      setRight((r) => r + 1);
+      onCorrect();
+    }
+  };
+
   return (
-    <section className="card grid place-items-center gap-4 py-10 text-center" aria-live="polite">
-      <div className="relative">
-        <Shiori mood="think" className="h-40 w-auto" />
-        <span className="absolute -right-4 top-6 inline-block animate-write text-4xl" aria-hidden>
-          ✏️
-        </span>
+    <section className="card space-y-4 py-6" aria-live="polite">
+      <div className="flex items-center gap-4">
+        <div className="relative shrink-0">
+          <Shiori mood={ready && stepsDone ? "right" : "think"} className="h-28 w-auto sm:h-32" />
+          {!(ready && stepsDone) && (
+            <span className="absolute -right-3 top-4 inline-block animate-write text-3xl" aria-hidden>
+              ✏️
+            </span>
+          )}
+        </div>
+        <div className="min-w-0 flex-1 space-y-2">
+          <p className="text-lg font-black sm:text-xl">{ready && stepsDone ? "できました！" : `${MAKING[i]}…`}</p>
+          <ol className="flex flex-wrap gap-1.5 text-xs font-bold" aria-label="進み具合">
+            {MAKING.map((m, k) => (
+              <li key={m} className={`rounded-full px-2 py-0.5 ${k < i || (ready && stepsDone) ? "bg-ok-soft text-ok" : k === i ? "bg-brand-soft text-brand-dark" : "bg-canvas text-muted"}`}>
+                {k < i || (ready && stepsDone) ? "✓ " : ""}
+                {m}
+              </li>
+            ))}
+          </ol>
+          <div className="h-3 overflow-hidden rounded-full bg-canvas-deep" aria-hidden>
+            {ready && stepsDone ? (
+              <div className="h-full w-full rounded-full bg-ok-bright" />
+            ) : (
+              <div className="h-full w-full animate-stripe rounded-full bg-[length:28px_100%] bg-[repeating-linear-gradient(45deg,var(--color-brand)_0_7px,var(--color-sky)_7px_14px)]" />
+            )}
+          </div>
+          <p className="text-xs text-muted tabular-nums">{ready && stepsDone ? "豆知識は、見終わってからでも大丈夫です。" : `AIがあなたのお話を読んで、記事の文に整えています（${seconds}秒）`}</p>
+        </div>
       </div>
-      <p className="text-xl font-black">{MAKING[i]}…</p>
-      <div className="h-3 w-full max-w-xs overflow-hidden rounded-full bg-canvas-deep" aria-hidden>
-        <div className="h-full rounded-full bg-brand transition-[width] duration-1000" style={{ width: `${((i + 1) / MAKING.length) * 100}%` }} />
+
+      {ready && stepsDone && (
+        <button type="button" className="btn-primary min-h-14 w-full animate-pop text-lg" onClick={onDone}>
+          ✨ 書き出しを見る（{left}）
+        </button>
+      )}
+
+      <div key={n} className="animate-enter space-y-3 rounded-2xl border-2 border-sun bg-sun-soft p-4">
+        <p className="flex items-center justify-between gap-2 text-xs font-bold">
+          <span className="rounded-full bg-sun px-2.5 py-0.5 text-ink">💡 しおりのAIO豆知識</span>
+          {right > 0 && <span className="text-brand-dark">正解 {right} 問</span>}
+        </p>
+        <p className="font-black leading-snug">Q. {quiz.q}</p>
+        <div className="grid grid-cols-2 gap-2">
+          {[true, false].map((v) => {
+            const chosen = picked === v;
+            const correct = picked !== null && v === quiz.answer;
+            return (
+              <button
+                key={String(v)}
+                type="button"
+                disabled={picked !== null}
+                onClick={() => answer(v)}
+                aria-label={v ? "まる（そう思う）" : "ばつ（そう思わない）"}
+                className={`min-h-14 rounded-2xl border-2 text-3xl font-black transition-transform ${
+                  correct ? "animate-pop border-ok-bright bg-ok-soft text-ok" : chosen ? "border-danger bg-danger-soft text-danger" : "border-line bg-surface hover:-translate-y-0.5"
+                }`}
+              >
+                {v ? "○" : "×"}
+              </button>
+            );
+          })}
+        </div>
+        {picked !== null && (
+          <div className="animate-rise space-y-2">
+            <p className="font-black">{picked === quiz.answer ? "🎉 正解！ +10pt" : `おしい！ 答えは「${quiz.answer ? "○" : "×"}」`}</p>
+            <p className="text-sm">{quiz.why}</p>
+            <div className="text-right">
+              <button
+                type="button"
+                className="text-sm font-bold text-brand-dark underline"
+                onClick={() => {
+                  setPicked(null);
+                  setN((v) => v + 1);
+                }}
+              >
+                次の問題 →
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

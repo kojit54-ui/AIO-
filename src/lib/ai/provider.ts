@@ -26,7 +26,8 @@ export interface AiUsage {
 }
 
 /** draft＝普段の生成（速く安い）、finish＝仕上げ（上位モデル） */
-export type AiQuality = "draft" | "finish";
+/** quick＝考える量を少なくして早く返す（30秒でためすのように、人がその場で待つもの） */
+export type AiQuality = "quick" | "draft" | "finish";
 
 export interface AiCompletionRequest {
   /** keyword_proposal は書く記事の提案（src/lib/growth/proposals.ts） */

@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const res = await provider.complete({ kind: "trial", system: TRIAL_SYSTEM_PROMPT, user, maxOutputTokens: MAX_OUTPUT_TOKENS, quality: "draft", signal: controller.signal });
+    const res = await provider.complete({ kind: "trial", system: TRIAL_SYSTEM_PROMPT, user, maxOutputTokens: MAX_OUTPUT_TOKENS, quality: "quick", signal: controller.signal });
     usage = res.usage;
     const { result, reason } = parseTrialResult(res.text, input);
     if (!result) {
