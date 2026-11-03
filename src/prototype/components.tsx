@@ -8,7 +8,7 @@ export function PrototypeNotice({ saved = false }: { saved?: boolean }) {
   return (
     <p className="rounded-lg border border-warn-soft bg-warn-soft px-3 py-2 text-sm text-warn" role="note">
       {saved
-        ? `新しい流れの試し運転です。会社のこと・書く記事リスト・今売りたいものは会社ごとに保存されます。記事のおすすめは${SAMPLE_LABEL}。`
+        ? "会社のこと・書く記事リスト・今売りたいものは、会社ごとに自動で保存されます。"
         : `新しい流れの画面試作です。架空の会社で動かしていて、${SAMPLE_LABEL}。入力はこのブラウザの中だけに保存され、本物の記事には反映されません。`}
     </p>
   );
