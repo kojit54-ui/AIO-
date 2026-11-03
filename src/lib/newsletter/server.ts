@@ -63,6 +63,36 @@ export interface NewsletterResult {
   failed: number;
 }
 
+/** 日本時間の今月 */
+export function currentMonthJstFor(now = new Date()): string {
+  return new Date(now.getTime() + 9 * 3600_000).toISOString().slice(0, 7);
+}
+
+type TestFail = { ok: false; status: number; code: string; message: string };
+
+/** 見本の画面から、ログインしている担当の方だけに、今月ここまでのしおり通信を試しに送る（ほかの人には送らない・送った記録も残さない） */
+export async function sendTestNewsletter(deps: { user: SupabaseClient; admin: SupabaseClient; appUrl: string; now?: Date; env?: Record<string, string | undefined> }): Promise<{ ok: true; to: string } | TestFail> {
+  const env = deps.env ?? process.env;
+  const { data: auth } = await deps.user.auth.getUser();
+  if (!auth.user) return { ok: false, status: 401, code: "session_expired", message: "ログインの有効期限が切れました" };
+  const { data: m } = await deps.user.from("memberships").select("organization_id, role").eq("user_id", auth.user.id).eq("role", "client_member").is("revoked_at", null).limit(1).maybeSingle();
+  if (!m) return { ok: false, status: 403, code: "forbidden", message: "しおり通信は、会社の担当の方に届きます" };
+  const to = auth.user.email;
+  if (!to) return { ok: false, status: 400, code: "no_email", message: "メールアドレスが見つかりませんでした" };
+  if (!smtpConfig(env)) return { ok: false, status: 503, code: "not_configured", message: "メールを送る準備が、まだ終わっていません" };
+  const orgId = (m as Row).organization_id as string;
+  const input = newsletterInput(await loadOrgDb(deps.admin, orgId), orgId, currentMonthJstFor(deps.now));
+  const unsubscribeUrl = `${deps.appUrl}/api/newsletter/unsubscribe?u=${encodeURIComponent(auth.user.id)}&s=${unsubscribeSig(auth.user.id, env)}`;
+  const mail = renderNewsletter(input, { appUrl: deps.appUrl, unsubscribeUrl });
+  try {
+    await sendMail({ to, ...mail, subject: `【試し】${mail.subject}` }, env);
+  } catch (e) {
+    console.error("newsletter test send failed", { orgId, reason: e instanceof Error ? e.name : "other" });
+    return { ok: false, status: 502, code: "send_failed", message: "送れませんでした。少し待ってからもう一度お試しください" };
+  }
+  return { ok: true, to };
+}
+
 /** 前の月のしおり通信を送る。dryRun なら数えるだけ */
 export async function runNewsletter(deps: { admin: SupabaseClient; appUrl: string; dryRun?: boolean; now?: Date; env?: Record<string, string | undefined> }): Promise<NewsletterResult> {
   const env = deps.env ?? process.env;

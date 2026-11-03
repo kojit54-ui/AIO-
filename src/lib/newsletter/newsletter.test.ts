@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import type { MockDb } from "@/mock/store";
 import { newsletterInput, renderNewsletter } from "./content";
 import { smtpConfig, unsubscribeSig, verifyUnsubscribe } from "./send";
-import { previousMonthJst } from "./server";
+import { currentMonthJstFor, previousMonthJst, sendTestNewsletter } from "./server";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 const db = {
   organizations: [{ id: "o1", name: "さくら<住まい>工房" }],
@@ -53,6 +54,21 @@ describe("送る準備", () => {
   it("SMTP の設定がそろわなければ送らない。アプリ パスワードの空白は取る", () => {
     expect(smtpConfig({})).toBeNull();
     expect(smtpConfig({ SMTP_USER: "aio@co-tam.co.jp", SMTP_PASS: "abcd efgh ijkl mnop" })).toMatchObject({ host: "smtp.gmail.com", port: 465, pass: "abcdefghijklmnop", from: "aio@co-tam.co.jp" });
+  });
+
+  it("試しに送るのは、会社の担当の方だけ。送る準備が無ければ送らない", async () => {
+    expect(currentMonthJstFor(new Date("2026-10-31T15:30:00Z"))).toBe("2026-11");
+    const userDb = (role: string | null) =>
+      ({
+        auth: { getUser: async () => ({ data: { user: { id: "u1", email: "a@example.jp" } } }) },
+        from: () => {
+          const q = { select: () => q, eq: () => q, is: () => q, limit: () => q, maybeSingle: async () => ({ data: role ? { organization_id: "o1", role } : null }) };
+          return q;
+        },
+      }) as unknown as SupabaseClient;
+    const admin = {} as SupabaseClient;
+    expect(await sendTestNewsletter({ user: userDb(null), admin, appUrl: "", env: {} })).toMatchObject({ ok: false, code: "forbidden" });
+    expect(await sendTestNewsletter({ user: userDb("client_member"), admin, appUrl: "", env: {} })).toMatchObject({ ok: false, code: "not_configured" });
   });
 
   it("受け取らないのリンクは、署名が合うときだけ通す", () => {
