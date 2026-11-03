@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/mock/store";
 import { EmptyState, PageSkeleton } from "./ui";
+import { SERVICE_NAME } from "@/lib/brand";
 
 /** ログイン必須の画面を包む。未ログインならログイン画面へ */
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -51,7 +52,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               ✎
             </span>
             <span className="min-w-0">
-              <span className="block text-sm font-medium text-muted">コタム ブログ執筆支援</span>
+              <span className="block text-sm font-medium text-muted">{SERVICE_NAME}</span>
               <span className="block truncate text-lg font-black">{org ? org.name : "コタム管理画面"}</span>
             </span>
           </Link>

@@ -530,7 +530,7 @@ function CommentPanel({ reviews }: { reviews: ReturnType<typeof useStore>["db"][
 
 const REVIEW_CATEGORY_LABEL: Record<AiReviewCategory, string> = {
   originality: "この会社らしさ",
-  aio: "AIに紹介されやすいか",
+  aio: "AIと人に選ばれるか",
   ai_tone: "AIが書いたように見える",
   facts: "事実が正しいか",
   style: "言葉づかい",
@@ -905,7 +905,7 @@ function PublishDialog({ article, onCopy, onClose, onError }: { article: Article
         steps={steps}
         step={step}
         onStep={setStep}
-        doneSay={["公開おめでとうございます！", "しおりも記事のことを覚えました。検索やAIにどう見られるか、これから一緒に見ていきましょう。"].join("")}
+        doneSay={["公開おめでとうございます！", "しおりも記事のことを覚えました。検索やAIにどう見られるか、これからいっしょに見ていきましょう。"].join("")}
         doneBody={
           <button type="button" className="btn-primary" onClick={onClose}>
             記事の画面に戻る

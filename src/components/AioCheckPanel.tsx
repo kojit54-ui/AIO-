@@ -9,7 +9,7 @@ import { AioIcon } from "@/components/aio";
 import { Confetti, Shiori, Toast } from "@/components/fun";
 import { ShioriTalk } from "@/components/talk";
 import { GeneratingOverlay, formatDate } from "@/components/ui";
-import { AIO_CHECK_LIST, aioCheckLabel } from "@/lib/aioCheck";
+import { AIO_CHECK_GROUPS, AIO_CHECK_LIST, aioCheckLabel } from "@/lib/aioCheck";
 import { useStore } from "@/mock/store";
 import type { AioCheck, AioCheckKey, AioPoint, Answer, Article, ArticleVersion } from "@/types/domain";
 
@@ -26,6 +26,16 @@ function CheckIcon({ k, className = "h-5 w-5" }: { k: AioCheckKey; className?: s
   );
 }
 
+/** 「AIに選ばれる」「人に選ばれる」の札 */
+function StageTag({ stage }: { stage: (typeof AIO_CHECK_GROUPS)[number] }) {
+  return (
+    <p className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-black ${stage.key === "ai" ? "bg-brand-soft text-brand-dark" : "bg-sun text-ink"}`}>
+      <span aria-hidden>{stage.icon}</span>
+      {stage.step}. {stage.label}
+    </p>
+  );
+}
+
 /** 「こんなチェックをします」。項目名を並べ、開くと何を見るかの説明が出る */
 export function AioCheckList({ compact = false }: { compact?: boolean }) {
   return (
@@ -33,14 +43,19 @@ export function AioCheckList({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <>
           <p className="font-bold">こんなチェックをします（{AIO_CHECK_LIST.length}項目）</p>
-          <ul className="flex flex-wrap gap-1.5 text-xs" aria-label="チェックする項目">
-            {AIO_CHECK_LIST.map((c, i) => (
-              <li key={c.key} className="inline-flex animate-pop items-center gap-1 rounded-full bg-surface px-2 py-1 font-bold text-brand-dark ring-1 ring-line" style={{ animationDelay: `${i * 0.04}s` }}>
-                <CheckIcon k={c.key} className="h-4 w-4" />
-                {c.label.split("（")[0]}
-              </li>
-            ))}
-          </ul>
+          {AIO_CHECK_GROUPS.map((g) => (
+            <div key={g.key}>
+              <StageTag stage={g} />
+              <ul className="mt-1 flex flex-wrap gap-1.5 text-xs" aria-label={`${g.label}ためのチェック`}>
+                {g.keys.map((k, i) => (
+                  <li key={k} className="inline-flex animate-pop items-center gap-1 rounded-full bg-surface px-2 py-1 font-bold text-brand-dark ring-1 ring-line" style={{ animationDelay: `${i * 0.04}s` }}>
+                    <CheckIcon k={k} className="h-4 w-4" />
+                    {aioCheckLabel(k).split("（")[0]}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </>
       )}
       <details>
@@ -83,8 +98,11 @@ function CheckResult({ check, applied }: { check: AioCheck; applied: boolean }) 
         {check.summary && !applied && <p className="mt-2 text-sm">{check.summary}</p>}
         {check.isSample && <p className="mt-1 text-xs text-warn">サンプル（AIは未接続）</p>}
       </div>
-      <ul className="space-y-1.5 text-sm">
-        {items.map((i, n) => (
+      {AIO_CHECK_GROUPS.map((g) => (
+        <div key={g.key} className="space-y-1.5">
+          <StageTag stage={g} />
+          <ul className="space-y-1.5 text-sm">
+            {items.filter((i) => g.keys.includes(i.key)).map((i, n) => (
           <li
             key={i.key}
             className={`flex animate-rise items-start gap-2 rounded-xl px-2.5 py-1.5 ${i.ok ? "bg-ok-soft" : "bg-sun-soft"}`}
@@ -101,8 +119,10 @@ function CheckResult({ check, applied }: { check: AioCheck; applied: boolean }) 
               {i.note && <span className="text-muted">{i.note}</span>}
             </span>
           </li>
-        ))}
-      </ul>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 }
@@ -235,7 +255,7 @@ export function useAioCheck(article: Article, version: ArticleVersion, onError: 
     setBusy("check");
     try {
       const c = await api.runAioCheck(article.id);
-      if (c.status === "done") setCelebrate("チェック完了！AIに紹介されやすい記事です");
+      if (c.status === "done") setCelebrate("チェック完了！AIにも人にも選ばれやすい記事です");
       // 足りない所があれば、すぐに質問のウィンドウを開く
       else setAskOpen(true);
     } catch (e) {

@@ -246,7 +246,7 @@ export default function QuestionsPage() {
             <ShioriFace className="h-12 w-12" />
             <span>
               <b className="block">しおり（コタム）より</b>
-              くわしい体験ほど、AIが紹介しやすくなります。
+              くわしい体験ほど、AIが紹介しやすく、読んだ人も安心して頼めます。
             </span>
           </p>
         </aside>
@@ -258,7 +258,7 @@ export default function QuestionsPage() {
             前回の続き（答えなくても大丈夫です）
           </h2>
           <ShioriTalk mood="ask" size="sm" lines={[`前の記事「${previous.title}」で話してくれたお客様（${Array.from(previousCase).slice(0, 40).join("")}…）、`, "その後どうなりましたか？"]} />
-          <p className="text-sm text-muted">なぜ聞くの？　その後の様子は、ほかの会社には書けない一番の材料です。記事に厚みが出て、AIにも紹介されやすくなります。</p>
+          <p className="text-sm text-muted">なぜ聞くの？　その後の様子は、ほかの会社には書けない一番の材料です。記事に厚みが出て、AIに紹介されやすく、読んだ人にも「頼んだらこうなる」が伝わります。</p>
           <label htmlFor="prev-followup" className="sr-only">
             {PREVIOUS_CASE_QUESTION.label}
           </label>

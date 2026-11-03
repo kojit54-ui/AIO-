@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-03 CC（Claude、プロジェクトのスレッド）サービスの定義を全体に組み込む
+- ブランチ / コミット：claude/project-thread-ksfvfg
+- 変更点：田村さん「AIに選んでもらった後に人に選んでもらうことが何より大切。サービス全体の定義」「言葉や見た目を整えたい」。docs/AIO.md の一番上に「このサービスの定義」。src/lib/brand.ts（名前・ひとこと・2つの段階・AIへの目的の文）を新設し、書き手・点検役・AIOのチェック・30秒でためすの指示に入れた。AIO_POINTS に people（人に選ばれる理由）と stage、AIOのチェックを2段に分けて表示。src/components/ChosenPath.tsx をホーム・ログイン・招待状・しおりに。入口に「2つの「選ばれる」」の段と、AIに紹介→記事を読んで問い合わせ、までの動き。サービス名を「コタムのブログ執筆支援」にそろえ（しおり通信のメールも）、お客さん→お客様、一緒に→いっしょに
+- 確認結果：単体テスト（定義が指示に入っているかの src/lib/brand.test.ts を追加）・型検査・lint が通過。375px・1280px の画面写真は /mnt/project-files/brand/
+- 未完了：本物のAIで、指示の変更後の記事を1本ためす
+- 次の作業と担当：CX が指示文の変更をレビュー
+
 ### 2026-11-03 CC（Claude、プロジェクトのスレッド）ためすの見守りと引き継ぎ
 - ブランチ / コミット：claude/project-thread-ksfvfg（main から）
 - 変更点：/admin/trial（page・actions・ranges）、src/lib/tryoutCarry.ts（ブラウザに7日）、/try の「覚えておく」、ヒアリングの「入れる」、src/lib/tryoutVisitor.ts（IP だけのハッシュ）、/api/try の大きさの上限（10KB）、招待の管理画面から見守りへのリンク

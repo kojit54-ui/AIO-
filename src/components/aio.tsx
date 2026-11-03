@@ -61,7 +61,14 @@ export function AioWhy({ point }: { point: AioPoint }) {
       </span>
       <p>
         <span className="block font-bold text-ok">なぜ聞くの？　「{p.label}」が集まるからです</span>
-        <span className="block">{p.why}</span>
+        <span className="mt-1 flex gap-2">
+          <span className="h-6 shrink-0 self-start whitespace-nowrap rounded-full bg-surface px-2 text-xs font-black leading-6 text-brand-dark">AIに選ばれる</span>
+          <span>{p.why}</span>
+        </span>
+        <span className="mt-1 flex gap-2">
+          <span className="h-6 shrink-0 self-start whitespace-nowrap rounded-full bg-sun px-2 text-xs font-black leading-6 text-ink">人に選ばれる</span>
+          <span>{p.people}</span>
+        </span>
         {news && (
           <span className="mt-1.5 block rounded-xl bg-surface/80 px-3 py-1.5 text-sm">
             <span className="font-bold text-brand-dark">最新情報（{formatNewsDate(news.date)}）</span> {news.title}。<SourceTag item={news} />
@@ -145,7 +152,7 @@ export function AioNews({ count = 3 }: { count?: number }) {
   );
 }
 
-/** 答えるたびに集まる「AIに紹介される材料」。集まった材料はポンと黄色に変わる */
+/** 答えるたびに集まる「AIと人に選ばれる材料」。集まった材料はポンと黄色に変わる */
 export function AioMeter({ points, collected }: { points: AioPoint[]; collected: AioPoint[] }) {
   const all = [...new Set(points)];
   const have = all.filter((p) => collected.includes(p)).length;
@@ -153,7 +160,7 @@ export function AioMeter({ points, collected }: { points: AioPoint[]; collected:
     <section className="card space-y-3" aria-labelledby="aio-meter-heading">
       <div>
         <h2 id="aio-meter-heading" className="text-lg font-bold">
-          AIに紹介される材料
+          AIと人に選ばれる材料
         </h2>
         <p className="text-sm text-muted">
           答えるたびに、ここに集まります（{have} / {all.length}）
@@ -195,12 +202,12 @@ export function Cheer({ point }: { point: AioPoint }) {
   return <Toast>{AIO_POINTS[point].cheer}</Toast>;
 }
 
-/** なぜAIOが必要か。お客様がAIに聞く → AIが会社を紹介する → 問い合わせ → 売上 */
+/** なぜAIOが必要か。お客様がAIに聞く → AIに選ばれる → 人に選ばれる（問い合わせ） → 売上 */
 export function WhyAio({ compact = false }: { compact?: boolean }) {
   const steps = [
     { icon: "qa" as const, title: "お客様がAIに聞く", body: "「さくら市で断熱リフォームを頼むなら？」" },
-    { icon: "entity" as const, title: "AIが答えの中で紹介する", body: "くわしく正直に書いている会社を選んで紹介" },
-    { icon: "action" as const, title: "問い合わせが来る", body: "紹介を読んで、そのまま連絡" },
+    { icon: "entity" as const, title: "AIに選ばれる", body: "くわしく正直に書いている会社を、AIが答えの中で紹介" },
+    { icon: "action" as const, title: "人に選ばれる", body: "記事を読んだ人が「ここに頼みたい」と問い合わせ" },
     { icon: "numbers" as const, title: "売上が上がる", body: "AI時代のウェブサイトの役目" },
   ];
   return (
@@ -210,11 +217,11 @@ export function WhyAio({ compact = false }: { compact?: boolean }) {
           なぜ、こんなにくわしく聞くの？
         </h2>
         <p className="text-muted">
-          AI時代に、ウェブサイトで売上を上げるためです。いま、お客様は Google だけでなく AI にも相談します。AIに「この会社がおすすめ」と紹介されるための工夫を <strong>AIO</strong> といいます。AIが紹介したくなるのは、その会社にしかない体験や数字が書かれた記事です。だから、一問一答でくわしく聞いています。
+          AI時代に、ウェブサイトで売上を上げるためです。いま、お客様は Google だけでなく AI にも相談します。AIに「この会社がおすすめ」と紹介されるための工夫を <strong>AIO</strong> といいます。AIが紹介したくなるのは、その会社にしかない体験や数字が書かれた記事です。そして、いちばん大切なのは、紹介されて読みに来た人に「ここに頼みたい」と選ばれること。だから、一問一答でくわしく聞いています。
         </p>
       </div>
       {!compact && (
-        <ol className="grid gap-2 sm:grid-cols-4" aria-label="AIに紹介されて売上になるまで">
+        <ol className="grid gap-2 sm:grid-cols-4" aria-label="AIに選ばれ、人に選ばれて売上になるまで">
           {steps.map((st, i) => (
             <li key={st.title} className="flex animate-rise gap-2 rounded-2xl bg-canvas p-3 sm:flex-col sm:items-center sm:text-center" style={{ animationDelay: `${i * 0.12}s` }}>
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand text-white">
@@ -230,7 +237,7 @@ export function WhyAio({ compact = false }: { compact?: boolean }) {
           ))}
         </ol>
       )}
-      <p className="font-bold text-brand-dark">1本書くごとに、AIに紹介される材料が増えていきます。一緒にがんばりましょう！</p>
+      <p className="font-bold text-brand-dark">1本書くごとに、AIと人に選ばれる材料が増えていきます。いっしょにがんばりましょう！</p>
     </section>
   );
 }

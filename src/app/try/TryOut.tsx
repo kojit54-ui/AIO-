@@ -1,6 +1,6 @@
 "use client";
 
-// 30秒でためす（/try）。ログインなしで、AIに紹介される準備度の診断 → 1問答えて記事の書き出し、まで体験する。
+// 30秒でためす（/try）。ログインなしで、AIと人に選ばれる準備度の診断 → 1問答えて記事の書き出し、まで体験する。
 // いまはサンプル（AIにはつながない）。src/lib/tryout.ts。入力はこのブラウザの画面の中だけで使い、保存も送信もしない。
 
 import Link from "next/link";
@@ -58,7 +58,7 @@ const CHOICES: { value: ReadinessAnswer; label: string; icon: string }[] = [
 ];
 
 const REACT: Record<ReadinessAnswer, { mood: ShioriMood; say: string }> = {
-  yes: { mood: "right", say: "いいですね！それはAIが紹介しやすい材料です。" },
+  yes: { mood: "right", say: "いいですね！それはAIにも人にも伝わる材料です。" },
   some: { mood: "idea", say: "おしい！もう少し足すと、ぐっと良くなります。" },
   no: { mood: "cheer", say: "大丈夫！ここが伸びしろです。" },
 };
@@ -171,9 +171,9 @@ export function TryOut() {
           {phase === "check" && (
             <section className="space-y-4">
               <div className="card space-y-2 bg-ink text-white">
-                <p className="text-xs font-black text-sky">お客さんが、AIにこう聞いたら…</p>
+                <p className="text-xs font-black text-sky">お客様が、AIにこう聞いたら…</p>
                 <p className="text-lg font-black">💬 {customerQuestion(region, job)}</p>
-                <p className="text-sm text-white/80">AIが「{company}」を紹介するための材料が、そろっているか見てみましょう。</p>
+                <p className="text-sm text-white/80">「{company}」がAIに紹介されて、読んだ人に選ばれるための材料が、そろっているか見てみましょう。</p>
               </div>
               <div className="card space-y-4">
                 <p className="text-sm font-black text-brand-dark">
@@ -243,7 +243,7 @@ export function TryOut() {
                   rows={4}
                   maxLength={400}
                   className="field text-lg"
-                  placeholder="例）急ぎの試作を頼まれて、なんとか間に合わせた。お客さんにとても喜ばれた。"
+                  placeholder="例）急ぎの試作を頼まれて、なんとか間に合わせた。お客様にとても喜ばれた。"
                 />
               </label>
               <button
@@ -301,7 +301,7 @@ function Intro({ onStart }: { onStart: () => void }) {
       <h1 className="relative text-3xl font-black leading-snug">
         あなたの会社、
         <br />
-        AIに紹介される準備は
+        AIと人に選ばれる準備は
         <br />
         <span className="text-brand">できてる？</span>
       </h1>
@@ -340,7 +340,7 @@ function Result({ company, answers, onNext }: { company: string; answers: Record
   return (
     <section className="space-y-4">
       <div className="card space-y-4 text-center">
-        <p className="font-black text-muted">{company}の、AIに紹介される準備度</p>
+        <p className="font-black text-muted">{company}の、選ばれる準備度</p>
         <div
           className="relative mx-auto grid h-48 w-48 place-items-center rounded-full"
           style={{ background: `conic-gradient(var(--color-brand) ${deg}deg, var(--color-canvas-deep) ${deg}deg)` }}
@@ -381,7 +381,7 @@ function Result({ company, answers, onNext }: { company: string; answers: Record
           <button type="button" className="btn-primary min-h-16 w-full text-lg" onClick={onNext}>
             1問答えて、記事の書き出しを作ってみる <span className="inline-block animate-nudge">→</span>
           </button>
-          <p className="text-center text-xs text-muted">この点数は、答えから出した目安です。AIが実際に紹介するかどうかは、AIが決めます。</p>
+          <p className="text-center text-xs text-muted">この点数は、答えから出した目安です。紹介するかどうかはAIが、頼むかどうかは読んだ人が決めます。</p>
         </div>
       )}
     </section>
@@ -442,7 +442,7 @@ function Done({ outcome, story, onAgain, onKeep }: { outcome: Outcome; story: st
             ),
           )}
           <p className="select-none text-muted blur-[3px]" aria-hidden>
-            このあと、ご相談の中身、むずかしかったところ、工夫したこと、お客さんの声が続きます。読んだ人がすぐ相談できるように…
+            このあと、ご相談の中身、むずかしかったところ、工夫したこと、お客様の声が続きます。読んだ人がすぐ相談できるように…
           </p>
         </div>
       </article>
@@ -469,7 +469,7 @@ function Done({ outcome, story, onAgain, onKeep }: { outcome: Outcome; story: st
             </li>
           ))}
         </ul>
-        <p className="text-sm text-muted">答えるほど、AIに紹介されやすい材料（経験・数字）がそろった記事になります。</p>
+        <p className="text-sm text-muted">答えるほど、AIに紹介されやすく、読んだ人が安心できる材料（経験・数字）がそろった記事になります。</p>
       </div>
 
       <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand to-[#4f8ff0] p-6 text-center text-white shadow-[0_8px_0_var(--color-brand-dark)]">

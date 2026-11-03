@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { SERVICE_DESCRIPTION, SERVICE_NAME } from "@/lib/brand";
 import { Welcome } from "./Welcome";
 
 export const metadata: Metadata = {
-  title: "AIに紹介される会社に｜コタムのブログ執筆支援",
-  description: "しおりの質問に答えるだけで、AIに紹介されやすい記事ができる。ものづくりの会社のためのブログ執筆支援。",
+  title: `AIに選ばれて、人に選ばれる会社に｜${SERVICE_NAME}`,
+  description: SERVICE_DESCRIPTION,
 };
 
 /** 入口のページ（サービスのご紹介）。ログインしなくても見られる */

@@ -103,7 +103,7 @@ export function renderNewsletter(i: NewsletterInput, links: { appUrl: string; un
     lines.push("", "■ 検索での見られ方（Search Console、28日分）", `・検索に出た回数：${num(i.search.impressions)}回`, `・クリックされた回数：${num(i.search.clicks)}回`);
     if (i.search.near.length) lines.push("・あと一歩で上位の言葉：", ...i.search.near.map((q) => `　「${q.query}」（いま${q.position}位）`));
   }
-  lines.push("", "■ 来月の1本", "質問に答えるだけで記事になります。", links.appUrl, "", "――", "コタム ブログ執筆支援（案内役：しおり）", `このメールを受け取らない：${links.unsubscribeUrl}`);
+  lines.push("", "■ 来月の1本", "質問に答えるだけで記事になります。", links.appUrl, "", "――", "コタムのブログ執筆支援（案内役：しおり）", `このメールを受け取らない：${links.unsubscribeUrl}`);
   const text = lines.filter((x, n, all) => !(x === "" && all[n - 1] === "")).join("\n");
 
   const card = (inner: string) => `<tr><td style="padding:8px 24px"><div style="background:#ffffff;border:2px solid #dbe7fb;border-radius:18px;padding:16px 18px">${inner}</div></td></tr>`;
@@ -124,7 +124,7 @@ export function renderNewsletter(i: NewsletterInput, links: { appUrl: string; un
 <body style="margin:0;background:#eef4fc;font-family:'Hiragino Maru Gothic ProN','Hiragino Sans','Yu Gothic UI',Meiryo,sans-serif;color:#1e2a3b">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eef4fc"><tr><td align="center" style="padding:16px 8px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px">
-<tr><td style="padding:8px 24px"><p style="margin:0;font-size:12px;color:#5b6b80">コタム ブログ執筆支援</p><p style="margin:4px 0 0;font-size:22px;font-weight:900">📰 しおり通信 ${esc(label)}号</p><p style="margin:2px 0 0;font-size:14px">${esc(i.orgName)}さま</p></td></tr>
+<tr><td style="padding:8px 24px"><p style="margin:0;font-size:12px;color:#5b6b80">コタムのブログ執筆支援</p><p style="margin:4px 0 0;font-size:22px;font-weight:900">📰 しおり通信 ${esc(label)}号</p><p style="margin:2px 0 0;font-size:14px">${esc(i.orgName)}さま</p></td></tr>
 <tr><td style="padding:8px 24px"><table role="presentation" cellpadding="0" cellspacing="0"><tr>
 <td style="vertical-align:bottom;padding-right:8px"><img src="${esc(links.appUrl)}/guide/shiori-face.webp" width="56" height="56" alt="しおり" style="border-radius:50%;background:#cfe2ff;display:block"></td>
 <td style="vertical-align:bottom"><div style="background:#ffffff;border:2px solid #dbe7fb;border-radius:18px 18px 18px 4px;padding:10px 14px;font-size:14px;font-weight:700">${esc(shioriLine(i))}</div></td>
@@ -133,7 +133,7 @@ ${card(h("今月のまとめ") + `<table role="presentation" width="100%" cellpa
 ${card(h(`🎖️ スタンプ帳 ${i.stampsGot} / ${i.stampsTotal}`) + (i.newStamps.length ? `<p style="margin:0 0 6px;font-size:14px">今月もらったスタンプ：<b>${esc(i.newStamps.join("、"))}</b></p>` : "") + `<p style="margin:0;font-size:13px;color:#5b6b80">${i.nextStamp ? `次は「${esc(i.nextStamp.title)}」：${esc(i.nextStamp.how)}` : "スタンプが全部そろいました！"}</p>`)}
 ${searchHtml}
 <tr><td style="padding:16px 24px;text-align:center"><a href="${esc(links.appUrl)}" style="display:inline-block;padding:14px 28px;border-radius:999px;background:#2f6fdb;color:#ffffff;font-weight:900;font-size:16px;text-decoration:none">来月の1本を書く →</a><p style="margin:8px 0 0;font-size:12px;color:#5b6b80">質問に答えるだけで記事になります。</p></td></tr>
-<tr><td style="padding:8px 24px 24px;font-size:11px;color:#5b6b80;text-align:center">コタム ブログ執筆支援（案内役：しおり）<br><a href="${esc(links.unsubscribeUrl)}" style="color:#5b6b80">このメールを受け取らない</a></td></tr>
+<tr><td style="padding:8px 24px 24px;font-size:11px;color:#5b6b80;text-align:center">コタムのブログ執筆支援（案内役：しおり）<br><a href="${esc(links.unsubscribeUrl)}" style="color:#5b6b80">このメールを受け取らない</a></td></tr>
 </table></td></tr></table></body></html>`;
   return { subject, text, html };
 }

@@ -9,6 +9,7 @@ import { useStore } from "@/mock/store";
 import { PrototypeNotice } from "@/prototype/components";
 import { createGrowRemote } from "@/prototype/remote";
 import { connectGrow, growActions, reloadGrow, useGrowSync } from "@/prototype/store";
+import { SERVICE_NAME } from "@/lib/brand";
 
 const NAV = [
   { href: "/prototype", label: "ホーム" },
@@ -72,9 +73,14 @@ export default function PrototypeLayout({ children }: { children: React.ReactNod
     <>
       <header className="border-b border-line bg-surface">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 sm:px-6">
-          <Link href="/prototype" className="min-w-0 font-bold">
-            <span className="block text-sm font-normal text-muted">コタム ブログ執筆支援（新しい流れの試作）</span>
-            <span className="block truncate text-lg">{orgName}</span>
+          <Link href="/prototype" className="group flex min-w-0 items-center gap-3 font-bold">
+            <span className="grid h-10 w-10 shrink-0 -rotate-6 place-items-center rounded-xl bg-brand text-lg text-white transition-transform group-hover:rotate-6" aria-hidden>
+              ✎
+            </span>
+            <span className="min-w-0">
+              <span className="block text-sm font-medium text-muted">{SERVICE_NAME}（新しい流れの試作）</span>
+              <span className="block truncate text-lg font-black">{orgName}</span>
+            </span>
           </Link>
           {remoteMode ? (
             <div className="flex flex-wrap items-center gap-2">

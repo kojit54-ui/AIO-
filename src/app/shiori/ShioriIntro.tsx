@@ -10,28 +10,29 @@ import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
 import { BigShiori, Logo, Reveal } from "@/components/landing";
 import { SHIORI_LEVELS } from "@/components/ShioriGrowth";
 import { ShioriTalk } from "@/components/talk";
+import { ChosenPath } from "@/components/ChosenPath";
 
 const PROFILE: { label: string; value: string; icon: string }[] = [
   { icon: "💼", label: "お仕事", value: "あなたの会社の記事づくりの案内役" },
   { icon: "✨", label: "得意なこと", value: "質問すること、ほめること、AIOのニュース集め" },
   { icon: "🙅", label: "苦手なこと", value: "作り話。だから、あなたの経験をくわしく聞きます" },
-  { icon: "📰", label: "毎週月曜日", value: "AIに紹介されるための最新ニュースを読んでいます" },
-  { icon: "💬", label: "口ぐせ", value: "「いいですね！それ、AIが紹介したくなる話です」" },
+  { icon: "📰", label: "毎週月曜日", value: "AIに選ばれるための最新ニュースを読んでいます" },
+  { icon: "💬", label: "口ぐせ", value: "「いいですね！それ、AIにも人にも伝わる話です」" },
   { icon: "❤️", label: "好きなもの", value: "現場の言葉。飾らない話がいちばん伝わります" },
 ];
 
 /** 表情の図鑑。押すと、その顔のときに言いそうなことを話す */
 const FACES: { mood: ShioriMood; name: string; say: string }[] = [
   { mood: "bow", name: "ごあいさつ", say: "はじめまして、しおりです。どうぞよろしくお願いします！" },
-  { mood: "ask", name: "しつもん", say: "ちょっと教えてください。そのとき、お客さんは何に困っていましたか？" },
-  { mood: "point", name: "ここがポイント", say: "ここを書くと、AIが紹介しやすくなるんです。" },
+  { mood: "ask", name: "しつもん", say: "ちょっと教えてください。そのとき、お客様は何に困っていましたか？" },
+  { mood: "point", name: "ここがポイント", say: "ここを書くと、AIが紹介しやすくなって、読んだ人も安心できるんです。" },
   { mood: "surprise", name: "びっくり", say: "えっ、そんな工夫をしていたんですか！それ、記事にしましょう！" },
   { mood: "idea", name: "ひらめき", say: "いいこと思いつきました！その話、もう1本書けますよ。" },
   { mood: "think", name: "考え中", say: "うーん…どう書くと伝わるか、いま考えています。" },
   { mood: "right", name: "正解", say: "そのとおりです！材料がそろいました。" },
   { mood: "welldone", name: "よくできました", say: "すばらしい！とても読みやすい記事になりました。" },
   { mood: "cheer", name: "おうえん", say: "あと少しです！いっしょにがんばりましょう！" },
-  { mood: "joy", name: "うれしい", say: "うれしいです！また一歩、AIに近づきましたね。" },
+  { mood: "joy", name: "うれしい", say: "うれしいです！また一歩、選ばれる会社に近づきましたね。" },
   { mood: "coffee", name: "ひと休み", say: "おつかれさまです。コーヒーでも飲んで、ひと息つきましょう。" },
   { mood: "sad", name: "しょんぼり", say: "うまくいきませんでした…。でも大丈夫、もう一度やってみましょう。" },
   { mood: "jersey-stretch", name: "準備運動", say: "さあ、準備運動はばっちり。今月も書きますよ！" },
@@ -42,7 +43,7 @@ const FACES: { mood: ShioriMood; name: string; say: string }[] = [
 const CAN_DO: { icon: string; title: string; text: string }[] = [
   { icon: "💬", title: "質問して、聞き出す", text: "1問ずつ、なぜ聞くのかを添えて質問します。話すように答えてください。" },
   { icon: "📝", title: "記事にまとめる", text: "あなたの答えから、AIといっしょに記事の形にします。" },
-  { icon: "🔍", title: "AIOのチェック", text: "AIに紹介されやすい形になっているか、11のポイントで確かめます。" },
+  { icon: "🔍", title: "AIOのチェック", text: "AIに選ばれて、読んだ人にも選ばれる記事か、11のポイントで確かめます。" },
   { icon: "🎖️", title: "応援する", text: "スタンプやレベルアップで、続けるのを応援します。" },
 ];
 
@@ -81,8 +82,9 @@ export function ShioriIntro() {
           <ShioriTalk
             mood="joy"
             hideOnPhone
-            lines={["はじめまして！あなたの会社の記事づくりを、となりで案内します。", "あなたの会社が、AIに「この会社がいいよ」と紹介されるように。いっしょにがんばりましょう！"]}
+            lines={["はじめまして！あなたの会社の記事づくりを、となりで案内します。", "AIに選ばれて、そのあと読んだ人に選ばれるまで、ずっと伴走します。いっしょにがんばりましょう！"]}
           />
+          <ChosenPath />
         </div>
       </section>
 
