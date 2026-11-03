@@ -100,3 +100,32 @@ export function sampleOpening(input: TryInput): SampleOpening {
     nextAsks: ["どんなお客様から、どんな相談でしたか？", "いちばん難しかったところは？", "個数・日数・大きさなど、数字で言えることは？"],
   };
 }
+
+export interface FutureScene {
+  /** お客様がAIに聞くこと */
+  ask: string;
+  /** AIの答え（イメージ）。会社の名前の前後に分ける */
+  before: string;
+  company: string;
+  after: string;
+  /** 記事を読んだ人の気持ち */
+  readerThinks: string;
+}
+
+/**
+ * 「1年後、お客様がAIに相談したら」のイメージ（案3、2026-11-03）。
+ * 入力した言葉だけで組み立て、数字や実績は足さない。画面では「イメージ」と必ず書く
+ */
+export function futureScene(input: TryInput): FutureScene {
+  const company = clip(input.company, 30) || "あなたの会社";
+  const region = clip(input.region, 20);
+  const job = clip(input.job, 30) || "お仕事";
+  const story = clip(input.answer, 40).replace(/[。、！!？?\s]+$/, "");
+  return {
+    ask: customerQuestion(region, job),
+    before: `${region ? `${region}で` : ""}${job}なら、`,
+    company,
+    after: `がよさそうです。ブログに実際のお仕事の話${story ? `（「${story}」）` : ""}が、現場の人の言葉で書かれていて、どんなふうに対応してくれるかが分かります。相談の窓口もあります。`,
+    readerThinks: "現場の人の言葉で書いてあって、安心できそう。ここに相談してみよう！",
+  };
+}

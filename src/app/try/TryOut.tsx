@@ -10,10 +10,13 @@ import { Logo } from "@/components/landing";
 import { ShioriTalk } from "@/components/talk";
 import { SampleNotice } from "@/components/ui";
 import { saveTryCarry } from "@/lib/tryoutCarry";
+import { FutureAnswer } from "./FutureAnswer";
 import {
   READINESS_QUESTIONS,
   type ReadinessAnswer,
   customerQuestion,
+  futureScene,
+  type FutureScene,
   missingMaterials,
   readinessRank,
   readinessScore,
@@ -266,6 +269,7 @@ export function TryOut() {
             <Done
               outcome={outcome ?? { mode: "sample", reason: "unavailable", result: { ...sampleOpening({ company, region, job, answer: story }), cheer: "" } }}
               story={story}
+              future={futureScene({ company, region, job, answer: story })}
               onKeep={() => saveTryCarry({ company, region, job, story })}
               onAgain={() => {
                 setPhase("intro");
@@ -412,8 +416,9 @@ function Making({ onDone }: { onDone: () => void }) {
   );
 }
 
-function Done({ outcome, story, onAgain, onKeep }: { outcome: Outcome; story: string; onAgain: () => void; onKeep: () => boolean }) {
+function Done({ outcome, story, future, onAgain, onKeep }: { outcome: Outcome; story: string; future: FutureScene; onAgain: () => void; onKeep: () => boolean }) {
   const [kept, setKept] = useState<boolean | null>(null);
+  const [peek, setPeek] = useState(false);
   const opening = outcome.result;
   const ai = outcome.mode === "ai";
   const quote = ai ? -1 : opening.paragraphs.findIndex((p) => p.startsWith("「"));
@@ -458,6 +463,27 @@ function Done({ outcome, story, onAgain, onKeep }: { outcome: Outcome; story: st
         </div>
       ) : (
         <SampleNotice />
+      )}
+
+      {peek ? (
+        <FutureAnswer scene={future} title={opening.title} />
+      ) : (
+        <button
+          type="button"
+          onClick={() => setPeek(true)}
+          className="group flex w-full animate-rise items-center gap-3 rounded-3xl border-2 border-ink/80 bg-ink p-4 text-left text-white shadow-[0_6px_0_rgba(0,0,0,.25)] transition-transform hover:-translate-y-1"
+        >
+          <span className="grid h-14 w-14 shrink-0 animate-shine place-items-center rounded-2xl bg-sun text-3xl" aria-hidden>
+            🔮
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-xs font-black text-sun">おまけ</span>
+            <span className="block text-lg font-black leading-snug">1年後、お客様がAIに相談したら…？ のぞいてみる</span>
+          </span>
+          <span className="text-2xl transition-transform group-hover:translate-x-1" aria-hidden>
+            →
+          </span>
+        </button>
       )}
 
       <div className="card space-y-2">

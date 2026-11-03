@@ -11,6 +11,7 @@ import { MonthlyGrowth } from "@/components/MonthlyGrowth";
 import { SearchConsoleCard } from "@/components/SearchConsoleCard";
 import { ShioriGrowth } from "@/components/ShioriGrowth";
 import { StampBook } from "@/components/StampBook";
+import { TownBoard } from "@/components/TownBoard";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
@@ -81,6 +82,7 @@ export default function HomePage() {
 
       <AioNews />
 
+      <TownBoard db={db} orgId={orgId} orgName={org?.name ?? ""} />
       <StampBook db={db} orgId={orgId} />
       <ShioriGrowth db={db} orgId={orgId} />
       <MonthlyGrowth db={db} orgId={orgId} month={month} />

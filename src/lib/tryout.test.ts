@@ -42,3 +42,26 @@ describe("記事の書き出し（サンプル）", () => {
     expect(o.paragraphs.join("").length).toBeLessThan(420);
   });
 });
+
+describe("1年後のイメージ", () => {
+  it("入力した言葉だけで作り、数字を足さない", async () => {
+    const { futureScene } = await import("./tryout");
+    const s = futureScene({ company: "山田製作所", region: "岐阜県関市", job: "金属の部品加工", answer: "急ぎの試作を間に合わせた" });
+    expect(s.ask).toContain("岐阜県関市");
+    expect(s.company).toBe("山田製作所");
+    expect(s.after).toContain("急ぎの試作を間に合わせた");
+    expect(`${s.before}${s.after}${s.readerThinks}`).not.toMatch(/[0-9０-９]/);
+  });
+
+  it("空の入力でもこわれない", async () => {
+    const { futureScene } = await import("./tryout");
+    const s = futureScene({ company: "", region: "", job: "", answer: "" });
+    expect(s.company).toBe("あなたの会社");
+    expect(s.after).not.toContain("「」");
+  });
+});
+
+it("1年後のイメージの引用は、句点で終わらない", async () => {
+  const { futureScene } = await import("./tryout");
+  expect(futureScene({ company: "a", region: "b", job: "c", answer: "間に合わせた。" }).after).toContain("（「間に合わせた」）");
+});
