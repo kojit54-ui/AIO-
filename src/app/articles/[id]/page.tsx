@@ -10,6 +10,7 @@ import { Confetti, ShioriFace, Toast } from "@/components/fun";
 import { type GuideStep, ShioriTalk, StepGuide } from "@/components/talk";
 import { Dialog, Forbidden, GeneratingOverlay, NotFound, Notice, SampleNotice, StatusBadge, formatDate } from "@/components/ui";
 import { FOLLOW_UP_QUESTION, QUESTIONS } from "@/mock/data";
+import { PLAN_LABELS, PLAN_QUESTIONS, planOf } from "@/lib/articlePlan";
 import { ApiError, useStore } from "@/mock/store";
 import { blocksToHtml, blocksToPlainText } from "@/lib/exportText";
 import { slotOf } from "@/lib/imageSlot";
@@ -134,7 +135,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
     <main className="page">
       {busy === "generate" && <GeneratingOverlay label={outlineMode ? "本文を作っています" : "もう一度書いています"} />}
       {fresh && !outlineMode && <Confetti count={50} />}
-      {fresh && outlineMode && <Toast>見出しができました！順番や言葉を整えましょう</Toast>}
+      {fresh && outlineMode && <Toast>記事の流れができました！読む人の疑問の順に並んでいます</Toast>}
       {banner?.tone === "ok" && <Toast key={banner.message}>{banner.message}</Toast>}
       {!isCoach && <ArticleSteps article={article} outlineMode={outlineMode} aioDone={aioDone} />}
 
@@ -143,7 +144,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
           <Link href={isCoach ? "/coach" : "/"} className="text-sm text-brand-dark underline">
             {isCoach ? "管理画面へ戻る" : "ホームへ戻る"}
           </Link>
-          <h1 className="text-2xl font-black sm:text-3xl">{outlineMode ? "見出しができました" : isCoach ? "記事を確認する" : "記事を整える"}</h1>
+          <h1 className="text-2xl font-black sm:text-3xl">{outlineMode ? "記事の流れができました" : isCoach ? "記事を確認する" : "記事を整える"}</h1>
           <p className="flex flex-wrap items-center gap-2 text-sm text-muted">
             <StatusBadge status={article.status} />
             <span>{version.versionNo}回目の保存</span>
@@ -216,7 +217,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <section className={`card space-y-5 ${mobileView === "body" ? "" : "hidden lg:block"}`} aria-label="本文">
           {outlineMode ? (
-            <OutlineEditor headings={headings} onChange={setHeadings} onGenerate={generate} busy={busy !== null} />
+            <OutlineEditor title={version.title} plan={planOf(version.answers)} headings={headings} onChange={setHeadings} onGenerate={generate} busy={busy !== null} />
           ) : (
             <>
               <TitleEditor title={title} candidates={version.titleCandidates} readOnly={readOnly} onChange={(t) => { setTitle(t); setDirty(true); }} />
@@ -347,7 +348,7 @@ function ShioriNote({ status, fresh }: { status: Article["status"]; fresh: boole
 
 /** 記事ができるまでの道のり。今どこにいるかを示す */
 function ArticleSteps({ article, outlineMode, aioDone }: { article: Article; outlineMode: boolean; aioDone: boolean }) {
-  const steps = ["質問に答える", "見出しを決める", "本文を整える", "AIOのチェック", "ブログに載せる"];
+  const steps = ["質問に答える", "記事の流れを決める", "本文を整える", "AIOのチェック", "ブログに載せる"];
   const now = article.status === "published" ? 5 : aioDone ? 4 : outlineMode ? 1 : 2;
   return (
     <ol className="mb-4 flex flex-wrap gap-x-1 gap-y-1.5 text-xs sm:text-sm" aria-label="記事ができるまで">
@@ -434,35 +435,85 @@ function TitleEditor({ title, candidates, readOnly, onChange }: { title: string;
   );
 }
 
-function OutlineEditor({ headings, onChange, onGenerate, busy }: { headings: string[]; onChange: (h: string[]) => void; onGenerate: () => void; busy: boolean }) {
+/**
+ * 見出しの画面。見出しの一覧だけでは何のことか分からない（2026-11-03 田村さん）ので、
+ * 先に決めた作戦（タイトル・読む人・答え）を上に出し、見出しは「読む人の疑問」の順番として見せる。直すのは開いたときだけ
+ */
+function OutlineEditor({ title, plan, headings, onChange, onGenerate, busy }: { title: string; plan: { reader: string; conclusion: string }; headings: string[]; onChange: (h: string[]) => void; onGenerate: () => void; busy: boolean }) {
+  const filled = headings.filter((h) => h.trim());
   return (
-    <div className="space-y-4">
-      <ShioriTalk mood="welldone" lines={["答えてもらった内容から、記事の見出しを作りました！", "順番を入れ替えたり、言葉を直したりしてから「本文を作る」を押してくださいね。"]} />
-      <ol className="space-y-2">
-        {headings.map((h, i) => (
-          <li key={i} className="flex animate-rise items-center gap-2" style={{ animationDelay: `${i * 0.07}s` }}>
-            <label htmlFor={`h-${i}`} className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand font-black text-white">
-              {i + 1}
-            </label>
-            <input id={`h-${i}`} className="field" value={h} onChange={(e) => onChange(headings.map((x, n) => (n === i ? e.target.value : x)))} />
-            <button type="button" className="btn-secondary min-h-9 px-2 py-1 text-sm" aria-label={`見出し${i + 1}を上へ`} disabled={i === 0} onClick={() => { const n = [...headings]; [n[i - 1], n[i]] = [n[i], n[i - 1]]; onChange(n); }}>
-              ↑
-            </button>
-            <button type="button" className="btn-secondary min-h-9 px-2 py-1 text-sm text-danger" aria-label={`見出し${i + 1}を削除`} onClick={() => onChange(headings.filter((_, n) => n !== i))}>
-              ×
-            </button>
-          </li>
-        ))}
-      </ol>
-      <div className="flex flex-wrap items-center gap-2">
-        <button type="button" className="btn-secondary" onClick={() => onChange([...headings, ""])} disabled={headings.length >= MAX_HEADINGS}>
-          見出しを追加
-        </button>
-        {headings.length >= MAX_HEADINGS && <p className="text-sm text-muted">見出しは{MAX_HEADINGS}個までです</p>}
+    <div className="space-y-5">
+      <ShioriTalk mood="welldone" lines={["読む人が知りたい順番に、記事の流れを作りました！", "上から読むと、悩みが少しずつ解けていく流れです。このままで大丈夫なら「この流れで本文を書く」を押してください。"]} />
+      <div className="space-y-3 rounded-2xl border-2 border-sun bg-sun-soft p-4">
+        <p className="text-sm font-bold text-muted">この記事の作戦</p>
+        <div>
+          <p className="text-xs font-bold text-muted">タイトル</p>
+          <p className="text-lg font-black">{title}</p>
+        </div>
+        {plan.reader && (
+          <div>
+            <p className="text-xs font-bold text-muted">読んでほしい人</p>
+            <p className="font-bold">{plan.reader}</p>
+          </div>
+        )}
+        {plan.conclusion && (
+          <div>
+            <p className="text-xs font-bold text-muted">この記事の答え（本文のはじめに書きます）</p>
+            <p>{plan.conclusion}</p>
+          </div>
+        )}
       </div>
+      <div>
+        <h2 className="mb-2 text-lg font-black">読む人の疑問に、この順番で答えます</h2>
+        <ol className="space-y-1">
+          {filled.map((h, i) => (
+            <li key={i} className="animate-rise" style={{ animationDelay: `${i * 0.07}s` }}>
+              <div className="flex items-start gap-3 rounded-xl bg-canvas p-3">
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand font-black text-white" aria-hidden>
+                  {i + 1}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-xs font-bold text-muted">読む人の疑問{i + 1}</p>
+                  <p className="font-bold">{h}</p>
+                </div>
+              </div>
+              {i < filled.length - 1 && (
+                <p className="py-0.5 pl-5 text-muted" aria-hidden>
+                  ↓
+                </p>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+      <details className="rounded-xl border-2 border-line p-3" open={filled.length === 0}>
+        <summary className="cursor-pointer font-bold text-brand-dark">流れを直したいとき（言葉を直す・入れ替える・足す）</summary>
+        <ol className="mt-3 space-y-2">
+          {headings.map((h, i) => (
+            <li key={i} className="flex items-center gap-2">
+              <label htmlFor={`h-${i}`} className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand font-black text-white">
+                {i + 1}
+              </label>
+              <input id={`h-${i}`} className="field" value={h} onChange={(e) => onChange(headings.map((x, n) => (n === i ? e.target.value : x)))} />
+              <button type="button" className="btn-secondary min-h-9 px-2 py-1 text-sm" aria-label={`見出し${i + 1}を上へ`} disabled={i === 0} onClick={() => { const n = [...headings]; [n[i - 1], n[i]] = [n[i], n[i - 1]]; onChange(n); }}>
+                ↑
+              </button>
+              <button type="button" className="btn-secondary min-h-9 px-2 py-1 text-sm text-danger" aria-label={`見出し${i + 1}を削除`} onClick={() => onChange(headings.filter((_, n) => n !== i))}>
+                ×
+              </button>
+            </li>
+          ))}
+        </ol>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <button type="button" className="btn-secondary" onClick={() => onChange([...headings, ""])} disabled={headings.length >= MAX_HEADINGS}>
+            疑問を足す
+          </button>
+          {headings.length >= MAX_HEADINGS && <p className="text-sm text-muted">{MAX_HEADINGS}個までです</p>}
+        </div>
+      </details>
       <div className="border-t border-line pt-4">
-        <button type="button" className="btn-primary text-lg" disabled={busy || headings.filter((h) => h.trim()).length === 0} onClick={onGenerate}>
-          この見出しで本文を作る
+        <button type="button" className="btn-primary text-lg" disabled={busy || filled.length === 0} onClick={onGenerate}>
+          この流れで本文を書く
           <span className="inline-block animate-nudge" aria-hidden>
             ✨
           </span>
@@ -734,7 +785,7 @@ function ImagePanel({ article, version, canGenerate }: { article: Article; versi
 }
 
 function AnswerPanel({ version }: { version: ArticleVersion }) {
-  const all = [...QUESTIONS, FOLLOW_UP_QUESTION];
+  const all = [...QUESTIONS, FOLLOW_UP_QUESTION, ...PLAN_QUESTIONS.map((q) => ({ ...q, label: PLAN_LABELS[q.id] ?? q.label }))];
   if (version.answers.length === 0) return <p className="text-sm text-muted">答えた内容の記録はありません。</p>;
   return (
     <dl className="space-y-3">
