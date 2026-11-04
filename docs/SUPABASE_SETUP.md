@@ -9,7 +9,7 @@
 | 検証 | cotam-blog-staging（組織 co-tam、Free） | South Asia (Mumbai) | https://yxpteazaakcpyfvuikap.supabase.co | 2026-10-22 |
 | 本番 | 未作成。Northeast Asia (Tokyo) で作る | | | |
 
-検証用のアプリは Vercel のプロジェクト aio（kojit54-ui's projects、Hobby）で、https://aio-roan.vercel.app 。main に入ると自動で公開される。
+検証用のアプリは Vercel のプロジェクト aio（kojit54-ui's projects、Hobby）で、https://aio-erabare.jp （2026-11-04 から。前の https://aio-roan.vercel.app も開ける）。main に入ると自動で公開される。
 環境変数は NEXT_PUBLIC_SUPABASE_URL・NEXT_PUBLIC_SUPABASE_ANON_KEY・SUPABASE_SERVICE_ROLE_KEY の3つ（2026-10-22）。AIのキーは未設定のため、生成はサンプルになる。
 お客様に使ってもらう前に Pro に切り替える（Hobby は商用利用不可）。
 
@@ -19,16 +19,16 @@
 2. SQL Editor で supabase/migrations/ のファイルを古い順に実行する（「Success. No rows returned」で完了）
 3. Authentication → Sign In / Providers で「Allow new users to sign up」をオフにして Save（招待した人だけがログインできる）
 4. メールの文面は、独自ドメインの SMTP を設定するまで変えられない（Supabase の制限）。標準の文面のままだと、ログイン用のメールは**送ったのと同じブラウザで**開く必要がある（/auth/confirm は code で受ける）。SMTP の設定後（T3-2）に Authentication → Emails → Magic Link を次に差し替えると、別の端末で開いてもログインできる
-   - Subject：`コタム ブログ執筆支援 ログイン用のリンク`
+   - Subject：`AIOえらばれ帳 ログイン用のリンク`
    - Body：
      ```
      <h2>ログイン用のリンク</h2>
-     <p>下のリンクを開くと、コタム ブログ執筆支援にログインします（1時間有効）。</p>
+     <p>下のリンクを開くと、AIOえらばれ帳にログインします（1時間有効）。</p>
      <p><a href="{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=email">ログインする</a></p>
      <p>心当たりがない場合は、このメールを破棄してください。</p>
      ```
 5. Authentication → URL Configuration
-   - Site URL：アプリのURL（例：Vercel の URL）
+   - Site URL：アプリのURL（検証は https://aio-erabare.jp ）
    - Redirect URLs：`<アプリのURL>/auth/confirm**`（ローカルで試すときは `http://localhost:3000/auth/confirm**` も）。ここに無いURLへはメールのリンクが戻らない
 6. Project Settings → API Keys から `URL`、`anon`（公開してよい鍵）、`service_role`（秘密）を、Vercel の環境変数に入れる（.env.example の名前）
 7. 最初の全社管理者：Authentication → Users →「Add user」でメールアドレスを登録し、SQL Editor で

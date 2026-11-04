@@ -33,6 +33,12 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-04 CC（Claude、プロジェクトのスレッド「サービス名を決めてドメインに載せる」）
+- ブランチ / コミット：claude/project-thread-2u7gw9（名前の変更は PR #84 でマージ済み。この記録は docs のみ）
+- 変更点：サービス名「AIOえらばれ帳」（src/lib/brand.ts の SERVICE_NAME・SERVICE_TAGLINE・SERVICE_OPERATOR、ロゴ、/shiori・/try の題名、しおり通信の送り主名）。アドレスを https://aio-erabare.jp に切り替え
+- 設定（田村さんが画面で実施）：XServerドメインで aio-erabare.jp を取得（期限 2027/11/30、自動更新）、ネームサーバーを XServerドメインに、A レコード @ → 216.198.79.1。Vercel のプロジェクト aio にドメイン追加（www への転送なし、Production）。環境変数 NEXT_PUBLIC_SITE_URL=https://aio-erabare.jp（Config、Production）で再デプロイ。Supabase の Site URL を https://aio-erabare.jp、Redirect URLs に https://aio-erabare.jp/** を追加（aio-roan の行は残す）。SMTP の Sender name と Magic Link の件名・本文を「AIOえらばれ帳」に
+- 確認結果：DNS は 8.8.8.8・1.1.1.1・権威サーバー・JPRS で反映を確認。新しいアドレスでのログインは田村さんが確認中
+- 次の作業と担当：本番（Supabase 東京・Vercel Pro）を作るときも同じドメインを向ける（T3-1）。Search Console のサービスアカウントはドメインに関係しないため変更なし
 
 ## 記録
 
