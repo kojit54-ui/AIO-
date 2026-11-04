@@ -51024,5 +51024,9822 @@ export const MFG_ITEMS: MfgItem[] = [
       "publisher": "日本政策金融公庫 総合研究所",
       "date": "2026-02"
     }
+  },
+  {
+    "id": "question-517",
+    "kind": "question",
+    "title": "焼き菓子OEMは何個から？",
+    "summary": "県のOEMサイトでは菓子を100個から受ける会社と「要相談」の会社が並ぶ。記事では最小数と、数が増えると1個あたりがどう変わるかを示すと選ばれやすい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "焼き菓子は何個から？数と単価の目安",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（菓子）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/kashi.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-518",
+    "kind": "question",
+    "title": "包材は自分で用意するの？",
+    "summary": "菓子のOEMでは、袋や箱を発注者が用意して支給する形の会社もある。包材の手配をどちらがするかは、見積もりの前に書いておくと行き違いが減る。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "包材は支給？おまかせ？菓子OEMの分担表",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（菓子）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/kashi.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-519",
+    "kind": "question",
+    "title": "賞味期限を決める検査も頼める？",
+    "summary": "OEMの依頼では、半年〜1年半の賞味期限を確かめたいので初回に検査分も作ってほしい、という声がある。検査の段取りと費用をどう持つかを書くと安心される。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "日持ちを決める検査、誰がいつやる？",
+    "source": {
+      "title": "食品OEMの依頼案件",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=894601",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-437",
+    "kind": "success",
+    "title": "50缶からのクッキー缶OEM",
+    "summary": "大阪の洋菓子店が、ホテルや旅館ごとの魅力を形にするクッキー缶のOEMを50缶前後から始めると発表した。相手の業種を名指しした提案はWebでも伝わりやすい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "宿の名物をクッキー缶にする小ロットOEM",
+    "source": {
+      "title": "宿泊体験を提案するクッキー缶のOEMを開始",
+      "url": "https://prtimes.jp/main/html/rd/p/000000004.000177653.html",
+      "publisher": "PR TIMES",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-361",
+    "kind": "buyer",
+    "title": "宿や施設は「名物づくり」で探す",
+    "summary": "クッキー缶OEMの発表は、テスト販売や期間限定品の相談にも応じるとしている。宿や施設の担当者は「お土産を作りたい」という目的から作り手を探す。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "期間限定のお土産を作りたい宿へ",
+    "source": {
+      "title": "宿泊体験を提案するクッキー缶のOEMを開始",
+      "url": "https://prtimes.jp/main/html/rd/p/000000004.000177653.html",
+      "publisher": "PR TIMES",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-334",
+    "kind": "pain",
+    "title": "OEM頼みで自社の顔が見えない",
+    "summary": "OEM製造が売上の大部分を占める和菓子メーカーの譲渡案件がある。受託に偏ると自社名が知られず、取引先が減ると一気に苦しくなる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "受託ばかりの和菓子屋が名前を出す方法",
+    "source": {
+      "title": "和菓子メーカーの事業譲渡案件",
+      "url": "https://batonz.jp/sell_cases/40613",
+      "publisher": "バトンズ",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "question-520",
+    "kind": "question",
+    "title": "和菓子もOEMで作れる？",
+    "summary": "和菓子を中心に幅広い菓子を作り、OEMで売上を立てる会社もある。記事では、作れる品目（生菓子・焼き菓子・半生）と日持ちの違いを分けて書くとよい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "和菓子OEMで頼める品目と日持ち",
+    "source": {
+      "title": "和菓子メーカーの事業譲渡案件",
+      "url": "https://batonz.jp/sell_cases/40613",
+      "publisher": "バトンズ",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-438",
+    "kind": "success",
+    "title": "体験キットとハッシュタグで話題に",
+    "summary": "京都の老舗和菓子店が、学校向けの体験を家で作れるキットに変え、決めたハッシュタグで投稿してもらう企画をした。作る楽しさを客に発信してもらう例。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "家で作る和菓子キットと投稿企画",
+    "source": {
+      "title": "老舗和菓子店の体験キットとSNS",
+      "url": "https://netshop.impress.co.jp/node/8964",
+      "publisher": "ネットショップ担当者フォーラム",
+      "date": null
+    }
+  },
+  {
+    "id": "question-521",
+    "kind": "question",
+    "title": "自宅のキッチンで菓子を作って売れる？",
+    "summary": "自宅で作った菓子を売るには菓子製造業の許可が要る。SNSやフリマでも、くり返し売れば営業とみなされるという解説がある。台所とは別の製造場所が必要なことが多い。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "自宅で焼き菓子を売る前に知ること",
+    "source": {
+      "title": "家庭で作った菓子やパンを売るための営業許可",
+      "url": "https://atsoho.com/blog/home-kitchen-sweets-sales-permit",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-527",
+    "kind": "term",
+    "title": "菓子製造業の許可",
+    "summary": "パンや菓子を作って売るための保健所の許可。施設は、全業種共通の基準、業種ごとの基準、扱う食品に応じた基準の組み合わせで見られる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "菓子製造業の許可、何を見られる？",
+    "source": {
+      "title": "菓子製造業の施設基準",
+      "url": "https://www.pref.shimane.lg.jp/life/syoku/kikan/hamada_hoken/syokuhin/gyoushu_kijun/kasiseizou.html",
+      "publisher": "島根県浜田保健所",
+      "date": null
+    }
+  },
+  {
+    "id": "question-522",
+    "kind": "question",
+    "title": "許可の申請に何が要る？",
+    "summary": "申請書のほか、製造室の平面図や設備の配置図が要る。相模原市の資料では菓子製造業の申請手数料は14,000円。金額は自治体で違うので保健所に確かめる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "菓子の営業許可、図面と手数料",
+    "source": {
+      "title": "営業許可の施設基準と手数料",
+      "url": "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/007/431/kijun_r07.pdf",
+      "publisher": "相模原市",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-362",
+    "kind": "buyer",
+    "title": "店を開く前に保健所へ図面を持つ",
+    "summary": "施設の細かな要件は自治体で違うため、計画の段階で図面を持って保健所に相談するのが近道とされる。工房づくりを請け負う側は、この手順を記事で案内できる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "菓子製造業の施設基準",
+      "url": "https://www.pref.shimane.lg.jp/life/syoku/kikan/hamada_hoken/syokuhin/gyoushu_kijun/kasiseizou.html",
+      "publisher": "島根県浜田保健所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-439",
+    "kind": "success",
+    "title": "全国のパン屋から冷凍パンを集める",
+    "summary": "群馬のスタートアップが、焼いて冷凍したパンを全国のパン屋から小ロットで仕入れられる仕組みを作った。小さな店でも冷凍で遠くの買い手とつながれる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "冷凍パンで遠くの会社とつながる",
+    "source": {
+      "title": "パン屋の冷凍パンを小ロットで調達",
+      "url": "https://weekly.ascii.jp/elem/000/004/011/4011206/",
+      "publisher": "週刊アスキー",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-363",
+    "kind": "buyer",
+    "title": "企業のパン調達は小ロットで試す",
+    "summary": "会社の福利厚生やイベント向けに、パン屋の冷凍パンを小ロットで頼む仕組みが出ている。買い手はまず少量で味と届き方を試してから増やす。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "会社のおやつにパン屋の冷凍パン",
+    "source": {
+      "title": "パンの小ロット調達サービス",
+      "url": "https://news.nissyoku.co.jp/news/aoyagi20200428062548894",
+      "publisher": "日本食糧新聞",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "term-528",
+    "kind": "term",
+    "title": "焼成済み冷凍パン",
+    "summary": "焼き上げてから冷凍したパン。解凍や軽い温めで食べられ、遠くへ送ったり作り置きしたりしやすい。生地のまま冷凍する方法とは手間と味の出方が違う。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "焼いてから冷凍と生地で冷凍の違い",
+    "source": {
+      "title": "パン屋の冷凍パンを小ロットで調達",
+      "url": "https://weekly.ascii.jp/elem/000/004/011/4011206/",
+      "publisher": "週刊アスキー",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-410",
+    "kind": "trend",
+    "official": false,
+    "title": "パン屋の倒産は2025年に大幅減",
+    "summary": "帝国データバンクの発表では、パン屋の倒産は2025年に大きく減り、約7割が黒字とされた。一方で原料高などの負担は続き、課題は「納得感のある値上げ」とした。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "値上げを納得してもらう伝え方",
+    "source": {
+      "title": "パン屋の倒産、大幅減",
+      "url": "https://www.zaikei.co.jp/releases/3205338/",
+      "publisher": "帝国データバンク（財経新聞）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-335",
+    "kind": "pain",
+    "title": "値上げを客にどう伝えるか",
+    "summary": "パン屋は原料・光熱・人件費の高まりに直面し、値上げの納得感が課題とされる。原料の違いや手間を言葉にして伝える発信が、値上げの支えになる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "うちのパンが値上がりした理由",
+    "source": {
+      "title": "パン屋の倒産、大幅減",
+      "url": "https://www.zaikei.co.jp/releases/3205338/",
+      "publisher": "帝国データバンク（財経新聞）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-411",
+    "kind": "trend",
+    "official": false,
+    "title": "惣菜市場は11.7兆円に",
+    "summary": "日本惣菜協会の白書（日本食糧新聞が報道）では、2025年の惣菜市場は11兆7075億円で前年比3.7%増。ただし増えた分には原料費や人件費による値上げも含まれる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "惣菜市場は伸びている？数字の中身",
+    "source": {
+      "title": "2026年版惣菜白書",
+      "url": "https://news.nissyoku.co.jp/news/fukushima20260601025101835",
+      "publisher": "日本食糧新聞",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "pain-336",
+    "kind": "pain",
+    "title": "惣菜づくりは人の手に頼る",
+    "summary": "矢野経済研究所は、日配惣菜は多品種少量・短納期の労働集約型で、製造の多くを人手に頼るとした。人手不足と人件費高で機械化の必要が高まっている。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "惣菜工場の手作業と機械のすみ分け",
+    "source": {
+      "title": "2026年版 惣菜(中食)・米飯市場の実態と将来展望",
+      "url": "https://www.yano.co.jp/market_reports/C67113600",
+      "publisher": "矢野経済研究所",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-412",
+    "kind": "trend",
+    "official": false,
+    "title": "売上増の一番の理由は値上げ",
+    "summary": "矢野経済研究所の中食事業者への調査で、売上が増えた理由は「値上げを実施した」が45.2%で最多。原料費の価格転嫁が進んだという答えも25.8%あった。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2026年版 惣菜(中食)・米飯市場の実態と将来展望",
+      "url": "https://www.yano.co.jp/market_reports/C67113600",
+      "publisher": "矢野経済研究所",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-529",
+    "kind": "term",
+    "title": "日配惣菜",
+    "summary": "毎日つくって毎日届ける、日持ちの短い惣菜。サラダや煮物、揚げ物などが入る。多品種を少しずつ短い納期で作るため、人手と段取りの負担が大きい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "日配惣菜とは？毎日届ける仕組み",
+    "source": {
+      "title": "2026年版 惣菜(中食)・米飯市場の実態と将来展望",
+      "url": "https://www.yano.co.jp/market_reports/C67113600",
+      "publisher": "矢野経済研究所",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-530",
+    "kind": "term",
+    "title": "中食（なかしょく）",
+    "summary": "家の外で調理され、家や職場で食べる食事。惣菜・弁当・おにぎりなど。外食（店で食べる）と内食（家で作る）の間にあたる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "2026年版 惣菜(中食)・米飯市場の実態と将来展望",
+      "url": "https://www.yano.co.jp/market_reports/C67113600",
+      "publisher": "矢野経済研究所",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-523",
+    "kind": "question",
+    "title": "惣菜はどれくらいの量から頼める？",
+    "summary": "水産の惣菜を作る会社には、続けて頼む場合は月20kg程度から、単発は100kgからといった形で、継続と単発で最小量を分ける例がある。分け方を書くと相談が来やすい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "続けて頼む？一度だけ？惣菜の最小量",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（農産物冷凍）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/nousanbutsureitou.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-413",
+    "kind": "trend",
+    "official": true,
+    "title": "冷凍食品の国内消費が300万トン超",
+    "summary": "日本冷凍食品協会によると、2025年の国内生産は約157万4千トンで前年比2.4%増。輸入を合わせた消費量は初めて300万トンを超え、1人あたり24.6kgで過去最高。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "冷凍食品はなぜ伸びる？",
+    "source": {
+      "title": "冷凍食品の生産・消費（2025年）",
+      "url": "https://www.reishokukyo.or.jp/wp-content/uploads/2026/04/pdf-data_21.pdf",
+      "publisher": "日本冷凍食品協会",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "trend-414",
+    "kind": "trend",
+    "official": true,
+    "title": "冷凍はカツやギョウザが伸びた",
+    "summary": "同協会の2025年の数字では、調理食品・菓子類・畜産物は増え、農産物と水産物は減った。品目ではカツ、ピラフ、ギョウザが伸び、炒飯や鶏唐揚は減った。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "冷凍食品の生産・消費（2025年）",
+      "url": "https://www.reishokukyo.or.jp/wp-content/uploads/2026/04/pdf-data_21.pdf",
+      "publisher": "日本冷凍食品協会",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "term-531",
+    "kind": "term",
+    "title": "急速冷凍",
+    "summary": "食品を短い時間で凍らせること。氷の粒が小さくなり、とかしたときに水分（ドリップ）が出にくい。ブラストチラーやショックフリーザーという機械を使う。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "急速冷凍でなぜおいしさが残る？",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（農産物冷凍）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/nousanbutsureitou.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "term-532",
+    "kind": "term",
+    "title": "ドリップ",
+    "summary": "冷凍した食品をとかしたときに出る水分やうまみの汁。多いと味や食感が落ちる。凍らせ方を工夫して減らすのが冷凍技術の腕の見せどころ。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "プロトン凍結を使ったOEM",
+      "url": "https://mono.ipros.com/product/detail/2000210906",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-533",
+    "kind": "term",
+    "title": "プロトン凍結",
+    "summary": "磁気や電磁波と冷風を組み合わせた凍結の方法とされ、解凍時のドリップを抑えるという。この技術を使ったOEMを案内する会社もある。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "特殊な凍結は何がちがう？",
+    "source": {
+      "title": "プロトン凍結を使ったOEM",
+      "url": "https://mono.ipros.com/product/detail/2000210906",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-440",
+    "kind": "success",
+    "title": "冷凍で「計画生産」を打ち出す",
+    "summary": "凍結技術を使ったOEMの案内では、作りためができるので丁寧に時間をかけて作れる点を利点に挙げる。繁忙期に追われない作り方は買い手の安心にもなる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "冷凍で作り置き、繁忙期でも品質一定",
+    "source": {
+      "title": "プロトン凍結を使ったOEM",
+      "url": "https://mono.ipros.com/product/detail/2000210906",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-524",
+    "kind": "question",
+    "title": "冷凍の惣菜も個包装で頼める？",
+    "summary": "県のOEMサイトには、急速冷凍や真空包装の機械を備え、小売向けの個包装まで受ける会社がある。設備の名前と、できる包装の形を並べて書くと伝わる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "冷凍・真空・個包装までできること",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（農産物冷凍）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/nousanbutsureitou.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "term-534",
+    "kind": "term",
+    "title": "真空包装",
+    "summary": "袋の中の空気を抜いて封をする包装。乾燥や酸化を防ぎ、冷凍焼けも減らせる。冷凍の肉や魚、惣菜のOEMでよく使われる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "宮城県OEM・商品化サポート（農産物冷凍）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/nousanbutsureitou.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-525",
+    "kind": "question",
+    "title": "下味を付けた生の冷凍もできる？",
+    "summary": "下味付きの生の冷凍品を得意とし、小ロットの試し生産から相談できる受託先がある。焼く前・揚げる前の状態で届けたい飲食店には大事な情報。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "下味冷凍で店の仕込みを減らす",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（農産物冷凍）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/nousanbutsureitou.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-415",
+    "kind": "trend",
+    "official": false,
+    "title": "冷凍自販機が店の売り場に",
+    "summary": "冷凍食品の自販機は、発売から1年たたずに1000台を超えたと報じられた。置くのは飲食店が多く、高くても専門店の味を求めて買う人がいるという。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "冷凍自販機で店の味を24時間売る",
+    "source": {
+      "title": "冷凍自販機の広がり",
+      "url": "https://www.sbbit.jp/article/refers/79032",
+      "publisher": "ビジネス+IT",
+      "date": "2022-01"
+    }
+  },
+  {
+    "id": "success-441",
+    "kind": "success",
+    "title": "自販機で客層が広がった",
+    "summary": "冷凍自販機を置いた飲食店では、店に来なかった人が買うようになり、客層が広がったという声がある。作り手は、自販機向けの冷凍品づくりを受ける道もある。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "冷凍自販機の広がり",
+      "url": "https://www.sbbit.jp/article/refers/79032",
+      "publisher": "ビジネス+IT",
+      "date": "2022-01"
+    }
+  },
+  {
+    "id": "trend-416",
+    "kind": "trend",
+    "official": true,
+    "title": "異業種が冷凍自販機の店を開く",
+    "summary": "新潟市の事例集では、電気工事業や内装業の会社が冷凍自販機や無人の冷凍餃子店を開いた。今はメーカーから仕入れるが、地元産品の加工も考えているという。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "新潟市ビジネスモデル事例集",
+      "url": "https://www.city.niigata.lg.jp/shisei/seisaku/jigyoproject/niigata2km/renkei/niigata2kmkakerumaru.files/businessmodel.pdf",
+      "publisher": "新潟市",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-364",
+    "kind": "buyer",
+    "title": "無人販売店は商品を仕入れる側",
+    "summary": "冷凍自販機の店を始めた異業種の会社は、冷凍食品メーカーから商品を仕入れている。小さな冷凍食品工場には、こうした新しい売り手が買い手になる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "無人販売店向けの冷凍商品をつくる",
+    "source": {
+      "title": "新潟市ビジネスモデル事例集",
+      "url": "https://www.city.niigata.lg.jp/shisei/seisaku/jigyoproject/niigata2km/renkei/niigata2kmkakerumaru.files/businessmodel.pdf",
+      "publisher": "新潟市",
+      "date": null
+    }
+  },
+  {
+    "id": "question-526",
+    "kind": "question",
+    "title": "和菓子やパスタも自販機で売れる？",
+    "summary": "非接触の販売装置について、パスタや和菓子を売りたいという問い合わせが来ていると報じられた。冷凍に向くか、とかし方をどう伝えるかが記事のネタになる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "非接触の販売装置に関心",
+      "url": "https://newswitch.jp/p/26573",
+      "publisher": "ニュースイッチ",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "buyer-365",
+    "kind": "buyer",
+    "title": "県の加工委託先ガイドで探す",
+    "summary": "熊本県は県内の農産物の加工を受ける会社・団体をガイドにまとめている。施設がない農家も、委託なら設備と開発のリスクを抑えて加工品を始められるという。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "農家が加工を頼む先の探し方",
+    "source": {
+      "title": "農産物の加工委託先ガイド",
+      "url": "https://www.pref.kumamoto.jp/soshiki/73/196134.html",
+      "publisher": "熊本県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-527",
+    "kind": "question",
+    "title": "施設がなくても加工品は作れる？",
+    "summary": "熊本県は、製造施設が足りない、作物から新しい加工品を作りたい、品数を増やしたい農家に加工委託をすすめる。受ける側は「持ち込みでもOK」と書くと届く。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "畑はあるけど工場はない農家へ",
+    "source": {
+      "title": "農産物の加工委託先ガイド",
+      "url": "https://www.pref.kumamoto.jp/soshiki/73/196134.html",
+      "publisher": "熊本県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-442",
+    "kind": "success",
+    "title": "農家・加工業者・大学で試作",
+    "summary": "大阪府和泉市の農業者グループが、加工業者や大学と組んでみかんドレッシングと業務用ペーストの試作品を作り、直売所での販売につなげた。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "みかんがドレッシングになるまで",
+    "source": {
+      "title": "6次産業化だより",
+      "url": "https://www.pref.osaka.lg.jp/documents/24912/73dayori_1.pdf",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-337",
+    "kind": "pain",
+    "title": "農繁期に加工の手が回らない",
+    "summary": "滋賀県の農産加工グループでは、加工する人の多くが果樹農家で、農繁期に加工ができないことが課題とされた。受託加工の会社には、この時期の受け皿になる強みがある。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "収穫の忙しい時期は加工をまかせる",
+    "source": {
+      "title": "農産加工グループの取組",
+      "url": "https://www.pref.shiga.lg.jp/file/attachment/1008689.pdf",
+      "publisher": "滋賀県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-338",
+    "kind": "pain",
+    "title": "業者任せの加工品で失敗",
+    "summary": "農家が加工品を業者任せで作り、売れずに困った体験が紹介されている。受ける側も、売り先や量の見込みを一緒に考える姿勢を記事で示すと信頼される。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "売れる加工品は売り先から逆算する",
+    "source": {
+      "title": "業者任せの加工品づくりにご用心",
+      "url": "https://agri.mynavi.jp/2024_06_28_270208",
+      "publisher": "マイナビ農業",
+      "date": "2024-06"
+    }
+  },
+  {
+    "id": "buyer-366",
+    "kind": "buyer",
+    "title": "作る前に売り先を一緒に決める",
+    "summary": "業者任せの加工品づくりの失敗談からは、商品の設計と売る計画をすり合わせる大切さが読み取れる。農家は「売るところまで相談できるか」で委託先を選ぶ。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "業者任せの加工品づくりにご用心",
+      "url": "https://agri.mynavi.jp/2024_06_28_270208",
+      "publisher": "マイナビ農業",
+      "date": "2024-06"
+    }
+  },
+  {
+    "id": "trend-417",
+    "kind": "trend",
+    "official": false,
+    "title": "農家のドライフルーツ相談が急増",
+    "summary": "食品乾燥機を扱う会社は、自前でドライフルーツを作りたい農家からの問い合わせが前年同期比730%に増えたと発表した。異常気象で廃棄果物が増えたのが背景という。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "規格外の果物をドライフルーツに",
+    "source": {
+      "title": "農家からのドライフルーツ加工相談が急増",
+      "url": "https://zaikei.co.jp/releases/3456944/",
+      "publisher": "財経新聞",
+      "date": null
+    }
+  },
+  {
+    "id": "term-535",
+    "kind": "term",
+    "title": "規格外品（B級品）",
+    "summary": "味は問題ないが、形・大きさ・傷などで市場の規格に合わず出荷できない農産物。ジャムやドライフルーツ、ジュースに加工して価値をつける例が多い。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "規格外の果物がおいしい加工品になる",
+    "source": {
+      "title": "農家からのドライフルーツ加工相談が急増",
+      "url": "https://zaikei.co.jp/releases/3456944/",
+      "publisher": "財経新聞",
+      "date": null
+    }
+  },
+  {
+    "id": "success-443",
+    "kind": "success",
+    "title": "規格外の果物を返礼品に",
+    "summary": "茨城県行方市では、外見や大きさで売れない果物を砂糖や保存料なしで乾燥させ、ふるさと納税の返礼品にしている。食品ロス削減の話は発信の柱になる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "捨てていた果物が返礼品になった",
+    "source": {
+      "title": "規格外フルーツのドライフルーツ返礼品",
+      "url": "https://www.furusato-tax.jp/product/detail/08233/6112698",
+      "publisher": "ふるさとチョイス",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-528",
+    "kind": "question",
+    "title": "りんごジュースは何kgから？",
+    "summary": "県のOEMサイトでは、果汁の最小量を100kg程度とし、それ以下は相談とする受託先がある。地元の個人農家の受託をする例もあり、箱数で目安を書くと分かりやすい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "りんご何箱からジュースにできる？",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（受託事業者）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/jigyosha/detail20.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-339",
+    "kind": "pain",
+    "title": "近くに小ロットの加工先がない",
+    "summary": "茨城県の資料では、県内にトマトジュースの加工を請け負う業者がほとんどなく、小ロットの製造に応じてもらえない状況があったとされる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "小ロットの搾汁を引き受ける意味",
+    "source": {
+      "title": "トマトジュースの商品化",
+      "url": "https://www.pref.ibaraki.jp/nourinsuisan/noseisaku/senryaku/moukarunogyo/documents/09_kensei_tomatojuice.pdf",
+      "publisher": "茨城県",
+      "date": null
+    }
+  },
+  {
+    "id": "term-536",
+    "kind": "term",
+    "title": "搾汁（さくじゅう）",
+    "summary": "果物や野菜をしぼって汁をとること。ジュース加工の最初の工程。しぼり方や殺菌の方法で、味・色・日持ちが変わる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "トマトジュースの商品化",
+      "url": "https://www.pref.ibaraki.jp/nourinsuisan/noseisaku/senryaku/moukarunogyo/documents/09_kensei_tomatojuice.pdf",
+      "publisher": "茨城県",
+      "date": null
+    }
+  },
+  {
+    "id": "term-537",
+    "kind": "term",
+    "title": "ジャムの糖度40%",
+    "summary": "日本農林規格（JAS）ではジャムの可溶性固形分（主に糖分）を40%以上としている。低糖度のジャムが増え、水分がしみ出る離水や日持ちが課題になる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "低糖度ジャムはなぜ日持ちが短い？",
+    "source": {
+      "title": "ジャム類の品質と保存性",
+      "url": "https://www.hro.or.jp/upload/43420/h04all.pdf",
+      "publisher": "北海道立総合研究機構",
+      "date": null
+    }
+  },
+  {
+    "id": "term-538",
+    "kind": "term",
+    "title": "水分活性",
+    "summary": "食品の中で、微生物が使える水の割合を表す数字。低いほど傷みにくい。北海道の研究所は、低糖度ジャムでは糖度だけでなく水分の管理が日持ちに大事とした。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "糖度だけでは日持ちは決まらない",
+    "source": {
+      "title": "ジャム類の品質と保存性",
+      "url": "https://www.hro.or.jp/upload/43420/h04all.pdf",
+      "publisher": "北海道立総合研究機構",
+      "date": null
+    }
+  },
+  {
+    "id": "term-539",
+    "kind": "term",
+    "title": "加速試験",
+    "summary": "高い温度で保存して品質の変化を早めて調べ、賞味期限を考える方法。山梨県はスモモジャムを3つの温度で2か月保存し、色の変化が目安になるとした。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "賞味期限はどうやって決める？",
+    "source": {
+      "title": "スモモジャムの保存試験",
+      "url": "https://www.pref.yamanashi.jp/documents/84002/sokuho_h29_06.pdf",
+      "publisher": "山梨県",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "question-529",
+    "kind": "question",
+    "title": "ジャムの賞味期限は何で決まる？",
+    "summary": "山梨県の試験では、糖度や酸度、水分などを測ったうち、保存温度と期間で大きく変わったのは色だった。記事では測る項目と根拠を示すと発注者が安心する。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "スモモジャムの保存試験",
+      "url": "https://www.pref.yamanashi.jp/documents/84002/sokuho_h29_06.pdf",
+      "publisher": "山梨県",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "success-444",
+    "kind": "success",
+    "title": "ヨーグルトで差をつけネット通販へ",
+    "summary": "平成30年度の6次産業化優良事例で、ジャージー牛の牛乳でヨーグルトを作り、ネット通販やスーパー、百貨店へ販路を広げた酪農家が農林水産大臣賞を受けた。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "6次産業化優良事例（平成30年度）",
+      "url": "https://www.maff.go.jp/j/nousin/inobe/6jika/yuryo_h30.html",
+      "publisher": "農林水産省",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "success-445",
+    "kind": "success",
+    "title": "自家産の原料で加工品を通販",
+    "summary": "山形県のマッシュルーム生産者は、自社のマッシュルームでカレーやハンバーグを作り、ネットや直送レストランで売る事例として紹介された。原料の自家生産は強い発信材料になる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "畑から食卓まで、自社で作る加工品",
+    "source": {
+      "title": "6次産業化優良事例（平成30年度）",
+      "url": "https://www.maff.go.jp/j/nousin/inobe/6jika/yuryo_h30.html",
+      "publisher": "農林水産省",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "term-540",
+    "kind": "term",
+    "title": "総合化事業計画",
+    "summary": "農林漁業者が加工・販売まで手がける6次産業化の計画で、国の認定を受けるもの。認定件数は令和3年度末で累計約2,600件とされる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "6次産業化の取組状況",
+      "url": "https://www.maff.go.jp/j/nousin/inobe/6jika/attach/pdf/torikumi-21.pdf",
+      "publisher": "農林水産省",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-367",
+    "kind": "buyer",
+    "title": "事例集で組む相手を探す",
+    "summary": "農政局は6次産業化の取組事例集を地域ごとに公開している。加工を受ける会社は、事例集の農家の品目を見て、自社が手伝える相手を探せる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "6次産業化の取組事例集",
+      "url": "https://www.maff.go.jp/kyusyu/kouryu/jireisyuu.html",
+      "publisher": "九州農政局",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "pain-340",
+    "kind": "pain",
+    "title": "原料も人も運ぶ手段も足りない",
+    "summary": "水産庁の資料は、水産加工業が原材料不足、人手不足、輸送能力不足、経営力の向上という課題に直面しているとした。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "魚が獲れない時代の水産加工",
+    "source": {
+      "title": "水産加工業のバリューチェーン支援",
+      "url": "https://www.jfa.maff.go.jp/j/kakou/attach/pdf/value_chain-148.pdf",
+      "publisher": "水産庁",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-418",
+    "kind": "trend",
+    "official": true,
+    "title": "水産加工の連携プランを国が支援",
+    "summary": "水産庁の事業は、資源状態のよい魚への原料の切り替えや、流通の効率化・作業の自動化を、取引先や金融機関と組んで進める取り組みを支援する。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "水産加工業のバリューチェーン支援",
+      "url": "https://www.jfa.maff.go.jp/j/kakou/attach/pdf/value_chain-148.pdf",
+      "publisher": "水産庁",
+      "date": null
+    }
+  },
+  {
+    "id": "term-541",
+    "kind": "term",
+    "title": "原料転換",
+    "summary": "獲れにくくなった魚から、資源が安定している別の魚へ加工品の原料を切り替えること。味や加工の仕方を変える必要があり、試作の腕が問われる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "いつもの魚が獲れないとき何で作る？",
+    "source": {
+      "title": "水産加工業のバリューチェーン支援",
+      "url": "https://www.jfa.maff.go.jp/j/kakou/attach/pdf/value_chain-148.pdf",
+      "publisher": "水産庁",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-341",
+    "kind": "pain",
+    "title": "不漁と高齢化で量が減る",
+    "summary": "農林水産政策研究所の研究では、原料魚の不漁と働き手の減少・高齢化で水産加工の生産量・販売量が減っている。原料高で、利益率は他の食品製造より低いという。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "水産加工業の研究成果",
+      "url": "https://www.maff.go.jp/primaff/kanko/review/attach/pdf/250530_pr125_02.pdf",
+      "publisher": "農林水産政策研究所",
+      "date": "2025-05"
+    }
+  },
+  {
+    "id": "term-542",
+    "kind": "term",
+    "title": "一次加工（フィレ・骨取り）",
+    "summary": "魚を三枚におろしたり骨を抜いたりする、料理の手前までの加工。飲食店や惣菜工場が仕込みを減らすために外へ頼むことが多い。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "骨取り・フィレはどこまで頼める？",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（農産物冷凍）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/nousanbutsureitou.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-446",
+    "kind": "success",
+    "title": "小ロット缶詰で返礼品に採用",
+    "summary": "石巻市が紹介する水産加工会社は、小ロットの缶詰OEMも受け、自社の品が自治体の返礼品に採られた実績を載せている。受託と自社品の両方を見せる形。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "自社の缶詰とOEM缶詰、両方を見せる",
+    "source": {
+      "title": "石巻の水産加工会社の紹介",
+      "url": "https://www.city.ishinomaki.lg.jp/cont/10451000/8302/01_kinoyaishinomakisuisan.pdf",
+      "publisher": "石巻市",
+      "date": null
+    }
+  },
+  {
+    "id": "question-530",
+    "kind": "question",
+    "title": "市外で加工した品も返礼品になる？",
+    "summary": "いわき市の資料では、市産の牛乳や果物を100%使い市外で作ったジェラートは認められ、市産牛乳が1割ほどのアイスは認められない例を示す。原料の割合が鍵。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "市外の工場で作った品は返礼品になる？",
+    "source": {
+      "title": "ふるさと納税返礼品の地場産品基準",
+      "url": "https://www.city.iwaki.lg.jp/www/contents/1476319542941/simple/file01_3.pdf",
+      "publisher": "いわき市",
+      "date": null
+    }
+  },
+  {
+    "id": "term-543",
+    "kind": "term",
+    "title": "地場産品基準",
+    "summary": "ふるさと納税の返礼品は、総務省の決めた「地元の産品」の基準に合う必要がある。加工品は、原料の割合や、地元で主な工程をして価値が生まれたかで判断される。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "返礼品の地場産品基準をやさしく",
+    "source": {
+      "title": "ふるさと納税返礼品の地場産品基準",
+      "url": "https://www.city.iwaki.lg.jp/www/contents/1476319542941/simple/file01_3.pdf",
+      "publisher": "いわき市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-419",
+    "kind": "trend",
+    "official": true,
+    "title": "付加価値の考え方が明確に",
+    "summary": "長和町の資料によると、令和8年10月以降の指定期間から、区域内で生まれた付加価値の考え方が明確になる予定。加工を受ける会社も工程の場所を説明できるようにしたい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地場産品基準の証明依頼",
+      "url": "https://www.town.nagawa.nagano.jp/material/files/group/17/shoumei_irai.pdf",
+      "publisher": "長和町",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-368",
+    "kind": "buyer",
+    "title": "返礼品の窓口は取りまとめ事業者",
+    "summary": "ふじみ野市は、返礼品の開発や発注・配送管理を民間の取りまとめ事業者に任せている。返礼品づくりを受けたい工場は、自治体と並んでこの事業者にも知られる必要がある。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "返礼品の仕事はどこから来る？",
+    "source": {
+      "title": "返礼品提供事業者の募集要項",
+      "url": "https://www.city.fujimino.saitama.jp/material/files/group/3/hurusatonouzeihenreihinteikyoujigyousyabosyuyoukou.pdf",
+      "publisher": "ふじみ野市",
+      "date": null
+    }
+  },
+  {
+    "id": "term-544",
+    "kind": "term",
+    "title": "取りまとめ事業者（中間事業者）",
+    "summary": "自治体から返礼品の業務を任された民間の会社。寄附の受付ページづくり、事業者との契約、配送の管理などを行う。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "返礼品提供事業者の募集要項",
+      "url": "https://www.city.fujimino.saitama.jp/material/files/group/3/hurusatonouzeihenreihinteikyoujigyousyabosyuyoukou.pdf",
+      "publisher": "ふじみ野市",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-342",
+    "kind": "pain",
+    "title": "表示違反で返礼品が取り消し",
+    "summary": "山口県の募集要項では、地場産品基準や表示のルールに違反すると返礼品の承認が取り消され、損害賠償を負うこともあるとされる。OEMでは表示の責任分担が大事。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "返礼品の表示、誰が確かめる？",
+    "source": {
+      "title": "ふるさと納税返礼品の募集要項",
+      "url": "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/192612.pdf",
+      "publisher": "山口県",
+      "date": null
+    }
+  },
+  {
+    "id": "term-545",
+    "kind": "term",
+    "title": "飲料の容器と設備",
+    "summary": "厚生労働省の資料では、清涼飲料の容器に缶・ペットボトル・ボトル缶・紙容器などがあり、容器ごとに設備を専用にするか兼用にするかが違う。容器で頼める工場が変わる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "缶・瓶・ペット、容器で工場が変わる",
+    "source": {
+      "title": "清涼飲料水の製造基準に関する資料",
+      "url": "https://www.mhlw.go.jp/content/11121000/000360783.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-531",
+    "kind": "question",
+    "title": "ジュースはどの容器で頼める？",
+    "summary": "飲料のOEMは、缶、瓶、ペットボトル、紙パックで設備が分かれる。発注者は容器を決めてから工場を探すと早い。受ける側は対応容器と容量を一覧にするとよい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちで詰められる容器と容量の一覧",
+    "source": {
+      "title": "清涼飲料水の製造基準に関する資料",
+      "url": "https://www.mhlw.go.jp/content/11121000/000360783.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-532",
+    "kind": "question",
+    "title": "ペットフードを作るのに届出は要る？",
+    "summary": "ペットフードを作る・輸入する事業者は、法人でも個人でも、事業を始める前に地方農政局などへ届け出る。法人なら登記事項証明書など実在を示す書類を付ける。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "犬のおやつを作る前に要る届出",
+    "source": {
+      "title": "ペットフード安全法の手続",
+      "url": "https://www.env.go.jp/nature/dobutsu/aigo/petfood/procedure.html",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-546",
+    "kind": "term",
+    "title": "ペットフード安全法",
+    "summary": "犬・猫のペットフードの安全を守る法律。製造業者・輸入業者の届出、帳簿、表示、成分の規格や製造方法の基準を定める。平成21年6月に施行された。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ペットフード安全法の手続",
+      "url": "https://www.env.go.jp/nature/dobutsu/aigo/petfood/procedure.html",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-533",
+    "kind": "question",
+    "title": "ペットフードの表示は何を書く？",
+    "summary": "犬猫用には名称、賞味期限、原材料名、原産国名、事業者名と住所の5つを日本語で書く。名称は犬用か猫用か分かる書き方にし、一部の添加物は用途名も要る。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "ペットフードの表示5項目",
+    "source": {
+      "title": "ペットフードの安全確保",
+      "url": "https://www.maff.go.jp/kanto/syo_an/anzen/petfood.html",
+      "publisher": "関東農政局",
+      "date": null
+    }
+  },
+  {
+    "id": "question-534",
+    "kind": "question",
+    "title": "ペットフードを小分けして売るのは？",
+    "summary": "買ったペットフードを開けて小分けし、包み直して売る場合は製造業者にあたり届出が要るとされる。販売だけなら届出は不要でも、表示や帳簿の基準は守る。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "ペットフードの安全確保",
+      "url": "https://www.maff.go.jp/kanto/syo_an/anzen/petfood.html",
+      "publisher": "関東農政局",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-420",
+    "kind": "trend",
+    "official": false,
+    "title": "日本のペットフード市場は64億ドル",
+    "summary": "調査会社IMARCは、日本のペットフード市場を2025年に64億ドルと見積もり、2026〜2034年に年4.4%伸びると予測。プレミアムや機能性、定期購入が伸びの理由という。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "日本のペットフード市場",
+      "url": "https://www.gii.co.jp/report/imarc1954121-japan-pet-food-market-size-share-trends-forecast.html",
+      "publisher": "IMARC（グローバルインフォメーション）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-343",
+    "kind": "pain",
+    "title": "OEMでは誰が届出するか迷う",
+    "summary": "ペットフードのOEMで、頼む側と作る側のどちらが製造業者として届け出るかは、制度の資料だけでは分かりにくい。契約前に農政局へ確かめるよう記事で案内するとよい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ペットフード安全法の手続",
+      "url": "https://www.env.go.jp/nature/dobutsu/aigo/petfood/procedure.html",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-369",
+    "kind": "buyer",
+    "title": "受託先は試作・テスト販売から",
+    "summary": "クッキー缶や下味冷凍の受託先は、テスト販売や小ロットの試し生産から相談に応じている。買い手は小さく試して売れ行きを見てから量を増やす。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "まずテスト販売、それから本番",
+    "source": {
+      "title": "宿泊体験を提案するクッキー缶のOEMを開始",
+      "url": "https://prtimes.jp/main/html/rd/p/000000004.000177653.html",
+      "publisher": "PR TIMES",
+      "date": null
+    }
+  },
+  {
+    "id": "success-447",
+    "kind": "success",
+    "title": "受託先の紹介に工程を並べる",
+    "summary": "水産加工の会社紹介では、加工の範囲（フィレ・骨取り・漬け込み・加熱・急速冷凍）を一つずつ並べている。工程を並べるだけで、頼める範囲が伝わる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "うちで頼める工程を一枚で見せる",
+    "source": {
+      "title": "宮城県OEM・商品化サポート（農産物冷凍）",
+      "url": "https://www.pref.miyagi.jp/site/miyagi_oem/genre/nousanbutsureitou.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-344",
+    "kind": "pain",
+    "title": "受託の小ロットは利益が出にくい",
+    "summary": "惣菜は多品種少量で人手に頼る。小ロットの受託は段取り替えが増えて利益が残りにくい。最小量や最低金額を決めて公開しておくと、無理のない相談だけが来る。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "小ロットを受け続けるための最低条件",
+    "source": {
+      "title": "2026年版 惣菜(中食)・米飯市場の実態と将来展望",
+      "url": "https://www.yano.co.jp/market_reports/C67113600",
+      "publisher": "矢野経済研究所",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-535",
+    "kind": "question",
+    "title": "開発から発売までどれくらい？",
+    "summary": "OEMの依頼では、初回に日持ちを確かめる検査分を作ってから本番に入りたいという声がある。試作・検査・表示づくりを工程表で見せると、発注者が計画を立てやすい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "OEMで発売までの日数の目安",
+    "source": {
+      "title": "食品OEMの依頼案件",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=894601",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-421",
+    "kind": "trend",
+    "official": true,
+    "title": "工場の祭典は初回から約1万人",
+    "summary": "燕三条の工場の祭典は2013年の初回で約1万人が来場したと、市の案内で紹介されている。産地ぐるみで工場を開くと、一社では呼べない人数が集まる。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "産地イベントで工場に人が来るまで",
+    "source": {
+      "title": "工場の祭典 資料",
+      "url": "https://www.city.sanjo.niigata.jp/material/files/group/2/000100028.pdf",
+      "publisher": "三条市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-422",
+    "kind": "trend",
+    "official": true,
+    "title": "工場の祭典は2015年に約1.9万人",
+    "summary": "市の資料では、2015年の来場者は19,312人、翌2016年の参加拠点は96とされる。回を重ねて参加工場も来場者も増えている。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工場の祭典 資料",
+      "url": "https://www.city.sanjo.niigata.jp/material/files/group/2/000098515.pdf",
+      "publisher": "三条市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-423",
+    "kind": "trend",
+    "official": true,
+    "title": "2025年度は過去最大133工場",
+    "summary": "燕三条の工場の祭典は2025年度の第13回で過去最大の133工場が参加し、来場者も過去最多だったと地域の振り返り資料にある。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちが工場の祭典に出た理由",
+    "source": {
+      "title": "工場の祭典 振り返り資料",
+      "url": "https://www.city.sanjo.niigata.jp/material/files/group/2/000121665.pdf",
+      "publisher": "三条市",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-345",
+    "kind": "pain",
+    "title": "見学対応で商談の機会を逃す",
+    "summary": "オープンファクトリーでは案内や接客で手がふさがり、販売や商談の機会を逃すことがある、と産地の事例で課題に挙げられている。当日の役割分担を決めておきたい。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地方創生の取組事例",
+      "url": "https://www.tohoku.meti.go.jp/kikaku/chihososei/topics/pdf/230106.pdf",
+      "publisher": "東北経済産業局",
+      "date": "2023-01"
+    }
+  },
+  {
+    "id": "success-448",
+    "kind": "success",
+    "title": "工場開放で新事業のヒントとつながり",
+    "summary": "東北経済産業局の資料では、オープンファクトリーへの参加で新事業のヒントや新しいつながりを得ることを狙う事例が紹介されている。来場者の声が企画の種になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場見学で来た人の一言から生まれた製品",
+    "source": {
+      "title": "地方創生の取組事例",
+      "url": "https://www.tohoku.meti.go.jp/kikaku/chihososei/topics/pdf/230106.pdf",
+      "publisher": "東北経済産業局",
+      "date": "2023-01"
+    }
+  },
+  {
+    "id": "question-536",
+    "kind": "question",
+    "title": "工場の祭典は誰でも出られる？",
+    "summary": "2024年度の開催要項では、三条市・燕市に本社や事業所がある法人・個人が対象で、見学・体験・販売などの形で参加する。地域外の会社は出られない点を書くとよい。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "工場の祭典 開催要項",
+      "url": "https://www.city.sanjo.niigata.jp/material/files/group/2/000121667.pdf",
+      "publisher": "三条市",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "term-547",
+    "kind": "term",
+    "title": "商工会議所青年部",
+    "summary": "地域の若手経営者の集まり。燕三条の工場の祭典でも共催者に加わる。産地イベントを動かす担い手として、記事で紹介すると地域とのつながりが伝わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工場の祭典 開催要項",
+      "url": "https://www.city.sanjo.niigata.jp/material/files/group/2/000121667.pdf",
+      "publisher": "三条市",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-449",
+    "kind": "success",
+    "title": "工場一斉開放は地域の広告になる",
+    "summary": "燕三条の企業が工場を一斉に開くイベントは広告・広報の専門媒体でも取り上げられた。産地単位で動くと、一社ではとれない媒体露出が得られる。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "メディアに載った産地イベントの裏側",
+    "source": {
+      "title": "燕三条の企業が工場を一斉に開放",
+      "url": "https://www.advertimes.com/?p=205393",
+      "publisher": "AdverTimes",
+      "date": null
+    }
+  },
+  {
+    "id": "term-548",
+    "kind": "term",
+    "title": "磨き屋",
+    "summary": "燕の金属製品を仕上げる研磨の専門業者。燕市は研修施設を設け、研磨の協同組合が研修生の指導や新規開業者を支援している。技術継承の話題にも使える。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "磨き屋とは？仕上げで品質が決まる話",
+    "source": {
+      "title": "燕三条から",
+      "url": "https://jp.fujitsu.com/family/familyroom/syuppan/family/papers/p364/pdf/364_from_tsubamesanjo.pdf",
+      "publisher": "富士通 FAMILY",
+      "date": null
+    }
+  },
+  {
+    "id": "question-537",
+    "kind": "question",
+    "title": "分業の産地は何が強い？",
+    "summary": "燕三条の研究では、専門化した企業がネットワークで結びつくことで、需要の変化に柔軟に対応でき、利潤の向上にもつながると分析されている。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "分業の町だから小ロットに強い理由",
+    "source": {
+      "title": "燕三条地域の企業ネットワーク",
+      "url": "https://niigata-u.repo.nii.ac.jp/record/5877/files/h28zek63_a.pdf",
+      "publisher": "新潟大学",
+      "date": "2016"
+    }
+  },
+  {
+    "id": "trend-424",
+    "kind": "trend",
+    "official": false,
+    "title": "問屋経由から直販へ",
+    "summary": "燕の銅器メーカーの資料では、地元問屋や百貨店問屋を通す流通を見直し、流通経路を短くした例が紹介されている。産地でも直接つながる動きがある。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "燕三条から",
+      "url": "https://jp.fujitsu.com/family/familyroom/syuppan/family/papers/p364/pdf/364_from_tsubamesanjo.pdf",
+      "publisher": "富士通 FAMILY",
+      "date": null
+    }
+  },
+  {
+    "id": "term-549",
+    "kind": "term",
+    "title": "事業所密度",
+    "summary": "一定の面積あたりの事業所の数。東大阪市は製造業の事業所密度が1km²あたり107.6で全国1位と、労働局の資料にある。近くに加工先が多い理由として使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場が密集する町で頼むメリット",
+    "source": {
+      "title": "東大阪の製造業",
+      "url": "https://jsite.mhlw.go.jp/osaka-hellowork/content/contents/002264292.pdf",
+      "publisher": "大阪労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-370",
+    "kind": "buyer",
+    "title": "大阪では府の機関が外注先を探す",
+    "summary": "大阪産業局は府内約4,500社の中から、新しい外注先探しを無料で手伝っていると、2022年の冊子で紹介されている。発注者が使える窓口として記事で案内できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "articleIdea": "大阪で加工先を探すなら公的窓口も",
+    "source": {
+      "title": "中小企業の課題と支援",
+      "url": "https://www.shinkin.co.jp/osaka/pdf/kadai/kadai2022/31.pdf",
+      "publisher": "大阪信用金庫",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "buyer-371",
+    "kind": "buyer",
+    "title": "市の企業検索サイトで探す",
+    "summary": "東大阪市には市内のモノづくり企業約1,200社が登録する技術交流のWebサイトがあると、2017年の記事にある。自治体の企業検索は地域で探す入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "東大阪市が事業承継支援",
+      "url": "https://newswitch.jp/p/5278",
+      "publisher": "ニュースイッチ",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "success-450",
+    "kind": "success",
+    "title": "高シェア企業の紹介冊子",
+    "summary": "東大阪では、全国で高いシェアを持つ中小企業を紹介する冊子が作られていた。地域の冊子に載ると、自社の強みを短く言葉にする機会になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域雇用創造（東大阪）",
+      "url": "https://www.mhlw.go.jp/bunya/koyou/chiiki-koyou/package/17/18.html",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-346",
+    "kind": "pain",
+    "title": "展示会の出展費が重い",
+    "summary": "大阪府は展示商談会の小間料と装飾費の2分の1、上限25万円を補助する出展支援を令和8年度も行う。費用が理由で出展をためらう会社は自治体の制度を確認したい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和8年度中小企業展示商談会出展支援事業",
+      "url": "https://www.pref.osaka.lg.jp/o110070/mono/r8syuttenshien.html",
+      "publisher": "大阪府",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-425",
+    "kind": "trend",
+    "official": true,
+    "title": "展示会出展の前後も助言",
+    "summary": "大阪府の出展支援は、補助だけでなく出展前後の課題を解決する助言も含む。対象の展示会は年度ごとに変わるため、最新の要項を確認する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "大規模展示商談会活用事業（出展支援事業）",
+      "url": "https://www.pref.osaka.lg.jp/o110070/mono/shuttenshien/index.html",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "term-550",
+    "kind": "term",
+    "title": "発注開拓コーディネーター",
+    "summary": "公的機関で発注企業を回り、成約しそうな受注企業を選んで取引をあっせんする担当者。大阪産業局が募集している。町工場から見ると無料の営業代行に近い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "公的なあっせんを使うコツ",
+    "source": {
+      "title": "発注開拓コーディネーター募集要領",
+      "url": "https://www.obda.or.jp/wp-content/uploads/2021/02/確定CD募集要領_発注開拓CD.pdf",
+      "publisher": "大阪産業局",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-426",
+    "kind": "trend",
+    "official": true,
+    "title": "大田区は仲間まわしをデジタル化",
+    "summary": "大田区は2022年の委員会資料で、産業振興協会などと組んで仲間まわしをデジタル化し、区内外の企業連携と業務効率化を進める計画を示した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域産業委員会資料",
+      "url": "https://www.city.ota.tokyo.jp/gikai/kugikai_katsudou/iinkai/iinkaishiryo/chiiki/R4chiiki/chikisangyo_040715.files/12_tiiki040715.pdf",
+      "publisher": "大田区",
+      "date": "2022-07"
+    }
+  },
+  {
+    "id": "buyer-372",
+    "kind": "buyer",
+    "title": "受発注商談会は事前マッチング",
+    "summary": "大田区の第65回ものづくり受発注商談会は事前に組み合わせを決める個別面談で、1商談20分・最大10回とされる。発注側は短時間で複数社を比べられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "商談会で発注先を見つける準備",
+    "source": {
+      "title": "第65回ものづくり受発注商談会チラシ",
+      "url": "https://www.pio-ota.jp/wp/wp-content/uploads/2026/08/第65回ものづくり受発注商談会チラシ20260831.pdf",
+      "publisher": "大田区産業振興協会",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "trend-427",
+    "kind": "trend",
+    "official": true,
+    "title": "商談会は平成元年から60回超",
+    "summary": "大田区の受発注商談会は平成元年に始まり、60回以上続いている。長く続く公的商談会は、地域で加工先を探す発注者の定番の場になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "第65回ものづくり受発注商談会チラシ",
+      "url": "https://www.pio-ota.jp/wp/wp-content/uploads/2026/08/第65回ものづくり受発注商談会チラシ20260831.pdf",
+      "publisher": "大田区産業振興協会",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "trend-428",
+    "kind": "trend",
+    "official": true,
+    "title": "受注あっせんの経験をAIに",
+    "summary": "大田区産業振興協会は2018〜2019年度、受注あっせんを担うコーディネーターの経験をデータにため、AIで受発注をつなぐ仕組みを試した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIを活用した大田区版受発注促進マッチングシステムの開発",
+      "url": "https://www.sangyo-rodo.metro.tokyo.lg.jp/chushou/ota.pdf",
+      "publisher": "東京都産業労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-451",
+    "kind": "success",
+    "title": "商談会の前に1枚資料を用意",
+    "summary": "20分の個別面談では設備・材質・得意ロットが一目で分かる資料が要る。大田区の商談会形式から、短く伝える準備が成約の差になると分かる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "20分で伝わる自社紹介のつくり方",
+    "source": {
+      "title": "第65回ものづくり受発注商談会チラシ",
+      "url": "https://www.pio-ota.jp/wp/wp-content/uploads/2026/08/第65回ものづくり受発注商談会チラシ20260831.pdf",
+      "publisher": "大田区産業振興協会",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "term-551",
+    "kind": "term",
+    "title": "すみだ3M運動",
+    "summary": "墨田区の、小さな博物館・すみだマイスター・工房ショップの3つの取り組み。頭文字がMで、区のものづくりを外に伝える。工場を店や展示の場にする考え方の例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "すみだのものづくり PRブック",
+      "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/pr_brand_hyousyo/monodukuriprbooks/sumidamonoculvol1.files/sumidamonocul2022hyousi.pdf",
+      "publisher": "墨田区",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "term-552",
+    "kind": "term",
+    "title": "工房ショップ",
+    "summary": "製造の場と店がひとつになった施設。墨田区が認定し、作る様子を見ながら買える。町工場が見せる工夫をするときの参考になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "工場の一角を店にした話",
+    "source": {
+      "title": "すみだのものづくり PRブック",
+      "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/pr_brand_hyousyo/monodukuriprbooks/sumidamonoculvol1.files/sumidamonocul2022hyousi.pdf",
+      "publisher": "墨田区",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "success-452",
+    "kind": "success",
+    "title": "職人の認定制度で技術を見せる",
+    "summary": "墨田区は優れた技術者をすみだマイスターとして認定し、専門家派遣や講習会で後継者育成も支える。認定を受けたら記事で取り上げると信頼の材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "マイスター認定までの道のり",
+    "source": {
+      "title": "すみだのものづくり PRブック",
+      "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/pr_brand_hyousyo/monodukuriprbooks/sumidamonoculvol1.files/sumidamonocul2022hyousi.pdf",
+      "publisher": "墨田区",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "trend-429",
+    "kind": "trend",
+    "official": true,
+    "title": "墨田区は全国初の中小企業振興条例",
+    "summary": "墨田区は1979年に全国初の中小企業振興基本条例を作った。区の支援策はこの流れの上にある。地域の支援が厚い理由として記事に使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "すみだのものづくり PRブック",
+      "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/pr_brand_hyousyo/monodukuriprbooks/sumidamonoculvol1.files/sumidamonocul2022hyousi.pdf",
+      "publisher": "墨田区",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "term-553",
+    "kind": "term",
+    "title": "後継者塾",
+    "summary": "若手経営者や後継者が経営を学ぶ私塾。墨田区のフロンティアすみだ塾は、全国の現場を体験する合宿も含む。燕市なども同様の取り組みを伝えている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "後継ぎが塾で学んだこと",
+    "source": {
+      "title": "燕市報道資料",
+      "url": "https://www.city.tsubame.niigata.jp/material/files/group/6/100888087.pdf",
+      "publisher": "燕市",
+      "date": "2019-10"
+    }
+  },
+  {
+    "id": "pain-347",
+    "kind": "pain",
+    "title": "工場数の減少が心配される",
+    "summary": "墨田区の工業振興計画では、区内の工場数の減少が心配されている。区は事業承継の支援や新しいものづくり拠点を並行して進めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "墨田区工業振興マスタープラン",
+      "url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_kihon/ku_kakusyukeikaku/kougyousinkou.files/honpenn.pdf",
+      "publisher": "墨田区",
+      "date": "2009"
+    }
+  },
+  {
+    "id": "pain-348",
+    "kind": "pain",
+    "title": "下請けだけでは名が知られない",
+    "summary": "墨田区の産業振興会議の資料では、町工場が下請けに頼らず自ら発信する必要を感じているという声がある。発信の動機を記事で語ると共感を得やすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "下請けの町工場がブログを始めた理由",
+    "source": {
+      "title": "産業振興会議 第3回資料",
+      "url": "https://www.city.sumida.lg.jp/kuseijoho/joho_kojin_kaigi/kakusyu_giziroku/sangyo_shinkou/R7sanshinkaigi3.files/dai3kaisiryou.pdf",
+      "publisher": "墨田区",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-430",
+    "kind": "trend",
+    "official": true,
+    "title": "諏訪は医療・航空へ広がる",
+    "summary": "長野県の資料では、精密工業で育った諏訪地域のものづくりが、医療機器や航空機関連など新しい分野に入る動きがあるとされる。技術力の発信が課題とも書かれる。",
+    "industries": [
+      "精密機器",
+      "医療機器",
+      "航空宇宙"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "諏訪地域のものづくりについて",
+      "url": "https://www.pref.nagano.lg.jp/suwachi/suwachi-somu/documents/20180522shoken.pdf",
+      "publisher": "長野県諏訪地域振興局",
+      "date": "2018-05"
+    }
+  },
+  {
+    "id": "buyer-373",
+    "kind": "buyer",
+    "title": "諏訪圏はNPOがマッチング",
+    "summary": "諏訪圏のNPOのものづくり推進機構は、ビジネスマッチングや人材育成、産学官金の連携を担う。精密加工の外注先を諏訪で探すなら相談先になる。",
+    "industries": [
+      "精密機器",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "NPO諏訪圏ものづくり推進機構",
+      "url": "https://pr.mono.ipros.com/suwamo/product/detail/2001532030/",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-453",
+    "kind": "success",
+    "title": "大学生と組んで発信力を上げる",
+    "summary": "諏訪市のデザインプロジェクトは、製造業の人材確保と発信力を上げるため、企業と大学生が一緒に取り組む事業として県の資料に載っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "学生と一緒に会社案内を作った話",
+    "source": {
+      "title": "諏訪地域のものづくりについて",
+      "url": "https://www.pref.nagano.lg.jp/suwachi/suwachi-somu/documents/20180522shoken.pdf",
+      "publisher": "長野県諏訪地域振興局",
+      "date": "2018-05"
+    }
+  },
+  {
+    "id": "buyer-374",
+    "kind": "buyer",
+    "title": "坂城はテクノセンターが窓口",
+    "summary": "坂城町では、さかきテクノセンターと地域の協同組合が技術支援や人材確保・販路開拓を担う機関として挙げられている。町の工業の窓口として覚えておくとよい。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "創業支援事業計画（坂城町）",
+      "url": "https://www.chusho.meti.go.jp/keiei/chiiki/nintei/2014-3/3-426.pdf",
+      "publisher": "中小企業庁",
+      "date": "2014"
+    }
+  },
+  {
+    "id": "term-554",
+    "kind": "term",
+    "title": "はままつ産業創造センター",
+    "summary": "浜松の産業支援機関が連携して作った地域の支援拠点。人材育成・知的財産・創業・販路開拓などを担う。浜松市・商工会議所・大学・公設試などが関わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域再生計画（浜松）",
+      "url": "https://www.chisou.go.jp/tiiki/tiikisaisei/dai7nintei/48toke.pdf",
+      "publisher": "内閣府",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-431",
+    "kind": "trend",
+    "official": true,
+    "title": "浜松は医工・宇宙航空を重点に",
+    "summary": "浜松の地域計画では、医工連携や宇宙航空、農工連携などの新産業づくりが重点に挙げられていた。輸送機器の集積を他分野に広げる動きである。",
+    "industries": [
+      "自動車部品",
+      "航空宇宙",
+      "医療機器"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域再生計画（浜松）",
+      "url": "https://www.chisou.go.jp/tiiki/tiikisaisei/dai9nintei/46tai.pdf",
+      "publisher": "内閣府",
+      "date": null
+    }
+  },
+  {
+    "id": "question-538",
+    "kind": "question",
+    "title": "公設試を使ったことがない",
+    "summary": "浜松の工業技術支援センターでは、まだ使ったことのない企業向けに、相談の流れや設備の使い方を紹介する見学会を開いていた（2016年）。最初は見学からでよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "工業技術支援センター見学会案内",
+      "url": "https://www.hama-med.ac.jp/20160624kenngakukai.pdf",
+      "publisher": "浜松医科大学",
+      "date": "2016"
+    }
+  },
+  {
+    "id": "success-454",
+    "kind": "success",
+    "title": "鋳造から加工まで一括管理",
+    "summary": "浜松の連携事例では、工程ごとに分かれていた試作部品の発注を、鋳造から精密加工まで一括で管理する形にし、納期を45日から30日に縮める目標を立てた。",
+    "industries": [
+      "鋳造",
+      "切削加工",
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工程を束ねて試作の納期を縮める",
+    "source": {
+      "title": "新連携認定事例",
+      "url": "https://www.chusho.meti.go.jp/keiei/shinpou/shinrenkei_ninteijirei/3kanto/3-18-057_kgk.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "success-455",
+    "kind": "success",
+    "title": "仲間のネットワークで何でも相談",
+    "summary": "中小企業庁の事例では、精密金属加工の会社が加工業同士の網を使い、どんな加工相談にも応じる体制を作った。研究所の試作から航空宇宙やロボットへ広げた。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "どんな加工でも相談してください、と言える理由",
+    "source": {
+      "title": "町工場の需要獲得事例",
+      "url": "https://www.chusho.meti.go.jp/keiei/sapoin/monozukuri300sha/2020/juyou/juyou026.pdf",
+      "publisher": "中小企業庁",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "trend-432",
+    "kind": "trend",
+    "official": false,
+    "title": "商工会議所が横請けを支援",
+    "summary": "大阪商工会議所は機械・金属加工の町工場を横につなぎ、一社では受けにくい案件を共同で受けられるようにしている。各社の設備や技術はデータベース化される。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "町工場の連携強める「横請け」で受注増狙う",
+      "url": "https://www.rodo.co.jp/news/23225/",
+      "publisher": "労働新聞社",
+      "date": null
+    }
+  },
+  {
+    "id": "success-456",
+    "kind": "success",
+    "title": "試作ネットワークに相談窓口",
+    "summary": "東京・多摩の試作ネットワークでは、非製造業からの相談をコンシェルジュが仲介して案件にする仕組みがある。図面がない相談にも応じられる入口になる。",
+    "industries": [
+      "3Dプリンタ",
+      "金属加工",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "図面がなくても相談できる窓口",
+    "source": {
+      "title": "TAMA試作ネットワーク始動",
+      "url": "https://www.atpress.ne.jp/news/56625",
+      "publisher": "@Press",
+      "date": null
+    }
+  },
+  {
+    "id": "success-457",
+    "kind": "success",
+    "title": "3社で工程を一元管理",
+    "summary": "江戸川区の町工場プロジェクトでは、技術の違う3社が共通のシステムで工程を一つにまとめ、受注から納品までの進み具合をその場で管理している。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "つながる町工場プロジェクト",
+      "url": "https://www.nikkan.co.jp/articles/view/00631443",
+      "publisher": "日刊工業新聞",
+      "date": null
+    }
+  },
+  {
+    "id": "success-458",
+    "kind": "success",
+    "title": "オープンファクトリーは人を育てる",
+    "summary": "近畿経済産業局は2019年の調査で、中小ものづくり企業への聞き取りから、オープンファクトリーには人を育てる働きがあるという兆しを指摘した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場見学の案内役で若手が変わった",
+    "source": {
+      "title": "関西企業フロントラインNEXT",
+      "url": "https://www.kansai.meti.go.jp/1-9chushoresearch/frontline/frontline_no14.pdf",
+      "publisher": "近畿経済産業局",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "success-459",
+    "kind": "success",
+    "title": "工場開放から採用やコラボ商品",
+    "summary": "東北経済産業局の資料では、オープンファクトリーをきっかけに、価値観の近い人との出会い、コラボ商品、採用、地域課題の解決が生まれるとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オープンファクトリー関連資料",
+      "url": "https://www.tohoku.meti.go.jp/kikaku/chihososei/topics/downloadfiles/230410_6.pdf",
+      "publisher": "東北経済産業局",
+      "date": "2023-04"
+    }
+  },
+  {
+    "id": "success-460",
+    "kind": "success",
+    "title": "社員と一緒に取り組む工場開放",
+    "summary": "四国経済産業局の2023年のセミナーでは、社員と取り組むオープンファクトリーが講演テーマになった。経営者だけでなく社員が企画に入ると続けやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オープンファクトリーセミナー",
+      "url": "https://www.shikoku.meti.go.jp/05_pressdocs/2023/20230713a/00.pdf",
+      "publisher": "四国経済産業局",
+      "date": "2023-07"
+    }
+  },
+  {
+    "id": "trend-433",
+    "kind": "trend",
+    "official": true,
+    "title": "関西の工場開放は7から16か所へ",
+    "summary": "近畿経済産業局の報告書では、関西の地域一体型オープンファクトリーが2018年の7か所から2021年には16か所に増えたとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和3年度 関西の地域一体型オープンファクトリー報告書",
+      "url": "https://www.kansai.meti.go.jp/1-9chushoresearch/openfactory/R3fyOFhoukokusho.pdf",
+      "publisher": "近畿経済産業局",
+      "date": "2022-03"
+    }
+  },
+  {
+    "id": "trend-434",
+    "kind": "trend",
+    "official": true,
+    "title": "国が全国の事例集を公表",
+    "summary": "近畿経済産業局は国内の地域一体型オープンファクトリーをまとめた事例集を全国で初めて公表し、その後も2.0などの版を重ねている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "全国の地域一体型オープンファクトリー事例集",
+      "url": "https://www.kansai.meti.go.jp/1-9chushoresearch/openfactory/R4fybooklet.html",
+      "publisher": "近畿経済産業局",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-435",
+    "kind": "trend",
+    "official": true,
+    "title": "政策銀行も工場開放を分析",
+    "summary": "日本政策投資銀行関西支店は2025年3月、地域一体型オープンファクトリーを地場産業の新しい商機として整理したレポートを出した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域一体型オープンファクトリーの可能性",
+      "url": "https://www.dbj.jp/upload/investigate/docs/781dbbfc2b91ebc1b967cb450c9c532d.pdf",
+      "publisher": "日本政策投資銀行 関西支店",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "trend-436",
+    "kind": "trend",
+    "official": true,
+    "title": "共創が生まれる場として",
+    "summary": "近畿経済産業局の令和2年度の報告書では、オープンファクトリーの取り組みから共創が生まれる点に注目している。地域の会社同士が組むきっかけになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和2年度 地域一体型オープンファクトリー事例調査報告書",
+      "url": "https://www.kansai.meti.go.jp/1-9chushoresearch/openfactory/R2fyOFhoukokusho.pdf",
+      "publisher": "近畿経済産業局",
+      "date": "2021-03"
+    }
+  },
+  {
+    "id": "trend-437",
+    "kind": "trend",
+    "official": true,
+    "title": "ローカルゼブラ企業に注目",
+    "summary": "近畿経済産業局は令和7年度、地域の課題解決と利益を両立するローカルゼブラ企業を中心にした、コミュニティ型の産業集積を調べている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域一体型オープンファクトリー",
+      "url": "https://www.kansai.meti.go.jp/1-9chushoresearch/openfactory/openfactory.html",
+      "publisher": "近畿経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-555",
+    "kind": "term",
+    "title": "地域一体型オープンファクトリー",
+    "summary": "一つの地域の多くの工場が同じ期間に現場を公開するイベント。来場者は複数の工場を回る。一社で行う工場見学より人が集まりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "source": {
+      "title": "令和4年度 地域一体型オープンファクトリー報告書",
+      "url": "https://www.kansai.meti.go.jp/1-9chushoresearch/openfactory/R4fyOFhoukokusho.pdf",
+      "publisher": "近畿経済産業局",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "success-461",
+    "kind": "success",
+    "title": "工場開放で45人の雇用",
+    "summary": "福井県鯖江・越前の工場開放イベントRENEWの発起人の話では、始めてから地域で45人の雇用が生まれた。採用中の工房をパンフで紹介する工夫もある。",
+    "industries": [
+      "繊維",
+      "刃物・工具",
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場見学から入社した人の話",
+    "source": {
+      "title": "越前/鯖江を「産業観光の聖地」にする",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2306/06/news003_4.html",
+      "publisher": "MONOist",
+      "date": "2023-06"
+    }
+  },
+  {
+    "id": "success-462",
+    "kind": "success",
+    "title": "宿泊型の産地合同説明会",
+    "summary": "鯖江・越前の産地では、泊まりがけで複数の工房を知る合同就職説明会を行っている。一社では呼べない求職者を産地全体で集めるやり方。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "越前/鯖江を「産業観光の聖地」にする",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2306/06/news003_4.html",
+      "publisher": "MONOist",
+      "date": "2023-06"
+    }
+  },
+  {
+    "id": "trend-438",
+    "kind": "trend",
+    "official": false,
+    "title": "産地の工場開放が122事業者に",
+    "summary": "鯖江・越前の工場開放イベントRENEWは、11回目に122事業者が参加予定とされた。眼鏡・漆器・和紙・打刃物・繊維など7つの産地がまとまる。",
+    "industries": [
+      "繊維",
+      "刃物・工具",
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "KOGEI COMMONS発足",
+      "url": "https://eleminist.com/article/4301",
+      "publisher": "ELEMINIST",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-439",
+    "kind": "trend",
+    "official": false,
+    "title": "金融機関が工場開放を広める",
+    "summary": "2025年には大手金融グループなどとKOGEI COMMONSが立ち上がり、鯖江・越前の工場開放の成功例を他地域の団体に学んでもらうことを目指している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "KOGEI COMMONS発足",
+      "url": "https://eleminist.com/article/4301",
+      "publisher": "ELEMINIST",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-463",
+    "kind": "success",
+    "title": "DtoCで思わぬOEMの注文",
+    "summary": "日本政策金融公庫総合研究所の2022年の論文では、自社ECで消費者に直接売る中小企業に、OEM生産の開始や新規取引先からの注文など想定外の機会が生まれたとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社製品を出したらBtoBの相談が来た",
+    "source": {
+      "title": "中小企業のDtoC",
+      "url": "https://www.jfc.go.jp/n/findings/pdf/ronbun2211_02.pdf",
+      "publisher": "日本政策金融公庫総合研究所",
+      "date": "2022-11"
+    }
+  },
+  {
+    "id": "success-464",
+    "kind": "success",
+    "title": "SNSの続けた投稿が鍵",
+    "summary": "同じ論文では、DtoCで成果を上げた中小企業の成功の鍵として、SNSでの継続的な投稿が挙げられている。毎週決まった曜日に出すなど、続ける仕組みを作りたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業のDtoC",
+      "url": "https://www.jfc.go.jp/n/findings/pdf/ronbun2211_02.pdf",
+      "publisher": "日本政策金融公庫総合研究所",
+      "date": "2022-11"
+    }
+  },
+  {
+    "id": "success-465",
+    "kind": "success",
+    "title": "こだわりの発信で単価が上がる",
+    "summary": "埼玉県の事例では、BtoB中心だった食肉加工の事業者が自社商品をブランド化し、ネットとSNSで素材や製法のこだわりを伝えて、ギフト需要と単価の向上につなげた。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "自社商品のブランド化",
+      "url": "https://www.pref.saitama.lg.jp/documents/82754/p24_25_warzwein.pdf",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-466",
+    "kind": "success",
+    "title": "B2C製品は受注と採用のフック",
+    "summary": "ある町工場の経営者は、B2C製品を売上の柱というより、B2Bの案件や採用につなげるきっかけと位置づけている。多くの工場は宣伝力が足りないという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社製品は名刺代わり",
+    "source": {
+      "title": "B2C製品作りで“攻めの工場”へ",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2403/18/news002_2.html",
+      "publisher": "MONOist",
+      "date": "2024-03"
+    }
+  },
+  {
+    "id": "success-467",
+    "kind": "success",
+    "title": "区のお土産認定で知られる",
+    "summary": "大田区には区が製品を選ぶお土産の認定があり、ものづくり企業の消費者向け製品の部門もある。自治体の認定は、自社製品を知ってもらう入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "B2C製品作りで“攻めの工場”へ",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2403/18/news002_2.html",
+      "publisher": "MONOist",
+      "date": "2024-03"
+    }
+  },
+  {
+    "id": "buyer-375",
+    "kind": "buyer",
+    "title": "滋賀は1000社強から無料紹介",
+    "summary": "滋賀県産業支援プラザは、県内の登録企業1000社強から新しい仕事やパートナーを無料で紹介する個別あっせんを行う。発注者も受注者も使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "あっせん事業",
+      "url": "https://www.shigaplaza.or.jp/lims/wp-content/uploads/2024/03/97482e013ca31f3a75b96cfca7e4d2ee.pdf",
+      "publisher": "滋賀県産業支援プラザ",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "buyer-376",
+    "kind": "buyer",
+    "title": "県外の発注者も相談できる",
+    "summary": "あいち産業振興機構の受発注あっせんは、所在地が県内外を問わず、部品などの製造や修理の発注案件を持つ企業を対象にしている。県外から愛知の加工先を探せる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "愛知で加工先を探す方法",
+    "source": {
+      "title": "受発注あっせんチラシ",
+      "url": "https://www.aibsc.jp/wp-content/uploads/2025/07/あっせんチラシ.pdf",
+      "publisher": "あいち産業振興機構",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-440",
+    "kind": "trend",
+    "official": true,
+    "title": "あっせんの成立は約2割",
+    "summary": "宮城県の業務報告では、取引あっせんの実施と成立の件数が年度ごとに出ており、例として実施192件・成立36件の年がある。全部がすぐ決まるわけではない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "業務実績報告",
+      "url": "https://www.pref.miyagi.jp/documents/53342/02r5gyomujisseki.pdf",
+      "publisher": "宮城県",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-441",
+    "kind": "trend",
+    "official": true,
+    "title": "埼玉は年3千件超をあっせん",
+    "summary": "埼玉県の予算資料では、取引あっせんの相談員が県内企業を回って受発注情報を集め、平成25年度の総あっせん件数は3,051件だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "取引あっせん事業 予算資料",
+      "url": "https://www.pref.saitama.lg.jp/yosan-info/ST2015-10/pdf/007681.pdf",
+      "publisher": "埼玉県",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "buyer-377",
+    "kind": "buyer",
+    "title": "都の商談会は案件ごとに面談",
+    "summary": "東京都中小企業振興公社のビジネスマッチングは、具体的な発注案件をもとに面談する形で、1回25分・1日最大8回。参加は無料。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "令和7年度 第4回ビジネスマッチングin東京",
+      "url": "https://sogyotecho.jp/news/20251211matching/",
+      "publisher": "創業手帳",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "trend-442",
+    "kind": "trend",
+    "official": true,
+    "title": "九都県市の合同商談会に308社",
+    "summary": "首都圏の九都県市合同商談会の第18回は、参加308社のうち発注側87社・受注側221社だった。受注側が多く、発注側に選ばれる準備が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "第18回九都県市合同商談会",
+      "url": "https://www.pref.chiba.lg.jp/sanshin/event/r7/kyutoken18.html",
+      "publisher": "千葉県",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-349",
+    "kind": "pain",
+    "title": "受注側が多く選ばれにくい",
+    "summary": "合同商談会では受注側の会社が発注側の倍以上いる。商談会に出るだけでなく、事前に自社サイトや資料で強みを見せておくことが大切になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "商談会の前にサイトを整える理由",
+    "source": {
+      "title": "第18回九都県市合同商談会",
+      "url": "https://www.pref.chiba.lg.jp/sanshin/event/r7/kyutoken18.html",
+      "publisher": "千葉県",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "question-539",
+    "kind": "question",
+    "title": "町工場が多い自治体は相談無料？",
+    "summary": "町工場が集まる自治体の中には、無料の受発注相談を行うところがある。専門のコーディネーターが仕様や工程の相談にも乗るという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "自治体の無料受発注相談",
+      "url": "https://active.nikkeibp.co.jp/atcl/wp/b/22/03/24/02465/",
+      "publisher": "日経BP",
+      "date": "2022-03"
+    }
+  },
+  {
+    "id": "buyer-378",
+    "kind": "buyer",
+    "title": "設備や素材で工場を検索",
+    "summary": "工場が得意分野・設備・対応素材・ロット数を登録し、メーカーが技術で検索できる月額制のサービスもある。営業が苦手な町工場でも見つけてもらいやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "町工場の登録型マッチングサービス",
+      "url": "https://ascii.jp/elem/000/004/310/4310196/",
+      "publisher": "ASCII",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-350",
+    "kind": "pain",
+    "title": "サイト刷新で問い合わせが的外れに",
+    "summary": "ある町工場はサイトを新しくして問い合わせは続いたが、得意な少量〜中量の型加工とずれた相談ばかりで売上につながらなかった。誰に何を伝えるかが先。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせが増えても儲からない理由",
+    "source": {
+      "title": "ホームページ刷新でも売上につながらない",
+      "url": "https://newswitch.jp/p/35760",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-379",
+    "kind": "buyer",
+    "title": "会員企業を業種別に探す",
+    "summary": "岡山県のページには、鍛造・鋳造、プレス・板金・溶接、レーザー加工、表面処理、切削などの業種別に会員企業を探せる仕組みがある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "県の会員企業検索で外注先を探す",
+    "source": {
+      "title": "会員企業検索【業種別】",
+      "url": "https://www.pref.okayama.jp/site/micro/647831.html",
+      "publisher": "岡山県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-468",
+    "kind": "success",
+    "title": "組合で特許を地域に知らせる",
+    "summary": "盛岡の工業団地協同組合は組合員の技術を地域に知ってもらう取り組みをし、表面処理技術の特許が11件あると紹介している。組合単位の発信の例。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工業団地協同組合の取り組み",
+      "url": "https://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/037/406/1101_0203.pdf",
+      "publisher": "盛岡市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-443",
+    "kind": "trend",
+    "official": true,
+    "title": "岩手は半導体の共同受注を後押し",
+    "summary": "いわて産業振興センターは、自動車・半導体の中核企業と県内中小企業の取引拡大を進め、半導体の製造設備メンテナンスの共同受注や人材育成を支えている。",
+    "industries": [
+      "半導体",
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "いわて産業振興センター広報誌",
+      "url": "https://www.joho-iwate.or.jp/wp/assets/uploads/2023/05/c6dfb4cec432abf01edc39fdc6199bc1.pdf",
+      "publisher": "いわて産業振興センター",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-444",
+    "kind": "trend",
+    "official": true,
+    "title": "宮城は半導体人材が年400人不足",
+    "summary": "宮城県の資料では、半導体関連で今後10年に少なくとも4,000人、年400人の人材が不足すると見込んでいる。地域の製造業の採用にも響く。",
+    "industries": [
+      "半導体"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "半導体関連産業の振興",
+      "url": "https://www.pref.miyagi.jp:443/documents/43741/2_4.pdf",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-445",
+    "kind": "trend",
+    "official": true,
+    "title": "自動車は東北広域で集積",
+    "summary": "宮城県は自動車関連産業について、岩手・山形など東北各県と連携しながら集積を進める方針を示している。県をまたいだ取引が前提になる。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "自動車関連産業の集積",
+      "url": "https://www.pref.miyagi.jp/documents/22148/86907.pdf",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-446",
+    "kind": "trend",
+    "official": false,
+    "title": "九州・山口72社が供給網に意欲",
+    "summary": "熊本日日新聞によると、2024年6月時点で九州・山口の中小企業72社がTSMC熊本工場の供給網への参入に意欲を示し、地銀などが支援している。",
+    "industries": [
+      "半導体"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "TSMC熊本工場の供給網参入、72社が意欲",
+      "url": "https://kumanichi.com/articles/1444074",
+      "publisher": "熊本日日新聞",
+      "date": "2024-06"
+    }
+  },
+  {
+    "id": "trend-447",
+    "kind": "trend",
+    "official": false,
+    "title": "地銀13行が大学と参入支援",
+    "summary": "2024年10月、九州・沖縄・山口の地銀13行が、九州大学と台湾の大学のプロジェクトに参画し、地場企業の半導体産業への参入を支援することになった。",
+    "industries": [
+      "半導体"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "九州地場企業のTSMCサプライチェーン参入を支援",
+      "url": "https://kumanichi.com/articles/1574372",
+      "publisher": "熊本日日新聞",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "pain-351",
+    "kind": "pain",
+    "title": "台湾企業との取引の作法",
+    "summary": "熊本市では、台湾企業との取引をうまく進めるコツを学ぶ地場企業向けセミナーが開かれた。商習慣や意思決定の速さの違いに戸惑う会社が多いことがうかがえる。",
+    "industries": [
+      "半導体"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "台湾企業との取引成功の秘訣は？地場企業向けセミナー",
+      "url": "https://kumanichi.com/articles/1590071",
+      "publisher": "熊本日日新聞",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-448",
+    "kind": "trend",
+    "official": false,
+    "title": "地銀が供給網参画を橋渡し",
+    "summary": "2025年12月の報道では、九州の地銀グループが地元企業を半導体サプライチェーンに組み込む構想を掲げ、参画の橋渡しを進めている。",
+    "industries": [
+      "半導体"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "半導体供給網への地元企業参画",
+      "url": "https://newswitch.jp/image/47696",
+      "publisher": "ニュースイッチ",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "pain-352",
+    "kind": "pain",
+    "title": "地元企業の知名度が低い",
+    "summary": "若者が地元に戻らない理由として、受け皿の雇用不足、条件の地域差、地元企業の知名度の低さが挙げられている（JILPT資料、2017年）。発信不足は採用の壁になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "地元の若者に知ってもらうために",
+    "source": {
+      "title": "地方の若者の就職について",
+      "url": "https://www.chisou.go.jp/sousei/meeting/daigaku_yuushikishakaigi/h29-08-07-shiryou3.pdf",
+      "publisher": "内閣官房（JILPT資料）",
+      "date": "2017-08"
+    }
+  },
+  {
+    "id": "success-469",
+    "kind": "success",
+    "title": "UIJターン採用の事例を国が公開",
+    "summary": "厚生労働省の地方就職学生応援のサイトでは、UIJターン採用の成功事例や助成金の活用例を公開している。自社の採用記事の組み立ての参考になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "UIJターン採用成功事例",
+      "url": "https://lokatsu-company.mhlw.go.jp/case",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-540",
+    "kind": "question",
+    "title": "Uターンで町工場に入るのはあり？",
+    "summary": "Uターン人材を採った地方の中小企業の経営者は総じて評価が高いという記事がある。記事では、前職の経験がどう生きるかを具体的に書くと応募の後押しになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "都会から戻って町工場で働く",
+    "source": {
+      "title": "Uターン人材を採用した経営者の声",
+      "url": "https://gentosha-go.com/articles/-/42765",
+      "publisher": "幻冬舎ゴールドオンライン",
+      "date": null
+    }
+  },
+  {
+    "id": "success-470",
+    "kind": "success",
+    "title": "高校生向け企業見学バスツアー",
+    "summary": "兵庫県東播磨では、高校生がものづくり企業を回る無料のバスツアーを毎年行う。2025年度は6社が協力した。参加企業は若い人に現場を見せる機会になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "高校生の見学でうちが見せたもの",
+    "source": {
+      "title": "令和8年度東播磨の魅力企業見学バスツアー",
+      "url": "https://web.pref.hyogo.lg.jp/ehk01/press/20260624-3.html",
+      "publisher": "兵庫県",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "success-471",
+    "kind": "success",
+    "title": "20社を巡る工場バスツアー",
+    "summary": "兵庫県赤穂市では2025年8月、就職を希望する高校生が市内の工場20社を巡り、医薬品会社や鉄工所などで社員の説明を聞いた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "高校生が市内工場を巡るバスツアー",
+      "url": "https://www.kobe-np.co.jp/news/seiban/202508/0019328622.shtml",
+      "publisher": "神戸新聞",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "pain-353",
+    "kind": "pain",
+    "title": "地元就職の高校生は1割ほど",
+    "summary": "岐阜県飛騨地域では地元就職を選ぶ高校生が1割程度にとどまる課題があり、ハローワークが製造業の見学会を開いている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "飛騨地域の高校生企業見学会",
+      "url": "https://jsite.mhlw.go.jp/gifu-roudoukyoku/content/contents/002165970.pdf",
+      "publisher": "岐阜労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-472",
+    "kind": "success",
+    "title": "17社と117人の見学ツアー",
+    "summary": "鹿児島県指宿市では、市とハローワークが高校生向けの見学ツアーを共催し、生徒117名・企業17社が参加してコース別に回った。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "いぶすき魅力発見Jobツアー",
+      "url": "https://jsite.mhlw.go.jp/kagoshima-roudoukyoku/home/photoreport_2023-0609-4.html",
+      "publisher": "鹿児島労働局",
+      "date": "2023-06"
+    }
+  },
+  {
+    "id": "success-473",
+    "kind": "success",
+    "title": "若手社員が高校で座談会",
+    "summary": "青森県は工業高校で、ものづくり企業のPRと若手社員との座談会を開いている。年の近い社員が話すと、仕事のやりがいが伝わりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手社員が語る入社の決め手",
+    "source": {
+      "title": "ものづくり企業PRイベント・若手社員等との座談会",
+      "url": "https://www.pref.aomori.lg.jp/release/2024/76926.html",
+      "publisher": "青森県",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "trend-449",
+    "kind": "trend",
+    "official": true,
+    "title": "振興局も見学ツアーを実施",
+    "summary": "北海道の空知総合振興局は、地元での就職と定着を進めるため、高校生向けに建設業や製造業の企業見学バスツアーを行った。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "高校生が地元企業の現場見学",
+      "url": "https://www.hokkaido-np.co.jp/article/1229082/",
+      "publisher": "北海道新聞",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-450",
+    "kind": "trend",
+    "official": true,
+    "title": "繊維の表示規程が2025年に改正施行",
+    "summary": "消費者庁の案内では、繊維製品品質表示規程は2024年12月に改正され、2025年1月から施行。規程中の「日本工業規格」は「日本産業規格」と読み替える。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "2025年改正の品質表示、何が変わった？",
+    "source": {
+      "title": "繊維製品品質表示規程",
+      "url": "https://www.caa.go.jp/policies/policy/representation/household_goods/law/law_04.html",
+      "publisher": "消費者庁",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "question-541",
+    "kind": "question",
+    "title": "品質表示は誰が付ける？",
+    "summary": "規程では、製造業者・販売業者・表示業者が「表示者」として表示する。OEMの答えでは、誰が表示者になるかを最初に決めることを書く。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "OEMの品質表示は誰の名前で出す？",
+    "source": {
+      "title": "繊維製品品質表示規程",
+      "url": "https://www.caa.go.jp/policies/policy/representation/household_goods/law/law_04.html",
+      "publisher": "消費者庁",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-556",
+    "kind": "term",
+    "title": "組成表示",
+    "summary": "生地に使った全ての繊維の名前と混用率（%）を書く表示。部位ごとに分けて書く例外もある。発注前に生地の組成を工場と確認する。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "組成表示の書き方をやさしく解説",
+    "source": {
+      "title": "繊維製品品質表示規程",
+      "url": "https://www.caa.go.jp/policies/policy/representation/household_goods/law/law_04.html",
+      "publisher": "消費者庁",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "question-542",
+    "kind": "question",
+    "title": "ブランド名だけの表示でいい？",
+    "summary": "東京都の手引きでは、表示者名は登記上の正式な社名で書く必要があり、商標やブランド名だけは認められない。衣料品などでは連絡先も要る。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "自社ブランド服のタグに必要な社名と連絡先",
+    "source": {
+      "title": "家庭用品品質表示法ハンドブック",
+      "url": "https://www.shouhiseikatu.metro.tokyo.lg.jp/torihiki/hyoji/documents/kahyohandbook3003.pdf",
+      "publisher": "東京都",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "question-543",
+    "kind": "question",
+    "title": "輸入した服にも日本語表示？",
+    "summary": "日本で売るなら輸入品も家庭用品品質表示法の対象で、日本語で表示する必要がある（東京都の手引き）。輸入代行と組む人向けの答えに入れる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "海外生産の服でも日本語タグが必要な理由",
+    "source": {
+      "title": "家庭用品品質表示法ハンドブック",
+      "url": "https://www.shouhiseikatu.metro.tokyo.lg.jp/torihiki/hyoji/documents/kahyohandbook3003.pdf",
+      "publisher": "東京都",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "trend-451",
+    "kind": "trend",
+    "official": true,
+    "title": "洗濯表示記号のJIS改正に合わせ見直し",
+    "summary": "消費者庁は2024年5月、JIS L0001改正を受けて繊維製品品質表示規程を改める案を消費者委員会に諮った。洗濯表示の扱いが更新された。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "洗濯表示はいつ・どう変わった？",
+    "source": {
+      "title": "第433回 消費者委員会本会議 資料",
+      "url": "https://www.cao.go.jp/consumer/iinkai/2024/433/shiryou/index.html",
+      "publisher": "消費者委員会",
+      "date": "2024-05"
+    }
+  },
+  {
+    "id": "trend-452",
+    "kind": "trend",
+    "official": true,
+    "title": "アクリレート繊維の表示を追加",
+    "summary": "2024年9月の消費者委員会資料で、混用率試験のJIS改正を受け、アクリレート繊維の混用率表示を適正にする改正案が示された（経産大臣の要請）。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "消費者委員会 資料（アクリレート繊維）",
+      "url": "https://www.cao.go.jp/consumer/iinkai/2024/443/doc/20240912_shiryou1-2.pdf",
+      "publisher": "消費者委員会",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "term-557",
+    "kind": "term",
+    "title": "洗濯表示（取扱い表示）",
+    "summary": "洗い方・漂白・乾燥・アイロン・クリーニングを記号で示す表示。自治体も規程改正を案内している。小ロットの自社製品でもタグに入れる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小ロットでも必要な洗濯表示タグの作り方",
+    "source": {
+      "title": "洗濯表示の案内",
+      "url": "https://www.city.yachiyo.lg.jp/uploaded/attachment/44699.pdf",
+      "publisher": "八千代市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-453",
+    "kind": "trend",
+    "official": true,
+    "title": "国の検討会がOEMの経営難を指摘",
+    "summary": "経産省の繊維産地検討会の報告書概要（2025年11月）は、衣料品の低価格化で一部OEM事業が苦しいこと、産地が消費者に知られていないことを課題に挙げた。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "国の報告書から読む繊維産地のこれから",
+    "source": {
+      "title": "繊維産地のサプライチェーン強靱化に向けた対応検討会 報告書概要",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/textile_production_area/pdf/005_04_00.pdf",
+      "publisher": "経済産業省",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-454",
+    "kind": "trend",
+    "official": true,
+    "title": "認証・デジタル・ブランド化に共同投資",
+    "summary": "同報告書は対応策として、産地の企業が認証取得・デジタル化・ブランド化に共同で投資する方向を示した。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "繊維産地のサプライチェーン強靱化に向けた対応検討会 報告書概要",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/textile_production_area/pdf/005_04_00.pdf",
+      "publisher": "経済産業省",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "pain-354",
+    "kind": "pain",
+    "title": "小ロット多品種の負担が重い",
+    "summary": "経産省の検討会資料は、産地の課題として小ロット・多品種への対応負担を挙げる。少量を受けるほど段取りが増え、利益が残りにくい。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "小ロットを受けても利益を残す工夫",
+    "source": {
+      "title": "繊維産地のサプライチェーン強靱化に向けた対応検討会 報告書概要",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/textile_production_area/pdf/005_04_00.pdf",
+      "publisher": "経済産業省",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "success-474",
+    "kind": "success",
+    "title": "老舗が相次いで自社ブランド",
+    "summary": "金沢・見附・一宮など代表的な産地の老舗が、OEMの値下げ要求や海外生産との競争を背景に自社ブランドを始めたと報じられた。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "OEM工場が自社ブランドを始めた理由",
+    "source": {
+      "title": "繊維産地の老舗が自社ブランド",
+      "url": "https://www.wwdjapan.com/articles/1140925",
+      "publisher": "WWD JAPAN",
+      "date": null
+    }
+  },
+  {
+    "id": "success-475",
+    "kind": "success",
+    "title": "自社ブランドでOEM依存を減らした",
+    "summary": "JETROの紹介では、あるニットメーカーはOEM受注の減少を受けて自社ブランドを立ち上げ、数年でOEMの大部分を減らせた。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "OEM比率を下げた工場の道のり",
+    "source": {
+      "title": "evam eva",
+      "url": "https://www.jetro.go.jp/en/mjcompany/evam_eva.html",
+      "publisher": "JETRO",
+      "date": null
+    }
+  },
+  {
+    "id": "success-476",
+    "kind": "success",
+    "title": "PR中心で産地の名を広めた",
+    "summary": "今治タオルのブランド化は2006年に国の支援事業で始まり、予算が限られる中でCMよりパブリシティを重視したと紹介されている。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "広告費が少なくても名前を知ってもらう方法",
+    "source": {
+      "title": "佐藤可士和氏が語る、地方発ブランドの成功条件とは?",
+      "url": "https://www.itmedia.co.jp/business/spv/1705/16/news043.html",
+      "publisher": "ITmedia ビジネスオンライン",
+      "date": "2017-05"
+    }
+  },
+  {
+    "id": "success-477",
+    "kind": "success",
+    "title": "産地ブランドの認知が約3倍",
+    "summary": "解説記事は、今治タオルの認知度が2004年17.5%から2012年51.5%に上がったと紹介。共通の基準とロゴで産地全体を売った例。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "産地ブランドの基準とロゴの効き目",
+    "source": {
+      "title": "今治タオル（差別化の用語解説）",
+      "url": "https://www.shopowner-support.net/glossary/differentiation/imabari/",
+      "publisher": "ショップオーナーサポート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-478",
+    "kind": "success",
+    "title": "コロナ後に工場が自社ECへ",
+    "summary": "今治のタオルメーカーで自社ECが広がり、半数ほどが持ち始めたという声も。イベント向け需要が減ったことがきっかけの会社もある。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "イベント需要が減った工場のEC立ち上げ",
+    "source": {
+      "title": "老舗の今治タオル名店がECで躍進",
+      "url": "https://biz-journal.jp/company/post_347502.html",
+      "publisher": "ビジネスジャーナル",
+      "date": null
+    }
+  },
+  {
+    "id": "success-479",
+    "kind": "success",
+    "title": "専門家が直接すすめる店",
+    "summary": "今治タオルの南青山店は、卸を通さずタオルソムリエが客に直接届ける場として生まれた。作り手の知識をそのまま売り場に出す例。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "作り手の知識を売り場で伝える",
+    "source": {
+      "title": "今治タオル 南青山の店舗",
+      "url": "https://www.wwdjapan.com/articles/695496",
+      "publisher": "WWD JAPAN",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-455",
+    "kind": "trend",
+    "official": false,
+    "title": "児島で工場併設の直営店",
+    "summary": "2026年2月、児島のデニムブランドが産地で初の直営店を開き、新工場で生産増と海外取引の拡大も狙うと報じられた。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "児島のデニムブランド直営店",
+      "url": "https://www.wwdjapan.com/articles/1552088",
+      "publisher": "WWD JAPAN",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-480",
+    "kind": "success",
+    "title": "工場の機械を百貨店で実演",
+    "summary": "百貨店のイベントで、児島の工場のミシン・刺繍機・レーザー加工機を運び込み、加工と縫製を実演した。工程そのものを見せ場にした例。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工程を見せるイベントで客をつかむ",
+    "source": {
+      "title": "Depart de Loop 児島デニム",
+      "url": "https://www.takashimaya.co.jp/store/special/depart_de_loop/newpost.html?id=461",
+      "publisher": "高島屋",
+      "date": null
+    }
+  },
+  {
+    "id": "term-558",
+    "kind": "term",
+    "title": "デニムの分業",
+    "summary": "デニムは生地・縫製・洗い加工などがほぼ分業で成り立つ。発注者はどの工程を誰が担い、品質責任がどこにあるかを確かめる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "デニムができるまでの分業をやさしく",
+    "source": {
+      "title": "Depart de Loop 児島デニム",
+      "url": "https://www.takashimaya.co.jp/store/special/depart_de_loop/newpost.html?id=461",
+      "publisher": "高島屋",
+      "date": null
+    }
+  },
+  {
+    "id": "success-481",
+    "kind": "success",
+    "title": "産地の組み合わせをブランドに",
+    "summary": "ある国産デニムブランドは、備中・備後の生地と備前の縫製・加工を組み合わせることを売りにしている。地域の分業を価値として語る例。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "産地の分業を強みとして伝える書き方",
+    "source": {
+      "title": "JAPAN DENIM",
+      "url": "https://www.fashion-press.net/brands/5691",
+      "publisher": "ファッションプレス",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-355",
+    "kind": "pain",
+    "title": "熟練の加工職人に頼っている",
+    "summary": "JETROの国産デニム資料は、熟練技術者が欠かせず、若手への指導が産地の価値を守る鍵だとする。人に付いた技術の継承が課題。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "洗い加工の技を若手に渡す",
+    "source": {
+      "title": "JAPAN DENIM",
+      "url": "https://www.jetro.go.jp/ext_images/jetro/japan/hiroshima/denim/pdf/japandenim_jp.pdf",
+      "publisher": "JETRO広島",
+      "date": null
+    }
+  },
+  {
+    "id": "question-544",
+    "kind": "question",
+    "title": "名入れタオルは何枚から？",
+    "summary": "ある事例では、今治タオルにオリジナルネームを縫い付ける方式で100枚から、約2週間で納品できる。答えでは方式で枚数と納期が変わることを書く。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "名入れタオルの最小ロットと納期の目安",
+    "source": {
+      "title": "今治タオルへの名入れに新提案",
+      "url": "https://netshop.impress.co.jp/r/prtimes/items/000000009.000178238",
+      "publisher": "ネットショップ担当者フォーラム（PR TIMES）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-545",
+    "kind": "question",
+    "title": "タオルに直接印刷すると？",
+    "summary": "タオル面への直接印刷は吸水性や風合いが落ちることがあるため、名入れタグを縫い付ける方式を選ぶ業者もある。用途別の名入れ方法を答えに。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "タオルの名入れ方法の違い（印刷・刺繍・タグ）",
+    "source": {
+      "title": "今治タオルへの名入れに新提案",
+      "url": "https://netshop.impress.co.jp/r/prtimes/items/000000009.000178238",
+      "publisher": "ネットショップ担当者フォーラム（PR TIMES）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-546",
+    "kind": "question",
+    "title": "名入れとOEMはどう違う？",
+    "summary": "名入れは既製品に名前を入れるので小ロット・低コスト。OEMは生地や形から作るので数百〜数千個が前提になりやすい。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "名入れとOEM、どちらを選ぶ？",
+    "source": {
+      "title": "名入れオリジナルグッズの作り方",
+      "url": "https://www.theckb.com/archive/create-original-goods-with-name/",
+      "publisher": "THE CKB",
+      "date": null
+    }
+  },
+  {
+    "id": "question-547",
+    "kind": "question",
+    "title": "靴下は何足から作れる？",
+    "summary": "小ロットOEMでは数百足から作れることも珍しくないとする解説がある（海外工場が中心）。国内工場は会社ごとに違うので問い合わせで確認する。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "オリジナル靴下の最小ロットの考え方",
+    "source": {
+      "title": "靴下OEMの小ロットでオリジナルブランド",
+      "url": "https://www.theckb.com/archive/starting-an-original-brand-with-sock-oem-small-lot-production/",
+      "publisher": "THE CKB",
+      "date": null
+    }
+  },
+  {
+    "id": "term-559",
+    "kind": "term",
+    "title": "奈良の靴下産地",
+    "summary": "奈良県（広陵町・大和高田市など）は靴下生産量で国内トップクラスの産地。大半はOEMの下請けが中心とされる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "靴下産地の工場が伝えるべきこと",
+    "source": {
+      "title": "奈良の靴下",
+      "url": "https://www.roomie.jp/2026/09/1879443/",
+      "publisher": "ROOMIE",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "success-482",
+    "kind": "success",
+    "title": "OEM中心の工場が自社ブランドも",
+    "summary": "近畿経産局の紹介では、広陵町の従業員14人ほどのタイツ・靴下メーカーが、ODM・OEMを中心にしつつ2017年から自社ブランドも展開。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "14人の工場が自社ブランドを始めるまで",
+    "source": {
+      "title": "昌和莫大小 紹介",
+      "url": "https://www.kansai.meti.go.jp/3-5sangyo/senni/syouwameriyasu.pdf",
+      "publisher": "近畿経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-380",
+    "kind": "buyer",
+    "title": "靴下は産地の事例集から探す",
+    "summary": "JETROの事例など公的機関が産地企業を紹介している。海外の買い手は公的機関の事例ページから工場を知ることもある。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "公的機関に紹介されると何が変わる？",
+    "source": {
+      "title": "奈良の靴下 事例",
+      "url": "https://www.jetro.go.jp/case_study/2020/6261.html",
+      "publisher": "JETRO",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "term-560",
+    "kind": "term",
+    "title": "ホールガーメント（無縫製ニット）",
+    "summary": "1本の糸から1着を丸ごと編む方式。裁断・縫製をせず、縫い目の擦れが少なく、端布も出にくい。従来は編み地を裁って縫い合わせる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "縫わないニットの仕組みと向く商品",
+    "source": {
+      "title": "ホールガーメントの仕組み",
+      "url": "https://toyokeizai.net/articles/-/238746",
+      "publisher": "東洋経済オンライン",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "buyer-381",
+    "kind": "buyer",
+    "title": "10着程度から縫製先を探す依頼",
+    "summary": "発注サイトには10〜15着程度の小ロットで縫製先を探す依頼も見られる。小ロットの受け方をサイトに明記すると候補に入りやすい。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "10着から受ける工場のページの作り方",
+    "source": {
+      "title": "縫製・加工・プリントのOEM依頼",
+      "url": "https://www.biz.ne.jp/subject/sewing-processing-print/oem/",
+      "publisher": "ビズオーシャン（比較ビズ）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-561",
+    "kind": "term",
+    "title": "摩擦堅ろう度",
+    "summary": "生地を白い綿布でこすり、白布への色移りをグレースケールで等級判定する試験。乾いた布と湿った布で行う。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "色移りの試験をやさしく解説",
+    "source": {
+      "title": "摩擦堅ろう度試験",
+      "url": "https://www.hikaku.metro.tokyo.lg.jp/Portals/0/images/shisho/shien/public/179_4.pdf",
+      "publisher": "東京都立皮革技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-562",
+    "kind": "term",
+    "title": "変退色と汚染",
+    "summary": "染色堅ろう度には、色そのものが変わる「変退色」と、他の布に色が移る「汚染」の2つの見方がある。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "摩擦堅ろう度試験",
+      "url": "https://www.hikaku.metro.tokyo.lg.jp/Portals/0/images/shisho/shien/public/179_4.pdf",
+      "publisher": "東京都立皮革技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-356",
+    "kind": "pain",
+    "title": "濡れると色移りしやすい",
+    "summary": "福岡県の研究では、湿摩擦で白布が汚れる対策として、染料量を減らす・塩やフィックス剤で繊維と染料の結びつきを強める方法を検討した。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "濃い色ほど色移りしやすい理由",
+    "source": {
+      "title": "湿摩擦堅ろう度の改善",
+      "url": "https://www.fitc.pref.fukuoka.jp/data/kenkyu-seika/report/no30/no30_01.pdf",
+      "publisher": "福岡県工業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-382",
+    "kind": "buyer",
+    "title": "色落ちは公設試で試せる",
+    "summary": "茨城県の公設試験研究機関などは染色堅ろう度の依頼試験を受けている。発注者は量産前に第三者の試験結果を求めることがある。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "試験結果を見せると発注者が安心する",
+    "source": {
+      "title": "染色堅ろう度試験",
+      "url": "https://www.itic.pref.ibaraki.jp/facility/examdetails/des/desk06",
+      "publisher": "茨城県産業技術イノベーションセンター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-548",
+    "kind": "question",
+    "title": "試験条件は何を決めておく？",
+    "summary": "色落ちのもめごとを防ぐには、試験規格・乾湿の別・合格等級を仕様で決めておく。答えでは量産前の試作で試すことも書く。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "色落ちトラブルを防ぐ仕様の決め方",
+    "source": {
+      "title": "摩擦堅ろう度試験",
+      "url": "https://www.hikaku.metro.tokyo.lg.jp/Portals/0/images/shisho/shien/public/179_4.pdf",
+      "publisher": "東京都立皮革技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-563",
+    "kind": "term",
+    "title": "検針",
+    "summary": "完成品に折れた針や金属片が残っていないか、検針機で調べる工程。多くの縫製工場で標準の品質管理になっている。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "検針とは？縫製工場の安全対策",
+    "source": {
+      "title": "アパレルECの検針ガイド",
+      "url": "https://stockcrew.co.jp/insights/kenshin-apparel-ec-guide",
+      "publisher": "スタッククルー",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-357",
+    "kind": "pain",
+    "title": "針の見逃しは回収につながる",
+    "summary": "海外では、ベビー服に残った針で利用者がけがをし、人気商品を回収した例が2015年にある。小さな見逃しがブランドに大きく響く。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "How Needle Detectors Work",
+      "url": "https://www.onlineclothingstudy.com/2026/04/how-needle-detectors-work-and-why-they.html",
+      "publisher": "Online Clothing Study",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "question-549",
+    "kind": "question",
+    "title": "検針機が誤って反応することは？",
+    "summary": "金属粉や染料にも反応することがあり、機械の清掃が大事とされる。検針の運用（記録・清掃・再検査）を答えに書くと信頼される。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "検針の運用を公開して信頼を得る",
+    "source": {
+      "title": "How Needle Detectors Work",
+      "url": "https://www.onlineclothingstudy.com/2026/04/how-needle-detectors-work-and-why-they.html",
+      "publisher": "Online Clothing Study",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "term-564",
+    "kind": "term",
+    "title": "AQL（抜き取り検査の基準）",
+    "summary": "最終検査で何個抜いて何個まで不良を許すかを決める基準。資材検査・工程内検査・最終抜き取り・第三者監査を重ねるのが一般的。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "検品はどこまでやる？AQLの考え方",
+    "source": {
+      "title": "Garment textile quality inspection",
+      "url": "https://www.oshima.com.tw/quality-control-packing-factory-support/garment-textile-quality-inspection",
+      "publisher": "Oshima",
+      "date": null
+    }
+  },
+  {
+    "id": "term-565",
+    "kind": "term",
+    "title": "番手",
+    "summary": "糸の太さを表す単位。綿番手は数字が大きいほど細い糸になる。太番手の糸で天竺に編むと厚手で透けにくいTシャツになる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "番手と生地の厚さの関係",
+    "source": {
+      "title": "Tシャツの生地のちがい",
+      "url": "https://www.muji.com/jp/ja/shop/046603/articles/muji-staff/732961",
+      "publisher": "無印良品",
+      "date": null
+    }
+  },
+  {
+    "id": "term-566",
+    "kind": "term",
+    "title": "天竺編み",
+    "summary": "Tシャツに多い基本の編み方で、薄く軽い生地になる。発注時は編み方と糸の太さをセットで伝えると話が早い。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Tシャツの生地のちがい",
+      "url": "https://www.muji.com/jp/ja/shop/046603/articles/muji-staff/732961",
+      "publisher": "無印良品",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-383",
+    "kind": "buyer",
+    "title": "生地は機屋に直接頼む流れも",
+    "summary": "掛川の織物工場が産元商社に頼らず、デザイナーやメーカーへの直販を強めたと報じられた。小ロットの高品質生産が強み。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "機屋が直接注文を受けるときのページ",
+    "source": {
+      "title": "掛川の織物工場が直販",
+      "url": "https://www.wwdjapan.com/?p=1484073",
+      "publisher": "WWD JAPAN",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-358",
+    "kind": "pain",
+    "title": "問屋頼みの機屋が仕事を失った",
+    "summary": "中部経済連合会の資料では、尾州で流通を商社や問屋に頼っていた事業者が仕事を失い数が大きく減った。一方で多品種小ロットを強みにする工場もある。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "問屋頼みから抜け出す機屋の発信",
+    "source": {
+      "title": "中部だより 尾州",
+      "url": "https://www.chukeiren.or.jp/wp/wp-content/uploads/assets/magazine/pdf/chubudayori%20201906.pdf",
+      "publisher": "中部経済連合会",
+      "date": "2019-06"
+    }
+  },
+  {
+    "id": "buyer-384",
+    "kind": "buyer",
+    "title": "小ロットの機屋は産地を回って探す",
+    "summary": "新ブランドのデザイナーが、少ないロットに応じる機屋を探して桐生を訪ねた体験記がある。応じる機屋は多くないという。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "小ロットOKを明記すると見つけてもらえる",
+    "source": {
+      "title": "euchronia 新ブランド 002",
+      "url": "https://www.fashionsnap.com/article/euchronia-new-brand-002/",
+      "publisher": "FASHIONSNAP",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-385",
+    "kind": "buyer",
+    "title": "展示会で若手デザイナーと出会う",
+    "summary": "尾州では、デザイナーの考えた生地を評価し発注先と出会える展示会を開く動きがある。機屋側の新しい買い手の入口になる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "source": {
+      "title": "尾州のテキスタイルデザイナー",
+      "url": "https://newswitch.jp/p/15705",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-359",
+    "kind": "pain",
+    "title": "日本一の鞄産地なのに知られない",
+    "summary": "豊岡は鞄の一大産地だが、OEMが中心のため知名度は低いとされる。作っている事実を名前で語れないのが悩み。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "OEMで名前を出せない工場の発信法",
+    "source": {
+      "title": "豊岡の鞄",
+      "url": "https://gendai.media/articles/-/63601",
+      "publisher": "現代ビジネス",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-360",
+    "kind": "pain",
+    "title": "OEMだけでは収益が安定しない",
+    "summary": "研究資料は、豊岡の鞄産地では相手先の低価格要請や発注量に収益が左右され、OEMだけでは生き残れないという危機感があったとする。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "豊岡鞄産地の研究",
+      "url": "https://pubs-stg.iir.hit-u.ac.jp/admin/ja/pdfs/file/2292",
+      "publisher": "一橋大学イノベーション研究センター",
+      "date": null
+    }
+  },
+  {
+    "id": "success-483",
+    "kind": "success",
+    "title": "基準を満たした品だけ地域ブランドに",
+    "summary": "「豊岡鞄」は2006年に登録され、組合の基準を満たした製品だけが認定される。品質基準をはっきり示して信頼を得た例。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "認定の基準を書くと選ばれる理由",
+    "source": {
+      "title": "豊岡財布",
+      "url": "https://serai.jp/?p=382275",
+      "publisher": "サライ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-456",
+    "kind": "trend",
+    "official": false,
+    "title": "鞄職人の学校や研修施設",
+    "summary": "豊岡では鞄の専門学校や縫製者向けのトレーニング施設など、職人育成の取り組みが進む。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Artisan Avenue 概要",
+      "url": "https://www.artisan-atelier.net/wp-content/uploads/2024/04/Artisan-Avenue-概要.pdf",
+      "publisher": "Artisan Avenue",
+      "date": "2024-04"
+    }
+  },
+  {
+    "id": "question-550",
+    "kind": "question",
+    "title": "制服はまずサンプルで確かめる？",
+    "summary": "大量注文の前にサンプルを頼み、品質を確かめる流れが一般的。答えには、サンプル費用と期間の目安を入れる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "制服づくりはサンプルから",
+    "source": {
+      "title": "企業ユニフォーム",
+      "url": "https://www.printful.com/jp/branded-corporate-wear",
+      "publisher": "Printful",
+      "date": null
+    }
+  },
+  {
+    "id": "question-551",
+    "kind": "question",
+    "title": "ロゴは刺繍とプリントどちら？",
+    "summary": "ユニフォームのロゴはシルクプリント・刺繍・転写プリントから選ぶ例がある。答えでは耐久性・枚数・費用の違いを書く。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "制服ロゴの入れ方の選び方",
+    "source": {
+      "title": "ユニクロ ユニフォーム 2023FW カタログ",
+      "url": "https://www.uniqlo.com/customize/tairyo/lib/pdf/2023_FALL-WINTER_CATALOG.PDF",
+      "publisher": "ユニクロ",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "buyer-386",
+    "kind": "buyer",
+    "title": "制服はレンタルも比べられる",
+    "summary": "工場の制服では、購入・在庫管理の負担を減らすためにレンタル（回収・洗濯・補修込み）も選ばれる。作り手は買う場合との違いを示す。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "買うかレンタルか、制服の選び方",
+    "source": {
+      "title": "ユニフォームレンタル",
+      "url": "https://it-trend.jp/rental_uniform/article/698-9012",
+      "publisher": "ITトレンド",
+      "date": null
+    }
+  },
+  {
+    "id": "term-567",
+    "kind": "term",
+    "title": "ストック生産",
+    "summary": "ユニフォーム業界では在庫を先に作るストック生産が主流とされ、必要量だけ作る方式への移行が課題。別注か既製品かで納期が変わる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "既製品と別注で制服の納期が違う理由",
+    "source": {
+      "title": "ユニフォーム業界の生産体制",
+      "url": "https://www.ginken.jp/denshi/680/680/pdf/067.pdf",
+      "publisher": "ginken.jp",
+      "date": null
+    }
+  },
+  {
+    "id": "success-484",
+    "kind": "success",
+    "title": "SNS担当を若手に任せ採用増",
+    "summary": "厚労省の事例集では、製造業の会社がECやSNSでの会社紹介を若手に任せ、応募が増えて毎年3〜4人の高校生を採用できた（紙容器の例）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手が発信すると若手が来る",
+    "source": {
+      "title": "若者の採用・定着 事例集",
+      "url": "https://www.mhlw.go.jp/content/11600000/001230641.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-457",
+    "kind": "trend",
+    "official": true,
+    "title": "繊維産地は人材確保が最大の課題",
+    "summary": "経産省資料は、繊維産地の最大の課題は人材確保とし、業務内容やキャリアをHPなどで発信することが効果的としている。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "求職者に伝わる仕事紹介ページ",
+    "source": {
+      "title": "繊維産業 人材 資料",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/textile_nw/pdf/002_04_00.pdf",
+      "publisher": "経済産業省",
+      "date": null
+    }
+  },
+  {
+    "id": "success-485",
+    "kind": "success",
+    "title": "若い縫製スタッフを打ち出す",
+    "summary": "中小企業庁の資料で、縫製スタッフの平均年齢が28歳と若い会社が紹介された。年齢層を示すと求職者の不安が減る。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "縫製会社の人材活用",
+      "url": "https://www.chusho.meti.go.jp/keiei/sapoin/monozukuri300sha/2018/ninai016_edovance.pdf",
+      "publisher": "中小企業庁",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "term-568",
+    "kind": "term",
+    "title": "造作家具",
+    "summary": "建築工事の一部として空間に合わせて作り、壁や床に固定する家具。設計段階から工務店と打ち合わせが要り、完成まで時間がかかる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "造作家具と置き家具の違い",
+    "source": {
+      "title": "工務店の造作家具 費用相場とメリットデメリット",
+      "url": "https://crexgroup.com/ja/home-building/planning/construction-company-custom-furniture-guide/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-552",
+    "kind": "question",
+    "title": "造作とオーダー家具どちら？",
+    "summary": "オーダー家具は造作と既製品の中間。サイズは選べ、引っ越しにも持って行ける。一方で壁とのすき間や耐震では造作に劣ることがある。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "造作とオーダー家具、頼み先の決め方",
+    "source": {
+      "title": "家づくりの造作とは",
+      "url": "https://crexgroup.com/ja/home-building/planning/house-building-custom-fixtures/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-387",
+    "kind": "buyer",
+    "title": "建物と一体なら工務店、単体なら工房",
+    "summary": "壁一面の収納など建物と一体なら工務店の造作、持ち運ぶ単体家具なら工房のオーダーが候補になる。工房は自社の得意を明記する。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "工房に頼むのが向く家具・向かない家具",
+    "source": {
+      "title": "家具と建築の中間",
+      "url": "https://www.athome.co.jp/contents/custom/build-design/furnitecture/",
+      "publisher": "アットホーム",
+      "date": null
+    }
+  },
+  {
+    "id": "question-553",
+    "kind": "question",
+    "title": "オーダーの食器棚はいくら？",
+    "summary": "ある工房の国産ナラ食器棚（幅90cm）は仕様で税込約80万〜113万円と幅がある。答えではサイズ・樹種・塗装で決まることを書く。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "オーダー家具の値段が決まる3つの要素",
+    "source": {
+      "title": "オーダー家具カタログ（食器棚）",
+      "url": "https://www.oakv.co.jp/pdf_data/catalog/05_furniture5_cupboard202511.pdf",
+      "publisher": "オークヴィレッジ",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "term-569",
+    "kind": "term",
+    "title": "材料費の上乗せ",
+    "summary": "材料は仕入れ値のままでなく、選別・運搬・保管・反りのリスク分を上乗せして見積もる考え方がある。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "無垢材の見積に上乗せがある理由",
+    "source": {
+      "title": "特注木工の価格設定ガイド",
+      "url": "https://beancount.io/ja/blog/2026/09/17/custom-woodworking-pricing-material-markup-shop-overhead-margin-guide",
+      "publisher": "Beancount",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "success-486",
+    "kind": "success",
+    "title": "内訳を分けた見積で納得を得る",
+    "summary": "材料・人件費・仕上げ・配送設置に分けた見積は、価格が計算で決まったことを示し、値引き交渉も具体的になるとされる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "家具見積の内訳を公開する",
+    "source": {
+      "title": "特注木工の価格設定ガイド",
+      "url": "https://beancount.io/ja/blog/2026/09/17/custom-woodworking-pricing-material-markup-shop-overhead-margin-guide",
+      "publisher": "Beancount",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "trend-458",
+    "kind": "trend",
+    "official": true,
+    "title": "改正クリーンウッド法が2025年施行",
+    "summary": "違法伐採対策の改正法が2025年4月に施行。川上・水際の木材関連事業者に合法性確認などを義務づけ、譲渡時の情報提供も必要に。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "家具づくりとクリーンウッド法",
+    "source": {
+      "title": "林野庁 広報誌 クリーンウッド法",
+      "url": "https://www.rinya.maff.go.jp/j/kouhou/kouhousitu/jouhoushi/attach/pdf/0708-8.pdf",
+      "publisher": "林野庁",
+      "date": null
+    }
+  },
+  {
+    "id": "question-554",
+    "kind": "question",
+    "title": "家具もクリーンウッド法の対象？",
+    "summary": "対象物品には家具も含まれ、詳細は林野庁の家具ガイドラインで確認する。答えでは仕入れ先から合法性情報をもらう流れを書く。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "家具の木材、どこから来た？の答え方",
+    "source": {
+      "title": "クリーンウッド法について",
+      "url": "https://www2.panasonic.biz/jp/sumai/law/cleanwood/",
+      "publisher": "パナソニック",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-388",
+    "kind": "buyer",
+    "title": "合法木材の説明を求める買い手",
+    "summary": "法改正で木材の合法性情報の受け渡しが求められるようになった。法人の買い手には、材の出どころを説明できる工房が選ばれやすい。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "材の出どころを説明できる強み",
+    "source": {
+      "title": "木材関連 審議会資料",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/felled_wood/pdf/004_05_00.pdf",
+      "publisher": "経済産業省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-570",
+    "kind": "term",
+    "title": "STマーク",
+    "summary": "日本玩具協会のST基準に合格したおもちゃに付けられるマーク。1971年に業界の自主規制で始まり、機械的・可燃・化学的安全性を見る。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "木のおもちゃとSTマーク",
+    "source": {
+      "title": "STマーク",
+      "url": "https://www.gov-online.go.jp/article/202508/entry-8747.html",
+      "publisher": "政府広報オンライン",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "trend-459",
+    "kind": "trend",
+    "official": true,
+    "title": "乳幼児用玩具に子供PSCマーク",
+    "summary": "改正消費生活用製品安全法で3歳未満向け玩具が子供用特定製品に指定され、子供PSCマークの表示が必要に。2025年12月施行と報じられた。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "木製玩具を作る工房が知るべき新ルール",
+    "source": {
+      "title": "子供PSCマーク",
+      "url": "https://www.bcnretail.com/market/detail/20251222_582738.html",
+      "publisher": "BCN",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "trend-460",
+    "kind": "trend",
+    "official": false,
+    "title": "ST基準の新版ST2025",
+    "summary": "日本玩具協会はST基準の新版を2025年に定めた。技術基準としてISO 8124やEN 71などの規格が挙げられている。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ST基準 2025",
+      "url": "https://www.toys.or.jp/pdf/2025/ST20250807.pdf",
+      "publisher": "日本玩具協会",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "question-555",
+    "kind": "question",
+    "title": "口に入れるおもちゃの決まりは？",
+    "summary": "乳幼児が口にする「指定おもちゃ」は食品衛生法の規格の対象で、規格外の製造・販売は禁止。塗装の溶出も見られる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "木製玩具の塗装、何に気をつける？",
+    "source": {
+      "title": "日本の子供向け製品の規制",
+      "url": "https://www.tuvsud.com/ja-jp/resource-centre/stories/jp-regulatory-compliance-for-childrens-products-in-japan",
+      "publisher": "TÜV SÜD",
+      "date": null
+    }
+  },
+  {
+    "id": "term-571",
+    "kind": "term",
+    "title": "意匠図と製作図",
+    "summary": "デザイン会社の範囲は平面図・展開図・家具詳細図などの意匠図までで、製作や取付は別という例がある。誰が製作図を描くかを最初に決める。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "内装の図面、誰が描く？",
+    "source": {
+      "title": "造作什器の製作先募集",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=994011",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-389",
+    "kind": "buyer",
+    "title": "実測と夜間作業を最初に確認",
+    "summary": "造作什器の製作先を探す依頼で、現地実測・製作図作成・夜間作業の可否を最初に確かめたいとする例がある。対応範囲を明記すると選ばれる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "店舗什器の工房が最初に書くべき対応範囲",
+    "source": {
+      "title": "造作什器の製作先募集",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=994011",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-361",
+    "kind": "pain",
+    "title": "引渡し日が動かせない",
+    "summary": "店舗什器では、発注から引渡しまでの期限が厳しく決まる依頼がある。図面承認が遅れると工期全体がずれ込む。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "開店日に間に合わせる段取り",
+    "source": {
+      "title": "内装・什器の依頼",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=922083",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-556",
+    "kind": "question",
+    "title": "店づくりは何から決める？",
+    "summary": "中小機構の解説では、構想のあと基本計画（レイアウトや動線）を決め、そこに最も時間をかけるべきとされる。家具はその後に決まる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "店舗什器を頼む前に決めておくこと",
+    "source": {
+      "title": "店舗づくりの進め方",
+      "url": "https://j-net21.smrj.go.jp/startup/manual/list3/3-2-5.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-362",
+    "kind": "pain",
+    "title": "割れの許容範囲で認識がずれる",
+    "summary": "和歌山県の調査で、供給者・需要者とも過半数が無垢材は割れるものと認識する一方、表面割れをどこまで許すかは両者でずれていた。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "どこまでの割れは正常？を先に伝える",
+    "source": {
+      "title": "木材の割れに関する調査",
+      "url": "https://www.pref.wakayama.lg.jp/prefg/070100/070109/gaiyou/006/index_d/fil/Wood-crack_survey.pdf",
+      "publisher": "和歌山県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-363",
+    "kind": "pain",
+    "title": "暖房と日差しで天板が割れた",
+    "summary": "学校の机天板の例では、含水率6%で仕上げた天板が冬の後に割れ、全てがヒーター近くで日の当たる場所だった。乾く時の方が寸法変化が大きい。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "置き場所で無垢の天板は割れる",
+    "source": {
+      "title": "机天板の割れ",
+      "url": "https://www.hro.or.jp/upload/10138/26107002001.pdf",
+      "publisher": "北海道立総合研究機構",
+      "date": null
+    }
+  },
+  {
+    "id": "term-572",
+    "kind": "term",
+    "title": "含水率",
+    "summary": "木に含まれる水分の割合。周りの湿度で増減し、木が伸び縮みする。床暖房のある部屋では乾いて縮みやすい。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "含水率をやさしく：木が動く理由",
+    "source": {
+      "title": "床暖房用フローリングの含水率と寸法変化",
+      "url": "https://www.pref.okayama.jp/uploaded/attachment/320355.pdf",
+      "publisher": "岡山県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-557",
+    "kind": "question",
+    "title": "乾燥させても反りは出る？",
+    "summary": "十分に乾燥しても、無垢材は設置場所の温湿度で伸び縮みし、多少の反りや割れは完全には防げないとメーカーは説明する。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "無垢の家具を買う前に知ってほしいこと",
+    "source": {
+      "title": "ホワイトオーク製品の注意",
+      "url": "https://www.idee-online.com/images/item_page/attention_white_oak_1comon.pdf",
+      "publisher": "IDEE",
+      "date": null
+    }
+  },
+  {
+    "id": "question-558",
+    "kind": "question",
+    "title": "無垢の家で後悔しやすい点は？",
+    "summary": "一般向けの解説では、反りや割れ、手入れの手間が後悔の点に挙がる。答えでは事前の説明と手入れ方法を書く。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "無垢の家",
+      "url": "https://www.athome.co.jp/contents/custom/build-design/solid-wood-house/",
+      "publisher": "アットホーム",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-461",
+    "kind": "trend",
+    "official": true,
+    "title": "企業は基礎のある若手を採って育てる",
+    "summary": "東京都の職業訓練（木工技術科・1年・おおむね30歳以下）の案内では、企業が基礎技術のある若手を採り社内で育てる流れが強まっているとする。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "訓練校の修了生を採る工房",
+    "source": {
+      "title": "木工技術科 案内",
+      "url": "https://www.hataraku.metro.tokyo.lg.jp/vsdc/jonan/woodwork.pdf",
+      "publisher": "東京都立城南職業能力開発センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-573",
+    "kind": "term",
+    "title": "家具の技能士",
+    "summary": "埼玉県の木工工芸科（定員30人・1年）では、修了後に二級技能士（家具）などの資格を目指せる。求人や工房紹介で資格者数を示す材料になる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "木工工芸科",
+      "url": "https://www.pref.saitama.lg.jp/b0806/j18kamoku/j18mokkou.html",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-364",
+    "kind": "pain",
+    "title": "未経験を採る余裕がない",
+    "summary": "都立工芸高校の案内（2023年）は、家具の会社や工房は未経験者の採用に限りがあり、専門知識や資格が求められるとする。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "未経験から家具職人になるには",
+    "source": {
+      "title": "木工教室及び本校紹介",
+      "url": "https://www.metro.ed.jp/kogei-h/assets/中学校先生向け「木工教室及び本校紹介」.pdf",
+      "publisher": "東京都立工芸高校",
+      "date": "2023-07"
+    }
+  },
+  {
+    "id": "question-559",
+    "kind": "question",
+    "title": "家具職人に資格は要る？",
+    "summary": "必須の資格はないが、工業高校や訓練校で機械操作や図面の見方を学んでおくとよいとされる。求職者向けの答えに入れる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "家具職人になる道すじ",
+    "source": {
+      "title": "家具職人の仕事",
+      "url": "https://www.toshin.com/mirai/joblab/job/352/",
+      "publisher": "東進",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-365",
+    "kind": "pain",
+    "title": "大型家具はECで伸びにくい",
+    "summary": "経産省のデータをもとにした記事では、家具ECは雑貨など低単価品の比率が高く、大型家具の売上はほぼ横ばい。実物を見せる工夫が要る。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "大きな家具をネットで売る工夫",
+    "source": {
+      "title": "家具ECの記事一覧",
+      "url": "https://netshop.impress.co.jp/index%2Ephp/g/%E5%AE%B6%E5%85%B7",
+      "publisher": "ネットショップ担当者フォーラム",
+      "date": null
+    }
+  },
+  {
+    "id": "success-487",
+    "kind": "success",
+    "title": "オーダー特化の自社EC",
+    "summary": "ある家具メーカーは、オーダーに特化した自社ECを開き、家具を作る楽しさも伝える狙いを掲げた。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "選ぶ楽しさを伝えるオーダーのページ",
+    "source": {
+      "title": "関家具の自社EC",
+      "url": "https://netshop.impress.co.jp/taxonomy/term/6112",
+      "publisher": "ネットショップ担当者フォーラム",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-462",
+    "kind": "trend",
+    "official": false,
+    "title": "家具メーカーがEC・SNS担当を採る",
+    "summary": "家具メーカーの求人で、自社ECの更新や特集、Instagramの投稿企画を担う人を募る例がある。直販の発信に人を割く動き。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "家具メーカーのEC・SNS担当求人",
+      "url": "https://www.bizreach.jp/job/view/7597606/",
+      "publisher": "ビズリーチ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-463",
+    "kind": "trend",
+    "official": false,
+    "title": "米国が輸入キャビネット関税を引き上げ",
+    "summary": "2025年12月の報道では、米国は2026年1月からキッチンキャビネットや洗面台の輸入関税を25%から50%に上げるとされた。輸出を考える工房は注意。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Why your kitchen cabinets and furniture could get more expensive",
+      "url": "https://www.itiger.com/news/2595737219",
+      "publisher": "Tiger Brokers（Dow Jones）",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "question-560",
+    "kind": "question",
+    "title": "オーダー家具は返品できる？",
+    "summary": "オーダー品は返品できないことが多い。答えでは図面の確認、採寸、搬入経路の確認を契約前に一緒にすることを書く。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "オーダー家具の失敗を防ぐ確認リスト",
+    "source": {
+      "title": "5 Mistakes to Avoid When Ordering Custom Furniture",
+      "url": "https://mahoganymillworks.com/blog/5-mistakes-to-avoid-when-ordering-custom-furniture-mahogany-millworks/",
+      "publisher": "Mahogany Millworks",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-366",
+    "kind": "pain",
+    "title": "採寸ミスが一番多い失敗",
+    "summary": "注文家具の失敗で最も多いのは採寸ミスで、少しのずれで収まらなかったり扉が開かなくなる。工房側の実測サービスが安心材料になる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "実測に伺う理由を伝える",
+    "source": {
+      "title": "5 Mistakes to Avoid When Ordering Custom Furniture",
+      "url": "https://mahoganymillworks.com/blog/5-mistakes-to-avoid-when-ordering-custom-furniture-mahogany-millworks/",
+      "publisher": "Mahogany Millworks",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-390",
+    "kind": "buyer",
+    "title": "オーダーはカタログで選び方を示す",
+    "summary": "ある家具ブランドは、サイズや樹種・仕上げを選べるオーダーカタログを公開している。選べる範囲を先に見せると問い合わせが具体的になる。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オーダーカタログ",
+      "url": "https://www.rafuju.jp/upload/pdf/rafuju_order_catalog.pdf",
+      "publisher": "rafuju",
+      "date": null
+    }
+  },
+  {
+    "id": "question-561",
+    "kind": "question",
+    "title": "刻印がすぐ薄くなるのはなぜ？",
+    "summary": "想定より早く刻印が不鮮明になる相談では、金型の断面や成分を調べて原因を探る。材料・熱処理・使い方を聞き、調べ方を示すとよい。",
+    "industries": [
+      "金型",
+      "プレス"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "技術支援事例 刻印金型の不良",
+      "url": "https://www.assist.ipc.city.hiroshima.jp/VOL.22_9.pdf",
+      "publisher": "広島市工業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-562",
+    "kind": "question",
+    "title": "ダイカスト部品が割れたのはなぜ？",
+    "summary": "角の部分に集まった小さな穴（ピンホール）が起点と推定された例がある。巣が出やすい形と、検査で何を見るかを答えに入れる。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ダイカスト割れと巣の関係をやさしく",
+    "source": {
+      "title": "技術相談事例 機械・金属",
+      "url": "https://www.pref.shiga.lg.jp/hik/32603.html",
+      "publisher": "滋賀県北部産業技術共創センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-563",
+    "kind": "question",
+    "title": "ボルトが急に折れたのは材料のせい？",
+    "summary": "材料内部の欠陥や製造時の割れが疑われる例がある。破面を見ると疲労か一発破断かが分かる。破面写真と使用条件を残すよう伝える。",
+    "industries": [
+      "ねじ・締結部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "技術相談事例 機械・金属",
+      "url": "https://www.pref.shiga.lg.jp/hik/32603.html",
+      "publisher": "滋賀県北部産業技術共創センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-564",
+    "kind": "question",
+    "title": "部品の疲労破壊は何が起点になる？",
+    "summary": "材料中の不純物の固まり（介在物）が起点だった例がある。材料の清浄度や形の角の扱いが効く。原因調査は公設試にも頼めると添える。",
+    "industries": [
+      "機械部品",
+      "自動車部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "技術相談事例 機械・金属",
+      "url": "https://www.pref.shiga.lg.jp/hik/32603.html",
+      "publisher": "滋賀県北部産業技術共創センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-565",
+    "kind": "question",
+    "title": "亜鉛ダイカストがぼろぼろに腐るのは？",
+    "summary": "不純物の鉛・すず・カドミウムが多いと結晶の境目から腐る粒間腐食が起きる。材料の成分管理と地金の出どころを確かめると答える。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "亜鉛合金ダイカストの技術資料",
+      "url": "https://orist.jp/technicalsheet/10020.pdf",
+      "publisher": "大阪産業技術研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "question-566",
+    "kind": "question",
+    "title": "JIS材なのに割れや加工不良が出るのは？",
+    "summary": "同じJIS規格に合う材料でも伸びの差で加工のしやすさが違った例がある。JISは加工性までは決めていないので、試し加工で確かめると伝える。",
+    "industries": [
+      "金属加工",
+      "プレス",
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "「JIS品なのに」と言われたときの答え方",
+    "source": {
+      "title": "技術相談事例（材料の加工性）",
+      "url": "https://www.nmiri.city.nagoya.jp/wp-content/uploads/2023/02/research_7_02.pdf",
+      "publisher": "名古屋市工業研究所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "question-567",
+    "kind": "question",
+    "title": "海外のSUS304が錆びやすいのはなぜ？",
+    "summary": "成分はJISを満たしても、溶接など熱の影響で結晶の境目が腐る部品が混じっていた例がある。受入時の見分け方と熱影響の対策を答える。",
+    "industries": [
+      "金属加工",
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外調達ステンレスの錆を見分ける",
+    "source": {
+      "title": "ステンレス部品の発錆",
+      "url": "https://www.nmiri.city.nagoya.jp/wp-content/uploads/2023/02/research_7_04.pdf",
+      "publisher": "名古屋市工業研究所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "question-568",
+    "kind": "question",
+    "title": "ステンレスなのに錆びたのはなぜ？",
+    "summary": "多くは加工中に付いた鉄粉が起点の「もらい錆」。酸洗いや不動態化処理で除く。材料が原因か外から付いたかを先に切り分けると答える。",
+    "industries": [
+      "金属加工",
+      "表面処理",
+      "塗装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "もらい錆と材料起因の錆を見分ける",
+    "source": {
+      "title": "ステンレスの錆再発と対策",
+      "url": "https://pr.mono.ipros.com/kinzokutoso/product/detail/2001652811/",
+      "publisher": "イプロス（塗装会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-569",
+    "kind": "question",
+    "title": "ステンレスが割れる応力腐食割れとは？",
+    "summary": "SUS304などで、塩分と引っぱる力が同時に働くと起きる。鋼種を変える、残った応力を抜く、塩分を減らすが対策と答える。",
+    "industries": [
+      "金属加工",
+      "溶接",
+      "産業機械"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ステンレス よくあるご質問",
+      "url": "https://www.nipponsteel.com/product/faq/stainless/",
+      "publisher": "日本製鉄",
+      "date": null
+    }
+  },
+  {
+    "id": "question-570",
+    "kind": "question",
+    "title": "溶接したステンレスだけ錆びるのは？",
+    "summary": "溶接の熱で結晶の境目が腐りやすくなる（粒界腐食）ことがある。低炭素材や入熱管理、溶接後の処理をどうするかを答える。",
+    "industries": [
+      "溶接",
+      "製缶"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ステンレス部品の発錆",
+      "url": "https://www.nmiri.city.nagoya.jp/wp-content/uploads/2023/02/research_7_04.pdf",
+      "publisher": "名古屋市工業研究所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "question-571",
+    "kind": "question",
+    "title": "曲げの近くに穴を開けてもいい？",
+    "summary": "曲げ線に近すぎると穴が変形する。板厚の2.5倍ほど離すのが目安とする解説がある。各社の加工限界表を見て決めると伝える。",
+    "industries": [
+      "板金",
+      "プレス"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "曲げと穴の距離、図面で迷ったら",
+    "source": {
+      "title": "プレス加工の図面ガイド",
+      "url": "https://renue.co.jp/posts/press-stamping-drawing-blanking-bending-deep-drawing-burr-guide-2026",
+      "publisher": "Renue",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-572",
+    "kind": "question",
+    "title": "板金の加工限界表はどう使う？",
+    "summary": "板厚と穴の種類（通し穴・タップ・長穴）ごとに曲げからの最小距離が決まる表がある。限界ぎりぎりは変形しやすいので少し余裕を取る。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "板金部品の加工限界",
+      "url": "https://vn.misumi-ec.com/pdf/fa/2012/p2_1719.pdf",
+      "publisher": "ミスミ",
+      "date": "2012"
+    }
+  },
+  {
+    "id": "question-573",
+    "kind": "question",
+    "title": "曲げの内側Rはどれくらい？",
+    "summary": "最小曲げ半径は板厚の1〜2倍が目安という解説がある。材質と板厚で戻り（スプリングバック）も変わるので加工先に確認すると答える。",
+    "industries": [
+      "板金",
+      "プレス"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "プレス加工の図面ガイド",
+      "url": "https://renue.co.jp/posts/press-stamping-drawing-blanking-bending-deep-drawing-burr-guide-2026",
+      "publisher": "Renue",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-574",
+    "kind": "term",
+    "title": "SS400の「400」は何の数字？",
+    "summary": "最低の引っぱり強さ（400N/mm²以上）を表す。成分ではなく強さで決めた材料で、溶接構造物によく使われる。",
+    "industries": [
+      "金属加工",
+      "製缶"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "知っておきたいJISから見た機械材料",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2512/03/news006.html",
+      "publisher": "MONOist",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "term-575",
+    "kind": "term",
+    "title": "S45Cの「45」は何の数字？",
+    "summary": "炭素量が約0.45％という意味。炭素が多いほど焼入れで硬く強くできる。生のままでも焼入れしても使われる。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "知っておきたいJISから見た機械材料",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2512/03/news006.html",
+      "publisher": "MONOist",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "question-574",
+    "kind": "question",
+    "title": "RaとRz、どっちで指定する？",
+    "summary": "普通の加工面はRa、シール面や気密面はRzを使うことが多い。図面の記号には仕上げの加工方法や筋目の向きも書けると添える。",
+    "industries": [
+      "切削加工",
+      "研削"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "表面粗さ記号 Ra・Rz 図面ガイド",
+      "url": "https://renue.co.jp/posts/surface-roughness-symbols-ra-rz-jis-drawing-guide-2026",
+      "publisher": "Renue",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-575",
+    "kind": "question",
+    "title": "面粗さを緩くしたのに仕上がりが良すぎる？",
+    "summary": "旋盤で普通に削るとRa6.3くらいになるという現場の声がある。緩くしたい意図は数値を大きめにして伝えると、無駄な仕上げを減らせる。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "あなたは、まだ「▽」や「〜」を使っている？",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/0911/30/news085_2.html",
+      "publisher": "MONOist",
+      "date": "2009-11"
+    }
+  },
+  {
+    "id": "question-576",
+    "kind": "question",
+    "title": "古い図面の▽記号はどう読む？",
+    "summary": "三角記号は旧JISの書き方で、2度の改正で今の記号に変わった。古い図面を頼むときは今の記号に読み替えて確認すると答える。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "旧図面の▽記号を今の書き方に読み替える",
+    "source": {
+      "title": "あなたは、まだ「▽」や「〜」を使っている？",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/0911/30/news085_2.html",
+      "publisher": "MONOist",
+      "date": "2009-11"
+    }
+  },
+  {
+    "id": "question-577",
+    "kind": "question",
+    "title": "面粗さの指定でいくら変わる？",
+    "summary": "仕上げを一段細かくするごとに工程が増え、費用が上がるという解説がある。どの面にどの粗さが要るかを加工先と一緒に決めると答える。",
+    "industries": [
+      "切削加工",
+      "研削"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Surface finish callouts and manufacturing cost",
+      "url": "https://www.getleo.ai/blog/surface-finish-callouts-manufacturing-cost-2026",
+      "publisher": "Leo AI",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-578",
+    "kind": "question",
+    "title": "タップ穴は図面にどう書く？",
+    "summary": "ねじの呼びと有効ねじ深さ（例「M6深さ10」）だけ書き、下穴は加工側の標準に任せるやり方がある。必要なら下穴深さも書くと答える。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "タップ穴の書き方、最低限これだけ",
+    "source": {
+      "title": "ねじ穴・タップ穴の図面指示 完全ガイド",
+      "url": "https://renue.co.jp/posts/screw-tap-hole-drawing-pilot-drill-counterbore-guide-2026",
+      "publisher": "Renue",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-579",
+    "kind": "question",
+    "title": "転造タップのねじ穴は深さが要る？",
+    "summary": "有効ねじ長さを確実に取るため、加工深さに1.5ピッチほど余裕を見込むのが目安とメーカーFAQにある。下穴の深さに余裕を持たせる。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "転造タップ よくあるご質問",
+      "url": "https://faq.osg.co.jp/faq/show/616",
+      "publisher": "オーエスジー",
+      "date": null
+    }
+  },
+  {
+    "id": "question-580",
+    "kind": "question",
+    "title": "3D CADの穴情報をそのまま出していい？",
+    "summary": "穴機能で自動に付いた深さやねじ仕様が2D図面に出て、現場が迷うことがある。出図前に穴の表記を設計者が見直すと答える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "図面の穴寸法の表記を攻略せよ！",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2509/18/news008.html",
+      "publisher": "MONOist",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "question-581",
+    "kind": "question",
+    "title": "ねじ穴の検査はどうしている？",
+    "summary": "図面のねじ精度に合った限界ゲージ（通り・止まり）で合否を見る。転造タップなら内径も確認する。検査方法を見積時に聞くとよい。",
+    "industries": [
+      "切削加工",
+      "ねじ・締結部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "転造タップ よくあるご質問",
+      "url": "https://faq.osg.co.jp/faq/show/616",
+      "publisher": "オーエスジー",
+      "date": null
+    }
+  },
+  {
+    "id": "question-582",
+    "kind": "question",
+    "title": "成形品のヒケはどう防ぐ？",
+    "summary": "厚い所は冷えるのが遅くへこみやすい。肉厚をそろえ、厚い所は肉抜きする。設計段階で成形先に見てもらうのが近道と答える。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ヒケが出にくい形を図で説明",
+    "source": {
+      "title": "射出成形の外観不良ヒケ対策",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2012/14/news003.html",
+      "publisher": "MONOist",
+      "date": "2020-12"
+    }
+  },
+  {
+    "id": "question-583",
+    "kind": "question",
+    "title": "リブの厚さはどれくらい？",
+    "summary": "リブは本体より薄く、一般部の7割程度にする考え方がある。厚いと裏側にヒケが出る。高さと抜き勾配も合わせて決める。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "肉厚と抜き勾配を押さえるべし！成型部品設計のツボ",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/0709/20/news124_2.html",
+      "publisher": "MONOist",
+      "date": "2007-09"
+    }
+  },
+  {
+    "id": "question-584",
+    "kind": "question",
+    "title": "肉厚が変わる所はどうする？",
+    "summary": "急に変えず、なだらかに変えるのが良品のコツ。急な段差はヒケやそり、流れむらの元になると答える。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "肉厚と抜き勾配を押さえるべし！成型部品設計のツボ",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/0709/20/news124_2.html",
+      "publisher": "MONOist",
+      "date": "2007-09"
+    }
+  },
+  {
+    "id": "question-585",
+    "kind": "question",
+    "title": "成形品に線が出るのはなぜ？",
+    "summary": "樹脂の流れがぶつかる所にウェルドラインが出る。肉厚をそろえると流れが均一になり目立ちにくい。ゲート位置も関わると答える。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ウェルドラインの仕組みとその対策",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2104/08/news004_3.html",
+      "publisher": "MONOist",
+      "date": "2021-04"
+    }
+  },
+  {
+    "id": "question-586",
+    "kind": "question",
+    "title": "リブの付け根に穴（ボイド）が出る？",
+    "summary": "リブと壁が交わる所に肉が集まると冷え方がずれ、ヒケや中の空洞ができる。交わる所の肉を減らす設計が効くと答える。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "リブ設計における均一な肉厚",
+      "url": "https://zetarmold.com/ja/%e3%83%aa%e3%83%96%e8%a8%ad%e8%a8%88%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e5%9d%87%e4%b8%80%e3%81%aa%e8%82%89%e5%8e%9a/",
+      "publisher": "ZetarMold",
+      "date": null
+    }
+  },
+  {
+    "id": "question-587",
+    "kind": "question",
+    "title": "金属部品を樹脂に置き換えられる？",
+    "summary": "ガラス繊維入りPPSなど耐熱樹脂で金属代替を提案する成形会社がある。温度・荷重・薬品・寸法の条件を先に出してもらうと答える。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "金属から樹脂に変える前の確認表",
+    "source": {
+      "title": "金属代替の樹脂成形",
+      "url": "https://pr.mono.ipros.com/tadapla/product/detail/2000623646/",
+      "publisher": "イプロス（成形会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-588",
+    "kind": "question",
+    "title": "樹脂の切削で±0.01は出る？",
+    "summary": "樹脂は温度や吸水で動くので、高い公差は難しい。どうしても要るならアルミに変える案もある。常温で保管・測定することも伝える。",
+    "industries": [
+      "切削加工",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "樹脂の削り出し、精度の限界",
+    "source": {
+      "title": "樹脂材料の特性と注意",
+      "url": "https://chk0-jp.misumi-ec.com/pdf/fa/2018/p2_997.pdf",
+      "publisher": "ミスミ",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "term-576",
+    "kind": "term",
+    "title": "PPS（ピーピーエス）",
+    "summary": "耐熱性・薬品への強さ・寸法の安定・電気の絶縁にすぐれた樹脂。ガラス繊維入りで金属代替に使われる。",
+    "industries": [
+      "樹脂成形",
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "金属代替の樹脂成形",
+      "url": "https://pr.mono.ipros.com/tadapla/product/detail/2000623646/",
+      "publisher": "イプロス（成形会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-589",
+    "kind": "question",
+    "title": "めっきの耐食性を上げるには？",
+    "summary": "ニッケルめっきを多層にして錆びにくくする例がある。膜厚だけでなく層の組み方も効く。使う環境を伝えて仕様を決めると答える。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "めっき皮膜の技術資料",
+      "url": "https://www.orist.jp/dl/izumi/archive/Gijutsu_shiryo/mekkihimaku.pdf",
+      "publisher": "大阪産業技術研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "question-590",
+    "kind": "question",
+    "title": "粉体塗装の膜厚はどれくらい？",
+    "summary": "製品ごとに違い、ある粉体塗料の仕様例では60±10μm・160℃20分。膜が厚い分、はめあい部はマスキングが要ると答える。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "粉体塗料 製品資料",
+      "url": "https://rockpaint.co.jp/industry/data/manual/049-7500info.pdf",
+      "publisher": "ロックペイント",
+      "date": null
+    }
+  },
+  {
+    "id": "question-591",
+    "kind": "question",
+    "title": "塗装の色が思った色にならない？",
+    "summary": "色見本の出し方と許せる色差を最初に決める。思う色が出なかった相談に乗る塗装会社もある。下地処理で密着も変わると添える。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "デザイナーの要求をかなえる加工技術10選",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2308/07/news013_3.html",
+      "publisher": "MONOist",
+      "date": "2023-08"
+    }
+  },
+  {
+    "id": "question-592",
+    "kind": "question",
+    "title": "アルミとステンレスは溶接できる？",
+    "summary": "溶かして付けると境目に硬くもろい化合物ができ、普通の溶接は難しい。摩擦撹拌接合やレーザ、専用ワイヤなど別の方法を相談する。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "異種金属の接合、できる方法・できない方法",
+    "source": {
+      "title": "アルミと異種金属の摩擦撹拌点接合",
+      "url": "https://www.aomori-itc.or.jp/_files/00212663/r270904.pdf",
+      "publisher": "青森県産業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-593",
+    "kind": "question",
+    "title": "異種金属の接合はどの方法がいい？",
+    "summary": "SUS304とA5052を5つの方法で比べた研究では、レーザ溶接と摩擦撹拌接合で境目の化合物層が薄かった。強度試験で確かめると答える。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ステンレスとアルミの異種金属接合",
+      "url": "https://www.pref.ehime.jp/uploaded/attachment/50984.pdf",
+      "publisher": "愛媛県産業技術研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "question-594",
+    "kind": "question",
+    "title": "アルミとステンレスの接合強度は？",
+    "summary": "特殊ワイヤとYAGレーザで重ね継手を作り、約150MPaの引張せん断強度とした報道がある。必要な強度と試験方法を先に決める。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "異種金属を接合する特殊ワイヤ",
+      "url": "https://newswitch.jp/p/7021",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-577",
+    "kind": "term",
+    "title": "摩擦撹拌接合（FSW）",
+    "summary": "回転する工具で材料を溶かさずに混ぜて付ける方法。アルミなど溶けやすい材料や、異種金属の接合に向く。",
+    "industries": [
+      "溶接",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "アルミと異種金属の摩擦撹拌点接合",
+      "url": "https://www.aomori-itc.or.jp/_files/00212663/r270904.pdf",
+      "publisher": "青森県産業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-595",
+    "kind": "question",
+    "title": "焼入れしたのに硬さが足りない？",
+    "summary": "材料の取り違えや組織のむら、断面が大きすぎることが原因になる。材料の識別と、太い部品は焼きが入りやすい合金鋼を勧めると答える。",
+    "industries": [
+      "熱処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Solving Hardness Deficiency in Quenching",
+      "url": "https://machinemfg.com/how-to-solve-the-problem-of-hardness-deficiency-during-quenching",
+      "publisher": "MachineMFG",
+      "date": null
+    }
+  },
+  {
+    "id": "term-578",
+    "kind": "term",
+    "title": "焼入れひずみ",
+    "summary": "熱処理で形や寸法が元に戻らない形で変わること。仕上げ代を残す、熱処理後に削る・研ぐなどで対応する。",
+    "industries": [
+      "熱処理",
+      "研削"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "鋼の熱処理中に発生する欠陥とは？",
+      "url": "https://jp.kindle-tech.com/faqs/what-are-the-defects-that-occur-during-heat-treatment-of-steel",
+      "publisher": "KINTEK",
+      "date": null
+    }
+  },
+  {
+    "id": "question-596",
+    "kind": "question",
+    "title": "基板の穴とパターンはどこまで細かく？",
+    "summary": "ある基板メーカーは最小線幅・間隔0.075mm、最小穴0.10mm、1〜48層を実力値とする。会社で違うので設計前に仕様表を取り寄せる。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "基板メーカーの製造仕様表の読み方",
+    "source": {
+      "title": "プリント基板の製造実力値",
+      "url": "https://mono.ipros.com/product/detail/2001141168",
+      "publisher": "イプロス（基板メーカーの製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-579",
+    "kind": "term",
+    "title": "アスペクト比（基板の穴）",
+    "summary": "穴の深さと径の比。10:1以下が推奨とされ、板厚1.6mmなら最小ドリル径は約0.16mmが目安という解説がある。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Minimum Drill Size and Drill Requirements",
+      "url": "https://www.allpcb.com/allelectrohub/minimum-drill-size-and-drill-requirements",
+      "publisher": "ALLPCB",
+      "date": null
+    }
+  },
+  {
+    "id": "question-597",
+    "kind": "question",
+    "title": "多層基板は穴まわりの余裕が要る？",
+    "summary": "穴とほかの銅箔の最小すき間は層数で変わり、多層ほど広く取る必要がある。設計ルールを製造先に合わせると答える。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Minimum Drill Size and Drill Requirements",
+      "url": "https://www.7pcb.com/blog/dimensions-drills-highest-lowest-diameter",
+      "publisher": "7PCB",
+      "date": null
+    }
+  },
+  {
+    "id": "question-598",
+    "kind": "question",
+    "title": "実装の部品は自分で集める？",
+    "summary": "部品を支給するか、実装会社に調達まで任せるかを選べる。在庫部品を持ち代替品まで提案する会社もある。部品表と座標データは必ず用意すると答える。",
+    "industries": [
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "基板実装の受託",
+      "url": "https://mono.ipros.com/product/detail/2000494973",
+      "publisher": "イプロス（実装会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-599",
+    "kind": "question",
+    "title": "試作の実装でメタルマスク代が高い？",
+    "summary": "少量ではメタルマスク代が初期費用の大きな割合になる。フィルムマスクや、マスク不要の方式を持つ会社もあると答える。",
+    "industries": [
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "試作実装の初期費用を下げる方法",
+    "source": {
+      "title": "試作向けフィルムマスク",
+      "url": "https://mono.ipros.com/product/detail/2000156044",
+      "publisher": "イプロス（実装会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-600",
+    "kind": "question",
+    "title": "1個だとなぜこんなに高い？",
+    "summary": "段取りやプログラム、治具の費用は数に関係なくかかり、少ないほど1個に重く乗る。数量違いで見積をもらうと差が分かると答える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "1個・10個・100個で単価が違う理由",
+    "source": {
+      "title": "外段取化と製造費用",
+      "url": "https://pr.mono.ipros.com/matsui-ss/product/detail/2000733039/",
+      "publisher": "イプロス（加工会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-601",
+    "kind": "question",
+    "title": "成形品は何個から安くなる？",
+    "summary": "金型代を多くの数で割れるので、数が増えると1個の値段が急に下がる。生涯の総数を伝えると型の選び方も変わると答える。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "射出成形のコスト",
+      "url": "https://zetarmold.com/ja/?p=53782",
+      "publisher": "ZetarMold",
+      "date": null
+    }
+  },
+  {
+    "id": "question-602",
+    "kind": "question",
+    "title": "隅のRを小さくすると高くなる？",
+    "summary": "切削の見積は加工時間で決まり、削りにくい形ほど高い。内側の角は許せる範囲でRを残すと費用を下げやすい。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "図面ひと工夫で切削費を下げる",
+    "source": {
+      "title": "切削加工のコストダウン",
+      "url": "https://pr.mono.ipros.com/toyamask/product/detail/2000474702/",
+      "publisher": "イプロス（加工会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-603",
+    "kind": "question",
+    "title": "見積依頼で仕様をどこまで書く？",
+    "summary": "外注先を探す案件では、材質・数量・面粗さを品物ごとに書いて依頼していた。条件が違うと金額も変わるので、そろえて出すと比べやすい。",
+    "industries": [
+      "切削加工",
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "切削加工の外注先募集",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=980196",
+      "publisher": "ビズオーシャン",
+      "date": null
+    }
+  },
+  {
+    "id": "question-604",
+    "kind": "question",
+    "title": "翌日に部品がほしいときは？",
+    "summary": "夜勤で翌朝に納めた例を出す会社もあるが要相談が多い。特急の可否と追加費用、どこまで工程を短くできるかを先に聞く。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "特急依頼の頼み方と費用の考え方",
+    "source": {
+      "title": "特急部品の対応事例",
+      "url": "https://pr.mono.ipros.com/ohnoseiko/product/detail/2000363606/",
+      "publisher": "イプロス（加工会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-391",
+    "kind": "buyer",
+    "title": "特急専門の加工会社を探すには？",
+    "summary": "多品種・小ロット・超短納期に特化し、遠方の取引先も持つ会社がある。「特急」「即日」を掲げる会社の実例と体制を見て選ぶ。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "はばたく中小企業・小規模事業者300社",
+      "url": "https://www.chusho.meti.go.jp/keiei/sapoin/monozukuri300sha/2018/seisan125_toyomechatec.pdf",
+      "publisher": "中小企業庁",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "question-605",
+    "kind": "question",
+    "title": "通常納期1週間は短い？",
+    "summary": "旋盤・CNC部品で通常でも1週間で納める会社を探す案件があった。数が増えると割安になる点も理解したうえで依頼していた。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "旋盤・CNC加工の外注先募集",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=981181",
+      "publisher": "ビズオーシャン",
+      "date": null
+    }
+  },
+  {
+    "id": "question-606",
+    "kind": "question",
+    "title": "3Dプリント品で強度試験していい？",
+    "summary": "熱溶解積層の試験片は射出成形品より引張・衝撃に弱く、積む向きでも差が出た。機能試験では差を前提にすると答える。",
+    "industries": [
+      "3Dプリンタ",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "3Dプリンタ造形品の強度評価",
+      "url": "https://www.pref.yamanashi.jp/documents/86909/report_h29_30.pdf",
+      "publisher": "山梨県産業技術センター",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "question-607",
+    "kind": "question",
+    "title": "液体を流す試作は何で作る？",
+    "summary": "切削品は水漏れしにくく、液体を貯める・流す試験に使える。ガラス繊維入り樹脂も削れると試作会社は説明している。",
+    "industries": [
+      "切削加工",
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "News Letter Vol.6",
+      "url": "https://www.hirotass.co.jp/download/news/News_Letter_Vol6_20210525.pdf",
+      "publisher": "試作会社のニュースレター",
+      "date": "2021-05"
+    }
+  },
+  {
+    "id": "question-608",
+    "kind": "question",
+    "title": "3Dプリント品の精度を上げたい？",
+    "summary": "造形後に必要な寸法だけ切削で仕上げ、±0.05mm・Ra1.6〜3.2を出すハイブリッド加工を示す会社がある。",
+    "industries": [
+      "3Dプリンタ",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "3Dプリント＋切削のハイブリッド加工",
+      "url": "https://mono.ipros.com/product/detail/2000620232",
+      "publisher": "イプロス（試作会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-609",
+    "kind": "question",
+    "title": "量産に近い試作を鋳物で作れる？",
+    "summary": "石膏鋳造の試作は量産ダイカストと強度・放熱が違うことがある。近い性質を見たいなら簡易ダイカスト（10〜1000個が目安の例）も候補。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ダイカスト試作の選び方",
+    "source": {
+      "title": "役立つ簡易ダイカスト",
+      "url": "https://mono.ipros.com/product/detail/2000223677",
+      "publisher": "イプロス（鋳造会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-610",
+    "kind": "question",
+    "title": "削り出しとダイカスト、どこで切り替え？",
+    "summary": "ダイカストは型代が重く、数が多いほど有利。少数や設計変更が多い段階は削り出しが向く。総数と変更の見込みで決めると答える。",
+    "industries": [
+      "鋳造",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "CNC Machining vs Die Casting: The Complete 2026 Decision Guide",
+      "url": "https://seller.alibaba.com/blogs/2026/southeast-asia/precision-manufacturing/cnc-machining-vs-die-casting-guide-alibaba-b2b",
+      "publisher": "Alibaba.com",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-611",
+    "kind": "question",
+    "title": "図面の「〜相当品」は海外で通じる？",
+    "summary": "「相当品」は現地メーカーの判断に任せることになり、不良の元になる。材料規格と必要な性質をはっきり書くと答える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外に図面を出す前に直す書き方",
+    "source": {
+      "title": "図面表記の曖昧さが生む現地調達部品のトラブル",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2208/10/news004.html",
+      "publisher": "MONOist",
+      "date": "2022-08"
+    }
+  },
+  {
+    "id": "question-612",
+    "kind": "question",
+    "title": "海外品を国内に戻す会社は多い？",
+    "summary": "米国ではダイカスト会社が中国製の亜鉛鋳物約50万個を国内生産に戻した例がある。品質・近さ・輸送費・金属価格の変動が理由とされた。",
+    "industries": [
+      "鋳造",
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "US metals die casters see business return from overseas",
+      "url": "https://www.foundry-planet.com/d/us-metals-die-casters-see-business-return-from-overseas/",
+      "publisher": "Foundry Planet",
+      "date": null
+    }
+  },
+  {
+    "id": "question-613",
+    "kind": "question",
+    "title": "ミルシートがあれば品質は大丈夫？",
+    "summary": "ミルシートが証明するのは材料だけ。削ったり溶接した後の寸法や品質は別に寸法成績書が要る。必要な書類を発注時に決める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ミルシート・検査成績書・COAの違い",
+    "source": {
+      "title": "検査成績書・試験成績書・COA・ミルシートの違い",
+      "url": "https://www.issoh.co.jp/column/details/16895/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "term-580",
+    "kind": "term",
+    "title": "COA（分析証明書）",
+    "summary": "ロットごとに規格に合うことを示す書類。規格値との照合と合否判定まで含み、検査成績書に近い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "検査成績書・試験成績書・COA・ミルシートの違い",
+      "url": "https://www.issoh.co.jp/column/details/16895/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "question-614",
+    "kind": "question",
+    "title": "公設試に試験を頼むときの準備は？",
+    "summary": "依頼者名・依頼品・項目・成績書の使い道を事前に伝え、できるか確認するのが一般的。書いてほしい内容も依頼時に伝える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "依頼試験 依頼書の書き方",
+      "url": "https://www.aomori-itc.or.jp/_files/00012119/irai_hachi_kakikata.pdf",
+      "publisher": "青森県産業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-615",
+    "kind": "question",
+    "title": "不良の原因を公の機関に調べてもらえる？",
+    "summary": "公設試は技術相談・機器利用・依頼試験・共同研究を受ける。課題を整理してから近くの窓口に連絡すると話が早い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "不良調査で公設試を使う手順",
+    "source": {
+      "title": "公設試験研究機関の活用",
+      "url": "https://j-net21.smrj.go.jp/support/publicsupport/2020012701.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "question-616",
+    "kind": "question",
+    "title": "公設試の分析費用はいくら？",
+    "summary": "機関ごとの料金表で決まる。千葉県では電子顕微鏡試験1試料7,190円などの例（令和元年10月改正）。技術相談は無料の所が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "依頼試験",
+      "url": "https://www.pref.chiba.lg.jp/sanken/iraishiken/index.html",
+      "publisher": "千葉県産業支援技術研究所",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "question-617",
+    "kind": "question",
+    "title": "強いボルトが勝手に折れたら相談先は？",
+    "summary": "強度区分12.9のボルトが締結後に破断した相談例を公設試の案内が載せている。破面と使い方を持って相談すると答える。",
+    "industries": [
+      "ねじ・締結部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "公設試のすすめ",
+      "url": "https://www.kansai.meti.go.jp/2giki/sangiren/susume/2023kousetsushinosusume.pdf",
+      "publisher": "近畿経済産業局",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "question-618",
+    "kind": "question",
+    "title": "R曲げも自動見積できる？",
+    "summary": "meviyは2021年にR曲げと切り起こしに対応。R曲げは鉄系3.2mm、ステンレス・アルミ3.0mmまでなど範囲がある。範囲外は個別見積になる。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "meviyがR曲げと切り起こしに対応",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2110/15/news023.html",
+      "publisher": "MONOist",
+      "date": "2021-10"
+    }
+  },
+  {
+    "id": "question-619",
+    "kind": "question",
+    "title": "溶接板金も3Dデータだけで頼める？",
+    "summary": "meviyは3Dから溶接箇所を判定し、外形の3辺合計1500mm以内・長手1200mm以内が対象（2023年時点）。2024年から板厚違いの溶接も対象に。",
+    "industries": [
+      "板金",
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "3Dデータのみで板金溶接品の手配が可能に",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2306/27/news032.html",
+      "publisher": "MONOist",
+      "date": "2023-06"
+    }
+  },
+  {
+    "id": "question-620",
+    "kind": "question",
+    "title": "板厚が違う部品の溶接も見積できる？",
+    "summary": "2024年にmeviyは板厚違いの溶接を自動見積の対象に加えた。ネット見積で無理な形は町工場に頼むと、記事で役割を分けて書ける。",
+    "industries": [
+      "板金",
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネット見積と町工場の使い分け",
+    "source": {
+      "title": "meviyが板厚違いの溶接に対応",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2402/16/news009.html",
+      "publisher": "MONOist",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "trend-464",
+    "kind": "trend",
+    "official": true,
+    "title": "1人当たり売上は前年比4.1%増",
+    "summary": "全印工連の令和5年度調査（2024年10月公表）で、1人当たり純売上高は約1,653万円、前年より4.1%増えた。値上げが少しずつ通り始めた様子がうかがえる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "値上げのお願いを始めた理由を書く",
+    "source": {
+      "title": "令和5年度 印刷業経営動向実態調査 総括編",
+      "url": "https://www.aj-pia.or.jp/wp-content/uploads/2024/10/The-2023-Survey-on-Business-Trends-in-the-Printing-Industry-Summary.pdf",
+      "publisher": "全日本印刷工業組合連合会",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "trend-465",
+    "kind": "trend",
+    "official": true,
+    "title": "営業利益率0.5%で3年ぶり黒字",
+    "summary": "同じ令和5年度調査で、印刷会社の営業利益率は0.5%と3年ぶりに黒字に戻り、経常利益率は2.0%だった。黒字とはいえ利益はとても薄い。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "利益0.5%の業界で品質を守る工夫",
+    "source": {
+      "title": "令和5年度 印刷業経営動向実態調査 総括編",
+      "url": "https://www.aj-pia.or.jp/wp-content/uploads/2024/10/The-2023-Survey-on-Business-Trends-in-the-Printing-Industry-Summary.pdf",
+      "publisher": "全日本印刷工業組合連合会",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "trend-466",
+    "kind": "trend",
+    "official": true,
+    "title": "令和4年度は売上が25年ぶりの低さ",
+    "summary": "全印工連の令和4年度調査（219社回答）では、1人当たり純売上高が約1,587万円で前年比2.9%減、25年ぶりの低い水準。営業利益率は-0.1%で2年続けて赤字だった。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和4年度 印刷業経営動向実態調査 総括編",
+      "url": "https://www.aj-pia.or.jp/wp-content/uploads/2023/10/04summary.pdf",
+      "publisher": "全日本印刷工業組合連合会",
+      "date": "2023-08"
+    }
+  },
+  {
+    "id": "trend-467",
+    "kind": "trend",
+    "official": true,
+    "title": "コスト増の転嫁は5割に届かず",
+    "summary": "全印工連の報告では、コスト増を価格に転嫁できた割合は2023年9月に48.2%まで上がったが、半分に届いていない（印刷ジャーナル2024年4月）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "値上げの内訳を発注者に見せる記事",
+    "source": {
+      "title": "中小印刷産業振興議連、価格転嫁や取引慣行の課題について協議",
+      "url": "https://www.pjl.co.jp/news/main/2024/04/17264.html",
+      "publisher": "印刷ジャーナル",
+      "date": "2024-04"
+    }
+  },
+  {
+    "id": "trend-468",
+    "kind": "trend",
+    "official": true,
+    "title": "経営動向調査の回答は約200社",
+    "summary": "全印工連の令和7年度の経営動向実態調査は、約2,985社に送り有効回答は198社。同業の数字と比べるときは回答数が少ない点も覚えておく。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "関連統計データ",
+      "url": "https://www.aj-pia.or.jp/toukei/",
+      "publisher": "全日本印刷工業組合連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-469",
+    "kind": "trend",
+    "official": true,
+    "title": "全印工連は用紙・インキ価格も毎年調べる",
+    "summary": "全印工連は組合員向けに「用紙等価格動向調査」を毎年行い、用紙とインキ価格の動きをつかもうとしている。値上げ交渉の根拠に使える公的な資料の一つ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "用紙等価格動向調査ご協力のお願い",
+      "url": "https://www.aj-pia.or.jp/news/%E3%80%90%E5%85%A8%E5%8D%B0%E5%B7%A5%E9%80%A3%E3%80%91%E7%94%A8%E7%B4%99%E7%AD%89%E4%BE%A1%E6%A0%BC%E5%8B%95%E5%90%91%E8%AA%BF%E6%9F%BB%E3%81%B8%E3%81%AE%E3%81%94%E5%8D%94%E5%8A%9B%E3%81%AE%E3%81%8A/",
+      "publisher": "全日本印刷工業組合連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-470",
+    "kind": "trend",
+    "official": true,
+    "title": "2020〜25年でコストは約4割上昇",
+    "summary": "日印産連の2026年1月の資料は、オフセット印刷で2020〜25年に約39〜44%のコスト上昇圧力があったと示し、発注者に価格転嫁への理解を求めている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積もりが5年前と違う理由を説明",
+    "source": {
+      "title": "印刷発注事業者の皆様へのお願い～資材価格高騰・労務費上昇等の現状～",
+      "url": "https://www.jfpi.or.jp/files/user/pdf/PrintingIndustryCostTrends_Offset.pdf",
+      "publisher": "日本印刷産業連合会",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "trend-471",
+    "kind": "trend",
+    "official": true,
+    "title": "下請けの下流ほど転嫁が進まない",
+    "summary": "日印産連資料が引く公取委の調査（2025年12月公表）では、価格転嫁は改善したが、取引の段階が深いほど進みにくい。孫請けの印刷会社ほど苦しい構図。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "印刷発注事業者の皆様へのお願い～資材価格高騰・労務費上昇等の現状～",
+      "url": "https://www.jfpi.or.jp/files/user/pdf/PrintingIndustryCostTrends_Offset.pdf",
+      "publisher": "日本印刷産業連合会",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "trend-472",
+    "kind": "trend",
+    "official": false,
+    "title": "印刷用紙は2025年に2年ぶり値上がり",
+    "summary": "日本経済新聞によると、2025年に印刷用紙の価格が前月比5%上がり、2年ぶりの値上がりとなった。物流費などの転嫁が進んだ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "印刷用紙が2年ぶり値上がり 5%、物流費など転嫁進む",
+      "url": "https://www.nikkei.com/article/DGXZQOUB249G30U5A420C2000000/",
+      "publisher": "日本経済新聞",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-473",
+    "kind": "trend",
+    "official": false,
+    "title": "2026年は印刷用紙が8%値上がり",
+    "summary": "日本経済新聞は2026年、製紙会社が採算確保のため人件費などを転嫁し、印刷用紙が8%値上がりしたと報じた。紙代の上昇はまだ続いている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紙代が上がる今、仕様で安くする方法",
+    "source": {
+      "title": "印刷用紙8%値上がり 製紙、採算確保へ人件費など転嫁",
+      "url": "https://www.nikkei.com/article/DGXZQOUB2540F0V20C26A5000000/",
+      "publisher": "日本経済新聞",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-367",
+    "kind": "pain",
+    "title": "紙代の値上げ通知が年に何度も来る",
+    "summary": "製紙各社は2025年以降も値上げを打ち出しており（日印産連2026年1月資料）、印刷会社は見積もりの有効期限を短くしないと赤字になりやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "印刷発注事業者の皆様へのお願い～資材価格高騰・労務費上昇等の現状～",
+      "url": "https://www.jfpi.or.jp/files/user/pdf/PrintingIndustryCostTrends_Offset.pdf",
+      "publisher": "日本印刷産業連合会",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "question-621",
+    "kind": "question",
+    "title": "印刷代はなぜ毎年上がるの？",
+    "summary": "答えに入れたいこと：紙・インキ・版材が上がっていること、人件費とエネルギー代も上がっていること、業界団体が公表している資料があること。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "印刷代が上がる理由を正直に書く",
+    "source": {
+      "title": "印刷発注事業者の皆様へのお願い～資材価格高騰・労務費上昇等の現状～",
+      "url": "https://www.jfpi.or.jp/files/user/pdf/PrintingIndustryCostTrends_Offset.pdf",
+      "publisher": "日本印刷産業連合会",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "question-622",
+    "kind": "question",
+    "title": "見積もりの有効期限が短いのはなぜ？",
+    "summary": "答えに入れたいこと：紙の値上げが続き、仕入れ値が月ごとに変わること。期限を過ぎたら再見積もりになること。早めに部数を決めると有利なこと。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "見積もりの有効期限の理由",
+    "source": {
+      "title": "印刷用紙8%値上がり 製紙、採算確保へ人件費など転嫁",
+      "url": "https://www.nikkei.com/article/DGXZQOUB2540F0V20C26A5000000/",
+      "publisher": "日本経済新聞",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-488",
+    "kind": "success",
+    "title": "値上げの理由を公的資料で示す",
+    "summary": "業界団体が発注者向けに出す資料（日印産連のお願い文書など）を見積もりに添え、上げ幅の根拠を見せると話し合いが進みやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "値上げを伝える手紙の書き方",
+    "source": {
+      "title": "印刷発注事業者の皆様へのお願い～資材価格高騰・労務費上昇等の現状～",
+      "url": "https://www.jfpi.or.jp/files/user/pdf/PrintingIndustryCostTrends_Offset.pdf",
+      "publisher": "日本印刷産業連合会",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "pain-368",
+    "kind": "pain",
+    "title": "乾燥工程が電気を食う",
+    "summary": "印刷工場ではインキを乾かす工程で多くの電力を使うとされ、乾燥設備の効率が電気代を左右する。グラビアなど溶剤を飛ばす工程は特に重い。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "省エネ優良取組事例",
+      "url": "https://www.pref.okayama.jp/uploaded/life/306329_1346365_misc.pdf",
+      "publisher": "岡山県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-489",
+    "kind": "success",
+    "title": "コンプレッサーの台数制御で電力を減らす",
+    "summary": "岡山県の事例集では、印刷工場が低負荷時も動いていた150kWの機械を自動停止させ、75kWの台数制御中心に変えた。乾燥や空調の運転も見直した。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "工場の電気代を下げた3つの見直し",
+    "source": {
+      "title": "省エネ優良取組事例",
+      "url": "https://www.pref.okayama.jp/uploaded/life/306329_1346365_misc.pdf",
+      "publisher": "岡山県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-490",
+    "kind": "success",
+    "title": "エア圧を0.69から0.65MPaへ",
+    "summary": "札幌市の資料では、印刷工場がコンプレッサーの吐出圧を0.69MPaから0.65MPaに下げる試験をし、電流値から削減できる電力を計算した。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "印刷工場のコンプレッサー改善",
+      "url": "https://www.city.sapporo.jp/kankyo/management/ems_jigyosha/documents/22_printing_plant_compressor_kaizen.pdf",
+      "publisher": "札幌市",
+      "date": null
+    }
+  },
+  {
+    "id": "success-491",
+    "kind": "success",
+    "title": "新型ラベル印刷機で省エネ率73%",
+    "summary": "SIIの省エネ事例では、ラベル印刷機を新型に替え、対象設備で省エネ率73.3%、年12.1kl・約108万円の削減と示された。補助金の申請例として参考になる。",
+    "industries": [
+      "印刷",
+      "パッケージ",
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "印刷機の更新と省エネ補助金",
+    "source": {
+      "title": "省エネ設備更新の事例（ラベル印刷機）",
+      "url": "https://sii.or.jp/file/cutback_example/135_yasui-kk.pdf",
+      "publisher": "環境共創イニシアチブ（SII）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-623",
+    "kind": "question",
+    "title": "工場のエア漏れでいくら損する？",
+    "summary": "答えに入れたいこと：資源エネルギー庁の資料では、圧力を0.1MPa下げ、エア漏れを10%から2%にした例で年16万円の削減。まず計ることから始める。",
+    "industries": [
+      "印刷",
+      "印刷機械"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "省エネでコストダウン",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saving/government/data/package_r7_03_shoene_costdown.pdf",
+      "publisher": "資源エネルギー庁",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-492",
+    "kind": "success",
+    "title": "省エネの実績が大手の受注につながる",
+    "summary": "エネチェンジの記事は、京都の小さな印刷会社が独自の方式で消費電力を減らし省エネ大賞を受け、環境対策を理由に大手企業の案件を取ったと紹介。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "省エネの取り組みをサイトで伝える",
+    "source": {
+      "title": "省エネ大賞を受賞した印刷会社の施策",
+      "url": "https://enechange.jp/articles/biz/interview-with-adbank-prize",
+      "publisher": "エネチェンジ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-392",
+    "kind": "buyer",
+    "title": "環境報告に使えるCO2の数字を求める",
+    "summary": "大手の発注者は取引先の省エネ・環境対策を見るようになっている。電力削減の数字を出せる印刷会社は、選ばれる理由を一つ持てる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "省エネ大賞を受賞した印刷会社の施策",
+      "url": "https://enechange.jp/articles/biz/interview-with-adbank-prize",
+      "publisher": "エネチェンジ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-581",
+    "kind": "term",
+    "title": "バイオマスマークとは",
+    "summary": "植物など生物由来の原料を使った製品に、日本有機資源協会が認める印。インキでは生物由来の割合が乾燥重量で10%以上などの基準がある。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "バイオマスインキの印刷物を頼むには",
+    "source": {
+      "title": "専用バイオマスインキ",
+      "url": "https://mono.ipros.com/cg3/専用バイオマスインキ",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-582",
+    "kind": "term",
+    "title": "ノンVOCインキとは",
+    "summary": "インキに含まれる石油系の溶剤を植物由来の材料などに置き換え、揮発性有機化合物（VOC）を減らしたインキ。作業場のにおいや大気への負担を減らす。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "植物由来材料を用いた環境対応印刷（日本印刷学会誌55巻4号）",
+      "url": "https://www.jstage.jst.go.jp/article/nig/55/4/55_238/_article/-char/ja",
+      "publisher": "日本印刷学会誌",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "term-583",
+    "kind": "term",
+    "title": "水なし印刷とは",
+    "summary": "インキの種類ではなく、オフセット印刷のやり方の一つ。湿し水を使わずに刷るため、湿し水に入れるアルコール類や廃液が出ない。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "水なし印刷で何が変わる？",
+    "source": {
+      "title": "植物由来材料を用いた環境対応印刷（日本印刷学会誌55巻4号）",
+      "url": "https://www.jstage.jst.go.jp/article/nig/55/4/55_238/_article/-char/ja",
+      "publisher": "日本印刷学会誌",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "question-624",
+    "kind": "question",
+    "title": "バイオマスと水なしは何が違う？",
+    "summary": "答えに入れたいこと：バイオマスは原料、ノンVOCは揮発する成分、水なしは刷り方の話で軸が別。組み合わせもできる。印刷物にどの印を入れたいか先に伝える。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "環境印刷の3つの言葉の違い",
+    "source": {
+      "title": "植物由来材料を用いた環境対応印刷（日本印刷学会誌55巻4号）",
+      "url": "https://www.jstage.jst.go.jp/article/nig/55/4/55_238/_article/-char/ja",
+      "publisher": "日本印刷学会誌",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "term-584",
+    "kind": "term",
+    "title": "湿し水とIPAとは",
+    "summary": "オフセット印刷で版の汚れを防ぐ水が湿し水。昔はIPA（アルコール）を多く混ぜたが、法規制や環境面から減らす流れで、IPAなしの湿し水も出ている。",
+    "industries": [
+      "印刷",
+      "印刷機械"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PRESSMAX 湿し水",
+      "url": "https://www.fujifilm.com/jp/ja/business/graphic/pressmax/fountain",
+      "publisher": "富士フイルム",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-474",
+    "kind": "trend",
+    "official": false,
+    "title": "IPAを使わない湿し水が広がる",
+    "summary": "富士フイルムなど資材メーカーは、IPAを使わずに水上がりを保つ湿し水やVOC成分を除いた製品を出している。作業者の安全と環境対応の両方に効く。",
+    "industries": [
+      "印刷",
+      "印刷機械"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PRESSMAX 湿し水",
+      "url": "https://www.fujifilm.com/jp/ja/business/graphic/pressmax/fountain",
+      "publisher": "富士フイルム",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-393",
+    "kind": "buyer",
+    "title": "環境印刷は「どの印を入れたいか」で頼む",
+    "summary": "発注者は報告書や商品に環境の印を載せたいことが多い。バイオマスマーク・GP・FSCなど、載せたい印を先に決めると印刷会社が対応可否を答えやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "専用バイオマスインキ",
+      "url": "https://mono.ipros.com/cg3/専用バイオマスインキ",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-585",
+    "kind": "term",
+    "title": "DM発送代行の仕事の範囲",
+    "summary": "宛名リストの管理や重複を消すクレンジング、印刷・封入・発送まで含むことが多い。リストを暗号化して管理する会社もある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "DM発送はどこまで任せられる？",
+    "source": {
+      "title": "DM発送代行の選び方",
+      "url": "https://imitsu.jp/matome/dm/1628261217399573",
+      "publisher": "アイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-369",
+    "kind": "pain",
+    "title": "封入物が多いほど誤封入が怖い",
+    "summary": "DMは印刷から封入、宛名貼り、郵送手続きまで工数が多い。複雑な封入を手作業でミスなくこなせるかが会社ごとの差になる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "DMの印刷から発送まで",
+      "url": "https://www.shopowner-support.net/customer_attraction_information/offline/dm/dm-printing-shipping/",
+      "publisher": "Shopowner Support",
+      "date": null
+    }
+  },
+  {
+    "id": "question-625",
+    "kind": "question",
+    "title": "DMの宛名データはどう渡す？",
+    "summary": "答えに入れたいこと：暗号化して渡す方法、受け取り後の保管と消し方、誰が触るか。Pマークの有無だけでなく、再委託の有無も書いておく。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "宛名データの渡し方と消し方",
+    "source": {
+      "title": "DM発送代行の選び方",
+      "url": "https://imitsu.jp/matome/dm/1628261217399573",
+      "publisher": "アイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-394",
+    "kind": "buyer",
+    "title": "Pマークだけでなく再委託先も聞く",
+    "summary": "DMを頼む発注者は、封入や発送を別会社に出すかどうか、データを消した証明が出せるかも確かめたい。答えをサイトに載せておくと選ばれやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "DM発送代行の選び方",
+      "url": "https://imitsu.jp/matome/dm/1628261217399573",
+      "publisher": "アイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-475",
+    "kind": "trend",
+    "official": true,
+    "title": "Pマークの業種別の数は公表されている",
+    "summary": "JIPDECは付与事業者数の推移と業種別の数をPDFで公開しており、2026年3月末時点版もある。印刷業の数を記事に使うときは原本で確かめる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "プライバシーマーク付与事業者情報（2026年3月31日時点）",
+      "url": "https://privacymark.jp/certification_info/data/g7ccig0000000gll-att/pmark_data_20260331.pdf",
+      "publisher": "JIPDEC",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "success-493",
+    "kind": "success",
+    "title": "個人情報の扱い方を手順で見せる",
+    "summary": "Pマークのロゴを貼るだけでなく、データの受け取り・保管・印刷・消去の流れを図で見せると、DMや通知物を頼む担当者が社内で説明しやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "個人情報の流れを1枚の図に",
+    "source": {
+      "title": "DM発送代行の選び方",
+      "url": "https://imitsu.jp/matome/dm/1628261217399573",
+      "publisher": "アイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-476",
+    "kind": "trend",
+    "official": false,
+    "title": "印刷業の課題は採用の次は定着",
+    "summary": "JAGATの2023年の新入社員調査は、厳しい採用の次の課題を育成と定着としている。新入社員の約半数が10年以内に辞めるつもりという他の調査も紹介。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "入社3年目までの育て方を書く",
+    "source": {
+      "title": "新入社員意識調査（特集）",
+      "url": "https://www.jagat.or.jp/wp-content/uploads/2023/04/26_32_tokuki_shinnyushain.pdf",
+      "publisher": "JAGAT",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-477",
+    "kind": "trend",
+    "official": false,
+    "title": "若手は働きやすさと雰囲気を重視",
+    "summary": "JAGATの2025年調査では、新入社員は安定と成長に加え、働きやすさや職場の雰囲気を重く見る。回答者は女性が65.5%、21〜23歳が約4分の3。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "職場の雰囲気を伝える採用ページ",
+    "source": {
+      "title": "新入社員意識調査（JAGAT info 2025年8月）",
+      "url": "https://www.jagat.or.jp/wp-content/uploads/2024/12/JAGATinfo202508_shinnyushain.pdf",
+      "publisher": "JAGAT",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "trend-478",
+    "kind": "trend",
+    "official": false,
+    "title": "インターンは採用に効くが離職は防げない",
+    "summary": "JAGATの2021年調査では、印刷会社はインターンを採用に有効と見る一方、内定辞退や早い離職を防ぐ効果は弱いと感じている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "新卒採用調査（JAGAT info 2021年11月）",
+      "url": "https://www.jagat.or.jp/wp-content/uploads/2022/07/JAGATinfo202111_tokuki_shinsotsu.pdf",
+      "publisher": "JAGAT",
+      "date": "2021-11"
+    }
+  },
+  {
+    "id": "success-494",
+    "kind": "success",
+    "title": "仕事内容と社風を前に出す",
+    "summary": "JAGATの採用調査では、多くの印刷会社が学生に「仕事内容」と「社風」を伝えることを重視し、45%が「技術力・クリエイティブ」も強みとして伝えている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "印刷の仕事を1日の流れで見せる",
+    "source": {
+      "title": "採用活動調査（JAGAT info 2021年9月）",
+      "url": "https://www.jagat.or.jp/wp-content/uploads/2022/07/JAGATinfo202109_tokuki_saiyo.pdf",
+      "publisher": "JAGAT",
+      "date": "2021-09"
+    }
+  },
+  {
+    "id": "success-495",
+    "kind": "success",
+    "title": "約2か月の新人研修で育てる",
+    "summary": "岩手県の資料で、地方の印刷会社が人材育成と環境整備を進め、約2か月の新人研修を行っていると紹介されている。研修内容を公開すると応募者の安心材料になる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "新人研修のカリキュラムを公開する",
+    "source": {
+      "title": "岩手県の印刷会社の取組紹介",
+      "url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/071/635/kawasimainnsatukakutei2019.6.pdf",
+      "publisher": "岩手県",
+      "date": "2019-06"
+    }
+  },
+  {
+    "id": "success-496",
+    "kind": "success",
+    "title": "5日間のインターンで一連の仕事を体験",
+    "summary": "長野県の大学生のレポートでは、印刷会社の5日間のインターンで印刷に関わる一連の仕事を体験した。学生の声を載せると次の応募者に伝わる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "インターン生の感想記事",
+    "source": {
+      "title": "インターンシップ体験レポート",
+      "url": "https://www.pref.nagano.lg.jp/ken-manabi/internship/documents/r4kenritsudai_2.pdf",
+      "publisher": "長野県",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "question-626",
+    "kind": "question",
+    "title": "印刷会社の新人研修は何をする？",
+    "summary": "答えに入れたいこと：紙とインキの扱い、機械の段取り、安全のルール、先輩との組み合わせ。研修の長さ（例：約2か月）と、誰が教えるか。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "岩手県の印刷会社の取組紹介",
+      "url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/071/635/kawasimainnsatukakutei2019.6.pdf",
+      "publisher": "岩手県",
+      "date": "2019-06"
+    }
+  },
+  {
+    "id": "success-497",
+    "kind": "success",
+    "title": "トラブル対応をマニュアル化して夜勤も一人で",
+    "summary": "イプロスの事例では、5色オフセット機のトラブル対応を現場取材でマニュアル化し、夜勤のオペレーターが一人で解決できるようになったという声がある。",
+    "industries": [
+      "印刷",
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "ベテランの勘を手順書にした話",
+    "source": {
+      "title": "業務マニュアル作成サービス（オフセット印刷機のトラブル対応）",
+      "url": "https://mono.ipros.com/product/detail/2000638621",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-498",
+    "kind": "success",
+    "title": "ベテランの動きを動画で教える",
+    "summary": "J-Net21のQ&Aでは、ベテランの動きを見せる動画は教える人による差が出にくく、スキルマップと組み合わせると若手の多能工化が進むとしている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "刷版交換の動画マニュアル",
+    "source": {
+      "title": "若手の育成に動画マニュアルは有効か",
+      "url": "https://j-net21.smrj.go.jp/qa/hr/Q1478.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2023-11"
+    }
+  },
+  {
+    "id": "term-586",
+    "kind": "term",
+    "title": "職業能力評価シート（印刷オペレーター）",
+    "summary": "厚労省の印刷オペレーター向けの評価シートは、段取り・版替え・本刷り・刷了後作業などを上司とOJT担当の観察で3段階に評価する。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "印刷オペレーター 職業能力評価シート",
+      "url": "https://www.mhlw.go.jp/bunya/nouryoku/job_card01/dl/mc03_4c4.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-479",
+    "kind": "trend",
+    "official": false,
+    "title": "印刷機に操作支援の仕組みが入る",
+    "summary": "印刷機メーカーは、操作手順や印刷の知識を画面で引ける支援システムを出し、標準化で属人的な作業を減らすとうたう。若手の立ち上がりを早める狙い。",
+    "industries": [
+      "印刷機械"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "印刷オペレーション支援システム",
+      "url": "https://miyakoshi.co.jp/wp-content/uploads/2025/11/b9db0659e03529e754dc09e836515815.pdf",
+      "publisher": "ミヤコシ",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "question-627",
+    "kind": "question",
+    "title": "印刷オペレーターは公的訓練で学べる？",
+    "summary": "答えに入れたいこと：東京都の職業能力開発センターに、紙やインキの扱いから印刷機の操作まで学ぶ訓練がある。未経験からの入口になる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "グラフィックアーツ科 案内",
+      "url": "https://www.hataraku.metro.tokyo.lg.jp/vsdc/chuo/graphicleaflet.pdf",
+      "publisher": "東京都立中央・城北職業能力開発センター",
+      "date": null
+    }
+  },
+  {
+    "id": "success-499",
+    "kind": "success",
+    "title": "Instagramは導線まで設計して使う",
+    "summary": "Instagram採用は職場の雰囲気や人柄を見せる手法だが、投稿だけでは応募は増えない。狙う人・投稿テーマ・採用サイトへの導線・効果測定まで決める。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "採用SNSの投稿テーマ12か月分",
+    "source": {
+      "title": "Instagram採用のやり方",
+      "url": "https://www.shopowner-support.net/hr/recruitment-measures/social-recruiting/instagram-recruiting/",
+      "publisher": "Shopowner Support",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-480",
+    "kind": "trend",
+    "official": true,
+    "title": "印刷会社の地方創生事例を集める仕組み",
+    "summary": "日印産連は「じゃぱにうむ」で全国約2万2千社の印刷会社から地方創生の好事例を集め、内閣府の官民連携プラットフォームで自治体にも共有している。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社の地域の取り組みを応募する",
+    "source": {
+      "title": "じゃぱにうむ（印刷産業の地方創生）",
+      "url": "https://jfpi.or.jp/topics_detail6/id=184",
+      "publisher": "日本印刷産業連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-481",
+    "kind": "trend",
+    "official": true,
+    "title": "地方創生の事例発表会を毎年開く",
+    "summary": "日印産連は印刷会社の地方創生事業の事例発表会（じゃぱにうむ）を開き、発表を動画でWebに載せて共有している。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "じゃぱにうむ2019 地方創生事業事例発表会",
+      "url": "https://www.jfpi.or.jp/topics/detail/id=4343",
+      "publisher": "日本印刷産業連合会",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "success-500",
+    "kind": "success",
+    "title": "業界の事例集に載って自治体に知られる",
+    "summary": "じゃぱにうむの事例は自治体にも届く。地域の仕事を事例として出すと、自治体の担当者が印刷会社を「地域の相談先」として知るきっかけになる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "じゃぱにうむ（印刷産業の地方創生）",
+      "url": "https://jfpi.or.jp/topics_detail6/id=184",
+      "publisher": "日本印刷産業連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-501",
+    "kind": "success",
+    "title": "名刺にQRで会社の動画をつなぐ",
+    "summary": "企画から印刷まで受ける会社が、企業のビジョンを聞いて動画を作り、そのURLのQRコードを名刺に載せる提案をしている。紙と動画をつなぐ販促の一例。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "紙とWeb・動画をつなぐ提案例",
+    "source": {
+      "title": "企画・デザイン提案から印刷・ポスティングまで",
+      "url": "https://www.biz.ne.jp/company/adlineplus/",
+      "publisher": "ビズオーシャン（比較ビズ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-502",
+    "kind": "success",
+    "title": "企画からポスティングまで一括で受ける",
+    "summary": "地域の印刷会社が企画・デザイン・印刷・新聞折込・ポスティングまで一括で受け、販促の窓口を一つにしている。チラシの効果まで相談できるのが強み。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "チラシの配り方まで相談できる会社",
+    "source": {
+      "title": "企画・デザイン提案から印刷・ポスティングまで",
+      "url": "https://www.biz.ne.jp/company/adlineplus/",
+      "publisher": "ビズオーシャン（比較ビズ）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-482",
+    "kind": "trend",
+    "official": true,
+    "title": "人口の少ない地域ほど小さな会社が大事",
+    "summary": "2020年版小規模企業白書は、人口密度が低い地域ほど小規模事業者の存在感が大きいと示す。地方の印刷会社は地域の情報発信の担い手にもなれる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2020年版 小規模企業白書",
+      "url": "https://www.chusho.meti.go.jp/pamflet/hakusyo/2020/PDF/shokibo/99sHakusyo_zentai.pdf",
+      "publisher": "中小企業庁",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "trend-483",
+    "kind": "trend",
+    "official": true,
+    "title": "地域課題の事業は社会的意義を示す",
+    "summary": "2023年版小規模企業白書は、地域課題の解決を続けるには事業の社会的意義を示すことや複数地域への展開が収支や資金面で大事だとする。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2023年版 小規模企業白書",
+      "url": "https://www.chusho.meti.go.jp/pamflet/hakusyo/2023/PDF/shokibo/00sHakusho_zentai.pdf",
+      "publisher": "中小企業庁",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "pain-370",
+    "kind": "pain",
+    "title": "自治体と組みたいが窓口が分からない",
+    "summary": "白書は、地域課題の解決で事業者と自治体の双方が課題を抱え、両者をつなぐ組織の役割が大きいとする。印刷会社も商工会や組合を通すと話が進みやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2023年版 小規模企業白書",
+      "url": "https://www.chusho.meti.go.jp/pamflet/hakusyo/2023/PDF/shokibo/00sHakusho_zentai.pdf",
+      "publisher": "中小企業庁",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "buyer-395",
+    "kind": "buyer",
+    "title": "地域の販促は「配り方」まで相談したい",
+    "summary": "地域の店や団体は、チラシを刷るだけでなく、配る範囲や時期、Webとのつなぎ方まで一緒に考えてほしい。提案の幅を記事で見せると問い合わせにつながる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "企画・デザイン提案から印刷・ポスティングまで",
+      "url": "https://www.biz.ne.jp/company/adlineplus/",
+      "publisher": "ビズオーシャン（比較ビズ）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-484",
+    "kind": "trend",
+    "official": false,
+    "title": "推し活向けに缶バッジ1個から",
+    "summary": "ネット印刷大手の一つが、推し活向けサービスでオリジナル缶バッジを1個から受ける取り扱いを2026年10月に始めた。個人の小さな注文が市場になっている。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "1個から作れるグッズの作り方",
+    "source": {
+      "title": "1個から作れるオリジナル缶バッジ印刷の取り扱い開始",
+      "url": "https://www.oricon.co.jp/pressrelease/3059750/",
+      "publisher": "ORICON NEWS（プレスリリース）",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "trend-485",
+    "kind": "trend",
+    "official": false,
+    "title": "UVプリンター49台で1日5万個",
+    "summary": "アクリルグッズの印刷会社が、UVプリンター49台とレーザー加工機7台で1日最大5万個を作れる体制をうたい、企業向けOEMや大ロットに広げている（2025年12月）。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "企業向けオリジナルアクリルグッズ製造サービスを本格展開",
+      "url": "https://netshop.impress.co.jp/index%2Ephp/r/prtimes/items/000000278.000072705",
+      "publisher": "ネットショップ担当者フォーラム（PR TIMES）",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "question-628",
+    "kind": "question",
+    "title": "アクリルグッズは何個から作れる？",
+    "summary": "答えに入れたいこと：1個から受ける会社と大ロット向けの会社があること、印刷方式（UV）と形の切り抜き方、データの作り方、納期。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "アクリルグッズの最小ロットと納期",
+    "source": {
+      "title": "企業向けオリジナルアクリルグッズ製造サービスを本格展開",
+      "url": "https://netshop.impress.co.jp/index%2Ephp/r/prtimes/items/000000278.000072705",
+      "publisher": "ネットショップ担当者フォーラム（PR TIMES）",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "pain-371",
+    "kind": "pain",
+    "title": "BtoCは問い合わせ対応が増える",
+    "summary": "個人のグッズ注文は1件が小さく、データの直しや質問が多い。Web上で入稿やデザインが完結する仕組みがないと手間で赤字になりやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "1個から作れるオリジナル缶バッジ印刷の取り扱い開始",
+      "url": "https://www.oricon.co.jp/pressrelease/3059750/",
+      "publisher": "ORICON NEWS（プレスリリース）",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "success-503",
+    "kind": "success",
+    "title": "図面複写からデジタルで小ロット印刷へ",
+    "summary": "日本HPの事例では、図面複写が本業だった会社がデジタル印刷機で小ロット市場を開き、デジタル印刷が売上の中心になった。オフセットのロスと手間が理由。",
+    "industries": [
+      "印刷",
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "本業が縮んだ会社のデジタル転換",
+    "source": {
+      "title": "HP Indigo 導入事例（図面複写から小ロット印刷へ）",
+      "url": "https://jp.ext.hp.com/printers/digital-presses/indigo/casestudy/shiryo_micro/",
+      "publisher": "日本HP",
+      "date": null
+    }
+  },
+  {
+    "id": "success-504",
+    "kind": "success",
+    "title": "ラベル会社がデジタル化で納期短縮",
+    "summary": "日本HPの事例では、シール・ラベル印刷会社がデジタル印刷機を入れ、生産性・納期・顧客満足が上がったと紹介されている。",
+    "industries": [
+      "印刷",
+      "パッケージ",
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "HP Indigo 導入事例（シール・ラベル印刷）",
+      "url": "https://jp.ext.hp.com/printers/digital-presses/indigo/casestudy/impam/",
+      "publisher": "日本HP",
+      "date": null
+    }
+  },
+  {
+    "id": "success-505",
+    "kind": "success",
+    "title": "デジタル機で営業範囲と利益率が上がる",
+    "summary": "コニカミノルタの事例では、デジタル印刷機で小ロット多品種に応え、営業できる範囲が広がり利益率も上がったという。",
+    "industries": [
+      "印刷",
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "bizhub PRESS 導入事例",
+      "url": "https://konicaminolta.jp/business/products/graphic/printlab/case/pdf/Yaro_Camseal.pdf",
+      "publisher": "コニカミノルタジャパン",
+      "date": null
+    }
+  },
+  {
+    "id": "success-506",
+    "kind": "success",
+    "title": "約款やマニュアルの小ロット冊子を取る",
+    "summary": "JAGATの資料は、連帳インクジェット機で保険の約款や社内マニュアルなど小ロットの冊子を受け、業績を伸ばした例を紹介している。",
+    "industries": [
+      "印刷",
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "改訂の多い冊子は小ロットで",
+    "source": {
+      "title": "連帳インクジェットによる小ロット冊子の事例",
+      "url": "https://www.jagat.or.jp/wp-content/uploads/2019/08/e629d4a1b70e21d2e1d2fb3a355a47f6.pdf",
+      "publisher": "JAGAT",
+      "date": "2019-08"
+    }
+  },
+  {
+    "id": "buyer-396",
+    "kind": "buyer",
+    "title": "デジタル機の事例はメーカー発で読む",
+    "summary": "導入事例の多くはメーカーのサイトにあり、うまくいった例が中心。設備担当は受注件数や回収期間など、自社と同じ物差しの数字を販売店に聞くとよい。",
+    "industries": [
+      "印刷機械"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "HP Indigo 導入事例（図面複写から小ロット印刷へ）",
+      "url": "https://jp.ext.hp.com/printers/digital-presses/indigo/casestudy/shiryo_micro/",
+      "publisher": "日本HP",
+      "date": null
+    }
+  },
+  {
+    "id": "success-507",
+    "kind": "success",
+    "title": "食品が6割のラベル会社がデジタル化",
+    "summary": "コニカミノルタの事例で、作るラベルの6割が食品という地方のラベル会社が、1仕事3,000枚以下の案件を版なしで刷り、コストと納期を抑えている。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "3,000枚以下のラベルは版なしで",
+    "source": {
+      "title": "デジタルラベル印刷機 導入事例",
+      "url": "https://www.konicaminolta.jp/business/products/graphic/printlab/case/pdf/shinwalabel.pdf",
+      "publisher": "コニカミノルタジャパン",
+      "date": null
+    }
+  },
+  {
+    "id": "success-508",
+    "kind": "success",
+    "title": "素材の選び分けを強みに出す",
+    "summary": "小ロット多品種のラベル会社は、耐熱・耐薬品など用途に合う素材を選べること、フルカラーやバリアブル印刷、ISO9001を強みとして示している。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "用途別のラベル素材の選び方",
+    "source": {
+      "title": "ラベル・シール印刷の製品紹介",
+      "url": "https://pr.mono.ipros.com/kanae-nagano/product/detail/2001521532",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-629",
+    "kind": "question",
+    "title": "工業用ラベルは何を伝えて頼む？",
+    "summary": "答えに入れたいこと：貼る物の材質、熱や薬品にさらされるか、何年もたせたいか、番号を一枚ずつ変えるか（バリアブル）。用途で素材が変わる。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "工業用ラベルの頼み方",
+    "source": {
+      "title": "ラベル・シール印刷の製品紹介",
+      "url": "https://pr.mono.ipros.com/kanae-nagano/product/detail/2001521532",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-587",
+    "kind": "term",
+    "title": "凸版間欠輪転機とは",
+    "summary": "シール・ラベル印刷でよく使う機械。ロール状の材料に樹脂の凸版で刷り、そのまま型抜きまでできる。中〜大ロットのラベル向き。",
+    "industries": [
+      "印刷",
+      "パッケージ",
+      "印刷機械"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "HP Indigo 導入事例（シール・ラベル印刷）",
+      "url": "https://jp.ext.hp.com/printers/digital-presses/indigo/casestudy/impam/",
+      "publisher": "日本HP",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-486",
+    "kind": "trend",
+    "official": true,
+    "title": "紙の出版市場が1兆円を割る",
+    "summary": "出版科学研究所によると、2025年の紙の書籍・雑誌の推定販売額は9,647億円で前年比4.1%減。1975年以来初めて1兆円を割った（2026年1月公表）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "出版印刷の仕事はどう変わる？",
+    "source": {
+      "title": "紙の出版市場、1975年以来初の1兆円割れ",
+      "url": "https://www.fashionsnap.com/article/2026-01-27/print-publications-market/",
+      "publisher": "FASHIONSNAP",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "trend-487",
+    "kind": "trend",
+    "official": true,
+    "title": "雑誌は10%減、書籍は前年並み",
+    "summary": "2025年は書籍が5,939億円で前年並み（4年ぶりの増加）、雑誌は3,708億円で10.0%減、週刊誌は17.9%減。雑誌を刷る印刷会社ほど影響が大きい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "紙の出版市場、1975年以来初の1兆円割れ",
+      "url": "https://www.fashionsnap.com/article/2026-01-27/print-publications-market/",
+      "publisher": "FASHIONSNAP",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "trend-488",
+    "kind": "trend",
+    "official": true,
+    "title": "電子出版は5,815億円に",
+    "summary": "2025年の電子出版市場は前年比2.7%増の5,815億円で、紙と電子の合計は1兆5,462億円（出版科学研究所）。電子コミックの伸びは鈍ってきた。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "紙の出版市場、1975年以来初の1兆円割れ",
+      "url": "https://www.fashionsnap.com/article/2026-01-27/print-publications-market/",
+      "publisher": "FASHIONSNAP",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "term-588",
+    "kind": "term",
+    "title": "教科書の供給の仕組み",
+    "summary": "教科書を出す発行者には学校まで届ける義務がある。実際の配送は都道府県ごとの教科書供給会社（全国53か所）と取扱書店が担う。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "教科書の供給",
+      "url": "https://www.mext.go.jp/a_menu/shotou/kyoukasho/gaiyou/04060901/1235096.htm",
+      "publisher": "文部科学省",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-372",
+    "kind": "pain",
+    "title": "教科書は冊数が決まってから刷る時間が短い",
+    "summary": "教科書の需要数は使う年度の前年度9月に把握され、学年はじめの必要数との調整が要る。発行者は調整本と常備本を用意して備える。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "教科書の供給",
+      "url": "https://www.mext.go.jp/a_menu/shotou/kyoukasho/gaiyou/04060901/1235096.htm",
+      "publisher": "文部科学省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-489",
+    "kind": "trend",
+    "official": true,
+    "title": "デジタル教科書が議論の中心に",
+    "summary": "教科書協会は2024年に文科省の会議でデジタル教科書の現状を報告した。紙の教科書の印刷・供給の工程や費用も論点になっている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "教科書協会資料（デジタル教科書の現状）",
+      "url": "https://www.mext.go.jp/content/20241112-mxt_kyokasyo01-000037891_6.pdf",
+      "publisher": "文部科学省",
+      "date": "2024-11"
+    }
+  },
+  {
+    "id": "trend-490",
+    "kind": "trend",
+    "official": true,
+    "title": "自治体の広報紙もデジタル化を検討",
+    "summary": "総務省は自治体から広報紙の配り方やデジタル化の課題を聞き取っている。紙とWeb版を両方出す自治体もあり、広報紙の印刷は部数より中身の提案が問われる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "広報紙をWebと紙で出す提案",
+    "source": {
+      "title": "地方自治体の広報紙に関するヒアリング資料",
+      "url": "https://www.soumu.go.jp/main_content/000876615.pdf",
+      "publisher": "総務省",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-491",
+    "kind": "trend",
+    "official": true,
+    "title": "県の議案印刷もペーパーレスで減る",
+    "summary": "長野県は令和7年度予算の見直しで、県議会に出す議案の印刷部数をペーパーレス化で減らす方針を示した。役所の印刷は今後も減る方向。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和7年度予算の主な見直し",
+      "url": "https://www.pref.nagano.lg.jp/jinji/kensei/soshiki/yosan/r07/documents/r7yosan_omonaminaoshi.pdf",
+      "publisher": "長野県",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-509",
+    "kind": "success",
+    "title": "広報紙はWeb版とセットで受ける",
+    "summary": "自治体の広報紙はWeb版を作る動きがある。紙の印刷だけでなく、同じ原稿からWeb版やPDF版も作れることを示すと、部数が減っても仕事を残しやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "地方自治体の広報紙に関するヒアリング資料",
+      "url": "https://www.soumu.go.jp/main_content/000876615.pdf",
+      "publisher": "総務省",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "term-589",
+    "kind": "term",
+    "title": "リファービッシュ（再整備）とは",
+    "summary": "中古の印刷機を点検・清掃・部品交換して使える状態に戻すこと。簡単な点検から全面的な再生まで段階があり、メーカーが自ら行う場合もある。",
+    "industries": [
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中古印刷機の整備の段階",
+    "source": {
+      "title": "Buying and selling used printing machines",
+      "url": "https://www.heidelberg.com/global/en/products/remarketed_equipment/remarketed_equipment_overview.jsp",
+      "publisher": "Heidelberg",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-492",
+    "kind": "trend",
+    "official": false,
+    "title": "メーカー自身が中古機を売り買いする",
+    "summary": "大手印刷機メーカーは中古機の下取りと再販を行い、自らを最大級の中古再販業者と述べる。純正部品で整備することが寿命を延ばすと説明している。",
+    "industries": [
+      "印刷機械"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Buying and selling used printing machines",
+      "url": "https://www.heidelberg.com/global/en/products/remarketed_equipment/remarketed_equipment_overview.jsp",
+      "publisher": "Heidelberg",
+      "date": null
+    }
+  },
+  {
+    "id": "term-590",
+    "kind": "term",
+    "title": "レトロフィットとは",
+    "summary": "古い機械の制御部分や電子部品を新しいものに替えて使い続けること。ラベル印刷機メーカーは、電子部品が手に入らない旧型機向けにこれを提供している。",
+    "industries": [
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "旧型機を延命するレトロフィット",
+    "source": {
+      "title": "Comprehensive service for older generations of Gallus machines",
+      "url": "https://www.gallus-group.com/en/labelprinting/products/pre-owned-machines",
+      "publisher": "Gallus",
+      "date": null
+    }
+  },
+  {
+    "id": "success-510",
+    "kind": "success",
+    "title": "仕事に合う中古機を選んで入れる",
+    "summary": "ハイデルベルグ日本法人の資料で、地方の印刷会社が仕事内容に合う中古の菊全機を入れ、メーカーが清掃・洗浄・修理をして引き渡した例がある。",
+    "industries": [
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新品でなく中古を選んだ理由",
+    "source": {
+      "title": "ユーザー事例（中古機の導入）",
+      "url": "https://www.heidelberg.com/jp/media/local_media/heidelberg_japan/press_release/190723_eins/pdf_2/190716_user_eins_RE_04.pdf",
+      "publisher": "ハイデルベルグ・ジャパン",
+      "date": "2019-07"
+    }
+  },
+  {
+    "id": "question-630",
+    "kind": "question",
+    "title": "中古機の整備はどこまでしてくれる？",
+    "summary": "答えに入れたいこと：点検だけか、清掃と消耗部品の交換までか、全面再生か。誰が整備し、純正部品を使うか、保証があるか。段階で価格が変わる。",
+    "industries": [
+      "印刷機械"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "Buying and selling used printing machines",
+      "url": "https://www.heidelberg.com/global/en/products/remarketed_equipment/remarketed_equipment_overview.jsp",
+      "publisher": "Heidelberg",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-397",
+    "kind": "buyer",
+    "title": "発注担当は社内DXの中で印刷を見直す",
+    "summary": "行政や企業の印刷物担当者に「DXの中での発注側の課題」を聞く調査も行われている。紙を減らす流れの中で、何を紙に残すかの相談相手が求められる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "DX推進における印刷物を発注する側の課題に関する調査",
+      "url": "https://www.commercepick.com/?p=21449",
+      "publisher": "コマースピック",
+      "date": null
+    }
+  },
+  {
+    "id": "question-631",
+    "kind": "question",
+    "title": "印刷会社に企画から頼んでいい？",
+    "summary": "答えに入れたいこと：目的・配る相手・予算・時期を伝えれば、紙の形や部数、配り方、Webとのつなぎ方まで提案できること。デザインだけ・印刷だけも可能なこと。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "印刷会社に相談できること一覧",
+    "source": {
+      "title": "企画・デザイン提案から印刷・ポスティングまで",
+      "url": "https://www.biz.ne.jp/company/adlineplus/",
+      "publisher": "ビズオーシャン（比較ビズ）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-398",
+    "kind": "buyer",
+    "title": "続けるかは情報共有の得で決まる",
+    "summary": "日本の製造業の購買担当を調べた論文では、長く付き合いたい相手は、会議への参加・技術者の派遣・コスト削減の提案など、情報を出してくれる取引先だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「提案してくれる外注先」が続く理由",
+    "source": {
+      "title": "Accounting for trust and control in Japanese buyer-supplier relationships（論文）",
+      "url": "https://www.emerald.com/insight/content/doi/10.1108/JAOC-07-2011-0033/full/ris",
+      "publisher": "Emerald",
+      "date": null
+    }
+  },
+  {
+    "id": "term-591",
+    "kind": "term",
+    "title": "信頼は3種類（約束・能力・善意）",
+    "summary": "取引の信頼は「約束を守る」「能力がある」「相手のために動く」の3つに分けて考えられる。記事でもこの3つを分けて示すと伝わりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "約束・腕・気づかいで信頼を伝える",
+    "source": {
+      "title": "取引コストと信頼に関する論文",
+      "url": "https://www.jstage.jst.go.jp/article/jjhg1948/49/6/49_6_525/_article/-char/ja",
+      "publisher": "人文地理（J-STAGE）",
+      "date": "1997"
+    }
+  },
+  {
+    "id": "buyer-399",
+    "kind": "buyer",
+    "title": "購買はQCDの安定を一番見る",
+    "summary": "製造業の購買部門の役目は、品質・コスト・納期を安定して確保すること。単発の安さより、毎回同じ水準で届く安心が評価の土台になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "毎回同じ品質で届けるための工夫",
+    "source": {
+      "title": "製造業の購買部門の役割",
+      "url": "https://crexgroup.com/ja/manufacturing/operation/manufacturing-purchasing-department/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-400",
+    "kind": "buyer",
+    "title": "今の取引先への不満の上位は返事の遅さ",
+    "summary": "PROSの購買担当210人の調査では、今の取引先の課題に「問い合わせへの返事が遅い・非効率」を35%が挙げ、価格の不安定さなどと並ぶ上位だった（米国中心）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "問い合わせの返事を早くする仕組み",
+    "source": {
+      "title": "B2B Buyers' Top Challenges with their Current Vendors",
+      "url": "https://pros.com/news/b2b-buyers-top-challenges-with-their-current-vendors",
+      "publisher": "PROS",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-401",
+    "kind": "buyer",
+    "title": "乗り換えを考える人は多いが実行は一部",
+    "summary": "PROSの2020年の調査では、購買の体験への不満から取引先の変更を考える人が70%いた一方、実際に切った人は3人に1人ほど。不満は静かにたまる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "お客様の小さな不満を拾う聞き方",
+    "source": {
+      "title": "70% of B2B Buyers Mull Switching Vendors",
+      "url": "https://pros.com/?p=40667",
+      "publisher": "PROS",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "buyer-402",
+    "kind": "buyer",
+    "title": "届けられないと取引先を替えられる",
+    "summary": "コロナ禍の米国調査で、BtoBの買い手が取引先を替えた一番の理由は、届けられなかったこと（納品の不履行）だった。供給を止めないことが最大の守り。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "材料不足でも納期を守る段取り",
+    "source": {
+      "title": "Failure to Offer Delivery Is the Top Reason US B2B Buyers Switched Suppliers",
+      "url": "https://www.emarketer.com/content/failure-offer-delivery-top-reason-us-b2b-buyers-switched-suppliers-amid-pandemic",
+      "publisher": "eMarketer",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "buyer-403",
+    "kind": "buyer",
+    "title": "Web注文の使いにくさで乗り換えも",
+    "summary": "Sana Commerceの2024年の調査（買い手1,000人）では、製造業の買い手の71%が、よりよいWeb注文の体験を出せる取引先に替える用意があると答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "注文・再注文をラクにする工夫",
+    "source": {
+      "title": "B2B Web Store Woes Drive Manufacturing Buyers Elsewhere",
+      "url": "https://www.inddist.com/e-commerce/news/22911929/b2b-web-store-woes-drive-manufacturing-buyers-elsewhere-survey-finds",
+      "publisher": "Industrial Distribution",
+      "date": "2024-06"
+    }
+  },
+  {
+    "id": "pain-373",
+    "kind": "pain",
+    "title": "取引先とのやりとりで困る仕入先は多い",
+    "summary": "HICXの2024年の調査（大手と取引する仕入先1,000社）では、98%が大口の取引先にもっとよい連絡を求め、半数近くが問い合わせの解決に苦労していた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "連絡の行き違いを減らす決まりごと",
+    "source": {
+      "title": "98% of Suppliers Want Better Communication: Survey",
+      "url": "https://www.sdcexec.com/sourcing-procurement/sourcing-solutions/news/22914564/hicx-solutions-ltd-98-of-suppliers-want-better-communication-survey",
+      "publisher": "SDCExec",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "pain-374",
+    "kind": "pain",
+    "title": "トラブル経験は取引先の半数超",
+    "summary": "2026年10月の調査（製造業と取引経験のある80人）で、53.8%が品質か納品のトラブルを経験。小規模な調査だが、トラブルは珍しくない前提で備えたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "トラブルが起きたとき当社がすること",
+    "source": {
+      "title": "製造業との取引トラブルに関する調査",
+      "url": "https://www.logi-today.com/1012895",
+      "publisher": "LOGI-TODAY",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "buyer-404",
+    "kind": "buyer",
+    "title": "事実を見せられる工場かで継続が変わる",
+    "summary": "同じ調査で、トラブルを経験した人の62.5%が「映像などで事実を確かめられる工場か」で今後の取引の考えが変わると答えた。記録を残す工場が選ばれる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "出荷前の写真・記録をどう残すか",
+    "source": {
+      "title": "製造業との取引トラブルに関する調査",
+      "url": "https://www.logi-today.com/1012895",
+      "publisher": "LOGI-TODAY",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "question-632",
+    "kind": "question",
+    "title": "不良が出たとき、ごまかさない？",
+    "summary": "発注者が気にするのは不良そのものより、その後も信頼できるかどうか。原因と対策を隠さず示す姿勢を記事で伝えると安心につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "不良が出たときの当社の約束",
+    "source": {
+      "title": "Japan's crisis of quality and trust",
+      "url": "https://billemmott.com/japans-crisis-of-quality-and-trust/",
+      "publisher": "Bill Emmott",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-493",
+    "kind": "trend",
+    "official": false,
+    "title": "現場の半数強が「品質力は落ちた」",
+    "summary": "MONOistの読者調査（2023年3月公開）で、製造現場の担当者の半数強が品質力は落ちていると答えた。品質への不安が高い今、取組を見せる価値は大きい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "品質を守るために毎日していること",
+    "source": {
+      "title": "「品質力は落ちている」と半数強が回答",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2303/17/news068.html",
+      "publisher": "MONOist",
+      "date": "2023-03"
+    }
+  },
+  {
+    "id": "trend-494",
+    "kind": "trend",
+    "official": false,
+    "title": "品質問題を難しくする要因を議論",
+    "summary": "MONOistのポッドキャスト（2026年4月）では、ものづくり現場の品質問題を難しくする要因や不正の実態が話題に。発注者の品質への目は厳しくなっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "モノづくり現場が直面する品質問題",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2604/17/news021.html",
+      "publisher": "MONOist",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "buyer-405",
+    "kind": "buyer",
+    "title": "中小の購買も価格・品質で冷静に選ぶ",
+    "summary": "中小製造企業の生産財の購買を調べた研究では、価格・品質・コストパフォーマンスなど客観的な基準が重く、取引先の変更も起こりうる。一方で売り手の発信にも影響される。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "比べられたときに伝わる強みの書き方",
+    "source": {
+      "title": "中小製造企業の生産財購買行動の実証研究",
+      "url": "https://ryuka.repo.nii.ac.jp/record/195/files/043-067.pdf",
+      "publisher": "流通科学大学 論集",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-406",
+    "kind": "buyer",
+    "title": "稟議で説明しやすい会社が残る",
+    "summary": "購買は現場だけでなく上長・購買・経営の承認を経る。技術・品質・体制を社内資料に写しやすい形で示せないと、候補から外れやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "稟議に貼れる会社紹介ページの作り方",
+    "source": {
+      "title": "製造業の販路拡大",
+      "url": "https://www.shopowner-support.net/attracting_customers/manufacturing/manufacturing-general/manufacturing-sales-channel-expansion/",
+      "publisher": "店舗オーナー支援",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-407",
+    "kind": "buyer",
+    "title": "絞り込みで最も見るのは加工事例",
+    "summary": "テクノポートの調査では、外注先候補を絞るとき最も重視する情報は加工事例（実績）で56.8%。次に会社の規模、取引先、ISOなど、設備の情報が続いた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "加工事例ページに何を書くか",
+    "source": {
+      "title": "「サプライヤーの探し方と選定基準」の本音",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2404/19/news005_4.html",
+      "publisher": "MONOist",
+      "date": "2024-04"
+    }
+  },
+  {
+    "id": "buyer-408",
+    "kind": "buyer",
+    "title": "比べるのは3社以内が8割超",
+    "summary": "2025年5月の会社員517人の調査で、検討時に比べた製品・サービスは「1つ」16.8%、「2つ」31.9%、「3つ」32.7%。候補に入れるかどうかが勝負になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "比べる3社に残るための情報",
+    "source": {
+      "title": "BtoB商材の購買行動に関する実態調査レポート2025",
+      "url": "https://mypage.atpress.ne.jp/smart/news/4991112",
+      "publisher": "ITコミュニケーションズ・B2Bマーケティング（@Press）",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-495",
+    "kind": "trend",
+    "official": false,
+    "title": "若い買い手は人の声を頼りにする",
+    "summary": "Forresterの2025年予測では、若いBtoBの買い手の半数超が、SNSや知り合いなど外部の情報源を頼りに購入を決めるという。口コミや評判の影響が増す見通し。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "お客様の声を記事にするやり方",
+    "source": {
+      "title": "3 ways millennial, Gen Z buyers will change B2B buying",
+      "url": "https://www.digitalcommerce360.com/2025/01/22/3-ways-millennial-gen-z-buyers-will-change-b2b-buying/",
+      "publisher": "Digital Commerce 360",
+      "date": "2025-01"
+    }
+  },
+  {
+    "id": "question-633",
+    "kind": "question",
+    "title": "初めての外注先、連絡が途切れない？",
+    "summary": "外注のトラブルでは連絡が途切れる例が珍しくなく、特に納品直前に起きやすい。遅れを隠そうとする心理も背景にあるという。返信の約束を書くと安心材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "連絡の返し方と担当者の決まり",
+    "source": {
+      "title": "発注先が音信不通で納品されない時の対処",
+      "url": "https://atsoho.com/blog/batch909-reserve-039",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-634",
+    "kind": "question",
+    "title": "思った物と違う、を防ぐには？",
+    "summary": "外注で「期待と違う」失敗の多くは、発注側の指示があいまいなことから起きる。作り手側から確認項目を示すと、発注者の失敗を防げて信頼が増す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "発注前に確かめたい5つのこと",
+    "source": {
+      "title": "外注の品質管理",
+      "url": "https://atsoho.com/blog/gaichu-quality-management",
+      "publisher": "atsoho",
+      "date": null
+    }
+  },
+  {
+    "id": "question-635",
+    "kind": "question",
+    "title": "クレームを入れたら最初に何が返る？",
+    "summary": "クレーム対応の基本は、まず謝り、内容を最後まで聞くこと。発注者は最初の反応の早さと聞く姿勢で、その後を信頼できるか判断する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "クレームを受けた最初の1時間",
+    "source": {
+      "title": "クレーム対応の基本",
+      "url": "https://www.salesforce.com/jp/hub/crm/claim/",
+      "publisher": "Salesforce",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-375",
+    "kind": "pain",
+    "title": "謝罪や補償だけでは終わらない",
+    "summary": "食品製造業のクレームは、サービス業のように謝罪や補償で済ませず、原因を根本から解決する必要があると中小機構は答えている。製造業共通の考え方。",
+    "industries": [
+      "all",
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "謝って終わりにしない原因の追い方",
+    "source": {
+      "title": "食品製造業のクレーム対応（Q&A）",
+      "url": "https://j-net21.smrj.go.jp/qa/org/Q1402.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2021-08"
+    }
+  },
+  {
+    "id": "success-511",
+    "kind": "success",
+    "title": "クレームを関係を強める機会に",
+    "summary": "中小機構のQ&Aは、クレームの型に合った対応を身につけ、うまく生かせばお客様との関係を強められると説く。トラブル後の対応がリピートを分ける。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "クレームから生まれた改善の話",
+    "source": {
+      "title": "食品製造業のクレーム対応（Q&A）",
+      "url": "https://j-net21.smrj.go.jp/qa/org/Q1402.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2021-08"
+    }
+  },
+  {
+    "id": "term-592",
+    "kind": "term",
+    "title": "トレーサビリティで原因を早く絞る",
+    "summary": "製品がいつ・どの材料・どの工程で作られたかを追える仕組み。クレームの原因探しや影響範囲の特定が早くなる。中小機構もクレーム対策として挙げている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ロット番号から何が分かるか",
+    "source": {
+      "title": "食品製造業のクレーム対応（Q&A）",
+      "url": "https://j-net21.smrj.go.jp/qa/org/Q1402.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2021-08"
+    }
+  },
+  {
+    "id": "trend-496",
+    "kind": "trend",
+    "official": false,
+    "title": "過去のクレームから原因をAIで推定",
+    "summary": "2021年に、電子部品メーカーの品質保証向けに、過去クレームの症状・原因・対策をAIで分析し、責任の所在や原因の推定を示す仕組みが出た。初動を早める流れ。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "クレームの初動対応を支援するソリューション",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2103/12/news047.html",
+      "publisher": "MONOist",
+      "date": "2021-03"
+    }
+  },
+  {
+    "id": "pain-376",
+    "kind": "pain",
+    "title": "顧客・社内・仕入先で情報がばらける",
+    "summary": "品質問題は、顧客・社内の部署・仕入先の間で情報がばらばらになると対応が遅れる。発生から解決までを一つの流れで管理する考え方が広がっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "不良の連絡を一本化する工夫",
+    "source": {
+      "title": "製造品質問題管理ソリューション",
+      "url": "https://jpn.nec.com/soft/salesforce/qimm.html",
+      "publisher": "NEC",
+      "date": null
+    }
+  },
+  {
+    "id": "term-593",
+    "kind": "term",
+    "title": "是正処置と修正の違い",
+    "summary": "修正はその不良品を直すこと、是正処置は原因を取り除いて再発を防ぐこと。発注者に「是正処置」を求められたら、原因分析と仕組みの見直しまで含む。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "「直しました」と「再発しません」の違い",
+    "source": {
+      "title": "報告書の書き方",
+      "url": "https://biz.moneyforward.com/work-efficiency/basic/9280/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "question-636",
+    "kind": "question",
+    "title": "不良の報告書には何を書けばいい？",
+    "summary": "不具合の内容、原因、行った処置、再発防止の4つが基本。5W1Hでまとめ、推測や感情は入れず、時系列で事実を書く。顧客の指定書式があればそれに従う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "不良報告書の書き方と見本",
+    "source": {
+      "title": "報告書の書き方",
+      "url": "https://biz.moneyforward.com/work-efficiency/basic/9280/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "pain-377",
+    "kind": "pain",
+    "title": "お詫びの報告書が言い訳に見える",
+    "summary": "社外向けの報告書は正確さを優先し、謝罪と再発防止策をはっきり示すのが要点。経緯の説明ばかり長いと言い訳に読まれ、信頼を落とす。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "お詫びの報告書で避けたい書き方",
+    "source": {
+      "title": "顛末書・お詫びの報告書の作り方",
+      "url": "https://book.st-hakky.com/purpose/how-to-create-an-apology-report",
+      "publisher": "Hakky Handbook",
+      "date": null
+    }
+  },
+  {
+    "id": "question-637",
+    "kind": "question",
+    "title": "海外の取引先に不具合を英語で報告するには？",
+    "summary": "英文の報告書（Incident Report）も、何が起きたか・なぜ起きたか・どう対応したかを時系列で、感情や推測を避けて書くのが基本とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "海外のお客様への不具合報告の型",
+    "source": {
+      "title": "Incident Reportの書き方",
+      "url": "https://kimini.online/blog/?p=113400",
+      "publisher": "Kimini英会話",
+      "date": null
+    }
+  },
+  {
+    "id": "question-638",
+    "kind": "question",
+    "title": "再発防止策は本当に効いた？",
+    "summary": "是正処置は打って終わりではなく、実施後に結果を見直し、効いたことを確かめてから閉じる。発注者は「効果の確認」まで書かれた報告を信頼する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "再発防止の効果をどう確かめるか",
+    "source": {
+      "title": "報告書の書き方",
+      "url": "https://biz.moneyforward.com/work-efficiency/basic/9280/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "term-594",
+    "kind": "term",
+    "title": "暫定対策と恒久対策",
+    "summary": "暫定対策は不良品をこれ以上出さないための当面の手当て（隔離・選別など）、恒久対策は原因を断つ仕組みの改善。報告書では両方を分けて書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "不良が出た日にする暫定対策",
+    "source": {
+      "title": "Prevent unauthorized use of nonconforming material",
+      "url": "https://us.fitgap.com/stack-guides/prevent-unauthorized-use-of-nonconforming-material-with-access-controls-and-automated-holds",
+      "publisher": "FitGap",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-378",
+    "kind": "pain",
+    "title": "不良品が在庫に紛れて出てしまう",
+    "summary": "不良品が出荷されるのは、使える在庫のまま置かれ、保留の札が守られず、出荷時に確かめないため。受入時の隔離と各段階の確認が流出を防ぐ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "不良品を絶対に出さない置き場のルール",
+    "source": {
+      "title": "Prevent unauthorized use of nonconforming material",
+      "url": "https://us.fitgap.com/stack-guides/prevent-unauthorized-use-of-nonconforming-material-with-access-controls-and-automated-holds",
+      "publisher": "FitGap",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-379",
+    "kind": "pain",
+    "title": "応急処置がいつの間にか定着",
+    "summary": "一時しのぎの対策が長く残るのは、目先の生産量で評価されると根本対策の手間が高く見え、担当もあいまいなため。期限と担当を決めておく。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "仮対策を放置しないための決めごと",
+    "source": {
+      "title": "How to Stop Short-Term Fixes from Becoming Permanent",
+      "url": "https://www.cleverence.com/articles/business-blogs/prevent-short-term-fixes-from-becoming-permanent-4827",
+      "publisher": "Cleverence",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-380",
+    "kind": "pain",
+    "title": "なぜなぜ分析が犯人探しになる",
+    "summary": "なぜなぜ分析の失敗例として、個人のつるし上げになることが挙げられる。注意不足で止めず、なぜその間違いが起きる仕組みなのかまで掘る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "人を責めないなぜなぜ分析",
+    "source": {
+      "title": "なぜなぜ分析の失敗例",
+      "url": "https://kigyolog.com/article.php?id=1631",
+      "publisher": "企業ログ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-381",
+    "kind": "pain",
+    "title": "なぜなぜの出発点があいまい",
+    "summary": "最初の問題をぼんやり決めると、たどり着く原因も対策もぼやける。「何が・どこで・どれだけ」まで具体的に決めてから始める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "なぜなぜ分析は最初の1行で決まる",
+    "source": {
+      "title": "なぜなぜ分析とは",
+      "url": "https://biz.moneyforward.com/payroll/basic/66577/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "pain-382",
+    "kind": "pain",
+    "title": "変えられない原因で止まる",
+    "summary": "「時間がない」「景気が悪い」のような原因では手が打てない。自分たちで変えられる原因にたどり着くまで掘るのがなぜなぜ分析のコツ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "対策が打てる原因の見つけ方",
+    "source": {
+      "title": "なぜなぜ分析とは",
+      "url": "https://biz.moneyforward.com/payroll/basic/66577/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "term-595",
+    "kind": "term",
+    "title": "なぜなぜ分析の「5回」は目安",
+    "summary": "「なぜ」を5回くり返すのは目安で、因果関係が確かめられるところまで掘るのが本来の考え方。推測や連想でつなげないことが大切。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "なぜなぜ分析とは（発注者向けに）",
+    "source": {
+      "title": "なぜなぜ分析の進め方",
+      "url": "https://www.compita-japan.com/forum_pdf/nazenaze.pdf",
+      "publisher": "コンピタ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-512",
+    "kind": "success",
+    "title": "真因は「基準書の管理の仕組み」だった例",
+    "summary": "部品不良のなぜなぜ分析の例では、検査基準があいまいで、基準書を更新・管理する仕組みがないことが真因とされた。仕組みを直すと再発が止まる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "不良の真因が仕組みにあった話",
+    "source": {
+      "title": "なぜなぜ分析とは",
+      "url": "https://biz.moneyforward.com/payroll/basic/66577/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-497",
+    "kind": "trend",
+    "official": true,
+    "title": "再発防止を仕組みに変える講座",
+    "summary": "埼玉県産業振興公社は2026年12月に、同じ不具合がくり返される原因を個人のミスに求めず、仕組みの改善につなげる再発防止の講座を開く（オンライン）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "同じ不具合をくり返さない会社の習慣",
+    "source": {
+      "title": "再発防止セミナーの案内",
+      "url": "https://j-net21.smrj.go.jp/snavi2/articles/195180",
+      "publisher": "J-Net21（埼玉県産業振興公社）",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "question-639",
+    "kind": "question",
+    "title": "検査成績書は何のためにある？",
+    "summary": "最終検査の結果は検査表に記録され、品質記録として保管するか製品と一緒に顧客へ出す。トラブル時に「何を確かめて出したか」を示す証拠になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "検査成績書でお客様が確かめること",
+    "source": {
+      "title": "How to ensure the quality of machine parts",
+      "url": "https://ipqcco.com/blog/how-to-ensure-the-quality-of-machine-parts-mechanical-component-dimensional-inspection-and-measuring-instruments",
+      "publisher": "IPQC",
+      "date": null
+    }
+  },
+  {
+    "id": "question-640",
+    "kind": "question",
+    "title": "ミルシートはなぜ要る？",
+    "summary": "材料の成分や試験結果を示す証明書。図面どおりの材料かを確かめるため取り寄せて照合・保管する。ロット番号や合否も載り、クレーム時の裏付けになる。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ミルシートの見方と当社の保管方法",
+    "source": {
+      "title": "Why Savvy Importers Never Skip the Certificate of Quality",
+      "url": "https://racklify.com/encyclopedia/trust-but-verify-why-savvy-importers-never-skip-the-certificate-of-quality",
+      "publisher": "Racklify",
+      "date": null
+    }
+  },
+  {
+    "id": "question-641",
+    "kind": "question",
+    "title": "受入検査は発注者もするべき？",
+    "summary": "後工程や出荷前に問題が見つかったとき、受入で確かめていたかが重要になる。外注品の寸法・外観の確認は発注側の守りでもある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "受入検査で見てほしいポイント",
+    "source": {
+      "title": "How to ensure the quality of machine parts",
+      "url": "https://ipqcco.com/blog/how-to-ensure-the-quality-of-machine-parts-mechanical-component-dimensional-inspection-and-measuring-instruments",
+      "publisher": "IPQC",
+      "date": null
+    }
+  },
+  {
+    "id": "term-596",
+    "kind": "term",
+    "title": "4M変更（人・設備・材料・方法）",
+    "summary": "作業者・設備・材料・作り方のどれかを変えること。品質に影響しうるため、事前に見極め、取引先によっては承認を取ってから変える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "4M変更をお客様に連絡する理由",
+    "source": {
+      "title": "4M変更管理とは",
+      "url": "https://crexgroup.com/ja/manufacturing/operation/what-is-four-m-change-management/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-642",
+    "kind": "question",
+    "title": "材料や設備を替えたら連絡すべき？",
+    "summary": "仕入先の変更は顧客の承認の流れで管理する仕組みがある。変更の種類ごとに、教育記録や設備の比較報告などの提出物が決まっている例もある。",
+    "industries": [
+      "自動車部品",
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "変更を黙ってしない会社の約束",
+    "source": {
+      "title": "Supplier Change Management Guidebook Rev4.0",
+      "url": "https://www.am.astemo.com/sites/default/files/2026-01/Supplier%20Change%20Management%20Guidebook_Rev4.0_2025%20%28AM%29.pdf",
+      "publisher": "Astemo",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-383",
+    "kind": "pain",
+    "title": "どこまでが4M変更か顧客で違う",
+    "summary": "同じ4Mの変更でも、品質に影響する場合だけ届け出る区分など、顧客ごとに基準が違う。日産の仕入先向け研修でも、顧客の要求を知ることが扱われている。",
+    "industries": [
+      "自動車部品",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "届け出の基準をお客様ごとに確かめる",
+    "source": {
+      "title": "4M Change Management (Nissan Supplier Training Program)",
+      "url": "https://cavse.msstate.edu/workshops/wsDetails.php?ws=81",
+      "publisher": "ミシシッピ州立大学 CAVS-E",
+      "date": null
+    }
+  },
+  {
+    "id": "question-643",
+    "kind": "question",
+    "title": "納期に遅れそうなら、いつ言う？",
+    "summary": "遅れそうだと分かった時点ですぐが目安。前日や当日では相手が代わりの手を打てない。「間に合うかも」で先延ばしにするのが一番信頼を落とす。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "納期遅れの連絡で信頼を失わない方法",
+    "source": {
+      "title": "納期が遅れそうなときの連絡の文面と立て直し方",
+      "url": "https://atsoho.com/blog/how-to-report-freelance-deadline-delay",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-513",
+    "kind": "success",
+    "title": "遅れの連絡は事実→新納期→理由→お詫び",
+    "summary": "納期遅れを伝える順番は、事実、新しい期日、理由、最後にお詫び。急ぎは電話で伝え、新しい期日の行き違いを防ぐため必ずメールでも残す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "納期遅れの連絡文の見本",
+    "source": {
+      "title": "納期が遅れそうなときの連絡の文面と立て直し方",
+      "url": "https://atsoho.com/blog/how-to-report-freelance-deadline-delay",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-514",
+    "kind": "success",
+    "title": "「今後は」の運用変更を一文添える",
+    "summary": "遅れのお詫びは反省の言葉だけでなく、今後どう運用を変えるかを一文添えると伝わる。製造業なら部材の手配や工程の見直しを具体的に書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "遅れを2度出さない段取りの見直し",
+    "source": {
+      "title": "納期が遅れそうなときの連絡の文面と立て直し方",
+      "url": "https://atsoho.com/blog/how-to-report-freelance-deadline-delay",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-384",
+    "kind": "pain",
+    "title": "見積の都度の積算で回答が遅れる",
+    "summary": "見積のたびに仕様を検討し原価を積み上げると回答が遅れ、出すタイミングで他社に負けて失注が増える。よく出る仕様は事前に標準化しておく。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "見積の返事を早くする標準化",
+    "source": {
+      "title": "見積回答の標準化（CRMテーマ資料）",
+      "url": "https://www.qunie.com/wp-content/uploads/2024/09/crm_theme_05.pdf",
+      "publisher": "クニエ",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "success-515",
+    "kind": "success",
+    "title": "見積の承認をWeb化して即日回答",
+    "summary": "紙で回していた見積の承認をWebに移し、見積の即日回答を実現した事例がある。社内の承認の待ち時間が返事の遅さの原因になりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "見積の社内承認を短くする工夫",
+    "source": {
+      "title": "見積承認のWeb化の事例",
+      "url": "https://www.pfu.ricoh.com/onbase/casestudies/business02.html",
+      "publisher": "PFU",
+      "date": null
+    }
+  },
+  {
+    "id": "term-597",
+    "kind": "term",
+    "title": "見積の回答期間（RFQの回答時間）",
+    "summary": "見積依頼を受けてから回答するまでの時間。購買側は取引先を比べる物差しにすることもある。自社の平均を測って公開すると強みになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "見積は何日で返ってくる？",
+    "source": {
+      "title": "RFQ Turnaround Time（用語集）",
+      "url": "https://optif.ai/ja/glossary/rfq-turnaround-time/",
+      "publisher": "optif.ai",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-385",
+    "kind": "pain",
+    "title": "受注はまだFAXと紙が多い",
+    "summary": "製造業の受注業務の7割が「FAXでの受領がある」、紙の書類は9割超でやりとりされている（2024年の調査）。転記の手間が返事の遅れやミスを生む。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "FAX注文の転記ミスを減らす",
+    "source": {
+      "title": "製造業の受注業務、7割が「FAXでの受領ある」",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2409/10/news066.html",
+      "publisher": "MONOist",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "question-644",
+    "kind": "question",
+    "title": "見積の返事はどれくらいで来る？",
+    "summary": "発注者は返事の早さで対応力を測る。回答の目安日数、急ぎの窓口、図面が足りないときの確認の仕方を記事に書くと問い合わせしやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "見積の流れと返事の目安",
+    "source": {
+      "title": "見積回答の標準化（CRMテーマ資料）",
+      "url": "https://www.qunie.com/wp-content/uploads/2024/09/crm_theme_05.pdf",
+      "publisher": "クニエ",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "pain-386",
+    "kind": "pain",
+    "title": "担当替わりで約束が消える",
+    "summary": "引き継ぎで取引を失う原因は資料の量ではなく、経緯や口約束が前任者の頭や個人メールにしかないこと。顧客・商談・約束・関係者の4つで記録を残す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "担当が替わってもお客様を困らせない",
+    "source": {
+      "title": "営業の引き継ぎで顧客を失わない方法",
+      "url": "https://www.issoh.co.jp/column/details/18641/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "question-645",
+    "kind": "question",
+    "title": "担当が替わると対応は変わる？",
+    "summary": "発注者は担当交代で品質や対応が落ちないかを心配する。記録の残し方や複数人で見る体制を示すと、長く任せられる会社に見える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "担当交代のときの当社の引き継ぎ",
+    "source": {
+      "title": "営業の引き継ぎで顧客を失わない方法",
+      "url": "https://www.issoh.co.jp/column/details/18641/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "success-516",
+    "kind": "success",
+    "title": "交代のお知らせは2〜3週間前に",
+    "summary": "取引先への担当交代のメールは最終日の2〜3週間前が目安。直前の連絡は計画性がないと受け取られる。交代日・後任の情報・異動か退職かを簡潔に。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "担当交代のお知らせ文の見本",
+    "source": {
+      "title": "引き継ぎの挨拶メールの書き方",
+      "url": "https://dime.jp/genre/891366/",
+      "publisher": "@DIME",
+      "date": null
+    }
+  },
+  {
+    "id": "success-517",
+    "kind": "success",
+    "title": "前任の挨拶→後任の着任挨拶",
+    "summary": "まず前任者が引き継ぎの挨拶を送り、その後に後任者が着任の挨拶をするのが一般的。関係の深い取引先には対面の挨拶も考える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "担当交代の挨拶の順番",
+    "source": {
+      "title": "引き継ぎ挨拶メールの流れ",
+      "url": "https://mynavi-agent.jp/dainishinsotsu/canvas/2025/02/post-1490.html",
+      "publisher": "マイナビエージェント",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "success-518",
+    "kind": "success",
+    "title": "前任と後任で一緒に訪ねる",
+    "summary": "担当交代は前任と後任が2人で顧客を訪ねるのが従来のやり方。今はメールの重要性も増しているが、主要な取引先には顔合わせが安心材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "交代のときは2人でうかがいます",
+    "source": {
+      "title": "担当交代のビジネスメール",
+      "url": "https://news.mynavi.jp/article/businessmail-26/",
+      "publisher": "マイナビニュース",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-409",
+    "kind": "buyer",
+    "title": "評価表は品質・納期・価格・財務・法令",
+    "summary": "サプライヤー評価表の例では、品質・納期・価格・財務・法令の5軸で見る。品質は不良率や是正処置の期限、納期は遵守率と回答の速さ、価格は見積提出の速さも見る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "お客様は当社をどう評価しているか",
+    "source": {
+      "title": "サプライヤー評価表の作り方",
+      "url": "https://www.issoh.co.jp/column/details/16999/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-410",
+    "kind": "buyer",
+    "title": "見積の速さも評価の点数になる",
+    "summary": "評価表の価格の軸に「見積提出の速さ」、納期の軸に「回答の速さ」が入る例がある。返事の早さは印象でなく、点数として見られている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "返事の早さが評価に入る理由",
+    "source": {
+      "title": "サプライヤー評価表の作り方",
+      "url": "https://www.issoh.co.jp/column/details/16999/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-411",
+    "kind": "buyer",
+    "title": "小さな部品でも止まれば重要扱い",
+    "summary": "部品をリスクと金額で分ける考え方では、金額が小さくても供給が止まると生産が止まる品は重要扱い。値下げより在庫と代わりの確保が求められる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "小さな部品こそ安定して届ける",
+    "source": {
+      "title": "サプライヤー評価表の作り方",
+      "url": "https://www.issoh.co.jp/column/details/16999/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-412",
+    "kind": "buyer",
+    "title": "QCDに加えアフターと供給リスク",
+    "summary": "サプライヤー評価はQCDだけでなく、アフターサービスや供給リスクまで広げるのが要点とされる。不具合後の対応や災害時の備えも見られる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "納めた後のフォローも評価される",
+    "source": {
+      "title": "サプライヤー評価の項目",
+      "url": "https://lifestyle.assist-all.co.jp/?p=76606",
+      "publisher": "assist-all",
+      "date": null
+    }
+  },
+  {
+    "id": "term-598",
+    "kind": "term",
+    "title": "数字の評価と人の評価を合わせる",
+    "summary": "購買システムでは、納期遵守率などの数値（ハードファクト）と、担当者の対応などの定性評価（ソフトファクト）を重み付けして点数にする仕組みがある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "数字に出ない対応力の伝え方",
+    "source": {
+      "title": "サプライヤー評価のKPI",
+      "url": "https://learning.sap.com/courses/purchasing-in-sap-s-4hana-jp/explaining-kpis-in-supplier-evaluation",
+      "publisher": "SAP Learning",
+      "date": null
+    }
+  },
+  {
+    "id": "question-646",
+    "kind": "question",
+    "title": "取引先の監査（二者監査）では何を見る？",
+    "summary": "監査の指摘は客観的な証拠に基づく。手順書や記録など、実際にやっていることを示せる文書がそろっているかが見られる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "初めての二者監査で準備すること",
+    "source": {
+      "title": "Supplier Audit Checklist",
+      "url": "https://www.globalsources.com/knowledge/supplier-audit-checklist/",
+      "publisher": "Global Sources",
+      "date": null
+    }
+  },
+  {
+    "id": "question-647",
+    "kind": "question",
+    "title": "監査では書類だけでなく実態も？",
+    "summary": "監査は、仕入先が言っていることだけでなく、実際にその水準で運用しているかを確かめる場。書類の抜け、品質管理の弱さ、責任のあいまいさが典型の懸念点。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "監査の前に自分で点検すること",
+    "source": {
+      "title": "How to Conduct a Supplier Audit",
+      "url": "https://jodoo.com/blog/supplier-audit-checklist",
+      "publisher": "Jodoo",
+      "date": null
+    }
+  },
+  {
+    "id": "success-519",
+    "kind": "success",
+    "title": "監査では実態に合わせて報告する",
+    "summary": "京都府の資料は、監査を準備と実施に分け、受ける側は実態に合わせた現状報告と改善提案をするとしている。事前に必要書類を伝えておくことも勧める。",
+    "industries": [
+      "化粧品OEM",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "監査を受ける側の準備の流れ",
+    "source": {
+      "title": "京都府 薬事支援セミナー資料（外部委託先の管理）",
+      "url": "https://www.pref.kyoto.jp/yakumu/documents/r80227kyoutohuyakujisienseminakesyouhinniyakubugaihinnbumonnbguru-pu.pdf",
+      "publisher": "京都府",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-413",
+    "kind": "buyer",
+    "title": "中小の新規開拓は紹介が6割",
+    "summary": "ラクスとSansanのBtoB中小企業の営業管理職300人調査で、新規開拓の手法は「既存顧客や知人からの紹介」が60.7%。商談に最もつながった手法でも紹介が52.0%。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "紹介されやすい会社がしていること",
+    "source": {
+      "title": "BtoB中小企業の新規開拓に関する調査",
+      "url": "https://markezine.jp/news/detail/52731",
+      "publisher": "MarkeZine",
+      "date": null
+    }
+  },
+  {
+    "id": "success-520",
+    "kind": "success",
+    "title": "近くの工場どうしで仕事を回す",
+    "summary": "大田区では、近くの町工場が得意分野を生かして仕事を回し合う「仲間回し」がある。できない仕事を断らずつなぐことが、紹介と信頼の輪を生む。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "できない仕事を仲間につなぐ理由",
+    "source": {
+      "title": "大田区町工場の「仲間回し」が織り成すオープンファクトリー",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1512/04/news024_4.html",
+      "publisher": "MONOist",
+      "date": "2015-12"
+    }
+  },
+  {
+    "id": "pain-387",
+    "kind": "pain",
+    "title": "反響はあるのに売上にならない",
+    "summary": "HPの反響は大きかったが、得意な生産形態と問い合わせの中身がずれて売上につながらなかった町工場の例。強みと、それを求める相手を絞って書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "来てほしいお客様に届く書き方",
+    "source": {
+      "title": "イノベーションで戦う中小製造業の舞台裏(8)",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1607/28/news011_3.html",
+      "publisher": "MONOist",
+      "date": "2016-07"
+    }
+  },
+  {
+    "id": "pain-388",
+    "kind": "pain",
+    "title": "下請けは価格を元請けに左右される",
+    "summary": "信金中央金庫の2022年のレポートは、下請型の中小製造業の価格転嫁は元請けとの価格協議に大きく左右されると指摘。差別化と品質・ブランドが脱価格競争の鍵。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "価格以外で選ばれる理由の作り方",
+    "source": {
+      "title": "脱「価格競争」を実現する中小企業の「価値創造」（製造業編）",
+      "url": "https://www.scbri.jp/reports/.assets/industry_20220622.pdf",
+      "publisher": "信金中央金庫 地域・中小企業研究所",
+      "date": "2022-06"
+    }
+  },
+  {
+    "id": "success-521",
+    "kind": "success",
+    "title": "強みを発信して価格競争を抜ける",
+    "summary": "2020年版中小企業白書は、付加価値を増やすには自社の優位性を顧客に発信し、価格競争から抜けることが大切とした。価格転嫁力は長くマイナスが続いている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "当社が選ばれる理由を言葉にする",
+    "source": {
+      "title": "2020年版中小企業白書の解説",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2012/17/news002_7.html",
+      "publisher": "MONOist",
+      "date": "2020-12"
+    }
+  },
+  {
+    "id": "trend-498",
+    "kind": "trend",
+    "official": true,
+    "title": "受注側はEDIなど連携を求める",
+    "summary": "中小企業庁のパートナーシップ構築宣言のアンケート（2024年1月）では、受注側が発注側に、発注・受注システムの連携やEDIの導入などIT面の支援を求める声があった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "パートナーシップ構築宣言 取組状況アンケート 結果概要",
+      "url": "https://www.biz-partnership.jp/10537043440c0fe6978f382493fe2aa55d99f82a.pdf",
+      "publisher": "中小企業庁",
+      "date": "2024-01"
+    }
+  },
+  {
+    "id": "term-599",
+    "kind": "term",
+    "title": "NPS（すすめたい度）",
+    "summary": "「この会社を知り合いにすすめたいか」を0〜10点で聞き、取引全体への愛着を測る指標。個々の対応の良しあしより、関係全体を見るのに向く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "お客様アンケートで何を聞くか",
+    "source": {
+      "title": "顧客満足度調査の例",
+      "url": "https://wpforms.com/ja/customer-satisfaction-survey-examples/",
+      "publisher": "WPForms",
+      "date": null
+    }
+  },
+  {
+    "id": "term-600",
+    "kind": "term",
+    "title": "CES（手間の少なさ）",
+    "summary": "お客様が用事を済ませるのにどれだけ手間がかかったかを聞く指標。見積依頼や不具合連絡の後に聞くと、対応の改善点が分かる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "見積の後に聞く一問アンケート",
+    "source": {
+      "title": "顧客満足度調査の例",
+      "url": "https://wpforms.com/ja/customer-satisfaction-survey-examples/",
+      "publisher": "WPForms",
+      "date": null
+    }
+  },
+  {
+    "id": "success-522",
+    "kind": "success",
+    "title": "納品後と保証後の2回聞く",
+    "summary": "ポーランドの金属加工会社は、BtoBの取引先104社に、契約後と保証期間の終了後の2回、Webで満足度とNPSを調べた（2023年の論文）。時期を分けると変化が見える。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "納品後のお客様アンケートの作り方",
+    "source": {
+      "title": "The assessment of business customers' satisfaction in the B2B market",
+      "url": "https://econjournals.sgh.waw.pl/JMFS/article/view/4133",
+      "publisher": "Journal of Management and Financial Sciences",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "success-523",
+    "kind": "success",
+    "title": "満足度の質問は型から作る",
+    "summary": "顧客満足度調査は、総合満足・項目別満足・すすめたい度・自由記述などの定番の質問から選ぶと作りやすい。質問例やテンプレートが公開されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "お客様アンケートの質問例",
+    "source": {
+      "title": "顧客満足度調査の質問項目30選",
+      "url": "https://crexgroup.com/ja/data/?p=3478",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "success-524",
+    "kind": "success",
+    "title": "BtoB向けのアンケート型を使う",
+    "summary": "BtoB顧客の満足度調査やNPS調査のテンプレートが無料で公開されている。少人数の会社でも、まず年1回、主要な取引先に送ってみるとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "年1回のお客様アンケートを始める",
+    "source": {
+      "title": "BtoB 顧客満足度調査テンプレート",
+      "url": "https://www.zoho.com/jp/survey/templates/customer-satisfaction/",
+      "publisher": "Zoho",
+      "date": null
+    }
+  },
+  {
+    "id": "success-525",
+    "kind": "success",
+    "title": "声を集めて記事の材料にする",
+    "summary": "アンケートの自由記述や「すすめたい理由」は、そのままお客様の声として記事の材料になる（掲載は相手の了承を取る）。選ばれる理由を言葉で示せる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "お客様が当社を選んだ理由",
+    "source": {
+      "title": "顧客満足度調査の質問項目30選",
+      "url": "https://crexgroup.com/ja/data/?p=3478",
+      "publisher": "CREX",
+      "date": null
+    }
   }
 ];
