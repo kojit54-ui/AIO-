@@ -126133,6 +126133,9005 @@ const MFG_PART_6: MfgItem[] = [
       "publisher": "大田区",
       "date": "2025-10"
     }
+  },
+  {
+    "id": "trend-912",
+    "kind": "trend",
+    "official": true,
+    "title": "製造業の業況、資材高と住宅減で悪化",
+    "summary": "日本商工会議所のLOBO調査（2026年3月）では、製造業は住宅工事の減少で木材製品の引き合いが減り、原油・資材の値上がりも重なって業況が悪化した。",
+    "industries": [
+      "all",
+      "木工",
+      "建材・金物"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "資材高の今、見積の考え方を説明する記事",
+    "source": {
+      "title": "LOBO調査2026年3月結果",
+      "url": "https://www.jcci.or.jp/news/research/2026/0331110000.html",
+      "publisher": "日本商工会議所",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-913",
+    "kind": "trend",
+    "official": true,
+    "title": "中東情勢で調達難、製造業に重荷",
+    "summary": "日本商工会議所のLOBO調査（2026年4月）では、製造業でエネルギー・仕入価格の上昇と材料の調達難が業況悪化の理由に挙がった。先行きも厳しい見方とされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "材料が手に入りにくい時の納期の伝え方",
+    "source": {
+      "title": "LOBO調査2026年4月結果",
+      "url": "https://www.jcci.or.jp/news/news/2026/0430110000.html",
+      "publisher": "日本商工会議所",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "pain-740",
+    "kind": "pain",
+    "title": "無理な短納期の要請が当たり前に",
+    "summary": "日本商工会議所が2026年4月に内閣府の会合へ出した資料では、製造業の声として、取引先からの無理な納期要請が常態化している例が紹介された。人手不足で対応が難しいという。",
+    "industries": [
+      "all",
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "短納期を頼む前に知ってほしいこと",
+    "source": {
+      "title": "第8回働き方・人への投資WG 日本商工会議所提出資料",
+      "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_03human/260414/human08_05.pdf",
+      "publisher": "日本商工会議所",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "trend-914",
+    "kind": "trend",
+    "official": true,
+    "title": "小さい会社ほど価格転嫁が進まない",
+    "summary": "日本商工会議所の2026年10月の資料では、価格転嫁率は卸売業66.7%・建設業60.5%と高い一方、10人未満の企業は44.9%にとどまった。小さな会社ほど値上げを言い出しにくい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "値上げのお願いを伝える記事の書き方",
+    "source": {
+      "title": "公正取引委員会会合 資料（日本商工会議所）",
+      "url": "https://www.jftc.go.jp/file/261007_1_shiryo3.pdf",
+      "publisher": "日本商工会議所",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "trend-915",
+    "kind": "trend",
+    "official": false,
+    "title": "北海道の会議所は8割超が販路支援",
+    "summary": "日本商工会議所の地域の販路支援に関する資料では、北海道地方で回答した商工会議所の8割超が、農林水産品の販路開拓を支援していた。食品加工の会社は相談先として使いやすい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "地元の商工会議所の販路支援の使い方",
+    "source": {
+      "title": "地域商社・販路開拓に関する資料",
+      "url": "https://archive.jcci.or.jp/chiiki/hanro/2021_chiikiryoku/0322_Regionaltradingcompany.pdf",
+      "publisher": "日本商工会議所",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-916",
+    "kind": "trend",
+    "official": true,
+    "title": "中小の7割が2026年度に賃上げ",
+    "summary": "日本商工会議所・東京商工会議所の調査（2026年4〜5月、2,260社、うち製造業588社）では、71.3%が賃上げを実施または予定と答えた。人を確保するための賃上げが続く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "給与・待遇を求職者向けに見せる記事",
+    "source": {
+      "title": "中小企業の賃上げ・賃金改定に関する調査",
+      "url": "https://www.jcci.or.jp/20260608_survey_release.pdf",
+      "publisher": "日本商工会議所・東京商工会議所",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "pain-741",
+    "kind": "pain",
+    "title": "小規模企業は賃上げが追いつかない",
+    "summary": "同じ2026年6月公表の日商・東商調査では、小規模企業で賃上げを実施・予定とした割合は59.9%で、全体の71.3%より低かった。待遇で大手と競いにくい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場が給与以外で選ばれる理由",
+    "source": {
+      "title": "中小企業の賃上げ・賃金改定に関する調査",
+      "url": "https://www.jcci.or.jp/20260608_survey_release.pdf",
+      "publisher": "日本商工会議所・東京商工会議所",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-917",
+    "kind": "trend",
+    "official": true,
+    "title": "防衛的な賃上げはもう限界",
+    "summary": "日本商工会議所の小林会頭は2026年3月の会見で、人材確保のための賃上げを続ける中小企業は労働分配率が限界に近く、生産性向上と価格転嫁の両方が欠かせないと述べた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "会頭会見 防衛的賃上げ、限界に",
+      "url": "https://ab.jcci.or.jp/article/124001/",
+      "publisher": "日商 Assist Biz",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-918",
+    "kind": "trend",
+    "official": true,
+    "title": "中小の賃上げ率は4.29%に",
+    "summary": "時事通信によると、日本商工会議所の調査で2026年度の中小企業の賃上げ率は平均4.29%で、前年の4.03%から伸びた。人手の確保が理由とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "26年度の中小賃上げ率4.29% 人手確保へ伸び拡大",
+      "url": "https://www.jiji.com/jc/article?k=2026060800835&g=eco",
+      "publisher": "時事通信",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-919",
+    "kind": "trend",
+    "official": true,
+    "title": "デジタル化、製造業も非製造業も同じ",
+    "summary": "日本政策金融公庫の2024年の調査では、5年前よりデジタル化が進んだとする企業は合計69.6%。製造業と非製造業の差はほとんどなかった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業のデジタル化に関する調査",
+      "url": "https://www.jfc.go.jp/n/findings/pdf/tokubetu_240524.pdf",
+      "publisher": "日本政策金融公庫",
+      "date": "2024-05"
+    }
+  },
+  {
+    "id": "trend-920",
+    "kind": "trend",
+    "official": true,
+    "title": "AI・半導体の引き合いで製造業改善",
+    "summary": "J-Net21が伝えた日本商工会議所の2026年9月LOBO調査では、全産業の業況DIは▲20.7。製造業はAI・半導体関連の引き合い増加と一部の価格転嫁の進展で改善した。",
+    "industries": [
+      "半導体",
+      "電子部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "半導体向けの加工実績を見せる記事",
+    "source": {
+      "title": "9月LOBO調査、全産業業況DIは▲20.7",
+      "url": "https://j-net21.smrj.go.jp/news/bt5puv000000wk0s.html",
+      "publisher": "中小企業基盤整備機構（J-Net21）",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "success-1554",
+    "kind": "success",
+    "title": "異素材一体の部品で取引先を広げる",
+    "summary": "J-Net21の記事では、高崎商工会議所の支援先として、金属とゴムを一体で成形する部品の会社が取引先を広げた例が紹介された。他社にない組み合わせ技術が強みになる。",
+    "industries": [
+      "ゴム",
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "金属とゴムの一体成形でできること",
+    "source": {
+      "title": "「進取の精神」で新しい支援手法を学ぶ：高崎商工会議所",
+      "url": "https://j-net21.smrj.go.jp/special/business_support/20231214.html",
+      "publisher": "中小企業基盤整備機構（J-Net21）",
+      "date": "2023-12"
+    }
+  },
+  {
+    "id": "buyer-809",
+    "kind": "buyer",
+    "title": "若手経営者は対話で強みに気づく",
+    "summary": "高崎商工会議所は製造業の若手経営者を支援先に選び、職員は「対話と傾聴」の大切さを学んだ（J-Net21）。自社の強みは人に話して初めて言葉になることが多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "「進取の精神」で新しい支援手法を学ぶ：高崎商工会議所",
+      "url": "https://j-net21.smrj.go.jp/special/business_support/20231214.html",
+      "publisher": "中小企業基盤整備機構（J-Net21）",
+      "date": "2023-12"
+    }
+  },
+  {
+    "id": "success-1555",
+    "kind": "success",
+    "title": "2人1組の伴走で改善案に納得",
+    "summary": "さいたま商工会議所は2024年、経験のある経営指導員と若手が組む「W支援」を始め、事業者に改善案を納得してもらえた（J-Net21、2025年）。一人の目より複数の目で強みを探す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "事業者の経営力再構築に向けた伴走支援を強化：さいたま商工会議所",
+      "url": "https://j-net21.smrj.go.jp/special/business_support/20250414.html",
+      "publisher": "中小企業基盤整備機構（J-Net21）",
+      "date": "2025-04"
+    }
+  },
+  {
+    "id": "trend-921",
+    "kind": "trend",
+    "official": true,
+    "title": "中小のDX取組・検討は約4割",
+    "summary": "中小企業基盤整備機構の調査（2025年実施、2026年2月公表）では、DXに取り組んでいる・検討している企業は39.1%。期待する支援は補助金・助成金が多かった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業のDX推進に関する調査（2025年）",
+      "url": "https://www.smrj.go.jp/research_case/questionnaire/fbrion0000002pjw-att/202602_DX_point.pdf",
+      "publisher": "中小企業基盤整備機構",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "term-986",
+    "kind": "term",
+    "title": "持続化補助金は販路開拓の補助",
+    "summary": "中小企業庁の資料では、小規模事業者持続化補助金は、事業者が自ら経営計画を作り、商工会・商工会議所の支援を受けて行う販路開拓を補助する制度。HP作りに使う会社も多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "持続化補助金でホームページを作る流れ",
+    "source": {
+      "title": "小規模事業者持続化補助金（令和4年度予算資料）",
+      "url": "https://www.chusho.meti.go.jp/koukai/yosan/r4/r4_jizoku.pdf",
+      "publisher": "中小企業庁",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "success-1556",
+    "kind": "success",
+    "title": "環境需要を見てアルミ表面処理を高度化",
+    "summary": "中小企業庁の支援機関の優良事例集では、小山商工会議所が、環境意識の高まりで市場が伸びると見て、アルミの表面処理の高度化を支援した例が載る。市場の伸びを根拠に投資を説明した。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "アルミ表面処理の需要が伸びる理由",
+    "source": {
+      "title": "認定経営革新等支援機関による優良取組事例集",
+      "url": "https://sato-h.com/office/PDF/torikumijireisyuu.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-742",
+    "kind": "pain",
+    "title": "取引先が少なく一社依存になりがち",
+    "summary": "栃木市の大平町商工会の経営発達支援計画では、製造業の取引先の分散を目標にし、支援で新しい取引先を得る小規模製造業者を5年で3者とした。下請け一社への依存が課題。",
+    "industries": [
+      "all",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "一社依存から抜けるための発信",
+    "source": {
+      "title": "経営発達支援計画の概要（大平町商工会）",
+      "url": "https://www.kanto.meti.go.jp/seisaku/shokibo/ninteikeikaku/data/tochigi/09-021.pdf",
+      "publisher": "関東経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-922",
+    "kind": "trend",
+    "official": true,
+    "title": "東北の会議所と作る補助金事例集",
+    "summary": "東北経済産業局は、東北の商工会議所の協力で、小規模事業者持続化補助金の活用事例集（令和2〜3年度実施分）を作った。製造業の販路開拓の例を探すときの入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "小規模事業者持続化補助金にかかる活用事例集を作成しました",
+      "url": "https://www.tohoku.meti.go.jp/s_cyusyo/topics/220922.html",
+      "publisher": "東北経済産業局",
+      "date": "2022-09"
+    }
+  },
+  {
+    "id": "success-1557",
+    "kind": "success",
+    "title": "専門家チームでDX戦略を作る",
+    "summary": "北海道経済産業局の資料では、北海道DX推進協働体が2022年度、専門家チームを派遣してDX戦略作りを伴走し、社内人材の研修も行った。支援先には製造業7社が含まれた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "北海道DX推進協働体 リーフレット",
+      "url": "https://www.hkd.meti.go.jp/hokcm/20230221_3/leaflet.pdf",
+      "publisher": "北海道経済産業局",
+      "date": "2023-02"
+    }
+  },
+  {
+    "id": "success-1558",
+    "kind": "success",
+    "title": "道内メーカーのDX事例を発表会で共有",
+    "summary": "北海道経済産業局は2023年3月、札幌で道内企業のDX事例を紹介する場を開き、食料品製造業の社内体制づくりや戦略策定の例を紹介した。他社の事例は発信のネタ探しにもなる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "DX事例紹介（2023年3月）",
+      "url": "https://www.hkd.meti.go.jp/hokcm/digital_suishin/result/20230314/data13.pdf",
+      "publisher": "北海道経済産業局",
+      "date": "2023-03"
+    }
+  },
+  {
+    "id": "pain-743",
+    "kind": "pain",
+    "title": "営業の人も時間も足りず商談が組めない",
+    "summary": "北海道中小企業総合支援センターの事業計画では、道内の中小企業は営業に回せる人と時間が足りず、商談の機会を作りにくいことが課題に挙がった。待つ営業を補うのがWebの役目。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "営業がいない工場のWebの役割",
+    "source": {
+      "title": "事業計画（令和5年度）",
+      "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2023/06/plan_R5.pdf",
+      "publisher": "北海道中小企業総合支援センター",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "buyer-810",
+    "kind": "buyer",
+    "title": "支援機関の共同ブースで展示会に出る",
+    "summary": "北海道中小企業総合支援センターは、道内のものづくり企業の販路開拓として、効果の高い展示会に共同ブースを出し、中小企業が出展できるようにしている。単独出展より負担が軽い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "展示会の共同ブースに出て分かったこと",
+    "source": {
+      "title": "事業計画（令和2年度）",
+      "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2020/03/plan_R2.pdf",
+      "publisher": "北海道中小企業総合支援センター",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "trend-923",
+    "kind": "trend",
+    "official": true,
+    "title": "北東北・北海道の商談会、成約22件",
+    "summary": "北海道中小企業総合支援センターなどの合同商談会は、2024年度に商談970件、成約22件、成約額約2,505万円だった。商談の大半はすぐ成約しないため、後追いが大事。",
+    "industries": [
+      "all",
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "商談会のあとに何を送るか",
+    "source": {
+      "title": "青森・秋田・岩手・北海道 合同商談会2025 案内",
+      "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2025/07/goudou2025_press.pdf",
+      "publisher": "北海道中小企業総合支援センター",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-924",
+    "kind": "trend",
+    "official": true,
+    "title": "合同商談会の参加が過去最高に",
+    "summary": "北海道中小企業総合支援センターの2026年の発表では、青森・秋田・岩手・北海道の合同商談会の参加企業が310社で過去最高。発注側の関心が高まっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "合同商談会2026 プレスリリース",
+      "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2026/07/goudou2026_press.pdf",
+      "publisher": "北海道中小企業総合支援センター",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "buyer-811",
+    "kind": "buyer",
+    "title": "1社あたりの商談相手が増えた",
+    "summary": "同じ2026年の発表では、受注側1社あたりの商談数が8社から10社に増えた。短い面談で伝わる会社紹介とWebの詳細ページを用意しておくと話が続く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "10分の商談で伝わる会社紹介ページ",
+    "source": {
+      "title": "合同商談会2026 プレスリリース",
+      "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2026/07/goudou2026_press.pdf",
+      "publisher": "北海道中小企業総合支援センター",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "buyer-812",
+    "kind": "buyer",
+    "title": "発注企業40社と個別面談",
+    "summary": "「モノづくり商談会あおもり2025」は2025年10月に八戸で開かれ、全国の発注企業40社程度と、青森・北海道・岩手・秋田のものづくり企業60社程度が個別に面談する形だった。",
+    "industries": [
+      "all",
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "発注企業との個別商談で聞かれること",
+    "source": {
+      "title": "モノづくり商談会あおもり2025 案内",
+      "url": "https://www.21aomori.or.jp/21aomori/images/2025/06/96b9143e7b9e4735915155f68ee2f6ab.pdf",
+      "publisher": "21あおもり産業総合支援センター",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "buyer-813",
+    "kind": "buyer",
+    "title": "商談の成果は数か月後に出る",
+    "summary": "同じ商談会では、終わってから4か月後に成果を確かめるアンケートを予定していた。発注の決定には時間がかかり、その間に相手がWebで会社を見直すことが多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "商談後に見られるページを整える",
+    "source": {
+      "title": "モノづくり商談会あおもり2025 案内",
+      "url": "https://www.21aomori.or.jp/21aomori/images/2025/06/96b9143e7b9e4735915155f68ee2f6ab.pdf",
+      "publisher": "21あおもり産業総合支援センター",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "trend-925",
+    "kind": "trend",
+    "official": true,
+    "title": "青森の商談会は毎年続く",
+    "summary": "21あおもり産業総合支援センターは発注企業と県内ものづくり企業の個別面談形式の商談会を毎年案内しており、2023年・2024年も開いた。新規取引の定番の場になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "モノづくり商談会あおもり 案内（2024年）",
+      "url": "https://21aomori.or.jp/21aomori/images/2024/07/e16159ecb63e8a3d4421180598452e59.pdf",
+      "publisher": "21あおもり産業総合支援センター",
+      "date": "2024-07"
+    }
+  },
+  {
+    "id": "buyer-814",
+    "kind": "buyer",
+    "title": "全国の会議所が組む受発注商談会",
+    "summary": "相模原商工会議所が案内した「全国ものづくり受発注商談会」（2024年秋）は、54の商工会議所と東京都商工会連合会の主催。金属製品・機械器具・樹脂成形などの企業が対象。",
+    "industries": [
+      "金属加工",
+      "樹脂成形",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "受発注商談会への出方と準備",
+    "source": {
+      "title": "全国ものづくり受発注商談会 案内",
+      "url": "https://sagamihara-cci.or.jp/wp3/wp-content/uploads/2024/08/【ご案内】全国ものつ_くり商談会.pdf",
+      "publisher": "相模原商工会議所",
+      "date": "2024-08"
+    }
+  },
+  {
+    "id": "trend-926",
+    "kind": "trend",
+    "official": true,
+    "title": "受発注商談会は約600社が参加",
+    "summary": "同じ案内では、前年度の全国ものづくり受発注商談会は参加企業592社、総商談件数854件とされた。発注先を探す担当者が一度に多くの工場と会う場になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "全国ものづくり受発注商談会 案内",
+      "url": "https://sagamihara-cci.or.jp/wp3/wp-content/uploads/2024/08/【ご案内】全国ものつ_くり商談会.pdf",
+      "publisher": "相模原商工会議所",
+      "date": "2024-08"
+    }
+  },
+  {
+    "id": "success-1559",
+    "kind": "success",
+    "title": "Xの発信で全国から加工見積",
+    "summary": "相模原商工会議所のSNS活用セミナー（2022年）資料では、従業員22人ほどの町工場がXの公式アカウントを運用し、全国から加工の見積依頼が来るようになった例が紹介された。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "町工場のX運用、何を投稿するか",
+    "source": {
+      "title": "SNS活用セミナー資料「SNSで広がるビジネスチャンス」",
+      "url": "https://www.sagamihara-cci.or.jp/wp3/wp-content/uploads/2022/06/%E7%9B%B8%E6%A8%A1%E5%8E%9F%E5%95%86%E5%B7%A5%E4%BC%9A%E8%AD%B0%E6%89%80%E3%80%80SNS%E6%B4%BB%E7%94%A8%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BC%E3%80%80%E8%B3%87%E6%96%99.pdf",
+      "publisher": "相模原商工会議所",
+      "date": "2022-06"
+    }
+  },
+  {
+    "id": "success-1560",
+    "kind": "success",
+    "title": "町工場が会議所セミナーの講師に",
+    "summary": "同じセミナーでは、フォロワー1.5万人を持つ町工場が講師となり、SNSを使った企業戦略を話した。発信がうまくいくと、地域の支援機関から話す場を頼まれ、さらに知られる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "発信が講演依頼につながった話",
+    "source": {
+      "title": "SNS活用セミナー資料「SNSで広がるビジネスチャンス」",
+      "url": "https://www.sagamihara-cci.or.jp/wp3/wp-content/uploads/2022/06/%E7%9B%B8%E6%A8%A1%E5%8E%9F%E5%95%86%E5%B7%A5%E4%BC%9A%E8%AD%B0%E6%89%80%E3%80%80SNS%E6%B4%BB%E7%94%A8%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BC%E3%80%80%E8%B3%87%E6%96%99.pdf",
+      "publisher": "相模原商工会議所",
+      "date": "2022-06"
+    }
+  },
+  {
+    "id": "trend-927",
+    "kind": "trend",
+    "official": true,
+    "title": "工業部会で中小製造業のデジタル化",
+    "summary": "柏商工会議所は2020年、工業部会のコロナ対策事業として「中小製造業デジタル化推進事業」を案内した。地域の会議所が製造業向けにデジタル化を後押しする動きの一つ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工業部会コロナ対策事業 中小製造業デジタル化推進事業",
+      "url": "https://www.kashiwa-cci.or.jp/wp-content/uploads/2020/12/3a1b2266ff5b86678234eb25b2de7ab9-1.pdf",
+      "publisher": "柏商工会議所",
+      "date": "2020-12"
+    }
+  },
+  {
+    "id": "buyer-815",
+    "kind": "buyer",
+    "title": "製造業専門の取引支援も使える",
+    "summary": "同じ柏商工会議所の資料では、製造業に特化した取引支援サービスも紹介された。自社サイトだけでなく、こうした受発注の仕組みに載ることも新規の入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "受発注サイトと自社サイトの使い分け",
+    "source": {
+      "title": "工業部会コロナ対策事業 中小製造業デジタル化推進事業",
+      "url": "https://www.kashiwa-cci.or.jp/wp-content/uploads/2020/12/3a1b2266ff5b86678234eb25b2de7ab9-1.pdf",
+      "publisher": "柏商工会議所",
+      "date": "2020-12"
+    }
+  },
+  {
+    "id": "trend-928",
+    "kind": "trend",
+    "official": true,
+    "title": "会報の特集は「選ばれる企業」へ",
+    "summary": "千葉商工会議所の会報「夢シティちば」2026年4月号は、「選ぶ採用」から「選ばれる企業」へという採用の特集を組んだ。求職者に選ばれる発信が地域でも課題になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "求職者に選ばれる工場の採用ページ",
+    "source": {
+      "title": "千葉商工会議所会報 2026年4月号",
+      "url": "https://wp-chiba-cci-s3-bucket.s3.ap-northeast-1.amazonaws.com/wp-content/uploads/2026/04/01091006/yumecitychiba202604.pdf",
+      "publisher": "千葉商工会議所",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "success-1561",
+    "kind": "success",
+    "title": "会報同封のPRで約5,300社に届く",
+    "summary": "千葉商工会議所の「PR便」は、会員企業のチラシを会報と一緒に約5,300の会員事業所へ届ける仕組み。地元のBtoBの見込み客に紙で知らせ、Webへ案内できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "地元の会員企業にチラシで知らせる",
+    "source": {
+      "title": "千葉商工会議所PR便",
+      "url": "https://chiba-cci.or.jp/%E7%B5%8C%E5%96%B6%E6%94%AF%E6%8F%B4/%E8%B2%A9%E8%B7%AF%E6%8B%A1%E5%A4%A7-2/%E5%8D%83%E8%91%89%E5%95%86%E5%B7%A5%E4%BC%9A%E8%AD%B0%E6%89%80%EF%BD%90%EF%BD%92%E4%BE%BF/",
+      "publisher": "千葉商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1562",
+    "kind": "success",
+    "title": "会議所の会報で会員企業を紹介",
+    "summary": "千葉商工会議所の会報は毎月1日に発行され、会員企業の紹介や事業の報告、専門家の経営のヒントを載せる。会報に載った記事は自社サイトの「掲載実績」にも使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "会報に載った記事の活かし方",
+    "source": {
+      "title": "会報誌「夢シティちば」",
+      "url": "https://chiba-cci.or.jp/%E4%BC%9A%E5%A0%B1%E8%AA%8C%E5%A4%A2%E3%82%B7%E3%83%86%E3%82%A3%E3%81%A1%E3%81%B0/",
+      "publisher": "千葉商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-816",
+    "kind": "buyer",
+    "title": "地元の会報で情報を集める",
+    "summary": "埼玉県商工会議所連合会は、さいたま・川口・越谷・春日部など県内の各会議所の会報を一覧で紹介している。地元の発注担当は会報で地域の会社を知ることもある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "情報を入手したい！",
+      "url": "https://www.cci-saitama.or.jp/servicelist/2774/",
+      "publisher": "埼玉県商工会議所連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-929",
+    "kind": "trend",
+    "official": true,
+    "title": "宮城の企業調査、製造業が27%",
+    "summary": "宮城県の2026年度のデジタル化の実態調査は回答606社で、製造業が27%を占めた。県は毎年調べており、地域の製造業のデジタル化の様子が分かる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "県内企業のデジタル化に関する実態調査（令和8年）",
+      "url": "https://www.pref.miyagi.jp/documents/39879/r8press.pdf",
+      "publisher": "宮城県",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-930",
+    "kind": "trend",
+    "official": true,
+    "title": "工場のデジタル化とWeb商談に補助",
+    "summary": "宮城県は2021年度、生産現場のデジタル化やWeb商談の整備に使える補助金（補助率3分の2、上限300万円）を募集した。今も続くかは未確認。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "宮城県 デジタル化補助金 募集案内（2021年度）",
+      "url": "https://www.pref.miyagi.jp:443/documents/22989/867648.pdf",
+      "publisher": "宮城県",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1563",
+    "kind": "success",
+    "title": "補助金で道具メーカーが新しい売り方",
+    "summary": "仙台市産業振興事業団は2024年3月、2023年度の補助金の活用事例集を出し、左官道具の製造・小売の会社など5社を紹介した。地域の事例集は自社の取り組みを話す参考になる。",
+    "industries": [
+      "刃物・工具",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "補助金活用事例集（2023年度）",
+      "url": "https://www.siip.city.sendai.jp/documents/20240328.pdf",
+      "publisher": "仙台市産業振興事業団",
+      "date": "2024-03"
+    }
+  },
+  {
+    "id": "success-1564",
+    "kind": "success",
+    "title": "工場を開いて産地を知ってもらう",
+    "summary": "「燕三条 工場の祭典」は、燕商工会議所青年部や三条商工会議所青年部も実行委員会に加わり、工場を一般公開して産地の認知を広げている（ニュースイッチ）。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場を一般公開するときの準備",
+    "source": {
+      "title": "燕三条 工場の祭典",
+      "url": "https://newswitch.jp/keyword/detail/20763",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-931",
+    "kind": "trend",
+    "official": false,
+    "title": "長岡市は販路開拓に半額補助",
+    "summary": "長岡市には、ものづくり・新商品開発や販路開拓を対象に、補助率2分の1・上限50万円の補助制度がある（補助金ポータルの掲載情報）。公募期間は市で確認が必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "長岡市 販路開拓等の補助制度",
+      "url": "https://hojyokin-portal.jp/subsidies/72500",
+      "publisher": "補助金ポータル",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1565",
+    "kind": "success",
+    "title": "屋根工事から板金加工へ転換",
+    "summary": "栃木県よろず支援拠点の事例集（2017年度）では、屋根工事業から板金加工業に軸足を移し、大手空調メーカーなどから金属加工を受ける会社の例が載る。得意技術を言い直すと客が変わる。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "屋根板金の技術を産業向けに生かす",
+    "source": {
+      "title": "栃木県よろず支援拠点 支援事例集（平成29年度）",
+      "url": "https://www.tochigi-iin.or.jp/content/files/yorozu/h30/Jirei/H30%20TochigiJirei.pdf",
+      "publisher": "栃木県よろず支援拠点",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "buyer-817",
+    "kind": "buyer",
+    "title": "信用金庫の展示商談会も発注の場",
+    "summary": "栃木信用金庫などは2025年10月、宇都宮市で「ものづくり企業展示・商談会」を開き、発注企業40社程度が参加予定だった。地域金融機関の商談会も買い手との出会いの場。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ものづくり企業展示・商談会2025",
+      "url": "https://www.shinkin.co.jp/tochigi/news/2025pdf/monozukuri-2025.pdf",
+      "publisher": "栃木信用金庫",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1566",
+    "kind": "success",
+    "title": "モデル企業を作って横に広げる",
+    "summary": "ノーステック財団は、ものづくり企業の社員向けにデジタル技術やロボット導入のセミナー・研修を開き、手本になる企業を直接支援して他社へ広げる取り組みをしている。",
+    "industries": [
+      "all",
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ノーステック財団 DX関連資料",
+      "url": "https://www.hro.or.jp/upload/1550/22dx.pdf",
+      "publisher": "ノーステック財団",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1567",
+    "kind": "success",
+    "title": "市の事例集に省力化の成果が載る",
+    "summary": "札幌市は「令和5年度札幌市ものづくり支援事業成果事例集」を公開し、省力化機器の導入補助などの事例を載せている。設備投資の話は採用や発注向けの記事のネタになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "新しい設備で何が変わったかの記事",
+    "source": {
+      "title": "札幌市ものづくり支援事業 成果事例",
+      "url": "https://www.city.sapporo.jp/keizai/seikajirei/seikajirei5.html",
+      "publisher": "札幌市",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1568",
+    "kind": "success",
+    "title": "会議所主催のオープンファクトリー",
+    "summary": "青梅商工会議所は2025年11月、市内の工場見学会「おうめオープンファクトリー2025」を開いた。ハローワークも案内しており、採用の入口としても使われる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場見学会を採用につなげる",
+    "source": {
+      "title": "おうめオープンファクトリー2025",
+      "url": "https://jsite.mhlw.go.jp/tokyo-hellowork/list/oume/07110608oumeopenf_00001.html",
+      "publisher": "東京労働局 ハローワーク青梅",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1569",
+    "kind": "success",
+    "title": "会議所とスポーツクラブで若手育成",
+    "summary": "タウンニュースによると、小田原箱根商工会議所は地元のフットサルクラブと組み、若手の採用・定着の課題に取り組む研修を2025年10月に始めた。地域ぐるみで若手を育てる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域の若手連携で働く環境創出",
+      "url": "https://townnews.co.jp/0607/2026/10/31/859785.html",
+      "publisher": "タウンニュース",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "trend-932",
+    "kind": "trend",
+    "official": true,
+    "title": "地方の会議所もSNS実践講座",
+    "summary": "横手商工会議所は2026年8月、デジタル化・SNS活用による販路拡大のセミナーを案内し、InstagramとCanvaを使う実践型のワークショップを行った。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "デジタル化・SNS活用による販路拡大・集客力アップセミナー",
+      "url": "https://www.yokotecci.or.jp/%E3%80%8C%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%8C%96%E3%83%BBsns%E6%B4%BB%E7%94%A8%E3%81%AB%E3%82%88%E3%82%8B%E8%B2%A9%E8%B7%AF%E6%8B%A1%E5%A4%A7%E3%83%BB%E9%9B%86%E5%AE%A2%E5%8A%9B%E3%82%A2/",
+      "publisher": "横手商工会議所",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-1354",
+    "kind": "question",
+    "title": "ホームページ制作は補助の対象？",
+    "summary": "日本商工会議所の持続化補助金のQ&A（令和元年度補正）では、ホームページ制作は販路開拓の取り組みであれば対象になり得るとされた。今の公募要領での確認が必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "補助金でHPを作る前に確かめること",
+    "source": {
+      "title": "申請時によくあるご質問",
+      "url": "https://r1.jizokukahojokin.info/index.php/sinsei/%E7%94%B3%E8%AB%8B%E6%99%82%E3%81%AB%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E3%81%94%E8%B3%AA%E5%95%8F/",
+      "publisher": "日本商工会議所 小規模事業者持続化補助金事務局",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "term-987",
+    "kind": "term",
+    "title": "事業支援計画書は会議所で作る",
+    "summary": "持続化補助金の申請には、商工会議所か商工会で事業支援計画書を作って交付してもらう必要がある。製造業は従業員20人以下が対象。早めの相談が欠かせない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "持続化補助金の相談の進め方",
+    "source": {
+      "title": "小規模事業者持続化補助金＜一般型＞",
+      "url": "https://www.jizokuka-portal.info/",
+      "publisher": "小規模事業者持続化補助金事務局",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-818",
+    "kind": "buyer",
+    "title": "補助金の相談窓口は地元の会議所",
+    "summary": "長野商工会議所の補助金ページでは、販路拡大・販売促進の経費を補助する持続化補助金やIT導入補助金を案内している。Web作りの前に地元の会議所で使える制度を確かめられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "補助金・助成金",
+      "url": "https://www.nagano-cci.or.jp/finance/hojokin",
+      "publisher": "長野商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-933",
+    "kind": "trend",
+    "official": true,
+    "title": "日商の補助で北米越境ECを試す",
+    "summary": "日本商工会議所と名古屋商工会議所などは、小規模事業者の日用品・工芸品・雑貨を北米向け越境ECで試し売りする事業を行い、参加費は無料で日商が費用を補助した（コロナ期の資料）。",
+    "industries": [
+      "all",
+      "木工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "海外向けの小さな試し売りの始め方",
+    "source": {
+      "title": "越境EC支援事業 案内",
+      "url": "https://nagoya-cci.or.jp/event/files/ekkyoecshienjigyo.pdf",
+      "publisher": "名古屋商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1570",
+    "kind": "success",
+    "title": "補助金でオンライン工場見学",
+    "summary": "補助金コネクトの解説では、持続化補助金の製造業の採択事例として、Webページ作りやオンライン工場見学が挙げられている。遠くの発注担当にも現場を見せられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "オンライン工場見学の作り方",
+    "source": {
+      "title": "小規模事業者持続化補助金の採択事例は？",
+      "url": "https://financeinjapan.com/knowledge/pm6wkH5cChfJWGt5UtCKa",
+      "publisher": "補助金コネクト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1571",
+    "kind": "success",
+    "title": "工場公開で消費者の声が届く",
+    "summary": "神戸市のオープンファクトリーの出展企業アンケートでは、来場者が会社や商品について質問してくれた、普段聞けない消費者の声を聞けたという声が挙がった。記事のネタにもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "工場見学で聞かれた質問を記事にする",
+    "source": {
+      "title": "オープンファクトリー 実施結果",
+      "url": "https://www.city.kobe.lg.jp/a23965/press/105122285334.html",
+      "publisher": "神戸市",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1572",
+    "kind": "success",
+    "title": "会議所が日商のデジタル冊子を配布",
+    "summary": "多摩商工会議所は、日本商工会議所の冊子「デジタル化でつながる中小企業の未来」を会員に案内した（2025年10月）。身近な会議所が発信の入門資料を届けている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "冊子「デジタル化でつながる中小企業の未来」について",
+      "url": "https://www.tamacci.or.jp/news/news2510291.html",
+      "publisher": "多摩商工会議所",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "success-1573",
+    "kind": "success",
+    "title": "白板で強みを書き出し社長が気づく",
+    "summary": "J-Net21の記事（2026年7月）では、安曇野市商工会の職員が印刷会社の若手社長と話しながら、強みや課題を白板に書き出し、社長自身の気づきを引き出した。強みの言葉はHPの軸になる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "自社の強みを書き出してHPに使う",
+    "source": {
+      "title": "社長の覚悟を引き出す伴走支援をとことん追求「安曇野市商工会」",
+      "url": "https://j-net21.smrj.go.jp/special/business_support/20260717.html",
+      "publisher": "中小企業基盤整備機構（J-Net21）",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "trend-934",
+    "kind": "trend",
+    "official": false,
+    "title": "栃木の展示商談会は毎年開かれる",
+    "summary": "栃木信用金庫などは「ものづくり企業展示・商談会」を2024年・2025年と続けて案内している。地元で発注先を探す企業と会える定期的な場で、出展の前後にWebを整えると効く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり企業展示・商談会2024",
+      "url": "https://www.shinkin.co.jp/tochigi/news/2024pdf/monozukuri-2024.pdf",
+      "publisher": "栃木信用金庫",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1574",
+    "kind": "success",
+    "title": "地域一体の工場公開で街を発信",
+    "summary": "神戸市の資料では、オープンファクトリーは工場を公開して見て・触れて・体験してもらう催しで、地域一体で開くと「ものづくりの街」の発信になり、働く人が増えることも期待できるとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "近所の工場と合同で見学会を開く",
+    "source": {
+      "title": "オープンファクトリー 実施結果",
+      "url": "https://www.city.kobe.lg.jp/a23965/press/105122285334.html",
+      "publisher": "神戸市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-935",
+    "kind": "trend",
+    "official": true,
+    "title": "福井商議所、製造業1000社にデジタル化調査",
+    "summary": "福井商工会議所は2021年8〜9月、県内製造業1,000社にデジタル化の進み具合と課題を聞き、272社（27.2%）が答えた。IoT・AI・クラウド・生産管理ソフトなどを対象にしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のデジタル化に関するアンケート調査 結果報告",
+      "url": "https://www.fcci.or.jp/files/uploads/survey_2021degital-seizou.pdf",
+      "publisher": "福井商工会議所",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "pain-744",
+    "kind": "pain",
+    "title": "デジタル化の壁は「費用対効果が見えない」",
+    "summary": "福井商工会議所の2024年2月の報告では、課題を感じる会社が約7割。最も多い理由は「費用対効果が不明確」、次が「デジタル化の適任者がいない」だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "導入前に効果を試算する方法",
+    "source": {
+      "title": "「製造業のデジタル化に関するアンケート調査」結果について",
+      "url": "https://fcci-dx.jp/report/activity/1967/",
+      "publisher": "福井商工会議所 デジタル活用ビジネス支援センター",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "trend-936",
+    "kind": "trend",
+    "official": true,
+    "title": "小さな製造業ほどデジタル化が足踏み",
+    "summary": "福井商工会議所の2024年の調査では、デジタル化を進める製造業は6割以上。一方、小規模な会社では足踏みの傾向が見られた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "『製造業のデジタル化に関するアンケート調査』結果報告",
+      "url": "https://fcci-dx.jp/assets/wp-content/uploads/2024/02/d3240cecb84fa87394209f1381de164c.pdf",
+      "publisher": "福井商工会議所 デジタル活用ビジネス支援センター",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "pain-745",
+    "kind": "pain",
+    "title": "デジタル投資は社長が決めることが多い",
+    "summary": "福井商工会議所の2024年の調査からは、デジタル化の設備投資を経営者や役員が主導している例が多いと読み取れる。現場任せでは進みにくい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "社長が自ら進めた現場のデジタル化",
+    "source": {
+      "title": "『製造業のデジタル化に関するアンケート調査』結果報告",
+      "url": "https://fcci-dx.jp/assets/wp-content/uploads/2024/02/d3240cecb84fa87394209f1381de164c.pdf",
+      "publisher": "福井商工会議所 デジタル活用ビジネス支援センター",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "success-1575",
+    "kind": "success",
+    "title": "商議所の委員会が「デジタル化ノススメ」",
+    "summary": "福井商工会議所の情報イノベーション委員会は2021年6月、中小企業のデジタル技術活用を研究し、報告書にまとめた。身近な機関の手引きから始める方法もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "DX時代に向けた中小企業『デジタル化』ノススメ",
+      "url": "https://fcci-dx.jp/assets/wp-content/themes/dx/pdf/fcciDXreport2021.pdf",
+      "publisher": "福井商工会議所 情報イノベーション委員会",
+      "date": "2021-06"
+    }
+  },
+  {
+    "id": "pain-746",
+    "kind": "pain",
+    "title": "課題はツール選びと人材の確保",
+    "summary": "武生商工会議所の調査を伝える日商の記事では、半数以上がデジタル化に何らかの形で取り組む一方、課題は使うツールの選び方と人材の確保だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちが選んだ道具と選ばなかった理由",
+    "source": {
+      "title": "半数以上がデジタル化に向けて何らかの取り組み（武生商工会議所）",
+      "url": "https://ab.jcci.or.jp/article/106514/",
+      "publisher": "日商 Assist Biz",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-747",
+    "kind": "pain",
+    "title": "製造現場のデジタル化は事務より遅れる",
+    "summary": "福井県の2020年の調査（313社）では、生産管理ツールなど製造工程のデジタル化は31.4%で、勤怠・販売管理など事務面の73.1%より低かった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "事務の次に工場をデジタル化した話",
+    "source": {
+      "title": "県内企業の「経営改善とデジタル化に関するアンケート」調査結果",
+      "url": "https://www.pref.fukui.lg.jp/doc/sinsan/iotai/tyousa_d/fil/tyousakekka.pdf",
+      "publisher": "福井県",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "success-1576",
+    "kind": "success",
+    "title": "商工会連合会がDX事例報告会を開く",
+    "summary": "富山県商工会連合会は2025年2月、地域企業のDX推進事例報告会を案内した。近くの会社の発表は、自社の取り組みを発信する場にもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "富山県商工会連合会「地域企業DX推進事例報告会」",
+      "url": "https://www.shokoren-toyama.or.jp/kenren/topics_detail.phtml?Record_ID=acd94e4264eff2c3751809f2dcd6b80f&TClass_ID=10",
+      "publisher": "富山県商工会連合会",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "success-1577",
+    "kind": "success",
+    "title": "設備の稼働状況を集めて見える化",
+    "summary": "富山DXコンソーシアムの製造業向けページでは、製造業の会社に設備稼働状況を集めて分析する仕組みの導入を支援した例を載せている。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "機械の稼働率を見える化した結果",
+    "source": {
+      "title": "富山DXコンソーシアム 製造業",
+      "url": "https://www.toyama-dxconsortium.jp/partner/gyousyu/gyousyu_01/",
+      "publisher": "富山DXコンソーシアム",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-937",
+    "kind": "trend",
+    "official": true,
+    "title": "金沢商議所が使える補助金を一覧に",
+    "summary": "金沢商工会議所の企業経営アシストセンターは2025年10月時点の国・石川県・金沢市の補助金を一覧にした。なりわい再建支援補助金なども含む。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "補助金一覧（企業経営アシストセンター）",
+      "url": "https://www.kanazawa-cci.or.jp/service/consul/pdf/hojyokin.pdf?20240709=",
+      "publisher": "金沢商工会議所",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "trend-938",
+    "kind": "trend",
+    "official": true,
+    "title": "神戸の中小企業訪問調査は製造業別に報告",
+    "summary": "こうべ産業・就労支援財団は2025年7月、令和6年度の神戸市中小企業訪問調査を製造業向けと非製造業向けに分けて公表した。地元の悩みを知る資料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "【令和6年度】神戸市中小企業訪問調査 調査結果",
+      "url": "https://kobe-ipc.or.jp/archives/22691",
+      "publisher": "こうべ産業・就労支援財団",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "success-1578",
+    "kind": "success",
+    "title": "企業OBが町工場を一軒ずつ訪ねる",
+    "summary": "産業人OBネットは神戸市の委託で中小製造業の訪問を続け、2021年11月〜2022年2月は会員12名で回ったと報告している。外の目が強みの発見につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "外の人に言われて気づいた強み",
+    "source": {
+      "title": "中小製造業訪問事業の活動報告",
+      "url": "https://www.sanobnet.jp/info/news/20220511131854/",
+      "publisher": "産業人OBネット",
+      "date": "2022-05"
+    }
+  },
+  {
+    "id": "trend-939",
+    "kind": "trend",
+    "official": false,
+    "title": "神戸の訪問調査、初回は87社",
+    "summary": "産業人OBネットの2025年2月の便りでは、2024年度は委託元が神戸市産業振興財団に移り、初回訪問は87社だったと伝えている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "産業人OBネット便り(第22号)",
+      "url": "https://www.sanobnet.jp/info/obnet-dayori/20250206130746/",
+      "publisher": "産業人OBネット",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "buyer-819",
+    "kind": "buyer",
+    "title": "東京の発注企業が大阪に来て商談",
+    "summary": "大阪商工会議所の2021年の加工商談会は東京都・東京商工会議所と共催し、東京圏の発注側17社が参加した。発注企業は遠方でも加工先を探している。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "遠くの発注者に選ばれるページ",
+    "source": {
+      "title": "大阪・東京 ものづくり加工商談会2021",
+      "url": "https://www.osaka.cci.or.jp/event/seminar/202108/D13211202019.html",
+      "publisher": "大阪商工会議所",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "buyer-820",
+    "kind": "buyer",
+    "title": "発注企業のブースを順番に回る商談",
+    "summary": "大阪商工会議所の2022年の加工商談会は発注企業11社。訪れた順に最大15分ほどの商談と、事前予約の商談を併用した。短時間で強みを伝える準備が要る。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "15分で伝わる自社紹介のつくり方",
+    "source": {
+      "title": "ものづくり加工商談会2022",
+      "url": "https://www.osaka.cci.or.jp/event/seminar/202210/D13230221022.html",
+      "publisher": "大阪商工会議所",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "buyer-821",
+    "kind": "buyer",
+    "title": "受注を広げたい府内中小が無料で参加",
+    "summary": "大阪商工会議所の2020年の加工商談会は、東京圏のものづくり企業20社が来阪。対象は受注拡大をめざす府内の中小ものづくり企業で参加無料だった。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2020 大阪・東京ものづくり加工商談会",
+      "url": "https://www.osaka.cci.or.jp/event/seminar/202009/D13201127018.html",
+      "publisher": "大阪商工会議所",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "success-1579",
+    "kind": "success",
+    "title": "商談会で年5,655件、成約・継続1,550件",
+    "summary": "大阪商工会議所の入会案内では、大手流通業への販路開拓支援全体で年間商談5,655件、うち成約・商談継続1,550件としている。加工商談会単体の数ではない。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "売上アップを強力支援！｜活用例",
+      "url": "https://nyukai.osaka.cci.or.jp/cases/hanrokakudai.html",
+      "publisher": "大阪商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-822",
+    "kind": "buyer",
+    "title": "受発注商談会、188件の商談",
+    "summary": "MOBIOの2024年の告知では、前年の大阪ものづくり受発注商談会は発注32社・受注96社で商談188件。発注1社が複数の受注候補と会っている。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "商談会のあとに見られる自社サイト",
+    "source": {
+      "title": "大阪ものづくり受発注商談会 2024 受注企業募集",
+      "url": "https://www.m-osaka.com/events/005336/",
+      "publisher": "MOBIO（ものづくりビジネスセンター大阪）",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "buyer-823",
+    "kind": "buyer",
+    "title": "大阪の発注企業と地方の受注企業をつなぐ",
+    "summary": "高知県産業振興センターは2020年度、大阪の発注企業と商談する受発注広域商談会への参加企業を募った。地方の工場も都市部の発注者と出会える。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和２年度 モノづくり受発注広域商談会 参加受注企業募集",
+      "url": "https://joho-kochi.or.jp/mono/gaisyou/juchuu_osaka.html",
+      "publisher": "高知県産業振興センター",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "buyer-824",
+    "kind": "buyer",
+    "title": "大阪産業局も受発注の対面商談会",
+    "summary": "大阪産業局は「大阪のモノづくり企業との受発注商談会（第2回）」で受注企業を募った。商談会の前に、自社の得意な加工を一言で言えるようにしておく。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "得意な加工を一言で言うと",
+    "source": {
+      "title": "大阪のモノづくり企業との受発注商談会（第2回）参加受注企業募集",
+      "url": "https://www.obda.or.jp/events/deal_events/jyuchu.html",
+      "publisher": "大阪産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1580",
+    "kind": "success",
+    "title": "市内の工場どうしが交流商談会で出会う",
+    "summary": "高槻商工会議所は2024年、ものづくり企業交流商談会を開いた。近くの工場同士の取引や協力先探しにも商工会議所の場が使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり企業交流商談会",
+      "url": "https://www.takatsukicci.or.jp/takumi2024.html",
+      "publisher": "高槻商工会議所",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-940",
+    "kind": "trend",
+    "official": true,
+    "title": "万博関連の受発注支援サイトを開設",
+    "summary": "日商の記事によると、大阪商工会議所は2025年大阪・関西万博に関連する商取引を促すため、受発注支援サイトの運営を始めた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "受発注支援サイト開設 万博関連の商取引促進（大阪商工会議所）",
+      "url": "https://ab.jcci.or.jp/article/85734/",
+      "publisher": "日商 Assist Biz",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1581",
+    "kind": "success",
+    "title": "伴走支援と小さな補助金を組み合わせる",
+    "summary": "箕面商工会議所は創業5年未満の小規模事業者などに、伴走型の経営支援と上限30万円の補助金を組み合わせる。広報費や外注費も対象と日商が伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "新規事業実現サポート 伴走支援と補助金活用（箕面商工会議所）",
+      "url": "https://ab.jcci.or.jp/article/119227/",
+      "publisher": "日商 Assist Biz",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1582",
+    "kind": "success",
+    "title": "共同出展で出会った会社と継続取引に",
+    "summary": "東大阪商工会議所は首都圏の展示会に地元5社でブースを出した。担当者は、過去の同様の展示会でマッチングした企業と継続的に取引できた例に触れている。",
+    "industries": [
+      "樹脂成形",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会で出会って10年続く取引",
+    "source": {
+      "title": "東大阪商工会議所がイベントに寄せる期待とは",
+      "url": "https://special.bizchanexpo.tokyo/opr/766/",
+      "publisher": "ビジネスチャンスEXPO in TOKYO",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1583",
+    "kind": "success",
+    "title": "交流会で87社・約100名が名刺交換",
+    "summary": "東大阪商工会議所で2023年6月に開かれたビジネスマッチング交流会には87企業・約100名が参加し、名刺交換や商談をした（主催は生命保険会社の支社）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "東大阪商工会議所で経営者セミナー＆ビジネスマッチング交流会",
+      "url": "https://team.expo2025.or.jp/ja/post/1377",
+      "publisher": "TEAM EXPO 2025",
+      "date": "2023-06"
+    }
+  },
+  {
+    "id": "trend-941",
+    "kind": "trend",
+    "official": false,
+    "title": "大阪の中小、生成AI活用は2割弱",
+    "summary": "大阪シティ信用金庫が府内の取引先1,275社に聞くと、業務で生成AIを使う会社は19.8%。関心はある53.8%、使う会社の95.6%が効果を感じていると大阪日日新聞が報じた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "【大阪】中小企業の生成ＡＩ活用２割弱 導入企業の９６％が効果実感",
+      "url": "https://weekly-osakanichi2.net/archives/55254",
+      "publisher": "大阪日日新聞",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-942",
+    "kind": "trend",
+    "official": true,
+    "title": "大阪府がDX人材の資料をまとめる",
+    "summary": "大阪府商工労働部は2024年3月、中小・中堅企業のデジタル化・DX推進とDX人材についての資料をまとめた。府内の現状を知る公式の資料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小・中堅企業のデジタル化・DX推進とデジタル・DX人材について",
+      "url": "https://www.pref.osaka.lg.jp/documents/12073/19820degitaru20honbun_1.pdf",
+      "publisher": "大阪府商工労働部",
+      "date": "2024-03"
+    }
+  },
+  {
+    "id": "trend-943",
+    "kind": "trend",
+    "official": true,
+    "title": "名古屋商議所、IT化支援に新たに取り組む",
+    "summary": "名古屋商工会議所の2017年度事業報告では、事業承継やIT化支援などで新しい取り組みを始めたと書いている。会員の中小企業のIT化を後押しする流れ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "平成29年度 事業報告",
+      "url": "https://nagoya-cci.or.jp/meisho/h29_report.pdf",
+      "publisher": "名古屋商工会議所",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "trend-944",
+    "kind": "trend",
+    "official": true,
+    "title": "デジタル化支援と次世代人材が柱に",
+    "summary": "名古屋商工会議所の2023年度事業報告では、会社の段階に応じたデジタル化・IT化支援と、次世代のものづくり人材の育成が柱に挙がっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和5年度 事業報告",
+      "url": "https://heartcore.nagoya-cci.or.jp/meisho/r5_report.pdf",
+      "publisher": "名古屋商工会議所",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1584",
+    "kind": "success",
+    "title": "中小製造業のためのWeb説明会",
+    "summary": "名古屋商工会議所は2020年4月、中小製造業向けに新型コロナ緊急経済対策のWeb説明会を開いた。集まれない時期にオンラインで情報を届けた例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小製造業のための新型コロナ緊急経済対策Web説明会",
+      "url": "https://heartcore.nagoya-cci.or.jp/pr/newsrelease20200421/2p.pdf",
+      "publisher": "名古屋商工会議所",
+      "date": "2020-04"
+    }
+  },
+  {
+    "id": "trend-945",
+    "kind": "trend",
+    "official": true,
+    "title": "製造業の価格転嫁率は45.9%",
+    "summary": "名古屋商工会議所の第54回定期景況調査（2025年9月）では、価格転嫁の実現状況で製造業が45.9%となり、全体の数値を上回った。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "第54回定期景況調査ならびに愛知県内22商工会議所合同調査結果",
+      "url": "https://www.nagoya-cci.or.jp/koho/news-release/pr/newsrelease20250912_29p.pdf",
+      "publisher": "名古屋商工会議所",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "pain-748",
+    "kind": "pain",
+    "title": "労務費の転嫁が2割未満の会社が半数",
+    "summary": "名古屋商工会議所の第55回調査（2025年12月）では、労務費の上昇分を2割未満しか転嫁できていない会社が50%。小規模企業で目立つと中日BIZナビが報じた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "値上げをお願いするときの伝え方",
+    "source": {
+      "title": "労務費の価格転嫁進まず、2割未満が50％ 名商調査",
+      "url": "https://biz.chunichi.co.jp/news/article/10/118924/",
+      "publisher": "中日BIZナビ",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "pain-749",
+    "kind": "pain",
+    "title": "労務費は原材料より転嫁しにくい",
+    "summary": "名古屋商工会議所の2025年12月の発表では、労務費の上昇分は原材料費やエネルギー価格より価格転嫁が進みにくいと説明している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "労務費の価格転嫁「十分にできていない」企業が過半数 ― 名商が実態調査",
+      "url": "https://prtimes.jp/main/html/rd/p/000000036.000036401.html",
+      "publisher": "名古屋商工会議所（PR TIMES）",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "pain-750",
+    "kind": "pain",
+    "title": "人を採るための原資が足りない",
+    "summary": "名古屋商工会議所の第51回調査（2024年12月）では、労務費の転嫁を人材確保の原資と考える会社の声を紹介。就業調整による人手不足も心配されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "賃上げと採用のために価格を見直した話",
+    "source": {
+      "title": "第51回定期景況調査結果について",
+      "url": "https://www.nagoya-cci.or.jp/pr/newsrelease20241217/66p.pdf",
+      "publisher": "名古屋商工会議所",
+      "date": "2024-12"
+    }
+  },
+  {
+    "id": "trend-946",
+    "kind": "trend",
+    "official": true,
+    "title": "メッセナゴヤ2025に844社・5万人",
+    "summary": "メッセナゴヤの開催実績によると、2025年11月5〜7日に844社・団体が出展し、来場者は50,705名。2024年は52,742名だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "メッセナゴヤ 開催実績・映像",
+      "url": "https://www.messenagoya.jp/history",
+      "publisher": "メッセナゴヤ実行委員会（名古屋商工会議所内）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-947",
+    "kind": "trend",
+    "official": false,
+    "title": "出展者の8割が中小、製造業が最多",
+    "summary": "日本経済新聞によると、メッセナゴヤ2025の参加企業は中小が80%を占め、業種別では鉄鋼や機械といった製造業の割合が最も高かった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "メッセナゴヤ2025開幕 中小のものづくり技術など展示",
+      "url": "https://www.nikkei.com/article/DGXZQOFD0512A0V01C25A1000000/",
+      "publisher": "日本経済新聞",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-948",
+    "kind": "trend",
+    "official": false,
+    "title": "異業種交流展、累計100万人来場へ",
+    "summary": "朝日新聞は、20回目のメッセナゴヤが開幕し、製造業やIT・エネルギーなど844の企業・団体が出展、累計来場者が100万人に届く見込みと伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "20回目のメッセナゴヤ開幕 異業種交流展、累計100万人来場へ",
+      "url": "https://news.yahoo.co.jp/articles/f46cef73e4df7a0355b72b59468aba2bc939d98e",
+      "publisher": "朝日新聞（Yahoo!ニュース）",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "success-1585",
+    "kind": "success",
+    "title": "展示会は市場の声を聞く場にもなる",
+    "summary": "メッセナゴヤ2024の結果報告書には、商談の獲得だけでなく、市場ニーズの把握やお客様の声を聞く良い機会になったという出展者の声がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会で聞いたお客様の声",
+    "source": {
+      "title": "メッセナゴヤ2024 開催結果報告書",
+      "url": "https://www.messenagoya.jp/pdf/history/2024.pdf",
+      "publisher": "メッセナゴヤ実行委員会（名古屋商工会議所内）",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1586",
+    "kind": "success",
+    "title": "出展者の声を集めて公開する",
+    "summary": "メッセナゴヤは「出展者の声」ページで出展した会社の感想を紹介している。自社も展示会の成果や学びをブログに書けば、次の来場者への案内になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会に出て分かったこと",
+    "source": {
+      "title": "メッセナゴヤ 出展者の声",
+      "url": "https://www.messenagoya.jp/voice",
+      "publisher": "メッセナゴヤ実行委員会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1587",
+    "kind": "success",
+    "title": "地元商議所が展示会の出展をとりまとめ",
+    "summary": "東海商工会議所（愛知県東海市）は会員向けにメッセナゴヤ2025の出展申込を案内した。大きな展示会も地元の商工会議所経由で出やすくなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "メッセナゴヤ2025出展申込のご案内",
+      "url": "https://www.tokai-cci.or.jp/%E3%83%A1%E3%83%83%E3%82%BB%E3%83%8A%E3%82%B4%E3%83%A42025%E5%87%BA%E5%B1%95%E7%94%B3%E8%BE%BC%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85%EF%BC%9C4-17%E6%9C%A810%E6%99%82%E9%96%8B%E5%A7%8B%EF%BC%9E",
+      "publisher": "東海商工会議所",
+      "date": "2025-04"
+    }
+  },
+  {
+    "id": "success-1588",
+    "kind": "success",
+    "title": "8社の共同出展で来訪者が3割増",
+    "summary": "浜松商工会議所の記事では、市と商議所の支援で8社が共同出展し、単独より来訪者が3割増えたと出展企業が語った。プレゼン後に大手と商談、納品に。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "共同出展で大手と出会った話",
+    "source": {
+      "title": "新素材で切り拓く、販路開拓の挑戦",
+      "url": "https://hamamatsu-cci.or.jp/news/show/1604/LScZ0tqO9/CmfvntRMc8rQ==",
+      "publisher": "浜松商工会議所",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1589",
+    "kind": "success",
+    "title": "新素材を武器に新しい分野へ",
+    "summary": "浜松商工会議所の記事で紹介された製造業は、新素材を使った製品で販路開拓に挑み、企業プレゼンをきっかけに東北に拠点を置く大手メーカーとの商談につなげた。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新しい素材で新しいお客様へ",
+    "source": {
+      "title": "新素材で切り拓く、販路開拓の挑戦",
+      "url": "https://hamamatsu-cci.or.jp/news/show/1604/LScZ0tqO9/CmfvntRMc8rQ==",
+      "publisher": "浜松商工会議所",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1590",
+    "kind": "success",
+    "title": "販路開拓支援塾で展示会の出方を学ぶ",
+    "summary": "浜松商工会議所の製造業向け「販路開拓支援塾」は全3回で、自社分析から展示会出展のノウハウ、新市場への近づき方までを学ぶ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社分析から始める販路開拓",
+    "source": {
+      "title": "ものづくり企業のための「販路開拓支援塾」＜全３回シリーズ＞",
+      "url": "https://www.hamamatsu-cci.or.jp/events/show/1241/1",
+      "publisher": "浜松商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-825",
+    "kind": "buyer",
+    "title": "自動車メーカー相手の新技術展示商談会",
+    "summary": "浜松商工会議所は、浜松地域のものづくり技術を国内自動車メーカーなどに紹介する新技術・新工法展示商談会を案内。輸送機器以外への参入も後押しする。",
+    "industries": [
+      "自動車部品",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "大手の技術者に見せた新工法",
+    "source": {
+      "title": "商談会・催事販売会",
+      "url": "https://www.hamamatsu-cci.or.jp/business_support/business_meeting.html",
+      "publisher": "浜松商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-826",
+    "kind": "buyer",
+    "title": "県内15商議所で5万社超から商品を集める",
+    "summary": "浜松商工会議所の商談会ページでは、静岡県内の15商工会議所の会員5万社超から商品を募り、バイヤーと個別に面談する合同商談会を紹介している。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商談会・催事販売会",
+      "url": "https://www.hamamatsu-cci.or.jp/business_support/business_meeting.html",
+      "publisher": "浜松商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-827",
+    "kind": "buyer",
+    "title": "大手企業の構内で技術展示商談会",
+    "summary": "浜松地域新産業創出会議は、大手化学メーカーの事業所で開く浜松地域技術展示商談会の出展者を募集した。大手の技術者が直接見て回る場になる。",
+    "industries": [
+      "金属加工",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "浜松地域新産業創出会議",
+      "url": "http://www.hama-sss.com/",
+      "publisher": "浜松地域新産業創出会議",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-949",
+    "kind": "trend",
+    "official": true,
+    "title": "浜松市がものづくり販路開拓に補助",
+    "summary": "浜松地域新産業創出会議のサイトでは、令和8年度の「浜松市ものづくり販路開拓事業費補助」の募集を案内している。展示会出展などに使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "浜松地域新産業創出会議",
+      "url": "http://www.hama-sss.com/",
+      "publisher": "浜松地域新産業創出会議",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1591",
+    "kind": "success",
+    "title": "ITツール導入の事例集を会員に公開",
+    "summary": "京都商工会議所は「はじめてのIT・DX応援事業」として会員優待のITツール導入支援を用意し、導入した事業者の事例集を公開している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちが入れたITツールと使い方",
+    "source": {
+      "title": "ITツール導入事例集",
+      "url": "https://www.kyo.or.jp/kyoto/ac/news_121446.html",
+      "publisher": "京都商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1592",
+    "kind": "success",
+    "title": "ITツールを触って試せる場所",
+    "summary": "近畿経済産業局の資料では、京都商工会議所は2022年度からIT/DX支援を始め、洛西のビジネスサポートデスクにITツールのデモ体験スペースを設けた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "京都商工会議所 ITツール導入支援",
+      "url": "https://www.kansai.meti.go.jp/3-2sashitsu/service/kyoto_cci.pdf",
+      "publisher": "近畿経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1593",
+    "kind": "success",
+    "title": "国・府・市のIT支援を一覧にする",
+    "summary": "京都商工会議所は国・京都府・京都市などのIT支援メニューをまとめ、制度は変わるので各ページで最新を確かめるよう呼びかけている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "国・京都府・京都市などのIT支援メニュー",
+      "url": "https://www.kyo.or.jp/kyoto/ac/news_122858.html",
+      "publisher": "京都商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1594",
+    "kind": "success",
+    "title": "業務ツールを常設展示でお試し",
+    "summary": "京都商工会議所の「はじめてのIT/DX応援事業」では、ビジネスチャットツールが常設展示に選ばれ、見て触れて実業務での使い方を想像できるようにした。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "京都商工会議所「はじめてのIT/DX応援事業」常設展示にChatworkが選定",
+      "url": "https://prtimes.jp/main/html/rd/p/000000274.000013602.html",
+      "publisher": "PR TIMES",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1595",
+    "kind": "success",
+    "title": "会報で地元企業の戦略を紹介",
+    "summary": "岡山商工会議所の会報「glocal」は毎月約7,500部。「明日を拓く企業の戦略」で製本会社や健康食品の会社など地元企業の取り組みを紹介している。",
+    "industries": [
+      "印刷",
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "会報に載った記事をブログにも",
+    "source": {
+      "title": "明日を拓く企業の戦略",
+      "url": "https://okayama-cci.or.jp/koho/companies.html",
+      "publisher": "岡山商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1596",
+    "kind": "success",
+    "title": "会報にチラシを同封して届ける",
+    "summary": "岡山商工会議所は会報「glocal」に会員のチラシを同封して会員事業所に届ける「ビジネス情報便」を行っている。地元の取引先へ知らせる手段の一つ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "会報glocal",
+      "url": "https://okayama-cci.or.jp/koho/magazine.html",
+      "publisher": "岡山商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1597",
+    "kind": "success",
+    "title": "首都圏の大型商談会への出展を後押し",
+    "summary": "岡山商工会議所の2025年度事業報告では、認定商品の販路開拓のため、首都圏の大型商談会への出展支援に力を入れたと報告している。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2025 事業報告書",
+      "url": "https://okayama-cci.or.jp/wp-content/uploads/2026/08/2025jigyohokoku.pdf",
+      "publisher": "岡山商工会議所",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "success-1598",
+    "kind": "success",
+    "title": "販路拡大・PRの相談窓口",
+    "summary": "岡山商工会議所は「販路を拡大したい、PRしたい」という会員向けに、商談会や広報の支援をまとめたページを用意している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "販路を拡大したい、PRしたい",
+      "url": "https://okayama-cci.or.jp/market_growth.html",
+      "publisher": "岡山商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-950",
+    "kind": "trend",
+    "official": true,
+    "title": "市が見本市出品を補助",
+    "summary": "岡山市の産業振興課は、製造業などの販路拡張支援として見本市出品の補助や広域商談会を行っている。展示会費用の一部を補える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "岡山市 産業振興課",
+      "url": "https://www.city.okayama.jp/soshiki/13-2-6-0-0_49.html",
+      "publisher": "岡山市",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-828",
+    "kind": "buyer",
+    "title": "WEB会員名簿で取引先を探す",
+    "summary": "広島商工会議所の営業・販促支援には、WEB会員名簿やビジネスマッチングがある。発注する側も会員名簿で地元の加工先を探せる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "営業・販促支援",
+      "url": "http://www.hiroshimacci.or.jp/promotion/",
+      "publisher": "広島商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-829",
+    "kind": "buyer",
+    "title": "受発注商談会で買い手企業も募集",
+    "summary": "広島商工会議所は2026年11月開催の全国ものづくり受発注商談会＆技術連携マッチングで、買い手企業の募集を案内した。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "新着情報一覧",
+      "url": "https://www.hiroshimacci.or.jp/news/",
+      "publisher": "広島商工会議所",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "success-1599",
+    "kind": "success",
+    "title": "商談スキルを学ぶ新市場開拓プログラム",
+    "summary": "福山商工会議所は、広島県などが県外大手企業との新しい取引獲得をめざして行う新市場開拓実践プログラムの商談スキルアップセミナーを案内した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "大手との商談で準備したこと",
+    "source": {
+      "title": "新市場開拓実践プログラム（商談スキルアップセミナー）のご案内",
+      "url": "https://www.fukuyama.or.jp/news/9385/",
+      "publisher": "福山商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1600",
+    "kind": "success",
+    "title": "新事業展開を専門家に無料で相談",
+    "summary": "広島商工会議所は中小企業診断士などによる無料の専門相談を設け、新事業展開や新商品開発のポイントも相談できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "専門相談（専門家による無料相談窓口）",
+      "url": "https://www.hiroshimacci.or.jp/executive/management/soudan/",
+      "publisher": "広島商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1601",
+    "kind": "success",
+    "title": "商談会の出展計画づくりから支える",
+    "summary": "高松商工会議所の令和7年度事業計画では、商談会・展示会の出展計画づくりや資金繰りの相談、補助金の活用を支援すると示している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和7年度 事業計画",
+      "url": "https://www.takacci.or.jp/wp-content/uploads/jigyoukeikaku2025.pdf",
+      "publisher": "高松商工会議所",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1602",
+    "kind": "success",
+    "title": "海外販路は3機関の窓口で相談",
+    "summary": "高松商工会議所の令和7年度事業計画では、商工会議所・ジェトロ香川・中小機構四国が一体となった相談窓口を設けるとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和7年度 事業計画",
+      "url": "https://www.takacci.or.jp/wp-content/uploads/jigyoukeikaku2025.pdf",
+      "publisher": "高松商工会議所",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-830",
+    "kind": "buyer",
+    "title": "商業施設への出店を商議所が仲介",
+    "summary": "KSB瀬戸内海放送によると、高松商工会議所は空港や駅近くの商業施設への出店を望む会員の商品の特徴を聞いて施設に伝える窓口を開いた。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "香川県内の販路開拓 高松商工会議所がサポート窓口を開設",
+      "url": "https://news.ksb.co.jp/article/15807440",
+      "publisher": "KSB瀬戸内海放送",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1603",
+    "kind": "success",
+    "title": "商議所と通信会社でデジタル化支援",
+    "summary": "福岡商工会議所は通信会社やIT企業と共同でコンソーシアム「YOKA-DIGI（よかデジ）」をつくり、中小企業のデジタル化を支援している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "YOKA-DIGI（よかデジ）",
+      "url": "https://yokadigi.fukunet.or.jp/",
+      "publisher": "福岡商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-951",
+    "kind": "trend",
+    "official": false,
+    "title": "福岡の中小、3割が生成AIを業務に",
+    "summary": "日本経済新聞によると、福岡商工会議所の経営動向調査で地場企業の33%が生成AIを業務に使っていると答えた。業種別ではサービス業が46%で最多。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "福岡の中小企業、3割が生成AI「業務に活用」",
+      "url": "https://www.nikkei.com/article/DGXZQOJC274QK0X20C26A4000000/",
+      "publisher": "日本経済新聞",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "success-1604",
+    "kind": "success",
+    "title": "デジタル化の展示イベントで現場を知る",
+    "summary": "福岡商工会議所は「FUKUSHO DIGITAL EXPO」を開き、足元の課題から少し先の働き方までを紹介した。見て学ぶ場がデジタル化の入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "FUKUSHO DIGITAL EXPO",
+      "url": "https://prtimes.com/story/detail/rP6vKai3mZB",
+      "publisher": "福岡商工会議所（PR TIMES STORY）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-952",
+    "kind": "trend",
+    "official": true,
+    "title": "福岡市の調査で製造業のDXの取り組み",
+    "summary": "福岡市が2025年7月に公表した中小企業振興アンケートでは、製造業の取り組みとしてDX化などが挙がっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業振興に関するアンケート 調査結果",
+      "url": "https://www.city.fukuoka.lg.jp/keizai/policy_mng/07_20250826sankou2.pdf",
+      "publisher": "福岡市",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-953",
+    "kind": "trend",
+    "official": true,
+    "title": "デジタルツール展示会を福岡で初開催",
+    "summary": "日商は西日本での開催を求める声に応え、商工会議所職員向けのデジタルツール展示会を福岡市で初めて開いた。支援する側の学びも広がっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "デジタルツール展示会 福岡で初開催",
+      "url": "https://ab.jcci.or.jp/article/103043/",
+      "publisher": "日商 Assist Biz",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-751",
+    "kind": "pain",
+    "title": "九州の企業の半数が正社員不足",
+    "summary": "帝国データバンクの調査では、2025年4月時点で正社員が足りないと感じる九州の企業は52.1%、非正社員は31.7%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "人が足りない工場の採用ページ",
+    "source": {
+      "title": "九州・人手不足に対する企業の動向調査（2025年4月）",
+      "url": "https://www.tdb.co.jp/resource/files/assets/d4b8e8ee91d1489c9a2abd23a4bb5219/97746b788e23435b8cf46b7bc1784653/20250528_%E4%B9%9D%E5%B7%9E%E3%83%BB%E4%BA%BA%E6%89%8B%E4%B8%8D%E8%B6%B3%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E4%BC%81%E6%A5%AD%E3%81%AE%E5%8B%95%E5%90%91%E8%AA%BF%E6%9F%BB%EF%BC%882025%E5%B9%B44%E6%9C%88%EF%BC%89.pdf",
+      "publisher": "帝国データバンク",
+      "date": "2025-05"
+    }
+  },
+  {
+    "id": "pain-752",
+    "kind": "pain",
+    "title": "九州の価格転嫁率は38.6%",
+    "summary": "帝国データバンクの2025年2月の調査では、九州の価格転嫁率は38.6%で全国平均を下回った。原材料費は約5割、人件費・物流費などは約3割にとどまる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "九州企業の価格転嫁に関する実態調査（2025年2月）",
+      "url": "https://www.tdb.co.jp/report/economic/20250327-pricepass-on-kyusyu/",
+      "publisher": "帝国データバンク",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "pain-753",
+    "kind": "pain",
+    "title": "燃料費・人件費の転嫁は不十分",
+    "summary": "日本政策投資銀行の九州地域設備投資計画調査では、燃料費や人件費の高騰について、九州の製造業の約7割が「一部転嫁できているが十分ではない」と答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "九州地域設備投資計画調査",
+      "url": "https://www.dbj.jp/investigate/equip/regional/pdf/17_kyushu_2025.pdf",
+      "publisher": "日本政策投資銀行",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1605",
+    "kind": "success",
+    "title": "3商議所が組んで県外で特産市",
+    "summary": "鹿児島県の川内・阿久根・いちき串木野の3商工会議所は広域で特産市を開き、17事業者が出店、1000人超が来場した。電力会社の協力で出店の負担を軽くした。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "近くの町と組んで県外に出た話",
+    "source": {
+      "title": "広域連携で特産市 1000人超が来場し魅力PR（川内・阿久根・いちき串木野商工会議所）",
+      "url": "https://ab.jcci.or.jp/article/123983/",
+      "publisher": "日商 Assist Biz",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1606",
+    "kind": "success",
+    "title": "那覇商議所は補助金から商談会まで",
+    "summary": "那覇商工会議所の2024年の活用ガイドでは、ものづくり補助金や持続化補助金の支援、経営相談、融資、人材育成、商談会などを案内している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2024 那覇商工会議所活用ガイド",
+      "url": "https://nahacci.com/wp/wp-content/uploads/2024/07/2024nahacci_katuyouguide.pdf",
+      "publisher": "那覇商工会議所",
+      "date": "2024-07"
+    }
+  },
+  {
+    "id": "trend-954",
+    "kind": "trend",
+    "official": true,
+    "title": "沖縄県が県内受注を増やす事業",
+    "summary": "沖縄県は「ものづくり県内受注・生産性向上支援事業」を行っている。県内での受注と生産性向上を後押しする公式の事業。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり県内受注・生産性向上支援事業",
+      "url": "https://www.pref.okinawa.lg.jp/shigoto/kogyo/1024878/1011645.html",
+      "publisher": "沖縄県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1607",
+    "kind": "success",
+    "title": "製品開発・技術導入を支援",
+    "summary": "沖縄県産業振興公社は「沖縄ものづくり製品開発・技術導入支援事業」で、県内製造業の製品開発や新しい技術の導入を支援している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "沖縄ものづくり製品開発・技術導入支援事業",
+      "url": "https://okinawa-ric.jp/service/post-18.html",
+      "publisher": "沖縄県産業振興公社",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-955",
+    "kind": "trend",
+    "official": false,
+    "title": "持続化補助金の採択率は約5割",
+    "summary": "民間の支援会社の整理では、小規模事業者持続化補助金の第19回は16,576件の申請に対し7,819件が採択され、採択率は47.2%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "小規模事業者持続化補助金（19回、採択結果）",
+      "url": "https://www.tokyo-kst.jp/repo35.html",
+      "publisher": "東京経営サポーター",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1608",
+    "kind": "success",
+    "title": "旋盤を入れて高精度の部品加工へ",
+    "summary": "ミラサポplusの持続化補助金ページでは、製造業の活用例として、受注拡大のため旋盤を導入し、高精度な部品加工の体制を整えた例を挙げている。",
+    "industries": [
+      "切削加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新しい機械で受けられる仕事",
+    "source": {
+      "title": "小規模事業者持続化補助金",
+      "url": "https://mirasapo-plus.go.jp/subsidy/jizokuka/",
+      "publisher": "ミラサポplus",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1609",
+    "kind": "success",
+    "title": "ホームページとDMで販路を広げる計画",
+    "summary": "持続化補助金の関西の採択者一覧（第9回）には、ホームページとDMを使った販路開拓を計画した滋賀県の事業者が載っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "持続化補助金＜一般型＞第9回締切分 採択者一覧（関西）",
+      "url": "https://r3.jizokukahojokin.info/doc/saitaku09/r3i_9_kansai.pdf",
+      "publisher": "日本商工会議所 持続化補助金事務局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1610",
+    "kind": "success",
+    "title": "試作サービスを始め専用サイトでPR",
+    "summary": "行政書士事務所のコラムでは、部品加工業が3Dプリンターで試作サービスを始め、そのPR用Webサイトの制作費も補助対象になる例を挙げている（例示）。",
+    "industries": [
+      "3Dプリンタ",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "試作サービスを始めたお知らせ",
+    "source": {
+      "title": "第20回 小規模事業者持続化補助金 製造業向けの採択事例とスケジュール",
+      "url": "https://nakagyousei.com/column/%E3%80%90%E9%80%9F%E5%A0%B1%E3%80%91%E7%AC%AC20%E5%9B%9E-%E5%B0%8F%E8%A6%8F%E6%A8%A1%E4%BA%8B%E6%A5%AD%E8%80%85%E6%8C%81%E7%B6%9A%E5%8C%96%E8%A3%9C%E5%8A%A9%E9%87%91%E3%81%AE%E5%85%AC%E5%8B%9F/",
+      "publisher": "行政書士事務所のコラム",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-754",
+    "kind": "pain",
+    "title": "ホームページを持たない小さな事業者",
+    "summary": "美濃商工会議所の経営発達支援計画では、小規模事業者にホームページを持っていない事業者が多いとし、無料のHP作成サービスの活用を提案して開設を支える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "まず無料で始めるホームページ",
+    "source": {
+      "title": "経営発達支援計画の概要（美濃商工会議所）",
+      "url": "https://www.chusho.meti.go.jp/keiei/shokibo/ninteikeikaku/download/21-53.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1611",
+    "kind": "success",
+    "title": "HPとSNSをつないで発信を支援",
+    "summary": "美濃商工会議所の経営発達支援計画には、ホームページとSNSの連携支援やネット通販の活用支援が項目に入っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "経営発達支援計画の概要（美濃商工会議所）",
+      "url": "https://www.chusho.meti.go.jp/keiei/shokibo/ninteikeikaku/download/21-53.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-956",
+    "kind": "trend",
+    "official": true,
+    "title": "製造・生産部門はAI導入が遅れる",
+    "summary": "中小機構の2026年3月の調査（製造業197社回答）では、製造・生産部門はAI・ITの導入が遅れ、効果が出た例では品質向上が72.5%で最多だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業のAI等の利活用に係る実態調査",
+      "url": "https://www.smrj.go.jp/research_case/questionnaire/fbrion0000002pjw-att/202603_AI_report.pdf",
+      "publisher": "中小企業基盤整備機構",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-957",
+    "kind": "trend",
+    "official": true,
+    "title": "商工会調査：価格転嫁で製造業が持ち直し",
+    "summary": "全国商工会連合会の2026年5月期調査では、製造業の売上は小幅に悪化したが、食料品や機械・金属で受注増や価格転嫁により採算を保てているという声が出ている。",
+    "industries": [
+      "食品製造",
+      "金属加工",
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "値上げを受け入れてもらえた説明の仕方",
+    "source": {
+      "title": "2026年6月 小規模企業景気動向調査（5月期）",
+      "url": "https://www.shokokai.or.jp/joho/chosa/keiki/keikidoukou.files/2605report.pdf",
+      "publisher": "全国商工会連合会",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "pain-755",
+    "kind": "pain",
+    "title": "人手不足と人件費上昇が経営の負担",
+    "summary": "全国商工会連合会の2026年8月期調査では、製造業でコスト上昇に加え、人手不足や人件費の上昇も経営の負担として挙げられている。採用と単価の両方が課題に。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "少人数の工場が人手不足でも納期を守る工夫",
+    "source": {
+      "title": "2026年9月 小規模企業景気動向調査（8月期）",
+      "url": "https://cdn.goope.jp/93816/261009100412-6ac83d8ccdcb9.pdf",
+      "publisher": "全国商工会連合会",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "trend-958",
+    "kind": "trend",
+    "official": true,
+    "title": "広島の商工会地域 製造業の仕入単価DIが83.3",
+    "summary": "広島県商工会連合会の第184回景況調査（2026年4〜6月期）で、製造業の仕入単価DIは83.3と高く、前期から14.0ポイント上昇。材料価格の上昇や入手難が負担と報告。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "広島県商工会連合会 第184回中小企業景況調査報告書",
+      "url": "https://www.kure-kouiki.jp/wp/wp-content/uploads/2026/07/4fdbc65fe59c121025b5e6fe5045edc4.pdf",
+      "publisher": "広島県商工会連合会",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "success-1612",
+    "kind": "success",
+    "title": "顧客の半数と価格交渉し値上げ",
+    "summary": "広島県商工会連合会の第184回景況調査（2026年6月）で、約半数の顧客と価格交渉し、5月分から10〜15％の値上げをした事業者の声が紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "値上げのお願いを顧客にどう伝えたか",
+    "source": {
+      "title": "広島県商工会連合会 第184回中小企業景況調査報告書",
+      "url": "https://www.kure-kouiki.jp/wp/wp-content/uploads/2026/07/4fdbc65fe59c121025b5e6fe5045edc4.pdf",
+      "publisher": "広島県商工会連合会",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "pain-756",
+    "kind": "pain",
+    "title": "商工会への相談は計画・販路・税務が多い",
+    "summary": "全国商工会連合会が2024年8月の国の小委員会に出した資料では、商工会を訪れる小規模事業者の相談は事業計画の策定、販路開拓、税務申告が多いとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "販路開拓の悩みをブログで先に答える",
+    "source": {
+      "title": "商工会の取り組みについて（基本問題小委員会資料）",
+      "url": "https://www.chusho.meti.go.jp/koukai/shingikai/kihonmondai/002/s002.pdf",
+      "publisher": "全国商工会連合会",
+      "date": "2024-08"
+    }
+  },
+  {
+    "id": "pain-757",
+    "kind": "pain",
+    "title": "販路開拓・人手不足・資金繰りが重い",
+    "summary": "日本商工会議所の2024年8月の資料では、小規模事業者は販路開拓・マーケティング、人手不足、資金繰りを重視する傾向があり、1社だけでの解決は難しいと指摘している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域経済の好循環を支える小規模事業者支援に向けて",
+      "url": "https://www.chusho.meti.go.jp/koukai/shingikai/kihonmondai/001/005.pdf",
+      "publisher": "日本商工会議所",
+      "date": "2024-08"
+    }
+  },
+  {
+    "id": "term-988",
+    "kind": "term",
+    "title": "持続化補助金は商工会と二人三脚",
+    "summary": "小規模事業者持続化補助金は、商工会・商工会議所の伴走支援を受けながら経営者が作った経営計画に沿って、販路開拓や業務効率化に取り組む費用を補助する制度。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "補助金でホームページを作る前に決めること",
+    "source": {
+      "title": "小規模事業者持続化補助金のご案内",
+      "url": "https://seisansei.smrj.go.jp/subsidy_info/sustainability_subsidy.html",
+      "publisher": "中小機構 補助金活用ナビ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-989",
+    "kind": "term",
+    "title": "商工会地区と商工会議所地区で窓口が違う",
+    "summary": "中小企業庁の資料では、持続化補助金の窓口は商工会の地域なら全国商工会連合会、商工会議所の地域なら日本商工会議所と分かれる。対象経費の例に看板・HP作成・チラシがある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "小規模事業者持続化補助金（予算資料）",
+      "url": "https://www.chusho.meti.go.jp/koukai/yosan/2019/190314yosan16.pdf",
+      "publisher": "中小企業庁",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "term-990",
+    "kind": "term",
+    "title": "商工会の会員のうち製造業は13％",
+    "summary": "国の小委員会資料（2024年8月）で、全国商工会連合会のデータとして商工会会員の業種構成のうち製造業は13％と示されている。町工場や食品製造も会員に多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "基本問題小委員会 資料",
+      "url": "https://www.chusho.meti.go.jp/koukai/shingikai/kihonmondai/001/004.pdf",
+      "publisher": "中小企業政策審議会",
+      "date": "2024-08"
+    }
+  },
+  {
+    "id": "success-1613",
+    "kind": "success",
+    "title": "燕三条で共同・協業型の持続化補助金",
+    "summary": "中小機構が持続化補助金の事例として紹介した燕商工会議所の取り組みでは、製造業が集まる燕三条地域で、展示会などのマッチングと共同・協業型の補助金を組み合わせた。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "産地の仲間と一緒に展示会に出る利点",
+    "source": {
+      "title": "小規模事業者持続化補助金の活用事例（中小機構紹介）",
+      "url": "https://sogyotecho.jp/news/20251217jizokuka/",
+      "publisher": "創業手帳",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "buyer-831",
+    "kind": "buyer",
+    "title": "伴走計画に沿った商談会出展を県が補助",
+    "summary": "宮城県は、商工会などの伴走型支援計画に基づく販路開拓として、商談会や展示会の出展費用を補助する制度を設けている（補助率1/2、上限は1事業者10万円と県が案内）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "小規模事業者に対する伴走型支援について",
+      "url": "https://www.pref.miyagi.jp/soshiki/chukisi/h30syoukibo-bansou.html",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-959",
+    "kind": "trend",
+    "official": true,
+    "title": "支援員が展示会のフォローまで学ぶ研修",
+    "summary": "日本商工会議所の活用事例として、都城商工会議所の職員研修が紹介された。課題把握から販路開拓、展示会出展、出展後のフォローまでを伴走支援として学ぶ内容。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "都城商工会議所の伴走型支援力向上研修",
+      "url": "https://prtimes.jp/main/html/rd/p/000000023.000044709.html",
+      "publisher": "PR TIMES",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-960",
+    "kind": "trend",
+    "official": true,
+    "title": "経営発達支援計画にIT販路拡大が定番",
+    "summary": "岡山県の真庭商工会の経営発達支援計画（2025〜2030年度）は、地域の商品を域外へ発信するITツールを使った需要開拓と、首都圏の大型展示商談会への出展支援を掲げる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "真庭商工会 経営発達支援計画",
+      "url": "https://www.chugoku.meti.go.jp/r7fy/topic/keiei/pdf/k-okayama11.pdf",
+      "publisher": "中国経済産業局",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-961",
+    "kind": "trend",
+    "official": true,
+    "title": "ブランド力・デジタル化・需要開拓を目標に",
+    "summary": "鳥取市東商工会の経営発達支援計画（2025〜2030年度）は、ブランド力の向上、デジタル化による生産性向上、幅広い需要開拓の支援を目標にし、製造業の課題にも触れている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "鳥取市東商工会 経営発達支援計画",
+      "url": "https://www.chugoku.meti.go.jp/r7fy/topic/keiei/pdf/k-tottori01.pdf",
+      "publisher": "中国経済産業局",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-991",
+    "kind": "term",
+    "title": "経営発達支援計画とは",
+    "summary": "経営発達支援計画は、商工会・商工会議所が地域の小規模事業者をどう支えるかを5年単位でまとめ国が認定する計画。販路開拓やSNS・EC活用の支援が多く盛り込まれる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "経営発達支援計画（山口県の商工会）",
+      "url": "https://yamaguchi-shokokai.or.jp/wps/wp-content/uploads/2016/04/69b21ad7b770b3e4c96b8e94bf6997b5.pdf",
+      "publisher": "山口県商工会連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-962",
+    "kind": "trend",
+    "official": true,
+    "title": "EC掲載事業者数を商工会の目標に",
+    "summary": "大分県の杵築市商工会の経営発達支援計画は、SNS・予約・EC・会計など基本的なデジタル導入支援を続け、EC掲載・オンライン販売の事業者数を指標に売上15〜30％増を目標とする。",
+    "industries": [
+      "食品製造",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "杵築市商工会 経営発達支援計画",
+      "url": "https://www.kyushu.meti.go.jp/seisaku/chusho/shokibo/44-07.pdf",
+      "publisher": "九州経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1614",
+    "kind": "success",
+    "title": "食品製造でパッケージ刷新とネット販売指導",
+    "summary": "岐阜県の商工会の事例で、食品製造の事業者に経営指導員が計画づくりと補助金申請を支援し、パッケージ刷新や充填機導入、専門家によるネット販売・SNS指導を行い、商品が賞を受けた。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "パッケージを変えて売れ方が変わった話",
+    "source": {
+      "title": "支援事例詳細（東白川村商工会）",
+      "url": "https://www.gifushoko.or.jp/higashishirakawa/business/cace/cacedetail/?newsnum=1133488",
+      "publisher": "東白川村商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1615",
+    "kind": "success",
+    "title": "価格転嫁できるブランディングを学ぶ",
+    "summary": "岐阜県の商工会の食品製造の事例では、専門家派遣で値段を上げても選ばれるブランディングと販売価格の決め方を指導し、商談会へのエントリーも支援した。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "安売りしないための商品の伝え方",
+    "source": {
+      "title": "支援事例詳細（東白川村商工会）",
+      "url": "https://www.gifushoko.or.jp/higashishirakawa/business/cace/cacedetail/?newsnum=1133488",
+      "publisher": "東白川村商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1616",
+    "kind": "success",
+    "title": "食品OEM工場を補助金と融資で立ち上げ",
+    "summary": "商工会の事例で、栄養補助食品を作る小さな事業者がOEM用の工場建設を目指し、ものづくり補助金の申請と計画づくりを支援され、融資で資金を確保。衛生管理も専門家から学んだ。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "OEMを頼む前に知りたい工場の衛生管理",
+    "source": {
+      "title": "商工会の支援事例詳細（奥浜名湖商工会）",
+      "url": "https://www.gifushoko.or.jp/dear_all/case/cacedetail/?newsnum=834218",
+      "publisher": "奥浜名湖商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1617",
+    "kind": "success",
+    "title": "革製品工房が自社HPとECで信頼を得る",
+    "summary": "岐阜県の商工会の事例で、革製品の製造事業者が持続化補助金で自社HPとECサイトを作った。HPを見て来店した客がECで注文するようになり、会社の信頼性も上がったという。",
+    "industries": [
+      "繊維",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工房がHPを作って変わったこと",
+    "source": {
+      "title": "支援事例詳細（北方町商工会）",
+      "url": "https://www.gifushoko.or.jp/kitagata/dear_all/case/cacedetail/?newsnum=1122935",
+      "publisher": "北方町商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1618",
+    "kind": "success",
+    "title": "革漉き機の導入で制作時間を短縮",
+    "summary": "同じ岐阜県の商工会の事例で、革製品の事業者は持続化補助金で工業用の革漉き機も入れ、制作時間を短くした。Webでの発信と生産体制を一緒に整えた例。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "支援事例詳細（北方町商工会）",
+      "url": "https://www.gifushoko.or.jp/kitagata/dear_all/case/cacedetail/?newsnum=1122935",
+      "publisher": "北方町商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1619",
+    "kind": "success",
+    "title": "木製家具の内製化で原価と納期を改善",
+    "summary": "岐阜県の商工会の事例で、移住して木製家具を作る事業者が計画づくりの支援を受け、旋盤加工機を入れて端材を使った新商品と内製化を進め、原価と納期を改善した。展示会出展も支援。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "端材から生まれた新商品の話",
+    "source": {
+      "title": "支援事例詳細（山県市商工会）",
+      "url": "https://www.gifushoko.or.jp/yamagata/business/cace/cacedetail/?newsnum=1457709",
+      "publisher": "山県市商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-758",
+    "kind": "pain",
+    "title": "材料・電気代の値上がりで利益が圧迫",
+    "summary": "岐阜県の商工会の木工の事例では、原材料や電気料金の値上がりが続き利益が圧迫されている状況が出発点だった。設備導入と内製化で対応を図った。",
+    "industries": [
+      "木工",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "支援事例詳細（山県市商工会）",
+      "url": "https://www.gifushoko.or.jp/yamagata/business/cace/cacedetail/?newsnum=1457709",
+      "publisher": "山県市商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1620",
+    "kind": "success",
+    "title": "縫製業が新たな業務獲得で売上アップ",
+    "summary": "岐阜県の山県市商工会の支援事例一覧に、婦人服の縫製業が新しい縫製業務の獲得と設備導入、新しい働く環境づくりで売上を伸ばした事例が載っている。製本業の事例もある。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商工会の支援事例（山県市商工会）",
+      "url": "https://www.gifushoko.or.jp/yamagata/dear_all/case/",
+      "publisher": "山県市商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1621",
+    "kind": "success",
+    "title": "製缶・家具施工の会社の販路開拓を支援",
+    "summary": "岐阜県の養老町商工会の事例で、大型の製缶やオフィス家具の設計・施工をする会社の販路開拓と設備投資を支援した。設計から施工までできることが強みになる。",
+    "industries": [
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "設計から施工まで一社で頼める利点",
+    "source": {
+      "title": "支援事例詳細（養老町商工会）",
+      "url": "https://www.gifushoko.or.jp/yourou/dear_all/case/cacedetail/?newsnum=831864",
+      "publisher": "養老町商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1622",
+    "kind": "success",
+    "title": "2週間のWeb広告で問い合わせ3件",
+    "summary": "岐阜県の海津市商工会の事例で、木製家具の事業者が小物から高単価の家具へ軸足を移す計画を作った。商工会によると約2週間のWeb広告でHP閲覧43件、問い合わせ3件があった。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "高い家具を選ぶ人が見るページとは",
+    "source": {
+      "title": "支援事例詳細（海津市商工会）",
+      "url": "https://www.gifushoko.or.jp/kaizu/dear_all/case/cacedetail/?newsnum=833922",
+      "publisher": "海津市商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1623",
+    "kind": "success",
+    "title": "低単価の小物から高単価の家具へ",
+    "summary": "岐阜県の海津市商工会の事例では、販売単価の低い小物中心から高単価の家具に移る計画を立て、Web広告とSNSで発信。商工会はSNSのフォロワーも増えたと報告している。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "オーダー家具の値段の決まり方",
+    "source": {
+      "title": "支援事例詳細（海津市商工会）",
+      "url": "https://www.gifushoko.or.jp/kaizu/dear_all/case/cacedetail/?newsnum=833922",
+      "publisher": "海津市商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1624",
+    "kind": "success",
+    "title": "商談会中止をオンライン商談で補う",
+    "summary": "岐阜県の北方町商工会の事例で、コロナ禍で商談会が中止になった事業者をオンライン商談ツールで支援。商工会によると2件のバイヤーと商談し、1件成約、1件は継続となった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "オンライン商談で伝わる資料の作り方",
+    "source": {
+      "title": "支援事例詳細（北方町商工会・オンライン商談）",
+      "url": "https://www.gifushoko.or.jp/kitagata/dear_all/case/cacedetail/?newsnum=830460",
+      "publisher": "北方町商工会（岐阜県商工会連合会サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1625",
+    "kind": "success",
+    "title": "製本の技術を体験ワークショップに",
+    "summary": "岐阜県の商工会の事例で、製本業の事業者が技術を生かした体験型ワークショップと新商品で販路を開いた。持続化補助金の活用と事業継続力強化計画づくりも支援された。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製本の現場を体験できる会の始め方",
+    "source": {
+      "title": "製本技術を活かした体験型ワークショップと新商品開発による販路開拓支援",
+      "url": "https://www.gifushoko.or.jp/support_list/25-33/",
+      "publisher": "岐阜県商工会連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1626",
+    "kind": "success",
+    "title": "刺繍機導入と自社ECで新事業",
+    "summary": "岐阜県の商工会の事例で、衣料品の製造卸と刺繍を行う事業者に商工会が二段階の新事業を提案。持続化補助金で刺繍機を入れ、自社ECサイトや催事出店も組み合わせた。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "名入れ刺繍を頼む人が知りたいこと",
+    "source": {
+      "title": "岐阜県小規模事業者持続化補助金活用事例詳細（刺繍）",
+      "url": "https://www.gifushoko.or.jp/business/cacegifu/cacegifudetail/?newsnum=832124",
+      "publisher": "岐阜県商工会連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-759",
+    "kind": "pain",
+    "title": "BtoCの実績とノウハウが少ない",
+    "summary": "岐阜県の商工会の刺繍の事例では、これまで卸中心だったため、一般の人に直接売る実績や売り方のノウハウが少ないことが課題として書かれていた。",
+    "industries": [
+      "繊維",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "卸の工場が個人向けに売るときの壁",
+    "source": {
+      "title": "岐阜県小規模事業者持続化補助金活用事例詳細（刺繍）",
+      "url": "https://www.gifushoko.or.jp/business/cacegifu/cacegifudetail/?newsnum=832124",
+      "publisher": "岐阜県商工会連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1627",
+    "kind": "success",
+    "title": "商工会が製造業の展示会出展を支援",
+    "summary": "愛媛県商工会連合会の支援事例には、製造業のカテゴリがあり、令和7年度に展示会出展を支援した事例が載っている。各商工会からのレポートと会員の声をまとめている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "支援事例 製造業",
+      "url": "https://ehime-sci.jp/report_industry/manufacturing/",
+      "publisher": "愛媛県商工会連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1628",
+    "kind": "success",
+    "title": "自家製パンを生かした新メニューで販路拡大",
+    "summary": "愛媛県のしまなみ商工会の事例で、パン製造小売の店が自家製パンを使ったハンバーガーやスイーツの新メニューを開発・販売し、その販路拡大を商工会が支援した。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "支援事例（しまなみ商工会）",
+      "url": "https://ehime-sci.jp/report/5909/",
+      "publisher": "愛媛県商工会連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1629",
+    "kind": "success",
+    "title": "新しい売り方の成果を事例集に",
+    "summary": "愛媛県と愛媛県商工会連合会は、コロナ禍での新ビジネスモデル補助金の成果事例集を出している。商工会の支援で新しい売り方に挑んだ小規模事業者の取り組みをまとめた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "コロナ対応 新ビジネスモデル補助金 成果事例集",
+      "url": "https://ehime-sci.jp/web/wp-content/uploads/2022/12/jirei.pdf",
+      "publisher": "愛媛県・愛媛県商工会連合会",
+      "date": "2022-12"
+    }
+  },
+  {
+    "id": "buyer-832",
+    "kind": "buyer",
+    "title": "県ブースで大手と個別商談",
+    "summary": "愛媛県は大型展示会に県のブースを出し、大手企業との個別商談会で東予に集まる製造業などの技術力をアピールする事業を行う。出展企業の負担は1社10万円程度と県が案内している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "県のブースで展示会に初めて出た話",
+    "source": {
+      "title": "大型展示会ブース出展支援 要領",
+      "url": "https://www.pref.ehime.jp/uploaded/attachment/50128.pdf",
+      "publisher": "愛媛県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1630",
+    "kind": "success",
+    "title": "和菓子店の商品開発から衛生管理まで伴走",
+    "summary": "石川県商工会連合会の支援事例（2025年11月号）では、和菓子の製造販売店に商品開発から生産性向上、衛生管理まで商工会が伴走した様子を紹介している。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "衛生管理の工夫を発注者に伝える",
+    "source": {
+      "title": "行きます・聞きます・提案します そして伴走します～商工会の支援事例～",
+      "url": "https://shoko.or.jp/contents/common/196",
+      "publisher": "石川県商工会連合会",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "success-1631",
+    "kind": "success",
+    "title": "アドバイザー派遣で社内体制を強化",
+    "summary": "石川県商工会連合会の支援事例では、商工会のアドバイザー派遣事業を使って社内の体制を強化した会社の例も取り上げている。外部の専門家を気軽に呼べる仕組み。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "行きます・聞きます・提案します そして伴走します～商工会の支援事例～",
+      "url": "https://shoko.or.jp/contents/common/196",
+      "publisher": "石川県商工会連合会",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "term-992",
+    "kind": "term",
+    "title": "「行きます・聞きます・提案します」",
+    "summary": "商工会が掲げる支援の合言葉。経営指導員が事業所へ出向き、話を聞き、提案し、伴走する。石川県や東京都の商工会連合会のページでもこの言い方を使っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "行きます・聞きます・提案します そして伴走します～商工会の支援事例～",
+      "url": "https://shoko.or.jp/contents/common/196",
+      "publisher": "石川県商工会連合会",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "buyer-833",
+    "kind": "buyer",
+    "title": "商工会が地元の金属加工会社を紹介",
+    "summary": "兵庫県の丹波市商工会の事例で、製造現場で使う鉄製の棚や台を頼む先を探す相談に、商工会が市内の金属加工の会員を紹介。その後も取引が続いている。",
+    "industries": [
+      "金属加工",
+      "製缶"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場の棚や台を地元で特注する方法",
+    "source": {
+      "title": "商工会の活用方法・ビジネスマッチング【参考事例】",
+      "url": "https://tanba.or.jp/katsuyou/",
+      "publisher": "丹波市商工会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1632",
+    "kind": "success",
+    "title": "冷凍技術で食品の新しい販路",
+    "summary": "丹波市商工会の参考事例に、食品の製造販売の事業所が冷凍技術を生かして新たな販路を開いた例がある。小規模事業者持続化補助金も活用した。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "冷凍で遠くのお客に届ける工夫",
+    "source": {
+      "title": "商工会の活用方法・ビジネスマッチング【参考事例】",
+      "url": "https://tanba.or.jp/katsuyou/",
+      "publisher": "丹波市商工会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1633",
+    "kind": "success",
+    "title": "求人相談会で幹部候補を約2か月で採用",
+    "summary": "丹波市商工会の参考事例で、幹部候補の採用に困っていた製造業の会社が、商工会の求人個別相談会を使い約2か月で人を採用できた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場が幹部候補を採れた理由",
+    "source": {
+      "title": "商工会の活用方法・ビジネスマッチング【参考事例】",
+      "url": "https://tanba.or.jp/katsuyou/",
+      "publisher": "丹波市商工会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1634",
+    "kind": "success",
+    "title": "下請けから元請けへ、広報を支援",
+    "summary": "広島県の呉広域商工会の2024年10月の支援事例紹介では、元請けへの移行を目指す事業者の広報活動の支援を取り上げ、補助金申請も商工会が一緒に取り組むと伝えている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "元請けとして直接頼まれる会社になるには",
+    "source": {
+      "title": "経営支援事例のご紹介（2024年10月31日発行）",
+      "url": "https://www.kure-kouiki.jp/news/4720-2-2-2-2-2-2-2-2-2-2-3/",
+      "publisher": "呉広域商工会",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "success-1635",
+    "kind": "success",
+    "title": "マグネシウムダイカストの研磨で新分野開拓",
+    "summary": "全国商工会連合会の支援先進事例に、マグネシウムダイカストの研磨加工技術を開発して新分野の受注先を開いた事例が載っている。得意な加工を言葉にすると新しい客に届く。",
+    "industries": [
+      "表面処理",
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "マグネシウム部品の研磨で困ること",
+    "source": {
+      "title": "商工会の支援先進事例",
+      "url": "https://www.shokokai.or.jp/sensin/",
+      "publisher": "全国商工会連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1636",
+    "kind": "success",
+    "title": "設備と技術を入れ日本酒を自社製造へ",
+    "summary": "全国商工会連合会の先進事例（九州・沖縄）に、長崎県壱岐市の事業者が設備と技術を導入して日本酒を自社製造に切り替えた例が載っている。",
+    "industries": [
+      "酒・醸造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社で造るようになった酒の話",
+    "source": {
+      "title": "商工会の支援先進事例（九州・沖縄）",
+      "url": "https://www.shokokai.or.jp/sensin/kyu.html",
+      "publisher": "全国商工会連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-834",
+    "kind": "buyer",
+    "title": "作り手が売り込む逆の商談会",
+    "summary": "東京都商工会連合会が案内した東京商工会議所主催の商談会（2020年）は、発注側が募る通常の形と逆に、食品メーカーが自由に提案して売り込む形式だった。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "バイヤーに提案するときの準備",
+    "source": {
+      "title": "製造業販路回復応援事業！メーカー自由提案型商談会",
+      "url": "https://www.shokokai-tokyo.or.jp/6263",
+      "publisher": "東京都商工会連合会",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "buyer-835",
+    "kind": "buyer",
+    "title": "発注側の課題リストに手を挙げる商談会",
+    "summary": "東京商工会議所の全国ものづくり受発注商談会では、発注側の課題がリストになり、受注側は自社技術で応えられそうな案件に申し込む。発注側の指名制で、首都圏外の受注企業は無料。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "受発注商談会で指名される会社の特徴",
+    "source": {
+      "title": "東商の工業系ビジネスマッチングメニュー",
+      "url": "https://www.tokyo-cci.or.jp/market/industry/",
+      "publisher": "東京商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-836",
+    "kind": "buyer",
+    "title": "商談会は発注側にも効率的",
+    "summary": "東京商工会議所の事例集では、工業系ものづくり企業の受発注商談会を成功事例として紹介し、商談会という出会い方が発注する側・受ける側の双方にとって効率がよいとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商談会のアプローチは受発注の双方にとって効率的（成功事例3）",
+      "url": "https://www.tokyo-cci.or.jp/page.jsp?id=1205026",
+      "publisher": "東京商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-963",
+    "kind": "trend",
+    "official": true,
+    "title": "全国連が販路開拓6施策を展開",
+    "summary": "ネットショップ担当者フォーラム（2026年6月）によると、全国商工会連合会はポップアップストア、EC活用、インバウンド誘客、大規模展示販売会などで小規模事業者を伴走支援する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ポップアップストア、EC活用、大規模展示販売会などで伴走支援する全国商工会連合会の事業",
+      "url": "https://netshop.impress.co.jp/n/2026/06/04/16172",
+      "publisher": "ネットショップ担当者フォーラム",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-964",
+    "kind": "trend",
+    "official": true,
+    "title": "ニッポン全国物産展に200事業者以上",
+    "summary": "J-Net21によると、全国商工会連合会の「ニッポン全国物産展2025」は2025年11月に池袋で開かれ、47都道府県の200以上の事業者がご当地の食品や名産品を出した。",
+    "industries": [
+      "食品製造",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "「ニッポン全国物産展2025」11月21日開幕",
+      "url": "https://j-net21.smrj.go.jp/news/inf5ia0000007ibk.html",
+      "publisher": "J-Net21（全国商工会連合会）",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "term-993",
+    "kind": "term",
+    "title": "共同・協業販路開拓支援補助金",
+    "summary": "商工会など支援機関が展示会・商談会・催事販売を開く取り組みを支える補助金で、全国商工会連合会が公募する。事業者が直接申請するものではなく、地元商工会経由で出展機会になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "「共同・協業販路開拓支援補助金」の第9回公募",
+      "url": "https://j-net21.smrj.go.jp/news/biufem00000023im.html",
+      "publisher": "J-Net21（全国商工会連合会）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-837",
+    "kind": "buyer",
+    "title": "商工会主催の展示会・商談会が出会いの場",
+    "summary": "全国商工会連合会は支援機関が開く展示会・商談会を補助している（J-Net21）。小さな工場にとって、商工会の商談会はバイヤーと会う入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "商工会の商談会に出て分かったこと",
+    "source": {
+      "title": "支援機関の展示会・商談会開催などを支援",
+      "url": "https://j-net21.smrj.go.jp/news/hgc8pd0000000skd.html",
+      "publisher": "J-Net21（全国商工会連合会）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-965",
+    "kind": "trend",
+    "official": true,
+    "title": "県が展示商談会の商談件数を点検",
+    "summary": "長野県は、ものづくり産業の振興に国際的で一定規模の展示商談会への支援が必要とし、商談件数などの成果目標の達成状況を事業改善シートで点検している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "事業改善シート（展示商談会支援）",
+      "url": "https://www.pref.nagano.lg.jp/seisaku-hyoka/kensei/soshiki/jigyokaizen/h25hyoka/documents/060312.pdf",
+      "publisher": "長野県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1637",
+    "kind": "success",
+    "title": "陶器の工房がHPを外国語対応し海外へ",
+    "summary": "東北経済産業局の岩手県の持続化補助金事例集（2018年）に、陶器製造の事業者がホームページを外国語に対応させて海外市場の販路を開いた事例がある。",
+    "industries": [
+      "ガラス・セラミック"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外のお客向けにHPで伝えること",
+    "source": {
+      "title": "小規模事業者持続化補助金 事例集（岩手県）",
+      "url": "https://www.tohoku.meti.go.jp/s_cyusyo/topics/pdf/180308_iwate.pdf",
+      "publisher": "東北経済産業局",
+      "date": "2018-03"
+    }
+  },
+  {
+    "id": "term-994",
+    "kind": "term",
+    "title": "支援員向けの事例集で工夫を学べる",
+    "summary": "東北経済産業局の福島県の持続化補助金事例集は、商工会・商工会議所の経営指導員向けに、小規模事業者の売上向上や販路拡大の工夫、補助金の使い方、業種別の取り組みを集めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "小規模事業者持続化補助金 事例集（福島県）",
+      "url": "https://www.tohoku.meti.go.jp/s_cyusyo/topics/pdf/fukushima_jirei_all.pdf",
+      "publisher": "東北経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1638",
+    "kind": "success",
+    "title": "HPとSNSを組み合わせて販路開拓",
+    "summary": "東北経済産業局の持続化補助金活用事例集（令和元〜2年度実施分）には、ホームページとSNSを組み合わせて新しい販路を開き、売上を増やす計画の事例が載っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "小規模事業者持続化補助金 活用事例集 令和元年度〜令和2年度実施分",
+      "url": "https://www.tohoku.meti.go.jp/s_cyusyo/topics/pdf/21_casestudy.pdf",
+      "publisher": "東北経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1639",
+    "kind": "success",
+    "title": "HPリニューアルとネットショップで販路開拓",
+    "summary": "大阪府の支援施策の活用事例集（2018年）には、ホームページのリニューアルやネットショップの構築で販路を開いた中小企業の取り組みが含まれている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "大阪府中小企業支援室 主な支援施策の活用事例 CASE BOOK（平成30年）",
+      "url": "https://www.pref.osaka.lg.jp/documents/35430/h29jirei.pdf",
+      "publisher": "大阪府",
+      "date": "2018-04"
+    }
+  },
+  {
+    "id": "success-1640",
+    "kind": "success",
+    "title": "展示会で商談約250社、成立45件",
+    "summary": "大阪府の支援施策の活用事例集（2016年）では、展示会で継続的な引き合いを得た例として、府によると商談件数約250社、商談成立45件となった事例を紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会のあと引き合いが続く仕掛け",
+    "source": {
+      "title": "大阪府中小企業支援室 主な支援施策の活用事例 CASE BOOK（平成28年）",
+      "url": "https://www.pref.osaka.lg.jp/documents/35430/170116jirei.pdf",
+      "publisher": "大阪府",
+      "date": "2016-11"
+    }
+  },
+  {
+    "id": "success-1641",
+    "kind": "success",
+    "title": "商談会とメディア広報で販路拡大",
+    "summary": "仙台商工会議所の小規模事業者サポート事例集（2023年）は、ものづくりを含む事業者に、商談会の開催やメディアへの広報支援、新商品の開発支援で売上・販路拡大を支えた例を集めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "地元紙に取り上げられた後にしたこと",
+    "source": {
+      "title": "小規模事業者サポート事例集",
+      "url": "https://www.sendaicci.or.jp/share/pdf/keiei_support2023.pdf",
+      "publisher": "仙台商工会議所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "success-1642",
+    "kind": "success",
+    "title": "工芸品の多言語ECで海外小売へ",
+    "summary": "ジェトロ富山の優良事例集（2023年3月）で、工芸品の製造事業者が県のオンライン海外販路開拓の伴走支援で翻訳ソフトを入れ、英語・中国語対応の海外向けECサイトを開いた例がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工芸品を海外の人に説明するコツ",
+    "source": {
+      "title": "令和4年度富山県オンライン海外販路開拓伴走支援モデル事業 優良事例集",
+      "url": "https://www.pref.toyama.jp/documents/26663/r4yuryojireishu.pdf",
+      "publisher": "ジェトロ富山",
+      "date": "2023-03"
+    }
+  },
+  {
+    "id": "trend-966",
+    "kind": "trend",
+    "official": true,
+    "title": "伝統工芸は百貨店依存からECと体験へ",
+    "summary": "経済産業省の2026年3月の資料では、伝統的工芸品の販路として、百貨店に頼る形から抜け出すECや、ワークショップで職人の思いを伝える取り組みを紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "職人の物語を伝えるページの作り方",
+    "source": {
+      "title": "第15回エンタメ・クリエイティブ政策研究会 伝統的工芸品（事務局資料）",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/entertainment_creative/pdf/015_03_00.pdf",
+      "publisher": "経済産業省",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "success-1643",
+    "kind": "success",
+    "title": "刃物工房の後継者が若手職人を採用",
+    "summary": "中小機構の事例（2025年2月）で、100年続く伝統の刃物の工房の後継者が商工会の経営指導員の伴走で経営革新に挑み、全国から若手職人を雇って生産力を上げた。",
+    "industries": [
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手職人が入りたくなる工房の発信",
+    "source": {
+      "title": "地域伝統工芸の事業承継に補助金を活用、生産性向上と販路開拓に挑戦",
+      "url": "https://seisansei.smrj.go.jp/case/20250220.html",
+      "publisher": "中小機構 補助金活用ナビ",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "buyer-838",
+    "kind": "buyer",
+    "title": "道具にこだわる層に狙いを定める",
+    "summary": "同じ中小機構の刃物工房の事例では、「道具にこだわりを持つ」人を狙う客層に決めて販路開拓に挑んだ。誰に向けて書くかを決めると発信がぶれない。",
+    "industries": [
+      "刃物・工具"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "こだわりの客が刃物を選ぶ決め手",
+    "source": {
+      "title": "地域伝統工芸の事業承継に補助金を活用、生産性向上と販路開拓に挑戦",
+      "url": "https://seisansei.smrj.go.jp/case/20250220.html",
+      "publisher": "中小機構 補助金活用ナビ",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "pain-760",
+    "kind": "pain",
+    "title": "若手の作り手は販路と人脈がない",
+    "summary": "総務省の資料では、伝統工芸の若い作り手は販売方法や人脈を持たず定着しにくいことが課題とされ、ベテランから売り方を学べる勉強会に市町村が補助する例がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "若手職人が自分で売る力をつけるには",
+    "source": {
+      "title": "伝統工芸を取り巻く現況と課題",
+      "url": "https://www.soumu.go.jp/main_content/000818483.pdf",
+      "publisher": "総務省",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1644",
+    "kind": "success",
+    "title": "展示商談会に初出展する事業者を伴走",
+    "summary": "山梨県の市川三郷町商工会の関わる発表で、展示商談会への出展が初めての事業者を含む4事業者を伴走支援し、農商工連携のマッチングフェアに送り出した。",
+    "industries": [
+      "食品製造",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "初めての商談会で用意したもの",
+    "source": {
+      "title": "「初めて市場に出る」3事業者を伴走支援 市川三郷町の4事業者が農商工連携マッチングフェアへ",
+      "url": "https://prtimes.jp/main/html/rd/p/000000011.000181546.html",
+      "publisher": "PR TIMES",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-839",
+    "kind": "buyer",
+    "title": "展示会の出展料を半額まで助成",
+    "summary": "柏商工会議所は展示会の出展料の2分の1以内、1事業所あたり年5万円を上限に助成し、新しく使う企業を優先する（令和8年度の案内）。装飾や設備工事は対象外。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "展示会の個別出展助成",
+      "url": "https://www.kashiwa-cci.or.jp/sales/exhibition/assistance",
+      "publisher": "柏商工会議所",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-840",
+    "kind": "buyer",
+    "title": "スタートアップの試作を町工場につなぐ",
+    "summary": "大阪商工会議所は2022年、町工場のネットワークを通じてスタートアップの試作開発と町工場を結ぶ「町工場×スタートアップ コネクト」を始めた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "スタートアップが試作を頼むときの流れ",
+    "source": {
+      "title": "「町工場×スタートアップ コネクト」事業概要",
+      "url": "https://www.osaka.cci.or.jp/Chousa_Kenkyuu_Iken/press/20220930press.pdf",
+      "publisher": "大阪商工会議所",
+      "date": "2022-09"
+    }
+  },
+  {
+    "id": "trend-967",
+    "kind": "trend",
+    "official": true,
+    "title": "デジタル化の入口はHPとSNSが最多",
+    "summary": "日本商工会議所が紹介した日本政策金融公庫の調査（2024年）では、デジタル化に取り組む企業のツール導入で「ホームページ、SNS」が88.5％と最も多かった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "「中小企業のデジタル化に関する調査」の結果を公表（日本公庫）",
+      "url": "https://www.jcci.or.jp/news/news/2024/0605173117.html",
+      "publisher": "日本商工会議所",
+      "date": "2024-06"
+    }
+  },
+  {
+    "id": "pain-761",
+    "kind": "pain",
+    "title": "SNSを使っていない小規模事業者が多い",
+    "summary": "高知県中小企業団体中央会の2021年のアンケートでは、小規模事業者のSNS活用について「活用していない」が59.1％で最も多かった。発信を始められていない会社が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "SNSを始める前にブログを整える理由",
+    "source": {
+      "title": "令和2年度 小規模事業者・中小企業者のIT活用についての取り組みアンケート報告書",
+      "url": "https://www.kbiz.or.jp/kochichuokai/wp-content/uploads/2021/03/6f3bd552274ccc8757c373d19d996ceb.pdf",
+      "publisher": "高知県中小企業団体中央会",
+      "date": "2021-02"
+    }
+  },
+  {
+    "id": "trend-968",
+    "kind": "trend",
+    "official": true,
+    "title": "支援員がものづくり現場に出向",
+    "summary": "J-Net21（2026年7月）は、各務原商工会議所の職員がものづくりの現場に出向き、その経験を事業者支援に生かす取り組みを紹介している。現場を知る支援員が増えている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "モノづくりの現場に出向 経験を事業者支援に活かす「各務原商工会議所」",
+      "url": "https://j-net21.smrj.go.jp/special/business_support/20260703.html",
+      "publisher": "J-Net21",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "term-995",
+    "kind": "term",
+    "title": "事業協同組合で何ができるか",
+    "summary": "中小企業が集まって作る組合では、共同受注・共同購買・共同宣伝・共同展示会・人材育成などを一緒に行える。全国中央会のガイドブックが、組合でできる共同事業の型を案内している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "組合加盟で何が変わるかを伝える",
+    "source": {
+      "title": "中小企業組合ガイドブック 2022-2023",
+      "url": "https://www.chuokai.or.jp/contents/seido/guidebook/2022-2023/guidebook2022-2023.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "term-996",
+    "kind": "term",
+    "title": "官公需適格組合と共同受注",
+    "summary": "官公庁の仕事を組合として共同で受けるしくみ。全国中央会は、官公需の受注確保に工夫している事業協同組合の成功事例を報告書にまとめている。製造業では印刷や看板などで使われる。",
+    "industries": [
+      "印刷",
+      "看板・サイン",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "組合で役所の仕事を受ける流れの紹介",
+    "source": {
+      "title": "事業協同組合における官公需共同受注 成功事例",
+      "url": "https://www.chuokai.or.jp/archive/kankouju/pdf/2019houkokusyo.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2020-03"
+    }
+  },
+  {
+    "id": "term-997",
+    "kind": "term",
+    "title": "情報連絡員報告とは",
+    "summary": "都道府県中央会が置く情報連絡員（組合の役職員、全国で約2,500名）が毎月、業界の景況を報告するしくみ。全国中央会が集計し、業種ごとの声として公表している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "政労使の意見交換 資料（全国中央会）",
+      "url": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/seiroushi/dai2/shiryou4.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "term-998",
+    "kind": "term",
+    "title": "景況DIの読み方",
+    "summary": "「良くなった」と答えた割合から「悪くなった」割合を引いた指数。中央会の月次景況調査では製造業・非製造業別に、売上高・収益・販売価格・雇用などのDIを出している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "景況DIを自社のブログで解説する",
+    "source": {
+      "title": "1月の中小企業月次景況調査",
+      "url": "https://www.chuokai.or.jp/index.php/13574/",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "term-999",
+    "kind": "term",
+    "title": "中小企業組合等活路開拓事業",
+    "summary": "組合が専門家を交えた委員会で市場調査や試作、ビジョン作りを行い、課題を解決する補助事業。展示会出展の類型もあり、補助率は経費の10分の6以内と国の組合ガイドブックで説明されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "組合で展示会に出る費用の工面",
+    "source": {
+      "title": "中小企業組合ガイドブック",
+      "url": "https://www.chusho.meti.go.jp/keiei/kakushin/pamphlet/kumiaiguide.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1000",
+    "kind": "term",
+    "title": "課題対応支援事業とは",
+    "summary": "3者以上の中小企業が連携し、組合などの単位で共同の取組みを行うときに経費の一部を補助する制度。生産性向上、取引力強化、海外展開、技術継承などがテーマとして挙げられている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業組合等課題対応支援事業 概要",
+      "url": "https://www.kbiz.or.jp/kochichuokai/wp-content/uploads/2019/04/2019-1_kadaitaiou-gaiyou.pdf",
+      "publisher": "高知県中小企業団体中央会",
+      "date": "2019-04"
+    }
+  },
+  {
+    "id": "term-1001",
+    "kind": "term",
+    "title": "ものづくり補助金の地域事務局",
+    "summary": "ものづくり補助金では都道府県中央会が地域事務局となり、公募から採択、交付決定、実績報告、事業化状況のフォローアップまで一貫して支援してきたと京都府中央会が説明している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "平成29年度補正 ものづくり補助金 成果事例集",
+      "url": "https://www.chuokai-kyoto.or.jp/whatsnew/20200826_H30%20mono.pdf",
+      "publisher": "京都府中小企業団体中央会",
+      "date": "2018-10"
+    }
+  },
+  {
+    "id": "term-1002",
+    "kind": "term",
+    "title": "事業化状況報告とは",
+    "summary": "ものづくり補助金は終わった後も、補助事業の成果が売上につながったかを数年間報告する。中央会のグッドプラクティス集は、終了後5年以内に市場取引で売上を出し、事業として定着させる過程を重視している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "補助金の後の5年をどう過ごしたか",
+    "source": {
+      "title": "グッドプラクティス集（2024年度）",
+      "url": "https://portal.monodukuri-hojo.jp/pdf/goodpractice2024_a4.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-1003",
+    "kind": "term",
+    "title": "グッドプラクティス集とは",
+    "summary": "全国中央会が、ものづくり補助金の成果を販路開拓や売上増につなげた事業者に聞き取りし、成功要因と課題の越え方をまとめた事例集。年度ごとに公開されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ものづくり補助金 グッドプラクティス集（2025年度）",
+      "url": "https://portal.monodukuri-hojo.jp/pdf/goodpractice2025_20260422.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "term-1004",
+    "kind": "term",
+    "title": "ものづくり補助金の成果事例検索",
+    "summary": "全国中央会のポータルサイトには、補助事業者の成果事例を検索できるページがある。業種や地域で探せ、同業の取り組み方を知る手がかりになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "同業の補助金事例から記事ネタを拾う",
+    "source": {
+      "title": "成果事例検索 - ものづくり補助金",
+      "url": "https://portal.monodukuri-hojo.jp/jireisearch.aspx",
+      "publisher": "全国中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1005",
+    "kind": "term",
+    "title": "先進組合事例抄録とは",
+    "summary": "全国中央会が毎年まとめる、がんばる組合の事例集。令和7年度版は「生産性向上・省力化・デジタル化」「地域・社会・業界の課題解決」「特徴ある活動」のテーマ別に分けて紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "先進組合事例抄録 令和7年度",
+      "url": "https://www.chuokai.or.jp/Contents/jirei/senshinkumiai/2025/R7senshin.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "term-1006",
+    "kind": "term",
+    "title": "組合事例検索システム",
+    "summary": "先進組合事例抄録に載った事例は、全国中央会のホームページの事例検索で、キーワードや業種から探せると令和4年度版に書かれている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "先進組合事例抄録 令和4年度",
+      "url": "https://www.chuokai.or.jp/Contents/jirei/senshinkumiai/2022/R4senshin.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2023-02"
+    }
+  },
+  {
+    "id": "term-1007",
+    "kind": "term",
+    "title": "新ものづくり・新サービス展",
+    "summary": "全国中央会が主催する展示商談会。ものづくり補助金で新製品や技術を開発した中小企業が出展し、新しい顧客・販路の開拓を目指す。東京ビッグサイトなどで開かれている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示商談会に出た感想を記事にする",
+    "source": {
+      "title": "「もの補助」活用の成果が一堂に「新ものづくり・新サービス展」開幕",
+      "url": "https://j-net21.smrj.go.jp/news/biufem000001r699.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-1008",
+    "kind": "term",
+    "title": "組合の青年部とは",
+    "summary": "組合の中で若手経営者や後継者が集まる部会。全国中央会は、青年部の研修会がきっかけで事業継続計画づくりが進んだ例などを国の研究会で紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "組合の青年部等による取組みのご紹介",
+      "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/keizokuryoku/002/005.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "trend-969",
+    "kind": "trend",
+    "official": true,
+    "title": "製造業は人手不足が深刻化（中央会）",
+    "summary": "全国中央会の月次景況調査（2026年1月末）では、製造業の景況DIは小幅に改善したが、原材料価格・人件費の上昇に加えて人手不足の影響が深刻化しているとした。12業種中9業種で改善。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "人手不足の中で納期を守る工夫",
+    "source": {
+      "title": "1月の中小企業月次景況調査",
+      "url": "https://www.chuokai.or.jp/index.php/13574/",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-970",
+    "kind": "trend",
+    "official": true,
+    "title": "取適法が価格転嫁の追い風に",
+    "summary": "全国中央会は2026年1月の月次景況で、製造業の改善の背景として海外需要と、価格転嫁を後押しする取適法の施行を挙げた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "取適法で値上げ交渉はどう変わったか",
+    "source": {
+      "title": "1月の中小企業月次景況調査",
+      "url": "https://www.chuokai.or.jp/index.php/13574/",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-971",
+    "kind": "trend",
+    "official": true,
+    "title": "コスト高に転嫁が追いつかず",
+    "summary": "全国中央会の月次景況調査（2025年4月末）では、製造業でコスト上昇に価格転嫁が追いつかない状況が続き、人手不足と米国関税への警戒感も景況感を押し下げたとした。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "4月の中小企業月次景況調査",
+      "url": "https://www.chuokai.or.jp/index.php/12099/",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2025-05"
+    }
+  },
+  {
+    "id": "trend-972",
+    "kind": "trend",
+    "official": true,
+    "title": "材料・労務費高に価格改定が遅れる",
+    "summary": "全国中央会の情報連絡員報告（2026年1月分）では、製造業の一部で材料費・労務費の上昇に価格改定が追いつかず、製造部門の人材不足も深刻さを増しているとの声があった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "値上げをお願いする理由をどう伝えるか",
+    "source": {
+      "title": "情報連絡員報告（令和8年1月分）",
+      "url": "https://www.chuokai.or.jp/images/2026/02/hou2601.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-973",
+    "kind": "trend",
+    "official": true,
+    "title": "めっきは貴金属高で転嫁が難しい",
+    "summary": "全国中央会の情報連絡員報告（2026年1月分）に、めっきに使う金・銀・銅・ニッケルの価格が高く、価格転嫁も難しいという業界の声が載った。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "めっき単価が上がる理由を発注者に説明",
+    "source": {
+      "title": "情報連絡員報告（令和8年1月分）",
+      "url": "https://www.chuokai.or.jp/images/2026/02/hou2601.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-974",
+    "kind": "trend",
+    "official": true,
+    "title": "鉄鋼・金属や印刷で売上減の月も",
+    "summary": "福岡市の会議資料（2025年8月）によると、中央会の情報連絡員報告5月分では、製造業のうち木材・木製品、印刷、鉄鋼・金属、電気機器で売上高が減り、収益が悪化した。",
+    "industries": [
+      "印刷",
+      "金属加工",
+      "木工",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業関係委員の意見",
+      "url": "https://www.city.fukuoka.lg.jp/keizai/policy_mng/documents/03_20250826siryo3.pdf",
+      "publisher": "福岡市",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "trend-975",
+    "kind": "trend",
+    "official": true,
+    "title": "景況は一進一退（中央会）",
+    "summary": "全国中央会の2026年3月の資料では、情報連絡員調査で1月の製造業DIは小幅改善、非製造業は低下。物価上昇による消費低迷を心配する声が多く、景況感は一進一退とされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "政労使の意見交換 資料（全国中央会）",
+      "url": "https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/seiroushi/dai2/shiryou4.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-976",
+    "kind": "trend",
+    "official": true,
+    "title": "静岡中央会：製造業6指標が悪化",
+    "summary": "静岡県中央会の景況調査（2026年2月分、回答58名）では、製造業で在庫数量と雇用人員の2指標が改善し、残る6指標が悪化。コスト高の継続と外部環境の不安定さが要因とされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "景況調査 総括（2026年2月）",
+      "url": "https://www.siz-sba.or.jp/s/jigyou/pdf/soukatsu_202602.pdf",
+      "publisher": "静岡県中小企業団体中央会",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-977",
+    "kind": "trend",
+    "official": true,
+    "title": "販売価格・取引条件はまだ弱い",
+    "summary": "静岡県中央会の景況調査（2026年1月分）では、製造業で売上高や収益は改善したが、販売価格や取引条件には弱さが残り、本格回復とは言いにくいとまとめた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "景況調査 総括（2026年1月）",
+      "url": "https://www.siz-sba.or.jp/s/jigyou/pdf/soukatsu_202601.pdf",
+      "publisher": "静岡県中小企業団体中央会",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-978",
+    "kind": "trend",
+    "official": true,
+    "title": "包装資材が高騰し納期も長く",
+    "summary": "長崎県中央会の情報連絡員情報（2026年4月期、48名）では、製造業で包装資材の高騰と納期の長期化が収益の心配として挙がった。オフセット印刷は売上・販売価格がやや上向き。",
+    "industries": [
+      "食品製造",
+      "パッケージ",
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "資材高で値上げする時の伝え方",
+    "source": {
+      "title": "2026年4月期 情報連絡員情報",
+      "url": "https://www.nagasaki-chuokai.or.jp/management/renrakuin/2026_04",
+      "publisher": "長崎県中小企業団体中央会",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "trend-979",
+    "kind": "trend",
+    "official": true,
+    "title": "印刷業の景況DIは厳しいまま",
+    "summary": "日本印刷産業連合会の2025年の年次報告は、全国中央会の月次景況調査を引き、印刷業の景況感・売上・収益・資金繰りの各DIが依然として厳しいとまとめている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "印刷産業Annually Report Vol.4 2025年",
+      "url": "https://jfpi.or.jp/files/user/pdf/Annually_Report_Vol4.pdf?20250919=",
+      "publisher": "日本印刷産業連合会",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "trend-980",
+    "kind": "trend",
+    "official": true,
+    "title": "経営の悩み1位は人材の質不足",
+    "summary": "全国中央会の労働事情実態調査（2025年7月実施、15,219事業所）では、経営上の障害で「人材不足（質の不足）」が半数を超えてトップ。量の不足と人件費の増大も3割以上が選んだ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "人が育つ職場を求職者に見せる記事",
+    "source": {
+      "title": "全国中央会 提出資料（労働市場改革分科会）",
+      "url": "https://www.mhlw.go.jp/content/12602000/001693774.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "trend-981",
+    "kind": "trend",
+    "official": true,
+    "title": "転嫁できたのは約5割（中央会）",
+    "summary": "全国中央会の2024年10月の発表では、従業員300人以下の事業所で価格引上げ（転嫁）を実現した割合は約5割にとどまり、転嫁率10〜30%未満の事業所が約4割と最も多かった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "値上げ交渉の準備をどう進めたか",
+    "source": {
+      "title": "ニュースリリース 中小企業労働事情実態調査",
+      "url": "https://www.chuokai.or.jp/images/2024/09/20241001_R6roudougaiyou.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "trend-982",
+    "kind": "trend",
+    "official": true,
+    "title": "山口：製造業はほぼ転嫁3割",
+    "summary": "山口県中央会の臨時調査（2024年2月公表）では、原材料費などの高騰分を「ほぼ転嫁できている」事業所が26%（前年22%）。業種別では製造業が30%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "価格転嫁及び賃上げに関する臨時調査",
+      "url": "https://axis.or.jp/wp-content/uploads/2024/02/R6.pdf",
+      "publisher": "山口県中小企業団体中央会",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "trend-983",
+    "kind": "trend",
+    "official": true,
+    "title": "転嫁と賃上げを毎年同じ形で調査",
+    "summary": "山口県中央会は2026年1月下旬、会員組合の組合員60事業所（製造業30）に価格転嫁と賃上げの状況を、前年と同時期・同内容で調べた。回答は56事業所。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "価格転嫁及び賃上げに関する調査",
+      "url": "https://axis.or.jp/wp-content/uploads/2026/02/e1946ca7b77405202c638cfcb2299a27-1.pdf",
+      "publisher": "山口県中小企業団体中央会",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-984",
+    "kind": "trend",
+    "official": true,
+    "title": "DXの壁は人材と予算",
+    "summary": "山口県中央会の調査（2025年3月公表）では、DX・デジタル化の課題に人材不足57.5%、予算確保の難しさ47.1%が多く挙がり、期待する効果は業務効率化が95.4%で最多だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "小さな工場のデジタル化の始め方",
+    "source": {
+      "title": "中小企業のDX・デジタル化推進に関する実態調査報告書",
+      "url": "https://axis.or.jp/wp-content/uploads/2025/03/dxresearch.pdf",
+      "publisher": "山口県中小企業団体中央会",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "trend-985",
+    "kind": "trend",
+    "official": true,
+    "title": "小さい会社ほどDXを不要と思う",
+    "summary": "山口県中央会のDX実態調査（2025年3月公表）では、従業員規模が小さいほどDX・デジタル化を「必要だと思う」割合が低かった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "小さな会社こそデジタルが効く場面",
+    "source": {
+      "title": "中小企業のDX・デジタル化推進に関する実態調査報告書",
+      "url": "https://axis.or.jp/wp-content/uploads/2025/03/dxresearch.pdf",
+      "publisher": "山口県中小企業団体中央会",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "trend-986",
+    "kind": "trend",
+    "official": true,
+    "title": "DXの相談相手がいない約6割",
+    "summary": "神奈川県中央会の調査（2023年10月報告、ものづくり補助金採択者など410件回答）では、約6割がDXについて相談できる人がいないと答え、相談先は外部コンサルが最多だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "DXを誰に相談したかを記事にする",
+    "source": {
+      "title": "中小企業デジタル化状況調査アンケート結果報告",
+      "url": "https://www.chuokai-kanagawa.or.jp/dx/wp-content/uploads/2024/01/%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%8C%96%E7%8A%B6%E6%B3%81%E8%AA%BF%E6%9F%BB%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E7%B5%90%E6%9E%9C.pdf",
+      "publisher": "神奈川県中小企業団体中央会",
+      "date": "2023-10"
+    }
+  },
+  {
+    "id": "trend-987",
+    "kind": "trend",
+    "official": true,
+    "title": "中小企業組合は全国約3.5万",
+    "summary": "山口県中央会によると、中小企業組合は全国で約35,000組合、県内に約450組合ある。人口減少やコロナ禍で組合を取り巻く環境が変わり、実態調査が行われている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和7年度地域中小企業組合実態調査ご協力のお願い",
+      "url": "https://axis.or.jp/info/21724.html",
+      "publisher": "山口県中小企業団体中央会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-988",
+    "kind": "trend",
+    "official": true,
+    "title": "地域の組合実態調査の結果",
+    "summary": "山口県中央会の会報（2026年2月）は、令和7年度の地域中小企業組合実態調査結果の概要を特集した。組合の現状と課題を知る資料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "令和7年度 地域中小企業組合実態調査結果の概要（会報）",
+      "url": "https://axis.or.jp/wp-content/uploads/2026/02/f6c6c27b209aca39037ad46d878dbed0.pdf",
+      "publisher": "山口県中小企業団体中央会",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-989",
+    "kind": "trend",
+    "official": true,
+    "title": "神奈川の労働事情は業種別に",
+    "summary": "神奈川県中央会の労働事情報告（2024年2月）は、製造業と非製造業の割合をそろえて事業所を選んで調べており、製造業の雇用・賃金の状況を分けて見られる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "神奈川県の労働事情",
+      "url": "https://www.chuokai-kanagawa.or.jp/wp2/wp-content/uploads/2024/02/神奈川県の労働事情WEB用.pdf",
+      "publisher": "神奈川県中小企業団体中央会",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "trend-990",
+    "kind": "trend",
+    "official": true,
+    "title": "展示商談会で商談支援が7倍",
+    "summary": "運営会社の発表によると、2024年の新ものづくり・新サービス展はリアル出展594社（前年比1.1倍）、Web出展547社で、商談支援数は前年の7倍になった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の前にWebで準備したこと",
+    "source": {
+      "title": "前年比7倍の商談支援数！リアル重視の展示商談会",
+      "url": "https://www.convention.co.jp/result/detail/id=1008",
+      "publisher": "日本コンベンションサービス",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-991",
+    "kind": "trend",
+    "official": true,
+    "title": "グッドプラクティス企業の特別展示",
+    "summary": "2025年12月の新ものづくり・新サービス展では、グッドプラクティス集に載った企業の特別展示と、補助金活用の工夫・課題・効果を話すパネル討論が行われた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり補助金成果評価調査事業（グッドプラクティス集）委託先の公募",
+      "url": "https://www.chuokai.or.jp/index.php/12390/",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-992",
+    "kind": "trend",
+    "official": true,
+    "title": "展示商談会はWeb出展も併用",
+    "summary": "全国中央会の新ものづくり・新サービス展は、会場の出展に加えてWeb出展があり、対面とオンラインの両方で商談できるよう案内されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "Web展示会のページを自社サイトに流用",
+    "source": {
+      "title": "中小企業 新ものづくり・新サービス展",
+      "url": "https://www.shin-monodukuri-shin-service.jp/index.html",
+      "publisher": "全国中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1645",
+    "kind": "success",
+    "title": "組合で地域ブランドを展示会へ",
+    "summary": "デニム産地の織物の組合が、課題対応支援事業で地域ブランドの浸透と販路拡大のための展示会出展を行った（令和5年度の実施事例）。産地名を前に出した共同発信の例。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "産地ブランドと自社の関係を語る",
+    "source": {
+      "title": "中小企業組合等課題対応支援事業 実施事例紹介",
+      "url": "https://www.chuokai.or.jp/index.php/subsidy/subsidykadai/subsidykadaiouboyoukou/subsidykadaiouboyoukouarchive/",
+      "publisher": "全国中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1646",
+    "kind": "success",
+    "title": "織物産地の有志がブランド化",
+    "summary": "先進組合事例抄録（令和3年度）では、産地の衰退を受けて織物の組合員有志がブランド化に取り組み、デザインとマーケティング力、消費者の認知を高める連携事業を始めた例を紹介。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "産地の仲間と始めたブランドの話",
+    "source": {
+      "title": "先進組合事例抄録 令和3年度",
+      "url": "https://www.chuokai.or.jp/Contents/jirei/senshinkumiai/2021/R3senshin.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "success-1647",
+    "kind": "success",
+    "title": "参加組合員の8割が販促効果",
+    "summary": "先進組合事例抄録（令和5年度）には、組合の共同の取組みで参加組合員の80%が販売促進効果を認め、新規顧客にもつながったと書かれた事例がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "共同で発信して何が変わったか",
+    "source": {
+      "title": "先進組合事例抄録 令和5年度",
+      "url": "https://www.chuokai.or.jp/Contents/jirei/senshinkumiai/2023/R5senshin.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1648",
+    "kind": "success",
+    "title": "漆器組合がJETROと海外展示",
+    "summary": "全国中央会の事例リストには、漆器の産地組合がJETROと組んで台湾の展示会に出展し、英国・台湾のバイヤーを招いて工房見学を行った海外販路開拓の取組みが載っている。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外バイヤーに工房を見せた日",
+    "source": {
+      "title": "事例リスト（組合事例検索）",
+      "url": "https://www.chuokai.or.jp/index.php/jireisearch/jireilist/?current_page=9&pageval=19",
+      "publisher": "全国中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1649",
+    "kind": "success",
+    "title": "家具組合の有志9社でブランド",
+    "summary": "国の組合ガイドブックでは、都内の家具の組合で有志9社が集まり、連携して独自ブランドを作り、富裕層や海外への販路が広がった例を紹介している。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "同業9社で組んだブランドの裏側",
+    "source": {
+      "title": "中小企業組合ガイドブック",
+      "url": "https://www.chusho.meti.go.jp/keiei/kakushin/pamphlet/kumiaiguide.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1650",
+    "kind": "success",
+    "title": "和紙組合の展示会で商談数十件",
+    "summary": "国の組合ガイドブックによると、徳島の和紙の組合が海外市場向けの展示会に出たところ、欧米・アジアの画材店バイヤーや大型流通業者と数十件の商談があり、一部は受注交渉に進んだ。",
+    "industries": [
+      "紙加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業組合ガイドブック",
+      "url": "https://www.chusho.meti.go.jp/keiei/kakushin/pamphlet/kumiaiguide.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1651",
+    "kind": "success",
+    "title": "木材組合の産地ブランド発信",
+    "summary": "新潟県中央会の先進組合事例集には、地元の杉材のブランドイメージを広げる事業に取り組んだ木材の組合の例が載っている。",
+    "industries": [
+      "木工",
+      "建材・金物"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "地元材を使う理由をブログで語る",
+    "source": {
+      "title": "先進組合事例集",
+      "url": "https://www.chuokai-niigata.or.jp/chousa/jireisyu/",
+      "publisher": "新潟県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1652",
+    "kind": "success",
+    "title": "県産素材の醤油でブランド商品",
+    "summary": "新潟県中央会の先進組合事例集（平成31年度調査）では、醤油の協業組合が県産素材を使ったブランド商品を開発した例を紹介している。",
+    "industries": [
+      "食品製造",
+      "酒・醸造"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "source": {
+      "title": "先進組合事例集",
+      "url": "https://www.chuokai-niigata.or.jp/chousa/jireisyu/",
+      "publisher": "新潟県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1653",
+    "kind": "success",
+    "title": "組合のリーフレットでブランド作り",
+    "summary": "山梨県中央会は、小規模事業者組織化指導事業で、組合のブランド構築や販路拡大に向けたリーフレット作成などを支援した例を挙げている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "小規模事業者組織化指導事業（全国中央会）",
+      "url": "https://www.chuokai-yamanashi.or.jp/%E5%B0%8F%E8%A6%8F%E6%A8%A1%E4%BA%8B%E6%A5%AD%E8%80%85%E7%B5%84%E7%B9%94%E5%8C%96%E6%8C%87%E5%B0%8E%E4%BA%8B%E6%A5%AD%EF%BC%88%E5%85%A8%E5%9B%BD%E4%B8%AD%E5%A4%AE%E4%BC%9A%EF%BC%89",
+      "publisher": "山梨県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1654",
+    "kind": "success",
+    "title": "受注生産から自社商品の直販へ",
+    "summary": "兵庫県中央会の活用事例では、受注生産が中心だった化成品のメーカーが自社独自商品の開発・直販に踏み出す際、中央会が商品開発と販路開拓の両面を支援した。",
+    "industries": [
+      "化学・塗料・接着剤",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "下請けから自社商品へ踏み出した理由",
+    "source": {
+      "title": "中央会活用事例（受注生産型の化成品メーカー）",
+      "url": "https://www.web-tenjikai.com/files/case/case25.php",
+      "publisher": "兵庫県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1655",
+    "kind": "success",
+    "title": "共同出展でギフトショーへ",
+    "summary": "兵庫県中央会の活用事例では、展示会出展を考えていた木工の事業者が、中央会サイトで共同出展の支援を見つけて申し込み、東京のギフトショー出展につなげた。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "共同出展ブースで得た出会い",
+    "source": {
+      "title": "中央会活用事例（木工所）",
+      "url": "https://www.web-tenjikai.com/files/case/case30.php",
+      "publisher": "兵庫県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1656",
+    "kind": "success",
+    "title": "初のホームページで新規客",
+    "summary": "兵庫県中央会の活用事例では、中央会のサポートで初めてのホームページを開いた電器店が、ホームページを通じて新しい顧客とつながったと実感している。製造業でも参考になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "中央会活用事例（電器店）",
+      "url": "https://www.web-tenjikai.com/files/case/case50.php",
+      "publisher": "兵庫県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1657",
+    "kind": "success",
+    "title": "プレスリリース講座で発信力",
+    "summary": "兵庫県中央会の活用事例では、食品会社が中央会主催のプレスリリースセミナーに参加し、自社ブランド商品の発信力を高めた。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "新商品のプレスリリースの書き方",
+    "source": {
+      "title": "中央会活用事例（食品会社）",
+      "url": "https://www.web-tenjikai.com/files/case/case35.php",
+      "publisher": "兵庫県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1658",
+    "kind": "success",
+    "title": "皮革組合のPRに活路開拓事業",
+    "summary": "兵庫県中央会の活用事例では、皮革の工業組合が産地のPR活動に活路開拓調査・実現化事業の補助を使った。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中央会活用事例（皮革の組合）",
+      "url": "https://www.web-tenjikai.com/files/case/case24.php",
+      "publisher": "兵庫県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1659",
+    "kind": "success",
+    "title": "組合のHP作成費を助成",
+    "summary": "高知県中央会は、組合や組合員の魅力を発信するチラシやホームページ作成等の費用を助成している。共同受注を進めるための組合ブランド品のHP作成なども対象とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "組合のサイトと自社サイトの役割分担",
+    "source": {
+      "title": "組合や組合員の魅力を発信するチラシやホームページ作成等の費用を助成",
+      "url": "https://www.kbiz.or.jp/%E7%B5%84%E5%90%88%E3%82%84%E7%B5%84%E5%90%88%E5%93%A1%E3%81%AE%E9%AD%85%E5%8A%9B%E3%82%92%E7%99%BA%E4%BF%A1%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E3%83%81%E3%83%A9%E3%82%B7%E3%82%84%E3%83%9B-5/",
+      "publisher": "高知県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1660",
+    "kind": "success",
+    "title": "Webで製品を共同販売するしくみ",
+    "summary": "全国中央会の資料では、組合の連携事例として、Webサイトを使って組合員の扱う製品を共同で販売するシステムの構築などが挙げられている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "組合を起点とした連携事例",
+      "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kyoujin/2018/181226kyoujin09.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2018-12"
+    }
+  },
+  {
+    "id": "success-1661",
+    "kind": "success",
+    "title": "受注依頼をWebフォームで受付",
+    "summary": "先進組合事例抄録（令和7年度）では、工事業の組合がWebフォームで依頼データを受け取り、事務局で確認して進める新システムを2025年10月に動かした例を紹介。受注業務のWeb化の参考に。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせフォームの項目を見直す",
+    "source": {
+      "title": "先進組合事例抄録 令和7年度",
+      "url": "https://www.chuokai.or.jp/Contents/jirei/senshinkumiai/2025/R7senshin.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "success-1662",
+    "kind": "success",
+    "title": "板金組合の助け合い掲示板",
+    "summary": "全国中央会の事例には、板金業の組合が「助け合い掲示板システム」を作り、組合員どうしで作業員の貸し借りや仕事の依頼をし合う例がある。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "繁忙期に仲間と仕事を分け合う話",
+    "source": {
+      "title": "先進組合事例抄録 令和7年度",
+      "url": "https://www.chuokai.or.jp/Contents/jirei/senshinkumiai/2025/R7senshin.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "success-1663",
+    "kind": "success",
+    "title": "官公需を組合で共同受注",
+    "summary": "全国中央会の官公需共同受注の成功事例集（2020年3月）は、事業協同組合が工夫して官公庁の仕事を確保している例をまとめている。共同受注の体制作りの参考になる。",
+    "industries": [
+      "印刷",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "事業協同組合における官公需共同受注 成功事例",
+      "url": "https://www.chuokai.or.jp/archive/kankouju/pdf/2019houkokusyo.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2020-03"
+    }
+  },
+  {
+    "id": "success-1664",
+    "kind": "success",
+    "title": "厳しい業界への新規参入",
+    "summary": "和歌山県中央会の成果事例集（2020年1月）では、ものづくり補助金を使い、品質の要求が最も厳しいとされる食品・医療・精密機器業界へ新規参入を果たした例を紹介している。",
+    "industries": [
+      "機械部品",
+      "医療機器",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "品質の厳しい業界に入れた理由",
+    "source": {
+      "title": "ものづくり補助事業 成果事例集 わかやま",
+      "url": "https://www.chuokai-wakayama.or.jp/wp/wp-content/uploads/jirei_r02.pdf",
+      "publisher": "和歌山県中小企業団体中央会",
+      "date": "2020-01"
+    }
+  },
+  {
+    "id": "success-1665",
+    "kind": "success",
+    "title": "新製品と新規取引先を同時に",
+    "summary": "愛知県中央会の成果事例集（2019年11月）には、「新規製品および新規取引先の獲得」を事業計画に掲げてものづくり補助金に取り組んだ製造業の例が載っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり補助事業 成果事例集（愛知県）",
+      "url": "https://www.aiweb.or.jp/file/monohojo/h29/seikajirei.pdf",
+      "publisher": "愛知県中小企業団体中央会",
+      "date": "2019-11"
+    }
+  },
+  {
+    "id": "success-1666",
+    "kind": "success",
+    "title": "測定の自動出力で信頼を得る",
+    "summary": "測定機メーカーの紹介によると、ある会社はものづくり補助金で三次元測定機を工程内検査に入れ、手入力だった検査結果が自動出力になり、顧客からの信頼向上につながった。",
+    "industries": [
+      "切削加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "検査成績書の出し方を記事にする",
+    "source": {
+      "title": "高精度CNC三次元座標測定機 製品ページ（導入事例）",
+      "url": "https://mono.ipros.com/product/detail/2001235219",
+      "publisher": "東京精密（イプロス掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1667",
+    "kind": "success",
+    "title": "展示会でHP経由の相手と対面",
+    "summary": "新ものづくり・新サービス展の出展者の声として、大手ホームセンターのバイヤーとの出会いから取引が成立した例や、HPを通じてやりとりしていた企業と会場で会い商談につながった例が紹介された。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Webと展示会をつないだ商談",
+    "source": {
+      "title": "前年比7倍の商談支援数！リアル重視の展示商談会",
+      "url": "https://www.convention.co.jp/result/detail/id=1008",
+      "publisher": "日本コンベンションサービス",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1668",
+    "kind": "success",
+    "title": "補助金後の販路開拓が分かれ目",
+    "summary": "全国中央会のグッドプラクティス集は、ものづくり補助金の成果を販路開拓・取引拡大・売上増につなげ、事業として定着させるまでの過程を事業者への聞き取りで整理している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "補助金で作った物をどう売ったか",
+    "source": {
+      "title": "ものづくり補助金 グッドプラクティス集（2025年度）",
+      "url": "https://portal.monodukuri-hojo.jp/pdf/goodpractice2025_20260422.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "success-1669",
+    "kind": "success",
+    "title": "STEPで見る事業化の道のり",
+    "summary": "全国中央会の成果活用グッドプラクティス（2019年）は、開発から販売までの事業化をSTEP1〜5の段階に分けて、事業者の取り組みを紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "開発から売上まで5段階で振り返る",
+    "source": {
+      "title": "ものづくり補助金 成果活用グッドプラクティス",
+      "url": "https://portal.monodukuri-hojo.jp/pdf/goodpractice201903_a3.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2019-03"
+    }
+  },
+  {
+    "id": "success-1670",
+    "kind": "success",
+    "title": "半導体装置部品へ参入",
+    "summary": "経産省の素形材企業事例集（2025年3月）では、機械加工の技術を生かして半導体製造装置向け部品に参入し、販路を広げた企業が紹介されている。",
+    "industries": [
+      "切削加工",
+      "半導体"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "新分野の部品を受けられる設備と体制",
+    "source": {
+      "title": "前向きな挑戦を行う素形材企業事例",
+      "url": "https://www.meti.go.jp/policy/mono_info_service/mono/sokeizai/jireir.pdf",
+      "publisher": "経済産業省（素形材産業ビジョン策定委員会）",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "success-1671",
+    "kind": "success",
+    "title": "後継者を青年部で育てる",
+    "summary": "奈良県中央会の組合事業承継マニュアル（2022年2月）は、後継者世代に組合の部会や青年部で役割を担ってもらい、リーダーシップを育てる方法を示している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "後継ぎが外の仲間から学んだこと",
+    "source": {
+      "title": "組合事業承継マニュアル",
+      "url": "https://www.chuokai-nara.or.jp/chuokai/files/c_file02010939.pdf",
+      "publisher": "奈良県中小企業団体中央会",
+      "date": "2022-02"
+    }
+  },
+  {
+    "id": "success-1672",
+    "kind": "success",
+    "title": "商談件数は計画の約4倍",
+    "summary": "大分の県産品の組合による助成事業の成果報告（2024年度）では、展示会の商談件数が計画の約4倍に達した一方、成約件数は目標の56%にとどまった。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "展示会の後の追いかけ方",
+    "source": {
+      "title": "大分県産品のブランド力強化及び販路拡大事業 成果",
+      "url": "https://www.zenkyo.or.jp/chiiki/docs/jigyou2024-report/44_ooita_j2024.pdf",
+      "publisher": "助成事業の成果報告（大分県の組合）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-762",
+    "kind": "pain",
+    "title": "補助金の成果が売上に届かない",
+    "summary": "ものづくり補助金は設備導入で終わらず、終了後に売上を出して定着させることが求められる。中央会のグッドプラクティス集は、そこで課題を越えた方法を事例で示している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "設備を入れた後に困ったこと",
+    "source": {
+      "title": "グッドプラクティス集（2024年度）",
+      "url": "https://portal.monodukuri-hojo.jp/pdf/goodpractice2024_a4.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-763",
+    "kind": "pain",
+    "title": "DXを相談できる人がいない",
+    "summary": "神奈川県中央会の調査（2023年）では約6割がDXの相談相手がいないと答えた。小さな製造業ほど、誰に何を聞けばよいか分からないまま止まりがち。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業デジタル化状況調査アンケート結果報告",
+      "url": "https://www.chuokai-kanagawa.or.jp/dx/wp-content/uploads/2024/01/%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%8C%96%E7%8A%B6%E6%B3%81%E8%AA%BF%E6%9F%BB%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E7%B5%90%E6%9E%9C.pdf",
+      "publisher": "神奈川県中小企業団体中央会",
+      "date": "2023-10"
+    }
+  },
+  {
+    "id": "pain-764",
+    "kind": "pain",
+    "title": "人と予算が足りずDXが進まない",
+    "summary": "山口県中央会の調査（2025年3月）では、デジタル化の課題として人材不足と予算の確保が上位。小さな工場では担当者が兼務で手が回らない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "兼務の担当者でも回るIT化",
+    "source": {
+      "title": "中小企業のDX・デジタル化推進に関する実態調査報告書",
+      "url": "https://axis.or.jp/wp-content/uploads/2025/03/dxresearch.pdf",
+      "publisher": "山口県中小企業団体中央会",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "pain-765",
+    "kind": "pain",
+    "title": "商談はできても成約に至らない",
+    "summary": "大分の組合の助成事業報告では、展示会の商談件数は計画を大きく上回ったが、成約は目標の56%。展示会の後の追いかけ方と、見込み客が見る情報の用意が課題になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "大分県産品のブランド力強化及び販路拡大事業 成果",
+      "url": "https://www.zenkyo.or.jp/chiiki/docs/jigyou2024-report/44_ooita_j2024.pdf",
+      "publisher": "助成事業の成果報告（大分県の組合）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-766",
+    "kind": "pain",
+    "title": "単独では販路開拓が難しい",
+    "summary": "全国中央会の課題対応支援事業は、取引力の強化や海外展開など、中小企業1社では解決しにくいテーマに組合で取り組むための制度とされている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業組合等課題対応支援事業 概要",
+      "url": "https://www.kbiz.or.jp/kochichuokai/wp-content/uploads/2019/04/2019-1_kadaitaiou-gaiyou.pdf",
+      "publisher": "高知県中小企業団体中央会",
+      "date": "2019-04"
+    }
+  },
+  {
+    "id": "pain-767",
+    "kind": "pain",
+    "title": "人材の質が足りない",
+    "summary": "全国中央会の労働事情実態調査（2025年7月実施）では、人材不足（質の不足）が経営上の障害のトップ。育てる時間と教える人の不足が悩みになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "未経験者が一人前になるまで",
+    "source": {
+      "title": "全国中央会 提出資料（労働市場改革分科会）",
+      "url": "https://www.mhlw.go.jp/content/12602000/001693774.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "pain-768",
+    "kind": "pain",
+    "title": "産地の衰退と認知度の低さ",
+    "summary": "先進組合事例抄録（令和3年度）の織物産地の例では、産地の衰退を背景に、デザインやマーケティングの力と消費者の認知度を上げることが課題とされた。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "先進組合事例抄録 令和3年度",
+      "url": "https://www.chuokai.or.jp/Contents/jirei/senshinkumiai/2021/R3senshin.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "buyer-841",
+    "kind": "buyer",
+    "title": "展示商談会で補助金開発品を探す",
+    "summary": "新ものづくり・新サービス展には、ものづくり補助金で新製品や技術を開発した中小企業が全国から集まる。発注先や新しい技術を探す買い手にとって、まとめて比べられる場になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "展示会で見つけてもらうための準備",
+    "source": {
+      "title": "「中小企業 新ものづくり・新サービス展」が開催されます",
+      "url": "https://www.chusho.meti.go.jp/keiei/sapoin/2024/241128event.html",
+      "publisher": "中小企業庁",
+      "date": "2024-11"
+    }
+  },
+  {
+    "id": "buyer-842",
+    "kind": "buyer",
+    "title": "バイヤー商談会で新規客と出会う",
+    "summary": "全国中央会の運営事務局公募要領では、展示商談会の目的として、バイヤー商談会や来場者との交流を通じた認知度向上と新規顧客の獲得を挙げている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "展示商談会 運営事務局の公募要領（令和7年度）",
+      "url": "https://www.chuokai.or.jp/images/2025/05/R7_kouboyouryou.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2025-05"
+    }
+  },
+  {
+    "id": "buyer-843",
+    "kind": "buyer",
+    "title": "全国約500社が一度に出展",
+    "summary": "PR TIMESの発表によると、新ものづくり・新サービス展には全国から約500社が集まる。買い手は分野別の展示で、補助金で開発された製品や技術を比べられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "約500社が集結する「中小企業 新ものづくり・新サービス展」開催",
+      "url": "https://prtimes.jp/main/html/rd/p/000000012.000038098.html",
+      "publisher": "PR TIMES",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-844",
+    "kind": "buyer",
+    "title": "成果事例集から加工先を知る",
+    "summary": "都道府県中央会のものづくり補助金成果事例集には、事業者名とテーマ・実施場所の一覧がある。京都府中央会は平成24〜令和元年度の一覧を2025年12月に作っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "事例集に載った技術を記事で紹介",
+    "source": {
+      "title": "成果事例集 実施事業者一覧（平成24〜令和元年度）",
+      "url": "https://www.chuokai-kyoto.or.jp/whatsnew/seikajirei_listH24-R1.pdf",
+      "publisher": "京都府中小企業団体中央会",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "buyer-845",
+    "kind": "buyer",
+    "title": "県別の成果事例集を見る",
+    "summary": "奈良県や茨城県などの中央会も、ものづくり補助金の成果事例集を公開している。地元の加工先を探す人が、どんな設備と技術を持つ会社かを知る入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "補助金で入れた設備を記事で見せる",
+    "source": {
+      "title": "ものづくり補助金 成果事例集",
+      "url": "https://www.chuokai-nara.or.jp/chuokai/monozukuri_seika.html",
+      "publisher": "奈良県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-846",
+    "kind": "buyer",
+    "title": "共同出展の組合ブースで探す",
+    "summary": "買い手は、組合単位の共同展示ブースで同じ産地の複数社をまとめて見られる。兵庫県中央会など各地の中央会が共同出展を支援している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "共同ブースで自社を覚えてもらう工夫",
+    "source": {
+      "title": "中央会活用事例",
+      "url": "https://www.web-tenjikai.com/files/case/index.php",
+      "publisher": "兵庫県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-847",
+    "kind": "buyer",
+    "title": "組合の連携で一括発注",
+    "summary": "全国中央会の資料では、組合を起点に複数の中小企業が連携する事例を紹介している。発注する側は、組合の窓口を通じて複数工程をまとめて頼める場合がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "仲間の会社と組んで一括で受ける",
+    "source": {
+      "title": "組合を起点とした連携事例",
+      "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/kyoujin/2018/181226kyoujin09.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2018-12"
+    }
+  },
+  {
+    "id": "success-1673",
+    "kind": "success",
+    "title": "茨城の成果事例集で事業化を学ぶ",
+    "summary": "茨城県中央会は、平成25〜28年度補正のものづくり補助金の成果事例を冊子にまとめている。金属加工系の会社の取り組みも含まれる。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ものづくり補助金 成果事例集",
+      "url": "https://www.ibarakiken.or.jp/pdf/H30_seikajireishu.pdf",
+      "publisher": "茨城県中小企業団体中央会",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "success-1674",
+    "kind": "success",
+    "title": "事例集が事業展開の後まで追う",
+    "summary": "京都府中央会の成果事例集（2024年12月公開）は、平成29〜令和元年度補正の20事例について、補助事業後の事業展開や活動・成果を紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "補助金から数年後の今を書く",
+    "source": {
+      "title": "ものづくり補助金 成果事例集 ｰ京都府ｰ",
+      "url": "https://www.chuokai-kyoto.or.jp/blog04/2024/12/post-134.html",
+      "publisher": "京都府中小企業団体中央会",
+      "date": "2024-12"
+    }
+  },
+  {
+    "id": "pain-769",
+    "kind": "pain",
+    "title": "組合で課題を出し合う",
+    "summary": "滋賀県中央会は、組合で取り組む課題解決として、1社では解きにくい悩みを組合で一緒に扱う考え方を紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "組合で取り組む課題解決",
+      "url": "https://chuokai-shiga.or.jp/association-challenge/",
+      "publisher": "滋賀県中小企業団体中央会",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-993",
+    "kind": "trend",
+    "official": true,
+    "title": "組合ガイドブックの最新版",
+    "summary": "全国中央会は「中小企業組合ガイドブック2025-2026」で、組合のしくみと中央会の支援を案内している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "中小企業組合ガイドブック 2025-2026",
+      "url": "https://www.chuokai.or.jp/contents/seido/guidebook/2025-2026/guidebook2025-2026.pdf",
+      "publisher": "全国中小企業団体中央会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-994",
+    "kind": "trend",
+    "official": true,
+    "title": "よろずの相談の約2割が製造業",
+    "summary": "中小企業庁のよろず支援拠点の研究会資料では、相談の業種別内訳で製造業が19%を占めた。町工場もよく使う無料の相談先だと記事で紹介できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "無料の経営相談所を使ってみた話",
+    "source": {
+      "title": "中小企業庁 よろず支援拠点に関する研究会 資料",
+      "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/yorozu/001/007.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1675",
+    "kind": "success",
+    "title": "よろずの事例集から近い業種を探す",
+    "summary": "北海道よろず支援拠点は、創業から売上拡大、経営改善、海外展開までの支援事例を冊子にまとめて公開している。自社に近い業種の事例を読むと、相談の切り口が見つかる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "北海道よろず支援拠点 支援事例集（平成28年度）",
+      "url": "https://www.hsc.or.jp/pdf/download_28yorozujirei.pdf",
+      "publisher": "北海道よろず支援拠点",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "success-1676",
+    "kind": "success",
+    "title": "酒類製造も支援事例に載る",
+    "summary": "北海道よろず支援拠点の平成29年度の事例集には、酒類製造業など製造系の事例が入り、売上拡大や経営改善の支援内容が紹介されている。",
+    "industries": [
+      "酒・醸造",
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "支援機関と一緒に売上を立て直した記録",
+    "source": {
+      "title": "経営相談でみつける成功のヒント（北海道よろず支援拠点）",
+      "url": "https://www.hsc.or.jp/pdf/download_29yorozujirei2.pdf",
+      "publisher": "北海道よろず支援拠点",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "trend-995",
+    "kind": "trend",
+    "official": true,
+    "title": "北海道のよろずは年約9,000件",
+    "summary": "北海道中小企業総合支援センターの2024年の資料では、北海道よろず支援拠点の前年の相談件数は約9,000件と示されている。相談する会社は珍しくない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "北海道よろず支援拠点 案内資料",
+      "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2024/04/fbc1fbe7c5db8cec0206fc5f72b3181b.pdf",
+      "publisher": "北海道中小企業総合支援センター",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1677",
+    "kind": "success",
+    "title": "雑誌の取材で全国から問い合わせ",
+    "summary": "青森の支援事例では、自社ブランドのカスタムパーツを作る会社が、試作・HP制作・展示会・雑誌広告を支援された。専門雑誌に取材されてから全国から問い合わせが来て受注が増えた。",
+    "industries": [
+      "機械部品",
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "専門誌に載ったあと何が起きたか",
+    "source": {
+      "title": "21あおもり産業総合支援センター 支援事例資料",
+      "url": "https://www.21aomori.or.jp/images/2021/12/7ef10681c86a535f6d72ce00853f3e04f87c7aa2.pdf",
+      "publisher": "21あおもり産業総合支援センター",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1678",
+    "kind": "success",
+    "title": "HP・展示会・雑誌をまとめて動かす",
+    "summary": "同じ青森の事例は、HP制作だけでなく情報発信・展示会出展・雑誌広告を組み合わせた支援だった。一つの施策より、見つけてもらう入口を複数作るほうが効くことが分かる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "21あおもり産業総合支援センター 支援事例資料",
+      "url": "https://www.21aomori.or.jp/images/2021/12/7ef10681c86a535f6d72ce00853f3e04f87c7aa2.pdf",
+      "publisher": "21あおもり産業総合支援センター",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1679",
+    "kind": "success",
+    "title": "下請けから自社ブランドへ広げる",
+    "summary": "青森の事例のように、部品づくりの技術を自社ブランド製品にすると、雑誌や展示会で紹介されやすくなる。ブログでは開発のきっかけと試作の苦労を書くと伝わりやすい。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社ブランド製品を作った理由",
+    "source": {
+      "title": "21あおもり産業総合支援センター 支援事例資料",
+      "url": "https://www.21aomori.or.jp/images/2021/12/7ef10681c86a535f6d72ce00853f3e04f87c7aa2.pdf",
+      "publisher": "21あおもり産業総合支援センター",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1680",
+    "kind": "success",
+    "title": "合同相談会から補助金で売上増",
+    "summary": "ミラサポplusの岩手の事例では、缶詰・瓶詰メーカーが合同経営相談会でよろずのコーディネーターに相談し、ものづくり補助金でゼリー飲料事業を強化して売上を大きく伸ばした。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新しい商品の柱を育てた話",
+    "source": {
+      "title": "ミラサポplus 支援機関とともに（岩手の事例）",
+      "url": "https://mirasapo-plus.go.jp/hint/19159/",
+      "publisher": "中小企業庁 ミラサポplus",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1681",
+    "kind": "success",
+    "title": "食品と工芸を組み合わせて完売",
+    "summary": "琉球新報によると、よろず支援拠点の協力要請を受けた団体が地域の食品と工芸品を組み合わせた特注商品を企画し、首都圏中心に2日で完売、500万円を売り上げた。",
+    "industries": [
+      "食品製造",
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "異業種と組んだ特注品の作り方",
+    "source": {
+      "title": "よろず支援拠点の要請で特注商品を企画",
+      "url": "https://ryukyushimpo.jp/column/prentry-238996.html",
+      "publisher": "琉球新報",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-996",
+    "kind": "trend",
+    "official": true,
+    "title": "よろずがSNS活用の勉強会を共催",
+    "summary": "静岡県よろず支援拠点は2026年9月16日に、YouTube・Instagram・TikTokなどSNSを使ったPR方法の勉強会を共催した。支援機関もSNS発信を後押ししている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "SNS活用PR勉強会のチラシ（2026年9月16日）",
+      "url": "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/076/685/20260916_r8benkyokai02_chirashi.pdf",
+      "publisher": "静岡県",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "trend-997",
+    "kind": "trend",
+    "official": true,
+    "title": "大手出身者が売れる仕組みを支援",
+    "summary": "東京都中小企業振興公社のニューマーケット開拓支援事業は、大手で開発・製造・営業を経験した人が、都内中小企業の製品の売れる仕組みづくりと販路開拓を手伝う。2024年10月にはセミナーも開いた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ニューマーケット開拓支援事業 販路開拓セミナー",
+      "url": "https://kyodonewsprwire.jp/release/202410158104",
+      "publisher": "東京都中小企業振興公社（共同通信PRワイヤー）",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "success-1682",
+    "kind": "success",
+    "title": "公社とクラウドファンディングで試す",
+    "summary": "パルコの2023年2月の報告では、東京都中小企業振興公社と組み、同公社の支援製品を対象にクラウドファンディング「BOOSTER」で支援先20社のプロジェクトを実施した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "クラファンで新製品の反応を見た",
+    "source": {
+      "title": "BOOSTER×東京都中小企業振興公社 プロジェクト報告",
+      "url": "https://www.parco.co.jp/pdf/jp/store/storage/cname_20230208121209.pdf",
+      "publisher": "パルコ",
+      "date": "2023-02"
+    }
+  },
+  {
+    "id": "success-1683",
+    "kind": "success",
+    "title": "クラファンは新製品の市場調査になる",
+    "summary": "公社とパルコの取り組みのように、クラウドファンディングは売る前に反応を見る場になる。応援してくれた人の声を記事にすると、次の発信の材料にもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "BOOSTER×東京都中小企業振興公社 プロジェクト報告",
+      "url": "https://www.parco.co.jp/pdf/jp/store/storage/cname_20230208121209.pdf",
+      "publisher": "パルコ",
+      "date": "2023-02"
+    }
+  },
+  {
+    "id": "pain-770",
+    "kind": "pain",
+    "title": "価格交渉の悩みは事例集で学べる",
+    "summary": "中小企業庁は、価格交渉で悩む下請中小企業向けに個別相談の事例集をまとめ、基本的な考え方や注意点を示している。実際の相談は最寄りの下請かけこみ寺へ、と案内している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "価格交渉サポート事業 個別相談事例集",
+      "url": "https://mirasapo-plus.go.jp/resource/pdf/170403support.pdf",
+      "publisher": "中小企業庁",
+      "date": "2017-04"
+    }
+  },
+  {
+    "id": "pain-771",
+    "kind": "pain",
+    "title": "値上げの回答がないまま据え置き",
+    "summary": "全国中小企業振興機関協会の令和6年度の事例集には、発注側が下請事業者に回答を出さないまま取引価格を据え置いた、という相談が載っている。よくある悩みの一つ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "下請かけこみ寺 活用事例集（令和6年度）",
+      "url": "https://zenkyo.or.jp/kakekomi/pdf/case_studies-R6.pdf",
+      "publisher": "全国中小企業振興機関協会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-998",
+    "kind": "trend",
+    "official": true,
+    "title": "下請かけこみ寺は取引かけこみ寺へ",
+    "summary": "東洋経済の記事によると、「下請かけこみ寺」は2026年1月1日に「取引かけこみ寺」へ名前が変わる。記事で紹介するときは新しい名前を使う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "下請かけこみ寺の名称変更に関する記事",
+      "url": "https://toyokeizai.net/articles/-/909943",
+      "publisher": "東洋経済オンライン",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-1009",
+    "kind": "term",
+    "title": "値引き理由のない注文書に注意",
+    "summary": "中小企業庁の講習テキストには、見積額から値引きした理由がはっきりしない注文書は、買いたたきにあたるおそれがあるという指導事例が載っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "見積もりと注文書の金額が違うとき",
+    "source": {
+      "title": "適正取引講習会テキスト（令和4年度）",
+      "url": "https://tekitorisupport.go.jp/download/topics/r4_koushuu1.pdf",
+      "publisher": "中小企業庁 適正取引支援サイト",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "success-1684",
+    "kind": "success",
+    "title": "売場の見せ方で短期間に売上増",
+    "summary": "よろず支援拠点の全国の事例（製造業）に、北海道で売場のゾーニングと商品の見せ方を変え、短期間で売上を大きく伸ばした例がある。見せ方の工夫はWebにも通じる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "商品の並べ方を変えた結果",
+    "source": {
+      "title": "よろず支援拠点 全国の支援事例（業種：製造）",
+      "url": "https://yorozu.smrj.go.jp/support/?type=%E8%A3%BD%E9%80%A0",
+      "publisher": "よろず支援拠点全国本部（中小機構）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1685",
+    "kind": "success",
+    "title": "Web強化からネットとリアル営業へ",
+    "summary": "よろず支援拠点の平成27年度事例集では、宮城の事例として、Webの強化を皮切りにネットとリアルの営業を組み合わせて売上を増やした例が紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "HPを営業の入口にした話",
+    "source": {
+      "title": "よろず支援拠点 取組事例集 平成27年度",
+      "url": "https://www.smrj.go.jp/supporter/yorozu/fbrion0000004an2-att/h27torikumizirei.pdf",
+      "publisher": "よろず支援拠点全国本部（中小機構）",
+      "date": "2016"
+    }
+  },
+  {
+    "id": "success-1686",
+    "kind": "success",
+    "title": "HPを自作しネットショップ刷新",
+    "summary": "平成28年度の事例集には、佐賀の陶磁器メーカーがホームページを自作し、ネットショップを刷新して会社全体の売上を伸ばした事例がある。外注しなくても始められる例。",
+    "industries": [
+      "ガラス・セラミック"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自分たちでHPを作ってみた",
+    "source": {
+      "title": "よろず支援拠点 取組事例集 平成28年度",
+      "url": "https://www.smrj.go.jp/supporter/yorozu/fbrion0000004an2-att/h28torikumizirei.pdf",
+      "publisher": "よろず支援拠点全国本部（中小機構）",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "success-1687",
+    "kind": "success",
+    "title": "問屋頼みから大手と直接取引へ",
+    "summary": "福井県よろず支援拠点の事例は、問屋からの受注が中心だった会社が新しい販路を開拓し、大手との直接取引を実現した。卸を通さない販路づくりの参考になる。",
+    "industries": [
+      "繊維",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問屋以外の販路を作った道のり",
+    "source": {
+      "title": "問屋からの受注中心から新たな販路開拓を行い大手との直接取引実現",
+      "url": "https://yorozu.smrj.go.jp/support/fukuiyorozu_naito/",
+      "publisher": "福井県よろず支援拠点（全国本部サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1688",
+    "kind": "success",
+    "title": "伴走支援でBtoBの新販路",
+    "summary": "よろず支援拠点の売上拡大の事例一覧に、高知の製造業で「どんな困難があっても諦めない」と相談者に伴走し、BtoBの新しい販路を得た例がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "よろず支援拠点 全国の支援事例（課題：売上拡大）",
+      "url": "https://yorozu.smrj.go.jp/support/?theme=%E5%A3%B2%E4%B8%8A%E6%8B%A1%E5%A4%A7",
+      "publisher": "よろず支援拠点全国本部（中小機構）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1689",
+    "kind": "success",
+    "title": "YouTubeとECで海外市場を開拓",
+    "summary": "よろず支援拠点の事例一覧に、山口の製造業がYouTubeとECサイトを連携させて日本刀の魅力を発信し、海外市場を開拓して売上120%を達成した例がある。",
+    "industries": [
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "動画で海外のお客さんに届けた",
+    "source": {
+      "title": "よろず支援拠点 全国の支援事例（課題：売上拡大）",
+      "url": "https://yorozu.smrj.go.jp/support/?theme=%E5%A3%B2%E4%B8%8A%E6%8B%A1%E5%A4%A7",
+      "publisher": "よろず支援拠点全国本部（中小機構）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1690",
+    "kind": "success",
+    "title": "Instagramで売上を伸ばすパン工房",
+    "summary": "長野県よろず支援拠点の事例に、パン工房がInstagramを活用して売上を伸ばした例がある。作る工程を見せる投稿は、食品製造の小さな工場でも使える。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製造工程をInstagramで見せる",
+    "source": {
+      "title": "長野県よろず支援拠点 支援事例",
+      "url": "https://nagano-yorozu.go.jp/support_cases",
+      "publisher": "長野県よろず支援拠点",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1691",
+    "kind": "success",
+    "title": "確かな技術をブランド化して売上増",
+    "summary": "沖縄県よろず支援拠点の事例は、確かな技術と実績を強みとしてブランド化し、商品開発・情報発信・販路開拓に取り組み、2年で売上5,700万円から8,900万円になった。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "強みをブランドの言葉にする",
+    "source": {
+      "title": "確かな技術と実績が強み ブランド化で売上増",
+      "url": "https://yorozu.smrj.go.jp/support/okinawayorozu_imaipan/",
+      "publisher": "沖縄県よろず支援拠点（全国本部サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1692",
+    "kind": "success",
+    "title": "OEM依存の縫製工場が新商品",
+    "summary": "岡山県よろず支援拠点の事例では、OEM中心だった縫製工場が事業承継を見据えて新商品を開発。県内のセレクトショップで試験販売し、月2〜3着の売れ行きが4か月続いた。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "下請けの縫製工場が自社商品を作る",
+    "source": {
+      "title": "事業承継を見据え下請けからの脱却を図る",
+      "url": "https://yorozu.smrj.go.jp/support/okayamayorozu_fujiedahifuku/",
+      "publisher": "岡山県よろず支援拠点（全国本部サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1693",
+    "kind": "success",
+    "title": "一次加工から受託製造へ広げる",
+    "summary": "青森県よろず支援拠点の事例は、水産の一次加工から脱け出し、人手不足を補いながら受託製造にも対応する方向へ進んだ。何を受託できるかをWebで示すと依頼の入口になる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "受託製造できることの一覧",
+    "source": {
+      "title": "一次加工から脱却 人手不足を補い独自の強みを生かす",
+      "url": "https://yorozu.smrj.go.jp/support/aomoriyorozu_gonohesuisan/",
+      "publisher": "青森県よろず支援拠点（全国本部サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1694",
+    "kind": "success",
+    "title": "生産体制を見直し売上約339%",
+    "summary": "福岡のよろず支援拠点の事例では、生産体制を見直してコストをかけずに供給を増やし、支援後の平均売上高が支援前の約339%になった。個人向け販売も強化している。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "生産体制の見直しでコストをかけずに供給増を実現、新たな事業の柱に",
+      "url": "https://yorozu.smrj.go.jp/support/fukuoka_daikoku-cci/",
+      "publisher": "福岡県よろず支援拠点（全国本部サイト）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1695",
+    "kind": "success",
+    "title": "ネットとLINEで新しい販路",
+    "summary": "群馬県よろず支援拠点の事例に、新しい販売チャネルを広げるためネットやLINEで集客し、売上向上に大きくつながった例がある。既存客への連絡手段としても使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "LINEで常連さんとつながる",
+    "source": {
+      "title": "群馬県よろず支援拠点 支援事例",
+      "url": "https://www.yorozu-gunma.go.jp/cases/",
+      "publisher": "群馬県よろず支援拠点",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-999",
+    "kind": "trend",
+    "official": true,
+    "title": "沖縄の訪問相談は製造業16.4%",
+    "summary": "沖縄県産業振興公社の令和7年度（5月〜翌1月末）の訪問型相談の報告では、業種は卸・小売18.6%、製造業16.4%の順で、課題は販路拡大が44件と上位だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "沖縄県 訪問型相談支援 実施報告（令和7年度）",
+      "url": "https://okinawa-ric.jp/.assets/R7Report_push-3ed56edd.pdf",
+      "publisher": "沖縄県産業振興公社",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1000",
+    "kind": "trend",
+    "official": true,
+    "title": "よろずの主な課題にIT活用・発信",
+    "summary": "北陸財務局の資料では、石川県よろず支援拠点の課題別相談でIT活用（管理・発信）が主な項目に入っている。コロナ施策以降はサービス・飲食・小売の相談者が増えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "石川県よろず支援拠点の相談状況（平成30〜令和4年度）",
+      "url": "https://lfb.mof.go.jp/hokuriku/content/013/2023122008.pdf",
+      "publisher": "北陸財務局",
+      "date": "2023-12"
+    }
+  },
+  {
+    "id": "buyer-848",
+    "kind": "buyer",
+    "title": "BMSは加工技術と設備で検索される",
+    "summary": "全国中小企業取引振興協会のBMS（ビジネス・マッチング・ステーション）は無料の会員制サイトで、加工技術・保有設備・所在地などのキーワードで取引先を絞り込める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "自社の設備と加工技術の一覧",
+    "source": {
+      "title": "ビジネス・マッチング・ステーション（BMS）案内",
+      "url": "https://www.chusho.meti.go.jp/keiei/torihiki/download/bms_pamf.pdf",
+      "publisher": "全国中小企業取引振興協会",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1010",
+    "kind": "term",
+    "title": "BMS（ビジネス・マッチング・ステーション）",
+    "summary": "中小企業の取引先開拓をインターネットで手伝う会員制の仕組み。国の補助で利用料は無料。発注情報を探したり自社をPRしたりできる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "公的な受発注マッチングの使い方",
+    "source": {
+      "title": "ビジネス・マッチング・ステーション（BMS）案内",
+      "url": "https://www.chusho.meti.go.jp/keiei/torihiki/download/bms_pamf.pdf",
+      "publisher": "全国中小企業取引振興協会",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1001",
+    "kind": "trend",
+    "official": true,
+    "title": "BMSの登録は2.6万件超",
+    "summary": "全国中小企業取引振興協会の平成26年度事業報告では、BMSの登録企業数は2015年3月末に26,172件。同じ年度に広域商談会を全国8会場で開いた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "全国中小企業取引振興協会 平成26年度事業報告",
+      "url": "https://www.zenkyo.or.jp/disclosure/zentorikyo/pdf/jigyouhoukoku_h26.pdf",
+      "publisher": "全国中小企業取引振興協会",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "pain-772",
+    "kind": "pain",
+    "title": "コロナで商談の機会が減った",
+    "summary": "長野県の令和3年度の事業評価では、受発注の成立にはマッチングの機会を増やすことが大切として斡旋紹介件数を指標にしたが、新型コロナで商談機会が減ったと指摘している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "長野県 令和3年度 事務事業評価（受発注斡旋）",
+      "url": "https://www.pref.nagano.lg.jp/seisaku-hyoka/kensei/soshiki/jigyokaizen/r03hyoka/r03tenken-ketsuka/documents/070301.pdf",
+      "publisher": "長野県",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1002",
+    "kind": "trend",
+    "official": true,
+    "title": "海外バイヤーとオンライン商談",
+    "summary": "大阪産業局の海外展開チャレンジ支援事業（2025年度）は、短期集中の講座と「セカイコネクト」上での海外バイヤーとのオンライン商談を組み合わせた。対象は美容・日用品・食品などの完成品。",
+    "industries": [
+      "食品製造",
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "海外展開チャレンジ支援事業 2025",
+      "url": "https://www.obda.or.jp/wp-content/uploads/2025/05/2025_kaigai_tenkai_challenge_rev.pdf",
+      "publisher": "大阪産業局",
+      "date": "2025-05"
+    }
+  },
+  {
+    "id": "success-1696",
+    "kind": "success",
+    "title": "オンライン展示会で新商品を披露",
+    "summary": "大阪の事業では、約1年かけて自社技術を生かした新商品開発に挑んだ10社が、オンライン展示会「大阪商品計画#3」に出展した。公的支援と民間サービスを組み合わせた例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新商品をオンライン展示会に出した",
+    "source": {
+      "title": "公的支援機関×民間オンライン展示会で大阪のものづくりを全国へ",
+      "url": "https://webtan.impress.co.jp/r/prtimes/items/000000018.000047502",
+      "publisher": "PR TIMES（Web担当者Forum掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1011",
+    "kind": "term",
+    "title": "MOBIO（ものづくりビジネスセンター大阪）",
+    "summary": "大阪のものづくり中小企業の総合支援拠点。ビジネスマッチングや販路拡大の支援をしている。令和3年度から府のものづくり支援事業の一部が大阪産業局へ移った。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "大阪府 ものづくり支援",
+      "url": "https://www.pref.osaka.lg.jp/mono/",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1003",
+    "kind": "trend",
+    "official": true,
+    "title": "愛知の地域商談会はオンライン併設",
+    "summary": "あいち産業振興機構の令和8年度地域商談会（三河・知多会場）は2027年2月3日に刈谷市産業振興センターで開かれ、オンライン方式も併設。受注企業の申込期限は11月19日。",
+    "industries": [
+      "自動車部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和8年度 地域商談会（三河・知多会場）受注企業募集",
+      "url": "https://j-net21.smrj.go.jp/snavi2/articles/194731",
+      "publisher": "J-Net21（あいち産業振興機構の募集）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-849",
+    "kind": "buyer",
+    "title": "商談会で選ばれる企業になる",
+    "summary": "「商談会・マッチングで選ばれる企業になるために」というセミナーが、実際の支援事例を交えて開かれている。発注側は面談前に何ができる会社かを短く知りたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "商談会の前に用意する会社紹介",
+    "source": {
+      "title": "経営革新セミナー 商談会・マッチングで選ばれる企業になるために",
+      "url": "https://j-net21.smrj.go.jp/snavi2/articles/191640",
+      "publisher": "J-Net21（掲載）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-850",
+    "kind": "buyer",
+    "title": "大手の工場へ技術を売り込む展示会",
+    "summary": "東海三県の「次世代産業参入展示商談会 in 安永」は、中小企業が大手メーカーの拠点で新技術・新工法を展示して売り込む形。出展料2万円、定員24社程度。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "大手の社内展示会に出てみた",
+    "source": {
+      "title": "次世代産業参入展示商談会 in 安永 出展企業募集",
+      "url": "https://j-net21.smrj.go.jp/snavi2/articles/189533",
+      "publisher": "J-Net21（東海三県の募集）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1004",
+    "kind": "trend",
+    "official": true,
+    "title": "兵庫のよろずに生産性向上センター",
+    "summary": "兵庫県は2026年4月、よろず支援拠点の中に「生産性向上支援センター」を置いた。専門家が現場に何度も通い、計画から実行・フォローまで無料で支援する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "兵庫県よろず支援拠点内に「生産性向上支援センター」を新設",
+      "url": "https://web.pref.hyogo.lg.jp/sr07/press/20260511.html",
+      "publisher": "兵庫県",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "term-1012",
+    "kind": "term",
+    "title": "技術はNIRO、経営はよろずで分担",
+    "summary": "兵庫県の発表では、製造業の技術面の生産性向上はNIROものづくり支援センター、経営診断を含む幅広い支援は新センターが担う。相談先を選ぶ目安になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "兵庫県よろず支援拠点内に「生産性向上支援センター」を新設",
+      "url": "https://web.pref.hyogo.lg.jp/sr07/press/20260511.html",
+      "publisher": "兵庫県",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "buyer-851",
+    "kind": "buyer",
+    "title": "購買担当と個別に会う7県商談会",
+    "summary": "九州・中国7県合同広域商談会（2025年8月、マリンメッセ福岡）は、発注企業の外注購買担当と各県の中小製造業が個別に面談し、技術・製品と会社の概要を伝える場。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "購買担当に5分で伝える自社紹介",
+    "source": {
+      "title": "九州・中国7県合同広域商談会 受注企業募集案内",
+      "url": "https://www.toriton.or.jp/hp/wp-content/uploads/2025/07/九州・中国７県合同広域商談会-受注企業募集案内チラシ.pdf",
+      "publisher": "鳥取県産業振興機構ほか7県の財団",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "buyer-852",
+    "kind": "buyer",
+    "title": "発注情報が出たらメールで届く",
+    "summary": "7県の財団は受注したい中小製造業の事前エントリーを受け付け、発注企業の情報がそろい次第メールで知らせる。登録しておけば探してもらえる入口が一つ増える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "受注企業 事前エントリー募集チラシ",
+      "url": "https://www.toriton.or.jp/hp/wp-content/uploads/2025/05/受注企業事前エントリー募集チラシ.pdf",
+      "publisher": "鳥取県産業振興機構ほか",
+      "date": "2025-05"
+    }
+  },
+  {
+    "id": "term-1013",
+    "kind": "term",
+    "title": "販路開拓コーディネート事業",
+    "summary": "中小機構の事業で、専門家がマーケティング企画を一緒に作り、首都圏・近畿圏の想定市場の企業へ同行訪問して評価を聞く。販売代行や買い手の紹介はしない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "公的機関のテストマーケティング",
+    "source": {
+      "title": "公的な販路開拓支援（J-Net21 ハンドブック）",
+      "url": "https://j-net21.smrj.go.jp/handbook/development/public_support.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-853",
+    "kind": "buyer",
+    "title": "買い手の評価を聞いてから売る",
+    "summary": "販路開拓コーディネート事業は、想定する市場の企業を訪ねて製品の評価を集め、市場開拓の土台を作る。買い手が何を気にするかを知ってからWebの説明を書くとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "公的な販路開拓支援（J-Net21 ハンドブック）",
+      "url": "https://j-net21.smrj.go.jp/handbook/development/public_support.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1697",
+    "kind": "success",
+    "title": "市場評価から改良し再提案する",
+    "summary": "神戸市産業振興財団の令和6年度の販路開拓支援は、市場評価・商品の改良・テストマーケティング・バイヤーへの聞き取りを会社ごとに組み合わせる。改良の過程も発信の材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "バイヤーの声で製品を直した話",
+    "source": {
+      "title": "販路開拓支援事業 公募要領（令和6年度）",
+      "url": "https://kobe-ipc.or.jp/wp-content/uploads/2024/04/82f9c4b71299e9bdfbb7c0e589c2af27.pdf",
+      "publisher": "神戸市産業振興財団",
+      "date": "2024-04"
+    }
+  },
+  {
+    "id": "trend-1005",
+    "kind": "trend",
+    "official": true,
+    "title": "商社・メーカー出身の専門家が支援",
+    "summary": "2021年版中小企業白書では、中小機構に商社・メーカー出身の販路開拓の専門家（販路開拓コーディネーター）が配置されていると説明している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2021年版中小企業白書 第4章",
+      "url": "https://www.chusho.meti.go.jp/pamflet/hakusyo/2021/chusho/b4_4.html",
+      "publisher": "中小企業庁",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1006",
+    "kind": "trend",
+    "official": true,
+    "title": "中小機構が起業機運のイベントを共催",
+    "summary": "中小機構は創業機運醸成イベント開催支援（TIP*S）で、自治体・支援機関・大学が開くイベントを共催の形で支援している。2026年度の第2回募集は9月3日〜10月2日。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "創業機運醸成イベント開催支援（TIP*S）第2回募集",
+      "url": "https://j-net21.smrj.go.jp/snavi2/articles/191523",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "pain-773",
+    "kind": "pain",
+    "title": "発注元に知られるのが不安で相談しない",
+    "summary": "総務省の資料では、2025年6月27日〜10月31日に官公需の相談が取引かけこみ寺へ14件、自治体の窓口へ6件。発注元の自治体に知られる不安が背景にあるとみている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "官公需に関する取引かけこみ寺への相談状況",
+      "url": "https://www.soumu.go.jp/main_content/001091909.pdf",
+      "publisher": "総務省",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-1014",
+    "kind": "term",
+    "title": "取引かけこみ寺は無料で秘密を守る",
+    "summary": "福島県の案内では、取引かけこみ寺では弁護士や取引にくわしい相談員が無料で相談に応じ、秘密は守られる。価格転嫁の悩みを一人で抱えなくてよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "値上げの相談はどこにする？",
+    "source": {
+      "title": "価格転嫁の相談窓口",
+      "url": "https://www.pref.fukushima.lg.jp/sec/32011b/kakakutenka-sodan.html",
+      "publisher": "福島県",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-854",
+    "kind": "buyer",
+    "title": "区の窓口が加工技術で紹介する",
+    "summary": "目黒区は、受注したい企業と発注したい企業の要望に合う相手を、東京都中小企業振興公社とのネットワークで紹介する。保有機械や加工技術を調べ、単価は当事者同士で決める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "保有設備リストを公開する理由",
+    "source": {
+      "title": "受発注相談（取引の紹介・あっせん）",
+      "url": "https://www.city.meguro.tokyo.jp/sangyoukeizai/shigoto/sangyou/juhacchu.html",
+      "publisher": "目黒区",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-855",
+    "kind": "buyer",
+    "title": "区外の発注者にも広く紹介",
+    "summary": "江戸川区は公社と組み、区外企業も含めて受発注を紹介する。対象は機械・プレス・板金・溶接・金型・表面処理などの製造業。公的な紹介でも設備と技術が見られる。",
+    "industries": [
+      "プレス",
+      "板金",
+      "溶接",
+      "金型",
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり相談・受発注紹介",
+      "url": "https://www.city.edogawa.tokyo.jp/e093/shigotosangyo/jigyosha_oen/sangyo_jigyosya/sodan/monodukurisodan.html",
+      "publisher": "江戸川区",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-856",
+    "kind": "buyer",
+    "title": "発注側は協業相手も探している",
+    "summary": "しずおか・かながわ広域合同商談会の案内では、発注企業が増産や新技術・新製品の開発のために外注先や協業パートナーを新しく探す場と位置づけている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "一緒に開発できる外注先とは",
+    "source": {
+      "title": "しずおか かながわ広域合同商談会 募集案内（発注企業）",
+      "url": "https://www.shinkin.co.jp/chunan/_news/contents/21179/しずおか　かながわ広域合同商談会　募集案内_発注企業　HP用.pdf",
+      "publisher": "静岡県・神奈川県の支援機関（中南信用金庫掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-857",
+    "kind": "buyer",
+    "title": "発注側からの指名で面談が決まる",
+    "summary": "同じ商談会では、双方の希望が合ったときのほか、発注企業や受注企業からの指名で個別面談を組む。1社の発注企業あたり最大10商談の予定。指名されるには事前の情報が大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "しずおか かながわ広域合同商談会 募集案内（発注企業）",
+      "url": "https://www.shinkin.co.jp/chunan/_news/contents/21179/しずおか　かながわ広域合同商談会　募集案内_発注企業　HP用.pdf",
+      "publisher": "静岡県・神奈川県の支援機関（中南信用金庫掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-858",
+    "kind": "buyer",
+    "title": "技術と受注体制をPRする商談会",
+    "summary": "高知県産業振興センターの2025年9月の商談会は、発注企業の外注担当と県内企業が個別に面談し、持っている技術・製品・受注体制を伝えることが目的とされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "受注体制（人・設備・納期）の書き方",
+    "source": {
+      "title": "令和7年度 高知県技術の外商取引拡大商談会",
+      "url": "https://joho-kochi.or.jp/pdf/2025/R7shodankai.pdf",
+      "publisher": "高知県産業振興センター",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-859",
+    "kind": "buyer",
+    "title": "購買担当に外注方針を聞く調査",
+    "summary": "高知県産業振興センターは全国の発注企業の資材・購買担当に、外注方針や県内企業との面談希望を尋ねる調査を行い、発注案件の登録フォームを通年で開いている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "あっせん希望等調査のお願い（2024年）",
+      "url": "https://joho-kochi.or.jp/2024/assen1.pdf",
+      "publisher": "高知県産業振興センター",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1698",
+    "kind": "success",
+    "title": "公的な受注企業カタログに載る",
+    "summary": "高知県産業振興センターは2022年の調査で、発注企業へ県内の受注企業カタログも案内した。公的なカタログと自社サイトの説明をそろえておくと信頼されやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "あっせん希望等調査（2022年）",
+      "url": "https://joho-kochi.or.jp/pdf/2022/assen_survey1.pdf",
+      "publisher": "高知県産業振興センター",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "buyer-860",
+    "kind": "buyer",
+    "title": "面談相手は事前に決まっている",
+    "summary": "岐阜県などの広域商談会では、発注側・受注側の希望をもとに面談相手とスケジュールを事前に決める。発注側は前もって受注企業の情報を見ている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "広域商談会 募集案内",
+      "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/359175.pdf",
+      "publisher": "岐阜県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1007",
+    "kind": "trend",
+    "official": true,
+    "title": "岐阜・滋賀・三重の商談会に78社",
+    "summary": "岐阜・滋賀・三重の「モノづくり商談会 in GIFU」は2026年12月3日に対面、12月7〜11日にオンラインで開かれ、県内外から78社の発注企業が参加予定とされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "岐阜・滋賀・三重「モノづくり商談会 in GIFU」受注企業募集",
+      "url": "https://j-net21.smrj.go.jp/snavi2/articles/189653",
+      "publisher": "J-Net21（岐阜・滋賀・三重の募集）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1008",
+    "kind": "trend",
+    "official": true,
+    "title": "令和7年度は発注企業81社が参加",
+    "summary": "滋賀県産業支援プラザの令和7年度のチラシでは、モノづくり商談会に県内外から81社の発注企業が参加すると案内していた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "モノづくり商談会 チラシ（令和7年度）",
+      "url": "https://www.shigaplaza.or.jp/wp-content/uploads/2025/08/shodan-hanro-251204-1211-chirashi.pdf",
+      "publisher": "滋賀県産業支援プラザ",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "pain-774",
+    "kind": "pain",
+    "title": "親企業頼みの販路では生き残れない",
+    "summary": "大阪府の資料は、中小製造業が親企業や卸に販路を頼ってきたため、親企業の海外移転などで生き残りさえ難しくなっていると指摘している。自分で見つけてもらう力が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "大阪府 中小製造業の販路に関する調査資料",
+      "url": "https://www-pref-osaka-lg-jp.cache.yimg.jp/attach/1949/00032975/17WP-1-3a.pdf",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-775",
+    "kind": "pain",
+    "title": "代金未払いや発注取消しの相談",
+    "summary": "下請かけこみ寺の平成28年度事例集には、代金の未払い、契約の解除、発注の取消しといった相談と、それへの助言がまとめられている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "下請かけこみ寺活用事例集（平成28年度）",
+      "url": "https://zenkyo.or.jp/kakekomi/pdf/jireishu28.pdf",
+      "publisher": "全国中小企業取引振興協会",
+      "date": "2017-03"
+    }
+  },
+  {
+    "id": "success-1699",
+    "kind": "success",
+    "title": "取引の経緯は文書で残して伝える",
+    "summary": "平成29年度の事例集では、取引状況を示す資料を添えて文書で説明する助言や、配達証明付きの督促状を送る助言が紹介されている。記録が自分を守る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "下請かけこみ寺活用事例集（平成29年度）",
+      "url": "https://www.zenkyo.or.jp/kakekomi/pdf/jireishu29.pdf",
+      "publisher": "全国中小企業取引振興協会",
+      "date": "2018-03"
+    }
+  },
+  {
+    "id": "term-1015",
+    "kind": "term",
+    "title": "下請代金は受領から60日以内",
+    "summary": "下請かけこみ寺の令和4年度事例集では、下請代金は受け取った日から60日以内に支払う必要があると説明している。発注者向け記事で支払条件を書くときの基礎知識。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "支払条件はいつまで？",
+    "source": {
+      "title": "下請かけこみ寺活用事例集（令和4年度）",
+      "url": "https://www.zenkyo.or.jp/kakekomi/pdf/case_studies-R4.pdf",
+      "publisher": "全国中小企業振興機関協会",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-1009",
+    "kind": "trend",
+    "official": true,
+    "title": "能登半島地震で特別相談窓口",
+    "summary": "全国中小企業振興機関協会の取引かけこみ寺事業ページでは、熊本地震や令和6年能登半島地震に関する特別相談窓口を案内している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "取引かけこみ寺事業",
+      "url": "https://www.zenkyo.or.jp/kakekomi/",
+      "publisher": "全国中小企業振興機関協会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1700",
+    "kind": "success",
+    "title": "専門家派遣と展示会で依頼が増える",
+    "summary": "東京都中小企業振興公社の専門家派遣の支援事例では、新商品のマーケティングの課題に専門家を派遣し、複数の展示会に出展した結果、オリジナルのブレンド依頼が増えた。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会で受託の相談が増えた理由",
+    "source": {
+      "title": "専門家派遣事業 支援事例（1）",
+      "url": "https://www.tokyo-kosha.or.jp/support/shien/specialist/case01.html",
+      "publisher": "東京都中小企業振興公社",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1016",
+    "kind": "term",
+    "title": "公社の専門家派遣",
+    "summary": "東京都中小企業振興公社が、経営や技術の課題に応じて登録専門家を会社へ派遣する事業。Web・販路など自社だけで手が回らない課題の相談先になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "専門家派遣事業",
+      "url": "https://www.tokyo-kosha.or.jp/support/shien/specialist/index.html",
+      "publisher": "東京都中小企業振興公社",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1010",
+    "kind": "trend",
+    "official": true,
+    "title": "技能人材の定着を無料で支援",
+    "summary": "東京都中小企業振興公社の「ものづくり中小企業技能人材定着支援」では、年度内最大6回の対面支援を無料で受けられる。採用だけでなく辞めない仕組みづくりも支援対象。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり中小企業技能人材定着支援《専門家派遣》",
+      "url": "https://www.tokyo-kosha.or.jp/support/shien/ginou_jinzai/index.html",
+      "publisher": "東京都中小企業振興公社",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1701",
+    "kind": "success",
+    "title": "印刷会社が新事業で人材を確保",
+    "summary": "高知県よろず支援拠点の事例（2020年3月）は、印刷会社が新事業に挑み、社内外へ働きかけて人材育成と適任者の確保を進めた。新しい挑戦の発信は採用にも効く。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新事業を始めた印刷会社の求人",
+    "source": {
+      "title": "新事業への挑戦 社内外へ働きかけ 人材育成・適任者確保",
+      "url": "https://yorozu.smrj.go.jp/support/kouchiyorozu_koubuninsatsu/",
+      "publisher": "高知県よろず支援拠点（全国本部サイト）",
+      "date": "2020-03"
+    }
+  },
+  {
+    "id": "success-1702",
+    "kind": "success",
+    "title": "埼玉のよろずは事例をPDFで公開",
+    "summary": "埼玉県よろず支援拠点は支援事例をPDFで公開しており、製造業の生産性向上の事例も載っている。自社の取り組みを記事にするとき、似た事例の書き方が参考になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "埼玉県よろず支援拠点 支援事例紹介",
+      "url": "https://saitama-yorozu.go.jp/case/",
+      "publisher": "埼玉県よろず支援拠点",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1703",
+    "kind": "success",
+    "title": "世界観やストーリーで共感を得る",
+    "summary": "ミラサポplusのブランディング事例では、中小企業が自社の世界観やストーリーを発信して顧客の共感を得た例を紹介している。ブランドは高級品だけの話ではない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちの工場の物語を書く",
+    "source": {
+      "title": "事例から学ぶ！「ブランディング」",
+      "url": "https://mirasapo-plus.go.jp/hint/19331/",
+      "publisher": "中小企業庁 ミラサポplus",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1355",
+    "kind": "question",
+    "title": "よろず支援拠点で何を相談できる？",
+    "summary": "中小企業庁の資料にあるとおり製造業の相談も多く、売上拡大・販路・IT活用などを無料で相談できる。読者向けには「公的な相談先も使いながら発信している」と書くと安心感が出る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "中小企業庁 よろず支援拠点に関する研究会 資料",
+      "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/yorozu/001/007.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1356",
+    "kind": "question",
+    "title": "公的な商談会と自社サイトの違いは？",
+    "summary": "九州・中国7県の商談会のように、公的な商談会は購買担当と直接会える。一方で面談前後に会社を調べられるのは自社サイト。両方をそろえると商談が進みやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "商談会のあとに見られるページ",
+    "source": {
+      "title": "九州・中国7県合同広域商談会 受注企業募集案内",
+      "url": "https://www.toriton.or.jp/hp/wp-content/uploads/2025/07/九州・中国７県合同広域商談会-受注企業募集案内チラシ.pdf",
+      "publisher": "鳥取県産業振興機構ほか7県の財団",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "buyer-861",
+    "kind": "buyer",
+    "title": "発注企業は外注先を新規開拓したい",
+    "summary": "岐阜・滋賀・三重の商談会には、2026年度は県内外78社の発注企業が参加予定と主催者が案内している。外注先を新しく探す発注側は多く、見つけてもらう準備に意味がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "岐阜・滋賀・三重「モノづくり商談会 in GIFU」受注企業募集",
+      "url": "https://j-net21.smrj.go.jp/snavi2/articles/189653",
+      "publisher": "J-Net21（岐阜・滋賀・三重の募集）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-1357",
+    "kind": "question",
+    "title": "買いたたきとは何ですか？",
+    "summary": "中小企業庁の講習テキストの事例では、値引きの理由がはっきりしない注文書が問題になる。発注者向けに、見積もりの根拠（材料費・工数）を説明する記事は信頼につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "見積もりの内訳を公開する",
+    "source": {
+      "title": "適正取引講習会テキスト（令和4年度）",
+      "url": "https://tekitorisupport.go.jp/download/topics/r4_koushuu1.pdf",
+      "publisher": "中小企業庁 適正取引支援サイト",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "success-1704",
+    "kind": "success",
+    "title": "売れる商品のヒントは相談会から",
+    "summary": "岩手の事例のように、合同経営相談会での相談が新商品の柱づくりにつながることがある。相談の経緯を記事にすると、取り組みの本気度が伝わる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ミラサポplus 支援機関とともに（岩手の事例）",
+      "url": "https://mirasapo-plus.go.jp/hint/19159/",
+      "publisher": "中小企業庁 ミラサポplus",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1017",
+    "kind": "term",
+    "title": "技術相談は無料、試験は実費",
+    "summary": "鹿児島県の案内では、公設試の技術相談・指導は無料で、依頼試験・分析は実費負担。発注者にも「まず相談は無料」と伝えると使ってもらいやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "試験に出す前に無料の技術相談を使う",
+    "source": {
+      "title": "技術支援（工業技術センター等）",
+      "url": "https://www.pref.kagoshima.jp/af03/sangyo-rodo/syoko/shinko/05003001.html",
+      "publisher": "鹿児島県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1011",
+    "kind": "trend",
+    "official": true,
+    "title": "愛知の公設試は依頼試験13万件超",
+    "summary": "愛知県によると、2021年度にあいち産業科学技術総合センターが受けた依頼試験は136,348件、技術相談・指導は44,109件。測る・調べる需要がとても大きい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "あいち産業科学技術総合センターの概要",
+      "url": "https://www.pref.aichi.jp/uploaded/attachment/502441.pdf",
+      "publisher": "愛知県",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1018",
+    "kind": "term",
+    "title": "技術相談は電話・来所・メールで",
+    "summary": "茨城県の公設試は技術相談を電話・来所・メールで受け、対象に制限は設けていない。有料の依頼試験では結果に対する解決策の提案もする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "茨城県産業技術イノベーションセンター",
+      "url": "https://www.pref.ibaraki.jp/shokorodo/kogise/sangyo/kougise-top.html",
+      "publisher": "茨城県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1012",
+    "kind": "trend",
+    "official": true,
+    "title": "公設試を「技術の駆け込み寺」に",
+    "summary": "兵庫県は公設試を中小企業の「技術の駆け込み寺」と位置づけ、ワンストップの技術相談を強めるとした（2020年の戦略）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ひょうご経済戦略 重点戦略",
+      "url": "https://www.hyogo-kg.jp/download/outline/jutensenryaku_2020.pdf",
+      "publisher": "ひょうご産業活性化センター等",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "question-1358",
+    "kind": "question",
+    "title": "異物の正体は調べてもらえる？",
+    "summary": "名古屋市工業研究所の事例では、フィルターに詰まった異物を蛍光X線と赤外吸収で調べ、コンプレッサーのオイルミストと鋼材加工の金属粉が原因と推定した。成分から発生源をしぼれる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "異物の成分分析で発生源をしぼる流れ",
+    "source": {
+      "title": "研究報告：空調機フィルター詰まりの原因調査",
+      "url": "https://www.nmiri.city.nagoya.jp/wp-content/uploads/2023/02/research_7_06.pdf",
+      "publisher": "名古屋市工業研究所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "pain-776",
+    "kind": "pain",
+    "title": "工場の空調フィルターがすぐ詰まる",
+    "summary": "名古屋市工業研究所の相談例では、空気圧縮機のオイルミストと加工で出る金属粉が混ざって詰まりの原因になっていた。設備まわりの困りごとも公設試に相談できる。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "研究報告：空調機フィルター詰まりの原因調査",
+      "url": "https://www.nmiri.city.nagoya.jp/wp-content/uploads/2023/02/research_7_06.pdf",
+      "publisher": "名古屋市工業研究所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "term-1019",
+    "kind": "term",
+    "title": "破断面解析",
+    "summary": "折れた・割れた部品の断面を顕微鏡などで見て、疲労・過大な力・腐食など壊れ方の原因を推定する方法。栃木県の研修では、分析方法の選び方とデータが大事とされる。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "部品が折れたとき最初にすること",
+    "source": {
+      "title": "金属材料の破断面解析 研修案内",
+      "url": "https://iri.pref.tochigi.lg.jp/content/files/jinzai/151015_gk.pdf",
+      "publisher": "栃木県産業技術センター",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "trend-1013",
+    "kind": "trend",
+    "official": true,
+    "title": "信金が製造業マッチング会社と提携",
+    "summary": "福島信用金庫は2017年、取引先の「本業支援」として製造業のビジネスマッチングサービスを持つ会社と提携した。技術の困りごとを外部の技術者探しにつなぐ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ビジネスマッチングサービスに関する業務提携",
+      "url": "https://www.shinkin.co.jp/fshinkin/csr/pdf/linkers01.pdf",
+      "publisher": "福島信用金庫",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "buyer-862",
+    "kind": "buyer",
+    "title": "大手の技術ニーズを信金経由で探す",
+    "summary": "京都中央信用金庫は、大手企業の技術ニーズと技術を持つ中堅・中小企業のマッチングを外部サービスと組んで支援している。発注側も信金に探し方を相談できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "取引銀行に「こういう技術を探している」と伝える",
+    "source": {
+      "title": "製造業マッチングに関する業務提携",
+      "url": "https://www.chushin.co.jp/cms_source/files/20200615001.pdf",
+      "publisher": "京都中央信用金庫",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1705",
+    "kind": "success",
+    "title": "信金のマッチングフェアで成約",
+    "summary": "高松信用金庫の報告では、第1回のマッチングフェアに99社が出展し商談3,901件。3か月後に取引先73社に聞くと成約66件、商談継続116件だった（2008年資料）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "信金のフェアの後、3か月の追いかけ方",
+    "source": {
+      "title": "高松信用金庫の取組",
+      "url": "https://www.fsa.go.jp/news/19/ginkou/20080331-6/09.pdf",
+      "publisher": "金融庁（高松信用金庫の報告）",
+      "date": "2008"
+    }
+  },
+  {
+    "id": "success-1706",
+    "kind": "success",
+    "title": "初出展の中小を集めた総合展",
+    "summary": "川崎信用金庫の報告では、2007年の中小企業総合展に110社が出展し約5,000人が来場。出展社の約7割はビジネスフェアが初めてだった。最初の一歩に信金の展示会は使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "初めての展示会は取引信金の催しから",
+    "source": {
+      "title": "川崎信用金庫の取組",
+      "url": "https://www.fsa.go.jp/news/19/ginkou/20080331-6/10.pdf",
+      "publisher": "金融庁（川崎信用金庫の報告）",
+      "date": "2008"
+    }
+  },
+  {
+    "id": "trend-1014",
+    "kind": "trend",
+    "official": false,
+    "title": "公庫と信金が共同で商談会",
+    "summary": "日本食糧新聞によると、2024年10月に日本公庫と大阪信用金庫が両方の取引先向けに商談会を開いた。共催は2年目で、能登の被災4県の事業者にも参加を呼びかけた。",
+    "industries": [
+      "食品製造",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "日本公庫と大阪信金が秋の大商談会",
+      "url": "https://news.nissyoku.co.jp/news/fujibayashi20241023050059289",
+      "publisher": "日本食糧新聞",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "buyer-863",
+    "kind": "buyer",
+    "title": "公庫の商談会に大手39社が来る",
+    "summary": "日本公庫の発表では、2019年2月の第11回全国ビジネス商談会は製造業中心で、大手企業への販路拡大の要望に応えて大手39社を呼んだ。買い手は公的商談会で中小を探す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "全国ビジネス商談会の開催結果",
+      "url": "https://www.jfc.go.jp/n/info/pdf/topics_190227a.pdf",
+      "publisher": "日本政策金融公庫",
+      "date": "2019-02"
+    }
+  },
+  {
+    "id": "trend-1015",
+    "kind": "trend",
+    "official": true,
+    "title": "公庫のオンライン商談は725件",
+    "summary": "日本公庫によると、2022年2月の全国オンライン商談会には全都道府県から505社が売り手として参加し、延べ商談は725件（前回424件）。画面越しの商談が定着した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "全国オンライン商談会の開催結果",
+      "url": "https://www.jfc.go.jp/n/info/pdf/topics_220221b.pdf",
+      "publisher": "日本政策金融公庫",
+      "date": "2022-02"
+    }
+  },
+  {
+    "id": "success-1707",
+    "kind": "success",
+    "title": "オンライン商談は画面映えの準備",
+    "summary": "日本公庫のオンライン商談会のように画面越しの商談が増えている。製品写真・加工動画・1枚資料をすぐ画面共有できるよう、Webサイトに置いておくと話が早い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "オンライン商談で見せる写真と動画の用意",
+    "source": {
+      "title": "全国オンライン商談会の開催結果",
+      "url": "https://www.jfc.go.jp/n/info/pdf/topics_220221b.pdf",
+      "publisher": "日本政策金融公庫",
+      "date": "2022-02"
+    }
+  },
+  {
+    "id": "buyer-864",
+    "kind": "buyer",
+    "title": "公庫もパートナー探しのサイトを運営",
+    "summary": "国土交通省の資料では、日本公庫がビジネスパートナー探しのマッチングサイトを運営し、相談機関の紹介もしているとされる。取引先探しの入口の一つ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "事業者支援の取組（関係機関）",
+      "url": "https://www.mlit.go.jp/common/001200620.pdf",
+      "publisher": "国土交通省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1016",
+    "kind": "trend",
+    "official": true,
+    "title": "信金が製造業向けHP制作会社と提携",
+    "summary": "川口信用金庫は2022年1月、製造業のホームページ制作に強い会社と提携した。製造業と関係の深い信金として、取引先のDXの悩みに提案できるようにする狙い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "株式会社デジタルベリーとの業務提携",
+      "url": "https://www.shinkin.co.jp/ksb/info/topics/pdf/220127.pdf",
+      "publisher": "川口信用金庫",
+      "date": "2022-01"
+    }
+  },
+  {
+    "id": "buyer-865",
+    "kind": "buyer",
+    "title": "HP制作会社は取引信金に聞く",
+    "summary": "川口信用金庫のように、信金が製造業向けの制作会社と組む例がある。制作会社選びに迷ったら、まず取引のある信金に紹介先を聞く方法もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "ホームページの依頼先を銀行で相談する",
+    "source": {
+      "title": "株式会社デジタルベリーとの業務提携",
+      "url": "https://www.shinkin.co.jp/ksb/info/topics/pdf/220127.pdf",
+      "publisher": "川口信用金庫",
+      "date": "2022-01"
+    }
+  },
+  {
+    "id": "trend-1017",
+    "kind": "trend",
+    "official": false,
+    "title": "信金経由でホームページ作成を支援",
+    "summary": "KDDIウェブコミュニケーションズは2022年、全国の信用金庫の取引先の中小企業・個人事業主向けに、ホームページを使ったDX支援を始めたと発表した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "信用金庫の取引先向けホームページDX支援",
+      "url": "https://www.kddi-webcommunications.co.jp/archives/001/202207/全国の信用金庫の取引先の中小企業・個人事業主に向けて、ホームページを活用したDX支援を開始.pdf",
+      "publisher": "KDDIウェブコミュニケーションズ",
+      "date": "2022-07"
+    }
+  },
+  {
+    "id": "trend-1018",
+    "kind": "trend",
+    "official": false,
+    "title": "信金がDXの伴走支援を始める",
+    "summary": "2026年5月の発表によると、村上信用金庫が外部の会社と組み、地域企業のDXを戦略から実行まで伴走支援する。セミナーや個別相談も予定。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "村上信用金庫と地域イノベーション協創基盤の提携",
+      "url": "https://aeo.washinmura.jp/ai/%E5%9C%B0%E5%9F%9F%E3%82%A4%E3%83%8E%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%85%B1%E5%89%B5%E5%9F%BA%E7%9B%A4%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE/en/news/2026-05-20-murakami-shinkin-bank-and-regional-innov",
+      "publisher": "washinmura（企業発表の要約）",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "trend-1019",
+    "kind": "trend",
+    "official": false,
+    "title": "地銀のデジタル化支援は本業支援",
+    "summary": "ASCIIによると、2023年のイベントで地銀のDXコンサルが議論され、デジタル化の支援は取引先の本業支援と位置づけられた。銀行は融資以外の相談先にもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地銀のDXコンサルは中小のDXの足がかりになるか",
+      "url": "https://ascii.jp/elem/000/004/145/4145278/",
+      "publisher": "ASCII",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "pain-777",
+    "kind": "pain",
+    "title": "地銀のDX支援はまだ手薄",
+    "summary": "日本総研のレポートは、地銀の取引先向けDX支援の体制は十分ではなく、強化が急務と指摘する。銀行に頼るだけでなく自社でも発信を進める必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地域金融機関のDX支援（レポート）",
+      "url": "https://www.jri.co.jp/page.jsp?id=105184",
+      "publisher": "日本総合研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1359",
+    "kind": "question",
+    "title": "試験の依頼はまず電話？",
+    "summary": "東京都立皮革技術センターでは、依頼書を送る前に平日に電話で試験内容と試料の状態を伝え、できるかどうかを確かめる流れ。手数料を払ってから試験が始まる。",
+    "industries": [
+      "繊維",
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "公設試に試験を頼む手順をやさしく",
+    "source": {
+      "title": "依頼試験の利用手順書",
+      "url": "https://www.hikaku.metro.tokyo.lg.jp/Portals/0/images/honsho/shiken/2023/riyoutejyunnsyo.pdf",
+      "publisher": "東京都立皮革技術センター",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "question-1360",
+    "kind": "question",
+    "title": "公設試の試験は当日払い？",
+    "summary": "岡山県工業技術センターでは、まず電話やメールで問い合わせて担当者と日程・方法を打ち合わせ、当日に手続きして現金で払う方式。機関ごとに支払い方は違う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "依頼試験のご案内",
+      "url": "https://www.pref.okayama.jp/site/kougi/598235.html",
+      "publisher": "岡山県工業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1020",
+    "kind": "term",
+    "title": "申請書は担当者と相談してから",
+    "summary": "香川県産業技術センターでは、使う設備や頼む試験を担当職員と相談してから申請書を出す。いきなり書類を送るより、目的を先に話すと話が早い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "依頼試験・機器利用の申請書",
+      "url": "https://www.pref.kagawa.lg.jp/sangi/irai/application-form.html",
+      "publisher": "香川県産業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1021",
+    "kind": "term",
+    "title": "試料と参考材料をそえて出す",
+    "summary": "和歌山県の規則では、依頼試験の申請書には試料と参考材料をつける。必要な数量はそのつど所長が決めるので、何個送ればよいかは事前に聞く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工業技術センター依頼試験規則",
+      "url": "https://www.pref.wakayama.lg.jp/prefg/010100/reiki/reiki_honbun/k501RG00000635.html",
+      "publisher": "和歌山県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1361",
+    "kind": "question",
+    "title": "公設試の試験結果をHPに載せていい？",
+    "summary": "茨城県の公設試では、成績書に書かれた内容に限って名義を使える。広告などに使うときは成績書番号と交付日を書くよう求めている。載せる前に必ず機関の決まりを確かめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "試験データをWebに載せるときの決まり",
+    "source": {
+      "title": "名義使用について",
+      "url": "https://www.itic.pref.ibaraki.jp/cms/wp-content/uploads/2021/07/meigishiyou.pdf",
+      "publisher": "茨城県産業技術イノベーションセンター",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1708",
+    "kind": "success",
+    "title": "第三者の試験データで信頼を見せる",
+    "summary": "茨城県の公設試のルールのように、成績書番号と交付日を明記すれば試験結果を発信に使える場合がある。自社測定より公的機関のデータの方が買い手に伝わりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "公設試で測った数字を製品ページに",
+    "source": {
+      "title": "名義使用について",
+      "url": "https://www.itic.pref.ibaraki.jp/cms/wp-content/uploads/2021/07/meigishiyou.pdf",
+      "publisher": "茨城県産業技術イノベーションセンター",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "pain-778",
+    "kind": "pain",
+    "title": "成績書の使い方で注意を受ける",
+    "summary": "沖縄県工業技術センターは、成績書の不適切な使い方が見られるとして注意を呼びかけている。一部だけ切り取る・別製品に流用するなどは信頼を失う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "試験分析等成績書の活用について（注意喚起）",
+      "url": "https://www.pref.okinawa.jp/shigoto/kenkyu/1011573/1022710/1011577.html",
+      "publisher": "沖縄県工業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1022",
+    "kind": "term",
+    "title": "成績書は「その試料」の結果",
+    "summary": "公設試の成績書は、持ちこんだ試料を試した結果を示すもの。沖縄県は不適切な活用に注意を呼びかけている。製品全体の保証のように書かないのが大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「試験済み」と書くときの正しい言い方",
+    "source": {
+      "title": "成績書の活用に関する注意喚起",
+      "url": "https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/011/577/seisekisyotyuikanki20200402.pdf",
+      "publisher": "沖縄県工業技術センター",
+      "date": "2020-04"
+    }
+  },
+  {
+    "id": "term-1023",
+    "kind": "term",
+    "title": "技術相談・依頼試験・機器利用",
+    "summary": "公設試の主なサービスは、困りごとを聞く技術相談、職員が測る依頼試験、自分で機械を使う機器利用など。山梨県の利用案内のように窓口で使い分けを案内している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "山梨県産業技術センター ご利用案内",
+      "url": "https://www.pref.yamanashi.jp/yitc/riyo.html",
+      "publisher": "山梨県産業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1020",
+    "kind": "trend",
+    "official": true,
+    "title": "公設試の相談は「分析・評価」が最多",
+    "summary": "福岡県工業技術センターの業務報告では、技術相談は「分析・評価」が毎年最多で、令和2年度は全6,555件のうち2,292件だった。何でできているか・なぜ壊れたかを知りたい人が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「なぜ壊れた？」に答える記事",
+    "source": {
+      "title": "令和2年度 業務報告 技術相談",
+      "url": "https://www.fitc.pref.fukuoka.jp/data/center/report/r2/r02_04.pdf",
+      "publisher": "福岡県工業技術センター",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "question-1362",
+    "kind": "question",
+    "title": "測定・寸法の相談は多い？",
+    "summary": "福岡県工業技術センターの令和2年度の報告では、「精密加工・測定」の相談が614件、「材料・構造強度」が305件。寸法や強度を外で測りたい需要は根強い。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "令和2年度 業務報告 技術相談",
+      "url": "https://www.fitc.pref.fukuoka.jp/data/center/report/r2/r02_04.pdf",
+      "publisher": "福岡県工業技術センター",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1021",
+    "kind": "trend",
+    "official": true,
+    "title": "食品加工の相談も多い",
+    "summary": "福岡県工業技術センターの業務報告では、食品加工の相談も毎年数百件ある（令和2年度557件）。食品メーカーも公設試の常連の使い手。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和3年度 業務報告",
+      "url": "https://www.fitc.pref.fukuoka.jp/data/center/report/r3/gyoumu_r3_04.pdf",
+      "publisher": "福岡県工業技術センター",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "success-1709",
+    "kind": "success",
+    "title": "強度試験と赤外分析で材質の違いを特定",
+    "summary": "福岡県工業技術センターの平成30年度の事例では、製品が壊れた原因を強度試験と赤外分光分析を組み合わせて調べ、材質の違いを突き止めた。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "樹脂部品が割れたときの原因調べ",
+    "source": {
+      "title": "平成30年度 業務報告",
+      "url": "https://www.fitc.pref.fukuoka.jp/data/center/report/h30/h30_04.pdf",
+      "publisher": "福岡県工業技術センター",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "question-1363",
+    "kind": "question",
+    "title": "めっき＋塗装の製品がさびたら？",
+    "summary": "都産技研の相談事例では、亜鉛ダイカストにめっきとクリヤ塗装をした製品の部分腐食を断面観察で調べ、塗装のはがれを見つけた。めっきと塗装の専門家が組んで対応した。",
+    "industries": [
+      "表面処理",
+      "塗装",
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "めっきと塗装の重ねで起きる不具合",
+    "source": {
+      "title": "めっき・塗装複合試験",
+      "url": "https://www.iri-tokyo.jp/service/testing/brand/b-coating/",
+      "publisher": "東京都立産業技術研究センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1024",
+    "kind": "term",
+    "title": "公設試で塩水噴霧試験を頼む",
+    "summary": "塩の霧を吹きつけて、さびにくさを比べる試験。都産技研では亜鉛めっき鋼板に電着塗装・粉体塗装をしたものの耐食性をこの試験で評価した事例がある。",
+    "industries": [
+      "表面処理",
+      "塗装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "塩水噴霧試験の時間の意味",
+    "source": {
+      "title": "めっき・塗装複合試験",
+      "url": "https://www.iri-tokyo.jp/service/testing/brand/b-coating/",
+      "publisher": "東京都立産業技術研究センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1364",
+    "kind": "question",
+    "title": "めっきが変色するのはなぜ？",
+    "summary": "めっき会社の解説では、めっき液の劣化、後の洗浄不足、乾燥不足、高温多湿での保管が主な原因。保管と梱包の条件も発注時に伝えたい。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "めっき品の変色を防ぐ保管の話",
+    "source": {
+      "title": "めっきの脱色・変色とは？",
+      "url": "https://ja.nc-net.or.jp/company/87574/product/detail/268478/",
+      "publisher": "NCネット（めっき会社の解説）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-779",
+    "kind": "pain",
+    "title": "無電解ニッケルが変色して困る",
+    "summary": "Q&Aサイトでは、無電解ニッケルめっきの変色に対し、水洗が足りず薬品が残っている可能性を指摘する回答があった。現場の声として多い悩み。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "無電解Niめっきの変色の除去方法について",
+      "url": "https://okbizcs.okwave.jp/mori.nc-net/qa/q9443182.html",
+      "publisher": "NCネット Q&A",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-780",
+    "kind": "pain",
+    "title": "アルミの塗装がすぐはがれる",
+    "summary": "商社の事例ページでは、アルミ製品のクロメート処理の上の塗膜が軽い力ではがれた例が紹介されている。前処理と塗料の相性は相談の多いテーマ。",
+    "industries": [
+      "塗装",
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "めっき会社のお悩みに、商社としての価値提供",
+      "url": "https://fuji-syoji.jp/cases/5/",
+      "publisher": "商社の事例ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1710",
+    "kind": "success",
+    "title": "信金のブースに間借りして出展",
+    "summary": "大阪シティ信用金庫は2023年の展示会で、自身のブースの一部を取引先3社に貸し、万博出展をめざす製品を展示した。単独出展が難しい会社の入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "取引信金のブースに相乗り出展する",
+    "source": {
+      "title": "HANAZONO EXPO 2023 出展報告",
+      "url": "https://www.shinkin.co.jp/osakashi/news/2023/20231110hanazono.pdf",
+      "publisher": "大阪シティ信用金庫",
+      "date": "2023-11"
+    }
+  },
+  {
+    "id": "success-1711",
+    "kind": "success",
+    "title": "商談会の成果は半年後に測る",
+    "summary": "亀有信用金庫の資料では、ある商談イベント後6か月のアンケートで継続面談96件、成約86件。商談会の効果は当日ではなく数か月後に出る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "商談会の名刺を半年追いかける",
+    "source": {
+      "title": "地域密着型金融の取組状況",
+      "url": "https://www.shinkin.co.jp/kameari/pdf/discro/2026/07-08.pdf",
+      "publisher": "亀有信用金庫",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-1025",
+    "kind": "term",
+    "title": "よい仕事おこしフェア",
+    "summary": "全国の信用金庫が連携して2012年から開くBtoBの展示商談会。ものづくり・食品・観光などが中心。事務局は城南信用金庫で、信金や自治体など多くの団体が参加。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "よい仕事おこしフェア チラシ",
+      "url": "https://www.city.machida.tokyo.jp/jigyousha/shien/shien/yoishigotookoshi.files/chirashi2.pdf",
+      "publisher": "町田市（よい仕事おこしフェア案内）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1022",
+    "kind": "trend",
+    "official": true,
+    "title": "信金が取引先のデジタル化を調べる",
+    "summary": "上田信用金庫は取引先264社を対象に、デジタル化とキャッシュレスへの対応を特別調査した。地域の信金調査は、地元の取引先の実情を知る材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "特別調査 中小企業におけるデジタル化とキャッシュレスへの対応",
+      "url": "https://www.shinkin.co.jp/ueda/corporation/bizsbs/img/pdf/kdr-no170.pdf",
+      "publisher": "上田信用金庫",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1026",
+    "kind": "term",
+    "title": "全国中小企業景気動向調査",
+    "summary": "信金中央金庫が全国の信用金庫を通じて、従業員300人以下の中小企業約1万6千社に四半期ごとに聞く景気調査。業種別の景況を知る材料。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "信金中金月報 2023年6月号",
+      "url": "https://www.scbri.jp/publication/.assets/geppo_2023-6-4.pdf",
+      "publisher": "信金中央金庫 地域・中小企業研究所",
+      "date": "2023-06"
+    }
+  },
+  {
+    "id": "buyer-866",
+    "kind": "buyer",
+    "title": "協会に年1000件ほどの引き合い",
+    "summary": "大田区産業振興協会の案内では、区内外から年間1000件ほどの引き合いがあり、登録企業のデータベースから候補を紹介する。発注側は地域の協会に頼んで加工先を探せる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "加工先を地域の振興協会で探す方法",
+    "source": {
+      "title": "受発注商談会 開催報告",
+      "url": "https://www.pio-ota.jp/mediafile/170aafa8310ce8b0100393266f9674f595798527.pdf",
+      "publisher": "大田区産業振興協会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1712",
+    "kind": "success",
+    "title": "振興協会への企業登録で紹介を待つ",
+    "summary": "大田区産業振興協会は登録企業の技術・設備データから引き合いに合う会社を紹介する。登録情報をくわしく書いておくことが、紹介されるための前提になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "支援機関の企業データを更新しよう",
+    "source": {
+      "title": "受発注商談会 開催報告",
+      "url": "https://www.pio-ota.jp/mediafile/170aafa8310ce8b0100393266f9674f595798527.pdf",
+      "publisher": "大田区産業振興協会",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-867",
+    "kind": "buyer",
+    "title": "発注企業は商談会に無料で参加",
+    "summary": "大田区産業振興協会の第59回受発注商談会（2020年12月）では、発注企業は無料で参加でき、134社のうち発注側は45社だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "第59回受発注商談会 開催結果",
+      "url": "https://pio-ota.jp/59.pdf",
+      "publisher": "大田区産業振興協会",
+      "date": "2020-12"
+    }
+  },
+  {
+    "id": "trend-1023",
+    "kind": "trend",
+    "official": true,
+    "title": "大田区の商談会は776商談",
+    "summary": "大田区産業振興協会によると、2018年10月の第57回受発注商談会は269社（発注91社・受注178社）が参加し、商談数は776件だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "第57回受発注商談会 開催結果",
+      "url": "https://www.pio-ota.jp/docs/57.pdf",
+      "publisher": "大田区産業振興協会",
+      "date": "2018-10"
+    }
+  },
+  {
+    "id": "pain-781",
+    "kind": "pain",
+    "title": "商談会でも価格競争の案件が多い",
+    "summary": "大田区の計画資料では、商談会の案件は単なる価格競争のものから、大手の高い技術を求めるものまで幅広いとされる。技術を言葉にできないと価格だけで比べられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "価格で比べられないための技術の見せ方",
+    "source": {
+      "title": "大田区基本計画 目指す姿の達成度評価",
+      "url": "https://www.city.ota.tokyo.jp/kuseijoho/ota_plan/kihonkeikaku/past/kihonkeikaku10/mezasusugatanotasseidohyouka.files/02-6kobetumokuhyou2-3.pdf",
+      "publisher": "大田区",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1713",
+    "kind": "success",
+    "title": "協会が撮るPR動画をHPに載せる",
+    "summary": "大田区の資料では、産業振興協会が取材・撮影・編集してホームページ用のPR動画づくりを支援し、費用の3分の2を助成（上限想定12万1千円）。初めて動画を作る会社向け。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "初めての会社紹介動画は支援機関と作る",
+    "source": {
+      "title": "企業PR動画制作支援事業",
+      "url": "https://www.city.ota.tokyo.jp/gikai/kugikai_katsudou/iinkai/iinkaishiryo/chiiki/R3chiiki/03061516.files/19_tiiki03061516.pdf",
+      "publisher": "大田区",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1024",
+    "kind": "trend",
+    "official": true,
+    "title": "墨田区はものづくりPRの催しを補助",
+    "summary": "墨田区のサポートブック（2025年度）には、区内ものづくり事業者が参加するイベントなどを支援する「ものづくりプロモーション推進補助金」があり、上限150万円。事前相談が必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "すみだビジネスサポートブック2025",
+      "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/keikaku_siryo/busisupobook.files/supportbook2025.pdf",
+      "publisher": "墨田区",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-1027",
+    "kind": "term",
+    "title": "すみだモダン",
+    "summary": "墨田区の地域ブランド認証。区内で作られたすぐれた商品などを認証して発信を後押しする。2025年度は6社が認証された。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "すみだビジネスサポートブック2025",
+      "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/keikaku_siryo/busisupobook.files/supportbook2025.pdf",
+      "publisher": "墨田区",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1714",
+    "kind": "success",
+    "title": "府が中小の「強み」のPRを支援",
+    "summary": "大阪府の資料には「ものづくり企業の強みPR支援事業」などの販路拡大の事業がある。自社の強みを第三者と一緒に言葉にする機会として使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり企業の強みPR支援事業",
+      "url": "https://www.pref.osaka.lg.jp/documents/121564/27.pdf",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1025",
+    "kind": "trend",
+    "official": false,
+    "title": "東大阪市は新製品開発を助成",
+    "summary": "補助金ポータルによると、東大阪市の「ものづくり支援助成事業」は、市内中小企業が行う総事業費75万円超の新製品開発や技術研究の経費の一部を助成する（2023年度分）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "東大阪市ものづくり支援助成事業",
+      "url": "https://hojyokin-portal.jp/subsidies/29967",
+      "publisher": "補助金ポータル（東大阪市の制度）",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "success-1715",
+    "kind": "success",
+    "title": "大企業の特許で自社製品を作る",
+    "summary": "川崎市の知的財産マッチング（川崎モデル）は、大企業の開放特許を市内中小に橋渡しする。資料によると2026年3月末で成約54件、製品化37件。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "開放特許で下請けから自社製品へ",
+    "source": {
+      "title": "知的財産マッチング事業パンフレット2026",
+      "url": "https://www.kawasaki-net.ne.jp/chitekizaisan/wp-content/uploads/2026/04/chitekizaisan_2026.pdf",
+      "publisher": "川崎市産業振興財団",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "success-1716",
+    "kind": "success",
+    "title": "記者発表で新製品の露出を増やす",
+    "summary": "川崎市の知財マッチングでは、製品化した中小企業の記者発表などで露出を高め、販売につなげる支援もある。製品化の後の発信まで支援機関に頼れる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "知的財産マッチング事業パンフレット2026",
+      "url": "https://www.kawasaki-net.ne.jp/chitekizaisan/wp-content/uploads/2026/04/chitekizaisan_2026.pdf",
+      "publisher": "川崎市産業振興財団",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "term-1028",
+    "kind": "term",
+    "title": "開放特許",
+    "summary": "企業が他社に使ってもらうために公開している特許。川崎市のように支援機関が仲立ちし、許諾の交渉や契約の手続きを手伝うことがある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "知的財産マッチング事業パンフレット2026",
+      "url": "https://www.kawasaki-net.ne.jp/chitekizaisan/wp-content/uploads/2026/04/chitekizaisan_2026.pdf",
+      "publisher": "川崎市産業振興財団",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "pain-782",
+    "kind": "pain",
+    "title": "人材・受注・開発が三大課題",
+    "summary": "川崎市の資料では、市内中小製造業の主な経営課題として人材確保、受注・販路開拓、新技術・新製品の研究開発が挙げられている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "川崎市産業振興プラン関係資料",
+      "url": "https://www.city.kawasaki.jp/170/cmsfiles/contents/0000090/90726/4-1.pdf",
+      "publisher": "川崎市",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-868",
+    "kind": "buyer",
+    "title": "県の支援機関が取引をあっせん",
+    "summary": "埼玉県の資料では、受発注情報を集めて提供し、取引のあっせんや展示商談会で県内中小の販路拡大を支援するとある。発注側も県の窓口に加工先を相談できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "埼玉県 取引振興事業（予算資料）",
+      "url": "https://www.pref.saitama.lg.jp/yosan-info/ST2021-11/pdf/007681.pdf",
+      "publisher": "埼玉県",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1026",
+    "kind": "trend",
+    "official": true,
+    "title": "燕市は産業ブランドづくりを推進",
+    "summary": "燕市の資料では「つばめ産業ブランド創生プロジェクト」で地域産業のブランド化と販路開拓を掲げ、金属酒器の普及なども進めている。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "燕市まち・ひと・しごと創生総合戦略",
+      "url": "https://www.city.tsubame.niigata.jp/material/files/group/5/100886374.pdf",
+      "publisher": "燕市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1027",
+    "kind": "trend",
+    "official": true,
+    "title": "燕は産地一貫と工場開放でブランド化",
+    "summary": "燕市の第2期基本計画の概要では、卸商社と産地一貫の製造流通体制を支え、オープンファクトリーで地場産業のブランドを強める方針。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "燕市 地域経済牽引事業 基本計画の概要",
+      "url": "https://www.meti.go.jp/policy/sme_chiiki/miraitoushi/kihonkeikaku/gaiyo/353_nigata_tsubame_gaiyo.pdf",
+      "publisher": "経済産業省（燕市の計画）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1717",
+    "kind": "success",
+    "title": "産地の展示会で金属加工を見せる",
+    "summary": "ニュースイッチは燕三条ものづくりメッセで金属加工企業の出展を紹介した。産地の名前で集客する展示会は、単独より買い手に見つけてもらいやすい。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "燕三条ものづくりメッセ",
+      "url": "https://newswitch.jp/p/14963",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-783",
+    "kind": "pain",
+    "title": "公設試の存在を知らない",
+    "summary": "RIETIの2026年の要約は、公設試の利用が伸びない一番の壁は費用対効果の比較の前に、そもそも選択肢に入らない「未認知」だと指摘する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「公設試って何？」から書く記事",
+    "source": {
+      "title": "中小企業における公設試「未認知」からの脱却",
+      "url": "https://www.rieti.go.jp/jp/publications/nts/26e022.html",
+      "publisher": "経済産業研究所（RIETI）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1028",
+    "kind": "trend",
+    "official": true,
+    "title": "公設試を使う企業は生産性が高い",
+    "summary": "RIETIの2025年の要約では、全国の中小企業経営者へのアンケートから、公設試を使った企業は労働生産性が一貫して高い傾向が見られたとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "公設試の利用と中小企業の生産性",
+      "url": "https://www.rieti.go.jp/jp/publications/nts/25e064.html",
+      "publisher": "経済産業研究所（RIETI）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-1029",
+    "kind": "term",
+    "title": "公設試は敷居の低い相談窓口",
+    "summary": "日本総研のレポートは、公設試を中小企業にとって敷居の低い身近な相談窓口とし、技術相談や依頼試験を低料金で出すと説明する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "公設試験研究機関の役割（レポート）",
+      "url": "https://www.jri.co.jp/page.jsp?id=107821",
+      "publisher": "日本総合研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1029",
+    "kind": "trend",
+    "official": true,
+    "title": "公設試利用者の目的達成度は97%",
+    "summary": "群馬県産業技術センターの2020年度アンケートでは、利用企業の目的達成度は97.3%だった（利用した企業だけが対象）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "群馬県産業技術センター 利用者アンケート",
+      "url": "https://www.pref.gunma.jp/uploaded/attachment/53345.pdf",
+      "publisher": "群馬県",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1718",
+    "kind": "success",
+    "title": "中小BtoBもWebで新規客を得る",
+    "summary": "日本公庫総合研究所は2016年、中小BtoB企業のウェブマーケティングをテーマに調べている。製造業の多くはBtoBで、Webでの見つけてもらい方が研究の対象になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小BtoB企業のウェブマーケティング（シンポジウム資料）",
+      "url": "https://www.jfc.go.jp/n/findings/pdf/symposium05_160318.pdf",
+      "publisher": "日本政策金融公庫総合研究所",
+      "date": "2016-03"
+    }
+  },
+  {
+    "id": "trend-1030",
+    "kind": "trend",
+    "official": false,
+    "title": "製造業は新市場開拓に積極的",
+    "summary": "MONOistが紹介した中小企業庁の調査では、製造業と卸売業は新規市場への販路開拓に取り組む割合が多い一方、2〜4割の中小は取り組んでいないとされた（2015年）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業の販路開拓（MONOist）",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1505/15/news013_3.html",
+      "publisher": "MONOist",
+      "date": "2015-05"
+    }
+  },
+  {
+    "id": "trend-1031",
+    "kind": "trend",
+    "official": false,
+    "title": "販路開拓に挑む中小は半数超",
+    "summary": "大同生命の2025年4月度調査では、新規顧客・販路の開拓に取り組む中小企業は53%で、自社ホームページやSNSでの発信をしている企業は32%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "大同生命サーベイ 2025年4月度",
+      "url": "https://digitalpr.jp/r/110467",
+      "publisher": "大同生命保険",
+      "date": "2025-04"
+    }
+  },
+  {
+    "id": "pain-784",
+    "kind": "pain",
+    "title": "販路開拓の人材が足りない",
+    "summary": "大同生命の2025年4月度調査では、事業拡大の課題に商品・サービス力の強化と、開拓を担う人材の確保が挙がった。発信を続ける人手がいないのはよくある悩み。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "大同生命サーベイ 2025年4月度",
+      "url": "https://digitalpr.jp/r/110467",
+      "publisher": "大同生命保険",
+      "date": "2025-04"
+    }
+  },
+  {
+    "id": "success-1719",
+    "kind": "success",
+    "title": "信金が製造業向けツールの体験会",
+    "summary": "大阪シティ信用金庫は2024年3月、生産管理や在庫・原価管理など製造業向けツールの体験展示とセミナーを開いた。取引先が導入の前に比べられる場になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業向けDX体験会・セミナー開催報告",
+      "url": "https://www.shinkin.co.jp/osakashi/news/2023/20240325dx.pdf",
+      "publisher": "大阪シティ信用金庫",
+      "date": "2024-03"
+    }
+  },
+  {
+    "id": "trend-1032",
+    "kind": "trend",
+    "official": true,
+    "title": "県は公設試の成果を製品化の数で見る",
+    "summary": "山形県は工業技術センターの成果指標に、支援で製品化に取り組む企業の数を置いている。公設試は試験だけでなく製品化までの相談先。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "山形県 工業技術センターの事業評価",
+      "url": "https://www.pref.yamagata.jp/documents/1007/300603121.pdf",
+      "publisher": "山形県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1033",
+    "kind": "trend",
+    "official": true,
+    "title": "岩手の公設試は相談年3000件が目標",
+    "summary": "岩手県工業技術センターの令和7年度計画では、技術相談件数を年3,000件とする数値目標を掲げている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "岩手県工業技術センター 令和7年度事業計画",
+      "url": "https://www2.pref.iwate.jp/~kiri/public_info/plan/pdf/R7keikaku.pdf",
+      "publisher": "岩手県工業技術センター",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-869",
+    "kind": "buyer",
+    "title": "県が首都圏の企業と引き合わせる",
+    "summary": "宮城県は、県内で製造する中小企業を首都圏などの企業と引き合わせる販路支援をしている。開発途上の製品は原則対象外で、売れる形になってから使う制度。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "宮城県 販路開拓支援事業",
+      "url": "https://www.pref.miyagi.jp:443/documents/25164/3-11.pdf",
+      "publisher": "宮城県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1034",
+    "kind": "trend",
+    "official": true,
+    "title": "市が優れた商品を認定して販路支援",
+    "summary": "横浜市は2026年4月、優れた商品を持つ事業者を販路開拓支援の対象として認定する制度の募集を出した。認定は発信の材料にもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "横浜市 販路開拓支援の認定募集",
+      "url": "https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/keizai/2026/0406sbir.files/0016_20260403.pdf",
+      "publisher": "横浜市",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "success-1720",
+    "kind": "success",
+    "title": "県が企業PR動画を作って公開",
+    "summary": "宮城県は人材不足のものづくり企業向けに、公募で選んだ20社のPR動画を作り、県のサイトやYouTubeで公開した（2020年）。採用の発信を県の力で広げる例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "自治体の採用動画の企画に応募する",
+    "source": {
+      "title": "MIYAGIものづくり人材PR動画の公開",
+      "url": "https://www.pref.miyagi.jp/release/prmovie-r2press.html",
+      "publisher": "宮城県",
+      "date": "2020-11"
+    }
+  },
+  {
+    "id": "trend-1035",
+    "kind": "trend",
+    "official": true,
+    "title": "市が若者向けにSNS広告で発信",
+    "summary": "札幌市は市内ものづくり企業への就職を増やすため、動画を作りSNSとSNS広告で若年層に届ける業務を委託している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり企業動画発信業務 仕様書",
+      "url": "https://www.city.sapporo.jp/keizai/keiyaku/documents/siyosho.pdf",
+      "publisher": "札幌市",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1721",
+    "kind": "success",
+    "title": "2分の簡単PR動画を市が作る",
+    "summary": "長岡市は市内ものづくり企業向けに、会社紹介や新製品を紹介する2分程度の簡単なPR動画を作る企画を行った（募集は終了）。短い動画でも商談前の紹介に使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり企業PR動画の制作",
+      "url": "https://www.city.nagaoka.niigata.jp:443/sangyou/cate01/file/2021mono-fair01.pdf",
+      "publisher": "長岡市",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "term-1030",
+    "kind": "term",
+    "title": "公設試の利用料を区が補助",
+    "summary": "世田谷区は区内中小企業が都産技研を使うときの利用料の一部を補助している。区によっては試験費用の負担を軽くできる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "区内中小企業の都産技研利用料補助",
+      "url": "https://www.city.setagaya.lg.jp/documents/4983/panhuretto.pdf",
+      "publisher": "世田谷区",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1365",
+    "kind": "question",
+    "title": "試験費用の補助は誰が使える？",
+    "summary": "品川区の利用料助成は、区内に本社か主な事業所がある会社が対象。所在地で使える制度が変わるので、記事では「地元の制度を確かめて」と添えるとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "利用料助成のご案内（令和7年度）",
+      "url": "https://www.mics.city.shinagawa.tokyo.jp/material/files/group/2/R7Riyoryo_Chirashi.pdf",
+      "publisher": "品川区",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1036",
+    "kind": "trend",
+    "official": true,
+    "title": "地銀は販路と生産性の支援をする",
+    "summary": "全国地方銀行協会の2018年の報告では、地銀が成長を目指す取引先にビジネスマッチングやIT活用による効率化の支援をしているとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地方銀行の地域密着型金融の取組状況（2018）",
+      "url": "https://www.chiginkyo.or.jp/regional_banks/initiative/community_based/assets/2018_torikumijyokyo_all.pdf",
+      "publisher": "全国地方銀行協会",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "buyer-870",
+    "kind": "buyer",
+    "title": "地銀経由で海外メーカーと会う",
+    "summary": "ニュースイッチによると、国際協力銀行が広島銀行の取引先の製造企業をカナダの大手部品メーカーと引き合わせるマッチング会を開いた。海外の買い手とも銀行経由で会える。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "JBIC 海外メーカーとのマッチング",
+      "url": "https://newswitch.jp/p/12556",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1722",
+    "kind": "success",
+    "title": "支援センターの紹介で基板の受託へ",
+    "summary": "さいたま市の報告では、首都圏の販路を探していた他県の電子機器製造会社を、市内の無線機器メーカーに引き合わせ、電子基板製造の受託につながった。",
+    "industries": [
+      "基板実装",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "さいたま市 産業支援の報告",
+      "url": "https://www.city.saitama.lg.jp/006/007/020/010/001/p076186_d/fil/houkoku1.pdf",
+      "publisher": "さいたま市",
+      "date": null
+    }
+  },
+  {
+    "id": "term-1031",
+    "kind": "term",
+    "title": "ビジネスマッチングの成約率",
+    "summary": "銀行が取引先同士を紹介して、実際の取引になった割合。高知工科大学の論文はこの成約率に注目し、地銀のマッチングがうまくいく要因を考えている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地方銀行のビジネスマッチングの成功要因",
+      "url": "https://www.kochi-tech.ac.jp/library/ron/pdf/2019/03/15/a1200398.pdf",
+      "publisher": "高知工科大学",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "success-1723",
+    "kind": "success",
+    "title": "地銀が開発と販路をまとめて支援",
+    "summary": "全国地方銀行協会の2015年の事例集には、地銀が塗料製造会社の開発支援と販路拡大支援をした例など、製造業向けの取り組みが載っている。",
+    "industries": [
+      "化学・塗料・接着剤"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地方銀行の分野別取組事例（2015）",
+      "url": "https://www.chiginkyo.or.jp/pdf/2015_bunya_02.pdf",
+      "publisher": "全国地方銀行協会",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "success-1724",
+    "kind": "success",
+    "title": "県のDX事例集に製造業が載る",
+    "summary": "鹿児島県の「かごしま中小企業DX推進事業」では、製造業の導入事例を公開している（令和5年度）。県の事例集に載ると、それ自体が自社の発信材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業のDXグッドプラクティス",
+      "url": "https://www.pref.kagoshima.jp/af22/dx_goodpractice.html",
+      "publisher": "鹿児島県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1725",
+    "kind": "success",
+    "title": "信金に出す提案資料をそろえる",
+    "summary": "鳥取信用金庫はビジネスマッチング用の提案資料の様式を公開している。何を作れて何を求めるかを1枚にまとめると、信金が紹介先を探しやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "銀行に渡す1枚の会社紹介",
+    "source": {
+      "title": "ビジネスマッチング提案資料",
+      "url": "https://www.shinkin.co.jp/torishin/business/support/04_teiansiryo.pdf",
+      "publisher": "鳥取信用金庫",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-871",
+    "kind": "buyer",
+    "title": "ネットの取引あっせんは無料",
+    "summary": "中小企業庁の資料にある「ビジネス・マッチング・ステーション」は、受注企業と発注企業をネットでつなぐ取引あっせんで、無料で使えるとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ビジネス・マッチング・ステーションの案内",
+      "url": "https://www.chusho.meti.go.jp/keiei/torihiki/2014/download/140217business.pdf",
+      "publisher": "中小企業庁",
+      "date": "2014"
+    }
   }
 ];
 
