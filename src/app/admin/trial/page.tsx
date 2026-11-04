@@ -110,9 +110,14 @@ export default async function AdminTrialPage() {
     <main className="page max-w-3xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h1 className="text-2xl font-black sm:text-3xl">30秒でためすの見守り</h1>
-        <Link href="/admin/invitations" className="text-sm font-bold text-brand-dark underline">
-          招待と所属の管理へ
-        </Link>
+        <div className="flex flex-wrap gap-x-4 text-sm font-bold">
+          <Link href="/admin/usage" className="text-brand-dark underline">
+            利用金額と利用頻度へ
+          </Link>
+          <Link href="/admin/invitations" className="text-brand-dark underline">
+            招待と所属の管理へ
+          </Link>
+        </div>
       </div>
 
       <section className={`card space-y-3 border-2 ${settings.trial_ai_enabled ? "border-ok-bright" : "border-danger"}`}>
