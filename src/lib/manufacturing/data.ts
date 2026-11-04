@@ -70820,5 +70820,10419 @@ export const MFG_ITEMS: MfgItem[] = [
       "publisher": "イプロス",
       "date": null
     }
+  },
+  {
+    "id": "question-780",
+    "kind": "question",
+    "title": "WordやPowerPointのデータで頼める？",
+    "summary": "受け付ける会社は多いが、開く環境で書体が変わったり崩れたりしやすい。大手ネット印刷はPDFにしての入稿を勧める。答えには『受けられる形式』と『PDFにする手順』をセットで。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Wordで作ったチラシを頼むときの3つの準備",
+    "source": {
+      "title": "Officeデータ(Word・PowerPoint・EXCEL)の入稿は可能ですか？",
+      "url": "https://raksul.com/guide/submit-data/faq-10/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-781",
+    "kind": "question",
+    "title": "Wordで作るとCMYKにできない？",
+    "summary": "WordはRGBでしか色を作れず、印刷用のCMYKに変えると鮮やかな色ほどくすむ。発注者には『画面どおりにはならない』と先に伝え、大事な色は見本で確かめる流れを書くとよい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ワード｜Word データチェックリスト",
+      "url": "https://raksul.com/guide/create-data/data-check-guide/word-check/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-782",
+    "kind": "question",
+    "title": "Officeで作ると文字化けが心配",
+    "summary": "PDFにするときフォントが埋め込まれていないと別の書体に置き換わる。丸数字などの機種依存文字も化けやすい。確認用PDFで文字が変わっていないか見る手順を答えに入れる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ワード｜Word データチェックリスト",
+      "url": "https://raksul.com/guide/create-data/data-check-guide/word-check/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-783",
+    "kind": "question",
+    "title": "PowerPointのチラシは何を確かめる？",
+    "summary": "スライドの大きさと注文した仕上がりサイズが合っているかが最初の確認点。パスワード保護をしない、保存後に開けるか見る、なども大手のチェックリストにある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "パワーポイント｜PowerPoint データチェックリスト",
+      "url": "https://raksul.com/guide/create-data/data-check-guide/powerpoint-check/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-784",
+    "kind": "question",
+    "title": "Canvaのデザインで印刷を頼める？",
+    "summary": "頼める会社が増えている。ダウンロードで『PDF（印刷）』を選び、トリムマークと塗り足しを含めて書き出すのが基本。会社ごとに条件が違うので、Canva入稿の案内ページを見る。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Canvaで作ったチラシをきれいに刷るコツ",
+    "source": {
+      "title": "Canva（キャンバ）からの印刷手順と、おすすめの印刷方法をご紹介！",
+      "url": "https://www.graphic.jp/feature/lp_canva_print",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-785",
+    "kind": "question",
+    "title": "Canvaで作った色が刷ると違う",
+    "summary": "Canvaの画面はRGBの光の色で、印刷のインキでは出せない色がある。蛍光っぽい青や緑は特に沈む。色が大事なら校正を取るか、印刷会社に色の近い指定を相談する。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PDF印刷",
+      "url": "https://www.canva.com/ja_jp/features/pdf-print/",
+      "publisher": "Canva",
+      "date": null
+    }
+  },
+  {
+    "id": "question-786",
+    "kind": "question",
+    "title": "スマホの写真をそのまま入稿できる？",
+    "summary": "JPGやPNGの画像入稿を受ける会社は多い。ただし塗り足しや文字の位置は自分で調整できないので、写真1枚を刷るグッズやポスター向き。文字入りの印刷物はレイアウトソフトで作る。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "画像や写真データ(pngやjpeg、psdなど)は入稿できますか",
+      "url": "https://www.graphic.jp/customer/faq/answer/100153",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-787",
+    "kind": "question",
+    "title": "PDF入稿でもアウトライン化は要る？",
+    "summary": "印刷用のPDF（PDF/X-1aなど）でフォントが埋め込まれていれば不要とする会社が多い。ただし入稿の方法によっては求められる。会社の入稿方法ごとの条件を答えに並べると親切。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PDF入稿でフォントのアウトラインや画像の埋め込みをしたほうがいいですか",
+      "url": "https://www.graphic.jp/customer/faq/answer/101450",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-788",
+    "kind": "question",
+    "title": "「解像度が低い」と言われたら？",
+    "summary": "画像の画素が足りず、刷ると粗くなるという警告。そのまま刷るか、元の大きい画像に差し替えるかを選ぶ。小さい画像を引き伸ばしても良くならないことを先に伝える。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "写真が粗いと言われたときの直し方",
+    "source": {
+      "title": "注意事項解説：「解像度の低い画像が含まれているため、仕上がりが粗くなることがあります」",
+      "url": "https://raksul.com/guide/submit-data/notes/resolution/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-789",
+    "kind": "question",
+    "title": "小さい画像を拡大して使っていい？",
+    "summary": "引き伸ばすと粗さが目立つ。グラフィックは配置した画像の拡大・縮小を70〜130%ほどにとどめるよう案内している。ロゴは元データ（ベクター）をもらうのが一番。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "印刷に最適な解像度（画像解像度）とは？目安や印刷時の注意点も紹介",
+      "url": "https://www.graphic.jp/feature/print_resolution",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-790",
+    "kind": "question",
+    "title": "ポスターの写真は何dpiあればいい？",
+    "summary": "離れて見るので、チラシより低くてよい。ラクスルは離れて見るポスターで150〜200dpi、一般の印刷物で350〜400dpiを目安に挙げる。見る距離を聞いてから答えるとよい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "インターネット上の画像を使いたいのですが、問題ありませんか？",
+      "url": "https://raksul.com/guide/create-data/faq/faq-11/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-791",
+    "kind": "question",
+    "title": "自動チェックで解像度エラーが出た",
+    "summary": "ネット印刷の自動チェックは、基準より低い画像があると止まる。わざと粗く見せるデザインならその旨を伝えれば進められることもある。会社ごとの対処をFAQで確かめる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "スマートチェックなどの自動データチェックで解像度が低いとエラーがでます。",
+      "url": "https://www.graphic.jp/customer/faq/answer/102491",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-792",
+    "kind": "question",
+    "title": "文字は何ポイントまで小さくできる？",
+    "summary": "刷れる限界と読める大きさは別。グラフィックは6pt以上、ラクスルのオンラインデザインは読みやすさのため8pt以上を勧める。注意書きや表示ラベルは特に大きめに。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "小さい文字も印刷できますか?",
+      "url": "https://www.graphic.jp/customer/faq/answer/136",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-793",
+    "kind": "question",
+    "title": "細い罫線はどこまで刷れる？",
+    "summary": "0.3pt（約0.1mm）より細い線はかすれるおそれがあるとラクスルは案内する。Illustratorで『線なし』の細線や0ptの線が消える事故も多いので、線幅の数字で確かめる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "線幅の設定",
+      "url": "https://guide.raksul.com/hc/ja/articles/13334386541455-%E7%B7%9A%E5%B9%85%E3%81%AE%E8%A8%AD%E5%AE%9A",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-794",
+    "kind": "question",
+    "title": "白抜き文字がつぶれない？",
+    "summary": "色ベタの上に細い白文字を置くと、インキがにじんで埋まりやすい。太めの書体を使い、背景は1色100%に近い色にするとかすれにくい、と大手の注意点にある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "印刷データ作成の注意点_オンラインデザイン",
+      "url": "https://raksul.com/guide/design/online-design/check-data/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-795",
+    "kind": "question",
+    "title": "端の文字が切れたのは誰の責任？",
+    "summary": "仕上がり線から1mm以内の文字は断裁のずれで切れることがあり、発注側の配置の問題になりやすい。1mmより内側で切れたら印刷側の不備の可能性、とグラフィックは示す。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "文字が切れない配置の目安と責任の線引き",
+    "source": {
+      "title": "断裁により文字が切れている",
+      "url": "https://www.graphic.jp/customer/faq/answer/102825",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-796",
+    "kind": "question",
+    "title": "断裁はどれくらいずれるもの？",
+    "summary": "紙を重ねて切るため、1mmほどのずれは製造上避けられないと扱う会社が多い。加工によっては1.5mmまで合格とすることも。切れて困る文字は2〜3mm内側へ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "断裁ズレに注意しよう",
+      "url": "https://www.graphic.jp/data_guide/basic_knowledge/cutting_shift",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-797",
+    "kind": "question",
+    "title": "細いフチ取りのデザインは危ない？",
+    "summary": "四辺に同じ幅の細い枠を入れると、断裁が少しずれただけで左右や上下の幅がそろわず目立つ。枠を太くするか、枠なしのデザインを勧めるのが印刷会社の定番の答え。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "断裁ズレに注意しよう",
+      "url": "https://www.graphic.jp/data_guide/basic_knowledge/cutting_shift",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-798",
+    "kind": "question",
+    "title": "冊子の断裁はどれくらいずれる？",
+    "summary": "冊子はページを重ねて切るので一枚物よりずれやすい。文字や大事な絵柄は仕上がりより3mm以上内側に置くよう案内する会社が多い。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "冊子の断裁はどの程度ずれるか知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/100026",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-799",
+    "kind": "question",
+    "title": "冊子のページ数はどう数える？",
+    "summary": "表紙・表2・表3・裏表紙の4ページも含めて数える。中綴じは紙1枚が4ページ分なので4の倍数。数え方の図を記事に入れると問い合わせが減る。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "冊子のページ数の数え方を図で説明",
+    "source": {
+      "title": "冊子のページ数の考え方が知りたい。対応しているページ数を教えてください。",
+      "url": "https://www.graphic.jp/customer/faq/answer/100003",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-800",
+    "kind": "question",
+    "title": "中綴じが4の倍数にならない時は？",
+    "summary": "中綴じは4の倍数でしか作れないので、白ページやメモ欄を足して合わせるのが一般的。どのページに白を入れるかで見え方が変わるので、台割の段階で相談するとよい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中綴じ冊子のページ数を4の倍数以外で注文したい",
+      "url": "https://www.graphic.jp/customer/faq/answer/101549",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-801",
+    "kind": "question",
+    "title": "冊子の背幅はどう決まる？",
+    "summary": "背幅は紙の厚さとページ数で決まる。グラフィックは『表紙の厚さ×2＋本文の厚さ×ページ数÷2』の式を示す。無線綴じの表紙は背幅込みの見開きで作る。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中綴じ冊子、無線綴じ冊子のデータ作成方法を知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/100029",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-802",
+    "kind": "question",
+    "title": "冊子のノド側の余白はどれだけ？",
+    "summary": "綴じる側（ノド）は開いても見えにくい。グラフィックは文字や大事な絵柄をノドから10mm以上離すよう勧める。厚い無線綴じほど余白を多めに。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商品別データ作成ガイド 中綴じ冊子印刷 綴じ方向・ページの配置",
+      "url": "https://www.graphic.jp/data_guide/product/booklet/saddle_stitch",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-803",
+    "kind": "question",
+    "title": "無線綴じの表紙はどう作る？",
+    "summary": "表1・背・表4を1枚につなげた見開きで作り、背の幅は本文の紙とページ数から出す。背にタイトルを入れるなら、背幅が小さいと1mmほどのずれが目立つので注意。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商品別データ作成ガイド 無線綴じ冊子印刷 表紙データの作成方法",
+      "url": "https://graphic.jp/data_guide/product/perfect_bound_booklet",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-804",
+    "kind": "question",
+    "title": "WordやPowerPointで冊子は作れる？",
+    "summary": "作れる。ページ設定を仕上がりサイズにし、ページ数をそろえ、PDFにして順番を確かめる。大手は6つの手順で解説している。社内報や会報の担当者向けの記事になりやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社内報をWordで作って冊子にする手順",
+    "source": {
+      "title": "ワード・パワーポイントで簡単6ステップ!冊子の作り方はじめて講座",
+      "url": "https://raksul.com/magazine/usage/140811-booklet/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-805",
+    "kind": "question",
+    "title": "透明な素材に刷ると色が透ける？",
+    "summary": "インキだけだと向こうが透けて色が薄く見える。絵柄の下に白インクを敷く『白版』で抑えるが、白を敷いても少し透け感は残る。仕上がりの見本写真を記事に載せるとよい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オリジナルクリアファイルの作り方｜白版の必要性と作成方法",
+      "url": "https://www.graphic.jp/feature/how_to_make_clear_file",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-806",
+    "kind": "question",
+    "title": "白版のデータは何色で作る？",
+    "summary": "別レイヤーに、絵柄と同じ位置でK100%のベタで作る会社が多い。ラクスルは例外的に特色の水色で作る指定。会社ごとに違うので、テンプレートの指定に従うよう書く。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商品別データ作成ガイド ホワイト版",
+      "url": "https://www.graphic.jp/data_guide/product/white_plate",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-807",
+    "kind": "question",
+    "title": "白版は絵柄より小さく作る？",
+    "summary": "白とカラーは刷るときにずれるので、白を少し内側に縮める。グラフィックは-0.2mm、印刷屋さんドットコムは-0.1mmを案内。数値は会社で違う。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "白打ちデータの作成方法",
+      "url": "https://www.insatsuyasan.com/products/clearfile/clearfile_shirouchi.html",
+      "publisher": "印刷屋さんドットコム",
+      "date": null
+    }
+  },
+  {
+    "id": "question-808",
+    "kind": "question",
+    "title": "細い文字に白版をつけたら？",
+    "summary": "白を縮めると細い文字や線はかすれやすい。細かい部分は白版なしの方がきれいに出る、とラクスルのシールのガイドにある。デザイン相談のポイントになる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "シール・ステッカー・ラベル（白版あり）の印刷用データ作成方法",
+      "url": "https://raksul.com/guide/create-data/item/sticker/guide-white/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-809",
+    "kind": "question",
+    "title": "白版でグラデーションはできる？",
+    "summary": "白版はベタが基本で、濃淡はうまく出ないことが多い。透け具合を変えたいなら、白の有無で表現するデザインに変える。グラフィックのFAQが答えている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ホワイト版について知りたい(白インクのデータ作成方法について知りたい)",
+      "url": "https://www.graphic.jp/customer/faq/answer/101383",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-810",
+    "kind": "question",
+    "title": "白版がいる商品といらない商品は？",
+    "summary": "クリアファイルや透明シールなど透ける素材は白版が必要。Tシャツや濃色トートでは不要としている会社もある。商品ごとの一覧を答えに入れると迷わない。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商品別データ作成ガイド ホワイト版",
+      "url": "https://www.graphic.jp/data_guide/product/white_plate",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-811",
+    "kind": "question",
+    "title": "黒をもっと深い色にしたい",
+    "summary": "K100%だけの黒は少し薄く見える。CMYを足した『リッチブラック』にすると深い黒になる。グラフィックはC60M40Y40K100、ラクスルはC50M40Y40K100を推す。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "リッチブラックとは？CMYKの数値とスミベタ・4色ベタとの使い分け",
+      "url": "https://www.graphic.jp/feature/rich_black",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-812",
+    "kind": "question",
+    "title": "小さな黒文字もリッチブラック？",
+    "summary": "細い文字や罫線をリッチブラックにすると、4色のわずかなずれでにじんで見える。文字はK100%（スミベタ）が基本、と各社が案内している。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "リッチブラック(混色の黒)、4色ベタ、K1色で印刷する場合で、どれが綺麗な印刷ができますか",
+      "url": "https://www.graphic.jp/customer/faq/answer/102772",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-813",
+    "kind": "question",
+    "title": "黒ベタが裏移りしたのはなぜ？",
+    "summary": "インキを重ねすぎると乾かず、重ねた紙の裏につく。CMYK全部100%の4色ベタは避ける。ラクスルは総インキ量を300%以内を目安にするよう案内している。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "総インキ量（黒のインキ量）",
+      "url": "https://raksul.com/guide/create-data/knowledge-of-printing/ink-amount/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-814",
+    "kind": "question",
+    "title": "特色は何色まで使える？",
+    "summary": "ネット印刷では片面2色までなど上限がある。グラフィックは片面2色まで、二度刷りは不可。3色以上や重ね刷りが要るなら、版を作る町の印刷会社に相談するのが向く。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "特色を何色使うかで変わる頼み先と費用",
+    "source": {
+      "title": "特色インキ",
+      "url": "https://www.graphic.jp/options/print_ink/trait_ink",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-815",
+    "kind": "question",
+    "title": "特色を1色足すといくら？",
+    "summary": "版と色替えの分が上乗せになる。グラフィックのA4までの料金表では、基本料に枚数分の単価が加わる形。部数が少ないほど1枚あたりは割高になる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "A4まで（特色印刷・料金早見表）",
+      "url": "https://www.graphic.jp/popup/options/trait_ink/a4_price_list",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-816",
+    "kind": "question",
+    "title": "特色の色は校正で確かめられる？",
+    "summary": "デジタルプルーフは特色に対応せず、CMYKに置き換えて出る。特色の色を本当に見たいなら、本番の機械とインキで刷る本機校正を選ぶ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "デジタルプルーフ、本機校正の違いを教えてほしい",
+      "url": "https://www.graphic.jp/customer/faq/answer/101292",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-817",
+    "kind": "question",
+    "title": "簡易校正では何を見ればいい？",
+    "summary": "家庭用に近い機械で出すので色は本番どおりではない。見るべきは誤字脱字、電話番号や価格、サイズ、切れ、順番。画面だけで確かめるのは危ない、と大手コラムも書く。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "校正で必ず見る10か所のチェック表",
+    "source": {
+      "title": "チラシ作りに利用しよう!簡易校正と本機校正の違い",
+      "url": "https://raksul.com/magazine/column/difference-off-press-proof/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-818",
+    "kind": "question",
+    "title": "入稿画面のプレビュー色は正しい？",
+    "summary": "入稿後に出るプレビュー画像は体裁の確認用で、刷り色は反映していない。色を見たいなら本機校正かデジタルプルーフを頼む、とグラフィックのFAQが答えている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PDF入稿でプレビュー画面（校正画像）通りに印刷されますか",
+      "url": "https://www.graphic.jp/customer/faq/answer/101152",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-819",
+    "kind": "question",
+    "title": "誤字は印刷会社が見てくれる？",
+    "summary": "多くのネット印刷のデータチェックは、印刷できるかの確認だけ。文字の誤りやデザインミスは対象外で、データ不備のトラブルは作った側の責任が原則と明記している。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "誤字は誰が見る？チェックの範囲の違い",
+    "source": {
+      "title": "入稿データのチェック",
+      "url": "https://www.graphic.jp/shop_guide/data_submission/check",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-820",
+    "kind": "question",
+    "title": "不良品はいつまでに連絡する？",
+    "summary": "大手ネット印刷は、届いてから1週間ほどを受付の目安にしている。届いたらすぐ箱を開け、数と状態を確かめるよう記事で伝えるとトラブルが減る。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "返品・再印刷について",
+      "url": "https://raksul.com/guide/return/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-821",
+    "kind": "question",
+    "title": "配り始めてから不良に気づいたら？",
+    "summary": "一部でも使った後は、返品や刷り直しを断られることがある、とラクスルは案内する。使う前に全体を見る、写真を残す、の2点を答えに入れる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "キャンセル・返金・返品について",
+      "url": "https://guide.raksul.com/hc/ja/articles/4407928301071-%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AB-%E8%BF%94%E9%87%91-%E8%BF%94%E5%93%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-822",
+    "kind": "question",
+    "title": "色が思ったのと違えば刷り直せる？",
+    "summary": "画面との差や前回との差が会社の許容範囲の中なら、品質保証の対象外になることが多い。色が大事なら校正を取り、基準を先に決めておくのが答え。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商品が届いたが、想定していた色と仕上がりの色が異なっている理由が知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/101283",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-823",
+    "kind": "question",
+    "title": "入稿後にデータを差し替えたい",
+    "summary": "差し替えられる期限は入稿方法で違う。グラフィックはスタッフのチェック前まで、別の方法では入稿後1時間までなどと決めている。早く連絡するほど選べる手が多い。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "再入稿はいつまでできますか",
+      "url": "https://www.graphic.jp/customer/faq/answer/100304",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-824",
+    "kind": "question",
+    "title": "データ不備の連絡を放置すると？",
+    "summary": "修正データを出すまで出荷日は決まらず、再入稿後に計算し直しになる。グラフィックの規約では通知から10日返事がないと取り消しになる場合がある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ご注文規約",
+      "url": "https://www.graphic.jp/corporate_info/agreement/order",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-825",
+    "kind": "question",
+    "title": "前回と同じ色で増刷できる？",
+    "summary": "同じデータでも、刷る機械や一緒に刷る他のデータで色は少し変わる。ネット印刷は許容範囲内の差を保証しない。同じ色にしたいなら、前回の刷り物を見本として渡せる会社に。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "増刷で色をそろえるために伝えること",
+    "source": {
+      "title": "前回と同じデータで注文を考えているが色が同じように仕上がるか教えてほしい",
+      "url": "https://www.graphic.jp/customer/faq/answer/101282",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-826",
+    "kind": "question",
+    "title": "増刷のたびにデータを出し直す？",
+    "summary": "ネット印刷では、同じ仕様でも新しい注文としてデータを出し直すのが基本。保管サービスを使えば省ける場合もある。最終版のデータを社内で決まった場所に保管しておく。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "以前の注文を増刷したいが、データ入稿も必要ですか",
+      "url": "https://www.graphic.jp/customer/faq/answer/100328",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-827",
+    "kind": "question",
+    "title": "入稿データはいつまで残る？",
+    "summary": "グラフィックの無料のデータ保管は13か月で、保管されるのは印刷用に変換したデータ。手元に返してはもらえない。元データの管理は発注側の仕事と考える。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "データストックオプションについて知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/101890",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-828",
+    "kind": "question",
+    "title": "版を使う増刷で何が違う？",
+    "summary": "版を作る印刷では、増刷でも仕上がりに少し違いが出ることがある。版の扱いや版代がどうなるかは会社ごとに決まりがある。前回の版を使えるかを先に聞く。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "版代について",
+      "url": "https://guide.raksul.com/hc/ja/articles/5019974343567-%E7%89%88%E4%BB%A3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-829",
+    "kind": "question",
+    "title": "増刷はいつから頼める？",
+    "summary": "ラクスルでは前の注文が出荷された後から増刷の操作ができる。在庫が切れる前に、納期を逆算して頼む目安を記事にすると喜ばれる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "増刷注文方法",
+      "url": "https://guide.raksul.com/hc/ja/articles/4407921131663-%E5%A2%97%E5%88%B7%E6%B3%A8%E6%96%87%E6%96%B9%E6%B3%95",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-830",
+    "kind": "question",
+    "title": "刷ったチラシの在庫はどう置く？",
+    "summary": "紙は湿気を吸って反る。包装のまま平らに、湿気の少ない場所で、重いものを載せずに置く。開けた残りは袋で密封する、と機器メーカーも案内している。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "印刷物の在庫を傷めない置き方",
+    "source": {
+      "title": "用紙の取り扱い（保管）",
+      "url": "https://www.fujifilm.com/fb/ja/support/graphic/cut-sheet/versant-3100-press-3100i-press/info/009",
+      "publisher": "富士フイルムビジネスイノベーション",
+      "date": null
+    }
+  },
+  {
+    "id": "question-831",
+    "kind": "question",
+    "title": "印刷物の色あせを防ぐには？",
+    "summary": "直射日光や照明、空調の風が当たる場所を避ける。印刷物は光や保管条件で色が変わることがあり、メーカーも保証外と明記する。長く使う物は光の当たらない場所へ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "取扱説明書（インクジェット用紙）",
+      "url": "https://cdn.sanwa.co.jp/support/setsumeisyo/pdf/J/JP-EP4NA4.pdf",
+      "publisher": "サンワサプライ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-832",
+    "kind": "question",
+    "title": "届いた紙が反っていたら？",
+    "summary": "温度や湿度が違う場所に移すと反りや波打ちが出る。箱のまま部屋になじませてから開けると落ち着くことが多い。四隅が大きく反るなら印刷会社に相談。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "プリンターの用紙が反る・波打つときの対処法",
+      "url": "https://personal.canon.jp/articles/tips/howto/printer3",
+      "publisher": "キヤノン",
+      "date": null
+    }
+  },
+  {
+    "id": "question-833",
+    "kind": "question",
+    "title": "何か所にも分けて届けられる？",
+    "summary": "分納はできるが、届け先1件ごとに追加料金がかかる会社が多い。グラフィックは1件追加で1,500円。分納できない商品もあるので注文前に確かめる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商品のお届けについて - 複数箇所への発送（分納）とご注意点",
+      "url": "https://www.graphic.jp/shop_guide/delivery/split",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-834",
+    "kind": "question",
+    "title": "印刷の送料はいくらかかる？",
+    "summary": "送料無料の会社もあれば、1回の注文ごとに定額の会社もある。グラフィックは1カートにつき350円。分納の追加料金は別なので、総額で比べる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "送料はかかりますか",
+      "url": "https://www.graphic.jp/customer/faq/answer/100179",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-835",
+    "kind": "question",
+    "title": "支店ごとに配りたいときは？",
+    "summary": "届け先の上限を決めている会社もあり、ラクスルの専用注文サイトでは注文時に複数の住所へ分けられる。多店舗なら一覧で指示できるかを先に聞く。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "注文時に複数の住所へ配送（分納）する≪専用注文サイト≫",
+      "url": "https://guide.raksul.com/hc/ja/articles/10488368417807-%E6%B3%A8%E6%96%87%E6%99%82%E3%81%AB%E8%A4%87%E6%95%B0%E3%81%AE%E4%BD%8F%E6%89%80%E3%81%B8%E9%85%8D%E9%80%81-%E5%88%86%E7%B4%8D-%E3%81%99%E3%82%8B-%E5%B0%82%E7%94%A8%E6%B3%A8%E6%96%87%E3%82%B5%E3%82%A4%E3%83%88",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-836",
+    "kind": "question",
+    "title": "封筒の郵便番号枠は自分で作る？",
+    "summary": "既製の長3封筒は赤い枠が刷ってあるものが多い。角2や洋長3は枠ありを選べない会社もあり、その場合はデータに枠を作る。枠の近くは印刷できない範囲がある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ポストカードやはがきDM、既製封筒にはあらかじめ郵便番号枠が付いているか知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/100765",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-837",
+    "kind": "question",
+    "title": "窓付き封筒の窓の位置は選べる？",
+    "summary": "窓の位置と大きさは定番の規格で決まっていて動かせないことが多い。請求書などの宛名の位置を、窓に合わせて作るのが先。選べるサイズも会社ごとに違う。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オプションガイド（封筒部分印刷・そっくりデザイン）",
+      "url": "https://raksul.com/guide/products-faq/envelope/options/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-838",
+    "kind": "question",
+    "title": "封筒の窓の裏にベタを置くと？",
+    "summary": "窓のフィルムや抜きの部分は段差ができ、広いベタはむらになりやすい。窓の周りは文字やロゴを避けて余白を取るよう案内されている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "封筒印刷・オリジナル封筒作成",
+      "url": "https://www.graphic.jp/lineup/envelope",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-839",
+    "kind": "question",
+    "title": "封筒は全面に印刷できる？",
+    "summary": "既製の封筒に刷る『部分印刷』は、のり付け部分などに刷れない範囲がある。全面に柄を入れたいなら、刷ってから封筒に仕立てる全面印刷を選ぶ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "封筒（全面印刷）の印刷可能範囲",
+      "url": "https://raksul.com/guide/create-data/item/envelope/guide-zenmen/printarea/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-840",
+    "kind": "question",
+    "title": "封筒の2色刷りデータは？",
+    "summary": "1色目はK版、2色目はM版に分けて濃度100%で作るよう指定する会社がある。色は版ごとにインキで決めるので、画面の色で作らない。専用テンプレートを使う。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オリジナル封筒印刷の入稿テンプレートダウンロード（無料）",
+      "url": "https://www.graphic.jp/download/templates/13",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-841",
+    "kind": "question",
+    "title": "のぼりは屋外で何か月もつ？",
+    "summary": "薄手のポンジ生地で約3か月、厚手のツイルで約1年が目安とラクスルは示す。風が強い場所や擦れる場所では1週間ほどでほつれることもある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "のぼりを長持ちさせる生地と置き方",
+    "source": {
+      "title": "のぼり旗はどれくらの期間使えますか？（耐久性）",
+      "url": "https://raksul.com/guide/products-faq/flag/faq-5",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-842",
+    "kind": "question",
+    "title": "のぼりの裏から見るとどう見える？",
+    "summary": "薄手の生地はインキが裏まで抜け、裏からは左右反対に見える。厚手は裏からほとんど見えない。両面から読ませたいなら遮光材を挟んだ両面のぼりにする。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "素材(生地)・防炎加工について（のぼり旗印刷）",
+      "url": "https://raksul.com/guide/products-faq/flag/cloth",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-843",
+    "kind": "question",
+    "title": "のぼりの塗り足しは3mmでいい？",
+    "summary": "布は縫ったり縮んだりするので、紙より多く取る。グラフィックはのぼりの塗り足しを10mmと案内。ポールを通す側に文字を寄せない。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "のぼり印刷について知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/102023",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-844",
+    "kind": "question",
+    "title": "旗や幕のデザインで気をつけることは？",
+    "summary": "縫い目と袋になる部分も含めてデザインする。旗や幕には風を抜く切れ込みがないので、強風の日は早めに片付けるよう伝える。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "旗や幕の印刷について知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/102026",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-845",
+    "kind": "question",
+    "title": "シールの形は自由に作れる？",
+    "summary": "丸や四角以外の形も作れるが、複雑すぎる形や鋭い角は受けられない場合がある。料金は面積で決まり、同じ面積なら形が違っても同じ値段という会社も。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "シール・ステッカーの形状はなんでもできますか",
+      "url": "https://www.graphic.jp/customer/faq/answer/100099",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-846",
+    "kind": "question",
+    "title": "シールのカットラインはどう作る？",
+    "summary": "デザインと別のレイヤーに、同じ位置で実線のパスを作る。カットは±1mmほどずれるので、文字や均等なフチはカット線から2mm以上内側へ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "カットラインの作成方法が知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/101945",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-847",
+    "kind": "question",
+    "title": "シールの枚数はどう数える？",
+    "summary": "台紙の枚数ではなく、はがすシール1枚ずつで数える会社がある。台紙は四角で届き、台紙への印刷はできないことも。数え方の違いで見積もりがずれやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "型抜きシール印刷・型抜きステッカー作成",
+      "url": "https://www.graphic.jp/lineup/sticker/die_cutting_seal",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-848",
+    "kind": "question",
+    "title": "台紙を切らずにはがしやすくしたい",
+    "summary": "台紙は残してシール部分だけ切る『ハーフカット』にする。1枚の台紙に何枚も並べたいならマルチタイプやハーフカットの本数指定を選ぶ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ハーフカットとは何か知りたい",
+      "url": "https://www.graphic.jp/customer/faq/answer/101444",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-849",
+    "kind": "question",
+    "title": "折込チラシは薄い紙でいい？",
+    "summary": "大量に配る折込チラシは58〜70kgほどの薄い紙がよく使われ、手渡しや店頭なら90kgが定番。高級感が欲しいときは110kg以上。用途から選ぶ表を載せる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "用途別に選ぶ紙の厚さ早見表",
+    "source": {
+      "title": "チラシ用紙・厚さの選び方",
+      "url": "https://raksul.com/magazine/column/131108-flyer/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-850",
+    "kind": "question",
+    "title": "名刺は何kgの紙が普通？",
+    "summary": "一般的な名刺は180kgほどが標準で、厚手にしたいなら220kgほど。厚すぎると財布や名刺入れで扱いにくい。触って選べるサンプル帳を勧める会社も多い。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "印刷用紙の選び方",
+      "url": "https://raksul.com/magazine/column/160308-paper/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-851",
+    "kind": "question",
+    "title": "三つ折りに厚い紙を選ぶと？",
+    "summary": "厚い紙を折ると折り目のインキが割れる『背割れ』が起きやすい。三つ折りは90〜110kgがよく使われる。厚くしたいなら筋入れ加工を相談する。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "用紙の厚さガイド（折りパンフレット印刷）",
+      "url": "https://raksul.com/guide/products-faq/pamphlet/thickness/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-852",
+    "kind": "question",
+    "title": "二つ折りパンフの紙は何kg？",
+    "summary": "A3を二つ折りにした4ページなら135kgほどが目安とする解説がある。折る回数が増えるほど薄めにする。触った印象とコストの比較を記事に。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "パンフレット用紙の選び方｜厚さ・質感・コストで比較",
+      "url": "https://www.irie-design.com/blog/pamphlet-paper-guide.html",
+      "publisher": "アイリィデザイン",
+      "date": null
+    }
+  },
+  {
+    "id": "question-853",
+    "kind": "question",
+    "title": "少しでも安く刷るには？",
+    "summary": "納期に余裕を持つ、規格サイズにする、まとめて頼む、色数を減らす、一般的な紙にする、がよく挙がる。少部数なら版を作らないオンデマンドが向く。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "印刷代を下げる5つの工夫と品質の線",
+    "source": {
+      "title": "少しの工夫でコストダウン!印刷費用を安く済ませるためには",
+      "url": "https://raksul.com/magazine/column/cost_down/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-854",
+    "kind": "question",
+    "title": "ネットの画像を使って刷れる？",
+    "summary": "作った人の許諾がない画像は、私的に使う場合でも印刷会社が複製することになり、権利侵害にあたるとして断られる。素材サイトの利用条件を確かめる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "印刷物に使える画像と使えない画像",
+    "source": {
+      "title": "インターネット上の画像を使いたいのですが、問題ありませんか？",
+      "url": "https://raksul.com/guide/create-data/faq/faq-11/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-855",
+    "kind": "question",
+    "title": "透かし入りの素材で入稿したら？",
+    "summary": "透かし（ウォーターマーク）入りは配置の確認用。本番に使うには提供元で購入するなど決まった手続きが要る。購入後の画像に差し替えたか校正で確かめる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "インターネット上の画像を使いたいのですが、問題ありませんか？",
+      "url": "https://raksul.com/guide/create-data/faq/faq-11/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-856",
+    "kind": "question",
+    "title": "キャラクターや写真の人物は刷れる？",
+    "summary": "キャラクターや写っている人物、団体のマークには許諾が要る場合がある。許諾を示せないと印刷に進めない会社もある。グッズの記事では先に触れる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "気をつけて！知的財産権・著作権とは",
+      "url": "https://guide.raksul.com/hc/ja/articles/9397334711311-%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%81%A6-%E7%9F%A5%E7%9A%84%E8%B2%A1%E7%94%A3%E6%A8%A9-%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%A8%E3%81%AF",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "term-736",
+    "kind": "term",
+    "title": "カットパスとは",
+    "summary": "シールなどを切る形を示す線のデータ。デザインと別のレイヤーに置き、レイヤー名も指定されることが多い。線が閉じていないと切れない。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "商品別データ作成ガイド シール印刷（マルチタイプ）",
+      "url": "https://www.graphic.jp/data_guide/product/seal/seal_multi_type",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-737",
+    "kind": "term",
+    "title": "総インキ量とは",
+    "summary": "1か所に重なるCMYKの%を足した数。多いと乾かず裏移りする。紙の種類で上限が違い、コート紙で350%以内、上質紙などで300%以内が目安とされる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "総インキ量（黒のインキ量）",
+      "url": "https://raksul.com/guide/create-data/knowledge-of-printing/ink-amount/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "term-738",
+    "kind": "term",
+    "title": "デジタルプルーフとは",
+    "summary": "本番とは別の校正用の機械で、本番と同じ紙に刷って見る簡易な色校正。本機校正より安く早いが、特色は再現できず片面だけのことが多い。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "デジタルプルーフ（本紙タイプ）- 簡易校正",
+      "url": "https://www.graphic.jp/options/proof/digital",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-739",
+    "kind": "term",
+    "title": "チチテープとは",
+    "summary": "のぼりにポールを通すための輪や袋の部分。上と横の何か所につくか、左右どちらにつくかを注文で決める。設置場所の向きに合わせる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オリジナルのぼり旗印刷",
+      "url": "https://www.graphic.jp/lineup/banner/flag",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-740",
+    "kind": "term",
+    "title": "ポンジとツイル（のぼり生地）",
+    "summary": "ポンジは薄く安く裏まで色が抜ける生地。ツイルは厚く丈夫で裏から見えにくい。屋外の期間と見せ方で選ぶ。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "素材(生地)・防炎加工について（のぼり旗印刷）",
+      "url": "https://raksul.com/guide/products-faq/flag/cloth",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "success-570",
+    "kind": "success",
+    "title": "質問を1つずつ1ページに分ける",
+    "summary": "大手ネット印刷はFAQを質問ごとの独立ページにし、質問文をそのまま題名にしている。AIや検索がそのまま答えとして拾いやすい形。町の印刷会社のFAQにも使える。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "冊子のページ数の考え方が知りたい。対応しているページ数を教えてください。",
+      "url": "https://www.graphic.jp/customer/faq/answer/100003",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-571",
+    "kind": "success",
+    "title": "Office用のチェック表を公開する",
+    "summary": "WordやPowerPointで作る客向けに、確かめる項目を一覧にしたページを公開している例。不備の差し戻しが減り、Officeで作る層の入口になる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "パワーポイント｜PowerPoint データチェックリスト",
+      "url": "https://raksul.com/guide/create-data/data-check-guide/powerpoint-check/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "success-572",
+    "kind": "success",
+    "title": "Canvaから頼む手順を記事にする",
+    "summary": "Canvaで作る人が増え、書き出しから入稿までの手順を記事にする印刷会社が出ている。デザインソフトを持たない小さな店や団体を呼び込める。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Canva（キャンバ）からの印刷手順と、おすすめの印刷方法をご紹介！",
+      "url": "https://www.graphic.jp/feature/lp_canva_print",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-455",
+    "kind": "buyer",
+    "title": "送料と分納料まで含めて比べる",
+    "summary": "印刷代だけでなく、送料・分納料・校正代を足した総額で比べる発注者が多い。会社ごとに送料の決め方が違うので、総額の例を載せると選ばれやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "送料はかかりますか",
+      "url": "https://www.graphic.jp/customer/faq/answer/100179",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-456",
+    "kind": "buyer",
+    "title": "返品の条件を読んでから頼む",
+    "summary": "不良の受付期間や使った後の扱いなど、返品の条件を先に確かめる発注者がいる。条件をはっきり書いた会社の方が安心される。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "返品・再印刷について",
+      "url": "https://raksul.com/guide/return/",
+      "publisher": "ラクスル",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-449",
+    "kind": "pain",
+    "title": "許容範囲の色差を説明しきれない",
+    "summary": "客は前回や画面と違うと感じても、会社は許容範囲内として刷り直さない。基準を事前に見せていないと不満になる。色の決まりをFAQで先に示す会社がある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "印刷の色再現に関するFAQ",
+      "url": "https://www.graphic.jp/shop_guide/faq_about_color",
+      "publisher": "グラフィック（印刷通販）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-857",
+    "kind": "question",
+    "title": "NC旋盤オペは何から覚える？",
+    "summary": "多くの求人は、まず機械の扱いに慣れ、次に製品の検査、刃物交換と段階的に任せる流れ。最初の数週間で何をするかを書くと不安が減る。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "NC旋盤の新人が最初の1か月でやること",
+    "source": {
+      "title": "NC旋盤の求人（茨城県つくば市）",
+      "url": "https://jp.indeed.com/q-nc%e6%97%8b%e7%9b%a4-l-%e8%8c%a8%e5%9f%8e%e7%9c%8c-%e3%81%a4%e3%81%8f%e3%81%b0%e5%b8%82-%e6%b1%82%e4%ba%ba.html",
+      "publisher": "Indeed",
+      "date": null
+    }
+  },
+  {
+    "id": "question-858",
+    "kind": "question",
+    "title": "NC旋盤は同じ作業の繰り返し？",
+    "summary": "量産の工場では同じ部品を繰り返す時間が長い。多品種の町工場は段取り替えが多く、毎日違う図面を見る。どちらの働き方かを先に伝える。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "量産と多品種、NC旋盤の1日の違い",
+    "source": {
+      "title": "NC旋盤の求人（群馬県）ハローワーク求人検索",
+      "url": "https://www.hellowork.careers/%EF%BC%AE%EF%BC%A3%E6%97%8B%E7%9B%A4%E9%96%A2%E9%80%A3%E3%81%AE%E3%83%8F%E3%83%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%82%AF%E6%B1%82%E4%BA%BA%E7%BE%A4%E9%A6%AC%E7%9C%8C",
+      "publisher": "ハローワーク求人検索サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "question-859",
+    "kind": "question",
+    "title": "NC旋盤は体力が要りますか？",
+    "summary": "体力に自信がなくてもできると書く求人もある。重い材料はクレーンや台車を使うか、持つ重さはどれくらいかを具体的に書くと応募しやすい。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちの旋盤作業で持つものの重さ",
+    "source": {
+      "title": "NC旋盤の求人（群馬県）ハローワーク求人検索",
+      "url": "https://www.hellowork.careers/%EF%BC%AE%EF%BC%A3%E6%97%8B%E7%9B%A4%E9%96%A2%E9%80%A3%E3%81%AE%E3%83%8F%E3%83%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%82%AF%E6%B1%82%E4%BA%BA%E7%BE%A4%E9%A6%AC%E7%9C%8C",
+      "publisher": "ハローワーク求人検索サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "term-741",
+    "kind": "term",
+    "title": "NCプログラム",
+    "summary": "NC工作機械を動かす命令のこと。加工の順番や刃物の動き、回転数などを先に操作盤に入れておく。厚労省の職業解説でも、この段取りが大事な仕事とされる。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "NCプログラムを書けるまでの道のり",
+    "source": {
+      "title": "職業解説（金属工作機械の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000582413.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-742",
+    "kind": "term",
+    "title": "段取り替え",
+    "summary": "次の品物を作るために、刃物・つかむ道具・プログラムを入れ替える作業。慣れた人ほど速く、腕の差が出やすい。求人の「段取りから任せる」はここを指す。",
+    "industries": [
+      "切削加工",
+      "樹脂成形",
+      "プレス"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "段取り替えができると何が変わる？",
+    "source": {
+      "title": "NC旋盤の求人（群馬県）ハローワーク求人検索",
+      "url": "https://www.hellowork.careers/%EF%BC%AE%EF%BC%A3%E6%97%8B%E7%9B%A4%E9%96%A2%E9%80%A3%E3%81%AE%E3%83%8F%E3%83%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%82%AF%E6%B1%82%E4%BA%BA%E7%BE%A4%E9%A6%AC%E7%9C%8C",
+      "publisher": "ハローワーク求人検索サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "question-860",
+    "kind": "question",
+    "title": "汎用旋盤とNC旋盤、どっちを覚える？",
+    "summary": "job tag では手で動かす汎用工作機械の仕事と、数値で動かすNC機の仕事が別に紹介される。町工場では両方使うことも多く、汎用で削る感覚を学ぶ会社もある。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "汎用旋盤から教える理由",
+    "source": {
+      "title": "job tag 職業情報（金属工作機械の仕事）",
+      "url": "https://shigoto.mhlw.go.jp/User/Occupation/Detail/256",
+      "publisher": "厚生労働省 job tag",
+      "date": null
+    }
+  },
+  {
+    "id": "question-861",
+    "kind": "question",
+    "title": "旋盤工はどんな測定をする？",
+    "summary": "マイクロメーターやノギスで寸法を測り、図面どおりか確かめるのも仕事のうち。簡単な図面を読む力は入社後に覚える例が多い。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "新人が使う測定具3つ",
+    "source": {
+      "title": "職業解説（金属工作機械の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000582413.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-743",
+    "kind": "term",
+    "title": "職業能力評価シート（機械加工）",
+    "summary": "厚労省が作った、機械加工の仕事でどの段階に何ができればよいかの一覧。新人・中堅・ベテランの目安として、社内の育成計画づくりにも使える。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "評価シートで見る旋盤工の成長段階",
+    "source": {
+      "title": "職種：加工　職務：機械加工",
+      "url": "https://www.mhlw.go.jp/content/11800000/000596597.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-862",
+    "kind": "question",
+    "title": "板金工の給料はどのくらい幅がある？",
+    "summary": "ハローワークの板金関連の求人では、月給は17万円台から40万円台まで幅がある（求人検索サイトの掲載より）。経験・資格・役割で大きく変わると説明するとよい。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "板金工の給料が上がるきっかけ",
+    "source": {
+      "title": "板金工の求人（千葉）ハローワーク求人検索",
+      "url": "https://www.hellowork.careers/%E6%9D%BF%E9%87%91%E5%B7%A5%E9%96%A2%E9%80%A3%E3%81%AE%E3%83%8F%E3%83%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%82%AF%E6%B1%82%E4%BA%BA%E5%8D%83%E8%91%89",
+      "publisher": "ハローワーク求人検索サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "question-863",
+    "kind": "question",
+    "title": "板金の先輩も未経験から？",
+    "summary": "先輩の多くが未経験で入社した、と書く板金の求人がある。前職や入社時の年齢を紹介すると、転職者が自分に重ねやすい。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "未経験で入った先輩の3年間",
+    "source": {
+      "title": "板金の求人（マイナビ転職）",
+      "url": "https://tenshoku.mynavi.jp/jobinfo-363694-5-8-1/",
+      "publisher": "マイナビ転職",
+      "date": null
+    }
+  },
+  {
+    "id": "question-864",
+    "kind": "question",
+    "title": "板金で手に職はつく？",
+    "summary": "曲げ・溶接・展開図の読み方は会社を変えても使える技術。資格取得の費用を会社が持つ求人もあり、何が身につくかを並べて書くと伝わる。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "板金で身につく技術と資格",
+    "source": {
+      "title": "板金の求人（マイナビ転職）",
+      "url": "https://tenshoku.mynavi.jp/jobinfo-363694-5-8-1/",
+      "publisher": "マイナビ転職",
+      "date": null
+    }
+  },
+  {
+    "id": "question-865",
+    "kind": "question",
+    "title": "溶接工はどんな職場で働く？",
+    "summary": "厚労省の解説では、電機・造船・自動車などの工場から、ビル・橋などの建設まで職場は広い。町工場では製缶や架台など、何を溶接するかを見せると伝わる。",
+    "industries": [
+      "溶接",
+      "製缶"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちで溶接しているものの一覧",
+    "source": {
+      "title": "職業解説（溶接の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000578188.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-744",
+    "kind": "term",
+    "title": "手溶接・半自動・自動溶接",
+    "summary": "溶接棒を手で動かすのが手溶接、ワイヤが自動で出てトーチを人が動かすのが半自動、機械が全部動かすのが自動溶接。求人を読むとき、どれかを確かめる。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "半自動溶接から始める理由",
+    "source": {
+      "title": "職業解説（溶接の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000578188.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-745",
+    "kind": "term",
+    "title": "アーク溶接の特別教育",
+    "summary": "アーク溶接の仕事に就く前に、会社が行う安全の教育。法律で決まっており、入社後に受けるのが普通。資格が無くても応募できる理由の一つ。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "入社後に受ける溶接の教育",
+    "source": {
+      "title": "熊本労働局の資料（溶接）",
+      "url": "https://jsite.mhlw.go.jp/kumamoto-roudoukyoku/content/contents/002586905.pdf",
+      "publisher": "熊本労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-746",
+    "kind": "term",
+    "title": "ガス溶接技能講習",
+    "summary": "可燃性ガスを使う溶接や切断をするための講習。修了しないとその作業はできない。職業訓練で取れることもある。",
+    "industries": [
+      "溶接",
+      "板金"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ガス溶接の講習は何日？",
+    "source": {
+      "title": "熊本労働局の資料（溶接）",
+      "url": "https://jsite.mhlw.go.jp/kumamoto-roudoukyoku/content/contents/002586905.pdf",
+      "publisher": "熊本労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-747",
+    "kind": "term",
+    "title": "JIS溶接技能者評価試験",
+    "summary": "日本溶接協会が行う、溶接の腕を確かめる試験。被覆アーク・半自動・TIGなど種類ごとにあり、有効期間と更新がある。持っていると転職で強い。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "JIS溶接の資格、何から取る？",
+    "source": {
+      "title": "新潟の公共職業訓練（溶接）",
+      "url": "https://jsite.mhlw.go.jp/niigata-hellowork/content/contents/001790181.pdf",
+      "publisher": "ハローワーク新潟",
+      "date": null
+    }
+  },
+  {
+    "id": "question-866",
+    "kind": "question",
+    "title": "溶接は職業訓練で学べる？",
+    "summary": "新潟の公共職業訓練では、職歴がなくても受けられ、JIS基本級の試験を含むと案内している。訓練機関が出す合格率は約90%。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "訓練校出身の溶接工を採るとき",
+    "source": {
+      "title": "新潟の公共職業訓練（溶接）",
+      "url": "https://jsite.mhlw.go.jp/niigata-hellowork/content/contents/001790181.pdf",
+      "publisher": "ハローワーク新潟",
+      "date": null
+    }
+  },
+  {
+    "id": "question-867",
+    "kind": "question",
+    "title": "溶接の資格で給料は上がる？",
+    "summary": "JISやAW検定などの資格の数や技能の幅で基本給を上げる、と書く求人がある。どの資格でいくら上がるかを書けると強い。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "資格ごとの手当を公開する",
+    "source": {
+      "title": "溶接工の転職ガイド",
+      "url": "https://crexgroup.com/ja/tenshoku/specific-job/welder-career-change-guide/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "term-748",
+    "kind": "term",
+    "title": "AW検定",
+    "summary": "鉄骨などの建築向けの溶接の腕を確かめる検定。鉄骨・製缶の会社では、JISと並んで求人に出てくる。",
+    "industries": [
+      "溶接",
+      "製缶"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "溶接工の転職ガイド",
+      "url": "https://crexgroup.com/ja/tenshoku/specific-job/welder-career-change-guide/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-868",
+    "kind": "question",
+    "title": "溶接工の給料は地域で違う？",
+    "summary": "同じ溶接でも、月給20万円台前半の求人から60万円台をうたう求人まで幅がある（求人サイトの掲載より）。仕事の種類・出張・資格の差が大きい。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "溶接工の給料の幅はなぜ大きい？",
+    "source": {
+      "title": "溶接の資格とキャリア",
+      "url": "https://atsoho.com/blog/welding-cert-career",
+      "publisher": "atsoho",
+      "date": null
+    }
+  },
+  {
+    "id": "question-869",
+    "kind": "question",
+    "title": "溶接の資格は会社負担？",
+    "summary": "資格がない人は、一定期間の後に会社負担で取れる、とする求人がある。いつ・何を・誰の費用で取るかを書くと安心される。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "入社1年目に取る資格と費用",
+    "source": {
+      "title": "熊本労働局の資料（溶接）",
+      "url": "https://jsite.mhlw.go.jp/kumamoto-roudoukyoku/content/contents/002586905.pdf",
+      "publisher": "熊本労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "question-870",
+    "kind": "question",
+    "title": "溶接の訓練で何を習う？",
+    "summary": "県の溶接訓練では、安全の教育、手溶接、半自動、TIGの順に練習し、資格の受験まで進む流れが多い。会社での育て方の参考にもなる。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "訓練校の順番で新人を育てる",
+    "source": {
+      "title": "溶接の職業訓練案内",
+      "url": "https://www.pref.aomori.lg.jp/soshiki/shoko/ha-koka/files/yousetu.pdf",
+      "publisher": "青森県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-871",
+    "kind": "question",
+    "title": "溶接の仕事はロボットに奪われる？",
+    "summary": "人手不足で溶接ロボットの需要は高まる。一方、建機・船・橋などは品物のばらつきが大きく、熟練者の調整が難しいとされる。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "ロボットと溶接職人のすみ分け",
+    "source": {
+      "title": "溶接ロボットの需要",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2609/28/news049.html",
+      "publisher": "MONOist",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "trend-572",
+    "kind": "trend",
+    "official": false,
+    "title": "大手がAIで職人の溶接を再現",
+    "summary": "神戸製鋼はAIで溶接条件を自動で変えるロボットを出し、造船などの難しい溶接で熟練者の技の再現を目指す。人は段取りや確認へ役割が移る流れ。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "溶接ロボットが入ると職人は何をする？",
+    "source": {
+      "title": "AIで溶接条件を自動制御するロボット",
+      "url": "https://newswitch.jp/p/22526",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-749",
+    "kind": "term",
+    "title": "溶接ロボットのティーチング",
+    "summary": "ロボットに溶接の通り道や条件を教える作業。ロボットを使う職場では、この作業ができる人が重宝される。溶接の経験がある人ほど覚えが早い。",
+    "industries": [
+      "溶接"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ティーチングは溶接経験が生きる",
+    "source": {
+      "title": "AIと小型ロボットによる溶接",
+      "url": "https://www.kobelco.co.jp/special-contents/assets/pdf/coreTec01.pdf",
+      "publisher": "神戸製鋼所",
+      "date": null
+    }
+  },
+  {
+    "id": "question-872",
+    "kind": "question",
+    "title": "めっき工場はきつい？",
+    "summary": "厚労省の解説では、高温多湿で立ち作業が多く、塩酸など劇物も使うため、安全の知識と体力が要るとされる。換気や保護具の対策を見せると安心される。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "めっき工場の暑さと安全対策",
+    "source": {
+      "title": "職業解説（表面処理の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000582417.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-873",
+    "kind": "question",
+    "title": "めっきの仕事に資格は要る？",
+    "summary": "入るときに資格や学歴は特に要らないとされる。入社後に技能検定（めっき職種）を目指すと、社内で認められ転職にも有利。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "めっき技能士までの道",
+    "source": {
+      "title": "職業解説（表面処理の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000582417.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-750",
+    "kind": "term",
+    "title": "脱脂・酸洗い",
+    "summary": "めっきの前に油を落とす（脱脂）、薬で表面の汚れやさびを取る（酸洗い）作業。きれいにしないと皮膜がはがれる。新人がまず覚える工程。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "めっきの前処理はなぜ大事？",
+    "source": {
+      "title": "職業解説（表面処理の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000582417.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-874",
+    "kind": "question",
+    "title": "めっき工場は自動化されている？",
+    "summary": "自動めっき装置が広がり、手で品物を漬ける作業から、装置の操作や調整へ変わりつつあると厚労省の解説にある。どこまで機械かを書くとよい。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "めっきラインで人がやる仕事",
+    "source": {
+      "title": "職業解説（表面処理の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000582417.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-751",
+    "kind": "term",
+    "title": "技能検定（めっき）",
+    "summary": "国の技能検定の一つ。電気めっきなどの作業ごとに級がある。「表面処理技能士」と呼ばれることもあるが、正式には技能検定のめっき職種。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "職種：表面処理　職務：表面処理",
+      "url": "https://www.mhlw.go.jp/content/11800000/000604180.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-875",
+    "kind": "question",
+    "title": "めっきのにおいは大丈夫？",
+    "summary": "薬品のにおいの強さは、使う薬と換気の設備で大きく変わる。求人の作業環境欄に書き、見学でかいでもらうのが一番早い。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "見学でにおいと換気を見てもらう",
+    "source": {
+      "title": "めっきの求人（埼玉）ハローワーク求人検索",
+      "url": "https://www.hellowork.careers/%E3%82%81%E3%81%A3%E3%81%8D%E9%96%A2%E9%80%A3%E3%81%AE%E3%83%8F%E3%83%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%82%AF%E6%B1%82%E4%BA%BA%E5%9F%BC%E7%8E%89",
+      "publisher": "ハローワーク求人検索サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "question-876",
+    "kind": "question",
+    "title": "工場の塗装は未経験でもできる？",
+    "summary": "塗装見習いの求人では未経験可が多い。スプレーやハケで塗る前に、マスキングや下地づくりから覚える流れを書くと想像しやすい。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "塗装の新人が最初にやる下地づくり",
+    "source": {
+      "title": "塗装見習いの求人（神埼市）",
+      "url": "https://jp.indeed.com/q-%e5%a1%97%e8%a3%85%e8%a6%8b%e7%bf%92%e3%81%84-l-%e7%a5%9e%e5%9f%bc%e5%b8%82-%e6%b1%82%e4%ba%ba.html",
+      "publisher": "Indeed",
+      "date": null
+    }
+  },
+  {
+    "id": "question-877",
+    "kind": "question",
+    "title": "塗装のシンナーは体に悪い？",
+    "summary": "有機溶剤系の塗料を吹き付ける職場がある。換気・防毒マスク・健康診断の有無で働きやすさが変わる。対策を具体的に書く会社が選ばれる。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちの塗装場の換気とマスク",
+    "source": {
+      "title": "塗装工の求人（姫路市）",
+      "url": "https://jp.indeed.com/q-%e5%a1%97%e8%a3%85%e5%b7%a5-l-%e5%a7%ab%e8%b7%af%e5%b8%82-%e8%8a%b1%e7%94%b0%e7%94%ba%e4%b8%8a%e5%8e%9f%e7%94%b0-%e6%b1%82%e4%ba%ba.html",
+      "publisher": "Indeed",
+      "date": null
+    }
+  },
+  {
+    "id": "question-878",
+    "kind": "question",
+    "title": "射出成形オペレーターの仕事は？",
+    "summary": "材料の補充、温度などの成形条件の入力、金型の交換、出てきた品物の検査やバリ取り・箱詰め。最初は検査と箱詰めから始めることが多い。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "成形工場の新人の1日",
+    "source": {
+      "title": "プラスチック射出成形オペレーターの求人（上田市）",
+      "url": "https://jp.indeed.com/q-%e3%83%97%e3%83%a9%e3%82%b9%e3%83%81%e3%83%83%e3%82%af%e5%b0%84%e5%87%ba%e6%88%90%e5%bd%a2%e3%82%aa%e3%83%9a%e3%83%ac%e3%83%bc%e3%82%bf%e3%83%bc-l-%e9%95%b7%e9%87%8e%e7%9c%8c-%e4%b8%8a%e7%94%b0%e5%b8%82-%e9%95%b7%e7%80%ac-%e6%b1%82%e4%ba%ba.html",
+      "publisher": "Indeed",
+      "date": null
+    }
+  },
+  {
+    "id": "term-752",
+    "kind": "term",
+    "title": "成形条件",
+    "summary": "樹脂を溶かす温度、押し込む速さや圧力、冷やす時間などの組み合わせ。これを決められる人が成形の中堅・ベテラン。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "成形条件を任されるまで",
+    "source": {
+      "title": "プラスチック射出成形オペレーターの求人（上田市）",
+      "url": "https://jp.indeed.com/q-%e3%83%97%e3%83%a9%e3%82%b9%e3%83%81%e3%83%83%e3%82%af%e5%b0%84%e5%87%ba%e6%88%90%e5%bd%a2%e3%82%aa%e3%83%9a%e3%83%ac%e3%83%bc%e3%82%bf%e3%83%bc-l-%e9%95%b7%e9%87%8e%e7%9c%8c-%e4%b8%8a%e7%94%b0%e5%b8%82-%e9%95%b7%e7%80%ac-%e6%b1%82%e4%ba%ba.html",
+      "publisher": "Indeed",
+      "date": null
+    }
+  },
+  {
+    "id": "question-879",
+    "kind": "question",
+    "title": "成形の仕事は夜勤がある？",
+    "summary": "成形機を止めずに回す工場は交代制が多く、夜勤専属の募集もある。日勤だけの会社もあるので、勤務形態を求人の先頭に書く。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "成形工場の交代制のしくみ",
+    "source": {
+      "title": "プラスチック成形の求人",
+      "url": "https://jp.indeed.com/q-%e3%83%97%e3%83%a9%e3%82%b9%e3%83%81%e3%83%83%e3%82%af%e6%88%90%e5%bd%a2-%e6%b1%82%e4%ba%ba.html?start=20",
+      "publisher": "Indeed",
+      "date": null
+    }
+  },
+  {
+    "id": "term-753",
+    "kind": "term",
+    "title": "プラスチック成形技能士",
+    "summary": "国の技能検定の一つで、射出成形などの腕を確かめる。求人では「尚可」が多く必須ではない。入社後に取る道を示す会社もある。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "成形技能士2級をめざす新人",
+    "source": {
+      "title": "プラスチック射出成形オペレーターの求人（上田市）",
+      "url": "https://jp.indeed.com/q-%e3%83%97%e3%83%a9%e3%82%b9%e3%83%81%e3%83%83%e3%82%af%e5%b0%84%e5%87%ba%e6%88%90%e5%bd%a2%e3%82%aa%e3%83%9a%e3%83%ac%e3%83%bc%e3%82%bf%e3%83%bc-l-%e9%95%b7%e9%87%8e%e7%9c%8c-%e4%b8%8a%e7%94%b0%e5%b8%82-%e9%95%b7%e7%80%ac-%e6%b1%82%e4%ba%ba.html",
+      "publisher": "Indeed",
+      "date": null
+    }
+  },
+  {
+    "id": "question-880",
+    "kind": "question",
+    "title": "成形の金型交換は重い？",
+    "summary": "金型は重く、クレーンやホイストで運ぶことが多い。持ち上げる作業がどれだけあるかは女性や年配の応募者が気にする点。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "女性も金型交換をするか",
+    "source": {
+      "title": "製造業で女性に向いている仕事",
+      "url": "https://mynavi-agent.jp/knowledge/maker/351.html",
+      "publisher": "マイナビエージェント",
+      "date": null
+    }
+  },
+  {
+    "id": "question-881",
+    "kind": "question",
+    "title": "食品工場のライン作業は慣れる？",
+    "summary": "同じ工程の繰り返しで、ペースを保つことが負担になる人もいる。一方で、だいたい1か月ほどで慣れるという見方もある。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "ライン作業に慣れるまでの1か月",
+    "source": {
+      "title": "食品製造の仕事",
+      "url": "https://crexgroup.com/ja/manufacturing/human/food-manufacturing-jobs/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-882",
+    "kind": "question",
+    "title": "食品工場のにおいは？",
+    "summary": "惣菜・弁当・水産加工・菓子の工場はにおいが強めで、人によっては気になる。何を作る工場かを最初に書くとミスマッチが減る。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちの工場のにおいと温度",
+    "source": {
+      "title": "食品製造の仕事",
+      "url": "https://crexgroup.com/ja/manufacturing/human/food-manufacturing-jobs/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-883",
+    "kind": "question",
+    "title": "食品工場は立ちっぱなし？",
+    "summary": "口コミでは立ちっぱなしの負担がよく挙がる。休憩の回数や、座ってできる工程があるかを書くと応募者が判断しやすい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "休憩と座れる工程を書く",
+    "source": {
+      "title": "工場バイトはきつい？",
+      "url": "https://www.baitoru.com/contents/manufacturing/3667.html",
+      "publisher": "バイトル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-884",
+    "kind": "question",
+    "title": "冷蔵の部屋で働くと寒い？",
+    "summary": "冷蔵・冷凍の場所で作業する工場もある。部屋の温度、防寒着の貸し出し、他の工程と交代するかを書くと不安が減る。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "冷蔵室の温度と防寒着",
+    "source": {
+      "title": "食品工場の仕事",
+      "url": "https://townwork.net/magazine/?p=104765",
+      "publisher": "タウンワークマガジン",
+      "date": null
+    }
+  },
+  {
+    "id": "term-754",
+    "kind": "term",
+    "title": "衛生ルール（入室前の手順）",
+    "summary": "食品工場では、着替え、手洗い、粘着ローラー、エアシャワーなど入室前の手順が決まっている。初日に戸惑う点なので写真で見せるとよい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "入室までの5ステップを写真で",
+    "source": {
+      "title": "食品工場の仕事",
+      "url": "https://townwork.net/magazine/?p=104765",
+      "publisher": "タウンワークマガジン",
+      "date": null
+    }
+  },
+  {
+    "id": "question-885",
+    "kind": "question",
+    "title": "製本・断裁の仕事は何をする？",
+    "summary": "紙の角をそろえて切る断裁、本の形にする製本、箱詰め・出荷など。機械の操作が要らない検品や梱包から始められる求人もある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "製本工場の新人の仕事",
+    "source": {
+      "title": "断裁の仕事",
+      "url": "https://xn--pckua2a7gp15o89zb.com/%E6%96%AD%E8%A3%81%E3%81%AE%E4%BB%95%E4%BA%8B?u=1",
+      "publisher": "求人ボックス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-886",
+    "kind": "question",
+    "title": "印刷工場は夜勤がある？",
+    "summary": "日勤か夜勤を選べる工場や、深夜の仕事があるため18歳以上とする製本工場がある。印刷は納期で夜に回すことがあると伝える。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "印刷工場の夜勤はなぜある？",
+    "source": {
+      "title": "印刷工場の求人（マイナビ転職）",
+      "url": "https://tenshoku.mynavi.jp/jobinfo-261674-4-30-1/?ty=kw",
+      "publisher": "マイナビ転職",
+      "date": null
+    }
+  },
+  {
+    "id": "question-887",
+    "kind": "question",
+    "title": "印刷の後加工は女性でもできる？",
+    "summary": "検品・数量チェック・包装を未経験の女性が担当する例がある。運ぶ紙の量を自分で調整できると書く求人も。重さと台車の有無を書く。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "紙を運ぶ量と道具",
+    "source": {
+      "title": "印刷工場の求人（マイナビ転職）",
+      "url": "https://tenshoku.mynavi.jp/jobinfo-261674-4-30-1/?ty=kw",
+      "publisher": "マイナビ転職",
+      "date": null
+    }
+  },
+  {
+    "id": "question-888",
+    "kind": "question",
+    "title": "検査員はどんな作業をする？",
+    "summary": "目で見て傷・汚れ・変形を探す外観検査、ノギスやゲージでの寸法の確認、検査機の操作、記録の入力など。良品と不良品を分ける仕事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "検査員の1日",
+    "source": {
+      "title": "製造業の検査員の仕事",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-inspector-job/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-889",
+    "kind": "question",
+    "title": "検査の判断は新人でもできる？",
+    "summary": "判断に迷うときの基準をサンプルと手順書で決めている職場がある。最初は先輩と一緒に見る。基準がそろっていることを見せる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "限度見本で迷わない検査",
+    "source": {
+      "title": "製造業の検査員の仕事",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-inspector-job/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "term-755",
+    "kind": "term",
+    "title": "限度見本",
+    "summary": "ここまでならOK、ここからはNGという境目を示す見本の品物。検査員どうしの判断のずれを減らす。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "限度見本の作り方",
+    "source": {
+      "title": "製造業の検査員の仕事",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-inspector-job/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-890",
+    "kind": "question",
+    "title": "検査の仕事は目が疲れる？",
+    "summary": "目で見る検査は集中が続く。モニターで見る検査や、休憩・別の作業との組み合わせがあるかで負担は変わる。照明の工夫も伝えたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "検査の目の疲れを減らす工夫",
+    "source": {
+      "title": "製造業に向いてる人の特徴",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-career-aptitude/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-891",
+    "kind": "question",
+    "title": "検査はAIに置きかわる？",
+    "summary": "経産省はAIの外観検査の手引をまとめ、単純な目視から人を解放するとする。一方で判定の基準づくりや例外の判断、データの準備は人が担う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "AI検査が入っても残る仕事",
+    "source": {
+      "title": "AI導入ガイドブック 外観検査（良品）",
+      "url": "https://www.meti.go.jp/policy/it_policy/jinzai/AIguidebook_gaikan_ryohin_FIX.pdf",
+      "publisher": "経済産業省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-573",
+    "kind": "trend",
+    "official": true,
+    "title": "経産省が中小向けAI検査の手引",
+    "summary": "経産省は中小企業が自分で外観検査AIを入れられるよう、企画から運用までの注意点を手引にまとめた。検査員の仕事の中身が変わる前ぶれ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "AI検査の手引を読んでみた",
+    "source": {
+      "title": "中小のAI導入へ手引 部品検査など2領域で 経産省",
+      "url": "https://www.rodo.co.jp/news/104819/",
+      "publisher": "労働新聞社",
+      "date": null
+    }
+  },
+  {
+    "id": "question-892",
+    "kind": "question",
+    "title": "機械組立は何をする仕事？",
+    "summary": "図面で組む順番と取り付け位置を確かめ、工具で部品を付け、最後に動くか確認する。小さい装置なら1台を最後まで組むこともある。",
+    "industries": [
+      "組立",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "1台の装置ができるまで",
+    "source": {
+      "title": "機械組立の求人（東京都）ハローワーク求人検索",
+      "url": "https://www.hellowork.careers/%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E9%96%A2%E9%80%A3%E3%81%AE%E3%83%8F%E3%83%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%82%AF%E6%B1%82%E4%BA%BA%E6%9D%B1%E4%BA%AC%E9%83%BD",
+      "publisher": "ハローワーク求人検索サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "term-756",
+    "kind": "term",
+    "title": "技能検定（仕上げ）",
+    "summary": "手工具や工作機械を使った部品の仕上げと組立の腕を確かめる国の検定。機械組立仕上げなどの作業がある。",
+    "industries": [
+      "組立",
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "機械組立仕上げ技能士とは",
+    "source": {
+      "title": "技能検定 仕上げ職種",
+      "url": "https://waza.mhlw.go.jp/shokushu/list/shiage-lb.html",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-757",
+    "kind": "term",
+    "title": "心出し",
+    "summary": "回る軸と軸の中心をぴったり合わせる調整。ずれると振動や故障の原因になる。組立の腕の差が出るところ。",
+    "industries": [
+      "組立",
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "心出しを教える動画",
+    "source": {
+      "title": "職業解説（仕上工）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000578185.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-893",
+    "kind": "question",
+    "title": "組立に向いているのはどんな人？",
+    "summary": "厚労省の解説では、製品のしくみや組立作業への興味が大事とされる。工業高校の出身者が多いが、入るときに資格は特に要らない。",
+    "industries": [
+      "組立",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "組立に向く人・向かない人",
+    "source": {
+      "title": "職業解説（仕上工）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000578185.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-894",
+    "kind": "question",
+    "title": "機械保全はどんな仕事？",
+    "summary": "保全の計画づくり、点検、故障したときの対応、修理や改良まで。担当の場所や機械・電気などの分担が決まっていることが多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "保全担当の1週間",
+    "source": {
+      "title": "職業解説（機械保全の仕事）",
+      "url": "https://www.mhlw.go.jp/content/11800000/000588865.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-895",
+    "kind": "question",
+    "title": "機械保全に入るのに何が有利？",
+    "summary": "資格は特に要らないが、工業高校・高専の機械科や電気科の知識があると有利。技能検定（機械保全）を取ると社内で認められやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "保全マンに必要な知識",
+    "source": {
+      "title": "職種：生産技術　職務：機械保全",
+      "url": "https://www.mhlw.go.jp/content/11800000/000598170.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-896",
+    "kind": "question",
+    "title": "保全の仕事は夜も呼ばれる？",
+    "summary": "24時間動く工場では、交代制の保全や、夜の故障で呼ばれる仕組みがある会社も。呼び出しの有無と手当を求人に書くと信頼される。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "保全の呼び出しルールを公開",
+    "source": {
+      "title": "機械保全の求人一覧",
+      "url": "https://tenshoku.mynavi.jp/list/o15235/pg4/",
+      "publisher": "マイナビ転職",
+      "date": null
+    }
+  },
+  {
+    "id": "term-758",
+    "kind": "term",
+    "title": "設備の予防保全",
+    "summary": "壊れる前に点検や部品交換をする考え方。壊れてから直す事後保全より、止まる時間を減らせる。保全の仕事の中心。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "予防保全で止まらない工場へ",
+    "source": {
+      "title": "職種：生産技術　職務：機械保全",
+      "url": "https://www.mhlw.go.jp/content/11800000/000598170.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-897",
+    "kind": "question",
+    "title": "CADオペと設計者の違いは？",
+    "summary": "CADオペレーターは設計者を手伝い、図面データを作ったり直したりする。設計者は形や寸法を決める側。オペレーターから経験を積んで設計者になる道もある。",
+    "industries": [
+      "装置",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "CADオペから設計者へ",
+    "source": {
+      "title": "CADオペレーターの求人",
+      "url": "https://employment.en-japan.com/k_390900/s_cad-operator/",
+      "publisher": "エン転職",
+      "date": null
+    }
+  },
+  {
+    "id": "question-898",
+    "kind": "question",
+    "title": "設計は未経験でも入れる？",
+    "summary": "研修で図面の読み方やCAD操作を基礎から学べる求人もある。町工場では現場で図面を読む経験を積んでから設計に移ることも多い。",
+    "industries": [
+      "装置",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "現場から設計に移った人の話",
+    "source": {
+      "title": "広島労働局の求人資料（CAD）",
+      "url": "https://jsite.mhlw.go.jp/hiroshima-roudoukyoku/content/contents/002385789.pdf",
+      "publisher": "広島労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "question-899",
+    "kind": "question",
+    "title": "設計の給料は経験でどう変わる？",
+    "summary": "あるCADの求人では、未経験は月給19万〜30万円、経験者は21万〜60万円（エン転職の掲載より）。経験の幅で差が大きい。",
+    "industries": [
+      "装置",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "CADオペレーターの求人",
+      "url": "https://employment.en-japan.com/k_390900/s_cad-operator/",
+      "publisher": "エン転職",
+      "date": null
+    }
+  },
+  {
+    "id": "term-759",
+    "kind": "term",
+    "title": "二交代と三交代",
+    "summary": "三交代は24時間を8時間ほどの3つに分けて回す。二交代は日勤と夜勤の2つで、1回の拘束が長くなりやすい。「三直二交代」は3班で2つの時間帯を回す方式。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "二交代と三交代、どっちが楽？",
+    "source": {
+      "title": "三交代とは",
+      "url": "https://biz.moneyforward.com/payroll/basic/118806/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "question-900",
+    "kind": "question",
+    "title": "交代勤務は体に悪い？",
+    "summary": "オランダの研究では、三交代の人は日勤の人よりメタボに当たる割合が高く、四交代では弱まった。休み方まで含めた勤務表を見せたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちの交代勤務表と休み方",
+    "source": {
+      "title": "Anti-clockwise rotating shift work and health: 3-shift or 4-shift?",
+      "url": "https://dare.uva.nl/id/3f1fd89b-d50f-4b06-9a65-0d9842f67a9d",
+      "publisher": "アムステルダム大学",
+      "date": null
+    }
+  },
+  {
+    "id": "question-901",
+    "kind": "question",
+    "title": "夜勤手当はどう決まる？",
+    "summary": "夜10時から朝5時の深夜の仕事は割増賃金が付く。工場ごとに手当の額や夜勤の回数が違うので、月の例を数字で書くと比べやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "夜勤ありの月の給料例",
+    "source": {
+      "title": "三交代とは",
+      "url": "https://biz.moneyforward.com/payroll/basic/118806/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "question-902",
+    "kind": "question",
+    "title": "玉掛けとクレーンはいつ取る？",
+    "summary": "入社前や入社後に会社が取らせる例が多い。1トン以上の荷を扱う玉掛けは技能講習、1トン未満は特別教育。クレーンも大きさで区分が変わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "入社1年目に取る資格の一覧",
+    "source": {
+      "title": "玉掛けの求人（中四国）",
+      "url": "https://www.baitoru.com/chushikoku/jlist/slinging/",
+      "publisher": "バイトル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-903",
+    "kind": "question",
+    "title": "溶接や機械加工は無料で学べる？",
+    "summary": "ポリテクセンターの求職者向け訓練は受講料無料（テキスト代などは別）。溶接・機械加工・CADなど6か月の科が多い。ハローワークで申し込む。",
+    "industries": [
+      "溶接",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "訓練校の修了生を採るには",
+    "source": {
+      "title": "埼玉のポリテクセンター訓練案内",
+      "url": "https://jsite.mhlw.go.jp/saitama-roudoukyoku/content/contents/002426491.pdf",
+      "publisher": "埼玉労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "question-904",
+    "kind": "question",
+    "title": "職業訓練の後はどこに就職？",
+    "summary": "岐阜の金属加工技術科は、就職先に鉄骨溶接工・板金溶接工・製缶工などを挙げる。就職率は年度で80%台後半の資料がある。",
+    "industries": [
+      "溶接",
+      "板金",
+      "製缶"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "訓練校と町工場をつなぐ",
+    "source": {
+      "title": "岐阜の金属加工技術科の案内",
+      "url": "https://jsite.mhlw.go.jp/gifu-roudoukyoku/content/contents/002512700.pdf",
+      "publisher": "岐阜労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "question-905",
+    "kind": "question",
+    "title": "訓練中に資格も取れる？",
+    "summary": "旭川の機械加工技術科では、旋盤などを学びつつガス溶接技能講習の修了証など複数の資格を取れる内容になっている。",
+    "industries": [
+      "切削加工",
+      "溶接"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "訓練中に取れる資格",
+    "source": {
+      "title": "旭川の機械加工技術科の案内",
+      "url": "https://jsite.mhlw.go.jp/hokkaido-hellowork/content/contents/q0s96t0000001c0q.pdf",
+      "publisher": "北海道のハローワーク",
+      "date": null
+    }
+  },
+  {
+    "id": "question-906",
+    "kind": "question",
+    "title": "工場の音で耳が悪くならない？",
+    "summary": "厚労省のガイドラインでは、85dB以上で耳を守る道具を使い、90dB以上では作業の見直しも考える。測った数字と耳栓の支給を見せたい。",
+    "industries": [
+      "プレス",
+      "鍛造",
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちの工場の音を測ってみた",
+    "source": {
+      "title": "騒音障害防止のためのガイドライン",
+      "url": "https://www.mhlw.go.jp/content/000628106.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-760",
+    "kind": "term",
+    "title": "騒音性難聴",
+    "summary": "大きな音を長く聞き続けて、耳が聞こえにくくなること。治りにくい。プレス作業などが代表的な騒音作業とされる。",
+    "industries": [
+      "プレス",
+      "鍛造",
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "騒音性難聴を防ぐ3つの工夫",
+    "source": {
+      "title": "費用かけず難聴防ぎたい 現場でできる簡単な方法は",
+      "url": "https://www.rodo.co.jp/faq/105720/",
+      "publisher": "労働新聞社",
+      "date": null
+    }
+  },
+  {
+    "id": "question-907",
+    "kind": "question",
+    "title": "耳栓は毎日付けるもの？",
+    "summary": "騒音の大きい職場では毎日付ける。湿気で耳の中にカビが出た相談例もあり、交換の頻度や清潔に保つ方法も教えてほしいところ。",
+    "industries": [
+      "プレス",
+      "鍛造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "耳栓と耳の中のカビの相談",
+      "url": "https://jinjibu.jp/qa/detl/116973/1/",
+      "publisher": "日本の人事部",
+      "date": null
+    }
+  },
+  {
+    "id": "question-908",
+    "kind": "question",
+    "title": "女性に向く工場の仕事は？",
+    "summary": "転職サイトでは検品・検査、組立の一部、仕分け・梱包が始めやすいとされる。マニュアルがあると未経験でも覚えやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "女性スタッフの担当工程を紹介",
+    "source": {
+      "title": "女性に人気の工場の仕事",
+      "url": "https://www.baitoru.com/contents/manufacturing/3910.html",
+      "publisher": "バイトル",
+      "date": null
+    }
+  },
+  {
+    "id": "question-909",
+    "kind": "question",
+    "title": "工具や机は女性向けに変えられる？",
+    "summary": "東京都の事例では、机の高さや工具・設備を女性に合うサイズと重さに変えた会社がある。小さな改善でも写真で見せると伝わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "作業台の高さを変えた話",
+    "source": {
+      "title": "女性が働きやすい職場の取組事例",
+      "url": "https://www.hataraku.metro.tokyo.lg.jp/sodan/chousa/iguchi.pdf",
+      "publisher": "東京都",
+      "date": null
+    }
+  },
+  {
+    "id": "question-910",
+    "kind": "question",
+    "title": "60歳から工場で働ける？",
+    "summary": "ハローワークの求職者の3分の1近くは60歳以上と宮城労働局の資料にある。製造業の求人は作業の中身を具体的に書くと判断しやすいと助言している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "60代が活躍する工程",
+    "source": {
+      "title": "宮城労働局 シニア求職者の資料",
+      "url": "https://jsite.mhlw.go.jp/miyagi-roudoukyoku/content/contents/002365775.pdf",
+      "publisher": "宮城労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "question-911",
+    "kind": "question",
+    "title": "高校生でも技能検定は受けられる？",
+    "summary": "工業高校など専門高校の在校生は1年生から3級を受けられる。合格発表が就職活動の時期に合うため、履歴書に書ける。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "在校中に3級を取った新人",
+    "source": {
+      "title": "技能検定3級の受検資格の拡大",
+      "url": "https://www.mhlw.go.jp/topics/2004/02/tp0210-6.html",
+      "publisher": "厚生労働省",
+      "date": "2004"
+    }
+  },
+  {
+    "id": "question-912",
+    "kind": "question",
+    "title": "普通科からでも製造業に入れる？",
+    "summary": "京都市の資料では、工業高校の卒業生の方が企業の評価は高い傾向。ただ普通科でも、入社後の教育と資格で十分に追いつける道を示したい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "普通科出身の先輩の話",
+    "source": {
+      "title": "京都市 会議資料（工業高校）",
+      "url": "https://www.city.kyoto.lg.jp/kyoiku/cmsfiles/contents/0000126/126496/7kaigisiryou.pdf",
+      "publisher": "京都市",
+      "date": null
+    }
+  },
+  {
+    "id": "question-913",
+    "kind": "question",
+    "title": "Uターン転職者は活躍できる？",
+    "summary": "リクルートワークス研究所の2016年の調査では、勤め先の業績に貢献したと答えた人はUターン人材で58.5%、地元に住み続けた人で50.5%。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "Uターン社員の活躍事例",
+    "source": {
+      "title": "UIターン調査",
+      "url": "https://works-i.com/surveys/item/160407_uiturn_survey.pdf",
+      "publisher": "リクルートワークス研究所",
+      "date": "2016-04"
+    }
+  },
+  {
+    "id": "question-914",
+    "kind": "question",
+    "title": "地元に戻って働く条件は？",
+    "summary": "労働政策研究・研修機構の資料では、Uターンには質のよい雇用の受け皿があるかが大事な条件とされる。給料・休み・育成を見える形にする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "Uターン希望者に伝えたい3つ",
+    "source": {
+      "title": "地方への移住と就業の調査",
+      "url": "https://www.jil.go.jp/institute/siryo/2017/documents/188_04.pdf",
+      "publisher": "労働政策研究・研修機構",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "question-915",
+    "kind": "question",
+    "title": "経験年数で時給はどう上がる？",
+    "summary": "厚労省の職種別平均賃金の表には、金属プレス・製缶・板金・溶接などの時給が経験年数別に載る。年数を重ねると上がる形を自社の例で示す。",
+    "industries": [
+      "板金",
+      "溶接",
+      "プレス",
+      "製缶"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちの給料は経験でこう上がる",
+    "source": {
+      "title": "職種別平均賃金（時給換算）",
+      "url": "https://www.mhlw.go.jp/content/001294218.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-916",
+    "kind": "question",
+    "title": "製造業の給料は何歳がピーク？",
+    "summary": "2019年の賃金構造基本統計調査では、製造業の男性の生産労働者の賃金は50〜54歳が最も高く月32.7万円ほど。長く続けるほど上がる業界といえる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "40代・50代の職人の給料",
+    "source": {
+      "title": "令和元年賃金構造基本統計調査 産業別",
+      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/chingin/kouzou/z2019/dl/09.pdf",
+      "publisher": "厚生労働省",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "question-917",
+    "kind": "question",
+    "title": "AIで工場の仕事はなくなる？",
+    "summary": "日本は働き手が大きく減る見込みで、AI脅威論は当てはまりにくいとする専門家もいる。担い手不足を補う道具としての見方が強い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "AIが来ても人が要る理由",
+    "source": {
+      "title": "AI脅威論は日本では当てはまりにくい",
+      "url": "https://president.jp/articles/-/81071",
+      "publisher": "プレジデントオンライン",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-574",
+    "kind": "trend",
+    "official": false,
+    "title": "ロボットは難しい作業へ広がる",
+    "summary": "センサーやAIの進化で、これまで難しかった作業の自動化が進む（MONOist 2024年展望）。人の仕事は段取り・判断・改善へ寄っていく。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ロボット時代に伸びる職人の力",
+    "source": {
+      "title": "センサーやAIの進化で難作業を自動化 MONOist 2024年展望",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2401/12/news078_2.html",
+      "publisher": "MONOist",
+      "date": "2024-01"
+    }
+  },
+  {
+    "id": "question-918",
+    "kind": "question",
+    "title": "手に職がつく業種はどれ？",
+    "summary": "溶接・板金・旋盤・めっき・組立・保全など、それぞれに国の技能検定がある。級で腕を示せる仕事は会社を変えても通用しやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "業種別・取れる技能検定の一覧",
+    "source": {
+      "title": "技能検定 仕上げ職種",
+      "url": "https://waza.mhlw.go.jp/shokushu/list/shiage-lb.html",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-919",
+    "kind": "question",
+    "title": "何年で一人前になる？",
+    "summary": "「何年で一人前」をはっきり書いた公的な目安は少ない。職業能力評価シートの段階や、技能検定の級を目安に、自社の育て方を示すとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "うちの一人前の基準",
+    "source": {
+      "title": "職種：加工　職務：機械加工",
+      "url": "https://www.mhlw.go.jp/content/11800000/000596597.doc",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-920",
+    "kind": "question",
+    "title": "汚れる仕事ですか？",
+    "summary": "切削は油、溶接はすす、めっきは薬品、食品は水と、汚れ方は業種で違う。作業着の洗濯や更衣室の有無も含めて書くと伝わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "作業着と更衣室を見せる",
+    "source": {
+      "title": "製造業に向いてる人の特徴",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-career-aptitude/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "question-921",
+    "kind": "question",
+    "title": "製造業に向いているのは？",
+    "summary": "集中が続く、細かい違いに気づく、手順どおりに進められる人が向くとされる。業種によって求められる力が違うと伝えるとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "業種ごとに向く人のタイプ",
+    "source": {
+      "title": "製造業に向いてる人の特徴",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-career-aptitude/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-575",
+    "kind": "trend",
+    "official": true,
+    "title": "国内回帰の経験は15%、2020年以降に増加",
+    "summary": "海外に投資・生産委託する中小企業のうち、過去10年で国内回帰したのは15.0%。件数は2020年以降に目立って増えた（日本政策金融公庫、2023年調査）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "国内回帰はどれくらい起きている？",
+    "source": {
+      "title": "中小企業の海外展開と国内回帰に関する調査",
+      "url": "https://www.jfc.go.jp/n/findings/pdf/tokubetu_230601_2.pdf",
+      "publisher": "日本政策金融公庫",
+      "date": "2023-06"
+    }
+  },
+  {
+    "id": "trend-576",
+    "kind": "trend",
+    "official": true,
+    "title": "海外調達の4社に1社が国内・国産へ",
+    "summary": "中小企業庁の2024年8月の資料では、海外調達をする企業の4社に1社が国内回帰か国産回帰を実施・検討。理由は「安定した調達」「円安で輸入コスト増」が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "国産に切り替える会社が増えた理由",
+    "source": {
+      "title": "小規模事業者を取り巻く現状と課題について",
+      "url": "https://www.chusho.meti.go.jp/koukai/shingikai/kihonmondai/001/003.pdf",
+      "publisher": "中小企業庁",
+      "date": "2024-08"
+    }
+  },
+  {
+    "id": "trend-577",
+    "kind": "trend",
+    "official": true,
+    "title": "新しい調達先は「近さ」と「安定」で選ぶ",
+    "summary": "ジェトロの2025年度調査（2026年2月公表）では、中小企業は新しい調達先選びで地政学リスクの低さや地理的な近さを重視。円安で調達先や生産国を見直す企業もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "買い手が今、調達先に求めるもの",
+    "source": {
+      "title": "ジェトロ海外ビジネス調査 第24回日本企業の海外事業展開に関するアンケート調査",
+      "url": "https://www.jetro.go.jp/ext_images/_News/releases/2026/fb2468413e5d19f0/survey_v3.pdf",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-578",
+    "kind": "trend",
+    "official": true,
+    "title": "地政学リスクが7割超の企業に影響",
+    "summary": "ジェトロが日本本社約3,300社に聞いた調査では、地政学リスクが7割を超える企業の事業に影響していると報告された（2026年公表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "日本本社3,300社にアンケート調査（前編）地政学リスクが7割超に影響",
+      "url": "https://www.jetro.go.jp/biz/areareports/2026/d353ab21ec7eb545.html",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-579",
+    "kind": "trend",
+    "official": true,
+    "title": "円安で輸入コスト増、中小は4割超",
+    "summary": "ジェトロの2024年度調査（2025年3月公表）では、中小企業の4割超が「円安で国内への輸入コストが増えた」と答えた。海外調達の割安感が薄れている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "円安で海外品は本当に安い？",
+    "source": {
+      "title": "2024年度 日本企業の海外事業展開に関するアンケート調査（報告書版）",
+      "url": "https://www.jetro.go.jp/ext_images/_Reports/01/c45cf2de4d0ebf45/20240043.pdf",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "trend-580",
+    "kind": "trend",
+    "official": true,
+    "title": "品質と円安で国内調達に戻した声",
+    "summary": "ジェトロ2025年度調査の自由回答に、品質と円安の影響で海外調達をやめ国内調達に切り替えた企業の声がある。一方でドル建てで売る側は売上を上げやすいという声も。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "円安は買う側と売る側で逆に効く",
+    "source": {
+      "title": "ジェトロ海外ビジネス調査 第24回日本企業の海外事業展開に関するアンケート調査",
+      "url": "https://www.jetro.go.jp/ext_images/_News/releases/2026/fb2468413e5d19f0/survey_v3.pdf",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-581",
+    "kind": "trend",
+    "official": false,
+    "title": "国内・国産回帰の検討は4割",
+    "summary": "帝国データバンクの調査（2023年1月発表）では、海外調達や輸入品を使う企業の40.0%が国内回帰・第三国移転・国産品への切り替えを実施または検討していた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "帝国データバンクの国内回帰調査を伝える記事",
+      "url": "https://www.j-cast.com/kaisha/2023/02/03455239.html?p=all",
+      "publisher": "J-CAST会社ウォッチ",
+      "date": "2023-02"
+    }
+  },
+  {
+    "id": "trend-582",
+    "kind": "trend",
+    "official": false,
+    "title": "生産拠点の国内回帰検討は8.1%",
+    "summary": "帝国データバンクが2022年4月に約2万5千社に聞いた調査では、自社の生産拠点の国内回帰を「検討中」としたのは8.1%。調達先の見直しより拠点移転はハードルが高い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ロシア・ウクライナ情勢の仕入れ影響調査（帝国データバンク）",
+      "url": "https://dime.jp/genre/1523851/",
+      "publisher": "@DIME",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "trend-583",
+    "kind": "trend",
+    "official": true,
+    "title": "輸送機械では国内回帰が見える",
+    "summary": "財務省の2024年12月の分析では、法人企業統計から輸送機械で国内回帰の動きが見られる一方、化学や電気機械はなお海外投資を重視する動きがあるとした。",
+    "industries": [
+      "自動車部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ファイナンス 2024年12月号（法人企業統計からみた国内回帰）",
+      "url": "https://www.mof.go.jp/public_relations/finance/202412/202412m.pdf",
+      "publisher": "財務省",
+      "date": "2024-12"
+    }
+  },
+  {
+    "id": "trend-584",
+    "kind": "trend",
+    "official": false,
+    "title": "経済安全保障が回帰の追い風に",
+    "summary": "第一生命経済研究所（2022年10月）は、円安に加え、米中対立で経済安全保障が意識され、企業の海外事業は安さだけで決められなくなっていると分析した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「安さ」だけで決めない時代の発注",
+    "source": {
+      "title": "円安と国内回帰に関するレポート",
+      "url": "https://www.dlri.co.jp/files/macro/210778.pdf",
+      "publisher": "第一生命経済研究所",
+      "date": "2022-10"
+    }
+  },
+  {
+    "id": "trend-585",
+    "kind": "trend",
+    "official": true,
+    "title": "回帰を後押しする国の補助制度",
+    "summary": "国土技術政策総合研究所（2023年）は、人件費上昇や経済安全保障に加え、経産省の生産拠点の国内回帰への補助制度も回帰の一因と見ている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "国内回帰の動向に関する資料",
+      "url": "https://www.nilim.go.jp/lab/bcg/siryou/2023report/ar2023hp060.pdf",
+      "publisher": "国土技術政策総合研究所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-586",
+    "kind": "trend",
+    "official": true,
+    "title": "サプライチェーン強靱化に466億円",
+    "summary": "経産省の令和7年度補正予算（2025年12月）では、経済安全保障に関わるサプライチェーン強靱化事業に466億円を計上。磁気センサーなど先端電子部品も対象。",
+    "industries": [
+      "電子部品",
+      "半導体"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "経済産業省関係 令和7年度補正予算の概要",
+      "url": "https://www.meti.go.jp/main/yosan/yosan_fy2025/hosei/pdf/r7_gaiyo.pdf",
+      "publisher": "経済産業省",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "trend-587",
+    "kind": "trend",
+    "official": true,
+    "title": "ドローンや衛星部品も特定重要物資に",
+    "summary": "2025年11月の総合経済対策では、無人航空機・人工衛星・ロケットの部品、人工呼吸器、磁気センサーを特定重要物資に加え、生産基盤の強化を支える方針を示した。",
+    "industries": [
+      "航空宇宙",
+      "医療機器",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "特定重要物資と町工場の仕事",
+    "source": {
+      "title": "「強い経済」を実現する総合経済対策",
+      "url": "https://www5.cao.go.jp/keizai1/keizaitaisaku/1121_taisaku.pdf",
+      "publisher": "内閣府",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-588",
+    "kind": "trend",
+    "official": true,
+    "title": "国が「製造基盤強化レポート」",
+    "summary": "経産省の検討会は2026年4月、地政学リスクを踏まえた製造基盤の強化について中間取りまとめを公表。国内で作る力をどう守るかが政策の柱になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地政学リスクを踏まえた製造基盤強化等に関する検討会 中間取りまとめ「製造基盤強化レポート」",
+      "url": "https://www.meti.go.jp/shingikai/external_economy/geopolitical_risks/pdf/20260415_2.pdf",
+      "publisher": "経済産業省",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "trend-589",
+    "kind": "trend",
+    "official": true,
+    "title": "経済安保の予算は補正中心",
+    "summary": "経産省の2026年5月資料では、経済安全保障推進法に基づく強靱化予算は令和7年補正が約1,692億円、令和8年当初が約125億円。公募は補正の時期に集中しやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "経済安全保障政策に係るアップデート",
+      "url": "https://www.meti.go.jp/shingikai/sankoshin/tsusho_boeki/pdf/015_03_00.pdf",
+      "publisher": "経済産業省",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "trend-590",
+    "kind": "trend",
+    "official": true,
+    "title": "国内投資の補助は約29万件",
+    "summary": "経産省の「国内投資マップ」（2025年7月）では、補助金などによる投資支援は約29万件、支援額は約7.8兆円、総投資額は約17兆円とまとめている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "国内投資マップ ～補助金等の活用事例～",
+      "url": "https://www.meti.go.jp/press/2025/07/20250708002/20250708002-a.pdf",
+      "publisher": "経済産業省",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-591",
+    "kind": "trend",
+    "official": true,
+    "title": "レアアース規制で自動車の生産が止まった",
+    "summary": "財務省の2025年10月のコラムによると、中国は2025年4月に中・重希土類7品目の輸出規制を導入。部品の調達難で一時生産を止めた日本の自動車メーカーもあった。",
+    "industries": [
+      "自動車部品",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "材料が止まると部品も止まる",
+    "source": {
+      "title": "ファイナンス 2025年10月号（レアアース輸出規制）",
+      "url": "https://www.mof.go.jp/public_relations/finance/2025010/202510g.html",
+      "publisher": "財務省",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "trend-592",
+    "kind": "trend",
+    "official": false,
+    "title": "中国が対日の輸出管理を強化",
+    "summary": "2026年1月、中国は軍民両用品目の対日輸出管理の強化を発表。日本総研の専門家は、運用をあいまいにして先行き不安を与える狙いがあると見る（ロイター配信）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中国の対日輸出管理強化に関する記事",
+      "url": "https://www.sbbit.jp/article/refers/178993",
+      "publisher": "ビジネス+IT（ロイター配信）",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "trend-593",
+    "kind": "trend",
+    "official": false,
+    "title": "重希土類の不足は2027年まで続く見方",
+    "summary": "Caixin（2026年8月）は、ジスプロシウムなどの対日輸出が2026年上半期にゼロになったと報道。必要量の約3分の2しか確保できていないとの分析も紹介した。",
+    "industries": [
+      "電子部品",
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Japan faces heavy rare earth shortage as China curbs supply",
+      "url": "https://www.caixinglobal.com/2026-08-21/japan-faces-heavy-rare-earth-shortage-as-china-curbs-supply-102476428.html",
+      "publisher": "Caixin Global",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "trend-594",
+    "kind": "trend",
+    "official": false,
+    "title": "レアアースは生産7割・精製9割が中国",
+    "summary": "日本総研のレポートは、中国が世界のレアアース生産の約7割、精製の約9割を占めると説明。一国に頼る材料は、部品の国内生産でも調達リスクになる。",
+    "industries": [
+      "電子部品",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "レアアースに関するレポート",
+      "url": "https://www.jri.co.jp/page.jsp?id=113213",
+      "publisher": "日本総合研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-595",
+    "kind": "trend",
+    "official": true,
+    "title": "紅海回避で配送が平均2週間延びた",
+    "summary": "ジェトロ（2024年8月）は、紅海を避けて喜望峰回りになったことで配送期間が平均2週間ほど延び、運賃も大きく上がったと伝えた。海外調達の納期が読みにくい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "海外調達の納期が延びる理由",
+    "source": {
+      "title": "紅海危機の物流への影響（ビジネス短信）",
+      "url": "https://www.jetro.go.jp/biznews/2024/08/cb7cdaa1b9175219.html",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2024-08"
+    }
+  },
+  {
+    "id": "trend-596",
+    "kind": "trend",
+    "official": true,
+    "title": "関税コストの価格転嫁に苦戦",
+    "summary": "ジェトロが2025年8月に行った米国関税の簡易調査では、関税コストへの懸念が続く一方、価格に上乗せ（転嫁）することに課題を抱える企業が多いとされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "米国関税措置に関する日系企業アンケート",
+      "url": "https://www.jetro.go.jp/ext_library/1/world/n_america/us/trump2_administration/survey20250904_v2.pdf",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "trend-597",
+    "kind": "trend",
+    "official": false,
+    "title": "円安・海外情勢で転嫁は道半ば",
+    "summary": "信金中金の2026年7月のレポートは、全国中小企業景気動向調査をもとに、円安や海外情勢の影響を受ける中で中小企業の価格転嫁が十分に進んでいない現状を整理した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "全国中小企業景気動向調査からみた価格転嫁",
+      "url": "https://www.scbri.jp/reports/.assets/industry_20260728.pdf",
+      "publisher": "信金中金 地域・中小企業研究所",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "trend-598",
+    "kind": "trend",
+    "official": true,
+    "title": "ベトナムの現地調達率は36.6%",
+    "summary": "ジェトロ・ハノイ（2025年8月）によると、ベトナム進出日系企業の現地調達率は36.6%。拡大の課題は「現地の品質・技術力が不十分」が60.9%で最多。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "東南アジア調達の品質の実情",
+    "source": {
+      "title": "ベトナムの日系企業の現地調達に関する資料",
+      "url": "https://www.jetro.go.jp/ext_images/jetro/overseas/vn_hanoi/info/20250805/attachment_1.pdf",
+      "publisher": "ジェトロ・ハノイ事務所",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "trend-599",
+    "kind": "trend",
+    "official": true,
+    "title": "現地調達率はタイ57%・中国68%",
+    "summary": "ジェトロの2023年資料（2022年度調査）では、日系企業の現地調達率はベトナム37.3%、タイ57.3%、中国68.4%。国によって部品を現地でそろえる力が違う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ベトナムの日系企業の現地調達（2023年資料）",
+      "url": "https://www.Jetro.go.jp/ext_images/world/asia/vn/company/pdf/nm2023.pdf",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-600",
+    "kind": "trend",
+    "official": false,
+    "title": "英国企業の3分の2が回帰を検討",
+    "summary": "英国の報道では、中国の供給業者への満足度が下がり、英国企業の3分の2が国内か欧州への製造回帰を検討。理由にリードタイムの長さや品質がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "UK companies consider manufacturing return to Britain",
+      "url": "https://news.madeinthemidlands.com/news/uk-companies-consider-manufacturing-return-to-britain",
+      "publisher": "Made in the Midlands",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-450",
+    "kind": "pain",
+    "title": "海外品の不良で客先に迷惑",
+    "summary": "海外調達品の品質が安定せず、自社の客先に迷惑をかけているという相談は多い。不良を作らない工場を選ぶか、出荷前検査を強めるかを決める必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外品の不良はどこで止める？",
+    "source": {
+      "title": "海外調達品の品質問題とは",
+      "url": "https://www.monodukuri.com/gihou/article/199",
+      "publisher": "ものづくりドットコム",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-451",
+    "kind": "pain",
+    "title": "良いサンプルと違う量産品が届く",
+    "summary": "サンプルは最高の品質で作られ、量産では材料や工程が変わることがある。承認したサンプルを保管し、届いた量産品と比べる手間が生まれる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "サンプルは合格、量産は不合格の理由",
+    "source": {
+      "title": "中国輸入代行で失敗しない！業者選び",
+      "url": "https://note.com/nakayamayuji/n/n372f750d955d",
+      "publisher": "note（中国駐在経験者）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-452",
+    "kind": "pain",
+    "title": "変更の連絡なく不良の原因が追えない",
+    "summary": "海外の部品メーカーが材料・設備・方法・人（4M）の変更を知らせず、不良の原因究明が難しくなる例がある。国内の取引では当たり前の連絡が届かない。",
+    "industries": [
+      "機械部品",
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "4M変更の連絡がないと何が困る？",
+    "source": {
+      "title": "中国部品メーカーとの不良品トラブルをなくすには？",
+      "url": "https://newswitch.jp/p/24154",
+      "publisher": "ニュースイッチ（日刊工業新聞）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-453",
+    "kind": "pain",
+    "title": "図面の不足を補ってもらえない",
+    "summary": "日本の町工場なら補ってくれる図面の抜けが、中国のメーカーではそのまま形になる。「あうんの呼吸」は通じず、曖昧な依頼がトラブルを生む。",
+    "industries": [
+      "切削加工",
+      "板金",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "図面の行間を読む国内工場の価値",
+    "source": {
+      "title": "中国で「あうんの呼吸」は通じない、曖昧な依頼がトラブルを生む",
+      "url": "https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00042/00008/",
+      "publisher": "日経ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-454",
+    "kind": "pain",
+    "title": "通訳の伝言で現場の答えがずれる",
+    "summary": "通訳を介した伝言ゲームで、現場の回答が正しく伝わらなかった例がある。現場の担当者と直接情報を共有することが大事だとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中国メーカーとトラブル！カギは「確かな情報伝達」",
+      "url": "https://newswitch.jp/p/23011",
+      "publisher": "ニュースイッチ（日刊工業新聞）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-455",
+    "kind": "pain",
+    "title": "模倣部品が紛れ込む心配",
+    "summary": "中国での現地調達では模倣部品のトラブルがあり得る。承認品と試作品で部品の抜去力（抜けにくさ）に大きな差が出た例も紹介されている。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "模倣部品はどう見分ける？",
+    "source": {
+      "title": "中国で現地調達する際に気を付けるべき模倣部品トラブル",
+      "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00401/00020/",
+      "publisher": "日経クロステック",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-456",
+    "kind": "pain",
+    "title": "海外調達は在庫が膨らみやすい",
+    "summary": "海外は発注から納品まで時間がかかり、小口で運ぶと送料が上がるため、まとめ買いになって在庫費用や廃棄が増える悪循環に陥りやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "安い単価が在庫で消える話",
+    "source": {
+      "title": "海外調達のメリットと注意点",
+      "url": "https://www.digima-japan.com/knowhow/world/15070.php",
+      "publisher": "Digima〜出島〜",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-457",
+    "kind": "pain",
+    "title": "仕様変更のたびに時間がかかる",
+    "summary": "海外調達では仕様変更への対応が遅れがち。試作と量産で仕上がりが違う、材料ロットでばらつくといった悩みもあり、手戻りが増える。",
+    "industries": [
+      "機械部品",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "設計変更が多い部品はどこで作る？",
+    "source": {
+      "title": "海外調達か、国内生産か ― 部品選定で見落とされがちな違い",
+      "url": "https://ja.nc-net.or.jp/company/91246/product/detail/266223/",
+      "publisher": "NCネット（加工会社の記事）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-458",
+    "kind": "pain",
+    "title": "小ロットだと通関と物流が重い",
+    "summary": "アパレルの例では、小ロットだと物流や通関の費用、管理の手間とリスクが大きく、通関手配に人を割けない会社には中国生産は難しいと指摘されている。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小ロットは国内のほうが安い？",
+    "source": {
+      "title": "アパレルの中国生産と小ロットに関する論考",
+      "url": "https://agora-web.jp/?p=2821",
+      "publisher": "アゴラ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-459",
+    "kind": "pain",
+    "title": "海外の加工ネットは納期の数え方が違う",
+    "summary": "海外の基板製造サービスでは、製造の時計がデータ確認後から動くため、表示の納期どおり届かないことがあるという利用者の声がある。",
+    "industries": [
+      "基板実装",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「最短24時間」はいつから数える？",
+    "source": {
+      "title": "PCBWay vs JLCPCB which is cheaper",
+      "url": "https://forums.atariage.com/topic/349426-pcbway-vs-jlcpcb-which-is-cheaper",
+      "publisher": "AtariAge Forums（個人の投稿）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-460",
+    "kind": "pain",
+    "title": "片面的なNDAで情報だけ聞かれる",
+    "summary": "中小企業庁の知財取引検討会では、中小企業だけが情報を出す片面的なNDAや、秘密保持期間が短いNDAを示されるケースが問題例として挙がった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "NDAで見るべき3つの点",
+    "source": {
+      "title": "知的財産取引検討会 資料",
+      "url": "https://www.chusho.meti.go.jp/koukai/kenkyukai/chizaitorihiki/2020/200924chizaitorihiki04.pdf",
+      "publisher": "中小企業庁",
+      "date": "2020-09"
+    }
+  },
+  {
+    "id": "pain-461",
+    "kind": "pain",
+    "title": "海外送金先の変更メールは詐欺のことも",
+    "summary": "海外取引先になりすまし、振込先口座を変えさせるビジネスメール詐欺（BEC）がある。振込先の変更はメール以外の電話などで確かめるよう警察が呼びかけている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "海外の取引先からの口座変更メール",
+    "source": {
+      "title": "ビジネスメール詐欺（BEC）",
+      "url": "https://www.police.pref.saitama.lg.jp/documents/30633/4_bec.pdf",
+      "publisher": "埼玉県警察",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-462",
+    "kind": "pain",
+    "title": "前払いで始めた輸出の回収不安",
+    "summary": "初めての取引は互いに信用が分からない。前払いは売り手には安全だが、相手が詐欺目的だと前金は取り戻しにくいとジェトロは注意している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "輸入代金前払決済のリスク回避策",
+      "url": "https://www.jetro.go.jp/world/qa/04J-010201.html",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-922",
+    "kind": "question",
+    "title": "海外のほうが安いのは本当？",
+    "summary": "単価だけでは比べられない。円安による輸入コスト増、輸送費、検品や不良対応、在庫の費用を足すと差が縮むことがある。総額で比べる視点を答えに入れる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "単価と総額の違いを図で説明",
+    "source": {
+      "title": "2024年度 日本企業の海外事業展開に関するアンケート調査（報告書版）",
+      "url": "https://www.jetro.go.jp/ext_images/_Reports/01/c45cf2de4d0ebf45/20240043.pdf",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "question-923",
+    "kind": "question",
+    "title": "中国と東南アジア、どちらに頼む？",
+    "summary": "現地で部品をそろえる力は国で違い、ジェトロ資料ではベトナムは現地調達率が低く品質課題も多い。国内の工場と比べるなら、材料の入手や品質の安定も聞く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "中国・ベトナム・国内の比べ方",
+    "source": {
+      "title": "ベトナムの日系企業の現地調達に関する資料",
+      "url": "https://www.jetro.go.jp/ext_images/jetro/overseas/vn_hanoi/info/20250805/attachment_1.pdf",
+      "publisher": "ジェトロ・ハノイ事務所",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "question-924",
+    "kind": "question",
+    "title": "設計変更が多いならどこで作る？",
+    "summary": "国内は設計と加工の現場が近く手戻りを抑えやすい。変更が多い試作や小ロットは国内、仕様が固まった量産は海外も候補、という分け方を示すとよい。",
+    "industries": [
+      "機械部品",
+      "切削加工",
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試作は国内、量産は海外でもいい？",
+    "source": {
+      "title": "海外調達か、国内生産か ― 部品選定で見落とされがちな違い",
+      "url": "https://ja.nc-net.or.jp/company/91246/product/detail/266223/",
+      "publisher": "NCネット（加工会社の記事）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-925",
+    "kind": "question",
+    "title": "国内の強みは結局どこ？",
+    "summary": "2018年のレポートは、品質の差は縮まっても、納期は国内の立地と細かな調整のしやすさで明らかに有利と述べる。答えには納期と相談のしやすさを具体的に。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "「国内で作る理由」は納期と相談",
+    "source": {
+      "title": "国内工場の役割に関するレポート",
+      "url": "https://www.murc.jp/wp-content/uploads/2018/09/cr_180919.pdf",
+      "publisher": "三菱UFJリサーチ&コンサルティング",
+      "date": "2018-09"
+    }
+  },
+  {
+    "id": "question-926",
+    "kind": "question",
+    "title": "海外の造形・加工ネットとの違いは？",
+    "summary": "海外の基板サービスでは安さを評価する声の一方、穴あけの誤りがあったという投稿もある。国内に頼む利点として、図面の確認と不具合時の対応の早さを示す。",
+    "industries": [
+      "基板実装",
+      "3Dプリンタ",
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "海外ネット発注と国内町工場の違い",
+    "source": {
+      "title": "Which PCB fab do you currently like the best",
+      "url": "https://forum.mysensors.org/topic/11999/which-pcb-fab-do-you-currently-like-the-best?page=2",
+      "publisher": "MySensors Forum（個人の投稿）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-927",
+    "kind": "question",
+    "title": "海外の会社にNDAを結べば安心？",
+    "summary": "中国向けでは、第三者への漏えいより相手自身が図面を使う心配が大きく、欧米型NDAではずれるという法律事務所の指摘がある。製造契約に組み込む形が勧められる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "海外委託で図面を守るには",
+    "source": {
+      "title": "China NNN Agreements: What They Do, What They Don't",
+      "url": "https://harris-sliwoski.com/chinalawblog/china-nnn-agreements-do-them-correctly-or-walk-away/",
+      "publisher": "Harris Sliwoski（法律事務所ブログ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-928",
+    "kind": "question",
+    "title": "海外から部品を輸入すると関税は？",
+    "summary": "関税は輸入するときに税関が課す税金。税率は品目や国で違う。見積の比較では、本体価格のほかに関税・輸入時の消費税・通関費用がかかることを伝える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "輸入部品の見積に入っていない費用",
+    "source": {
+      "title": "輸入関税とは",
+      "url": "https://www.dhl.com/discover/ja-jp/logistics-advice/import-export-advice/what-is-import-duty",
+      "publisher": "DHL",
+      "date": null
+    }
+  },
+  {
+    "id": "question-929",
+    "kind": "question",
+    "title": "海外の見積はどう作る？",
+    "summary": "ジェトロは、輸出価格は国内卸価格とは別に作り、最低取引数量・決済条件・梱包・貿易条件（インコタームズ）・決済通貨を決めて組み立てると説明する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "はじめての英語見積の作り方",
+    "source": {
+      "title": "輸出価格の算定方法",
+      "url": "https://www.jetro.go.jp/world/qa/04J-140101.html",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-930",
+    "kind": "question",
+    "title": "海外送金の手数料は誰が払う？",
+    "summary": "海外送金では送る側・受け取る側の銀行手数料がかかる。ジェトロのQ&Aは、請求方法と銀行費用の負担を取り決めておくことを勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "輸出代金の請求方法と送金に関する銀行諸費用の負担",
+      "url": "https://www.jetro.go.jp/world/qa/04A-020130.html",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-931",
+    "kind": "question",
+    "title": "海外の初取引は前金でいい？",
+    "summary": "中小機構は、販売先の信用が分かりにくいので前受金（先払い）で始めることを勧めている。少額ならクレジットカードやPayPalが多いとも説明する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "海外の小口注文の受け取り方",
+    "source": {
+      "title": "海外には手形はないの？貿易決済条件・お金のやりとりのあれこれ",
+      "url": "https://biznavi.smrj.go.jp/21259/",
+      "publisher": "中小機構 海外ビジネスナビ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-932",
+    "kind": "question",
+    "title": "輸出代金を確実に回収するには？",
+    "summary": "ジェトロは、契約書に品質・数量・価格・受渡・決済条件のほか、船積みの遅れ、クレームの出し方、準拠法を書くことを勧める。新しい相手は信用調査も。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "輸出における代金回収等留意点",
+      "url": "https://www.jetro.go.jp/world/qa/04A-000955.html",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-933",
+    "kind": "question",
+    "title": "円安なのに値上げされたのはなぜ？",
+    "summary": "円安は輸出には追い風でも、輸入材料やエネルギーの値上がりで国内の作り手のコストを押し上げる。値上げの理由として材料費の動きを説明すると納得されやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "円安と見積の関係をやさしく",
+    "source": {
+      "title": "中小企業における円安の影響に関する調査",
+      "url": "https://www.smrj.go.jp/research_case/questionnaire/fbrion0000002pjw-att/enyasu.pdf",
+      "publisher": "中小企業基盤整備機構",
+      "date": "2022-12"
+    }
+  },
+  {
+    "id": "question-934",
+    "kind": "question",
+    "title": "見積の有効期限はなぜある？",
+    "summary": "材料や燃料・労務費が動けば価格交渉が必要になる。中小企業庁の価格交渉ハンドブックは、変動前後のデータを普段から集めておくよう勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "見積有効期限の理由を発注者に",
+    "source": {
+      "title": "価格交渉ハンドブック",
+      "url": "https://www.chusho.meti.go.jp/keiei/torihiki/download/kakaku_kosho_handbook.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "question-935",
+    "kind": "question",
+    "title": "中国の加工ネット発注で気をつけること",
+    "summary": "発注者側の体験談では、検品が外観中心で寸法まで見ていなかった、などの失敗がある。合否基準を写真や数値で決め、不良の証拠を残すことが勧められる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "海外ネット発注のチェックリスト",
+    "source": {
+      "title": "検品で不良品を発見したら即やること5選",
+      "url": "https://note.com/kei_china_biz/n/n8e6d1a684b15",
+      "publisher": "note（個人）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-936",
+    "kind": "question",
+    "title": "海外の仕事を国内に移す時の手間は？",
+    "summary": "時事通信（2022年11月）は、海外拠点の国内移管を検討する動きの一方、部品供給網の組み直しの手間から慎重論も根強いと報じた。移管では図面・材料・条件の引き継ぎを確かめる。",
+    "industries": [
+      "金型",
+      "樹脂成形",
+      "プレス"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "海外からの移管案件で確認すること",
+    "source": {
+      "title": "海外生産拠点の国内移管に関する記事（時事通信配信）",
+      "url": "https://www.sbbit.jp/article/refers/99694",
+      "publisher": "ビジネス+IT（時事通信配信）",
+      "date": "2022-11"
+    }
+  },
+  {
+    "id": "buyer-457",
+    "kind": "buyer",
+    "title": "総額（TCO）で国内と海外を比べる",
+    "summary": "TCO（持つことの総費用）は、どの品目を国内で、どれを海外で調達すると得かを比べる道具。輸送費や品質の費用まで入れて判断する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "TCOで見る国内加工の値打ち",
+    "source": {
+      "title": "Using TCO To Buy And Sell Smarter",
+      "url": "https://manufacturersedge.com/event/using-tco-to-buy-and-sell-smarter/",
+      "publisher": "Manufacturer's Edge",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-458",
+    "kind": "buyer",
+    "title": "単価の高い国内が正解の場合も",
+    "summary": "米国の調達専門誌は、長く複雑な供給網のリスクまで考えると、単価が高い国内サプライヤーのほうがよい選択になることがあると指摘している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "単価が高くても国内を選ぶ理由",
+    "source": {
+      "title": "Prioritize value over cost for procurement success",
+      "url": "https://www.ascm.org/ascm-insights/scm-now-magazine/prioritize-value-over-cost-for-procurement-success/",
+      "publisher": "ASCM",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-459",
+    "kind": "buyer",
+    "title": "海外品は不良を作らない工場で選ぶ",
+    "summary": "海外調達の品質は、工程で不良を作らない仕組みのある工場を選ぶか、出荷前検査を強めるかの二択になりやすい。購買はまず工場の管理力を見る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "海外調達と品質管理",
+      "url": "https://www.monodukuri.com/gihou/article/1374",
+      "publisher": "ものづくりドットコム",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-460",
+    "kind": "buyer",
+    "title": "合否基準は写真と2か国語で",
+    "summary": "中国の工場とは品質の感覚がずれやすい。合格基準を写真付きで日英・日中の文書にし、承認サンプルを残すのが購買の基本対策とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "合否基準を写真で決める",
+    "source": {
+      "title": "中国輸入代行で失敗しない！業者選び",
+      "url": "https://note.com/nakayamayuji/n/n372f750d955d",
+      "publisher": "note（中国駐在経験者）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-461",
+    "kind": "buyer",
+    "title": "量産中も購買と品証が関わり続ける",
+    "summary": "中国での不良を減らすには、立ち上げ後も日本側の購買や品質保証が定期的に関わり、工場任せにしないことが大切だと解説されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中国での不良を減らすために日本メーカーがすべきこと",
+      "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00401/00011/",
+      "publisher": "日経クロステック",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-462",
+    "kind": "buyer",
+    "title": "国によって任せ方を変える",
+    "summary": "日系企業の現地調達率は中国・タイが高く、ベトナムは低い。購買は国ごとに材料の入手性と品質の安定を見て、国内との組み合わせを決める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ベトナムの日系企業の現地調達（2023年資料）",
+      "url": "https://www.Jetro.go.jp/ext_images/world/asia/vn/company/pdf/nm2023.pdf",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "buyer-463",
+    "kind": "buyer",
+    "title": "新しい加工先探しに輸出商社の商談会",
+    "summary": "ジェトロは2025年8月、「機械・部品」を扱う中堅・中小企業と国内の輸出商社の商談会を開いた。商社経由で海外の買い手とつながる道もある。",
+    "industries": [
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "中堅・中小企業対象に国内輸出商社との商談会",
+      "url": "https://j-net21.smrj.go.jp/news/eb1d2k0000001rw3.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "buyer-464",
+    "kind": "buyer",
+    "title": "海外の買い手は高精度研磨を探す",
+    "summary": "中小機構のジェグテックには、インドネシア企業が納期短縮と品質向上のため、日本の高精度な研磨・鏡面加工の会社を探す案件が載った例がある。",
+    "industries": [
+      "研削",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "海外の買い手が日本を探す理由",
+    "source": {
+      "title": "ジェグテックを活用して",
+      "url": "https://www.smrj.go.jp/sme/overseas/jgoodtech/case/fbrion0000001zfn-att/jgoodtech_0412.pdf",
+      "publisher": "中小企業基盤整備機構",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-465",
+    "kind": "buyer",
+    "title": "ネット即見積で国内の加工先を比べる",
+    "summary": "ミスミのmeviyは3D CADデータから加工可否・価格・納期を自動で出す。2023年には板金溶接にも広がり、即時見積は国内の加工先選びの比較の基準になっている。",
+    "industries": [
+      "板金",
+      "切削加工",
+      "溶接"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "即見積サービスとどう違う？",
+    "source": {
+      "title": "meviyが板金溶接加工サービスを開始",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2311/22/news014.html",
+      "publisher": "MONOist",
+      "date": "2023-11"
+    }
+  },
+  {
+    "id": "buyer-466",
+    "kind": "buyer",
+    "title": "レアアース不足で調達先を分散",
+    "summary": "2026年3〜4月に対日レアアース輸出が大きく減り、日本企業は豪州やインドなどへの調達先の切り替えを進めている（Caixinほかの報道）。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Japan faces heavy rare earth shortage as China curbs supply",
+      "url": "https://www.caixinglobal.com/2026-08-21/japan-faces-heavy-rare-earth-shortage-as-china-curbs-supply-102476428.html",
+      "publisher": "Caixin Global",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "success-573",
+    "kind": "success",
+    "title": "納期と小ロットを理由に国内へ戻す",
+    "summary": "中国に委託していた靴ひもを国内生産に移したメーカーは、コストだけでなく納期短縮と小ロット対応ができる点を国内の強みと判断。工程の自動化で採算を合わせた。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "国内回帰で成り立った条件",
+    "source": {
+      "title": "中国から国内へ生産を移した靴ひもメーカーの記事",
+      "url": "https://newswitch.jp/p/8398",
+      "publisher": "ニュースイッチ（日刊工業新聞）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-574",
+    "kind": "success",
+    "title": "「海外に出せない」悩みに国内工場で応える",
+    "summary": "電子部品の受託製造で、製造を海外に出せないという悩みに対し、国内工場での製造と小ロット対応を前面に出して紹介する加工会社がある。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外に出せない仕事を拾う見出し",
+    "source": {
+      "title": "電子部品の受託製造（国内工場・小ロット）",
+      "url": "https://mono.ipros.com/product/detail/2000497387",
+      "publisher": "イプロス（加工会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-575",
+    "kind": "success",
+    "title": "航空・防衛の実績と小ロットを並べる",
+    "summary": "基板実装・組立の会社が、航空・防衛・宇宙の実績と小ロット・カスタム品への対応を一緒に打ち出し、設計以降の外注先として選ばれる形を作っている。",
+    "industries": [
+      "基板実装",
+      "航空宇宙"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "実績分野と小ロットを並べて書く",
+    "source": {
+      "title": "航空・防衛・宇宙関連の基板実装及び組立実績あり 小ロット・カスタム品まで対応",
+      "url": "https://mono.ipros.com/product/detail/2000499070",
+      "publisher": "イプロス（加工会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-576",
+    "kind": "success",
+    "title": "受託加工から自社品の輸出へ",
+    "summary": "缶用の金属板を受託加工していた会社が、輸出経験ゼロからジェトロの伴走を受け、タイの大手百貨店で販売できた事例がある（2026年1月資料）。",
+    "industries": [
+      "印刷",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "下請けから輸出に出た話",
+    "source": {
+      "title": "「新輸出大国コンソーシアム」とは（事例）",
+      "url": "https://www.jetro.go.jp/ext_images/consortium/organizations/jirei202601r3.pdf",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "success-577",
+    "kind": "success",
+    "title": "品質で勝負すれば海外に機会",
+    "summary": "中小機構の事例集で、熱処理会社の社長は、現地企業も地場の品質に満足しておらず、値段ではなく品質で勝負すれば海外に機会は多いと話している。",
+    "industries": [
+      "熱処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "値段でなく品質で海外の仕事",
+    "source": {
+      "title": "中小企業 海外展開事例集（機械・装置等）",
+      "url": "https://j-net21.smrj.go.jp/special/overseas/01.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-578",
+    "kind": "success",
+    "title": "はじめて輸出を伴走で始める",
+    "summary": "ジェトロの新規輸出1万者支援プログラムは、輸出のあらゆる質問に答え、専門家の伴走や商談会につなぐ。初めての中小製造業が最初に使う窓口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "はじめての輸出相談の流れ",
+    "source": {
+      "title": "新規輸出1万者支援プログラム",
+      "url": "https://www.jetro.go.jp/ichiman-export.html",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-579",
+    "kind": "success",
+    "title": "連携して輸出に挑むと補助",
+    "summary": "複数の事業者が連携して中堅・中小企業の輸出を支える事業に、上限2,000万円・補助率1/2の補助（2025年4月公募）。地域の加工会社がまとまって海外に出る形。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "複数の事業者が連携して中堅・中小企業の輸出を支援する事業に最大2,000万円を補助",
+      "url": "https://j-net21.smrj.go.jp/news/cek71k000000vskc.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2025-04"
+    }
+  },
+  {
+    "id": "term-761",
+    "kind": "term",
+    "title": "国内回帰（リショアリング）",
+    "summary": "海外に出した生産や調達を国内に戻すこと。円安・地政学リスク・品質・納期が主な理由。調達先を国産品に変えるのは「国産回帰」と呼ばれることもある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "国内回帰と国産回帰の違い",
+    "source": {
+      "title": "国内回帰・国産回帰に関する企業の動向調査",
+      "url": "https://www.tdb.co.jp/report/economic/b_0bfcmcq/",
+      "publisher": "帝国データバンク",
+      "date": null
+    }
+  },
+  {
+    "id": "term-762",
+    "kind": "term",
+    "title": "経済安全保障の「特定重要物資」",
+    "summary": "国民生活や経済に欠かせず、供給を他国に頼ると危ない物資として国が指定するもの。2026年4月時点の資料では16物資。指定されると国内生産の支援がつく。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "地政学リスクを踏まえた製造基盤強化等に関する検討会 中間取りまとめ「製造基盤強化レポート」",
+      "url": "https://www.meti.go.jp/shingikai/external_economy/geopolitical_risks/pdf/20260415_2.pdf",
+      "publisher": "経済産業省",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "term-763",
+    "kind": "term",
+    "title": "インコタームズ（貿易条件）",
+    "summary": "国際商業会議所が決めた、売り手と買い手の費用と責任の分け方。どこまでの運賃や保険を見積に含むかがこれで決まる。現行は2020年版。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "海外見積のEXWとFOBの違い",
+    "source": {
+      "title": "これだけは知っておきたい貿易の基礎",
+      "url": "https://biznavi.smrj.go.jp/wp-content/uploads/2023/12/SMRJ_20231108_Webinar_Ver2.pdf",
+      "publisher": "中小企業基盤整備機構",
+      "date": "2023-11"
+    }
+  },
+  {
+    "id": "term-764",
+    "kind": "term",
+    "title": "信用状（L/C）",
+    "summary": "銀行が買い手に代わって支払いを約束する決済の仕組み。初めての海外取引で代金回収が不安なときに使う。手数料と書類の手間がかかる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "これだけは知っておきたい貿易の基礎",
+      "url": "https://biznavi.smrj.go.jp/wp-content/uploads/2023/12/SMRJ_20231108_Webinar_Ver2.pdf",
+      "publisher": "中小企業基盤整備機構",
+      "date": "2023-11"
+    }
+  },
+  {
+    "id": "term-765",
+    "kind": "term",
+    "title": "4M変更",
+    "summary": "材料（Material）・設備（Machine）・方法（Method）・人（Man）の変更。品質に影響するため、取引先に事前に知らせるのが国内の商習慣。海外では連絡がないこともある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "4M変更の連絡を約束する会社",
+    "source": {
+      "title": "中国部品メーカーとの不良品トラブルをなくすには？",
+      "url": "https://newswitch.jp/p/24154",
+      "publisher": "ニュースイッチ（日刊工業新聞）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-766",
+    "kind": "term",
+    "title": "NNN契約",
+    "summary": "中国の製造委託で使われる、秘密保持・使用禁止・迂回禁止をまとめた契約。図面を相手が自分で使うことを防ぐのが狙いで、欧米型のNDAと違う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "China NNN Agreements: What They Do, What They Don't",
+      "url": "https://harris-sliwoski.com/chinalawblog/china-nnn-agreements-do-them-correctly-or-walk-away/",
+      "publisher": "Harris Sliwoski（法律事務所ブログ）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-767",
+    "kind": "term",
+    "title": "関税率は品目番号で決まる",
+    "summary": "関税の率は、品目ごとの番号（HSコード）と輸出先の国で決まる。ジェトロの「世界各国の関税率」で機械などの税率を調べられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "輸出前に関税率を調べる方法",
+    "source": {
+      "title": "世界各国の関税率（中国・機械）",
+      "url": "https://www.jetro.go.jp/themetop/export/e-tariff/machinery/asia/cn/",
+      "publisher": "日本貿易振興機構（ジェトロ）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-768",
+    "kind": "term",
+    "title": "ビジネスメール詐欺（BEC）",
+    "summary": "取引先や社内の人になりすました偽メールで、振込先を変えさせてお金をだまし取る詐欺。海外取引で多い。秋田銀行などは電話やファクスでの確認を勧める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "海外送金に関する詐欺への注意",
+      "url": "https://www.akita-bank.co.jp/news/news_important/pdf/28101201.pdf",
+      "publisher": "秋田銀行",
+      "date": null
+    }
+  },
+  {
+    "id": "term-769",
+    "kind": "term",
+    "title": "サプライチェーン強靱化",
+    "summary": "材料・部品の調達が一つの国や会社に偏らないよう、調達先を分けたり国内に生産を持ったりして、止まりにくい供給網にすること。国の補助の対象にもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "供給網の強靱化と町工場",
+    "source": {
+      "title": "サプライチェーン対策のための国内投資促進事業費補助金",
+      "url": "https://www.meti.go.jp/covid-19/supplychain/index.html",
+      "publisher": "経済産業省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-770",
+    "kind": "term",
+    "title": "即時見積の部品調達サービス",
+    "summary": "3D CADデータを上げると価格と納期が自動で出る調達サービス。meviyは2019年に海外展開を発表した。比べる基準として発注者がよく使う。",
+    "industries": [
+      "切削加工",
+      "板金"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "部品調達のDXを実現する「meviy」がさらに進化――新領域、そして海外展開へ",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1910/17/news035.html",
+      "publisher": "MONOist",
+      "date": "2019-10"
+    }
+  },
+  {
+    "id": "trend-601",
+    "kind": "trend",
+    "official": true,
+    "title": "AIに出るにはスニペット表示が条件",
+    "summary": "Googleの説明では、AI機能で紹介されるには、ページがインデックスされ、通常の検索でスニペット付きで表示できる状態であることが必要。noindexや表示制限をかけたページは対象外になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AI features and your website",
+      "url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "publisher": "Google 検索セントラル",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-602",
+    "kind": "trend",
+    "official": true,
+    "title": "AI欄の表示回数を見るレポート",
+    "summary": "Googleは2026年6月、Search Consoleに生成AI機能の成果レポートを発表。AIによる概要・AIモードでの表示回数や、出たURLを国・端末・日付別に見られる。クリック数は出ない（第三者の解説より）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Search Consoleで見えた、AIに紹介された当社のページ",
+    "source": {
+      "title": "Introducing Search Generative AI performance reports in Search Console",
+      "url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "publisher": "Google 検索セントラル ブログ",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-603",
+    "kind": "trend",
+    "official": true,
+    "title": "作り方よりも中身の質で評価",
+    "summary": "Googleは2023年、AIで作った文章でも評価は作り方でなく中身の質で決まると公表。ただし順位を操作する目的で自動生成を量産するのはスパム扱い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Google Search's guidance about AI-generated content",
+      "url": "https://developers.google.com/search/blog/2023/02/google-search-and-ai-content",
+      "publisher": "Google 検索セントラル ブログ",
+      "date": "2023-02"
+    }
+  },
+  {
+    "id": "trend-604",
+    "kind": "trend",
+    "official": true,
+    "title": "誰が・どう・なぜ作ったかを示す",
+    "summary": "Googleは良いコンテンツの点検として「誰が（Who）・どのように（How）・なぜ（Why）作ったか」を示すよう勧めている。製造業なら担当技術者名や実測方法を書くと答えやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "この記事を書いた技術者と、測り方の紹介",
+    "source": {
+      "title": "Google Search's guidance about AI-generated content",
+      "url": "https://developers.google.com/search/blog/2023/02/google-search-and-ai-content",
+      "publisher": "Google 検索セントラル ブログ",
+      "date": "2023-02"
+    }
+  },
+  {
+    "id": "trend-605",
+    "kind": "trend",
+    "official": true,
+    "title": "ChatGPT検索はOAI-SearchBot次第",
+    "summary": "OpenAIの説明では、OAI-SearchBotを拒否したサイトはChatGPTの検索回答に出なくなる（案内リンクは残る場合あり）。出たいならrobots.txtで許可するのが前提。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Overview of OpenAI Crawlers",
+      "url": "https://developers.openai.com/docs/bots",
+      "publisher": "OpenAI",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-606",
+    "kind": "trend",
+    "official": true,
+    "title": "学習用GPTBotと検索用は別もの",
+    "summary": "OpenAIの文書では、GPTBotは学習用の収集で、拒否しても検索表示（OAI-SearchBot）には影響しない。「学習は断り、検索には出る」設定ができる。変更の反映は約24時間。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "GPTBot",
+      "url": "https://developers.openai.com/docs/gptbot",
+      "publisher": "OpenAI",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-607",
+    "kind": "trend",
+    "official": true,
+    "title": "利用者の依頼で読むChatGPT-User",
+    "summary": "OpenAIによると、ChatGPT-Userは利用者が質問した時にページを読みに来るもので、検索に出すかどうかの判断には使われない。利用者起点のためrobots.txtが効かない場合もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Overview of OpenAI Crawlers",
+      "url": "https://developers.openai.com/docs/bots",
+      "publisher": "OpenAI",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-608",
+    "kind": "trend",
+    "official": false,
+    "title": "AI専用の書き直しは不要とGoogle",
+    "summary": "2026年5月のGoogleのAI検索向けガイドについて、第三者の解説は「AI向けの書き直し・Markdown版ページ・細切れ化は不要」と紹介。人に向けた一次情報を重視する方針。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Google officially debunks 5 GEO myths in 2026: llms.txt and chunking are not required",
+      "url": "https://dev.to/toshihiro_shishido/google-officially-debunks-5-geo-myths-in-2026-llmstxt-and-chunking-are-not-required-1cl8",
+      "publisher": "DEV Community",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-609",
+    "kind": "trend",
+    "official": false,
+    "title": "不自然な言及集めもGoogleは否定",
+    "summary": "第三者の解説によれば、Googleのガイドは作り物の社名言及集めや、AI目的の構造化データの過剰な追加をやるべきでない施策に挙げている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Google Clarifies Which AEO and GEO Tactics Actually Matter",
+      "url": "https://www.writtenlyhub.com/news/google-aeo-geo-still-seo-official-guide",
+      "publisher": "WrittenlyHub",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "trend-610",
+    "kind": "trend",
+    "official": false,
+    "title": "経験に基づく情報と画像・動画を重視",
+    "summary": "GoogleのAI検索ガイドを読んだ解説は、基本の技術的な整備に加え、実体験に基づく内容と、画像・動画など複数の形の素材を勧めている点を要点に挙げる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工の様子を写真と動画で見せる記事",
+    "source": {
+      "title": "Google's AI search optimization guide is right about the basics",
+      "url": "https://cxl.com/blog/google-ai-search-optimization-guide/",
+      "publisher": "CXL",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-611",
+    "kind": "trend",
+    "official": false,
+    "title": "AIモードもSearch Consoleに合算",
+    "summary": "2025年の報道では、Search Consoleの検索パフォーマンスにAIモードのクリック・表示回数が通常の検索と合算される。AIだけを切り出せないので他の数字と合わせて見る必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Search ConsoleとAIモードのデータ",
+      "url": "https://www.itmedia.co.jp/business/spv/2507/03/news013_2.html",
+      "publisher": "ITmedia ビジネスオンライン",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-612",
+    "kind": "trend",
+    "official": false,
+    "title": "BingにAI引用のレポートが登場",
+    "summary": "Bing Webmaster Toolsに2026年2月、AI Performanceレポートの試行版が登場。CopilotやBingの要約で何回引用されたか、AIが使った検索語が無料で分かる。ChatGPTやGoogleは対象外。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Bingで分かった、AIが当社を見つけた検索語",
+    "source": {
+      "title": "Inside Bing's New AI Performance Report: What 20,000 Copilot Citations Taught Us",
+      "url": "https://www.searchinfluence.com/blog/bing-ai-performance-report-copilot-citations/",
+      "publisher": "Search Influence",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-613",
+    "kind": "trend",
+    "official": false,
+    "title": "Bingの引用割合レポート（6月）",
+    "summary": "2026年6月16日から、Bing Webmaster Toolsに意図・話題・引用の割合・比較の4つの試行版画面が順次追加されたと報じられた。どの話題で他社と比べて引用されるかが見える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Bing Webmaster Tools: 4 New Reports to Know Why AI Cites Your Site",
+      "url": "https://pasqualepillitteri.it/en/news/5220/bing-webmaster-tools-ai-citation-share-geo",
+      "publisher": "Pasquale Pillitteri",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-614",
+    "kind": "trend",
+    "official": false,
+    "title": "ChatGPTの引用元が企業ページへ",
+    "summary": "2026年10月の解説は、8月ごろからChatGPTの引用元がSNSや「おすすめ○選」記事から企業自身の製品ページ・仕様書へ移ったと整理。数値はツール会社などの集計で、業種差もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "当社の仕様書ページを読みやすく作り直した話",
+    "source": {
+      "title": "ChatGPTの引用元の変化 2026",
+      "url": "https://jinrai.co.jp/blog/2026/10/09/chatgpt-citation-shift-2026/",
+      "publisher": "Jinrai",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "trend-615",
+    "kind": "trend",
+    "official": false,
+    "title": "引用ページの9割が同年に更新",
+    "summary": "Ahrefsが2025年9月にChatGPTの引用上位1,000ページを調べると、89.7%がその年に更新されていた。ただし半分強はWikipediaで、更新日の表示が実際の更新と一致しない例もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ChatGPT の上位 1,000 件の引用の 67% はマーケターの手が出せない領域に",
+      "url": "https://ahrefs.com/ja/blog/chatgpts-most-cited-pages/",
+      "publisher": "Ahrefs",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-616",
+    "kind": "trend",
+    "official": false,
+    "title": "引用の多くは企業が手を出せない場所",
+    "summary": "Ahrefsの分析では、ChatGPTの引用上位1,000件の67%がWikipediaなど企業が直接作れない場所だった。自社サイトだけで勝とうとせず、外の情報源も整える必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ChatGPT の上位 1,000 件の引用の 67% はマーケターの手が出せない領域に",
+      "url": "https://ahrefs.com/ja/blog/chatgpts-most-cited-pages/",
+      "publisher": "Ahrefs",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-617",
+    "kind": "trend",
+    "official": false,
+    "title": "ChatGPTの広告導入で引用が一時減",
+    "summary": "Built Inは、ChatGPTの広告導入（2026年2月）後、社名に関する質問での引用が一時41%減ったが3月に戻り、製品サイトやレビューが学習系ブログより優先される傾向と伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "How to Make Brand Content More Visible in AI Search",
+      "url": "https://builtin.com/articles/chatgpt-ads-changing-ai-search",
+      "publisher": "Built In",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "trend-618",
+    "kind": "trend",
+    "official": false,
+    "title": "日本でも1位のクリックが6割減",
+    "summary": "Ahrefsの調査では、日本の情報収集型の検索語で、AIによる概要が出ると1位のクリック率の低下幅が2025年12月の−38%から2026年6月に−62.7%へ広がった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIに要約されても読みに来てもらえる記事の作り方",
+    "source": {
+      "title": "AI 概要で Google 検索 1 位の CTR が半年で激減、日本 クリック率が − 62.7% に減少",
+      "url": "https://ahrefs.com/ja/blog/ai-overviews-reduce-clicks-june-2026/",
+      "publisher": "Ahrefs",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-619",
+    "kind": "trend",
+    "official": false,
+    "title": "引用はページ単位でなく段落単位",
+    "summary": "AIはページ全体でなく、質問に合う段落だけを抜き出して引用するという見方がある（Yextの2026年分析を引いた解説）。各段落が単独で意味の通る書き方が向く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Retrieval Signalsを設計する ─ AIが引用したくなる本文5つの構造",
+      "url": "https://zenn.dev/kenimo49/articles/retrieval-signals-5-content-structures",
+      "publisher": "Zenn",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-620",
+    "kind": "trend",
+    "official": false,
+    "title": "読まれても引用されるのは一部",
+    "summary": "ChatGPTは1つの質問で数十ページを読むが、引用するのは約15%だけという調査（AirOps、2025年）が紹介されている。読まれるだけでなく、抜き出しやすさが要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "10 things ChatGPT looks for before citing your website",
+      "url": "https://dev.to/siyahtonu/10-things-chatgpt-looks-for-before-citing-your-website-28ej",
+      "publisher": "DEV Community",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-621",
+    "kind": "trend",
+    "official": false,
+    "title": "B2BのAI引用はYouTubeとLinkedIn",
+    "summary": "Meltwaterの2026年5月の報告（B2Bの16分野・950万件の引用）では、最も引用されたのはYouTube、2位がLinkedIn。会社サイトからの引用は18.7%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工の様子を動画で残す理由",
+    "source": {
+      "title": "Meltwater reveals LinkedIn is the 2nd most cited source in AI answers behind only YouTube",
+      "url": "https://www.bandt.com.au/meltwater-reveals-linkedin-is-the-2nd-most-cited-source-in-ai-answers-behind-only-youtube/",
+      "publisher": "B&T",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "trend-622",
+    "kind": "trend",
+    "official": false,
+    "title": "業界専門誌は自分の分野で強い",
+    "summary": "6つの引用調査をまとめた報告（2026年）は、自分の業界の中では一般ニュースより業界専門誌の方がAIに引用されやすいと整理。発表元に利害関係がある点は差し引く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "業界誌に載った技術記事を自社サイトでも紹介する",
+    "source": {
+      "title": "Trade Press AI Index 2026",
+      "url": "https://5wpr.com/research/trade-press-ai-index-2026/",
+      "publisher": "5W Research",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-623",
+    "kind": "trend",
+    "official": false,
+    "title": "展示会の出展者情報をAIで探す研究",
+    "summary": "欧州では、出展者の製品・用途・技術・認証などをまとめ、来場者が自然な言葉で探せるAIの研究（Exposense）が紹介されている。出展者情報の書き方が見つかりやすさを左右し始めた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Exposense: AI-Powered Business Matching That Transforms the Trade Fair Experience",
+      "url": "https://leapfrog.com.de/en/article/exposense-ai-powered-business-matching-that-transforms-the-trade-fair-experience",
+      "publisher": "leapfrog",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-624",
+    "kind": "trend",
+    "official": false,
+    "title": "県が無料の企業データベース",
+    "summary": "福島県は2025年2月、県内製造業が無料で自社情報を載せられる「ものづくり企業データベース」を新設。自治体の企業紹介は、外から自社を説明してくれる場所の一つになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "県の企業データベースに載せた内容と、HPとのそろえ方",
+    "source": {
+      "title": "福島県ものづくり企業データベース",
+      "url": "https://www.pref.fukushima.lg.jp/sec/32011b/monodukuri-chirashi.html",
+      "publisher": "福島県",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "trend-625",
+    "kind": "trend",
+    "official": false,
+    "title": "外部言及を起点にした支援も登場",
+    "summary": "「SEO上位でもAIには引用されない」として、第三者メディアでの言及からAIの推薦を狙うBtoB向け支援サービスも出てきた。外での言及が重視されている表れ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "SEO上位でも、AIには引用されない。第三者メディアからの言及を起点にAI推薦を獲得するBtoB特化型LLMO支援を提供開始",
+      "url": "https://webtan.impress.co.jp/r/prtimes/items/000000662.000045863",
+      "publisher": "Web担当者Forum（PR TIMES）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-580",
+    "kind": "success",
+    "title": "PDFの仕様表をHTMLの表に",
+    "summary": "従業員45名ほどの金属加工会社で、PDFだけにあった仕様表をHTMLの表に移し、冒頭に用途と一般名称を足すと、AI検索経由の訪問が3か月で月数件から10件超になった（支援会社の発表で第三者検証なし）。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "PDFだった加工仕様表をページで読めるようにしました",
+    "source": {
+      "title": "製造業のLLMO入門｜AI検索で選ばれるWeb戦略",
+      "url": "https://www.g-rhythm.com/llmo-ai-search-manufacturing-btob/",
+      "publisher": "Good Rhythm Consulting",
+      "date": null
+    }
+  },
+  {
+    "id": "success-581",
+    "kind": "success",
+    "title": "AI検索経由の問い合わせが約4倍",
+    "summary": "検索からの引き合いが減っていたBtoB製造業がLLMO対策に取り組み、AI検索経由の問い合わせが約4倍になったと支援会社が紹介。第三者の検証はなく、施策の中身は各社で違う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "LLMO対策の事例5選！「AIに選ばれる企業」をブランド設計から逆算する実践手法",
+      "url": "https://www.ageha.tv/magazine/magazine_marketing/llmo_casestudy/",
+      "publisher": "揚羽",
+      "date": null
+    }
+  },
+  {
+    "id": "success-582",
+    "kind": "success",
+    "title": "技術力を整理して引用率14→38%",
+    "summary": "BtoB製造業で技術力や加工実績をAIに伝わる形に整理し、6か月でChatGPTでの製品カテゴリの引用率が14%から38%に上がったと支援会社が公表（自社発表、第三者検証なし）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業の導入事例",
+      "url": "https://amour-inc.jp/case-industry/manufacturing/",
+      "publisher": "アムール",
+      "date": null
+    }
+  },
+  {
+    "id": "success-583",
+    "kind": "success",
+    "title": "公開34日で最初のRFQ",
+    "summary": "米国の支援会社は、先端製造業の顧客がサイト公開34日後に最初の見積依頼を受けたと発表。会社自身も「全ての売上が一つの施策のおかげとは言えない」と断っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "MarketMagnetix says manufacturing client got first RFQ in 34 days",
+      "url": "https://www.militarypressreleases.com/agp-article/938584453-marketmagnetix-says-manufacturing-client-got-first-rfq-in-34-days",
+      "publisher": "Military Press Releases",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "success-584",
+    "kind": "success",
+    "title": "AI経由の見積依頼が月0→47件",
+    "summary": "米国の産業機械メーカーの事例として、技術仕様の質問でAIの引用率62%、AI経由の見積依頼が月0件から47件になったと支援会社が公表。匿名で第三者の検証はない。",
+    "industries": [
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "How an Industrial Equipment Manufacturer Achieved 62% AI Citation Rate in Technical Specification Queries",
+      "url": "https://www.aicited.org/case-analyses/how-an-industrial-equipment-manufacturer-achieved-62-ai-citation-rate-in-technical-specification-queries",
+      "publisher": "Cited",
+      "date": null
+    }
+  },
+  {
+    "id": "success-585",
+    "kind": "success",
+    "title": "対応能力ページと認証の明示",
+    "summary": "米国の支援会社は、加工能力ごとのページと認証情報を整えると、90日でAI経由の見積依頼が月5〜10件出ると主張。売り手の主張なので、自社では小さく試して測る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "当社の加工能力を工程ごとにまとめたページ",
+    "source": {
+      "title": "Generative Engine Optimization (GEO) for B2B: The Complete 2026 Guide",
+      "url": "https://www.mersel.ai/generative-engine-optimization",
+      "publisher": "Mersel AI",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-586",
+    "kind": "success",
+    "title": "冒頭に2〜4文で答えを書く",
+    "summary": "引用を狙うなら、各ページの冒頭に2〜4文の直接の答えを置き、事実を確かめやすく書くとよいという助言がある。「何個から」「納期は」など先に答える形が製造業にも合う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ChatGPTの回答で引用される方法",
+      "url": "https://alejandrorioja.com/ja/how-to-get-cited-in-chatgpt-answers/",
+      "publisher": "個人ブログ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-587",
+    "kind": "success",
+    "title": "質問→即答→根拠の順で書く",
+    "summary": "AIは段落単位で引用するので、見出しに質問、直後に一言の答え、その後に根拠や数値を置く構造が勧められている。公差や材質の話でもこの順が読みやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "Q.SUS304の公差はどこまで？に一言で答える記事",
+    "source": {
+      "title": "Retrieval Signalsを設計する ─ AIが引用したくなる本文5つの構造",
+      "url": "https://zenn.dev/kenimo49/articles/retrieval-signals-5-content-structures",
+      "publisher": "Zenn",
+      "date": null
+    }
+  },
+  {
+    "id": "success-588",
+    "kind": "success",
+    "title": "事例は1件1ページで課題→数値",
+    "summary": "加工事例は1件ごとにURLを分け、課題・やったこと・数値・期間を近くにまとめる型が勧められている。顧客名を出せない時は業種と規模で示す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "不良率を下げた加工事例：課題・方法・数値",
+    "source": {
+      "title": "導入事例ページをAI検索に引用される形にする",
+      "url": "https://uravation.com/llmo/donyu-jirei-page-ai-search/",
+      "publisher": "uravation",
+      "date": null
+    }
+  },
+  {
+    "id": "success-589",
+    "kind": "success",
+    "title": "図面に書く言葉で事例を書く",
+    "summary": "発注者は図面にある部品名・加工方法・材料名・公差で探すことが多い。事例ページにもその言葉をそのまま入れると、AIにも人にも見つかりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業のAIO対策｜技術資料と事例をAI引用源に変えるBtoB引き合い設計",
+      "url": "https://0120.co.jp/blog/aio-144/",
+      "publisher": "課題解決プラットフォーム",
+      "date": null
+    }
+  },
+  {
+    "id": "success-590",
+    "kind": "success",
+    "title": "情報は正のページに集めて揃える",
+    "summary": "同じ情報が複数ページでずれていると、AIが混乱する。設備や対応材料などは正となるページに集め、外部サイトの記載とも照らし合わせて揃える考え方が紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "導入事例ページをAI検索に引用される形にする",
+      "url": "https://uravation.com/llmo/donyu-jirei-page-ai-search/",
+      "publisher": "uravation",
+      "date": null
+    }
+  },
+  {
+    "id": "success-591",
+    "kind": "success",
+    "title": "用語集は1文目で言い切る",
+    "summary": "用語集の質は定義文で決まり、冒頭1文で「〇〇とは△△のこと」と言い切る形が勧められる。自社紹介は定義の後ろに回す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "当社の加工用語集：一文で分かる言葉の意味",
+    "source": {
+      "title": "用語集ページをAI検索に引用される形に設計する",
+      "url": "https://uravation.com/llmo/yougoshu-glossary-ai-search-design/",
+      "publisher": "uravation",
+      "date": null
+    }
+  },
+  {
+    "id": "success-592",
+    "kind": "success",
+    "title": "定義・比較・判断の記事を組む",
+    "summary": "BtoBでは定義の記事だけでなく、比較の記事、導入を判断する記事を組み合わせる設計が勧められる。同じ問いに答える記事を何本も作ると評価が割れる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoBのLLMO",
+      "url": "https://funnel-ai.jp/media/b2b-llmo/",
+      "publisher": "funnel-ai",
+      "date": null
+    }
+  },
+  {
+    "id": "success-593",
+    "kind": "success",
+    "title": "比較の軸は買い手の順番で",
+    "summary": "比較ページは、自社に有利な軸だけでなく、買い手が実際に比べる順に軸を並べ、数値と根拠・日付を示すとAIに引用されやすいという解説がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "切削と板金、どちらで作る？比べる順番で解説",
+    "source": {
+      "title": "How to Write Comparison Pages That AI Engines Actually Cite",
+      "url": "https://gracker.ai/blog/how-to-write-comparison-pages-that-ai-engines-actually-cite",
+      "publisher": "Gracker",
+      "date": null
+    }
+  },
+  {
+    "id": "success-594",
+    "kind": "success",
+    "title": "比較表に数字がないと引かれにくい",
+    "summary": "料金や仕様の数値を書いていない比較ページは、AIに引用されにくいという実務の指摘がある。価格が出せない時は「目安の幅」や「何で変わるか」を書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "BtoBのGEO対策",
+      "url": "https://jinrai.co.jp/blog/btob-geo-taisaku/",
+      "publisher": "Jinrai",
+      "date": null
+    }
+  },
+  {
+    "id": "success-595",
+    "kind": "success",
+    "title": "対象・料金・条件・失敗例をそろえる",
+    "summary": "300の質問での分析（2026年5月）から、対象顧客・料金体系・導入条件・失敗例など比較に要る情報をそろえることがAIに参照されやすくする、と提言されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "当社に頼むのが向いていない場合の話",
+    "source": {
+      "title": "【AKARUMI INSIGHTS】AIはBtoB企業をどの情報から選んでいるのか?300プロンプト調査で見えたLLMO/AIO対策",
+      "url": "https://prtimes.jp/main/html/rd/p/000000029.000145103.html",
+      "publisher": "PR TIMES（ipe）",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "success-596",
+    "kind": "success",
+    "title": "プレスリリースで社名をAIに載せる",
+    "summary": "プレスリリースはAIの回答に社名を出す手段として効く一方、引用されるURLは配信サイトや転載先が多く、自社サイトの評価には直結しにくい。両方の役割を分けて使う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "プレスリリースとAI検索の引用",
+      "url": "https://uravation.com/llmo/press-release-ai-search-citation/",
+      "publisher": "uravation",
+      "date": null
+    }
+  },
+  {
+    "id": "success-597",
+    "kind": "success",
+    "title": "リリースを一次情報の起点にする",
+    "summary": "広報の悩みとして一次情報の不足、第三者からの露出不足、受け皿となる自社サイトの不足が挙げられ、プレスリリースをAI対策の起点にして自社ブログで詳しく書く流れが紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新設備の導入をリリースとブログの両方で伝える",
+    "source": {
+      "title": "プレスリリースを起点にしたAI対策",
+      "url": "https://kyodonewsprwire.jp/corp/shioj/9404/",
+      "publisher": "共同通信PRワイヤー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-598",
+    "kind": "success",
+    "title": "展示会とWebをつなげて準備",
+    "summary": "製造業の展示会選びの解説では、出展前の準備・当日・事後フォローと、Web集客との連動まで一続きで計画するよう勧めている。出展情報を自社サイトにも残すと外の情報と揃う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業向けの展示会選び",
+      "url": "https://www.shopowner-support.net/attracting_customers/btob/manufacturing/exhibition-list/",
+      "publisher": "店舗オーナー支援",
+      "date": null
+    }
+  },
+  {
+    "id": "success-599",
+    "kind": "success",
+    "title": "自治体の商談会で外の接点を作る",
+    "summary": "札幌市の2025年の受発注マッチングには道外の発注企業14社と道内受注企業44社が参加。商談会の参加企業紹介は、自社サイト以外で自社が紹介される場にもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくりマッチング in SAPPORO",
+      "url": "https://www.city.sapporo.jp/keizai/seizo/shien/documents/otakubosyu.pdf",
+      "publisher": "札幌市",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-600",
+    "kind": "success",
+    "title": "AIの答えは月1回同じ文で点検",
+    "summary": "自社がAIにどう答えられているかは、一時チャットで検索あり・なしの両方を、毎月同じ質問文で複数回聞き、「正確・不足・誤り・言及なし」で記録する方法が紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "AIに当社のことを聞いてみた（毎月の記録）",
+    "source": {
+      "title": "ChatGPTでの自社ブランドの点検",
+      "url": "https://tatap.jp/knowledge/chatgpt-brand-audit/",
+      "publisher": "tatap",
+      "date": null
+    }
+  },
+  {
+    "id": "success-601",
+    "kind": "success",
+    "title": "誤りはAIでなく読まれる元を直す",
+    "summary": "AIが自社を間違えて答えたら、AIに直接言うのではなく、AIが読んでいる自社の会社概要や外部の企業データベースなど元の情報を直すのが基本とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "AIが自社について誤った情報を答えるとき",
+      "url": "https://stellagent.ai/ja/ai-search-dock/blog/ai-wrong-information",
+      "publisher": "stellagent",
+      "date": null
+    }
+  },
+  {
+    "id": "success-602",
+    "kind": "success",
+    "title": "GA4に「AI検索」のチャネルを作る",
+    "summary": "GA4ではChatGPTやPerplexityからの訪問は「参照元」に混ざる。探索で参照元を抜き出し、AI用のセグメントやカスタムチャネル「AI検索」を作ると流入を分けて見られる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AI経由で来た人が何を読んだかを調べた",
+    "source": {
+      "title": "GA4でAI検索からの流入を測る",
+      "url": "https://jinrai.co.jp/blog/2026/07/22/ga4-ai-search-traffic/",
+      "publisher": "Jinrai",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "success-603",
+    "kind": "success",
+    "title": "AIチャネルは参照の上に置く",
+    "summary": "GA4のカスタムチャネルでは、chatgpt・perplexity・gemini・claudeなどの参照元を正規表現でまとめ、「参照」「自然検索」より上の順に置かないと正しく振り分けられない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIトラフィックのGA4計測 実装ガイド2026",
+      "url": "https://uravation.com/media/ai-traffic-ga4-tracking-implementation-guide-2026/",
+      "publisher": "uravation",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-604",
+    "kind": "success",
+    "title": "問い合わせフォームで知った経路を聞く",
+    "summary": "AI経由はGA4で測りきれないため、問い合わせフォームに「どこで当社を知りましたか（ChatGPTなど）」の選択肢を足すと、AIをきっかけに来た客が分かりやすい。GAで見えない分の補い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "GA4でAI検索からの流入を測る",
+      "url": "https://jinrai.co.jp/blog/2026/07/22/ga4-ai-search-traffic/",
+      "publisher": "Jinrai",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "buyer-467",
+    "kind": "buyer",
+    "title": "66.4%が外注先選びに生成AI",
+    "summary": "プロベルの調査（2026年、BtoBの発注担当）では、66.4%がパートナー企業選びに生成AIを使っていた。候補を探す段階でAIに聞かれている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoB発注、66.4%がパートナー企業選びに生成AIを活用【プロベル調べ】",
+      "url": "https://webtan.impress.co.jp/n/2026/09/16/53262",
+      "publisher": "Web担当者Forum",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "buyer-468",
+    "kind": "buyer",
+    "title": "理由がはっきりしたAI推薦なら候補に",
+    "summary": "2026年8月の調査（149名）では、AIがすすめる会社でも推奨理由や評価がしっかりしていれば候補に入れる人が72.5%。理由を書ける材料をサイトに置くことが大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "当社が選ばれている理由を数字で",
+    "source": {
+      "title": "BtoB発注、66.4%がパートナー企業選びに生成AIを活用【プロベル調べ】",
+      "url": "https://webtan.impress.co.jp/n/2026/09/16/53262",
+      "publisher": "Web担当者Forum",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "buyer-469",
+    "kind": "buyer",
+    "title": "外注先選びの情報源1位はAI",
+    "summary": "ナイルの調査（2026年7月、329名）では、外注先選定の情報源としてAI検索・AIチャットが64.1%で最多となり、検索エンジンを上回った。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "“AIからの推薦”が最重要に！BtoBサービス・外注先選定における生成AIの活用実態調査",
+      "url": "https://prtimes.jp/main/html/rd/p/000000678.000055900.html",
+      "publisher": "PR TIMES（ナイル）",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "buyer-470",
+    "kind": "buyer",
+    "title": "AIの情報が最終判断に影響98%",
+    "summary": "同じナイルの調査では、AI検索で得た情報が最終判断に影響したと答えた人が98.1%。最後に決めるのは人でも、材料はAIから来ている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "“AIからの推薦”が最重要に！BtoBサービス・外注先選定における生成AIの活用実態調査",
+      "url": "https://prtimes.jp/main/html/rd/p/000000678.000055900.html",
+      "publisher": "PR TIMES（ナイル）",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "buyer-471",
+    "kind": "buyer",
+    "title": "経営者の6割がAI推薦の会社を検討",
+    "summary": "LLMO支援会社の調査（経営者・役員319名）では、AI検索で推薦された会社を検討すると答えた人が61.1%。発注を決める立場の人もAIを判断材料にしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoB発注先探し、6割の経営者が「AIのおすすめ」を判断材料に",
+      "url": "https://syncad.jp/news/101516/",
+      "publisher": "SYNCAD",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-472",
+    "kind": "buyer",
+    "title": "AI表示を重要と考える経営者67%",
+    "summary": "同じ調査では、自社がAI検索で表示されることを重要と考える経営者が67.4%。調査主体がLLMO支援会社である点は差し引いて見る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoB発注先探し、6割の経営者が「AIのおすすめ」を判断材料に",
+      "url": "https://syncad.jp/news/101516/",
+      "publisher": "SYNCAD",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-473",
+    "kind": "buyer",
+    "title": "裏取り先の1位は公式サイト",
+    "summary": "2026年の発注担当者調査では、AIの答えを確かめる先として最も多いのは会社の公式サイト（71%）。AIで見つけられた後、HPの中身で決まる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIで当社を知った方へ：まず確かめてほしい3ページ",
+    "source": {
+      "title": "BtoB発注先選定におけるAI検索活用の実態調査2026",
+      "url": "https://www.bod-grp.com/blog/news/260611-01/",
+      "publisher": "BOD",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "buyer-474",
+    "kind": "buyer",
+    "title": "接触前に調べ終える割合は6割超",
+    "summary": "GlobalSpecのデータを引いた解説では、製造業の購買の流れの62%は、仕入れ先に連絡する前の自主調査で進む。その調査にAIが入ってきている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Manufacturing Lead Generation: How Buyers Actually Find You",
+      "url": "https://www.cobaltsalesgroup.com/learning-center/manufacturing-lead-generation",
+      "publisher": "Cobalt Sales Group",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-475",
+    "kind": "buyer",
+    "title": "AIの答えで「定番」がいない分野も",
+    "summary": "Semrushのデータを引いた解説では、調べた分野のうちChatGPTの答えではっきり定番の会社がいるのは15.2%だけ。小さな専門分野ほど最初に名前が出る余地がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "〇〇加工ならここ、と言われるための記事",
+    "source": {
+      "title": "Manufacturing Lead Generation: How Buyers Actually Find You",
+      "url": "https://www.cobaltsalesgroup.com/learning-center/manufacturing-lead-generation",
+      "publisher": "Cobalt Sales Group",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-476",
+    "kind": "buyer",
+    "title": "技術者はAIで競合を先に見つける",
+    "summary": "米国の事例紹介では、技術者がChatGPTやPerplexityで競合を見つけ、技術比較の前に候補から外されていた会社があったとされる（支援会社の発表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "How an Industrial Equipment Manufacturer Achieved 62% AI Citation Rate in Technical Specification Queries",
+      "url": "https://www.aicited.org/case-analyses/how-an-industrial-equipment-manufacturer-achieved-62-ai-citation-rate-in-technical-specification-queries",
+      "publisher": "Cited",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-477",
+    "kind": "buyer",
+    "title": "AIは比較・相場・選び方記事も読む",
+    "summary": "BtoBの300プロンプト調査（2026年5月）では、AIの回答は公式サイトだけでなく、比較記事・費用相場記事・選び方記事など第三者メディアの情報にも影響されていた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "【AKARUMI INSIGHTS】AIはBtoB企業をどの情報から選んでいるのか?300プロンプト調査で見えたLLMO/AIO対策",
+      "url": "https://prtimes.jp/main/html/rd/p/000000029.000145103.html",
+      "publisher": "PR TIMES（ipe）",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "buyer-478",
+    "kind": "buyer",
+    "title": "AI要約では製品サイトとレビュー優先",
+    "summary": "社名を含む質問でのAIの引用は、学習系のブログより製品サイトやレビューを優先する傾向が報じられた（2026年5月）。買い手は「実物の情報」を見たがっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "How to Make Brand Content More Visible in AI Search",
+      "url": "https://builtin.com/articles/chatgpt-ads-changing-ai-search",
+      "publisher": "Built In",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "buyer-479",
+    "kind": "buyer",
+    "title": "Perplexityは掲示板をよく引く",
+    "summary": "引用元の調査をまとめた報道では、PerplexityはReddit（掲示板）を多く引用する（上位引用の46.7%）。AIごとに見ている場所が違う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Meltwater reveals LinkedIn is the 2nd most cited source in AI answers behind only YouTube",
+      "url": "https://www.bandt.com.au/meltwater-reveals-linkedin-is-the-2nd-most-cited-source-in-ai-answers-behind-only-youtube/",
+      "publisher": "B&T",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "question-937",
+    "kind": "question",
+    "title": "llms.txtは置いた方がいい？",
+    "summary": "Googleは生成AI検索のためにllms.txtは要らないとの立場と解説されている。置いても害はないが、まず会社概要・設備・事例ページの中身を整える方が先。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Google officially debunks 5 GEO myths in 2026: llms.txt and chunking are not required",
+      "url": "https://dev.to/toshihiro_shishido/google-officially-debunks-5-geo-myths-in-2026-llmstxt-and-chunking-are-not-required-1cl8",
+      "publisher": "DEV Community",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-938",
+    "kind": "question",
+    "title": "AIの学習を断ると検索に出なくなる？",
+    "summary": "OpenAIでは、学習用のGPTBotを断っても、検索用のOAI-SearchBotを許可していればChatGPTの検索には出られる。図面や技術資料を学習に使われたくない会社でも両立できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "当社サイトのAIへの公開方針",
+    "source": {
+      "title": "GPTBot",
+      "url": "https://developers.openai.com/docs/gptbot",
+      "publisher": "OpenAI",
+      "date": null
+    }
+  },
+  {
+    "id": "question-939",
+    "kind": "question",
+    "title": "構造化データを入れればAIに出る？",
+    "summary": "Googleの立場は、構造化データは生成AI検索の条件ではない（リッチリザルトには引き続き有効）と紹介されている。本文が薄いまま足しても効果は出にくい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Google Clarifies Which AEO and GEO Tactics Actually Matter",
+      "url": "https://www.writtenlyhub.com/news/google-aeo-geo-still-seo-official-guide",
+      "publisher": "WrittenlyHub",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "question-940",
+    "kind": "question",
+    "title": "AIに当社が出てくるか確かめるには？",
+    "summary": "同じ質問を毎月、検索あり・なしでAIに聞いて記録する方法がある。Search Consoleの生成AIレポート（表示回数）やBingのAIレポート（引用回数）も参考になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ChatGPTでの自社ブランドの点検",
+      "url": "https://tatap.jp/knowledge/chatgpt-brand-audit/",
+      "publisher": "tatap",
+      "date": null
+    }
+  },
+  {
+    "id": "question-941",
+    "kind": "question",
+    "title": "AIに別の会社と間違えられたら？",
+    "summary": "似た社名・表記ゆれ・読み方の違いが原因になりやすい。会社概要に正式名・読み・所在地・事業をはっきり書き、外部の企業情報も揃える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIが自社を別の会社と混同するのはなぜ? 似た社名・表記ゆれ・読み方の切り分けと直し方",
+      "url": "https://stellagent.ai/ja/ai-search-dock/blog/ai-company-confusion",
+      "publisher": "stellagent",
+      "date": null
+    }
+  },
+  {
+    "id": "question-942",
+    "kind": "question",
+    "title": "AIに出ても見に来てくれる？",
+    "summary": "AIの要約が出るとクリックは減るが、AIの答えを確かめるために公式サイトを見る人が多い。数字・条件・事例など要約では済まない情報を置いておくと訪問につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "AI 概要で Google 検索 1 位の CTR が半年で激減、日本 クリック率が − 62.7% に減少",
+      "url": "https://ahrefs.com/ja/blog/ai-overviews-reduce-clicks-june-2026/",
+      "publisher": "Ahrefs",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-463",
+    "kind": "pain",
+    "title": "AIの誤りは似た社名から起こる",
+    "summary": "AIは確かな情報が見つからないと、近い情報をつないでもっともらしく答える。似た社名の会社と混同される、他社製品の機能が自社名で語られるといった型がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIが自社を別の会社と混同するのはなぜ? 似た社名・表記ゆれ・読み方の切り分けと直し方",
+      "url": "https://stellagent.ai/ja/ai-search-dock/blog/ai-company-confusion",
+      "publisher": "stellagent",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-464",
+    "kind": "pain",
+    "title": "AIはうその数字も引用する",
+    "summary": "作った統計をAIがそのまま引用してしまう実験も報告されている。自社の記事で使う数字は出典を確かめ、根拠のない数字を載せないことが信頼を守る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ChatGPTが偽の統計を引用 - 5万ページの実験でみる出典の確かめ方",
+      "url": "https://braindetox.kr/ja/posts/fake_statistics_get_cited_by_llms.html",
+      "publisher": "braindetox",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-465",
+    "kind": "pain",
+    "title": "AIOの成果が測りにくい",
+    "summary": "AIによる概要からの訪問はGA4では通常の自然検索に含まれ、分けて測れない。AIが裏で読みに来るアクセスは参照元が残らないことも多く、効果の全体像がつかみにくい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIトラフィックのGA4計測 実装ガイド2026",
+      "url": "https://uravation.com/media/ai-traffic-ga4-tracking-implementation-guide-2026/",
+      "publisher": "uravation",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-466",
+    "kind": "pain",
+    "title": "Search ConsoleでAIのクリックが不明",
+    "summary": "Googleの生成AIレポートは表示回数とURLは分かるが、クリック数や流入までは出ない（第三者の解説）。表示が増えても問い合わせとの関係は別に確かめる必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Google reports AI search impressions: how to read them",
+      "url": "https://searchenginejournal.com/google-reports-ai-search-impressions-how-to-read-them/582824",
+      "publisher": "Search Engine Journal",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-467",
+    "kind": "pain",
+    "title": "Bingの引用数が急に跳ねて戸惑う",
+    "summary": "Bingのレポートでは、引用回数が急に増えても見え方が良くなったわけではない例や、1つの人気ページだけで数字が動いた例が報告されている。短期の増減で判断しない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Inside Bing's New AI Performance Report: What 20,000 Copilot Citations Taught Us",
+      "url": "https://www.searchinfluence.com/blog/bing-ai-performance-report-copilot-citations/",
+      "publisher": "Search Influence",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-468",
+    "kind": "pain",
+    "title": "プレスの引用先は自社サイトでない",
+    "summary": "プレスリリースはAIに社名を出してもらえても、引用されるURLは配信サイトや転載先になりがち。リリースだけでは自社サイトの評価が積み上がらない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "プレスリリースとAI検索の引用",
+      "url": "https://uravation.com/llmo/press-release-ai-search-citation/",
+      "publisher": "uravation",
+      "date": null
+    }
+  },
+  {
+    "id": "term-771",
+    "kind": "term",
+    "title": "AIO・LLMO・GEOとは",
+    "summary": "いずれも、AI検索（AIによる概要・ChatGPTなど）で自社の情報が引用・推薦されるための取り組みの呼び名。中身は通常のSEOと重なる部分が大きい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Google AI Overviews・AIモード対策とは? 出る条件と、サイトでやること",
+      "url": "https://stellagent.ai/ja/ai-search-dock/blog/ai-overviews",
+      "publisher": "stellagent",
+      "date": null
+    }
+  },
+  {
+    "id": "term-772",
+    "kind": "term",
+    "title": "OAI-SearchBotとは",
+    "summary": "OpenAIがChatGPTの検索機能のためにWebを巡回するプログラム。robots.txtで拒否するとChatGPTの検索回答に出なくなる。学習用のGPTBotとは別。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Overview of OpenAI Crawlers",
+      "url": "https://developers.openai.com/docs/bots",
+      "publisher": "OpenAI",
+      "date": null
+    }
+  },
+  {
+    "id": "term-773",
+    "kind": "term",
+    "title": "参照元（リファラー）とは",
+    "summary": "訪問者がどのサイトから来たかを示す情報。GA4ではchatgpt.com（旧chat.openai.com）やperplexity.aiが参照元として記録される。AIから来た人を数える手がかり。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "GA4でAI検索からの流入を測る",
+      "url": "https://jinrai.co.jp/blog/2026/07/22/ga4-ai-search-traffic/",
+      "publisher": "Jinrai",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "term-774",
+    "kind": "term",
+    "title": "カスタムチャネルグループとは",
+    "summary": "GA4で流入元を自分で分類する設定。ChatGPTなどをまとめた「AI検索」の枠を作ると、AIからの訪問を通常の参照と分けて集計できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIトラフィックのGA4計測 実装ガイド2026",
+      "url": "https://uravation.com/media/ai-traffic-ga4-tracking-implementation-guide-2026/",
+      "publisher": "uravation",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-775",
+    "kind": "term",
+    "title": "グラウンディングクエリとは",
+    "summary": "AIが回答の裏付けを探すために内部で行う検索語。BingのAIレポートで見られ、AIがどんな言葉で自社ページを見つけたかが分かる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Inside Bing's New AI Performance Report: What 20,000 Copilot Citations Taught Us",
+      "url": "https://www.searchinfluence.com/blog/bing-ai-performance-report-copilot-citations/",
+      "publisher": "Search Influence",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-776",
+    "kind": "term",
+    "title": "引用率（サイテーション率）とは",
+    "summary": "AIに質問したとき、答えの中で自社ページが出典として示される割合。支援会社が成果の指標によく使うが、測り方は会社ごとに違う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業の導入事例",
+      "url": "https://amour-inc.jp/case-industry/manufacturing/",
+      "publisher": "アムール",
+      "date": null
+    }
+  },
+  {
+    "id": "term-777",
+    "kind": "term",
+    "title": "パッセージ（段落）引用とは",
+    "summary": "AIがページ全体ではなく、質問に合う一部の段落だけを抜き出して答えに使うこと。段落ごとに主語と結論があると抜き出されやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Retrieval Signalsを設計する ─ AIが引用したくなる本文5つの構造",
+      "url": "https://zenn.dev/kenimo49/articles/retrieval-signals-5-content-structures",
+      "publisher": "Zenn",
+      "date": null
+    }
+  },
+  {
+    "id": "term-778",
+    "kind": "term",
+    "title": "隠しテキストとは",
+    "summary": "背景と同じ色の文字など、人には見えずプログラムだけが読む文字。AI向けの指示をこっそり埋めるのはGoogleのスパムポリシーに触れる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIO対策のNGパターン",
+      "url": "https://uravation.com/llmo/aio-taisaku-ng-patterns/",
+      "publisher": "uravation",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-469",
+    "kind": "pain",
+    "title": "AI向けにFAQを機械的に量産",
+    "summary": "AI対策としてFAQや質問ごとのページを機械的に量産するのは、やってはいけない例に挙げられる。Googleも質問ごとのページ量産は不要との立場と解説されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIO対策の進め方",
+      "url": "https://tatap.jp/knowledge/aio-optimization-steps/",
+      "publisher": "tatap",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-470",
+    "kind": "pain",
+    "title": "AIクローラーを全部止めてしまう",
+    "summary": "AIの学習を嫌ってAIクローラーを全面ブロックすると、AI検索にも出なくなる。学習用と検索用を分けて設定するのが基本で、全面ブロックはNG例とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIO対策のNGパターン",
+      "url": "https://uravation.com/llmo/aio-taisaku-ng-patterns/",
+      "publisher": "uravation",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-471",
+    "kind": "pain",
+    "title": "成果保証の業者に丸投げ",
+    "summary": "「AIに必ず出す」と成果を保証する業者への丸投げはNG例に挙げられる。AIの回答は変わりやすく、表示は誰にも保証できない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "AIO対策のNGパターン",
+      "url": "https://uravation.com/llmo/aio-taisaku-ng-patterns/",
+      "publisher": "uravation",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-472",
+    "kind": "pain",
+    "title": "質問文を本文に詰め込む",
+    "summary": "AIで使われそうな質問文を不自然に本文へ詰め込むと、読む人にも読みにくく、避けるべきとされる。質問は見出しに1回、答えは自然な文で。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIOでやってはいけないこと",
+      "url": "https://www.sungrove.co.jp/aio-dont-no/",
+      "publisher": "サングローブ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-473",
+    "kind": "pain",
+    "title": "構造化データだけ足して満足",
+    "summary": "構造化データやチェック項目だけ整えても、本文に一次情報がなければAIに引用されにくい。チェックリストは土台で、中身の代わりにはならない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIO対策チェックリスト",
+      "url": "https://stellagent.ai/ja/ai-search-dock/blog/aio-checklist",
+      "publisher": "stellagent",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-626",
+    "kind": "trend",
+    "official": true,
+    "title": "めっきの亜鉛は暫定基準の業種",
+    "summary": "亜鉛の排水基準は、電気めっき業など一般基準をすぐ守るのが難しい業種に暫定基準が設けられてきた。期限ごとに延長・強化が見直される。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちの排水基準はどれ？を図で説明",
+    "source": {
+      "title": "排水基準を定める省令の一部改正（暫定排水基準）",
+      "url": "https://www.env.go.jp/press/7099.html",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-627",
+    "kind": "trend",
+    "official": true,
+    "title": "ほう素・ふっ素の暫定基準も見直し",
+    "summary": "大阪府の資料では、ほう素・ふっ素・亜鉛などの暫定排水基準が令和8年3月末で期限を迎え、経過措置の見直しが検討された。国も令和7年7月に見直した。",
+    "industries": [
+      "表面処理",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "暫定基準の期限と自社の備えを書く",
+    "source": {
+      "title": "ほう素・亜鉛等の暫定排水基準の見直し案（意見募集）",
+      "url": "https://www.pref.osaka.lg.jp/documents/120288/houso_aen_pubcom.pdf",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "term-779",
+    "kind": "term",
+    "title": "上乗せ基準（排水）",
+    "summary": "国の排水基準より厳しい値を都道府県が条例で決めるもの。大阪府は亜鉛で、電気めっき業に当初から暫定基準を当てている。工場の所在地で基準が変わる。",
+    "industries": [
+      "表面処理",
+      "塗装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "同じめっきでも県で基準が違う理由",
+    "source": {
+      "title": "亜鉛の排水基準について",
+      "url": "https://www.pref.osaka.lg.jp/documents/824/12_zinc_standard.pdf",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "success-605",
+    "kind": "success",
+    "title": "亜鉛排水の対策事例集を使う",
+    "summary": "環境省は電気めっき業の亜鉛排水濃度を下げる対策事例集（令和5年度版）を出している。自社の対策を事例集の型に沿って書くと、発注者に伝わりやすい。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "排水対策をどう進めたかを記事にする",
+    "source": {
+      "title": "電気めっき業における亜鉛の排水濃度低減のための対策事例集（令和5年度版）",
+      "url": "https://www.env.go.jp/content/000265045.pdf",
+      "publisher": "環境省",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-606",
+    "kind": "success",
+    "title": "精密ろ過で汚泥と薬剤を減らす",
+    "summary": "補助金で凝集沈殿から精密ろ過装置へ替えためっき会社の報告では、放流水の質が上がり、高分子凝集剤が不要に、汚泥も減り、処理能力は3倍になった。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "排水設備の更新で何が変わったか",
+    "source": {
+      "title": "ものづくり補助金 成果事例（めっき排水の精密ろ過）",
+      "url": "https://www.maido.or.jp/mono_hojokin/mono_seika_R02/16.pdf",
+      "publisher": "大阪産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-474",
+    "kind": "pain",
+    "title": "めっき汚泥の処分費が重い",
+    "summary": "排水処理で出る汚泥は産業廃棄物として処理費がかかる。工程のクローズド化で水と薬品を回収し汚泥を減らす装置もあるが、効果の裏づけは自社で確かめる必要がある。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "汚泥を減らす3つの方法を比べる",
+    "source": {
+      "title": "ニッケルめっき工程のクローズド化装置",
+      "url": "https://www.ipros.com/product/detail/95858039",
+      "publisher": "イプロス（装置メーカーの資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-943",
+    "kind": "question",
+    "title": "めっき会社の排水管理は大丈夫？",
+    "summary": "発注者は環境面の不安から排水の扱いを気にする。基準の種類、測定の頻度、処理の方法、事故時の連絡をFAQで答えると選ばれやすい。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "排水管理の4項目をFAQにする",
+    "source": {
+      "title": "電気めっき業における亜鉛の排水濃度低減のための対策事例集（令和5年度版）",
+      "url": "https://www.env.go.jp/content/000265045.pdf",
+      "publisher": "環境省",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "term-780",
+    "kind": "term",
+    "title": "PRTR（化管法の届出）",
+    "summary": "対象物質の排出量・移動量を国に届け出る制度。製造業など24業種、常用雇用21人以上、対象物質を年1トン以上扱うなどの条件をすべて満たすと届出が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちは届出対象？3つの条件で確かめる",
+    "source": {
+      "title": "PRTR制度の届出",
+      "url": "https://www-pref-mie-lg-jp.cache.yimg.jp/common/content/000950475.pdf",
+      "publisher": "三重県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-475",
+    "kind": "pain",
+    "title": "塩素系脱脂剤の排ガスが課題",
+    "summary": "めっきや金属加工ではジクロロメタンなど塩素系の脱脂剤が使われ、排ガスの浄化が課題とされてきた。環境省のモデル事業で浄化技術が取り上げられた。",
+    "industries": [
+      "表面処理",
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "洗浄剤を替えた理由と結果を書く",
+    "source": {
+      "title": "有機塩素系脱脂剤の排ガス浄化技術",
+      "url": "https://www.env.go.jp/air/tech/model/voc16_03/mat01.pdf",
+      "publisher": "環境省",
+      "date": "2016"
+    }
+  },
+  {
+    "id": "success-607",
+    "kind": "success",
+    "title": "水性補修塗料へ1か月で全面切替",
+    "summary": "自動車補修の事業所が水性補修塗料を導入し、約1か月で使用率100％にした。低VOCのクリヤーも使い、溶剤のころより約60％VOCを減らしたと環境省が表彰。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "水性塗料に替えた手順と苦労",
+    "source": {
+      "title": "VOC対策功労者表彰（平成22年度）",
+      "url": "https://www.env.go.jp/air/osen/voc/prize/h22.html",
+      "publisher": "環境省",
+      "date": "2010"
+    }
+  },
+  {
+    "id": "pain-476",
+    "kind": "pain",
+    "title": "VOC処理装置は高くて入れられない",
+    "summary": "一般に紹介されるVOC処理装置や削減技術は投資額が大きく、中小の塗装業ではほとんど採用できないという声があった。そこで低コストの削減方法を実証する動きが起きた。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "お金をかけないVOC削減の工夫",
+    "source": {
+      "title": "VOC対策功労者表彰（平成22年度）",
+      "url": "https://www.env.go.jp/air/osen/voc/prize/h22.html",
+      "publisher": "環境省",
+      "date": "2010"
+    }
+  },
+  {
+    "id": "term-781",
+    "kind": "term",
+    "title": "VOCの自主的取組",
+    "summary": "法の規制対象にならない施設や作業でも、事業者が自ら排出を抑えるやり方。規制と自主的取組を組み合わせるのが日本のVOC対策の特徴。",
+    "industries": [
+      "塗装",
+      "印刷",
+      "化学・塗料・接着剤"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "規制じゃないのにVOCを減らす理由",
+    "source": {
+      "title": "産業環境管理協会 VOCセミナー資料",
+      "url": "https://www.pref.osaka.lg.jp/documents/965/2022seminar_4_sankankyou.pdf",
+      "publisher": "大阪府（産業環境管理協会）",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "question-944",
+    "kind": "question",
+    "title": "塗装の塗料は水性？溶剤？",
+    "summary": "発注者はにおい・環境・仕上がりの差を気にする。水性やハイソリッド（高固形分）塗料への切替の有無と、仕上がりや耐久性の違いを答えに入れる。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "水性と溶剤、仕上がりと価格の違い",
+    "source": {
+      "title": "VOC排出抑制の講演資料",
+      "url": "https://www.kansai.meti.go.jp/3-6kankyo/R3fy/02_koensiryou.pdf",
+      "publisher": "近畿経済産業局",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "term-782",
+    "kind": "term",
+    "title": "湿し水廃液と現像廃液",
+    "summary": "オフセット印刷で出る廃液。湿し水は循環させて使い、交換時の廃液は専門の産廃業者に任せる。水質汚濁防止法の規制に従って回収・処理する。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "印刷工場から出る廃液のゆくえ",
+    "source": {
+      "title": "印刷産業の環境対応：水質",
+      "url": "https://jfpi.or.jp/printpia4/part2_05-03.html",
+      "publisher": "日本印刷産業連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "question-945",
+    "kind": "question",
+    "title": "印刷の損紙はどうしている？",
+    "summary": "環境配慮を求める発注者は損紙のゆくえを聞く。大阪市の調達チェックリストでは印刷工程の損紙を製紙原料に80％以上リサイクルする項目がある。",
+    "industries": [
+      "印刷",
+      "紙加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "損紙のリサイクル率を答えに入れる",
+    "source": {
+      "title": "環境配慮チェックリスト（印刷）",
+      "url": "https://www.city.osaka.lg.jp/joto/cmsfiles/contents/0000681/681269/kannkyouu.pdf",
+      "publisher": "大阪市",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-480",
+    "kind": "buyer",
+    "title": "自治体は印刷の環境項目で選ぶ",
+    "summary": "自治体の印刷発注では、損紙・製本くずの製紙原料リサイクル率などを並べた環境配慮チェックリストを使う例がある。答えられる数字を先に用意しておく。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "官公庁印刷のチェック項目に答える",
+    "source": {
+      "title": "環境配慮チェックリスト（印刷）",
+      "url": "https://www.city.osaka.lg.jp/joto/cmsfiles/contents/0000681/681269/kannkyouu.pdf",
+      "publisher": "大阪市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-628",
+    "kind": "trend",
+    "official": false,
+    "title": "廃グラビアインキを燃料に",
+    "summary": "インキメーカーの工場で、廃グラビアインキを回収・エマルジョン化し、セメント会社が石炭の代わりの燃料に使う実証が行われた（2024年）。",
+    "industries": [
+      "印刷",
+      "パッケージ",
+      "化学・塗料・接着剤"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "廃グラビアインキを石炭代替燃料に",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2409/04/news073.html",
+      "publisher": "MONOist",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "success-608",
+    "kind": "success",
+    "title": "分別回収を細かく見せる",
+    "summary": "印刷業界では紙くず・廃プラ・金属くず・廃液・廃溶剤の分別回収と、製紙原料にできない紙くずの固形燃料化が進む。分別の写真は環境ページの説得材料になる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "工場の分別回収を写真で紹介",
+    "source": {
+      "title": "印刷産業の環境対応：廃棄物",
+      "url": "https://www.jfpi.or.jp/printpia4/part2_05-05.html",
+      "publisher": "日本印刷産業連合会",
+      "date": null
+    }
+  },
+  {
+    "id": "success-609",
+    "kind": "success",
+    "title": "環境配慮の印刷を商品として出す",
+    "summary": "LED-UV水なし印刷、FSC認証紙、ノンVOCインキ、カーボンオフセットを組み合わせ、環境配慮の印刷として提案する印刷会社がある。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "環境配慮印刷のメニューを作る",
+    "source": {
+      "title": "サステナブルな取組事例（印刷会社）",
+      "url": "https://www.sentia-sendai.jp/conventionnavi/wp-content/themes/theme_convnavi_v2/pdf/r7-sustainable-case_konnoinsatsu.pdf",
+      "publisher": "仙台観光国際協会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-610",
+    "kind": "success",
+    "title": "再エネ100％の印刷を打ち出す",
+    "summary": "工場を再生可能エネルギーで動かし、CO2排出量を見える化した印刷サービスがメディアで紹介された。数字で示すと記事化されやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "うちの工場の電気は何でできている？",
+    "source": {
+      "title": "工場はすべて再エネで稼働する環境配慮型プリント",
+      "url": "https://www.newsweekjapan.jp/articles/-/54005",
+      "publisher": "ニューズウィーク日本版",
+      "date": null
+    }
+  },
+  {
+    "id": "term-783",
+    "kind": "term",
+    "title": "FSCのCoC認証",
+    "summary": "FSCには森林の管理を認める認証と、加工・流通の過程を認めるCoC認証がある。印刷会社が取るのはCoC。FSC紙はGP認定の資材にもなっている。",
+    "industries": [
+      "印刷",
+      "紙加工",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "FSCマークを入れるには何が要る？",
+    "source": {
+      "title": "環境ラベルの見方",
+      "url": "https://www.city.toshima.lg.jp/149/documents/eko212.pdf",
+      "publisher": "豊島区",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-629",
+    "kind": "trend",
+    "official": true,
+    "title": "事業系食品ロス目標が6割減に",
+    "summary": "2025年3月の食品リサイクル法の新しい基本方針で、事業系食品ロスを2000年度比で2030年度までに6割減らす目標になった。従来の5割減は2022年度に達成。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "食品ロス削減・食品リサイクル関連資料",
+      "url": "https://www.maff.go.jp/j/shokusan/recycle/syoku_loss/attach/pdf/161227_4-213.pdf",
+      "publisher": "農林水産省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-630",
+    "kind": "trend",
+    "official": true,
+    "title": "食品製造業の再生利用目標は95％",
+    "summary": "食品リサイクル法の基本方針で、食品製造業の再生利用等実施率の目標は95％（2029年度まで）。卸75％、小売65％、外食50％より高い。",
+    "industries": [
+      "食品製造",
+      "酒・醸造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "食品リサイクル法基本方針（新旧対照）",
+      "url": "https://www.env.go.jp/council/03recycle/%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99%EF%BC%93%E3%80%80%E9%A3%9F%E5%93%81%E3%83%AA%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E6%B3%95%E5%9F%BA%E6%9C%AC%E6%96%B9%E9%87%9D%EF%BC%88%E6%96%B0%E6%97%A7%E5%AF%BE%E7%85%A7%EF%BC%89.pdf",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-784",
+    "kind": "term",
+    "title": "エコフィード",
+    "summary": "食品の製造くずや余った食品から作る家畜のえさ。食品リサイクル法では飼料化が最優先で、次に肥料化、きのこの菌床と続く。",
+    "industries": [
+      "食品製造",
+      "酒・醸造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場の食品残さはえさになる？",
+    "source": {
+      "title": "食品リサイクルとエコフィード",
+      "url": "https://www.pref.nagasaki.jp/shared/uploads/2020/09/1601430389.pdf",
+      "publisher": "長崎県",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "success-611",
+    "kind": "success",
+    "title": "食品廃棄物を毎日計量する",
+    "summary": "国は食品ロス削減の取組として、食品廃棄物の継続的な計量を挙げている。何がどれだけ捨てられたかを測り、数字の変化を発信すると取組が伝わる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "廃棄量を測り始めて分かったこと",
+    "source": {
+      "title": "食品ロス削減・食品リサイクル関連資料",
+      "url": "https://www.maff.go.jp/j/shokusan/recycle/syoku_loss/attach/pdf/161227_4-213.pdf",
+      "publisher": "農林水産省",
+      "date": null
+    }
+  },
+  {
+    "id": "success-612",
+    "kind": "success",
+    "title": "賞味期限の延長と年月表示",
+    "summary": "賞味期限を延ばし、日付を年月表示にするのは国が挙げる食品ロス削減の方法。製造側の工夫として記事にでき、取引先の在庫ロスも減らせる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "賞味期限を延ばせた理由を説明",
+    "source": {
+      "title": "食品ロス削減・食品リサイクル関連資料",
+      "url": "https://www.maff.go.jp/j/shokusan/recycle/syoku_loss/attach/pdf/161227_4-213.pdf",
+      "publisher": "農林水産省",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-481",
+    "kind": "buyer",
+    "title": "フードバンク寄附を条件で見る",
+    "summary": "未利用食品のフードバンク寄附は国も勧める取組。小売や商社は、取引先がロスにどう向き合うかを見ている。寄附の手順を公開しておくと信頼につながる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "余った食品をフードバンクへ渡す流れ",
+    "source": {
+      "title": "フードバンク活用の資料",
+      "url": "https://www.maff.go.jp/kyusyu/seiryuu/syokuhin/recycle/foodbank/attach/pdf/221129-2.pdf",
+      "publisher": "九州農政局",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "question-946",
+    "kind": "question",
+    "title": "OEMの余り製品はどうなる？",
+    "summary": "食品OEMを頼む人は、規格外品や余りが出たときの扱いを気にする。再加工、加工用への回し先、フードバンク、飼料化などの扱いを先に示す。",
+    "industries": [
+      "食品製造",
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "余剰品の扱いをOEM契約前に決める",
+    "source": {
+      "title": "食品ロス削減の取組事例",
+      "url": "https://www.maff.go.jp/tokai/keiei/kigyo/loss/index.html",
+      "publisher": "東海農政局",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-477",
+    "kind": "pain",
+    "title": "排水の油が処理設備を弱らせる",
+    "summary": "食品工場の排水では、前段で油分を取りきれず生物処理の微生物が弱る、冬に油の塊や配管詰まりが起きる、汚泥が増えて処理費が上がる、という悩みが多い。",
+    "industries": [
+      "食品製造",
+      "食品機械"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "排水の油対策を上流から考える",
+    "source": {
+      "title": "排水処理の技術資料（油分の回収）",
+      "url": "https://www.env.go.jp/air/tech/model/work16/ref12.pdf",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "success-613",
+    "kind": "success",
+    "title": "ゆで汁の油を回収して設備を縮小",
+    "summary": "鶏ガラ加工場で、ゆで汁に含まれる多量の油を回収して再利用し、排水処理施設を小さくできた例が環境省資料にある。捨てていた油を資源に変える話は記事になる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "捨てていた油を資源にした話",
+    "source": {
+      "title": "排水処理の技術資料（油分の回収）",
+      "url": "https://www.env.go.jp/air/tech/model/work16/ref12.pdf",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-947",
+    "kind": "question",
+    "title": "食品工場の排水対策は？",
+    "summary": "衛生監査や取引先の工場監査では排水と残さの扱いも見られる。処理方式、油の除去、汚泥の処分先、記録の残し方を答えに入れる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "監査で聞かれる排水のこと",
+    "source": {
+      "title": "油脂分解微生物製剤の導入事例",
+      "url": "https://pr.mono.ipros.com/ameroid/product/detail/2001653788/",
+      "publisher": "イプロス（製剤メーカーの資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-631",
+    "kind": "trend",
+    "official": true,
+    "title": "改正資源法で再生プラの計画が要る",
+    "summary": "2026年4月から改正資源有効利用促進法が施行。製造事業者などに再生プラスチックの利用計画と定期報告を求める。プラ新法（2022年施行）とは別の法律。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "再生プラスチック利用促進の検討資料",
+      "url": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/resource_circulation/decarbonization_recycled_wg/pdf/002_03_00.pdf",
+      "publisher": "経済産業省",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-632",
+    "kind": "trend",
+    "official": true,
+    "title": "再生プラの対象は容器・家電・車",
+    "summary": "再生プラ利用を進める製品として、容器包装、家電4品目、自動車の3分野が選ばれた（2025年8月の審議会）。部品を納める成形会社にも再生材の相談が来る。",
+    "industries": [
+      "樹脂成形",
+      "自動車部品",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "再生材の相談が来たら何を確かめる？",
+    "source": {
+      "title": "再生プラスチック利用促進の検討資料",
+      "url": "https://www.meti.go.jp/shingikai/sankoshin/sangyo_gijutsu/resource_circulation/decarbonization_recycled_wg/pdf/002_03_00.pdf",
+      "publisher": "経済産業省",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-633",
+    "kind": "trend",
+    "official": true,
+    "title": "再生プラ利用率の義務化へ",
+    "summary": "取組が進む製品については、令和10年度までに段階的に一定の再生プラ利用率を義務づける方針が示された。具体的な率は今後決まる。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "プラスチック関連の参考資料",
+      "url": "https://www.maff.go.jp/j/shokusan/recycle/youki/pra-tf/dai8tf/sannkou.pdf",
+      "publisher": "農林水産省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-785",
+    "kind": "term",
+    "title": "プラ新法（プラスチック資源循環促進法）",
+    "summary": "2022年4月施行。設計から廃棄までプラを減らし循環させる法律。製品の設計指針や、事業者が出すプラ廃棄物の排出抑制・再資源化などを定める。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "プラ新法と改正資源法の違い",
+    "source": {
+      "title": "プラスチック資源循環促進法の概要",
+      "url": "https://www.maff.go.jp/j/shokusan/recycle/youki/plastic/gaiyou.pdf",
+      "publisher": "農林水産省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-948",
+    "kind": "question",
+    "title": "排出事業者としてのプラ対応は？",
+    "summary": "プラ新法では、事業活動で出るプラ廃棄物を多く出す事業者に排出抑制と再資源化の取組が求められる。自治体も事業者向けに解説している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "工場の廃プラ、何を求められている？",
+    "source": {
+      "title": "プラスチック資源循環促進法（事業者向け）",
+      "url": "https://www.city.sendai.jp/shido-jigyo/houkaisei2.html",
+      "publisher": "仙台市",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-478",
+    "kind": "pain",
+    "title": "再生材はロットでばらつく",
+    "summary": "PCR樹脂などの再生材はロットごとのばらつきが大きく、同じ品種でもロットが変わると成形品質がそろわない。ばらつきを数値で評価する仕組みも出てきた。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "再生材で品質を安定させる工夫",
+    "source": {
+      "title": "リサイクル材のロットばらつき評価",
+      "url": "https://kyodonewsprwire.jp/release/202402267010",
+      "publisher": "共同通信PRワイヤー",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "pain-479",
+    "kind": "pain",
+    "title": "粉砕材を混ぜると物性が落ちる",
+    "summary": "スプルーやランナーを粉砕して再利用すると、熱やせん断で強度や衝撃性が落ちる心配がある。公設試は成形と粉砕を繰り返したときの変化を調べている。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "粉砕材を何％まで混ぜられる？",
+    "source": {
+      "title": "リサイクル材の成形と物性（研究報告）",
+      "url": "https://www.itic.pref.ibaraki.jp/publication/doc/research/h28/vol45_07.pdf",
+      "publisher": "茨城県産業技術イノベーションセンター",
+      "date": "2016"
+    }
+  },
+  {
+    "id": "question-949",
+    "kind": "question",
+    "title": "再生材で作れますか？",
+    "summary": "発注者から再生材で作れるか聞かれたら、混ぜる割合、色の制約、物性の確認方法、ロット変更時の試作、価格への影響を答えに入れる。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "再生材成形の相談で聞くこと",
+    "source": {
+      "title": "リサイクル材のロットばらつき評価",
+      "url": "https://kyodonewsprwire.jp/release/202402267010",
+      "publisher": "共同通信PRワイヤー",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "term-786",
+    "kind": "term",
+    "title": "バイオマスプラと生分解性プラ",
+    "summary": "バイオマスプラは植物など再生可能な原料で作るもの。生分解性プラは微生物で最後はCO2と水に分解するもの。別の考え方で、両方を満たすとは限らない。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "バイオプラ2種類の違いを図にする",
+    "source": {
+      "title": "バイオプラスチック導入ロードマップ関連資料",
+      "url": "https://www.env.go.jp/content/900516837.pdf",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-950",
+    "kind": "question",
+    "title": "生分解性ならリサイクルもできる？",
+    "summary": "生分解性プラは分解する性質のため従来プラと構造が違い、強度や再現性の問題からリサイクルに向かないものも多い。用途と捨て方を先に決める。",
+    "industries": [
+      "樹脂成形",
+      "パッケージ"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "生分解性プラを選ぶ前に聞くこと",
+    "source": {
+      "title": "生分解性プラスチックとは",
+      "url": "https://eleminist.com/article/3139",
+      "publisher": "ELEMINIST",
+      "date": null
+    }
+  },
+  {
+    "id": "success-614",
+    "kind": "success",
+    "title": "樹脂くずを種類別に分けて有価に",
+    "summary": "工場の廃プラをPE・硬質・その他に分けて種類別に置き、圧縮減容装置も入れて約9割の有価物化を目指した例がある。分別が売却の第一歩。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "廃プラを売れるものに変える分け方",
+    "source": {
+      "title": "多量排出事業者の処理計画",
+      "url": "https://www.pref.shiga.lg.jp/file/attachment/5401696.pdf",
+      "publisher": "滋賀県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-480",
+    "kind": "pain",
+    "title": "有価売却は積み込みが手間",
+    "summary": "樹脂くずの有価売却が決まっても、基本は車上渡しのため積み込みを別に頼む必要があり、工場内の置き場の移動も課題になった例がある。",
+    "industries": [
+      "樹脂成形",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "有価売却で見落としがちな手間",
+    "source": {
+      "title": "事業者の廃棄物削減取組事例",
+      "url": "https://www.pref.kanagawa.jp/documents/12389/torikumijirei-sumitomodenkikougyou.pdf",
+      "publisher": "神奈川県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-615",
+    "kind": "success",
+    "title": "分別で廃プラの大半を有価物に",
+    "summary": "分別を進めて廃プラの大部分を有価物にし、排出量が前年より大きく減った事業者の例を神奈川県が紹介。数字の変化は環境報告の材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "分別で処理費が減った記録",
+    "source": {
+      "title": "事業者の廃棄物削減取組事例",
+      "url": "https://www.pref.kanagawa.jp/documents/12389/15.pdf",
+      "publisher": "神奈川県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-481",
+    "kind": "pain",
+    "title": "切りくずの分別に手がかかる",
+    "summary": "アルミと真鍮が混ざると買い取りの値が下がる。手で分けると人手がかかる。価格を見て手間をかける部分と、かけない部分を分ける考え方がリサイクル会社から示されている。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "切りくずの分別、どこまでやる？",
+    "source": {
+      "title": "銅・アルミ・真鍮等の有価回収と選別",
+      "url": "https://mono.ipros.com/product/detail/2000541687",
+      "publisher": "イプロス（リサイクル会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-616",
+    "kind": "success",
+    "title": "切りくずをブリケットで高く売る",
+    "summary": "切りくずを圧縮して固めるブリケット化で、再溶解の歩留まりと売却価格を上げ、かさも減らせるとメーカーは説明する。効果は現場の条件しだい。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "切りくずの売り方を変えた結果",
+    "source": {
+      "title": "切削くずのブリケットマシン",
+      "url": "https://www.ipros.com/product/detail/2000232170",
+      "publisher": "イプロス（機械メーカーの資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-482",
+    "kind": "buyer",
+    "title": "切りくずの相場を調べる",
+    "summary": "公的機関の売払いでも、アルミくずなどは市場価格調査をもとに値を決めている。町工場も複数の非鉄スクラップ業者から見積もりを取り、混入率と油分を伝える。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "切りくずの買取先の選び方",
+    "source": {
+      "title": "アルミ屑等売払いの市場価格調査書",
+      "url": "https://www.mod.go.jp/asdf/iruma/bosyu/raising/8-R-21sijoukakakuhen",
+      "publisher": "航空自衛隊入間基地",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-482",
+    "kind": "pain",
+    "title": "クーラントの腐敗と廃液費",
+    "summary": "水溶性切削油が腐ると交換と廃液処理費がかさむ。油剤商社の事例では腐りにくい油剤へ替えて液寿命が2倍以上、1台年約4万円の削減となった。",
+    "industries": [
+      "切削加工",
+      "研削"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "クーラント交換の回数を減らす",
+    "source": {
+      "title": "腐敗しにくい水溶性切削油の事例",
+      "url": "https://pr.mono.ipros.com/nagaokasekiyu/product/detail/2001553525/",
+      "publisher": "イプロス（油剤商社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-617",
+    "kind": "success",
+    "title": "浮上油を取って交換を半分に",
+    "summary": "機械から混ざる浮上油を回収する装置を入れ、クーラントの交換を1年1回から2年1回に延ばせたという装置メーカーの事例。数字は販売側の報告。",
+    "industries": [
+      "切削加工",
+      "研削"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "廃液を減らした工場の工夫",
+    "source": {
+      "title": "浮上油回収装置の導入事例",
+      "url": "https://mono.ipros.com/product/detail/2001085507",
+      "publisher": "イプロス（装置メーカーの資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-787",
+    "kind": "term",
+    "title": "排出事業者責任",
+    "summary": "産業廃棄物の処理を業者に任せても、出した会社が最後まで適正処理の責任を負うという考え方。マニフェストはそれを確かめる道具。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "処理を頼めば終わり、ではない理由",
+    "source": {
+      "title": "産業廃棄物の処理（排出事業者の方へ）",
+      "url": "https://www.city.funabashi.lg.jp/jigyou/haikibutsu/001/p001193.html",
+      "publisher": "船橋市",
+      "date": null
+    }
+  },
+  {
+    "id": "term-788",
+    "kind": "term",
+    "title": "マニフェスト（産業廃棄物管理票）",
+    "summary": "産廃を業者に渡すときに交付し、最終処分まで正しく処理されたか確かめる伝票。引渡しと同時に交付し、5年間保存する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "マニフェストの流れを1枚で",
+    "source": {
+      "title": "電子マニフェストの説明資料",
+      "url": "https://www.city.osaka.lg.jp/kankyo/cmsfiles/contents/0000537/537635/220603shiryou1.pdf",
+      "publisher": "大阪市",
+      "date": "2022-06"
+    }
+  },
+  {
+    "id": "term-789",
+    "kind": "term",
+    "title": "電子マニフェスト",
+    "summary": "排出事業者・収集運搬業者・処分業者の3者が情報処理センターを通じてデータでやりとりする方式。3者すべての加入が必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紙と電子、どっちが楽？",
+    "source": {
+      "title": "産業廃棄物管理票（マニフェスト）制度について",
+      "url": "https://www.pref.saitama.lg.jp/a0506/manifest.html",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "success-618",
+    "kind": "success",
+    "title": "電子化で報告書の提出が不要に",
+    "summary": "電子マニフェストにすると紙の保管が要らず、毎年の交付等状況報告書の提出も不要になる。入力漏れ防止や期限の通知機能もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "電子マニフェストに替えた感想",
+    "source": {
+      "title": "電子マニフェストのすすめ",
+      "url": "https://www.pref.fukuoka.lg.jp/uploaded/attachment/238312.pdf",
+      "publisher": "福岡県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-483",
+    "kind": "pain",
+    "title": "処理完了の報告が来ない",
+    "summary": "期限内に処理完了の報告が届かないときは、排出事業者が措置内容等報告書で知事などに報告しなければならない。放っておくと責任を問われる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "マニフェストが戻らないときの手順",
+    "source": {
+      "title": "産業廃棄物管理票（マニフェスト）制度について",
+      "url": "https://www.pref.saitama.lg.jp/a0506/manifest.html",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-951",
+    "kind": "question",
+    "title": "委託先の許可を確かめている？",
+    "summary": "産廃の委託では、委託先が許可を持つか、許可の品目や範囲が合っているかを確かめる。自治体が委託のポイントを配っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "産廃業者を選ぶときの確認項目",
+    "source": {
+      "title": "産業廃棄物の委託のポイント",
+      "url": "https://sanpai.city.kyoto.lg.jp/wp-content/uploads/2024/03/itakupoint.pdf",
+      "publisher": "京都市",
+      "date": "2024-03"
+    }
+  },
+  {
+    "id": "trend-634",
+    "kind": "trend",
+    "official": true,
+    "title": "電子マニフェストを中小にも",
+    "summary": "環境省は電子マニフェストを中小企業・小規模事業者にも広げられるよう検討していると規制改革の会議で答えた（2022年）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "規制改革推進会議資料（電子マニフェスト）",
+      "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2201_05digital/220420/digital05_0301.pdf",
+      "publisher": "内閣府",
+      "date": "2022-04"
+    }
+  },
+  {
+    "id": "success-619",
+    "kind": "success",
+    "title": "エア漏れ点検の日を毎月つくる",
+    "summary": "毎月の「エア漏れ点検の日」と漏れの見える化機器で、製品1,000本あたりの電力原単位を約20％下げた事例を近畿経済産業局が紹介。社内で気づけない点は省エネ診断で見つけた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "エア漏れ点検を始めた話",
+    "source": {
+      "title": "カーボンニュートラル取組事例（エア漏れ点検）",
+      "url": "https://www.kansai.meti.go.jp/5-1shiene/cn_jirei/cnjirei_nipponwico.pdf",
+      "publisher": "近畿経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-620",
+    "kind": "success",
+    "title": "タンク増設でコンプレッサー電力39％減",
+    "summary": "タンク容量が足りずコンプレッサーが動きっぱなしだった企業が、タンクを増やして圧力を調整し電力消費を39％減らした（川崎市の中小企業モデル事業）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "コンプレッサーの電気代を減らした方法",
+    "source": {
+      "title": "中小企業の省エネモデル事業",
+      "url": "https://www.city.kawasaki.jp/300/cmsfiles/contents/0000165/165720/syoene.pdf",
+      "publisher": "川崎市",
+      "date": null
+    }
+  },
+  {
+    "id": "term-790",
+    "kind": "term",
+    "title": "エア漏れ率と設定圧力",
+    "summary": "コンプレッサー配管から漏れる空気の割合と、吐出圧の設定。漏れ率を10％→2％にして年16万円減、圧力を0.1MPa下げる効果も資源エネルギー庁が示す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "エア漏れはいくら損している？",
+    "source": {
+      "title": "省エネでコストダウン",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saving/government/data/package_r7_03_shoene_costdown.pdf",
+      "publisher": "資源エネルギー庁",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-621",
+    "kind": "success",
+    "title": "高効率機と見える化で補助金",
+    "summary": "コンプレッサーを高効率機に替え、見える化システムでエア漏れの場所を特定し、省エネ補助金を使った事例を中部経済産業局がまとめている。",
+    "industries": [
+      "プレス",
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "補助金でコンプレッサーを替えた流れ",
+    "source": {
+      "title": "省エネ事例集（コンプレッサ更新と見える化）",
+      "url": "https://www.chubu.meti.go.jp/d33shouene/jireishu/casestudy/38/pdf/casestudy38.pdf",
+      "publisher": "中部経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-622",
+    "kind": "success",
+    "title": "省エネ診断で運用改善を先に",
+    "summary": "コンプレッサー・空調・照明の省エネ診断で、運用改善3件と投資改善1件の提案を受けた例がある。まずお金のかからない運用改善から手をつけられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "省エネ診断で出た提案と実行結果",
+    "source": {
+      "title": "省エネ診断事例",
+      "url": "https://shoeneshindan.jp/assets/docs/r5shindan_archive/matsudakuriningushokai.pdf",
+      "publisher": "省エネ診断事業",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "buyer-483",
+    "kind": "buyer",
+    "title": "空調・LEDは自治体の補助から",
+    "summary": "名古屋市は中小企業の高効率空調とLEDに補助率1/2・上限100万円の補助を出す（2026年）。京都市も古いエアコンやLED更新に補助。自治体ごとに条件が違う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "地元の省エネ補助を調べる手順",
+    "source": {
+      "title": "中小企業省エネルギー設備等導入補助金",
+      "url": "https://www.city.nagoya.jp/houdou/3003942/3003943/3004358.html",
+      "publisher": "名古屋市",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-484",
+    "kind": "pain",
+    "title": "交付決定前の発注は対象外",
+    "summary": "省エネ補助金の多くは交付決定の前に発注・契約した設備を対象にしない。先着順や予算切れもあり、着工前に公募要領を確かめる必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "補助金で失敗しない順番",
+    "source": {
+      "title": "省エネ改修の補助制度",
+      "url": "https://www.city.kyoto.lg.jp/kankyo/cmsfiles/contents/0000348/348031/04_hozyo.pdf",
+      "publisher": "京都市",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-791",
+    "kind": "term",
+    "title": "カタログ型の省エネ補助",
+    "summary": "国の省エネ補助で、国が指定した省エネ性能の高い設備の一覧から選んで申請する枠。中小は補助率1/2という解説がある。最新はSIIで確かめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "省エネ補助の種類をやさしく",
+    "source": {
+      "title": "省エネ補助金の解説",
+      "url": "https://www.irisohyama.co.jp/b2b/itrends/articles/7205/",
+      "publisher": "アイリスオーヤマ（法人向けコラム）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-623",
+    "kind": "success",
+    "title": "溶解炉の放熱を減らし年170万円",
+    "summary": "アルミの溶解炉と保持炉の放熱を減らす改修と、出湯時にすぐ蓋を閉める運用で、工場全体の電気料金の5.2％、年約170万円を減らした事例を東北経済産業局が紹介。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "炉の蓋を閉めるだけで変わること",
+    "source": {
+      "title": "省エネ事例（溶解炉の放熱対策ほか）",
+      "url": "https://www.tohoku.meti.go.jp/s_shigen_ene/syo_energy/topics/pdf/260407_3.pdf",
+      "publisher": "東北経済産業局",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "success-624",
+    "kind": "success",
+    "title": "工業炉の省エネ診断を受ける",
+    "summary": "ダイカスト会社が国の省エネ診断拡充事業を使い、工業炉とコンプレッサーの診断を受けて投資改善の提案を得た。炉を持つ会社は炉を中心に診断を受けるとよい。",
+    "industries": [
+      "鋳造",
+      "熱処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "工業炉の省エネ診断の受け方",
+    "source": {
+      "title": "省エネ診断事例（工業炉とコンプレッサ）",
+      "url": "https://www.shoeneshindan.jp/assets/docs/r5shindan_archive/keiyodaikasuto.pdf",
+      "publisher": "省エネ診断事業",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "term-792",
+    "kind": "term",
+    "title": "オンサイトPPA",
+    "summary": "発電事業者が自社の屋根などに自分の費用で太陽光を置き、その電気を工場が買う仕組み。初期費用はかからないが長期契約で、設備を自由に替えたり処分したりできない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "PPAと自社購入はどっちがいい？",
+    "source": {
+      "title": "オンサイトPPAのメリット・デメリット",
+      "url": "https://enemanex.jp/?p=219",
+      "publisher": "エネマネックス",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-485",
+    "kind": "pain",
+    "title": "屋根に太陽光が載らない",
+    "summary": "古い工場の屋根は耐荷重や形の問題で太陽光を置けないことがある。構造と防水の残り寿命を先に確かめる必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "工場屋根に太陽光を載せる前の確認",
+    "source": {
+      "title": "オンサイトPPAのメリット・デメリット",
+      "url": "https://enemanex.jp/?p=219",
+      "publisher": "エネマネックス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-952",
+    "kind": "question",
+    "title": "PPAの削減効果はどのくらい？",
+    "summary": "削減率は工場の電気の使い方で大きく変わる。昼間にラインが動いているかが鍵。契約期間、途中解約、契約終了後の設備の扱いを確かめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "昼に動く工場ほど得な理由",
+    "source": {
+      "title": "工場屋根の太陽光",
+      "url": "https://newswitch.jp/p/24450",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-484",
+    "kind": "buyer",
+    "title": "太陽光は補助金とセットで比べる",
+    "summary": "補助金を使ったPPAや自家消費型の太陽光もある。補助金がサービス料金にどう反映されるかを、複数社の見積もりで比べる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "太陽光の見積もりで比べる点",
+    "source": {
+      "title": "太陽光発電の導入補助",
+      "url": "https://hojyokin-portal.jp/columns/taiyoko_sokushin",
+      "publisher": "補助金ポータル",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-486",
+    "kind": "pain",
+    "title": "製品1個あたりの電気が分からない",
+    "summary": "CFP算定には製品1つに使ったエネルギーが要るが、請求書で分かるのは月ごとの電気・ガスの量だけ。製品ごとにどう割り振るかで中小はつまずく。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "月の電気代から製品のCO2を出す",
+    "source": {
+      "title": "中小のCFP算定",
+      "url": "https://newswitch.jp/p/47686",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-487",
+    "kind": "pain",
+    "title": "取引先ごとにCO2様式が違う",
+    "summary": "各社が独自の方式でデータを求めると、複数の取引先に納める会社は対応の手間と費用が大きくなるとIPAの資料は指摘する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "CO2の問い合わせが何社からも来る",
+    "source": {
+      "title": "サプライチェーンのCO2データ連携（調達資料）",
+      "url": "https://www.ipa.go.jp/choutatsu/nyusatsu/2023/doe3um000000apa4-att/nyusatsu20231215-2ex-2.pdf",
+      "publisher": "IPA",
+      "date": "2023-12"
+    }
+  },
+  {
+    "id": "trend-635",
+    "kind": "trend",
+    "official": true,
+    "title": "一次データの活用を広げる動き",
+    "summary": "経済産業省は、上流の削減を製品のCFPに反映するには一次データの活用拡大が課題で、サプライヤーの巻き込みが必要としている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "カーボンフットプリント検討会資料",
+      "url": "https://www.meti.go.jp/shingikai/energy_environment/carbon_footprint/pdf/002_05_00.pdf",
+      "publisher": "経済産業省",
+      "date": null
+    }
+  },
+  {
+    "id": "success-625",
+    "kind": "success",
+    "title": "省エネ活動とCFP算定をまとめる",
+    "summary": "CFPを算定した中小の化学会社は、省エネ活動の仕組みと組み合わせれば負担が軽くなりそうだと分かったと報じられた。測る仕組みを一つにする。",
+    "industries": [
+      "化学・塗料・接着剤",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "CO2算定と省エネを一緒に進める",
+    "source": {
+      "title": "中小のCFP算定",
+      "url": "https://newswitch.jp/p/47686",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-953",
+    "kind": "question",
+    "title": "どこまで一次データが要る？",
+    "summary": "CFPガイドラインは、優先的に一次データを使うべき場合を示す方針。全部を実測しなくてよい部分もあるので、取引先に範囲を確かめてから集める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "CO2データ、何から集める？",
+    "source": {
+      "title": "カーボンフットプリント検討会資料（第4回）",
+      "url": "https://www.meti.go.jp/shingikai/energy_environment/carbon_footprint/pdf/004_04_00.pdf",
+      "publisher": "経済産業省",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-485",
+    "kind": "buyer",
+    "title": "グリーン調達は2つの面で見る",
+    "summary": "大手のグリーン調達では、仕入先の環境管理体制と、納める品の含有化学物質の2つを調べ、評価の高い仕入先から優先して買う仕組みがある。",
+    "industries": [
+      "電子部品",
+      "機械部品",
+      "樹脂成形",
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "大手の環境アンケートに答える準備",
+    "source": {
+      "title": "グリーン調達ガイドライン",
+      "url": "https://www.iwasaki.co.jp/corporate/sustainability/eco/activity/doc/green_gl.pdf",
+      "publisher": "岩崎電気",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-486",
+    "kind": "buyer",
+    "title": "新規取引でchemSHERPAを求める",
+    "summary": "新しく取引を始めるとき、環境管理体制の評価表、禁止物質の非含有保証書、chemSHERPAの提出を求め、その後は年1回更新する運用の例がある。",
+    "industries": [
+      "電子部品",
+      "機械部品",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "新規取引で出す環境書類一覧",
+    "source": {
+      "title": "グリーン調達ガイドライン",
+      "url": "https://www.iwasaki.co.jp/corporate/sustainability/eco/activity/doc/green_gl.pdf",
+      "publisher": "岩崎電気",
+      "date": null
+    }
+  },
+  {
+    "id": "term-793",
+    "kind": "term",
+    "title": "chemSHERPA",
+    "summary": "経済産業省が主導して作った、製品に含まれる化学物質の情報を取引先へ伝える共通の様式。化学品向けのCIと成形品向けのAIがある。",
+    "industries": [
+      "電子部品",
+      "樹脂成形",
+      "表面処理",
+      "化学・塗料・接着剤"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "chemSHERPAを頼まれたら",
+    "source": {
+      "title": "グリーン調達ガイドライン",
+      "url": "https://jp.idec.com/media/JP-GreenProcurementGuidelines202001.pdf",
+      "publisher": "IDEC",
+      "date": "2020-01"
+    }
+  },
+  {
+    "id": "pain-488",
+    "kind": "pain",
+    "title": "発注元ごとの禁止物質リスト",
+    "summary": "chemSHERPAで答えても、発注元が独自の禁止物質・監視物質リストを持っていることが多く、その照合も別に要る。",
+    "industries": [
+      "電子部品",
+      "表面処理",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "禁止物質の問い合わせに速く答える",
+    "source": {
+      "title": "グリーン調達ガイドライン",
+      "url": "https://www.hitachi.co.jp/procurement/csr/environment/pdf/green.pdf",
+      "publisher": "日立製作所",
+      "date": null
+    }
+  },
+  {
+    "id": "term-794",
+    "kind": "term",
+    "title": "中小企業版SBT",
+    "summary": "従業員500人以下などの条件を満たす企業が、自社の排出（スコープ1・2）だけで削減目標を立てて認定を受けられる仕組み。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中小版SBTを取る流れ",
+    "source": {
+      "title": "中小がSBT認定に動く",
+      "url": "https://newswitch.jp/p/41734",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-487",
+    "kind": "buyer",
+    "title": "大手は仕入先の削減目標を見る",
+    "summary": "サプライチェーンでCO2を減らす取引先の要望に応えるため、中小がSBT認定に動いている。大手と取引を続けるには具体的な取組を示すことが大事とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "取引先にCO2目標を聞かれたら",
+    "source": {
+      "title": "中小がSBT認定に動く",
+      "url": "https://newswitch.jp/p/41734",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-636",
+    "kind": "trend",
+    "official": true,
+    "title": "SBT認定を条件にする補助金",
+    "summary": "宇都宮市の令和8年度補助金では、中小版SBT相当の削減目標の設定や、事業完了後の認定取得を要件にしている。自治体の支援はSBTとつながり始めた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和8年度 SBT関連補助金のチラシ",
+      "url": "https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/032/050/r8chirashisbt.pdf",
+      "publisher": "宇都宮市",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-626",
+    "kind": "success",
+    "title": "SBT認定で採用と資金調達にも",
+    "summary": "飯田市は中小版SBT認定の効果として、ブランドと認知度の向上、資金調達、人材確保・育成を挙げている。取得をサイトで伝えると複数の場面で使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "SBT認定をサイトでどう見せる",
+    "source": {
+      "title": "SBT認定取得支援の案内",
+      "url": "https://www.city.iida.lg.jp/uploaded/attachment/82802.pdf",
+      "publisher": "飯田市",
+      "date": null
+    }
+  },
+  {
+    "id": "success-627",
+    "kind": "success",
+    "title": "脱炭素の発信で人材獲得力が上がる",
+    "summary": "環境省の事例集では、従業員85人の金属加工会社が脱炭素の取組を社内外に発信し、社員の意欲と人材獲得力が上がったとされる。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "脱炭素の取組を採用ページに書く",
+    "source": {
+      "title": "中小規模事業者向けの脱炭素経営導入事例集",
+      "url": "https://www.env.go.jp/content/000114657.pdf",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "success-628",
+    "kind": "success",
+    "title": "気候に関心のある人材に届く",
+    "summary": "環境省のハンドブックは、脱炭素経営の取組は気候変動に関心の高い人材から共感され、人材を集める効果が期待できると説明する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "環境の取組を求職者向けに書く",
+    "source": {
+      "title": "中小規模事業者のための脱炭素経営ハンドブック",
+      "url": "https://www.env.go.jp/earth/SMEs_handbook.pdf",
+      "publisher": "環境省",
+      "date": null
+    }
+  },
+  {
+    "id": "success-629",
+    "kind": "success",
+    "title": "GXの取組をPRし新規受注",
+    "summary": "環境省の2026年7月の講演資料では、取組をGXの観点でPRして新規受注につなげた事例と、廃材を使った製品をPRして採用強化と新事業につなげた事例が紹介された。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "環境の取組を営業資料にする",
+    "source": {
+      "title": "中小企業を取り巻く脱炭素経営（講演資料）",
+      "url": "https://www.city.narita.chiba.jp/content/000226353.pdf",
+      "publisher": "環境省（成田市配布）",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "success-630",
+    "kind": "success",
+    "title": "廃材を使った製品を発信する",
+    "summary": "工場の廃材を使った製品を作って発信すると、採用強化と新しい事業の柱の両方に効いた例を環境省が紹介している。端材や切りくずの再利用も記事のネタになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "端材で作った製品の紹介記事",
+    "source": {
+      "title": "中小企業を取り巻く脱炭素経営（講演資料）",
+      "url": "https://www.city.narita.chiba.jp/content/000226353.pdf",
+      "publisher": "環境省（成田市配布）",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "success-631",
+    "kind": "success",
+    "title": "再エネ化を地域の事例集に載せる",
+    "summary": "川崎市の脱炭素事例集では、製造業の再エネ化や品質管理の取組が紹介されている。自治体の事例集に載ると、自社サイトで引用できる第三者の裏付けになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "自治体の事例集に載る方法",
+    "source": {
+      "title": "脱炭素の取組事例一覧",
+      "url": "https://www.city.kawasaki.jp/300/cmsfiles/contents/0000165/165720/jirei_ichiran.pdf",
+      "publisher": "川崎市",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-637",
+    "kind": "trend",
+    "official": true,
+    "title": "改正物流効率化法が2026年4月に本格施行",
+    "summary": "2026年4月から、一定規模以上の荷主は「特定荷主」に指定され、計画の作成や報告、物流の責任者選びが義務になった。2025年4月からは全荷主に努力義務がかかっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "物流効率化法、小さな工場にも関係ある？",
+    "source": {
+      "title": "改正物流効率化法の特定事業者制度",
+      "url": "https://www.mlit.go.jp/seisakutokatsu/freight/content/001993308.pdf",
+      "publisher": "国土交通省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-638",
+    "kind": "trend",
+    "official": true,
+    "title": "特定荷主は年9万トン以上",
+    "summary": "国土交通省の資料では、特定荷主の基準は取り扱う貨物の重さが年9万トン以上。多くの町工場は対象外だが、取引先の大手が対象なら協力を求められる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "取引先が特定荷主なら、うちに何が来る？",
+    "source": {
+      "title": "改正物流効率化法の特定事業者制度",
+      "url": "https://www.mlit.go.jp/seisakutokatsu/freight/content/001993308.pdf",
+      "publisher": "国土交通省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-639",
+    "kind": "trend",
+    "official": true,
+    "title": "物流の責任者CLOの選任",
+    "summary": "特定荷主には「物流統括管理者（CLO）」を選ぶ義務がある。大手の発注先では、物流の担当役員から納品方法の見直し依頼が来ることが増えそうだ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "改正物流効率化法の特定事業者制度",
+      "url": "https://www.mlit.go.jp/seisakutokatsu/freight/content/001993308.pdf",
+      "publisher": "国土交通省",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-640",
+    "kind": "trend",
+    "official": false,
+    "title": "中長期計画と定期報告の期限",
+    "summary": "法律事務所の整理では、特定事業者の届出は2026年5月末、中長期計画の提出は同年10月末、定期報告は2027年7月末から毎年とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "改正物流効率化法の施行に向けて",
+      "url": "https://www.nishimura.com/sites/default/files/newsletters/file/corporate_260123_ja.pdf",
+      "publisher": "西村あさひ法律事務所",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "trend-641",
+    "kind": "trend",
+    "official": true,
+    "title": "荷主の判断基準は4本柱",
+    "summary": "国が示した荷主の判断基準は、積載効率の向上、荷待ち時間の短縮、荷役時間の短縮、実効性の確保の4つ。小さな会社もこの視点で出荷を見直せる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "出荷を見直す4つの目のつけどころ",
+    "source": {
+      "title": "物流効率化法 荷主の判断基準",
+      "url": "https://wwwtb.mlit.go.jp/kinki/content/000348723.pdf",
+      "publisher": "国土交通省 近畿運輸局",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-642",
+    "kind": "trend",
+    "official": true,
+    "title": "受け渡し日時の指示も荷主の役目",
+    "summary": "九州経済産業局の資料では、荷待ちを減らす取組として、荷物の受け取り・引き渡し日時を適切に指示することや予約の仕組みの導入が挙げられている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "物流効率化法の概要と荷主の取組",
+      "url": "https://www.kyushu.meti.go.jp/seisaku/ryutsu/oshirase/250612_1_1.pdf",
+      "publisher": "九州経済産業局",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "trend-643",
+    "kind": "trend",
+    "official": true,
+    "title": "予約システムは入れるだけでは不十分",
+    "summary": "農林水産省の資料は、トラック予約受付システムは導入しただけでなく、実際に荷待ちが短くなる使い方が求められると説明している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "物流効率化法について",
+      "url": "https://www.maff.go.jp/hokkaido/suishin/syokuhinsangyou/attach/pdf/butsuryu-kouritsuka-24.pdf",
+      "publisher": "農林水産省 北海道農政事務所",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-644",
+    "kind": "trend",
+    "official": false,
+    "title": "標準的運賃が平均約8%上がった",
+    "summary": "2024年3月の告示で、トラックの標準的運賃は平均8%ほど引き上げられたと報じられた。燃料や高速代も上乗せしやすくなった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "標準的運賃 改正告示",
+      "url": "https://www.logi-today.com/596353",
+      "publisher": "LOGISTICS TODAY",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-645",
+    "kind": "trend",
+    "official": true,
+    "title": "荷待ち・積み込みにも料金の目安",
+    "summary": "2024年の見直しで、待機時間料に加えて積込料・取卸料の水準が示された。荷待ちと荷役が合わせて2時間を超えると5割増しになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "運賃以外にかかる『料金』とは",
+    "source": {
+      "title": "標準的運賃の見直しについて",
+      "url": "https://www.mlit.go.jp/jidosha/content/001732626.pdf",
+      "publisher": "国土交通省",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-646",
+    "kind": "trend",
+    "official": true,
+    "title": "高速代や燃料サーチャージは別に払う",
+    "summary": "標準的運賃では、待機・積み下ろしなどの料金や、高速代・燃料サーチャージなどの実費は運賃に含めず、別に受け取る整理になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "標準的運賃の見直しについて",
+      "url": "https://www.mlit.go.jp/jidosha/content/001732626.pdf",
+      "publisher": "国土交通省",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-647",
+    "kind": "trend",
+    "official": true,
+    "title": "取適法で運送の委託も対象に",
+    "summary": "2026年1月施行の取適法で「特定運送委託」が加わり、メーカーが売った品物を客先へ届ける運送の委託も規制対象になった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "自社製品を運んでもらうときの新ルール",
+    "source": {
+      "title": "下請法が取適法に",
+      "url": "https://www.gov-online.go.jp/article/202511/entry-9983.html",
+      "publisher": "政府広報オンライン",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-648",
+    "kind": "trend",
+    "official": false,
+    "title": "運送会社には60日以内に支払う",
+    "summary": "解説記事によると、特定運送委託では発荷主に書面の交付、60日以内の支払、価格協議への対応などが求められ、荷待ちや付帯作業のただ働きは禁止とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "取適法の特定運送委託",
+      "url": "https://biz.moneyforward.com/contract/basic/23241/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-649",
+    "kind": "trend",
+    "official": false,
+    "title": "公取委が物流の取引に目を光らせる",
+    "summary": "公正取引委員会は、取適法で特定運送委託が加わったことを受け、荷主と運送会社の取引の監視を強めていると報じられた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "公取委、物流の取引適正化へ監視強化",
+      "url": "https://www.logi-today.com/951144",
+      "publisher": "LOGISTICS TODAY",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-650",
+    "kind": "trend",
+    "official": false,
+    "title": "路線便が2026年に約2割値上げ",
+    "summary": "大手の路線便会社が2026年に、2024年の運賃と比べ距離・重さに応じて約20%の値上げを発表したと報じられた。小口の出荷が多い工場ほど影響が大きい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "送料が上がった。見積はどう変わる？",
+    "source": {
+      "title": "路線便の運賃改定",
+      "url": "https://www.logi-today.com/985073",
+      "publisher": "LOGISTICS TODAY",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-651",
+    "kind": "trend",
+    "official": false,
+    "title": "遠い地域は納期を1日延ばす動き",
+    "summary": "2024年1月、大手家具メーカーが東北・九州など長距離の地域で配送リードタイムを1日延ばした。運転手の残業規制への対応だ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "遠方のお客さまへの納期の考え方",
+    "source": {
+      "title": "家具メーカーが配送リードタイムを延長",
+      "url": "https://www.lnews.jp/2024/01/q0131403.html",
+      "publisher": "LNEWS",
+      "date": "2024-01"
+    }
+  },
+  {
+    "id": "trend-652",
+    "kind": "trend",
+    "official": false,
+    "title": "共同輸配送の連携に補助金",
+    "summary": "国土交通省は、複数の荷主・物流会社が物流データを連携し共同輸配送や帰り荷の確保を進める事業に補助する。補助率1/2・上限4,000万円と紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "物流データ連携促進支援事業",
+      "url": "https://hojyokin-portal.jp/subsidies/80897",
+      "publisher": "補助金ポータル",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-653",
+    "kind": "trend",
+    "official": false,
+    "title": "元請けの自社便を増やす流れ",
+    "summary": "食品卸の幹部は、改正物流2法を背景に、元請け物流会社は自社便の比率を上げることが利益につながると述べた。配送力のある会社が選ばれやすくなる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "卸の幹部、自社便比率を語る",
+      "url": "https://news.nissyoku.co.jp/news/yamamoto20260306120108201",
+      "publisher": "日本食糧新聞",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "pain-489",
+    "kind": "pain",
+    "title": "運送会社の値上げを価格に乗せられない",
+    "summary": "高知県の調査では、運送会社から値上げを求められ価格転嫁できたのは61%、応じたが転嫁できていないのが30%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "送料の値上がりをお客さまにどう伝えたか",
+    "source": {
+      "title": "物流2024年問題に関する調査結果",
+      "url": "https://www.pref.kochi.lg.jp/doc/2025031000155/file_contents/file_20253101115022_1.pdf",
+      "publisher": "高知県",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "pain-490",
+    "kind": "pain",
+    "title": "配送料の値上げは受け入れるしかない",
+    "summary": "大阪の信用金庫が2023年12月に取引先へ聞いた調査では、配送料の値上げを「受け入れる」が69.6%で最多だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "物流2024年問題に関する特別調査",
+      "url": "https://www.shinkin.co.jp/osaka/pdf/report/202312_tokubetsu2.pdf",
+      "publisher": "大阪信用金庫",
+      "date": "2023-12"
+    }
+  },
+  {
+    "id": "pain-491",
+    "kind": "pain",
+    "title": "時間を一斉指定すると荷待ちが起きる",
+    "summary": "荷主が多くの運送会社に同じ時刻を指定すると、トラックが集まって長い順番待ちになる。受け入れ側の決め方が荷待ちの原因になりうる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "荷主の一斉指定が生むトラックの行列",
+      "url": "https://www.webcartop.jp/?p=1353773",
+      "publisher": "WEB CARTOP",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-492",
+    "kind": "pain",
+    "title": "小口が少量だと貸切は割高",
+    "summary": "チャーター便は1台を貸し切るため、荷物が少ないと費用がかさむ。数個の部品を急ぎで届けたいときの悩みどころになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "チャーター便とは",
+      "url": "https://ecnomikata.com/ecnews/33128/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-493",
+    "kind": "pain",
+    "title": "混載便は他の荷物とぶつかる",
+    "summary": "路線便は1台に複数の荷主の荷物を積むため安いが、他の荷物との接触や積み替えがあり、精密品や傷が嫌な品では注意がいる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "路線便とは",
+      "url": "https://ecnomikata.com/ecnews/33459/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-494",
+    "kind": "pain",
+    "title": "海上輸送中に錆が出る",
+    "summary": "海を渡るコンテナは湿気・塩気・急な温度差で結露しやすく、天井から落ちた水滴が金属部品を局所的に錆びさせることがある。",
+    "industries": [
+      "金属加工",
+      "機械部品",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "輸出した部品が錆びて届いた。原因と対策",
+    "source": {
+      "title": "Prevent rusting metal parts when shipping containers overseas",
+      "url": "https://www.zerust.com/blog/prevent-rusting-metal-parts-when-shipping-containers-overseas/",
+      "publisher": "Zerust",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-495",
+    "kind": "pain",
+    "title": "木のパレット1枚で荷物が止まる",
+    "summary": "処理のマークがない木製梱包材は、到着国で差し止めや送り返し、廃棄の対象になりうる。スタンプのないパレット1枚で貨物全体が止まった例も紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ISPM 15 木材梱包の対応ガイド2026",
+      "url": "https://blog.gettransport.com/ja/logistics-guide/ispm-15-wood-packaging-compliance-guide-2026/",
+      "publisher": "GetTransport",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-496",
+    "kind": "pain",
+    "title": "書類の不備で通関が止まる",
+    "summary": "海外発送では、書類の誤りや不足で貨物が税関で止まり遅れることがある。品名があいまいだと確認が増えるので、部品名は具体的に書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "輸出の必要書類",
+      "url": "https://www.digima-japan.com/knowhow/world/expert-fromtr-00007.php",
+      "publisher": "Digima〜出島〜",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-497",
+    "kind": "pain",
+    "title": "梱包が悪いと保険が出ない",
+    "summary": "国際輸送の貨物保険では、遅延による損害、不適切な梱包による損害、間接的な損害などが補償対象外とされる例がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "貨物保険",
+      "url": "https://www.dhl.com/jp-ja/home/global-forwarding/products-and-solutions/cargo-insurance.html",
+      "publisher": "DHL",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-498",
+    "kind": "pain",
+    "title": "運送会社の補償は限られる",
+    "summary": "運送会社の責任は輸送手段ごとに上限があり、過失を荷主側が示す必要がある場合もある。高額品は運送会社の補償だけでは足りないことがある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "配送の補償額と保険",
+      "url": "https://ecnomikata.com/blog/33370/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-499",
+    "kind": "pain",
+    "title": "冷蔵品は配送回数が多く手間",
+    "summary": "弁当やデザートなどの冷蔵食品は1日2〜3回の配送が行われ、温度や衛生の管理に多くの手間がかかる、と国の資料は整理している。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "加工食品の物流の現状",
+      "url": "https://www.mlit.go.jp/common/001266011.pdf",
+      "publisher": "国土交通省（野村総合研究所の資料）",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "pain-500",
+    "kind": "pain",
+    "title": "中小の食品メーカーは卸任せになりやすい",
+    "summary": "資料によると、大手は小売の専用センターへ直接納めるが、中小メーカーは卸経由が基本。配送の工夫を自分で打ち出しにくい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "加工食品の物流の現状",
+      "url": "https://www.mlit.go.jp/common/001266011.pdf",
+      "publisher": "国土交通省（野村総合研究所の資料）",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "pain-501",
+    "kind": "pain",
+    "title": "搬入口と短い移動区間で揺れる",
+    "summary": "精密機器はエアサス車で運ぶのが常識でも、建物から車まで、車から設置場所までの短い区間を普通の台車で運ぶと振動が伝わりやすい。",
+    "industries": [
+      "装置",
+      "精密機器",
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "防振平台車",
+      "url": "https://mono.ipros.com/news/detail/1174",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-502",
+    "kind": "pain",
+    "title": "複数社に分けると責任があいまい",
+    "summary": "成形・検査・組立・梱包を別々の会社に頼むと、不具合が出たときにどこの責任か分かりにくくなる、と一貫対応の会社は説明している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "成形から組立・梱包まで一貫",
+      "url": "https://pr.mono.ipros.com/taisei-i/product/detail/2001612623/",
+      "publisher": "イプロス（成形会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-954",
+    "kind": "question",
+    "title": "路線便とチャーター便の違いは？",
+    "summary": "路線便は複数の荷主の荷物をまとめて運び安い。チャーター便は1台を貸し切り、時間を決めやすく破損も減らせるが少量だと割高。答えには量と急ぎ具合で選ぶと書くとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "路線便と貸切、うちはこう使い分けています",
+    "source": {
+      "title": "チャーター便とは",
+      "url": "https://ecnomikata.com/ecnews/33128/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-955",
+    "kind": "question",
+    "title": "時間指定で届けてもらえる？",
+    "summary": "チャーター便は出発・到着の時刻を決めやすく、製造業では指定時間の配達で生産の遅れを防いだ例がある。答えには追加費用の目安も添える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "チャーター便による製造業の物流事例",
+      "url": "https://mono.ipros.com/product/detail/2000692489",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-956",
+    "kind": "question",
+    "title": "長い材料や重い品はどう運ぶ？",
+    "summary": "長尺の金属は水平に積める長さの車を選び、車体の中央に置いて前後左右に動かないよう固定する。答えには車種（平ボディ・ユニック等）の選び方を書く。",
+    "industries": [
+      "金属加工",
+      "製缶",
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "長尺物を安全に届けるための積み方",
+    "source": {
+      "title": "Safety Alert: long metal loads",
+      "url": "https://www.cic.hk/files/page/52/safety_alert_25_15_e.pdf",
+      "publisher": "香港建造業議会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "question-957",
+    "kind": "question",
+    "title": "重量物の見積に何を伝える？",
+    "summary": "重量物の輸送見積では、寸法・数量・重さ・梱包の有無、積み込みを誰がするか（フォークかクレーン付きトラックか）を伝えるのが前提になる。",
+    "industries": [
+      "製缶",
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "重量物のユニック輸送の見積依頼",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=964891",
+      "publisher": "ビジネス・マッチング・ステーション",
+      "date": null
+    }
+  },
+  {
+    "id": "question-958",
+    "kind": "question",
+    "title": "精密装置の搬入で伝えることは？",
+    "summary": "見積の段階で、エアサス車の指定、積み方、搬入先の階数や搬入口の有無を伝えると話が早い。答えには事前の現地確認の有無も書く。",
+    "industries": [
+      "装置",
+      "精密機器",
+      "産業機械"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "精密機器輸送の依頼",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=984637",
+      "publisher": "ビジネス・マッチング・ステーション",
+      "date": null
+    }
+  },
+  {
+    "id": "question-959",
+    "kind": "question",
+    "title": "防錆紙はどう使えば効く？",
+    "summary": "気化性の防錆紙は、包んだあとポリ袋や箱で密閉すると効果が安定する。答えには鉄用・非鉄用など金属に合わせて選ぶことも書く。",
+    "industries": [
+      "金属加工",
+      "切削加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "防錆紙で包むだけでは足りない理由",
+    "source": {
+      "title": "ZERUST ICT VCI paper",
+      "url": "https://www.zerust.com/?p=7545",
+      "publisher": "Zerust",
+      "date": null
+    }
+  },
+  {
+    "id": "question-960",
+    "kind": "question",
+    "title": "防錆はどのくらいもつ？",
+    "summary": "販売店の商品説明では、防錆紙の効果は6〜12か月、ポリ袋で密封すると12〜36か月とされる例がある。答えには保管の条件で変わる点を添える。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "防錆紙の商品一覧",
+      "url": "https://www.monotaro.com/s/c-59413/?rv=1",
+      "publisher": "モノタロウ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-961",
+    "kind": "question",
+    "title": "防錆油なしで送れる？",
+    "summary": "防錆紙メーカーの中には、防錆油を使わなくても高温多湿で長く錆を防げるとうたう製品がある。油を嫌う客先には選択肢になる。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "気化性防錆紙",
+      "url": "https://pr.mono.ipros.com/yamaichi-k/product/detail/2000272489",
+      "publisher": "イプロス（防錆紙メーカーの資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-962",
+    "kind": "question",
+    "title": "輸出の木箱に何が必要？",
+    "summary": "国際輸送の木製梱包材（厚さ6mm超）は熱処理か燻蒸をして、IPPCのマークを付ける必要がある。答えには自社で手配できる木箱の種類を書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "輸出の木箱、熱処理スタンプって何？",
+    "source": {
+      "title": "ISPM 15 木材梱包の対応ガイド2026",
+      "url": "https://blog.gettransport.com/ja/logistics-guide/ispm-15-wood-packaging-compliance-guide-2026/",
+      "publisher": "GetTransport",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-963",
+    "kind": "question",
+    "title": "海外にEMSで部品を送れる？",
+    "summary": "EMSは国ごとに必要な書類が違い、日本郵便の国別一覧で税関告知書やインボイスの要否を確かめられる。答えには国名で調べる手順を書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "国際郵便 必要書類",
+      "url": "https://www.post.japanpost.jp/int/use/document.html",
+      "publisher": "日本郵便",
+      "date": null
+    }
+  },
+  {
+    "id": "question-964",
+    "kind": "question",
+    "title": "海外発送の書類は何がいる？",
+    "summary": "基本は品名・数量・重さ・原産国・単価・HSコードを書いたインボイスと、梱包の中身を示すパッキングリスト。両方の記載をそろえることが大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "初めての海外発送、書類はこれだけ用意",
+    "source": {
+      "title": "国際輸送に必要な書類",
+      "url": "https://www.dhl.com/discover/ja-jp/logistics-advice/essential-guides/what-paperwork-do-I-need-for-international-shipping",
+      "publisher": "DHL",
+      "date": null
+    }
+  },
+  {
+    "id": "question-965",
+    "kind": "question",
+    "title": "輸出の見積は工場渡し？届け先渡し？",
+    "summary": "EXWは工場で渡すだけで売り手の負担が最小、DDPは相手国の通関や関税まで売り手が持つ。答えには条件名と版（2020等）を見積に書くと示す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "EXW インコタームズ2020",
+      "url": "https://www.searates.com/jp/reference/incoterms2020/EXW/",
+      "publisher": "SeaRates",
+      "date": null
+    }
+  },
+  {
+    "id": "question-966",
+    "kind": "question",
+    "title": "納品書・受領書・検収書の違いは？",
+    "summary": "納品書は届けた側が出し、受領書は受け取った事実、検収書は中身を確かめて受け入れた結果を示す。支払いの根拠になるのは検収であることが多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "納品から検収まで、書類の流れ",
+    "source": {
+      "title": "検収書とは",
+      "url": "https://bakuraku.jp/knowledge/knowledge-invoice/inspection-document",
+      "publisher": "バクラク",
+      "date": null
+    }
+  },
+  {
+    "id": "question-967",
+    "kind": "question",
+    "title": "検収では何を確かめる？",
+    "summary": "検収では数量、仕様（型番・寸法など）、品質（外観・試験成績など）を発注内容と照らし合わせる。答えには検査成績書を同封するかを書くとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "検収書とは",
+      "url": "https://keiyaku-watch.jp/media/kisochishiki/kenshusho/",
+      "publisher": "契約ウォッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-968",
+    "kind": "question",
+    "title": "運送中に壊れたら誰が持つ？",
+    "summary": "宅配便の責任の範囲は国の標準宅配便運送約款に定めがある。答えには上限額があり、高額品は保険を別にかけることを書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "運送中の破損、補償はどこまで？",
+    "source": {
+      "title": "標準宅配便運送約款",
+      "url": "https://www.mlit.go.jp/jidosha/content/001732380.pdf",
+      "publisher": "国土交通省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-969",
+    "kind": "question",
+    "title": "貨物保険の保険料はいくら？",
+    "summary": "解説記事では、貨物保険の保険料は貨物の価値の0.25〜0.5%ほどが目安と紹介されている。答えには見積に含めるかどうかを書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "配送の補償額と保険",
+      "url": "https://ecnomikata.com/blog/33370/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-970",
+    "kind": "question",
+    "title": "チルドと冷蔵は同じ温度？",
+    "summary": "物流では0〜5℃ほどをチルド、食品の製造や小売では0〜10℃を冷蔵と呼ぶことが多く、使う人で範囲がずれる。答えには自社の管理温度を数字で書く。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "冷蔵・チルド・冷凍、うちの管理温度",
+    "source": {
+      "title": "チルド配送ガイド",
+      "url": "https://stockcrew.co.jp/insights/article_chilled-delivery-guide_2026-05-26",
+      "publisher": "STOCKCREW",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "question-971",
+    "kind": "question",
+    "title": "輸出の錆対策は何を組み合わせる？",
+    "summary": "乾燥剤で露点を下げ、気化性防錆材と防湿袋で包むなど、何重かに守る方法が紹介されている。輸送日数と金属の種類で決める。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "コンテナ用乾燥剤",
+      "url": "https://pr.mono.ipros.com/ex-dry/product/detail/2000602533/",
+      "publisher": "イプロス（乾燥剤メーカーの資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-972",
+    "kind": "question",
+    "title": "見積に送料は入っていますか？",
+    "summary": "見積書に「送料込み」か「送料別途（実費）」かを書かないと、あとで金額の行き違いになりやすい。範囲と含まないものを明記するのが基本。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "見積の送料、込み・別途の書き方",
+    "source": {
+      "title": "見積書の書き方",
+      "url": "https://biz.moneyforward.com/invoice/basic/58002/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2024-10"
+    }
+  },
+  {
+    "id": "question-973",
+    "kind": "question",
+    "title": "材料を支給したら運賃は誰持ち？",
+    "summary": "発注元が材料を渡して加工を頼む「支給」は製造業でよくある取引。答えには支給品の引き取り・返送の運賃をどちらが持つか決めておくことを書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "有償支給・無償支給とは",
+      "url": "https://sogyotecho.jp/?p=18442",
+      "publisher": "創業手帳",
+      "date": null
+    }
+  },
+  {
+    "id": "term-795",
+    "kind": "term",
+    "title": "特定荷主",
+    "summary": "年9万トン以上の貨物を扱う荷主。改正物流効率化法で国に指定され、計画・報告・責任者選任の義務を負う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "改正物流効率化法の特定事業者制度",
+      "url": "https://www.mlit.go.jp/seisakutokatsu/freight/content/001993308.pdf",
+      "publisher": "国土交通省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-796",
+    "kind": "term",
+    "title": "CLO（物流統括管理者）",
+    "summary": "特定荷主が選ぶ、物流全体の責任者。発注元の調達・物流の方針を決める立場になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "改正物流効率化法とは",
+      "url": "https://sogyotecho.jp/buturyukouritukahou-kaisei/",
+      "publisher": "創業手帳",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-797",
+    "kind": "term",
+    "title": "標準的運賃",
+    "summary": "国がトラック運送の適正な運賃の目安として告示した運賃表。荷主との交渉の土台になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "運送会社の値上げ、根拠はどこにある？",
+    "source": {
+      "title": "標準的運賃の見直しについて",
+      "url": "https://www.mlit.go.jp/jidosha/content/001732626.pdf",
+      "publisher": "国土交通省",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "term-798",
+    "kind": "term",
+    "title": "荷待ち時間・荷役時間",
+    "summary": "荷待ちはトラックが積み下ろしの順番を待つ時間、荷役は積み込みや取り下ろしの作業時間。どちらも短くすることが荷主に求められる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "物流効率化法 荷主の判断基準",
+      "url": "https://wwwtb.mlit.go.jp/kinki/content/000348723.pdf",
+      "publisher": "国土交通省 近畿運輸局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-799",
+    "kind": "term",
+    "title": "発荷主と着荷主",
+    "summary": "荷物を出す側が発荷主、受け取る側が着荷主。着荷主でも納品の場所や時刻を決めていれば物流効率化法の対象になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "着荷主の物流効率化対応",
+      "url": "https://www.issoh.co.jp/column/details/18867/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "term-800",
+    "kind": "term",
+    "title": "路線便（混載便）",
+    "summary": "1台のトラックに複数の荷主の荷物を積み合わせて運ぶ方式。数個から送れ、費用を抑えやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "路線便とは",
+      "url": "https://ecnomikata.com/ecnews/33459/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-801",
+    "kind": "term",
+    "title": "チャーター便（貸切便）",
+    "summary": "トラックを1台まるごと貸し切る方式。積み替えがなく時間を決めやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "チャーター便とは",
+      "url": "https://ecnomikata.com/ecnews/33128/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-802",
+    "kind": "term",
+    "title": "エアサス車",
+    "summary": "空気ばねで振動を和らげるトラック。精密機器や装置を運ぶときに指定されることが多い。",
+    "industries": [
+      "装置",
+      "精密機器",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "防振平台車",
+      "url": "https://mono.ipros.com/news/detail/1174",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-803",
+    "kind": "term",
+    "title": "気化性防錆剤（VCI）",
+    "summary": "蒸発した成分が金属の表面に薄い膜をつくり、湿気や酸素から守る防錆材。紙・フィルム・袋などの形がある。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "錆を防ぐ包み方、VCIって何？",
+    "source": {
+      "title": "ZERUST ICT VCI paper",
+      "url": "https://www.zerust.com/?p=7545",
+      "publisher": "Zerust",
+      "date": null
+    }
+  },
+  {
+    "id": "term-804",
+    "kind": "term",
+    "title": "コンテナレイン",
+    "summary": "海上コンテナの中で温度差により結露し、天井などから水滴が落ちる現象。輸出品の錆や汚れの原因になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Prevent rusting metal parts when shipping containers overseas",
+      "url": "https://www.zerust.com/blog/prevent-rusting-metal-parts-when-shipping-containers-overseas/",
+      "publisher": "Zerust",
+      "date": null
+    }
+  },
+  {
+    "id": "term-805",
+    "kind": "term",
+    "title": "ISPM No.15",
+    "summary": "木材梱包材に付いた害虫が国境を越えないよう定めた国際基準。熱処理（芯部56℃・30分以上）などと公式マークが必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ISPM 15 木材梱包の対応ガイド2026",
+      "url": "https://blog.gettransport.com/ja/logistics-guide/ispm-15-wood-packaging-compliance-guide-2026/",
+      "publisher": "GetTransport",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-806",
+    "kind": "term",
+    "title": "インボイス（輸出用）",
+    "summary": "海外発送で中身・数量・単価・原産国などを示す明細書。国内の消費税インボイスとは別物。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "国際輸送に必要な書類",
+      "url": "https://www.dhl.com/discover/ja-jp/logistics-advice/essential-guides/what-paperwork-do-I-need-for-international-shipping",
+      "publisher": "DHL",
+      "date": null
+    }
+  },
+  {
+    "id": "term-807",
+    "kind": "term",
+    "title": "インコタームズ",
+    "summary": "国際取引で、どこまで売り手が運賃・保険・危険を負うかを決める世界共通の条件。EXW・FOB・DDPなどがある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "インコタームズの基礎",
+      "url": "https://stockcrew.co.jp/insights/forwarding-hid-210308",
+      "publisher": "STOCKCREW",
+      "date": null
+    }
+  },
+  {
+    "id": "term-808",
+    "kind": "term",
+    "title": "検収",
+    "summary": "届いた品物を発注内容と照らし、数量・仕様・品質を確かめて受け入れること。支払いや売上の根拠になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "検収書とは",
+      "url": "https://bakuraku.jp/knowledge/knowledge-invoice/inspection-document",
+      "publisher": "バクラク",
+      "date": null
+    }
+  },
+  {
+    "id": "term-809",
+    "kind": "term",
+    "title": "特定運送委託",
+    "summary": "取適法で加わった取引の型。メーカーなどが売った品物を客先へ届ける運送を、運送会社に任せる取引を指す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "取適法の特定運送委託",
+      "url": "https://biz.moneyforward.com/contract/basic/23241/",
+      "publisher": "マネーフォワード クラウド",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "term-810",
+    "kind": "term",
+    "title": "通い箱（リターナブル容器）",
+    "summary": "繰り返し使う運搬用の箱。折りたためば場所を取らず、使い捨ての段ボールを減らせる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "通い箱に切り替えて変わったこと",
+    "source": {
+      "title": "折りたたみコンテナ（通い箱）とは",
+      "url": "https://ecnomikata.com/blog/37453/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-811",
+    "kind": "term",
+    "title": "運賃と料金の別建て",
+    "summary": "運ぶ対価の「運賃」と、待機・積み下ろしなどの「料金」を分けて契約する考え方。付帯作業はただではないという前提。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "運賃と料金の別建て契約",
+      "url": "https://kpmg.com/jp/ja/insights/2024/11/separate-contract-fares-charges.html",
+      "publisher": "KPMG",
+      "date": "2024-11"
+    }
+  },
+  {
+    "id": "success-632",
+    "kind": "success",
+    "title": "遠方の納期を先に公表する",
+    "summary": "長距離地域の納期を1日延ばすと事前に知らせた例がある。地域ごとの到着日の目安をサイトに載せると、問い合わせ前に安心してもらえる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "地域別のお届け日数を載せました",
+    "source": {
+      "title": "家具メーカーが配送リードタイムを延長",
+      "url": "https://www.lnews.jp/2024/01/q0131403.html",
+      "publisher": "LNEWS",
+      "date": "2024-01"
+    }
+  },
+  {
+    "id": "success-633",
+    "kind": "success",
+    "title": "締め時間を明記して守る",
+    "summary": "受注の締め時刻を変えたら、それを一覧で知らせた通販の例がある。「何時までの注文で当日出荷」を書くと、発注者は計画を立てやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "何時までなら当日出荷？を書く",
+    "source": {
+      "title": "BtoB通販が受注締め時間を変更",
+      "url": "https://netshop.impress.co.jp/node/11617",
+      "publisher": "ネットショップ担当者フォーラム",
+      "date": "2023-12"
+    }
+  },
+  {
+    "id": "success-634",
+    "kind": "success",
+    "title": "防錆梱包のやり方を見せる",
+    "summary": "防錆紙で包み、密閉する手順は外から見えにくい。写真で梱包の手順を見せると、錆が心配な発注者に丁寧さが伝わる。",
+    "industries": [
+      "金属加工",
+      "切削加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "錆びずに届く。うちの梱包の手順",
+    "source": {
+      "title": "ZERUST ICT VCI paper",
+      "url": "https://www.zerust.com/?p=7545",
+      "publisher": "Zerust",
+      "date": null
+    }
+  },
+  {
+    "id": "success-635",
+    "kind": "success",
+    "title": "輸出梱包の対応範囲を書く",
+    "summary": "熱処理済み木箱、乾燥剤、防錆包装など、輸出時に何まで対応できるかを書くと、初めて海外に出す発注者の不安を減らせる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "輸出梱包、ここまで対応できます",
+    "source": {
+      "title": "ISPM 15 木材梱包の対応ガイド2026",
+      "url": "https://blog.gettransport.com/ja/logistics-guide/ispm-15-wood-packaging-compliance-guide-2026/",
+      "publisher": "GetTransport",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-636",
+    "kind": "success",
+    "title": "荷待ちを約4時間から53分に",
+    "summary": "国の実証事業では、着く時刻を予約して運行したところ、待ち時間が約4時間から約53分に縮んだ。受け入れ時間の工夫は記事の題材になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "トラックを待たせない出荷の工夫",
+    "source": {
+      "title": "荷待ち削減の実証事業",
+      "url": "https://wwwtb.mlit.go.jp/kinki/content/0607-shiryou7.pdf",
+      "publisher": "国土交通省 近畿運輸局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-637",
+    "kind": "success",
+    "title": "まず表計算と運用ルールから",
+    "summary": "年9万トンに届かない荷主は、まず表計算と運用ルールで荷待ちを測り、効果を見てからシステムに進む方法が提案されている。小さく始めた話は伝わりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "出荷の待ち時間を、エクセルで測ってみた",
+    "source": {
+      "title": "着荷主の物流効率化対応",
+      "url": "https://www.issoh.co.jp/column/details/18867/",
+      "publisher": "一創",
+      "date": null
+    }
+  },
+  {
+    "id": "success-638",
+    "kind": "success",
+    "title": "繰り返し使える輸出箱を提案",
+    "summary": "強化段ボールと樹脂パレットを組み合わせた繰り返し使える輸出梱包容器がある。梱包材のごみを減らす提案は環境面の発信にもつながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "source": {
+      "title": "繰り返し使える輸出梱包容器",
+      "url": "https://mono.ipros.com/product/detail/240103002",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-639",
+    "kind": "success",
+    "title": "時間指定配達で遅れのリスクを減らす",
+    "summary": "製造業でチャーター便を使い、発着時間を決めてリードタイムを縮め、指定時間配達で生産リスクを減らした事例が紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "急ぎの部品を確実に届けるやり方",
+    "source": {
+      "title": "チャーター便による製造業の物流事例",
+      "url": "https://mono.ipros.com/product/detail/2000692489",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-640",
+    "kind": "success",
+    "title": "防振台車で最後の数メートルを守る",
+    "summary": "エアサス車だけでなく、搬入時の台車にも防振を考える例がある。「最後の数メートルまで気を配る」と書くと装置の発注者に響く。",
+    "industries": [
+      "装置",
+      "精密機器",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "source": {
+      "title": "防振平台車",
+      "url": "https://mono.ipros.com/news/detail/1174",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-488",
+    "kind": "buyer",
+    "title": "一貫対応で発注先を絞る",
+    "summary": "成形から組立・梱包までを1社に頼むと、責任があいまいにならず、発注先が減って管理の手間も減る、と一貫対応の会社は訴える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "加工から梱包・発送までまとめて頼める？",
+    "source": {
+      "title": "成形から組立・梱包まで一貫",
+      "url": "https://pr.mono.ipros.com/taisei-i/product/detail/2001612623/",
+      "publisher": "イプロス（成形会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-489",
+    "kind": "buyer",
+    "title": "梱包・発送代行まで頼みたい",
+    "summary": "物流の途中で組立などの生産加工まで受ける流通加工の会社がある。発注者は、加工のあとの梱包・発送まで頼めるかを見ている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "流通加工とは",
+      "url": "https://stockcrew.co.jp/insights/logistics-processing",
+      "publisher": "STOCKCREW",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-490",
+    "kind": "buyer",
+    "title": "送料と付帯作業を分けて比べる",
+    "summary": "運賃と作業の料金を分けて考えるのが流れ。見積を比べる発注者には、送料・梱包・積み込みを分けて書いた見積が比べやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "articleIdea": "見積の内訳、送料と梱包費を分けた理由",
+    "source": {
+      "title": "運賃と料金の別建て契約",
+      "url": "https://kpmg.com/jp/ja/insights/2024/11/separate-contract-fares-charges.html",
+      "publisher": "KPMG",
+      "date": "2024-11"
+    }
+  },
+  {
+    "id": "buyer-491",
+    "kind": "buyer",
+    "title": "輸出の条件で見積額が変わる",
+    "summary": "EXWとDDPでは売り手の負担が大きく違う。海外の買い手は、どの条件の見積かを最初に確かめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "インコタームズの基礎",
+      "url": "https://stockcrew.co.jp/insights/forwarding-hid-210308",
+      "publisher": "STOCKCREW",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-492",
+    "kind": "buyer",
+    "title": "高額品は保険の有無を確かめる",
+    "summary": "運送会社の補償には上限があるため、高額な装置や部品を頼む買い手は、保険をかけるか、誰がかけるかを確認したい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "貨物保険",
+      "url": "https://www.dhl.com/jp-ja/home/global-forwarding/products-and-solutions/cargo-insurance.html",
+      "publisher": "DHL",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-493",
+    "kind": "buyer",
+    "title": "納期は運送日数込みで見る",
+    "summary": "2024年問題で遠方の配送日数が延びる例が出ている。発注者は「出荷日」ではなく「到着日」で納期を比べる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "出荷日と到着日、どちらで約束しますか",
+    "source": {
+      "title": "家具メーカーが配送リードタイムを延長",
+      "url": "https://www.lnews.jp/2024/01/q0131403.html",
+      "publisher": "LNEWS",
+      "date": "2024-01"
+    }
+  },
+  {
+    "id": "buyer-494",
+    "kind": "buyer",
+    "title": "物流を見直す発注元が増える",
+    "summary": "特定荷主では物流の責任者が置かれ、荷待ち・積載率の改善を取引先に求める。協力的な納入先が選ばれやすくなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "物流効率化法 荷主の判断基準",
+      "url": "https://wwwtb.mlit.go.jp/kinki/content/000348723.pdf",
+      "publisher": "国土交通省 近畿運輸局",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-495",
+    "kind": "buyer",
+    "title": "受け入れ時刻を守れるかを見る",
+    "summary": "労働局は着荷主にも、ドライバーの働き方に配慮した到着時刻や納期の設定を求めている。発注者は時刻どおりに届けられる仕入先を求める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "荷主の皆さまへのお願い",
+      "url": "https://jsite.mhlw.go.jp/nagano-roudoukyoku/content/contents/yousei-leaflet202510.pdf",
+      "publisher": "長野労働局",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "buyer-496",
+    "kind": "buyer",
+    "title": "保冷配送の対応を確かめる",
+    "summary": "冷蔵・冷凍の食品を頼む人は、どの温度帯で、どの地域まで届けられるかを最初に確かめる。温度の定義を数字で書くと比べやすい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "チルド配送ガイド",
+      "url": "https://stockcrew.co.jp/insights/article_chilled-delivery-guide_2026-05-26",
+      "publisher": "STOCKCREW",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "question-974",
+    "kind": "question",
+    "title": "重い品は梱包で何に気をつける？",
+    "summary": "重量物は輸送中の揺れや衝撃に耐える梱包と固定が要る。国際輸送会社の解説を参考に、パレットへの固定方法を答えに入れる。",
+    "industries": [
+      "装置",
+      "産業機械",
+      "製缶"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "source": {
+      "title": "重量物を輸送中に守る方法",
+      "url": "https://www.dhl.com/discover/ja-jp/logistics-advice/heavyweight/protecting-heavy-items-during-shipping",
+      "publisher": "DHL",
+      "date": null
+    }
   }
 ];
