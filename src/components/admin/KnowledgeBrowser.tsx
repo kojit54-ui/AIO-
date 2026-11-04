@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   MFG_COLLECTED_AT,
-  MFG_ITEMS,
+  MFG_DOMESTIC,
   MFG_KIND_LABEL,
+  MFG_OVERSEAS,
   mfgCounts,
+  type MfgItem,
   type MfgKind,
 } from "@/lib/manufacturing";
 
@@ -20,24 +22,29 @@ const USE_LABEL: Record<string, string> = {
 };
 
 /** 業種の名前と件数（多い順）。「どの業種にも」は業種でしぼらないときに出る */
-const INDUSTRIES: [string, number][] = (() => {
+function industriesOf(items: MfgItem[]): [string, number][] {
   const m = new Map<string, number>();
-  for (const x of MFG_ITEMS)
+  for (const x of items)
     for (const i of x.industries)
       if (i !== "all") m.set(i, (m.get(i) ?? 0) + 1);
   return [...m.entries()].sort((a, b) => b[1] - a[1]);
-})();
+}
+const DOMESTIC_INDUSTRIES = industriesOf(MFG_DOMESTIC);
+const OVERSEAS_INDUSTRIES = industriesOf(MFG_OVERSEAS);
 
 /** 全社管理者向け：製造業の知識表を見る */
 export function KnowledgeBrowser() {
+  const [region, setRegion] = useState<"domestic" | "overseas">("domestic");
   const [kind, setKind] = useState<MfgKind | "all">("all");
   const [q, setQ] = useState("");
   const [ind, setInd] = useState("");
   const [shown, setShown] = useState(PAGE);
-  const counts = mfgCounts();
+  const base = region === "overseas" ? MFG_OVERSEAS : MFG_DOMESTIC;
+  const INDUSTRIES = region === "overseas" ? OVERSEAS_INDUSTRIES : DOMESTIC_INDUSTRIES;
+  const counts = mfgCounts(base);
   const list = useMemo(() => {
     const words = q.trim().split(/\s+/).filter(Boolean);
-    return MFG_ITEMS.filter(
+    return base.filter(
       (x) =>
         (kind === "all" || x.kind === kind) &&
         (!ind || x.industries.includes(ind)) &&
@@ -47,7 +54,7 @@ export function KnowledgeBrowser() {
           ),
         ),
     );
-  }, [kind, q, ind]);
+  }, [base, kind, q, ind]);
   return (
     <main className="page max-w-4xl space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -64,13 +71,33 @@ export function KnowledgeBrowser() {
       <section className="card space-y-2">
         <p>
           製造業の悩み・発注する人の疑問・うまくいったやり方・買い手の探し方・最近の動き・つまずく言葉のやさしい説明を、公的機関や業界メディア、調査の公開情報から{" "}
-          <b>{MFG_ITEMS.length.toLocaleString()}件</b>（{INDUSTRIES.length}の業種） 集めました（{MFG_COLLECTED_AT}{" "}
+          <b>国内 {MFG_DOMESTIC.length.toLocaleString()}件</b>（{DOMESTIC_INDUSTRIES.length}の業種）と、
+          <b>海外 {MFG_OVERSEAS.length.toLocaleString()}件</b> 集めました（{MFG_COLLECTED_AT}{" "}
           時点）。文章は写さず、要点だけを言いかえて、出典を残しています。
+        </p>
+        <p className="text-sm text-muted">
+          海外のものは、日本と前提（発注の仕方・法律・値段・数字）が違うので分けています。読む人の疑問・しおりのこぼれ話・記事を書くAIへの指示には使いません。
         </p>
         <p className="text-sm text-muted">
           使い道：製造業の会社の記事を書くとき、AIに「読む人がよく抱く疑問」「つまずきやすい言葉」と書き方のコツとして渡します（記事の中の数字や事例としては使いません）。書く記事の提案の参考、ホームの「製造業のこぼれ話」にも使います。外したいものや、足したいサイトがあれば、担当のClaudeに伝えてください。
         </p>
       </section>
+      <div className="flex flex-wrap gap-2" role="tablist" aria-label="国内と海外">
+        {(["domestic", "overseas"] as const).map((r) => (
+          <Chip
+            key={r}
+            on={region === r}
+            onClick={() => {
+              setRegion(r);
+              setKind("all");
+              setInd("");
+              setShown(PAGE);
+            }}
+          >
+            {r === "domestic" ? "国内" : "海外"}（{(r === "domestic" ? MFG_DOMESTIC : MFG_OVERSEAS).length.toLocaleString()}）
+          </Chip>
+        ))}
+      </div>
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="種類">
         <Chip
           on={kind === "all"}
@@ -79,7 +106,7 @@ export function KnowledgeBrowser() {
             setShown(PAGE);
           }}
         >
-          すべて（{MFG_ITEMS.length}）
+          すべて（{base.length}）
         </Chip>
         {KINDS.map((k) => (
           <Chip
@@ -135,6 +162,11 @@ export function KnowledgeBrowser() {
               <span className="rounded-full bg-brand-soft px-2 py-0.5 text-brand-dark">
                 {MFG_KIND_LABEL[x.kind]}
               </span>
+              {x.region === "overseas" && (
+                <span className="rounded-full bg-warn-soft px-2 py-0.5 text-warn">
+                  海外
+                </span>
+              )}
               {x.kind === "trend" && (
                 <span
                   className={`rounded-full px-2 py-0.5 ${x.official ? "bg-ok-soft text-ok" : "bg-warn-soft text-warn"}`}

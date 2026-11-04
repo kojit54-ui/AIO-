@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { MFG_ITEMS, articleIdeasFor, detectIndustries, isManufacturing, mfgCounts, mfgTipOfDay, mfgWriterRules, readerQuestionsFor, readerTermsFor } from "./index";
+import { MFG_DOMESTIC, MFG_ITEMS, MFG_OVERSEAS, articleIdeasFor, detectIndustries, isManufacturing, mfgCounts, mfgTipOfDay, mfgWriterRules, readerQuestionsFor, readerTermsFor } from "./index";
 
 describe("製造業の知識表", () => {
   it("形・長さ・出典がそろっている", () => {
@@ -56,5 +56,17 @@ describe("製造業の知識表", () => {
     expect(mfgTipOfDay("2026-11-04")?.id).toBe(mfgTipOfDay("2026-11-04")?.id);
     const own = Array.from({ length: 30 }, (_, i) => mfgTipOfDay(`2026-11-${i}`, "精密板金と溶接")!).filter((x) => x.industries.some((i) => i === "板金" || i === "溶接"));
     expect(own.length).toBeGreaterThan(12);
+  });
+
+  it("海外の事例は分けて数え、記事やしおりには使わない", () => {
+    expect(MFG_OVERSEAS.length).toBeGreaterThan(100);
+    expect(MFG_DOMESTIC.length + MFG_OVERSEAS.length).toBe(MFG_ITEMS.length);
+    const total = Object.values(mfgCounts()).reduce((a, b) => a + b, 0);
+    expect(total).toBe(MFG_DOMESTIC.length);
+    const biz = ["精密板金と溶接", "オフセット印刷と製本", "食品のOEM", "樹脂の射出成形", null];
+    for (const b of biz) {
+      for (const x of [...readerQuestionsFor(b, 50), ...readerTermsFor(b, 50)]) expect(x.region, x.id).toBeUndefined();
+      for (let i = 0; i < 40; i++) expect(mfgTipOfDay(`2026-12-${i}`, b)?.region).toBeUndefined();
+    }
   });
 });
