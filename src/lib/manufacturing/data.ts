@@ -135261,7 +135261,10884 @@ const MFG_PART_6: MfgItem[] = [
       "publisher": "中小企業庁",
       "date": "2014"
     }
+  },
+  {
+    "id": "success-1726",
+    "kind": "success",
+    "region": "overseas",
+    "title": "受託加工はサイトを最初の顔と考える",
+    "summary": "米国の見積ソフト会社Paperless Partsのブログ。部品の買い手は見積を頼む前にWebで工場を調べるので、サイトが最初の印象になると説く。HPを置くだけでなく見積依頼につなげる作りが大事という。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積を頼む前に発注者が見るページ",
+    "source": {
+      "title": "build a job shop marketing presence",
+      "url": "https://www.paperlessparts.com/blog/build-a-job-shop-marketing-presence/",
+      "publisher": "Paperless Parts",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1727",
+    "kind": "success",
+    "region": "overseas",
+    "title": "SEOと記事で見積依頼が27%増えた例",
+    "summary": "米国の機械加工会社の事例。Paperless Partsの発表では、SEOと記事づくりを任せた結果、自然検索の訪問が前年比35%、ページ閲覧が21%、サイト経由の見積依頼が27%増えた。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "記事を足すと見積依頼は増えるのか",
+    "source": {
+      "title": "Ameritex Boosts Organic Traffic and RFQs with Paperless Parts Marketing Solutions",
+      "url": "https://www.casestudies.com/company/paperless-parts/case-study/ameritex-boosts-organic-traffic-35-yoy-with-paperless-parts-marketing-solutions",
+      "publisher": "Paperless Parts（casestudies.com掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1728",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見積フォームは図面を受け取れる形に",
+    "summary": "米国のPaperless Partsは、サイトの見積依頼フォームを強化する方法を紹介。図面データを受け取り、そのまま見積作業に回せる受け口にすると、依頼する側も受ける側も手間が減るという考え方。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "図面を送りやすい見積フォームの作り方",
+    "source": {
+      "title": "level up your websites rfq form with paperless parts",
+      "url": "https://www.paperlessparts.com/blog/level-up-your-websites-rfq-form-with-paperless-parts/",
+      "publisher": "Paperless Parts",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-872",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "返事の速さで発注先を決める買い手が47%",
+    "summary": "米国の調査。Paperless PartsとResearchscapeが2022年に部品の買い手・技術者600人超に聞くと、47%が「返事の速さが発注先選びに直接ひびく」と答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積の返事は何日以内が目安？",
+    "source": {
+      "title": "Industrial Buyer Survey Reveals New Implications for U.S. Manufacturers Throughout the Supply Chain",
+      "url": "https://www.paperlessparts.com/press/industrial-buyer-survey-reveals-new-implications-for-us-manufacturers-throughout-the-supply-chain/",
+      "publisher": "Paperless Parts",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "buyer-873",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "買い手の67%が24時間以内の見積を期待",
+    "summary": "米国の調査。Paperless Partsが2020年に部品の買い手400人超に聞くと、67%が24時間以内の見積を期待し（2019年は53%）、94%は3日以上待たない、75%は見積を受けて1週間以内に決めると答えた。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積の目安日数をサイトに書く",
+    "source": {
+      "title": "2020 Part Buyer Expectations Report",
+      "url": "https://paperlessparts.com/resources/report-2020-part-buyer-expectations/",
+      "publisher": "Paperless Parts",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "buyer-874",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "新しい外注先は検索と紹介でほぼ同じ",
+    "summary": "米国の2022年の買い手調査（Paperless Parts）の報道。新しい加工先を探す方法の上位はネット検索64%、紹介63%、業界誌31%だった。紹介だけでなく検索で見つかる準備も要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紹介で来た人も最後はHPを見る",
+    "source": {
+      "title": "Paperless Parts Issues 2022 Custom Part Buyer Survey",
+      "url": "https://www.inddist.com/economy/news/22617879/paperless-parts-issues-2022-custom-part-buyer-survey",
+      "publisher": "Industrial Distribution",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "buyer-875",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "買い手の94%が1年で新しい外注先を試す",
+    "summary": "米国の2022年の買い手調査（Paperless Parts）の報道。94%が過去12か月に新しい加工先を少なくとも1社試し、今の取引先が期待に届かないとき替えると答えた人は2020年の54%から85%に増えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新規の発注先はいつ探されるのか",
+    "source": {
+      "title": "Industrial Buyer Survey Reveals New Implications",
+      "url": "https://industrytoday.com/?p=30922",
+      "publisher": "Industry Today",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "buyer-876",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "買い手は加工能力と品質認証を見て判断",
+    "summary": "米国の2022年の買い手調査（Paperless Parts）の報道。仕事を任せられるかの判断材料として、加工できる能力を69%、品質認証を54%が挙げた。能力と認証をサイトで分かりやすく示すとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "できることと認証を1ページにまとめる",
+    "source": {
+      "title": "Industrial Buyer Survey Reveals New Implications for U.S. Manufacturers",
+      "url": "https://salestechstar.com/sales-engagement/industrial-buyer-survey-reveals-new-implications-for-u-s-manufacturers-throughout-the-supply-chain/",
+      "publisher": "SalesTechStar",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "pain-785",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "ネットの受発注サイト頼みの限界",
+    "summary": "米国の業界誌Modern Machine Shopは、受託加工会社にとってネットの受発注サイトが実際に何をもたらすかを検証。仲介サイトは入口になるが、それだけに頼らず自社の見つけてもらう道も持つ視点が要る。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "受発注サイトと自社HPの使い分け",
+    "source": {
+      "title": "What Do Online Marketplaces Really Deliver To Job Shops?",
+      "url": "https://mmsonline.com/articles/what-do-online-marketplaces-really-deliver-to-job-shops",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1729",
+    "kind": "success",
+    "region": "overseas",
+    "title": "求人はFacebook、取引先はLinkedInで",
+    "summary": "米国のCNC加工会社の話（Modern Machine Shop）。若い人に届くのはSNSで、採用にはFacebookが効き、TwitterやLinkedInは主に取引先との接点に使っていた。家族が広報と採用を担当していた。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "採用と営業でSNSを使い分ける",
+    "source": {
+      "title": "for this cnc machine shop growth is both wonderful and hard",
+      "url": "https://www.mmsonline.com/blog/post/for-this-cnc-machine-shop-growth-is-both-wonderful-and-hard",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1730",
+    "kind": "success",
+    "region": "overseas",
+    "title": "SNSは売り込みより仕事の魅力を見せる",
+    "summary": "米国の加工会社の社長の話（Modern Machine Shop）。SNSは自社の売り込みではなく、ものづくりの魅力を知ってもらうために使い、動画で社員を紹介して若い人材の関心を集めている。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社員紹介動画で若い人に届ける",
+    "source": {
+      "title": "use social media to attract young manufacturing talent",
+      "url": "https://mmsonline.com/articles/use-social-media-to-attract-young-manufacturing-talent-2",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1731",
+    "kind": "success",
+    "region": "overseas",
+    "title": "ブログは難しい材料の扱い方を書く",
+    "summary": "米国のModern Machine Shopの記事。ブログが効かないのは題材選びや中身の薄さのため。耐熱合金など難しい材料をどう削るか、何が難しいかを具体的に書き、新しい記事を顧客にメールで知らせるとよい。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "難削材の加工で気をつけていること",
+    "source": {
+      "title": "What Should You Blog About?",
+      "url": "https://mmsonline.com/articles/what-should-you-blog-about",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1732",
+    "kind": "success",
+    "region": "overseas",
+    "title": "ブログをHPの入口にする考え方",
+    "summary": "米国のModern Machine Shopの記事。加工会社はブログを持つべきかを論じ、ブログをサイトの表のページにすると、更新の多い生きた発信になるという考え方を紹介している。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "更新される工場HPの作り方",
+    "source": {
+      "title": "should a machine shop have a blog",
+      "url": "https://www.mmsonline.com/articles/should-a-machine-shop-have-a-blog",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1733",
+    "kind": "success",
+    "region": "overseas",
+    "title": "受発注サービスで近くの新規客2社",
+    "summary": "米国の業界誌Production Machiningの記事。小さな加工会社がネットの見積依頼サービスに登録し、短い期間で地元周辺の新規客を2社得た。遠くの客だけでなく近くの客もネットで探している。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "近くの会社もネットで外注先を探す",
+    "source": {
+      "title": "web site leads shop to nearby customers",
+      "url": "https://www.productionmachining.com/articles/web-site-leads-shop-to-nearby-customers",
+      "publisher": "Production Machining",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1734",
+    "kind": "success",
+    "region": "overseas",
+    "title": "昔ながらの受託から営業発信型の会社へ",
+    "summary": "米国の業界団体TMAの新会長の話（Production Machining）。自社の受託加工会社を営業とマーケティングを軸にした会社に変え、SNSでの発信が見込みのある新規の引き合いにつながったという。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "町工場が発信型に変わるまで",
+    "source": {
+      "title": "marketing meets metalworking for new TMA chairman",
+      "url": "https://www.productionmachining.com/columns/marketing-meets-metalworking-for-new-tma-chairman",
+      "publisher": "Production Machining",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-786",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "加工会社のInstagramはまだ少ない",
+    "summary": "米国のProduction Machiningのブログは、CNC加工会社がSNSをどれだけ使っているかを問う。Instagramは加工会社ではまだあまり使われていないと指摘しており、裏を返せば目立てる余地がある。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工の動画をInstagramに載せる",
+    "source": {
+      "title": "cnc machine shops how engaged with social media are you",
+      "url": "https://productionmachining.com/blog/post/cnc-machine-shops-how-engaged-with-social-media-are-you",
+      "publisher": "Production Machining",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1735",
+    "kind": "success",
+    "region": "overseas",
+    "title": "経験不問の求人文に変えて若手が応募",
+    "summary": "米国の加工会社の話（Production Machining 2022年10月号）。工場経験を条件にしない求人文に書き直すと若く意欲的な応募が来た。10代に届くようInstagramやTikTokで動画も出している。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "未経験歓迎の求人文の書き方",
+    "source": {
+      "title": "Production Machining October 2022: Page 6",
+      "url": "https://pm.mydigitalpublication.com/october-2022/page-6",
+      "publisher": "Production Machining",
+      "date": "2022-10"
+    }
+  },
+  {
+    "id": "trend-1037",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "業界誌サイトに検索から月4万件の流入",
+    "summary": "米国の業界誌Modern Machine Shopの2025年媒体資料。発行元の2024年7月時点の数字で、Web訪問者は約5万、検索からの流入は月約4万400件。発注者は業界誌の記事からも業者を知る。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "業界誌に載った記事を自社サイトで紹介",
+    "source": {
+      "title": "MMS 2025 Marketing Guide",
+      "url": "https://gardnerweb.com/MediaKits/2025/MMS_2025_MktgGuide_IA.pdf",
+      "publisher": "Gardner Business Media",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1736",
+    "kind": "success",
+    "region": "overseas",
+    "title": "技術者向けの記事は中身の濃さが勝負",
+    "summary": "米国の業界誌発行元Gardnerのブログ。技術者や産業の買い手が関心を持つ記事は、宣伝でなく技術的な中身があるもの。読み手が仕事で使える情報を出すことが信頼につながるという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "技術者が読みたくなる記事の条件",
+    "source": {
+      "title": "making industrial content marketing engaging for engineers and industrial buyers",
+      "url": "https://gardnerweb.com/blog/post/making-industrial-content-marketing-engaging-for-engineers-and-industrial-buyers",
+      "publisher": "Gardner Business Media",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1737",
+    "kind": "success",
+    "region": "overseas",
+    "title": "板厚や寸法で検索される言葉を狙う",
+    "summary": "米国の板金業界誌The Fabricatorの記事（Web広告会社の社長が寄稿）。SEOは、買い手が実際に打ち込む寸法や板厚などの具体的な言葉を狙うと効く。工程が動いている様子をサイトで見せることも勧める。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "対応できる板厚と寸法を書き出す",
+    "source": {
+      "title": "good marketing helps custom metal fabricators find the right spot",
+      "url": "https://www.thefabricator.com/article/shopmanagement/good-marketing-helps-custom-metal-fabricators-find-the-right-spot",
+      "publisher": "The Fabricator",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1738",
+    "kind": "success",
+    "region": "overseas",
+    "title": "新入社員の多くはFacebookで会社を知った",
+    "summary": "米国の受託板金会社の話（The Fabricator）。新しく入った人の多くは、就職フェアなどではなくFacebookなどのSNSで会社を知っていた。SNSは採用の入口にもなる。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "応募者はどこで会社を知ったか",
+    "source": {
+      "title": "how one job shop used social media to hire more skilled workers",
+      "url": "https://www.thefabricator.com/thefabricator/article/shopmanagement/how-one-job-shop-used-social-media-to-hire-more-skilled-workers",
+      "publisher": "The Fabricator",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1739",
+    "kind": "success",
+    "region": "overseas",
+    "title": "SNSのプロフィールで検索にも出やすく",
+    "summary": "米国のThe Fabricatorの座談会記事。製造業や受託加工の経営者が、LinkedInなどにプロフィールを置いておくと検索で見つかりやすくなり、製品やサービスを知ってもらいやすいと話している。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "manufacturers and job shop owners discuss social media",
+      "url": "https://www.thefabricator.com/thefabricator/article/shopmanagement/manufacturers-and-job-shop-owners-discuss-social-media",
+      "publisher": "The Fabricator",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1740",
+    "kind": "success",
+    "region": "overseas",
+    "title": "Instagramで社員への誇りも伝える",
+    "summary": "米国の製缶・板金会社がInstagramのフォロワーを2万4000人まで増やした話（The Fabricator）。製品だけでなく、会社の大事にしていることや社員への誇りを見せることで共感を集めた。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "写真で伝える工場の人と仕事",
+    "source": {
+      "title": "how a fab shop earned 24 000 instagram followers",
+      "url": "https://www.thefabricator.com/article/shopmanagement/how-a-fab-shop-earned-24-000-instagram-followers",
+      "publisher": "The Fabricator",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-787",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "小さな製缶会社には販促の人も予算もない",
+    "summary": "米国の製缶・板金の業界団体FMAが2024年9月に開いたウェビナーの案内。中小の製缶会社の多くは大きな販促部門や予算を持たず、手が届きやすく安いデジタル発信が選ばれていると説明。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "人手ゼロから始めるWeb発信",
+    "source": {
+      "title": "FMA webinar FMAFE94",
+      "url": "https://store.fmamfg.org/personifyebusiness/Store/Product-Details/productId/366851703",
+      "publisher": "FMA（Fabricators & Manufacturers Association）",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "trend-1038",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "板金業界誌がLinkedInで3万1000人",
+    "summary": "米国の板金業界誌The Fabricatorの運営元FMAが、SNS運用で業界賞の佳作を受けたと報道された。LinkedInの登録者は3万1000人。製造業の情報はLinkedInでも読まれている。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "fma communications honored with azbee award for social media excellence",
+      "url": "https://mtdcnc.com/news/mtdcnc/fma-communications-honored-with-azbee-award-for-social-media-excellence",
+      "publisher": "MTDCNC",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1741",
+    "kind": "success",
+    "region": "overseas",
+    "title": "公的支援で営業手順と発信計画を作る",
+    "summary": "米国の公的な製造業支援NIST MEPの2021年の事例。支援機関と一緒に営業の進め方と、見つけてもらうための発信（インバウンド）の計画を作り、成長につなげた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "営業の手順を紙に書くと何が変わるか",
+    "source": {
+      "title": "sales process and inbound marketing plan growth",
+      "url": "https://nist.gov/mep/successstories/2021/sales-process-and-inbound-marketing-plan-growth",
+      "publisher": "NIST MEP",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1742",
+    "kind": "success",
+    "region": "overseas",
+    "title": "営業の目標数字を決めて追う",
+    "summary": "米国のNIST MEPの2021年の事例。支援を受けて営業の手順を作り、手の届く目標の数字（主要指標）を決めて追う形にした。小さな会社でも営業を仕組みにできる例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "sales process generates attainable key metric goals",
+      "url": "https://www.nist.gov/mep/successstories/2021/sales-process-generates-attainable-key-metric-goals",
+      "publisher": "NIST MEP",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1743",
+    "kind": "success",
+    "region": "overseas",
+    "title": "公的支援のSEOで問い合わせが増えた",
+    "summary": "米国イリノイ州のMEP（IMEC）の2024年の事例。サイトを作り直した製造業者が、支援制度で9か月SEOに取り組み、Googleの店舗情報やSNSも整えた。会社の声では問い合わせからの成約率は33%超。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Googleの店舗情報を整える手順",
+    "source": {
+      "title": "Success Story 2024（IMEC）",
+      "url": "https://imec.org/wp-content/uploads/2024/10/Success-Story-Hookset-Enterprises-2024.pdf",
+      "publisher": "IMEC（Illinois MEP）",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1744",
+    "kind": "success",
+    "region": "overseas",
+    "title": "新サイトでネット見積依頼が30%増",
+    "summary": "米国イリノイ州のMEP（IMEC）の2023年の事例。樹脂加工の会社が新しいサイトを作ると、ネット経由の見積依頼が30%増えたと支援機関が発表。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "サイトを作り直すときに入れるもの",
+    "source": {
+      "title": "Success Story 2023（IMEC）",
+      "url": "https://imec.org/wp-content/uploads/2023/08/Success-Story-Steven-Plastics-2023.pdf",
+      "publisher": "IMEC（Illinois MEP）",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "success-1745",
+    "kind": "success",
+    "region": "overseas",
+    "title": "広告なしでも週5件ほどの新規の相談",
+    "summary": "米国ニューヨーク州のMEPの事例（FuzeHub）。木型の会社が初めてのサイトを検索向けに整えて公開すると、広告なしで週に約5件の新しい相談が来るようになったと報告。",
+    "industries": [
+      "木工",
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "初めてのHPで相談が来るまで",
+    "source": {
+      "title": "NY MEP: ITAC increases leads for Quality Patterns",
+      "url": "https://fuzehub.com/manufacturing-blog/ny-mep-success-story-itac-increases-leads-for-quality-patterns/",
+      "publisher": "FuzeHub（NY MEP）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1746",
+    "kind": "success",
+    "region": "overseas",
+    "title": "サイトの技術的な不具合を直して順位回復",
+    "summary": "米国ニューヨーク州のMEPの事例（FuzeHub）。支援機関が制作担当に助言し、検索順位を下げていたサイトの技術的な問題を直すと、順位・訪問・問い合わせが上がった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見えないサイトの不具合を点検する",
+    "source": {
+      "title": "NY MEP: FuzeHub Helps Meyda Lighting Shine",
+      "url": "https://fuzehub.com/manufacturing-blog/ny-mep-fuzehub-helps-meyda-lighting-shine/",
+      "publisher": "FuzeHub（NY MEP）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1039",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "受託加工の団体が海軍の人材計画と連携",
+    "summary": "米国の受託加工の業界団体NTMAが2026年2月、米海軍の人材育成プログラムと組み、会員企業の人材確保を支えると発表した。業界団体ぐるみで若い働き手の入口を作る動き。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "NTMA Partners with U.S. Navy Talent Pipeline Program",
+      "url": "https://secure.businesswire.com/news/home/20260210211566/en/NTMA-Partners-with-U.S.-Navy-Talent-Pipeline-Program-to-Support-Skilled-Workforce",
+      "publisher": "NTMA（Business Wire）",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-1040",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "業界団体が見習い制度で人を育てる",
+    "summary": "米国の受託加工の業界団体NTMAは、人手不足を埋めるため見習い・見習い前の育成制度など人材育成の取り組みを進めている。小さな工場が単独でできない採用の入口を団体が担う。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "how ntma promotes workforce development",
+      "url": "https://ntma.org/how-ntma-promotes-workforce-development-to-close-the-manufacturing-skills-gap/",
+      "publisher": "NTMA",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1041",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "カナダは輸出の販促費を国が補助",
+    "summary": "カナダの輸出支援制度CanExportは、中小企業の海外向けの販促活動を幅広く資金面で支える。外務省の貿易担当部門とNRC IRAPが連携し、申請はネットで随時受け付ける。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "CanExport",
+      "url": "https://wearebctech.com/canexport/",
+      "publisher": "BC Tech Association",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1747",
+    "kind": "success",
+    "region": "overseas",
+    "title": "関税で失った仕事を地元向けSEOで補う",
+    "summary": "カナダ・オンタリオ州の金属加工会社の事例（制作会社の発表記事）。関税で仕事の大きな部分を失ったあと、地元の優良顧客に絞ったSEO、詳しい施工事例ページ、地域を絞った広告に取り組んだ。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "取引先が減った時の地元向け発信",
+    "source": {
+      "title": "How a enOptimize SEO Strategy Helped a Metal Fabricator Beat Tariff Losses",
+      "url": "https://business.mammothtimes.com/mammothtimes/article/abnewswire-2025-8-12-how-a-enoptimize-seo-strategy-helped-a-metal-fabricator-beat-tariff-losses",
+      "publisher": "enOptimize（AB Newswire）",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "buyer-877",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "若い世代は会社の「顔」で選ぶ",
+    "summary": "カナダの人材会社Randstadは、製造業が若い人材を集めるには分かりやすく魅力のある雇用ブランドが要で、Z世代ほどそれが大事だと説く。求人票だけでなく会社の発信全体が見られる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "求職者に伝わる会社の紹介ページ",
+    "source": {
+      "title": "hiring gen z attract young talent manufacturing company",
+      "url": "https://www.randstad.ca/employers/workplace-insights/workforce-management/hiring-gen-z-attract-young-talent-manufacturing-company",
+      "publisher": "Randstad Canada",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1748",
+    "kind": "success",
+    "region": "overseas",
+    "title": "Z世代の85%が使うYouTubeで現場を見せる",
+    "summary": "米国の食品業界誌の記事。Tooling U-SMEの報告を引き、Z世代の85%がYouTubeを使うとして、ものづくりの新しい姿を動画で見せるよう勧める。工場見学動画は採用にも効く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場見学動画を採用ページに置く",
+    "source": {
+      "title": "recruiting gen z for food industry jobs",
+      "url": "https://foodindustryexecutive.com/2021/02/recruiting-gen-z-for-food-industry-jobs/",
+      "publisher": "Food Industry Executive",
+      "date": "2021-02"
+    }
+  },
+  {
+    "id": "buyer-878",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "若手は仕事の変化と勤務の柔軟さを見る",
+    "summary": "米国の展示会FABTECHのパネル討論（報道）。小さな会社がZ世代を雇う利点と難しさが話され、仕事内容に変化を持たせることや勤務時間の柔軟さが若手に響くという意見が出た。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手が続く職場のつくり方",
+    "source": {
+      "title": "FABTECH panelists ponder challenges, opportunities associated with younger employees",
+      "url": "https://www.trailer-bodybuilders.com/fabrication/fabtech-panelists-ponder-challenges-opportunities-associated-younger-employees",
+      "publisher": "Trailer/Body Builders",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-788",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "地元の大手と人材を取り合う小さな工場",
+    "summary": "米国の経営誌Chief Executiveが、地元の大手製造業と働き手を取り合う小さな製造業者を紹介。勤務の柔軟さなど、大手と違う働き方を打ち出して人を集めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "大手にない町工場の働きやすさ",
+    "source": {
+      "title": "how to hook gen z on manufacturing",
+      "url": "https://chiefexecutive.net/how-to-hook-gen-z-on-manufacturing/amp",
+      "publisher": "Chief Executive",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1042",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "製造業の仕事はZ世代の関心が高い",
+    "summary": "米国の記事。IndustryWeekが報じた2019年のL2L製造業指数では、製造業の仕事への関心はミレニアル世代や大人全体よりZ世代のほうが高かった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若い人に届く工場の求人とは",
+    "source": {
+      "title": "manufacturing jobs are on more gen z radars than millennials",
+      "url": "https://www.tradeonlytoday.com/workforce-development/manufacturing-jobs-are-on-more-gen-z-radars-that-millennials",
+      "publisher": "Trade Only Today",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "pain-789",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "古い考えの採用がZ世代を遠ざける",
+    "summary": "米国の製造業メディアManufacturing.netのZ世代と製造業のポッドキャストは「古いやり方の採用がZ世代の採用をだめにしている」と題して、採用のやり方そのものの見直しを呼びかける。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Gen Z in Manufacturing: Legacy Thinking Is Killing Your Gen Z Hiring",
+      "url": "https://www.manufacturing.net/gen-z-in-manufacturing-podcast/video/22942023/gen-z-in-manufacturing-legacy-thinking-is-killing-your-gen-z-hiring",
+      "publisher": "Manufacturing.net",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1749",
+    "kind": "success",
+    "region": "overseas",
+    "title": "社員がYouTubeで若い世代に発信",
+    "summary": "米国の工作機械メーカーHurcoの発表。顧客の加工会社の人がYouTubeチャンネルを始め、ものづくりがいかに面白く技術的な仕事かを同世代に伝えている。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手社員が語る加工の面白さ",
+    "source": {
+      "title": "Hurco Customer Starts YouTube Channel to Attract Millennials to Manufacturing",
+      "url": "https://www.hurco.com/en-us/about-hurco/press-releases/Pages/Hurco-Customer-Starts-YouTube-Channel-to-Attract-Millennials-to-Manufacturing---.aspx",
+      "publisher": "Hurco",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1043",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "工具メーカーが加工のSNS発信者と組む",
+    "summary": "米国の記事。工具メーカーのSeco Toolsが、フォロワー10万人超のInstagramで加工動画を出すCNC技能者と組み、若い層に届けようとしている。加工の動画は見る人が多い。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Manufacturer Partners Up With Instagram Influencer",
+      "url": "https://www.newequipment.com/research-and-development/article/21276953/seco-tools-llc-manufacturer-partners-up-with-instagram-influencer-swemachinist",
+      "publisher": "New Equipment Digest",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1750",
+    "kind": "success",
+    "region": "overseas",
+    "title": "初日からSNSで顧客との輪をつくる",
+    "summary": "米国ラスベガスのチューブレーザー加工会社の話（TRUMPFの記事）。創業時からInstagramとYouTubeで発信し、取引先は約1200社から1500社超へ。その95%がリピート客という。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工の動画が取引先を呼ぶ理由",
+    "source": {
+      "title": "Viral in Vegas: a sheet metal worker becomes a social media star",
+      "url": "https://www.trumpf.com/en_GB/newsroom/stories/viral-in-vegas-a-sheet-metal-worker-becomes-a-social-media-star/",
+      "publisher": "TRUMPF",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1751",
+    "kind": "success",
+    "region": "overseas",
+    "title": "社長の発信で仕事の実例と顧客を集める",
+    "summary": "米国の加工会社の社長の話（ポッドキャストMachine Shop Mastery）。LinkedInなどで発信を続けてフォロワーを増やし、手がけた良い仕事を紹介して新しい顧客を呼んでいる。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社長がLinkedInで書くこと",
+    "source": {
+      "title": "Ep 70: How NTL Industries Leverages Social Media to Achieve Growth",
+      "url": "https://ppacc.player.fm/series/series-3634800/ep-70-how-ntl-industries-leverages-social-media-to-achieve-growth",
+      "publisher": "Machine Shop Mastery",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-879",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "発注担当にはTikTokよりLinkedIn",
+    "summary": "英国の製造業ソフト会社AMFGの受託加工の販促ガイド。TikTok利用者の4人に1人は20歳未満で、精密部品の買い手には届きにくい。取引先に届けるにはLinkedInが向くという。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "SNSは誰に届けるかで選ぶ",
+    "source": {
+      "title": "How to Market Your Job Shop",
+      "url": "https://www.amfg.ai/post/how-to-market-your-job-shop",
+      "publisher": "AMFG",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1752",
+    "kind": "success",
+    "region": "overseas",
+    "title": "LinkedInで新しい取引先を見つける",
+    "summary": "米国の電子基板業界メディアI-Connect007のコラム。LinkedInは新しい取引先を見つけるのに役立つという「当たり前」の話として、つながりを生かした営業を勧めている。",
+    "industries": [
+      "基板実装",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "It's Only Common Sense: LinkedIn Helps Find New Customers",
+      "url": "https://iconnect007.com/article/117351/its-only-common-sense-linkedin-helps-find-new-customers/117354/pcb",
+      "publisher": "I-Connect007",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1753",
+    "kind": "success",
+    "region": "overseas",
+    "title": "設備・材料・工程を全部サイトに書く",
+    "summary": "米国の受発注サービスXometryの2025年のガイド。小さな加工会社でも専任なしでSEOを始められ、対応工程・材料・機械を全部書き出し、写真や動画で見せることが大事という。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "設備・材料・工程の一覧ページ",
+    "source": {
+      "title": "5 Ways to Optimize Your Machine Shop's Website for SEO and Discoverability",
+      "url": "https://www.xometry.com/resources/shop-tips/5-ways-optimize-machine-shop-website-seo-discoverability/",
+      "publisher": "Xometry",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1754",
+    "kind": "success",
+    "region": "overseas",
+    "title": "客との会話から売り方を見直す",
+    "summary": "米国の受発注サービスXometryのブログ。加工の仕事を伸ばすには顧客との会話を生かし、何に困っているか、なぜ選んだかを聞いて発信や営業に生かすことを勧めている。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "お客さまに選んだ理由を聞く",
+    "source": {
+      "title": "how to use customer conversations to boost your machining business",
+      "url": "https://www.xometry.com/blog/how-to-use-customer-conversations-to-boost-your-machining-business",
+      "publisher": "Xometry",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1755",
+    "kind": "success",
+    "region": "overseas",
+    "title": "工程ごとのページで良い依頼を増やす",
+    "summary": "米国のWeb制作会社OuterBoxは、加工会社には主要な工程ごとにページを作るよう勧める。問い合わせの数だけでなく、見積する価値のある依頼がどれだけ来たかで測るべきという。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせを数でなく中身で測る",
+    "source": {
+      "title": "Machine Shop Marketing",
+      "url": "https://www.outerboxdesign.com/digital-marketing-services/industries/machine-shops/",
+      "publisher": "OuterBox",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1756",
+    "kind": "success",
+    "region": "overseas",
+    "title": "製缶会社のSEOは工程と地域の言葉で",
+    "summary": "米国のWeb制作会社WebFXの金属加工会社向けSEOガイド。対応する加工ごとの言葉を軸にしたページ、Googleの店舗情報、サイトの技術的な健全さをそろえるよう勧める。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "「地域名＋加工名」で探される",
+    "source": {
+      "title": "metal fabricator seo guide",
+      "url": "https://www.webfx.com/blog/manufacturing/metal-fabricator-seo-guide/",
+      "publisher": "WebFX",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1757",
+    "kind": "success",
+    "region": "overseas",
+    "title": "SNSは施工の写真と工場の日常を",
+    "summary": "米国のWeb制作会社WebFXの金属加工会社向けSNSの案内。手がけた製品や工場の様子を見せ、問い合わせにつながる場としてSNSを使う考え方を説明している。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "social media for metal fabricators",
+      "url": "https://www.webfx.com/industries/industrial/metal-fabricators/social-media",
+      "publisher": "WebFX",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1758",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見積フォームを目立たせて依頼60%増",
+    "summary": "米国のめっき会社の事例。WebFXの発表では、サイトを作り直して見積フォームを目立つ場所に置くと、見積依頼が60%、自然検索の訪問が270%増えた。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積ボタンをどこに置くか",
+    "source": {
+      "title": "Sharretts Plating Customer Case Study",
+      "url": "https://www.casestudies.com/company/webpagefx/case-study/sharretts-plating-customer-case-study",
+      "publisher": "WebFX（casestudies.com掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1759",
+    "kind": "success",
+    "region": "overseas",
+    "title": "製缶の見込み客を集める手順",
+    "summary": "米国のWeb制作会社weCreateの記事。金属加工会社が見込み客を得るには、加工ごとのページ、事例、Googleの店舗情報、技術的に健全なサイトを組み合わせるよう説く。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "how to get leads for metal fabrication shops",
+      "url": "https://www.wecreate.com/insights/how-to-get-leads-for-metal-fabrication-shops",
+      "publisher": "weCreate",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1760",
+    "kind": "success",
+    "region": "overseas",
+    "title": "地元検索で地図の1位を取った加工会社",
+    "summary": "米国コロラド州の機械加工会社の事例（制作会社Boulder SEO Marketingの発表）。地域向けのSEOに取り組み、Googleの店舗情報が地図の検索結果で1位になった。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "「近くの加工屋」で見つかるには",
+    "source": {
+      "title": "APM Machine Shop Local SEO Case Study",
+      "url": "https://boulderseomarketing.com/seo-case-studies/apm-machine-shop-seo-local-seo-case-study/",
+      "publisher": "Boulder SEO Marketing",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1761",
+    "kind": "success",
+    "region": "overseas",
+    "title": "精密加工の会社がSEOで伸びた事例",
+    "summary": "米国の精密加工会社の成長をSEOで支えた事例を、制作会社Boulder SEO Marketingが発表。航空宇宙向けの規格を持つ会社などで、検索のクリック・表示・見積依頼が増えたと説明している。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "航空宇宙"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Boulder SEO Marketing publishes case study on supporting advanced precision machining growth",
+      "url": "https://boulderseomarketing.com/boulder-seo-marketing-publishes-case-study-on-supporting-advanced-precision-machining-growth-with-seo/",
+      "publisher": "Boulder SEO Marketing",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1762",
+    "kind": "success",
+    "region": "overseas",
+    "title": "修理・製缶会社で自然検索の流入150%増",
+    "summary": "米国の修理・製缶会社の事例。制作会社Pronto Marketingの発表では、サイトと検索対策の見直しで自然検索からの訪問が150%増えた。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "修理もできるとHPに書く",
+    "source": {
+      "title": "East Coast Repair and Fabrication increases organic search traffic by 150%",
+      "url": "https://www.prontomarketing.com/?p=11886",
+      "publisher": "Pronto Marketing",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-880",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "技術者がダウンロードしたくなる資料",
+    "summary": "米国の制作会社Pronto Marketingの記事。産業の見込み客がサイトから落としたくなる資料の種類を整理し、技術資料や選び方ガイドなど仕事にすぐ使えるものが好まれると説く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発注者向け「頼み方ガイド」を作る",
+    "source": {
+      "title": "What Kind of Content Will Industrial Leads Download from Your Website?",
+      "url": "https://www.prontomarketing.com/?p=84469",
+      "publisher": "Pronto Marketing",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1763",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見積依頼が大きく増えた製造業の事例",
+    "summary": "米国の製造業者の事例。制作会社Kuno Creativeの発表では、サイトと発信の見直しで、サイトの訪問が450%、見積依頼が1800%増えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Amerline Case Study",
+      "url": "https://www.kunocreative.com/hubfs/Case%20Studies%20Collateral%20-%20pdfs/Amerline.pdf",
+      "publisher": "Kuno Creative",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1764",
+    "kind": "success",
+    "region": "overseas",
+    "title": "SEOで27の言葉が検索1ページ目に",
+    "summary": "米国の産業機械会社の事例。制作会社LYFE Marketingの発表では、SEOに取り組み、検索1ページ目に出る言葉が0から27に増えた。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "どの言葉で1ページ目を狙うか",
+    "source": {
+      "title": "Machinery Network Achieves 27 First-Page Keyword Rankings",
+      "url": "https://www.casestudies.com/company/lyfe-marketing/case-study/machinery-network-boosts-first-page-rankings-from-0-to-27-with-lyfe-marketing",
+      "publisher": "LYFE Marketing（casestudies.com掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1765",
+    "kind": "success",
+    "region": "overseas",
+    "title": "顧客管理とメールで新規2社と売上",
+    "summary": "米国の創業30年の受託加工会社の事例。顧客管理・メール配信ツールHatchbuckの発表では、導入後に7万ドルの売上と新しい客2社を得た。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積後のフォローをメールで仕組みに",
+    "source": {
+      "title": "J/E Bearing & Machine Customer Case Study",
+      "url": "https://www.casestudies.com/company/hatchbuck/case-study/je-bearing-machine-customer-case-study",
+      "publisher": "Hatchbuck（casestudies.com掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1766",
+    "kind": "success",
+    "region": "overseas",
+    "title": "印刷会社は月1回のメルマガで再注文",
+    "summary": "米国の制作会社Slamdotの印刷会社向けの記事。月1回のニュースレターと新しい連絡先向けの連続メールを勧め、具体的な件名のほうが開かれやすく、7割超がスマホで開かれるという。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "再注文を思い出してもらうメール",
+    "source": {
+      "title": "Simple Ways Print Shops Can Use Email Marketing to Drive Repeat Business",
+      "url": "https://www.slamdot.com/blog/simple-ways-print-shops-can-use-email-marketing-to-drive-repeat-business/",
+      "publisher": "Slamdot",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1767",
+    "kind": "success",
+    "region": "overseas",
+    "title": "リピート注文を数クリックで受ける",
+    "summary": "米国などで使われる見積ソフトDigiFabsterの記事。1回きりの仕事をリピートに変えるには、前回の条件で数クリックで再注文できる仕組みが効くと説く。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "「前回と同じ」で頼める受け口",
+    "source": {
+      "title": "From One-Off Jobs to Repeat Orders",
+      "url": "https://digifabster.com/product/from-one-off-jobs-to-repeat-orders-building-loyalty-through-smart-quoting/",
+      "publisher": "DigiFabster",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1768",
+    "kind": "success",
+    "region": "overseas",
+    "title": "10人の加工会社はリピートが柱",
+    "summary": "米国オクラホマ州の従業員10人ほどの加工会社の話（American Machinist）。決まった契約がなくても、繰り返しの仕事が自社の「製品」のような柱になっている。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "リピートが続く町工場の理由",
+    "source": {
+      "title": "NEO Machine LLC: born and raised on repeat work",
+      "url": "https://www.americanmachinist.com/features/neo-machine-llc-born-and-raised-repeat-work",
+      "publisher": "American Machinist",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1769",
+    "kind": "success",
+    "region": "overseas",
+    "title": "設備一覧は機械名より加工できる大きさ",
+    "summary": "米国の大学の工作室の設備ページ（カンザス州立大）。旋盤ごとに加工できる直径と長さの範囲を書いている。発注者は機種名より「どこまで作れるか」を知りたい。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工できる最大サイズを表にする",
+    "source": {
+      "title": "Machine Shop Equipment",
+      "url": "https://www.phys.ksu.edu/machine-shop/equipment.html",
+      "publisher": "Kansas State University",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1770",
+    "kind": "success",
+    "region": "overseas",
+    "title": "加工能力は工程ごとに分けて見せる",
+    "summary": "米国の大学の工作サービス（ペンシルベニア州立大）は、CAD/CAM・放電加工・旋削・フライス・溶接・研削など工程ごとにサービスを分け、設備は別に一覧にしている。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "放電加工",
+      "研削"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工程別に並べた加工メニュー",
+    "source": {
+      "title": "Engineering Shop Services",
+      "url": "https://www.engr.psu.edu/ess/",
+      "publisher": "Penn State",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1771",
+    "kind": "success",
+    "region": "overseas",
+    "title": "設備一覧に測定機も並べて品質を示す",
+    "summary": "米国の機械加工・修理会社の設備一覧ページ。レーザートラッカーや三次元測定機まで載せ、仕様で工場の力が分かるようにしている。品質を重く見る買い手は測定機を見る。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "測定機の一覧で品質を見せる",
+    "source": {
+      "title": "Equipment List",
+      "url": "https://www.atlasmachine.com/machining-and-repair/in-house/equipment-list",
+      "publisher": "機械加工・修理会社のサイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1772",
+    "kind": "success",
+    "region": "overseas",
+    "title": "設備ページに問い合わせ先を添える",
+    "summary": "米国の装置メーカーの機械加工能力ページ。設備と能力を紹介したうえで、詳しく聞きたい人向けに製造部門の連絡先を書いている。能力ページから直接聞ける道を作る例。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "能力ページの最後に置く一言",
+    "source": {
+      "title": "Machine Shop Capabilities",
+      "url": "https://www.pelletron.com/home/our-company/machine-shop-capabilities/",
+      "publisher": "装置メーカーのサイト",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-881",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "技術者が重視するのは仕様書と技術記事",
+    "summary": "米国の調査（GlobalSpecとTREW Marketing、制作会社Konstructが紹介）。技術系の買い手が大きな購入を検討するとき価値が高いと見るのは、仕様書、技術記事、CAD図面だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "仕様と図面で答えるページづくり",
+    "source": {
+      "title": "Content Marketing for Industrial Sectors",
+      "url": "https://www.konstructdigital.com/content-marketing/industrial-sectors/",
+      "publisher": "Konstruct Digital",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1773",
+    "kind": "success",
+    "region": "overseas",
+    "title": "技術者向けの記事は役に立つかが基準",
+    "summary": "米国のCADデータ会社CADENAS PARTsolutionsの記事。技術者や産業の買い手を引きつける記事にするには、宣伝より設計や選定の仕事に役立つ情報を出すべきと説く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Content Marketing Strategy: How to Make Online Content Engaging for Engineers and Industrial Buyers",
+      "url": "https://partsolutions.com/content-marketing-strategy-how-to-make-content-engaging-for-engineers-and-industrial-buyers/",
+      "publisher": "CADENAS PARTsolutions",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-790",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "製造業の65%は毎月の目標がない",
+    "summary": "米国の制作会社Industrial Sageの記事。製造業の65%は毎月の見込み客獲得の目標を決めておらず、それが自らデジタル発信の足を引っぱる原因の一つという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "月に何件の相談を目指すか決める",
+    "source": {
+      "title": "3 ways manufacturers are sabotaging their own digital marketing",
+      "url": "https://www.industrialsage.com/3-ways-manufacturers-are-sabotaging-their-own-digital-marketing/",
+      "publisher": "Industrial Sage",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1774",
+    "kind": "success",
+    "region": "overseas",
+    "title": "製造業で一番価値ある記事は事例",
+    "summary": "米国の制作会社Industrial Sageの記事は、製造業にとって最も価値のある発信物は何かを問い、それを作っているかを問いかける。課題・やり方・結果の順で書く事例は、買い手が判断に使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "課題・工夫・結果で書く加工事例",
+    "source": {
+      "title": "the most valuable piece of content for manufacturers are you producing it",
+      "url": "https://www.industrialsage.com/the-most-valuable-piece-of-content-for-manufacturers-are-you-producing-it/",
+      "publisher": "Industrial Sage",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-882",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "買い手は問い合わせ前に6割超を進める",
+    "summary": "米国の制作会社Marketveepの記事。産業の買い手は、売り手に連絡する前に購入の過程の60%以上をネットで進めているという。問い合わせ前にサイトで答えを出しておく必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "4 Essential Manufacturing Digital Marketing Strategies for Success",
+      "url": "https://www.marketveep.com/blog/4-essential-manufacturing-digital-marketing-strategies-for-success",
+      "publisher": "Marketveep",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1044",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米国製造業の6割が2027年までにAI導入",
+    "summary": "米国の記事（DesignRush）。製造業の経営者団体MLCの調査では、米国の製造業の60%が2027年までにAIを使う見込み。一方でAI検索に自社が出るかへの備えは遅れているという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIに聞かれたとき自社は出るか",
+    "source": {
+      "title": "60% of Manufacturers Will Use AI by 2027, But Most Are Ignoring AI Search Visibility",
+      "url": "https://news.designrush.com/manufacturers-ai-search-visibility-2027",
+      "publisher": "DesignRush",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1045",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI検索の推薦は一部の会社に集中",
+    "summary": "米国フロリダ州の調査の報道（TechIntelPro）。業者探しをAIに聞いた結果を調べると、上位10社がAIの言及の約58%を占めていた。AIに出ない会社は候補に入りにくい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIに名前が出る会社と出ない会社",
+    "source": {
+      "title": "florida manufacturers struggle with ai visibility in buyer searches",
+      "url": "https://techintelpro.com/news/florida-manufacturers-struggle-with-ai-visibility-in-buyer-searches",
+      "publisher": "TechIntelPro",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1775",
+    "kind": "success",
+    "region": "overseas",
+    "title": "AIには他のサイトでの紹介が効く",
+    "summary": "米国の記事（Mention Rank）。Superlinesの2026年の分析として、AIに引用されるのは自社サイトより第三者のサイトを通じてのほうが6.5倍多いと紹介。業界誌・団体・名簿への掲載が効く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "業界誌や団体のページに載る工夫",
+    "source": {
+      "title": "industrial equipment ai visibility guide",
+      "url": "https://mention-rank.orosy.com/blog/industrial-equipment-ai-visibility-guide",
+      "publisher": "Mention Rank",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-791",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "技術系の会社の半分はAIに引用ゼロ",
+    "summary": "米国の記事（MarketScale）。技術系の会社の51%は主要な生成AIのどれにも一度も引用されていないという。AIに聞かれても名前が出ない会社が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "B2B buying",
+      "url": "https://www.marketscale.com/industries/business-services/topic/b2b-buying",
+      "publisher": "MarketScale",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-792",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "AIが作る候補リストに入っていない",
+    "summary": "米国の製造業向け支援会社Y Meadowsの記事は「AIがあなたの見込み客の候補リストを作ったが、あなたは入っていなかった」と題し、AIが業者の絞り込みを担い始めた危うさを指摘する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIに選ばれる会社紹介の書き方",
+    "source": {
+      "title": "AI just built your prospect's shortlist. You weren't on it.",
+      "url": "https://ymeadows.com/en/insights/newsletter/ai-just-built-your-prospects-shortlist-you-werent-on-it/",
+      "publisher": "Y Meadows",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1776",
+    "kind": "success",
+    "region": "overseas",
+    "title": "建機メーカーの英国拠点で問い合わせ6倍",
+    "summary": "英国の制作会社の発表。国際的な建機メーカーの英国拠点で、狙う言葉の記事と製品ページを整え、問い合わせが月5件から30件に。主要な言葉で検索1ページ目に入った。",
+    "industries": [
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせが増える製品ページの書き方",
+    "source": {
+      "title": "Construction Equipment: 3x Traffic, 6x Enquiry Increase",
+      "url": "https://www.jdrgroup.co.uk/blog/case-study-construction-equipment-manufacturer-triples-website-traffic-6x-increase-in-enquiries",
+      "publisher": "JDR Group",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1777",
+    "kind": "success",
+    "region": "overseas",
+    "title": "洗浄装置メーカーで問い合わせ約3倍",
+    "summary": "英国の制作会社の発表。洗浄装置の会社で、月の訪問が282人から567人に倍増し、サイトからの問い合わせは月3件ほどから10件以上に。訪問は少なくても問い合わせは増やせる例。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "訪問者が少なくても問い合わせを増やす方法",
+    "source": {
+      "title": "Digital Marketing Case Study For A Manufacturing Business",
+      "url": "https://www.jdrgroup.co.uk/blog/digital-marketing-case-study-for-a-manufacturing-business",
+      "publisher": "JDR Group",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1778",
+    "kind": "success",
+    "region": "overseas",
+    "title": "4人の技術会社で問い合わせ月2件→74件",
+    "summary": "英国東部の従業員4人ほどの技術会社。制作会社の発表（2021年時点）では、問い合わせが月2件から74件に増え、忙しすぎて検索広告を止める時期もあった。小さな会社でもWebで変われる例。",
+    "industries": [
+      "機械部品",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場こそWebで問い合わせを取れる理由",
+    "source": {
+      "title": "Case Study: 4 Man Engineering Company From 2 to 74 Enquiries",
+      "url": "https://www.jdrgroup.co.uk/blog/case-study-4-man-engineering-company-go-from-2-to-74-enquiries-a-month",
+      "publisher": "JDR Group",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1779",
+    "kind": "success",
+    "region": "overseas",
+    "title": "専門メーカーがサイト経由で大口受注",
+    "summary": "英国の制作会社の発表。専門メーカーで顧客管理の仕組みとサイトをつなぎ、記事で呼び込む発信を続けた。訪問は5倍、問い合わせは毎月20件以上、サイト経由と分かる受注が360万ポンド超に。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせを受注まで追いかける仕組み",
+    "source": {
+      "title": "Manufacturing Business Generate £3.6m Revenue, 5x Traffic",
+      "url": "https://www.jdrgroup.co.uk/blog/digital-marketing-for-manufacturing-business-case-study",
+      "publisher": "JDR Group",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1780",
+    "kind": "success",
+    "region": "overseas",
+    "title": "機械メーカーで相談が月10件→125件",
+    "summary": "英国の機械メーカー。もともと月2千訪問・10〜15語で1ページ目だったが、制作会社の発表では支援後に訪問4千超、相談は月約10件から125件に。順位があっても相談につながらない状態からの改善。",
+    "industries": [
+      "産業機械",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "順位はあるのに問い合わせが来ない理由",
+    "source": {
+      "title": "Case Study: Machine Manufacturer Boosts Leads 100+, £29M+ Pipeline",
+      "url": "https://www.jdrgroup.co.uk/blog/machine-manufacturers-go-from-10-leads-a-month-to-125-generate-8m-in-sales-pipeline",
+      "publisher": "JDR Group",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1781",
+    "kind": "success",
+    "region": "overseas",
+    "title": "ポンプメーカーで自然検索が倍増し大口受注",
+    "summary": "英国シェフィールド近くの産業用ポンプメーカー。制作会社の発表では、検索対策で自然検索の流入が倍になり、Webからの問い合わせが増えて6桁ポンドの契約につながった。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "検索から大きな仕事が来るまでの道のり",
+    "source": {
+      "title": "Manufacturing SEO and SEO for Manufacturers",
+      "url": "https://www.seoworks.co.uk/case-studies/manufacturing-seo/",
+      "publisher": "The SEO Works",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1782",
+    "kind": "success",
+    "region": "overseas",
+    "title": "比べる購買担当向けのページに絞る",
+    "summary": "英国リバプールの産業機器の会社。制作会社によると、読み物より「業者を比べている購買担当」が探す言葉のページを優先して作った。買う直前の人が読むページを先に整える考え方。",
+    "industries": [
+      "産業機械",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "買う直前の人が探す言葉でページを作る",
+    "source": {
+      "title": "SEO Service for Industrial Equipment Manufacturing Company",
+      "url": "https://www.growthnaavik.com/case-studies/seo-service-for-industrial-equipment-manufacturer/",
+      "publisher": "Growth Naavik",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1783",
+    "kind": "success",
+    "region": "overseas",
+    "title": "読み物から依頼向けページへ移して42%増",
+    "summary": "英国の制作会社の発表。製造業の顧客で、ブログ記事中心から「頼みたい人向け」のサービス・製品ページ中心に切り替え、サイトからの問い合わせが42%増えた。記事は依頼ページへつなぐ役も必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ブログ記事から依頼ページへのつなぎ方",
+    "source": {
+      "title": "SEO for Manufacturing Companies",
+      "url": "https://www.redcore.digital/industries/seo-for-manufacturing/",
+      "publisher": "Red Core Digital",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1784",
+    "kind": "success",
+    "region": "overseas",
+    "title": "専用機メーカーが技術記事3本で相談42%増",
+    "summary": "ドイツの制作会社の解説。中堅の専用機メーカーが、狙いを絞った技術記事3本と記事どうしのリンク、問い合わせまでの道の見直しで、半年で質の高い相談を42%増やした。",
+    "industries": [
+      "産業機械",
+      "装置",
+      "治具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "技術記事3本で相談を増やす作戦",
+    "source": {
+      "title": "Leadgenerierung im Maschinenbau: So gewinnt Ihre Website mehr Anfragen",
+      "url": "https://gerlach.media/ratgeber/leadgenerierung-maschinenbau/",
+      "publisher": "gerlach.media",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1785",
+    "kind": "success",
+    "region": "overseas",
+    "title": "新規相談の半分超がサイトの製品ページから",
+    "summary": "ドイツ・バイエルン州の専門性の高い機械メーカー。検索対策会社によると、今は新しい問い合わせの半分以上がサイト経由で、それも製品ごとの具体的なページから来ている。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品ページ1枚ずつが営業になる",
+    "source": {
+      "title": "Fallstudien - SEO für die Industrie",
+      "url": "https://eingenetzt.net/seo-fallstudien/",
+      "publisher": "eingenetzt",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1786",
+    "kind": "success",
+    "region": "overseas",
+    "title": "問い合わせ欄に絞り込みの質問を入れる",
+    "summary": "ドイツの制作会社の事例（会社名は伏せ）。中堅企業のサイト刷新で、ページ構成の作り直し、古いURLの転送、ただの連絡欄を「用途・数量など」を聞く問い合わせ欄に替えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積がもらいやすい問い合わせ欄の質問",
+    "source": {
+      "title": "Projektbeispiel: Website-Relaunch mit SEO-Fundament",
+      "url": "https://makemaiweb.com/referenzen/website-relaunch-seo-mittelstand",
+      "publisher": "makemai",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1787",
+    "kind": "success",
+    "region": "overseas",
+    "title": "装置メーカーが刷新で検索順位を83位上げる",
+    "summary": "ドイツ・ルール地方の装置メーカー。制作会社によると、検索対策を組み込んでサイトを作り直し、Googleでの順位が83位分上がった。刷新のときに検索のことを最初から考える例。",
+    "industries": [
+      "装置",
+      "製缶"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "サイト刷新で検索順位を落とさないコツ",
+    "source": {
+      "title": "Ein Website-Relaunch-Beispiel im Mittelstand",
+      "url": "https://mobydigg.de/en/insights/website-relaunch-beispiel-mittelstand/",
+      "publisher": "mobydigg",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-793",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "展示会と対面が主で、ネットは後回し",
+    "summary": "ドイツの業界誌によると、機械メーカーにとって展示会と対面の商談は今も大事だが、買い手がネットで調べる比重は年々大きく、Webの発信を避けては通れなくなっている。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会頼みの会社がWebを始める順番",
+    "source": {
+      "title": "Grundwissen Online-Marketing für Maschinenbauer",
+      "url": "https://www.produktion.de/technik/grundwissen-online-marketing-fuer-maschinenbauer/1668263",
+      "publisher": "produktion.de",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-794",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "中堅企業のネット発信を止めるのは知識不足",
+    "summary": "ドイツの中堅企業向けの資料で、Salesforceは、ネットでの発信が進まない大きな理由として、社内に詳しい人がいないことと、それによる不安を挙げている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "詳しい人がいなくても続く発信のやり方",
+    "source": {
+      "title": "Online-Marketing im deutschen Mittelstand",
+      "url": "https://www.salesforce.com/de/form/mittelstand/whitepaper-online-marketing-mittelstand/",
+      "publisher": "Salesforce",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-795",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "サイトが名刺代わりで営業していない",
+    "summary": "ドイツの中小向け解説。サイトを「ネット上の名刺」で終わらせず、問い合わせを生む営業の道具として使うべきと説く。Bitkomの2025年の調査を引き、中小はデジタル発信でまだ遅れているとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "名刺代わりのサイトを営業の道具にする",
+    "source": {
+      "title": "Website-Marketing für KMU: Strategien, Tools & Tipps",
+      "url": "https://sellwerk.de/wissenswert/website-marketing",
+      "publisher": "sellwerk",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-796",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "紹介だけでは新しい客が足りない",
+    "summary": "ドイツの解説記事。中堅企業は紹介だけでは足りなくなったと説く。KfWの2025年9月の特別調査では、ドイツの工業系の会社の28%が中国の品質の良い製品との競争が増えていると答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紹介頼みから抜け出す発信",
+    "source": {
+      "title": "Digitale Aufholjagd für den Mittelstand",
+      "url": "https://xpert.digital/digitale-aufholjagd-fuer-den-mittelstand/",
+      "publisher": "Xpert.Digital",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-797",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "英国製造業サイトの4割超が検索の基本で失格",
+    "summary": "英国の調査。制作会社Tudge Digitalが2025年3月に製造業366社のサイトを調べると、4割超が検索対策の基本（題名や説明文など）を満たさず、取れたはずの売上を逃している恐れがあった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社サイトの検索の基本を自分で点検する",
+    "source": {
+      "title": "Over 40% of UK manufacturing businesses potentially losing revenue due to basic marketing failures",
+      "url": "https://business.mammothtimes.com/mammothtimes/article/getnews-2025-3-29-over-40-of-uk-manufacturing-businesses-potentially-losing-revenue-due-to-basic-marketing-failures",
+      "publisher": "GetNews",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "trend-1046",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "英国メーカーの9割超が通販サイト出店を増やす",
+    "summary": "英国の調査。Akeneoの報告では、英国の製造業の93%が今後12か月でオンラインの売り場（マーケットプレイス）への出店を増やすと答えた。部品・消耗品でもネットで買える形が広がる。",
+    "industries": [
+      "機械部品",
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "部品をネットで買える形にする第一歩",
+    "source": {
+      "title": "93 per cent of British manufacturers will increase their marketplace presence in the next 12 months",
+      "url": "https://homeofdirectcommerce.com/?p=53300",
+      "publisher": "Home of Direct Commerce",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1047",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ドイツのB2Bネット取引が2024年に7%増",
+    "summary": "ドイツの調査。IFHケルン（ECC）によると、2024年にネットショップとマーケットプレイス経由のB2B取引は約5090億ユーロで前年比7%増。卸とメーカーの売上の12.1%がこの経路だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "企業同士の取引もネットに移っている",
+    "source": {
+      "title": "Trotz Konjunkturflaute: B2B-Internethandel legt um sieben Prozent zu",
+      "url": "https://www.ifhkoeln.de/trotz-konjunkturflaute-b2b-internethandel-von-herstellern-und-grosshandel-legt-um-sieben-prozent-zu/",
+      "publisher": "IFH KÖLN",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1048",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "B2Bネット取引の伸びの中心はマーケットプレイス",
+    "summary": "ドイツの調査。IFHケルンによると2025年のメーカーと卸のB2Bネット取引は約5490億ユーロに伸びた。伸びを引っぱるのはマーケットプレイスだが、売上の量では今も自社ネットショップが大きい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社サイトと外部サイトの使い分け",
+    "source": {
+      "title": "B2B-Internethandel von Herstellern und Großhändlern wächst 2025 auf 549 Milliarden Euro",
+      "url": "https://www.ifhkoeln.de/b2b-internethandel-von-herstellern-und-grosshaendlern-waechst-2025-auf-549-milliarden-euro/",
+      "publisher": "IFH KÖLN",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1049",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "2030年にはメーカーと商社の役割が変わる",
+    "summary": "ドイツの調査。ECCクラブの2026年の探索的な調査（メーカー・卸の幹部25人）では、76%が2030年までにメーカーと商社の役割が大きく変わると見た。代表的な数字ではないと著者も断っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "商社を通さず直接相談が来る時代",
+    "source": {
+      "title": "ECC Club Studie 2026: B2B-Vertriebsstrukturen im Wandel",
+      "url": "https://www.moebelmarkt.de/beitrag/ecc-club-studie-2026-b2b-vertriebsstrukturen-im-wandel",
+      "publisher": "Möbelmarkt",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-883",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "予備部品は自分で調べて頼める方が選ばれる",
+    "summary": "ドイツの論文。VDMA会員の機械メーカーのネット販売を比べ、交換部品やアフターサービスでは、客が自分で調べて注文できる仕組みと豊富な情報が強みになるとまとめた。",
+    "industries": [
+      "産業機械",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "交換部品の問い合わせを減らすページ",
+    "source": {
+      "title": "Strategien im E-Commerce (Maschinen- und Anlagenbau)",
+      "url": "https://duepublico2.uni-due.de/servlets/MCRFileNodeServlet/duepublico_derivate_00073338/Drueen_Goudz_Strategien_e-Commerce.pdf",
+      "publisher": "Universität Duisburg-Essen",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-798",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "B2B企業の3社に1社はネット注文を受けない",
+    "summary": "ドイツの調査。Roland Bergerの2015年の工業系B2B企業の調査では、33%が客にネットで注文する手段を用意していなかった。買い手の期待との差が広がる原因とされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネットで「頼み方」が分かるだけで違う",
+    "source": {
+      "title": "Die digitale Zukunft des B2B-Vertriebs",
+      "url": "https://www.rolandberger.com/publications/publication_pdf/die_digitale_zukunft_des_b2b_vertriebs.pdf",
+      "publisher": "Roland Berger",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "buyer-884",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "企業の仕入れはネット経由が主流に",
+    "summary": "ドイツ・バイエルン州の調査。ibi researchの2017年の調査をミュンヘン商工会議所がまとめ、取引先からの仕入れの多くがすでにネット経由で、その割合はさらに増える見込みとした。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発注担当はまずネットで探す",
+    "source": {
+      "title": "ibi-Handelsstudie Auswertung Bayern",
+      "url": "https://www.ihk-muenchen.de/ihk/documents/Branchen/Handel/2017-11-13_ibi-Handelsstudie_Auswertung-Bayern.pdf",
+      "publisher": "IHK München",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "trend-1050",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "ドイツ企業の8割超がAIを発信の流行1位に",
+    "summary": "ドイツの調査。Bitkomが2025年末に会員企業に聞くと（代表的な調査ではない）、84%がAIを発信の一番の流れと見て、67%がAIなしでは今後の発信は成功しないと答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIを発信にどう使うか",
+    "source": {
+      "title": "Marketingtrends: Unternehmen sehen KI an Spitze",
+      "url": "https://www.bitkom.org/Presse/Presseinformation/Marketingtrends-Unternehmen-sehen-KI-an-Spitze",
+      "publisher": "Bitkom",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1051",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "データを使った発信がAIに次ぐ流れ",
+    "summary": "ドイツの調査。同じBitkomの調査で、AIに次ぐ2番目の流れは「データにもとづく発信」で62%。勘ではなく、問い合わせや閲覧の数字を見て直すやり方が重視されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "アクセス数字の見方を覚える",
+    "source": {
+      "title": "Marketingtrends: Unternehmen sehen KI an Spitze",
+      "url": "https://silicon-saxony.de/bitkom-marketingtrends-unternehmen-sehen-ki-an-der-spitze/",
+      "publisher": "Silicon Saxony",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1052",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "ドイツのデジタル発信は1ユーロで2.5ユーロ",
+    "summary": "ドイツの調査。Bitkomの「デジタル発信2025」を商工会議所が紹介。支出は2年で20%増え309億ユーロ、1ユーロの支出で2.50ユーロの売上が生まれるとした。中小は実行面で課題が残る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発信にかけるお金の考え方",
+    "source": {
+      "title": "Innovationsnachrichten März 2025",
+      "url": "https://www.ihk.de/blueprint/servlet/resource/blob/6502922/9841880ca60cc74ef7c93697235f42c8/innovationsnachrichten-maerz-2025-data.pdf",
+      "publisher": "DIHK / IHK",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "trend-1053",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ドイツでAIを使う会社が57%に",
+    "summary": "ドイツの調査。Bitkomによると、従業員20人以上の会社でAIを使っているのは2026年に57%。2025年の36%、2024年の20%から急に増えた。買い手側もAIで調べるのが当たり前に。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "買い手がAIで調べる時代の記事",
+    "source": {
+      "title": "Mehrheit der Firmen setzt erstmals auf Künstliche Intelligenz",
+      "url": "https://ms-aktuell.de/welt/ki-unternehmen-bitkom-14-09-2026/",
+      "publisher": "ms-aktuell",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "buyer-885",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "産業の購買質問にAIは同じ171サイトを読む",
+    "summary": "ドイツの調査。AI検索の支援会社が2026年、6業界72の購買質問を30日間6つのAIに聞くと、答えの元は毎日ほぼ同じ171サイトで、小さなメーカーも多く含まれていた。中立な調査ではない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場でもAIに引用される理由",
+    "source": {
+      "title": "Studie: Bei Kauffragen aus der Industrie liest die KI jeden Tag dieselben 171 Websites",
+      "url": "https://www.fair-news.de/3832654/studie-bei-kauffragen-aus-der-industrie-liest-die-ki-jeden-tag-dieselben-171-websites",
+      "publisher": "fair-NEWS",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-886",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "英国の決裁者の66%がAIで業者を調べる",
+    "summary": "英国の調査。Magenta Associatesの調べでは、購買の権限がある英国の上級の決裁者の66%が、取引先を調べるのにAIの道具を使っていた。AIに正しく伝わるサイトかが問われる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIで業者を調べる購買担当に届く記事",
+    "source": {
+      "title": "66% of B2B Buyers Now Use AI For Supplier Research",
+      "url": "https://www.traxtech.com/ai-in-supply-chain/66-of-b2b-buyers-now-use-ai-for-supplier-research",
+      "publisher": "Trax",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-887",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ドイツの記事「B2B購買の73%がAIで調べる」",
+    "summary": "ドイツのIT誌は、B2Bの買い手の73%が購入の過程でAI検索を使うと紹介。ただし元は分析ブログで、独自調査ではない。数字は幅をもって見るべきだが、流れははっきりしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AI時代に発注者が調べる順番",
+    "source": {
+      "title": "73 % der B2B-Einkäufer recherchieren mit ChatGPT",
+      "url": "https://www.it-management.today/73-der-b2b-einkaeufer-recherchieren-mit-chatgpt",
+      "publisher": "IT-Management.today",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-888",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ネットで始めて手作業で止まると乗り換え",
+    "summary": "ドイツのB2B取引の調査（2026年）。買い手はネットで調べ始めるのに、見積や注文の途中で電話・メールの手作業に戻されると不満がたまり、多くが業者の乗り換えを考えると紹介した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積の手間を減らすと選ばれる",
+    "source": {
+      "title": "B2B-Commerce-Studie 2026: Warum Einkäufer*innen die Anbieter wechseln",
+      "url": "https://omr.com/de/reviews/contenthub/digital-gestartet-manuell-gestrandet-warum-die-meisten-b2b-einkaeuferinnen-den-anbieter-wechseln-wuerden",
+      "publisher": "OMR Reviews",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-889",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ドイツの業者検索サイトに月130万人の買い手",
+    "summary": "ドイツの業者検索サイト「wer liefert was」は、運営会社の発表で毎月130万人の買い手が使い、約59万社・4.7万分野の業者が載る。買い手が業者を分野で探す習慣が根づいている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "業者検索サイトに載せる情報の整え方",
+    "source": {
+      "title": "wer liefert was (wlw): der führende B2B-Marktplatz",
+      "url": "https://www.visable.com/en_int/b2b-marketplaces/wer-liefert-was",
+      "publisher": "Visable",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-890",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "特注品の業者探しを代わりに手伝う仕組み",
+    "summary": "ドイツの業者検索サイトは、機械・設備などの特注の部品を探す買い手向けに、条件に合う業者探しを無料で手伝う仕組みを始めた。変わった仕事ほど「探してもらう」需要がある。",
+    "industries": [
+      "機械部品",
+      "金属加工",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "特注品の相談先として見つかる書き方",
+    "source": {
+      "title": "wlw Connect: Kostenlose Lieferantensuche für Sonderbedarfe",
+      "url": "https://beschaffung-aktuell.industrie.de/einkauf/kostenlose-lieferantensuche-fuer-sonderbedarfe/",
+      "publisher": "Beschaffung aktuell",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-891",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "買い手の4分の1は環境配慮の業者だけと取引",
+    "summary": "ドイツの調査。業者検索サイトの運営会社が2021年に買い手259人に聞くと、24%が環境に配慮した業者としか取引しないと答えた。環境への取り組みはサイトに書くべき選ばれる理由になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "環境への取り組みをサイトに書く",
+    "source": {
+      "title": "Umfrage: Nachhaltigkeit im Einkauf",
+      "url": "https://www.visable.com/de_ch/ueber-uns/presse/Presse-Archiv/2021/Visable-Umfrage-Nachhaltigkeit-im-Einkauf",
+      "publisher": "Visable",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1054",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "大きな展示会が無くても困らない中小が半数超",
+    "summary": "ドイツの調査。業者検索サイトの運営会社がCivey社と中小の決裁者約1000人に聞くと、半数超が業界の大きな展示会が無くなっても損は小さいか無いと答えた（コロナ期）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会に出なくても見つけてもらう方法",
+    "source": {
+      "title": "Visable Corona Special",
+      "url": "https://www.visable.com/de_de/ueber-uns/presse/Presse-Archiv/2020/visable-records-significantly-higher-demand-on-its-wer-liefert-was-b2b-platform-1",
+      "publisher": "Visable",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "trend-1055",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "展示会の代わりにはならないがネットは補助に",
+    "summary": "ドイツの調査。展示会業界団体AUMAが2023年秋に出展企業に聞くと、81%がオンラインの催しは対面の展示会の代わりにならないと答え、41%はネットを展示会の補助と見ていた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の前後にWebでできること",
+    "source": {
+      "title": "Aussteller-Ausblick 2024/2025",
+      "url": "https://www.auma.de/fileadmin/publikationen/auma-aussteller-ausblick-2024-2025.pdf",
+      "publisher": "AUMA",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "pain-799",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "小さな出展者は成果を勘で判断しがち",
+    "summary": "ドイツの調査。AUMAの出展者見通し2026/2027によると、大企業は商談数や費用対効果を数字で追うが、中堅は名刺の追跡など初歩の計測を足し始めた段階で、小さな会社は感覚で成果を判断しがち。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の名刺を問い合わせに変える",
+    "source": {
+      "title": "Messe Insights: Messebeteiligungen zwischen Wirkung und Wirtschaftlichkeit",
+      "url": "https://www.auma.de/fileadmin/publikationen/auma-aussteller-ausblick-2026-2027.pdf",
+      "publisher": "AUMA",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-800",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "展示会の来場者の15%は後で連絡が来ない",
+    "summary": "ドイツの記事。AUMAのデータの分析として、測れる目標を決めて出展するのは24%だけで、来場者の15%は展示会のあと出展者から一度も連絡を受けないと紹介。出展後のフォローが弱い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会のあとに送る記事とお礼メール",
+    "source": {
+      "title": "Mehr Umsatz aus Messe-Leads holen",
+      "url": "https://www.marketing-boerse.de/fachartikel/details/2610-zwischen-milliarden-wertschoepfung-und-messe-chaos/204150",
+      "publisher": "marketing-BÖRSE",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1056",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "展示会は会期後もつながるネットの場に",
+    "summary": "ドイツの調査。AUMAの「AI時代の展示会」では、主催者がハイブリッドの場を会期だけでなく1年中つながる場として作り、出展者をAIで来場者に薦める仕組みも広がっていると報告した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会のページを1年中生かす",
+    "source": {
+      "title": "AUMA-Studie „Messen im Zeitalter von KI“",
+      "url": "https://www.auma.de/fileadmin/publikationen/auma-studie-messen-im-zeitalter-von-ki.pdf",
+      "publisher": "AUMA",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1057",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "今後5年も展示会は多くの会社に必要",
+    "summary": "ドイツの展示会業界団体AUMAの発表。今後5年について、多くの会社が展示会を欠かせないと見ている。展示会とWebはどちらかではなく、組み合わせて使うものになっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会とWebの組み合わせ方",
+    "source": {
+      "title": "Messe in den nächsten fünf Jahren: Mehrheitlich unverzichtbar für Unternehmen",
+      "url": "https://www.auma.de/aktuelles/meldungen/detail/messe-in-den-naechsten-fuenf-jahren-mehrheitlich-unverzichtbar-fuer-unternehmen/",
+      "publisher": "AUMA",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1058",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "主催者側もデジタル化に備えている",
+    "summary": "ドイツの産業向け発信の団体の記事。AUMAの調査で、展示会の主催者がデジタルの仕組みを強めている様子を紹介。出展者もネットでの事前の告知や面談予約を使う場面が増える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の前に面談予約を取る方法",
+    "source": {
+      "title": "AUMA-Umfrage zeigt: Messemacher rüsten sich für digitalere Zukunft",
+      "url": "https://bvik.org/blog/2024/09/auma-umfrage/",
+      "publisher": "bvik",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "trend-1059",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "展示会の公式サイトでAIが面談を仲介",
+    "summary": "ドイツ・ケルンの展示会会社は、AIで出展者と来場者を引き合わせ、会期前に面談を組む仕組みを使っている。出展者情報の書き方しだいで紹介されるかが変わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の出展者ページに書くこと",
+    "source": {
+      "title": "AI at trade shows: How Koelnmesse leads the way",
+      "url": "https://location.cologne-tourism.com/destination-cologne/mice-news/detailview/ai-at-trade-shows-how-koelnmesse-leads-the-way",
+      "publisher": "KölnTourismus",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1060",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ネットの催しは長く続く代わりにならない",
+    "summary": "ドイツの調査。AUMAが2021年に3つの業界団体の出展企業に聞くと、半数超がネットの催しを試したが、多くは本物の展示会の長く続く代わりにはならないと答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "オンライン展示会の上手な使い方",
+    "source": {
+      "title": "Digital events no permanent alternative for most exhibitors in Germany",
+      "url": "https://de.industryarena.com/auma/news/digital-events-no-permanent-alternative-for-most-exhibitors-in-germany--14726.html",
+      "publisher": "IndustryArena",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1788",
+    "kind": "success",
+    "region": "overseas",
+    "title": "窓メーカーが拡張現実の選択機能で輸出",
+    "summary": "イタリア・ナポリの窓・ドアメーカー。制作会社によると、ブランドを作り直し、拡張現実（AR）で製品を選べる機能と専用アプリを入れ、20か国以上に輸出している。",
+    "industries": [
+      "建材・金物"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品を選ぶ手助けになるページ",
+    "source": {
+      "title": "Case Studies",
+      "url": "https://www.deepmarketing.it/en/case-studies/",
+      "publisher": "Deep Marketing",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1789",
+    "kind": "success",
+    "region": "overseas",
+    "title": "展示会の前にネットで買い手を呼ぶ",
+    "summary": "イタリアの空調メーカー。制作会社によると、大きな展示会に出るのに会期前に買い手を呼ぶネットの仕組みがなかったため、事前の広告と案内で来場を促した（数字は非公開）。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の前に出す告知記事",
+    "source": {
+      "title": "Case Studies — Performance Marketing Results",
+      "url": "https://effeoagency.com/case-studies",
+      "publisher": "Effeo Agency",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1790",
+    "kind": "success",
+    "region": "overseas",
+    "title": "施工事例こそ機械メーカーの腕の証明",
+    "summary": "オランダの機械メーカー向け支援会社は、仕事が案件ごとで見積が出しっぱなしになりがちな業界では、広く知られるより、顧客の事例を専門性の証拠として出すことが効くと説く。",
+    "industries": [
+      "産業機械",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "事例記事の作り方",
+    "source": {
+      "title": "Marketing voor Machinebouwers",
+      "url": "https://maaketing.nl/maakbedrijf/machinebouw/",
+      "publisher": "Maaketing",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1791",
+    "kind": "success",
+    "region": "overseas",
+    "title": "訪問数でなく「正しい問い合わせ」を数える",
+    "summary": "オランダの技術・製造業向け支援会社は、訪問者の数ではなく適切な問い合わせの数を目標にし、買う気のある専門用語に広告を出し、職種・業種・会社規模で絞るとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見るべき数字は問い合わせの質",
+    "source": {
+      "title": "Marketingbureau voor techniek en maakindustrie",
+      "url": "https://adsvibe.nl/diensten/marketingbureau-voor-techniek-en-maakindustrie/",
+      "publisher": "AdsVIBE",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1792",
+    "kind": "success",
+    "region": "overseas",
+    "title": "月の相談数と見積依頼の率と1件の費用",
+    "summary": "オランダの製造業向けの解説は、Web発信の効果を測る数字として、月の相談数、サイト訪問から見積依頼への率、相談1件あたりの費用の3つを追うよう勧める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場が見るべき3つの数字",
+    "source": {
+      "title": "Marketing maakindustrie: ontdek via 8 tips hoe het werkt",
+      "url": "https://sgnm.nl/artikelen/marketing-maakindustrie-ontdek-via-8-tips-hoe-het-werkt/",
+      "publisher": "SGNM",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1793",
+    "kind": "success",
+    "region": "overseas",
+    "title": "社員がLinkedInで発信して商談を作る",
+    "summary": "オランダの支援会社は、機械メーカーでも担当者自身がLinkedInで発信する方法が効くとし、デジタルの仕組みで同じ営業人数でも商談を最大3割増やせるとする（会社の主張）。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社長や技術者が自分で発信する",
+    "source": {
+      "title": "Digitale communicatie in de machinebouw slim aangepakt",
+      "url": "https://www.presult.nl/blog/digitale-communicatie-machinebouw/",
+      "publisher": "Presult",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1794",
+    "kind": "success",
+    "region": "overseas",
+    "title": "技術資料をダウンロード資料にして相談へ",
+    "summary": "オランダの中小製造業向け支援会社は、検索・広告に加え、技術の解説資料（ホワイトペーパー）とメールの連続配信で、興味を持った人を相談まで育てる方法を提供している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "技術資料をダウンロードしてもらう",
+    "source": {
+      "title": "MKB Maakindustrie",
+      "url": "https://www.tmcmedia.nl/mkb-maakindustrie",
+      "publisher": "TMC Media",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1061",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "北欧の製造業の7割がネット販売に対応",
+    "summary": "北欧の調査。2024年の北欧B2Bデジタル取引の報告では、製造業の70%がネットでの販売に対応し、卸・流通の80%よりやや低い。メーカー直販のネット化が進んでいる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場のネット受注の始め方",
+    "source": {
+      "title": "Nordic Digital Commerce in B2B 2024",
+      "url": "https://mb.cision.com/Main/14117/3964842/2747381.pdf",
+      "publisher": "Cision",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1795",
+    "kind": "success",
+    "region": "overseas",
+    "title": "北欧の現地事情に合わせた事例ページ",
+    "summary": "デンマークの支援会社の例。北欧に出る産業機器メーカーは技術の強みはあったがWebで相談が取れず、現地向けのサイト文と、北欧の条件に合わせた事例、2つの展示会を組み合わせた。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "読む人の条件に合わせた事例の書き方",
+    "source": {
+      "title": "Industrial B2B Expansion into the Nordic Region",
+      "url": "https://radner.dk/industrial-b2b-nordic-expansion/",
+      "publisher": "Radner",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1062",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "EU企業の売上の約2割はネット経由",
+    "summary": "EUの統計。EUROSTATの数字をまとめた記事によると、2024年のEU27か国の企業の売上に占めるネット受注は約19.5%（前年約19.1%）。アイルランドは約38%と高い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "受注のネット化は欧州でも進む",
+    "source": {
+      "title": "Europe B2B Ecommerce Statistics",
+      "url": "https://elogic.co/blog/europe-b2b-ecommerce-statistics/",
+      "publisher": "Elogic",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1063",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "EUでネット販売する企業は約4社に1社",
+    "summary": "EUの統計。EUROSTATをもとにした記事では、2024年にネットで販売したEUの企業は23.59%で、2014年の18.93%から増えた。全業種の数字で、製造業だけではない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネット販売する会社は増えている",
+    "source": {
+      "title": "Ecommerce in Europe: 2 out of every 10 euros come from the web",
+      "url": "https://www.modaes.com/global/markets/ecommerce-in-europe-2-out-of-every-10-euros-come-from-the-web-less-than-in-2019",
+      "publisher": "Modaes",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1064",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "フランス中小の売上の約12%がネット受注",
+    "summary": "フランスの統計。EUROSTATのデータをまとめたサイトによると、従業員10〜249人のフランスの中小企業の売上に占めるネット受注は、2024年に12.26%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中小のネット受注はどれくらいか",
+    "source": {
+      "title": "France - Share of enterprises turnover on e-commerce: SMEs",
+      "url": "https://tradingeconomics.com/france/share-of-enterprises-turnover-on-e-commerce-smes-10-249-persons-employed-without-financial-sector-eurostat-data.html",
+      "publisher": "Trading Economics",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1065",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "製造業のWeb受注はアイルランドが首位",
+    "summary": "EUの統計。Statistaの集計では、2024年に自社サイトで企業や役所から受注する製造業の割合は、EU27か国のうちアイルランドが1位だった。国によってWeb受注の進み方に差がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Webで受注する製造業の広がり",
+    "source": {
+      "title": "EU manufacturing enterprises making e-commerce sales by country",
+      "url": "https://www.statista.com/statistics/1302008/eu-manufacturing-enterprises-making-e-commerce-sales-by-country",
+      "publisher": "Statista",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1066",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "EU中小の7割強がデジタルの基本水準",
+    "summary": "EUの統計。EUROSTATによると、2025年にデジタル化の基本水準に届いたEUの中小企業は71%で、2030年目標の90%に約20ポイント足りない。大企業は96%。フィンランド94%、デンマーク92%。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中小のデジタル化はどこまで進んだか",
+    "source": {
+      "title": "Digitalisation in Europe – 2026 edition",
+      "url": "https://ec.europa.eu/eurostat/web/interactive-publications/digitalisation-2026",
+      "publisher": "Eurostat",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-1032",
+    "kind": "term",
+    "region": "overseas",
+    "title": "デジタル化の「基本水準」とは",
+    "summary": "EUの統計の言葉。EUROSTATの「基本水準」は、AI・SNS・クラウド・顧客管理・売上1%以上のネット販売など12の技術のうち4つ以上を使っていること。SNSや顧客管理も入る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな会社のデジタル化の目安",
+    "source": {
+      "title": "Towards Digital Decade targets for Europe",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Towards_Digital_Decade_targets_for_Europe",
+      "publisher": "Eurostat",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1796",
+    "kind": "success",
+    "region": "overseas",
+    "title": "若者にはInstagram・YouTube・TikTok",
+    "summary": "ドイツの専門人材の公的な窓口KOFAは、見習いの若者に届くのはInstagram、YouTube、TikTokで、TikTokでは楽しさのある短い動画が効くとまとめている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見習い募集の短い動画の作り方",
+    "source": {
+      "title": "Azubi-Recruiting über Social Media richtig gestalten",
+      "url": "https://www.kofa.de/mitarbeiter-finden/ausbildung/azubis-finden/azubi-rekrutierung-ueber-soziale-netzwerke/",
+      "publisher": "KOFA",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1797",
+    "kind": "success",
+    "region": "overseas",
+    "title": "屋根工事店が週3本の動画で応募",
+    "summary": "ドイツ・ヘッセン州の屋根工事の会社。公共放送によると、TikTokとInstagramに週3本動画を出し、人気の動画は15万回超再生。メッセージ経由で面接や実習の希望者が来た。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "現場の動画で若い応募者を集める",
+    "source": {
+      "title": "Wie Handwerksbetriebe mit TikTok und Instagram mehr Azubis gewinnen wollen",
+      "url": "https://www.hessenschau.de/wirtschaft/wie-handwerksbetriebe-mit-tiktok-und-instagram-mehr-azubis-gewinnen-wollen-v2,handwerksbetriebe-auf-tiktok-100.html",
+      "publisher": "hessenschau",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1798",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見習い本人と一緒に動画を作る",
+    "summary": "ドイツの中堅企業の例。マーケ誌によると、見習いの若者と一緒に動画を作る会社が増え、ある地方銀行は見習い7人でTikTokを運営しフォロワーが4万人超に。ある小売店は募集数を超える応募が来た。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手社員が主役の採用発信",
+    "source": {
+      "title": "Tiktok statt Stellenanzeige: Wie der Mittelstand von heute Azubis rekrutiert",
+      "url": "https://omr.com/de/daily/tiktok-statt-stellenanzeige-wie-der-mittelstand-von-heute-azubis-rekrutiert",
+      "publisher": "OMR",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1799",
+    "kind": "success",
+    "region": "overseas",
+    "title": "TikTokは短い予告、YouTubeは長い記録",
+    "summary": "ドイツ・ニーダーザクセン州の金属・電機の業界団体は、若者にはTikTokでは短い予告動画、YouTubeでは30分ほどの記録映像も見られると、媒体ごとに長さを変えるよう勧める。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "媒体ごとの動画の長さの使い分け",
+    "source": {
+      "title": "Wie Firmen mit Social Media Azubis gewinnen können",
+      "url": "https://niedersachsenmetall.de/aktuelles/wie-firmen-mit-social-media-azubis-gewinnen-koennen",
+      "publisher": "NiedersachsenMetall",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1800",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見習いの1日と入社後の流れを見せる",
+    "summary": "ドイツの人事の専門誌は、見習い募集の発信で人気なのは、見習いの1日の様子、先輩見習いの紹介、入社後の受け入れの流れだとまとめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見習いの1日を記事にする",
+    "source": {
+      "title": "Azubis gewinnen: Ausbildungsmarketing auf Social Media",
+      "url": "https://www.netzwerkq.de/fachbeitrag/social-media-im-ausbildungsmarketing/",
+      "publisher": "Netzwerk Q",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1801",
+    "kind": "success",
+    "region": "overseas",
+    "title": "採用動画は作り込まなくていい",
+    "summary": "オーストリアの支援会社は、見習い向けの動画は高い撮影費をかけなくてもよく、スマホで現場の本当の様子を撮る方が若者に届くと説く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "スマホで撮る採用動画",
+    "source": {
+      "title": "Ausbildungsmarketing: So gewinnen Sie Azubis",
+      "url": "https://www.imaos.at/ausbildungsmarketing-azubi-recruiting/",
+      "publisher": "imaos",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-801",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "SNSだけでは人は集まらない",
+    "summary": "ドイツの業界紙で専門家2人は、必要な技術者はSNSだけでは集まらず、まず「この会社で働きたい」と思える会社の姿（雇い主としての看板）を作ることが大事だと語った。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "雇い主として選ばれる会社の書き方",
+    "source": {
+      "title": "Fachkräftemangel: Recruiting über Social Media allein ist nicht die Lösung",
+      "url": "https://www.verkehrsrundschau.de/nachrichten/transport-logistik/fachkraeftemangel-recruiting-ueber-social-media-allein-ist-nicht-die-loesung-3408468",
+      "publisher": "VerkehrsRundschau",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "buyer-892",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "求職者は求人サイトの次に会社の発信を見る",
+    "summary": "ドイツの中堅企業の採用の解説では、一番使われるのは求人サイトで、その次が会社自身のサイトなどの発信、そしてSNSとされる。求人サイトから会社サイトへ見に来る人を逃さない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "求人サイトから来た人が読む採用ページ",
+    "source": {
+      "title": "Fachkräftemangel in mittelständischen Unternehmen Teil 1",
+      "url": "https://www.ibisworld.com/blog/fachkraeftemangel-in-mittelstaendischen-unternehmen-teil-1/49/1126/",
+      "publisher": "IBISWorld",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1802",
+    "kind": "success",
+    "region": "overseas",
+    "title": "SNS採用で難しい求人に100件超の応募",
+    "summary": "ドイツ・バイエルン州の商工会議所の中小向け冊子。SNSで狙った人材に呼びかける方法を紹介し、埋まりにくかった求人にSNS経由で100件を超える応募が来た例を載せている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "埋まらない求人をSNSで出し直す",
+    "source": {
+      "title": "Ihr und Wir",
+      "url": "https://www.bihk.de/fileadmin/eigene_dateien/bihk/Teaserbilder/Sonstiges/Digitalisierung/Ihr_und_Wir.pdf",
+      "publisher": "BIHK",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-802",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "英国の若者で製造業に就きたいのは4%",
+    "summary": "英国の調査。ネスレが2026年2月に16〜24歳2000人に聞くと、製造業の仕事を面白いと思う人は59%いたのに、目指すのは4%だけ。英国で今もものづくりをしていると思う人は28%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若者に工場の仕事が見えていない",
+    "source": {
+      "title": "Britain’s £518 billion manufacturing sector invisible to TikTok generation",
+      "url": "https://www.nestle.co.uk/en-gb/media/pressreleases/allpressreleases/britains-manufacturing-sector",
+      "publisher": "Nestlé UK",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "buyer-893",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "若者の進路に一番影響するのはSNS",
+    "summary": "英国の調査。同じネスレの調査を業界誌が報じ、若者はTikTok・YouTube・Instagramで仕事のきっかけを探し、SNSが将来の進路に最も影響していると伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若者が見る場所に工場の仕事を出す",
+    "source": {
+      "title": "UK manufacturing is facing a serious Gen Z skills shortage report from Nestle finds",
+      "url": "https://www.foodmanufacture.co.uk/Article/2026/02/26/uk-manufacturing-is-facing-a-serious-gen-z-skills-shortage-report-from-nestle-finds/",
+      "publisher": "Food Manufacture",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "success-1803",
+    "kind": "success",
+    "region": "overseas",
+    "title": "SNSは古い工場の印象を変えられる",
+    "summary": "英国の製造業団体Make UKは意見書で、SNSは製造業の古い印象をくつがえす力があり、特に若い女性に効くとした。知られていない見習い制度を見せる場にもなるとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "女性や若者に工場の今を伝える",
+    "source": {
+      "title": "Young People and Work Report: Call for Evidence – Make UK response",
+      "url": "https://makeuk.org/docs/young-people-and-work-report-call-evidence-make-uk-responsepdf/download?attachment=",
+      "publisher": "Make UK",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-803",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "英国企業の4割は若者に何も働きかけない",
+    "summary": "英国の調査。WorldSkills UKの依頼の報告では、雇い主の41%が若者に製造業の仕事を考えてもらう取り組みを何もしていなかった。発信しないと候補にも入らない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若者に向けて会社ができる小さな発信",
+    "source": {
+      "title": "UK falling short of excellence in manufacturing",
+      "url": "https://www.worldskillsuk.org/insights/uk-falling-short-of-excellence-in-manufacturing/",
+      "publisher": "WorldSkills UK",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-804",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "若者は技術職に興味があっても会社を知らない",
+    "summary": "英国の若手育成の団体は、技術者を目指す若者は増えているのに、中小の製造業の会社名をほとんど知らないと指摘。雇い主として知られていないことが人手不足の一因とする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "地元の若者に会社を知ってもらう",
+    "source": {
+      "title": "Engineering skills shortage: why low employer brand awareness is costing SMEs",
+      "url": "https://www.nextgenmakers.co.uk/engineering-skills-shortage-why-low-employer-brand-awareness-is-costing-smes/",
+      "publisher": "Next Gen Makers",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-805",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "若者の5人に3人は製造業を考えない",
+    "summary": "英国の業界誌は、若者の5人に3人が製造業の仕事を考えにくいという調査を報じた。仕事の中身が伝わっていないことが壁になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場の仕事の中身を伝える記事",
+    "source": {
+      "title": "3 in 5 young people are unlikely to consider manufacturing careers",
+      "url": "https://www.themanufacturer.com/articles/3-in-5-young-people-are-unlikely-to-consider-manufacturing-careers/",
+      "publisher": "The Manufacturer",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1067",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "SNSの年齢規制で若者への届け方が変わる",
+    "summary": "英国の業界誌は、子どものSNS利用を制限する動きが製造業の人材確保にどう響くかを論じた。SNSだけに頼らず、学校や保護者に届く発信も必要になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "保護者や先生に読まれる採用記事",
+    "source": {
+      "title": "What the social media ban means for the UK manufacturing talent pool",
+      "url": "https://www.manufacturingmanagement.co.uk/content/in-depth/what-the-social-media-ban-means-for-the-uk-manufacturing-talent-pool",
+      "publisher": "Manufacturing Management",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-806",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "製造業はSNS世代の人材争いで負けている",
+    "summary": "英国の人材紹介会社は、SNSで育った世代に製造業の仕事が見えておらず、他業界との人材の取り合いで負けていると論じ、現場の姿を発信する必要を説いた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "SNS世代に届く職場紹介",
+    "source": {
+      "title": "The Social Media Generation: Why Manufacturing Is Losing the Talent Battle",
+      "url": "https://www.morepeople.co.uk/blog/2026/04/the-social-media-generation-why-manufacturing-is-losing-the-talent-battle",
+      "publisher": "Morepeople",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "trend-1068",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "仏の工業系中小2055人に聞いた未来",
+    "summary": "フランスの調査。公的金融機関Bpifranceの研究所が2026年、工業系の中小・中堅の経営者2055人に聞き32人に面談。7つの打ち手の1つにデジタルを変化の手段として挙げた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場のデジタル化の打ち手",
+    "source": {
+      "title": "L'avenir de l'industrie - Regards des dirigeants de PME-ETI",
+      "url": "https://lelab.bpifrance.fr/storage/sites/31/2026/10/Lavenir-de-lindustrie-Regards-des-dirigeants-de-PME-ETI.pdf",
+      "publisher": "Bpifrance Le Lab",
+      "date": "2026-10"
+    }
+  },
+  {
+    "id": "pain-807",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "仏の経営者の45%はデジタル化の絵がない",
+    "summary": "フランスの調査。Bpifranceの研究所が中小・中堅の経営者1814人に聞くと、45%がデジタル化の考えがはっきりせず、考えがある人の63%も進める手順を持っていなかった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発信の手順を1枚に書く",
+    "source": {
+      "title": "Les dirigeants face au digital",
+      "url": "https://lelab.bpifrance.fr/get_pdf/1022/etude_dirigeantsfaceaudigital_bpifrancelelab.pdf",
+      "publisher": "Bpifrance Le Lab",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1804",
+    "kind": "success",
+    "region": "overseas",
+    "title": "あちこちに出るより筋の通った一つの形",
+    "summary": "フランスの公的機関Bpifranceの相談部門は、中小のデジタル発信はどこにでも出たり道具を増やしたりすることではなく、ばらばらの施策を測れる一つの形にまとめることだとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発信を一本にまとめる",
+    "source": {
+      "title": "Missions de conseil pour PME et ETI",
+      "url": "https://conseil.bpifrance.fr/publications",
+      "publisher": "Bpifrance Conseil",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1805",
+    "kind": "success",
+    "region": "overseas",
+    "title": "仏の工業系中小の4つの手",
+    "summary": "フランスの工業系中小向けの支援会社は、効く4つの手として、サイトの点検、検索対策、LinkedInでの営業、顧客管理の仕組みを挙げる（会社の解説）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場のWeb発信の4つの手",
+    "source": {
+      "title": "Marketing digital PME industrielle : 4 leviers qui rapportent",
+      "url": "https://sell-expert.fr/marketing-digital-pme-industrielle-guide/",
+      "publisher": "Sell Expert",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-808",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "スイスの中小でサイトを持つのは36%",
+    "summary": "スイスの調査。電話帳会社localsearchと大学の2025年の調査では、調べた中小のうち自社サイトを持つのは36%だけ。一方、住民の82%はネットで調べたいと答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "サイトが無いと選ばれない理由",
+    "source": {
+      "title": "Schweizer KMU verschenken grosses digitales Marktpotenzial",
+      "url": "https://www.localsearch.ch/de/medien-news/ch-kmu-verschenken-digitales-marktpotenzial/",
+      "publisher": "localsearch",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1069",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "スイスの中小は発信へのAI活用がまだ",
+    "summary": "スイスの調査。localsearchと大学の「KMU Digital Pulse」2026年版は、発信にAIを使う段階に、スイスの中小はまだ来ていないと結論づけた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIで記事作りを始める最初の一歩",
+    "source": {
+      "title": "Studienreihe «KMU Digital Pulse»",
+      "url": "https://www.localsearch.ch/de/kmu-studie/",
+      "publisher": "localsearch",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-809",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "工業系はデジタル発信の予算が特に少ない",
+    "summary": "オーストリアの調査。経済会議所（WKO）などの2017年の調査で、中小がデジタル発信にかけるのは年売上の10%未満で、工業系は特に少なかった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "少ない予算でできる発信",
+    "source": {
+      "title": "Digitale Transformation von KMUs in Österreich",
+      "url": "https://www.wko.at/oe/information-consulting/unternehmensberatung-buchhaltung-informationstechnologie/digitale-transformation-kmu.pdf",
+      "publisher": "WKO",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "pain-810",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "生産は進んでも販売のデジタル化は遅れる",
+    "summary": "オーストリアの調査。ウィーンの大学の中小調査では、生産・発信・販売でデジタル化の進み方がばらばらだった。工場の中は進んでも、外への発信が遅れがち。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場の中のデジタル化を外に伝える",
+    "source": {
+      "title": "Digitale Transformation KMU (IDS-Studie)",
+      "url": "https://www.fh-wien.ac.at/wp-content/uploads/2022/06/FHWien_IDS-Studie_DigitaleTransformation-KMU.pdf",
+      "publisher": "FHWien der WKW",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "success-1806",
+    "kind": "success",
+    "region": "overseas",
+    "title": "顧客管理の道具で事務の生産性50%増",
+    "summary": "英国の公的支援Made Smarterの例。窓・ドアの製造会社が顧客対応と販売の道具を入れ、生産と出荷もつないだ結果、事務の生産性が50%上がり、営業に使える時間が増えた。",
+    "industries": [
+      "建材・金物"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせ管理を楽にする道具",
+    "source": {
+      "title": "The Impact of Made Smarter",
+      "url": "https://www.madesmarter.uk/resources/blog-the-impact-of-made-smarter/",
+      "publisher": "Made Smarter",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1807",
+    "kind": "success",
+    "region": "overseas",
+    "title": "ドイツの支援拠点は中小に無料で相談",
+    "summary": "ドイツの「Mittelstand-Digital」の拠点は、国の経済省の資金で中小が無料で使える。日本の公的な相談窓口と同じく、Web発信も含めた相談先になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "公的な相談窓口の上手な使い方",
+    "source": {
+      "title": "Mittelstand-Digital Zentrum Fokus Mensch: CMS",
+      "url": "https://www.digitalzentrum-fokus-mensch.de/definition/cms",
+      "publisher": "Mittelstand-Digital Zentrum Fokus Mensch",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1808",
+    "kind": "success",
+    "region": "overseas",
+    "title": "移動する工場で中小に出向く支援",
+    "summary": "ドイツの支援拠点「Mittelstand-Digital Zentrum Hannover」は、移動式の工場を持って中小の現場へ出向き、組立から品質検査までの段階ごとの支援を用意している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "現場を見せる発信の参考",
+    "source": {
+      "title": "WSU 2 Kurzsteckbrief",
+      "url": "https://metropolregion.hamburg.de/resource/blob/12906/524d36fae19d78f814ed940ebeaeac97/wsu-2-kurzsteckbrief-2-3-1-data.pdf",
+      "publisher": "Metropolregion Hamburg",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1809",
+    "kind": "success",
+    "region": "overseas",
+    "title": "英独で同時に広報して名前を広める",
+    "summary": "英国とドイツで活動するB2B支援会社の事例。両国で広報を同時に進め、技術ニュースの動画は110本で5.5万回超見られた（支援会社の発表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "技術ニュースを動画で出す",
+    "source": {
+      "title": "Our Results - Case Studies and Testimonials",
+      "url": "https://www.napierb2b.com/our-results/",
+      "publisher": "Napier B2B",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1810",
+    "kind": "success",
+    "region": "overseas",
+    "title": "商談の合間も名前を思い出してもらう",
+    "summary": "欧州と米国の技術系企業のLinkedInの使い方を比べた記事。大手の例として、LinkedInを商談と商談の間に会社の存在を思い出してもらう場として使う姿を紹介した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "商談の合間に読まれる発信",
+    "source": {
+      "title": "Global B2B Engineering Marketing: EU vs US LinkedIn Playbook",
+      "url": "https://pettauer.net/en/global-b2b-engineering-linkedin-strategy-eu-vs-us/",
+      "publisher": "pettauer.net",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-894",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "取引先のLinkedInが信頼の強さに影響",
+    "summary": "英国の研究。2020年の英国のB2Bの客の調査では、取引先がLinkedInで発信していることが、関係の強さを表す4つの指標によい影響を与えていた（解説記事より）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発信が取引先の信頼につながる",
+    "source": {
+      "title": "LinkedIn B2B Marketing for Manufacturers",
+      "url": "https://www.axxen.ca/blogs/linkedin-b2b-marketing-industrial",
+      "publisher": "Axxen",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "buyer-895",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "B2B買い手は対面・電話・ネットを3等分",
+    "summary": "世界の調査。McKinseyが2024年に13か国の意思決定者約4,000人に聞くと、買い手は対面・リモート・ネットでの自己完結をほぼ3分の1ずつ使う。国・業種・会社の大きさが違っても同じ傾向。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "電話・来社・HP、どこから来ても困らない備え",
+    "source": {
+      "title": "Five fundamental truths: How B2B winners keep growing",
+      "url": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/five-fundamental-truths-how-b2b-winners-keep-growing",
+      "publisher": "McKinsey & Company",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "buyer-896",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "手間の大きい買い物ほど対面で決めたい",
+    "summary": "世界の調査。McKinseyの2024年B2B Pulseでは、手間のかかる大きな買い物について約40%が従来型（対面など）のやり取りを好むと答えた。初めての特注品こそ、会って話せる入口が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "初めての特注は「まず相談」の入口を作る",
+    "source": {
+      "title": "Five fundamental truths: How B2B winners keep growing",
+      "url": "https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/five-fundamental-truths-how-b2b-winners-keep-growing",
+      "publisher": "McKinsey & Company",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1070",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "買い手が使う接点は平均10チャネルに",
+    "summary": "世界の調査。McKinseyの第9回B2B Pulseを紹介した記事によると、買い手が購買の途中で使う接点は平均10チャネルで、2016年の5から倍に増えた。HP・メール・電話・展示会の話をそろえることが大切。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "HPと営業で言うことをそろえる理由",
+    "source": {
+      "title": "McKinsey & Company’s ninth global B2B Pulse Survey",
+      "url": "https://europeanbusinessmagazine.com/business/mckinsey-companys-ninth-global-b2b-pulse-survey/",
+      "publisher": "European Business Magazine",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1071",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "機械の補修部品はネットで直接注文の時代",
+    "summary": "欧州の記事。McKinseyのB2B Pulseを紹介し、エネルギー・素材・物流のような昔ながらの業種でも3分の1ずつの使い分けが当てはまり、産業機械の補修部品はネットで直接注文されるようになったと伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "補修部品・再製作の受付をHPに置く",
+    "source": {
+      "title": "McKinsey & Company’s ninth global B2B Pulse Survey",
+      "url": "https://europeanbusinessmagazine.com/business/mckinsey-companys-ninth-global-b2b-pulse-survey/",
+      "publisher": "European Business Magazine",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "buyer-897",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "高額の注文もネット経由で決める人が増加",
+    "summary": "米国の記事。McKinseyの調査を紹介し、1回50万ドル超の注文でもネットの自己完結や営業とのオンライン面談で決めてよいB2B買い手が39%と、2年前の28%から増えたと伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "大口の相談もオンラインで受けられる形に",
+    "source": {
+      "title": "More B2B buyers are willing to spend big bucks per online order",
+      "url": "https://www.digitalcommerce360.com/2024/09/12/more-b2b-buyers-are-willing-to-spend-big-bucks-per-online-order/",
+      "publisher": "Digital Commerce 360",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "buyer-898",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "調べる段階でも営業と話したい人は多い",
+    "summary": "世界の調査。McKinseyの調査では、新しい製品やサービスを調べているとき、営業担当と話すのが役に立つと答えたB2B買い手が76%いた。ネットで調べても、詳しい人に聞ける窓口が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「技術者に直接聞ける」窓口の書き方",
+    "source": {
+      "title": "When B2B buyers want to go digital—and when they don’t",
+      "url": "https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/when-b2b-buyers-want-to-go-digital-and-when-they-dont",
+      "publisher": "McKinsey & Company",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1072",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米自動車業界、北米の仕入れ先を重視へ",
+    "summary": "米国の調査。Thomasが2025年2月に出した自動車業界の調査では、経営層の約85%が2025年は北米のサプライヤーにより頼ると答え、41%が一部の工程を国内に戻す予定とした。近くの仕入れ先が見直されている。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "近くの加工先が選ばれる理由を書く",
+    "source": {
+      "title": "Nearly 85% Of Auto Executives Will Rely More Heavily On American Suppliers In 2025",
+      "url": "https://stocktitan.net/news/XMTR/nearly-85-of-auto-executives-will-rely-more-heavily-on-american-xdx1396mq20u.html",
+      "publisher": "Thomas（Xometry）",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "trend-1073",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "切削・板金・塗装・プレスの依頼が急増",
+    "summary": "米国の分析。Thomasの2025年報告を紹介した記事によると、切削・製缶板金・塗装・プレス・樹脂成形の加工サービスを探す動きが大きく伸びた。伸び率が高いのは軍需品、自動化設備、ロボット、試作サービス。",
+    "industries": [
+      "切削加工",
+      "板金",
+      "塗装",
+      "プレス",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "加工サービス名をページの見出しにする",
+    "source": {
+      "title": "Industrial Sourcing Behavior Shifts in 2025, Signaling Strategic Imperatives for Distributors",
+      "url": "https://distributionstrategy.com/industrial-sourcing-behavior-shifts-in-2025-signaling-strategic-imperatives-for-distributors",
+      "publisher": "Distribution Strategy Group",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "trend-1074",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "2025年上期は金属加工サービスが上位",
+    "summary": "米国の分析。Thomasの2025年上期報告を紹介した記事によると、非常用電源、軍需品、電池の調達が急増し、サービスでは金属加工（製缶・板金など）が最も探された分野の一つだった。",
+    "industries": [
+      "金属加工",
+      "板金",
+      "製缶"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "電源・電池関連の部品加工を受ける書き方",
+    "source": {
+      "title": "U.S. Industrial Sourcing Surges for Power Generators, Military Gear, and Batteries",
+      "url": "https://distributionstrategy.com/u-s-industrial-sourcing-surges-for-power-generators-military-gear-and-batteries",
+      "publisher": "Distribution Strategy Group",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1075",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "2026年5月、切削サービスの調達が倍増",
+    "summary": "米国の分析。Thomasの2026年5月の調達報告を紹介した記事によると、切削（カッティング）サービスが全分類で一番伸び、調達の動きが前年同月比113%増えた。買い手は自動化と供給能力への支出を増やしている。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「切る」加工の対応範囲を表で見せる",
+    "source": {
+      "title": "Industrial sourcing activity climbs in May as buyers boost spending on manufacturing automation and supply chain capacity",
+      "url": "https://distributionstrategy.com/2026/06/industrial-sourcing-activity-climbs-in-may-as-buyers-boost-spending-on-manufacturing-automation-and-supply-chain-capacity/",
+      "publisher": "Distribution Strategy Group",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-1076",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "航空宇宙の購買はAIで見積比較を急ぐ",
+    "summary": "米国・欧州の調査。Xometryが2025年12月に米欧の製造業リーダー300人に聞くと、航空宇宙・防衛の85%が価格の見える化や調達の効率化にAIを優先し、一般の産業（63%）より高かった。",
+    "industries": [
+      "航空宇宙"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "AIに読まれやすい対応材料・公差の書き方",
+    "source": {
+      "title": "Aerospace & Defense Leaders Prioritize AI-Enabled Sourcing to Strengthen Domestic Supply Chains and Support Program Growth",
+      "url": "https://investors.xometry.com/news-releases/news-release-details/aerospace-defense-leaders-prioritize-ai-enabled-sourcing",
+      "publisher": "Xometry",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "pain-811",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "航空宇宙の6割が大きな納期遅れを経験",
+    "summary": "米国・欧州の調査。Xometryの2026年2月発表の調査では、航空宇宙・防衛の60%が過去1年に仕入れ先の大きな遅れを経験し、90%が国内の調達能力を成功に欠かせないと答えた。納期を守る力は強い売りになる。",
+    "industries": [
+      "航空宇宙"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "納期遵守の実績を数字で載せる",
+    "source": {
+      "title": "Aerospace and defense manufacturers turn to AI sourcing",
+      "url": "https://www.digitalcommerce360.com/2026/02/09/aerospace-defense-manufacturers-ai-sourcing/",
+      "publisher": "Digital Commerce 360",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-1077",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "2026年の製造業の鍵はAIと俊敏さ",
+    "summary": "米国の調査。Xometryは2025年8月に300人へ調査した初の「製造業の見通し」で、2026年の競争力を左右する一番の流れとしてAIと俊敏さ（素早く対応する力）を挙げた。小回りは町工場の武器になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "小さな会社の「速さ」を伝える記事",
+    "source": {
+      "title": "Press Release: AI and Agility Top the List of Critical Trends that Will Define Manufacturing Competitiveness in 2026",
+      "url": "https://www.itiger.com/news/2565817156",
+      "publisher": "Xometry（プレスリリース）",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "trend-1078",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米製造業の8割超が国内回帰を検討",
+    "summary": "北米の調査。Thomasが2021年に出した報告では、北米の製造業の83%が国内回帰（リショアリング）の可能性が高いと答え、2020年3月の54%から増えた。542件の有効回答による。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "国内で頼める加工先が見直される理由",
+    "source": {
+      "title": "NEW REPORT: Reshoring Could Drive $443 Billion in U.S. Economic Value Over Next 12 Months",
+      "url": "https://www.businesswire.com/news/home/20210602005529/en/NEW-REPORT-Reshoring-Could-Drive-443-Billion-in-U.S.-Economic-Value-Over-Next-12-Months",
+      "publisher": "Thomas",
+      "date": "2021-06"
+    }
+  },
+  {
+    "id": "pain-812",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "海外の仕入れ先は技術相談と時差が壁",
+    "summary": "北米の調査。Thomasの2020年の調査では、製造業の64%が生産・調達を北米に戻す可能性が高いと答えた。理由に、海外の仕入れ先の技術サポートの受けにくさや時差の不便さが挙がった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「すぐ相談できる距離」を強みとして書く",
+    "source": {
+      "title": "Survey: 64% of Manufacturers Say Reshoring is Likely",
+      "url": "https://www.ohiomfg.com/our-communities/survey-64-of-manufacturers-say-reshoring-is-likely/",
+      "publisher": "Ohio Manufacturers' Association",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "trend-1079",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "Thomas上の調達依頼額は3倍近くに",
+    "summary": "米国の報道。Thomasによると、同社の場で直近12か月に出された調達依頼は2,040億ドルを超え、2018年の690億ドルから大きく増えた。ネットで加工先を探す買い手が増えている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ネットで加工先を探す人に届く書き方",
+    "source": {
+      "title": "Reshoring Could Add $443B to the US Economy",
+      "url": "https://www.sdcexec.com/sourcing-procurement/news/21452481/thomasnetcom-reshoring-could-add-443b-to-the-us-economy",
+      "publisher": "Supply & Demand Chain Executive",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "pain-813",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "開発の壁は供給網から景気と人手へ",
+    "summary": "米国の調査。Protolabsが2024年4月に出した、技術者・設計者・開発者700人超への調査では、製品開発の妨げとして景気と人手不足が供給網の問題を上回った。人手の足りない発注側を助ける提案が効く。",
+    "industries": [
+      "機械部品",
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "設計の手間を減らす提案を記事にする",
+    "source": {
+      "title": "Product Development Outlook: Economy, Workforce Overtake Supply Chain Challenges as Key Innovation Roadblocks",
+      "url": "https://www.businesswire.com/news/home/20240409070008/en",
+      "publisher": "Protolabs",
+      "date": "2024-04"
+    }
+  },
+  {
+    "id": "buyer-899",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "製造現場は今も「速さ」を最重視",
+    "summary": "英国の報道。Protolabsの調査結果として、製造業ではいまも速さ（短納期）への要求が最も強いと伝えた。試作や小ロットでは、納期の目安を最初に示すことが選ばれる条件になる。",
+    "industries": [
+      "切削加工",
+      "樹脂成形",
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "納期の目安を加工別に一覧で出す",
+    "source": {
+      "title": "Protolabs survey reveals the need for speed still dominates manufacturing",
+      "url": "https://manufacturingmanagement.co.uk/content/news/protolabs-survey-reveals-the-need-for-speed-still-dominates-manufacturing",
+      "publisher": "Manufacturing Management",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "trend-1080",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "3Dプリントは新しい用途で伸びている",
+    "summary": "米国の報告。Protolabsの2024年6月の3Dプリント報告は、新しい使い道が広がることで業界の成長が速まっていると伝えた。試作だけでなく最終部品への利用を相談される場面が増える。",
+    "industries": [
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "3Dプリントで作れる最終部品の例",
+    "source": {
+      "title": "Protolabs 3D Printing Report Reveals Accelerated Industry Growth Through Emerging Applications",
+      "url": "https://www.businesswire.com/news/home/20240603252174/en",
+      "publisher": "Protolabs",
+      "date": "2024-06"
+    }
+  },
+  {
+    "id": "pain-814",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "設計者の多くが特注部品の入手に苦労",
+    "summary": "米国の調査。機械設計誌Machine Designの読者調査では、設計者の85%が特注部品を使い、59%は半年に1回以上設計に入れる。約3分の1は、特注は標準品より「ずっと」手に入れにくいと答えた。",
+    "industries": [
+      "機械部品",
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "特注部品を頼むときの流れを図で示す",
+    "source": {
+      "title": "Engineers and custom components: A reader survey",
+      "url": "https://www.machinedesign.com/community/engineers-and-custom-components-reader-survey",
+      "publisher": "Machine Design",
+      "date": null
+    }
   }
 ];
 
-export const MFG_ITEMS: MfgItem[] = [...MFG_PART_0, ...MFG_PART_1, ...MFG_PART_2, ...MFG_PART_3, ...MFG_PART_4, ...MFG_PART_5, ...MFG_PART_6];
+const MFG_PART_7: MfgItem[] = [
+  {
+    "id": "pain-815",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "加工先が設計に意見をくれない不満",
+    "summary": "米国の調査。技術者・設計者・購買250人への調査（Fast Radius）では、47%が特注の加工先は部品設計への助言をほとんど、または全くくれないと答えた。図面への一言提案は差になる。",
+    "industries": [
+      "機械部品",
+      "切削加工",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "図面に一言そえる「加工しやすさ提案」",
+    "source": {
+      "title": "New Data Reveals Engineers’ Top Pain Points with Custom Manufacturing",
+      "url": "https://www.engineering.com/?p=44087",
+      "publisher": "Engineering.com",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-816",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "技術者は週4時間以上を調達に取られる",
+    "summary": "米国の調査。FictivとMISUMIの2026年版報告では、技術者の約83%が週4時間以上を仕入れ先探し・見積・品質管理に使っていると答えた。設計者の手間を減らせる加工先は喜ばれる。",
+    "industries": [
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "見積を早く楽にする受付フォームの工夫",
+    "source": {
+      "title": "2026 State of Manufacturing & Supply Chain Report",
+      "url": "https://www.fictiv.com/somscreport",
+      "publisher": "Fictiv・MISUMI",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-900",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "調達を任せられれば設計が進むと93%",
+    "summary": "米国の調査。FictivとMISUMIの2026年版報告では、93%が調達を外に任せられれば技術者の生産性が上がると答え、77%は貿易の規則が複雑で外の専門家なしでは扱えないとした。丸ごと任せられる相手が求められる。",
+    "industries": [
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "材料手配から仕上げまで一括で受ける説明",
+    "source": {
+      "title": "2026 supply chain report",
+      "url": "https://us.misumi-ec.com/blog/?p=16401",
+      "publisher": "MISUMI USA",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-817",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "人手不足で供給網を回しきれない",
+    "summary": "米国の調査。Fictivの2025年版報告（254人）では、77%が人や資源の不足で供給網をうまく管理できないと答え、68%が国内生産への切り替えを主な策にしていた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "発注側の手間を減らす、と書く",
+    "source": {
+      "title": "2025 State of Manufacturing & Supply Chain Report",
+      "url": "https://industrytoday.com/?p=53701",
+      "publisher": "Industry Today",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1081",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "国内生産の強化は3年連続の最優先策",
+    "summary": "米国の調査。Fictivの2024年版報告では、米国内での生産を増やすことが3年続けて最も多い供給網の策（66%）だったが、前年より大きく下がった。国内回帰の勢いは落ち着きつつある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "国内回帰の流れと小さな工場の関係",
+    "source": {
+      "title": "Fictiv's 2024 State of Manufacturing Report Shows Industry at Critical Point",
+      "url": "https://www.digitalengineering247.com/article/fictivs-2024-state-of-manufacturing-report-shows-industry-at-critical-point",
+      "publisher": "Digital Engineering 24/7",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "pain-818",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "設計と調達の連携に不満が多い",
+    "summary": "米国の調査。Fictivの2022年版報告では、ほぼ75%が設計部門と調達部門の協力を改善すべきだと答えた。設計者と購買の両方に向けて、同じページで情報を出すと話が早い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "設計者向けと購買向けの情報を分けて書く",
+    "source": {
+      "title": "Fictiv Releases Annual State of Manufacturing Report",
+      "url": "https://www.digitalengineering247.com/article/fictiv-releases-annual-state-of-manufacturing-report",
+      "publisher": "Digital Engineering 24/7",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "buyer-901",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "3D CADがすぐ取れないと買わない",
+    "summary": "米国の調査。EETechが自社読者の技術者750人に聞いた調査では、資料がダウンロードできないサイトから技術者は離れやすく、3D CADがすぐ取れなければ買わないという声もあった。",
+    "industries": [
+      "電子部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "図面・データの見本を置くページ作り",
+    "source": {
+      "title": "What Engineers Actually Do Before They Buy",
+      "url": "https://www.eetech.com/research/what-engineers-actually-do-before-they-buy",
+      "publisher": "EETech",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-902",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "技術者の84%は決定者か強い影響者",
+    "summary": "米国の調査。EETechの2026年の購買行動調査（技術者750人）では、84%が購入の決定者か強い影響者で、47%は主たる決定者だった。HPを読む設計者が実は発注先を決めている。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "設計者に向けて書く記事が効く理由",
+    "source": {
+      "title": "BuyerJourney Study 2026",
+      "url": "https://www.eetech.com/buyer-journey-study-2026",
+      "publisher": "EETech",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-903",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "承認業者リストでも新規は入れる",
+    "summary": "米国の調査。EETechの技術者750人調査では、62%が承認業者リストの下で働くが、完全に締め出されているのは5%だけ。残る57%は理由を示せば新しい業者を足せる。",
+    "industries": [
+      "電子部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "新規の加工先として選ばれる「理由」を書く",
+    "source": {
+      "title": "What Engineers Actually Do Before They Buy",
+      "url": "https://www.eetech.com/research/what-engineers-actually-do-before-they-buy",
+      "publisher": "EETech",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-904",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "製品ページから資料へ直接リンクを",
+    "summary": "米国の調査。EETechのブログによると、同社の年次調査で技術者の87%が製品ページからデータシートへの直接リンクを求めた。資料を探させないことが、問い合わせの前の信頼になる。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "加工事例ページに仕様表を必ず付ける",
+    "source": {
+      "title": "We Run the Largest Engineering Community in the World. Here Is What That Means for Your Website",
+      "url": "https://www.eetech.com/blog/we-run-the-largest-engineering-community-in-the-world-here-is-what-that-means-for-your-website",
+      "publisher": "EETech",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1082",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "技術者4,500人に聞く情報の集め方",
+    "summary": "米国の調査。EETechの2024年版エンジニアリング・インサイト報告は、4,500人超の技術者の回答をもとに、情報の集め方、購入の決め方、設計でのAI利用の広がりをまとめた。第8回目の調査。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "技術者がどこで情報を集めるか",
+    "source": {
+      "title": "Access EETech’s 2024 Engineering Insights Report",
+      "url": "https://eetech.com/press/2024-engineering-insights-report/",
+      "publisher": "EETech",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "buyer-905",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "欧州の部品購買は価格と在庫で決まる",
+    "summary": "欧州の調査。Farnellが2024年5〜7月に欧州の買い手941人に聞くと、業者選びの主な決め手は価格と在庫（すぐ手に入るか）だった。手ごろさと確実に届くことが競争力になる。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "在庫材料と即納できる範囲を見せる",
+    "source": {
+      "title": "Farnell releases results from inaugural Buyer Survey",
+      "url": "https://newelectronics.co.uk/content/news/farnell-releases-results-from-inaugural-buyer-survey",
+      "publisher": "New Electronics",
+      "date": "2025-03"
+    }
+  },
+  {
+    "id": "buyer-906",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "見積1社で決める買い手は1割だけ",
+    "summary": "欧州の調査。Farnellの2024年の買い手調査では、大半が3社以上から見積を取り、1社の見積で満足するのは10%だけだった。相見積が前提なので、比べやすい見積の出し方が大切。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "相見積で選ばれる見積書の書き方",
+    "source": {
+      "title": "Executive Summary（Buyer Survey）",
+      "url": "https://uk.farnell.com/buyer-survey",
+      "publisher": "Farnell",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-907",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "条件が良くなければ同じ業者を続けない",
+    "summary": "欧州の調査。Farnellの買い手調査のまとめでは、ずっと良い条件を出し続けない限り、1つの業者に忠実な買い手はまれだとした。リピートには、毎回の対応の良さが要る。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "リピートが続く会社がしていること",
+    "source": {
+      "title": "Farnell inaugural Buyer Survey results",
+      "url": "https://www.controlsdrivesautomation.com/Farnell-inaugural-Buyer-Survey-results",
+      "publisher": "Controls, Drives & Automation",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-819",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "部品の入手性で設計を決める時代",
+    "summary": "世界の調査。Avnetが2021年に技術者530人に聞くと、64%が好みより部品の入手しやすさで設計するようになったと答えた。手に入る材料で作れる提案は設計者に喜ばれる。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "手に入りやすい材料での代替提案",
+    "source": {
+      "title": "Chip Crunch Changes How Engineers Design",
+      "url": "https://www.machinedesign.com/automation-iiot/article/21235166/chip-crunch-changes-how-engineers-design",
+      "publisher": "Machine Design",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "buyer-908",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "部品がないとき技術者はどう動くか",
+    "summary": "世界の調査。Avnetの2021年調査では、設計した部品が手に入らないとき、基板の再設計55%、性能の良いピン互換品53%、そのまま置き換えられる品49%で対応していた。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "代替品の相談にのれることを書く",
+    "source": {
+      "title": "Shortages inflict ripple effect on product design",
+      "url": "https://www.electronicspecifier.com/news/shortages-inflict-ripple-effect-on-product-design/",
+      "publisher": "Electronic Specifier",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "buyer-909",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "承認リストの外にも調達先を探す",
+    "summary": "世界の調査。Avnetが2022年に技術者1,605人に聞くと、35%が別の調達先を探し、23%が社内の承認リストの外まで探していた。供給不安の時期は新しい業者に入るチャンス。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「急ぎの代わり」を受ける窓口",
+    "source": {
+      "title": "Avnet Insights Survey Indicates Chip Shortages Will Continue",
+      "url": "https://iconnect007.com/article/131080/avnet-insights-survey-indicates-chip-shortages-will-continue-explores-impact-on-product-design/131083/smt",
+      "publisher": "I-Connect007",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "pain-820",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "部品の入手性は今も技術者の最大の心配",
+    "summary": "世界の調査。Avnetの第3回調査（2023年）では、69%が部品の入手性を最大の心配に挙げ、対策の1位は今回も別の調達先を探すこと（32%）だった。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "供給の安定を強みとして伝える",
+    "source": {
+      "title": "Engineers Reach Turning Point with Navigating Component Availability",
+      "url": "https://www.foodlogistics.com/home/news/22880922/avnet-inc-engineers-reach-turning-point-with-navigating-component-availability",
+      "publisher": "Food Logistics",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-1083",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "スマート製造に改善予算の2割以上",
+    "summary": "米国の調査。Deloitteの2026年製造業の見通しを伝えた記事によると、同社の2025年調査で製造業の経営層600人の80%が、改善予算の20%以上をスマート製造に回す予定だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "小さな工場のデジタル化の始め方",
+    "source": {
+      "title": "What is Deloitte's Manufacturing Outlook for 2026?",
+      "url": "https://manufacturingdigital.com/news/deloitte-2026-manufacturing-outlook",
+      "publisher": "Manufacturing Digital",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "pain-821",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "最大の悩みは現場のスキル不足",
+    "summary": "米国の調査。Deloitteの2025年調査では、経営層の3分の1超が、働く人にスマート製造の技能を身につけさせることを最大の心配に挙げた。技術の伝え方は採用の記事にもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "技能の教え方を採用ページで見せる",
+    "source": {
+      "title": "Agentic AI & Talent Gaps: Deloitte on Manufacturing in 2026",
+      "url": "https://manufacturingdigital.com/news/agentic-ai-talent-gaps-deloitte-on-manufacturing-in-2026",
+      "publisher": "Manufacturing Digital",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-1084",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIは試しから本格導入の段階へ",
+    "summary": "米国の報道。Deloitteの2026年見通しは、製造業のAIが試験的な導入から本格的な活用に移りつつあり、成功には技術への投資と働く人の育て方を組み合わせることが要るとした。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "AIを使う工場の小さな一歩",
+    "source": {
+      "title": "5 Trends to Reshape Manufacturing Industry in 2026: Deloitte",
+      "url": "https://www.sdcexec.com/sourcing-procurement/manufacturing/news/22955448/deloitte-llp-5-trends-to-reshape-manufacturing-industry-in-2026-deloitte",
+      "publisher": "Supply & Demand Chain Executive",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-1085",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米製造業の85%が2026年は増収を見込む",
+    "summary": "米国の調査。会計・コンサル会社Sikichの2026年上期の製造業調査では、85%が2026年に売上が伸びると見込んでいた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "増収期に選ばれる加工先の準備",
+    "source": {
+      "title": "2026 H1 Manufacturing Industry Pulse Survey",
+      "url": "https://sikich.com/industries/manufacturing/manufacturing-industry-pulse/",
+      "publisher": "Sikich",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-910",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "産業財の調べものは約3分の2がネット",
+    "summary": "米国の記事。Bainが産業・技術分野の営業・マーケ幹部370人に聞いた報告によると、産業財のB2B買い手の調べもののほぼ3分の2がネットで行われていると見積もった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "問い合わせ前に読まれるページを増やす",
+    "source": {
+      "title": "The Digital Disruption In Industrial Sales And Marketing",
+      "url": "https://www.manufacturing.net/home/article/13115015/the-digital-disruption-in-industrial-sales-and-marketing",
+      "publisher": "Manufacturing.net",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-911",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "売り手は買い手の動き方を誤解しがち",
+    "summary": "米国の記事。BainとGoogleが産業機器などを買う米企業の1,208人に聞いた調査で、買い手の行動について売り手側にいくつもの思い込みがあることが分かったと伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "思い込みを捨てて買い手の声を聞く",
+    "source": {
+      "title": "The Digital Disruption In Industrial Sales And Marketing",
+      "url": "https://www.inddist.com/business-technology/article/13772487/the-digital-disruption-in-industrial-sales-and-marketing",
+      "publisher": "Industrial Distribution",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-912",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ネット育ちの世代がB2B購買を変える",
+    "summary": "米国の論考。BainはHBRへの寄稿で、ネットに慣れた世代（デジタルネイティブ）がB2B購買の担い手になり、調べ方や決め方が変わっていると論じた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "若い購買担当に届くHPの条件",
+    "source": {
+      "title": "How Digital Natives Are Changing B2B Purchasing (HBR)",
+      "url": "https://www.bain.com/insights/how-digital-natives-are-changing-b2b-purchasing-hbr/",
+      "publisher": "Bain & Company",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-913",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "B2B買い手の82%は個別の対応を期待",
+    "summary": "世界の調査。Salesforceの「つながる顧客」報告のまとめでは、B2B買い手の82%が業者に自分の状況に合わせた対応を期待し、69%はAmazonのような買いやすさを期待していた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "相手の業種別に事例を並べる",
+    "source": {
+      "title": "State of the Connected Customer",
+      "url": "https://salesforce.relayto.com/e/state-of-the-connected-customer-84jplvldtctr7",
+      "publisher": "Salesforce",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-914",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "業者選びで信頼は欠かせない条件",
+    "summary": "世界の調査。Salesforceの「つながる顧客」報告では、B2B買い手の84%が信頼を業者選びの重要な条件に挙げた。一方、会社が期待に応えていると感じるのは27%だけだった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "信頼を伝える実績・品質の書き方",
+    "source": {
+      "title": "State of the Connected Customer",
+      "url": "https://salesforce.com/uk/form/pdf/state-of-the-connected-customer",
+      "publisher": "Salesforce",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1086",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "顧客調査は事業の買い手3,300人規模",
+    "summary": "世界の調査。Salesforceの第6版「つながる顧客」報告（2023年）は、消費者1万1,000人とB2B買い手3,300人に、2023年5〜7月に聞いたもの。買い手の期待の変化を毎回まとめている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "買い手の期待はどう変わったか",
+    "source": {
+      "title": "State of the Connected Customer",
+      "url": "https://salesforce.com/ap/form/pdf/state-of-the-connected-customer",
+      "publisher": "Salesforce",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "buyer-915",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "他にない品なら高くても買う買い手",
+    "summary": "世界の調査。Salesforceの第3版報告（2019年、16か国8,000人超）を紹介した記事は、B2B買い手は他と違う品や先がけの品には高くても払う傾向が特に強いと伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "他社にできない加工を前面に出す",
+    "source": {
+      "title": "Latest Salesforce Report Takes the Pulse of Customer Expectations",
+      "url": "https://www.ypo.org/2019/09/latest-salesforce-report-takes-the-pulse-of-customer-expectations/",
+      "publisher": "YPO",
+      "date": "2019-09"
+    }
+  },
+  {
+    "id": "buyer-916",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "B2Bで調べる人の半分近くは若い世代",
+    "summary": "米国の調査。GoogleとMillward Brownの約3,000人調査を伝えた記事によると、B2Bの購入を調べる人に占めるミレニアル世代は2012年の27%から2014年に46%へ増えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "若い担当者が読みやすい記事の形",
+    "source": {
+      "title": "Study: Almost Half Of All B2B Researchers Are Millennials",
+      "url": "https://www.demandgenreport.com/?p=23132",
+      "publisher": "Demand Gen Report",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "buyer-917",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "役員でない人の8割が購入に口を出す",
+    "summary": "米国の調査。Googleの調査を伝えた記事では、役員でないB2B買い手の81%が購入の決定に関わっていた。現場の担当者が最初の候補を選ぶので、担当者向けの記事が効く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "現場担当者向けに書く理由",
+    "source": {
+      "title": "Millennials' influence on B2B buying skyrockets, Google says",
+      "url": "https://www.marketingdive.com/news/millennials-influence-on-b2b-buying-skyrockets-google-says/374410",
+      "publisher": "Marketing Dive",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "buyer-918",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "B2B調査の入口は社名でなく一般語の検索",
+    "summary": "オーストラリアの記事。Googleの調査を紹介し、ネットで調べるB2B担当の90%が検索を使い、71%は社名でなく一般的な言葉で検索を始めると伝えた。加工名・材料名で見つかる記事が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「材料名＋加工名」で見つかる記事",
+    "source": {
+      "title": "In B2B, ROI means ‘Risk of Ignoring’ Google",
+      "url": "https://www.marketingmag.com.au/tech-data/in-b2b-roi-means-risk-of-ignoring-google/",
+      "publisher": "Marketing Magazine",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "success-1811",
+    "kind": "success",
+    "region": "overseas",
+    "title": "B2Bの買い手の約7割が動画を見る",
+    "summary": "英国の記事。Googleの調査を紹介し、B2Bの調べる人・買う人の約70%が購入までの途中で動画を見ていると伝えた。加工中の短い動画は、現場の力を伝える手軽な方法になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "加工の様子を30秒動画で見せる",
+    "source": {
+      "title": "What B2B marketers need to know about millennials",
+      "url": "https://www.b2bmarketing.net/what-b2b-marketers-need-to-know-about-millennials/",
+      "publisher": "B2B Marketing",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "buyer-919",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "技術者の7割は名の知れた会社を選ぶ",
+    "summary": "世界の調査。GlobalSpecとTREWの2026年「技術者へのマーケティング」報告では、技術者の70%が知名度の高いブランドを選ぶとした。小さな会社ほど、名前を覚えてもらう発信が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "名前を覚えてもらうための定期発信",
+    "source": {
+      "title": "2026 State of Marketing to Engineers",
+      "url": "https://advertising.globalspec.com/wp-content/uploads/2026/03/SMTE-Report_GS2602_FINAL.pdf",
+      "publisher": "GlobalSpec・TREW Marketing",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "success-1812",
+    "kind": "success",
+    "region": "overseas",
+    "title": "欧州の技術者の多くは展示会に足を運ぶ",
+    "summary": "欧州の調査。TREWとElektorが2023年に欧州の技術者1,200人超に聞くと、56%が2024年に対面の業界イベントに行く予定と答えた。展示会と記事を結び付けると効果が上がる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "展示会の前後にブログで告知・報告",
+    "source": {
+      "title": "New survey reveals engineer preferences in marketing interactions",
+      "url": "https://www.eenewseurope.com/en/new-survey-reveals-engineer-preferences-in-marketing-interactions",
+      "publisher": "eeNews Europe",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "buyer-920",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "製造業から買う人のネット購入が4割増",
+    "summary": "米国の調査。PROSとHanover Researchが2020年に製造業から買う113人に聞くと、主にネットの自己完結で買う人が40%増えていた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ネットで頼める範囲を広げる",
+    "source": {
+      "title": "B2B Buyer Survey: Manufacturing Industry Results",
+      "url": "https://resources.pros.com/home/b2b-buyer-survey-manufacturing-industry-results",
+      "publisher": "PROS",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-921",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "B2B買い手の92%は自分向けの提案を望む",
+    "summary": "世界の調査。PROSの1,053人調査では、92%が自分に合わせたおすすめを望み、60%は業者の乗り換えは「たまに」以下と答えた。一度取引が始まると長く続きやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "最初の1回を取るための記事",
+    "source": {
+      "title": "PROS Global Survey Finds B2B Buyers Prioritize Personalization and Real-Time Pricing",
+      "url": "https://salestechstar.com/sales-marketing/pros-global-survey-finds-b2b-buyers-prioritize-personalization-and-real-time-pricing/",
+      "publisher": "SalesTechStar",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-922",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ネットで大半を買う人が急に増えた",
+    "summary": "世界の調査。PROSの調査では、2年前に購入の大半をネットでしていたと答えたのは15%だけで、その後ネット購入が大きく広がった。製造業の買い手も同じ流れにある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ネットで見積を頼める仕組みの紹介",
+    "source": {
+      "title": "Uncover What Manufacturing Buyers Want and How They Want to Buy [Survey]",
+      "url": "https://pros.com/?p=45097",
+      "publisher": "PROS",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-923",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "産業資材の買い手の6割超がネット購入",
+    "summary": "米国の調査。Channel Marketing GroupとBigCommerceの2025年報告（電気・空調・産業資材の買い手345人）では、62%がネットで購入していた。2018年は45%で、注文量の4.3%にすぎなかった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ネットで頼まれる会社になる準備",
+    "source": {
+      "title": "2025 Industrial Buyer Report",
+      "url": "https://www.bigcommerce.com/resources/2025-industrial-buyer-report/",
+      "publisher": "BigCommerce・Channel Marketing Group",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-924",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ネットと従来の注文を併用する買い手",
+    "summary": "米国の記事。2025年の産業資材の買い手調査を分析した記事によると、ネットの購入は全体の約30%で、大半の買い手はネットと従来の注文（電話・営業）を使い分けている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "電話・FAX・フォーム、どれでも受ける",
+    "source": {
+      "title": "What the Latest B2B Buyer Data Says About Digital Distribution in 2025",
+      "url": "https://www.mdm.com/article/technology/digital-commerce/what-the-latest-b2b-buyer-data-says-about-digital-distribution-in-2025/",
+      "publisher": "Modern Distribution Management",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-925",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ネット購入は簡単で時間の節約になる",
+    "summary": "米国の調査。2025年の産業資材の買い手調査のまとめでは、65.8%がネット購入は簡単と答え、60%が時間の節約になると答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "見積依頼を3分で終わらせる工夫",
+    "source": {
+      "title": "Industrial B2B buyers embrace digital for online ordering",
+      "url": "https://gob2b.com/industrial-b2b-buyers-embrace-digital-for-online-ordering/",
+      "publisher": "goB2B",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1087",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "産業財の買い手の65%がネットで発注",
+    "summary": "米国の報道。Digital Commerce 360は、2025年の調査で産業財のB2B買い手の65%がその年すでに1回以上ネットで購入したと伝えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ネット発注に慣れた買い手への対応",
+    "source": {
+      "title": "Industrial B2B buyers digital shift: order online",
+      "url": "https://www.digitalcommerce360.com/2025/06/09/industrial-b2b-buyers-digital-shift-order-online/",
+      "publisher": "Digital Commerce 360",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "pain-822",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "注文ミスが多いとネット発注をためらう",
+    "summary": "世界の調査。Sana Commerceの2024年の調査では、製造業の買い手の77%が注文のミスを理由にネットでの購入をためらうと答えた。正確な受け答えは、ネット受注の信頼の土台。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "受注ミスを防ぐ確認の流れを書く",
+    "source": {
+      "title": "Manufacturing Buyers Frustrated with Frequent B2B Web Store Errors",
+      "url": "https://www.supplychain247.com/article/manufacturing-buyers-frustrated-with-b2b-web-store-errors",
+      "publisher": "Supply Chain 24/7",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "pain-823",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "B2Bのネット注文の3件に1件でミス",
+    "summary": "世界の調査。Sana Commerceの2024年報告によると、B2B買い手はネット注文の33%でミスにあっており、2019年の28%から増えた。74%はより良いWeb注文があれば乗り換えるとした。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "図面・数量の確認を丁寧にする理由",
+    "source": {
+      "title": "Sana Commerce survey: B2B sellers' online order processing is error-prone",
+      "url": "https://www.digitalcommerce360.com/2024/03/11/sana-commerce-survey-b2b-sellers-online-buyers-error-prone-order-processing/amp/",
+      "publisher": "Digital Commerce 360",
+      "date": "2024-03"
+    }
+  },
+  {
+    "id": "buyer-926",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "AIの答えを別の情報で確かめる買い手",
+    "summary": "米国の調査。Gardner Business Mediaの2025年産業購買の調査では、AIの答えを他の情報源で確かめる人が55%、仕事の調べにAIを使わない人が31%、AIが示す出典をクリックする人が9%だった。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "AIに引用され、確かめに来られるページ",
+    "source": {
+      "title": "Buyers Are Turning to AI for Product Research",
+      "url": "https://gardnerweb.com/blog/post/buyers-are-turning-to-ai-for-product-research-does-your-marketing-put-your-brand-in-the-right-place",
+      "publisher": "Gardner Business Media",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1088",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "産業財の買い手はAIに慎重に関わる",
+    "summary": "米国の調査。Gardner Business Mediaの産業購買の影響調査（IBI）は、製品の調べものでのAIの役割を聞き、買い手は慎重に使いながらも変化は速く進んでいるとまとめた。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "AI時代の製造業の調べられ方",
+    "source": {
+      "title": "Trends + Tactics for Selling to Industrial Manufacturing Buyers",
+      "url": "https://gardnerweb.com/manufacturing-insights/ibi",
+      "publisher": "Gardner Business Media",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-927",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "大企業の96%は中小からもっと買いたい",
+    "summary": "米国の調査。Supplier.ioが2025年9月に年商5億ドル超の企業の幹部150人超に聞くと、96%が探す・審査・登録が楽なら中小企業からもっと買うと答えた。見つけやすく、確かめやすいことが鍵。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "大手の購買に見つけてもらう情報の出し方",
+    "source": {
+      "title": "Supplier.io Survey Finds 96% of Executives Want to Source More From Small Businesses",
+      "url": "https://www.businesswire.com/news/home/20250923010150/en/Supplier.io-Survey-Finds-96-of-Executives-Want-to-Source-More-From-Small-Businesses-But-Execution-Gaps-Are-Costing-Them",
+      "publisher": "Supplier.io",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "pain-824",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "中小への発注は全体の7%どまり",
+    "summary": "米国の調査。Supplier.ioの2025年の調査では、大企業が中小企業に払う額は仕入れ全体の平均7%にとどまっていた。買いたい気持ちと実際の間に、探しにくさ・審査の手間がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "審査に必要な情報を先にHPに出す",
+    "source": {
+      "title": "Survey: 96% of Executives Want More Small Suppliers in Supply Chains",
+      "url": "https://www.supplychain247.com/article/survey-shows-small-suppliers-critical-to-supply-chains",
+      "publisher": "Supply Chain 24/7",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "success-1813",
+    "kind": "success",
+    "region": "overseas",
+    "title": "中小と組んで品質と強さが上がった",
+    "summary": "米国の調査。Supplier.ioの2025年の調査では、中小の仕入れ先と組んだ大企業が、性能・品質の向上（56%）や供給網の強さ（53%）を効果に挙げた。小さな会社の良さを示す材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "小さな工場と組むメリットを書く",
+    "source": {
+      "title": "CPOs Want to Source More From Small Businesses",
+      "url": "https://supplier.io/resources/blog/cpos-want-to-source-more-from-small-businesses",
+      "publisher": "Supplier.io",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-825",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "審査不足の中小との取引で失敗も",
+    "summary": "米国の調査。Supplier.ioの2025年の調査では、41%の企業が過去1年に、十分に審査しなかった中小の仕入れ先との取引で失敗していた。品質体制や設備を見える形にすることが安心につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "設備・検査体制を一覧で見せる",
+    "source": {
+      "title": "Supplier.io: Why Businesses are Switching to Small Suppliers",
+      "url": "https://procurementmag.com/news/supplier-io-survey-report",
+      "publisher": "Procurement Magazine",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1089",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "関税で米国内の小さな仕入れ先が増える",
+    "summary": "米国の調査。Supplier.ioの2025年の調査では、91%の幹部が関税を受けて中小からの調達方針を見直した（予定含む）。71%が米国内の小規模業者からの調達を増やし、国外は26%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "仕入れ先の見直し期に選ばれる準備",
+    "source": {
+      "title": "96% of Executives Want to Source More From Small Businesses: Study",
+      "url": "https://www.foodlogistics.com/home/news/22950856/supplierio-96-of-executives-want-to-source-more-from-small-businesses-study",
+      "publisher": "Food Logistics",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "buyer-928",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "調達担当の75%は協業で双方得をする",
+    "summary": "世界の調査。ProcuriousとSAPが調達の責任者172人に聞くと、75%が仕入れ先との協力を深めると買い手と売り手の双方に良い結果が出ると答えた。改善提案をする加工先は歓迎される。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "発注者と一緒に原価を下げた話",
+    "source": {
+      "title": "Collaborative Procurement: How to Fix the Broken Links",
+      "url": "https://d3ueswe69sg7pl.cloudfront.net/wp-content/uploads/2025/12/11051357/Collaborative-Procurement_-How-to-Fix-the-Broken-Links-1.pdf",
+      "publisher": "Procurious・SAP",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-826",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "調達担当の仕事は今も事務作業が多い",
+    "summary": "世界の調査。Procuriousの590人調査では、調達担当の仕事のかなりの部分が戦略ではなく事務的な作業のままだった。見積や手配の手間を減らせる業者は助かる存在になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "購買担当の手間を減らす見積の出し方",
+    "source": {
+      "title": "Procurious: Next Level Procurement",
+      "url": "https://info.ivalua.com/reports/procurious-next-level-procurement-en",
+      "publisher": "Procurious・Ivalua",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-827",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "調達の悩み1位は仕入れ先の管理",
+    "summary": "米国の調査。Intentfulの2024年の調査では、56%が複雑な仕入れ先・業者の網の管理を一番の悩みに挙げた。一社で複数の工程をまとめて受けられると、買い手の負担が減る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "工程をまとめて受けるワンストップの説明",
+    "source": {
+      "title": "Procurement's Biggest Challenges: Insights from the 2024 Pain Point Survey",
+      "url": "https://intentful.ai/blog/procurements-biggest-challenges-insights-from-the-2024-pain-point-survey",
+      "publisher": "Intentful",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "buyer-929",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "戦略的な仕入れ先から価値を引き出す",
+    "summary": "世界の調査。Oliver Wymanの2024年の調達調査では、回答者の半数が戦略的な仕入れ先との関係から価値を引き出すことを重要と答えた。価格だけでなく提案力で選ばれる余地がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "価格以外で選ばれる提案の例",
+    "source": {
+      "title": "Successful procurement strategies: value sourcing survey",
+      "url": "https://oliverwyman.com/our-expertise/insights/2024/aug/successful-procurement-strategies-value-sourcing-survey.html",
+      "publisher": "Oliver Wyman",
+      "date": "2024-08"
+    }
+  },
+  {
+    "id": "buyer-930",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "8割がWebの良い業者へ乗り換えてよい",
+    "summary": "米国の調査。UPSの2017年の産業購買の調査（買い手1,500人）では、80%がより良いWebサイトを持つ業者へ乗り換えてよいと答えた。2015年は72%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "古いHPが失注につながる理由",
+    "source": {
+      "title": "UPS Industrial Buying Dynamics Study 2017",
+      "url": "https://ups.com/assets/resources/media/knowledge-center/UPS_Industrial_Buying_Dynamics_Study_2017.pdf",
+      "publisher": "UPS",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "buyer-931",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ネットで買う人の4割近くは新しい業者",
+    "summary": "米国の調査。UPSの産業購買の調査を伝えた記事によると、ネットで産業製品を買う人の38%が新しい業者から買っていた（2013年は34%）。ネットは新規取引の入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ネットから初めての取引が生まれる流れ",
+    "source": {
+      "title": "UPS Study Reveals Shifts in Industrial Distributors' Buying Behavior",
+      "url": "https://www.inddist.com/operations/news/13768624/ups-study-reveals-shifts-in-industrial-distributors-buying-behavior",
+      "publisher": "Industrial Distribution",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1090",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "メーカーから直接買う買い手が8割",
+    "summary": "米国の調査。UPSの2017年調査を伝えた記事では、メーカーから直接買った買い手が81%（2015年は64%）、ネットの市場で買った人が75%（2013年は20%）に増えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "直接頼める加工会社としての発信",
+    "source": {
+      "title": "UPS Study Reveals Industrial Distributors’ Waning Customer Loyalty",
+      "url": "https://www.supplychain247.com/article/ups_study_reveals_industrial_distributors_waning_customer_loyalty",
+      "publisher": "Supply Chain 24/7",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "buyer-932",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "若い買い手はスマホで頼める業者へ",
+    "summary": "米国の調査。UPSの産業購買の調査を伝えた記事によると、買い手の半数近く、ミレニアル世代では69%がスマホアプリのある業者へ取引を移しそうだと答えた。スマホで読みやすいHPは最低条件。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "スマホで見積依頼できるHPの点検",
+    "source": {
+      "title": "New UPS Study Highlights Role of Millennials in Industry Buying",
+      "url": "https://supplychainbrain.com/articles/29834-new-ups-study-highlights-role-of-millennials-in-industry-buying",
+      "publisher": "SupplyChainBrain",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-933",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "アフター対応で業者を選び直す若手",
+    "summary": "米国の調査。UPSの産業購買の調査を伝えた記事によると、ミレニアル世代の87%が、より良い購入後のサポートを求めて3〜5年のうちに業者を替えそうだと答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "納品後のフォローを記事で見せる",
+    "source": {
+      "title": "UPS Industrial Buying Dynamics Study: Buyers Raise the Bar for Suppliers",
+      "url": "https://www.manufacturing.net/home/whitepaper/13774198/ups-ups-industrial-buying-dynamics-study-buyers-raise-the-bar-for-suppliers",
+      "publisher": "Manufacturing.net",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1091",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "英国の調達でESGが重要な条件に",
+    "summary": "英国の調査。RSとCIPSの間接資材の調達報告では、約3分の2（64%）がESG（環境・社会への配慮）を会社の戦略の重要な一部と答え、調達側が仕入れ先の取り組みを詳しく見始めた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "環境への取り組みをHPに書く",
+    "source": {
+      "title": "Indirect Procurement Report",
+      "url": "https://uk.rs-online.com/web/content/m/2024-indirect-procurement-report",
+      "publisher": "RS・CIPS",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-828",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "小さな会社は公共調達で競いにくい",
+    "summary": "英国（スコットランド）の調査。スコットランド政府の2024年の供給者調査では、回答の40%が従業員の少ない零細企業で、自由記述では小さな会社が契約を競う難しさや買い手との連絡の悩みが挙がった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "公共案件に挑む小さな工場の準備",
+    "source": {
+      "title": "Public procurement: survey of suppliers 2024",
+      "url": "https://www.gov.scot/isbn/9781806430062",
+      "publisher": "Scottish Government",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1092",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "英国は下請けへの支払い遅れに厳しく",
+    "summary": "英国の動き。2025年6〜9月の公共調達の意見募集では、大きな発注者への中小企業向け支出目標や、下請けに期日どおり払わない業者を大型契約から外す案が示された。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "支払い条件を確かめるときの言い方",
+    "source": {
+      "title": "Public procurement consultation 2025: key dates and proposals",
+      "url": "https://help.oxygen-finance.com/helphub/public-procurement-consultation-2025-key-dates-and-proposals-and-what-they-mean-for-buyers-and-suppliers",
+      "publisher": "Oxygen Finance",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1093",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "候補選びにAIチャットが一番効く時代",
+    "summary": "米国の調査。G2の2025年5月の報告（ソフトウェア購買）では、候補リストに一番影響する情報源が生成AIのチャット（17%）、次がレビューサイト（15%）だった。営業と話すのは後の段階を好む。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "AIに候補として挙がる情報の出し方",
+    "source": {
+      "title": "G2 Report: AI Now Means ‘Always Included,’ Disrupting All Stages of the B2B Software Buying Journey",
+      "url": "https://www.businesswire.com/news/home/20250514382531/en",
+      "publisher": "G2",
+      "date": "2025-05"
+    }
+  },
+  {
+    "id": "success-1814",
+    "kind": "success",
+    "region": "overseas",
+    "title": "工場見学で生徒の見方が変わった",
+    "summary": "米国の製造業の日（MFG Day）について、デロイトの2015年調査では参加した生徒の81%が「製造業の仕事は面白くやりがいがある」と思いを強め、71%が周りに話したくなったと答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場見学に来た学生が驚いたこと3つ",
+    "source": {
+      "title": "Manufacturing Day 2015 helps change perception of industry",
+      "url": "https://www.thefabricator.com/thefabricator/news/shopmanagement/manufacturing-day-2015-helps-change-perception-of-industry",
+      "publisher": "The Fabricator",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "success-1815",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見学後に製造業を目指す生徒が増加",
+    "summary": "米国のMFG Dayの調査報告では、参加した生徒の84%が製造業の仕事に魅力を感じ、64%がこの道に進む気持ちが強まったと答えた（主催側の調査として報道）。見せることが一番の説明になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見学で伝えたい「うちの仕事の面白さ」",
+    "source": {
+      "title": "Study Shows MFG Day Motivates Students to Pursue Manufacturing Careers",
+      "url": "https://www.nmma.org/press/article/22233",
+      "publisher": "NMMA",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1816",
+    "kind": "success",
+    "region": "overseas",
+    "title": "生徒も先生も見学を面白いと評価",
+    "summary": "米国の2016年のMFG Day調査では、生徒の88%・先生の90%がイベントを面白いと答え、生徒の65%が製造業で働く意欲が高まったという。先生を味方にすると次の見学につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "学校の先生に向けた工場見学の案内文",
+    "source": {
+      "title": "Study shows Manufacturing Day has big impact on student perceptions",
+      "url": "https://empoweringpumps.com/study-shows-manufacturing-day-has-big-impact-on-student-perceptions",
+      "publisher": "Empowering Pumps & Equipment",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1817",
+    "kind": "success",
+    "region": "overseas",
+    "title": "地域の一斉見学に参加する",
+    "summary": "米国の製造業の日は、同じ日に各地の工場が一斉に扉を開く催し。地域の見学会に加わると、自社だけで集めるより生徒・保護者・先生に届きやすい。日本でも工業会や市の一斉見学に乗る形でまねできる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "一斉工場見学に参加して分かったこと",
+    "source": {
+      "title": "Survey results reveal Manufacturing Day events boost public perception of manufacturing industry",
+      "url": "https://www.supplychain247.com/article/survey_results_reveal_manufacturing_day_events_boost_public_perception_of_m",
+      "publisher": "Supply Chain 24/7",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1818",
+    "kind": "success",
+    "region": "overseas",
+    "title": "生徒は見て初めて仕事を信じる",
+    "summary": "米国の空調業界誌は、製造業の仕事は口で説明しても伝わらず、生徒は実際に現場を見て初めて実感すると伝える。写真や動画で現場を見せる記事も同じ役目を果たす。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "写真で見る、うちの工場の1日",
+    "source": {
+      "title": "When it comes to manufacturing, students must see to believe",
+      "url": "https://www.achrnews.com/articles/152462-when-it-comes-to-manufacturing-students-must-see-to-believe",
+      "publisher": "ACHR News",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1819",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見学の後は引率者アンケートを取る",
+    "summary": "米国のMFG Day 2024では、引率した先生向けに参加人数・受け入れ準備・生徒が進路として考えたかを聞くアンケートが用意された。見学を「やりっぱなし」にせず、感想を集めて次に生かす。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見学会の感想アンケートで聞く5項目",
+    "source": {
+      "title": "2024 MFG Day Survey",
+      "url": "https://www.surveymonkey.com/r/Z6MBPY6",
+      "publisher": "MFG Day（SurveyMonkey）",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1820",
+    "kind": "success",
+    "region": "overseas",
+    "title": "小さな工場でも見学会は開ける",
+    "summary": "米国の製造業支援機関（MEP）は、MFG Dayは工場見学だけでなく、学校での展示や実演の持ち込み、写真・動画の紹介、質問会でもよいと案内。規模が小さくても話す価値があるとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場だからできる見学会のかたち",
+    "source": {
+      "title": "Manufacturing Day: changing people's perceptions",
+      "url": "https://www.nist.gov/blogs/manufacturing-innovation-blog/manufacturing-day-changing-peoples-perceptions",
+      "publisher": "NIST MEP",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1821",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見学会は相手に合わせて短く",
+    "summary": "米国の機械加工誌は、MFG Day の成功のこつとして、生徒は長く細かい説明で飽きるので、見る人に合わせて内容と時間を絞るよう勧める。記事も同じで、読む人を一人決めて書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中学生に5分で伝える、うちの仕事",
+    "source": {
+      "title": "Host a Successful Manufacturing Day Event",
+      "url": "https://productionmachining.com/articles/host-a-successful-manufacturing-day-event",
+      "publisher": "Production Machining",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1822",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見学会の準備は手引きを使う",
+    "summary": "米国のMFG Day 2025の主催者向け手引きには、計画・当日・準備のチェックリストや話し方のこつがまとまっている。初めての見学会は、こうした型を借りると抜けが減る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "初めての工場見学会・準備チェックリスト",
+    "source": {
+      "title": "MFG Day 2025 Host Toolkit",
+      "url": "https://mfgday.com/wp-content/uploads/2025/04/MFG-Day-2025-Host-Toolkit.pdf",
+      "publisher": "MFG Day（The Manufacturing Institute）",
+      "date": "2025-04"
+    }
+  },
+  {
+    "id": "success-1823",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見学会の写真と声を後で発信する",
+    "summary": "米国オハイオ州の製造業協会は、MFG Day 後に参加者へアンケートを取り、写真や成功談を公式サイトに載せるよう勧める。1回の見学会がその後の記事やSNSの材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見学会のあとに書くブログ記事の型",
+    "source": {
+      "title": "Tips for Hosting Your MFG Day Event",
+      "url": "https://ohiomfg.com/our-communities/tips-for-hosting-your-mfg-day-event",
+      "publisher": "Ohio Manufacturers' Association",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1824",
+    "kind": "success",
+    "region": "overseas",
+    "title": "人手集めの入口として見学会を使う",
+    "summary": "米国バージニア州の製造業支援機関は、MFG Day を地域の働き手を集める手段として位置づけ、生徒・保護者・先生とのつながりづくりを勧めている。採用ページへの導線も用意しておく。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場見学から採用につなげる流れ",
+    "source": {
+      "title": "How MFG Day Can Help You Attract a Skilled Workforce",
+      "url": "https://genedge.org/resources-tools/how-mfg-day-can-help-you-attract-a-skilled-workforce/",
+      "publisher": "GENEDGE",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1825",
+    "kind": "success",
+    "region": "overseas",
+    "title": "地域で千人超の生徒が工場を見学",
+    "summary": "カナダ・ウィンザー＝エセックス地域では、製造業の日に合わせて地元の23の工場が受け入れ、1,100人を超える生徒が少なくとも1か所を見学したと地域の人材団体が伝える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "地域ぐるみの工場見学で変わったこと",
+    "source": {
+      "title": "MFG Day Windsor-Essex",
+      "url": "https://www.workforcewindsoressex.com/mfg/",
+      "publisher": "Workforce WindsorEssex",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1094",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "英国にも全国製造業の日がある",
+    "summary": "英国では業界団体Make UKが「全国製造業の日」を主催し、2025年は9月25日に4回目。参加企業は工場を開いて地図に載る。英国でも「見せて人を呼ぶ」動きが毎年続いている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "National Manufacturing Day 2025: start your planning today",
+      "url": "https://www.makeuk.org/insights/blogs/national-manufacturing-day-2025-start-your-planning-today",
+      "publisher": "Make UK",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1095",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "ウェールズ政府も製造業の日を後押し",
+    "summary": "英国ウェールズ政府の事業支援サイトは、2025年の全国製造業の日への参加を地域の製造業に呼びかけた。行政が工場公開を勧める動きは日本の自治体の工場見学イベントと似ている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "National Manufacturing Day 2025",
+      "url": "https://businesswales.gov.wales/news-and-blog/national-manufacturing-day-2025",
+      "publisher": "Business Wales（ウェールズ政府）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1096",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米国は2033年までに最大380万人必要",
+    "summary": "米国のデロイトと製造業協会の研究所の2024年4月の調査では、2024〜2033年に製造業で約380万人の新しい働き手が必要で、手を打たなければ約190万人分が埋まらないおそれがあるとした。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "US manufacturing could need new employees by 2033",
+      "url": "https://www2.deloitte.com/us/en/pages/about-deloitte/articles/press-releases/us-manufacturing-could-need-new-employees-by-2033.html",
+      "publisher": "Deloitte",
+      "date": "2024-04"
+    }
+  },
+  {
+    "id": "pain-829",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "技能の不足より応募者の不足",
+    "summary": "米国のデロイトと製造業協会研究所の2024年の調査は、技能の差だけでなく「そもそも応募が来ない」差があると指摘。日本の町工場の「求人を出しても反応がない」悩みと同じ構図。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "求人に応募が来ない工場がまず変えること",
+    "source": {
+      "title": "Supporting US manufacturing growth amid workforce challenges",
+      "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing/supporting-us-manufacturing-growth-amid-workforce-challenges.html",
+      "publisher": "Deloitte Insights",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1097",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "シミュレーション技能の需要が75%増",
+    "summary": "米国のデロイトと製造業協会研究所の2024年の分析では、直近5年でシミュレーションやそのソフトを使う技能の求人需要が75%増えた。デジタルの道具を使う仕事だと伝えるのが求人の材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Study: Amid Growth, A Looming Gap of Manufacturing Talent",
+      "url": "https://www.advancedmanufacturing.org/news-desk/study-amid-growth-a-looming-gap-of-manufacturing-talent/article_d5ac43ac-fe7b-11ee-8e9f-dfc9469f7ff2.html",
+      "publisher": "SME（Advanced Manufacturing）",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "pain-830",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "米製造業の悩み一位は人の確保",
+    "summary": "米国の全米製造業協会の景況調査では、2024年第2四半期に67%超、第4四半期に55%超の製造業が「人を集めて定着させられない」を主な課題に挙げた（業界紙の報道）。2021年末をピークに少しずつ下がっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "人が辞めない工場が毎月やっていること",
+    "source": {
+      "title": "The most in-demand factory jobs in 2025",
+      "url": "https://www.manufacturingdive.com/news/most-in-demand-factory-jobs-2025-labor-recruitment/736728/",
+      "publisher": "Manufacturing Dive",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1826",
+    "kind": "success",
+    "region": "overseas",
+    "title": "定着のために道すじを見せる",
+    "summary": "米国の繊維業界誌は、待遇の工夫・働きやすい環境・はっきりした昇進の道を示すことが人を集め定着させる近道だと論じる。求人記事に「3年後にできること」を書くとよい。",
+    "industries": [
+      "繊維",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "入社3年でできるようになること",
+    "source": {
+      "title": "Labor: A Scarce Resource",
+      "url": "https://www.textileworld.com/textile-world/from-the-editor/2024/07/labor-a-scarce-resource/",
+      "publisher": "Textile World",
+      "date": "2024-07"
+    }
+  },
+  {
+    "id": "success-1827",
+    "kind": "success",
+    "region": "overseas",
+    "title": "女性の人脈から採用する",
+    "summary": "米国のデロイト・製造業協会研究所・APICSの2015年の女性調査では、女性の回答者の65%が「会社に女性を呼ぶ採用活動がない」と答え、女性の人脈を通じた採用や指導役の制度が有効とされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "女性社員が語る、うちで働く理由",
+    "source": {
+      "title": "APICS, Deloitte and The Manufacturing Institute Release Latest Findings on Women in Manufacturing",
+      "url": "https://businesswire.com/news/home/20150825005352/en/APICS-Deloitte-and-The-Manufacturing-Institute-Release-Latest-Findings-on-Women-in-Manufacturing",
+      "publisher": "Business Wire",
+      "date": "2015-08"
+    }
+  },
+  {
+    "id": "pain-831",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "女性の採用・定着は評価が低い",
+    "summary": "米国の2015年の女性調査（デロイト等）では、女性の30%が自社の女性採用を、26%が定着の取り組みを「悪い」と評価した。先輩女性の姿を見せること、柔軟な働き方が定着の鍵とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "女性が長く働ける工場の工夫",
+    "source": {
+      "title": "Closing the Gender Gap, and with It, the Skills Gap",
+      "url": "https://www.industryweek.com/talent/recruiting-retention/article/21965605/closing-the-gender-gap-and-with-it-the-skills-gap",
+      "publisher": "IndustryWeek",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1828",
+    "kind": "success",
+    "region": "overseas",
+    "title": "業界ぐるみの若者向けキャンペーン",
+    "summary": "米国の全米製造業協会の「Creators Wanted」は、最初の10か月で200万人超に届き、製造業の仕事に関心のある生徒や指導者120万人超のメール名簿を作ったと協会が発表した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "業界団体の求人キャンペーンに乗る方法",
+    "source": {
+      "title": "Creators Wanted Gets Big Results",
+      "url": "https://themanufacturinginstitute.org/creators-wanted-gets-big-results-16479/",
+      "publisher": "The Manufacturing Institute",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1829",
+    "kind": "success",
+    "region": "overseas",
+    "title": "体験型の巡回イベントで生徒を集める",
+    "summary": "米国の「Creators Wanted」の2021年の巡回イベントは5州を回り、3,500人超が来場、うち生徒2,700人だったとMFG Dayが振り返る。体験できる場は、見るだけの説明より人を呼ぶ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "体験コーナーを作るときの工夫",
+    "source": {
+      "title": "Making an Impact: Tour Live 2021 in Review",
+      "url": "https://mfgday.com/making-an-impact-tour-live-2021-in-review/",
+      "publisher": "MFG Day",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1098",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米国は製造業のイメージ刷新に本腰",
+    "summary": "米国の全米製造業協会は「Creators Wanted」で、2025年までに新しい働き手60万人、技術系学校などへの入学25%増、業界の好感度向上を目標に掲げた。古い工場像を変えるのが狙い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "NAM unveils Creators Wanted campaign showcasing modern manufacturing",
+      "url": "https://www.supplychain247.com/article/nam_unveils_creators_wanted_campaign_showcasing_modern_manufacturing",
+      "publisher": "Supply Chain 24/7",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1830",
+    "kind": "success",
+    "region": "overseas",
+    "title": "工場の動画1,000再生で引き合い1件",
+    "summary": "中国の看板メーカーの例では、TikTokの再生1,000回ごとに平均1件の商談の問い合わせがあり、その3〜10%が受注になったとRest of Worldが2024年に報じた。製造の様子を見せる動画が営業になる。",
+    "industries": [
+      "看板・サイン",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工の様子を見せる短い動画の作り方",
+    "source": {
+      "title": "Chinese factories are using TikTok to sell to businesses",
+      "url": "https://restofworld.org/2024/chinese-factory-tiktok-b2b-sales/",
+      "publisher": "Rest of World",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1099",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "工場の作業動画は世界で人気",
+    "summary": "米国の調達サイトThomasは、工場の製造工程を映すTikTok動画が数十億回規模で見られていると紹介。機械が動き、ものができていく様子そのものが見たい人の多い題材になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "5 Billion Views and Counting: Why Are Factory TikToks Trending?",
+      "url": "https://www.thomasnet.com/insights/5-billion-views-and-counting-why-are-factory-tiktoks-trending-thoughts-after-dark/",
+      "publisher": "Thomas",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-832",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "バズ狙いの工場動画は信頼を損ねる",
+    "summary": "中国では工場動画を量産する制作会社があり、売るための演出が多いとRest of Worldが2021年に報じた。作り込みすぎより、自社の本当の現場を見せる方が信頼につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "演出しない現場動画が信頼される理由",
+    "source": {
+      "title": "The Chinese content farms behind factory TikTok",
+      "url": "https://restofworld.org/2021/the-chinese-content-farms-behind-factory-tiktok/",
+      "publisher": "Rest of World",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1831",
+    "kind": "success",
+    "region": "overseas",
+    "title": "中堅メーカーのTikTokで求人閲覧が倍に",
+    "summary": "ドイツの中堅送風機メーカーはTikTokのフォロワーが約11万人。求人を紹介した投稿の夜には採用ページの閲覧が倍になったと同社は話す（人事誌の報道）。プロフィールのリンクで効果を測っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "SNSから採用ページへつなぐ仕組み",
+    "source": {
+      "title": "Tiktok tickt anders",
+      "url": "https://www.humanresourcesmanager.de/employer-branding/fachkraeftemangel-tiktok-im-recruiting-einsetzen/",
+      "publisher": "Human Resources Manager",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-833",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "SNS経由と言わない応募者もいる",
+    "summary": "ドイツの中堅メーカーの広報担当は、TikTokで会社を知っても、そう言いたがらない応募者がいると話す（人事誌の報道）。SNSの効果は面接で「何で知ったか」を丁寧に聞いて確かめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Tiktok tickt anders",
+      "url": "https://www.humanresourcesmanager.de/employer-branding/fachkraeftemangel-tiktok-im-recruiting-einsetzen/",
+      "publisher": "Human Resources Manager",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1832",
+    "kind": "success",
+    "region": "overseas",
+    "title": "動画のコメント欄が応募の入口に",
+    "summary": "インドの産業誌は、ドイツの送風機メーカーのTikTokが6,000万回超再生され、動画のコメント欄に「経理やITの求人はある？」という質問が寄せられていると紹介。コメントへの返事も採用活動になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "動画のコメントにどう返すか",
+    "source": {
+      "title": "TikTok for Employer Branding 4.0",
+      "url": "https://industrialautomationindia.in/articleitm/13680/TikTok-for-Employer-Branding-4.0/articles",
+      "publisher": "Industrial Automation India",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1833",
+    "kind": "success",
+    "region": "overseas",
+    "title": "eスポーツや動画でIT人材にも届く",
+    "summary": "欧州の産業メディアは、ドイツの送風機メーカーがTikTokやeスポーツを使い、工場とは縁がなさそうなIT人材の採用に取り組んでいると2024年に紹介した。若い人がいる場所に出ていく発想。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製造業でもITの人が活躍している話",
+    "source": {
+      "title": "Esports, TikTok: Ziehl-Abegg's innovative approach to recruiting IT professionals",
+      "url": "https://emag.directindustry.com/2024/02/23/esports-tiktok-ziehl-abeggs-innovative-approach-to-recruiting-it-professionals/",
+      "publisher": "DirectIndustry e-magazine",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "success-1834",
+    "kind": "success",
+    "region": "overseas",
+    "title": "加工の様子を動画で残し営業に使う",
+    "summary": "米国の機械加工誌は、難しい部品の加工サイクルを撮ってYouTubeに載せ、急ぎの部品も設計から対応できると見込み客に示す町工場を紹介。動画は月1回のメールにも使い回す。別の工場では動画が新規受注につながった。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "難しい加工を動画で見せる記事",
+    "source": {
+      "title": "Machine Shop Marketing",
+      "url": "https://mmsonline.com/articles/machine-shop-marketing",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1835",
+    "kind": "success",
+    "region": "overseas",
+    "title": "YouTubeで新技術を購買担当に説明",
+    "summary": "米国シカゴ近郊の受託加工会社は、新しく入れた自動盤（スイス型）の加工をYouTubeで紹介し、購買担当に何ができるかを伝えている（機械加工誌）。新設備の導入は記事・動画の好機。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新しい機械でできるようになったこと",
+    "source": {
+      "title": "Video: Swiss-Type Machining Explained",
+      "url": "https://mmsonline.com/blog/post/video-swiss-type-machining-explained",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1100",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "YouTubeで技能を学ぶ若手が増加",
+    "summary": "米国の機械加工誌は、若い機械工がYouTubeの加工動画で技能を学ぶ「YouTube弟子」の姿を取り上げる。技術を見せる動画は、学ぶ人と将来の働き手の両方に届く。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "The YouTube Apprentice",
+      "url": "https://www.mmsonline.com/articles/the-youtube-apprentice",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1101",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "職人の発信者が若者の進路を動かす",
+    "summary": "米国の建設業誌は、溶接工や配管工が自分の現場をありのまま見せるTikTok・YouTubeの発信が若い世代の進路選びに影響していると伝える。業界団体の調査では、若者が来ないのは興味より知識不足のためだという。",
+    "industries": [
+      "溶接",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Rewrite the recruitment playbook",
+      "url": "https://acppubs.com/CBE/article/32793568-rewrite-the-recruitment-playbook",
+      "publisher": "Construction Business Owner",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1102",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "TikTokと職業団体が技能職を発信",
+    "summary": "米国では、TikTokと技能職の業界団体・SkillsUSAが組み、若者が主役の「Skills Jam」で技能職を知ってもらう取り組みを始めたと建設業メディアが報じた。",
+    "industries": [
+      "溶接",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "TikTok boosts construction careers for Gen Z",
+      "url": "https://www.constructionowners.com/news/tiktok-boosts-construction-careers-for-gen-z",
+      "publisher": "Construction Owners",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1103",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "豪州の職業学校もTikTokと連携",
+    "summary": "オーストラリアのNSW州の職業訓練校TAFE NSWはTikTokと組み、2025年10月に技能職の発信者を集めた催しを開いた。公的な訓練機関がSNSの発信者と組む例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "From scroll to skill: TikTok's Tools of the Trade with TAFE NSW",
+      "url": "https://education.nsw.gov.au/skills-nsw/skills-news/from-scroll-to-skill-tiktoks-tools-of-the-trade-with-tafe-nsw",
+      "publisher": "NSW Department of Education",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "trend-1104",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "技能職の発信者がSNSで後輩を呼ぶ",
+    "summary": "英国の電気工事業誌は、TikTokで仕事を見せる職人たちが次の世代を技能職に呼び込んでいると紹介。会社の公式より、働く本人の声が届きやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "TikTok trades – inspiring the next generation of tradespeople",
+      "url": "https://electricalcontractingnews.com/?p=41860",
+      "publisher": "Electrical Contracting News",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1836",
+    "kind": "success",
+    "region": "overseas",
+    "title": "スマホ1台で現場を撮ればよい",
+    "summary": "米国のSNS運用ツール会社は、製造業の投稿ネタとして工場の舞台裏を勧め、スマホのカメラで十分、自然光の方がよいことも多いと助言する。凝った機材より続けることが大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "スマホで工場を撮るときのこつ",
+    "source": {
+      "title": "Social media post ideas for manufacturers",
+      "url": "https://www.agorapulse.com/blog/manufacturing/social-media-post-ideas-for-manufacturers/",
+      "publisher": "Agorapulse",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1837",
+    "kind": "success",
+    "region": "overseas",
+    "title": "英国でもインスタは製造業に向く",
+    "summary": "英国の国産品推進団体の論考は、どの製造業もInstagramを使うべきだと主張。ものができる過程や職人の手元は写真映えし、消費者にも企業の担当者にも届くとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "写真で伝わる、ものができるまで",
+    "source": {
+      "title": "Why every manufacturer should be on Instagram",
+      "url": "https://makeitbritish.co.uk/opinion/why-every-manufacturer-should-be-on-instagram/",
+      "publisher": "Make it British",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1838",
+    "kind": "success",
+    "region": "overseas",
+    "title": "人と工程を見せ、売り込みは控えめ",
+    "summary": "米国のBtoBマーケ会社は、製造業のSNSは社員紹介や工程の舞台裏、役立つ解説、お客様の声を混ぜ、売り込みばかりにしないのがよいと勧める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社員紹介・工程・お客様の声の回し方",
+    "source": {
+      "title": "Master Social Media Marketing for Manufacturers: Key Best Practices",
+      "url": "https://www.marketveep.com/blog/master-social-media-marketing-for-manufacturers-key-best-practices",
+      "publisher": "Market Veep",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1105",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米国でもSNS広告は製造業に必須に",
+    "summary": "米国の製造業メディアの寄稿は、製造業にとってSNSでの発信と広告はもはや欠かせない営業手段だと論じる。買い手の担当者が個人としてSNSを見ているため。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Why Social Media Marketing and Advertising Is Essential for Manufacturers",
+      "url": "https://www.manufacturing.net/operations/blog/22918936/why-social-media-marketing-and-advertising-is-essential-for-manufacturers",
+      "publisher": "Manufacturing.net",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1839",
+    "kind": "success",
+    "region": "overseas",
+    "title": "社員の投稿で発信量を増やす",
+    "summary": "ドイツの切削工具メーカー大手Walterは、社員がLinkedInで会社の話題を共有する仕組みを使い、840件の投稿と3万1千ユーロ相当の広告換算効果を得たと支援会社が発表した。",
+    "industries": [
+      "刃物・工具",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社員が自分のSNSで仕事を紹介するルール",
+    "source": {
+      "title": "Walter boosts LinkedIn SoV with Sociuu",
+      "url": "https://www.casestudies.com/company/sociuu/case-study/walter-boosts-linkedin-sov-with-sociuu-driving-840-posts-and-31000-in-earned-media-value",
+      "publisher": "Sociuu（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1840",
+    "kind": "success",
+    "region": "overseas",
+    "title": "塗料大手も社員発信で効果",
+    "summary": "オランダの塗料大手AkzoNobelは、社員による発信の仕組みで10万ドル超の効果を得たと支援会社DSMN8が発表している。大企業の例だが、社員の顔で語る発信は小さな会社ほど効きやすい。",
+    "industries": [
+      "化学・塗料・接着剤",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "How AkzoNobel achieved employee advocacy success",
+      "url": "https://www.casestudies.com/company/dsmn8/case-study/how-akzonobel-achieved-employee-advocacy-success",
+      "publisher": "DSMN8（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1841",
+    "kind": "success",
+    "region": "overseas",
+    "title": "会社ページより社員の投稿が届く",
+    "summary": "英国の社員発信ツール会社は、LinkedInでは会社ページより社員個人の投稿の方がずっと広い相手に届くと説く。町工場なら社長や職人の個人アカウントが会社の顔になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社長がLinkedInで発信するときのネタ",
+    "source": {
+      "title": "LinkedIn company page vs employee advocacy",
+      "url": "https://dsmn8.com/blog/linkedin-company-page-vs-employee-advocacy/",
+      "publisher": "DSMN8",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1842",
+    "kind": "success",
+    "region": "overseas",
+    "title": "建材メーカーが営業に社員発信を導入",
+    "summary": "ポーランドの社員発信支援会社は、建材システムの製造会社が国をまたいで社員発信を広報と営業に取り入れた事例を紹介。営業担当が自分の名前で発信する形。",
+    "industries": [
+      "建材・金物"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Case study: international employee advocacy program in a manufacturing company",
+      "url": "https://sharebee.pl/en/knowledge-base/blog/case-study-international-employee-advocacy-program-in-a-manufacturing-company/",
+      "publisher": "Sharebee",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1843",
+    "kind": "success",
+    "region": "overseas",
+    "title": "工場の顔となる人もLinkedInに",
+    "summary": "米国の機械加工誌は、受託加工の工場は会社ページだけでなく、お客様と話す社員もLinkedInに出るべきだとし、受注につながるSNSとしてLinkedInを第一に挙げる。",
+    "industries": [
+      "切削加工",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "お客様と話す社員のプロフィールの書き方",
+    "source": {
+      "title": "Job Shops and Online Marketing, Version 2.0",
+      "url": "https://www.mmsonline.com/columns/job-shops-and-online-marketing-version-20",
+      "publisher": "Modern Machine Shop",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1844",
+    "kind": "success",
+    "region": "overseas",
+    "title": "社長の名前で検索されても困らない",
+    "summary": "米国の加工仲介大手は、工場の営業のこつとして、経営者がLinkedInで自分の検索での見え方を整え、買い手が発注前に人柄を知れるようにすることを挙げる。",
+    "industries": [
+      "切削加工",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社長プロフィールページに書くこと",
+    "source": {
+      "title": "Five Tips to Drive Sales for Your Machine Shop",
+      "url": "https://www.xometry.com/blog/five-tips-to-drive-sales-to-your-machine-shop",
+      "publisher": "Xometry",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1845",
+    "kind": "success",
+    "region": "overseas",
+    "title": "社員を会社の応援団にする講演",
+    "summary": "米国の板金・溶接の展示会FABTECHでは、社員を会社の発信者に育て、個人の発信が製造業の成果につながる話をテーマにした講演が組まれた。展示会でも個人発信が話題。",
+    "industries": [
+      "板金",
+      "溶接"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "From Employee to Advocate: How Personal Branding Drives Manufacturing Success",
+      "url": "https://cdn.fabtechexpo.com/sessions/45507/f187-from-employee-to-advocate-how-personal-branding-drives-manufacturing-success",
+      "publisher": "FABTECH",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1846",
+    "kind": "success",
+    "region": "overseas",
+    "title": "LinkedInで営業担当の個人ブランド",
+    "summary": "米国のLinkedInは、製造業の営業担当が個人の発信で信頼を築くことを勧める。買い手は会社より先に担当者の顔と考え方を見て判断することがある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Building your personal brand as a manufacturing seller",
+      "url": "https://business.linkedin.com/sales-solutions/cx/21/08/building-your-personal-brand-as-a-manufacturing-seller",
+      "publisher": "LinkedIn Sales Solutions",
+      "date": "2021-08"
+    }
+  },
+  {
+    "id": "success-1847",
+    "kind": "success",
+    "region": "overseas",
+    "title": "求人に動画を付けると応募が増える",
+    "summary": "米国の地方経済紙の寄稿は、LinkedInの報告として、動画付きの求人は応募が36%多いと紹介。別の製造業の例では採用動画で応募が前の倍になったという（寄稿者の紹介で、方法は不明）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "1分の職場紹介動画で伝えること",
+    "source": {
+      "title": "Opinion: Harnessing video for strategic talent attraction, retention",
+      "url": "https://sbj.net/stories/opinion-harnessing-video-for-strategic-talent-attraction-retention,95410",
+      "publisher": "Springfield Business Journal",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1848",
+    "kind": "success",
+    "region": "overseas",
+    "title": "食品大手の見習い募集は動画で",
+    "summary": "スイスの食品大手ネスレは、見習い（アプレンティス）募集で動画を使い、7万回超の再生と見習い募集ページへの2,000超のクリックを得たと支援会社が発表した。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Helping Nestlé reach and inspire candidates across digital channels",
+      "url": "https://www.casestudies.com/company/symphony-talent/case-study/helping-nestle-reach-and-inspire-candidates-across-digital-channels",
+      "publisher": "Symphony Talent（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1849",
+    "kind": "success",
+    "region": "overseas",
+    "title": "動画とライブ質問会で応募66%増",
+    "summary": "英国の電力会社は、技能職の見習い募集で動画・先輩の事例・SNSでのライブ質問会を使い、89人の枠に2,775件の応募が集まり前回比66%増えたと発表した。製造業ではないが手法はまねできる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "先輩社員に質問できる会の開き方",
+    "source": {
+      "title": "Apprentice applications soar",
+      "url": "https://www.westernpower.co.uk/news-and-events/latest-news/apprentice-applications-soar",
+      "publisher": "Western Power Distribution",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1850",
+    "kind": "success",
+    "region": "overseas",
+    "title": "工作機械商社と町工場がSNSで若手育成",
+    "summary": "英国の工作機械メディアは、全国製造業の日に合わせ、工作機械の販売会社と地域の加工会社が組み、TikTok・Instagram・YouTubeで若手育成を発信した例を2025年に紹介。長期の欠員が5万5千とのMake UK推計も引く。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Collaboration and social media are building a new talent pipeline on UK National Manufacturing Day",
+      "url": "https://mtdcnc.com/news/ncmt-ltd/ncmt-and-bel-engineering-show-how-collaboration-and-social-media-are-building-a-new-talent-pipeline-on-uk-national-manufacturing-day",
+      "publisher": "MTDCNC",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "success-1851",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見習いのSNS発信を競う大会",
+    "summary": "英国の製造業誌は、現役の見習いがSNSで自分の仕事を発信して競う大会を紹介。若手本人の発信が、同世代への一番の求人広告になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手社員が書く、入社1年目の日記",
+    "source": {
+      "title": "Social media drives manufacturing apprenticeship competition",
+      "url": "https://www.themanufacturer.com/articles/social-media-drives-manufacturing-apprenticeship-competition/",
+      "publisher": "The Manufacturer",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1106",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "英国政府が技能職の広報を支援",
+    "summary": "英国政府は技能職の魅力を伝える「Fire It Up」キャンペーンで、雇い主向けの広報素材をまとめた手引きを出した。国の広報に乗れば小さな会社でも発信しやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Fire It Up campaign toolkit",
+      "url": "https://assets.publishing.service.gov.uk/media/5cd1752ae5274a34e8d053ad/Fire_It_Up_campaign_toolkit.pdf",
+      "publisher": "英国政府（GOV.UK）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1107",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "英国では製造業の評価が上がった",
+    "summary": "英国Make UKがSavanta等と2023年に2,436人に聞いた調査では、製造業を経済に欠かせないと見る人が5年前の約3分の2から93%に増え、子どもの就職先として前向きな親も増えた（業界誌の報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Poll reveals shift in public attitudes towards manufacturing careers",
+      "url": "https://processengineering.co.uk/article/2094335/poll-reveals-shift-in-public-attitudes-towards-manufacturing-careers",
+      "publisher": "Process Engineering",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "pain-834",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "英国の若者で製造業を考える人は1割未満",
+    "summary": "英国の製造業誌は、製造業を仕事として考える若者は10%に満たないという調査を報じた。「知らない」ことが最大の壁で、仕事の中身を見せる発信が足りていない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若い人が知らない、ものづくりの仕事",
+    "source": {
+      "title": "Less than 10% of young people consider manufacturing career",
+      "url": "https://www.themanufacturer.com/articles/less-than-10-of-young-people-consider-manufacturing-career/",
+      "publisher": "The Manufacturer",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-835",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "英国のZ世代で製造業志望は6%",
+    "summary": "英国の製造業経営誌は、製造業での仕事を考えている英国のZ世代はわずか6%という調査を伝えた。若い人に届く場所と言葉で発信し直す必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Only 6% of Gen Z in the UK are considering a career in manufacturing",
+      "url": "https://manufacturingmanagement.co.uk/content/news/only-6-of-gen-z-in-the-uk-are-considering-a-career-in-manufacturing",
+      "publisher": "Manufacturing Management",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-836",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "子に製造業を勧める親は5人に1人",
+    "summary": "英国ケンブリッジ大学の製造研究所の報告では、子どもに製造業の仕事を勧めるという人は5人に1人にとどまった。保護者に向けた発信も採用には欠かせない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "保護者に知ってほしい、うちの働き方",
+    "source": {
+      "title": "Tackling manufacturing's image problem through policy",
+      "url": "https://www.ifm.eng.cam.ac.uk/news/tackling-manufacturings-image-problem-through-policy",
+      "publisher": "University of Cambridge IfM",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-837",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "英国の家具業界も若者の関心が薄い",
+    "summary": "英国の家具業界紙は2025年2月、製造業の仕事に若い人の関心が低いことを示す調査を報じた。家具・木工のような手仕事の業界でも担い手の悩みは共通。",
+    "industries": [
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Study highlights lack of interest in manufacturing careers",
+      "url": "https://www.furniturenews.net/news/study-highlights-lack-of-interest-in-manufacturing-careers",
+      "publisher": "Furniture News",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "success-1852",
+    "kind": "success",
+    "region": "overseas",
+    "title": "地域で製造業のイメージ改善に動く",
+    "summary": "英国ミッドランズの製造業ネットワークは、製造業の古く暗いイメージを変える取り組みを呼びかけている。地域の会社がまとまって発信すると、1社では届かない若者にも届く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Made in the Midlands tackles perceived poor image of manufacturing",
+      "url": "https://news.madeinthemidlands.com/news/made-in-the-midlands-tackles-perceived-poor-image-of-manufacturing",
+      "publisher": "Made in the Midlands",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1853",
+    "kind": "success",
+    "region": "overseas",
+    "title": "豪州の業界キャンペーンが900万人に到達",
+    "summary": "オーストラリアの製造業技能連合のキャンペーンは11の媒体に広告を出し、2か月で900万人超に届き、サイト訪問7万2千件と同団体のトップが述べた（業界団体AMTILの報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若い人に向けた仕事診断ページを作る",
+    "source": {
+      "title": "Audiences are connecting with a campaign to encourage young people into careers in manufacturing",
+      "url": "https://amtil.com.au/strong-reach-manufacturing-campaign/",
+      "publisher": "AMTIL",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1854",
+    "kind": "success",
+    "region": "overseas",
+    "title": "診断クイズで若者を引き込む",
+    "summary": "オーストラリアの製造業キャンペーンでは、向いている仕事を診断するクイズを始めた人の4人に3人が最後まで答えたと主催団体が説明（自己申告）。参加型のしかけは若い人に効く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "あなたに向く、ものづくりの仕事診断",
+    "source": {
+      "title": "Audiences are connecting with a campaign to encourage young people into careers in manufacturing",
+      "url": "https://amtil.com.au/strong-reach-manufacturing-campaign/",
+      "publisher": "AMTIL",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1108",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "豪州は古い固定観念を問題視",
+    "summary": "オーストラリアの製造業技能連合の2024年の人材計画は、若者が製造業を選ばない理由に古い固定観念があるとし、若者向けのキャンペーンを始めた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Manufacturing Industry Skills Alliance launches campaign to attract young Australians",
+      "url": "https://www.australianmanufacturing.com.au/manufacturing-industry-skills-alliance-launches-campaign-to-attract-young-australians/",
+      "publisher": "Australian Manufacturing",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "pain-838",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "豪州でも技能職の入学が伸びない",
+    "summary": "オーストラリアの業界団体SEMMAは、統計局の数字から製造業の技能職の入学がほぼ伸びていないと警告し、人手不足が続くとした。宣伝だけでは担い手が増えにくい現実。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Manufacturing skills enrolments stagnate as SEMMA warns of ongoing shortages",
+      "url": "https://www.australianmanufacturing.com.au/manufacturing-skills-enrolments-stagnate-as-semma-warns-of-ongoing-shortages/",
+      "publisher": "Australian Manufacturing",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1855",
+    "kind": "success",
+    "region": "overseas",
+    "title": "若い女性向けの体験会で関心を高める",
+    "summary": "オーストラリアの大学CQUniversityは、若い女性が製造業や技能職を体験できる催しを開いた。実際に手を動かす機会が、自分にもできるという実感につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "女子学生向けものづくり体験の開き方",
+    "source": {
+      "title": "Sparks fly for young women interested in manufacturing and trades careers",
+      "url": "https://www.cqu.edu.au/news/842750/sparks-fly-for-young-women-interested-in-manufacturing-and-trades-careers",
+      "publisher": "CQUniversity",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1856",
+    "kind": "success",
+    "region": "overseas",
+    "title": "若手社員を大使にして学校で話す",
+    "summary": "オーストラリア政府の見習い大使制度は2013年に始まり、2017年までに600万人に届いたと報告された（ユネスコ資料）。若い先輩が自分の言葉で語るのが一番伝わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手社員が母校で話すときの原稿",
+    "source": {
+      "title": "Australian Apprenticeships Ambassadors Program",
+      "url": "https://webarchive.unesco.org/web/20221006212403/https://unevoc.unesco.org/up/PP_Ambassador.pdf",
+      "publisher": "UNESCO-UNEVOC",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1857",
+    "kind": "success",
+    "region": "overseas",
+    "title": "NZでは学校と工場をつなぐ訪問",
+    "summary": "ニュージーランドの産業訓練機関Competenzは、高校訪問や展示会、メーカーとの連携で、生徒に製造・エンジニアの仕事を見せている。会社が学校に出向く形は日本でもまねしやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "高校の進路説明会で話すこと",
+    "source": {
+      "title": "Competenz on the front foot connecting students with manufacturing and engineering careers",
+      "url": "https://competenz.org.nz/news/competenz-on-the-front-foot-connecting-students-with-manufacturing-and-engineering-careers",
+      "publisher": "Competenz",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "success-1858",
+    "kind": "success",
+    "region": "overseas",
+    "title": "「学びながら稼ぐ」を前に出す",
+    "summary": "ニュージーランドのCompetenzは、見習いは働いて給料をもらいながら資格を取れると発信している。学費の心配がないことは、若い人と保護者に響く伝え方。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "働きながら資格が取れる、うちの育て方",
+    "source": {
+      "title": "Apprentices have it all – work, earn, learn",
+      "url": "https://competenz.org.nz/news/apprentices-have-it-all-work-earn-learn",
+      "publisher": "Competenz",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1109",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "NZは5年で機械系見習い8千人必要",
+    "summary": "ニュージーランドの2019年の発表では、機械系エンジニアの見習いが5年で8,000人超必要とされ、技能職の求人は過去最高水準とされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Demand for skilled workers across NZ at record high levels",
+      "url": "https://www.scoop.co.nz/stories/BU1910/S00221/demand-for-skilled-workers-across-nz-at-record-high-levels.htm",
+      "publisher": "Scoop",
+      "date": "2019-10"
+    }
+  },
+  {
+    "id": "trend-1110",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米Z世代は製造業を最新技術と見る",
+    "summary": "米国ニュージャージー州の経済団体は、Z世代が製造業を「欠かせない・ハイテク・現代的」と見るようになっているという調査を紹介した。最新の機械やデジタルを見せる発信が合う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Survey: Gen Z increasingly views manufacturing as vital, high-tech, modern",
+      "url": "https://njbia.org/survey-gen-z-increasingly-views-manufacturing-as-vital-high-tech-modern/",
+      "publisher": "NJBIA",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-839",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "米Z世代で工場勤務を考えるのは14%",
+    "summary": "米国のZ世代2,000人超への2025年の調査（Soter Analytics）では、工場などの産業の仕事を考えるのは14%にとどまり、5人に1人は給料が低いと思っていた（報道）。給料を具体的に見せることが大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちの給料と昇給の仕組みを正直に",
+    "source": {
+      "title": "Nearly 4M U.S. manufacturing jobs will open by 2033, but Gen Z won't touch them",
+      "url": "https://allwork.space/2025/12/nearly-4m-u-s-manufacturing-jobs-will-open-by-2033-but-gen-z-wont-touch-them",
+      "publisher": "Allwork.Space",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "trend-1111",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "Z世代は工場より技能職を好む",
+    "summary": "米国の報道では、Z世代は組立ラインの仕事より、溶接や電気などの技能職を選ぶ傾向があるとされる。「手に職がつく」ことを前に出すと響きやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Gen Z blue collar work",
+      "url": "https://fortune.com/2025/12/20/gen-z-blue-collar-work-ford-economy/",
+      "publisher": "Fortune",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "pain-840",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "製造業はZ世代の採用に課題",
+    "summary": "米国の人事団体SHRMは、製造業がZ世代を引きつけられていない理由と対策を論じる。働き方の柔軟さや成長の見通しをはっきり示すことが求められる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Z世代の新人が辞めない職場づくり",
+    "source": {
+      "title": "Manufacturing has a Gen Z problem. Here's how to fix it",
+      "url": "https://www.shrm.org/in/enterprise-solutions/insights/manufacturing-has-gen-z-problem-heres-how-to-fix",
+      "publisher": "SHRM",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1112",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "米国で「工具ベルト世代」が話題",
+    "summary": "米国では2024年、Z世代が大学より職業訓練を選ぶ「工具ベルト世代」としてWSJが報じ、職業系の学校の入学増が話題になった。AIの影響への不安や借金を避けたい思いが背景とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Gen Zers vocational training: the toolbelt generation",
+      "url": "https://www.fortune.com/2024/06/14/gen-zers-vocational-training-uncertainty-ai-toolbelt-generation-careers",
+      "publisher": "Fortune",
+      "date": "2024-06"
+    }
+  },
+  {
+    "id": "trend-1113",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "Z世代の半数が技能職を検討",
+    "summary": "米国の人事メディアは、履歴書作成サイトZetyの調査で、Z世代の働き手の53%が現場系・技能職を真剣に考えていると伝えた（2025年）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Gen Z choosing skilled trades over college degrees",
+      "url": "https://www.hrgrapevine.com/us/content/article/2025-06-25-gen-z-choosing-skilled-trades-over-college-degrees",
+      "publisher": "HR Grapevine",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "success-1859",
+    "kind": "success",
+    "region": "overseas",
+    "title": "アズビ募集はSNSの使い分けが鍵",
+    "summary": "ドイツの専門人材センターKOFAは、見習い（アズビ）をSNSで探す手引きを出し、若者がいる媒体を選び、社員の顔が見える投稿をするよう勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "高校生に届くSNSの選び方",
+    "source": {
+      "title": "Auszubildende über Social Media finden",
+      "url": "https://kofa.de/media/Publikationen/KOFA_Kompakt/Auszubildende_ueber_Social_Media_finden.pdf",
+      "publisher": "KOFA（ドイツ経済研究所）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1860",
+    "kind": "success",
+    "region": "overseas",
+    "title": "WhatsApp窓口で応募のハードルを下げる",
+    "summary": "ドイツのケルン商工会議所の会報は、応募の窓口にWhatsAppを加えた会社が、2週間で何件かの応募を得た例を紹介。電話やメールより気軽な連絡手段が若い人には効く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "LINEで質問できる求人の始め方",
+    "source": {
+      "title": "Azubi-Recruiting",
+      "url": "https://www.ihk.de/koeln/hauptnavigation/ihkplus/ausgabe-2023-5-ihkplus/azubi-recruiting-5955042",
+      "publisher": "IHK Köln",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "pain-841",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "SNSの選び先を間違えている",
+    "summary": "ドイツの手工業新聞は、多くの会社が若者のいない場所でアズビを募集していると報じた。若者が本当に見ている媒体を調べてから発信すべき。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Social Media: Betriebe werben am falschen Ort um Azubis",
+      "url": "https://www.deutsche-handwerks-zeitung.de/?p=347084",
+      "publisher": "Deutsche Handwerks Zeitung",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1114",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "アズビ募集の6割近くが埋まらない",
+    "summary": "ドイツ・ヘッセン州の資料は、2023年の調査で58%の会社が募集した見習いの枠を埋められなかったと伝える。SNSを使っても足りない状況が続いている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AZB Whitepaper",
+      "url": "https://www.dualeausbildung-hessen.de/fileadmin/bilder/2023/AZB-Whitepager-fin.pdf",
+      "publisher": "Duale Ausbildung Hessen",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-1115",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "Instagramの見習い募集を研究",
+    "summary": "ドイツの職業教育研究所BIBBの論文は、自動車部品メーカーのInstagramでの見習い募集の投稿を分析した（2020年）。公的研究機関もSNS採用を調べている。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Instagram im Ausbildungsmarketing",
+      "url": "https://dspace-test.bibb.de/items/2fda1647-bc30-4620-8fa7-dd10cc40c143/full",
+      "publisher": "BIBB",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "pain-842",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "アズビ募集のよくある5つの失敗",
+    "summary": "ドイツの見習い求人サイトは、応募が来ない会社によくある失敗として、返事の遅さや分かりにくい募集文などを挙げる。応募の後の対応も採用の一部。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "応募者に3日以内に返事する理由",
+    "source": {
+      "title": "Das kostet Sie Talente: 5 entscheidende Fehler im Azubi-Recruiting",
+      "url": "https://www.aubi-plus.de/blog/das-kostet-sie-talente-5-entscheidende-fehler-im-azubi-recruiting-6491/",
+      "publisher": "aubi-plus",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1116",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "カナダ政府が技能職の広報を開始",
+    "summary": "カナダ政府は2023年9月、若者に建設・運輸・製造・サービスの技能職を知ってもらう全国キャンペーンを始めた。国が技能職の魅力発信に予算をつけている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Government of Canada encourages Canadians to explore careers in the skilled trades",
+      "url": "https://www.canada.ca/en/employment-social-development/news/2023/09/government-of-canada-encourages-canadians-to-explore-careers-in-the-skilled-trades.html",
+      "publisher": "カナダ政府（ESDC）",
+      "date": "2023-09"
+    }
+  },
+  {
+    "id": "pain-843",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "必要と思うが自分はやらない",
+    "summary": "カナダの調査では、96%が国に技能職の人が必要と考える一方、76%は自分の仕事としては考えないと答えたと報じられた（発行元は不明確）。「必要だけど自分ごとではない」壁がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自分の仕事として考えてもらう伝え方",
+    "source": {
+      "title": "Canada needs to do more to attract young people to skilled trades",
+      "url": "https://www.on-sitemag.com/labour/canada-needs-to-do-more-to-attract-young-people-to-skilled-trades/1003977502/",
+      "publisher": "On-Site Magazine",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-844",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "若者に技能職をもっと勧めるべき",
+    "summary": "カナダの高等教育ニュースは、若者に技能職を選択肢として考えてもらうにはさらに取り組みが必要だとする調査を紹介。学校や保護者への情報が足りていない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Study shows more must be done to encourage youth to consider the skilled trades",
+      "url": "https://academica.ca/?p=6505",
+      "publisher": "Academica Group",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1117",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "カナダの製造業月間で学校に教材",
+    "summary": "カナダの電設業界誌によると、カナダ製造業者協会（CME）は10月の製造業月間などを通じて、200の中学・高校・大学に製造業の仕事を紹介する道具を届けた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Industry Continues to Lead the Evolution of Science, Technology Education",
+      "url": "https://canadianelectricalwholesaler.ca/industry-continues-to-lead-the-evolution-of-science-technology-education",
+      "publisher": "Canadian Electrical Wholesaler",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-934",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "技術者の96%が仕事で動画を見る",
+    "summary": "米国のIEEE GlobalSpecの2022年の発表では、技術者の96%が仕事のために動画を見て、53%は週に1時間以上見ている。新技術を調べるのにYouTubeが役立つと80%が答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "設計担当者が見たくなる加工動画",
+    "source": {
+      "title": "Engineers are embracing YouTube – so should you",
+      "url": "https://advertising.globalspec.com/2022/02/02/engineers-are-embracing-youtube-so-should-you/",
+      "publisher": "IEEE GlobalSpec",
+      "date": "2022-02"
+    }
+  },
+  {
+    "id": "buyer-935",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "技術者は今もメールを読む",
+    "summary": "米国の広告業界誌MediaPostは、技術者向けの調査から、技術者は今もメールのニュースレターをよく読むと伝える。動画や事例を月1回メールで届けるやり方は今も有効。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Blueprint For Engineers: They Still Read Email",
+      "url": "https://www.mediapost.com/publications/article/370197/blueprint-for-engineers-they-still-read-email-new.html",
+      "publisher": "MediaPost",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1118",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI概要の引用、上位10位内は38%",
+    "summary": "シンガポールのAhrefsが2026年に86.3万キーワードを調べると、AI概要で引用されたページのうち検索上位10位にも入るのは38%。順位だけでは引用は決まらない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "順位が低い会社でもAIに引用される書き方",
+    "source": {
+      "title": "AI概要の引用、上位10位内は38%",
+      "url": "https://ahrefs.com/blog/ai-overview-citations-top-10",
+      "publisher": "Ahrefs",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-1119",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ChatGPTは「おすすめ○選」記事をよく引く",
+    "summary": "シンガポールのAhrefsが2万6千超の出典URLを調べると、ChatGPTが引用したページの43.8%が「おすすめ○選」型の比較記事。次に多い型のほぼ2倍だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工方法の比較記事を自社で書く",
+    "source": {
+      "title": "ChatGPTは「おすすめ○選」記事をよく引く",
+      "url": "https://ahrefs.com/blog/best-lists-research/",
+      "publisher": "Ahrefs",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "success-1861",
+    "kind": "success",
+    "region": "overseas",
+    "title": "比較記事は毎年更新し上位に根拠を",
+    "summary": "シンガポールのAhrefsの調査では、引用された比較記事の79.1%が2025年に更新済みで、記事の上の方に載る会社ほどChatGPTの推薦に出やすかった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "材料・工法の比較表を毎年見直す",
+    "source": {
+      "title": "比較記事は毎年更新し上位に根拠を",
+      "url": "https://ahrefs.com/de/blog/best-lists-research/",
+      "publisher": "Ahrefs",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "trend-1120",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIはやや新しい記事を好む",
+    "summary": "シンガポールのAhrefsが2025年7月に約1,700万の引用を調べると、AIが引用するURLの平均年齢は1,064日で、検索結果（1,432日）より約26%新しかった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "主要ページを年1回見直す段取り",
+    "source": {
+      "title": "AIはやや新しい記事を好む",
+      "url": "https://ahrefs.com/blog/do-ai-assistants-prefer-to-cite-fresh-content/",
+      "publisher": "Ahrefs",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-1121",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "鮮度を一番好むのはChatGPT",
+    "summary": "シンガポールのAhrefsの鮮度調査では、新しいページを最も好むのはChatGPT。GoogleのAI概要は逆に、検索結果より平均16日古いページを引いていた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "鮮度を一番好むのはChatGPT",
+      "url": "https://ahrefs.com/fr/blog/do-ai-assistants-prefer-to-cite-fresh-content/",
+      "publisher": "Ahrefs",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "pain-845",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "更新日だけ変えても効かない",
+    "summary": "シンガポールのAhrefsの鮮度調査の筆者は、新しさは多くの要因の一つで、質の低い記事を毎日更新しても効果はないと注意。引用ページも平均では約3年前のもの。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "古い記事は数字と事例を足して直す",
+    "source": {
+      "title": "更新日だけ変えても効かない",
+      "url": "https://seositecheckup.com/articles/ai-loves-fresh-content-how-to-keep-your-blog-posts-relevant-and-cited",
+      "publisher": "SEO Site Checkup",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1122",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "構造化データを足しても引用増えず",
+    "summary": "シンガポールのAhrefsが1,885ページで比べると、JSON-LDの構造化データを足してもChatGPTやAIモードの引用はほぼ変わらず、AI概要は少し減った（TechWyse報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "構造化データを足しても引用増えず",
+      "url": "https://www.techwyse.com/news/ai-search/schema-markup-ai-citations-ahrefs-study",
+      "publisher": "TechWyse",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1123",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIはページの見える文字を読む",
+    "summary": "海外の調査まとめによると、ドイツのsearchVIUの2025年10月の試験では、チャットAIがページを読む時は画面に見える文字だけを使い、隠れた構造化データは無視した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "大事な仕様は画面の文字で書く",
+    "source": {
+      "title": "AIはページの見える文字を読む",
+      "url": "https://analyzify.com/hub/schema-markup-ai-citations-research",
+      "publisher": "Analyzify",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1124",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "被リンクより社名の言及と連動",
+    "summary": "英国のB2B支援会社のまとめでは、Ahrefsが7.5万ブランドを調べ、Web上の社名の言及とAI概要への表示の相関は0.664と被リンクの約3倍。相関で因果ではない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "業界誌や団体名簿で社名を増やす",
+    "source": {
+      "title": "被リンクより社名の言及と連動",
+      "url": "https://whitehat-seo.co.uk/blog/google-ai-overviews-b2b-guide",
+      "publisher": "Whitehat SEO",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1125",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "B2Bの比較検索でもYouTubeが最多",
+    "summary": "英語圏のマーケ会社DerivateXが2026年6月、B2Bの「おすすめソフト」検索のAI概要の引用1,259件を調べると、最も多い引用元はYouTubeで、Redditが続いた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工動画を記事に添える",
+    "source": {
+      "title": "B2Bの比較検索でもYouTubeが最多",
+      "url": "https://derivatex.agency/blog/what-content-gets-cited-google-ai-overviews/",
+      "publisher": "DerivateX",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-1126",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ChatGPT引用の4分の1は検索圏外",
+    "summary": "米国のseoClarityがChatGPTによく引用される上位1,000URLを調べると、約25%はGoogle検索の上位100位にも入っていなかった。検索と別の評価がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ChatGPT引用の4分の1は検索圏外",
+      "url": "https://www.seoclarity.net/research/analysis-of-top-cited-pages-from-chatgpt",
+      "publisher": "seoClarity",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1127",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "重なりの数字は数え方で大違い",
+    "summary": "米国の比較記事によると、seoClarityは「AI概要の9割が上位10位を1つは引用」、Ahrefsは「引用の約38%が上位10位」。分母が違うだけで、どちらも正しい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AI調査の数字の読み方を記事に",
+    "source": {
+      "title": "重なりの数字は数え方で大違い",
+      "url": "https://apiserpent.com/blog/ai-overview-citations-vs-rankings-overlap",
+      "publisher": "Serpent API",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1128",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIモードの引用は検索上位と重ならない",
+    "summary": "米国のMozが4万キーワードで調べると、GoogleのAIモードの引用のうち検索上位10位と一致したのは12%だけだった（AuthorityTechのまとめ）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIモードの引用は検索上位と重ならない",
+      "url": "https://authoritytech.io/curated/google-ai-mode-self-citation-audit-brand-2026",
+      "publisher": "AuthorityTech",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1129",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIモードの引用の17%はGoogle自身",
+    "summary": "海外のSE Rankingが2026年2月に130万件の引用を調べると、AIモードの引用の17.42%はgoogle.com自身だった（米国のAuthorityTechのまとめ）。地図や口コミ欄も大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Googleの会社情報を整える",
+    "source": {
+      "title": "AIモードの引用の17%はGoogle自身",
+      "url": "https://authoritytech.io/curated/google-ai-mode-self-citation-audit-brand-2026",
+      "publisher": "AuthorityTech",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1130",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIモードは1回で約23の情報源",
+    "summary": "米国のAveriが50のB2Bソフトの質問をGoogleのAIモードで試すと、1回の答えに平均約23の情報源。道具を探す質問は27.9、広い言葉は19.2と、買う直前ほど多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発注直前の疑問に答える記事",
+    "source": {
+      "title": "AIモードは1回で約23の情報源",
+      "url": "https://averi.ai/blog/we-ran-50-b2b-saas-queries-through-google-ai-mode.-it-cited-23-sources-per-answer.",
+      "publisher": "Averi",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1131",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIモードで見える引用は約5件",
+    "summary": "米国のTryAnalyzeの分析では、AIモードの画面に見える引用は1回平均約5.3件。B2Bの質問100件中97件で何かの出典が示された。クリックにつながるのはこの数件。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIモードで見える引用は約5件",
+      "url": "https://www.tryanalyze.ai/blog/state-of-ai-search-citation-presence",
+      "publisher": "TryAnalyze",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1132",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "引用の68%は派生質問でも上位外",
+    "summary": "米国のSurferの調査として紹介された結果では、AIが引用したページの68%は、元の質問でもAIが裏で作る派生質問でも検索上位10位に入っていなかった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "引用の68%は派生質問でも上位外",
+      "url": "https://ziptie.dev/?p=1350",
+      "publisher": "ZipTie",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-846",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "AIの「派生質問」は外から見えない",
+    "summary": "米国のSEO専門家によると、GoogleはAIモードが裏で作る派生質問を公開していない。派生質問を表示するツールは、AIでそれらしい質問を推測しているだけ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ツールの数字をうのみにしない",
+    "source": {
+      "title": "AIの「派生質問」は外から見えない",
+      "url": "https://hartzer.it.com/google-ai-mode/",
+      "publisher": "Hartzer Consulting",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1133",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIモードの引用上位はYouTube等",
+    "summary": "ドイツのSEO専門メディアがまとめた2026年7月のAIモード引用上位50サイトでは、YouTube・Reddit・Facebookが目立ち、LinkedInも引用を伸ばしていた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIモードの引用上位はYouTube等",
+      "url": "https://www.seo-day.de/news/article/the-50-most-cited-websites-in-google-ai-mode-july-2026?lang=en",
+      "publisher": "SEO-DAY",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "trend-1134",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ChatGPTはWikipedia、AI概要はReddit",
+    "summary": "米国のProfoundが2024年8月〜2025年6月の引用を調べると、ChatGPTの最大の引用元はWikipedia、GoogleのAI概要はRedditで、YouTubeとQuoraが続いた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIごとの引用元の違いを図解",
+    "source": {
+      "title": "ChatGPTはWikipedia、AI概要はReddit",
+      "url": "https://www.tryprofound.com/blog/ai-platform-citation-patterns",
+      "publisher": "Profound",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1862",
+    "kind": "success",
+    "region": "overseas",
+    "title": "AIごとに載る場所を分けて考える",
+    "summary": "米国のProfoundの調査では、AIの種類ごとに好む情報源が大きく違った。一つのAIの結果だけで判断せず、自社サイト・動画・Q&Aの場をそれぞれ点検するとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIごとに載る場所を分けて考える",
+      "url": "https://www.seroundtable.com/chatgpt-sources-39578.html",
+      "publisher": "Search Engine Roundtable",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1135",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "最近はYouTubeが引用の上位に",
+    "summary": "米国のLLM Pulseの直近28日の集計では、GoogleのAI概要とPerplexityで最も引用されたのはYouTube。動画の説明文も引用元になりうる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工の様子を動画と文字で残す",
+    "source": {
+      "title": "最近はYouTubeが引用の上位に",
+      "url": "https://llmpulse.ai/data-studies/top-cited-domains",
+      "publisher": "LLM Pulse",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1136",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI概要は検索の約48%に表示",
+    "summary": "米国のBrightEdgeの2026年2月までの分析では、追跡した検索の約48%にAI概要が出た。1年前は31%。表示の広がりは業種によって差がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AI概要は検索の約48%に表示",
+      "url": "https://www.writtenlyhub.com/news/ai-overviews-brightedge-data-2026-seo",
+      "publisher": "WrittenlyHub",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-847",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "AI概要は会社に辛口になりやすい",
+    "summary": "米国のBrightEdgeは2026年3月、GoogleのAI概要はChatGPTよりブランドを批判する記述が44%多いと発表（見出しの情報）。悪い評判が答えに混ざる心配がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AI概要は会社に辛口になりやすい",
+      "url": "https://atdb-v5.vercel.app/news/brightedge-data-reveals-new-ai-brand-risk-for-cmos-google-ai-overviews-are-44-more-likely-to-criticize-brands-than-chatgpt",
+      "publisher": "BrightEdge（転載）",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-1137",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "買う直前の質問はAIが社名を出しにくい",
+    "summary": "米国のBrightEdgeの調べでは、ChatGPTは購入段階の質問で挙げる社名が最も少なく、Googleは購入の質問になるとAI概要の代わりに買い物広告を出す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "買う直前の質問はAIが社名を出しにくい",
+      "url": "https://linkedin.com/company/brightedge",
+      "publisher": "BrightEdge",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-1138",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "豪州のB2Bサービス検索は半数にAI概要",
+    "summary": "豪州のDigital Nomads HQの2026年の調査では、B2Bサービスの検索結果の51.7%にAI概要が出た。全体平均37.8%より多く、企業向けの調べ物ほどAIが答える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "豪州のB2Bサービス検索は半数にAI概要",
+      "url": "https://digitalnomadshq.com.au/?p=44252",
+      "publisher": "Digital Nomads HQ",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1139",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI検索の訪問者は4.4倍の価値",
+    "summary": "米国のSemrushは2025年6月、AI検索からの訪問者は通常の自然検索より成約率で見て4.4倍の価値があると発表。AIで比較を済ませてから来るためと説明した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIから来た人が見るページを整える",
+    "source": {
+      "title": "AI検索の訪問者は4.4倍の価値",
+      "url": "https://www.semrush.com/blog/ai-search-seo-traffic-study/",
+      "publisher": "Semrush",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "trend-1140",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "2028年にAI検索が検索を超える予測",
+    "summary": "米国のSemrushは2025年6月の調査で、AI検索からの訪問者が2028年までに従来の検索からの訪問者を上回るとの見通しを示した（PPC Land報道）。あくまで予測。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "2028年にAI検索が検索を超える予測",
+      "url": "https://ppc.land/ai-search-visitors-worth-4-4x-more-than-traditional-organic-traffic/",
+      "publisher": "PPC Land",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "trend-1141",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI経由は成約しやすいとは限らない",
+    "summary": "米国の代理店Amsiveが54サイトを調べると、AI経由の訪問は自然検索より大きく成約しやすいとは言えなかった（Search Engine Land報道）。課題は量の少なさ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AI経由は成約しやすいとは限らない",
+      "url": "https://searchengineland.com/llm-organic-search-traffic-convert-same-research-461567",
+      "publisher": "Search Engine Land",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1142",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "LinkedInはAI引用で2番手",
+    "summary": "米国のSemrushが2026年1〜2月に32.5万の質問で調べると、LinkedInはAI検索でRedditに次ぐ引用元。8.9万のLinkedInのURLが答えに使われた（PPC Land報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "LinkedInはAI引用で2番手",
+      "url": "https://ppc.land/linkedin-ranks-2-in-ai-citations-what-89k-urls-reveal-about-b2b-visibility/",
+      "publisher": "PPC Land",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-1143",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "LinkedInの出方はAIで差",
+    "summary": "米国のSemrushのLinkedIn調査のまとめでは、答えにLinkedInが出る割合は平均約11%で、ChatGPT検索は14.3%、Perplexityは5.3%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "LinkedInの出方はAIで差",
+      "url": "https://www.kaleighmoore.com/ai-visibility-report-1",
+      "publisher": "Kaleigh Moore",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "success-1863",
+    "kind": "success",
+    "region": "overseas",
+    "title": "LinkedInは自分の言葉の投稿が引かれる",
+    "summary": "米国のSemrushのLinkedIn調査の解説では、AIに引用された投稿・記事の約95%は本人が書いた元の投稿で、共有し直しただけのものは約5%。社長や技術者の発信が効く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社長が技術の考えを英語圏SNSで書く",
+    "source": {
+      "title": "LinkedInは自分の言葉の投稿が引かれる",
+      "url": "https://almcorp.com/blog/linkedin-ai-search-citations-2026/",
+      "publisher": "ALM Corp",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1144",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "Redditの引用頻度は約4割",
+    "summary": "米国のDesignRushの紹介では、Semrushが5,000キーワード・15万超の引用を調べ、Redditの引用頻度は約40%でWikipediaやYouTubeより上。二次情報。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Redditの引用頻度は約4割",
+      "url": "https://www.designrush.com/agency/digital-marketing/trends/reddit-marketing",
+      "publisher": "DesignRush",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1145",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ChatGPTからB2Bサイトへの訪問が約4倍",
+    "summary": "米国のDemandbaseの集計では、追跡するB2Bサイトへの月間ChatGPT訪問が2026年6月に260万件となり、前年同月より303%増えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AI経由の訪問を月ごとに数える",
+    "source": {
+      "title": "ChatGPTからB2Bサイトへの訪問が約4倍",
+      "url": "https://www.demandbase.com/press-release/chatgpt-b2b-referrals-growth/",
+      "publisher": "Demandbase",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "trend-1146",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "伸びても流入全体の0.33%",
+    "summary": "米国のDemandbaseのデータを解説した記事では、ChatGPTからB2Bサイトへの訪問は1年で303%増えても、流入全体に占める割合は0.33%にとどまる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "伸びても流入全体の0.33%",
+      "url": "https://www.relevantaudience.com/geo/chatgpt-referrals-b2b-303-percent-growth/",
+      "publisher": "Relevant Audience",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1147",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "B2BでAI検索の流入は2%未満",
+    "summary": "米国のOctane11が4億のB2Bセッションを調べた2026年の報告では、AI検索は検索経由の流入の2%未満。Google検索の対策をやめる段階ではない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Google対策とAI対策の両立",
+    "source": {
+      "title": "B2BでAI検索の流入は2%未満",
+      "url": "https://octane11.com/insights/insights-state-of-b2b-ai-search-q2-26/",
+      "publisher": "Octane11",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1148",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "B2BへのAI流入はChatGPTが6割",
+    "summary": "米国のGoodieが41のB2Bサイトを2026年3〜4月に調べると、AI経由の流入はChatGPTが62.6%、Claude18.5%、Gemini10.6%、Perplexity7.3%だった（Axis Intelligence報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "B2BへのAI流入はChatGPTが6割",
+      "url": "https://axis-intelligence.com/?p=32664",
+      "publisher": "Axis Intelligence",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1149",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ChatGPTの送客が1か月で増加",
+    "summary": "海外のSE Rankingの集計では、世界のサイトへの流入に占めるChatGPTの割合が2026年4月0.23%→5月0.32%。5月7日のリンク表示の変更が背景と見るが因果は未確認。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ChatGPTの送客が1か月で増加",
+      "url": "https://seranking.com/blog/chatgpt-referral-traffic-may-2026/",
+      "publisher": "SE Ranking",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-1150",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIからの訪問は1年で約4.6倍",
+    "summary": "イスラエルのSimilarwebの集計では、2025年6月にAIが上位1,000サイトへ送った訪問は約11.3億回で前年同月比357%増。ただしGoogle検索は同月1,910億回。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIからの訪問は1年で約4.6倍",
+      "url": "https://coalitiontechnologies.com/blog/traffic-from-ai-hit-1-13b-visits-up-357-yoy",
+      "publisher": "Coalition Technologies",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-1151",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI送客の8割はChatGPT",
+    "summary": "イスラエルのSimilarwebの2025年6月の集計では、AIからの送客のうちChatGPTが約3.97億回で81.7%を占めた（Search Engine Land報道）。まずChatGPTで点検を。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ChatGPTで自社がどう出るか調べる",
+    "source": {
+      "title": "AI送客の8割はChatGPT",
+      "url": "https://searchengineland.com/ai-1-traffic-mostly-chatgpt-464653",
+      "publisher": "Search Engine Land",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-1152",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI引用の86%は企業が管理できる情報",
+    "summary": "米国のYextが2025年7〜8月にChatGPT・Gemini・Perplexityの680万件の引用を調べると、自社サイト44%・掲載サイト42%など86%が企業側で直せる情報だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIに読まれる自社情報の棚卸し",
+    "source": {
+      "title": "AI引用の86%は企業が管理できる情報",
+      "url": "https://yext.com/about/news-media/ai-citations-release",
+      "publisher": "Yext",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "trend-1153",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ChatGPTは掲載サイト、Geminiは公式",
+    "summary": "米国のYextの調査では、Geminiは引用の52.1%を企業の公式サイトから取り、ChatGPTは引用のほぼ半分を外部の掲載サイトから取っていた。Yextは関連製品の販売元。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ChatGPTは掲載サイト、Geminiは公式",
+      "url": "https://www.businesswire.com/news/home/20251009106549/en",
+      "publisher": "Business Wire",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "success-1864",
+    "kind": "success",
+    "region": "overseas",
+    "title": "社名なしの質問は公式サイトが約6割",
+    "summary": "米国のYextの調査では、社名を含まない客観的な質問では、公式サイトと拠点ページが引用の約6割。会社案内・対応地域・設備のページを正確に保つとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "会社概要ページを答えの形に直す",
+    "source": {
+      "title": "社名なしの質問は公式サイトが約6割",
+      "url": "https://chainstoreage.com/report-first-party-websites-product-listings-dominate-ai-search-citations",
+      "publisher": "Chain Store Age",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "success-1865",
+    "kind": "success",
+    "region": "overseas",
+    "title": "掲載サイトの会社情報もそろえる",
+    "summary": "米国のYextは、ChatGPTが外部の掲載サイトをよく引くと報告。業者名簿や地図の会社情報が古いとAIの答えも古くなるので、住所・業務・連絡先を一斉にそろえたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "掲載サイトの会社情報もそろえる",
+      "url": "https://www.yext.com/blog/ai-citations-86-percent-of-sources-are-brand-managed",
+      "publisher": "Yext",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "trend-1154",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "産業オートメーションのAI露出は平均4%",
+    "summary": "米国のZen Mediaが2026年に買い手の質問1,000件・4,000回答を調べると、上位100社のAI露出は平均4%。最も引用された情報源はメーカー自身のサイトだった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社サイトを技術の答え帳にする",
+    "source": {
+      "title": "産業オートメーションのAI露出は平均4%",
+      "url": "https://manufacturingdigital.com/globenewswire/3371734",
+      "publisher": "Manufacturing Digital",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-848",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "AIの推薦は大手数社に集中",
+    "summary": "米国のZen Mediaの2026年4月の調査では、ロボット分野のAIの答えに出る社名の約6割を大手4社が占めた。それ以外の会社は質問を細かく絞らないと出てこない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "大手が答えない細かい質問を狙う",
+    "source": {
+      "title": "AIの推薦は大手数社に集中",
+      "url": "https://www.globenewswire.com/news-release/2026/04/28/3283097/0/en/Four-OEMs-Capture-60-of-Robotics-Industry-AI-Visibility.html",
+      "publisher": "GlobeNewswire",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "trend-1155",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "地域の業種ではAIの推薦が1社に偏る",
+    "summary": "米国の地方の調査で、Genius Marketingが594のAIの答えを調べると、一部の業種ではChatGPT・Gemini・Perplexityが同じ1社を繰り返し推薦していた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "地域名と業種で自社が出るか試す",
+    "source": {
+      "title": "地域の業種ではAIの推薦が1社に偏る",
+      "url": "https://www.daily-tribune.com/online_features/press_releases/genius-marketing-s-study-of-594-ai-answers-finds-one-business-leads-chatgpt-gemini-and/article_f322a9c6-8a88-5523-96d0-25b9d2a7a0d1.html",
+      "publisher": "Daily Tribune",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1156",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI要約が出るとクリックが半減",
+    "summary": "米国のPew Researchが2025年3月に成人900人の閲覧を調べると、AI要約が出た検索で結果がクリックされたのは8%、出ないときは15%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AI要約が出るとクリックが半減",
+      "url": "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results.md",
+      "publisher": "Pew Research Center",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-1157",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AI要約の中のリンクは1%しか押されない",
+    "summary": "米国のPew Researchの調査では、AI要約の中にある出典リンクが押されたのは要約が出た訪問の約1%。引用されても来訪は少なく、社名を覚えてもらう意味が大きい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "引用で社名を覚えてもらう工夫",
+    "source": {
+      "title": "AI要約の中のリンクは1%しか押されない",
+      "url": "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/markdown",
+      "publisher": "Pew Research Center",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "success-1866",
+    "kind": "success",
+    "region": "overseas",
+    "title": "長い質問文ほどAI要約が出る",
+    "summary": "米国のPew Researchの調査では、質問の形の長い検索ほどAI要約が出やすく、1〜2語の検索で出たのは8%だけ。発注者が打つ長い質問に答える記事が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発注者の長い質問をそのまま見出しに",
+    "source": {
+      "title": "長い質問文ほどAI要約が出る",
+      "url": "https://www.seroundtable.com/pew-google-ai-overviews-39808.html",
+      "publisher": "Search Engine Roundtable",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-1158",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "検索は2026年に25%減との予測",
+    "summary": "米国のGartnerは2024年2月、AIチャットなどの影響で従来の検索エンジンの利用量が2026年までに25%減ると予測した。実際にどうなったかの測定ではない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "検索は2026年に25%減との予測",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents.",
+      "publisher": "Gartner",
+      "date": "2024-02"
+    }
+  },
+  {
+    "id": "trend-1159",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "25%減の予測には反論も",
+    "summary": "米国のSearch Engine Journalは、Gartnerの25%減予測は検索エンジンが変わらない前提に立つと批判。大事な調べ物ではチャットAIが信頼されにくい点も挙げた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "25%減の予測には反論も",
+      "url": "https://searchenginejournal.com/why-prediction-of-25-search-volume-drop-due-to-chatbots-fails-scrutiny/511270",
+      "publisher": "Search Engine Journal",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-1160",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "BingがGEOを公式の指針に追加",
+    "summary": "米国のMicrosoftはBingのウェブマスター向け指針を改め、Copilotの答えの「根拠」や引用に選ばれるための推奨を加えた（Search Engine Journal報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BingがGEOを公式の指針に追加",
+      "url": "https://www.searchenginejournal.com/bing-adds-geo-to-official-guidelines-expands-ai-abuse-definitions/",
+      "publisher": "Search Engine Journal",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "success-1867",
+    "kind": "success",
+    "region": "overseas",
+    "title": "見出しは質問の形、段落で完結",
+    "summary": "米国のMicrosoftは2025年10月、AIの答えに選ばれやすいのは具体的な質問や話題を表す見出しと、その下で一つの考えが完結する段落だと解説した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Q&A型の見出しで技術記事を組む",
+    "source": {
+      "title": "見出しは質問の形、段落で完結",
+      "url": "https://www.searchenginejournal.com/microsoft-explains-how-to-optimize-content-for-ai-search-visibility/577161",
+      "publisher": "Search Engine Journal",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "buyer-936",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "ソフトの買い手の51%はAIから調べ始める",
+    "summary": "米国のG2が2026年にB2Bソフトの買い手1,076人に聞くと、51%がGoogleよりAIチャットで調べ始めることが多いと回答。2025年4月の29%から増えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "発注者の最初の質問を想定する",
+    "source": {
+      "title": "ソフトの買い手の51%はAIから調べ始める",
+      "url": "https://learn.g2.com/ai-search-surging-for-b2b-buyers",
+      "publisher": "G2",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-937",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "AIとGoogleを並べて使う人が6割",
+    "summary": "米国のG2の2026年の調査では、B2Bソフトの買い手の61%がAI検索とGoogleを並べて使うと回答。Googleをやめたわけではなく、両方で見つかる必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIとGoogleを並べて使う人が6割",
+      "url": "https://company.g2.com/news/g2-research-the-answer-economy",
+      "publisher": "G2",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-938",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "AIを見て予定と違う会社を選んだ69%",
+    "summary": "米国のG2の2026年の調査では、ソフトの買い手の69%が、AIチャットが示した情報をきっかけに最初の予定と別の会社を選んだ。候補はAIで入れ替わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIに選ばれる理由を書く",
+    "source": {
+      "title": "AIを見て予定と違う会社を選んだ69%",
+      "url": "https://learn.g2.com/ai-search-surging-for-b2b-buyers?hs_amp=true",
+      "publisher": "G2",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-939",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "AIでの調べ物は早いと感じる53%",
+    "summary": "米国のG2の2026年の調査では、ソフトの買い手の53%がAIチャットでの調べ物は従来の検索より効率的と回答（前回36%）。使うAIはChatGPTが63%で最多。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIでの調べ物は早いと感じる53%",
+      "url": "https://www.demandgenreport.com/?p=52737",
+      "publisher": "Demand Gen Report",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-940",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "買い手の94%が購入途中でAIを使う",
+    "summary": "米国の6senseの2025年の買い手調査として、2.5万ドル以上を買った買い手の94%が購入途中で生成AIを使ったと紹介されている。主な使い方は調べた情報の整理。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "買い手の94%が購入途中でAIを使う",
+      "url": "https://www.firebrand.marketing/2026/05/brand-awareness-ai-companies-growth-lever/",
+      "publisher": "Firebrand",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "buyer-941",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "設備の買い手はAIで最初の3〜4社",
+    "summary": "米国の業界ブログによると、設備の購入では買い手がChatGPTで最初の候補を3〜4社出し、そこから詳しく調べる。最初の候補に入れるかが分かれ目になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIの最初の候補に入る条件",
+    "source": {
+      "title": "設備の買い手はAIで最初の3〜4社",
+      "url": "https://mention-rank.orosy.com/blog/industrial-equipment-buyer-behavior",
+      "publisher": "Mention Rank",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-942",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "技術者の質問先はChatGPTが69%",
+    "summary": "米国のAvnetが2025年10〜11月に世界の技術者1,200人に聞くと、設計中の技術的な質問先はChatGPT69%、Gemini57%、Copilot50%だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "技術者がAIに聞く質問に答える",
+    "source": {
+      "title": "技術者の質問先はChatGPTが69%",
+      "url": "https://iconnect007.com/article/148425/avnet-insights-survey-engineers-embracing-ai-and-confronting-its-challenges/148422/design",
+      "publisher": "I-Connect007",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-943",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "技術者は技術者が育てたAIを望む",
+    "summary": "米国のAvnetの2026年の調査では、誰でも使える汎用AIで答えを得たい技術者は16%だけ。47%は社外の技術者が学習させたAIを使いたいと答えた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "現場の技術者が書く記事の強み",
+    "source": {
+      "title": "技術者は技術者が育てたAIを望む",
+      "url": "https://timestech.in/avnet-insights-engineers-get-behind-ai/",
+      "publisher": "TimesTech",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-944",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "米国の技術者はAIを使うが信じ切らない",
+    "summary": "米国の2026年の調査では、技術者の86%がAIを使う一方、完全に信頼する人は6%だけ。AIの答えを確かめるための根拠のあるページが求められる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIの答えの裏づけになる資料",
+    "source": {
+      "title": "米国の技術者はAIを使うが信じ切らない",
+      "url": "https://allwork.space/2026/02/86-of-u-s-engineers-use-ai-but-only-6-fully-trust-it-2026-survey-finds/",
+      "publisher": "Allwork.Space",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "success-1868",
+    "kind": "success",
+    "region": "overseas",
+    "title": "AI経由1,867訪問から有望商談21件",
+    "summary": "米国の代理店Kuno Creativeによると、設備メーカーで2025年〜2026年にAI経由の訪問1,867件（ChatGPT1,580件）があり、うち21件が有望な商談になった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AI経由の問い合わせを数える仕組み",
+    "source": {
+      "title": "AI経由1,867訪問から有望商談21件",
+      "url": "https://www.kunocreative.com/manufacturer-ai-search-case-study",
+      "publisher": "Kuno Creative",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1869",
+    "kind": "success",
+    "region": "overseas",
+    "title": "AI概要の表示が1年で約4倍",
+    "summary": "米国の代理店Kuno Creativeの事例では、設備メーカーのAI概要への表示数が2025年に297%増え、自然検索からの問い合わせも前年比16.59%増えた（代理店の発表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AI概要の表示が1年で約4倍",
+      "url": "https://www.kunocreative.com/manufacturer-ai-search-case-study",
+      "publisher": "Kuno Creative",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1870",
+    "kind": "success",
+    "region": "overseas",
+    "title": "AIから来た商談の9割はChatGPT",
+    "summary": "米国の代理店Kuno Creativeの事例では、設備メーカーの有望商談21件のうち19件がChatGPT経由、PerplexityとCopilotが各1件（代理店の発表）。まずChatGPTを見る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "AIから来た商談の9割はChatGPT",
+      "url": "https://www.kunocreative.com/manufacturer-ai-search-case-study",
+      "publisher": "Kuno Creative",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1871",
+    "kind": "success",
+    "region": "overseas",
+    "title": "工業製品の会社でAI流入が2,300%増",
+    "summary": "米国のSEO会社The Search Initiativeの発表では、AI検索に出ていなかった工業製品の会社が、対策後にAIからの流入を2,300%増やした（代理店の発表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工業製品の会社でAI流入が2,300%増",
+      "url": "https://thesearchinitiative.com/case-studies/b2b-ai-search",
+      "publisher": "The Search Initiative",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1872",
+    "kind": "success",
+    "region": "overseas",
+    "title": "「AIで見つけた」で大口2件成約",
+    "summary": "米国の支援会社Marketing Metricsによると、中西部の機械加工会社が大企業2社と契約。どちらも「AI検索で御社を見つけた」という連絡から始まった（支援会社の発表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせ時に知った経路を聞く",
+    "source": {
+      "title": "「AIで見つけた」で大口2件成約",
+      "url": "https://www.marketingmetricscorp.com/ai-search",
+      "publisher": "Marketing Metrics",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-849",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "AI経由の買い手が解析に映らない",
+    "summary": "インドのB2B代理店upGrowthは、AIで見つけたと言う買い手9人がいたのに、GA4にはほとんど記録がなかったと報告。AI経由は「直接」に紛れやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AI経由の客を取りこぼさない計測",
+    "source": {
+      "title": "AI経由の買い手が解析に映らない",
+      "url": "https://upgrowth.in/buyers-found-us-through-ai-analytics-missed-them/",
+      "publisher": "upGrowth",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1873",
+    "kind": "success",
+    "region": "overseas",
+    "title": "自社分野の質問58問中30問で引用",
+    "summary": "米国のB2Bデータ会社Cleanlistが2026年8月、自社分野の58の質問でAI概要を調べると、30問で自社サイトが引用された。得意分野の解説を厚くした成果と説明。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "得意分野の質問を58個書き出す",
+    "source": {
+      "title": "自社分野の質問58問中30問で引用",
+      "url": "https://www.cleanlist.ai/blog/2026-08-10-ghost-citation-report-b2b-data",
+      "publisher": "Cleanlist",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "success-1874",
+    "kind": "success",
+    "region": "overseas",
+    "title": "部品は型番・互換表で探される",
+    "summary": "米国のSEO会社によると、工業部品の買い手は型番・互換品・メーカーコードで探す。仕様表と並べて互換表をWebの文字で載せると見つかりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "型番から探す人のための互換表",
+    "source": {
+      "title": "部品は型番・互換表で探される",
+      "url": "https://lattseo.pages.dev/services/industrial-parts-seo/",
+      "publisher": "LATT/SEO",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1875",
+    "kind": "success",
+    "region": "overseas",
+    "title": "仕様・カタログはWebで整える",
+    "summary": "米国の産業系代理店Atomic Designは、製品の仕様やカタログをWebページとして整理し、材料・寸法・認証を読み取れる形にすることを勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "カタログのWeb化の手順",
+    "source": {
+      "title": "仕様・カタログはWebで整える",
+      "url": "https://atomicdesign.net/learning-center/manufacturing/product-spec-catalog-best-practices/",
+      "publisher": "Atomic Design",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1876",
+    "kind": "success",
+    "region": "overseas",
+    "title": "PDFの取扱説明書をAIが読める形に",
+    "summary": "中国の輸出支援会社ABKEは、PDFの取扱説明書や仕様書を項目ごとの短い知識に分けてWebに載せ、AIに読まれやすくする方法を紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PDFの取扱説明書をAIが読める形に",
+      "url": "https://cnabke.com/en/faq/abke-ab-guest-geo-turn-pdf-manuals-into-ai-indexable-product-knowledge-for-b2b-export.html",
+      "publisher": "ABKE",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1161",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "FAQの構造化でAI引用が増えた例",
+    "summary": "米国のLLM Pulseの紹介では、2025年のRelixirの調査で、FAQの構造化データがあるページのAI引用率は41%、ないページは15%だった。調査の詳細は未確認。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "FAQの構造化でAI引用が増えた例",
+      "url": "https://llmpulse.ai/blog/glossary/faq-style-content-for-ai/",
+      "publisher": "LLM Pulse",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1162",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "FAQ付きは引用45%多いが標本は小",
+    "summary": "米国のTrakkrの2026年の調査では、FAQの構造化データがあるページは引用が平均45%多かった。ただし標本が小さく、FAQのあるページは長い傾向もあると注記。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "FAQ付きは引用45%多いが標本は小",
+      "url": "https://trakkr.ai/trakkr-research/anatomy-of-an-ai-citation/facts/pages-with-no-faq-signal-average-twenty-five-point-four-citations",
+      "publisher": "Trakkr",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-850",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "FAQの構造化は専門家でも意見が割れる",
+    "summary": "海外のSEO比較サイトは、FAQの構造化データをもう勧めない理由を解説。効くのは見える質問と答えの文章そのもの、という見方も多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "FAQは画面に見える文章で書く",
+    "source": {
+      "title": "FAQの構造化は専門家でも意見が割れる",
+      "url": "https://seocompare.pages.dev/stats/faq-schema-gap/",
+      "publisher": "SEOCompare",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "trend-1163",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "GEOの元は2023年の米国の論文",
+    "summary": "米国のプリンストン大などの研究者が2023年11月に「生成エンジン最適化（GEO）」の論文を出し、AIの答えに載るための書き方研究が始まった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "GEOの元は2023年の米国の論文",
+      "url": "https://www.guptadeepak.com/the-complete-guide-to-generative-engine-optimization-geo/",
+      "publisher": "Deepak Gupta",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-851",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "GEOの事例は代理店の自己申告が多い",
+    "summary": "米国の業界まとめでは、AI検索対策の事例の多くは代理店の自社発表で、開始前後の数字や第三者の確認がないものが多い。数字は誰の発表かを確かめたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AI対策業者の選び方",
+    "source": {
+      "title": "GEOの事例は代理店の自己申告が多い",
+      "url": "https://digitalagencynetwork.com/generative-engine-optimization-case-studies-real-examples-proven-strategies",
+      "publisher": "Digital Agency Network",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1164",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "シンガポールの中小デジタル化支援の広がり",
+    "summary": "シンガポールのIMDAによると、2022年1月時点で「SMEs Go Digital」から7万8千社を超える中小がデジタルの仕組みを入れた。国が業種ごとに「まず入れる道具」を示す方式。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "国の支援で何から始めたかを書く記事",
+    "source": {
+      "title": "SMEs Go Digital factsheet Jan 2022",
+      "url": "https://imda.gov.sg/-/media/imda/files/programme/smes-go-digital/smesgd-factsheet-jan-2022.pdf",
+      "publisher": "IMDA",
+      "date": "2022-01"
+    }
+  },
+  {
+    "id": "trend-1165",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "シンガポールでデジタル導入が5倍の速さに",
+    "summary": "シンガポール統計局とIMDAの資料では、デジタルの仕組みを入れる会社は四半期平均で2018年の約800社から2020年の約4千社へ増えた。コロナ期に一気に進んだ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "取引先のデジタル化に合わせた受注窓口",
+    "source": {
+      "title": "SingStat publication (IMDA digital adoption)",
+      "url": "https://www.singstat.gov.sg/-/media/files/publications/industry/ssn220-pg4-7.pdf",
+      "publisher": "シンガポール統計局",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1166",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "シンガポール食品工場の9割超がデジタル導入",
+    "summary": "シンガポールのEnterprise SingaporeとIMDAは2026年2月、食品製造業の9割超が業種向けのデジタルの仕組みを1つ以上入れたと発表（2023年は75%）。計画を更新し1500社超を支援。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "食品工場のデジタル化を発注者にどう見せるか",
+    "source": {
+      "title": "Refreshed Industry Digital Plan for food manufacturers",
+      "url": "https://www.enterprisesg.gov.sg/-/media/esg/files/media-centre/media-releases/2026/february/mr00526_refreshed-industry-digital-plan-to-support-over-1500-food-manufacturers-in-accelerating-technology-adoption.pdf",
+      "publisher": "Enterprise Singapore",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-1167",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "精密加工向けに段階別のデジタル化手引き",
+    "summary": "シンガポールは2021年11月、精密加工業向けのデジタル化計画を発表。約2700社が対象で、会社の成長段階ごとに入れる仕組みを示し、補助金で費用を支える。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちのデジタル化は今どの段階か",
+    "source": {
+      "title": "New digital plan to help Precision Engineering industry digitalise",
+      "url": "https://imda.gov.sg/news-and-events/Media-Room/Media-Releases/2021/New-digital-plan-to-help-Precision-Engineering-industry-digitalise-and-build-capabilities-for-the-future",
+      "publisher": "IMDA",
+      "date": "2021-11"
+    }
+  },
+  {
+    "id": "success-1877",
+    "kind": "success",
+    "region": "overseas",
+    "title": "研究機関と組んで生産性を上げた精密中小",
+    "summary": "シンガポールの精密加工の中小が、公的研究機関A*STARと組んで生産を見直した例。A*STARは記事の見出しで売上が6倍に伸びたと紹介している。外部の専門家と組む話は信頼の材料になる。",
+    "industries": [
+      "切削加工",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "公設試と組んだ改善を記事にする",
+    "source": {
+      "title": "How precision engineering SME achieved six-fold revenue growth",
+      "url": "https://www.a-star.edu.sg/topics/innovates/latest-research-tech/how-precision-engineering-sme-feinmetall-singapore-achieved-six-fold-revenue-growth",
+      "publisher": "A*STAR",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1168",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "精密加工の業界団体と研究機関が4.0を後押し",
+    "summary": "シンガポールでは2021年から、研究機関SIMTechの生産性センターが精密加工の業界団体と組み、IoTなどの導入と、技術を橋渡しするシステム会社の参加を進めている。",
+    "industries": [
+      "切削加工",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "業界団体の取り組みに参加した話",
+    "source": {
+      "title": "Productivity Matters: Collaborate & Excel",
+      "url": "https://www.a-star.edu.sg/simtech/mm/features/productivity-matters-collaborate-excel",
+      "publisher": "A*STAR SIMTech",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1169",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "韓国スマート工場で生産性28.5%向上",
+    "summary": "韓国のスマート工場普及事業（2014〜18年）の分析では、参加企業の生産性が28.5%、品質が42.5%上がったと報じられた（亜洲経済、2022年12月）。数字は事業側の分析。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場の見える化で何が変わったか",
+    "source": {
+      "title": "Four Years of Building Win-Win Smart Factories",
+      "url": "https://www.asiae.co.kr/en/article/2022120410530796424",
+      "publisher": "亜洲経済（asiae）",
+      "date": "2022-12"
+    }
+  },
+  {
+    "id": "success-1878",
+    "kind": "success",
+    "region": "overseas",
+    "title": "大手と組む韓国スマート工場で売上増",
+    "summary": "韓国中小企業中央会が鉄鋼大手との共生型スマート工場に参加した292社を調べると、売上の伸びが未導入企業より42.9ポイント高く、営業利益は導入後50.5%増えた（2024年1月報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "取引先と一緒に進めた改善の記事",
+    "source": {
+      "title": "Sales Increase of 63.4% with the Introduction of Win-Win Type Smart Factory",
+      "url": "https://www.asiae.co.kr/en/article/2024011509411476700",
+      "publisher": "亜洲経済（asiae）",
+      "date": "2024-01"
+    }
+  },
+  {
+    "id": "trend-1170",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "韓国スマート工場の導入2年で売上23.9%増",
+    "summary": "韓国中小企業中央会の2022年の調査（302社）では、スマート工場の導入1年後に売上が19.1%、2年後に23.9%伸び、雇用や新しい取り組みも増えたとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "設備投資の効果を数字で語る",
+    "source": {
+      "title": "SMEs Increase Sales, Employment, and Innovation Activities After Adopting Smart Factories",
+      "url": "https://www.asiae.co.kr/en/article/2022090709462321864",
+      "publisher": "亜洲経済（asiae）",
+      "date": "2022-09"
+    }
+  },
+  {
+    "id": "pain-852",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "スマート工場を入れても効果に差が出る",
+    "summary": "韓国の2024年の学術論文は、スマート工場を入れた企業の中にも改善の余地が残る例があると指摘。道具を入れるだけでなく、使いこなしと現場の定着が成果を分ける。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "設備を入れた後に苦労した話",
+    "source": {
+      "title": "Smart factory study (KoreaScience)",
+      "url": "https://koreascience.kr/article/JAKO202425043310595.do",
+      "publisher": "KoreaScience",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1879",
+    "kind": "success",
+    "region": "overseas",
+    "title": "韓国のオンライン商談は追いかけ面談つき",
+    "summary": "韓国のKOTRAは2020年11月までにオンライン輸出商談を3万1千件超開き、84か国の買い手1万4千社が参加と発表。1回の面談では契約になりにくいため、後追いの面談も用意した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "オンライン商談の後の追いかけ方",
+    "source": {
+      "title": "KOTRA Surpasses 30,000 Online Export Consultations",
+      "url": "https://www.asiae.co.kr/en/article/2020112911163985628",
+      "publisher": "亜洲経済（asiae）",
+      "date": "2020-11"
+    }
+  },
+  {
+    "id": "trend-1171",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "韓国は非対面の海外営業で輸出成果",
+    "summary": "韓国のKOTRAは2020年9月、コロナ期の非対面の海外マーケティング（映像商談など）で6億ドルの輸出成果を上げたと発表した。会わずに商談する形が定着し始めた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ビデオ商談で工場を見せるコツ",
+    "source": {
+      "title": "KOTRA Achieves $600 Million Export Results in Non-Face-to-Face Overseas Marketing",
+      "url": "https://www.asiae.co.kr/en/article/2020092110054855087",
+      "publisher": "亜洲経済（asiae）",
+      "date": "2020-09"
+    }
+  },
+  {
+    "id": "success-1880",
+    "kind": "success",
+    "region": "overseas",
+    "title": "台湾の車部品会社が当日受注・当日出荷",
+    "summary": "台湾の自動車用ハンドル部品メーカーが、政府の製造業デジタル化事業を使い、2021年に取締役会で計画を決定。受注から出荷を当日で回せるようにした（PwCの事例）。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "短納期を支える仕組みを書く",
+    "source": {
+      "title": "How does a Taiwan-based aftermarket car handle manufacturer win the global market",
+      "url": "https://www.bcctaipei.com/sites/default/files/2023-12/PWC%20-%20HOW%20DOES%20A%20TAIWAN-BASED%20AFTERMARKET%20CAR%20HANDLE%20MANUFACTURER%20WIN%20THE%20GLOBAL%20MARKET_0.pdf",
+      "publisher": "PwC（英国商工会議所台北）",
+      "date": "2023-12"
+    }
+  },
+  {
+    "id": "success-1881",
+    "kind": "success",
+    "region": "overseas",
+    "title": "台湾の航空部品会社はデータで品質を示す",
+    "summary": "台湾の航空機用締結部品メーカーが、データに基づく品質管理と生産の効率化で国際市場に出た事例（PwC）。品質の記録を示せることが海外の買い手の信頼につながる。",
+    "industries": [
+      "航空宇宙",
+      "ねじ・締結部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "品質データの見せ方を記事にする",
+    "source": {
+      "title": "Asian Aerospace Parts Suppliers Leap into the International Market",
+      "url": "https://www.bcctaipei.com/sites/default/files/2022-11/PwC%EF%BD%9CPursuing%20Efficient%20Production%20and%20Excellent%20Quality%20with%20Data-driven%20Decision-making%2C%20Asian%20Aerospace%20Parts%20Suppliers%20Leap%20into%20the%20International%20Market_final.pdf",
+      "publisher": "PwC（英国商工会議所台北）",
+      "date": "2022-11"
+    }
+  },
+  {
+    "id": "trend-1172",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "台湾貿易センターがオンライン展示館",
+    "summary": "台湾の貿易振興機関TAITRAは2021年の年次報告で、自動車部品・医療・IoTなど9つの館をもつオンライン展示会を貿易サイト上に作ったと報告。展示会に行けない買い手向け。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネット上の常設展示場としてのHP",
+    "source": {
+      "title": "TAITRA Annual Report 2021",
+      "url": "https://www.taitra.org.tw/YearReport/2021/EN/files/basic-html/page34.html",
+      "publisher": "TAITRA",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1173",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "台湾の工作機械展はオンラインで6万訪問",
+    "summary": "台湾の工作機械展のオンライン版（2021年）は最初の2日で約6万の訪問があり、多い買い手はインド・タイ・ベトナムだったと報じられた（CENS）。アジアの買い手はネットで探す。",
+    "industries": [
+      "産業機械",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外の買い手がネットで見る情報",
+    "source": {
+      "title": "TIMTOS Online 2021",
+      "url": "https://www.cens.com/cens/html/en/news/news_inner_55645.html",
+      "publisher": "CENS",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-1174",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "台湾はVR展示で出展者を無料支援",
+    "summary": "台湾のTAITRAは2020年7月、ドイツの見本市に出る28社にVR展示とWeb販促を無料で提供し、年80回のオンラインVR展示を計画すると報じられた（Taipei Times）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場をVRや動画で見せる方法",
+    "source": {
+      "title": "TAITRA virtual exhibitions",
+      "url": "https://www.taipeitimes.com/News/biz/archives/2020/07/22/2003740322",
+      "publisher": "Taipei Times",
+      "date": "2020-07"
+    }
+  },
+  {
+    "id": "success-1882",
+    "kind": "success",
+    "region": "overseas",
+    "title": "20人未満の包装工場が3か月で信頼を得た",
+    "summary": "ベトナムの20人未満の包装資材工場が、Alibaba.comで3か月のうちに評価の星を上げ、買い手の信頼が増えるにつれ注文が入り始めた（Alibaba発表の事例）。小さくても実績の見える化が効く。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな工場が評価を積み上げる方法",
+    "source": {
+      "title": "This Vietnamese packaging supplier sees exponential growth on Alibaba.com",
+      "url": "https://seller.alibaba.com/stories/this-vietnamese-packaging-supplier-sees--exponential-growth-on-alibabacom-px002buj6",
+      "publisher": "Alibaba.com",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1883",
+    "kind": "success",
+    "region": "overseas",
+    "title": "地元の包装会社が世界の買い手から引き合い",
+    "summary": "インドネシアの包装メーカーがAlibaba.comに出て、問い合わせが安定し、本気の買い手が増え、受注の流れも整ったと創業者が語る（Alibaba発表の事例）。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせの「質」が上がった話",
+    "source": {
+      "title": "Success story: global buyers on Alibaba.com",
+      "url": "https://seller.alibaba.com/id/success-story-pt-hoki-pas-global-buyers-alibaba-com",
+      "publisher": "Alibaba.com",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1884",
+    "kind": "success",
+    "region": "overseas",
+    "title": "最初の連絡から10日で大口受注",
+    "summary": "バングラデシュの環境配慮型の衣料工場が、ギリシャの買い手と連絡を始めて10日で12万4千ドルの注文を得た（Alibaba発表）。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "環境の取り組みを具体的に書く",
+    "source": {
+      "title": "Sustainable apparel manufacturing global growth & impact",
+      "url": "https://seller.alibaba.com/stories/px002aioh-brownfield-sustainable-apparel-manufacturing-global-growth--impact",
+      "publisher": "Alibaba.com",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-945",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "海外の買い手は返信の速さで選ぶ",
+    "summary": "Alibaba.comの売り手向けブログは、B2Bの買い手は返信の早さを取引先選びの決め手にすると説き、24時間以内の返信を勧める。問い合わせへの初動の速さは国内でも同じ。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせに何時間で返すかを書く",
+    "source": {
+      "title": "Within 24 Hours Response Time: The Hidden Competitive Advantage",
+      "url": "https://seller.alibaba.com/blogs/2026/southeast-asia/dried-fruit/24-hours-response-communication-guide-alibaba-b2b",
+      "publisher": "Alibaba.com",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1885",
+    "kind": "success",
+    "region": "overseas",
+    "title": "夜間の問い合わせにAIが一次対応",
+    "summary": "Alibaba.comの台湾向けブログによると、AIが夜間の買い手のメッセージに対応し、ある利用者は3か月の試用で問い合わせが保証水準の3倍になった（Alibabaの宣伝で1例のみ）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "時差のある問い合わせへの対応",
+    "source": {
+      "title": "Alibaba.com AI Agent for Taiwan exporters",
+      "url": "https://seller.alibaba.com/tw/blogs/alibaba-com-ai-agent-for-taiwan-exporters",
+      "publisher": "Alibaba.com",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1886",
+    "kind": "success",
+    "region": "overseas",
+    "title": "無料会員から有料にして商品800件掲載",
+    "summary": "ベトナムの食品会社は無料会員のときは問い合わせが少なかったが、有料会員に上げて掲載商品を800件超に増やし、輸出を伸ばした（Alibabaの事例集）。載せる量が見つかる量になる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品・加工事例ページを増やす理由",
+    "source": {
+      "title": "Hagimex achieves global export growth with Alibaba.com",
+      "url": "https://www.casestudies.com/company/alibabacom/case-study/hagimex-customer-case-study",
+      "publisher": "Alibaba.com（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1887",
+    "kind": "success",
+    "region": "overseas",
+    "title": "8年の苦労の後に初の大口輸出",
+    "summary": "ベトナムの金属家具工場は、Alibabaの店を開いて約5か月で初の海外受注を得た。その後HPを作り、FacebookとGoogleの広告も始めた。見出しでは約100万ドルの注文と報道。",
+    "industries": [
+      "金属加工",
+      "木工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "モール出店からHPへ広げた順番",
+    "source": {
+      "title": "Vietnamese firm lands first $1 mln order on Alibaba after 8-year struggle",
+      "url": "https://theinvestor.vn/vietnamese-firm-lands-first-1-mln-order-on-alibaba-after-8-year-struggle-to-export-d15831.html",
+      "publisher": "The Investor",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-853",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "中小にネット販促の経験と人がいない",
+    "summary": "ベトナムの専門家は、多くの中小がネットでの販促の経験が少なく、情報も担当できる人材も足りないと指摘。ネットと展示会など対面の両方を使うよう勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "人がいない会社のネット発信の始め方",
+    "source": {
+      "title": "VN exporters need to use both online, offline platforms",
+      "url": "https://vietnamnews.vn/economy/537869/vn-exporters-need-to-use-both-online-offline-platforms-to-go-global-experts.html",
+      "publisher": "Viet Nam News",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1888",
+    "kind": "success",
+    "region": "overseas",
+    "title": "ネットと対面の両方で販路を開く",
+    "summary": "ベトナムの輸出支援の場で、ネットのB2Bサイトと展示会・商談会を組み合わせるよう助言された。ネットで見つけてもらい、対面で信頼を固める流れが勧められている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会とHPをつなぐ流れ",
+    "source": {
+      "title": "Exporters advised to use both online, offline platforms to go global",
+      "url": "https://baobinhduong.vn/en/exporters-advised-to-use-both-online-offline-platforms-to-go-global-a211358.html",
+      "publisher": "Binh Duong新聞",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-854",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "デジタル輸出の壁は人材と技術支援",
+    "summary": "国際商業会議所（ICC）の2022年のベトナム報告は、中小のデジタル輸出の壁として、技能のある人材不足、技術面の支援不足、通信の遅さを挙げた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "少人数で続けられる発信の仕組み",
+    "source": {
+      "title": "2022 ICC MSME Digital Export Southeast Asia: Vietnam",
+      "url": "https://iccwbo.org/wp-content/uploads/sites/3/2022/12/2022-icc-msme-digital-export-southeast-asia--country-focus-vietnam.pdf",
+      "publisher": "ICC",
+      "date": "2022-12"
+    }
+  },
+  {
+    "id": "success-1889",
+    "kind": "success",
+    "region": "overseas",
+    "title": "売上の半分がB2Bサイト経由に",
+    "summary": "インドの金属工芸品メーカーの創業者は、売上のほぼ半分がB2BサイトIndiaMART経由になったと語る（IndiaMART掲載、2025年10月）。製品ごとの掲載が地方の小さな工場の販路になる。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "地方の工場が全国から受注する方法",
+    "source": {
+      "title": "IndiaMART supported in expanding my business",
+      "url": "https://corporate.indiamart.com/2025/10/23/indiamart-supported-in-expanding-my-business/",
+      "publisher": "IndiaMART",
+      "date": "2025-10"
+    }
+  },
+  {
+    "id": "buyer-946",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "地元の業者として見えると選ばれやすい",
+    "summary": "インドのIndiaMARTの2020年の記事では、地域で上位に出る有料枠の売り手は週35〜49件の引き合いを得るとし、「地元の業者」と見えることが買い手の安心になると説明。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "地域名を入れて地元の買い手に届く",
+    "source": {
+      "title": "How a 40 year old business transformed itself digitally through IndiaMART",
+      "url": "https://corporate.indiamart.com/2020/02/14/how-a-40-year-old-business-transformed-itself-digitally-through-indiamart/",
+      "publisher": "IndiaMART",
+      "date": "2020-02"
+    }
+  },
+  {
+    "id": "pain-855",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "インド中小の9割がネット輸出は難しい",
+    "summary": "インドの団体Empower Indiaの調査では、中小・輸出業者の約9割がネット輸出の仕組みを分かりにくいと答え、手続きと手数料が主な壁だった（Deccan Chronicle報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外の問い合わせ対応の手間を減らす",
+    "source": {
+      "title": "90% of Indian MSMEs find e-commerce export ecosystem challenging",
+      "url": "https://www.deccanchronicle.com/business/90-of-indian-msmes-find-e-commerce-export-ecosystem-challenging-1854127",
+      "publisher": "Deccan Chronicle",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1175",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "インド中小の8割がB2Bサイト利用増を予想",
+    "summary": "インドで2026年の「世界中小企業の日」に合わせた1万6千社超の調査では、10社中8社が今後2年でB2Bのネット取引の利用が増えると見込んだ（Tribune India）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "買い手がネットで調達する時代の備え",
+    "source": {
+      "title": "World MSME Day 2026 survey",
+      "url": "https://www.tribuneindia.com/news/business/world-msme-day-2026-5-in-10-msmes-continue-to-face-supplier-management-and-invoice-compliance-challenges-digital-procurement-adoption-accelerating/",
+      "publisher": "Tribune India",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "pain-856",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "販路と顧客の維持が最大の悩み",
+    "summary": "インドの2023年の報告では、中小の多くが販路の確保、顧客の維持、販促を最大の課題に挙げた。ネット販売を使う会社は若く学歴の高い経営者が多い傾向もあった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "既存客を手放さない発信",
+    "source": {
+      "title": "Inability to access markets, retain customers top challenges for MSMEs",
+      "url": "https://www.deccanherald.com/business/inability-to-access-markets-retain-customers-top-challenges-for-msmes-report-2718975",
+      "publisher": "Deccan Herald",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "pain-857",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "口コミ頼みでネットは難しく見える",
+    "summary": "インドの中小の多くは今も口コミや近所の来客に頼り、ネットの販路は複雑で怖く高そうに見えるという論考。最初の一歩を小さくすることが大事になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "口コミの会社がHPを持つ意味",
+    "source": {
+      "title": "Why are MSMEs still unable to access newer markets?",
+      "url": "https://india.entrepreneur.com/en-in/news-and-trends/why-are-msmes-still-unable-to-access-newer-markets/491615",
+      "publisher": "Entrepreneur India",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1890",
+    "kind": "success",
+    "region": "overseas",
+    "title": "展示場運営者が作った越境B2Bサイト",
+    "summary": "インドの大型展示場の運営会社が越境B2Bサイトを作り、200社超の中小が海外の小売の買い手とつながっている（YourStory）。展示会の主催者がネットでも商談を続ける形。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会後もネットで商談を続ける",
+    "source": {
+      "title": "How ExpoBazaar is making B2B export feasible for Indian MSMEs",
+      "url": "https://yourstory.com/smbstory/b2b-export-small-business-msme-expobazaar-india-expo-mart-america",
+      "publisher": "YourStory",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-947",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "B2Bサイトは買い手の探す手間を減らす",
+    "summary": "インドの製造中小を調べた研究は、B2Bのネット市場は買い手にとって価格を比べやすく、取引や探す手間が減ると整理。買い手は比べる材料がそろった所を選ぶ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "比べやすい情報の出し方",
+    "source": {
+      "title": "Perception and adoption of B2B electronic marketplaces: manufacturing MSMEs",
+      "url": "https://sgbeta.inflibnet.ac.in/items/37a86471-1b08-46bf-8e1f-1fec68e5e102",
+      "publisher": "INFLIBNET",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1176",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "広州交易会は会期後の追いかけまでアプリ化",
+    "summary": "中国の広州交易会（第139回、2026年春）は、買い手向けの窓口、通年の事前登録、ニュースレターを始め、アプリで会期前の計画から会期後のフォローまで支えると発表した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の前後で何を発信するか",
+    "source": {
+      "title": "The 139th Canton Fair to open on April 15",
+      "url": "https://www.bolsamania.com/nota-de-prensa/mercados/the-139th-canton-fair-to-open-on-april-15-with-expanded-scale-and-stronger-innovation-focus--22283086.html",
+      "publisher": "広州交易会（プレスリリース）",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "pain-858",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "オンライン展示会は対面に及ばない",
+    "summary": "中国の輸出企業は、2020年に完全オンラインで開かれた広州交易会について、対面の展示会の代わりにはならないと感じたと報じられた（財新）。ネットは対面を補う役と考える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネットと対面の役割分担",
+    "source": {
+      "title": "China's exporters find virtual trade fair is no match for real thing",
+      "url": "https://www.caixinglobal.com/2020-06-28/chinas-exporters-find-virtual-trade-fair-is-no-match-for-real-thing-101572764.html",
+      "publisher": "Caixin Global",
+      "date": "2020-06"
+    }
+  },
+  {
+    "id": "trend-1177",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "交易会のライブ配信に88万人",
+    "summary": "中国の広州交易会（2021年春、オンライン）は出展企業のライブ配信を88万人が見たと報じられた（China Daily）。工場や製品を動画で見せる売り方が広がった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場紹介の動画を作る",
+    "source": {
+      "title": "Online crowd swells at third Canton Fair",
+      "url": "https://www.pressreader.com/usa/china-daily-global-weekly/20210430/281706912539310",
+      "publisher": "China Daily",
+      "date": "2021-04"
+    }
+  },
+  {
+    "id": "pain-859",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "モール頼みは手数料と集客の偏りが不安",
+    "summary": "中国の輸出支援会社のブログは、B2Bモールだけに頼ると手数料の上昇や集客の偏りに左右されると指摘し、自社サイトを持つよう勧める（宣伝を含む）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "モールに頼らず自社HPを持つ理由",
+    "source": {
+      "title": "B2B website strategy: Alibaba dependency",
+      "url": "https://cnabke.com/en/blogs/b2b-website-strategy-alibaba-dependency.html",
+      "publisher": "cnabke",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1178",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "中国の工場は「モール＋自社サイト」の二本立て",
+    "summary": "中国の輸出向けWeb支援会社は、B2Bモールと自社サイトはどちらか一方ではなく、両方を使う二本立てが主流になりつつあると説く（業者の見方で数字の出典は不明）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ポータル掲載と自社HPの使い分け",
+    "source": {
+      "title": "How do foreign trade B2B companies choose B2B platforms, independent website, SEO and SEM",
+      "url": "https://cnabke.com/en/blogs/how-do-foreign-trade-b2b-companies-choose-b2b-platforms-independent-website-seo-and-sem.html",
+      "publisher": "cnabke",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1179",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "買い手がAIに仕入れ先探しを任せ始めた",
+    "summary": "中国のAlibaba.comは、買い手が会話で条件を伝えると候補の売り手を探して問い合わせまで送るAI「Accio」を広げている（Digital Commerce 360、2025年8月）。AIに読まれる情報が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIに紹介される会社情報の書き方",
+    "source": {
+      "title": "Alibaba B2B search engine Accio agent",
+      "url": "https://www.digitalcommerce360.com/2025/08/14/alibaba-b2b-search-engine-accio-agent/",
+      "publisher": "Digital Commerce 360",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "trend-1180",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "問い合わせの意図をAIが読み返信案",
+    "summary": "中国のAlibaba.comは2025年9月、買い手のメッセージから意図・急ぎ具合・条件を読み取り、売り手に返信案を出すAI機能を発表した（Digital Commerce 360）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせの返信を早くする工夫",
+    "source": {
+      "title": "Alibaba.com AI tools CoCreate 2025",
+      "url": "https://www.digitalcommerce360.com/2025/09/08/alibaba-com-ai-tools-cocreate-2025/",
+      "publisher": "Digital Commerce 360",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "trend-1181",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "世界の中小の63%が越境取引にAIを求める",
+    "summary": "中国のAlibaba.comの調査として、世界の中小の63%が越境取引のためにAIの道具を探していると発表された（Alibaba発表）。小さな会社ほどAIで手間を減らそうとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIで海外対応の手間を減らす",
+    "source": {
+      "title": "63% of Global SMEs Now Rush to AI Tools to Supercharge Cross-Border Trade",
+      "url": "https://finanzen.net/nachricht/aktien/63-of-global-smes-now-rush-to-ai-tools-to-supercharge-cross-border-trade-alibaba-com-research-14799247",
+      "publisher": "Alibaba.com（finanzen.net掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1182",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "AIで小さな輸出業者の固定費が下がる",
+    "summary": "中国のChina Dailyの論説（2026年4月）は、AIの道具によって小さな輸出業者が知らない市場に出るときの固定費が減ると論じた。翻訳や問い合わせ対応の負担が軽くなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AIで海外の問い合わせに備える",
+    "source": {
+      "title": "China Daily opinion on AI tools for exporters",
+      "url": "https://www.chinadaily.com.cn/a/202604/25/WS69ec1000a310d6866eb457c4.html",
+      "publisher": "China Daily",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "buyer-948",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "海外の買い手は第三者の工場監査を見る",
+    "summary": "中国のMade-in-China.comは、第三者の認証機関が工場を監査した売り手に印を付け、営業許可・認証・生産と品質管理の体制を監査報告にまとめて買い手に示している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "第三者の認証や監査をHPに載せる",
+    "source": {
+      "title": "Made-in-China.com member icons",
+      "url": "https://www.made-in-china.com/aboutus/membericon/",
+      "publisher": "Made-in-China.com",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-949",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "買い手は生産現場の動画を求める",
+    "summary": "中国の調達代行会社の手引きは、仕入れ先に営業許可・工場の住所・製品範囲・生産中の動画を求めるよう勧め、工場の動画を嫌がる会社は商社が工場を装う疑いありとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場の中を動画で見せる理由",
+    "source": {
+      "title": "Verify China suppliers: step-by-step due diligence",
+      "url": "https://www.maplesourcing.com/verify-china-suppliers-step-by-step-due-diligence.html",
+      "publisher": "Maple Sourcing",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-950",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "掲載は候補探し、決め手はサンプル",
+    "summary": "中国の調達代行会社は、B2Bサイトは候補を探し絞り込む道具で、それだけで信用しないよう助言。サンプルで品質・仕上げ・表示を仕様と照らすのが決め手とする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "試作・サンプル対応を記事にする",
+    "source": {
+      "title": "Finding Chinese suppliers: 7 steps to source products safely",
+      "url": "https://www.maplesourcing.com/finding-chinese-suppliers-7-steps-to-source-products-safely.html?page=3",
+      "publisher": "Maple Sourcing",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-951",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "一度確かめた仕入れ先も定期的に見直す",
+    "summary": "中国の調達の手引き（2026年）は、仕入れ先を一度確かめて終わりにせず、時間をおいて確かめ直すよう警告。買い手は最新の情報が更新されているかを見ている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "会社情報を更新し続ける意味",
+    "source": {
+      "title": "How to Contact Chinese Manufacturers in 2026",
+      "url": "https://www.newbuyingagent.com/es/resources/how-to-contact-chinese-manufacturers-in-2026",
+      "publisher": "NewBuyingAgent",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1183",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "タイは中小1万5千社にデジタル化の補助",
+    "summary": "タイのデジタル経済振興庁（depa）は南部で、中小や商店など1万5千社向けの小口の補助と、製造業などの600社向けの大きな変革支援を進めると発表した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "補助金で始めるデジタル化",
+    "source": {
+      "title": "Depa targets 15,600 businesses with AI and digital grants",
+      "url": "https://thailand.go.th/issue-focus-detail/depa-targets-15600-businesses-with-ai-and-digital-grants-to-boost-competitiveness-in-southern-thailand",
+      "publisher": "タイ政府",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1184",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "タイの小口補助は1人約335ドル",
+    "summary": "タイのdepaの資料では、中小の経営をデジタルで底上げする小口の補助券は、上限が1人あたり約335ドルの払い戻し。小さな額で最初の一歩を後押しする設計。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さく始めるデジタル化",
+    "source": {
+      "title": "depa presentation (UNESCAP)",
+      "url": "https://www.unescap.org/sites/default/d8files/event-documents/Dr%20Suparkorn%2C%20Department%20of%20Agriculture%20%28DEPA%29%2C%20Thailand.pdf",
+      "publisher": "UNESCAP",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1185",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "タイの商工会議所が地域の中小を支援",
+    "summary": "タイのチョンブリ商工会議所はdepaと組み、東部経済回廊の中小15万社のデジタル化を支える取り組みを進めている。地域の会議所がデジタル化の窓口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "商工会議所の支援を使った話",
+    "source": {
+      "title": "Chonburi Chamber of Commerce joins forces with depa",
+      "url": "https://thailand.opendevelopmentmekong.net/news/chonburi-chamber-of-commerce-joins-forces-with-depa-to-support-digital-transformation-of-150000-eec-zone-smes/",
+      "publisher": "Open Development Mekong",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-860",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "展示会の名刺は5日以内に連絡を",
+    "summary": "米国の展示会専門誌の2015年の調査では、展示会で得た見込み客のうち5日以内に連絡されたのは62%だった。残りは熱が冷めた後になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会後の追いかけメールの書き方",
+    "source": {
+      "title": "EXHIBITOR Sales Lead Survey",
+      "url": "https://exhibitoronline.com/topics/article.asp?ID=2208",
+      "publisher": "EXHIBITOR Magazine",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "pain-861",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "展示会後の連絡が3〜5日遅れる",
+    "summary": "米国のイベント支援会社の2026年の報告では、出展者の40%が展示会後の連絡を3〜5日待つ。24時間以内が理想で、48時間以内でも強いとする（業者の報告）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の翌日に送る記事とメール",
+    "source": {
+      "title": "The real cost of waiting three to five days after a trade show",
+      "url": "https://www.momencio.com/?p=36918",
+      "publisher": "Momencio",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1186",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "欧州の消費者は紙の包装を好む",
+    "summary": "欧州などの消費者約1万2千人への2025年1月の調査（Two Sides）では、15の包装の分野のうち9つで紙・段ボールが一番好まれた。ガラスは4分野、金属・樹脂は1分野ずつ。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紙の包装を選ぶ理由を発注者に伝える",
+    "source": {
+      "title": "2025 European Trend Tracker Summary",
+      "url": "https://www.burgo.com/sites/default/files/articoli/documenti/2025-European-Trend-Tracker-Summary-4pg-English.pdf",
+      "publisher": "Two Sides",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1187",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "通販は紙の箱で届けてほしい62%",
+    "summary": "Two Sidesの2025年の調査では、62%がネット通販の荷物を紙の包装で届けてほしいと答え、53%が紙の包装は環境によいと見ていた。通販向けの箱の提案材料になる。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "通販の箱を紙にする提案",
+    "source": {
+      "title": "Two Sides Trend Tracker explores consumer perceptions of print",
+      "url": "https://www.piworld.com/article/two-sides-trend-tracker-explores-consumer-perceptions-of-print",
+      "publisher": "Printing Impressions",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1188",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "紙かデジタルか選ぶ権利を求める76%",
+    "summary": "Two Sidesの2025年の調査では76%が「デジタルだけに押しやられず紙を選べる権利」を求め、47%が薬の説明書や取扱説明書は紙がよいと答えた。説明書印刷の価値の裏付け。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "取扱説明書を紙で残す理由",
+    "source": {
+      "title": "Print Matters! Consumers prefer paper for learning, trust, and everyday life",
+      "url": "https://ondemand.tappi.org/print-matters-consumers-prefer-paper-for-learning-trust-and-everyday-life/",
+      "publisher": "TAPPI",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "trend-1189",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "広告の信頼はSNSより紙が上",
+    "summary": "Two Sidesの2025年の調査では、広告を信頼する人はテレビ45%、新聞・雑誌の印刷広告40%、SNS24%だった。紙の販促物の信頼を説明する材料になる。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紙のチラシが信頼される理由",
+    "source": {
+      "title": "Print Matters! (PPI On The Web)",
+      "url": "https://www.naylornetwork.com/ppi-otw/articles/print.asp?aid=885534",
+      "publisher": "Two Sides（Naylor掲載）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "pain-862",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "紙のリサイクル率を知る人は4人に1人",
+    "summary": "Two Sidesの2025年の調査では、紙と紙の包装のリサイクル率が60%を超えると知る欧州の消費者は25%だけだった。良さが伝わっていないことは発信の余地になる。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紙のリサイクルをやさしく解説",
+    "source": {
+      "title": "Consumers prefer paper for learning",
+      "url": "https://www.paperage.com/2025news/06-17-2025consumers-prefer-paper-for-learning.html",
+      "publisher": "PaperAge",
+      "date": "2025-06"
+    }
+  },
+  {
+    "id": "trend-1190",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "印刷の買い手の72%が環境配慮を求める",
+    "summary": "FESPAの2023年の印刷業界調査では、72%の印刷会社が買い手から環境に配慮した製品ややり方を求められていると答え、70%が値上げせずに応えられるとした。",
+    "industries": [
+      "印刷",
+      "看板・サイン"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "環境対応を見積もりに書く",
+    "source": {
+      "title": "FESPA Print Census 2023",
+      "url": "https://www.fespa.com/en/news-media/fespa-print-census-2023-shows-rising-sustainability-demands-and-changing-customer-requirements",
+      "publisher": "FESPA",
+      "date": "2023-10"
+    }
+  },
+  {
+    "id": "trend-1191",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "環境は大事でも戦略の柱は4割",
+    "summary": "FESPAの2025年調査（2026年発表）では、印刷会社の92%が環境配慮は大事と答えたが、経営の柱にしたのは40%。買い手の要求がまだ弱く投資しにくい事情もあった。",
+    "industries": [
+      "印刷",
+      "看板・サイン"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "環境配慮を差別化に使う",
+    "source": {
+      "title": "FESPA launches 2026 Print Census as it releases key findings from 2025 survey",
+      "url": "https://www.earthisland.co.uk/single-post/fespa-launches-2026-print-census-as-it-releases-key-findings-from-2025-survey",
+      "publisher": "FESPA（Earth Island掲載）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1192",
+    "kind": "trend",
+    "official": true,
+    "region": "overseas",
+    "title": "印刷もネット注文と透明性が求められる",
+    "summary": "FESPAの印刷業界調査（2025年調査）は、デジタル中心の注文の仕組みと、供給の流れの見える化を求める声が強まっていると報告。次回はネット受注（Web to Print）も調べる。",
+    "industries": [
+      "印刷",
+      "看板・サイン"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネットで頼める印刷の案内ページ",
+    "source": {
+      "title": "FESPA Print Census",
+      "url": "https://www.fespa.com/en/fespa-print-census/",
+      "publisher": "FESPA",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-952",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "印刷の買い手が求める速さと頼みやすさ",
+    "summary": "米国のPRINTING United Expo 2026での発表によると、今の印刷の買い手は速い対応、簡単な注文、加飾、信頼できる会社、記憶に残る製品を求めている（ASI報道）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "頼みやすさを伝える注文ページ",
+    "source": {
+      "title": "PRINTING United Expo 2026: Understanding the Modern Print Buyer",
+      "url": "https://members.asicentral.com/news/strategy/september-2026/printing-united-expo-2026-understanding-the-modern-print-buyer/",
+      "publisher": "ASI",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "buyer-953",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "買い手の75%は一括で任せられる会社を好む",
+    "summary": "米国の調査会社NAPCOと業界団体の調査（2025年ASI報道）では、印刷の買い手の75%がデザインから仕上げまで一括で頼める会社を好む。対応範囲を一覧で見せると選ばれやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "一括で頼める範囲を図で見せる",
+    "source": {
+      "title": "ASI Orlando 2025: The value in print for promo distributors",
+      "url": "https://members.asicentral.com/news/strategy/january-2025/asi-orlando-2025-the-value-in-print-for-promo-distributors/",
+      "publisher": "ASI",
+      "date": "2025-01"
+    }
+  },
+  {
+    "id": "success-1891",
+    "kind": "success",
+    "region": "overseas",
+    "title": "専用の注文サイトで既存客の注文が増加",
+    "summary": "米国のNAPCO Researchの調査では、顧客ごとの専用注文サイトを持つ印刷会社は平均12%売上が伸び、93%が既存客からの売上増を報告した（2026年報道）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "お得意様専用の注文ページを作る",
+    "source": {
+      "title": "NAPCO Study: 93% of Printers Report Sales Gains via Customized Web Portals",
+      "url": "https://www.newsworthy.ai/curated/napco-study-93-of-printers-report-sales-gains-via-customized-web/202631703",
+      "publisher": "Newsworthy.ai",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "success-1892",
+    "kind": "success",
+    "region": "overseas",
+    "title": "自社ブランドのネット店で小口注文8倍",
+    "summary": "英国の印刷会社が自社ブランドのネット注文店に移り、利益率が上がり、小ロットのデジタル印刷の注文が8倍に増えた。人は増やしていない（ソフト会社Infigoの事例）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小ロット注文をネットで受ける",
+    "source": {
+      "title": "Control Media nearly doubles order volumes with Infigo web-to-print",
+      "url": "https://www.casestudies.com/company/infigo/case-study/control-media-doubles-order-volumes-with-infigo",
+      "publisher": "Infigo（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1893",
+    "kind": "success",
+    "region": "overseas",
+    "title": "企業向け注文サイトで新規登録千件超",
+    "summary": "米国の印刷会社が顧客企業向けの注文サイトを作り、ある案件だけで千件を超える新しい利用登録があり、印刷量も大きく伸びた（ソフト会社XMPieの事例）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "企業の各拠点が使える注文の仕組み",
+    "source": {
+      "title": "Ditto gains new clients and grows print volume with XMPie StoreFlow",
+      "url": "https://www.casestudies.com/company/xmpie/case-study/ditto-documents-gains-new-clients-with-tailored-webtoprint-offerings",
+      "publisher": "XMPie（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1894",
+    "kind": "success",
+    "region": "overseas",
+    "title": "検索で見つかり事例で選ばれる印刷会社",
+    "summary": "英国の印刷会社は、飛び込み営業ではなく、まず検索で上位に出る計画を立て、次に事例と問い合わせ先への道筋がはっきりしたHPとブランドを作ったと語る（PrintWeek）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "印刷の事例ページの作り方",
+    "source": {
+      "title": "Why printers need to get better at self promotion",
+      "url": "https://printweek.com/content/features/why-printers-need-to-get-better-at-self-promotion",
+      "publisher": "PrintWeek",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1895",
+    "kind": "success",
+    "region": "overseas",
+    "title": "老舗印刷会社が「新しく環境的」と発信",
+    "summary": "英国の創業150年の印刷会社が、印刷を「新しく環境にやさしい」ものとして検索向け記事・SNS・広報で発信し、2023〜24年に問い合わせが34%増えた（制作会社の発表）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "老舗の印刷会社の新しい見せ方",
+    "source": {
+      "title": "Galloways Printers case study",
+      "url": "https://redefineweb.com/case-studies/details/galloways-printers/",
+      "publisher": "Redefine Web",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1896",
+    "kind": "success",
+    "region": "overseas",
+    "title": "サービス別ページと事例ページで問い合わせ増",
+    "summary": "米国の印刷会社のHPを作り直し、サービスごとのページを整理、事例ページを足し、問い合わせの計測を入れた結果、検索からの訪問が大きく伸びた（Web会社の発表）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "サービス別ページを作る理由",
+    "source": {
+      "title": "Printing Company Case Study",
+      "url": "https://markitors.com/?p=3404",
+      "publisher": "Markitors",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-1193",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "複数チャネルの販促は1年で元が取れる",
+    "summary": "ドイツの印刷見本市drupaの業界報告は、伸びる分野として複数チャネルの販促、本のオンデマンド印刷、デジタル印刷の軟包装を挙げ、複数チャネル販促の回収期間は1年とした。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紙とWebを組み合わせた提案",
+    "source": {
+      "title": "drupa points to growth applications",
+      "url": "https://www.sprinter.com.au/drupa-points-to-growth-applications",
+      "publisher": "Sprinter",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-954",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "小規模企業は検索と口コミで印刷機を選ぶ",
+    "summary": "米国と欧州の小規模企業が印刷・スキャン機器を買う過程の調査（Keypoint、2026年）では、検索エンジン、ネットの口コミ、販売店やメーカーの情報が重視され、会社の規模で行動が違った。",
+    "industries": [
+      "印刷機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "機器を選ぶ人が検索で知りたいこと",
+    "source": {
+      "title": "Keypoint Intelligence launches Why Buy research series",
+      "url": "https://members.bta.org/news/Details/keypoint-intelligence-launches-why-buy-research-series-exploring-how-smbs-purchase-print-scanning-technology-351929",
+      "publisher": "BTA",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-1194",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "印刷の購入額の62%がネット経由",
+    "summary": "米国の調査会社Keypoint Intelligenceの2022年の発表では、マーケ担当などの印刷の購入額のうち62%がネット経由だった。印刷もネットで頼む時代になっている。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネットで印刷を頼む人への案内",
+    "source": {
+      "title": "Keypoint Intelligence research uncovers print buying trends in the US",
+      "url": "https://keypointintelligence.com/company-news/keypoint-intelligence-research-uncovers-print-buying-trends-in-the-us",
+      "publisher": "Keypoint Intelligence",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "success-1897",
+    "kind": "success",
+    "region": "overseas",
+    "title": "看板会社がHPと口コミで見積依頼3千件",
+    "summary": "米国の横断幕・看板会社が、新しいHP、検索対策、口コミの仕組みで4年間に見積依頼3096件、1件あたり約23ドル、Googleの評価4.8を得た（Web会社の発表）。",
+    "industries": [
+      "看板・サイン"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "看板の見積依頼を増やすHP",
+    "source": {
+      "title": "3,096 Banner & Sign Quote Request Leads from New Website, SEO & More 5-Star Reviews",
+      "url": "https://onlinevisibilitypros.com/?p=17268",
+      "publisher": "Online Visibility Pros",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1898",
+    "kind": "success",
+    "region": "overseas",
+    "title": "看板会社が検索のクリックを3.4倍に",
+    "summary": "豪州の看板会社がHPの作り直しの後に検索対策を進め、検索からのクリックが340%増え、良い問い合わせが増えた（Web会社Axiomの事例）。",
+    "industries": [
+      "看板・サイン"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "看板の施工事例を検索に強くする",
+    "source": {
+      "title": "Sign Here Signs boosts search visibility with Axiom SEO",
+      "url": "https://www.casestudies.com/company/axiom/case-study/sign-here-signs-boosts-search-clicks-340-with-axiom",
+      "publisher": "Axiom（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-955",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "看板の問い合わせは電話が中心",
+    "summary": "米国の看板会社向け広告支援会社は、看板の製作・施工の問い合わせはフォームより電話が多いとし、電話の計測を勧める。HPに電話番号を大きく出すことが大事になる。",
+    "industries": [
+      "看板・サイン"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "電話で問い合わせやすいHP",
+    "source": {
+      "title": "Google Ads for sign companies",
+      "url": "https://clicksgeek.com/google-ads-for-sign-companies/",
+      "publisher": "ClicksGeek",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-863",
+    "kind": "pain",
+    "region": "overseas",
+    "title": "看板会社の販促は売上につながりにくい",
+    "summary": "米国の看板業界誌の調査では、販促で売上のほぼ全部が来る会社は8%、ごく一部は45%。5社に3社がもっと販促すべきと考える一方、その4割は新しい手の予定がない。HPは87%が使う。",
+    "industries": [
+      "看板・サイン"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "看板会社が続けられる発信の型",
+    "source": {
+      "title": "Signshop owners and managers on marketing",
+      "url": "https://signsofthetimes.com/signshop-owners-and-managers-on-marketing",
+      "publisher": "Signs of the Times",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1899",
+    "kind": "success",
+    "region": "overseas",
+    "title": "看板会社のHPにチャットで問い合わせ取り込み",
+    "summary": "米国の看板会社が新しいHPにAIのチャットを置き、サイトの情報をもとに客の質問にすぐ答え、見込み客を取りこぼさなくなった（制作者の事例）。",
+    "industries": [
+      "看板・サイン"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "夜間や休日の問い合わせ対応",
+    "source": {
+      "title": "Case Study: SIGNLite",
+      "url": "https://janicechristopher.com/?p=1427",
+      "publisher": "Janice Christopher",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1900",
+    "kind": "success",
+    "region": "overseas",
+    "title": "デジタル機を足しラベル会社が年25%成長",
+    "summary": "豪州のラベル印刷会社が、凸版・フレキソに加えて小ロット用のデジタル印刷機を入れ、新しい客との取引が増えて年25%ほど成長したと語る（Konica Minolta豪州の事例）。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小ロットのラベル印刷を案内する",
+    "source": {
+      "title": "Customer Success Story: Label Line",
+      "url": "https://konicaminolta.com.au/news/case-studies/customer-success-story-label-line",
+      "publisher": "Konica Minolta Australia",
+      "date": "2025-02"
+    }
+  },
+  {
+    "id": "success-1901",
+    "kind": "success",
+    "region": "overseas",
+    "title": "ネット受注のラベル会社が市場の10倍成長",
+    "summary": "米国の全デジタルのラベル会社は、使いやすいネットの集客・注文の仕組みと生産管理、デジタル機をつなげ、2019年に北米ラベル市場の約10倍の速さで伸びた（本人の発表）。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネット注文から生産までの流れ",
+    "source": {
+      "title": "Wizard Labels sees record growth in 2019",
+      "url": "https://www.labelsandlabeling.com/news/digital-printing/wizard-labels-sees-record-growth-2019",
+      "publisher": "Labels & Labeling",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "success-1902",
+    "kind": "success",
+    "region": "overseas",
+    "title": "ネットでラベルを売り設備を増やす",
+    "summary": "英国のラベル会社はネットでのラベル販売で成功し、印刷の設備を増やしている（Digital Labels & Packaging誌）。ネットの受注が小ロット設備の稼働を支える。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネット受注と設備投資の関係",
+    "source": {
+      "title": "The company has made a success of selling labels online",
+      "url": "https://www.dlpmag.com/news/19289/tlcg-installs-tau-330-e/",
+      "publisher": "Digital Labels & Packaging",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1903",
+    "kind": "success",
+    "region": "overseas",
+    "title": "HPに即時見積を置き初年度100万ドル",
+    "summary": "海外の3Dプリント受託会社がHPに即時見積の部品を埋め込み、初年度に100万ドル超を売り、顧客を20%増やした（ソフト会社DigiFabsterの事例）。",
+    "industries": [
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ネットで見積もりできる仕組み",
+    "source": {
+      "title": "ZiggZagg achieves $1M+ in first-year sales with DigiFabster",
+      "url": "https://www.casestudies.com/company/digifabster/case-study/ziggzagg-increased-sales-for-over-1m-usd-in-first-year-with-digifabster",
+      "publisher": "DigiFabster（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-956",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "包装の買い手の59%は環境で取引先を替える",
+    "summary": "米国のBainの2025年の調査（125人）では、包装の買い手の59%が、環境の指標が満たされなければ3年以内に仕入れ先を替えると答えた（Packaging Dive）。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "包装の環境データを示す",
+    "source": {
+      "title": "Bain report: packaging sustainability",
+      "url": "https://www.packagingdive.com/news/bain-report-packaging-sustainability-substrate-regulation-recycling/808981/",
+      "publisher": "Packaging Dive",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-1195",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "包装の環境要求は軽量化・再利用へ",
+    "summary": "米国の業界団体系の調査では、ブランドが包装に求める環境対応の首位「リサイクルしやすさ」は2024年の60%から2025年の42%へ下がり、軽量化37%・再利用34%が伸びた。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "軽くて小さい箱の提案",
+    "source": {
+      "title": "Top 3 Trends Driving Change in the Packaging and Label Industry",
+      "url": "https://www.packagingimpressions.com/article/top-3-trends-driving-change-in-the-packaging-and-label-industry/",
+      "publisher": "Packaging Impressions",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-957",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "包装は主と副の2社から買う",
+    "summary": "米国のL.E.K.の2026年の調査（ブランド担当450人）では、約3分の2が同じ形の包装を主と副の2社から買い、支出の大半は主の会社に行く。まず副として入る道がある。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "2番手の仕入れ先として選ばれる",
+    "source": {
+      "title": "Sustainability initiatives driving CPG, foodservice brands to make major packaging changes by 2028",
+      "url": "https://www.sdcexec.com/home/news/22965762/lek-consulting-sustainability-initiatives-driving-cpg-foodservice-brands-to-make-major-packaging-changes-by-2028",
+      "publisher": "SDCExec",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-958",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "欧州のブランドは供給の安定とコストを重視",
+    "summary": "欧州のブランド約400社への2026年のL.E.K.調査では、環境配慮が再び重要になる一方、供給の安定とコスト管理が今も大きな関心事だった。安定供給を示すことが選ばれる条件。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "安定供給の体制を記事にする",
+    "source": {
+      "title": "European Brand Owner Packaging Survey 2026",
+      "url": "https://www.lek.com/insights/paper-packaging/european-brand-owner-packaging-survey-2026-sustainability-balancing",
+      "publisher": "L.E.K. Consulting",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-959",
+    "kind": "buyer",
+    "region": "overseas",
+    "title": "環境配慮の包装は会社単位で見られる",
+    "summary": "欧州のブランドへの2025年のL.E.K.調査では、「環境配慮の包装」を材料だけでなく仕入れ先の会社の基準や排出量で判断していた。進まない理由の首位はコスト。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社のCO2や環境方針を公開する",
+    "source": {
+      "title": "Sustainability Under Pressure: How European Brands Are Balancing Goals and Realities",
+      "url": "https://www.lek.com/insights/ind/eu/ar/sustainability-under-pressure-how-european-brands-are-balancing-goals-and",
+      "publisher": "L.E.K. Consulting",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1904",
+    "kind": "success",
+    "region": "overseas",
+    "title": "小ロットの箱をネットで頼めるように",
+    "summary": "ポーランドの包装の通販会社は、工場の最低ロットが高く小さな会社は特注の箱を作れない不便から生まれた。小口でもネットで注文できる仕組みで中小のブランドをつかんだ（TechCrunch）。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小ロットの箱を頼める案内",
+    "source": {
+      "title": "Packhelp raises a seed round to spread the love of beautiful boxes",
+      "url": "https://techcrunch.com/2018/06/05/packhelp-raises-a-seed-round-to-spread-the-love-of-beautiful-boxes",
+      "publisher": "TechCrunch",
+      "date": "2018-06"
+    }
+  },
+  {
+    "id": "trend-1196",
+    "kind": "trend",
+    "official": false,
+    "region": "overseas",
+    "title": "ネット通販の伸びで特注の箱も伸びる",
+    "summary": "ポーランドの包装の通販会社は2021年に4千万ユーロを調達。ネット通販と宅配の伸びに乗り、大手の客も得たと報じられた（TechCrunch）。通販向けの箱の需要は大きい。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "通販向けの箱づくりを記事にする",
+    "source": {
+      "title": "Packhelp Series B",
+      "url": "https://techcrunch.com/2021/11/18/packhelp-series-b/amp/",
+      "publisher": "TechCrunch",
+      "date": "2021-11"
+    }
+  },
+  {
+    "id": "success-1905",
+    "kind": "success",
+    "region": "overseas",
+    "title": "印刷会社がLinkedInで新規40万ドル",
+    "summary": "米国の中規模の印刷・販促の会社が、営業をLinkedInの検索機能で価値の高い見込み客に絞り、新規の取引40万ドルと1人あたり20件の見込み客を得た（LinkedInの事例）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "担当者がLinkedInで発信する",
+    "source": {
+      "title": "RBO PrintLogistix achieves $400K in new business with LinkedIn Sales Solutions",
+      "url": "https://www.casestudies.com/company/linkedin-sales-solutions/case-study/rbo-printlogistix-leverages-sales-navigator-to-expand-markets-and-make-a-difference-during-the-covid-19-pandemic",
+      "publisher": "LinkedIn（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1906",
+    "kind": "success",
+    "region": "overseas",
+    "title": "印刷会社の担当者が仕事の写真を投稿",
+    "summary": "米国の印刷会社の担当者は、自社のサービスや仕事の写真をLinkedInなどに投稿し続けたことで、知り合いから声がかかるようになったと語る（印刷業界のインタビュー）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "仕事の写真を毎週投稿する",
+    "source": {
+      "title": "Printerviews: Amanda Bronowski of Heeter Printing",
+      "url": "https://ocelot-lemon-l5xm.squarespace.com/blog-feed/2020/8/24/printerviews-amanda-bronowski-of-heeter-printing",
+      "publisher": "Printerviews",
+      "date": "2020-08"
+    }
+  }
+];
+
+export const MFG_ITEMS: MfgItem[] = [...MFG_PART_0, ...MFG_PART_1, ...MFG_PART_2, ...MFG_PART_3, ...MFG_PART_4, ...MFG_PART_5, ...MFG_PART_6, ...MFG_PART_7];
