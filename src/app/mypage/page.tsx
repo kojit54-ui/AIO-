@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { ShioriTalk } from "@/components/talk";
 import { Notice } from "@/components/ui";
 import { ORG_NAME_MAX, normalizeOrgName } from "@/lib/orgName";
+import { TONES } from "@/lib/shioriTone";
+import { useShioriTone } from "@/components/useShioriTone";
 import { useStore } from "@/mock/store";
 
 export default function MyPage() {
@@ -31,9 +33,11 @@ export default function MyPage() {
         ホームへ戻る
       </Link>
       <h1 className="text-2xl font-black sm:text-3xl">マイページ</h1>
-      <ShioriTalk mood="point" lines={["ここでは、社名やメールの受け取りを変えられます。", "変えたいところだけ、1つずつどうぞ。"]} />
+      <ShioriTalk mood="point" lines={["ここでは、社名やしおりの話し方、メールの受け取りを変えられます。", "変えたいところだけ、1つずつどうぞ。"]} />
 
       {org && <OrgNameCard orgId={org.id} current={org.name} />}
+
+      {org && <ToneCard />}
 
       <section className="card space-y-1">
         <h2 className="font-black">ログインしているメールアドレス</h2>
@@ -182,5 +186,32 @@ function NewsletterToggle() {
       </button>
       {error && <p className="text-sm font-bold text-danger">{error}</p>}
     </div>
+  );
+}
+
+function ToneCard() {
+  const [tone, setTone] = useShioriTone();
+  const picked = TONES.find((t) => t.id === tone) ?? TONES[1];
+  return (
+    <section className="card space-y-3">
+      <h2 className="font-black">しおりの話し方</h2>
+      <p className="text-sm text-muted">しおりがどのくらい厳しく声をかけるかを選べます。このパソコン・スマホで覚えます。</p>
+      <div role="radiogroup" aria-label="しおりの話し方" className="grid gap-2 sm:grid-cols-3">
+        {TONES.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            role="radio"
+            aria-checked={tone === t.id}
+            onClick={() => setTone(t.id)}
+            className={`rounded-2xl border-2 px-3 py-2 text-left transition ${tone === t.id ? "border-brand bg-brand-soft" : "border-line bg-surface hover:border-brand"}`}
+          >
+            <span className="block font-black">{t.label}</span>
+            <span className="block text-xs text-muted">{t.note}</span>
+          </button>
+        ))}
+      </div>
+      <ShioriTalk key={picked.id} mood={picked.id === "gentle" ? "joy" : picked.id === "strict" ? "point" : "cheer"} lines={[picked.sample]} />
+    </section>
   );
 }

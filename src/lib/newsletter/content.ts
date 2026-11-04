@@ -72,8 +72,8 @@ const num = (n: number) => n.toLocaleString("ja-JP");
 export function shioriLine(i: NewsletterInput): string {
   if (i.mentioned) return "今月、AIの答えにあなたの会社が出てきました！積み重ねが実ってきています。";
   if (i.published > 0) return `今月は${i.published}本の記事をブログに載せましたね。おつかれさまでした！`;
-  if (i.written > 0) return "今月も記事を書きましたね。ブログに載せるところまで、いっしょに進めましょう。";
-  return "今月はお休みでしたね。来月は質問に答えるだけの1本から、また始めましょう。";
+  if (i.written > 0) return "今月も記事を書きましたね。でも、ブログに載せるまではお客様に届きません。載せるところまで進めましょう。";
+  return "今月は1本もありませんでしたよ。続けて書くほど、AIにもお客様にも見つけてもらいやすくなります。来月は質問に答えるだけの1本から、また始めましょう。";
 }
 
 /** 件名・本文（テキスト）・本文（HTML） */

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AioNews } from "@/components/aio";
 import { Wave } from "@/components/fun";
 import { ShioriTalk } from "@/components/talk";
@@ -13,6 +13,8 @@ import { ShioriGrowth } from "@/components/ShioriGrowth";
 import { StampBook } from "@/components/StampBook";
 import { TownBoard } from "@/components/TownBoard";
 import { WhatsNew } from "@/components/WhatsNew";
+import { useShioriTone } from "@/components/useShioriTone";
+import { homeLines, referenceTime } from "@/lib/shioriTone";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
@@ -20,6 +22,8 @@ import { articleHref, articleSummaries } from "@/lib/selectors";
 export default function HomePage() {
   const { db, user, month } = useStore();
   const router = useRouter();
+  const [tone] = useShioriTone();
+  const [nowMs] = useState(() => Date.now());
 
   useEffect(() => {
     if (user?.role === "coach") router.replace("/coach");
@@ -31,6 +35,15 @@ export default function HomePage() {
   const list = articleSummaries(db, orgId);
   const inProgress = list.find((a) => a.status === "drafting" || a.status === "changes_requested");
   const org = db.organizations.find((o) => o.id === orgId);
+  const mine = db.articles.filter((a) => a.organizationId === orgId);
+  const lastWork = mine.reduce((m, a) => Math.max(m, new Date(a.updatedAt).getTime() || 0), 0);
+  const lines = homeLines(tone, {
+    publishedThisMonth: mine.filter((a) => a.publishedAt?.startsWith(month)).length,
+    workedThisMonth: mine.filter((a) => a.updatedAt.startsWith(month)).length,
+    inProgress: !!inProgress,
+    totalArticles: mine.length,
+    daysSinceLastWork: lastWork ? Math.max(0, Math.floor((referenceTime(month, nowMs) - lastWork) / 86_400_000)) : null,
+  });
 
   return (
     <main className="page space-y-6">
@@ -46,7 +59,7 @@ export default function HomePage() {
         <h1 className="text-2xl font-black leading-snug sm:text-3xl">
           {user.name}さん、こんにちは <Wave />
         </h1>
-        <ShioriTalk mood="jersey-cheer" size="lg" lines={["今月も1本、いっしょに書きましょう！", "AIに選ばれて、読んだ人に「ここに頼みたい」と思ってもらえる記事に。質問に答えるだけで、できますよ。"]} />
+        <ShioriTalk mood="jersey-cheer" size="lg" lines={lines} />
         <ChosenPath className="mt-2" />
       </div>
       <WhatsNew />
