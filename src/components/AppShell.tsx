@@ -57,7 +57,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </span>
           </Link>
           <div className="flex items-center gap-3 text-sm">
-            <span className="text-muted">{user.name}</span>
+            <Link href="/mypage" className="flex items-center gap-1 font-bold text-brand-dark underline-offset-4 hover:underline">
+              <span aria-hidden>👤</span>
+              <span className="max-w-[9rem] truncate">マイページ</span>
+            </Link>
             <button
               type="button"
               className="btn-secondary min-h-9 px-3 py-1 text-sm"

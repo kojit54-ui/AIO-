@@ -3,6 +3,7 @@
 // 画面試作用の擬似API。ブラウザ内に架空データを持ち、通信の遅れと失敗を再現する。
 // 関数の形は docs/DATA.md「API案」と揃えてあり、API接続時（T2-9）にこの層だけを差し替える。
 
+import { normalizeOrgName } from "@/lib/orgName";
 import { createContext, useContext, useMemo, useSyncExternalStore } from "react";
 import type {
   AioCheck,
@@ -654,6 +655,24 @@ function createApi(
     /** 古くなった数字を読み直す（サンプルでは何もしない） */
     async refreshSearchConsole(orgId: string) {
       requireOrg(requireUser(), orgId);
+    },
+
+    /** 社名を直す（マイページ）。記事やAIへの指示に使う社名もこれになる */
+    async renameOrganization(orgId: string, name: string) {
+      const user = requireUser();
+      requireOrg(user, orgId);
+      await delay(300);
+      checkSaveSimulations();
+      const clean = normalizeOrgName(name);
+      if (!clean) throw new ApiError("save_failed", "社名は1〜60文字で入れてください（URLや記号の < > は使えません）");
+      const db = getDb();
+      commit({ ...db, organizations: db.organizations.map((o) => (o.id === orgId ? { ...o, name: clean } : o)) });
+    },
+
+    /** ログインしているメールアドレス（試作では架空） */
+    async accountEmail(): Promise<string | null> {
+      requireUser();
+      return "（試作）tantou@example.jp";
     },
 
     /** しおり通信のメールを受け取るか */

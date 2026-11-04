@@ -536,6 +536,23 @@ export class RemoteBackend {
       return { connected: !!json.connected, message: json.message };
     },
 
+    renameOrganization: async (orgId, name) => {
+      this.requireUser();
+      const res = await fetch(`/api/organizations/${encodeURIComponent(orgId)}/name`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ name }),
+      }).catch(() => null);
+      const json = ((await res?.json().catch(() => ({}))) ?? {}) as { code?: string; message?: string };
+      if (!res?.ok) throw new ApiError((json.code ?? "save_failed") as "save_failed", json.message ?? "保存できませんでした");
+      await this.load();
+    },
+
+    accountEmail: async () => {
+      const { data } = await this.client.auth.getUser();
+      return data.user?.email ?? null;
+    },
+
     setNewsletterOptOut: async (optOut) => {
       const user = this.requireUser();
       const { error } = optOut ? await this.client.from("newsletter_optouts").upsert({ user_id: user.id }) : await this.client.from("newsletter_optouts").delete().eq("user_id", user.id);
