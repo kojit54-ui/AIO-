@@ -16,6 +16,12 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-04-name",
+    date: "2026-11-04",
+    title: "サービスの名前が「AIOえらばれ帳」になりました",
+    body: "AI時代に、AIにもお客様にも選ばれる会社になるための帳面です。アドレスも https://aio-erabare.jp になりました。前のアドレスも、しばらくそのまま開けます。",
+  },
+  {
     id: "2026-11-04-updates",
     date: "2026-11-04",
     title: "新しくなったことを、しおりがお知らせします",
