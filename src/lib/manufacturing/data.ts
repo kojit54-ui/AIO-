@@ -108431,6 +108431,8577 @@ const MFG_PART_5: MfgItem[] = [
       "publisher": "StockSun",
       "date": null
     }
+  },
+  {
+    "id": "buyer-661",
+    "kind": "buyer",
+    "title": "マッチングで制作会社を探し直す",
+    "summary": "発注ナビの事例。樹脂の金型・成形・組立を行う会社が、前の制作会社の予算や自由度に不満を持ち、発注ナビの紹介で新しい制作会社に出会ってサイトを作り直した。",
+    "industries": [
+      "樹脂成形",
+      "金型",
+      "組立"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "articleIdea": "制作会社を替えるとき、何を比べた？",
+    "source": {
+      "title": "製造業のホームページ刷新。発注ナビで、形なき価値「提案力」を描く制作会社と出会う",
+      "url": "https://hnavi.co.jp/knowledge/interview/ogawa_liveest/",
+      "publisher": "発注ナビ（発注ラウンジ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1170",
+    "kind": "success",
+    "title": "「提案力」という形のない強みを描く",
+    "summary": "同じ事例で、依頼主は「ものづくりだけでなく提案力を打ち出したい」と望み、表現が難しい要望に応える提案をした制作会社を選んだ。組織変更と事業拡大がきっかけ。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちの「提案力」を見える形にする",
+    "source": {
+      "title": "製造業のホームページ刷新。発注ナビで、形なき価値「提案力」を描く制作会社と出会う",
+      "url": "https://hnavi.co.jp/knowledge/blog/ogawa_liveest",
+      "publisher": "発注ナビ（発注ラウンジ）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-620",
+    "kind": "pain",
+    "title": "前の制作会社では直せない不自由さ",
+    "summary": "樹脂製品の会社は、既存の制作会社では予算面や更新の自由度に課題を感じていた。サイトを自分たちで動かせないことが、作り直しの理由になる例。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "発注ナビ 活用事例一覧",
+      "url": "https://hnavi.co.jp/hp/casestudy/",
+      "publisher": "発注ナビ（発注ラウンジ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1171",
+    "kind": "success",
+    "title": "製品情報を細かく載せ自社で更新",
+    "summary": "発注ナビの実績ページ。大阪でアルミ材を扱う金属の会社のサイトで、製品情報を細かく掲載し、会社側でも管理画面から更新できる仕組みにした。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "アルミ材の品ぞろえ、サイトで全部見せる",
+    "source": {
+      "title": "発注ナビ 実績から探す（ホームページ制作）",
+      "url": "https://hnavi.co.jp/hp/case/881/",
+      "publisher": "発注ナビ（発注ラウンジ）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-662",
+    "kind": "buyer",
+    "title": "製造業の実績がある制作会社を選ぶ",
+    "summary": "発注ナビの比較記事は、過去に製造業のサイトを作った会社は業界の話が通じ、制作がスムーズに進みやすいとする。発注前に製造業の実績の有無を確かめるのが基本。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のWebサイト制作でおすすめのホームページ制作会社8社【2026年版】",
+      "url": "https://hnavi.co.jp/knowledge/blog/manufacturing-hp_companies/",
+      "publisher": "発注ナビ（発注ラウンジ）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-1283",
+    "kind": "question",
+    "title": "リニューアル費用はいくらが目安？",
+    "summary": "比較ビズの製造業向け記事では、コーポレートサイトのリニューアルは40万〜200万円が目安とされる。ページ数や撮影の有無で幅が出る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "ホームページのリニューアル、いくらかかる？",
+    "source": {
+      "title": "製造業向けのホームページ制作が得意な会社19選！選び方や制作費用も解説【2026年度版】",
+      "url": "https://www.biz.ne.jp/matome/2002558/",
+      "publisher": "比較ビズ",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-954",
+    "kind": "term",
+    "title": "見積書の内訳「ディレクション費」",
+    "summary": "比較ビズの見積もり記事では、ディレクション費は総額の1〜3割程度、SEO対策費は20万〜100万円程度、サーバー・ドメイン費は年1万〜5万円程度が目安とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "ホームページの見積書、何にお金がかかる？",
+    "source": {
+      "title": "ホームページ制作会社の見積もりを徹底比較！【見積書例あり】見積書の見方も解説",
+      "url": "https://www.biz.ne.jp/matome/2002392/",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-621",
+    "kind": "pain",
+    "title": "格安プランの月額と契約縛り",
+    "summary": "比較ビズは、初期費用が安くても月額の保守費やオプション料金が別にかかり、「◯年契約」の縛りで総額が高くなることがあると注意する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ホームページ制作を格安で依頼できる制作会社22選【2026年度版】",
+      "url": "https://www.biz.ne.jp/matome/2002676/",
+      "publisher": "比較ビズ",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-663",
+    "kind": "buyer",
+    "title": "格安でも確かめたい4つの範囲",
+    "summary": "同じ記事は、ページ数、スマホ対応、SEO対策の有無、公開後のサポート範囲を事前に確かめるよう勧める。安さだけで選ぶと後から追加費用が出やすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ホームページ制作を格安で依頼できる制作会社22選【2026年度版】",
+      "url": "https://www.biz.ne.jp/matome/2002676/",
+      "publisher": "比較ビズ",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1172",
+    "kind": "success",
+    "title": "技術マニュアルまで同じ会社で作る",
+    "summary": "比較ビズ掲載のBtoBサイト制作会社は、サイトに加えパンフレットや技術マニュアルも制作し、掲載情報ではリピート率95%以上とされる。紙とWebの言葉をそろえやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "カタログとサイト、同じ言葉で説明する",
+    "source": {
+      "title": "アドミューズ 比較ビズ掲載ページ",
+      "url": "https://www.biz.ne.jp/corporation/35282/",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1284",
+    "kind": "question",
+    "title": "製造業のサイト制作の相場は？",
+    "summary": "PRONIアイミツの製造業向け記事では、製造業のホームページ制作の相場は50万円ほどとされる。ページ数・機能・運用支援で上下する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業におすすめのホームページ制作会社",
+      "url": "https://imitsu.jp/list/hp-design/manufacturer/",
+      "publisher": "PRONIアイミツ",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "buyer-664",
+    "kind": "buyer",
+    "title": "運用費やレポート費まで見積もりに",
+    "summary": "同じ記事は、制作費だけでなく公開後の運用費やレポート作成費まで明記しているかを確かめるよう勧める。作った後に育てる費用が抜けがち。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業におすすめのホームページ制作会社",
+      "url": "https://imitsu.jp/list/hp-design/manufacturer/",
+      "publisher": "PRONIアイミツ",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "question-1285",
+    "kind": "question",
+    "title": "ページ数でどれだけ費用が変わる？",
+    "summary": "アイミツの費用記事では、1〜5ページなら10万円以下、10ページ前後なら30万〜50万円、30ページ以上や多機能なら200万円以上が相場とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "会社のホームページ、ページ数と費用の関係",
+    "source": {
+      "title": "コーポレートサイトの制作費用相場｜あなたの企業規模ならいくら？",
+      "url": "https://imitsu.jp/cost/hp-design/article/corp",
+      "publisher": "PRONIアイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-665",
+    "kind": "buyer",
+    "title": "実績ページで金額帯と納期を見る",
+    "summary": "アイミツの制作会社ページでは、名古屋の制作会社のコーポレートサイト事例ごとに金額帯や納期が載っている。似た規模の事例で予算感をつかめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "PRONIアイミツ 制作実績（コーポレートサイト）",
+      "url": "https://imitsu.jp/ct-hp-design/pr-aichi/ci-nagoya-city/supplier/5662/service/84226/achievement/14838",
+      "publisher": "PRONIアイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-666",
+    "kind": "buyer",
+    "title": "地元の主要産業に強い制作会社",
+    "summary": "アイミツの愛知県豊田市のページでは、自動車グループの案件を中心にパンフレットやポスターを作ってきた制作会社が紹介される。地域の産業を知る会社は話が早い。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "豊田市のホームページ制作会社",
+      "url": "https://imitsu.jp/list/hp-design/aichi/toyota",
+      "publisher": "PRONIアイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-667",
+    "kind": "buyer",
+    "title": "口コミで見られるのは安さと修正の早さ",
+    "summary": "ミツモアの企業サイト制作の口コミでは、費用の安さ、修正対応の早さ、説明の分かりやすさを評価する声が目立つ。岐阜県では平均4.9（96件）と表示。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "岐阜県の企業サイト制作",
+      "url": "https://meetsmore.com/services/corporate-website-development/gifu",
+      "publisher": "ミツモア",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-622",
+    "kind": "pain",
+    "title": "考えがまとまらないまま発注した",
+    "summary": "ミツモアの口コミには、依頼者側の考えがまとまらないまま発注したことを反省する声がある。何を伝えたいか・誰に来てほしいかを先に決めておくとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "制作会社に頼む前に決めておく3つのこと",
+    "source": {
+      "title": "企業サイト制作",
+      "url": "https://meetsmore.com/services/corporate-website-development",
+      "publisher": "ミツモア",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-668",
+    "kind": "buyer",
+    "title": "マッチング口コミは自社サイト上の声",
+    "summary": "ミツモアの愛知県の企業サイト制作は平均4.9（100件）。ただし口コミはサービス内の声で、技術資料やBtoBの導線に強いかまでは分からない。実績で確かめたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "愛知県の企業サイト制作",
+      "url": "https://meetsmore.com/services/corporate-website-development/aichi",
+      "publisher": "ミツモア",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1173",
+    "kind": "success",
+    "title": "撮影から始めたフルリニューアル",
+    "summary": "Web幹事掲載の事例。熊本の制作会社が製造業のコーポレートサイトを、コンセプト会議を行い撮影も全部してから作り直した。費用目安51〜100万円、制作期間3か月。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "サイトを作り直す前に、写真を撮り直した",
+    "source": {
+      "title": "Web幹事 制作実績",
+      "url": "https://web-kanji.com/works/4048",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-669",
+    "kind": "buyer",
+    "title": "30万円以下の製造業サイトもある",
+    "summary": "Web幹事の実績検索では「製造業・メーカー コーポレートサイト」が30万円以下の価格帯に入っている。予算に合わせて事例を絞り込める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Web幹事 ホームページ制作実績（〜30万円）",
+      "url": "https://web-kanji.com/works/search/_30",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1174",
+    "kind": "success",
+    "title": "町工場は職人の技と温かみを見せる",
+    "summary": "Web幹事の製造業デザイン事例記事は、中小・町工場・大手の規模別に事例を紹介。町工場では職人の技と温かみが伝わる構成が多く取り上げられている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "職人の手元を見せると何が伝わる？",
+    "source": {
+      "title": "製造業ホームページの成功デザイン事例20選！集客・採用を加速させる重要ポイントを徹底解説",
+      "url": "https://web-kanji.com/posts/manufacturing-homepage-design",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1175",
+    "kind": "success",
+    "title": "現場写真で発注担当の不安を減らす",
+    "summary": "同じ記事は、社内や製作現場の写真をふんだんに使う事例を挙げ、初めて頼む発注担当者の不安を和らげる狙いがあると説明する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "初めての発注先、工場の中が見えると安心",
+    "source": {
+      "title": "製造業ホームページの成功デザイン事例20選！集客・採用を加速させる重要ポイントを徹底解説",
+      "url": "https://web-kanji.com/posts/manufacturing-homepage-design",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1176",
+    "kind": "success",
+    "title": "専門性の高い商材をSEO・AIO前提で",
+    "summary": "Web幹事の会社紹介では、IT・製造業に特化したBtoB制作会社が、SEO/AIO対策を優先してサービス・製品サイトを作るとされる。AI検索を意識した作りが選ぶ軸になってきた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "アドミューズ（Web幹事 制作会社紹介）",
+      "url": "https://web-kanji.com/companies/ad-muse",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1177",
+    "kind": "success",
+    "title": "半導体・精密加工・化学まで特化",
+    "summary": "製造業特化の制作会社は、電子・半導体、精密加工、機械、化学などを支援し、SEO/AIO対策やリード獲得、公開後のコンテンツ運用まで扱うと案内している。",
+    "industries": [
+      "電子部品",
+      "半導体",
+      "化学・塗料・接着剤"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業 ホームページ制作",
+      "url": "https://www.ad-muse.com/Industry-web/",
+      "publisher": "アドミューズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1178",
+    "kind": "success",
+    "title": "対応できる範囲を表で示す",
+    "summary": "BtoB制作会社のコラムなどは、対応できる材質・寸法・ロットを数値や範囲の表で示し、できない領域も書くと問い合わせの質が上がると紹介している。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちで「できること・できないこと」一覧",
+    "source": {
+      "title": "製造業のWebサイト制作：BtoBでリード獲得を成功させるデザイン戦略と成功事例",
+      "url": "https://www.ad-muse.com/btobcolumn/manufacturing-success/",
+      "publisher": "アドミューズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1179",
+    "kind": "success",
+    "title": "加工事例は1件1ページで",
+    "summary": "制作会社のコラムは、加工事例を1件ずつ別ページにし、ページの題名に製品名・材質・加工方法を入れる方法を紹介。細かい言葉で探す人に見つかりやすくなる。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工事例の書き方：製品名・材質・加工法",
+    "source": {
+      "title": "BtoB製造業ホームページの加工事例・導入事例ページの作り方・書き方",
+      "url": "https://ds-b.jp/dsmagazine/cases-page-on-a-manufacturing-companys-website/",
+      "publisher": "DSマガジン（ds-b.jp）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1180",
+    "kind": "success",
+    "title": "加工事例に書く4つの項目",
+    "summary": "同じコラムは、製品名・素材・加工方法・工夫した点を載せることを勧め、加工事例は新しい客を得たいBtoB製造業には必須だとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "この部品、どこを工夫した？",
+    "source": {
+      "title": "BtoB製造業ホームページの加工事例・導入事例ページの作り方・書き方",
+      "url": "https://ds-b.jp/dsmagazine/cases-page-on-a-manufacturing-companys-website/",
+      "publisher": "DSマガジン（ds-b.jp）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1181",
+    "kind": "success",
+    "title": "設備一覧は型番と台数まで",
+    "summary": "制作会社のコラムは、設備一覧に設備名・メーカー名・型番・仕様・台数を載せるのが基本とし、旋盤・マシニング・研削盤・測定機・CAD/CAMなど分野別の書き方を示す。",
+    "industries": [
+      "切削加工",
+      "研削",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "設備一覧、型番まで書く理由",
+    "source": {
+      "title": "製造業ホームページの設備一覧・設備紹介ページの作り方・書き方",
+      "url": "https://ds-b.jp/dsmagazine/how-to-write-equipment-page/",
+      "publisher": "DSマガジン（ds-b.jp）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-670",
+    "kind": "buyer",
+    "title": "発注者は設備一覧で頼めるか判断",
+    "summary": "同じコラムは、設備一覧は発注者が依頼できるかを判断する材料になり、受注率に影響すると説明する。大きさ・精度の上限が分かる書き方が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "何ミリまで削れる？設備から分かること",
+    "source": {
+      "title": "製造業ホームページの設備一覧・設備紹介ページの作り方・書き方",
+      "url": "https://ds-b.jp/dsmagazine/how-to-write-equipment-page/",
+      "publisher": "DSマガジン（ds-b.jp）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1182",
+    "kind": "success",
+    "title": "多言語は直訳でなくローカライズ",
+    "summary": "制作会社の多言語サイト記事は、単なる直訳ではなく、相手国の文化・言葉・商習慣に合わせて書き直す「ローカライズ」が欠かせないとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "海外の買い手に通じる英語ページとは",
+    "source": {
+      "title": "多言語サイトの制作・作り方や必要性・おすすめツール5選・成功事例",
+      "url": "https://ds-b.jp/dsmagazine/global-website-service/",
+      "publisher": "DSマガジン（ds-b.jp）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1183",
+    "kind": "success",
+    "title": "問い合わせは全ページから2クリック",
+    "summary": "伴走支援会社のブログは、問い合わせフォームに全ページから1〜2クリックで届くようにし、ヘッダーに常に置くことを勧める。読む途中で迷わせない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のホームページで集客するには？問い合わせが増えるサイト設計と運用方法",
+      "url": "https://synq-ps.co.jp/blog-manufacturing-homepage-lead-generation/",
+      "publisher": "synq-ps.co.jp（伴走支援会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1184",
+    "kind": "success",
+    "title": "加工事例を足す更新がよく効く",
+    "summary": "同社の改善記事では、加工事例を追加する更新は効果が大きく、守秘義務の範囲で素材・納期・ロット数を載せるとよいとする。全面リニューアルより先にできる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "守秘義務を守って加工事例を書くコツ",
+    "source": {
+      "title": "製造業のホームページ改善パターンを解説",
+      "url": "https://synq-ps.co.jp/blog-manufacturing-homepage-improvement/",
+      "publisher": "synq-ps.co.jp（伴走支援会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1185",
+    "kind": "success",
+    "title": "問い合わせを増やす5つのコンテンツ",
+    "summary": "伴走支援会社は、BtoB製造業がホームページから問い合わせを増やすために要るコンテンツを5つに整理して紹介している。発注者が比べる材料を先にそろえる考え方。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoB製造業がホームページから問い合わせを増やすために必要な5つのコンテンツ",
+      "url": "https://synq-ps.co.jp/blog-btob-manufacturing-contents/",
+      "publisher": "synq-ps.co.jp（伴走支援会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-623",
+    "kind": "pain",
+    "title": "Webで新規客をどう取るか分からない",
+    "summary": "同社のマーケティング入門記事は、Webで新しい顧客を得る方法を一から説明している。紹介と既存客だけに頼ってきた工場が最初につまずく所。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のマーケティング入門｜Web活用で新規顧客を獲得する方法",
+      "url": "https://synq-ps.co.jp/blog-manufacturing-marketing-basics/",
+      "publisher": "synq-ps.co.jp（伴走支援会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-624",
+    "kind": "pain",
+    "title": "下請けから抜けたい金属加工業",
+    "summary": "金属加工業の集客を扱う制作サイトは「下請け脱却・新規顧客獲得」を掲げ、集客方法7つを解説する。親会社頼みの受注を減らしたい悩みは根強い。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "下請けだけに頼らない仕事の取り方",
+    "source": {
+      "title": "金属加工業の集客方法7選｜問い合わせを増やす具体策を解説",
+      "url": "https://seizou-marketing.com/?p=33",
+      "publisher": "金属加工業向けホームページ制作サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-671",
+    "kind": "buyer",
+    "title": "特徴別に製造業向け制作会社を探す",
+    "summary": "比較メディアは製造業に強い制作会社13社を特徴別に紹介している（2026年版）。SEO・採用・多言語など、自社の課題に合う軸で絞るのが近道。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業に強いホームページ制作会社13選！【2026年最新版】",
+      "url": "https://yuryoweb.com/recommended/manufacturing-industry/",
+      "publisher": "優良WEB",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1186",
+    "kind": "success",
+    "title": "製品写真を大きく見せる冒頭",
+    "summary": "レンタルサーバー会社の事例記事は、ベアリング製造会社のサイトで製品写真を大きく見せる冒頭（ファーストビュー）を取り上げ、14の参考事例を紹介している。",
+    "industries": [
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "一枚目の写真で何を見せる？",
+    "source": {
+      "title": "製造業のホームページ参考事例14選",
+      "url": "https://www.xserver.ne.jp/bizhp/manufacturing-homepage/",
+      "publisher": "Xserver（ビジネスHP）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1187",
+    "kind": "success",
+    "title": "製品は探し方の軸で分類する",
+    "summary": "制作会社の事例記事は、製品点数が多い工場サイトでは、製品をカテゴリ別に整理し、絞り込み検索を用意するとよいとする。分類は買い手の探し方で決める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "製品が多い工場のページの分け方",
+    "source": {
+      "title": "製造業のホームページ制作の成功事例10選｜選ばれるページ作成のポイントも解説",
+      "url": "https://web.bridge-net.jp/blog/38655/",
+      "publisher": "web.bridge-net.jp（制作会社ブログ）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-672",
+    "kind": "buyer",
+    "title": "Webと展示会・ポータルを組み合わせる",
+    "summary": "マーケ支援会社の集客記事は、Webとリアルの両方でリードを得る10の方法を紹介。サイトだけでなく、ポータルや展示会など既存の経路と組み合わせて考えるのが前提。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業に効く集客方法10選！Webとリアルでリード獲得する方法",
+      "url": "https://coomil.co.jp/column/manufacturing-industry/",
+      "publisher": "coomil.co.jp（マーケ支援会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1188",
+    "kind": "success",
+    "title": "資料請求など中間の入口を作る",
+    "summary": "BtoBサイトの事例記事は、いきなり問い合わせはハードルが高いので、資料ダウンロードやサンプル請求など検討段階に合わせた入口を複数置くとよいとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "いきなり問い合わせしにくい人のための入口",
+    "source": {
+      "title": "BtoBサイトの成功事例9選｜事例からわかる成功のコツも紹介",
+      "url": "https://goleadgrid.com/blog/btob-successful-cases",
+      "publisher": "LeadGrid",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-625",
+    "kind": "pain",
+    "title": "リニューアルで失敗しないために",
+    "summary": "Web制作会社のブログは、BtoBサイトのリニューアルで失敗しないための要点を、成功事例から整理して紹介している。作り直す前に、何を良くしたいかを決めておきたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoBサイトリニューアルのコツ！成功事例に学ぶ失敗しないポイント",
+      "url": "https://www.shift-jp.net/blog/btob/",
+      "publisher": "株式会社シフト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1189",
+    "kind": "success",
+    "title": "月額制で翻訳から運用まで任せる",
+    "summary": "サービス紹介サイトによると、ある会社はBtoBの引き合い獲得向けに、初期費用0円・月額9,800円からのWeb制作と運用代行（多言語サイト）を提供する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "月額定額制Web製作&運用代行(多言語サイト)",
+      "url": "https://www.digima-japan.com/service/bizx-inc-WP1/",
+      "publisher": "Digima～出島～",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1190",
+    "kind": "success",
+    "title": "制作会社は自社サイトの実績を見る",
+    "summary": "BtoB制作会社の営業資料では、自社サイトから年450件超のリード、採用サイトから年120人超の自然応募があるとする（同社発表）。制作会社自身の成果も選ぶ材料。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ベイジ 会社案内資料",
+      "url": "https://baigie.me/download/pdf/sales_sheet.pdf",
+      "publisher": "ベイジ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-762",
+    "kind": "trend",
+    "official": false,
+    "title": "BtoBの勝ちパターンをテンプレ化",
+    "summary": "2022年、MAツールのベーシックとBtoBに強い制作会社が提携し、BtoBの勝ちパターンを詰めたデザインテンプレートのパッケージを出した。型で早く作る流れ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "マーケツール「ferret One」のベーシックと、BtoBに強いWeb制作のベイジが業務提携",
+      "url": "https://webtan.impress.co.jp/n/2022/10/05/43443",
+      "publisher": "Web担当者Forum",
+      "date": "2022-10"
+    }
+  },
+  {
+    "id": "buyer-673",
+    "kind": "buyer",
+    "title": "BtoBサイトをチェック表で見直す",
+    "summary": "BtoBマーケ会社はBtoBサイトのチェックリストを公開している。発注前に自社サイトの弱いところを洗い出すと、制作会社への依頼内容がはっきりする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "BtoB Webサイト チェックリスト ver1.0",
+      "url": "https://www.100inc.co.jp/hubfs/100inc-corp/image/service/package-service/b2b_website_checklist_ver1.0.pdf",
+      "publisher": "100inc.co.jp",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-763",
+    "kind": "trend",
+    "official": false,
+    "title": "評価をリスト数から商談数へ",
+    "summary": "MarkeZineのBtoBマーケティング記事では、製造業や卸のBtoB-EC化や、成果の物差しをリスト獲得数から商談数へ移す動きが取り上げられている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "MarkeZine BtoBマーケティング 記事一覧",
+      "url": "https://markezine.jp/btob?p=29",
+      "publisher": "MarkeZine",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1191",
+    "kind": "success",
+    "title": "サンプル請求を受注の入口に",
+    "summary": "EC支援会社のプレスリリースは、BtoB-ECでサンプル請求をリードの入口にして本受注につなげた3事例を紹介（同社の発表）。試してから買いたい買い手に合う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "まずサンプルから：小さく試せる頼み方",
+    "source": {
+      "title": "BtoB-ECのリード獲得事例コラム公開",
+      "url": "https://www.dreamnews.jp/press/0000340671",
+      "publisher": "サンクユー（ドリームニュース）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1192",
+    "kind": "success",
+    "title": "採用サイトは人を集める施策とセット",
+    "summary": "製造業の採用記事は、採用サイトだけでは効果が出にくく、求人サイトへのURL掲載やSNS発信、求人票からの誘導と組み合わせることが大切だとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "採用ページに人が来ない理由",
+    "source": {
+      "title": "製造業・工場の採用を成功させる7つの方法｜求人応募数を増やす採用戦略",
+      "url": "https://regalonico.com/column/Manufacturing-Recruitment",
+      "publisher": "regalonico.com（制作会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1193",
+    "kind": "success",
+    "title": "工場勤務の不安を動画で減らす",
+    "summary": "製造業の採用ガイドは、工場勤務への不安を減らすため、製造現場の動画や働く社員の写真を多く載せることを勧める。若い人はスマホで情報集めを終える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "動画で見る、工場の一日",
+    "source": {
+      "title": "製造業の採用難を解決する！ホームページ作成とWeb活用で採用を成功させる実践ガイド",
+      "url": "https://www.chaco-web.com/blog/web-marketing-for-seizou/",
+      "publisher": "チャコウェブ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1194",
+    "kind": "success",
+    "title": "職種別ページとキャリアの道筋",
+    "summary": "採用ブランディングの記事は、職種別ページや研修・キャリアパスの情報を載せることが応募に効くとし、製造業の事例も紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "入社3年でどこまでできる？",
+    "source": {
+      "title": "製造業に効果的な採用ブランディングと採用サイトの運営方法｜成功事例も紹介",
+      "url": "https://hypex.jp/articles/recruitment-branding-manufacturing-industry",
+      "publisher": "ハイペックス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1195",
+    "kind": "success",
+    "title": "かっこいい製造業サイト19",
+    "summary": "大阪・東京のデザイン会社は、おしゃれ・かっこいい製造業サイトのデザイン事例19を紹介。採用でも、見た目の印象が若い人の応募の入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のホームページ制作デザイン事例19選",
+      "url": "https://titan-art.com/14880",
+      "publisher": "タイタン・アート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1196",
+    "kind": "success",
+    "title": "多言語で海外からの流入が増えた",
+    "summary": "多言語化ツール会社の製造業事例では、大手計測・制御機器メーカーがタイ語サイトを導入後、サイト流入が前年比30%増えたとされる（ツール会社の発表）。",
+    "industries": [
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "タイ語・ベトナム語のページは要る？",
+    "source": {
+      "title": "WOVN 導入事例（製造業）",
+      "url": "https://mx.wovn.io/casestudy/tag/%E8%A3%BD%E9%80%A0%E6%A5%AD",
+      "publisher": "WOVN Technologies",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-626",
+    "kind": "pain",
+    "title": "技術用語の翻訳ミスが怖い",
+    "summary": "産業機械の多言語カタログ・サイト制作ガイドは、技術情報や製品仕様の翻訳ミスは重大なトラブルにつながるため品質管理が大事とする。技術用語に強い翻訳体制を選ぶ。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "産業機械 多言語カタログ・Webサイト制作ガイド",
+      "url": "https://www.udx.co.jp/blog/catalog-multilingual-industrial",
+      "publisher": "UDX",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1197",
+    "kind": "success",
+    "title": "まず製品・問い合わせページを訳す",
+    "summary": "翻訳会社の記事は、全部を訳すのではなく、トップ・製品紹介・問い合わせなど海外の顧客が特に必要とするページから多言語化する例を紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "英語ページ、どこから作る？",
+    "source": {
+      "title": "多言語サイトの作り方と成功のポイント！注意点や事例も解説",
+      "url": "https://www.crosslanguage.co.jp/blog/multilingual-website-success-cases/",
+      "publisher": "クロスランゲージ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1198",
+    "kind": "success",
+    "title": "海外受注につながる10の要点",
+    "summary": "電通のBtoB部門は、製造業が海外受注と商談につなげるための多言語法人サイトの10のポイントを整理している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のための海外受注と商談につながる多言語法人サイト１０ポイント",
+      "url": "https://b2b.dentsu.jp/column/corporate-site-point10",
+      "publisher": "電通 B2Bイニシアティブ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1199",
+    "kind": "success",
+    "title": "海外で評価される日本メーカーのサイト",
+    "summary": "海外デジタルマーケ会社は、海外で評価される日本の製造業のグローバルサイト10を紹介。海外企業編と見比べると、伝え方の違いが分かる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "海外で評価される「製造業のグローバルサイト10選」《日本企業編》",
+      "url": "https://www.icrossborderjapan.com/blog/archives/2088/",
+      "publisher": "ICROSS BORDER JAPAN",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1286",
+    "kind": "question",
+    "title": "小さなメーカーも多言語化すべき？",
+    "summary": "Web制作会社の記事は、製造業のホームページこそ多言語化すべき理由を説明している。海外の買い手に向けては、英語の製品ページが最初の入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のホームページこそ多言語化すべき理由",
+      "url": "https://www.web-company.jp/scenario/manufacturingindustry-multilingual/",
+      "publisher": "web-company.jp（制作会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1200",
+    "kind": "success",
+    "title": "2年半でアクセス約8倍",
+    "summary": "名古屋のSEO会社は、製造メーカーのサイトのアクセス数を2年半で約6,500から50,000へ増やした実績を示している（同社の公開情報）。時間をかけて積み上げた例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "検索から来る人を増やすには何年かかる？",
+    "source": {
+      "title": "SEOコンサル",
+      "url": "https://bel-fort.jp/service/seo_consulting.html",
+      "publisher": "ベルフォート",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-674",
+    "kind": "buyer",
+    "title": "製造業出身のSEO担当がいるか",
+    "summary": "同じ会社は製造業出身のSEOコンサルタントが在籍すると打ち出す。技術が分かる担当かどうかは、SEO会社を選ぶときの判断材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業のSEOとは？必要性やメリット、具体的な手順",
+      "url": "https://www.lany.co.jp/blog/manufacturing-seo",
+      "publisher": "LANY",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1287",
+    "kind": "question",
+    "title": "製造業のSEO外注はいくら？",
+    "summary": "あるデジタルマーケ会社は、製造業向けSEOを月額30万円で提供すると案内している。外注するなら月額費用と期間の総額で考えたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業はSEO対策を行うべき！理由やメリット、具体的な進め方",
+      "url": "https://digitalift.co.jp/contents/seo/manufacturing-seo/",
+      "publisher": "デジタリフト",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-675",
+    "kind": "buyer",
+    "title": "工作機械メーカーの集客支援を比べる",
+    "summary": "新規事業メディアは、工作機械メーカーのWeb集客に強いコンサル会社5社を比べている（2026年）。業種を絞った比較記事は発注先探しの入口になる。",
+    "industries": [
+      "産業機械",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "工作機械メーカーのWeb集客に強いコンサルティング会社5選【2026年最新】",
+      "url": "https://lire.co.jp/media-bizdev/column4/cs-webmarketing-machinetool-top5/",
+      "publisher": "リール（新規事業.com）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-676",
+    "kind": "buyer",
+    "title": "支援範囲が課題を覆っているか",
+    "summary": "製造業Webマーケ支援会社の比較記事は、サポート領域が自社のニーズを網羅しているかの確認を勧める。制作だけでなく公開後の改善まで任せられるかが要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "【2026年最新】製造業Webマーケティング支援会社6選",
+      "url": "https://www.tmcdigital.jp/column/web-marketing/manufacturing-web-marketing-support/",
+      "publisher": "TMCデジタル",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-677",
+    "kind": "buyer",
+    "title": "SEO記事を外に頼むときの選び方",
+    "summary": "製造業に強いSEO記事制作会社5社を選び方・成功事例とあわせて紹介する記事がある。技術を正しく書けるライターがいるかを見たい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業に強いSEO記事制作会社5選｜選び方と成功事例",
+      "url": "https://by-independent.com/column2/manufacturing-seo-content-companies-mrktx/",
+      "publisher": "Independent",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-678",
+    "kind": "buyer",
+    "title": "メーカーに強いSEO会社の費用感",
+    "summary": "Web制作会社の比較記事は、製造業のWeb制作・SEO会社をメーカーへの強さで比べ、選び方と費用相場を解説している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業のWeb制作・SEO会社おすすめ比較｜メーカーに強い制作会社の選び方と費用相場",
+      "url": "https://n-works.link/blog/seo/manufacturing-industry",
+      "publisher": "ニュートラルワークス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1201",
+    "kind": "success",
+    "title": "製造業に強いコンテンツSEO",
+    "summary": "製造業向けの支援会社は、製造業に強いSEO対策・コンテンツSEOを掲げている。技術記事を積み上げて検索から問い合わせを得る考え方。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業に強い〈SEO対策・コンテンツSEO〉",
+      "url": "https://monoto.co.jp/company/seo/",
+      "publisher": "monoto.co.jp（支援会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1202",
+    "kind": "success",
+    "title": "かっこいいデザインと運用・SEO",
+    "summary": "制作会社の製造業サイトガイドは、事例付きで、効果的なデザインと公開後の運用、SEO対策をまとめて解説。作って終わりにしないことを強調する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "【事例付き】製造業のWebサイト成功ガイド",
+      "url": "https://first-create.com/manifacture-website/",
+      "publisher": "first-create.com（制作会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1203",
+    "kind": "success",
+    "title": "部品メーカー、引き合いゼロから2倍超",
+    "summary": "群馬・伊勢崎の制作会社によると、古いデザインで技術が伝わらずWeb経由の引き合いがゼロだった太田市の部品メーカーが、作り直しでBtoBの問い合わせを200%に伸ばした。",
+    "industries": [
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "古いサイトのままだと何が起きる？",
+    "source": {
+      "title": "【群馬の成功事例】地域ビジネスを加速させたホームページ制作事例3選",
+      "url": "https://mk-design.xyz/marketing/20251116/",
+      "publisher": "MK-Design（群馬・伊勢崎）",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "pain-627",
+    "kind": "pain",
+    "title": "古いサイトでは技術力が伝わらない",
+    "summary": "群馬の制作会社が紹介する部品メーカーは、デザインが古く技術力が伝わらないことが悩みで、Webからの引き合いがゼロだった。見た目の古さは中身の古さと受け取られやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "【群馬の成功事例】地域ビジネスを加速させたホームページ制作事例3選",
+      "url": "https://mk-design.xyz/marketing/20251116/",
+      "publisher": "MK-Design（群馬・伊勢崎）",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "success-1204",
+    "kind": "success",
+    "title": "成果は公開から半年後に出ることも",
+    "summary": "群馬の制作会社の別の事例（外構業）では、公開後すぐには成果が出ず、開設後6か月とその後6か月を比べて問い合わせが約400%になったという。すぐ諦めず続けることが大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "【群馬の成功事例】地域ビジネスを加速させたホームページ制作事例3選",
+      "url": "https://mk-design.xyz/marketing/20251116/",
+      "publisher": "MK-Design（群馬・伊勢崎）",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "success-1205",
+    "kind": "success",
+    "title": "技術を「発注者の言葉」に訳す",
+    "summary": "群馬の制作会社は、製造業サイトに必要なのは「技術の翻訳」だとする。専門用語や設備名を並べるより、発注者の困りごとにどう効くかの言葉に直すと受注につながりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "うちの技術、発注する人の言葉で言うと？",
+    "source": {
+      "title": "群馬の製造業・工場向けホームページ制作：技術を「受注につながる言葉」に変えるWeb戦略",
+      "url": "https://mk-design.xyz/creation/20260826/",
+      "publisher": "MK-Design（群馬・伊勢崎）",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "success-1206",
+    "kind": "success",
+    "title": "「加工方法×地域名」で探される",
+    "summary": "群馬の制作会社は、金属加工・精密加工の会社に「切削加工 群馬」のような加工方法と地域名の組み合わせで探されるページ作りをすすめる。地元で近い工場を探す発注者に届く。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "群馬で切削加工を頼むときの選び方",
+    "source": {
+      "title": "群馬の製造業ホームページ制作｜金属加工・精密加工企業が取引を増やすWebサイトの作り方",
+      "url": "https://emo-planning.co.jp/column/1860/",
+      "publisher": "emo planning（群馬）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1207",
+    "kind": "success",
+    "title": "設備と加工できる寸法を具体的に",
+    "summary": "群馬の製造業向けコラムでは、設備の仕様や加工できる大きさを具体的に載せると、発注者が「頼めるか」を自分で判断でき、問い合わせのハードルが下がるとしている。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "うちで加工できる最大サイズと精度",
+    "source": {
+      "title": "群馬の製造業ホームページ制作｜金属加工・精密加工企業が取引を増やすWebサイトの作り方",
+      "url": "https://emo-planning.co.jp/column/1860/",
+      "publisher": "emo planning（群馬）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1208",
+    "kind": "success",
+    "title": "特殊印刷会社、問い合わせゼロから安定",
+    "summary": "製造業専門の制作者が紹介する栃木の特殊印刷会社は、問い合わせがほぼない状態から、安定した問い合わせと受注実績につながったという（制作者の発表）。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "特殊印刷で何ができる？素材別の実例",
+    "source": {
+      "title": "製造業専門のホームページ制作 Webマーケティング成功事例3社【2025年】",
+      "url": "https://peraichi.com/landing_pages/view/seizou/",
+      "publisher": "製造業専門の制作者（ペライチ掲載）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1209",
+    "kind": "success",
+    "title": "樹脂試作工場、新規取引が数百社",
+    "summary": "同じ制作者の掲載では、栃木の樹脂試作の専門工場がホームページを通じて数百社の新規取引先を開拓したとされる。試作に特化した打ち出しが探す人に刺さった例。",
+    "industries": [
+      "樹脂成形",
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "樹脂の試作、1個から頼める？",
+    "source": {
+      "title": "製造業専門のホームページ制作 Webマーケティング成功事例3社【2025年】",
+      "url": "https://peraichi.com/landing_pages/view/seizou/",
+      "publisher": "製造業専門の制作者（ペライチ掲載）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1210",
+    "kind": "success",
+    "title": "導線を先に設計して1.5倍前後",
+    "summary": "大阪の制作会社の調べ（十数社、サービス業・BtoB中心）では、問い合わせまでの流れを先に設計し直し、その上にデザインを載せる進め方で、問い合わせが1.5倍前後に増えた例があった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "大阪府のホームページ制作会社おすすめ25選！費用相場と選び方を目的別に徹底比較！",
+      "url": "https://grill.co.jp/marketing-log/6790/",
+      "publisher": "Grill（マーケティングログ）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-628",
+    "kind": "pain",
+    "title": "デザイン優先で問い合わせが増えない",
+    "summary": "大阪の制作会社は、見た目を優先して問い合わせまでの流れを後回しにすることを、問い合わせが増えない原因の一つに挙げる。きれいなサイトでも連絡しにくければ成果は出ない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "大阪府のホームページ制作会社おすすめ25選！費用相場と選び方を目的別に徹底比較！",
+      "url": "https://grill.co.jp/marketing-log/6790/",
+      "publisher": "Grill（マーケティングログ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1211",
+    "kind": "success",
+    "title": "堺・東大阪は加工内容で検索対策",
+    "summary": "大阪の制作会社の比較記事は、堺・東大阪の製造業では、加工内容を軸にした検索対策と、取引先に信頼を伝える作りが大事だとしている。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "東大阪で〇〇加工を探す人へ",
+    "source": {
+      "title": "大阪府のホームページ制作会社おすすめ25選！費用相場と選び方を目的別に徹底比較！",
+      "url": "https://grill.co.jp/marketing-log/6790/",
+      "publisher": "Grill（マーケティングログ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1212",
+    "kind": "success",
+    "title": "製品紹介と納入実績のページを作る",
+    "summary": "大阪・関西の町工場を中心に作る制作会社は、製品紹介ページや納入実績ページを作った事例を載せている。何をどこに納めてきたかが、初めての発注者の安心材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "これまでの納入実績、業界別に紹介",
+    "source": {
+      "title": "大阪の製造業・町工場のためのホームページ制作",
+      "url": "https://livalest.com/manufacturing/",
+      "publisher": "リバレスト（大阪）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-679",
+    "kind": "buyer",
+    "title": "地元制作会社の実績で同業を探す",
+    "summary": "東大阪の制作会社は、冷間・熱間圧造の会社などの制作実績を載せ、デザイン案1案10万円〜と料金も公開している。地元の会社の実績ページで同業の例を見るのが選ぶ近道。",
+    "industries": [
+      "鍛造"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "東大阪市 ホームページ作成・制作 (有)デジタルファクトリー",
+      "url": "https://www.digital-factory.jp/area/higashioosaka/",
+      "publisher": "デジタルファクトリー（大阪）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-680",
+    "kind": "buyer",
+    "title": "堺の熱処理会社も地元制作会社に",
+    "summary": "大阪の制作会社は、堺市の金属熱処理会社などの制作実績を掲載している。地場産業の仕事を知る地元の制作会社は、専門の話が通じやすい。",
+    "industries": [
+      "熱処理"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "堺市 ホームページ作成・制作 (有)デジタルファクトリー",
+      "url": "https://www.digital-factory.jp/area/sakai/",
+      "publisher": "デジタルファクトリー（大阪）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-681",
+    "kind": "buyer",
+    "title": "公開後の広告・SEOまで伴走する会社",
+    "summary": "東大阪・生駒が拠点のデザイン事務所は、製造業のコーポレートサイトや採用サイトの実績があり、公開後の広告運用や検索対策まで伴走するという。企業サイトは50万円〜と掲載。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "東大阪市の優良ホームページ制作会社10選【2026年最新版】",
+      "url": "https://web-kanji.com/posts/higashiosaka-city",
+      "publisher": "Web幹事",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-682",
+    "kind": "buyer",
+    "title": "地元の製造業事例を地域別にまとめた例",
+    "summary": "全国の製造業サイトを集めた制作会社のページは、大阪府の製造業サイトの事例を地元の制作会社とあわせて紹介している。依頼前に同じ地域の他社サイトを見比べられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "大阪府の製造業ホームページ制作事例｜地元の制作会社と実例｜クリートーク",
+      "url": "https://c-ree.com/works/seizou/osaka",
+      "publisher": "クリートーク",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-629",
+    "kind": "pain",
+    "title": "大田区はIT対応が難しい工場も",
+    "summary": "比較ビズの大田区の記事は、区内に工場が多い一方、中小企業にはIT対応が難しい会社も少なくないと指摘している。人手が少ない町工場ほど更新を任せられる相手が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "大田区のおすすめホームページ制作会社",
+      "url": "https://www.biz.ne.jp/list/hp-design/13_tokyo/otaku/",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1213",
+    "kind": "success",
+    "title": "学生と制作会社で町工場の特設HP",
+    "summary": "横浜国立大学の学生報告によると、大田区のオープンファクトリーで、オンラインイベントの特設ホームページをWeb制作会社と協力して作った。町工場の見せ方を外の目で作る例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場見学イベント、オンラインでもできる？",
+    "source": {
+      "title": "横浜国立大学 学生報告（大田区オープンファクトリー）",
+      "url": "https://ynu.repo.nii.ac.jp/record/11178/files/2020_1-03.pdf",
+      "publisher": "横浜国立大学",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "buyer-683",
+    "kind": "buyer",
+    "title": "製造・販売業の実績がある地元会社",
+    "summary": "大田区の制作会社の紹介では、多様な業種の実績があり、製造・販売業のサイト制作にも対応するとある。町工場の発注先選びでは、製造業の実績の有無をまず見る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "レイ・プランニング（Web幹事掲載）",
+      "url": "https://web-kanji.com/companies/rayplanning",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-684",
+    "kind": "buyer",
+    "title": "技術と加工実績を伝える構成",
+    "summary": "埼玉・川口の制作会社は、BtoB製造業のコーポレートサイトにも対応し、技術力や加工実績を伝える構成づくりを強みとする。月額19,800円〜のサブスク型もある。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "川口市のホームページ制作・集客支援",
+      "url": "https://cantik.co.jp/kawaguchi/",
+      "publisher": "cantik（埼玉・川口）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-764",
+    "kind": "trend",
+    "official": false,
+    "title": "町工場向けの格安モニター価格",
+    "summary": "町工場・精密加工会社向けに、初回モニター価格49,800円（税込）を掲げる制作者もいる。制作事例を増やす目的の価格とのことで、条件や公開後の更新の扱いは確かめたい。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業・町工場向けホームページ制作｜初回モニター価格49,800円",
+      "url": "https://factory-web-partner-jp.netlify.app/",
+      "publisher": "町工場向けWeb制作者",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-685",
+    "kind": "buyer",
+    "title": "フリーランスに頼むという選択",
+    "summary": "相模原のフリーランスのWebデザイナーは、製造業のコーポレートサイトの制作例を載せている。小さな工場は、個人の制作者に頼む選択肢もある。窓口が1人で話が早い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業のコーポレートサイト",
+      "url": "https://amot-design.com/works/work17.html",
+      "publisher": "AmotDesign（相模原）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-686",
+    "kind": "buyer",
+    "title": "大きなサイトは200万円〜の目安",
+    "summary": "神奈川の制作会社は相模原向けの案内で、大規模サイトは200万円〜という料金の目安を示している。ページ数や機能で費用は大きく変わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "相模原市のホームページ制作",
+      "url": "https://www.kazmia.jp/area/sagamihara/",
+      "publisher": "カズミア（神奈川）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1214",
+    "kind": "success",
+    "title": "専門用語と組立情報で引き合い",
+    "summary": "大阪府中小企業診断協会の事例では、取引先の海外移転で受注が減った製造業が、材質や精度などの専門用語、組立品の情報まで載せたことで、引き合いから受注につながった。",
+    "industries": [
+      "機械部品",
+      "組立"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "部品単体だけでなく組立まで頼める？",
+    "source": {
+      "title": "中小企業の正しいホームページ（中小企業で受注が狙えるホームページ）",
+      "url": "https://www.osaka-shindanshi.org/case/2689/",
+      "publisher": "大阪府中小企業診断協会",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-687",
+    "kind": "buyer",
+    "title": "撮影から編集まで地元で一貫",
+    "summary": "燕市を拠点とする制作会社は、写真・動画撮影から編集まで一貫して対応すると紹介されている。製品写真や技術紹介の映像を一緒に作れる地元の会社は、産地の工場に向く。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "燕市のホームページ制作会社",
+      "url": "https://web-kanji.com/posts/tsubame-city",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-688",
+    "kind": "buyer",
+    "title": "ECが得意な燕三条の制作会社",
+    "summary": "燕市の制作会社の紹介では、ECサイト構築を得意とし、運用や新商品の追加、イラスト作成まで支える会社がある。自社製品を直販したい産地のメーカー向き。",
+    "industries": [
+      "金属加工",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "燕市のホームページ制作会社",
+      "url": "https://web-kanji.com/posts/tsubame-city",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-689",
+    "kind": "buyer",
+    "title": "業種別の制作実績ページで探す",
+    "summary": "新潟の制作会社は「ものづくり・製造業」の業種別に制作実績を分けて公開している。依頼先を選ぶときは、業種で絞って似た会社のサイトを見るのがよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ものづくり･製造業 ホームページ制作/デザイン実績",
+      "url": "https://cunelwork.co.jp/works/business_type/manufacturing/",
+      "publisher": "クーネルワーク（新潟）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1215",
+    "kind": "success",
+    "title": "製品写真の撮影まで含めて制作",
+    "summary": "長野・岡谷の制作会社は、岡谷市の金属部品加工会社のサイトを、WordPress構築・検索対策・製品写真の撮影まで含めて作った実績を公開。公開後の成果も解説している。",
+    "industries": [
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品写真、プロに撮ってもらうと何が変わる？",
+    "source": {
+      "title": "株式会社諏訪機械製作所 ｜ホームページ制作実績-アイリーラボ",
+      "url": "https://www.aily-lab.co.jp/works/suwakikai/",
+      "publisher": "アイリーラボ（長野・岡谷）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1216",
+    "kind": "success",
+    "title": "広告運用で問い合わせ1.6倍",
+    "summary": "長野・岡谷の制作会社の成果事例によると、金属加工業の会社はリスティング広告の運用で問い合わせが1.6倍になった（制作会社の発表）。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Webサイト制作・リニューアル・運用の成果事例｜アイリーラボ",
+      "url": "https://www.aily-lab.co.jp/result/",
+      "publisher": "アイリーラボ（長野・岡谷）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-690",
+    "kind": "buyer",
+    "title": "Webと看板・印刷物をまとめて頼む",
+    "summary": "諏訪・茅野が拠点のデザイン会社は、ホームページに加え看板や印刷物も扱う。地方では、サイト・会社案内・看板を一社にまとめて頼み、見た目をそろえる選び方もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "長野県 諏訪市・茅野市のホームページ制作｜スタジオハロー",
+      "url": "https://www.st-hallo.com/",
+      "publisher": "スタジオハロー（長野・茅野）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1217",
+    "kind": "success",
+    "title": "問合せ20件から380件に",
+    "summary": "製造業も手がける制作会社は、ある製造業のWeb集客で問い合わせが20件から380件に増えた成果インタビューを載せている（制作会社の発表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ホームページ制作専科｜リニューアルWeb制作会社・BtoB/BtoC",
+      "url": "https://www.hp-senka.jp/",
+      "publisher": "ホームページ制作専科",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1218",
+    "kind": "success",
+    "title": "技術・製品の強みを商談へ",
+    "summary": "同じ制作会社の製造業向けページは、技術や製品の強みを問い合わせ・商談につなげることを主眼にする。強みを言葉にして見積もりの入口まで導くのが基本。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業ホームページ制作｜技術・製品の強みを問い合わせ・商談へ｜ホームページ制作専科",
+      "url": "https://www.hp-senka.jp/manufacturing/",
+      "publisher": "ホームページ制作専科",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1219",
+    "kind": "success",
+    "title": "刷新と記事運用で検索流入3倍",
+    "summary": "制作会社によると、ある製造業はサイトの作り直しとオウンドメディアの運用で、検索からの訪問が3倍になった。作って終わりにせず記事を足し続けた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "【製造業】ホームページリニューアルとオウンドメディア運用で自然検索流入3倍を実現",
+      "url": "https://toritoke.jp/case/achievements-1/",
+      "publisher": "とりとけ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-630",
+    "kind": "pain",
+    "title": "検索未対応・古い見た目・導線なし",
+    "summary": "同じ事例では、作り直し前の課題として、検索対策をしていない、デザインが古い、製品情報から問い合わせへの流れが整理されていない、の3つが挙げられている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "【製造業】ホームページリニューアルとオウンドメディア運用で自然検索流入3倍を実現",
+      "url": "https://toritoke.jp/case/achievements-1/",
+      "publisher": "とりとけ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1220",
+    "kind": "success",
+    "title": "問い合わせ40倍とうたう地方の事例",
+    "summary": "全国の地方都市向けに作る制作会社は、ホームページの作り直しで問い合わせ40倍・アクセス97倍とうたう事例を掲げる（制作会社の宣伝）。業種や元の件数は確かめたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "石川県金沢市で成果のでるホームページ作成",
+      "url": "https://www.s-contigo.com/hp/hokushin/ishikawa/kanazawashi",
+      "publisher": "スタジオコンチーゴ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-691",
+    "kind": "buyer",
+    "title": "比較サイトで「製造業対応」に絞る",
+    "summary": "比較サイトには、金沢市で製造業に対応する制作会社だけを並べた一覧がある。地域と業種で絞ると、候補を短い時間で集められる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "金沢市で製造業業界対応のホームページ制作会社一覧",
+      "url": "https://web-kanji.com/search/ishikawa/kanazawa-city/manufacturing",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-765",
+    "kind": "trend",
+    "official": true,
+    "title": "公的機関のHP専門家派遣の事例集",
+    "summary": "石川県の産業支援機関は、ホームページ関連の専門家派遣の活用事例を公開。専門家の助言でネットショップのページを直し、売上を伸ばした例がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "専門家派遣 (ホームページ関連) 活用事例 - ISICO支援事例集",
+      "url": "https://www.isico.or.jp/site/shien-jirei/list125-185.html",
+      "publisher": "石川県産業創出支援機構（ISICO）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-631",
+    "kind": "pain",
+    "title": "地方の製造業もSEO相談が多い",
+    "summary": "比較サイトの福井県の案件一覧には、鯖江市の会社から、上位表示したい言葉を挙げた検索対策の相談が見られる。地方の会社も検索で見つかりたいと考えている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "福井県のWeb制作会社案件",
+      "url": "https://www.biz.ne.jp/subject/web/18_fukui/",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-692",
+    "kind": "buyer",
+    "title": "格安パッケージの制作会社も",
+    "summary": "富山の制作会社の比較記事には、中小企業や個人事業主向けに新規作成の格安パッケージを用意する会社もある。初めてのサイトなら小さく始める選び方もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "富山県のおすすめホームページ制作会社",
+      "url": "https://imitsu.jp/list/hp-design/toyama/",
+      "publisher": "PRONIアイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-693",
+    "kind": "buyer",
+    "title": "自動車部品の現場出身の制作会社",
+    "summary": "西三河の制作会社は、代表が大手自動車部品メーカーで車載制御の開発を15年担当していたと紹介。製造業のBtoBの事情が分かる人に頼むと、説明の手間が減る。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "西尾・岡崎など三河のWeb制作＆マーケティング｜ウェブリン",
+      "url": "https://web-lin-tech.com/",
+      "publisher": "ウェブリン（愛知・西三河）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-694",
+    "kind": "buyer",
+    "title": "レンタル型の安いホームページ",
+    "summary": "岡崎の制作会社は、ホームページを安く「レンタル」する形で、無人搬送機の開発・製造会社など製造業の制作事例を載せる。初期費用を抑えたい小さな工場向けの形。",
+    "industries": [
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "制作事例",
+      "url": "https://www.hp-yr.com/jirei.html",
+      "publisher": "ホームページ安くレンタル.com（愛知・岡崎）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-695",
+    "kind": "buyer",
+    "title": "愛知の製造業サイト事例31件",
+    "summary": "製造業サイトを地域別に集める制作会社は、愛知県の製造業サイト事例を31件載せ、自動車部品関連の会社も含む。同じ地域の同業のサイトは、作る前の見本になる。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "愛知県の製造業ホームページ制作事例｜地元の制作会社と実例｜クリートーク",
+      "url": "https://c-ree.com/works/seizou/aichi",
+      "publisher": "クリートーク",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1221",
+    "kind": "success",
+    "title": "自動車部品メーカーの採用サイトはスマホ先",
+    "summary": "静岡の制作会社は、自動車部品メーカーの採用サイトを想定し、スマホで見る前提（モバイルファースト）で設計するとしている。求職者の多くはスマホで見る。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "スマホで見る工場の仕事紹介",
+    "source": {
+      "title": "ホームページ制作 静岡｜Web制作会社 ネオインデックス",
+      "url": "https://www.neoindex.co.jp/shizuoka/",
+      "publisher": "ネオインデックス（静岡）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1222",
+    "kind": "success",
+    "title": "製造業の集客と採用を一緒に解決",
+    "summary": "静岡の制作会社は、製造業向けに集客と採用の両方の課題を解くホームページ制作を打ち出している。受注の入口と採用の入口を一つのサイトで設計する考え方。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業ホームページ制作｜集客・採用の課題を解決するホームページ制作は静岡の株式会社レガロニコ",
+      "url": "https://regalonico.com/LP/manufacturing-industry",
+      "publisher": "レガロニコ（静岡）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1223",
+    "kind": "success",
+    "title": "採用代行とホームページを組み合わせ",
+    "summary": "同じ静岡の制作会社は、採用代行とホームページ制作を合わせて提供している。サイトを作るだけでなく応募の受け付けや連絡まで外に任せる形もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "採用代行・ホームページ制作なら静岡の株式会社レガロニコ",
+      "url": "https://regalonico.com/",
+      "publisher": "レガロニコ（静岡）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-696",
+    "kind": "buyer",
+    "title": "訪問してくれる範囲を確かめる",
+    "summary": "静岡・沼津の制作会社は、静岡県東部と神奈川県西部を訪問対応の地域としている。工場の撮影や取材が要る製造業は、来てもらえる範囲かを確かめておく。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "静岡県静岡市でホームページ制作なら株式会社 オフィスグルー",
+      "url": "https://www.gluee.jp/shizuokacity/",
+      "publisher": "オフィスグルー（静岡・沼津）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-697",
+    "kind": "buyer",
+    "title": "口コミと料金で地元の会社を比べる",
+    "summary": "静岡県のホームページ制作を口コミと料金で比べられるサービスがある。地方の小さな工場は、評価と費用を並べて見られる場で候補を探す方法もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "静岡県の企業・会社ホームページ制作【口コミ・料金で比較】 - ミツモア",
+      "url": "https://meetsmore.com/services/corporate-website-development/shizuoka",
+      "publisher": "ミツモア",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-698",
+    "kind": "buyer",
+    "title": "浜松の費用は30万〜150万円と幅",
+    "summary": "浜松の制作会社選びの記事は、依頼費用が30万円〜150万円と幅広く、差は「誰が作るか」で大きく出るとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "浜松でホームページ制作会社を探すなら|費用相場と失敗しない選び方 2026",
+      "url": "https://atsoho.com/blog/homepage-production-company-hamamatsu",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "buyer-699",
+    "kind": "buyer",
+    "title": "中小のサイトは40万〜100万円の目安",
+    "summary": "浜松の制作会社選びの別記事は、規模別の目安として、中小企業のコーポレートサイトで40万円〜100万円を示している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "浜松で制作会社を探すなら|相場と依頼の流れ 2026",
+      "url": "https://atsoho.com/blog/production-company-choice-hamamatsu",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-766",
+    "kind": "trend",
+    "official": false,
+    "title": "浜松の制作会社は採用と展示会映像",
+    "summary": "浜松の記事によると、地場の制作会社は製造業の採用サイトやコーポレートサイト、展示会用の紹介映像を主な仕事にしてきた。産業の町ならではの依頼の中身。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "浜松で制作会社を探すなら|相場と依頼の流れ 2026",
+      "url": "https://atsoho.com/blog/production-company-choice-hamamatsu",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1224",
+    "kind": "success",
+    "title": "Web完結の申込で申込が約8倍",
+    "summary": "名古屋の制作会社の発表（2023年）では、リニューアルしたサイトで新規申し込みが約8倍に。Webで完結する申込フォーム、解析データの活用、検索対策を挙げる（製造業ではない）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "エーアンドエー リニューアル事例の発表（@Press）",
+      "url": "https://pc.watch.impress.co.jp/docs/release/atpress/1478672.html",
+      "publisher": "エーアンドエー（名古屋）",
+      "date": "2023-02"
+    }
+  },
+  {
+    "id": "success-1225",
+    "kind": "success",
+    "title": "製造業で月18件の問い合わせ",
+    "summary": "広島の採用サイト制作会社をまとめた記事によると、広島市の制作会社は製造業の月間問い合わせ18件という成果を掲げている（制作会社の発表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "広島の採用サイト制作会社",
+      "url": "https://www.shopowner-support.net/hr/recruitment-measures/recruit-site/recruitment-site-production-company-hiroshima/",
+      "publisher": "ショップオーナーサポート",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-700",
+    "kind": "buyer",
+    "title": "採用ページは30万円以内・約1か月",
+    "summary": "同じ記事では、広島市の制作会社が作った生活用品メーカーの採用ページが、費用30万円以内・制作期間約1か月、担当はデザインと文章とされる。採用ページの目安になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "広島の採用サイト制作会社",
+      "url": "https://www.shopowner-support.net/hr/recruitment-measures/recruit-site/recruitment-site-production-company-hiroshima/",
+      "publisher": "ショップオーナーサポート",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-632",
+    "kind": "pain",
+    "title": "北九州は地元の制作会社が少ない",
+    "summary": "北九州の制作会社選びの記事は、製造業中心の集積地なのに地元の制作会社が少なく依頼が集中しやすいとする（数字の出典は示されていない）。早めの相談が要る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "北九州でホームページ制作会社を探すなら|費用の内訳と選び方 2026",
+      "url": "https://atsoho.com/blog/homepage-production-company-kitakyushu",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-633",
+    "kind": "pain",
+    "title": "小さな会社ほどIT投資が遅れる",
+    "summary": "北九州の記事は中小企業庁の調査を引いて、小規模な事業者ほどIT投資や専門の人材の確保が遅れているとする。外の制作会社に任せる理由の一つ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "北九州でホームページ制作会社を探すなら|費用の内訳と選び方 2026",
+      "url": "https://atsoho.com/blog/homepage-production-company-kitakyushu",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1226",
+    "kind": "success",
+    "title": "Webは人材の獲得にも効く",
+    "summary": "製造業のホームページ制作を解説する記事は、ホームページが集客だけでなく人材獲得にも効果があるとする（制作会社の自社メディア）。採用ページを後回しにしない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のホームページ制作",
+      "url": "https://stock-sun.com/column/website-creation-manufacturing-industry",
+      "publisher": "StockSun",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-701",
+    "kind": "buyer",
+    "title": "熊本の集客事例は業種別に比べる",
+    "summary": "熊本の制作会社の記事は、集客に成功した7つの業種別事例を分析し、売上が伸びた会社の共通点と業者の選び方をまとめる。地元の事例を業種ごとに見るとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "熊本のホームページ制作で集客に成功した事例7選｜売上が伸びた会社の共通点と失敗しない業者選び",
+      "url": "https://crevia-ts.com/archives/2865",
+      "publisher": "クレヴィア（熊本）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1227",
+    "kind": "success",
+    "title": "製品ページの改善と資料DLで1.5倍",
+    "summary": "仙台の制作会社の掲載では、精密機械メーカーが製品ページの検索対策と資料ダウンロードへの導線を強めて、問い合わせが約1.5倍に（社名なしの事例）。",
+    "industries": [
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品カタログPDF、何を載せる？",
+    "source": {
+      "title": "成果にこだわるホームページ制作",
+      "url": "https://www.smt-net.co.jp/about/",
+      "publisher": "SMT（仙台）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-702",
+    "kind": "buyer",
+    "title": "山形の地元会社は近隣の工場を多数",
+    "summary": "山形の制作会社は、長井市・高畠町・白鷹町など県内の製造業のコーポレートサイト制作を実績として紹介している。地元の工場の事情を知る会社は話が早い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業 ホームページ制作実績",
+      "url": "https://wevie.jan.ne.jp/works_industrys/manufacturing/",
+      "publisher": "ウェビー（山形）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1228",
+    "kind": "success",
+    "title": "製造・建設業の採用サイトも地元で",
+    "summary": "山形の制作会社は、製造・建設業の採用サイトやコーポレートサイトの事例を公開している。地方の工場は、受注向けと採用向けの両方を地元で頼む例が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "事例紹介",
+      "url": "https://tsunagu-hp.jp/service/webpage/works/",
+      "publisher": "つなぐホームページ（山形）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1229",
+    "kind": "success",
+    "title": "札幌の会社は公開後の運用を重視",
+    "summary": "札幌の制作会社は、ホームページ制作後に成果を出すための運用戦略を事例つきで説明している。地方でも、作った後の更新と改善が成果の分かれ目になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "【事例あり】札幌の企業向け！ホームページ制作後に成果を出すための運用戦略",
+      "url": "https://ardem.co.jp/archives/blog/%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E5%88%B6%E4%BD%9C%E4%BC%9A%E7%A4%BE%E3%81%8C%E8%A7%A3%E8%AA%AC%EF%BC%81%E4%BC%81%E6%A5%AD%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8",
+      "publisher": "ARDEM（札幌）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-703",
+    "kind": "buyer",
+    "title": "札幌の採用HPは業界別の事例で選ぶ",
+    "summary": "北海道の制作会社の採用ホームページ制作ガイドは、業界別の成功事例とおすすめの会社をまとめる。採用サイトは同じ業界の実績で選ぶとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "札幌の採用ホームページ制作ガイド｜業界別成功事例とおすすめ会社10選",
+      "url": "https://kukanhokkaido.co.jp/websolutions/knowledge/sapporo-recruit-website/",
+      "publisher": "空間（北海道）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1230",
+    "kind": "success",
+    "title": "粉末調味料メーカー、刷新で受注増",
+    "summary": "CMSを提供する会社の記事は、粉末調味料メーカーがサイトの作り直し後に問い合わせと受注を増やした例を紹介する。食品の原料メーカーも検索から見つけられる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "業務用の粉末調味料、少量から相談できる？",
+    "source": {
+      "title": "製造業のホームページ制作の成功事例を紹介！中小企業も参考になる制作のコツやポイントを解説｜CMS「Blue Monkey」",
+      "url": "https://bluemonkey.jp/media/column/manufacture_website_success_story/",
+      "publisher": "クラウドサーカス（Blue Monkey）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1231",
+    "kind": "success",
+    "title": "更新しやすさを重視した刷新",
+    "summary": "同じ記事では、ワイヤーシェルフの製造会社が、サイトを自社で運用しやすいことを重視して作り直した例も紹介。担当者が自分で更新できることが続ける条件。",
+    "industries": [
+      "金属加工",
+      "建材・金物"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業のホームページ制作の成功事例を紹介！中小企業も参考になる制作のコツやポイントを解説｜CMS「Blue Monkey」",
+      "url": "https://bluemonkey.jp/media/column/manufacture_website_success_story/",
+      "publisher": "クラウドサーカス（Blue Monkey）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1232",
+    "kind": "success",
+    "title": "営業DXはWebサイト活用から",
+    "summary": "CMS会社はイプロスで、製造業の営業DXはWebサイトの活用から始まるとし、問い合わせや商談につなげるためのサイト作り直しの事例資料を配っている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Sales DX in the manufacturing industry starts with utilizing websites! Cloud Circus",
+      "url": "https://pr.mono.ipros.com/en/cloudcircus/product/detail/2000790926",
+      "publisher": "クラウドサーカス（イプロス掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-767",
+    "kind": "trend",
+    "official": true,
+    "title": "都の専門家派遣は年8回まで",
+    "summary": "東京都中小企業振興公社の専門家派遣を使った支援では、年8回まで専門家が来る。制作の代行ではなく、自社でサイトを立ち上げ・改善できるよう助ける形が中心。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "東京都中小企業振興公社専門家派遣によるホームページ立ち上げ支援＆改善アドバイス",
+      "url": "https://sophit.biz/%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%B0%8F%E4%BC%81%E6%A5%AD%E6%8C%AF%E8%88%88%E5%85%AC%E7%A4%BE%E5%B0%82%E9%96%80%E5%AE%B6%E6%B4%BE%E9%81%A3%E4%BA%8B%E6%A5%AD%E3%81%AB%E3%82%88%E3%82%8Bhp%E3%82%84/",
+      "publisher": "ソフィットウェブコンサルティング",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-768",
+    "kind": "trend",
+    "official": true,
+    "title": "神戸市の中小企業へ専門家派遣",
+    "summary": "こうべ産業・就労支援財団は、神戸市内に主な事業所がある中小企業に専門家を派遣している。ホームページの相談を公的な窓口から始める方法もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "専門家派遣",
+      "url": "https://kobe-ipc.or.jp/specialist",
+      "publisher": "こうべ産業・就労支援財団",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1233",
+    "kind": "success",
+    "title": "大手電機メーカー、HubSpotでリード増",
+    "summary": "HubSpotの海外事例ページでは、カシオ計算機がHubSpotへ切り替えてリードが大きく増えた（見出しでは496%増）と紹介。英語の事例で、詳細は元ページで確認が必要。",
+    "industries": [
+      "電子部品",
+      "精密機器"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Switching to HubSpot adds up for Casio",
+      "url": "https://www.casestudies.com/company/hubspot/case-study/switching-to-hubspot-adds-up-for-casio",
+      "publisher": "casestudies.com（HubSpot事例）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1234",
+    "kind": "success",
+    "title": "代理店経由の見込み客もMAで追う",
+    "summary": "支援会社の製造業向け解説では、代理店を通じて売るメーカーがAccount Engagementで代理店への訪問を減らし、熱い見込み客を早く見つける使い方を紹介。",
+    "industries": [
+      "産業機械",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "代理店任せの営業に自社サイトを足す方法",
+    "source": {
+      "title": "製造業 Pardot 完全ガイド 2026",
+      "url": "https://aurant-technologies.com/?p=1407",
+      "publisher": "aurant technologies",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-634",
+    "kind": "pain",
+    "title": "支援会社のROI表は仮の数字のことも",
+    "summary": "同じ解説の費用対効果の表は「代理店50社」の仮の例で、実績ではない。MAの効果を語る記事では、数字が実例か仮定かを書き分けると信頼される。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "MAの効果の数字、実例と試算を分けて書く",
+    "source": {
+      "title": "製造業 Pardot 完全ガイド 2026",
+      "url": "https://aurant-technologies.com/?p=1407",
+      "publisher": "aurant technologies",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-955",
+    "kind": "term",
+    "title": "リードスコアリングとは",
+    "summary": "見込み客の行動（資料の閲覧、メールのクリック、展示会への来場など）に点数を付け、営業が先に連絡する相手を決める仕組み。製造業では展示会参加を重めに数える例がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「今連絡すべき客」を点数で決める仕組み",
+    "source": {
+      "title": "Salesforce Pardot B2Bリードナーチャリング実践ガイド",
+      "url": "https://aurant-technologies.com/blog/salesforce-pardot-b2b-lead-nurturing/",
+      "publisher": "aurant technologies",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1235",
+    "kind": "success",
+    "title": "展示会リードへ配信、30分で商談3件",
+    "summary": "支援会社のまとめでは、電子機器メーカーのサン電子が展示会で得た見込み客にメールを送ったところ、30分以内に3件の商談が生まれたと紹介。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の翌日に送るお礼メールの中身",
+    "source": {
+      "title": "Account Engagementの導入事例7選",
+      "url": "https://www.sellsup.co.jp/contents/account-engagement-case-study",
+      "publisher": "Sells up",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1236",
+    "kind": "success",
+    "title": "名刺とExcel営業からWeb経由が1/4へ",
+    "summary": "同じまとめでは、江崎グリコの法人向け事業が名刺をExcelで管理する訪問営業中心から、Webサイト経由がリード全体の4分の1を占めるまでになったと紹介。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "訪問営業中心の会社がWeb窓口を育てる順番",
+    "source": {
+      "title": "Account Engagementの導入事例7選",
+      "url": "https://www.sellsup.co.jp/contents/account-engagement-case-study",
+      "publisher": "Sells up",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-635",
+    "kind": "pain",
+    "title": "訪問頼みで見込み客が見えない",
+    "summary": "同じ事例の出発点は、名刺をExcelで持ち、訪問しないと相手の関心が分からない状態。製造業の多くが同じ悩みを抱えるとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Account Engagementの導入事例7選",
+      "url": "https://www.sellsup.co.jp/contents/account-engagement-case-study",
+      "publisher": "Sells up",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1237",
+    "kind": "success",
+    "title": "数年前の資料請求者が半年後に成約",
+    "summary": "解説記事の製造業B社の例では、休眠していた見込み客に過去の閲覧履歴をもとにした連続メールを送り、数年前に資料をダウンロードした相手が半年後に成約した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "昔の問い合わせ客にもう一度声をかける方法",
+    "source": {
+      "title": "Account Engagement（旧Pardot）とは",
+      "url": "https://www.macromill.com/service/words/account-engagement/",
+      "publisher": "マクロミル",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1238",
+    "kind": "success",
+    "title": "新規事業の機械、毎月商談5件・受注1〜2件",
+    "summary": "支援会社によると、顧客がほぼゼロの工業用機械の新規事業で、名刺の見込み客へのメール配信と技術資料（ホワイトペーパー）で関心を育て、毎月5件の商談と1〜2件の受注に。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "技術資料をダウンロードした人を商談につなぐ",
+    "source": {
+      "title": "Account Engagement活用事例：工業用機械事業",
+      "url": "https://quartet-communications.com/dx/post-3638/",
+      "publisher": "クォーテット・コミュニケーションズ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1288",
+    "kind": "question",
+    "title": "技術資料は誰向けに作る？",
+    "summary": "機械の新規事業の事例では、名刺を集めた相手に役立つ技術資料を配って関心を育てた。読む人の課題に答える資料が、商談の入口になる。",
+    "industries": [
+      "産業機械",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "設計者がもらってうれしい技術資料とは",
+    "source": {
+      "title": "Account Engagement活用事例：工業用機械事業",
+      "url": "https://quartet-communications.com/dx/post-3638/",
+      "publisher": "クォーテット・コミュニケーションズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1239",
+    "kind": "success",
+    "title": "売上実績を営業がいつでも見られる",
+    "summary": "支援会社の製造業の事例では、会計の売上実績をSalesforceの画面に出し、営業が常に把握。進行中の商談から収益の見込みも立てられるようにした。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Salesforce導入例：製造業",
+      "url": "https://quartet-communications.com/dx/post-3540/",
+      "publisher": "クォーテット・コミュニケーションズ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-636",
+    "kind": "pain",
+    "title": "展示会の名刺がExcelと名刺ソフトに散る",
+    "summary": "Marketo利用者の声では、展示会やWebで得た見込み客の情報が担当者ごとのExcelや名刺管理ソフトに散らばり、誰に連絡すべきか分からなかった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "展示会の名刺、1か所にまとめると何が変わる",
+    "source": {
+      "title": "Marketo Engageのレビュー",
+      "url": "https://www.itreview.jp/products/marketo/reviews/243012",
+      "publisher": "ITreview",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1240",
+    "kind": "success",
+    "title": "点数付けで営業と販促のずれが減る",
+    "summary": "同じ利用者は、見込み客の行動をまとめて点数を付け、今連絡すべき相手を営業に見せたことで、販促と営業の認識のずれが減り商談化率が上がったと話す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "営業に渡す見込み客リストの質を上げる",
+    "source": {
+      "title": "Marketo Engageのレビュー",
+      "url": "https://www.itreview.jp/products/marketo/reviews/243012",
+      "publisher": "ITreview",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1241",
+    "kind": "success",
+    "title": "大手電機、販促起点の収益が2.5倍",
+    "summary": "Adobeの資料（2021年）では、パナソニックでマーケティング起点の収益が2.5倍になったと掲載。どの事業のどんな数字かの詳細は資料で確認が必要。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Adobe Marketo Engage Overview Data Sheet",
+      "url": "https://kintone-sol.cybozu.co.jp/integrate/Adobe_Marketo_Engage_Overview_Data_Sheet.pdf",
+      "publisher": "Adobe",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "success-1242",
+    "kind": "success",
+    "title": "グループ横断の紹介で商談1,200件",
+    "summary": "Kairos3の配信記事では、自動車部品などのジェイテクトがグループ会社をまたぐ紹介営業に使い、4年で商談1,200件・受注240件を生み、引き継ぎ漏れも減ったとする。",
+    "industries": [
+      "自動車部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "関連会社や協力会社からの紹介を逃さない仕組み",
+    "source": {
+      "title": "Kairos3導入事例の配信（PR TIMES）",
+      "url": "https://webtan.impress.co.jp/r/prtimes/items/000000072.000144521",
+      "publisher": "Web担当者Forum（PR TIMES）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1243",
+    "kind": "success",
+    "title": "製造系の会社、営業データを1か所に",
+    "summary": "比較サイトの口コミでは、メーカー・製造系の利用者がKairos3で営業データと商談の情報をまとめて管理でき、役立っていると評価。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Kairos3の口コミ",
+      "url": "https://boxil.jp/service/50286/reviews/64004/",
+      "publisher": "BOXIL",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1244",
+    "kind": "success",
+    "title": "100人規模のメーカー、ウェビナーで商談",
+    "summary": "シャノンの事例では、従業員100人ほどの空調関連メーカーが社内に散らばる顧客情報をまとめ、初めてのウェビナーで関心を育てて商談を生んだ。MA選びは開催のしやすさと価格で決めた。",
+    "industries": [
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "初めてのウェビナーで何を話せば商談になるか",
+    "source": {
+      "title": "顧客情報のデータベース化とウェビナーで商談創出",
+      "url": "https://www.shanon.co.jp/case/manufacturing/sat/",
+      "publisher": "シャノン",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1245",
+    "kind": "success",
+    "title": "ウェビナー参加者の案件化率5〜7.5%",
+    "summary": "シャノンのブログの事例紹介では、製造業（三協エアテック）のウェビナー参加者のうち5〜7.5%が案件になったとする。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "業種別 MA導入の成功事例11選",
+      "url": "https://www.shanon.co.jp/blog/entry/ma_case3_mk02/",
+      "publisher": "シャノン",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-637",
+    "kind": "pain",
+    "title": "1度目のMA導入が社内に根づかない",
+    "summary": "シャノンの事例では、対面営業を大切にしてきた老舗の配管部品メーカーが2度目の導入で、必要なのはマーケティングを社内に広めることだったと振り返る。",
+    "industries": [
+      "機械部品",
+      "建材・金物"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "道具より先に社内の理解を作る話",
+    "source": {
+      "title": "老舗メーカー、2度目のシャノン導入",
+      "url": "https://www.shanon.co.jp/case/manufacturing/benkan/",
+      "publisher": "シャノン",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-704",
+    "kind": "buyer",
+    "title": "展示会名刺と長い商談に強いMAを選ぶ",
+    "summary": "シャノンのブログは、製造業のMA選びの軸として、展示会で集めた名刺の取り込みやすさと、検討が長い商談を追い続けられるかを挙げる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "製造業がMAを選ぶときに見るところ",
+    "source": {
+      "title": "製造業向けのMAツール6選を比較",
+      "url": "https://www.shanon.co.jp/blog/entry/manufacturing_ma/",
+      "publisher": "シャノン",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1246",
+    "kind": "success",
+    "title": "展示会とウェビナーを入口にまとめて管理",
+    "summary": "国産MAの口コミの要約では、メール配信・LP・フォーム作成・閲覧の記録を備え、展示会やウェビナーを起点に見込み客の管理まで続けて行える点が評価される。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "SHANON MARKETING PLATFORMの評判",
+      "url": "https://www.itreview.jp/products/shanon-marketing-platform/reviews",
+      "publisher": "ITreview",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1247",
+    "kind": "success",
+    "title": "電子機器メーカー、受注率20%→35%",
+    "summary": "Sansanの記事では、ある電子機器メーカーがMAとSFAのデータを名刺データでつなぎ、インサイドセールスから受注に至る率が20%から35%に上がったと紹介。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "電話で関心を確かめてから訪問する営業",
+    "source": {
+      "title": "製造業にSFAが必要な理由とは",
+      "url": "https://jp.sansan.com/media/sfa-manufacturing/",
+      "publisher": "Sansan",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1248",
+    "kind": "success",
+    "title": "グループ各社の名刺を集めて営業に生かす",
+    "summary": "同じ記事では、複数のグループ会社の名刺を1か所に集め、SFAとつないで営業に使う体制も紹介。取引の重なりや紹介先が見えるようになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業にSFAが必要な理由とは",
+      "url": "https://jp.sansan.com/media/sfa-manufacturing/",
+      "publisher": "Sansan",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1249",
+    "kind": "success",
+    "title": "51〜100人のメーカー、名刺検索が1/4に",
+    "summary": "比較サイトの事例では、従業員51〜100人のメーカーが名刺をSansanに入れ、日報を名刺にひもづけて、上司が離れた場所からも支援。名刺を探す時間が約4分の1に。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "日報と名刺をつなぐと営業がどう変わるか",
+    "source": {
+      "title": "Sansan導入事例 名刺検索の時間を1/4に",
+      "url": "https://boxil.jp/mag/a11393/",
+      "publisher": "BOXIL Magazine",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-769",
+    "kind": "trend",
+    "official": false,
+    "title": "出社制限で名刺データの利用が増えた",
+    "summary": "ニュースイッチの報道では、出社制限の影響でオンラインで見られる名刺データへのアクセスや、営業メール用のリストのダウンロードが増えたとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "名刺管理の利用変化",
+      "url": "https://newswitch.jp/p/35444",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-770",
+    "kind": "trend",
+    "official": false,
+    "title": "海外拠点の名刺も1つの顧客台帳に",
+    "summary": "Sansan Globalの事例集では、タイやシンガポールの製造業などで複数拠点の顧客情報をまとめ、新しい商談の機会につなげた例を紹介。64か国で使われているとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Sansan Global 導入事例集",
+      "url": "https://resources.sansan.com/jp_sansan_2024-form-0-1-0-0-0",
+      "publisher": "Sansan",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "success-1250",
+    "kind": "success",
+    "title": "紙伝票をやめ受注管理を正確に",
+    "summary": "ソフトブレーンの発表では、プレス機械メーカーのアイダエンジニアリングが紙の伝票運用を見直し、基幹システムと自動連携して受注管理の正確さと事務の効率を上げた。",
+    "industries": [
+      "産業機械",
+      "プレス"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "受注の伝票を紙からやめた会社の順番",
+    "source": {
+      "title": "eセールスマネージャー導入事例の公開",
+      "url": "https://www.softbrain.co.jp/_news/assets/pdf/260602.pdf",
+      "publisher": "ソフトブレーン",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "success-1251",
+    "kind": "success",
+    "title": "磁石加工の会社、停滞の理由を見て注文増",
+    "summary": "ソフトブレーンの発表では、マグネットの機械加工を行う会社が営業情報をため、商談が止まる理由を見える化して手を打ち、注文の増加につなげた。5年で売上3倍が目標。",
+    "industries": [
+      "切削加工",
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "商談が止まる理由を数えると見えること",
+    "source": {
+      "title": "相模化学金属の事例を公開",
+      "url": "https://www.atpress.ne.jp/news/164432",
+      "publisher": "ソフトブレーン（@Press）",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "pain-638",
+    "kind": "pain",
+    "title": "商談がどこで止まるのか分からない",
+    "summary": "同じ事例の出発点は、案件がどの段階で止まっているのか誰にも見えないこと。記録を残すことで、見積後の追いかけ不足などの原因が分かる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "見積を出した後の追いかけ方",
+    "source": {
+      "title": "相模化学金属の事例を公開",
+      "url": "https://www.atpress.ne.jp/news/164432",
+      "publisher": "ソフトブレーン（@Press）",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "success-1252",
+    "kind": "success",
+    "title": "部品メーカー、海外の案件情報も見える化",
+    "summary": "ソフトブレーンの発表では、海外にも拠点を持つ製造業の会社が顧客・案件の個人管理をやめ、世界の情報を見える化。申請・承認も電子化して全社の効率を上げた。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "eセールスマネージャー導入事例の公開",
+      "url": "https://www.softbrain.co.jp/_news/assets/pdf/260521.pdf",
+      "publisher": "ソフトブレーン",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "buyer-705",
+    "kind": "buyer",
+    "title": "CRMは導入支援会社の質で決まる",
+    "summary": "海外の照明看板メーカーの例では、別の会社による基本的なCRM導入の保守が不十分で課題が長引いた。道具だけでなく支援する会社の対応も比べるべきとされる。",
+    "industries": [
+      "看板・サイン"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "CRMを入れる前に支援会社に聞くこと",
+    "source": {
+      "title": "Implementation of Zoho CRM for lightbox manufacturing",
+      "url": "https://freelancehunt.com/en/showcase/work/implementation-zoho-crm-for-lightbox/1929737.html",
+      "publisher": "Freelancehunt",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1253",
+    "kind": "success",
+    "title": "仙台のメーカー、受注対応の手間が1/3",
+    "summary": "ECのミカタの取材では、FAXやメールの注文を基幹システムに手入力していた仙台のメーカーがBカートを入れ、入力の手間と時間が大きく減り対応コストが3分の1に。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "FAX注文をWeb注文に切り替えた手順",
+    "source": {
+      "title": "Bカートの導入で対応コストが1/3に",
+      "url": "https://ecnomikata.com/original_news/45896/",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-639",
+    "kind": "pain",
+    "title": "FAX注文の手入力をやめたい",
+    "summary": "Bカートの解説では、FAXでの受注は読み取り・手入力・確認の手間と入力ミスが重く、取引先に負担をかけずにWebへ移す段取りが大切とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "取引先に嫌がられずFAXをやめる方法",
+    "source": {
+      "title": "FAX受注をやめたい！",
+      "url": "https://bcart.jp/post/detail/245/",
+      "publisher": "Bカート（Dai）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-706",
+    "kind": "buyer",
+    "title": "「電話・FAX注文をやめたい」が多い理由",
+    "summary": "Bカートのお客様の声には、導入目的として「電話・FAX注文をやめたい」を挙げる会社が多数ある。注文する側にもWeb注文の便利さを伝える必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "取引先にWeb注文をすすめる案内文",
+    "source": {
+      "title": "導入目的 電話・FAX注文をやめたい",
+      "url": "https://bcart.jp/uservoice/purpose/88/",
+      "publisher": "Bカート（Dai）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-771",
+    "kind": "trend",
+    "official": true,
+    "title": "BtoB EC、導入2,500社・発注135万社",
+    "summary": "Bカートの発表（2026年5月）では、導入が2,500社、発注する側が延べ135万社を超えたとする。企業間の注文をWebで受ける流れが広がっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "導入2,500社・発注延べ135万社を突破",
+      "url": "https://bcart.jp/news/435/",
+      "publisher": "Bカート（Dai）",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "success-1254",
+    "kind": "success",
+    "title": "FAX中心の受注をWeb化して時間短縮",
+    "summary": "BtoB ECの口コミでは、FAX中心だった受注をWebに移して処理時間が短くなったという声がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Bカートの評判・口コミ",
+      "url": "https://www.itreview.jp/products/bcart/reviews",
+      "publisher": "ITreview",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1255",
+    "kind": "success",
+    "title": "全国の部品注文を本社に集めて自動化",
+    "summary": "BtoB EC事例のまとめでは、大手機械メーカーのエネルギー部門が全国に分かれていた補修部品の受発注を本社で一元化し、自動化した例を紹介。",
+    "industries": [
+      "産業機械",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "補修部品の注文をWebで受ける利点",
+    "source": {
+      "title": "BtoB ECサイトの事例9選",
+      "url": "https://craval.jp/btobec/media/btob-ec-site-examples/",
+      "publisher": "Craval",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1256",
+    "kind": "success",
+    "title": "型番・仕様で24時間検索できる部品EC",
+    "summary": "ecbeingの解説では、工作機械部品の電話・FAX中心の見積と発注をWebに移し、型番や仕様から24時間探せるようにして売上と効率を上げる流れを示す。",
+    "industries": [
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "型番で探される部品ページの作り方",
+    "source": {
+      "title": "工作機械部品ECの成功戦略",
+      "url": "https://www.ecbeing.net/b2b/contents/detail/104",
+      "publisher": "ecbeing",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-707",
+    "kind": "buyer",
+    "title": "設計者は型番とスペックで探す",
+    "summary": "同じ解説では、部品の買い手は営業時間外にも型番や寸法・仕様で探す。仕様表を文字で載せておくと見つけてもらいやすい。",
+    "industries": [
+      "機械部品",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "夜に部品を探す設計者に見つかるには",
+    "source": {
+      "title": "工作機械部品ECの成功戦略",
+      "url": "https://www.ecbeing.net/b2b/contents/detail/104",
+      "publisher": "ecbeing",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1257",
+    "kind": "success",
+    "title": "特注加工品の受注もWebで効率化",
+    "summary": "ecbeingの機械・工業用品・鉄鋼向けページでは、特注加工品の受注の効率化や、受発注の効率化とWeb上の顧客との接点づくりを目指した例を掲載。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "機械・工業用品、鉄鋼向けECソリューション",
+      "url": "https://www.ecbeing.net/b2b/product/industry/machine",
+      "publisher": "ecbeing",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1258",
+    "kind": "success",
+    "title": "フォームの直しで入力ミスと離脱が減る",
+    "summary": "formrunの事例集では、問い合わせ・申込フォームを作り直して入力ミスが減り、送信まで進む人の割合が上がった例を掲載（BtoC寄りの事例）。見積フォームにも応用できる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "見積依頼フォームの項目を減らす工夫",
+    "source": {
+      "title": "formrun導入事例集 お問い合わせ・無料体験",
+      "url": "https://form.run/__/download/661e1dd73a5e7b04497cf676/【formrun事例集①】営業用途のお問い合わせ、無料体験.pdf",
+      "publisher": "ベーシック（formrun）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1259",
+    "kind": "success",
+    "title": "機械メーカー、ヒートマップでページを評価",
+    "summary": "一般機械メーカー（300〜1000人）の担当者の口コミでは、アクセス解析のスクロール率だけでは良し悪しが分からず、ヒートマップを導入。流入経路や新規・既存の比較もできたとする。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品ページのどこが読まれているか調べる",
+    "source": {
+      "title": "Ptengineのレビュー",
+      "url": "https://www.itreview.jp/products/ptengine/reviews?q%5Bs%5D=rank+asc",
+      "publisher": "ITreview",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1260",
+    "kind": "success",
+    "title": "調理家電メーカー、月1〜2個から数百万円",
+    "summary": "EC支援会社のまとめでは、クラウドファンディング発の低温調理器メーカーが、以前の自社ECで月1〜2個だったのがShopify導入後の初月に数百万円の売上に。カゴ落ちした人へのクーポンが効いた。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自社製品の直販サイトで売れ始めるまで",
+    "source": {
+      "title": "Shopify導入事例 日本国内のECサイト事例",
+      "url": "https://corekara.co.jp/contents/sales-up/shopify-jirei/",
+      "publisher": "これから",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1261",
+    "kind": "success",
+    "title": "ビールメーカー、拡張性で自社EC刷新",
+    "summary": "同じまとめでは、沖縄のビールメーカーが2020年に自社ECを大きく作り直し、アプリで機能を足せる拡張性を理由にShopifyを選んだと紹介。",
+    "industries": [
+      "酒・醸造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Shopify導入事例 日本国内のECサイト事例",
+      "url": "https://corekara.co.jp/contents/sales-up/shopify-jirei/",
+      "publisher": "これから",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1262",
+    "kind": "success",
+    "title": "文具の工房、店の体験をECに移す",
+    "summary": "同じまとめでは、文具の工房ブランドが2020年にShopifyを入れ、店でしかできなかった体験をWebに移す「体験型EC」を作ったとする。",
+    "industries": [
+      "紙加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工房の手仕事をWebで伝える",
+    "source": {
+      "title": "Shopify導入事例 日本国内のECサイト事例",
+      "url": "https://corekara.co.jp/contents/sales-up/shopify-jirei/",
+      "publisher": "これから",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1263",
+    "kind": "success",
+    "title": "めっき会社、制作会社と組んでサイト刷新",
+    "summary": "Movable Typeのメーカー事例には、表面処理の会社が地元の制作会社と組んでサイトをリニューアルした例が載る。自社で更新できるCMSを選んだ点が共通する。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自分たちで更新できるサイトにする理由",
+    "source": {
+      "title": "メーカー - 導入事例",
+      "url": "https://www.sixapart.jp/business/manufacturer/",
+      "publisher": "シックス・アパート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1264",
+    "kind": "success",
+    "title": "製品情報をWebに集め社内の共通基盤に",
+    "summary": "同じ事例ページでは、金属製品のメーカーが製品情報をWebに集約し、営業・現場・顧客対応が同じ情報を見られる基盤を作った成果を紹介。",
+    "industries": [
+      "金属加工",
+      "建材・金物"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品ページが社内の資料置き場にもなる",
+    "source": {
+      "title": "メーカー - 導入事例",
+      "url": "https://www.sixapart.jp/business/manufacturer/",
+      "publisher": "シックス・アパート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1265",
+    "kind": "success",
+    "title": "卓球用品メーカー、クラウド型CMSへ移行",
+    "summary": "同じページでは、卓球用品のメーカーが自社で管理するCMSから運用込みのクラウド型へ移り、コーポレートサイトを作り直した例を紹介。保守の手間を減らせる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "メーカー - 導入事例",
+      "url": "https://www.sixapart.jp/business/manufacturer/",
+      "publisher": "シックス・アパート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1266",
+    "kind": "success",
+    "title": "別の工業会社もCMSでサイト刷新",
+    "summary": "同じメーカー事例ページには、別の工業系の会社がCMSでサイトをリニューアルした例も掲載。メーカーの採用例がまとまっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "メーカー - 導入事例",
+      "url": "https://www.sixapart.jp/business/manufacturer/",
+      "publisher": "シックス・アパート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1267",
+    "kind": "success",
+    "title": "大手自動車、100近いサイトを一元管理",
+    "summary": "HeartCoreの事例一覧では、SUBARUが100近いサイトをまとめて管理し、CMSを入れ替えて安全性と全体の整理を進めた例を掲載。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "導入事例一覧｜HeartCore CMS",
+      "url": "https://www.heartcore.co.jp/products/CX/casestudy.html",
+      "publisher": "ハートコア",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1268",
+    "kind": "success",
+    "title": "測量機器の会社、製品ページ更新が80%減",
+    "summary": "HeartCoreのお客様事例では、測量機器を扱う会社が製品情報ページの更新にかかる手間を80%減らしたとする。更新が楽になると情報が新しく保たれる。",
+    "industries": [
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品情報をいつも最新に保つ仕組み",
+    "source": {
+      "title": "お客様事例｜ハートコア",
+      "url": "https://www.heartcore.co.jp/casestudy/index.html",
+      "publisher": "ハートコア",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1269",
+    "kind": "success",
+    "title": "製造メーカー、利益集計1〜2週間がゼロに",
+    "summary": "楽楽販売の事例では、営業・経理・購買のデータがExcelに散り利益の見込みに1〜2週間かかっていた製造メーカーが、受注と購買を一元管理し、見積書から請求書まで自動転記に。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積から請求までを1つにまとめた話",
+    "source": {
+      "title": "利益の集計作業がゼロに",
+      "url": "https://www.rakurakuhanbai.jp/case/neotecjapan.php",
+      "publisher": "ラクス（楽楽販売）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1270",
+    "kind": "success",
+    "title": "音響機器メーカー、海外注文の進み具合を管理",
+    "summary": "楽楽販売の事例では、東京の音響機器メーカーが海外からの注文の受発注と進捗を管理し、業務の決まりを作って見える化し、無駄を減らした。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "業務のルール化、見える化",
+      "url": "https://www.rakurakuhanbai.jp/case/costumer/maker.php",
+      "publisher": "ラクス（楽楽販売）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-640",
+    "kind": "pain",
+    "title": "同じ情報を何枚ものExcelに入力",
+    "summary": "導入支援会社の事例では、茨城の製造業が製造管理から発送・納品まで複数のExcelに同じ情報を入れ、2度3度の手間が出ていた。楽楽販売へ移して解消した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "Excel管理の限界はどこで来るか",
+    "source": {
+      "title": "製造業でエクセル管理からの移行事例",
+      "url": "https://ardent.jp/works/seizougyou-rakurakuhanbai-ikou/",
+      "publisher": "アーデント",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1271",
+    "kind": "success",
+    "title": "Wix特化の制作会社が製造業サイトを制作",
+    "summary": "Wixに特化した東京の制作会社の実績には、製造業のコーポレートサイトが含まれる。安く作り、社内で更新しやすい点が選ばれる理由。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Wix特化のWEB制作会社 ラジャ",
+      "url": "https://www.creative-raja.com/",
+      "publisher": "ラジャ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1272",
+    "kind": "success",
+    "title": "保守費を減らし社内で直せるWixへ移行",
+    "summary": "Wix Studioの解説記事では、保守費用を下げ、社内で修正しやすくするためにWixへ移した例を紹介。小さな会社でも情報を新しく保ちやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "制作会社に頼まずに更新できるサイト",
+    "source": {
+      "title": "Wix Studioとは？",
+      "url": "https://www.creative-raja.com/post/wix-studio%E3%81%A8%E3%81%AF%EF%BC%9F%E5%BE%93%E6%9D%A5wix%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84%E3%83%BB%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%93%E3%81%A8%E3%83%BB%E5%88%B6%E4%BD%9C%E4%BA%8B%E4%BE%8B%E3%82%92%E3%83%97%E3%83%AD%E3%81%8C%E8%A7%A3%E8%AA%AC",
+      "publisher": "ラジャ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1273",
+    "kind": "success",
+    "title": "Wix Studioで会社案内と採用サイト",
+    "summary": "制作会社の事例集では、Wix Studioのデザインの自由さと更新のしやすさを生かし、企業のコーポレートサイトと採用サイトを作った例を紹介。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Wixで作った企業サイト制作事例集",
+      "url": "https://www.amr.co.jp/blog/2026/03/wix2025.html",
+      "publisher": "AMR",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1274",
+    "kind": "success",
+    "title": "梱包会社、見積から請求まで1つの基盤",
+    "summary": "コムチュアの事例では、見積書の一部がExcelで担当者ごとにバラバラだった梱包の会社が、案件・見積から作業・請求までをSalesforceで管理し、効率化と標準化を実現。",
+    "industries": [
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積書の書式を全員でそろえる",
+    "source": {
+      "title": "販売管理システム導入事例",
+      "url": "https://www.comture.com/casestudy/erp/erp-cloud-salesforce.html",
+      "publisher": "コムチュア",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-641",
+    "kind": "pain",
+    "title": "失注と単価下落が続く",
+    "summary": "導入支援会社の事例では、製作所が失注や単価の下落に悩んだことが仕組みづくりのきっかけ。理由を記録しないと同じ負け方が続く。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "失注の理由を記録すると見えること",
+    "source": {
+      "title": "Salesforce導入事例",
+      "url": "https://logical.co.jp/service/salesforce/case1/",
+      "publisher": "ロジカル・アーツ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1275",
+    "kind": "success",
+    "title": "製作所、商談と工程を1つの画面で",
+    "summary": "同じ事例では、案件・商談・工程の管理を1つにまとめ、役割をはっきりさせ、売上と経営の数字をその場で見られるようにした。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "商談と工場の進み具合を同じ画面で見る",
+    "source": {
+      "title": "Salesforce導入事例",
+      "url": "https://logical.co.jp/service/salesforce/case1/",
+      "publisher": "ロジカル・アーツ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1276",
+    "kind": "success",
+    "title": "訪問記録から入金まで「顧客カルテ」に",
+    "summary": "Salesforce技術者の記事では、ある会社が訪問記録・受注・売上・入金を一元管理する顧客カルテを作り、営業と事務の連携が強まった例を紹介。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業向けSalesforceの活用方法",
+      "url": "https://note.com/effinous/n/n4f9f5e5550e4",
+      "publisher": "note（田部井孝明）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1277",
+    "kind": "success",
+    "title": "見積・注文書・請求書を1か所で作る",
+    "summary": "導入支援会社の事例では、商談の見積から請求までを管理し、見積書・納品書・注文書・注文請書・請求書をSalesforceから作る構成を紹介。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Salesforce導入事例",
+      "url": "https://www.psol.co.jp/salesforce/example.html",
+      "publisher": "プライムソリューションズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1278",
+    "kind": "success",
+    "title": "基板メーカー、見積の悩みを仕組みで解決",
+    "summary": "支援会社の事例紹介では、従業員959人（単体）のプリント基板メーカーが見積まわりの課題を解くために見積システムを作った例を掲載。",
+    "industries": [
+      "基板実装",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業におけるsalesforce導入支援の事例",
+      "url": "https://www.success-follow.com/by-industry/manufacturing.html",
+      "publisher": "サクセスフォロー",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1289",
+    "kind": "question",
+    "title": "中小でもCRMは必要？",
+    "summary": "中小企業向けの解説では、営業一人ひとりの進み具合を画面で見える化し、まとめて管理できるのが利点とされる。少人数ほど一人の抜けが響く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "5人の会社でも顧客管理が要る理由",
+    "source": {
+      "title": "中小企業の営業改革にSalesforceは必須！",
+      "url": "https://www.mobileworkplace.jp/column/salestechmerit",
+      "publisher": "モバイルワークプレイス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1279",
+    "kind": "success",
+    "title": "製造業DXでSalesforceを使う勘所",
+    "summary": "研磨材メーカーのメディアでは、製造業のDXでのSalesforce活用例と成功のポイントをまとめている。メーカー自身が発信する例でもある。",
+    "industries": [
+      "研削"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業DXの推進に不可欠なSalesforce活用事例",
+      "url": "https://www.mipox.co.jp/media/archives/179",
+      "publisher": "Mipox",
+      "date": null
+    }
+  },
+  {
+    "id": "term-956",
+    "kind": "term",
+    "title": "インサイドセールスとは",
+    "summary": "電話やメール、オンライン面談で見込み客の関心を確かめ、商談に進める営業。訪問の前に温度感を確かめるので、少人数の会社でも効率よく動ける。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "訪問しない営業の始め方",
+    "source": {
+      "title": "製造業にSFAが必要な理由とは",
+      "url": "https://jp.sansan.com/media/sfa-manufacturing/",
+      "publisher": "Sansan",
+      "date": null
+    }
+  },
+  {
+    "id": "term-957",
+    "kind": "term",
+    "title": "MAとSFAとCRMの違い",
+    "summary": "MAは見込み客を集めて関心を育てる道具、SFAは商談の進み具合を管理する道具、CRMは取引後も含めた顧客との関係を管理する道具。製造業はつなげて使う例が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "MA・SFA・CRMの違いをやさしく",
+    "source": {
+      "title": "製造業向けのMAツール6選を比較",
+      "url": "https://www.shanon.co.jp/blog/entry/manufacturing_ma/",
+      "publisher": "シャノン",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-708",
+    "kind": "buyer",
+    "title": "ツールがBtoC向けかを確かめる",
+    "summary": "MAの中にはBtoC向けとうたう製品もあり、導入企業も金融・観光・通信が中心のものがある。製造業は企業向けの事例があるかを先に確かめるとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "b→dashの導入事例",
+      "url": "https://it-trend.jp/marketing_automation_tool/8065/case",
+      "publisher": "ITトレンド",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-772",
+    "kind": "trend",
+    "official": false,
+    "title": "MA導入事例はパートナーの解説が多い",
+    "summary": "製造業のMA・CRM事例を探すと、ベンダー公式より導入支援会社の解説記事が多く、数字が実例か仮定か書かれていないこともある。記事で引用するときは元の発表を確かめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業 Pardot 完全ガイド 2026",
+      "url": "https://aurant-technologies.com/?p=1407",
+      "publisher": "aurant technologies",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1280",
+    "kind": "success",
+    "title": "採用サイトと動画を一体で作り応募3倍",
+    "summary": "制作会社のインタビュー記事によると、採用動画と採用サイトを一体で設計した製造業の会社で、公開から約3か月で応募数が従来の3倍になり、即戦力の採用につながったという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "動画とサイトをセットで作った採用の話",
+    "source": {
+      "title": "チェリービー インタビュー",
+      "url": "https://hnavi.co.jp/knowledge/interview/cherrybee_2601/",
+      "publisher": "発注ナビ（チェリービー）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1281",
+    "kind": "success",
+    "title": "ライブ配信とPR動画で製品の問い合わせ増",
+    "summary": "メーカー向け動画制作会社の事例一覧に、製品のライブ配信とPR動画を組み合わせ、製品への問い合わせが増えたという製造業の案件が載っている。",
+    "industries": [
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品をライブ配信してみた結果",
+    "source": {
+      "title": "製造業の動画制作のお客様の声",
+      "url": "https://cherrybee.tv/voice/industry_v/maker/",
+      "publisher": "チェリービー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1282",
+    "kind": "success",
+    "title": "技術と工程の動画で問い合わせ月3→20件",
+    "summary": "YouTube運用支援会社の記事では、技術や工程を動画で見せ、ブログと併せて発信を続けた中小製造業で、月の問い合わせが3件から20件に増えたと紹介。動画単独の効果かは分からない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "動画とブログを続けた1年の記録",
+    "source": {
+      "title": "製造業のYouTube集客・活用術",
+      "url": "https://ytbs.jp/business/manufacturing-youtube/",
+      "publisher": "ytbs",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-709",
+    "kind": "buyer",
+    "title": "採用動画の制作会社は成果の明示で選ぶ",
+    "summary": "採用動画制作会社の比較記事では、事例映像の分かりやすさに加え、応募数が増えたなど具体的な成果を示しているかを選ぶ目安にするよう勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "採用動画の制作会社の選び方",
+    "source": {
+      "title": "採用動画のおすすめ制作会社",
+      "url": "https://company.moovy.jp/column/1543/",
+      "publisher": "moovy",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1283",
+    "kind": "success",
+    "title": "採用動画でスカウト返信率0→7.1%",
+    "summary": "採用動画サービス会社の紹介によると、動画を使った採用で応募数が3倍になった例や、スカウトメールの返信率が0%から7.1%に上がった例があるという（業種は不明、会社の発表）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "スカウトに動画を添えると何が変わるか",
+    "source": {
+      "title": "採用動画のおすすめ制作会社",
+      "url": "https://company.moovy.jp/column/1543/",
+      "publisher": "moovy",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-642",
+    "kind": "pain",
+    "title": "採用動画の効果の数字は出典が曖昧",
+    "summary": "応募数2倍などの採用動画の効果は、出典が「採用支援会社の調査の平均」としか書かれない記事も多い。制作会社に頼むときは数字の測り方を確かめたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業の採用動画成功事例",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-recruiting-video-tips/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1284",
+    "kind": "success",
+    "title": "社員インタビューで入社後のずれを減らす",
+    "summary": "製造業の採用動画の解説では、社員インタビューでありのままの職場を見せると、求職者が現実的に会社を理解でき、入社後のミスマッチを防ぎやすいとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "先輩社員に本音を話してもらう動画",
+    "source": {
+      "title": "製造業の採用動画成功事例",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-recruiting-video-tips/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "term-958",
+    "kind": "term",
+    "title": "短尺動画プランは数万円から",
+    "summary": "比較サイトに載る制作会社には、SNSや自社サイト向けの短い動画を5万円程度から作るプランもある。長い会社紹介とは別に、短尺を数多く作る選び方もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業に強い動画制作会社",
+      "url": "https://imitsu.jp/list/movie/manufacturing-industry/",
+      "publisher": "アイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-710",
+    "kind": "buyer",
+    "title": "制作会社は対応範囲と稟議支援で比べる",
+    "summary": "製造業の動画制作会社の比べ方として、どこまで対応するかの明確さ、費用対効果の説明、社内の稟議に使える資料を出してくれるかの3点を挙げる記事がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "動画制作の見積を社内で通すには",
+    "source": {
+      "title": "製造業の動画制作会社まとめ",
+      "url": "https://www.biz.ne.jp/matome/2005678/",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1285",
+    "kind": "success",
+    "title": "新工場の紹介はインタビューなしで空撮",
+    "summary": "制作会社の実績では、自動車部品メーカーの新工場開設に合わせ、各地の工場をドローンで空撮し、インタビューを使わず映像で会社を伝えた。撮影1週間、制作3か月。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新工場の完成を動画で伝える",
+    "source": {
+      "title": "制作実績一覧",
+      "url": "https://www.biz.ne.jp/company/ihc/list_acv.html",
+      "publisher": "比較ビズ（制作会社掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1286",
+    "kind": "success",
+    "title": "鉄鋼の工場敷地で空撮と地上撮影",
+    "summary": "制作会社の実績では、鉄鋼関係の会社の工場敷地内でドローン空撮と地上撮影を組み合わせて会社紹介映像を作った。広い敷地や設備の規模感を伝えやすい。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "空から見ると分かる工場の広さ",
+    "source": {
+      "title": "制作会社の会社ページ",
+      "url": "https://www.biz.ne.jp/company/ihc/",
+      "publisher": "比較ビズ（制作会社掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-959",
+    "kind": "term",
+    "title": "ドローン空撮の追加は3万円前後から",
+    "summary": "個人や小さな制作者の出品では、外観や周辺を空撮で追加するオプションが3万円・納期プラス7日の例がある。地域の制作会社では空撮プラン3.3万〜11万円の紹介も見られる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ドローン空撮の映像制作",
+      "url": "https://www.lancers.jp/menu/detail/1257373?ref=recommend_also",
+      "publisher": "ランサーズ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1290",
+    "kind": "question",
+    "title": "工場のドローン撮影に資格はいる？",
+    "summary": "飛ばす場所や方法によって国の許可や申請が必要になる。二等無人航空機操縦士などの国家資格を持つ操縦士が、飛行エリアの許可申請から当日の撮影まで担う制作会社もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "工場をドローンで撮るときの手続き",
+    "source": {
+      "title": "株式会社impの提案実績",
+      "url": "https://www.lancers.jp/profile/imp_drone/proposal",
+      "publisher": "ランサーズ（imp）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1287",
+    "kind": "success",
+    "title": "採用動画の依頼が前年比2.5倍の制作会社",
+    "summary": "採用動画とドローン空撮の両方を手がける制作会社は、採用動画の受注が前年比2.5倍ほどに増えたと掲げる。中小の採用で動画の需要が伸びている一つのしるし。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "株式会社impの提案実績",
+      "url": "https://www.lancers.jp/profile/imp_drone/proposal",
+      "publisher": "ランサーズ（imp）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-643",
+    "kind": "pain",
+    "title": "工場の写真がきれいに撮れない",
+    "summary": "地域の動画制作会社の比較記事では、「施設や工場の写真をホームページに載せたいが、きれいに撮れない」という悩みがよく挙がる。暗さ・広さ・油汚れで素人撮影は難しい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "工場をきれいに見せる撮影のコツ",
+    "source": {
+      "title": "三重のドローン撮影会社",
+      "url": "https://imitsu.jp/list/movie/drone-mie",
+      "publisher": "アイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-960",
+    "kind": "term",
+    "title": "工場撮影は拘束時間と交通費で決まる",
+    "summary": "工場撮影の出張カメラマンサービスでは、料金は主にカメラマンの拘束時間と交通費で決まり、商用利用込みで5万円台からの例がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工場のカメラマン依頼",
+      "url": "https://www.delta.photo/service/factory-photography",
+      "publisher": "deltaphoto",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1288",
+    "kind": "success",
+    "title": "工場写真は採用サイトと会社案内に使い回す",
+    "summary": "工場撮影サービスの紹介では、生産ライン・品質管理の様子・働く人を一度に撮り、採用サイト、会社案内、求人に使い回す使い方が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "1日の撮影で何枚撮っておくか",
+    "source": {
+      "title": "工場写真撮影サービス",
+      "url": "https://www.delta.photo/photography/genre/factory-photography",
+      "publisher": "deltaphoto",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1289",
+    "kind": "success",
+    "title": "設備投資の様子を撮って説明資料に",
+    "summary": "出張撮影会社は、工場の新設や設備の増強を撮っておき、株主総会などの映像・スライド資料に入れる使い方を紹介。取引先への説明にも使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新しい設備を写真で残すわけ",
+    "source": {
+      "title": "工場・施設の撮影カメラマン",
+      "url": "https://www.cameraman-mart.jp/still/factory/",
+      "publisher": "カメラマンMART",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1290",
+    "kind": "success",
+    "title": "見えない赤外線を3DCGにして海外で商談",
+    "summary": "制作会社の実績では、目に見えない赤外線を使う光学製品を3DCGで表し、海外の展示会で流した結果、現地での商談の約束を取るのに役立ったという。費用は300万〜600万円台、4か月。",
+    "industries": [
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "目に見えない性能をどう見せるか",
+    "source": {
+      "title": "3DCG制作実績",
+      "url": "https://imitsu.jp/ct-movie/pr-tokyo/ci-shinjuku-ku/supplier/463219/service/467690/achievement/36437",
+      "publisher": "アイミツ（FRIGG ENTERPRISE）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1291",
+    "kind": "success",
+    "title": "図面から内部構造や流れを動画にする",
+    "summary": "印刷会社の3DCGサービスは、CADデータや2D図面から、実写では撮れない部品の内部構造や流体・空気の動きを動画にする。展示会、営業資料、Webで使い回せる。",
+    "industries": [
+      "装置",
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中身が見えない装置を動画で見せる",
+    "source": {
+      "title": "3DCG製品紹介動画",
+      "url": "https://pr.mono.ipros.com/toyobijutsu/product/detail/2001636573/",
+      "publisher": "東洋美術印刷（イプロス）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1292",
+    "kind": "success",
+    "title": "3DCGで営業の説明をそろえる",
+    "summary": "3DCG制作会社は、仕組みを映像で見せると、営業担当ごとの説明の上手下手に頼らず、同じ内容を伝えられると説明する（制作会社の主張）。",
+    "industries": [
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新人営業でも伝わる説明動画",
+    "source": {
+      "title": "3DCG動画制作",
+      "url": "https://pr.mono.ipros.com/toyobijutsu/product/detail/2001636572/",
+      "publisher": "東洋美術印刷（イプロス）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1293",
+    "kind": "success",
+    "title": "樹脂成形の試作を3DCGで見せる",
+    "summary": "近畿経済産業局のVR・3DCG企業カタログに、樹脂成形の会社が3DCGで試作のシミュレーションを見せ、商談や展示会で機械の動きや原理を営業が説明できるようにする例がある。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "試作前に完成形をCGで見せる",
+    "source": {
+      "title": "VR・3DCG関連企業カタログ",
+      "url": "https://www.kansai.meti.go.jp/3-2sashitsu/vr/catalog/fujikawa_jushi.pdf",
+      "publisher": "近畿経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-961",
+    "kind": "term",
+    "title": "3DCGアニメは短尺で15万円からの例",
+    "summary": "3DCGの出品では、1〜5分のアニメーションを15万円からとする例がある。大がかりな製品映像は数百万円になることもあり、用途で幅が大きい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "3DCGアニメーション制作",
+      "url": "https://www.lancers.jp/menu/detail/1279845",
+      "publisher": "ランサーズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1294",
+    "kind": "success",
+    "title": "ブラウザで製品を回せる3DCG",
+    "summary": "製品を画面上で360度回したり拡大したりできる3DCGの仕組みは、営業・設計・製造のやり取りを短くし、見積を早める狙いで使われる（サービス会社の説明）。",
+    "industries": [
+      "機械部品",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "Webで製品をくるっと回して見せる",
+    "source": {
+      "title": "3DCGシミュレーション",
+      "url": "https://mono.ipros.com/product/detail/2001208119",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1295",
+    "kind": "success",
+    "title": "ブース一新で名刺852枚、3年で243%増",
+    "summary": "ブース制作会社の発表では、4小間で出展した電子部品メーカーがデザインと集客を一新し、前年比120%の530枚目標に対し852枚を獲得。3年で獲得率243%増とされる。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ブースを変えたら名刺が増えた話",
+    "source": {
+      "title": "展示会出展結果 名刺1025枚",
+      "url": "https://booth-design.jp/works/industry/3087",
+      "publisher": "ブースデザイン.jp",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "success-1296",
+    "kind": "success",
+    "title": "2小間で名刺目標170%、半数が商談予定",
+    "summary": "ブース制作会社の発表では、文具・紙製品展に2小間で出たメーカーが、名刺の目標の170%強を集め、その約半数で商談の予定が決まったという。",
+    "industries": [
+      "紙加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さなブースでも商談をとる工夫",
+    "source": {
+      "title": "展示会出展結果 目標の170%強",
+      "url": "https://booth-design.jp/%E5%87%BA%E5%B1%95%E3%81%AE%E7%B5%90%E6%9E%9C/3114",
+      "publisher": "ブースデザイン.jp",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1297",
+    "kind": "success",
+    "title": "小間を4から3に減らし動画とLEDで見せる",
+    "summary": "制作会社の紹介記事に、製造業の出展で小間を4から3に縮めつつ、動画とLEDパネルで製品を紹介した例がある。広さより見せ方で補う考え方。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ブースを小さくしても伝わる工夫",
+    "source": {
+      "title": "展示会ブースの制作事例",
+      "url": "https://www.shopowner-support.net/?p=102755",
+      "publisher": "ショップオーナーサポート",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-711",
+    "kind": "buyer",
+    "title": "来場者は100ブース通って10未満に寄る",
+    "summary": "ブースの解説では、来場者は1日に100以上のブースの前を通るが立ち寄るのは10未満。前を通る数秒で何の会社か分かることが大事だとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "数秒で伝わるブースの一言",
+    "source": {
+      "title": "来場者を引きつける展示会ブース",
+      "url": "https://wavecnct.com/ja/blogs/raijosha-o-hikitsukeru-tenjikai-busu-no-kurieitibu-na-aidea",
+      "publisher": "WaveConnect",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-712",
+    "kind": "buyer",
+    "title": "来場者が満足したのは開発者との話",
+    "summary": "経済メディアの記事では、出展側は名刺の数を気にしがちだが、来場者が「期待以上」と感じたのは開発者から直接話を聞けた体験だったという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会に技術者を立たせる理由",
+    "source": {
+      "title": "展示会の来場者の満足",
+      "url": "https://forbesjapan.com/articles/detail/100584",
+      "publisher": "Forbes JAPAN",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-713",
+    "kind": "buyer",
+    "title": "印象に残るブースは興味・応対・デザイン",
+    "summary": "支援会社の調査として、来場者の印象に残るブースは、展示内容への興味、スタッフの応対、デザイン性の3つに左右されると紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "来場者調査のお知らせ",
+      "url": "https://webtan.impress.co.jp/r/prtimes/items/000000004.000078256",
+      "publisher": "リンクストラテジー（PR TIMES）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1298",
+    "kind": "success",
+    "title": "通路側を開けて入りやすいブースに",
+    "summary": "展示会ブース制作会社は、製造業のブースでは通路側を広く開け、来場者が自然に入れる動線を作ると、滞在が延び名刺も増えやすいとする（制作会社の見解）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "入りやすいブースの作り方",
+    "source": {
+      "title": "製造業の展示会ブース設計",
+      "url": "https://www.hakuten.co.jp/tex/knowledge/manufacturing-industry-exhibition",
+      "publisher": "博展",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1299",
+    "kind": "success",
+    "title": "名刺100枚・商談化15%と先に決める",
+    "summary": "展示会支援会社は、ブースの目的を「名刺100枚」「商談化率15%」のように数字で決めてから設計に入るよう勧める。終わった後の振り返りもしやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会の目標を数字で決める",
+    "source": {
+      "title": "展示会ブース設計から集客まで",
+      "url": "https://eventhub.jp/blog/exhibition-booth/",
+      "publisher": "EventHub",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1300",
+    "kind": "success",
+    "title": "大型パネルと壁面で通行人の足を止める",
+    "summary": "ブースデザイン会社は、小間の大小にかかわらず、大型パネルや壁面のグラフィックが前を通る人の目を引き、足を止めるきっかけになると説明する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "1小間出展ブースの工夫",
+      "url": "https://www.chuosenden.co.jp/column/exhibition/11486/",
+      "publisher": "中央宣伝",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1301",
+    "kind": "success",
+    "title": "業種別のブース事例で見せ方を比べる",
+    "summary": "ブース制作会社は、業種ごとのブース事例と成功のポイントをまとめて公開。製造業なら実機・サンプルの置き方や照明の当て方が参考になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "展示会ブースデザインの事例8選",
+      "url": "https://www.freshtown.co.jp/useful_info/exhibition-booth-design-examples/",
+      "publisher": "フレッシュタウン",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1302",
+    "kind": "success",
+    "title": "出展先選びから商談化まで一続きで考える",
+    "summary": "ブース制作会社の製造業向け記事では、出展する展示会の選び方、ブースの作り、当日の動き、後の追いかけを一続きで設計するのが成果の近道とする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会を1年の流れで考える",
+    "source": {
+      "title": "製造業展示会の成功ポイント",
+      "url": "https://www.freshtown.co.jp/useful_info/manufacturing-exhibition-strategy/",
+      "publisher": "フレッシュタウン",
+      "date": null
+    }
+  },
+  {
+    "id": "term-962",
+    "kind": "term",
+    "title": "小間数は目的で選ぶ",
+    "summary": "ブース設計会社は、1小間は製品を絞った紹介、2小間以上は実演や商談席を置くなど、目的に合わせて広さを選ぶ目安を示している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "初出展は何小間がいいか",
+    "source": {
+      "title": "展示会ブースの小間数の選び方",
+      "url": "https://hdt.co.jp/know-how/booth_koma_selection_guide/",
+      "publisher": "星野ディザインテック",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1303",
+    "kind": "success",
+    "title": "製造業専門の会社でブースとパネルを",
+    "summary": "製造業メーカー専門をうたう制作会社は、ブースの企画から展示パネルまでまとめて作る。技術の話を絵にする力がある会社を選ぶと説明パネルが伝わりやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "展示会ブース企画・パネル制作",
+      "url": "https://com-story.com/jirei/exhibition/",
+      "publisher": "コム・ストーリー",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-644",
+    "kind": "pain",
+    "title": "テーマと強みがずれると商談にならない",
+    "summary": "製造業の展示会ガイドでは、展示会のテーマと自社の強みがずれていると、来場者の困りごととかみ合わず商談にならないとする。出展前の見極めが大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業の展示会一覧",
+      "url": "https://www.shopowner-support.net/attracting_customers/btob/manufacturing/exhibition-list/",
+      "publisher": "ショップオーナーサポート",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-714",
+    "kind": "buyer",
+    "title": "展示会は購買・設計・経営に一度に会える",
+    "summary": "製造業の展示会ガイドは、購買・設計・経営の担当が一か所に集まる点を、Webだけでは得にくい接点として挙げる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業の展示会一覧",
+      "url": "https://www.shopowner-support.net/attracting_customers/manufacturing/manufacturing-general/exhibition-list/",
+      "publisher": "ショップオーナーサポート",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-715",
+    "kind": "buyer",
+    "title": "予約制商談会は発注内容が先に出る",
+    "summary": "製造業の予約制商談会では、発注側が先に発注内容を示し、受注したい会社が商談を申し込んで日程を組む形式がある。自社の得意と合う案件だけに絞れる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "発注商談会の申し込み方",
+    "source": {
+      "title": "商談会に関するよくある質問",
+      "url": "https://www.aibsc.jp/wp-content/uploads/2024/04/商談会に関するよくあるご質問.pdf",
+      "publisher": "あいち産業振興機構",
+      "date": "2024-04"
+    }
+  },
+  {
+    "id": "success-1304",
+    "kind": "success",
+    "title": "ブース動画は15〜60秒で要点を",
+    "summary": "制作会社の解説では、来場者の時間は限られるため、ブースの動画は15〜60秒で製品の要点を伝えると足を止めてもらいやすいとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会で流す動画の長さ",
+    "source": {
+      "title": "展示会で商談率を上げる3つのポイント",
+      "url": "https://webtan.impress.co.jp/u/2021/06/24/40670",
+      "publisher": "Web担当者Forum（トーン・アップ）",
+      "date": "2021-06"
+    }
+  },
+  {
+    "id": "term-963",
+    "kind": "term",
+    "title": "ブース用動画を1本だけ頼むときの目安",
+    "summary": "制作会社のコラムは、展示会のブースで流す説明動画を1本だけ発注する場合の料金の目安と依頼の流れをまとめている。尺と素材の有無で費用が変わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "展示会ブースの説明動画を1本だけ発注",
+      "url": "https://atsoho.com/blog/trade-show-booth-video-production-cost",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1305",
+    "kind": "success",
+    "title": "オンライン展示でリード800件",
+    "summary": "オンライン展示会の解説記事では、電機周辺機器メーカーが特定業界の見込み客を800件、1件あたり1,200〜1,300円で集めた例を紹介（記事の記述）。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "オンライン展示会で見込み客を集める",
+    "source": {
+      "title": "製造業のオンライン展示会",
+      "url": "https://r-management.jp/media/online-exhibition/online-merit-step/",
+      "publisher": "r-management",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1306",
+    "kind": "success",
+    "title": "オンライン展示にチャットを置いて常時対応",
+    "summary": "オンライン展示会の事例記事では、狙う相手を決めて課題解決の情報を並べ、24時間対応のチャットボットを置いたことが見込み客の獲得と商談率の向上につながったとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "バーチャル展示会の成功事例",
+      "url": "https://r-management.jp/media/online-exhibition/virtual-exhibition-success/",
+      "publisher": "r-management",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1307",
+    "kind": "success",
+    "title": "センサー・半導体の展示会にリモート出展",
+    "summary": "オンライン展示会の記事によると、センサーや半導体の展示会のオンライン版に30社以上が「リモート出展」で参加した。会場に行かずに出る選択肢がある。",
+    "industries": [
+      "半導体",
+      "電子部品"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オンライン展示会の成功事例",
+      "url": "https://nex-pro.com/blog/online_exhibition/successful_online_exhibitions/",
+      "publisher": "ネクプロ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1308",
+    "kind": "success",
+    "title": "中小向けブース設計セミナーを公的機関が",
+    "summary": "中小機構のサイトに、人を引き寄せるブース設計のポイントを学ぶ中小企業向けの展示会成果向上セミナーの案内がある。初出展前に聞いておきたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業のための展示会成果向上セミナー",
+      "url": "https://j-net21.smrj.go.jp/snavi2/articles/187329",
+      "publisher": "J-Net21",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1309",
+    "kind": "success",
+    "title": "360度工場見学を採用と商談の両方に",
+    "summary": "精密板金の会社が、職場と仕事を伝える採用向けと、設備を見せる商談向けを兼ねて360度のバーチャル工場見学を作った。見られるのは申し込んだ人だけにしている。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "申込制のバーチャル工場見学",
+    "source": {
+      "title": "360度バーチャル工場見学",
+      "url": "https://ascii.jp/elem/000/004/070/4070843/",
+      "publisher": "ASCII",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1310",
+    "kind": "success",
+    "title": "VR工場見学をサイトに置き来社と両立",
+    "summary": "愛知の製造業がコロナ禍に始めたVR工場見学を自社サイトで公開し2026年に作り直した。実際の来社見学も多くの会社が訪れており、来られない人向けの入口になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "来られない人のためのVR見学",
+    "source": {
+      "title": "VR工場見学リニューアルの発表",
+      "url": "https://cdn.kyodonewsprwire.jp/prwfile/release/M106885/202606110720/_prw_PR1fl_6j64q3vf.pdf",
+      "publisher": "共同通信PRワイヤー",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "success-1311",
+    "kind": "success",
+    "title": "学校向けにVRの工場見学を始めた",
+    "summary": "大手食品メーカーは2022年から、360度カメラで撮った映像をスマホと箱型のスコープで見る、学校向けのオンライン工場見学を始めた。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "VRオンライン工場見学の発表",
+      "url": "https://kyodonewsprwire.jp/release/202203239006",
+      "publisher": "共同通信PRワイヤー",
+      "date": "2022-03"
+    }
+  },
+  {
+    "id": "success-1312",
+    "kind": "success",
+    "title": "見学コーナーでVRの製造体験",
+    "summary": "大手タイヤメーカーは工場の見学コーナーに、VRで製造の工程を約10分で疑似体験できる設備を入れた。危なくて近づけない工程も見せられる。",
+    "industries": [
+      "ゴム"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "VR工場見学の導入",
+      "url": "https://www.moguravr.com/?p=70288",
+      "publisher": "MoguraVR",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1313",
+    "kind": "success",
+    "title": "射出成形のVR見学で問い合わせの質向上",
+    "summary": "町工場支援の会社の事例では、東大阪の射出成形会社がVR工場見学をWebに組み込み、問い合わせの質を上げ、商談の時間を短くすることを狙った。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "VR見学で商談が早く進んだ話",
+    "source": {
+      "title": "VR工場見学×Web",
+      "url": "https://www.mp-strategy.com/works/daipla/",
+      "publisher": "MP-Strategy",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1314",
+    "kind": "success",
+    "title": "大阪のものづくりVRを50社以上",
+    "summary": "東大阪の4人ほどの支援会社は、大阪のものづくり企業のVR制作を50社以上手がけたとし、撮影から導入後の使い方まで支援する（近畿経産局の紹介資料）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "VR関連企業紹介",
+      "url": "https://www.kansai.meti.go.jp/3-2sashitsu/vr/kigyousyu/05_mp-strategy.pdf",
+      "publisher": "近畿経済産業局",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "success-1315",
+    "kind": "success",
+    "title": "VR工場見学は展示会のゴーグル体験にも",
+    "summary": "制作会社は、VR工場見学をHPに埋め込むほか、展示会でVRゴーグルで体験してもらう使い方も勧める。ブースで工場ごと見せられる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会で工場をVRで見せる",
+    "source": {
+      "title": "製造業のVR工場見学制作",
+      "url": "https://www.mp-strategy.com/vr/",
+      "publisher": "MP-Strategy",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1316",
+    "kind": "success",
+    "title": "VR見学の無料体験で営業と採用に",
+    "summary": "町工場支援の会社は、営業・採用に使えるバーチャル工場見学の無料体験を製造業向けに用意した。まず試して使い道を確かめる入り方がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "バーチャル工場見学無料体験",
+      "url": "https://www.mp-strategy.com/2024/11/06/virtual_factorytour_experience/",
+      "publisher": "MP-Strategy",
+      "date": "2024-11"
+    }
+  },
+  {
+    "id": "success-1317",
+    "kind": "success",
+    "title": "工程ごとの動画と360度見学を並べる",
+    "summary": "VR制作会社の事例集では、360度の工場見学で全体を見せ、工程ごとの動画も一緒に公開する例が紹介されている。全体と細部を分けて見せる作り。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工場見学のVR活用事例23選",
+      "url": "https://tips.spacely.co.jp/vr-factory-tour-23/",
+      "publisher": "スペースリー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1318",
+    "kind": "success",
+    "title": "工場見学VRで営業の打ち合わせを早く",
+    "summary": "FA分野の紹介サイトは、打ち合わせで工場内やサービスをVRで見せると、前提がそろい営業がしやすくなる使い方を紹介する。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "営業支援に役立つVR導入例",
+      "url": "https://fa-match.jp/archives/1084",
+      "publisher": "工場自動化マッチング",
+      "date": null
+    }
+  },
+  {
+    "id": "term-964",
+    "kind": "term",
+    "title": "3Dウォークスルーは歩くように見る",
+    "summary": "工場や会社を、画面上で歩き回るように見られるのが3Dウォークスルー。360度写真と違い、間取りや設備の位置関係までつかみやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "バーチャル会社見学・工場見学",
+      "url": "https://3d-wt.com/factory/",
+      "publisher": "3Dウォークスルー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1319",
+    "kind": "success",
+    "title": "工場の3Dデータで顧客の出張費を削減",
+    "summary": "海外の受託製造会社は工場を3Dでスキャンし、見込み客や監査チームに遠隔で見せた。ベンダーの公開事例では、出張費を年25万ドル減らしたとされる。",
+    "industries": [
+      "組立",
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "遠くの取引先に工場を見せる方法",
+    "source": {
+      "title": "製造施設の新しい見学方法",
+      "url": "https://matterport.com/ja/industries/case-studies/seacomp-provides-new-way-clients-and-prospects-tour-manufacturing",
+      "publisher": "Matterport",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1320",
+    "kind": "success",
+    "title": "ロックダウン中も工場ツアーで関係維持",
+    "summary": "英国の機器メーカーは工場をバーチャルツアーにし、行き来できない時期も顧客との関係を保った。その後も訪問なしの見学に使える資産になったという。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造施設のバーチャル化",
+      "url": "https://skyrevolutions.co.uk/case-study/dataracks-virtual-tours/",
+      "publisher": "Sky Revolutions",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1321",
+    "kind": "success",
+    "title": "バーチャル見学に案内機能を足す",
+    "summary": "バーチャル工場見学ツアーの解説では、案内の文章、動画の埋め込み、問い合わせボタンなどの機能を足すと、見ただけで終わらず次の行動につながるとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "バーチャル工場見学ツアーの魅力",
+      "url": "https://advalay.jp/23220/",
+      "publisher": "advalay",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-773",
+    "kind": "trend",
+    "official": false,
+    "title": "万博で町工場がVR見学を展示",
+    "summary": "2025年の大阪・関西万博では、地域の工場がVRの仮想見学で技術や働く人の魅力を伝える展示が行われたと紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "VR工場見学のまとめ",
+      "url": "https://imitsu.jp/matome/movie/vr-factory-tour",
+      "publisher": "アイミツ",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1322",
+    "kind": "success",
+    "title": "VR見学は入社前の体験にも",
+    "summary": "ノルウェーの研究では、中小製造業で一時雇用の人が入社前に360度VR動画で組立作業を体験する試みを調べ、ずれの防止や立ち上がりの早さにつながる可能性を示した。",
+    "industries": [
+      "組立"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "入社前に仕事をVRで体験してもらう",
+    "source": {
+      "title": "360度VRと入社前教育の研究",
+      "url": "https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/3120641?show=full",
+      "publisher": "ノルウェー科学技術大学",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-774",
+    "kind": "trend",
+    "official": false,
+    "title": "地域ぐるみの工場公開がコロナ前の2.4倍",
+    "summary": "日本経済新聞によると、地域一体型のオープンファクトリーは2025年に60件で、2019年の25件の約2.4倍。交流や人材育成の場になっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "開かれた町工場 コロナ前の2.4倍",
+      "url": "https://www.nikkei.com/article/DGXZQOUF203EX0Q6A520C2000000/",
+      "publisher": "日本経済新聞",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1323",
+    "kind": "success",
+    "title": "工場公開に出て毎年参加するように",
+    "summary": "MONOistの連載では、負担を心配していた会社が、工場公開に参加してから効果を感じて毎年出るようになり、自社の魅力を発信したい気持ちが生まれたと紹介。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場を開いて変わったこと",
+    "source": {
+      "title": "オープンファクトリーのすゝめ",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2311/07/news001.html",
+      "publisher": "MONOist",
+      "date": "2023-11"
+    }
+  },
+  {
+    "id": "success-1324",
+    "kind": "success",
+    "title": "工場を開くと社員の会話が増えた",
+    "summary": "商工会議所の事例では、地域で工場を開いた後、経営者から社員の意識が変わり社内の会話が増えたという声が出た。近所の騒音の苦情が和らぐこともあるという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見学を受けて社員が変わった",
+    "source": {
+      "title": "地域一体型オープンファクトリー",
+      "url": "https://ab.jcci.or.jp/article/76118/",
+      "publisher": "日本商工会議所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1325",
+    "kind": "success",
+    "title": "工場公開で採用とメディア露出が増加",
+    "summary": "四国経済産業局のセミナー報告では、香川の工場公開イベントの効果として、集客、採用、メディア露出の増加が紹介された。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オープンファクトリーセミナー",
+      "url": "https://www.shikoku.meti.go.jp/01_releases/2025/09/20250911a/20250911a.html",
+      "publisher": "四国経済産業局",
+      "date": "2025-09"
+    }
+  },
+  {
+    "id": "trend-775",
+    "kind": "trend",
+    "official": false,
+    "title": "各地で工場公開が増える理由",
+    "summary": "日刊工業新聞の記事では、町工場を体験できるオープンファクトリーが各地で増えており、地域の知名度づくりや人材確保が狙いになっていると伝える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "町工場を体験 オープンファクトリー",
+      "url": "https://newswitch.jp/p/19853",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1326",
+    "kind": "success",
+    "title": "職人の誇りを軸にして新卒採用が過去最多",
+    "summary": "ブランディング講座の記事では、価格競争に疲れていた創業70年の金属加工会社が「職人の誇り」を軸に作り直し、若手を発信役にSNSで伝えた結果、新卒採用が過去最多に。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "値段でなく思いで選ばれる話",
+    "source": {
+      "title": "中小企業向けブランディング手法",
+      "url": "https://www.flavours.ac/blog/branding/branding_techniques.html",
+      "publisher": "flavours",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1327",
+    "kind": "success",
+    "title": "採用ブランディングで半年15人採用",
+    "summary": "ブランディング会社の発表では、人手不足で仕事を断っていた地方の鉄骨製造会社が採用ブランディングに取り組み、半年で15人を採用、2,100万円のコスト削減になったという。",
+    "industries": [
+      "製缶",
+      "溶接"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "仕事を断らずに済むための採用",
+    "source": {
+      "title": "採用ブランディング成功事例10選",
+      "url": "https://www.musubi-inc.co.jp/musubi-resonance-branding/blogs/recruitment-branding-success-cases",
+      "publisher": "musubi",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1328",
+    "kind": "success",
+    "title": "銅加工のブランドで取引先が10年で6倍超",
+    "summary": "ブランディング会社の製造業事例では、銅加工の会社がブランドを確立し、10年で取引先数が600%増えたと紹介されている（会社の発表）。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "小さな加工会社がブランドを持つ",
+    "source": {
+      "title": "製造業の事例",
+      "url": "https://www.branding-t.co.jp/case/manufacturing/",
+      "publisher": "ブランディングテクノロジー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1329",
+    "kind": "success",
+    "title": "理念づくりからサイト・パンフ・動画まで",
+    "summary": "ブランディング会社の事例では、製造業の会社で理念（MVV）を決めてから、Webサイト、パンフレット、動画を一貫して作り、続けて採用動画も作った。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "理念から順に道具をそろえる",
+    "source": {
+      "title": "ブランディング事例 製造業",
+      "url": "https://www.paddledesign.co.jp/point/-case01.html",
+      "publisher": "パドルデザインカンパニー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1330",
+    "kind": "success",
+    "title": "地域行事と学校連携で知名度を上げる",
+    "summary": "ブランディング会社の記事では、地方の中堅製造業が地域のイベント参加や地元の学校との連携で知名度を上げ、採用や行政との関係づくりにつなげた例を紹介。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "地元で知られる会社になる",
+    "source": {
+      "title": "製造業のブランディング戦略",
+      "url": "https://reiro.co.jp/blog/manufacturing-branding/",
+      "publisher": "reiro",
+      "date": null
+    }
+  },
+  {
+    "id": "term-965",
+    "kind": "term",
+    "title": "工場ブランディングとは",
+    "summary": "工場そのものの見た目、見学、働く人の姿を通して会社の価値を伝える取り組み。ブランディング会社は、採用や取引先の信頼にも効くとして進め方を解説している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "articleIdea": "工場をきれいにすると何が変わるか",
+    "source": {
+      "title": "工場ブランディングとは",
+      "url": "https://reiro.co.jp/blog/branding-factory/",
+      "publisher": "reiro",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1331",
+    "kind": "success",
+    "title": "高校生向けにマンガで仕事を伝える",
+    "summary": "デザイン会社の事例では、知名度が低く業種が伝わりにくい兵庫の板金会社が、高校生向けパンフでマンガを使い事業内容を伝えた。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "高校生に分かる会社案内",
+    "source": {
+      "title": "高校生向け漫画活用パンフレット事例",
+      "url": "https://100pamphlet.jp/results/pamph-manga/18375/",
+      "publisher": "100人のデザイナー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1332",
+    "kind": "success",
+    "title": "めくると人物が色づく高卒採用パンフ",
+    "summary": "パンフレット制作会社の事例では、宮崎の鉄工所の高卒採用パンフで、ページをめくるごとに人物が色づく仕掛けで成長を表した（A5変形12ページ）。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "成長を見せる採用パンフの工夫",
+    "source": {
+      "title": "高卒採用パンフレット制作事例",
+      "url": "https://www.print-solution.com/product/pamph/pa04type88.html",
+      "publisher": "パンフレット専科",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1333",
+    "kind": "success",
+    "title": "大人向け会社案内を作り直し応募が安定",
+    "summary": "制作会社の記事では、大人向けの会社案内を高校にそのまま配って応募が集まらなかった製造業が、高校生向けに作り直して応募が安定した例を紹介（数字はなし）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "高校生向けに会社案内を作り直す",
+    "source": {
+      "title": "高卒採用パンフレット",
+      "url": "https://www.takumi-base.com/course-gifu-kousotsu6/",
+      "publisher": "匠ベース",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1291",
+    "kind": "question",
+    "title": "高校生は会社案内で何を見る？",
+    "summary": "高校生は「朝何時に出社するか」「誰と働くのか」など日々の様子を知りたがる、と制作会社は指摘。給与や事業の説明より先に1日の流れを載せたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "高校生が知りたい1日の流れ",
+    "source": {
+      "title": "高卒採用パンフレット",
+      "url": "https://www.takumi-base.com/course-gifu-kousotsu6/",
+      "publisher": "匠ベース",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1334",
+    "kind": "success",
+    "title": "社員対談の雑誌風で社風を伝える",
+    "summary": "パンフレット制作会社の採用パンフ事例集では、メッキ会社が社員同士の対談を中心にした雑誌風の作りで社風を伝えた例がある。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社員対談で作る採用パンフ",
+    "source": {
+      "title": "リクルートパンフレット制作事例集",
+      "url": "https://www.print-solution.com/menu/saiyo/spin-off_02.html",
+      "publisher": "パンフレット専科",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-716",
+    "kind": "buyer",
+    "title": "BtoBの営業用パンフは事例を見て頼む",
+    "summary": "会社案内の制作会社は、営業・BtoB向けパンフとカタログのデザイン事例を一覧にしている。発注する側は近い業種の事例を見て頼むと話が早い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "営業・BtoB パンフレット・カタログ事例",
+      "url": "https://www.print-solution.com/product/search/btob.html",
+      "publisher": "パンフレット専科",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1335",
+    "kind": "success",
+    "title": "2,500ページの工具カタログをデジタル化",
+    "summary": "デジタルカタログ会社の事例記事では、切削工具メーカーの2,500ページ規模の多言語カタログを電子化し、作る費用の削減と更新の速さを狙った。",
+    "industries": [
+      "刃物・工具"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "分厚いカタログを電子化した話",
+    "source": {
+      "title": "製造業のデジタルカタログ活用事例",
+      "url": "https://das-solution.akagane.co.jp/media/useful-info/digital-catalog-cases/",
+      "publisher": "アカガネ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-645",
+    "kind": "pain",
+    "title": "営業から「最新版のカタログが分からない」",
+    "summary": "電子ブック制作会社の事例では、400ページを超える産業機器メーカーの総合カタログを電子化し、印刷・改訂の費用と、営業の「最新版が分からない」という声に対応した。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "カタログの最新版をそろえる",
+    "source": {
+      "title": "製造業のカタログ電子化事例",
+      "url": "https://digitalbook-pdf.com/manufacturing-catalog-digitalbook-case/",
+      "publisher": "デジタルブック制作代行",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1336",
+    "kind": "success",
+    "title": "電子カタログの閲覧から関心をつかむ",
+    "summary": "デジタルカタログの事例集では、ページをめくる型にして閲覧データを取り、閲覧率40%向上・成約率15%向上とする例がある（ITサービスの例で、製造業ではない）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "カタログのどこが読まれたかを知る",
+    "source": {
+      "title": "デジタルカタログのビジネス活用事例",
+      "url": "https://www.quick-book.net/blog/digital-catalog-business-cases/",
+      "publisher": "quick-book",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1337",
+    "kind": "success",
+    "title": "部品の多い会社は検索できるカタログに",
+    "summary": "印刷会社の解説では、製品数の多い部品メーカーほど、検索で目的の製品に早くたどり着けるデジタルカタログが合い、動画で使う場所も見せられるとする。",
+    "industries": [
+      "機械部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "デジタルカタログとは",
+      "url": "https://www.kenbunsya.jp/commusapu/design/5091/",
+      "publisher": "研文社",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1338",
+    "kind": "success",
+    "title": "ブランドの考え方を会社案内に通す",
+    "summary": "大手鉄鋼メーカーは周年事業として会社案内を作り直し、創業からの考え方を歴史・現在・未来に分けて伝える構成にした。中小でも周年は作り直しの好機。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "周年で会社案内を作り直す",
+    "source": {
+      "title": "会社案内パンフレットの刷新",
+      "url": "https://www.aichi-steel.co.jp/news_item/20160621.pdf",
+      "publisher": "大手鉄鋼メーカーの発表",
+      "date": "2016-06"
+    }
+  },
+  {
+    "id": "success-1339",
+    "kind": "success",
+    "title": "撮影から編集まで一社で掲載が早く",
+    "summary": "BPO会社の支援事例では、商品の写真撮影から編集まで一社で引き受けたことで掲載までの期間が短くなり、ECの中身が増えて売上につながったという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "写真撮影・動画制作サービスの支援事例",
+      "url": "https://www.services.altius-link.com/case/e-commerce-company/",
+      "publisher": "アルティウスリンク",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1292",
+    "kind": "question",
+    "title": "自社製品の写真は自分で撮っていい？",
+    "summary": "EC制作会社のコラムでは、質感が売上を左右する商品は外注、更新の速さが大事な商品は自社撮影が基本とする。金属や樹脂の製品も質感の見え方で選びたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "製品写真を外に頼む基準",
+    "source": {
+      "title": "商品写真は自社撮影と外注どちらが",
+      "url": "https://fukuoka-ecsite.co.jp/blog/ecsite-production/product-photography-inhouse-vs-outsourcing/",
+      "publisher": "福岡ECサイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1340",
+    "kind": "success",
+    "title": "受注につながる動画は見た後の導線まで",
+    "summary": "動画制作会社の解説では、製造業の動画は作るだけでなく、見た人が問い合わせや資料請求に進める道筋をサイト上に用意すると受注につながりやすいとする。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業の動画制作 受注につながる活用法",
+      "url": "https://i-sheep.jp/blog/seizogyo-video/",
+      "publisher": "i-sheep",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1341",
+    "kind": "success",
+    "title": "SNSと広告で問い合わせ0→月20件",
+    "summary": "支援会社の発表では、製造業向けにSNS運用と広告運用を半年続け、問い合わせが月0件から月20件に。新規取引の相談や見積依頼が来るようになったという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "SNSと広告を半年続けて分かったこと",
+    "source": {
+      "title": "製造業向けSNS・広告運用支援の実績レポート",
+      "url": "https://prtimes.jp/main/html/rd/p/000000118.000110808.html",
+      "publisher": "PR TIMES（支援会社の発表）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-646",
+    "kind": "pain",
+    "title": "広告代理店の運用が見えない",
+    "summary": "製造業が広告運用を任せたときの不満として、運用の中身が分からない、具体的な改善の提案がないことが挙がる。選ぶときは範囲・実績・費用・体制・技術の5点で比べるとよいとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業向け広告代理店の選び方ガイド公開",
+      "url": "https://webtan.impress.co.jp/r/prtimes/items/000000118.000110808",
+      "publisher": "Web担当者Forum（PR TIMES転載）",
+      "date": "2025-05"
+    }
+  },
+  {
+    "id": "buyer-717",
+    "kind": "buyer",
+    "title": "広告は「今すぐ探す人」から当てる",
+    "summary": "製造業の検索語は、発注先を今探す人・比べている人・課題を調べている人に分けられる。今探す人向けの語は成約しやすいがクリック単価が高い。課題を調べる人には記事で応える方が安いとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "今すぐ頼みたい人が検索する言葉",
+    "source": {
+      "title": "製造業の広告運用",
+      "url": "https://www.sungrove.co.jp/manufacturing-industry-ad/",
+      "publisher": "サングローブ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1342",
+    "kind": "success",
+    "title": "広告の反応は24時間以内に返す",
+    "summary": "広告で問い合わせが来ても、返事が遅いと商談になりにくい。問い合わせには24時間以内、できればその日のうちに返す体制を整えるよう勧める解説がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "問い合わせへの返事を当日にしている理由",
+    "source": {
+      "title": "製造業の広告運用",
+      "url": "https://www.sungrove.co.jp/manufacturing-industry-ad/",
+      "publisher": "サングローブ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1343",
+    "kind": "success",
+    "title": "Facebookは加工工程の動画が強い",
+    "summary": "製造業のFacebookでは、加工や溶接の工程動画、品質検査の様子、設備投資のお知らせ、難しい加工の事例が反応を得やすいとされる。現場を見せる投稿が基本。",
+    "industries": [
+      "金属加工",
+      "溶接"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工程動画をFacebookに載せてみた",
+    "source": {
+      "title": "製造業のFacebook活用",
+      "url": "https://www.shopowner-support.net/attracting_customers/manufacturing/manufacturing-general/manufacturingindustry-facebook/",
+      "publisher": "キャククル（全研本社）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-776",
+    "kind": "trend",
+    "official": false,
+    "title": "Meta広告はBtoBでは認知の役",
+    "summary": "海外の広告会社は、Meta広告はLinkedInやGoogle広告の代わりにはならないが、認知づくりや決める人への働きかけを支える役割があると整理している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Meta Advertising for B2B",
+      "url": "https://www.straightnorth.com/blog/meta-advertising-for-b2b-how-to-make-it-work-for-your-business/",
+      "publisher": "Straight North",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1344",
+    "kind": "success",
+    "title": "LinkedInで業界を絞って海外へ",
+    "summary": "LinkedIn公式の事例では、日本の水処理エンジニアリング大手が米州・欧州・アジアに向け、電子・自動車・食品など相手の業界を絞った広告を出し、海外での知名度を上げた。",
+    "industries": [
+      "装置",
+      "化学・塗料・接着剤"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外の相手業界を絞って発信する",
+    "source": {
+      "title": "LinkedIn Marketing Solutions 事例",
+      "url": "https://www.casestudies.com/company/linkedin-marketing-solutions/case-study/kurita-group-raises-its-global-profile-through-linkedin",
+      "publisher": "LinkedIn（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1345",
+    "kind": "success",
+    "title": "資料ダウンロードで海外リードを",
+    "summary": "LinkedIn公式の事例では、日本の電機大手が通常の投稿に加え、似た属性の人への広告、資料を渡す代わりに連絡先をもらう広告、再訪問者への広告を組み合わせ、海外の見込み客の質を上げた。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外向けに技術資料を用意する",
+    "source": {
+      "title": "LinkedIn Marketing Solutions 事例",
+      "url": "https://www.casestudies.com/company/linkedin-marketing-solutions/case-study/fuji-electric-customer-case-study",
+      "publisher": "LinkedIn（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1346",
+    "kind": "success",
+    "title": "LinkedInで海外リード月2→18件",
+    "summary": "支援会社の事例では、精密機器メーカーがLinkedInで技術記事と狙いを絞った広告を出し、海外リードが月2件から18件に。英語の技術文の確認役探しに1か月かかったのが課題だったという。",
+    "industries": [
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外の技術者向けに英語で書くこと",
+    "source": {
+      "title": "精密機器メーカーのLinkedIn活用",
+      "url": "https://paaan.jp/cases/manufacturing-precision-linkedin-global-lead",
+      "publisher": "PAAAN",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-647",
+    "kind": "pain",
+    "title": "英語の技術文は機械翻訳で足りない",
+    "summary": "LinkedInで海外向けに発信した精密機器メーカーの事例では、機械翻訳の精度に限界があり、ネイティブの確認役を確保するのに時間がかかった。社長の時間確保も課題に。",
+    "industries": [
+      "精密機器"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "精密機器メーカーのLinkedIn活用",
+      "url": "https://paaan.jp/cases/manufacturing-precision-linkedin-global-lead",
+      "publisher": "PAAAN",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1347",
+    "kind": "success",
+    "title": "Sales Navigatorで海外の相手探し",
+    "summary": "LinkedInの有料営業機能で、業種や役職を絞って海外の相手を探し、それまで接点のなかった海外企業と取引が生まれた例があると支援会社は紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外の購買担当にどう見つけてもらうか",
+    "source": {
+      "title": "製造業の海外営業でのSales Navigator活用",
+      "url": "https://kynovus.com/how-to-use-sales-navigator-manufacturing/",
+      "publisher": "KYNOVUS",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-718",
+    "kind": "buyer",
+    "title": "海外の買い手はLinkedInで確かめる",
+    "summary": "製造業向けのLinkedIn運用代行では、会社ページの整備、技術投稿、つながり申請、返信の一次対応までを任せられる。海外の担当者は相手の会社をLinkedInで確かめるため、会社ページが入口になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "海外の取引先候補がまず見るページ",
+    "source": {
+      "title": "製造業のLinkedIn運用代行とは",
+      "url": "https://marketing.techport.co.jp/archives/41630/",
+      "publisher": "テクノポート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1348",
+    "kind": "success",
+    "title": "LinkedIn運用は国ごとに書き分け",
+    "summary": "海外向けLinkedIn支援の中には、現地出身のスタッフが国ごとに投稿を書き分ける体制をとる会社もある。同じ英語でも国によって響く言い方が違うため。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoB企業のLinkedIn活用と伴走支援",
+      "url": "https://www.s-bokan.com/blog/post-42107/",
+      "publisher": "世界へボカン",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1349",
+    "kind": "success",
+    "title": "展示会の代わりに検索とディスプレイ",
+    "summary": "支援会社の事例集では、電子部品商社がコロナ後に展示会頼みの営業をやめ、検索広告とディスプレイ広告で新規客を開拓し、商談数が10倍になったという。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会に出なくても商談をつくる",
+    "source": {
+      "title": "製造業BtoBの展示会とデジタル広告の使い分け",
+      "url": "https://www.synergy-marketing.co.jp/blog/manufacturing_btob_exhibition_digital-ad_differentiation",
+      "publisher": "シナジーマーケティング",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1350",
+    "kind": "success",
+    "title": "一度来た人に広告で再び届ける",
+    "summary": "展示会は年1〜2回の接点だが、検索広告で来た人にもう一度広告を見せる（リターゲティング）と、検討の間ずっと思い出してもらえるとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業BtoBの展示会とデジタル広告の使い分け",
+      "url": "https://www.synergy-marketing.co.jp/blog/manufacturing_btob_exhibition_digital-ad_differentiation",
+      "publisher": "シナジーマーケティング",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-719",
+    "kind": "buyer",
+    "title": "商談になる率は展示会もWebも幅",
+    "summary": "ある支援会社の目安では、商談になる率は展示会で5〜15%、デジタル広告で3〜10%。業界や商材で大きく変わるので、小さく試してから予算を移すよう勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業BtoBの展示会とデジタル広告の使い分け",
+      "url": "https://www.synergy-marketing.co.jp/blog/manufacturing_btob_exhibition_digital-ad_differentiation",
+      "publisher": "シナジーマーケティング",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1351",
+    "kind": "success",
+    "title": "展示会をWeb広告で置き換える手順",
+    "summary": "展示会の代わりにWeb広告を使うには、営業の流れそのものをオンラインにする必要があるとされる。資料請求やウェビナーなど、気軽に申し込める入口を先に用意する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "資料請求を入口にした理由",
+    "source": {
+      "title": "BtoB製造業の展示会をWeb広告で代替",
+      "url": "https://liskul.com/btob-manufacturing-industry-2-108522",
+      "publisher": "LISKUL（ソウルドアウト）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-648",
+    "kind": "pain",
+    "title": "BtoBのディスプレイ広告は外れやすい",
+    "summary": "BtoBのディスプレイ広告は、狙う相手を絞らないと関係ない人に表示されて費用がかさむ。誰に何を見せるかを先に決め、申し込みの入口を用意することが失敗を防ぐとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoB向けディスプレイ広告の戦略",
+      "url": "https://www.lany.co.jp/blog/btob-display-ads",
+      "publisher": "LANY",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1352",
+    "kind": "success",
+    "title": "広告は大型加工で月7件の引き合い",
+    "summary": "広告事例のまとめでは、大型マシニング加工の会社が月10万円の広告費で月7件の問い合わせを得たとされ、それまで接点のなかった業界からの引き合いも生まれたという。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "大きい部品の加工を頼める先の探し方",
+    "source": {
+      "title": "リスティング広告の成功事例",
+      "url": "https://ad-repo.com/blog/listing_cases/",
+      "publisher": "アドレポ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-649",
+    "kind": "pain",
+    "title": "単語1つの広告は費用だけ消える",
+    "summary": "「金属加工」「板金」など単語1つだけに広告を出し、月100万円使っても問い合わせが5件にとどまった失敗例が紹介されている。加工法・材料・地域を組み合わせた語に絞るのが基本。",
+    "industries": [
+      "金属加工",
+      "板金"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "リスティング広告の成功事例",
+      "url": "https://ad-repo.com/blog/listing_cases/",
+      "publisher": "アドレポ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-966",
+    "kind": "term",
+    "title": "CPAとCVRの意味",
+    "summary": "CPAは問い合わせ1件をとるのにかかった広告費、CVRは来た人のうち問い合わせた人の割合。ある解説では製造業のCVRは3〜8%が目安で、低いときは着地ページを直すとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "広告の数字、CPAとCVRとは",
+    "source": {
+      "title": "リスティング広告の成功事例6選",
+      "url": "https://allis-co.com/allisblog/11298/",
+      "publisher": "アリス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1353",
+    "kind": "success",
+    "title": "LP改修で装置メーカーの商談増",
+    "summary": "BtoB広告の事例では、機械・装置メーカーがヒートマップで読まれ方を調べて着地ページを直し、商談獲得が60%増えたと紹介されている。動画広告とも組み合わせた。",
+    "industries": [
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見積依頼ページをどこまで読まれているか",
+    "source": {
+      "title": "BtoB広告の事例",
+      "url": "https://www.it-comm.co.jp/media/btob-ad-case-studies",
+      "publisher": "アイティコミュニケーションズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1354",
+    "kind": "success",
+    "title": "動画広告は精度を見せる役",
+    "summary": "BtoBの広告では、製品の実演や導入事例のインタビュー動画で、動きや精度、仕様を目で確かめてもらう使い方が向くとされる。",
+    "industries": [
+      "装置",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "動く様子を動画で見せる理由",
+    "source": {
+      "title": "BtoB広告で成果を上げるには",
+      "url": "https://btob.medix-inc.co.jp/blog/btob-ad",
+      "publisher": "メディックス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1355",
+    "kind": "success",
+    "title": "1案件1ページで問い合わせ約3倍",
+    "summary": "支援会社によると、精密部品の加工会社が加工事例を案件ごとに1ページずつ作り、細かい検索語を狙ったところ、流入が約4倍、問い合わせが約3倍に。公開から3か月ほどで伸び始めた。",
+    "industries": [
+      "機械部品",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加工事例を1件ずつページにした話",
+    "source": {
+      "title": "製造業BtoBサイトのSEO事例",
+      "url": "https://www.s-fleage.com/case08001",
+      "publisher": "S-fleage",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1356",
+    "kind": "success",
+    "title": "技術SEOとフォーム改善を一緒に",
+    "summary": "支援会社の発表では、BtoB製造業サイトで、サイトの技術面の手直し、記事の追加、入力フォームの改善の3つを一緒に設計し、問い合わせが300%増えたという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "問い合わせフォームを短くした理由",
+    "source": {
+      "title": "製造業BtoBサイトのSEO事例",
+      "url": "https://www.s-fleage.com/case08001",
+      "publisher": "S-fleage",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1357",
+    "kind": "success",
+    "title": "工程ブログで検索1位、問い合わせ倍",
+    "summary": "SEO会社の記事では、金属加工メーカーが加工工程のブログを定期的に出し、「金属加工＋技術解説」の検索で1位になり、問い合わせが倍に増えたと紹介されている。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工程を順番に説明する記事",
+    "source": {
+      "title": "SEO対策が製造業で成果を上げる事例",
+      "url": "https://seo-assist.jp/media/20250605-530/",
+      "publisher": "SEOアシスト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1358",
+    "kind": "success",
+    "title": "比較サイトとSEOを併用する",
+    "summary": "製造業のWeb集客の事例集では、自社サイトのSEOだけでなく、業界の比較サイトに載せて入口を増やす方法が紹介されている。比較サイトから来た人も自社サイトで確かめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "比較サイトに載せたあと自社サイトで伝えること",
+    "source": {
+      "title": "製造業のWebマーケティング事例集",
+      "url": "https://roronto.jp/mkt/manufacturing/",
+      "publisher": "ロロント",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1359",
+    "kind": "success",
+    "title": "月3万PVの製造業サイトの書き方",
+    "summary": "月3万PVを超える製造業のサイト運営者は、自社の技術を一般の人にも分かる言葉で書くことでアクセスを増やしたと解説している。社内の言葉と検索される言葉は違う。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "社内の言葉を検索される言葉に直す",
+    "source": {
+      "title": "製造業のホームページのアクセス増加",
+      "url": "https://mitsudenshi.co.jp/9380/",
+      "publisher": "三電子（自社運営）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-967",
+    "kind": "term",
+    "title": "業界用語と検索語のずれ",
+    "summary": "「板金」は車の修理を探す人も検索するなど、業界の言葉と一般の検索語はずれることがある。「板金 精密」のように言葉を組み合わせて、狙う相手を絞るとよいとされる。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "「板金」で検索する人は誰か",
+    "source": {
+      "title": "製造業のSEO対策",
+      "url": "https://www.sungrove.co.jp/seo-manufacturing-industry/",
+      "publisher": "サングローブ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-650",
+    "kind": "pain",
+    "title": "技術を公開したくない気持ち",
+    "summary": "製造業は技術情報の公開に慎重な会社が多い。ただし加工工程の一部を見せると信頼の材料になる。どこまで出すかを先に社内で決めておくとよいとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "どこまで技術を見せるか決めた話",
+    "source": {
+      "title": "製造業のSEO対策",
+      "url": "https://www.sungrove.co.jp/seo-manufacturing-industry/",
+      "publisher": "サングローブ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1293",
+    "kind": "question",
+    "title": "SEOを頼むと月いくらか",
+    "summary": "製造業のSEOを外に頼む費用は、依頼する範囲で月数万円から30万円ほどまで幅がある。自社で書くか、記事だけ頼むか、全部任せるかで変わると解説されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業のSEO対策 費用",
+      "url": "https://atsoho.com/blog/manufacturing-seo-service-cost",
+      "publisher": "アトソーホー",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1360",
+    "kind": "success",
+    "title": "工場の現場を見せる投稿が応募に",
+    "summary": "TikTok採用の事例のまとめでは、製造業でも現場の様子や社員の人柄を見せる動画が応募につながりやすいとされる。作り込んだ広告より、普段の様子が好まれる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "普段の工場の様子を動画にした",
+    "source": {
+      "title": "TikTok採用の成功事例",
+      "url": "https://marugotoinc.jp/blog/tiktoksaiyou/",
+      "publisher": "まるごと",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1361",
+    "kind": "success",
+    "title": "若手3人で週2回投稿、フォロワー5倍",
+    "summary": "採用支援会社の紹介では、食品工場が若手社員3人で順番を決めて週2回投稿する体制にし、3か月でフォロワーが5倍に、採用の応募も増えたという。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "SNS担当を交代制にした理由",
+    "source": {
+      "title": "TikTok採用の成功事例",
+      "url": "https://www.addict-one.co.jp/blog/tiktok-recruitment-success-case/",
+      "publisher": "ADDICT ONE",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1362",
+    "kind": "success",
+    "title": "女性社員の動画で女性の応募増",
+    "summary": "TikTok採用の事例では、自動車部品メーカーが入社2年目の女性社員がラインで働く様子を紹介し、女性からの応募が増えたとされる。働く人を見せると自分に重ねてもらえる。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場で働く女性社員の1日",
+    "source": {
+      "title": "TikTok採用の成功事例",
+      "url": "https://www.addict-one.co.jp/blog/tiktok-recruitment-success-case/",
+      "publisher": "ADDICT ONE",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-651",
+    "kind": "pain",
+    "title": "TikTokの成果の数字は記事で違う",
+    "summary": "よく紹介される金属部品加工会社のTikTok採用は、内定者の数が記事ごとに違って書かれている。数字は会社の発表や取材記事で確かめてから使うのが安全。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "TikTok採用の成功事例",
+      "url": "https://stock-sun.com/column/tiktok-saiyo-seikoujirei/",
+      "publisher": "StockSun",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1363",
+    "kind": "success",
+    "title": "専門的な現場はTikTokで目立つ",
+    "summary": "製造業のTikTok運用ガイドでは、専門的な現場は投稿する会社が少ないため見つけてもらいやすいとされる。機械の動きや加工の瞬間は短い動画に向く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "機械の動きを15秒で見せる",
+    "source": {
+      "title": "製造業のTikTok運用ガイド",
+      "url": "https://vazai.jp/manufacturing-tiktok-operation-guide/",
+      "publisher": "バズアイ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1294",
+    "kind": "question",
+    "title": "工場の採用にTikTokは使えるか",
+    "summary": "製造業の採用でTikTokを使うときは、目的を採用に絞る、続けられる体制をつくる、採用ページへの導線を用意する、の3点がポイントとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "TikTokで製造業の採用はできる？",
+      "url": "https://toconana.com/SBd5xPpO2/P3--GPPp",
+      "publisher": "トコナナ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1364",
+    "kind": "success",
+    "title": "放置YouTubeをショートで再生20万",
+    "summary": "運用代行会社の事例では、放っておいたチャンネルをショート動画中心に作り直し、半年で約20万回再生に。ものづくりの現場が題材で、企画と撮影の負担が課題だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "止まっていたYouTubeを再開した",
+    "source": {
+      "title": "SNS運用代行の事例",
+      "url": "https://n-works.link/sns",
+      "publisher": "ニュートラルワークス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1365",
+    "kind": "success",
+    "title": "ショート動画は冒頭2〜3秒で結論",
+    "summary": "ショート動画の成功例に共通するのは、最初の2〜3秒で結論を見せる、1本で伝えることを1つに絞る、同じ型で量産して試す、の3つとされる（主にBtoCの例）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ショート動画の成功事例",
+      "url": "https://0120.co.jp/blog/video-134/",
+      "publisher": "課題解決プラットフォーム",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-777",
+    "kind": "trend",
+    "official": false,
+    "title": "製造業の動画活用、効果ありは63%",
+    "summary": "動画制作会社の2026年版調査では、製造業で動画を使って効果があったと答えたのは63.0%。今後はYouTube・SNS向けと自社サイト向けの動画が注目されているという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業の動画活用実態調査2026",
+      "url": "https://prtimes.jp/main/html/rd/p/000000015.000143413.html",
+      "publisher": "アルファノート（PR TIMES）",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-1366",
+    "kind": "success",
+    "title": "加工部品の写真に材質とサイズ",
+    "summary": "製造業のInstagram事例では、金属加工メーカーが加工部品の写真に、部品の大きさ、材質、表面処理の有無などを添えて投稿している。見る人が自分の案件に重ねやすい。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "部品写真にのせる情報の決め方",
+    "source": {
+      "title": "BtoB企業のInstagram運用ガイド",
+      "url": "https://simplique.jp/btob-instagram-management/",
+      "publisher": "シンプリーク",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1367",
+    "kind": "success",
+    "title": "社員をハッシュタグで紹介する",
+    "summary": "建材メーカーが自社名と「社員」を組み合わせたハッシュタグで、いろいろな職種の社員を写真や短い動画で紹介し、どんな人が働いているかを伝えている例がある。",
+    "industries": [
+      "建材・金物"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "職種ごとに社員を紹介する",
+    "source": {
+      "title": "BtoB企業の採用SNS成功事例",
+      "url": "https://dixi.co.jp/saien/saiyo_sns_seikou/",
+      "publisher": "DIXI",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1368",
+    "kind": "success",
+    "title": "週1回の投稿表を先につくる",
+    "summary": "Instagramで採用発信をする製造業の事例では、週1回の投稿予定を先に作り、社内で素材を集める習慣を育てたことで、半年以上続けられたという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "SNSを半年続けるための投稿表",
+    "source": {
+      "title": "製造業の採用にInstagramは使える？",
+      "url": "https://www.b-step.net/post/manufacturing-instagram-recruitment",
+      "publisher": "ビーステップ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1369",
+    "kind": "success",
+    "title": "Instagramで海外の問い合わせ3倍",
+    "summary": "広告会社のコラムでは、BtoB製造業がInstagramを使い、海外からの問い合わせが半年で3倍になった匿名の事例が紹介されている。製品の使われ方を見せる投稿が中心。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外の人に製品の使われ方を見せる",
+    "source": {
+      "title": "BtoB製造業がInstagramを活用すべき理由",
+      "url": "http://i-media.info/column/manufacturing-instagram-strategy/",
+      "publisher": "i-media",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-720",
+    "kind": "buyer",
+    "title": "SNS代行は成果で選ぶ",
+    "summary": "Instagram運用代行を選ぶときは、フォロワー数ではなく、売上・商談・採用という実際の成果を約束してくれるかで選ぶべきとされる。個人に頼むと実績があいまいなことも。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Instagram運用代行",
+      "url": "https://stock-sun.com/column/instagram-management/",
+      "publisher": "StockSun",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1295",
+    "kind": "question",
+    "title": "製造業のSNS代行はどう選ぶ",
+    "summary": "製造業向けSNS代行の比較記事では、製造業の実績があるか、技術の話を理解できるか、撮影まで頼めるか、成果の測り方が明確かが選ぶ基準とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業向けSNS代行おすすめ",
+      "url": "https://i-media.info/column/manufacturing-sns-agency-recommended/",
+      "publisher": "i-media",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-652",
+    "kind": "pain",
+    "title": "SNSで機密がもれる心配",
+    "summary": "製造業のSNS集客での悩みとして、現場や技術情報を発信するときに機密情報がもれる心配が挙がる。写してよい範囲を先に決めておく。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業のSNS集客",
+      "url": "https://www.biz.ne.jp/matome/2007234/",
+      "publisher": "ビズクロ（比較ビズ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1370",
+    "kind": "success",
+    "title": "BtoBのX事例にアルミ加工も",
+    "summary": "企業Xアカウントの成功事例のまとめに、BtoBのアルミ加工会社が入っている。製品の宣伝よりも人柄や日々の話題で親しみを持ってもらう型。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "企業Twitterアカウントの成功事例",
+      "url": "https://www.ownly.jp/sslab/twitter-kigyouakaunto-seikoujirei",
+      "publisher": "オウンリー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1371",
+    "kind": "success",
+    "title": "noteでBtoBの会社らしさを伝える",
+    "summary": "SNS支援会社の寄稿では、noteをBtoBブランディングに使う際の注意点と成果を出した2社の事例を紹介。長めの文章で考え方や人を伝える場として使われる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "noteで社長の考えを書く",
+    "source": {
+      "title": "noteを活用したBtoBブランディング",
+      "url": "https://www.comnico.jp/news/itmediamarketing_kikou_20230906",
+      "publisher": "コムニコ（ITmediaマーケティング寄稿）",
+      "date": "2023-09"
+    }
+  },
+  {
+    "id": "success-1372",
+    "kind": "success",
+    "title": "SNSで技術を見せて資料請求へ",
+    "summary": "BtoBのSNS運用では、SNSから直接受注を狙うより、SNSで技術力を見せて資料請求やWebフォームにつなぐ導線が大事とされる。事例は「課題→施策→成果」で書くと伝わる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "SNSから問い合わせフォームへの道",
+    "source": {
+      "title": "BtoBのSNS運用成功事例",
+      "url": "https://snsschool.net/column/industry-btob/success",
+      "publisher": "SNSスクール",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1373",
+    "kind": "success",
+    "title": "ゴム金型会社のYouTube技術解説",
+    "summary": "BtoBのSNS事例のまとめでは、ゴム金型から成形まで行う会社がYouTubeで加工の様子や技術を解説し、ノウハウの発信で知られるようになった例が紹介されている。",
+    "industries": [
+      "金型",
+      "ゴム"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "金型の仕組みを動画で説明する",
+    "source": {
+      "title": "BtoB企業のSNSマーケティング事例",
+      "url": "https://marketing.techport.co.jp/archives/28603/",
+      "publisher": "テクノポート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1374",
+    "kind": "success",
+    "title": "Indeedで表示を増やし原稿も直す",
+    "summary": "Indeed公式の事例では、新工場に移った鉄工所が複数の求人媒体で募集しても応募が少なかったため、担当者と相談して求人の表示回数を増やし、中身も直して採用目標を達成した。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新工場の求人原稿を書き直した話",
+    "source": {
+      "title": "Indeed ケーススタディ",
+      "url": "https://jp.indeed.com/%E6%B1%82%E4%BA%BA%E5%BA%83%E5%91%8A/%E3%82%B1%E3%83%BC%E3%82%B9%E3%82%B9%E3%82%BF%E3%83%87%E3%82%A3/morikawa-ironworks",
+      "publisher": "Indeed",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1296",
+    "kind": "question",
+    "title": "Indeed運用代行の手数料は",
+    "summary": "採用支援会社の解説では、Indeedの運用代行は、有料広告費の15〜30%ほどを手数料としてとる会社が多い。自分で運用するか任せるかは、時間と手数料で比べる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Indeed運用代行の解説",
+      "url": "https://www.neo-career.co.jp/humanresource/knowhow/a-contents-middlecareer-indeedunyo-231228/",
+      "publisher": "ネオキャリア",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1375",
+    "kind": "success",
+    "title": "米国の乳製品工場がIndeedで20人",
+    "summary": "Indeed公式の事例では、米国の乳製品加工会社が8か月でIndeedから20人を採用し、どの媒体より多かった。1人あたりの採用費は539ドルだったと報告されている。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Foremost Farms USA 事例",
+      "url": "https://www.casestudies.com/company/indeed/case-study/foremost-farms-usa-customer-case-study",
+      "publisher": "Indeed（casestudies.com）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1376",
+    "kind": "success",
+    "title": "製造職は製品写真を何枚も載せる",
+    "summary": "製造職の求人では、作っている製品の写真を何枚も載せ、何を作る会社か一目で分かるようにした例が紹介されている。求職者は仕事の中身が分からないと応募しない。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちが作っているものを写真で",
+    "source": {
+      "title": "製造職の求人募集にはIndeedがおすすめ",
+      "url": "https://www.tracom.co.jp/tralog/indeed-manufacturing/",
+      "publisher": "トラコム",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1377",
+    "kind": "success",
+    "title": "原稿を作り直し広告費5万で応募35件",
+    "summary": "採用支援会社の事例では、大阪の印刷・製版会社が、事実を並べただけの求人原稿を現場の聞き取りから作り直し、広告費5万円で応募35件、1人採用になったという。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "求人原稿を現場の言葉で書き直す",
+    "source": {
+      "title": "工場求人に応募が来ない原因と改善",
+      "url": "https://recruit.connect-mktg.com/%E5%B7%A5%E5%A0%B4%E6%B1%82%E4%BA%BA%E3%81%AB%E5%BF%9C%E5%8B%9F%E3%81%8C%E6%9D%A5%E3%81%AA%E3%81%84%E5%8E%9F%E5%9B%A07%E3%81%A4%E3%81%A8%E3%80%81%E4%BB%8A%E3%81%99%E3%81%90%E3%81%A7%E3%81%8D%E3%82%8B/",
+      "publisher": "コネクト",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-653",
+    "kind": "pain",
+    "title": "社内の職種名は検索されない",
+    "summary": "工場の求人で、社内の呼び名をそのまま職種名にすると検索に引っかからない。表示はあるのにクリックがないのか、クリックはあるのに応募がないのか、どこで止まっているかを分けて見る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業の求人に応募が来ない原因7つ",
+      "url": "https://recruit.connect-mktg.com/%E8%A3%BD%E9%80%A0%E6%A5%AD%E3%81%AE%E6%B1%82%E4%BA%BA%E3%81%AB%E5%BF%9C%E5%8B%9F%E3%81%8C%E6%9D%A5%E3%81%AA%E3%81%84%E5%8E%9F%E5%9B%A07%E3%81%A4%E3%81%A8%E6%94%B9%E5%96%84%E7%AD%96%EF%BD%9C%E3%81%BE/",
+      "publisher": "コネクト",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1297",
+    "kind": "question",
+    "title": "勤務地は工業団地名と駅まで",
+    "summary": "求職者は「〇〇市」だけでは通勤のイメージがわかない。工業団地の名前、最寄り駅、車で通えるかまで書くとよい。油や騒音、重い物など大変な点も最初に伝えると定着につながる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "工場までの通い方を詳しく書く",
+    "source": {
+      "title": "工場の求人を出しても応募が来ない原因10選",
+      "url": "https://kikai.asmedia.pro/2026/02/no-factory-job-applications/",
+      "publisher": "機械業界メディア",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "question-1298",
+    "kind": "question",
+    "title": "「製造補助」では仕事が分からない",
+    "summary": "「製造補助」「機械オペレーター」だけでは他社と区別がつかない。どんな工程で何をするかを、動きの言葉（削る・はめる・確かめる）まで具体的に書くよう勧められている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "機械オペレーターの1日を具体的に",
+    "source": {
+      "title": "製造業・工場の求人原稿の書き方",
+      "url": "https://www.three-count.jp/advice/industry-write-job/",
+      "publisher": "スリーカウント",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-654",
+    "kind": "pain",
+    "title": "工場の求人は現場が見えない",
+    "summary": "製造業の求人に応募が来ない一番の理由は、現場が見えないことだという指摘がある。休憩室や一緒に働く人の写真を撮り直し、応募への最初の連絡はその日のうちに返す。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業の求人に応募が来ない5つの理由",
+      "url": "https://stokedbase.jp/column/manufacturing-recruitment/",
+      "publisher": "ストークドベース",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1378",
+    "kind": "success",
+    "title": "条件を変えずに応募を集める",
+    "summary": "採用支援会社は、応募ゼロの工場の共通点として、条件だけで比べられる原稿になっていることを挙げ、仕事の中身や人を見せる方法で条件を変えずに戦えると解説している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "給料以外でうちを選ぶ理由",
+    "source": {
+      "title": "製造業の求人が来ない本当の理由",
+      "url": "https://haf-japan.com/blog/2026-02-01-manufacturing-recruitment-why-zero-applicants/",
+      "publisher": "HAF",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "question-1299",
+    "kind": "question",
+    "title": "応募が来ないのは媒体か原稿か",
+    "summary": "製造業で応募が来ないとき、求人票の中身、選んだ求人媒体、面接での対応の3つに分けて原因を探すとよいと、採用支援サービスは解説している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業で応募が来ない原因",
+      "url": "https://saiyo-kakaricho.com/wp/manufacture-recruit-problem/",
+      "publisher": "採用係長（ネットオン）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1379",
+    "kind": "success",
+    "title": "採用動画は早期退職を防ぐ目的で",
+    "summary": "動画制作の実績紹介では、大阪の金属加工会社が、応募はあるが入社後のずれや早期退職が課題で採用動画を作った。費用は101万〜300万円、納期1か月。効果は測っていないと明記。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "入社前に見てほしい工場の動画",
+    "source": {
+      "title": "採用動画の制作実績",
+      "url": "https://imitsu.jp/ct-hp-design/pr-osaka/ci-tondabayashi/supplier/460386/service/464729/achievement/26475",
+      "publisher": "アイミツ（制作会社の実績）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-968",
+    "kind": "term",
+    "title": "採用動画の4つの型",
+    "summary": "採用動画には、社員インタビュー、職場見学、仕事の密着、代表のメッセージなどの型がある。製造業では、現場のイメージの悪さを動画で変えることが目的になることが多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "採用動画はどの型から作るか",
+    "source": {
+      "title": "製造業の採用動画成功事例",
+      "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-recruiting-video-tips/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-721",
+    "kind": "buyer",
+    "title": "採用動画の制作会社の比べ方",
+    "summary": "採用動画の制作会社は、どこまで対応するか、費用に見合う効果を示せるか、社内の決裁まで手伝ってくれるかの3点で比べるとよいとされる（制作会社の営業ページ）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "採用動画制作のご案内",
+      "url": "https://pr.mono.ipros.com/contenna/product/detail/2001651915/",
+      "publisher": "コンテナ（イプロス掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1300",
+    "kind": "question",
+    "title": "採用動画の前に準備すること",
+    "summary": "採用動画を作る前に、誰に何を伝えるか、どの場面を撮るか、社員の誰に出てもらうかを決めておくと、撮影がスムーズで中身も伝わりやすいと解説されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "採用動画の構成と準備",
+      "url": "https://atsoho.com/blog/recruitment-video-structure-preparation-guide",
+      "publisher": "アトソーホー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1380",
+    "kind": "success",
+    "title": "不安→判断材料→応募の順で作る",
+    "summary": "製造業向けの採用サイト制作では、求職者が比べる順番（不安→判断材料→応募）に合わせ、職種別ページ、先輩インタビュー、短いフォーム、よくある質問を用意するとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "求職者の不安に先回りして答える",
+    "source": {
+      "title": "製造業の採用サイト制作",
+      "url": "https://pr.mono.ipros.com/contenna/product/detail/2001640233/",
+      "publisher": "コンテナ（イプロス掲載）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1381",
+    "kind": "success",
+    "title": "Googleマップを採用の窓口に",
+    "summary": "Googleビジネスプロフィールを採用に使う解説では、入口や駐車場の情報、職場の雰囲気が分かる写真を載せ、採用向けの第二のホームページとして整えるよう勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "面接に来る人のための道案内",
+    "source": {
+      "title": "採用に効くGoogleビジネスプロフィール",
+      "url": "https://gmotech.jp/semlabo/hr/blog/recruit-gmb/",
+      "publisher": "GMO TECH",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1382",
+    "kind": "success",
+    "title": "求人をプロフィールに投稿する",
+    "summary": "Googleビジネスプロフィールの投稿で募集職種を出して求人ページにつなぐ、道順の案内や動画を載せると、面接の遅刻や当日のキャンセル防止にも役立つとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "採用に効くGoogleビジネスプロフィール",
+      "url": "https://gmotech.jp/semlabo/hr/blog/recruit-gmb/",
+      "publisher": "GMO TECH",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-722",
+    "kind": "buyer",
+    "title": "若手はGoogleマップで会社を見る",
+    "summary": "中小製造業向けの記事では、若い求職者の多くが応募前にGoogleマップで会社を見ていると指摘。口コミの星や返信の仕方から、会社の雰囲気を判断するという。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "Googleマップで見られているもの",
+    "source": {
+      "title": "若手がGoogleマップを見ている理由",
+      "url": "https://note.com/meijihatsumeikai/n/n033931b1dfab",
+      "publisher": "明治発明会（note）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1383",
+    "kind": "success",
+    "title": "悪い口コミには誠実に返す",
+    "summary": "求職者は口コミの返信内容も見ている。悪い口コミには感情的にならず、改善策を示して返信すると、かえって信頼が上がるとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Googleビジネスプロフィールが求人に与える影響",
+      "url": "https://blog.misosil.com/google-business-profile-recruit/",
+      "publisher": "ミソシル",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1384",
+    "kind": "success",
+    "title": "製造業もGoogleマイビジネスを",
+    "summary": "製造業向けの解説では、外観や内装だけでなく社員が写った写真や休憩スペースなど、公式サイトに載りにくい写真をGoogleのプロフィールに載せると安心感につながるとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "休憩室の写真を載せた理由",
+    "source": {
+      "title": "Googleマイビジネス活用方法-製造業向け",
+      "url": "https://www.chirashiya.com/eazy/2021/01/27/mybusinessseizougyo/",
+      "publisher": "チラシ屋ドットコム",
+      "date": "2021-01"
+    }
+  },
+  {
+    "id": "question-1301",
+    "kind": "question",
+    "title": "採用チームもMEOを見るべきか",
+    "summary": "Web制作会社のコラムでは、求職者が会社名で検索したときに地図の情報が最初に出るため、採用担当もGoogleビジネスプロフィールの情報や写真を整えるべきだとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "求人にもMEOは重要？",
+      "url": "https://assist-all.co.jp/column/meo/20240902-3298/",
+      "publisher": "アシストオール",
+      "date": "2024-09"
+    }
+  },
+  {
+    "id": "success-1385",
+    "kind": "success",
+    "title": "ユニフォームの刷新を広報にした",
+    "summary": "PR TIMESのアワードで紹介された静岡の町工場は、ユニフォームの刷新を軸に、工場で働く人のイメージを変えるプレスリリースを出した。審査員は社外の印象と社員の誇りの両方に効くと評価。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "制服を変えた理由を発信する",
+    "source": {
+      "title": "プレスリリースアワード2025",
+      "url": "https://prtimes.com/magazine/award-2025-sugimura-seiko/",
+      "publisher": "PR TIMES MAGAZINE",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "success-1386",
+    "kind": "success",
+    "title": "社会の課題から書いてテレビへ",
+    "summary": "PR TIMESの事例では、町工場発のモバイルクーラーの初めてのリリースを、宣伝色を抑えて職場の熱中症の問題から書いたところ、テレビの経済番組に取り上げられ、量販店の取扱いや商談にもつながった。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "製品より先に困りごとを書く",
+    "source": {
+      "title": "初めてのプレスリリースからテレビに露出",
+      "url": "https://prtimes.co.jp/works/3645/",
+      "publisher": "PR TIMES",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1387",
+    "kind": "success",
+    "title": "取材100件以上につながった書き方",
+    "summary": "プレスリリース配信会社の事例では、読む人の心を動かす書き方を続けた会社が、テレビや雑誌から100件以上取り上げられたという。何が新しいか、誰の役に立つかをはっきり書く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "テレビや雑誌からの取材増の事例",
+      "url": "https://www.atpress.ne.jp/pr-hack/press-release-case-study-sekinoichi",
+      "publisher": "@Press",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1388",
+    "kind": "success",
+    "title": "放送後の注文に備える",
+    "summary": "元テレビ局員の解説では、放送直後に想定の10倍以上の注文が来ることもあるため、注目商品の在庫を確保し、サイトやSNSの受け皿を用意しておくよう勧めている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "テレビ取材を受けるには",
+      "url": "https://mops-pr.net/prkyoukasyo/media-coverage/",
+      "publisher": "MOPS PR",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1389",
+    "kind": "success",
+    "title": "新製品を募るテレビ番組に送る",
+    "summary": "新製品を紹介するコーナーを持つ番組は、送り方を指定していることが多い。元新聞記者は、番組ごとの案内に従い、他と違う切り口をつけて送るよう勧めている。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "テレビに取材してもらうには",
+      "url": "https://ca-news.biz/7149",
+      "publisher": "CA NEWS",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-655",
+    "kind": "pain",
+    "title": "リリースの掲載数だけでは測れない",
+    "summary": "BtoBのプレスリリースは、載った件数だけでは成果が分からない。どの掲載がどの商談につながったかを追えるよう、問い合わせの聞き方や指標を先に決めておく必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "BtoBプレスリリースと商談",
+      "url": "https://kyodonewsprwire.jp/corp/shioj/10346",
+      "publisher": "共同通信PRワイヤー",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-723",
+    "kind": "buyer",
+    "title": "購買担当は問い合わせ前に絞る",
+    "summary": "BtoBの購買担当は、問い合わせる前に候補をある程度絞っている。そのため、業界誌など読む人に届く配信先を選び、載った後に問い合わせできる道を用意しておくことが大事。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "BtoBプレスリリースと商談",
+      "url": "https://kyodonewsprwire.jp/corp/shioj/10346",
+      "publisher": "共同通信PRワイヤー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1390",
+    "kind": "success",
+    "title": "広報は稟議の判断材料をつくる",
+    "summary": "製造業の広報は、比べたり社内で稟議を通したりするときの判断材料を整える活動だとする解説がある。第三者の評価や導入実績を公開すると効くとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "担当者が上司に説明しやすい材料",
+    "source": {
+      "title": "製造業の広報PR",
+      "url": "https://www.shopowner-support.net/attracting_customers/manufacturing/manufacturing-general/publicrelations-marketing/",
+      "publisher": "キャククル（全研本社）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1302",
+    "kind": "question",
+    "title": "プレスリリース配信はいくらか",
+    "summary": "経済誌の記事では、PR TIMESの基本プランは配信1件あたり3万円の従量課金と紹介され、配信後の分析機能もある。料金は掲載時点のものなので最新は公式で確かめる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PR TIMESの紹介記事",
+      "url": "https://toyokeizai.net/articles/-/631824",
+      "publisher": "東洋経済オンライン",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-778",
+    "kind": "trend",
+    "official": true,
+    "title": "PR TIMESは月約9,000万PV",
+    "summary": "郡山市のセミナー資料では、PR TIMESはサイト閲覧数が月約9,000万PV、提携メディア260媒体と紹介されている。中小企業向けに配信の使い方を教える自治体のセミナーもある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "郡山市のセミナー資料",
+      "url": "https://www.city.koriyama.lg.jp/uploaded/attachment/108636.pdf",
+      "publisher": "郡山市",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1391",
+    "kind": "success",
+    "title": "BtoBは導入実績や共同実証で出す",
+    "summary": "BtoBのプレスリリース事例10選では、取引先での成果の紹介、共同の実証実験、企業同士の提携などがネタになっている。新製品がなくても出せる話題はある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "新製品がなくても出せるお知らせ",
+    "source": {
+      "title": "BtoBのプレスリリース事例10選",
+      "url": "https://prtimes.jp/magazine/b2b-press-release-case-study/",
+      "publisher": "PR TIMES MAGAZINE",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-779",
+    "kind": "trend",
+    "official": false,
+    "title": "町工場の新商品をギフトショーで",
+    "summary": "全国の24の町工場が作った新商品をギフトショーで一斉に見せる取り組みがプレスリリースで告知された。BtoBの町工場が自社製品で一般向けに出る流れ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "24の町工場発・新商品をギフトショーで",
+      "url": "https://prtimes.jp/main/html/rd/p/000000007.000107581.html",
+      "publisher": "町工場プロダクツ（PR TIMES）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-780",
+    "kind": "trend",
+    "official": false,
+    "title": "BtoBからBtoCへの連続セミナー",
+    "summary": "ものづくり企業を支援する団体が、BtoBの町工場がなぜBtoCに挑戦したかを話す連続セミナーを開くとプレスリリースで告知した。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくり企業を支援する連続セミナー",
+      "url": "https://prtimes.jp/main/html/rd/p/000000012.000107581.html",
+      "publisher": "町工場プロダクツ（PR TIMES）",
+      "date": "2025-08"
+    }
+  },
+  {
+    "id": "trend-781",
+    "kind": "trend",
+    "official": false,
+    "title": "町工場見本市で技術を一堂に",
+    "summary": "東京の城東地区を中心に町工場の製品と技術を集めた見本市が2026年2月に第12回を開き、後継者の登壇も予定された。展示の前後にリリースで告知する例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "第12回 町工場見本市",
+      "url": "https://prtimes.jp/main/html/rd/p/000002030.000022608.html",
+      "publisher": "産経新聞社（PR TIMES）",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "success-1392",
+    "kind": "success",
+    "title": "改善を続けて新規開拓をWebに任せる",
+    "summary": "制作会社の成果事例は、作って終わりにせず改善をくり返し、新しい取引先探しをWebで行うようにした製造業の例として紹介している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "作った後の改善、何を月に一度見る？",
+    "source": {
+      "title": "改善を繰り返し新規顧客開拓はWEBを利用",
+      "url": "https://www.aily-lab.co.jp/result/r011/",
+      "publisher": "アイリーラボ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1393",
+    "kind": "success",
+    "title": "働く人を載せたら取材依頼が来た",
+    "summary": "工業用ゴム製品の会社が、従業員の働く姿を写真で入れてサイトを作り直した。現場の様子が伝わるようになり、取材の依頼も多く来たとCMS会社が紹介。",
+    "industries": [
+      "ゴム"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちの工場の一日、写真で見せます",
+    "source": {
+      "title": "多数の取材依頼も。らしさが伝わる印象の良いサイトに！",
+      "url": "https://bluemonkey.jp/media/cases/fukoku/",
+      "publisher": "クラウドサーカス（BlueMonkey）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1394",
+    "kind": "success",
+    "title": "10年続けてWeb集客の仕組みに",
+    "summary": "粉体を砕く装置のメーカーは、約10年同じCMSを使い続け、少しずつWebで見込み客を集める体制を育てた。問い合わせも増えたとCMS会社が紹介。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "10年分の記事が営業になるまで",
+    "source": {
+      "title": "BlueMonkey活用歴10年！継続的な活動でデジタルマーケの仕組みを構築",
+      "url": "https://bluemonkey.jp/media/cases/aimex/",
+      "publisher": "クラウドサーカス（BlueMonkey）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1395",
+    "kind": "success",
+    "title": "自社ですぐ更新できるサイトに",
+    "summary": "CMS会社の導入事例では、客の求めにすばやく応えられるよう、自社で手早く更新できるサイトにしたことを成果として挙げている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "articleIdea": "新しい設備を入れた週に記事を出す",
+    "source": {
+      "title": "CMS BlueMonkeyの導入でお客様の期待に応える機動性の高いサイトを実現！",
+      "url": "https://bluemonkey.jp/media/cases/meihan/",
+      "publisher": "クラウドサーカス（BlueMonkey）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1396",
+    "kind": "success",
+    "title": "プレス機械メーカーは運用と広告を併用",
+    "summary": "名古屋の制作会社は、プレス機械の設計・製造・保守をする会社のサイトで、運用・アクセス解析・検索広告をまとめて引き受けている事例を公開している。",
+    "industries": [
+      "産業機械"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "機械の保守のことを先に書いておく",
+    "source": {
+      "title": "製造業ホームページ成功事例｜愛知・名古屋のホームページ制作運用会社",
+      "url": "https://netcom-net.com/manufacturing/",
+      "publisher": "NET.COM（ネットコム）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-656",
+    "kind": "pain",
+    "title": "作って終わりのサイトは成果が出ない",
+    "summary": "同じ制作会社は、製造業のサイトは作って終わりでなく、広告・SEO・解析・ページの手直しを続けるかで成果が変わると説明している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業ホームページ成功事例｜愛知・名古屋のホームページ制作運用会社",
+      "url": "https://netcom-net.com/manufacturing/",
+      "publisher": "NET.COM（ネットコム）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-657",
+    "kind": "pain",
+    "title": "古い会社サイトのまま取り残される",
+    "summary": "名古屋の制作会社のコラムは、愛知の製造業こそ技術が伝わる「強いホームページ」が要るとし、経営者が今リニューアルを考えるべき理由を説く。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "愛知の製造業にこそ必要な「強いホームページ」とは？",
+      "url": "https://www.spd-inc.jp/column/for_manufactures/",
+      "publisher": "SPD",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-724",
+    "kind": "buyer",
+    "title": "熱処理の制作実績がある会社を探す",
+    "summary": "群馬の制作会社は制作事例の一覧に熱処理加工の会社の案件を載せ、電話・メール・Zoomの無料相談を用意している。同業の実績があるか先に確かめるとよい。",
+    "industries": [
+      "熱処理"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ホームページ制作事例｜群馬県太田市のホームページ制作会社",
+      "url": "https://www.d-ic.com/works",
+      "publisher": "ディーアイシー",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-725",
+    "kind": "buyer",
+    "title": "制作会社はSEO実績と声で選ぶ",
+    "summary": "製造業向けをうたう制作会社は、デザイン事例・SEO対策の実績・お客様の声を並べて見せている。選ぶ側はこの3つがそろっているかを見るとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業向けおすすめホームページ制作会社",
+      "url": "https://to-realize.jp/hp/industry/manufacturing/",
+      "publisher": "リアライズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1397",
+    "kind": "success",
+    "title": "数百点の製品を探しやすくして相談倍増",
+    "summary": "制作会社の実績によると、自動車整備用の機器を作る会社が数百点の製品ページを持つサイトを、探しやすさとデザインに絞って作り直し、問い合わせが倍に（制作会社の発表）。",
+    "industries": [
+      "自動車部品",
+      "産業機械"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "品番が多い会社の製品の探し方ガイド",
+    "source": {
+      "title": "お問い合わせが倍増、数百点の製品ページを掲載するコーポレートサイトのリニューアル",
+      "url": "https://digital.toppan-colorer.co.jp/works/corporatesite-renewal20260605",
+      "publisher": "TOPPANコレール",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "pain-658",
+    "kind": "pain",
+    "title": "製品が多すぎて目当てにたどり着けない",
+    "summary": "同じ事例の出発点は、製品が数百点あり、見に来た人が欲しい製品を探しにくいことだった。品数の多い会社ほど、絞り込みや分類が問い合わせを左右する。",
+    "industries": [
+      "自動車部品",
+      "産業機械"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "お問い合わせが倍増、数百点の製品ページを掲載するコーポレートサイトのリニューアル",
+      "url": "https://digital.toppan-colorer.co.jp/works/corporatesite-renewal20260605",
+      "publisher": "TOPPANコレール",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "buyer-726",
+    "kind": "buyer",
+    "title": "自動車関連は分野別の実績で探す",
+    "summary": "ある制作会社は自動車関連のホームページ制作事例を分野ごとにまとめて公開している。自動車部品の会社は、同じ分野の実績がある制作会社から当たると話が早い。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ホームページ制作事例（自動車関連）",
+      "url": "https://www.tratto-brain.jp/works/genre_car.html",
+      "publisher": "トラットブレイン",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1398",
+    "kind": "success",
+    "title": "バイク部品メーカーがECとメディアを連携",
+    "summary": "制作会社の比較サイトに載った事例では、バイク部品メーカーがECサイトを全面的に作り直し、記事メディアと連携させて売る仕組みにした。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "部品の付け方記事から通販へつなぐ",
+    "source": {
+      "title": "バイクパーツメーカーにおけるECサイトの全面リニューアルおよびメディア連携",
+      "url": "https://web-kanji.com/works/3279",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-727",
+    "kind": "buyer",
+    "title": "採用サイトの実績一覧で制作会社を絞る",
+    "summary": "制作会社の比較サイトは、採用サイトの制作実績だけを集めた一覧を用意している。求人に悩む工場は、採用サイトの実績がある会社から探せる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "採用サイトの制作実績一覧",
+      "url": "https://web-kanji.com/works/search/employment-site",
+      "publisher": "Web幹事",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-782",
+    "kind": "trend",
+    "official": false,
+    "title": "EV化で売上に不安な部品会社が6割超",
+    "summary": "製造業専門の支援会社の調査では、EV化で売上に不安を「感じる」自動車部品の会社が6割超。そのうち新しい市場を開くことを打開策と考える会社は58.6%だった。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "EVで減る部品、うちの技術はどこで使える？",
+    "source": {
+      "title": "自動車部品サプライヤーが生き残るための異業種開拓手法",
+      "url": "https://marketing.techport.co.jp/archives/39008/",
+      "publisher": "テクノポート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1399",
+    "kind": "success",
+    "title": "技術解説と事例で異業種から大型量産",
+    "summary": "支援会社の事例集では、プレス金型の会社が技術解説と加工事例を載せてサイトを刷新し、業種を問わず引き合いを得て、1年足らずで大型の量産案件を受けた（支援会社の発表）。",
+    "industries": [
+      "金型",
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自動車以外の業界でうちのプレス技術は使える？",
+    "source": {
+      "title": "製造業の新規市場開拓・異業種参入の手法｜成功事例9社紹介",
+      "url": "https://marketing.techport.co.jp/archives/31610/",
+      "publisher": "テクノポート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1400",
+    "kind": "success",
+    "title": "特定業界頼みから抜けて有効相談2倍",
+    "summary": "支援会社によると、精密板金の会社が特定の業界に頼る状態から抜けるため、製作事例と技術コラムを足し続けた。有効な問い合わせが2倍になり、利益率も上がった。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "板金で、いままでと違う業界の仕事を受けた話",
+    "source": {
+      "title": "有効な問い合わせが2倍、利益率向上、新業界開拓、さらに仕事の内容まで変化",
+      "url": "https://marketing.techport.co.jp/case/watanabe-kg/",
+      "publisher": "テクノポート",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-783",
+    "kind": "trend",
+    "official": false,
+    "title": "海外向けにもAI検索対策のサービス",
+    "summary": "製造業専門の支援会社が、海外SEOとAI検索対策をまとめたサービスを出している。英語サイトもAIに引用されることを意識する流れが出てきた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業専門の海外SEO&AI検索対策サービス",
+      "url": "https://techport.co.jp/service/overseas-seo-consulting",
+      "publisher": "テクノポート",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-659",
+    "kind": "pain",
+    "title": "英語サイトを作っても引き合いが続かない",
+    "summary": "支援会社は、英語サイトで長く引き合いを得るには作る時の構成に注意点があると解説する。日本語サイトを訳しただけでは続かないことが多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "海外の買い手は英語サイトで何を探す？",
+    "source": {
+      "title": "英語サイト制作時の5つの注意点",
+      "url": "https://marketing.techport.co.jp/archives/13561/",
+      "publisher": "テクノポート",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-728",
+    "kind": "buyer",
+    "title": "業界ポータルの運営会社もサイトを作る",
+    "summary": "町工場向けの受発注ポータルを運営する会社が、製造業専門のホームページ制作も行い、熱処理などの業種の会社サイトを事例に載せている。",
+    "industries": [
+      "熱処理",
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業専門ホームページ制作",
+      "url": "https://service.nc-net.com/pr/website/",
+      "publisher": "NCネットワーク",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1401",
+    "kind": "success",
+    "title": "鋳造会社はトップに動画で現場を見せる",
+    "summary": "同じ会社の制作実績には、鋳鉄・砂型・ダイカスト鋳造と熱処理・機械加工を行う従業員100人ほどの会社の12ページのサイトがあり、トップに動画を置いている。",
+    "industries": [
+      "鋳造",
+      "熱処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "溶けた鉄が形になるまでを動画で",
+    "source": {
+      "title": "ホームページ制作実績",
+      "url": "https://service.nc-net.com/pr/website/works/",
+      "publisher": "NCネットワーク",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1402",
+    "kind": "success",
+    "title": "リニューアルで相談2倍、次は広告へ",
+    "summary": "制作会社のお客様事例では、サイトを作り直したあと問い合わせが前の約2倍になり、売上も伸びたため、広告やSEOにも挑戦し始めたという（制作会社の紹介）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ホームページリニューアルでお問合せが倍増｜お客様成功事例",
+      "url": "https://www.w-stage.jp/success/?id=1655200648-046124",
+      "publisher": "Webステージ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1403",
+    "kind": "success",
+    "title": "3か月で問い合わせ3倍と制作会社",
+    "summary": "発注先の比較サイトに載る制作会社は、作ったサイトで3か月で問い合わせを3倍にした実績と、アクセスはあるのに問い合わせにならないサイトの改善例を挙げている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "SEO対策もバッチリ（制作会社紹介ページ）",
+      "url": "https://www.biz.ne.jp/company/lsmanagement/",
+      "publisher": "比較ビズ（TENSEN）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-660",
+    "kind": "pain",
+    "title": "技術はあるのにWebで引き合いがない",
+    "summary": "金属加工業のWeb集客の解説では、「技術力には自信があるのに、Webからの引き合いが増えない」という悩みが多いとし、狙う客と強みの整理から始めるよう勧める。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "技術はあるのにWebで選ばれない理由",
+    "source": {
+      "title": "金属加工業の集客",
+      "url": "https://www.shopowner-support.net/attracting_customers/manufacturing/metal-processing/",
+      "publisher": "ショップオーナーサポート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1404",
+    "kind": "success",
+    "title": "フォームへ迷わず行ける道を作る",
+    "summary": "BtoBサイトの事例をまとめた制作会社は、問い合わせフォームを必ず置き、どのページからも迷わずたどり着ける導線が要ると説明している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "BtoB企業のホームページ制作｜参考事例21選！",
+      "url": "https://docodoor.co.jp/staffblog/btob0624/",
+      "publisher": "ドコドア",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1405",
+    "kind": "success",
+    "title": "製品説明は読む人の知識に合わせる",
+    "summary": "同じ制作会社は、製品の説明で見込み客の知っている程度に合わせる工夫を勧める。詳しい技術者と初めての担当者で、入口の言葉を分けるとよい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "はじめての人向け・詳しい人向けの説明",
+    "source": {
+      "title": "BtoB企業のホームページ制作｜参考事例21選！",
+      "url": "https://docodoor.co.jp/staffblog/btob0624/",
+      "publisher": "ドコドア",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1406",
+    "kind": "success",
+    "title": "デザイン変更だけで問い合わせ急増",
+    "summary": "デザイン会社のブログは、小さな会社がサイトのデザインを見直したことで問い合わせが急に増えた話を紹介。見た目の古さが信頼を下げていることがある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "小さな会社の成功事例！デザイン変更で問い合わせが急増した話",
+      "url": "https://blog.marzd.com/sme-design-renewal-success-case/",
+      "publisher": "MARZ DESIGN",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1407",
+    "kind": "success",
+    "title": "輸出企業の英語サイト事例を公開",
+    "summary": "ある制作会社は、輸出をしている企業の英語ホームページ制作事例をまとめて載せている。英語サイトを頼むなら、輸出企業の実績があるかを見る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "輸出企業の英語ホームページ制作事例掲載",
+      "url": "https://tifmo.co.jp/export-englishwebsite/",
+      "publisher": "ティフモ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1408",
+    "kind": "success",
+    "title": "中国語・タイ語版で東南アジアから引き合い",
+    "summary": "製造業向けマーケ記事によると、ねじ関連の工機の会社が英語版に加えて中国語版・タイ語版を作り、東南アジアからの引き合いが増えた（記事の紹介）。",
+    "industries": [
+      "ねじ・締結部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "タイの工場から問い合わせが来た理由",
+    "source": {
+      "title": "製造業が海外Webマーケティングをするメリットは？実践のコツや事例も解説",
+      "url": "https://mkt.engineer-education.com/engineer-global-web-marketing/",
+      "publisher": "製造業専門コンテンツマーケティングPRO",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1409",
+    "kind": "success",
+    "title": "展示会の後に多言語サイトで大口取引",
+    "summary": "同じ記事では、センサのメーカーが展示会出展をきっかけに外国語対応のサイトへ切り替え、中国の電子機器受託会社から引き合いを得て大きな取引になった。",
+    "industries": [
+      "精密機器",
+      "基板実装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "展示会で会った海外客が次に見るページ",
+    "source": {
+      "title": "製造業が海外Webマーケティングをするメリットは？実践のコツや事例も解説",
+      "url": "https://mkt.engineer-education.com/engineer-global-web-marketing/",
+      "publisher": "製造業専門コンテンツマーケティングPRO",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1410",
+    "kind": "success",
+    "title": "英語版のSEO改修で海外相談が急増",
+    "summary": "同じ記事は、洋食器のメーカーが英語版サイトのSEOと改修を行い、海外からの問い合わせが急に増えて新しい取引先を得た例も紹介している。",
+    "industries": [
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業が海外Webマーケティングをするメリットは？実践のコツや事例も解説",
+      "url": "https://mkt.engineer-education.com/engineer-global-web-marketing/",
+      "publisher": "製造業専門コンテンツマーケティングPRO",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1411",
+    "kind": "success",
+    "title": "ねじ商社が卸向けEC、24時間在庫確認",
+    "summary": "ねじの専門商社が、ねじ卸業者向けのBtoB通販サイトを開き、在庫や価格をいつでも確かめられるようにした。電話での確認の手間を減らす狙い。",
+    "industries": [
+      "ねじ・締結部品"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "在庫と価格をネットで見せる理由",
+    "source": {
+      "title": "ねじ専門商社、ねじ卸業者向けのBtoB-ECサイト「ねじネット」を開設",
+      "url": "https://netshop.impress.co.jp/node/10505",
+      "publisher": "ネットショップ担当者フォーラム",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1412",
+    "kind": "success",
+    "title": "特注ねじは測定から相談できると示す",
+    "summary": "ねじ通販の会社は特注ねじの事例ページで、現物の測定や図面の確認から相談を始められる流れと、フォームから相談が来た経緯を載せている。",
+    "industries": [
+      "ねじ・締結部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "図面がないねじ、現物から作れる？",
+    "source": {
+      "title": "事例紹介(特殊ねじオーダー)",
+      "url": "https://www.kurukuruwave.co.jp/case_study.php",
+      "publisher": "ねじ通販会社の事例ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1413",
+    "kind": "success",
+    "title": "ねじの提案を開発ストーリーで見せる",
+    "summary": "ねじメーカーが、コストダウンやVA/VE提案、特殊ねじの開発事例を「ねじ開発ストーリー」として一覧にしている。困りごとから答えまでを物語で見せる型。",
+    "industries": [
+      "ねじ・締結部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "このねじ、部品点数を減らせました",
+    "source": {
+      "title": "提案事例 ～ねじ開発ストーリー～",
+      "url": "https://www.asahi-oshineji.co.jp/case/",
+      "publisher": "ねじメーカーの事例ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1303",
+    "kind": "question",
+    "title": "市販にない寸法のボルトは頼める？",
+    "summary": "ねじの販売会社は特殊サイズのボルトの製作例を載せ、フォーム・電話・メールで受けている。答えには作れる寸法の例と、頼むとき伝える項目を入れる。",
+    "industries": [
+      "ねじ・締結部品"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "articleIdea": "特殊サイズのボルト、何を伝えれば作れる？",
+    "source": {
+      "title": "ねじ製作、追加工を承ります",
+      "url": "https://www.ymzcorp.co.jp/ym12/neji_seisaku.html",
+      "publisher": "ねじ販売会社の製作案内",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1414",
+    "kind": "success",
+    "title": "熱処理事例を炉と目的で絞り込める",
+    "summary": "熱処理の技術サイトは、炉の種類と目的で加工事例を絞り込めるページを置いている。発注者は自分の目的に近い事例をすぐ見つけられる。",
+    "industries": [
+      "熱処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "焼入れ・焼戻し、目的別の事例集",
+    "source": {
+      "title": "熱処理 開発・加工事例",
+      "url": "https://heat-treatment-navi.com/case/",
+      "publisher": "熱処理の技術サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1415",
+    "kind": "success",
+    "title": "お困りごとと解決策を対で載せる",
+    "summary": "熱処理の会社は事例集で「お客様のお困りごと」と「解決施策」を対にして示している。読む人が自分の悩みと重ねやすい書き方。",
+    "industries": [
+      "熱処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "歪みが出て困っていた部品の熱処理",
+    "source": {
+      "title": "事例集",
+      "url": "https://www.west-hill.co.jp/case/",
+      "publisher": "熱処理会社の事例ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1416",
+    "kind": "success",
+    "title": "熱処理の相談フォームに図面を添付",
+    "summary": "熱処理の会社は「お客様の声」ページを持ち、電話・FAX・フォームを並べ、フォームにファイルを添付できるようにしている。図面を送れると相談が早い。",
+    "industries": [
+      "熱処理"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "お客様の声",
+      "url": "https://www.okanetu.co.jp/voice/",
+      "publisher": "熱処理会社の公式サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1417",
+    "kind": "success",
+    "title": "炉の更新事例を業界別に紹介",
+    "summary": "熱処理炉のメーカーは、鉄鋼業界向けに用途に合わせて熱処理炉を更新した事例を紹介している。設備の買い手は同じ業界の更新例を探す。",
+    "industries": [
+      "熱処理",
+      "産業機械"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "熱処理炉メーカーの公式サイト（イプロス掲載）",
+      "url": "https://pr.mono.ipros.com/narita-mfg/product/detail/2001513542/",
+      "publisher": "イプロス掲載の炉メーカー",
+      "date": null
+    }
+  },
+  {
+    "id": "term-969",
+    "kind": "term",
+    "title": "SUS304は海外で通じないことも",
+    "summary": "海外の熱処理業者との打ち合わせ経験談では、日本の材質記号（SUS・SCMなど）は通じにくく、AISIなどの相当材で言い換える必要があったという。",
+    "industries": [
+      "熱処理",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "英語サイトで材質をどう書く？",
+    "source": {
+      "title": "熱処理と材料の英語｜「SUS304」は海外で通じません",
+      "url": "https://businessenglish.hateblo.jp/entry/heat-treatment-english",
+      "publisher": "ENGLISH CAFE",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1418",
+    "kind": "success",
+    "title": "熱処理用語の日英中韓対照表を公開",
+    "summary": "金属材料の会社は、焼入れや焼なましなど熱処理の専門用語を日・英・中・韓で対照した表を自社メディアで公開。海外の客にも読まれる記事になる。",
+    "industries": [
+      "熱処理"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "熱処理の言葉、英語・中国語で何と言う？",
+    "source": {
+      "title": "金属材料の専門用語 ー熱処理編ー",
+      "url": "https://www.tokkin.co.jp/media/technicalcolumn/2312140",
+      "publisher": "特殊金属エクセル（TOKKIN）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1419",
+    "kind": "success",
+    "title": "鋳造のナビサイトで技術コラム",
+    "summary": "ロストワックス鋳造の会社は専門のナビサイトを作り、焼もどし・焼なまし・固溶化処理など鋳物の熱処理をやさしく解説するコラムを載せている。",
+    "industries": [
+      "鋳造",
+      "熱処理"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "ロストワックス品の熱処理、何を選ぶ？",
+    "source": {
+      "title": "ロストワックスの熱処理 - ロストワックス鋳造.com",
+      "url": "https://www.taiyoparts.co.jp/lostwax-navi/column/420.html",
+      "publisher": "ロストワックス鋳造.com",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-784",
+    "kind": "trend",
+    "official": false,
+    "title": "鉄鋼大手もサイトを方針で作り直す",
+    "summary": "特殊鋼・鍛造品の大手メーカーは2022年11月に公式サイトを刷新し、「サステナブル」を軸に全体の方針を打ち出したと発表した。",
+    "industries": [
+      "鍛造",
+      "鋳造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ニュースリリース（PDF）",
+      "url": "https://www.aichi-steel.co.jp/news/mt-assets/docs/046d9005b0f3a9e1325263ca068b0a5cbee48ed0.pdf",
+      "publisher": "愛知製鋼",
+      "date": "2022-11"
+    }
+  },
+  {
+    "id": "success-1420",
+    "kind": "success",
+    "title": "放電・研削の会社が加工事例ページ",
+    "summary": "ワイヤー放電・形彫り放電・ブローチ再研磨を得意とする会社が、加工事例のページと問い合わせ窓口を並べている。事例の写真が強みの証拠になる。",
+    "industries": [
+      "放電加工",
+      "研削"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "ブローチの再研磨、どこまで直せる？",
+    "source": {
+      "title": "加工事例｜ブローチ研削工業所",
+      "url": "https://bkk-hamamatsu.co.jp/example",
+      "publisher": "放電・研削会社の事例ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1421",
+    "kind": "success",
+    "title": "放電加工の事例を「7選」記事に",
+    "summary": "放電加工の会社が、金型の修理・難削材・量産対応などの加工事例を7つ選んで1本の記事にまとめている（2026年4月）。事例を用途で並べると探されやすい。",
+    "industries": [
+      "放電加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "放電加工で直した金型の事例7つ",
+    "source": {
+      "title": "放電加工の加工事例7選｜金型修復・難削材・量産対応",
+      "url": "https://gapedm.com/2026/04/01/edm-case-studies/",
+      "publisher": "放電加工会社のブログ",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "buyer-729",
+    "kind": "buyer",
+    "title": "ギヤメーカーの信頼は実績で測る",
+    "summary": "歯車の専門メディアは、取引実績などの情報からギヤメーカーの信頼性をはかる方法を解説している。メーカー側は納入先の業界や件数を載せると選ばれやすい。",
+    "industries": [
+      "歯車"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "articleIdea": "歯車メーカーを実績で選ぶときの見方",
+    "source": {
+      "title": "実績その他の情報からギヤメーカーの信頼性をはかる方法",
+      "url": "https://www.hagurumagazine.com/gearmaker-point/achievement.html",
+      "publisher": "Hagurumagazine",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-730",
+    "kind": "buyer",
+    "title": "歯車は用途別のメーカー一覧で探す",
+    "summary": "同じメディアは、自動車・オートバイ向けなど用途別に歯車メーカーを紹介し、その分野で使うギヤの種類と役割も説明している。用途別の解説は探す人の入口になる。",
+    "industries": [
+      "歯車",
+      "自動車部品"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "articleIdea": "自動車向けの歯車、種類と役割",
+    "source": {
+      "title": "自動車・オートバイで使われる歯車を製造・加工するメーカーを紹介",
+      "url": "https://www.hagurumagazine.com/by-industry/automobile.html",
+      "publisher": "Hagurumagazine",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1422",
+    "kind": "success",
+    "title": "歯車の事例を日付つきで積み上げる",
+    "summary": "歯車の専門メーカーは、昭和27年からの歯車専業を打ち出し、製作事例を日付つきの一覧で載せ続けている。更新が続くこと自体が動いている会社の証拠になる。",
+    "industries": [
+      "歯車"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "歯車（ギヤ）の加工・製造メーカー",
+      "url": "https://www.toyo-gear.com/",
+      "publisher": "歯車メーカーの公式サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1423",
+    "kind": "success",
+    "title": "「他社に断られた」を先に書く",
+    "summary": "パイプ曲げの会社は「既製品にないサイズがほしい」「他の会社に断られた」など客の悩みを並べてから相談を促している。悩みの言葉は検索されやすい。",
+    "industries": [
+      "パイプ加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "他社に断られたパイプ曲げ、相談できる？",
+    "source": {
+      "title": "パイプ曲げならどんなことでもご相談ください",
+      "url": "https://horiuchipipe.com/",
+      "publisher": "パイプ加工会社の公式サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "question-1304",
+    "kind": "question",
+    "title": "パイプの見積もりや技術相談はどうする？",
+    "summary": "パイプ加工を扱う家具部品メーカーは、パイプの曲げ・切断・穴あけの説明とあわせ、見積もりや技術的な相談の仕方をFAQで答えている。",
+    "industries": [
+      "パイプ加工"
+    ],
+    "useFor": [
+      "question_example"
+    ],
+    "articleIdea": "パイプ加工の見積もりに要るもの",
+    "source": {
+      "title": "金属パイプ加工（曲げ／切断／穴あけ）",
+      "url": "https://www.takano-net.co.jp/portal/field/chair/technicalterm2/",
+      "publisher": "家具部品メーカーの技術用語ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1424",
+    "kind": "success",
+    "title": "設備名で「硬く太い材も曲がる」と示す",
+    "summary": "パイプ加工の会社は、使っている曲げ機を名前で示し、ステンレスなど硬い材や太い材でも曲げられると説明している。できる範囲を設備で裏づける。",
+    "industries": [
+      "パイプ加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "太いステンレスパイプも曲げられる理由",
+    "source": {
+      "title": "パイプ加工技術",
+      "url": "https://hasetec.net/pipe",
+      "publisher": "パイプ加工会社の公式サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1425",
+    "kind": "success",
+    "title": "ガラス加工会社が相談事例を一覧に",
+    "summary": "ガラス加工の会社は「お問い合わせ事例」の一覧で過去の相談をまとめ、自社工場で小ロット・短納期に対応できると示し、電話とフォームへつないでいる。",
+    "industries": [
+      "ガラス・セラミック"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "こんなガラス加工の相談が来ています",
+    "source": {
+      "title": "ガラス加工はお任せください",
+      "url": "https://annaka-tg.com/",
+      "publisher": "ガラス加工会社の公式サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1426",
+    "kind": "success",
+    "title": "ガラス・セラミックの事例を材質別に",
+    "summary": "精密部品の会社は、ガラスやセラミックスの種類ごとに特性をまとめ、材質別に加工事例を分けて見積もり依頼へつないでいる。材質名で探す人に届く。",
+    "industries": [
+      "ガラス・セラミック"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "石英・アルミナ・ジルコニア、加工の違い",
+    "source": {
+      "title": "ガラス/セラミックスの精密部品加工事例",
+      "url": "https://sol.pluseng.co.jp/cate1-5/",
+      "publisher": "精密部品加工会社の事例ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1427",
+    "kind": "success",
+    "title": "セラミック加工会社は事例と設備を分ける",
+    "summary": "セラミック加工の会社は、製品紹介・設備紹介・加工事例・会社概要・採用を分けたメニューにし、「セラミックのご相談をお待ちしております」と誘っている。",
+    "industries": [
+      "ガラス・セラミック"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "株式会社 セラミック加工技研",
+      "url": "https://www.ckg-ltd.com/index.html",
+      "publisher": "セラミック加工会社の公式サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1428",
+    "kind": "success",
+    "title": "航空機の事例をキーワードで絞り込む",
+    "summary": "加工・組立の会社は、航空機分野の事例を業界やキーワードで絞り込めるようにし、「海外出荷」もキーワードに入れている。海外の買い手にも見せやすい。",
+    "industries": [
+      "航空宇宙"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "航空機部品の加工事例と海外出荷",
+    "source": {
+      "title": "航空機",
+      "url": "https://www.daiwa-seiko.jp/works/?works-industry=aircraft",
+      "publisher": "加工会社の事例ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1429",
+    "kind": "success",
+    "title": "難削材と航空出荷実績を材質別に",
+    "summary": "切削の会社は、チタンやインコネルなどの難削材加工と、航空機・宇宙向けの出荷実績を、材質と形状ごとの事例一覧で見せている。",
+    "industries": [
+      "航空宇宙",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "インコネルの航空部品、削るときの工夫",
+    "source": {
+      "title": "航空機部品 の切削加工事例",
+      "url": "https://www.marutaka-ss.com/industry_cat/aircraft/",
+      "publisher": "切削会社の事例ページ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1430",
+    "kind": "success",
+    "title": "ロケットまで含めた航空宇宙ページ",
+    "summary": "部品加工の会社は航空宇宙関連事業のページを設け、航空機やロケット向けの加工技術と製品事例をまとめている。分野ごとのページは英語化もしやすい。",
+    "industries": [
+      "航空宇宙"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "航空宇宙関連事業",
+      "url": "https://enomotoweb.com/aerospace/",
+      "publisher": "部品加工会社の公式サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1431",
+    "kind": "success",
+    "title": "自動車以外の比率を2〜3割へ",
+    "summary": "自動車向けの部品が減る中、群馬の部品加工会社は自動車以外の仕事を開拓し、EVバッテリーケースの試作も受けた。情報発信も強めている（事務機メーカーの取材）。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "自動車以外の仕事を増やすために始めたこと",
+    "source": {
+      "title": "技術力生かし、自動車関連に加え新規需要を開拓",
+      "url": "https://www.ricoh.co.jp/magazines/smb/casestudy/002961/",
+      "publisher": "リコー",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1432",
+    "kind": "success",
+    "title": "会社案内を作り直し半年で見込客10社",
+    "summary": "営業支援の団体の事例では、社員150人ほどの自動車部品メーカーが新規向けの会社案内資料を使い、始めて6か月で10社の見込み客を開いた（団体の発表）。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "初めての会社に渡す資料とWebをそろえる",
+    "source": {
+      "title": "自動車部品製造業における営業力強化事例",
+      "url": "https://sales-up.jp/kashikajirei/kashika01.pdf",
+      "publisher": "売上UP研究会",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-785",
+    "kind": "trend",
+    "official": true,
+    "title": "部品工業会が事業転換の事例集",
+    "summary": "日本自動車部品工業会は、カーボンニュートラルに向けた新事業づくり・事業転換の事例集を公開している。脱自動車を考える会社の参考になる。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "事業転換の事例から学ぶ次の一手",
+    "source": {
+      "title": "CN 新事業創出・事業転換事例集（PDF）",
+      "url": "https://www.japia.or.jp/files/user/japia/gyoumu/CN/24CNshinjigyousoushutsujigyoutenkanjireishu.pdf",
+      "publisher": "日本自動車部品工業会（JAPIA）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-786",
+    "kind": "trend",
+    "official": false,
+    "title": "部品メーカー各社が技術を新規事業に",
+    "summary": "自動車部品メーカー各社が、自社の製品や技術を応用した新しい事業に乗り出していると業界の情報ページが伝えている。",
+    "industries": [
+      "自動車部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "自動車部品メーカー各社 新規事業、自社の製品や技術を応用",
+      "url": "https://www.aba-j.or.jp/info/industry/19802/",
+      "publisher": "aba-j.or.jp 業界情報",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-661",
+    "kind": "pain",
+    "title": "EMSに意図が伝わらない",
+    "summary": "設計ツール会社の技術コラムは、発注側の意図がEMSメーカーに「伝わらない」コミュニケーションの事例を扱う。受ける側は確認項目を先に示すと安心される。",
+    "industries": [
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "基板実装を頼むとき伝わらないこと",
+    "source": {
+      "title": "第3話 「伝わらない」EMSメーカとのコミュニケーション事例",
+      "url": "https://club-z.zuken.co.jp/tech-column/20190326_js_003.html",
+      "publisher": "図研",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "success-1433",
+    "kind": "success",
+    "title": "EMSの事例を課題→対応→効果で",
+    "summary": "基板の設計から実装・組立まで受ける会社は、事例を業務別に「課題→対応→効果」の形で見せ、実装工程を見越した設計を強みにしている。",
+    "industries": [
+      "基板実装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "実装しやすい基板設計で何が変わる？",
+    "source": {
+      "title": "設計から実装・組配までワンストップで対応可能！「EMSサービス」",
+      "url": "https://www.kei-all.co.jp/blog/post-5748/",
+      "publisher": "EMS会社のブログ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-1434",
+    "kind": "success",
+    "title": "手はんだの困りごとで問い合わせ",
+    "summary": "基板実装サービスの掲載では、手はんだ付けで困っている企業からの問い合わせが多いと書かれている。具体的な困りごとを示すと相談の呼び水になる。",
+    "industries": [
+      "基板実装"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "手はんだ付けを外に頼みたいとき",
+    "source": {
+      "title": "プリント基板実装サービス - メーカー・企業の業務用製品ランキング",
+      "url": "https://mono.ipros.com/cg2/%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%E5%9F%BA%E6%9D%BF%E5%AE%9F%E8%A3%85%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-731",
+    "kind": "buyer",
+    "title": "EMSは対応部品と検査で比べる",
+    "summary": "大手EMSは大型基板、0402・0603の極小チップ、多ピンコネクタ、X線での下面電極部品の検査を強みに挙げる。発注者はこの項目で比べるので中小も載せたい。",
+    "industries": [
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "articleIdea": "うちで実装できる部品サイズと検査",
+    "source": {
+      "title": "基板実装｜サービス内容｜EMS（設計・製造受託サービス）",
+      "url": "https://www.oki.com/jp/Advanced-ems/service/others.html",
+      "publisher": "OKI",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-732",
+    "kind": "buyer",
+    "title": "3Dプリント造形は事例ページで確かめる",
+    "summary": "3Dプリンタの販売・受託会社は、造形の事例をまとめたページを公開している。発注者は自分と近い用途の事例があるかで依頼先を選ぶ。",
+    "industries": [
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "事例 - 3Dプリンターならアルテック",
+      "url": "https://www.3d-printer.jp/case/",
+      "publisher": "アルテック",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-733",
+    "kind": "buyer",
+    "title": "金属積層造形の製造事例を見る",
+    "summary": "金属の積層造形を受託する会社は製造事例のページを持つ。どんな部品を作ったかを事例で示すと、発注者が頼めるかを判断しやすい。",
+    "industries": [
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "articleIdea": "金属3Dで作った部品の事例",
+    "source": {
+      "title": "製造事例",
+      "url": "https://jampt.jp/case/",
+      "publisher": "日本積層造形",
+      "date": null
+    }
   }
 ];
 
