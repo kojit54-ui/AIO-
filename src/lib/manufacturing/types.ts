@@ -1,5 +1,5 @@
-/** pain＝経営の悩み、question＝発注する人の疑問、success＝Webで成果が出たやり方、buyer＝買い手の探し方・決め方、trend＝最近の動き */
-export type MfgKind = "pain" | "question" | "success" | "buyer" | "trend";
+/** pain＝経営の悩み、question＝発注する人の疑問、success＝Webで成果が出たやり方、buyer＝買い手の探し方・決め方、trend＝最近の動き、term＝発注する人がつまずく言葉のやさしい説明 */
+export type MfgKind = "pain" | "question" | "success" | "buyer" | "trend" | "term";
 
 /** question_example＝質問の記入例・記事の提案に、article_idea＝書く記事の案に、writer_hint＝AIの書き手・点検役に、shiori_tip＝しおりのひとことに */
 export type MfgUse = "question_example" | "article_idea" | "writer_hint" | "shiori_tip";

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SERVICE_DESCRIPTION, SERVICE_NAME } from "@/lib/brand";
+import { mfgShowcase } from "@/lib/manufacturing";
 import { Welcome } from "./Welcome";
 
 export const metadata: Metadata = {
@@ -9,5 +10,5 @@ export const metadata: Metadata = {
 
 /** 入口のページ（サービスのご紹介）。ログインしなくても見られる */
 export default function WelcomePage() {
-  return <Welcome />;
+  return <Welcome makers={mfgShowcase()} />;
 }

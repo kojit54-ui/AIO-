@@ -76,6 +76,8 @@ describe("prompt", () => {
     const body = buildUserPrompt("body", mfg);
     expect(body).toContain("<reader_questions>");
     expect(body).toContain("数字や事例を作らない");
+    expect(body).toContain("<reader_terms>");
+    expect(buildUserPrompt("body", base)).not.toContain("<reader_terms>");
     expect(buildUserPrompt("review", mfg)).toContain("製造業の会社の記事では aio");
     expect(buildUserPrompt("images", mfg)).not.toContain("製造業");
   });
