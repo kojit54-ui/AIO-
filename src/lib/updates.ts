@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-04-tone",
+    date: "2026-11-04",
+    title: "しおりの話し方を選べるようになりました",
+    body: "しおりは少し厳しめになりました。さぼりは見逃しません。マイページで「やさしめ／ふつう／きびしめ」に変えられます。",
+    href: "/mypage",
+    linkLabel: "話し方を選ぶ",
+  },
+  {
     id: "2026-11-04-name",
     date: "2026-11-04",
     title: "サービスの名前が「AIOえらばれ帳」になりました",
