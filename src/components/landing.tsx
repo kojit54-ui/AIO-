@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { Shiori, type ShioriMood } from "@/components/fun";
 import { ChosenPath } from "@/components/ChosenPath";
 import { ShioriTalk } from "@/components/talk";
+import { SERVICE_NAME, SERVICE_TAGLINE } from "@/lib/brand";
 
 /** 画面に入ったら true になる（1回だけ） */
 export function useInView<T extends Element>(threshold = 0.25): [React.RefObject<T | null>, boolean] {
@@ -65,8 +66,8 @@ export function Logo({ href = "/welcome" }: { href?: string }) {
         ✎
       </span>
       <span className="leading-tight">
-        <span className="block text-xs font-bold text-muted">コタムの</span>
-        <span className="block">ブログ執筆支援</span>
+        <span className="block text-xs font-bold text-muted">{SERVICE_TAGLINE}</span>
+        <span className="block">{SERVICE_NAME}</span>
       </span>
     </Link>
   );
