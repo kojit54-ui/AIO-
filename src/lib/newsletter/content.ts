@@ -6,6 +6,7 @@ import { badges } from "@/lib/growth/badges";
 import { monthlySummary, writingStreak } from "@/lib/growth/monthly";
 import { nearQueries } from "@/lib/growth/nearQueries";
 import type { MockDb } from "@/mock/store";
+import { updatesInMonth } from "@/lib/updates";
 
 export interface NewsletterInput {
   orgName: string;
@@ -100,6 +101,8 @@ export function renderNewsletter(i: NewsletterInput, links: { appUrl: string; un
     ...(i.newStamps.length ? [`・今月もらったスタンプ：${i.newStamps.join("、")}`] : []),
     i.nextStamp ? `・次のスタンプ「${i.nextStamp.title}」：${i.nextStamp.how}` : "・スタンプが全部そろいました！",
   ];
+  const news = updatesInMonth(i.month);
+  if (news.length) lines.push("", "■ 今月、新しくなったこと", ...news.map((u) => `・${u.title}`), `${links.appUrl}/updates`);
   if (i.search) {
     lines.push("", "■ 検索での見られ方（Search Console、28日分）", `・検索に出た回数：${num(i.search.impressions)}回`, `・クリックされた回数：${num(i.search.clicks)}回`);
     if (i.search.near.length) lines.push("・あと一歩で上位の言葉：", ...i.search.near.map((q) => `　「${q.query}」（いま${q.position}位）`));
@@ -121,6 +124,13 @@ export function renderNewsletter(i: NewsletterInput, links: { appUrl: string; un
             : ""),
       )
     : "";
+  const newsHtml = news.length
+    ? card(
+        h("✨ 今月、新しくなったこと") +
+          `<ul style="margin:0;padding-left:18px;font-size:14px">${news.map((u) => `<li style="margin:2px 0">${esc(u.title)}</li>`).join("")}</ul>` +
+          `<p style="margin:8px 0 0;font-size:13px"><a href="${esc(links.appUrl)}/updates" style="color:#2f6fdb">くわしく見る</a></p>`,
+      )
+    : "";
   const html = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(subject)}</title></head>
 <body style="margin:0;background:#eef4fc;font-family:'Hiragino Maru Gothic ProN','Hiragino Sans','Yu Gothic UI',Meiryo,sans-serif;color:#1e2a3b">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eef4fc"><tr><td align="center" style="padding:16px 8px">
@@ -132,6 +142,7 @@ export function renderNewsletter(i: NewsletterInput, links: { appUrl: string; un
 </tr></table></td></tr>
 ${card(h("今月のまとめ") + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>${statCells}</tr></table>` + (i.streak > 0 ? `<p style="margin:10px 0 0;text-align:center"><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#ffc93c;font-weight:900;font-size:13px">🔥 ${i.streak}か月つづけて書いています</span></p>` : ""))}
 ${card(h(`🎖️ スタンプ帳 ${i.stampsGot} / ${i.stampsTotal}`) + (i.newStamps.length ? `<p style="margin:0 0 6px;font-size:14px">今月もらったスタンプ：<b>${esc(i.newStamps.join("、"))}</b></p>` : "") + `<p style="margin:0;font-size:13px;color:#5b6b80">${i.nextStamp ? `次は「${esc(i.nextStamp.title)}」：${esc(i.nextStamp.how)}` : "スタンプが全部そろいました！"}</p>`)}
+${newsHtml}
 ${searchHtml}
 <tr><td style="padding:16px 24px;text-align:center"><a href="${esc(links.appUrl)}" style="display:inline-block;padding:14px 28px;border-radius:999px;background:#2f6fdb;color:#ffffff;font-weight:900;font-size:16px;text-decoration:none">来月の1本を書く →</a><p style="margin:8px 0 0;font-size:12px;color:#5b6b80">質問に答えるだけで記事になります。</p></td></tr>
 <tr><td style="padding:8px 24px 24px;font-size:11px;color:#5b6b80;text-align:center">${SERVICE_NAME}（案内役：しおり）<br>${SERVICE_OPERATOR}<br><a href="${esc(links.unsubscribeUrl)}" style="color:#5b6b80">このメールを受け取らない</a></td></tr>
