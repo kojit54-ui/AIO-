@@ -36,6 +36,12 @@
 
 ## 記録
 
+### 2026-11-04 CC（Claude、プロジェクトのスレッド）新しくなったことを伝える
+- ブランチ：claude/project-thread-cnj6dn
+- 変更点：src/lib/updates.ts（一覧。テストあり）、ホームの WhatsNew（まだ見ていないものを、しおりが1つずつ。1/3 の札、次のお知らせ、わかりました）、/updates（一覧）、しおり通信に「今月、新しくなったこと」。LESSONS に「利用者に関わる変更では updates.ts に1つ足す」
+- 確認結果：lint・型検査・テスト通過。試作データで 375px・1280px、見たあとに出なくなることを確認
+- 次の作業：T6-4 しおりの厳しさ（田村さんのお返事待ち）、T6-5 製造業の知識表
+
 ### 2026-11-04 CC（Claude、プロジェクトのスレッド）マイページ
 - ブランチ：claude/project-thread-cnj6dn
 - 変更点：/mypage（社名を直す、ログインしているメール、しおり通信の受け取り、会社の情報へ、ログアウト）。画面の右上に「マイページ」。社名は /api/organizations/[id]/name（所属を確かめてから service role で name だけ更新、audit_logs に organization.renamed）。src/lib/orgName.ts（テストあり）。擬似APIに renameOrganization・accountEmail。SQLの追加なし

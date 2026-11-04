@@ -43,6 +43,15 @@ describe("しおり通信の中身", () => {
     expect(m.text).toContain("このメールを受け取らない：https://app.example/u?x=1");
     expect(m.text).toContain("「内窓 札幌」（いま15位）");
   });
+
+  it("その月に新しくなったことがあれば、一覧へのリンクと一緒に入れる", () => {
+    const nov = renderNewsletter(newsletterInput(db, "o1", "2026-11"), { appUrl: "https://app.example", unsubscribeUrl: "#" });
+    expect(nov.text).toContain("■ 今月、新しくなったこと");
+    expect(nov.text).toContain("https://app.example/updates");
+    expect(nov.html).toContain("今月、新しくなったこと");
+    const oct = renderNewsletter(newsletterInput(db, "o1", "2026-10"), { appUrl: "https://app.example", unsubscribeUrl: "#" });
+    expect(oct.text).not.toContain("新しくなったこと");
+  });
 });
 
 describe("送る準備", () => {

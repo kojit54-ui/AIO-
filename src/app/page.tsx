@@ -12,6 +12,7 @@ import { SearchConsoleCard } from "@/components/SearchConsoleCard";
 import { ShioriGrowth } from "@/components/ShioriGrowth";
 import { StampBook } from "@/components/StampBook";
 import { TownBoard } from "@/components/TownBoard";
+import { WhatsNew } from "@/components/WhatsNew";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
@@ -48,6 +49,7 @@ export default function HomePage() {
         <ShioriTalk mood="jersey-cheer" size="lg" lines={["今月も1本、いっしょに書きましょう！", "AIに選ばれて、読んだ人に「ここに頼みたい」と思ってもらえる記事に。質問に答えるだけで、できますよ。"]} />
         <ChosenPath className="mt-2" />
       </div>
+      <WhatsNew />
       {/* コタムの方針は、あるときだけ出す（無いときに「準備中」と出して待たせない。2026-11-03） */}
       {note && (
         <section className="card animate-rise [animation-delay:.1s]" aria-labelledby="policy-heading">
