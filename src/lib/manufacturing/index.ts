@@ -5,6 +5,11 @@ import { MFG_COLLECTED_AT, MFG_ITEMS } from "./data";
 import type { MfgItem, MfgKind } from "./types";
 
 export { MFG_COLLECTED_AT, MFG_ITEMS };
+
+/** 国内の知識（記事・しおり・入口のページに使うのはこちらだけ） */
+export const MFG_DOMESTIC: MfgItem[] = MFG_ITEMS.filter((x) => x.region !== "overseas");
+/** 海外の事例・調査（日本とは前提が違うので分けておく。今は管理画面で見るだけ） */
+export const MFG_OVERSEAS: MfgItem[] = MFG_ITEMS.filter((x) => x.region === "overseas");
 export type { MfgItem, MfgKind };
 
 export { MFG_KIND_LABEL, detectIndustries, isManufacturing } from "./detect";
@@ -18,7 +23,7 @@ function matches(item: MfgItem, industries: string[]): number {
 /** その会社に合う「発注する人の疑問」。業種が合うものを先に、最大 n 件 */
 export function readerQuestionsFor(business: string | null | undefined, n = 8): MfgItem[] {
   const inds = detectIndustries(business);
-  return MFG_ITEMS.filter((x) => x.kind === "question" && matches(x, inds) > 0)
+  return MFG_DOMESTIC.filter((x) => x.kind === "question" && matches(x, inds) > 0)
     .sort((a, b) => matches(b, inds) - matches(a, inds))
     .slice(0, n);
 }
@@ -26,7 +31,7 @@ export function readerQuestionsFor(business: string | null | undefined, n = 8): 
 /** 書く記事の案（業種が合うもの・どの業種にも合うもの） */
 export function articleIdeasFor(business: string | null | undefined, n = 10): { title: string; why: string }[] {
   const inds = detectIndustries(business);
-  return MFG_ITEMS.filter((x) => x.articleIdea && x.useFor.includes("article_idea") && x.kind !== "trend" && matches(x, inds) > 0)
+  return MFG_DOMESTIC.filter((x) => x.articleIdea && x.useFor.includes("article_idea") && x.kind !== "trend" && matches(x, inds) > 0)
     .sort((a, b) => matches(b, inds) - matches(a, inds))
     .slice(0, n)
     .map((x) => ({ title: x.articleIdea!, why: x.title }));
@@ -58,7 +63,7 @@ export function mfgReviewerRules(business: string | null | undefined): string {
 /** しおりのひとことに使えるもの（その日で変わる） */
 export function mfgTipOfDay(dayKey: string, business?: string | null): MfgItem | null {
   const inds = detectIndustries(business);
-  const all = MFG_ITEMS.filter((x) => (x.kind === "buyer" || x.kind === "success" || x.kind === "term") && matches(x, inds) > 0);
+  const all = MFG_DOMESTIC.filter((x) => (x.kind === "buyer" || x.kind === "success" || x.kind === "term") && matches(x, inds) > 0);
   if (!all.length) return null;
   let h = 0;
   for (const c of dayKey) h = (h * 31 + c.charCodeAt(0)) >>> 0;
@@ -71,14 +76,14 @@ export function mfgTipOfDay(dayKey: string, business?: string | null): MfgItem |
 /** 読む人がつまずきそうな言葉（業種が合うもの・どの業種にも合うもの）。記事で言葉に短い説明を添える参考 */
 export function readerTermsFor(business: string | null | undefined, n = 6): MfgItem[] {
   const inds = detectIndustries(business);
-  return MFG_ITEMS.filter((x) => x.kind === "term" && matches(x, inds) > 0)
+  return MFG_DOMESTIC.filter((x) => x.kind === "term" && matches(x, inds) > 0)
     .sort((a, b) => matches(b, inds) - matches(a, inds))
     .slice(0, n);
 }
 
-export function mfgCounts(): Record<MfgKind, number> {
+export function mfgCounts(items: MfgItem[] = MFG_DOMESTIC): Record<MfgKind, number> {
   const c = { pain: 0, question: 0, success: 0, buyer: 0, trend: 0, term: 0 } as Record<MfgKind, number>;
-  for (const x of MFG_ITEMS) c[x.kind] += 1;
+  for (const x of items) c[x.kind] += 1;
   return c;
 }
 
@@ -94,15 +99,15 @@ export function mfgShowcase(): MfgShowcase {
   // 発注する人の疑問から、業種ごとの加工の相談らしいものを、業種が重ならないように見せる
   const seen = new Set<string>();
   const samples: { id: string; title: string }[] = [];
-  for (const x of MFG_ITEMS) {
+  for (const x of MFG_DOMESTIC) {
     if (x.kind !== "question" || x.industries.includes("all") || seen.has(x.industries[0])) continue;
     seen.add(x.industries[0]);
     samples.push({ id: x.id, title: x.title });
     if (samples.length >= 12) break;
   }
   return {
-    total: MFG_ITEMS.length,
-    industries: new Set(MFG_ITEMS.flatMap((x) => x.industries).filter((i) => i !== "all")).size,
+    total: MFG_DOMESTIC.length,
+    industries: new Set(MFG_DOMESTIC.flatMap((x) => x.industries).filter((i) => i !== "all")).size,
     counts: mfgCounts(),
     samples,
   };

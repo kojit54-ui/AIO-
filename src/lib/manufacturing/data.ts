@@ -3471,6 +3471,7 @@ const MFG_PART_0: MfgItem[] = [
   {
     "id": "buyer-042",
     "kind": "buyer",
+    "region": "overseas",
     "title": "BtoB買い手の67%は営業なしで買いたい",
     "summary": "Gartnerの2025年8〜9月の調査で、BtoB買い手の67%が営業担当を介さない購買体験を好むと回答。自分で調べて決める前提で情報を用意する必要がある。",
     "industries": [
@@ -3489,6 +3490,7 @@ const MFG_PART_0: MfgItem[] = [
   {
     "id": "buyer-043",
     "kind": "buyer",
+    "region": "overseas",
     "title": "AIの答えを人に確かめたい買い手が69%",
     "summary": "Gartnerの2026年5月発表で、BtoB買い手の69%がAIが出した情報を営業担当に確認したいと回答。AIで候補に入った後、人の説明が決め手になる。",
     "industries": [
@@ -3508,6 +3510,7 @@ const MFG_PART_0: MfgItem[] = [
   {
     "id": "buyer-044",
     "kind": "buyer",
+    "region": "overseas",
     "title": "米国技術者の7割はAIで業者評価をほぼしない",
     "summary": "TREW Marketing等の2025年調査で、技術者の70%はAIで仕入れ先を評価することがほとんどない・ないと回答。AI生成情報への信頼は10点中4.4と低め。",
     "industries": [
@@ -3526,6 +3529,7 @@ const MFG_PART_0: MfgItem[] = [
   {
     "id": "buyer-045",
     "kind": "buyer",
+    "region": "overseas",
     "title": "英国の購買責任者の66%がAIで仕入れ先探し",
     "summary": "Magenta Associatesの英国300名調査で、66%がChatGPT等で仕入れ先を探し評価。71%は情報が分かりにくい仕入れ先を避けると答えた。",
     "industries": [
@@ -12766,6 +12770,7 @@ const MFG_PART_0: MfgItem[] = [
     "id": "trend-109",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "紙への置き換えは簡単ではない",
     "summary": "欧州の業界誌は、包装の紙化は簡単な解決策ではないと指摘する。強度やバリア性など、置き換えの条件を相談に乗れる会社に価値が出る。",
     "industries": [
@@ -29077,6 +29082,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "success-208",
     "kind": "success",
+    "region": "overseas",
     "title": "研修生に1日ついて回る動画",
     "summary": "ドイツの解説では、研修生の仕事に1日同行する形や、社員が仕事の魅力を語る短い動画が特に効くとされる。技術職では事実をそのまま分かりやすく見せるのがよいという。",
     "industries": [
@@ -30327,6 +30333,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "pain-205",
     "kind": "pain",
+    "region": "overseas",
     "title": "印刷機の更新費用が重く延命する",
     "summary": "古い機械は故障しやすく部品もどんどん手に入りにくくなる。それでも更新費用が重く、使い続ける印刷会社が多いと英国の業界誌。",
     "industries": [
@@ -33907,6 +33914,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "question-337",
     "kind": "question",
+    "region": "overseas",
     "title": "デジタル機の移設で何をする？",
     "summary": "米国の業界団体は、デジタル印刷機の移設はメーカー指定の電源手順を守り、ソフトのバックアップをとり、専門の人に任せるよう勧める。",
     "industries": [
@@ -37450,6 +37458,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "term-414",
     "kind": "term",
+    "region": "overseas",
     "title": "標準時間（SAM・SMV）",
     "summary": "1着を縫うのにかかる標準の分数。海外の研究ではシャツ29〜31分、ズボン30〜34分と測られた。工場はこれをライン編成や出来高払い、原価の決定に使う。工賃の根拠として説明できる。",
     "industries": [
@@ -37471,6 +37480,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "pain-243",
     "kind": "pain",
+    "region": "overseas",
     "title": "古い標準時間を使い続けている",
     "summary": "海外の研究では、多くの会社が20年以上前の基準時間に手直しを加えて使っていると指摘されている。工程が変わったのに見直さないと、工賃が安すぎる原因になる。",
     "industries": [
@@ -38651,6 +38661,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "success-321",
     "kind": "success",
+    "region": "overseas",
     "title": "海外の工作機械会社もTikTok",
     "summary": "英国の工作機械メーカーの販売会社が、CNC加工の技術を見せる目的でTikTokのアカウントを開設した。加工の様子を短い動画で見せる発信が海外の機械業界にも広がっている。",
     "industries": [
@@ -38672,6 +38683,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "success-322",
     "kind": "success",
+    "region": "overseas",
     "title": "米国の工場もTikTokで発信",
     "summary": "米国ウィスコンシン州の製造業がTikTokを使っている例が、2025年版としてまとめられている。地方の中堅メーカーでも短い動画で発信する例が増えている。",
     "industries": [
@@ -38828,6 +38840,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "success-328",
     "kind": "success",
+    "region": "overseas",
     "title": "受発注サイトで1年で売上100万ドル",
     "summary": "米国の部品加工会社が、部品の受発注マッチングサイト経由で1年足らずのうちに売上100万ドルに達した事例。新しい発注者と出会う窓口としてサイトを使った。",
     "industries": [
@@ -39120,6 +39133,7 @@ const MFG_PART_1: MfgItem[] = [
   {
     "id": "buyer-293",
     "kind": "buyer",
+    "region": "overseas",
     "title": "AIが引くのは主に第三者のサイト",
     "summary": "米国の調査では、ChatGPTがBtoBのツールを薦めるとき92.3%に出典を付けたが、その87.4%は薦めた会社自身ではなく第三者のサイトだった（DerivateX調べ）。外部の紹介記事や事例も大事になる。",
     "industries": [
@@ -45652,6 +45666,7 @@ const MFG_PART_2: MfgItem[] = [
   {
     "id": "buyer-336",
     "kind": "buyer",
+    "region": "overseas",
     "title": "Instagramで作り手を探す人",
     "summary": "海外では、工房を訪ねにくい時にInstagramで家具や金物の作り手を探す人がいると紹介された。作品写真を並べておくことが探される入口になる。",
     "industries": [
@@ -46371,6 +46386,7 @@ const MFG_PART_2: MfgItem[] = [
     "id": "trend-376",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "アフターサービスで利益を出す機械メーカー",
     "summary": "米国のUPSとIDCの調査では、中小の産業機械メーカーの78%が顧客のサービス期待が高まったと答え、3分の1以上が利益の半分超をアフターサービスで得ていた（米国の話）。",
     "industries": [
@@ -47487,6 +47503,7 @@ const MFG_PART_2: MfgItem[] = [
   {
     "id": "buyer-345",
     "kind": "buyer",
+    "region": "overseas",
     "title": "包装機は部品とサービスの手に入りやすさで選ぶ",
     "summary": "米国の包装業界誌の調査では、取引先を探すときに部品やサービスの入手しやすさを重視する会社が42%あった。",
     "industries": [
@@ -48855,6 +48872,7 @@ const MFG_PART_2: MfgItem[] = [
     "id": "trend-394",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "米国ではクラフトビールが縮む",
     "summary": "米国では2025年にクラフトビールの生産量が5.1%減り、閉鎖が開業を2年続けて上回った（米国の業界団体）。関税や飲酒習慣の変化が理由。日本の醸造所も差別化が要る。",
     "industries": [
@@ -54878,6 +54896,7 @@ const MFG_PART_2: MfgItem[] = [
   {
     "id": "question-547",
     "kind": "question",
+    "region": "overseas",
     "title": "靴下は何足から作れる？",
     "summary": "小ロットOEMでは数百足から作れることも珍しくないとする解説がある（海外工場が中心）。国内工場は会社ごとに違うので問い合わせで確認する。",
     "industries": [
@@ -55114,6 +55133,7 @@ const MFG_PART_2: MfgItem[] = [
   {
     "id": "pain-357",
     "kind": "pain",
+    "region": "overseas",
     "title": "針の見逃しは回収につながる",
     "summary": "海外では、ベビー服に残った針で利用者がけがをし、人気商品を回収した例が2015年にある。小さな見逃しがブランドに大きく響く。",
     "industries": [
@@ -57358,6 +57378,7 @@ const MFG_PART_2: MfgItem[] = [
   {
     "id": "question-612",
     "kind": "question",
+    "region": "overseas",
     "title": "海外品を国内に戻す会社は多い？",
     "summary": "米国ではダイカスト会社が中国製の亜鉛鋳物約50万個を国内生産に戻した例がある。品質・近さ・輸送費・金属価格の変動が理由とされた。",
     "industries": [
@@ -59318,6 +59339,7 @@ const MFG_PART_2: MfgItem[] = [
   {
     "id": "buyer-400",
     "kind": "buyer",
+    "region": "overseas",
     "title": "今の取引先への不満の上位は返事の遅さ",
     "summary": "PROSの購買担当210人の調査では、今の取引先の課題に「問い合わせへの返事が遅い・非効率」を35%が挙げ、価格の不安定さなどと並ぶ上位だった（米国中心）。",
     "industries": [
@@ -59359,6 +59381,7 @@ const MFG_PART_2: MfgItem[] = [
   {
     "id": "buyer-402",
     "kind": "buyer",
+    "region": "overseas",
     "title": "届けられないと取引先を替えられる",
     "summary": "コロナ禍の米国調査で、BtoBの買い手が取引先を替えた一番の理由は、届けられなかったこと（納品の不履行）だった。供給を止めないことが最大の守り。",
     "industries": [
@@ -59605,6 +59628,7 @@ const MFG_PART_3: MfgItem[] = [
     "id": "trend-495",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "若い買い手は人の声を頼りにする",
     "summary": "Forresterの2025年予測では、若いBtoBの買い手の半数超が、SNSや知り合いなど外部の情報源を頼りに購入を決めるという。口コミや評判の影響が増す見通し。",
     "industries": [
@@ -65814,6 +65838,7 @@ const MFG_PART_3: MfgItem[] = [
   {
     "id": "question-723",
     "kind": "question",
+    "region": "overseas",
     "title": "ULの盤は部品をUL品にすれば足りる？",
     "summary": "米国の現場では、全部品がUL登録品だと示す部品表を用意して盤にULラベルを付ける考え方が語られる。実際は盤屋側の登録と製作ルールも要るので、対応実績を聞くと安心。",
     "industries": [
@@ -65833,6 +65858,7 @@ const MFG_PART_3: MfgItem[] = [
   {
     "id": "success-538",
     "kind": "success",
+    "region": "overseas",
     "title": "海外でもULラベルを付けられると打ち出す",
     "summary": "ドイツの盤メーカーには、UL508Aに沿って設計・製作・文書化し、自国内でULラベルを付けられると案内し、輸送の手間とコストを減らせる点を売りにする例がある。",
     "industries": [
@@ -73892,6 +73918,7 @@ const MFG_PART_3: MfgItem[] = [
   {
     "id": "question-900",
     "kind": "question",
+    "region": "overseas",
     "title": "交代勤務は体に悪い？",
     "summary": "オランダの研究では、三交代の人は日勤の人よりメタボに当たる割合が高く、四交代では弱まった。休み方まで含めた勤務表を見せたい。",
     "industries": [
@@ -74888,6 +74915,7 @@ const MFG_PART_3: MfgItem[] = [
     "id": "trend-600",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "英国企業の3分の2が回帰を検討",
     "summary": "英国の報道では、中国の供給業者への満足度が下がり、英国企業の3分の2が国内か欧州への製造回帰を検討。理由にリードタイムの長さや品質がある。",
     "industries": [
@@ -75496,6 +75524,7 @@ const MFG_PART_3: MfgItem[] = [
   {
     "id": "buyer-458",
     "kind": "buyer",
+    "region": "overseas",
     "title": "単価の高い国内が正解の場合も",
     "summary": "米国の調達専門誌は、長く複雑な供給網のリスクまで考えると、単価が高い国内サプライヤーのほうがよい選択になることがあると指摘している。",
     "industries": [
@@ -76452,6 +76481,7 @@ const MFG_PART_3: MfgItem[] = [
     "id": "trend-623",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "展示会の出展者情報をAIで探す研究",
     "summary": "欧州では、出展者の製品・用途・技術・認証などをまとめ、来場者が自然な言葉で探せるAIの研究（Exposense）が紹介されている。出展者情報の書き方が見つかりやすさを左右し始めた。",
     "industries": [
@@ -76570,6 +76600,7 @@ const MFG_PART_3: MfgItem[] = [
   {
     "id": "success-583",
     "kind": "success",
+    "region": "overseas",
     "title": "公開34日で最初のRFQ",
     "summary": "米国の支援会社は、先端製造業の顧客がサイト公開34日後に最初の見積依頼を受けたと発表。会社自身も「全ての売上が一つの施策のおかげとは言えない」と断っている。",
     "industries": [
@@ -76589,6 +76620,7 @@ const MFG_PART_3: MfgItem[] = [
   {
     "id": "success-584",
     "kind": "success",
+    "region": "overseas",
     "title": "AI経由の見積依頼が月0→47件",
     "summary": "米国の産業機械メーカーの事例として、技術仕様の質問でAIの引用率62%、AI経由の見積依頼が月0件から47件になったと支援会社が公表。匿名で第三者の検証はない。",
     "industries": [
@@ -76609,6 +76641,7 @@ const MFG_PART_3: MfgItem[] = [
   {
     "id": "success-585",
     "kind": "success",
+    "region": "overseas",
     "title": "対応能力ページと認証の明示",
     "summary": "米国の支援会社は、加工能力ごとのページと認証情報を整えると、90日でAI経由の見積依頼が月5〜10件出ると主張。売り手の主張なので、自社では小さく試して測る。",
     "industries": [
@@ -77171,6 +77204,7 @@ const MFG_PART_3: MfgItem[] = [
   {
     "id": "buyer-476",
     "kind": "buyer",
+    "region": "overseas",
     "title": "技術者はAIで競合を先に見つける",
     "summary": "米国の事例紹介では、技術者がChatGPTやPerplexityで競合を見つけ、技術比較の前に候補から外されていた会社があったとされる（支援会社の発表）。",
     "industries": [
@@ -98190,6 +98224,7 @@ const MFG_PART_4: MfgItem[] = [
   {
     "id": "buyer-607",
     "kind": "buyer",
+    "region": "overseas",
     "title": "食品の原料先は買う前に承認する",
     "summary": "州政府の食品安全資料では、購入前に仕入先を承認し、GMP・HACCP・第三者認証などの要件と、監査や分析証明の確認による継続的な見張りを求めている。",
     "industries": [
@@ -98210,6 +98245,7 @@ const MFG_PART_4: MfgItem[] = [
   {
     "id": "buyer-608",
     "kind": "buyer",
+    "region": "overseas",
     "title": "ロットごとに分析証明を求める買い手",
     "summary": "同資料では、受け入れるロットごとに分析証明書（COA）を求める例が挙がる。毎回すぐ出せる体制が食品の取引では強みになる。",
     "industries": [
@@ -98228,6 +98264,7 @@ const MFG_PART_4: MfgItem[] = [
   {
     "id": "buyer-609",
     "kind": "buyer",
+    "region": "overseas",
     "title": "食品の認証は有効期限まで確かめる",
     "summary": "同資料は、ISO22000、HACCP、BRC、SQFなどの外部認証を優先しつつ、証明書が今も有効かを定期的に確かめるよう勧めている。",
     "industries": [
@@ -98247,6 +98284,7 @@ const MFG_PART_4: MfgItem[] = [
   {
     "id": "buyer-610",
     "kind": "buyer",
+    "region": "overseas",
     "title": "仕様・輸送・表示を先に合意する",
     "summary": "同資料は、製品仕様、輸送条件、表示の要件などの期待事項を仕入先と合意し、定期的に見直すことを勧めている。",
     "industries": [
@@ -98911,6 +98949,7 @@ const MFG_PART_4: MfgItem[] = [
     "id": "trend-734",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "研削の後継をロボットで補う例",
     "summary": "研削は熱・騒音・火花を伴い担い手が見つけにくく、ドイツの機械部品メーカーが研削部門長の退職後をロボットで補う計画だとロイターが伝えた（2023年の記事の紹介）。",
     "industries": [
@@ -99253,6 +99292,7 @@ const MFG_PART_4: MfgItem[] = [
   {
     "id": "pain-567",
     "kind": "pain",
+    "region": "overseas",
     "title": "熱処理は若い人に知られていない",
     "summary": "熱処理は先端の仕事と見られにくく、人を集めて残ってもらうのが難しいと米国の業界会合で話し合われた（2022年）。仕事の面白さを伝える発信が採用の課題になる。",
     "industries": [
@@ -104203,6 +104243,7 @@ const MFG_PART_5: MfgItem[] = [
   {
     "id": "success-1014",
     "kind": "success",
+    "region": "overseas",
     "title": "限定品を自社ECの会員に先行発売",
     "summary": "豪州の制作会社の事例では、蒸留所の自社ECで初回のシングルモルトを熱心なファンに売り、2日足らずで完売したと発表（2015年10月の発売）。",
     "industries": [
@@ -104223,6 +104264,7 @@ const MFG_PART_5: MfgItem[] = [
   {
     "id": "success-1015",
     "kind": "success",
+    "region": "overseas",
     "title": "酒は色・品種・価格で絞り込めるように",
     "summary": "米国の制作会社によると、ワインECに色・ぶどう品種・価格で絞れる検索を足し、買う人が目当ての酒を早く見つけられるようにした。",
     "industries": [
@@ -113439,6 +113481,7 @@ const MFG_PART_5: MfgItem[] = [
   {
     "id": "success-1320",
     "kind": "success",
+    "region": "overseas",
     "title": "ロックダウン中も工場ツアーで関係維持",
     "summary": "英国の機器メーカーは工場をバーチャルツアーにし、行き来できない時期も顧客との関係を保った。その後も訪問なしの見学に使える資産になったという。",
     "industries": [
@@ -115054,6 +115097,7 @@ const MFG_PART_5: MfgItem[] = [
   {
     "id": "success-1375",
     "kind": "success",
+    "region": "overseas",
     "title": "米国の乳製品工場がIndeedで20人",
     "summary": "Indeed公式の事例では、米国の乳製品加工会社が8か月でIndeedから20人を採用し、どの媒体より多かった。1人あたりの採用費は539ドルだったと報告されている。",
     "industries": [
@@ -120561,6 +120605,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-745",
     "kind": "buyer",
+    "region": "overseas",
     "title": "米国の購買担当は業者評価でまずHPを見る",
     "summary": "海外（米国）の調査。Thomasが2019年に購買担当266人に聞くと、取引先を評価するときに見るのは自社サイト73%、市場での存在68%、評判61%の順。小さな会社ほどHPが評価の入口になる。",
     "industries": [
@@ -120581,6 +120626,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-746",
     "kind": "buyer",
+    "region": "overseas",
     "title": "新しい外注先はGoogle・業者サイト・紹介で探す",
     "summary": "海外（米国）の調査資料。Thomasの2019年調査では、新しい取引先を探す手段はGoogle80%、業者検索サイト71%、紹介65%。検索と紹介の両方で見つかる準備が要る。",
     "industries": [
@@ -120601,6 +120647,7 @@ const MFG_PART_6: MfgItem[] = [
     "id": "trend-829",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "米国で最も探されたのは受託・OEM製造",
     "summary": "海外（米国）の動き。Thomasの2025年の調達動向レポートでは、8万超の分類のうち、受託製造やプライベートブランド製造などのサービスが一番多く探された。「頼める工場」を探す人が多い。",
     "industries": [
@@ -120621,6 +120668,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-747",
     "kind": "buyer",
+    "region": "overseas",
     "title": "認証は検索の絞り込み条件になる",
     "summary": "海外（米国）の業者検索サイトThomasnetは、ISOなどの認証で業者を絞り込めるようにしている。買い手は認証で先にふるい分けるので、持っている認証と範囲をはっきり書くと候補に残りやすい。",
     "industries": [
@@ -120641,6 +120689,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-748",
     "kind": "buyer",
+    "region": "overseas",
     "title": "見積依頼では必要な工程を指定する",
     "summary": "海外（米国）の業者検索サイトでは、買い手が溶接・切断・仕上げなど必要な工程を選んで見積を頼む仕組みがある。自社サイトでも工程名をそのまま書くと、探す人の言葉と合う。",
     "industries": [
@@ -120661,6 +120710,7 @@ const MFG_PART_6: MfgItem[] = [
     "id": "trend-830",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "複数の工程を一度に探す検索が登場",
     "summary": "海外（米国）の動き。Thomasは2026年、いくつもの加工能力を組み合わせて業者を探せる検索機能を出した。「切削＋表面処理まで」など、一貫でできることを書く会社が見つかりやすくなる。",
     "industries": [
@@ -120681,6 +120731,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-692",
     "kind": "pain",
+    "region": "overseas",
     "title": "製造業の発信の悩みは人手不足",
     "summary": "海外（米国）の調査。Content Marketing Instituteの2025年見通し調査では、製造業のマーケ担当の悩みで最も多いのは人や予算などの資源不足で57%。小さな会社ほど「書く人がいない」が壁になる。",
     "industries": [
@@ -120700,6 +120751,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-693",
     "kind": "pain",
+    "region": "overseas",
     "title": "記事を続けて作る仕組みがない",
     "summary": "海外（米国）の調査。CMIの同じ調査で、製造業のマーケ担当の54%が「記事などを無理なく増やせる仕組みがない」と答えた。思いつきで書くと続かないので、質問の型や取材の型を決めておくとよい。",
     "industries": [
@@ -120719,6 +120771,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-694",
     "kind": "pain",
+    "region": "overseas",
     "title": "発信の効果は「まあまあ」止まり",
     "summary": "海外（米国）の調査。CMIの2025年見通し調査で、製造業のマーケ担当の67%は自社の発信を「ほどほどに効果あり」と評価。大きな成果を感じる会社は少なく、何を目的に書くかを決め直す余地がある。",
     "industries": [
@@ -120738,6 +120791,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-695",
     "kind": "pain",
+    "region": "overseas",
     "title": "製造業の記事は自社の話ばかりになりがち",
     "summary": "海外（米国）の指摘。CMIは製造業の発信について「自社の話をやめよう」という題で調査結果を発表した。設備自慢より、読む人が知りたい答え（できる範囲・費用・納期）を先に書くのが基本。",
     "industries": [
@@ -120759,6 +120813,7 @@ const MFG_PART_6: MfgItem[] = [
     "id": "trend-831",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "製造業はもう発信の後発ではない",
     "summary": "海外（米国）の動き。CMIの研究責任者は、製造業の調査結果をもとに「製造業はもう遅れて始める業界ではない」と述べた。同業も発信を始めており、早く始めた会社ほど差がつく。",
     "industries": [
@@ -120778,6 +120833,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-749",
     "kind": "buyer",
+    "region": "overseas",
     "title": "業者と話す時間は購入準備の17%だけ",
     "summary": "海外の調査。Gartnerが複雑な購入に関わる750人に聞くと、買い手が業者と会う時間は全体の約17%。3社を比べるなら1社あたり約5%で、残りは自分で調べている。読まれる記事が営業の代わりになる。",
     "industries": [
@@ -120798,6 +120854,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-750",
     "kind": "buyer",
+    "region": "overseas",
     "title": "買い手はネットで一人で調べる時間が長い",
     "summary": "海外の調査（Gartner）の紹介。買い手の時間の使い方は、ネットで自分で調べる27%、社内の関係者と話す22%、ネット以外で調べる18%、業者と会う17%など。社内で回覧できる資料が役立つ。",
     "industries": [
@@ -120818,6 +120875,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-751",
     "kind": "buyer",
+    "region": "overseas",
     "title": "AI概要を見た人の9割が元の記事を開く",
     "summary": "海外（米国）の調査。TrustRadiusの2025年調査（IT製品の買い手）では、72%が調べる途中でGoogleのAI概要を見て、そのうち90%が少なくとも1つの出典をクリックした。引用元になる価値がある。",
     "industries": [
@@ -120837,6 +120895,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-752",
     "kind": "buyer",
+    "region": "overseas",
     "title": "AIの答えは94%が裏を取る",
     "summary": "海外の調査。TrustRadiusの2026年調査（IT製品の買い手1,862人）では、63%が購入の途中でAIを使い、94%がその答えを少なくとも時々は確かめる。確かめに来た人に事実が書かれたページが要る。",
     "industries": [
@@ -120857,6 +120916,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-753",
     "kind": "buyer",
+    "region": "overseas",
     "title": "決める前に利用者の声を見る",
     "summary": "海外の調査。TrustRadiusの2026年調査では、買い手の74%がレビューを購入判断に使う。製造業でも、取引先の声や事例（社名なしでも）を載せると、確かめたい人の安心材料になる。",
     "industries": [
@@ -120877,6 +120937,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-754",
     "kind": "buyer",
+    "region": "overseas",
     "title": "価格の目安を早く知りたい",
     "summary": "海外の調査。TrustRadiusの2026年報告は、買い手は最初から分かりやすい価格情報を求めているのに、売り手の発信がそこを外していると指摘。製造業なら「費用が決まる要素」と目安を書くとよい。",
     "industries": [
@@ -120898,6 +120959,7 @@ const MFG_PART_6: MfgItem[] = [
     "id": "trend-832",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "SEOからGEOへの移り変わり",
     "summary": "海外の動き。TrustRadiusの2026年報告は、検索順位を上げる工夫（SEO）から、生成AIの答えに載る工夫（GEO）への移り変わりが始まっていると指摘した。ただし土台は普通の検索で読まれる記事。",
     "industries": [
@@ -120917,6 +120979,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1477",
     "kind": "success",
+    "region": "overseas",
     "title": "塗料メーカーのWeb訪問が3年で約5倍",
     "summary": "海外（米国）の事例。工業向けマーケ会社Gorilla 76の発表によると、塗料メーカーのサイト訪問が3年でおよそ5倍に。買い手が調べる話題を継続して書き続けたことが積み上がった例。",
     "industries": [
@@ -120936,6 +120999,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1478",
     "kind": "success",
+    "region": "overseas",
     "title": "素材ベンチャーが10か月で有望な相談92件",
     "summary": "海外（米国）の事例。Gorilla 76の発表によると、新素材の開発ベンチャーが10か月で見込みの高い問い合わせ92件を得た。知名度が無くても、用途と課題を説明する記事で相談は来る。",
     "industries": [
@@ -120956,6 +121020,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1479",
     "kind": "success",
+    "region": "overseas",
     "title": "発電機の販売会社で問い合わせ経由の売上",
     "summary": "海外（米国）の事例。Gorilla 76の発表によると、発電機の販売会社が記事で問い合わせを集める方法で、ある四半期に約80万ドルの売上につなげた。問い合わせを売上まで追う考え方が参考になる。",
     "industries": [
@@ -120976,6 +121041,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1480",
     "kind": "success",
+    "region": "overseas",
     "title": "工業炉メーカーで大きな商談の種",
     "summary": "海外（米国）の事例。第三者の紹介記事によると、特注の工業炉メーカーがGorilla 76の運用する発信から約900万ドル分の商談候補を得た。受注まで長い設備でも、Webが商談の入口になる。",
     "industries": [
@@ -120996,6 +121062,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1481",
     "kind": "success",
+    "region": "overseas",
     "title": "飛び込みと口コミ頼みからWebの問い合わせへ",
     "summary": "海外（米国）の事例。Weidert Groupの紹介では、1948年から飛び込み営業と口コミに頼っていたタンクメーカーが、サイトを問い合わせを生む場に変え、12週ほどで手応えを得た。数字は公表されていない。",
     "industries": [
@@ -121017,6 +121084,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1482",
     "kind": "success",
+    "region": "overseas",
     "title": "狙う取引先を絞った発信で反応5倍",
     "summary": "海外（米国）の事例。Weidert Groupは工業系の顧客向けに、狙う会社を絞って発信する方法（ABM）を道具で効率化し、反応が5倍になったと事例で紹介。小さな会社も「来てほしい業界」を決めて書くとよい。",
     "industries": [
@@ -121036,6 +121104,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1483",
     "kind": "success",
+    "region": "overseas",
     "title": "専門メーカーこそ動画で強みを見せる",
     "summary": "海外（米国）の提案。Weidert Groupは、特定分野の専門メーカーに動画での発信を勧めている。文字だけでは伝わりにくい加工の様子や検査の手順を短い動画にし、記事に添えると伝わり方が変わる。",
     "industries": [
@@ -121055,6 +121124,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-755",
     "kind": "buyer",
+    "region": "overseas",
     "title": "技術者の8割超は登録が要る資料も読む",
     "summary": "海外（米国）の調査。TREW MarketingとGlobalSpecの2022年調査で、技術者の83%が登録して読む技術資料に触れていた。詳しい技術資料は「読まれない」わけではなく、中身が濃ければ求められる。",
     "industries": [
@@ -121074,6 +121144,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-756",
     "kind": "buyer",
+    "region": "overseas",
     "title": "技術者は購入過程の大半をネットで調べる",
     "summary": "海外の調査。TREW Marketingらの2026年調査の発表では、技術者は購入の道のりの62%をネットでの調べものに使い、業者に連絡する前に意見を固めている。最初の接点は自社の記事になる。",
     "industries": [
@@ -121094,6 +121165,7 @@ const MFG_PART_6: MfgItem[] = [
     "id": "trend-833",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "技術者の情報源で業界メディアが首位に",
     "summary": "海外の動き。TREW Marketingの番組によると、2026年の調査で技術者がよく使う情報源は、業者のサイトより技術系の業界メディアが上になった。自社サイトに加え、業界誌や業界サイトへの寄稿も効く。",
     "industries": [
@@ -121113,6 +121185,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-757",
     "kind": "buyer",
+    "region": "overseas",
     "title": "技術者は社外の専門家の意見を頼る",
     "summary": "海外の調査。TREW MarketingとGlobalSpecの2023年報告では、技術者が業界の独立した専門家に頼る傾向が強まっていた。自社の職人や技術者が実名でなくても「専門家として」解説する記事は信頼されやすい。",
     "industries": [
@@ -121133,6 +121206,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1484",
     "kind": "success",
+    "region": "overseas",
     "title": "AIは製品名でなく質問から探す",
     "summary": "海外の解説。従来のSEOは製品名で探される前提だが、AIツールでは買い手は質問から入るという。「〇〇を薄く削ると反るのはなぜ」のような質問の答えを記事にすると、AIの答えに使われやすい。",
     "industries": [
@@ -121153,6 +121227,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1485",
     "kind": "success",
+    "region": "overseas",
     "title": "技術者言葉でなく平らな言葉で答える",
     "summary": "海外の解説。製造業のGEOでは、買い手が実際にする質問に、専門用語だらけでなく分かりやすい言葉で答えることが勧められている。購買担当や開発者以外の人も読むことを前提に書く。",
     "industries": [
@@ -121172,6 +121247,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1486",
     "kind": "success",
+    "region": "overseas",
     "title": "業界名簿や団体の掲載情報をサイトと合わせる",
     "summary": "海外の解説。AIに正しく紹介されるには、業界団体の名簿や業者一覧サイトに載っている情報を、今の自社サイトと同じ内容に直すことが勧められている。古い住所や旧社名が残ると答えが混乱する。",
     "industries": [
@@ -121192,6 +121268,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-758",
     "kind": "buyer",
+    "region": "overseas",
     "title": "調達担当はChatGPTで製造業者を調べる",
     "summary": "海外の解説。米国のWeb会社は、調達チームやOEMの購買担当がChatGPTなどで製造業者を調べていると紹介している。AIに名前が出るには、できること・材料・認証などの事実が文字で載っている必要がある。",
     "industries": [
@@ -121211,6 +121288,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-759",
     "kind": "buyer",
+    "region": "overseas",
     "title": "買い手は仕様・材料・認証で絞ってから見積",
     "summary": "海外の解説。工業系の買い手は、製品・仕様・材料・認証で探して候補を絞り、そのあと見積依頼を出すのが普通という。見積前の段階で読まれる「できる仕様の一覧」が重要。",
     "industries": [
@@ -121230,6 +121308,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-760",
     "kind": "buyer",
+    "region": "overseas",
     "title": "技術系の買い手の多くが生成AIを使う",
     "summary": "海外の解説。米国の制作会社は、2026年の技術系マーケ調査を引き、技術系の買い手の69%が購入の途中で生成AIを使うと紹介。ただし工業の分析は「方向性を示すもの」と注意書きしている。",
     "industries": [
@@ -121249,6 +121328,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-696",
     "kind": "pain",
+    "region": "overseas",
     "title": "PDFのカタログはAIに読まれない",
     "summary": "海外の事例。あるメーカーは200ページのPDFカタログしか無く、買い手がChatGPTで仕様を調べても名前が出なかった。PDFが検索に載っていなかったため。主な仕様はページの文字として書くのが基本。",
     "industries": [
@@ -121269,6 +121349,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1487",
     "kind": "success",
+    "region": "overseas",
     "title": "事例はPDFでなくWebページで載せる",
     "summary": "海外の解説。製造業がAIに引用されるための助言として、事例をPDFではなくHTMLのページで公開し、業界名や具体的な条件を書き、複数のAIでの引用を定期的に確かめることが挙げられている。",
     "industries": [
@@ -121288,6 +121369,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1488",
     "kind": "success",
+    "region": "overseas",
     "title": "答えの形に直してAIの引用が増えた",
     "summary": "海外の事例。SEO会社LATT/SEOの発表では、ある工業メーカーの記事を、答えが先に来る形やFAQの形に直したところ、AIでの引用がほぼ0から1,800ページ超に増えた（外部ツールでの計測）。",
     "industries": [
@@ -121309,6 +121391,7 @@ const MFG_PART_6: MfgItem[] = [
     "id": "trend-834",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "包装業界団体がAI検索の勉強会",
     "summary": "海外（米国）の動き。段ボール・包装の業界団体AICCが「包装メーカーがAI検索で見つけられ、選ばれるには」というウェビナーを開いた。業界団体もAI検索を経営の課題として扱い始めている。",
     "industries": [
@@ -121330,6 +121413,7 @@ const MFG_PART_6: MfgItem[] = [
     "id": "trend-835",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "AI検索対策は普通のSEOの延長",
     "summary": "海外の解説。米国の広告会社は、AIの答えに載るための工夫（GEO・AEO）は、従来のSEOを置き換えるのではなく広げるものと説明している。まず検索で読まれる基本の記事をそろえることが先。",
     "industries": [
@@ -121349,6 +121433,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-761",
     "kind": "buyer",
+    "region": "overseas",
     "title": "業者探しをAIチャットから始める人が増加",
     "summary": "海外の調査の紹介。G2の2026年調査（ソフトの買い手）では、業者探しをAIチャットから始める人が51%と、前年の29%から増えた。製造業の調査ではないが、同じ流れが来ると考えて準備したい。",
     "industries": [
@@ -121368,6 +121453,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1489",
     "kind": "success",
+    "region": "overseas",
     "title": "GEOはAIが参照する「定番の情報源」になること",
     "summary": "海外の解説。製造業向けの解説では、GEOを「買い手の質問にAIが答えるとき、まず参照される情報源になること」と説明する。宣伝文より、条件と数値がそろった解説ページが参照されやすい。",
     "industries": [
@@ -121388,6 +121474,7 @@ const MFG_PART_6: MfgItem[] = [
     "id": "trend-836",
     "kind": "trend",
     "official": false,
+    "region": "overseas",
     "title": "工業会社向けにSEOとGEOの違いを解説",
     "summary": "海外の動き。工業系に強い米国のWeb会社は、GEOを「AIが答えの中で引用・要約するように記事を整えること」と説明し、工業会社にも対応を勧めている。言葉は新しいが、やることは分かりやすい答えを書くこと。",
     "industries": [
@@ -121407,6 +121494,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1490",
     "kind": "success",
+    "region": "overseas",
     "title": "トップページで得意を一言で言う",
     "summary": "海外（米国）のジョブショップ向け助言。サイトに来た人がすぐ分かるように、「公差の厳しい部品」「短納期の試作」など専門をトップで言い切ると、見積依頼につながりやすいという。",
     "industries": [
@@ -121428,6 +121516,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1491",
     "kind": "success",
+    "region": "overseas",
     "title": "見積が来ない原因は流入より導線",
     "summary": "海外（米国）の解説。製造業のサイトで見積依頼が来ないのは、アクセス不足より見積までの道筋の問題であることが多いという。トップから見積フォームまで迷わず行けるかを先に見直す。",
     "industries": [
@@ -121447,6 +121536,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1492",
     "kind": "success",
+    "region": "overseas",
     "title": "設備と能力を画像でなく文字で書く",
     "summary": "海外（米国）の解説。加工能力・CNC設備・生産能力を普通の文字で載せると、買い手にもAIにも何ができる会社か伝わるという。設備表を画像だけで載せている会社は文字の表に直すとよい。",
     "industries": [
@@ -121467,6 +121557,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1493",
     "kind": "success",
+    "region": "overseas",
     "title": "図面を添付できる見積フォーム",
     "summary": "海外（米国）の解説。ジョブショップの買い手は図面を送ってすぐ価格を知りたいので、見積フォームはファイル添付できるようにするのが基本。よくある質問ページと合わせて、迷いを減らす。",
     "industries": [
@@ -121488,6 +121579,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1494",
     "kind": "success",
+    "region": "overseas",
     "title": "受け付けるファイル形式を書いておく",
     "summary": "海外（米国）の解説。見積に使える図面のファイル形式（PDF・STEPなど）をはっきり書くことが、見積依頼の手間を減らす早い方法の一つとされる。形式が分からないと送る前にやめてしまう。",
     "industries": [
@@ -121510,6 +121602,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-762",
     "kind": "buyer",
+    "region": "overseas",
     "title": "1社でまとめて頼める会社を探す",
     "summary": "海外（米国）の解説。外注先を1社にまとめたい買い手は、加工だけして残りを外に出す工場を外すことがあるという。社内でできる工程と、協力先と組んで対応する範囲を分けて書くとよい。",
     "industries": [
@@ -121530,6 +121623,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1495",
     "kind": "success",
+    "region": "overseas",
     "title": "「品質第一」より完成品の写真",
     "summary": "海外（米国）の解説。ジョブショップのサイトでは「品質こそ私たちの情熱」のような決まり文句をやめ、実際の完成品の写真を見せるよう勧めている。材料・寸法・数量を添えると説得力が増す。",
     "industries": [
@@ -121550,6 +121644,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1496",
     "kind": "success",
+    "region": "overseas",
     "title": "機械加工会社でWeb経由の見積依頼2割増",
     "summary": "海外（米国）の事例。見積ソフト会社Paperless Partsの発表では、ある機械加工会社が同社のマーケ支援でサイト訪問60%増、サイトからの見積依頼20%増、検索での見え方40%改善となった。",
     "industries": [
@@ -121569,6 +121664,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1497",
     "kind": "success",
+    "region": "overseas",
     "title": "見積依頼4割増、9割は自然検索から",
     "summary": "海外（米国）の事例。Paperless Partsの発表では、別の機械加工会社で見積依頼が42.7%増え、新しいWeb経由の見積依頼の90%が自然検索から来た。広告に頼らず記事とページで集めた例。",
     "industries": [
@@ -121588,6 +121684,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1498",
     "kind": "success",
+    "region": "overseas",
     "title": "精密板金でクリックが大きく増えた",
     "summary": "海外の事例。Web会社Growleadsの発表では、精密板金・製作の会社で検索からの月間クリックが900から14,200に増え、月24件の有望な見積依頼が来るようになった。SEOと申込の改善を組み合わせた。",
     "industries": [
@@ -121608,6 +121705,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1499",
     "kind": "success",
+    "region": "overseas",
     "title": "受託製造の会社で自然検索の流入130%増",
     "summary": "海外（米国）の事例。LockDown SEOの発表では、受託製造の会社で検索からの流入が前年比130%増えた。4か月で、ページの中身・デザイン・外部リンク・業者一覧サイトへの掲載をまとめて直した。",
     "industries": [
@@ -121628,6 +121726,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1500",
     "kind": "success",
+    "region": "overseas",
     "title": "食品の受託包装は検索広告も効いた",
     "summary": "海外（米国）の事例。OuterBoxの紹介では、食品の受託包装（コパッカー）の会社で、有望な問い合わせの32%を検索広告が生んだ。急ぎの案件は広告、長く効くのは記事と役割を分けて考える。",
     "industries": [
@@ -121648,6 +121747,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-697",
     "kind": "pain",
+    "region": "overseas",
     "title": "Webの効果が出るまで1年以上",
     "summary": "海外（米国）の解説。製造業のSEO会社Digitaleerは、既にある製造業の会社でも、目に見える効果まで9〜18か月、費用に見合う成果まで12〜24か月かかると見込む。短期で判断してやめないことが大事。",
     "industries": [
@@ -121667,6 +121767,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1501",
     "kind": "success",
+    "region": "overseas",
     "title": "業界別の事例ページで探す人に合わせる",
     "summary": "海外（米国）の解説。Digitaleerは、航空・医療・自動車など業界ごとの事例ページが、その業界の買い手の検索に合うと勧める。加工能力の深さと認証の説明もあわせて載せると信頼につながる。",
     "industries": [
@@ -121687,6 +121788,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1502",
     "kind": "success",
+    "region": "overseas",
     "title": "見積の受け口を整えて依頼4割増",
     "summary": "海外（インド）の事例。Web会社IRPRによると、自動車部品メーカーがサイトを作り直し、見積依頼の入力をすっきりさせたところ、見積依頼が40%増えた。入力項目の多すぎるフォームは見直したい。",
     "industries": [
@@ -121706,6 +121808,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1503",
     "kind": "success",
+    "region": "overseas",
     "title": "金属製作の会社で問い合わせ前年比3倍超",
     "summary": "海外（米国）の事例。比較記事によると、工業系マーケ会社INDUSTRIAL Strength Marketingがサイトを作り直し発信を続けた金属製作会社で、問い合わせが前年比222%増えた。第三者の紹介である点に注意。",
     "industries": [
@@ -121726,6 +121829,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1504",
     "kind": "success",
+    "region": "overseas",
     "title": "新製品の発表を60日で立ち上げ",
     "summary": "海外の事例。INDUSTRIAL Strength Marketingの事例一覧では、糸のメーカーの新製品を60日で市場に出した例が紹介されている。新製品は記事・動画・資料を同時に用意すると、短い期間で知ってもらえる。",
     "industries": [
@@ -121745,6 +121849,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1505",
     "kind": "success",
+    "region": "overseas",
     "title": "電子機器の受託製造でサイト刷新",
     "summary": "海外の事例。紹介記事によると、INDUSTRIAL Strength Marketingは電子機器の受託製造会社の名前の見せ方とサイトを作り直し、問い合わせの質と反応が良くなった。数字ではなく「質」の改善として紹介。",
     "industries": [
@@ -121765,6 +121870,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-763",
     "kind": "buyer",
+    "region": "overseas",
     "title": "買う側の関係者は社内13人・社外9人",
     "summary": "海外の調査。Forresterの2026年報告（約1万8千人の買い手）では、購入に関わる人は平均で社内13人、社外9人。図面を見る人、値段を見る人、品質を見る人それぞれに答える記事が要る。",
     "industries": [
@@ -121785,6 +121891,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-764",
     "kind": "buyer",
+    "region": "overseas",
     "title": "買い手はAIで調べ、人と事業者に確かめる",
     "summary": "海外の調査。Forresterの2026年報告では、買い手の94%が購入の途中でAIを使うが、出発点として使い、答えは仲間・専門家・事業者本人に確かめる傾向が強まっている。",
     "industries": [
@@ -121804,6 +121911,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-765",
     "kind": "buyer",
+    "region": "overseas",
     "title": "慎重な買い手は約束より証拠を求める",
     "summary": "海外の調査。Forresterの2026年報告の題は「リスクを嫌う買い手は約束でなく証拠を求める」。製造業なら、測定データ・検査記録・不具合への対応例など、確かめられる事実を記事に入れるとよい。",
     "industries": [
@@ -121824,6 +121932,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-766",
     "kind": "buyer",
+    "region": "overseas",
     "title": "大人数で決めるのは失敗を減らすため",
     "summary": "海外の調査。Forresterの報告では、社内6人以上で決めた買い手の94%が、人数が多いことに利点（視点が広がる、失敗が減る）を感じた。社内で回覧されても誤解されない説明を心がける。",
     "industries": [
@@ -121843,6 +121952,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-767",
     "kind": "buyer",
+    "region": "overseas",
     "title": "勝つ会社は最初の候補リストにほぼいる",
     "summary": "海外の調査。6senseの2025年報告（約4,000人の買い手）では、最後に選ばれる会社は95%の確率で最初の候補リストに入っていた。探し始める前から名前を知られていることが大事。",
     "industries": [
@@ -121862,6 +121972,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-768",
     "kind": "buyer",
+    "region": "overseas",
     "title": "最初に連絡した会社が約8割勝つ",
     "summary": "海外の調査の紹介。6senseの2025年報告では、買い手は一番の候補に最初に連絡することが約8割で、最終的に一番の候補から買うのは77%。最初の問い合わせ先になれるかが勝負。",
     "industries": [
@@ -121881,6 +121992,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-769",
     "kind": "buyer",
+    "region": "overseas",
     "title": "買い手の初連絡は道のりの6割を過ぎてから",
     "summary": "海外の調査。6senseの2025年報告では、買い手が初めて売り手に連絡するのは、購入の道のりの61%地点（前年は69%）。連絡の前に、記事やページで判断材料を渡しておく必要がある。",
     "industries": [
@@ -121900,6 +122012,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-770",
     "kind": "buyer",
+    "region": "overseas",
     "title": "候補の会社とは以前から接点がある",
     "summary": "海外の調査。6senseの2025年報告では、買い手の候補リストの中に、以前に個人的な経験がある会社が97%の確率で含まれていた。展示会・紹介・過去の小口取引など、普段の接点が候補入りにつながる。",
     "industries": [
@@ -121919,6 +122032,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-771",
     "kind": "buyer",
+    "region": "overseas",
     "title": "今すぐ買う客は全体のほんの一部",
     "summary": "海外の研究。LinkedInのB2B Instituteが紹介する「95-5の法則」では、多くの分野で取引先を替えるのは数年に一度で、今まさに買う人はごく一部。残りの人に覚えてもらう発信が要る。",
     "industries": [
@@ -121939,6 +122053,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1506",
     "kind": "success",
+    "region": "overseas",
     "title": "クリックより「覚えてもらう」発信",
     "summary": "海外の考え方。LinkedInのB2B Instituteは、B2Bの広告は「クリックされる」より「記憶に残る」ことが大事と主張した。発注の機会が来たとき思い出されるよう、得意分野を同じ言葉でくり返す。",
     "industries": [
@@ -121958,6 +122073,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1507",
     "kind": "success",
+    "region": "overseas",
     "title": "「どんな時に思い出すか」を決めて書く",
     "summary": "海外の研究資料。LinkedInのB2B Instituteは、買い手が買う場面（困りごとのきっかけ）と会社名を結び付けることを勧める。「試作を急ぐ時」「海外品が不良だった時」など場面ごとに記事を作るとよい。",
     "industries": [
@@ -121978,6 +122094,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-772",
     "kind": "buyer",
+    "region": "overseas",
     "title": "95-5の数字はたとえで、決まりではない",
     "summary": "海外の解説。95-5の法則の割合はそのまま当てはめるものではなく、分野で変わると注意されている。ただ「今は買わない人が大半」という考え方は、受注品の多い町工場にも当てはまる。",
     "industries": [
@@ -121996,6 +122113,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-773",
     "kind": "buyer",
+    "region": "overseas",
     "title": "米国の企業の買い手の多くは12週以内に決める",
     "summary": "海外（米国）の調査。GoogleとNational Research Groupの2025年調査では、米国の企業の買い手の4分の3近くが、12週以内に購入を終えていた。探し始めてからが短いので、日ごろの情報の準備が要る。",
     "industries": [
@@ -122015,6 +122133,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "buyer-774",
     "kind": "buyer",
+    "region": "overseas",
     "title": "半年で取引先を替えた買い手は58%",
     "summary": "海外（米国）の調査。同じGoogleの2025年調査では、半年以内にB2Bで購入した人の58%が、その間に取引先を替えていた。取引先は思ったより動くので、乗り換え先として見つかる準備が要る。",
     "industries": [
@@ -122035,6 +122154,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-698",
     "kind": "pain",
+    "region": "overseas",
     "title": "専任の担当がいないのが一番の悩み",
     "summary": "海外（英国）の調査。Cognitionの調査では、製造業の33%が専任のマーケ担当がいないことを最大の課題に挙げ、従業員1〜9人の小さな会社ほど強く感じていた。社長や現場が無理なく書ける仕組みが要る。",
     "industries": [
@@ -122054,6 +122174,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-699",
     "kind": "pain",
+    "region": "overseas",
     "title": "自社の発信が古いと感じる会社も多い",
     "summary": "海外（英国）の調査。同じ調査で、製造業の27%が自社のマーケティングが時代遅れだと答えた。古いサイトのまま更新が止まっている会社は、まず実績や設備の更新から始めると負担が小さい。",
     "industries": [
@@ -122073,6 +122194,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-700",
     "kind": "pain",
+    "region": "overseas",
     "title": "効果の測り方が分からない",
     "summary": "海外（米国）の調査。Straight Northが米国の製造業114社に聞いた2025年調査では、20%がSEOの効果の測り方を最大の課題に挙げた。問い合わせの件数と、どの記事から来たかを記録するだけでも始められる。",
     "industries": [
@@ -122092,6 +122214,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "pain-701",
     "kind": "pain",
+    "region": "overseas",
     "title": "社内にWebの知識がない",
     "summary": "海外（米国）の解説。HubSpotの代理店Market Veepは、製造業の多くが社内にデジタルマーケティングの知識を持たないことを、うまくいかない理由の一つに挙げる。外に任せるにも、何を書くかは社内でしか決められない。",
     "industries": [
@@ -122111,6 +122234,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1508",
     "kind": "success",
+    "region": "overseas",
     "title": "技術者本人がカメラの前で説明する",
     "summary": "海外の傾向。米国の動画制作会社は、製造業のB2B動画では、実際の技術者や開発チームが自分で製品やサービスを説明する例が増えていると紹介する。うまく話せなくても、本物の説明が信頼につながる。",
     "industries": [
@@ -122130,6 +122254,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1509",
     "kind": "success",
+    "region": "overseas",
     "title": "再生数より「誰が見たか」",
     "summary": "海外（米国）の解説。工業系のYouTubeでは、狙う会社の技術者に300回見られる動画のほうが、趣味の人に3万回見られる動画より価値があるという。数字の小ささで落ち込まず、見てほしい人を決める。",
     "industries": [
@@ -122149,6 +122274,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1510",
     "kind": "success",
+    "region": "overseas",
     "title": "動画を買い手の段階ごとに作る",
     "summary": "海外の事例紹介。あるメーカーは動画を思いつきで出すのをやめ、買い手の検討段階と営業の流れに合わせて作った。製品の裏にいる技術者や機械工を見せ、技術的な判断を安心してできるようにした。",
     "industries": [
@@ -122168,6 +122294,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1511",
     "kind": "success",
+    "region": "overseas",
     "title": "工場見学のような動画を作る",
     "summary": "海外（米国）の提案。動画制作会社Studio Northは、実際に工場を訪ねたように感じられる工業動画を勧める。遠方の買い手は監査に来る前に動画で現場の整理整頓や検査の流れを確かめられる。",
     "industries": [
@@ -122188,6 +122315,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1512",
     "kind": "success",
+    "region": "overseas",
     "title": "工業系動画は製品ページと組み合わせる",
     "summary": "海外（米国）の解説。工業系マーケ会社Straight Northは、工業会社の動画の作り方のこつをまとめている。動画だけで終わらせず、仕様を書いた製品ページや記事に埋め込むと、検索と問い合わせにつながる。",
     "industries": [
@@ -122207,6 +122335,7 @@ const MFG_PART_6: MfgItem[] = [
   {
     "id": "success-1513",
     "kind": "success",
+    "region": "overseas",
     "title": "大手建機メーカーもYouTubeで発信",
     "summary": "海外の事例。製造業向けWeb会社Evenboundは、大手の建設機械メーカーを例に、YouTubeなどのSNSは製造業や工業系の会社にも効くと紹介する。大手だけでなく、小さな工場も同じ場所で見てもらえる。",
     "industries": [

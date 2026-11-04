@@ -9,6 +9,8 @@ export interface MfgItem {
   kind: MfgKind;
   /** trend のとき：国や団体の正式な発表なら true。報道・見通しは false */
   official?: boolean;
+  /** 海外の事例・調査なら "overseas"。国内と分けて数え、読む人の疑問・しおりのこぼれ話・AIへの指示には使わない */
+  region?: "overseas";
   title: string;
   summary: string;
   /** "all" か、業種の名前（切削加工・板金・溶接 など） */
