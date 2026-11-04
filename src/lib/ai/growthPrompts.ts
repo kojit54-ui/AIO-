@@ -7,6 +7,7 @@ import { PURPOSE_FOR_AI } from "@/lib/brand";
 import type { ResearchForPrompt } from "@/lib/keywords/research";
 import type { AioPoint } from "@/types/domain";
 import { ParseError, asData, parseJson } from "./prompt";
+import { articleIdeasFor, isManufacturing } from "@/lib/manufacturing";
 
 /** 深掘りの聞き手。答えが具体的でないときだけ、短い質問を1つ返す */
 export const FOLLOWUP_SYSTEM_PROMPT = `あなたは、中小企業の社長や担当者からブログの材料を聞き出す、やさしい聞き手です。
@@ -63,7 +64,6 @@ export function buildFollowUpPrompt(input: FollowUpInput): string {
 <materials>
 ${asData(materials)}
 </materials>
-
 次の形のJSONで返してください：
 {"follow_up": string | null, "why": string, "example": string}`;
 }
@@ -96,14 +96,21 @@ export type HearingForPrompt = Record<string, { question: string; answer: string
 
 /** research はラッコキーワードの下調べ（src/lib/keywords/research.ts）。無ければヒアリングだけで作る */
 export function buildProposalPrompt(hearing: HearingForPrompt, research: ResearchForPrompt[] = [], searchConsole: SearchSignalForPrompt[] = []): string {
-  const materials = { hearing, ...(research.length ? { research } : {}), ...(searchConsole.length ? { search_console: searchConsole } : {}) };
+  const business = Object.values(hearing).map((h) => h.answer).join(" ");
+  const mfgIdeas = isManufacturing(business) ? articleIdeasFor(business, 8) : [];
+  const materials = {
+    hearing,
+    ...(research.length ? { research } : {}),
+    ...(searchConsole.length ? { search_console: searchConsole } : {}),
+    ...(mfgIdeas.length ? { manufacturing_ideas: mfgIdeas } : {}),
+  };
   const extra = [research.length ? "下調べ" : "", searchConsole.length ? "Search Console の言葉" : ""].filter(Boolean).join("と");
   return `<materials> のヒアリング${extra ? `と${extra}` : ""}をもとに、記事の組み立てを3案作ってください。
 
 <materials>
 ${asData(materials)}
 </materials>
-
+${mfgIdeas.length ? "\nmanufacturing_ideas は、製造業の発注者の疑問や悩みから作った記事の案の例です（製造業の知識表）。この会社の答えに合うものだけを参考にし、会社の事実としては扱わないでください。\n" : ""}
 次の形のJSONで返してください：
 {"proposals": [{"pillar": {"keyword": string, "question": string}, "clusters": [{"keyword": string, "question": string}], "reasons": ("sales"|"competition"|"aio")[], "why": string}]}`;
 }

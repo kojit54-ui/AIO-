@@ -13,6 +13,7 @@ import { BigShiori, Logo, Reveal, useInView } from "@/components/landing";
 import { ShioriTalk, Typed } from "@/components/talk";
 import { CHOSEN_STAGES, SERVICE_COMPANION, SERVICE_MOST_IMPORTANT } from "@/lib/brand";
 import { useStore } from "@/mock/store";
+import { MFG_ITEMS, mfgCounts } from "@/lib/manufacturing";
 
 export function Welcome() {
   const { ready, user } = useStore();
@@ -43,6 +44,7 @@ export function Welcome() {
       <Quiz />
       <ThreeSteps />
       <KeepGoing />
+      <ForMakers />
       <ForYou />
       <FinalCall startHref={startHref} startLabel={startLabel} signedIn={signedIn} />
 
@@ -512,6 +514,53 @@ function KeepGoing() {
             <p className="text-sm text-muted">会社のことを教えるほど、しおりがあなたの会社にくわしくなり、記事がどんどん「あなたの会社らしく」なります。</p>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/** 製造業に特化している理由（製造業の知識表から） */
+function ForMakers() {
+  const counts = mfgCounts();
+  // 発注する人の疑問から、加工の相談らしいものを見せる（経営の悩みの問いは除く）
+  const samples = MFG_ITEMS.filter((x) => x.kind === "question" && !x.industries.includes("all")).slice(0, 8);
+  const stats: [string, number][] = [
+    ["発注する人の疑問", counts.question],
+    ["買い手の探し方・決め方", counts.buyer],
+    ["製造業の悩み", counts.pain],
+    ["Webでうまくいったやり方", counts.success],
+  ];
+  return (
+    <section className="py-12">
+      <div className="mx-auto max-w-5xl space-y-5 px-4 sm:px-6">
+        <Reveal>
+          <SectionTitle kicker="製造業に特化しています">しおりは、ものづくりの現場を勉強しています</SectionTitle>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <p className="mx-auto max-w-3xl text-center text-muted">
+            公的機関や業界メディア、調査の公開情報から、製造業の悩みや、発注する人がよく抱く疑問など {MFG_ITEMS.length}件 を集めて、AIに教えています。だから「小ロットでも頼める？」「図面がなくても大丈夫？」のような、お客様が本当に知りたいことに答える記事になります。これからも増やしていきます。
+          </p>
+        </Reveal>
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {stats.map(([label, n], i) => (
+            <li key={label}>
+              <Reveal delay={i * 0.06} className="card h-full text-center">
+                <span className="block text-3xl font-black text-brand">{n}</span>
+                <span className="text-sm font-bold">{label}</span>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+        <Reveal delay={0.1}>
+          <p className="mb-2 text-center text-sm font-bold">お客様がよく抱く疑問の例</p>
+          <ul className="flex flex-wrap justify-center gap-2">
+            {samples.map((x) => (
+              <li key={x.id} className="rounded-full border-2 border-line bg-surface px-3 py-1 text-sm">
+                「{x.title}」
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

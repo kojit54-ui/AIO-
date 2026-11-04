@@ -42,6 +42,13 @@
 
 ## 記録
 
+### 2026-11-04 CC（Claude、プロジェクトのスレッド）製造業の知識表
+- ブランチ：claude/project-thread-cnj6dn
+- 変更点：src/lib/manufacturing（data.ts 213件、index.ts、テスト）、書き手・点検役・記事の提案への差し込み（src/lib/ai/prompt.ts、growthPrompts.ts）、ホームの MfgTip、/admin/knowledge、入口のページの ForMakers、docs/MANUFACTURING.md
+- 収集：5つのテーマで検索を約140回（サブエージェント5つ）。イプロス・キーエンスはこの環境から直接開けず、検索結果の要約から
+- 確認結果：lint・型検査・テスト通過。375px・1280px で管理画面・入口・ホーム（試しに製造業の会社にして）を確認
+- 次の作業：定期的に集め直すか（田村さんの確認待ち）、イプロス・キーエンスの通信許可
+
 ### 2026-11-04 CC（Claude、プロジェクトのスレッド）しおりの話し方
 - ブランチ：claude/project-thread-cnj6dn
 - 変更点：src/lib/shioriTone.ts（やさしめ／ふつう／きびしめ、ホームの場面6つ：はじめて・今月載せた・書きかけ・書きかけが1週間以上・1か月以上空いた・今月まだ。テストあり）、useShioriTone（ブラウザに覚える）、ホームのひとことを場面と話し方で変える、マイページに「しおりの話し方」、しおり通信のひとことを少し厳しめに、新しくなったことに1つ

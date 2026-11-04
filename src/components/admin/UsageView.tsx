@@ -29,6 +29,9 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
           <Link href="/admin/trial" className="text-brand-dark underline">
             30秒でためすの見守り
           </Link>
+          <Link href="/admin/knowledge" className="text-brand-dark underline">
+            製造業の知識表
+          </Link>
         </nav>
       </div>
 

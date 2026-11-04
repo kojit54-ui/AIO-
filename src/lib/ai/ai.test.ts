@@ -69,6 +69,17 @@ describe("prompt", () => {
     expect(buildUserPrompt("outline", buildGenerationInput(ctx()))).toContain("<materials>");
   });
 
+  it("製造業の会社のときだけ、製造業の知識表のコツと読む人の疑問の例を足す", () => {
+    const base = buildGenerationInput(ctx());
+    expect(buildUserPrompt("body", base)).not.toContain("<reader_questions>");
+    const mfg = { ...base, profile: { ...base.profile!, business: "アルミとステンレスの切削加工（NC旋盤・マシニング）" } };
+    const body = buildUserPrompt("body", mfg);
+    expect(body).toContain("<reader_questions>");
+    expect(body).toContain("数字や事例を作らない");
+    expect(buildUserPrompt("review", mfg)).toContain("製造業の会社の記事では aio");
+    expect(buildUserPrompt("images", mfg)).not.toContain("製造業");
+  });
+
   it("決まった形以外の本文ブロックは受け付けない", () => {
     expect(() => parseBodyResult(JSON.stringify({ body: [{ type: "html", text: "<script>" }] }))).toThrow(ParseError);
     expect(() => parseBodyResult("JSONではない")).toThrow(ParseError);

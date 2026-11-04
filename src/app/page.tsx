@@ -13,6 +13,7 @@ import { ShioriGrowth } from "@/components/ShioriGrowth";
 import { StampBook } from "@/components/StampBook";
 import { TownBoard } from "@/components/TownBoard";
 import { WhatsNew } from "@/components/WhatsNew";
+import { MfgTip } from "@/components/MfgTip";
 import { useShioriTone } from "@/components/useShioriTone";
 import { homeLines, referenceTime } from "@/lib/shioriTone";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
@@ -93,6 +94,7 @@ export default function HomePage() {
       </section>
 
       <AioNews />
+      <MfgTip business={org?.profile?.business} />
 
       <TownBoard db={db} orgId={orgId} orgName={org?.name ?? ""} />
       <StampBook db={db} orgId={orgId} />
