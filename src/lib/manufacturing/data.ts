@@ -60841,5 +60841,9984 @@ export const MFG_ITEMS: MfgItem[] = [
       "publisher": "CREX",
       "date": null
     }
+  },
+  {
+    "id": "term-601",
+    "kind": "term",
+    "title": "SCM440はクロムとモリブデン入り",
+    "summary": "S45Cにクロムとモリブデンを足した合金鋼。焼入れで中まで硬くなりやすく、強さと粘りが増す。その分、材料費はS45Cより高めになる。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "S45CとSCM440、値段の差で得られるもの",
+    "source": {
+      "title": "[Machine #2] S45C vs SCM440: Smart Buyer's Guide",
+      "url": "https://globalsteelinsight.blogspot.com/2025/12/s45c-vs-scm440-cost-performance-guide.html",
+      "publisher": "Global Steel Insight",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "question-648",
+    "kind": "question",
+    "title": "太い軸もS45Cで大丈夫？",
+    "summary": "太い材料だとS45Cは焼入れしても芯が軟らかいまま残りやすい。大径で芯まで強さが要るならSCM440を候補に、と答えると親切。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "機械部品",
+      "熱処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "軸の太さで材料が変わる理由",
+    "source": {
+      "title": "[Machine #2] S45C vs SCM440: Smart Buyer's Guide",
+      "url": "https://globalsteelinsight.blogspot.com/2025/12/s45c-vs-scm440-cost-performance-guide.html",
+      "publisher": "Global Steel Insight",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "question-649",
+    "kind": "question",
+    "title": "表面だけ硬ければS45Cで足りる？",
+    "summary": "摩耗に耐える表面硬さが目的で芯の強さが要らないなら、S45Cに高周波焼入れで足りることが多い。目的を聞いて材料を絞ると安くなる。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "機械部品",
+      "熱処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "[Machine #2] S45C vs SCM440: Smart Buyer's Guide",
+      "url": "https://globalsteelinsight.blogspot.com/2025/12/s45c-vs-scm440-cost-performance-guide.html",
+      "publisher": "Global Steel Insight",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "question-650",
+    "kind": "question",
+    "title": "SCM440の部品に溶接できる？",
+    "summary": "S45CもSCM440も炭素が多く割れやすい。SCM440は焼きが入りやすい分さらに割れやすく、予熱など厳しい手順が要る。溶接前提なら材料から相談を。",
+    "industries": [
+      "溶接",
+      "製缶",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "溶接してはいけない鋼材の見分け方",
+    "source": {
+      "title": "[Tech #2] Welding Wars: S45C vs SCM440",
+      "url": "https://globalsteelinsight.blogspot.com/2026/01/welding-s45c-vs-scm440-crack-prevention.html",
+      "publisher": "Global Steel Insight",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "term-602",
+    "kind": "term",
+    "title": "調質材とは",
+    "summary": "焼入れ・焼戻しをして、強さと粘りの釣り合いを整えた材料。仕上がる強さは材料の種類だけでなく、太さや熱処理の条件で大きく変わる。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "機械部品",
+      "熱処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "調質材と生材、図面にどう書く？",
+    "source": {
+      "title": "[Machine #2] S45C vs SCM440: Smart Buyer's Guide",
+      "url": "https://globalsteelinsight.blogspot.com/2025/12/s45c-vs-scm440-cost-performance-guide.html",
+      "publisher": "Global Steel Insight",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "question-651",
+    "kind": "question",
+    "title": "鋼材の強さの数字はどれを信じる？",
+    "summary": "ネットの数値は出どころでばらつく。設計ではJIS（G4051やG4053など）と鋼材メーカーの保証値を基準に、と記事で一言添えると信頼される。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "[Machine #2] S45C vs SCM440: Smart Buyer's Guide",
+      "url": "https://globalsteelinsight.blogspot.com/2025/12/s45c-vs-scm440-cost-performance-guide.html",
+      "publisher": "Global Steel Insight",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "term-603",
+    "kind": "term",
+    "title": "強いボルトにはSCM440",
+    "summary": "10.9級以上のような高強度ボルトにはSCM440が使われる例が多い。強度区分と材料はセットで考える、と伝えるとよい。",
+    "industries": [
+      "ねじ・締結部品",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "[Machine #2] S45C vs SCM440: Smart Buyer's Guide",
+      "url": "https://globalsteelinsight.blogspot.com/2025/12/s45c-vs-scm440-cost-performance-guide.html",
+      "publisher": "Global Steel Insight",
+      "date": "2025-12"
+    }
+  },
+  {
+    "id": "term-604",
+    "kind": "term",
+    "title": "工具鋼は用途で3つに分かれる",
+    "summary": "JISの工具鋼は主な用途で「切削工具用」「冷間金型用」「熱間金型用」に分類される。記号だけでなく用途区分で見ると選びやすい。",
+    "industries": [
+      "金型",
+      "刃物・工具",
+      "熱処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工具鋼の基礎知識 鉄鋼材料の基礎知識(12)",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2607/06/news126_3.html",
+      "publisher": "MONOist",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "term-605",
+    "kind": "term",
+    "title": "SKD11は冷間金型の定番",
+    "summary": "炭素とクロム（約12%）が多い工具鋼。硬い炭化物ができて摩耗に強く、抜き型・転造ダイス・成形ロールなど常温で使う型に多い。",
+    "industries": [
+      "金型",
+      "プレス",
+      "刃物・工具"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工具鋼の基礎知識 鉄鋼材料の基礎知識(12)",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2607/06/news126_3.html",
+      "publisher": "MONOist",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "term-606",
+    "kind": "term",
+    "title": "SKD61は熱間金型の定番",
+    "summary": "熱に強く高温でも軟らかくなりにくい工具鋼。ダイカスト型や樹脂の射出成形型によく使われる。",
+    "industries": [
+      "金型",
+      "鋳造",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "工具鋼の基礎知識 鉄鋼材料の基礎知識(12)",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2607/06/news126_3.html",
+      "publisher": "MONOist",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "question-652",
+    "kind": "question",
+    "title": "型材はSKD11とSKD61どっち？",
+    "summary": "摩耗に強いのはSKD11、衝撃や熱の繰り返しに強いのはSKD61、という整理が多い。使う温度と割れやすさを聞いてから選ぶとよい。",
+    "industries": [
+      "金型",
+      "プレス",
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "型が欠けた・割れた時に見直す材料",
+    "source": {
+      "title": "工具鋼の基礎知識 鉄鋼材料の基礎知識(12)",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2607/06/news126_3.html",
+      "publisher": "MONOist",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "term-607",
+    "kind": "term",
+    "title": "SUJ2（軸受鋼）とは",
+    "summary": "炭素約1%・クロム約1.5%を含む鋼で、ベアリングの玉やころに使われる。焼入れ・焼戻しで硬くして耐摩耗性を出して使う。",
+    "industries": [
+      "機械部品",
+      "熱処理",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "軸受鋼SUJ2の組織（技術資料）",
+      "url": "https://www.pref.niigata.lg.jp/uploaded/attachment/430802.pdf",
+      "publisher": "新潟県工業技術総合研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "question-653",
+    "kind": "question",
+    "title": "SUJ2はどれくらい硬くなる？",
+    "summary": "軸受用途では焼入れ焼戻しでHRC60前後以上にして使うのが一般的とメーカー資料にある。硬くするほど粘りが減る点も添えると誠実。",
+    "industries": [
+      "機械部品",
+      "熱処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Steel Grade（軸受用鋼の硬さと用途）",
+      "url": "https://www.nachi-fujikoshi.co.jp/eng/kou/jiku/kob02a.htm",
+      "publisher": "不二越",
+      "date": null
+    }
+  },
+  {
+    "id": "question-654",
+    "kind": "question",
+    "title": "SUS304が磁石につくのは偽物？",
+    "summary": "SUS304は本来つきにくいが、曲げや冷間加工で磁性のある組織ができ、加工した所だけつくことがある。磁石だけで材料の真偽は決められない。",
+    "industries": [
+      "板金",
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "「磁石がつく＝不良」ではない話",
+    "source": {
+      "title": "研究報告 2023-05",
+      "url": "https://www.gitec.rd.pref.gifu.lg.jp/files/reports/2023/gitec_2023_05.pdf",
+      "publisher": "岐阜県工業技術研究所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "term-608",
+    "kind": "term",
+    "title": "加工誘起マルテンサイトとは",
+    "summary": "SUS304などを曲げたり伸ばしたりすると、一部が磁性のある硬い組織に変わる現象。加工が強いほど増え、硬くなり磁石につきやすくなる。",
+    "industries": [
+      "板金",
+      "プレス",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "研究報告 2023-05",
+      "url": "https://www.gitec.rd.pref.gifu.lg.jp/files/reports/2023/gitec_2023_05.pdf",
+      "publisher": "岐阜県工業技術研究所",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "question-655",
+    "kind": "question",
+    "title": "磁気を嫌う部品は何を確かめる？",
+    "summary": "非磁性が要る用途では、加工後に透磁率を測って管理する方法がある。材料名だけでなく「加工後に測るか」まで発注時に決めておく。",
+    "industries": [
+      "精密機器",
+      "医療機器",
+      "半導体",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "技術シート 18-10",
+      "url": "https://www.orist.jp/technicalsheet/18-10.pdf",
+      "publisher": "大阪産業技術研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "term-609",
+    "kind": "term",
+    "title": "SUS430は磁石につくステンレス",
+    "summary": "SUS430はフェライト系で、もともと磁石につく。SUS304より安いが、さびにくさは劣る。ラックや厨房備品などで使い分けられる。",
+    "industries": [
+      "板金",
+      "建材・金物",
+      "食品機械"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ステンレスラック製品情報",
+      "url": "https://pr.mono.ipros.com/yamakin-s/product/detail/2000777501/",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-610",
+    "kind": "term",
+    "title": "SUS440Cは焼入れできるステンレス",
+    "summary": "炭素約1%・クロム約17%のマルテンサイト系。焼入れ焼戻しでSUS420J2より硬く強くでき、刃物や軸受・精密部品に使われる。",
+    "industries": [
+      "刃物・工具",
+      "機械部品",
+      "熱処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "SUS440Cの組織（技術資料）",
+      "url": "https://www.pref.niigata.lg.jp/uploaded/attachment/430809.pdf",
+      "publisher": "新潟県工業技術総合研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "question-656",
+    "kind": "question",
+    "title": "SUS440Cならさびない？",
+    "summary": "SUS304などの300系ほどはさびに強くない。軽い腐食環境なら使えるが、塩分の多い所では表面処理なしは勧められない、とメーカーは説明する。",
+    "industries": [
+      "刃物・工具",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "440C Stainless Steel Characteristics and Applications",
+      "url": "https://www.sakysteel.com/news/440c-stainless-steel-characteristics-and-applications",
+      "publisher": "SAKY STEEL",
+      "date": null
+    }
+  },
+  {
+    "id": "question-657",
+    "kind": "question",
+    "title": "硬い刃物ほど良い？",
+    "summary": "硬いほど摩耗には強いが、硬すぎると粘りが落ち、衝撃で欠けやすくなる。用途に合う硬さで止めるのがプロの判断、と伝えられる。",
+    "industries": [
+      "刃物・工具",
+      "熱処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "刃物の硬さを上げすぎない理由",
+    "source": {
+      "title": "440C Stainless Steel Characteristics and Applications",
+      "url": "https://www.sakysteel.com/news/440c-stainless-steel-characteristics-and-applications",
+      "publisher": "SAKY STEEL",
+      "date": null
+    }
+  },
+  {
+    "id": "term-611",
+    "kind": "term",
+    "title": "SUS440Fは削りやすい440C",
+    "summary": "SUS440Cは削りにくく細かい穴加工が難しいため、硫黄を足して削りやすくしたSUS440Fが規格化された。精密小物で候補になる。",
+    "industries": [
+      "切削加工",
+      "精密機器"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "JP6207408B2（快削マルテンサイト系ステンレス）",
+      "url": "https://patents.google.com/patent/JP6207408B2/en",
+      "publisher": "Google Patents",
+      "date": null
+    }
+  },
+  {
+    "id": "term-612",
+    "kind": "term",
+    "title": "ステンレスの3つの系統",
+    "summary": "オーステナイト系（304など、磁石につきにくい）、フェライト系（430など、つく）、マルテンサイト系（440Cなど、焼入れ可）。系統で性格が決まる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ステンレス3系統を1枚の表で",
+    "source": {
+      "title": "技術シート 18-10",
+      "url": "https://www.orist.jp/technicalsheet/18-10.pdf",
+      "publisher": "大阪産業技術研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "term-613",
+    "kind": "term",
+    "title": "A2017（ジュラルミン）とは",
+    "summary": "アルミに銅を加えた合金で、鋼に迫る強さを持ち、削りやすい。重さは鉄の半分以下。強さが要る機械部品の板・棒によく使われる。",
+    "industries": [
+      "切削加工",
+      "機械部品",
+      "航空宇宙"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ジュラルミンだが、鋼材に匹敵する強度だと？",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/1412/05/news019.html",
+      "publisher": "MONOist",
+      "date": "2014-12"
+    }
+  },
+  {
+    "id": "question-658",
+    "kind": "question",
+    "title": "ジュラルミンはさびやすい？",
+    "summary": "銅を多く含むため、アルミの中ではさびに弱い。腐食する場所ではアルマイトなどの防食処理が必要。力がかかったまま腐食すると割れることもある。",
+    "industries": [
+      "切削加工",
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ジュラルミン部品にアルマイトが要る理由",
+    "source": {
+      "title": "ジュラルミンだが、鋼材に匹敵する強度だと？",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/1412/05/news019.html",
+      "publisher": "MONOist",
+      "date": "2014-12"
+    }
+  },
+  {
+    "id": "question-659",
+    "kind": "question",
+    "title": "ジュラルミンは溶接できる？",
+    "summary": "A2017は溶接に向かない材料とされる。溶接で組む構造なら、溶接しやすい5000系や6000系を勧めるのが一般的。",
+    "industries": [
+      "溶接",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ジュラルミンだが、鋼材に匹敵する強度だと？",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/1412/05/news019.html",
+      "publisher": "MONOist",
+      "date": "2014-12"
+    }
+  },
+  {
+    "id": "term-614",
+    "kind": "term",
+    "title": "A6063は押出形材向け",
+    "summary": "強さは控えめだが押し出しやすく、さびにも比較的強い。アルミフレームやレールなど複雑な断面の形材の材料として定番。",
+    "industries": [
+      "金属加工",
+      "建材・金物",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "アルミニウム合金（技術資料）",
+      "url": "https://nbk1560.com/-/media/Images/en/Product%20Site/en_technical/34_Aluminum%20Alloy.pdf",
+      "publisher": "鍋屋バイテック会社",
+      "date": null
+    }
+  },
+  {
+    "id": "term-615",
+    "kind": "term",
+    "title": "展伸材と鋳物の違い",
+    "summary": "展伸材は板・棒・押出など叩いたり伸ばしたりして作る材料（A5052など4桁）。鋳物は溶かして型に流す材料（AC4C、ADC12など）。",
+    "industries": [
+      "鋳造",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "アルミの記号の頭文字で分かること",
+    "source": {
+      "title": "YMC TR10 TechPaper 03",
+      "url": "https://global.yamaha-motor.com/jp/design_technology/technical/pdf/chapters/YMC-TR10_TechPaper_03.pdf",
+      "publisher": "ヤマハ発動機 技報",
+      "date": null
+    }
+  },
+  {
+    "id": "term-616",
+    "kind": "term",
+    "title": "ADC12はダイカストの定番",
+    "summary": "アルミダイカストで最もよく使われる合金。二輪エンジン部品のダイカスト材では、ADC10・ADC12相当が大半を占めると報告されている。",
+    "industries": [
+      "鋳造",
+      "自動車部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "YMC TR10 TechPaper 03",
+      "url": "https://global.yamaha-motor.com/jp/design_technology/technical/pdf/chapters/YMC-TR10_TechPaper_03.pdf",
+      "publisher": "ヤマハ発動機 技報",
+      "date": null
+    }
+  },
+  {
+    "id": "term-617",
+    "kind": "term",
+    "title": "AC4Cはアルミ鋳物の定番",
+    "summary": "砂型・金型鋳物で多い合金。二輪部品の鋳物ではAC4BとAC4Cで使用量の約8割を占めたと報告されている。熱処理（T6など）で強くできる。",
+    "industries": [
+      "鋳造",
+      "自動車部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "YMC TR10 TechPaper 03",
+      "url": "https://global.yamaha-motor.com/jp/design_technology/technical/pdf/chapters/YMC-TR10_TechPaper_03.pdf",
+      "publisher": "ヤマハ発動機 技報",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-499",
+    "kind": "trend",
+    "official": true,
+    "title": "ダイカスト材を粘り強くする研究",
+    "summary": "ADC12は割れやすさが課題で、より伸びる（粘り強い）ダイカスト材を求める動きがあり、公設試でも研究されている。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "研究報告 metal 2018-06",
+      "url": "https://www.gitec.rd.pref.gifu.lg.jp/files/reports/2018/metal_2018_06.pdf",
+      "publisher": "岐阜県工業技術研究所",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "term-618",
+    "kind": "term",
+    "title": "タフピッチ銅（C1100）とは",
+    "summary": "銅99.90%以上で、わずかに酸素を含む純銅。電気と熱をよく通し、電線やバスバーなど電気用途の定番。",
+    "industries": [
+      "金属加工",
+      "電子部品",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "純銅（商品カテゴリ）",
+      "url": "https://jp.misumi-ec.com/vona2/s_cate/%e7%b4%94%e9%8a%85/",
+      "publisher": "ミスミ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-619",
+    "kind": "term",
+    "title": "無酸素銅（C1020）とは",
+    "summary": "酸素をほぼ含まない純度99.96%以上の銅。電気・熱の伝わりやすさに加え、ろう付けや深絞りに強い。タフピッチ銅より高め。",
+    "industries": [
+      "金属加工",
+      "電子部品",
+      "半導体"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "純銅（商品カテゴリ）",
+      "url": "https://jp.misumi-ec.com/vona2/s_cate/%e7%b4%94%e9%8a%85/",
+      "publisher": "ミスミ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-660",
+    "kind": "question",
+    "title": "ろう付けする銅はどれを選ぶ？",
+    "summary": "酸素を含むタフピッチ銅は、水素を含む雰囲気で熱すると脆くなる（水素脆化）ことがある。ろう付け・溶接なら無酸素銅やりん脱酸銅を。",
+    "industries": [
+      "溶接",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "銅の種類を間違えると割れる話",
+    "source": {
+      "title": "純銅（商品カテゴリ）",
+      "url": "https://jp.misumi-ec.com/vona2/s_cate/%e7%b4%94%e9%8a%85/",
+      "publisher": "ミスミ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-620",
+    "kind": "term",
+    "title": "りん脱酸銅（C1220）とは",
+    "summary": "りんで酸素を抜いた銅で、酸素が少ないため水素脆化を起こしにくい。配管や溶接・ろう付けする部品で使われる。",
+    "industries": [
+      "パイプ加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "純銅（商品カテゴリ）",
+      "url": "https://jp.misumi-ec.com/vona2/s_cate/%e7%b4%94%e9%8a%85/",
+      "publisher": "ミスミ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-500",
+    "kind": "trend",
+    "official": false,
+    "title": "タフピッチ銅の代わりになる銅",
+    "summary": "JIS C1100に適合しつつ、りんを入れて性質を変えた「代替銅」を売り込む商社も出てきた。銅の選択肢は増えている。",
+    "industries": [
+      "金属加工",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "JIS C1100規格適合 リン入りタフピッチ代替銅",
+      "url": "https://www.ipros.com/product/detail/2000252234",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-621",
+    "kind": "term",
+    "title": "純チタンは1種〜4種",
+    "summary": "JISでは純チタンを1〜4種に分ける。1種が最も柔らかく成形しやすく、2種が最も汎用、3・4種は強いが成形しにくい。",
+    "industries": [
+      "金属加工",
+      "板金",
+      "医療機器"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "チタン製品資料",
+      "url": "https://www.namekawa.co.jp/pdf/namekawa_products_04_Titanium.pdf",
+      "publisher": "滑川軽銅",
+      "date": null
+    }
+  },
+  {
+    "id": "question-661",
+    "kind": "question",
+    "title": "JISとASTMのチタンは同じ？",
+    "summary": "ASTMのGr.1〜4がJIS1〜4種に近いが、成分や機械的性質は一致しない。海外図面のチタンを国内材で作るときは確認が必要。",
+    "industries": [
+      "金属加工",
+      "航空宇宙",
+      "医療機器"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外図面の材料記号を読み替える注意",
+    "source": {
+      "title": "チタン製品資料",
+      "url": "https://www.namekawa.co.jp/pdf/namekawa_products_04_Titanium.pdf",
+      "publisher": "滑川軽銅",
+      "date": null
+    }
+  },
+  {
+    "id": "term-622",
+    "kind": "term",
+    "title": "64チタンとは",
+    "summary": "アルミ6%・バナジウム4%を含むチタン合金（Ti-6Al-4V）。純チタンより大幅に強く、航空・医療・レース部品のボルトなどに使われる。",
+    "industries": [
+      "航空宇宙",
+      "医療機器",
+      "ねじ・締結部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "軽くて強い『64チタンボルト』",
+      "url": "https://mono.ipros.com/product/detail/2000401649",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-623",
+    "kind": "term",
+    "title": "ELI材とは",
+    "summary": "64チタンのうち、酸素・窒素・鉄などを特に少なくした品種。低温でも粘りを保ち、インプラントなど医療材料に使われる。",
+    "industries": [
+      "医療機器"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "高強度で耐食性に優れ極低温まで靭性を保つチタン",
+      "url": "https://mono.ipros.com/product/detail/2000532096",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-662",
+    "kind": "question",
+    "title": "純チタンと64チタンの使い分けは？",
+    "summary": "成形しやすさとさびにくさなら純チタン、強さと軽さが要る部品なら64チタン。用途を聞けば候補は絞れる、と記事に書くと相談が来やすい。",
+    "industries": [
+      "金属加工",
+      "切削加工",
+      "医療機器"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "軽くて強い『64チタンボルト』",
+      "url": "https://mono.ipros.com/product/detail/2000401649",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-624",
+    "kind": "term",
+    "title": "マグネシウムは実用金属で最も軽い",
+    "summary": "比重はアルミの約3分の2。軽さが武器だが、比較的低い温度で燃えることがあり、加工時の発火対策が大きな課題になる。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "マグネシウム合金のエンドミル加工に関する研究",
+      "url": "https://www.oita-ri.jp/wp-content/uploads/マグネシウム合金のエンドミル加工に関する研究.pdf",
+      "publisher": "大分県産業科学技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "question-663",
+    "kind": "question",
+    "title": "マグネシウムの切りくずは危ない？",
+    "summary": "細かい切りくずは可燃性固体で、危険物（第2類）に当たり事故の原因になりうる。保管や処理の決まりを守れる会社に頼むのが安心。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "マグネシウム加工を断られる理由",
+    "source": {
+      "title": "SASMA2024 資料",
+      "url": "https://unit.aist.go.jp/am-ri/news/images/sasma2024/sasma-1.pdf",
+      "publisher": "産業技術総合研究所",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "term-625",
+    "kind": "term",
+    "title": "AZ31とは",
+    "summary": "マグネシウムにアルミ約3%・亜鉛約1%を加えた代表的なマグネシウム合金。板や押出材で使われる。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "SASMA2024 資料",
+      "url": "https://unit.aist.go.jp/am-ri/news/images/sasma2024/sasma-1.pdf",
+      "publisher": "産業技術総合研究所",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "pain-389",
+    "kind": "pain",
+    "title": "油の付いたマグ切りくずが処理しにくい",
+    "summary": "切削油が付いた切りくずは再利用も安全な処理も難しい。乾式で削れば固まりのままリサイクルしやすい、という研究がある。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "SASMA2024 資料",
+      "url": "https://unit.aist.go.jp/am-ri/news/images/sasma2024/sasma-1.pdf",
+      "publisher": "産業技術総合研究所",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "question-664",
+    "kind": "question",
+    "title": "MCナイロンは何が得意？",
+    "summary": "摩耗に強く粘りがあるので、衝撃のかかる滑り部品やギア・ローラーに向く。一方で水を吸って寸法が変わりやすい点に注意。",
+    "industries": [
+      "プラスチック加工品",
+      "切削加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "MCナイロン 物性表",
+      "url": "https://files.bcart.jp/kurimotokakou/uploads/zaisitusyoumeisyo/butuseihyou/butsuseihyou_mcnylon.pdf",
+      "publisher": "樹脂加工会社の物性表",
+      "date": null
+    }
+  },
+  {
+    "id": "question-665",
+    "kind": "question",
+    "title": "ナイロン部品のはめあい寸法は？",
+    "summary": "ナイロン（PA6）は空気中の水分を吸って膨らむ。乾いた状態の寸法で組むと、後できつくなることがある。湿気を吸った後の寸法で考える。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ナイロン部品が後からきつくなる理由",
+    "source": {
+      "title": "Nylon Moisture Absorption: How Water Affects PA6 and PA66",
+      "url": "https://nylonplastic.com/nylon-moisture-absorption-effects-properties/",
+      "publisher": "nylonplastic.com",
+      "date": null
+    }
+  },
+  {
+    "id": "term-626",
+    "kind": "term",
+    "title": "樹脂のクリープとは",
+    "summary": "荷重をかけ続けると少しずつ変形が進む現象。POMはナイロンよりクリープに強く、ずっと力がかかる部品で選ばれやすい。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ナイロンとPOMの比較",
+      "url": "https://nylonplastic.com/ja/?p=4216",
+      "publisher": "nylonplastic.com",
+      "date": null
+    }
+  },
+  {
+    "id": "term-627",
+    "kind": "term",
+    "title": "PTFE（テフロン）とは",
+    "summary": "約260℃まで使え、ほぼすべての薬品に耐え、水を吸わず、よく滑る樹脂。ただし強さと硬さは低い。シール・ライニング・絶縁部品に多い。",
+    "industries": [
+      "プラスチック加工品",
+      "化学・塗料・接着剤",
+      "半導体"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PTFE 物性表",
+      "url": "https://files.bcart.jp/kurimotokakou/uploads/zaisitusyoumeisyo/butuseihyou/butsuseihyou_ptfe.pdf",
+      "publisher": "樹脂加工会社の物性表",
+      "date": null
+    }
+  },
+  {
+    "id": "question-666",
+    "kind": "question",
+    "title": "PTFEで精密な寸法は出る？",
+    "summary": "軟らかくつかみすぎると変形し、温度で伸び縮みが大きく、バリも出やすい。厳しい公差は出しにくい材料なので、要る所だけ公差を絞る。",
+    "industries": [
+      "切削加工",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "テフロン部品の公差の決め方",
+    "source": {
+      "title": "PTFE 物性表",
+      "url": "https://files.bcart.jp/kurimotokakou/uploads/zaisitusyoumeisyo/butuseihyou/butsuseihyou_ptfe.pdf",
+      "publisher": "樹脂加工会社の物性表",
+      "date": null
+    }
+  },
+  {
+    "id": "term-628",
+    "kind": "term",
+    "title": "コールドフローとは",
+    "summary": "PTFEなどに荷重をかけ続けると、常温でもじわじわ形が変わる現象。パッキンが緩む原因になるため、設計で見込むか充填材入りを選ぶ。",
+    "industries": [
+      "プラスチック加工品",
+      "ゴム"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PTFE 物性表",
+      "url": "https://files.bcart.jp/kurimotokakou/uploads/zaisitusyoumeisyo/butuseihyou/butsuseihyou_ptfe.pdf",
+      "publisher": "樹脂加工会社の物性表",
+      "date": null
+    }
+  },
+  {
+    "id": "term-629",
+    "kind": "term",
+    "title": "PPSとは",
+    "summary": "耐熱性が高く、薬品に強く、流れやすくて成形しやすいスーパーエンプラ。エンジン周りや電装品の筐体などで採用が広がった。",
+    "industries": [
+      "樹脂成形",
+      "自動車部品",
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "スーパーエンプラの採用広がる",
+      "url": "https://newswitch.jp/p/158",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-667",
+    "kind": "question",
+    "title": "PEEKは高い、代わりはある？",
+    "summary": "PPSは耐熱性がPEEKに近く、価格は安いとする物性資料がある。使用温度と強さの条件を聞いて、PPSで足りるか提案すると喜ばれる。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "PEEKをPPSに替えられる条件",
+    "source": {
+      "title": "PPS 物性表",
+      "url": "https://files.bcart.jp/kurimotokakou/uploads/zaisitusyoumeisyo/butuseihyou/butsuseihyou_pps.pdf",
+      "publisher": "樹脂加工会社の物性表",
+      "date": null
+    }
+  },
+  {
+    "id": "term-630",
+    "kind": "term",
+    "title": "PAIとPIとは",
+    "summary": "PAIはPEEKより強いが耐熱は少し低め、PI（ポリイミド）は連続300℃級でさらに熱に強いが高価。スーパーエンプラの上位の選択肢。",
+    "industries": [
+      "プラスチック加工品",
+      "半導体",
+      "航空宇宙"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "PEEK 物性表",
+      "url": "https://files.bcart.jp/kurimotokakou/uploads/zaisitusyoumeisyo/butuseihyou/butsuseihyou_peek.pdf",
+      "publisher": "樹脂加工会社の物性表",
+      "date": null
+    }
+  },
+  {
+    "id": "term-631",
+    "kind": "term",
+    "title": "UL94（樹脂の燃えにくさ）とは",
+    "summary": "米ULの燃焼試験の等級。V-0が最も厳しく10秒以内に消え燃えた滴が落ちない。HBは「ゆっくり燃える」最低の等級。V-1・V-2が中間。",
+    "industries": [
+      "樹脂成形",
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "樹脂部品のV-0とHBの違い",
+    "source": {
+      "title": "Flame retardant thermoplastics and UL classifications",
+      "url": "https://www.protolabs.co.uk/resources/blog/flame-retardant-thermoplastics-and-ul-classifications/",
+      "publisher": "Protolabs",
+      "date": null
+    }
+  },
+  {
+    "id": "question-668",
+    "kind": "question",
+    "title": "V-0の材料なら厚みは関係ない？",
+    "summary": "等級は材料と厚みの組み合わせで決まる。3mmでV-0でも1.5mmでは届かないことがある。設計厚みでULの登録情報を確かめる。",
+    "industries": [
+      "樹脂成形",
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "UL 94 classification in materials",
+      "url": "https://www.hubs.com/knowledge-base/ul-94-classification-in-materials/",
+      "publisher": "Hubs",
+      "date": null
+    }
+  },
+  {
+    "id": "question-669",
+    "kind": "question",
+    "title": "耐熱樹脂なら燃えにくい？",
+    "summary": "耐熱性と難燃性は別。耐熱は高温に耐える力、難燃は炎に触れた時の燃え方。必要な難燃等級は最終製品の安全規格で決まる。",
+    "industries": [
+      "樹脂成形",
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "UL 94 classification in materials",
+      "url": "https://www.hubs.com/knowledge-base/ul-94-classification-in-materials/",
+      "publisher": "Hubs",
+      "date": null
+    }
+  },
+  {
+    "id": "term-632",
+    "kind": "term",
+    "title": "シリコーンゴムは熱にも寒さにも強い",
+    "summary": "耐熱・耐寒に優れ、パッキンやガスケット、防振ゴム、ポッティングなど幅広く使われる。温度差の大きい場所の候補。",
+    "industries": [
+      "ゴム",
+      "食品機械",
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ゴムの特性と用途",
+      "url": "https://www.nichias.co.jp/gasketnavi/_data/pdf/technology/【資料】ゴムの特性と用途.pdf",
+      "publisher": "ニチアス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-633",
+    "kind": "term",
+    "title": "フッ素ゴムは熱と薬品に最も強い",
+    "summary": "ゴムの中で耐熱・耐薬品が最も優れる部類。化学工場のパッキンやダイヤフラムなど厳しい環境で使われるが高価。",
+    "industries": [
+      "ゴム",
+      "化学・塗料・接着剤",
+      "半導体"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ゴムの特性と用途",
+      "url": "https://www.nichias.co.jp/gasketnavi/_data/pdf/technology/【資料】ゴムの特性と用途.pdf",
+      "publisher": "ニチアス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-634",
+    "kind": "term",
+    "title": "ウレタンゴムは力に強い",
+    "summary": "ゴムの中でも機械的な強さと摩耗への強さが特に優れる。工業用ロールやソリッドタイヤ、ベルトなど力がかかる部品向き。",
+    "industries": [
+      "ゴム",
+      "産業機械"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ゴム素材 ゴムの種類と特長",
+      "url": "https://www.monotaro.com/note/productinfo/gum_type/",
+      "publisher": "モノタロウ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-635",
+    "kind": "term",
+    "title": "クロロプレンゴムはバランス型",
+    "summary": "天候・オゾン・熱・薬品への強さがほどよくそろった汎用ゴム。特別な条件がない屋外部品などの候補になる。",
+    "industries": [
+      "ゴム",
+      "建材・金物"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ゴム素材 ゴムの種類と特長",
+      "url": "https://www.monotaro.com/note/productinfo/gum_type/",
+      "publisher": "モノタロウ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-670",
+    "kind": "question",
+    "title": "ゴムの材質は何から決める？",
+    "summary": "使う温度、触れる油や薬品、かかる力の順に絞り、最後に硬さと入手しやすさを確認する。この順で聞き取りを書くと発注者が答えやすい。",
+    "industries": [
+      "ゴム"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ゴム材質を決める4つの質問",
+    "source": {
+      "title": "ゴムの特性と用途",
+      "url": "https://www.nichias.co.jp/gasketnavi/_data/pdf/technology/【資料】ゴムの特性と用途.pdf",
+      "publisher": "ニチアス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-636",
+    "kind": "term",
+    "title": "ゴムの硬さ（ショアA）",
+    "summary": "ゴムの硬さは数字で表し、ウレタンでは柔らかい15から硬い95まで幅がある。標準以外の硬さや色は特注になり高くなりやすい。",
+    "industries": [
+      "ゴム"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ゴム素材 ゴムの種類と特長",
+      "url": "https://www.monotaro.com/note/productinfo/gum_type/",
+      "publisher": "モノタロウ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-637",
+    "kind": "term",
+    "title": "板紙とは",
+    "summary": "厚い紙の総称で、ボール紙とも呼ぶ。黄板紙・白板紙などがあり、段ボール原紙や紙箱の材料に多く使われる。",
+    "industries": [
+      "紙加工",
+      "パッケージ",
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "板紙",
+      "url": "https://kotobank.jp/word/板紙",
+      "publisher": "コトバンク",
+      "date": null
+    }
+  },
+  {
+    "id": "term-638",
+    "kind": "term",
+    "title": "コートボールとは",
+    "summary": "表は白いパルプの層を塗って印刷をきれいにし、中と裏は再生紙のグレーの板紙。安く、土産箱や安価な商品の箱に多い。",
+    "industries": [
+      "パッケージ",
+      "紙加工",
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "紙箱の材料はコートボールで足りる？",
+    "source": {
+      "title": "コートボールの貼箱・紙箱",
+      "url": "https://pr.mono.ipros.com/en/kpac/product/detail/2001630495",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-671",
+    "kind": "question",
+    "title": "裏がグレーの箱は安っぽい？",
+    "summary": "仕切りなどで裏が見えない使い方なら、ギフト箱にも十分使える。裏まで見える箱なら両面白い板紙を勧めるとよい。",
+    "industries": [
+      "パッケージ",
+      "紙加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "コートボールの貼箱・紙箱",
+      "url": "https://pr.mono.ipros.com/en/kpac/product/detail/2001630495",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-639",
+    "kind": "term",
+    "title": "コート紙は塗工量で決まる",
+    "summary": "紙の表面に白い塗料（粘土など）を塗って滑らかにした紙。塗る量でアート紙・コート紙・微塗工紙などに分かれる。",
+    "industries": [
+      "印刷",
+      "紙加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "コート紙",
+      "url": "https://kotobank.jp/word/%E3%82%B3%E3%83%BC%E3%83%88%E7%B4%99-65533",
+      "publisher": "コトバンク",
+      "date": null
+    }
+  },
+  {
+    "id": "term-640",
+    "kind": "term",
+    "title": "RoHS指令の10物質",
+    "summary": "EUが電気電子機器で使用を制限する物質。鉛・水銀・カドミウム・六価クロムなどと、フタル酸エステル4種を加えた10物質。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "樹脂成形",
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "部品屋が知るべきRoHS10物質",
+    "source": {
+      "title": "RoHS Compliance Information 2024",
+      "url": "https://hios.com/wp-content/uploads/2024/11/RoHSComplianceInformation2024B.pdf",
+      "publisher": "HIOS",
+      "date": "2024-11"
+    }
+  },
+  {
+    "id": "question-672",
+    "kind": "question",
+    "title": "RoHS証明の「無」はゼロ？",
+    "summary": "多くは含有量が上限以下という意味。上限はほとんどの物質で0.1%（1000ppm）、カドミウムは0.01%（100ppm）。ゼロの証明ではない。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "RoHS2 非含有証明（例）",
+      "url": "https://cdn.shopify.com/s/files/1/0605/5313/4239/files/RoHS2_FLCB.pdf",
+      "publisher": "電子部品メーカーの証明書",
+      "date": null
+    }
+  },
+  {
+    "id": "question-673",
+    "kind": "question",
+    "title": "RoHS証明は品名で出してよい？",
+    "summary": "同じ品名でも型番で中身が違うことがある。大手メーカーも適合状態は発注型番で特定すると説明している。証明書は型番単位で出す。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製品のRoHS情報",
+      "url": "https://www.renesas.com/en/part/3184/rohs/ja",
+      "publisher": "ルネサス エレクトロニクス",
+      "date": null
+    }
+  },
+  {
+    "id": "term-641",
+    "kind": "term",
+    "title": "RoHSの適用除外とは",
+    "summary": "代わりがない用途に限り、制限物質の使用が期限付きで認められる仕組み。高温はんだの鉛や一部のガラス・セラミックなどが例。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "ガラス・セラミック"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製品のRoHS情報",
+      "url": "https://www.renesas.com/en/part/3184/rohs/ja",
+      "publisher": "ルネサス エレクトロニクス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-674",
+    "kind": "question",
+    "title": "快削黄銅C3604はRoHSで使える？",
+    "summary": "C3604は鉛を1.8〜3.7%含むが、銅合金中の鉛の適用除外によりRoHS指令に適合すると中小機構は答えている。除外は見直しが続く点に注意。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "快削黄銅はRoHS指令に適合しますか",
+      "url": "https://j-net21.smrj.go.jp/solution/qa/productdev/Q1379.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": "2021-02"
+    }
+  },
+  {
+    "id": "trend-501",
+    "kind": "trend",
+    "official": false,
+    "title": "金属中の鉛の除外は期限つき",
+    "summary": "鋼・アルミ・銅合金中の鉛の適用除外は期限が来るたび延長審議になる。大手は延長されない場合に備え代替材の検討を取引先に求めた。",
+    "industries": [
+      "切削加工",
+      "金属加工",
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "RoHS適用除外の期限に関するお知らせ",
+      "url": "https://holdings.panasonic/jp/corporate/about/procurement/green/pdf/C_Letter_PC-211215-1.pdf",
+      "publisher": "パナソニック",
+      "date": "2021-12"
+    }
+  },
+  {
+    "id": "term-642",
+    "kind": "term",
+    "title": "鉛レス黄銅とは",
+    "summary": "鉛の代わりにビスマスなどを入れて削りやすくした真鍮（C6801・C6803など）。JIS材として流通し、快削黄銅との削りやすさの比較研究もある。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "研究報告 2020-04（鉛レス黄銅の切削性）",
+      "url": "https://www.gitec.rd.pref.gifu.lg.jp/files/reports/2020/gitec_2020_04.pdf",
+      "publisher": "岐阜県工業技術研究所",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "term-643",
+    "kind": "term",
+    "title": "材料証明書EN10204の4種類",
+    "summary": "2.1は適合宣言のみ、2.2は同じ品種の一般的な試験結果、3.1はその納入品の試験結果、3.2は第三者や買い手の検査員の確認付き。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外客が言う「3.1証明」とは",
+    "source": {
+      "title": "EN 10204 2.1 vs 2.2 vs 3.1 vs 3.2",
+      "url": "https://blog.projectmaterials.com/quick-answers/epc/en-10204-certificate-types/",
+      "publisher": "Project Materials",
+      "date": null
+    }
+  },
+  {
+    "id": "question-675",
+    "kind": "question",
+    "title": "海外客の「3.1付きで」とは？",
+    "summary": "納入する材料そのもの（同じ溶解番号）の試験結果を、製造部門から独立した検査担当が署名した書類のこと。日本のミルシートで足りるか確認する。",
+    "industries": [
+      "金属加工",
+      "切削加工",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "EN 10204 2.1 vs 2.2 vs 3.1 vs 3.2",
+      "url": "https://blog.projectmaterials.com/quick-answers/epc/en-10204-certificate-types/",
+      "publisher": "Project Materials",
+      "date": null
+    }
+  },
+  {
+    "id": "term-644",
+    "kind": "term",
+    "title": "3.2証明書とは",
+    "summary": "3.1の内容に、製造者以外の第三者検査機関か買い手側検査員の確認・署名を加えたもの。中身より確認の仕方が違い、費用と日数が増える。",
+    "industries": [
+      "金属加工",
+      "製缶",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "EN 10204 3.1 vs 3.2",
+      "url": "https://blog.projectmaterials.com/quick-answers/epc/en-10204-3-1-vs-3-2/",
+      "publisher": "Project Materials",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-502",
+    "kind": "trend",
+    "official": true,
+    "title": "ステンレス鋼材が8月契約から値上げ",
+    "summary": "愛知製鋼は2026年8月契約分から、ニッケル系約5〜7%、モリブデン系約15%、クロム系約5%の値上げを発表。ニッケル・モリブデン高騰が理由。",
+    "industries": [
+      "金属加工",
+      "切削加工",
+      "機械部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "ステンレス鋼材の販売価格改定について",
+      "url": "https://www.aichi-steel.co.jp/news/mt-assets/docs/20260722_news1.pdf",
+      "publisher": "愛知製鋼",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "trend-503",
+    "kind": "trend",
+    "official": true,
+    "title": "ステンレスは3月にも約15%値上げ",
+    "summary": "愛知製鋼は2026年3月契約分からステンレス鋼材を約15%値上げした。ニッケル・クロムの高騰と円安を理由に挙げた。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "ステンレス鋼材の販売価格改定について",
+      "url": "https://www.aichi-steel.co.jp/news/mt-assets/docs/20260226_news.pdf",
+      "publisher": "愛知製鋼",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-504",
+    "kind": "trend",
+    "official": false,
+    "title": "中国・台湾製ステンレス冷延に関税",
+    "summary": "2026年7月、中国・台湾産のニッケル系ステンレス冷延鋼板に3.6〜42.1%の暫定反ダンピング関税を課すことが閣議決定されたと報じられた。",
+    "industries": [
+      "板金",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "ステンレス冷延鋼板に暫定反ダンピング関税",
+      "url": "https://www.logi-today.com/973202",
+      "publisher": "LOGISTICS TODAY",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "trend-505",
+    "kind": "trend",
+    "official": false,
+    "title": "銅が最高値圏で推移",
+    "summary": "2026年5月、銅は史上最高値の更新が続くと報じられた。AI向け設備や送電網の需要、鉱山の供給制約が背景。",
+    "industries": [
+      "電子部品",
+      "金属加工",
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "Copper's Record Highs Back in Focus",
+      "url": "https://news.metal.com/vn/newscontent/103907414-Đồng-lấy-lại-tâm-điểm-khi-thị-trường-đặt-cược-vào-tình-trạng-thắt-chặt-nguồn-cung-dài-hạn",
+      "publisher": "SMM",
+      "date": "2026-05"
+    }
+  },
+  {
+    "id": "trend-506",
+    "kind": "trend",
+    "official": false,
+    "title": "電線メーカーが銅の加工費を上げる",
+    "summary": "台湾の電線大手が2026年から銅の加工費を1トン200ドル台から300ドル台へ引き上げると報じられた。電線・ケーブルの調達費に響く。",
+    "industries": [
+      "電子部品",
+      "装置",
+      "組立"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "電線メーカーの銅加工費引き上げ",
+      "url": "https://apps.digitimes.com/news/a20260102PD230.html",
+      "publisher": "DIGITIMES",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "trend-507",
+    "kind": "trend",
+    "official": false,
+    "title": "アルミ地金の輸入物価が大きく上昇",
+    "summary": "日銀の企業物価指数をまとめたサイトによると、アルミ地金の輸入物価は2026年7月に前年比+49.6%、8月に+36.1%だった。",
+    "industries": [
+      "金属加工",
+      "鋳造",
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "企業物価指数（アルミ地金）",
+      "url": "https://www.kabutore.biz/keizaisihyo/kigyocpi423.html",
+      "publisher": "かぶトレ（日銀統計の整理）",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "trend-508",
+    "kind": "trend",
+    "official": false,
+    "title": "ナフサ高が樹脂製品にも波及",
+    "summary": "第一生命経済研究所は、2026年5月の企業物価は前年比+6.3%で、ナフサ高がポリエチレン・ポリプロピレンなど樹脂やプラ製品に広がったと分析。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品",
+      "パッケージ"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "企業物価指数 2026年5月",
+      "url": "https://www.dlri.co.jp/files/macro/622861.pdf",
+      "publisher": "第一生命経済研究所",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-509",
+    "kind": "trend",
+    "official": true,
+    "title": "石油樹脂なども相次ぎ値上げ",
+    "summary": "日本ゼオンは2026年3月、ナフサなど原料高を理由に石油樹脂などの値上げを発表。樹脂・接着剤の原料が上がると加工品にも響く。",
+    "industries": [
+      "化学・塗料・接着剤",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "石油樹脂等の価格改定について",
+      "url": "https://www.zeon.co.jp/news/assets/pdf/260327-2.pdf",
+      "publisher": "日本ゼオン",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-510",
+    "kind": "trend",
+    "official": false,
+    "title": "中小の8割がナフサ由来品の調達に支障",
+    "summary": "東京商工リサーチの2026年6月の調査では、中小企業の8割が樹脂などナフサ由来製品の調達に「支障がある」と答えた。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品",
+      "塗装",
+      "パッケージ"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "TSRデータインサイト（ナフサ由来製品の調達）",
+      "url": "https://www.tsr-net.co.jp/data/detail/1202946_1527.html",
+      "publisher": "東京商工リサーチ",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-511",
+    "kind": "trend",
+    "official": false,
+    "title": "中東情勢で石化原料に不安",
+    "summary": "アジア太平洋研究所は、2026年2月末からの中東の軍事衝突でホルムズ海峡が事実上封鎖され、ナフサなど石化原料の供給に不安が広がったと整理。",
+    "industries": [
+      "樹脂成形",
+      "化学・塗料・接着剤"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "APIR Trend Watch No.105",
+      "url": "https://www.apir.or.jp/uploads/research/APIR_Trend_Watch_No.105_2026-08-04_final.pdf",
+      "publisher": "アジア太平洋研究所",
+      "date": "2026-08"
+    }
+  },
+  {
+    "id": "pain-390",
+    "kind": "pain",
+    "title": "指定の樹脂が入らず納期が読めない",
+    "summary": "ナフサ由来製品の調達に支障が出る中、顧客指定の樹脂グレードが手に入らず、納期や見積もりが出せない悩みが増えている。",
+    "industries": [
+      "樹脂成形",
+      "プラスチック加工品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "材料が入らない時の代替材提案の進め方",
+    "source": {
+      "title": "TSRデータインサイト（ナフサ由来製品の調達）",
+      "url": "https://www.tsr-net.co.jp/data/detail/1202946_1527.html",
+      "publisher": "東京商工リサーチ",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "question-676",
+    "kind": "question",
+    "title": "見積もりの材料費はいつの値段？",
+    "summary": "鋼材の値上げは「◯月契約分から」と決まる。見積もりに材料価格の基準月と有効期限を書くと、後の値上げ相談がしやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip",
+      "question_example"
+    ],
+    "articleIdea": "見積もりに有効期限を書く理由",
+    "source": {
+      "title": "ステンレス鋼材の販売価格改定について",
+      "url": "https://www.aichi-steel.co.jp/news/mt-assets/docs/20260722_news1.pdf",
+      "publisher": "愛知製鋼",
+      "date": "2026-07"
+    }
+  },
+  {
+    "id": "question-677",
+    "kind": "question",
+    "title": "PEEKやPPSの部品はなぜ高い？",
+    "summary": "材料そのものが汎用樹脂よりずっと高価で、航空機や半導体装置向けの高級素材とされる。材料費が価格の多くを占めると説明すると納得されやすい。",
+    "industries": [
+      "プラスチック加工品",
+      "半導体"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "スーパーエンプラの採用広がる",
+      "url": "https://newswitch.jp/p/158",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-645",
+    "kind": "term",
+    "title": "賃率（チャージ・加工レート）",
+    "summary": "機械と人を1時間動かすといくらかかるかの値段。会社ごとの製造原価から決まるので、同じ図面でも見積が違う一番の理由になる。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "うちの時間単価の考え方を説明する",
+    "source": {
+      "title": "見積価格を計算する時の賃率はどう決まる？",
+      "url": "https://mono.ipros.com/product/detail/2000733031",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-678",
+    "kind": "question",
+    "title": "汎用機とマシニングで値段は違う？",
+    "summary": "同じ形でも、人が付きっきりの汎用機と、無人で回せるマシニングやNC旋盤では原価が変わる。数と形でどちらが安いかを答えに入れる。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "この部品はどの機械で削ると安いか",
+    "source": {
+      "title": "見積価格の決め方2 フライス盤orマシニング",
+      "url": "https://pr.mono.ipros.com/matsui-ss/product/detail/2001248653",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-679",
+    "kind": "question",
+    "title": "見積の加工費は何を足した数字？",
+    "summary": "おおまかには「時間単価×（段取り時間＋加工時間）」に材料費や外注費を足す。段取り時間は1個でも100個でもほぼ同じだとそえる。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "見積書の数字の中身を分解して見せる",
+    "source": {
+      "title": "見積価格の決め方2 フライス盤orマシニング",
+      "url": "https://pr.mono.ipros.com/matsui-ss/product/detail/2001248653",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-391",
+    "kind": "pain",
+    "title": "1個の試作で段取り代を説明しにくい",
+    "summary": "1個だと段取りの時間がそのまま単価に乗るため「高い」と言われやすい。段取りの中身を先に見せておくと納得されやすい。",
+    "industries": [
+      "切削加工",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "1個と10個で単価が何倍違うかを図に",
+    "source": {
+      "title": "なぜ1個だと単価が高いのか",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2301/16/news006.html",
+      "publisher": "MONOist",
+      "date": "2023-01"
+    }
+  },
+  {
+    "id": "question-680",
+    "kind": "question",
+    "title": "材料はメーカー品番まで書くべき？",
+    "summary": "品番まで決めると手に入りにくくなったりサイズが限られたりして高くなることがある。こだわりがなければ一般名か、品番と「同等可」を書く。",
+    "industries": [
+      "切削加工",
+      "樹脂成形",
+      "金属加工"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "材料指定の書き方で値段が変わる話",
+    "source": {
+      "title": "樹脂切削のコストダウン",
+      "url": "https://mono.ipros.com/product/detail/2001234094",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-681",
+    "kind": "question",
+    "title": "R面取りとC面取りで値段は違う？",
+    "summary": "一般にC面取りの方が工具を選ばず安く済みやすい。指示のない角の面取りをどうするかも図面で整理すると、見積の迷いが減る。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "面取り指示ひとつで変わる加工時間",
+    "source": {
+      "title": "切削部品のコストダウン",
+      "url": "https://mono.ipros.com/product/detail/2001234124",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-512",
+    "kind": "trend",
+    "official": false,
+    "title": "面粗さとコストの関係を数で見る研究",
+    "summary": "旋削で面粗さの要求を変えると加工の費用がどう変わるかを評価するモデルが、海外の大学で研究されている。厳しい指示ほど高いことの裏付けになる。",
+    "industries": [
+      "切削加工"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Modeling the cost of varying surface finish demands",
+      "url": "https://www.lunduniversity.lu.se/lup/publication/0cbd11a6-612f-4db7-9b8f-2ac3719af078",
+      "publisher": "Lund University",
+      "date": null
+    }
+  },
+  {
+    "id": "success-526",
+    "kind": "success",
+    "title": "削り出しを板金に変えて約3分の1に",
+    "summary": "マシニングで削っていた部品を、抜きと曲げの板金形状に変えて以前の約3分の1の費用で作れた例（MONOist、2008年）。強度は補強の形で補う。",
+    "industries": [
+      "板金",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "その部品、板金で作れませんか？という提案記事",
+    "source": {
+      "title": "板金部品化検討で工数削減&コストダウン",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/0807/25/news138.html",
+      "publisher": "MONOist",
+      "date": "2008-07"
+    }
+  },
+  {
+    "id": "question-682",
+    "kind": "question",
+    "title": "板金にすると強度は大丈夫？",
+    "summary": "削り出しから板金にすると工数は減るが、強度と精度が課題になる。補強の曲げやリブの入れ方で、どこまで安くできるかが決まる。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "板金化で安く、強度も守る設計の工夫",
+    "source": {
+      "title": "板金部品化検討で工数削減&コストダウン",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/0807/25/news138.html",
+      "publisher": "MONOist",
+      "date": "2008-07"
+    }
+  },
+  {
+    "id": "question-683",
+    "kind": "question",
+    "title": "溶接の箇所を減らすと安くなる？",
+    "summary": "曲げた板に側板を溶接する作りは、溶接と仕上げの時間がかかる。展開の形を変えて溶接箇所を減らすと、時間も歪み取りも減らせる。",
+    "industries": [
+      "板金",
+      "溶接",
+      "製缶"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "展開図を変えて溶接を減らした例",
+    "source": {
+      "title": "板金部品化検討で工数削減&コストダウン(2)",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/0807/25/news138_2.html",
+      "publisher": "MONOist",
+      "date": "2008-07"
+    }
+  },
+  {
+    "id": "term-646",
+    "kind": "term",
+    "title": "アシ（曲げ用の捨て部分）",
+    "summary": "曲げの位置を決めやすくするため、わざと付けて後で切り落とす部分。斜めの面でも正しく曲げられ、不良が減って結果的に安くなる。",
+    "industries": [
+      "板金"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "板金部品化検討で工数削減&コストダウン(2)",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/0807/25/news138_2.html",
+      "publisher": "MONOist",
+      "date": "2008-07"
+    }
+  },
+  {
+    "id": "question-684",
+    "kind": "question",
+    "title": "金型なしで段差や突き出しはできる？",
+    "summary": "専用の金型を作らずに、段差や突き出しの形を板金で作れる会社もある。試作や少量なら型代をかけずに済むので、問い合わせのときに聞くとよい。",
+    "industries": [
+      "板金",
+      "プレス"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "articleIdea": "型を作らずにできる板金の形",
+    "source": {
+      "title": "板金 曲げ金型",
+      "url": "https://mono.ipros.com/cg1/板金/曲げ金型/",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-392",
+    "kind": "pain",
+    "title": "歪み取りの手間が見積に乗せにくい",
+    "summary": "薄い板ほど溶接で波打ちやすく、直す時間が読みにくい。図面の段階で溶接の量と順番を相談できると、見積と実際の差が小さくなる。",
+    "industries": [
+      "溶接",
+      "製缶"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "技術職員研修資料（溶接）",
+      "url": "https://www.icer.kyushu-u.ac.jp/docs/tecstaff_training/h27/14.pdf",
+      "publisher": "九州大学",
+      "date": null
+    }
+  },
+  {
+    "id": "question-685",
+    "kind": "question",
+    "title": "成形品の1個の値段は何で決まる？",
+    "summary": "材料の量、1回の成形にかかる時間（サイクルタイム）、型代の割り振り、人と間接の費用で決まる。数が多いほど型代の割り振りは小さくなる。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "成形品の単価の中身を4つに分けて説明",
+    "source": {
+      "title": "射出成形の見積",
+      "url": "https://prototool.com/ja/injection-molding-quote",
+      "publisher": "Prototool",
+      "date": null
+    }
+  },
+  {
+    "id": "term-647",
+    "kind": "term",
+    "title": "サイクルタイム",
+    "summary": "1回の成形にかかる時間。射出・冷却・取り出しのうち冷却が長いことが多く、肉厚をそろえる設計で短くなり、単価が下がる。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "肉厚をそろえると安くなる理由",
+    "source": {
+      "title": "サイクルタイムの最適化 射出成形",
+      "url": "https://zetarmold.com/ja/%e3%82%b5%e3%82%a4%e3%82%af%e3%83%ab%e3%82%bf%e3%82%a4%e3%83%a0%e3%81%ae%e6%9c%80%e9%81%a9%e5%8c%96-%e5%b0%84%e5%87%ba%e6%88%90%e5%bd%a2/",
+      "publisher": "Zetar Mold",
+      "date": null
+    }
+  },
+  {
+    "id": "question-686",
+    "kind": "question",
+    "title": "3Dプリントと射出成形、何個から逆転？",
+    "summary": "射出成形は最初の型代が大きいかわりに、数が多いと1個がとても安い。少数は3Dプリント、数が増えたら成形という目安を答えに入れる。",
+    "industries": [
+      "樹脂成形",
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試作から量産へ、工法を切り替える数",
+    "source": {
+      "title": "1,000個の生産力比較:3Dプリント vs. 射出成形",
+      "url": "https://formlabs.com/jp/blog/race-to-1000-parts-3d-printing-injection-molding/",
+      "publisher": "Formlabs",
+      "date": null
+    }
+  },
+  {
+    "id": "term-648",
+    "kind": "term",
+    "title": "取り数（多数個取り）",
+    "summary": "1つの型で1回に何個作れるか。取り数を増やすと型代は上がるが、1個あたりの成形時間が減って単価は下がる。数量に合わせて決める。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "射出成形の詳細設計",
+      "url": "https://jp.misumi-ec.com/tech-info/work-knowledge/detailed-design/injection-detailed-design",
+      "publisher": "ミスミ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-687",
+    "kind": "question",
+    "title": "1個だけなら3Dプリントでいい？",
+    "summary": "1個ほどなら3Dプリンタで十分だが、数が多くなると時間も費用もかさむ。必要な数と、量産と同じ材料が要るかで工法を選ぶ。",
+    "industries": [
+      "樹脂成形",
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "articleIdea": "数で選ぶ樹脂試作の工法",
+    "source": {
+      "title": "プラスチック試作の工法提案",
+      "url": "https://mono.ipros.com/product/detail/2000625219",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "term-649",
+    "kind": "term",
+    "title": "真空注型（シリコーン型）",
+    "summary": "マスター型からシリコーンの型を作り、真空の中で樹脂を流し込む方法。数個〜数十個の試作に向き、金型代をかけずに済む。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "数十個だけ欲しいときの選択肢",
+    "source": {
+      "title": "真空注型の試作",
+      "url": "https://mono.ipros.com/product/detail/2001126366",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-688",
+    "kind": "question",
+    "title": "量産と同じ樹脂で少しだけ試せる？",
+    "summary": "3Dプリントで作った樹脂の型で射出成形する方法がある。型は長持ちしないが、ショット数が少なければ金型より安く早いとされる。",
+    "industries": [
+      "樹脂成形",
+      "金型",
+      "3Dプリンタ"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "3Dプリントの樹脂型",
+      "url": "https://newswitch.jp/index.php/p/5204",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-513",
+    "kind": "trend",
+    "official": true,
+    "title": "公設試で真空注型機を借りられる",
+    "summary": "宮城県の公設試は真空注型機を時間単位の料金で貸し出している（同センター資料、2020年掲載）。自社に機械がない会社の試作の入口になる。",
+    "industries": [
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "真空注型機",
+      "url": "https://www.mit.pref.miyagi.jp/wp-content/uploads/2020/05/6_Vacuum_Injection.pdf",
+      "publisher": "宮城県産業技術総合センター",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "question-689",
+    "kind": "question",
+    "title": "金型代で一番大きいのは何？",
+    "summary": "ある金型メーカーの解説では、機械加工の人件費が型代の4〜5割を占め、鋼材費ではないとしている。形の複雑さが値段を左右する。",
+    "industries": [
+      "金型",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "型代の内訳を正直に見せる記事",
+    "source": {
+      "title": "射出成形金型のコスト内訳",
+      "url": "https://zetarmold.com/ja/%e5%b0%84%e5%87%ba%e6%88%90%e5%bd%a2%e9%87%91%e5%9e%8b%e3%81%ae%e3%82%b3%e3%82%b9%e3%83%88%e5%86%85%e8%a8%b3/",
+      "publisher": "Zetar Mold",
+      "date": null
+    }
+  },
+  {
+    "id": "term-650",
+    "kind": "term",
+    "title": "金型の寿命（ショット数）",
+    "summary": "型が何回の成形に耐えるか。米国の分類では100万回以上向けの硬い鋼の型から、500回以下の試作用アルミ型まである。必要な数を先に伝える。",
+    "industries": [
+      "金型",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "何個作るかで型の作りを変える",
+    "source": {
+      "title": "射出成形金型寿命",
+      "url": "https://zetarmold.com/ja/射出成形金型寿命/",
+      "publisher": "Zetar Mold",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-393",
+    "kind": "pain",
+    "title": "必要な寿命が分からず型が過剰になる",
+    "summary": "発注側が総数を言わないと、長持ちする高い型を作るか、すぐ傷む型になるかの両極端になる。見積前に生涯の生産数を聞くとよい。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "射出成形金型寿命",
+      "url": "https://zetarmold.com/ja/射出成形金型寿命/",
+      "publisher": "Zetar Mold",
+      "date": null
+    }
+  },
+  {
+    "id": "question-690",
+    "kind": "question",
+    "title": "型代を下げる設計のコツは？",
+    "summary": "抜き勾配や肉厚、アンダーカットの有無で型の作りが大きく変わる。設計の早い段階で成形・金型の会社に見せると、無理のない形に直せる。",
+    "industries": [
+      "金型",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "図面を出す前に相談すると安くなる理由",
+    "source": {
+      "title": "射出成形の詳細設計",
+      "url": "https://jp.misumi-ec.com/tech-info/work-knowledge/detailed-design/injection-detailed-design",
+      "publisher": "ミスミ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-691",
+    "kind": "question",
+    "title": "工程の多い小さな部品はどの型？",
+    "summary": "工程が多い部品は、単発型を並べるより順送型で一度に仕上げる方が作れる量が大きく違う。数量と工程数で型の方式を答える。",
+    "industries": [
+      "プレス"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "この数量なら単発、この数量なら順送",
+    "source": {
+      "title": "プレス加工の技術資料",
+      "url": "https://www.pref.nagano.lg.jp/jinzai/sangyo/kaihatsu/koka/p-tech/documents/061225_sakurai.pdf",
+      "publisher": "長野県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-692",
+    "kind": "question",
+    "title": "板金とプレス、どちらが安い？",
+    "summary": "型を使わない板金は少量で安く、型を使うプレスは数が多いほど安い。数量の境目は形によるので、両方の見積を並べてもらうのが早い。",
+    "industries": [
+      "プレス",
+      "板金"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "板金からプレスに切り替える目安",
+    "source": {
+      "title": "精密板金加工とプレス加工(3)",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1911/20/news015_3.html",
+      "publisher": "MONOist",
+      "date": "2019-11"
+    }
+  },
+  {
+    "id": "term-651",
+    "kind": "term",
+    "title": "得意重量",
+    "summary": "鋳物工場ごとに作りやすい重さの範囲。県の企業紹介では、対応1〜300kgのうち得意は5〜30kgといった書き方がある。得意から外れると高くなりやすい。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "うちの得意な重さと大きさを書く",
+    "source": {
+      "title": "県内鋳造企業の紹介資料",
+      "url": "https://www.pref.mie.lg.jp/common/content/001202877.pdf",
+      "publisher": "三重県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-693",
+    "kind": "question",
+    "title": "鋳物の試作はなぜ砂型？",
+    "summary": "量産は金型で作るアルミ鋳物でも、試作は数が少ないので初期費用が安く早い砂型で作ることが多い。ただし巣（ピンホール）が出やすい点もそえる。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試作と量産で鋳造方法が違う理由",
+    "source": {
+      "title": "アルミ鋳物の資料",
+      "url": "https://www.pref.saitama.lg.jp/documents/143014/2011_alminium.pdf",
+      "publisher": "埼玉県",
+      "date": "2011"
+    }
+  },
+  {
+    "id": "question-694",
+    "kind": "question",
+    "title": "ダイカストの試作を安くするには？",
+    "summary": "金型を使わない石膏鋳造なら、ダイカストの試作用金型に比べて型の費用が約10分の1、CADデータがあれば約3週間でできるという例がある（日経BP、2020年）。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "ダイカスト前の試作の選択肢",
+    "source": {
+      "title": "石膏鋳造による試作",
+      "url": "https://active.nikkeibp.co.jp/atcl/wp/b/20/05/21/00555/",
+      "publisher": "日経BP",
+      "date": "2020-05"
+    }
+  },
+  {
+    "id": "question-695",
+    "kind": "question",
+    "title": "何個からダイカスト金型が得？",
+    "summary": "少量は石膏型や砂型、数千〜数万個の量産はダイカスト金型、という分け方をする会社が多い。数量の見込みで工法を答える。",
+    "industries": [
+      "鋳造",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "数量で選ぶアルミ鋳物の工法",
+    "source": {
+      "title": "アルミ鋳造",
+      "url": "https://mono.ipros.com/cg1/鋳造/アルミ",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-414",
+    "kind": "buyer",
+    "title": "鋳造会社は材質と重さで絞る",
+    "summary": "鋳鉄・鋳鋼・アルミで対応できる工場が違い、重さの範囲も工場で違う。発注側は材質・重さ・数量の3つで候補を絞っている。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "材質・重さ・数量を最初に書く",
+    "source": {
+      "title": "県内鋳造企業の紹介資料",
+      "url": "https://www.pref.mie.lg.jp/common/content/001202877.pdf",
+      "publisher": "三重県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-696",
+    "kind": "question",
+    "title": "部分めっきで値段は下がる？",
+    "summary": "金などの高いめっきは、範囲を絞るマスキング方式で使う金の量を減らせる。必要な面だけ指定すると単価が下がる可能性がある。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "めっきの範囲を絞って安くする",
+    "source": {
+      "title": "めっきの資料",
+      "url": "https://www.pref.osaka.lg.jp/documents/30624/mekki.pdf",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-394",
+    "kind": "pain",
+    "title": "治具にめっきが付いて手間が増える",
+    "summary": "製品を吊るす治具にもめっきが付くと、はがす作業や交換が増える。治具の費用と寿命も、めっきの値段の一部になっている。",
+    "industries": [
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "めっきの資料",
+      "url": "https://www.pref.osaka.lg.jp/documents/30624/mekki.pdf",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "term-652",
+    "kind": "term",
+    "title": "最低料金（ミニマムチャージ）",
+    "summary": "1回の処理に必ずかかる料金。めっきや熱処理では槽や炉を1回動かすだけで費用が出るので、少量でもこの金額になる。同じ処理をまとめると得。",
+    "industries": [
+      "表面処理",
+      "熱処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "1個だけのめっきが高い理由",
+    "source": {
+      "title": "めっきの資料",
+      "url": "https://www.pref.osaka.lg.jp/documents/30624/mekki.pdf",
+      "publisher": "大阪府",
+      "date": null
+    }
+  },
+  {
+    "id": "question-697",
+    "kind": "question",
+    "title": "塗装の値段は何で決まる？",
+    "summary": "大きさ（炉に入るか）、数、色の数と色替え、マスキングや下処理の手間でおおむね決まる。炉の大きさを書いておくと問い合わせが合いやすい。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "塗装の見積で聞かれる5つのこと",
+    "source": {
+      "title": "粉体塗装 焼付け",
+      "url": "https://mono.ipros.com/cg2/粉体塗装/焼付け",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "success-527",
+    "kind": "success",
+    "title": "炉の大きさを数字で載せる",
+    "summary": "「幅800mm×高さ550mmのコンベア炉に入る物なら塗装可能」と寸法を出して小物を呼び込む塗装会社がある。入るか入らないかが一目で分かる。",
+    "industries": [
+      "塗装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "うちの炉に入るサイズを先に書く",
+    "source": {
+      "title": "コンベア炉に入る物なら塗装可能",
+      "url": "https://mono.ipros.com/product/detail/2000606081",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-698",
+    "kind": "question",
+    "title": "手はんだと機械実装、どちらが安い？",
+    "summary": "少量の試作は手付けで済ませることが多いが、品質がばらつきやすい。数が増えたら機械実装、差し込み部品ははんだ槽という使い分けを答える。",
+    "industries": [
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "基板実装 1枚から試作",
+      "url": "https://mono.ipros.com/product/detail/2000494973",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-699",
+    "kind": "question",
+    "title": "部品は自分で用意した方が安い？",
+    "summary": "実装会社が部品を手配すると、手間と在庫の心配が減る。支給するなら、余分の数や届く日を合わせないと、段取りのやり直しで逆に高くなることもある。",
+    "industries": [
+      "基板実装",
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "部品の支給と手配、どちらが得か",
+    "source": {
+      "title": "基板の試作と実装",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1611/25/news016_2.html",
+      "publisher": "MONOist",
+      "date": "2016-11"
+    }
+  },
+  {
+    "id": "question-700",
+    "kind": "question",
+    "title": "既存の処方を使うと早く安い？",
+    "summary": "すでにある処方と容器を使うと、1,000本から最短6カ月で発売できる例がある。一から処方を作るより、試験と開発の費用と時間が減る。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "オリジナル処方とベース処方の違い",
+    "source": {
+      "title": "化粧品OEM 最短6ヶ月での発売",
+      "url": "https://pr.mono.ipros.com/orioncosmetics/product/detail/2000973853/",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-395",
+    "kind": "pain",
+    "title": "小ロットだと処方と容器の幅が狭まる",
+    "summary": "数を減らし費用を下げるほど、選べる成分や容器が少なくなる。小ロットの条件と引き換えに何をあきらめるかを先に伝えると、もめにくい。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "化粧品OEMの小ロット",
+      "url": "https://www.commercepick.com/archives/58135",
+      "publisher": "コマースピック",
+      "date": null
+    }
+  },
+  {
+    "id": "question-701",
+    "kind": "question",
+    "title": "食品OEMの見積に入る費用は？",
+    "summary": "原料費・加工費・包材費・試作費が主な中身。試作費が別に請求されるか、正式な見積の前か後かを会社に確かめるとよい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "食品OEMの見積書の見方",
+    "source": {
+      "title": "Food supplement OEM manufacturing",
+      "url": "https://mono.ipros.com/en/cg3/Food supplement OEM manufacturing",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-702",
+    "kind": "question",
+    "title": "初回だけかかる費用は何？",
+    "summary": "金型・印刷の版・専用の包装などは初回だけの場合が多い。再発注でもかかるか、型や版の持ち主はどちらかを確かめると比べやすい。",
+    "industries": [
+      "食品製造",
+      "化粧品OEM",
+      "パッケージ"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "初期費用と毎回の費用を分けて説明",
+    "source": {
+      "title": "OEMの最小ロット交渉",
+      "url": "https://www.sellersprite.com/jp/blog/alibaba-oem-moq-negotiation",
+      "publisher": "SellerSprite",
+      "date": null
+    }
+  },
+  {
+    "id": "question-703",
+    "kind": "question",
+    "title": "たくさん頼めば得になる？",
+    "summary": "数を増やすと単価は下がるが、払う総額は増える。保管の場所と費用、売り切るまでの期間も入れて数量を決めるよう答える。",
+    "industries": [
+      "食品製造",
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "単価の安さと在庫の重さ",
+    "source": {
+      "title": "OEMの最小ロット交渉",
+      "url": "https://www.sellersprite.com/jp/blog/alibaba-oem-moq-negotiation",
+      "publisher": "SellerSprite",
+      "date": null
+    }
+  },
+  {
+    "id": "question-704",
+    "kind": "question",
+    "title": "サプリは何個から頼める？",
+    "summary": "剤型と会社でまったく違い、500個から受けるサプリのOEMもある。最小ロットを品目ごとに書いておくと、小さく始めたい人に届く。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "Food supplement OEM manufacturing",
+      "url": "https://mono.ipros.com/en/cg3/Food supplement OEM manufacturing",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-705",
+    "kind": "question",
+    "title": "縫製の工賃はどう決まる？",
+    "summary": "生地の種類や厚さ、デザインの難しさで変わる。縫う人やパタンナーの時間単価に作業時間をかけて出し、工場の規模や得意な品目でも差が出る。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "同じ服でも工場で工賃が違う理由",
+    "source": {
+      "title": "縫製の工賃について",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=991273",
+      "publisher": "Biz Loop",
+      "date": null
+    }
+  },
+  {
+    "id": "term-653",
+    "kind": "term",
+    "title": "最低工賃",
+    "summary": "家で内職として縫う人などに国が定める工賃の下限。工程ごとに1か所いくらと決まっていて、工程を積み上げて値段を出す考え方の例になる。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "最低工賃の公示",
+      "url": "https://www.mhlw.go.jp/hourei/doc/kouji/K230713M0010.pdf",
+      "publisher": "厚生労働省",
+      "date": "2023-07"
+    }
+  },
+  {
+    "id": "buyer-415",
+    "kind": "buyer",
+    "title": "小ロット縫製は1型20枚からが目安",
+    "summary": "小ロットを頼みたい案件では、初回5〜10枚や1型20枚から、納期は発注から1か月前後といった条件が見られる。枚数と納期を先に書く。",
+    "industries": [
+      "繊維"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "何枚から・何日で、を最初に書く",
+    "source": {
+      "title": "縫製の小ロット対応",
+      "url": "https://www.biz.ne.jp/subject/industry/small-lot/",
+      "publisher": "Biz Loop",
+      "date": null
+    }
+  },
+  {
+    "id": "question-706",
+    "kind": "question",
+    "title": "装置の見積で設計費はどう出る？",
+    "summary": "設計費は構想・詳細設計にかかる人の手間で積むので見積書の中で一番あいまいになりやすい。設計の工数と現地の工数を分けて出してもらうと比べやすい。",
+    "industries": [
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "装置の見積書の読み方",
+    "source": {
+      "title": "ロボット導入の費用",
+      "url": "https://www.issoh.co.jp/md/column/16843",
+      "publisher": "issoh",
+      "date": null
+    }
+  },
+  {
+    "id": "term-654",
+    "kind": "term",
+    "title": "概算見積と確定見積",
+    "summary": "概算は仕様が固まる前に過去の似た案件から出す数字、確定は仕様を洗い出して工程ごとに積み上げた数字。契約は確定見積を基にする方が安全。",
+    "industries": [
+      "装置",
+      "治具",
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "概算の金額が変わるのはなぜか",
+    "source": {
+      "title": "ロボット導入の費用",
+      "url": "https://www.issoh.co.jp/md/column/16843",
+      "publisher": "issoh",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-396",
+    "kind": "pain",
+    "title": "装置の原価見積は1人ではできない",
+    "summary": "装置は機械・電気・制御の設計者がそれぞれ関わるので、1人の設計者で原価を見積るのは難しい。見積に日数がかかる理由として説明できる。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "装置設計と原価見積",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2311/01/news025.html",
+      "publisher": "MONOist",
+      "date": "2023-11"
+    }
+  },
+  {
+    "id": "question-707",
+    "kind": "question",
+    "title": "化粧箱1,000枚でいくら？",
+    "summary": "一括見積サイトの例では、化粧箱1,000枚で単価約51〜165円と会社で3倍ほど差がある（アイミツ）。条件で大きく変わるので単価で比べるとよい。",
+    "industries": [
+      "パッケージ",
+      "印刷"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "箱の値段の幅と、その理由",
+    "source": {
+      "title": "化粧箱とは",
+      "url": "https://imitsu.jp/matome/printing/what-is-cosmetic-box",
+      "publisher": "アイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-655",
+    "kind": "term",
+    "title": "版代",
+    "summary": "オフセットなどで使う版を作る費用。1部でも1,000部でもかかり、色の数だけ版が増える。部数で割るので、部数が多いほど1部の負担が下がる。",
+    "industries": [
+      "印刷",
+      "パッケージ"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "オンデマンド印刷とオフセット印刷の違い",
+      "url": "https://imitsu.jp/matome/printing/on-demand-offset-printing-difference",
+      "publisher": "アイミツ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-416",
+    "kind": "buyer",
+    "title": "少部数の下限は会社ごとに確認",
+    "summary": "何部から受けるかは印刷会社によって違うので、発注側は事前に下限を確かめている。下限部数をサイトに書くと問い合わせが合いやすい。",
+    "industries": [
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "何部から・何日で、を書く",
+    "source": {
+      "title": "オンデマンド印刷の会社",
+      "url": "https://www.biz.ne.jp/subject/ondemand-print/",
+      "publisher": "Biz Loop",
+      "date": null
+    }
+  },
+  {
+    "id": "success-528",
+    "kind": "success",
+    "title": "特急・小ロットに絞って打ち出す",
+    "summary": "多品種・小ロット・超短納期に特化した金属加工の会社が、国の「ものづくり300社」に選ばれている（中小企業庁、2018年）。急ぎは強みになる。",
+    "industries": [
+      "金属加工",
+      "切削加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "急ぎの注文を強みに変える",
+    "source": {
+      "title": "ものづくり300社 事例",
+      "url": "https://www.chusho.meti.go.jp/keiei/sapoin/monozukuri300sha/2018/seisan125_toyomechatec.pdf",
+      "publisher": "中小企業庁",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "question-708",
+    "kind": "question",
+    "title": "期限切れの見積の値段で頼める？",
+    "summary": "期限が過ぎた見積は効力がなくなるので、再発行が必要。材料費や人件費の上昇で単価の見直しを求められることも増えている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "見積書の有効期限切れ後に旧単価で発注してよいか",
+      "url": "https://atsoho.com/blog/expired-quote-price-revision",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-656",
+    "kind": "term",
+    "title": "見積の起算日",
+    "summary": "有効期限を数え始める日。「発行日から30日」などあいまいだと誤解のもとになるので、日付で書くと親切。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "見積書の有効期限",
+      "url": "https://www.yayoi-kk.co.jp/seikyusho/oyakudachi/quotation-period/",
+      "publisher": "弥生",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-397",
+    "kind": "pain",
+    "title": "見積を社長や幹部が抱えている",
+    "summary": "中堅・中小の製造業では見積の作成に時間がかかり、社長や幹部が対応していることが多い。見積を無料で何件も受けるほど本業が圧迫される。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "見積の負担をどう減らしたか",
+    "source": {
+      "title": "見積業務の課題",
+      "url": "https://www.aspicjapan.org/asu/article/19330",
+      "publisher": "ASPIC",
+      "date": null
+    }
+  },
+  {
+    "id": "question-709",
+    "kind": "question",
+    "title": "見積は無料？どこから有料？",
+    "summary": "見積は無料が多いが、設計や図面づくり、試作を伴う提案は別料金にする考え方がある。見積に営業・設計・製造の手間がかかることをそえて答える。",
+    "industries": [
+      "all",
+      "装置",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "無料の見積と有料の設計の線引き",
+    "source": {
+      "title": "製造業の見積書作成ガイド",
+      "url": "https://crexgroup.com/ja/manufacturing/finance/manufacturing-quotation-creation-guide/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "success-529",
+    "kind": "success",
+    "title": "過去の見積を探せる仕組みで速く",
+    "summary": "過去の図面と見積を紐づけて探せるようにし、似た部品の見積を早く出せるようにした中小製造業の例が九州経済産業局のDX事例にある。",
+    "industries": [
+      "all",
+      "金属加工"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "DX事例集2024",
+      "url": "https://www.kyushu.meti.go.jp/seisaku/jyoho/jirei/dx_quest/2024/2.pdf",
+      "publisher": "九州経済産業局",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "question-710",
+    "kind": "question",
+    "title": "預かっている型の保管料はもらえる？",
+    "summary": "型の無償保管は旧下請法でも取適法でも禁止。保管費用を書面にする、返却を求める、相談窓口を使うのが預かる側の対応の柱とされる。",
+    "industries": [
+      "金型",
+      "プレス",
+      "樹脂成形",
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "預かり型の保管料を説明する",
+    "source": {
+      "title": "金型の無償保管と取適法",
+      "url": "https://www.all-senmonka.jp/moneyizm/?p=315833",
+      "publisher": "Moneyizm",
+      "date": null
+    }
+  },
+  {
+    "id": "question-711",
+    "kind": "question",
+    "title": "2回目の実装は初期費用が要らない？",
+    "summary": "メタルマスクは基板ごとに作るが、同じ基板なら使い回せる。再発注では初期費用がかからないか少なくなることを、見積の答えに入れるとよい。",
+    "industries": [
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "初回と2回目で実装の見積が違う理由",
+    "source": {
+      "title": "メタルマスク 基板",
+      "url": "https://mono.ipros.com/cg3/メタルマスク/基板/",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-712",
+    "kind": "question",
+    "title": "設計費が「一式」なのはなぜ？",
+    "summary": "装置の設計費は人の手間で積むため一式にまとめられがちで、見積の中で一番見えにくい。工数（何人で何日）を書くと、比べる人に信頼される。",
+    "industries": [
+      "装置",
+      "産業機械"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "一式と書かない装置の見積書",
+    "source": {
+      "title": "ロボット導入の費用",
+      "url": "https://www.issoh.co.jp/md/column/16843",
+      "publisher": "issoh",
+      "date": null
+    }
+  },
+  {
+    "id": "question-713",
+    "kind": "question",
+    "title": "期限内なら値段は必ず同じ？",
+    "summary": "見積の期限は、その条件で受けられる期間を示すもの。数量や仕様、納期が変われば期限内でも出し直しになることを先に書いておくともめにくい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "見積書の有効期限",
+      "url": "https://biz.moneyforward.com/invoice/quotes-lp/expiration-date/",
+      "publisher": "マネーフォワード",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "question-714",
+    "kind": "question",
+    "title": "値上げの見積を出して協議できる？",
+    "summary": "取適法では、受ける側から協議を求めたのに応じず一方的に代金を決めることが禁止された。材料や人件費の根拠をそえた見積が協議の土台になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "値上げのお願いをどう伝えたか",
+    "source": {
+      "title": "取適法の解説",
+      "url": "https://j-net21.smrj.go.jp/solution/law/20260629.html",
+      "publisher": "J-Net21",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-514",
+    "kind": "trend",
+    "official": true,
+    "title": "令和7年の労災死亡は過去最少700人",
+    "summary": "厚労省の確定値では、2025年の労働災害の死亡者は700人で前年より46人減り過去最少。休業4日以上の死傷者は135,333人で0.3%減（労働新聞の報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "数字で見る、いまの工場の安全",
+    "source": {
+      "title": "死亡は過去最少の700人 令和7年・労災件数で確定値",
+      "url": "https://www.rodo.co.jp/news/220042/",
+      "publisher": "労働新聞社",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-515",
+    "kind": "trend",
+    "official": true,
+    "title": "製造業の労災死亡は115人に減少",
+    "summary": "2025年の業種別の死亡者は建設業214人、製造業115人（前年より27人減）、陸上貨物運送80人の順だった（厚労省の確定値、労働新聞の報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "製造業の労災は減っている？増えている？",
+    "source": {
+      "title": "死亡は過去最少の700人 令和7年・労災件数で確定値",
+      "url": "https://www.rodo.co.jp/news/220042/",
+      "publisher": "労働新聞社",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-516",
+    "kind": "trend",
+    "official": true,
+    "title": "製造業の労災は全産業の約3割",
+    "summary": "静岡労働局の資料では、製造業の労働災害は全産業の3割ほどで業種別に最も多く、機械へのはさまれ・巻き込まれが多いとしている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "町工場で一番多いけがは何か",
+    "source": {
+      "title": "製造業の労働災害防止（資料）",
+      "url": "https://jsite.mhlw.go.jp/shizuoka-roudoukyoku/content/contents/002005801.pdf",
+      "publisher": "静岡労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-517",
+    "kind": "trend",
+    "official": true,
+    "title": "熱中症対策が2025年6月に義務に",
+    "summary": "2025年6月1日の改正安衛則で、暑い環境の作業に「早く見つける体制」「悪化を防ぐ手順」「作業者への周知」の3つが事業者の義務になった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "うちの工場の熱中症対策を公開します",
+    "source": {
+      "title": "熱中症対策の義務化（解説）",
+      "url": "https://sogyotecho.jp/nechushoutaisaku-gimuka/",
+      "publisher": "創業手帳",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-518",
+    "kind": "trend",
+    "official": true,
+    "title": "熱中症の死亡が製造業の現場で",
+    "summary": "富山労働局によると、2025年の県内の職場の熱中症（休業4日以上）は23人で過去10年で最多。製造業は警備業に次いで多く、死亡1人も製造業の事業場だった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "屋内の工場でも熱中症は起きる",
+    "source": {
+      "title": "令和7年 職場における熱中症の発生状況（富山県）",
+      "url": "https://jsite.mhlw.go.jp/toyama-roudoukyoku/content/contents/002700839.pdf",
+      "publisher": "富山労働局",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-519",
+    "kind": "trend",
+    "official": true,
+    "title": "化学物質管理者の選任が義務に",
+    "summary": "2024年4月から、リスクアセスメント対象物を作ったり扱ったりする事業場は、規模や業種に関係なく化学物質管理者を選ぶことが義務になった（労働局資料）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "化学物質管理者を置きました",
+    "source": {
+      "title": "化学物質の自律的な管理（資料）",
+      "url": "https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/002192191.pdf",
+      "publisher": "奈良労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-520",
+    "kind": "trend",
+    "official": true,
+    "title": "対象の化学物質は段階的に増える",
+    "summary": "リスクアセスメント対象物は段階的に増やされている。追加の時期や数は資料の版で違うため、厚労省の最新一覧で確かめるよう労働局が呼びかけている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "使っている薬品が対象か調べた話",
+    "source": {
+      "title": "化学物質管理セミナー資料",
+      "url": "https://jsite.mhlw.go.jp/toyama-roudoukyoku/content/contents/R8kagakuseminar.pdf",
+      "publisher": "富山労働局",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-521",
+    "kind": "trend",
+    "official": true,
+    "title": "保護手袋の使用が2024年に義務化",
+    "summary": "2024年4月から、皮膚に障害を起こす・皮膚から吸収される化学物質を扱うときは、しみ込まない（不浸透性の）保護具を使わせることが義務になった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "手袋を選び直した理由",
+    "source": {
+      "title": "皮膚等障害化学物質等への不浸透性保護具の使用義務",
+      "url": "https://www.mhlw.go.jp/content/11300000/001216985.pdf",
+      "publisher": "厚生労働省",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-522",
+    "kind": "trend",
+    "official": false,
+    "title": "保護具着用管理責任者も選任義務",
+    "summary": "リスクアセスメント対象物を扱う事業場では、化学物質管理者と並んで、保護具の着け方を管理する「保護具着用管理責任者」の選任も義務になった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "保護具着用責任者選任が義務に（2024年の安全衛生ニュース）",
+      "url": "https://www.rodo.co.jp/news/189158/",
+      "publisher": "労働新聞社",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-523",
+    "kind": "trend",
+    "official": false,
+    "title": "高齢者の労災防止が努力義務に",
+    "summary": "2026年4月施行の改正安衛法で、高年齢者の特性に配慮した作業環境の改善などが事業者の努力義務になった（第62条の2第2項）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "60代も安心して働ける工場づくり",
+    "source": {
+      "title": "高年齢者の労働災害防止のための指針（解説）",
+      "url": "https://keiyaku-watch.jp/media/hourei/202604-konenreirodosaigai-guideline/",
+      "publisher": "契約ウォッチ",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-524",
+    "kind": "trend",
+    "official": false,
+    "title": "エイジフレンドリーは法律の指針へ",
+    "summary": "これまで法的根拠のなかったエイジフレンドリーガイドラインが、改正法にもとづく「高年齢者の労働災害防止のための指針」に格上げされた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "改正安衛法施行に伴う高年齢者対策の推進",
+      "url": "https://www.rodo.co.jp/series/217287/",
+      "publisher": "労働新聞社",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-525",
+    "kind": "trend",
+    "official": false,
+    "title": "努力義務でも訴訟で問われうる",
+    "summary": "専門家は、高齢の作業者が転倒や腰痛でけがをしたとき、体の衰えを考えた対策をしていたかが安全配慮義務の争点になりうると指摘している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "高年齢者の労働災害防止のための指針（解説）",
+      "url": "https://keiyaku-watch.jp/media/hourei/202604-konenreirodosaigai-guideline/",
+      "publisher": "契約ウォッチ",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-526",
+    "kind": "trend",
+    "official": true,
+    "title": "はさまれ対策の実施率60%が国の目標",
+    "summary": "第14次労働災害防止計画（2023〜2027年度）は、機械のはさまれ・巻き込まれ防止に取り組む製造業の事業場を2027年までに60%以上にする目標を掲げる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "国の目標とうちの対策",
+    "source": {
+      "title": "第14次労働災害防止計画 リーフレット",
+      "url": "https://jsite.mhlw.go.jp/iwate-roudoukyoku/content/contents/14jibouleaflet.pdf",
+      "publisher": "岩手労働局",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-527",
+    "kind": "trend",
+    "official": true,
+    "title": "騒音の指針が改訂、聴力検査も変更",
+    "summary": "騒音障害防止のガイドライン改訂で、定期健診（騒音）の4000Hzの検査音を40dBから25dB・30dBに変え、雇入れ時などは6000Hzも追加。管理者の選任も加わった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "工場の音と耳の検査",
+    "source": {
+      "title": "騒音障害防止のためのガイドライン改訂",
+      "url": "https://www.mhlw.go.jp/content/001089242.pdf",
+      "publisher": "厚生労働省",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-528",
+    "kind": "trend",
+    "official": true,
+    "title": "溶接ヒュームは特定化学物質に",
+    "summary": "溶接ヒュームは特定化学物質に加わり、2022年4月から全面施行。屋内で続けてアーク溶接する事業者は、測定結果に合わせた呼吸用保護具の選定と使用が必要。",
+    "industries": [
+      "溶接",
+      "製缶",
+      "板金",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "溶接工場の換気とマスクの話",
+    "source": {
+      "title": "金属アーク溶接等作業の健康障害防止",
+      "url": "https://jsite.mhlw.go.jp/osaka-roudoukyoku/content/contents/202106101318.pdf",
+      "publisher": "大阪労働局",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-529",
+    "kind": "trend",
+    "official": true,
+    "title": "溶接マスクのフィットテストが義務",
+    "summary": "屋内で金属アーク溶接を続ける事業場は、2023年4月から呼吸用保護具が顔に合っているかの確認（フィットテスト）を定期的に行うことが義務になった。",
+    "industries": [
+      "溶接",
+      "製缶",
+      "板金",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "溶接ヒューム対策（リーフレット）",
+      "url": "https://jsite.mhlw.go.jp/hokkaido-roudoukyoku/content/contents/001563651.pdf",
+      "publisher": "北海道労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-530",
+    "kind": "trend",
+    "official": false,
+    "title": "小さな事業場もストレスチェック義務へ",
+    "summary": "50人未満の事業場へのストレスチェック義務化は2028年4月1日施行と決まった。年1回の検査と、希望した高ストレス者への医師の面接が必要になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "小さな工場の心の健康づくり",
+    "source": {
+      "title": "ストレスチェック 全事業場での実施義務化 2028年4月で決定",
+      "url": "https://roumu.com/?p=132036",
+      "publisher": "労務ドットコム",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-531",
+    "kind": "trend",
+    "official": false,
+    "title": "外国人向けの労災防止マニュアル検討",
+    "summary": "厚労省は2026年度に製造業や建設業の団体と検討会をつくり、外国人労働者の安全教育に使える注意喚起のイラストやマニュアルを作る方針（2026年1月報道）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "業種絞ったマニュアル検討 外国人労働者の労災防止で",
+      "url": "https://www.rodo.co.jp/news/212324/",
+      "publisher": "労働新聞社",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "term-657",
+    "kind": "term",
+    "title": "はさまれ・巻き込まれ",
+    "summary": "機械の動く部分と固定部分のすき間に体がはさまる、回転部に手や服が巻き込まれる災害。製造業で多く、労災統計の「事故の型」の1つ。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "はさまれ・巻き込まれを防ぐ工夫",
+    "source": {
+      "title": "製造業の労働災害防止（資料）",
+      "url": "https://jsite.mhlw.go.jp/shizuoka-roudoukyoku/content/contents/002005801.pdf",
+      "publisher": "静岡労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-658",
+    "kind": "term",
+    "title": "休業4日以上の死傷者",
+    "summary": "労災統計でよく使う数え方。けがや病気で4日以上仕事を休んだ人と、亡くなった人の合計。会社が労基署に報告する義務がある範囲と重なる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "死亡は過去最少の700人 令和7年・労災件数で確定値",
+      "url": "https://www.rodo.co.jp/news/220042/",
+      "publisher": "労働新聞社",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-659",
+    "kind": "term",
+    "title": "WBGT（暑さ指数）",
+    "summary": "気温だけでなく湿度や照り返しも入れた暑さの目安。熱中症の義務はWBGT28度以上または気温31度以上で、連続1時間以上か1日4時間超の作業が対象。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "工場内の暑さ指数を測ってみた",
+    "source": {
+      "title": "熱中症対策の義務化（解説）",
+      "url": "https://sogyotecho.jp/nechushoutaisaku-gimuka/",
+      "publisher": "創業手帳",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "term-660",
+    "kind": "term",
+    "title": "リスクアセスメント対象物",
+    "summary": "厚労省が指定した、危険や有害性を調べて対策する義務がある化学物質。混ぜる・薄める・小分けして製品を作るのも「製造」に入る。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "化学物質の自律的な管理（資料）",
+      "url": "https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/002192191.pdf",
+      "publisher": "奈良労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-661",
+    "kind": "term",
+    "title": "SDS（安全データシート）",
+    "summary": "化学製品の危険性・扱い方・保護具などが書かれた資料。使う溶剤や薬品がどの規制にあたるかを確かめる出発点になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "有機溶剤作業主任者とは（解説）",
+      "url": "https://biz.moneyforward.com/construction/basic/69561/",
+      "publisher": "マネーフォワード",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-662",
+    "kind": "term",
+    "title": "不浸透性の保護具",
+    "summary": "有害物がしみ込まず、すり抜けもしない性能をもつ手袋や服。JIS T 8116の「透過」と「浸透」の両方を起こさないものを指す。普通のビニール手袋とは違う。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "皮膚等障害化学物質等への不浸透性保護具の使用義務",
+      "url": "https://www.mhlw.go.jp/content/11300000/001216985.pdf",
+      "publisher": "厚生労働省",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "term-663",
+    "kind": "term",
+    "title": "エイジフレンドリー",
+    "summary": "高齢の人も安全に働けるよう、職場の環境や作業のやり方を整える考え方。段差をなくす、滑りにくい床、重い物を機械で運ぶなどが例。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "製造業の労働災害防止（資料）",
+      "url": "https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/seizou.pdf",
+      "publisher": "奈良労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-664",
+    "kind": "term",
+    "title": "3段階の保護方策",
+    "summary": "機械の危険はまず設計でなくし、次に柵やカバーで防ぎ、それでも残る危険は「使用上の情報」で使う人に伝える、という順番で減らす考え方。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "機械の安全はまず設計から",
+    "source": {
+      "title": "機械の包括的な安全基準とリスクアセスメント（資料）",
+      "url": "https://www.mhlw.go.jp/content/11300000/001408022.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-665",
+    "kind": "term",
+    "title": "残留リスク",
+    "summary": "対策を尽くしても残ってしまう危険のこと。機械メーカーは取扱説明書などで使う人に知らせる。受け取った側は教育や作業手順に反映する。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "機械の包括的な安全基準とリスクアセスメント（資料）",
+      "url": "https://www.mhlw.go.jp/content/11300000/001408022.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-666",
+    "kind": "term",
+    "title": "マトリクス法・加算法",
+    "summary": "リスクアセスメントで危険の大きさを見積もる方法。けがの重さと起きやすさを表に当てはめたり、点数を足したりして、どれから対策するかを決める。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "機械設備のリスクアセスメントマニュアル",
+      "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei14/dl/100524-1.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-667",
+    "kind": "term",
+    "title": "技能講習と特別教育",
+    "summary": "法律で決まった資格の取り方。フォークリフトは最大荷重1トン以上なら技能講習、1トン未満なら特別教育の修了が必要。工場の敷地内でも必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "フォークリフトの資格、うちはこう取らせる",
+    "source": {
+      "title": "就業制限業務と資格（資料）",
+      "url": "https://www.mhlw.go.jp/content/11800000/jigyounai_275_img1.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-668",
+    "kind": "term",
+    "title": "玉掛け",
+    "summary": "クレーンで荷をつるときに、ワイヤーなどを掛けたり外したりする作業。つり上げ荷重1トン以上のクレーンでは玉掛け技能講習の修了が必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "就業制限業務と資格（資料）",
+      "url": "https://www.mhlw.go.jp/content/11800000/jigyounai_275_img1.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-669",
+    "kind": "term",
+    "title": "等価騒音レベル",
+    "summary": "変化する音を、一定時間の平均の大きさに直した値。85dB以上90dB未満、90dB以上で対策が必要になり、90dB以上では耳栓などの使用が必須。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "騒音障害防止のためのガイドライン（リーフレット）",
+      "url": "https://jsite.mhlw.go.jp/kyoto-roudoukyoku/content/contents/001563554.pdf",
+      "publisher": "京都労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-670",
+    "kind": "term",
+    "title": "溶接ヒューム",
+    "summary": "溶接の熱で金属が蒸発し、冷えてできる細かい粒子。吸い続けると健康を害するため、特定化学物質として測定・換気・マスクが求められる。",
+    "industries": [
+      "溶接",
+      "製缶",
+      "板金",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "金属アーク溶接等作業の健康障害防止",
+      "url": "https://jsite.mhlw.go.jp/osaka-roudoukyoku/content/contents/202106101318.pdf",
+      "publisher": "大阪労働局",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "term-671",
+    "kind": "term",
+    "title": "有機溶剤作業主任者",
+    "summary": "屋内で有機溶剤を使う作業に必要な責任者。技能講習を終えた人から選ぶ。塗装・洗浄・印刷などでよく関係する。",
+    "industries": [
+      "塗装",
+      "印刷",
+      "表面処理",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "有機溶剤作業主任者とは（解説）",
+      "url": "https://biz.moneyforward.com/construction/basic/69561/",
+      "publisher": "マネーフォワード",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-672",
+    "kind": "term",
+    "title": "有機溶剤の第一種〜第三種",
+    "summary": "有機溶剤は有害さで第一種から第三種に分かれ、測定や設備の義務が違う。ガソリンやミネラルスピリットなどは第三種で、比較的ゆるい。",
+    "industries": [
+      "塗装",
+      "印刷",
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "有機溶剤作業主任者とは（解説）",
+      "url": "https://biz.moneyforward.com/construction/basic/69561/",
+      "publisher": "マネーフォワード",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-673",
+    "kind": "term",
+    "title": "衛生推進者・安全衛生推進者",
+    "summary": "常時10〜49人の事業場で選ぶ担当者。業種で種類が分かれるが、製造業がどちらに入るかは労働局の資料でも記載が分かれる。所轄の労基署に確かめるのが確実。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "安全衛生管理体制（資料）",
+      "url": "https://jsite.mhlw.go.jp/kumamoto-roudoukyoku/content/contents/002651885.pdf",
+      "publisher": "熊本労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-674",
+    "kind": "term",
+    "title": "50人で変わる安全の体制",
+    "summary": "常時50人以上になると衛生管理者と産業医の選任が必要になり、業種によって安全管理者も要る。人数は会社全体でなく事業場ごとに数える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "会社が大きくなると何が変わる？",
+    "source": {
+      "title": "安全衛生管理体制",
+      "url": "https://aichi-elcc.mhlw.go.jp/?p=4604",
+      "publisher": "愛知労働局 働き方改革推進支援センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-675",
+    "kind": "term",
+    "title": "騒音規制法の特定施設",
+    "summary": "大きな音を出す機械として法律が決めた設備。指定地域で置くときは、市町村に工事開始の30日前までに届け出る。工業専用地域は対象外。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "町工場の音と近所づきあい",
+    "source": {
+      "title": "騒音・振動 特定施設等に係る届出",
+      "url": "https://www.city.takizawa.iwate.jp/uploads/contents/pages_0000003588_00/【騒音・振動】特定施設等に係る届出パンフレット.pdf",
+      "publisher": "滝沢市",
+      "date": null
+    }
+  },
+  {
+    "id": "term-676",
+    "kind": "term",
+    "title": "少量危険物",
+    "summary": "消防法の指定数量の5分の1以上、指定数量未満の危険物。市町村の火災予防条例で決まり、消防署への届出が必要になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "工場の塗料とシンナー、どこまで置ける？",
+    "source": {
+      "title": "少量危険物の貯蔵・取扱い",
+      "url": "https://www.pref.saitama.lg.jp/documents/173009/sgap3.pdf",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "term-677",
+    "kind": "term",
+    "title": "指定数量の倍数",
+    "summary": "種類の違う危険物を同じ場所に置くときは、それぞれの量を指定数量で割って足す。合計が1以上なら許可が必要な量になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "少量危険物の貯蔵・取扱い",
+      "url": "https://www.pref.saitama.lg.jp/documents/173009/sgap3.pdf",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "term-678",
+    "kind": "term",
+    "title": "第4類・第1石油類",
+    "summary": "塗料やシンナーの多くは消防法の第4類（燃えやすい液体）。水に溶けない第1石油類の指定数量は200L、第2石油類は1000L（堺市の一覧）。",
+    "industries": [
+      "塗装",
+      "表面処理",
+      "印刷"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "危険物の啓発",
+      "url": "https://www.city.sakai.lg.jp/kurashi/bosai/shobo/shimin/kasaiyobo/kikenbutsujiko/kikenbutu/kikennbutukeihatu.html",
+      "publisher": "堺市消防局",
+      "date": null
+    }
+  },
+  {
+    "id": "term-679",
+    "kind": "term",
+    "title": "ホワイトマーク",
+    "summary": "厚労省の「安全衛生優良企業公表制度」の通称。認定されるとマークをWebサイトや求人、名刺に使える。認定期間は3年。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "安全への取り組みを証明する方法",
+    "source": {
+      "title": "安全衛生優良企業とは",
+      "url": "https://www.kaonavi.jp/dictionary/goodhealth-and-safetycompany/",
+      "publisher": "カオナビ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-680",
+    "kind": "term",
+    "title": "36協定の限度時間",
+    "summary": "残業をさせるために労使で結ぶ協定。上限は原則月45時間・年360時間。特別条項でも年720時間以内、休日を含め月100時間未満などの上限がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "うちの残業時間を正直に書く",
+    "source": {
+      "title": "36協定の特別条項（解説）",
+      "url": "https://keiyaku-watch.jp/media/hourei/36kyotei-special/",
+      "publisher": "契約ウォッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-681",
+    "kind": "term",
+    "title": "ヒヤリハット",
+    "summary": "けがにはならなかったが、ヒヤリ・ハッとした出来事。報告して集めると、災害の前に対策が打て、リスクアセスメントの材料にもなる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "食料品製造業の労働災害防止（リーフレット）",
+      "url": "https://jsite.mhlw.go.jp/niigata-roudoukyoku/library/niigata-roudoukyoku/roudoukyokunituite/kantokusyo_oshirase/06/27/270513saigaibousi_06_shokuryouhinseizougyou_riifu.pdf",
+      "publisher": "新潟労働局",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "term-682",
+    "kind": "term",
+    "title": "KY活動（危険予知）",
+    "summary": "作業の前に、どこに危険があるかをみんなで話し合う活動。作業者の注意を高める。短時間でも毎日続けることが大事とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "食料品製造業の労働災害防止（リーフレット）",
+      "url": "https://jsite.mhlw.go.jp/niigata-roudoukyoku/library/niigata-roudoukyoku/roudoukyokunituite/kantokusyo_oshirase/06/27/270513saigaibousi_06_shokuryouhinseizougyou_riifu.pdf",
+      "publisher": "新潟労働局",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "term-683",
+    "kind": "term",
+    "title": "5S",
+    "summary": "整理・整頓・清掃・清潔・しつけの頭文字。厚労省の用語集では4Sとして載り、しつけを足したもの。段階を踏んで進めるものとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "5S活動とは",
+      "url": "https://www.fujifilm.com/fb/solution/dx_column/monozukuri/5s_activity_01.html",
+      "publisher": "富士フイルムビジネスイノベーション",
+      "date": null
+    }
+  },
+  {
+    "id": "term-684",
+    "kind": "term",
+    "title": "雇入れ時の安全衛生教育",
+    "summary": "人を雇ったときや作業内容が変わったときに行う安全の教育。外国人の災害の背景には、日本語の理解不足や危険の伝え漏れがあるとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "外国人労働者の安全衛生（資料）",
+      "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/002260364.pdf",
+      "publisher": "岡山労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-398",
+    "kind": "pain",
+    "title": "はさまれ事故がなくならない",
+    "summary": "製造業では機械へのはさまれ・巻き込まれが多く、国も対策を数値目標にしている。カバーを外して作業する、停止せずに手を入れるといった場面が課題。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "第14次労働災害防止計画 リーフレット",
+      "url": "https://jsite.mhlw.go.jp/iwate-roudoukyoku/content/contents/14jibouleaflet.pdf",
+      "publisher": "岩手労働局",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "pain-399",
+    "kind": "pain",
+    "title": "屋内の工場でも暑さがきつい",
+    "summary": "炉や機械の熱がこもる工場は、外の気温以上に暑くなる。熱中症の義務化で、暑さの測り方や体調の確かめ方を決めておく必要がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "令和7年 職場における熱中症の発生状況（富山県）",
+      "url": "https://jsite.mhlw.go.jp/toyama-roudoukyoku/content/contents/002700839.pdf",
+      "publisher": "富山労働局",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-400",
+    "kind": "pain",
+    "title": "熱中症の手順を何から作るか",
+    "summary": "義務の中身は、異変に気づく体制、悪化を防ぐ手順、その周知の3つ。誰に連絡し、どこで冷やし、いつ病院へ運ぶかを紙にして貼る形が基本。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "熱中症のとき誰が何をするか",
+    "source": {
+      "title": "職場の熱中症対策（解説）",
+      "url": "https://www.freee.co.jp/kb/kb-trend/workplace-heatstroke-prevention/",
+      "publisher": "freee",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-401",
+    "kind": "pain",
+    "title": "使っている薬品が対象か分からない",
+    "summary": "溶剤・洗浄剤・塗料など、どれがリスクアセスメント対象物かを調べるのが最初の壁。SDSを集めて一覧にすることから始める会社が多い。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "化学物質管理 自主点検チェックリスト",
+      "url": "https://chemiguide.mhlw.go.jp/kyochogekkan/pdf/checklist.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-402",
+    "kind": "pain",
+    "title": "化学物質管理者を誰にするか",
+    "summary": "小さな工場では専任を置く余裕がない。社長や工場長が兼ねることが多いが、リスクアセスメントの実施などを管理させる役目がある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "化学物質の自律的な管理（資料）",
+      "url": "https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/002192191.pdf",
+      "publisher": "奈良労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-403",
+    "kind": "pain",
+    "title": "手袋の選び方が分からない",
+    "summary": "化学物質ごとに合う手袋の材質が違い、普通のビニール手袋では防げないことがある。厚労省は選定マニュアル（2024年2月）で手順を示している。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "皮膚等障害化学物質等への不浸透性保護具の使用義務",
+      "url": "https://www.mhlw.go.jp/content/11300000/001216985.pdf",
+      "publisher": "厚生労働省",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "pain-404",
+    "kind": "pain",
+    "title": "ベテランの転倒やつまずき",
+    "summary": "高齢になるほど転倒の災害が増え、女性で特に多い。60歳以上は労災の4分の1以上を占め、けがが重くなりやすい（厚労省資料、2019年は27%）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "段差をなくした工場の通路",
+    "source": {
+      "title": "製造業の労働災害防止（資料）",
+      "url": "https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/seizou.pdf",
+      "publisher": "奈良労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-405",
+    "kind": "pain",
+    "title": "食品工場の床で滑る",
+    "summary": "水を使う食品工場では、床が濡れて滑る転倒が多い。滑りにくい床材やグレーチング、滑りにくい靴が対策として示されている。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "製造業の労働災害防止（資料）",
+      "url": "https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/seizou.pdf",
+      "publisher": "奈良労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-406",
+    "kind": "pain",
+    "title": "重い物を手で運ぶと腰を痛める",
+    "summary": "業務上の腰痛は年約5000件報告され、およそ4分の1が重い物の取り扱いで起きている（労働安全衛生総合研究所の資料）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "腰を痛めない運び方の工夫",
+    "source": {
+      "title": "重量物取扱いの体重比制限と腰痛（研究報告）",
+      "url": "https://www.jniosh.johas.go.jp/publication/doc/srr/SRR-No55-2-3.pdf",
+      "publisher": "労働安全衛生総合研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-407",
+    "kind": "pain",
+    "title": "体重の40%ルールだけでは足りない",
+    "summary": "厚労省の指針は重さを男性は体重の40%、女性は24%以下とするが、研究所の調査（約2万2千人）では体重比だけでは腰痛を防ぎきれないとの見方が出ている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "重量物取扱いの体重比制限と腰痛（研究報告）",
+      "url": "https://www.jniosh.johas.go.jp/publication/doc/srr/SRR-No55-2-3.pdf",
+      "publisher": "労働安全衛生総合研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-408",
+    "kind": "pain",
+    "title": "工場の音がうるさいと言われる",
+    "summary": "住宅に近い町工場では、プレスやコンプレッサーの音が苦情のもとになる。相談窓口は市町村で、敷地の境界での音の基準が地域と時間帯で決まっている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "工場・事業場からの騒音・振動の規制と届出",
+      "url": "https://www.city.sapporo.jp/kankyo/souon/kisei/koujou.html",
+      "publisher": "札幌市",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-409",
+    "kind": "pain",
+    "title": "移転先で騒音の届出が変わる",
+    "summary": "用途地域や指定地域かどうかで、届出や基準が変わる。移転先で特定施設を置くなら、移転先の市町村への届出が必要。府県の条例で追加の届出がある所もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "工場騒音の規制",
+      "url": "https://www.pref.kyoto.jp/noise/factorynoise.html",
+      "publisher": "京都府",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-410",
+    "kind": "pain",
+    "title": "塗料やシンナーの置きすぎ",
+    "summary": "塗料・ボンド類も量が増えると少量危険物になり届出が必要。種類が違っても合計で数えるため、気づかないうちに基準を超えることがある。",
+    "industries": [
+      "塗装",
+      "表面処理",
+      "印刷",
+      "木工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "危険物の事故防止対策",
+      "url": "https://www.city.kobe.lg.jp/a84190/r021211_jikoboushitaisaku.html",
+      "publisher": "神戸市消防局",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-411",
+    "kind": "pain",
+    "title": "溶剤の換気と保護具が後回し",
+    "summary": "製品中の溶剤が少なくても、蒸発すれば健康リスクは残る。換気と保護具は続けて必要。測定記録はトルエンなどで3年、エチルベンゼンは30年保存。",
+    "industries": [
+      "塗装",
+      "印刷",
+      "表面処理"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "有機溶剤作業主任者とは（解説）",
+      "url": "https://biz.moneyforward.com/construction/basic/69561/",
+      "publisher": "マネーフォワード",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-412",
+    "kind": "pain",
+    "title": "外国人の作業者に危険が伝わらない",
+    "summary": "日本語の理解が十分でないと、危ない場所や手順が伝わらない。文を短くするなど「やさしい日本語」を使うのが効果的とされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "外国人スタッフへの安全教育の工夫",
+    "source": {
+      "title": "外国人労働者向け安全衛生教育教材",
+      "url": "https://www.mhlw.go.jp/content/000815300.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-413",
+    "kind": "pain",
+    "title": "経験の浅い人がけがをしやすい",
+    "summary": "製造業では経験の短い未熟練の人の災害が多い。厚労省は未熟練者向けの安全教育マニュアルを作り、英語・ポルトガル語・スペイン語・中国語版もある。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "外国人労働者の安全衛生（資料）",
+      "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/002260364.pdf",
+      "publisher": "岡山労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-414",
+    "kind": "pain",
+    "title": "繁忙期の残業が上限を超えそう",
+    "summary": "特別条項を結ばずに月45時間を超えると違反。特別条項でも年720時間や月100時間未満などの上限がある。短納期の注文が重なる時期に注意。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "36協定の上限規制（解説）",
+      "url": "https://romsearch.officestation.jp/jinjiroumu/shugyoukisoku/28706",
+      "publisher": "オフィスステーション",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-415",
+    "kind": "pain",
+    "title": "ヒヤリハットが集まらない",
+    "summary": "報告しても叱られる、書くのが面倒といった理由で集まりにくい。集めた例を見える形で貼り出し、日々のKYで使うと意識が上がるとされる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ヒヤリ・ハットどう活用 職場の安全へのつなぎ方",
+      "url": "https://www.rodo.co.jp/faq/7522/",
+      "publisher": "労働新聞社",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-416",
+    "kind": "pain",
+    "title": "5Sが掛け声だけで終わる",
+    "summary": "5Sは全員参加と計画的な推進が大事だが、掛け声だけで終わる会社が多いと指摘されている。効果を意識して続けられるかが分かれ目。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "5Sの進め方（連載）",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1605/17/news010_2.html",
+      "publisher": "MONOist",
+      "date": "2016-05"
+    }
+  },
+  {
+    "id": "question-715",
+    "kind": "question",
+    "title": "この工場は安全に働けますか？",
+    "summary": "求職者はけがの心配をする。主な危険とその対策（カバー、停止の手順、保護具）、休業災害の有無を正直に書くと、安心材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "求職者に伝えたい、うちの安全対策",
+    "source": {
+      "title": "静岡の町工場が「きつい・汚い・危険」から脱却 応募者3.5倍",
+      "url": "https://www.itmedia.co.jp/business/articles/2603/31/news036.html",
+      "publisher": "ITmedia ビジネスオンライン",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "question-716",
+    "kind": "question",
+    "title": "フォークリフトの資格は取れますか？",
+    "summary": "求職者には資格を会社で取れるかが関心ごと。1トン以上は技能講習（原則35時間、普通免許で一部免除）、1トン未満は特別教育で、敷地内でも必要。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "入社後に取れる資格一覧",
+    "source": {
+      "title": "フォークリフトの免許（解説）",
+      "url": "https://matome.response.jp/articles/1670",
+      "publisher": "レスポンス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-717",
+    "kind": "question",
+    "title": "夏の工場は暑くないですか？",
+    "summary": "暑さの対策を聞かれたら、暑さ指数の測定、休憩と水分、体調が悪いときの連絡先と手順を具体的に書く。義務化された内容に沿うと説明しやすい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "工場の夏、こうして乗り切っています",
+    "source": {
+      "title": "熱中症対策の義務化（解説）",
+      "url": "https://sogyotecho.jp/nechushoutaisaku-gimuka/",
+      "publisher": "創業手帳",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "question-718",
+    "kind": "question",
+    "title": "年をとっても続けられますか？",
+    "summary": "シニア採用では、段差をなくす、重い物は機械で運ぶ、照明を明るくするなどの配慮を示す。2026年4月から高齢者の労災防止は努力義務。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "60歳からでも働ける工場",
+    "source": {
+      "title": "高年齢労働者の安全（特集）",
+      "url": "https://www.jil.go.jp/kokunai/blt/backnumber/2026/03/special_02.html",
+      "publisher": "労働政策研究・研修機構",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "question-719",
+    "kind": "question",
+    "title": "日本語が苦手でも働けますか？",
+    "summary": "外国人向けには、多言語の教材（最大14言語）やイラストでの説明を使っていることを示す。教育の担当者がいることも安心材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "外国人労働者向け安全衛生教育教材",
+      "url": "https://www.mhlw.go.jp/content/000815300.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-720",
+    "kind": "question",
+    "title": "残業はどのくらいありますか？",
+    "summary": "求職者は残業の量を気にする。36協定の上限内で、繁忙期と閑散期の目安を数字で示すと信頼につながる。上限は原則月45時間・年360時間。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "source": {
+      "title": "36協定の特別条項（解説）",
+      "url": "https://keiyaku-watch.jp/media/hourei/36kyotei-special/",
+      "publisher": "契約ウォッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-721",
+    "kind": "question",
+    "title": "監査で化学物質の管理を聞かれたら",
+    "summary": "取引先の監査では、使う物質の把握、管理者の選任、リスクアセスメント、ばく露を減らす対策が聞かれやすい。労働局の自主点検表の項目がそのまま使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "化学物質の管理、ここまでやっています",
+    "source": {
+      "title": "化学物質管理 自主点検チェックリスト",
+      "url": "https://chemiguide.mhlw.go.jp/kyochogekkan/pdf/checklist.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-722",
+    "kind": "question",
+    "title": "納入する機械の危険は誰が伝える？",
+    "summary": "機械メーカーは設計でリスクを減らし、残った危険は使用上の情報として使う人に伝える。買い手は取扱説明書の残留リスクを確かめるとよい。",
+    "industries": [
+      "装置",
+      "産業機械",
+      "治具"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "機械の包括的な安全基準とリスクアセスメント（資料）",
+      "url": "https://www.mhlw.go.jp/content/11300000/001408022.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "success-530",
+    "kind": "success",
+    "title": "若手の活躍を発信し応募200人",
+    "summary": "社員10人余りの町工場が、ビジョン作りや評価制度の導入に加え、若手が新製品開発に関わる様子を発信したところ、求人に年約200人の応募が集まった。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手が主役の工場を見せる",
+    "source": {
+      "title": "町工場をブランディングし、求人に応募者200人",
+      "url": "https://j-net21.smrj.go.jp/special/summary/case06.html",
+      "publisher": "J-Net21（中小機構）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-531",
+    "kind": "success",
+    "title": "「きつい・汚い・危険」脱却で応募3.5倍",
+    "summary": "静岡の町工場がコスト最優先を見直し、社員が誇れる職場づくりに切り替えたところ、求人の応募が2年で3.5倍になったと報じられた。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "危険な仕事のイメージを変える",
+    "source": {
+      "title": "静岡の町工場が「きつい・汚い・危険」から脱却 応募者3.5倍",
+      "url": "https://www.itmedia.co.jp/business/articles/2603/31/news036.html",
+      "publisher": "ITmedia ビジネスオンライン",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "success-532",
+    "kind": "success",
+    "title": "工場見学から大きな仕事が決まる",
+    "summary": "町工場の経営者の話として、5Sが行き届いた工場を見学してもらったことが、大きな受注につながることがあると紹介されている。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "見学に来てほしい工場の5S",
+    "source": {
+      "title": "町工場と5S（記事）",
+      "url": "https://newswitch.jp/p/35931",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-533",
+    "kind": "success",
+    "title": "認定マークを求人や名刺に使う",
+    "summary": "ホワイトマークを取ると、Webサイト・求人広告・名刺などに表示できる。ただし採用への効果を示す客観的な数字は見当たらず、実際の取り組みと一緒に伝えたい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "安全衛生優良企業とは",
+      "url": "https://www.kaonavi.jp/dictionary/goodhealth-and-safetycompany/",
+      "publisher": "カオナビ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-534",
+    "kind": "success",
+    "title": "製造業でもホワイトマークの認定例",
+    "summary": "千葉労働局は安全衛生優良企業に認定された会社を公開しており、製造業の会社も載っている。公的な一覧に載ることが信頼の裏づけになる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "安全衛生優良企業の認定企業",
+      "url": "https://jsite.mhlw.go.jp/chiba-roudoukyoku/hourei_seido_tetsuzuki/anzen_eisei/anzeneisei-yuryokigyou_00001.html",
+      "publisher": "千葉労働局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-535",
+    "kind": "success",
+    "title": "運ぶ人数を荷物に表示して腰痛予防",
+    "summary": "ある製造業の事業場は、1人25kgまでとして運搬物に必要な人数を表示し、人力の運搬を体重のおおむね40%以下に収めた（厚労省のコンクール事例）。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "写真で見せる腰痛予防の工夫",
+    "source": {
+      "title": "「見える」安全活動コンクール（腰痛予防の事例）",
+      "url": "https://anzeninfo.mhlw.go.jp/anzenproject/concour/2018/sakuhin2/n035.html",
+      "publisher": "厚生労働省 職場のあんぜんサイト",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "success-536",
+    "kind": "success",
+    "title": "安全の工夫を「見える化」して発信",
+    "summary": "厚労省の安全活動コンクールでは、リスクマップの掲示やランプでの危険表示、KY・ヒヤリハットの見える化が多く応募されている。写真で見せやすい題材になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工場の安全掲示を紹介します",
+    "source": {
+      "title": "「見える」安全活動コンクール 応募一覧",
+      "url": "https://anzeninfo.mhlw.go.jp/anzenproject/concour/2013/list1f.html",
+      "publisher": "厚生労働省 職場のあんぜんサイト",
+      "date": "2013"
+    }
+  },
+  {
+    "id": "success-537",
+    "kind": "success",
+    "title": "洗浄剤を有害性の低いものに変える",
+    "summary": "日本印刷産業連合会の手引きでは、作業方法の改善と、より有害性の低い洗浄剤への切り替えを対策として挙げる。変えた理由と結果を書くと記事になる。",
+    "industries": [
+      "印刷",
+      "塗装",
+      "表面処理"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "洗浄剤を変えて職場の空気が変わった",
+    "source": {
+      "title": "印刷業の簡易な化学物質管理の手引き",
+      "url": "https://www.jfpi.or.jp/files/user/pdf/kankyo/202111_kanni_kagakubussitu.pdf",
+      "publisher": "日本印刷産業連合会",
+      "date": "2021-11"
+    }
+  },
+  {
+    "id": "buyer-417",
+    "kind": "buyer",
+    "title": "取引先は安全の体制も見る",
+    "summary": "発注側の監査では化学物質の管理や保護具の扱いが確認項目になる。管理者の選任や点検の記録をWebで示しておくと、問い合わせ前の安心材料になる。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "化学物質管理 自主点検チェックリスト",
+      "url": "https://chemiguide.mhlw.go.jp/kyochogekkan/pdf/checklist.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-418",
+    "kind": "buyer",
+    "title": "補助金で測定や設備を整える",
+    "summary": "溶接ヒュームの測定は中小企業向けに費用の半分を補助する制度があった（2021年度、1事業場上限8万円）。年度で条件が変わるので最新を確認する。",
+    "industries": [
+      "溶接",
+      "製缶",
+      "板金",
+      "金属加工"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "溶接ヒュームの測定で中小へ補助",
+      "url": "https://www.rodo.co.jp/news/108220/",
+      "publisher": "労働新聞社",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "buyer-419",
+    "kind": "buyer",
+    "title": "高齢者向け設備はエイジフレンドリー補助金",
+    "summary": "設備改修の費用負担を減らすには、国のエイジフレンドリー補助金の計画的な活用が有効とされる。申請にはリスクアセスメントが求められる点に注意。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "改正安衛法施行に伴う高年齢者対策の推進",
+      "url": "https://www.rodo.co.jp/series/217287/",
+      "publisher": "労働新聞社",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-685",
+    "kind": "term",
+    "title": "UL 508A（米国の制御盤の規格）",
+    "summary": "米国向けの産業用制御盤を安全に作るための規格。カナダの規格とも整合している。北米へ出す装置の盤では、まずこれに合うかを聞かれる。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "北米へ出す装置の盤で最初に確認すること",
+    "source": {
+      "title": "産業用制御盤エンクロージャにおけるUL 508Aへの対応",
+      "url": "https://forum.digikey.com/t/ul-508a/72432",
+      "publisher": "DigiKey TechForum",
+      "date": null
+    }
+  },
+  {
+    "id": "question-723",
+    "kind": "question",
+    "title": "ULの盤は部品をUL品にすれば足りる？",
+    "summary": "米国の現場では、全部品がUL登録品だと示す部品表を用意して盤にULラベルを付ける考え方が語られる。実際は盤屋側の登録と製作ルールも要るので、対応実績を聞くと安心。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "control panel requirements ul 508a nfpa 70e nec",
+      "url": "https://mrplc.com/forums/topic/25534-control-panel-requirements-ul-508a-nfpa-70e-nec/",
+      "publisher": "MrPLC.com",
+      "date": null
+    }
+  },
+  {
+    "id": "success-538",
+    "kind": "success",
+    "title": "海外でもULラベルを付けられると打ち出す",
+    "summary": "ドイツの盤メーカーには、UL508Aに沿って設計・製作・文書化し、自国内でULラベルを付けられると案内し、輸送の手間とコストを減らせる点を売りにする例がある。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "自社でできる認証対応を一文で書く",
+    "source": {
+      "title": "E.P. Elektro Projekt",
+      "url": "https://allaboutautomation.de/en/?p=345591",
+      "publisher": "all about automation",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-417",
+    "kind": "pain",
+    "title": "制御盤づくりの悩みは毎回似ている",
+    "summary": "UL Solutionsは制御盤を作るときのよくある困りごとを10個にまとめている。部品選定や短絡電流定格、文書の不足など、発注前に共有しておけば手戻りが減る点が多い。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "盤の手戻りを減らす発注前の確認10項目",
+    "source": {
+      "title": "The 10 most common challenges when building industrial control panels",
+      "url": "https://www.ul.com/fr/insights/les-10-defis-les-plus-courants-lors-de-la-conception-de-tableaux-de-controle-industriels",
+      "publisher": "UL Solutions",
+      "date": null
+    }
+  },
+  {
+    "id": "success-539",
+    "kind": "success",
+    "title": "海外PLC・UL・CE対応を明記して選ばれる",
+    "summary": "国内の盤メーカーには、海外メーカーのPLCやUL・CEなど海外規格への対応、長納期部品の単品販売、既設設備の改造を強みとして並べる例がある。輸出装置の担当者の検索に合う。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "輸出装置の盤で頼れることを一覧で見せる",
+    "source": {
+      "title": "制御盤メーカーの製品紹介",
+      "url": "https://mono.ipros.com/product/detail/2001447704",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-420",
+    "kind": "buyer",
+    "title": "CE対応は対象の指令を先に決めて比べる",
+    "summary": "CEマークは製品ごとにかかる指令が違い、海外の質問サイトでも「どの指令が対象か」で迷う声がある。発注側が対象を先に決めると、盤屋の見積もりを横並びで比べやすい。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "The 10 most common challenges when building industrial control panels",
+      "url": "https://www.ul.com/fr/insights/les-10-defis-les-plus-courants-lors-de-la-conception-de-tableaux-de-controle-industriels",
+      "publisher": "UL Solutions",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-421",
+    "kind": "buyer",
+    "title": "盤は設計だけ・製造だけも頼める",
+    "summary": "盤メーカーの中には、設計から製作・試運転まで一括のほか、設計のみ・製造のみの依頼に応じる会社もある。社内に設計者がいる生産技術部門は、範囲を分けて頼む手もある。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "制御盤の設計・製作",
+      "url": "https://pr.mono.ipros.com/okunodenki/product/detail/2000602852/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-724",
+    "kind": "question",
+    "title": "制御盤の中には何が入っている？",
+    "summary": "盤の中にはブレーカー、制御リレー、PLCなどが組み込まれ、扉や外側にはランプ、スイッチ、表示パネルが付く。初めて盤を頼む開発者向けに、写真付きで説明すると親切。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "写真で見る制御盤の中身と役割",
+    "source": {
+      "title": "制御盤の設計・製作",
+      "url": "https://pr.mono.ipros.com/okunodenki/product/detail/2000602852/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-418",
+    "kind": "pain",
+    "title": "他社が作った古い盤の更新相談が増えた",
+    "summary": "盤の専門メーカーには、盤内機器の廃番、納めた業者の廃業、図面が無い、既設PLCを他社製に替えたい、といった更新相談が年々増えているという声がある。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "図面が無い古い制御盤でも更新できる？",
+    "source": {
+      "title": "制御盤メーカーの会社情報",
+      "url": "https://pr.mono.ipros.com/kinryo-works/information",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-422",
+    "kind": "buyer",
+    "title": "古い盤の更新先は図面復元力で選ぶ",
+    "summary": "既設盤の更新では、図面が無くても現物から調べ直せるか、廃番部品の代わりを探せるか、改造を一括で任せられるかが分かれ目。問い合わせ時にこの3点を聞くとよい。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "制御盤メーカーの会社情報",
+      "url": "https://pr.mono.ipros.com/kinryo-works/information",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-725",
+    "kind": "question",
+    "title": "盤の部品はいつ替えればいい？",
+    "summary": "盤メーカーは、部品は耐用年数を超えると故障率が急に上がる時期に入るとして、早めの交換を勧めている。部品だけ替えるか盤ごと替えるかは、図面と部品の入手性で決まる。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "制御盤の部品はいつ替える？目安と判断",
+    "source": {
+      "title": "制御盤の更新",
+      "url": "https://pr.mono.ipros.com/okunodenki/product/detail/2000694159/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "success-540",
+    "kind": "success",
+    "title": "小さな会社は対応範囲を具体的に並べる",
+    "summary": "小規模な制御の会社でも、既設装置の配線修理、部品交換、センサーやモーターの選定まで相談に乗ると細かく書く例がある。「どこまで頼めるか」が見えると小口の相談が来やすい。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "article_idea"
+    ],
+    "articleIdea": "小さな仕事も歓迎、を具体例で伝える",
+    "source": {
+      "title": "企業PR資料 制御",
+      "url": "https://www.pref.saitama.lg.jp/documents/249464/ymcontrol.pdf",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-419",
+    "kind": "pain",
+    "title": "盤メーカーも人手不足でベテラン頼み",
+    "summary": "日経クロステックの資料では、制御盤メーカーも人手不足に悩み、設計データの使い回しや作業の自動化といったDXで効率を上げることが鍵とされている。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "制御盤メーカーのDX",
+      "url": "https://active.nikkeibp.co.jp/atcl/wp/b/22/03/03/02383/",
+      "publisher": "日経クロステック Active",
+      "date": "2022-03"
+    }
+  },
+  {
+    "id": "term-686",
+    "kind": "term",
+    "title": "JIS C 0617（電気用図記号）",
+    "summary": "盤図や回路図で使う記号の日本の規格。国際規格IEC 60617と同じ内容で、昔のJIS C 0301に代わって使われている。図面の記号が古い・新しいで混ざると読み違いのもと。",
+    "industries": [
+      "装置",
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "古い盤図の記号と今の記号の違い",
+    "source": {
+      "title": "電気用図記号 JIS C 0617",
+      "url": "https://mono.ipros.com/product/detail/2000135027",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "term-687",
+    "kind": "term",
+    "title": "シーケンス図（展開接続図）と盤内図",
+    "summary": "シーケンス図は制御回路がどの順で動くかを示す図、盤内図は盤の中の機器の置き場所と配線を示す図。盤を頼むときは、どちらを誰が描くかを先に決める。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "盤を頼むとき必要な図面は何種類？",
+    "source": {
+      "title": "電気図面記号の読み方ガイド2026",
+      "url": "https://renue.co.jp/posts/electrical-drawing-symbols-circuit-sequence-jis-c0617-guide-2026",
+      "publisher": "renue",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-726",
+    "kind": "question",
+    "title": "回路からファームまで一社に頼める？",
+    "summary": "電子機器の受託開発には、回路設計・基板設計・メカ設計からマイコンのファームウェアまで一貫して受ける会社がある。窓口が1つだと不具合の切り分けが速い。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "電子機器の開発をまとめて頼むメリット",
+    "source": {
+      "title": "電子機器の受託開発",
+      "url": "https://mono.ipros.com/product/detail/2001512028",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-727",
+    "kind": "question",
+    "title": "仕様が決まっていなくても相談できる？",
+    "summary": "受託開発の会社には、仕様が固まる前でも開発範囲の整理や実現方法の検討から相談を受けると書くところがある。スタートアップは「やりたいこと」と台数・予算感だけでも話せる。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "電子機器の受託開発",
+      "url": "https://mono.ipros.com/product/detail/2001512028",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "success-541",
+    "kind": "success",
+    "title": "「試作のみもOK」と明記する",
+    "summary": "受託開発の会社には、試作のみの依頼にも応じると一言書き、気軽な相談を呼び込む例がある。量産前提でないと断られると思っている開発者の不安を先に消せる。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "article_idea"
+    ],
+    "source": {
+      "title": "受託開発の製品紹介",
+      "url": "https://pr.mono.ipros.com/yamatogi/product/detail/2001226170/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "term-688",
+    "kind": "term",
+    "title": "技適（技術基準適合証明）",
+    "summary": "電波を出す機器が日本の基準に合っていると認める制度。Wi-FiやBLEを積んだIoT機器も対象で、技適の無い無線機器を国内で使うと電波法違反になりうる。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "IoT機器を作るなら最初に知る技適",
+    "source": {
+      "title": "IoTデバイスにも必須の「技適」とは何か",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2103/09/news004_3.html",
+      "publisher": "MONOist",
+      "date": "2021-03"
+    }
+  },
+  {
+    "id": "question-728",
+    "kind": "question",
+    "title": "技適はいくらかかる？何日？",
+    "summary": "総務省の2026年3月の資料では、手続きは7営業日以内とされ、2.4GHz帯無線LANの複数規格機5台の例で約34.5万円。費用は試験機関で違うので複数社に聞く。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "技適の費用と日数、スタートアップの目安",
+    "source": {
+      "title": "スタートアップWG 総務省提出資料",
+      "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260319/startup12_03.pdf",
+      "publisher": "内閣府 規制改革推進会議",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "pain-420",
+    "kind": "pain",
+    "title": "技適の費用と期間が小さな会社に重い",
+    "summary": "2026年3月の規制改革の会議では、スタートアップから技適の認証費用（約30万円）と取得期間（1〜2か月）が負担だという声が出ている。開発計画に最初から入れておく。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "スタートアップWG 事業者提出資料",
+      "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260319/startup12_01.pdf",
+      "publisher": "内閣府 規制改革推進会議",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "question-729",
+    "kind": "question",
+    "title": "技適を取る前に電波を出して試せる？",
+    "summary": "技適未取得の機器で実験できる特例制度がある。ただし期間は限られ、2026年の会議資料では180日では短いという事業者の声も。条件は必ず総務省の原典で確かめる。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "スタートアップWG 総務省提出資料",
+      "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/meeting/wg/2501_04startup/260319/startup12_03.pdf",
+      "publisher": "内閣府 規制改革推進会議",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "term-689",
+    "kind": "term",
+    "title": "無線モジュールの技適を活かす",
+    "summary": "技適を取った無線モジュールを使えば、機器全体で一から取り直さずに済む場合がある。IoTデバイス入門の記事では、技適付きのデバイスを選ぶことを勧めている。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "技適付きモジュールで開発を早く安く",
+    "source": {
+      "title": "IoTデバイスにも必須の「技適」とは何か",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2103/09/news004_3.html",
+      "publisher": "MONOist",
+      "date": "2021-03"
+    }
+  },
+  {
+    "id": "trend-532",
+    "kind": "trend",
+    "official": false,
+    "title": "大手が技適の試験サービスを始めた",
+    "summary": "パナソニックは2022年12月、特任外部試験所の認定を取り、技適取得のための試験サービスを提供すると発表した。自前で試験設備を持たない開発者の選択肢が増えている。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "特任外部試験所の認定取得",
+      "url": "https://news.panasonic.com/jp/press/jn221207-1",
+      "publisher": "パナソニック",
+      "date": "2022-12"
+    }
+  },
+  {
+    "id": "term-690",
+    "kind": "term",
+    "title": "EMC試験とVCCI",
+    "summary": "EMCは機器が出すノイズと外からのノイズへの強さの試験。VCCIは情報機器が出す妨害波の自主規制。量産前に一度測っておかないと、最後に設計を戻すことになる。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "EMC試験の前に知っておくこと",
+    "source": {
+      "title": "研究成果 EMC規格適合の測定・対策支援",
+      "url": "https://www.itic.pref.ibaraki.jp/publication/doc/result/h24/H24_1-06.pdf",
+      "publisher": "茨城県産業技術イノベーションセンター",
+      "date": "2012"
+    }
+  },
+  {
+    "id": "buyer-423",
+    "kind": "buyer",
+    "title": "EMCの事前測定は公設試を使う",
+    "summary": "茨城県の産業技術イノベーションセンターは電波暗室を持ち、医療用の装置などでVCCI等への適合確認の測定と対策を支援した事例を公開している。地元の公設試にまず聞くとよい。",
+    "industries": [
+      "電子部品",
+      "精密機器"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "研究成果 EMC規格適合の測定・対策支援",
+      "url": "https://www.itic.pref.ibaraki.jp/publication/doc/result/h24/H24_1-06.pdf",
+      "publisher": "茨城県産業技術イノベーションセンター",
+      "date": "2012"
+    }
+  },
+  {
+    "id": "pain-421",
+    "kind": "pain",
+    "title": "放射ノイズの不合格は基板レイアウトが原因",
+    "summary": "2025年11月の技術誌の事例では、放射エミッションの不合格の原因として不十分なプリント基板のレイアウトが挙げられている。後から部品で抑えるより、設計段階での配慮が安い。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "EMCで落ちないための基板設計の注意",
+    "source": {
+      "title": "PCBレイアウトが原因のエミッション事例",
+      "url": "https://ex-press.jp/wp-content/uploads/2025/11/108_08_ITJ.pdf",
+      "publisher": "EX-PRESS",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "trend-533",
+    "kind": "trend",
+    "official": false,
+    "title": "EUのサイバーレジリエンス法が始まる",
+    "summary": "通信機能のある製品にセキュリティを求めるEUの法律。脆弱性の報告義務は2026年9月11日から、製造者の主な義務は2027年12月11日から全面適用とされる。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "EUに出すIoT機器、CRAで何が変わる？",
+    "source": {
+      "title": "欧州サイバーレジリエンス法(CRA)の衝撃",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2601/09/news029_2.html",
+      "publisher": "MONOist",
+      "date": "2026-01"
+    }
+  },
+  {
+    "id": "question-730",
+    "kind": "question",
+    "title": "日本の小さなメーカーもCRAの対象？",
+    "summary": "EUへ製品を出せば日本企業も対象。設計段階からのセキュリティ、技術文書、適合宣言の用意、販売後最低5年のアップデート提供などが求められると解説されている。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "日本の製造業に対応を迫る欧州サイバーレジリエンス法",
+      "url": "https://www.itmedia.co.jp/news/spv/2407/29/news013.html",
+      "publisher": "ITmedia",
+      "date": "2024-07"
+    }
+  },
+  {
+    "id": "trend-534",
+    "kind": "trend",
+    "official": false,
+    "title": "EU機械指令が機械規則に変わる",
+    "summary": "2023年6月に機械規則が官報に載り、機械指令は2027年1月に廃止。サイバーセキュリティやAIの安全要件が加わり、技術文書もより細かくなる。装置の輸出で準備が要る。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "装置をEUへ出すなら2027年までにやること",
+    "source": {
+      "title": "EU機械規則",
+      "url": "https://www.pwc.com/jp/ja/knowledge/column/awareness-cyber-security/eu-machinery-regulation.html",
+      "publisher": "PwC Japan",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-422",
+    "kind": "pain",
+    "title": "ソースコードを渡してもらえない",
+    "summary": "受託開発の典型的なもめごとは、ソースコードを渡されない、重要部分が受託先のサーバーにある、コンパイル済みでしか納品されない、といったもの。契約で納品範囲を決めておく。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ファームウェア開発で揉めないための契約",
+    "source": {
+      "title": "ソースコードの所有権を明確にする方法",
+      "url": "https://atsoho.com/blog/system-development-source-code-ownership",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-691",
+    "kind": "term",
+    "title": "著作権は契約しないと発注者に移らない",
+    "summary": "外部に作らせたプログラムの著作権は、譲渡の契約がない限り作った側に残る。お金を払っても改修や再配布が自由にならないことがある。著作者人格権の不行使特約もセットで。",
+    "industries": [
+      "電子部品"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "作ってもらったファームの権利は誰のもの？",
+    "source": {
+      "title": "ソフトウェア開発委託契約",
+      "url": "https://office-tree.jp/blog/legal-documents/software-development-agreement/",
+      "publisher": "office-tree",
+      "date": null
+    }
+  },
+  {
+    "id": "question-731",
+    "kind": "question",
+    "title": "回路のアイデアの特許は誰のもの？",
+    "summary": "技術的なアイデアは著作権でなく特許の対象になりうる。特許を受ける権利は元は発明した受託者側にあるとされ、ハードや組込みの開発では別に取り決めておくのが安全。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "特許を受ける権利の帰属",
+      "url": "https://patent-revenue.iprich.jp/%E5%B0%82%E9%96%80%E5%AE%B6%E5%90%91%E3%81%91/6127/",
+      "publisher": "IPリッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-424",
+    "kind": "buyer",
+    "title": "ハーネス外注は試験成績の出し方で選ぶ",
+    "summary": "ハーネスの外注先を比べるときは、引張試験の規格と記録の形、校正の有無、不良のとき工程のどこを疑うか説明できるかを見る。試験成績書の見本を取り寄せると早い。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "引張試験機の製品紹介",
+      "url": "https://mono.ipros.com/product/detail/2000815189",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "term-692",
+    "kind": "term",
+    "title": "圧着断面の確認",
+    "summary": "圧着部を切って磨き、断面を見てかしめ具合を確かめる方法。引張試験と組み合わせて評価する会社があり、試作品1本から受けるところもある。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ワイヤーハーネスの評価・試作",
+      "url": "https://www.marklines.com/ja/product/14530",
+      "publisher": "MarkLines",
+      "date": null
+    }
+  },
+  {
+    "id": "question-732",
+    "kind": "question",
+    "title": "図面が固まる前でもハーネスを頼める？",
+    "summary": "ハーネスの会社には、図面が確定していない開発段階の試作から受け、中ロットの量産まで国内で行うとするところがある。試作で長さや取り回しを決めてから図面化する流れも取れる。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ハーネスの開発試作から量産",
+      "url": "https://pr.mono.ipros.com/yashima-denso/product/detail/2000466561/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "success-542",
+    "kind": "success",
+    "title": "圧着済みの在庫品を一次試作向けに売る",
+    "summary": "端子を圧着済みの電線を在庫品として出し、ハウジングは買い手が用意する形で一次試作に使ってもらう例がある。図面不要・すぐ届くという入口を作り、本番の特注につなげる。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "article_idea"
+    ],
+    "articleIdea": "試作向けの入口商品で特注の相談を増やす",
+    "source": {
+      "title": "端子圧着済みハーネス在庫品",
+      "url": "https://pr.mono.ipros.com/taiheidenki-kk/product/detail/2000810948/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "success-543",
+    "kind": "success",
+    "title": "「試作から量産まで」を一文で出す",
+    "summary": "ハーネスの会社には、小ロットの試作から量産まで対応すると短く打ち出す例が多い。スタートアップが量産で別の会社を探し直す手間を嫌うことに合っている。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ハーネスの試作から量産",
+      "url": "https://pr.mono.ipros.com/hisago-denzai/product/detail/2001653030/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "success-544",
+    "kind": "success",
+    "title": "古い設備に後付けしてデータを取る",
+    "summary": "経産省が集めた中小企業のIoT事例40件には、既存設備にセンサーとマイコンを後付けして漏水のデータを取った例があり、汎用センサーで安く始める着眼点が評価された。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "古い機械のままIoT化した事例",
+    "source": {
+      "title": "中小企業のIoT事例40件",
+      "url": "https://newswitch.jp/p/8195",
+      "publisher": "ニュースイッチ",
+      "date": null
+    }
+  },
+  {
+    "id": "question-733",
+    "kind": "question",
+    "title": "一番手軽な後付けセンサーは？",
+    "summary": "製造業向けブログでは、機械の信号灯に被せる光学式のセンサーが、配線工事なしで付けやすい最初の1台として挙げられている。止まった・動いたが分かるだけでも改善が始まる。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "配線工事なしで始める稼働の見える化",
+    "source": {
+      "title": "製造業DX 低コストIoT",
+      "url": "https://atsoho.com/blog/manufacture-dx-iot-lowcost",
+      "publisher": "atsoho",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "success-545",
+    "kind": "success",
+    "title": "公設試と組んで稼働監視をつくる",
+    "summary": "岩手県工業技術センターの事例では、鋳物工場で装置ごとの稼働状況を取る仕組みを開発・導入した。公設試の支援を受けると、小さな工場でも安く始めやすい。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造現場のIoT活用事例",
+      "url": "https://regcol.aist.go.jp/file/kenkyukai/gmiot/1669689727585.pdf",
+      "publisher": "産業技術総合研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-546",
+    "kind": "success",
+    "title": "安いBIツールで稼働率を画面に出す",
+    "summary": "千葉県の支援事業では、装置の稼働状況を一元管理する安価なIoTシステムを開発し、各装置の稼働率を画面に表示して見える化した。高い専用システムがなくても始められる例。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "令和6年度 事業概要",
+      "url": "https://www.pref.chiba.lg.jp/sanshin/digital/documents/r6gaiyou2-1.pdf",
+      "publisher": "千葉県",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "term-693",
+    "kind": "term",
+    "title": "電圧信号の取り込み（後付けIoT）",
+    "summary": "機械に新しく通信機能を足さずに、ランプや制御機器の電圧信号を拾って稼働を判断する方法。古い機器や簡単なシーケンサの設備で使われ、小さく安く始められるとされる。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "後付けIoTプラットフォーム",
+      "url": "https://mono.ipros.com/product/detail/2000676899",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "term-694",
+    "kind": "term",
+    "title": "AI外観検査の5つの工程",
+    "summary": "撮像、前処理、学習、推論、後処理の5工程で動く。現場の結果は前半の撮像と教師データづくりで大きく決まり、AIの性能より撮り方が大事だとされる。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "AI外観検査は「撮り方」で決まる",
+    "source": {
+      "title": "AI外観検査の仕組みと導入",
+      "url": "https://biz.moneyforward.com/ai/basic/7379/",
+      "publisher": "マネーフォワード",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "pain-423",
+    "kind": "pain",
+    "title": "AI検査を入れたが使われていない",
+    "summary": "販売側の記事でも、AI外観検査を入れたのに誤検知が多く結局人が見ている、使われずにほこりをかぶっている、という失敗像が挙げられている。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "AI外観検査の仕組みと導入",
+      "url": "https://biz.moneyforward.com/ai/basic/7379/",
+      "publisher": "マネーフォワード",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "question-734",
+    "kind": "question",
+    "title": "中小でもAI外観検査は入れられる？",
+    "summary": "大手では導入が増える一方、中小企業ではまだ進んでいないとされる。費用は製品により50万円台から数百万円まで幅があり、補助金と組み合わせる例が多い。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "外観検査ガイド",
+      "url": "https://aismiley.co.jp/ai_news/visual-inspection-guide/",
+      "publisher": "AIsmiley",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-425",
+    "kind": "buyer",
+    "title": "画像検査は現物で検証してから決める",
+    "summary": "2019年にはリコーとRidge-iが中小企業向けAI外観検査を共同開発し、相談時に検査内容と対象物の写真を出すと無償で検証する仕組みを示した。現物で確かめる手順は今も基本。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "中小企業向けAI外観検査サービス",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1910/18/news039.html",
+      "publisher": "MONOist",
+      "date": "2019-10"
+    }
+  },
+  {
+    "id": "term-695",
+    "kind": "term",
+    "title": "明視野と暗視野",
+    "summary": "明視野はカメラの向きと照明の向きを合わせて全体を明るく照らす方法、暗視野は向きをずらして傷や凹凸で散った光だけを拾う方法。何を見たいかで選ぶ。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "傷を見る照明、文字を読む照明の違い",
+    "source": {
+      "title": "画像処理用照明の基礎",
+      "url": "https://www.optex-fa.jp/online_learning2021/textbox/d1_text.pdf",
+      "publisher": "オプテックス・エフエー",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "term-696",
+    "kind": "term",
+    "title": "同軸照明",
+    "summary": "カメラと同じ軸から光を当てる照明。平らな面は明るく、曲面や縁は暗く写るので、光る金属や凹凸のある部品の検査に使われる。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "画像処理用照明",
+      "url": "https://jp.misumi-ec.com/vona2/maker/misumi/mech_position/M0511000000/M0503010000",
+      "publisher": "ミスミ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-697",
+    "kind": "term",
+    "title": "リング照明・ローアングル照明",
+    "summary": "リング照明は円形のLEDで影の少ない光を当て、文字読み取りや基板検査に向く。ローアングルは横から光を当てて傷や縁を浮かび上がらせる。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "リング照明",
+      "url": "https://www.baslerweb.com/ja-jp/illumination/ring-light/",
+      "publisher": "Basler",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-424",
+    "kind": "pain",
+    "title": "照明を軽く見ると白飛び・黒つぶれ",
+    "summary": "画像検査では照明が合わないと必要な画像が撮れず、白飛びや黒つぶれが起きやすい。カメラや処理ソフトより先に、照明とワークの相性を試すのが近道。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "照明の選び方",
+      "url": "https://www.baslerweb.com/ja-jp/learning/illumination-selection",
+      "publisher": "Basler",
+      "date": null
+    }
+  },
+  {
+    "id": "question-735",
+    "kind": "question",
+    "title": "画像検査の照明はどう選ぶ？",
+    "summary": "まず部品の表面（光るか・平らか）と見たいもの（傷・形・文字）を整理し、明視野か暗視野かを決める。そのうえで色や当てる方向を比べ、実機で撮って確かめる。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "精密機器"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "画像検査の照明選び、発注前に決めること",
+    "source": {
+      "title": "画像処理用照明の基礎",
+      "url": "https://www.optex-fa.jp/online_learning2021/textbox/d1_text.pdf",
+      "publisher": "オプテックス・エフエー",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "question-736",
+    "kind": "question",
+    "title": "試験装置はオーダーメイドで作れる？",
+    "summary": "トルク、荷重、衝撃、リーク、流量などの試験装置をオーダーメイドで作る中小の装置会社がある。目的・対象・試験条件・規格・数量・納期を仕様書にまとめると見積もりが早い。",
+    "industries": [
+      "装置",
+      "精密機器"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試験装置を特注するときの仕様書の書き方",
+    "source": {
+      "title": "企業PR資料 試験装置のオーダーメイド製作",
+      "url": "https://www.pref.saitama.lg.jp/documents/236728/0247_shigumakogyo.pdf",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-426",
+    "kind": "buyer",
+    "title": "試験機の仕様書は公設試の雛形が参考",
+    "summary": "群馬産業技術センターは万能試験機の製作仕様書を公開しており、自社の提案品との違いを示す形で書く例が見られる。発注側が仕様書を作るときの見本になる。",
+    "industries": [
+      "装置",
+      "精密機器"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "万能試験機 製作仕様書",
+      "url": "https://www.tec-lab.pref.gunma.jp/wp-content/uploads/tender/260729seisaku.docx",
+      "publisher": "群馬産業技術センター",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-737",
+    "kind": "question",
+    "title": "試験機の校正では何を決める？",
+    "summary": "島根県の入札仕様書では、試験機の検査・整備・校正について、対象機種、作業場所、期間、報告書と証明書を30日以内に出すこと、壊したら元に戻すことまで決めている。",
+    "industries": [
+      "装置",
+      "精密機器"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "試験機の検査・整備・校正 仕様書",
+      "url": "https://www.pref.shimane.lg.jp/bid_info/bid_sangi/shikenkikennsa.data/05_siyousyo.pdf",
+      "publisher": "島根県",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-427",
+    "kind": "buyer",
+    "title": "装置を作る前に公設試で試す",
+    "summary": "大阪産業技術研究所には、通常の依頼試験で解けない課題を研究員に相談し、研究員が作る申込書で受けるオーダーメード試験がある。装置を作る前の条件出しに使える。",
+    "industries": [
+      "装置",
+      "精密機器"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "オーダーメード試験のご案内",
+      "url": "https://www.orist.jp/dl/pdf/ordermadetest.pdf",
+      "publisher": "大阪産業技術研究所",
+      "date": null
+    }
+  },
+  {
+    "id": "success-547",
+    "kind": "success",
+    "title": "試験の受託と装置の製作を両方出す",
+    "summary": "試験を受託する会社には、試験装置だけ欲しい客にはオーダーメイドで装置を納め、サポートもすると案内する例がある。「試験だけ」「装置だけ」の両方の入口を作っている。",
+    "industries": [
+      "装置",
+      "精密機器"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "article_idea"
+    ],
+    "articleIdea": "試験も装置も、どちらからでも頼める見せ方",
+    "source": {
+      "title": "試験受託と試験装置の製作",
+      "url": "https://mono.ipros.com/news/detail/177126",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-425",
+    "kind": "pain",
+    "title": "治具の依頼は現場の困りごとから始まる",
+    "summary": "MONOistの連載では、治具づくりは現場の困りごとの聞き取り、資料やサンプルの確認、設計、製作の順で進む。困りごとを聞かずに作ると、使われない治具になりやすい。",
+    "industries": [
+      "治具"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "source": {
+      "title": "現場の困りごとから始める治具製作",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2210/05/news003.html",
+      "publisher": "MONOist",
+      "date": "2022-10"
+    }
+  },
+  {
+    "id": "term-698",
+    "kind": "term",
+    "title": "検査治具と組立治具",
+    "summary": "検査治具は測定機で測りにくい部品を簡単に確かめるための治具、組立治具は組み付けで部品を正しい位置に保つ治具。両方の役目を1つに持たせる例もある。",
+    "industries": [
+      "治具",
+      "組立"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "検査治具と組立治具、何が違う？",
+    "source": {
+      "title": "位置決め治具 製品一覧",
+      "url": "https://mono.ipros.com/cg2/位置決め治具/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-738",
+    "kind": "question",
+    "title": "三次元測定機用の治具も頼める？",
+    "summary": "検査治具には、三次元測定機用や画像測定機用など、測定機ごとに専用に作るものがある。測る機械の型番と測りたい場所を伝えると話が早い。",
+    "industries": [
+      "治具",
+      "精密機器"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "位置決め治具 製品一覧",
+      "url": "https://mono.ipros.com/cg2/位置決め治具/",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-739",
+    "kind": "question",
+    "title": "数の違う治具をまとめて作れる？",
+    "summary": "位置決め部分を独立したユニットにして土台に差し込む作りにすると、10個用と30個用で部分を共通にできる事例がある。品種や数が増えそうなら最初に伝える。",
+    "industries": [
+      "治具"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "articleIdea": "品種が増えても使い回せる治具の作り方",
+    "source": {
+      "title": "治具製作の実例",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2210/05/news003_2.html",
+      "publisher": "MONOist",
+      "date": "2022-10"
+    }
+  },
+  {
+    "id": "question-740",
+    "kind": "question",
+    "title": "抵抗やコンデンサを1個から買える？",
+    "summary": "国内の電子部品商社には、抵抗やコンデンサを1点から売り、在庫品は当日出荷する多品種小ロット対応のところがある。試作の数だけ欲しい開発者は商社の小口対応を探す。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試作用の電子部品を少しだけ買う方法",
+    "source": {
+      "title": "電子部品商社の小ロット対応",
+      "url": "https://mono.ipros.com/product/detail/2000085421",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-428",
+    "kind": "buyer",
+    "title": "メーカー直より通販系ディストリビュータ",
+    "summary": "メーカーから直接買うと最小購入数量が決まっていることが多いが、Mouserなどは1個から買えるのが強み。EE Times Japanは少量多品種で成長していると伝えている（2023年12月）。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "Mouser、新倉庫設立で規模拡大へ",
+      "url": "https://eetimes.itmedia.co.jp/ee/articles/2312/27/news145_2.html",
+      "publisher": "EE Times Japan",
+      "date": "2023-12"
+    }
+  },
+  {
+    "id": "term-699",
+    "kind": "term",
+    "title": "MOQ（最小発注数量）",
+    "summary": "1回の注文で売ってもらえる最小の数。段取り費や材料の最低量をまかなうために決められる。試作で困るのはこの数と納期の長さ。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "MOQとは？試作で部品が買えないとき",
+    "source": {
+      "title": "Waldom Electronics launches mini reel program",
+      "url": "https://designing-electronics.com/waldom-electronics-launches-mini-reel-program-in-partnership-with-molex",
+      "publisher": "Designing Electronics",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-535",
+    "kind": "trend",
+    "official": false,
+    "title": "ミニリールで少量から買えるように",
+    "summary": "Waldom ElectronicsはMolexと組み、ミニリールで少量から売るプログラムを始めた。MOQ18,000個・18週の部品を375個・即納で買える例が紹介されている。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "Waldom Electronics launches mini reel program",
+      "url": "https://designing-electronics.com/waldom-electronics-launches-mini-reel-program-in-partnership-with-molex",
+      "publisher": "Designing Electronics",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-429",
+    "kind": "buyer",
+    "title": "MOQを下げる仕組みを使う",
+    "summary": "海外の部品販売会社には、メーカーのMOQの25%まで下げて売り、残りを在庫として持つプログラムがある。小ロットの量産では、こうした商社の仕組みを比べる。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "MOQ reduction solution",
+      "url": "https://www.onlinecomponents.com/fr/solutions/moq reduction solution-4",
+      "publisher": "Online Components",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-426",
+    "kind": "pain",
+    "title": "安い部品につられて偽造品をつかむ",
+    "summary": "部品が足りないときや安いときに非正規ルートで買い、偽造品や再生品が混ざった例が報告されている。刻印を削って上位品に見せかける手口や、リールごと別品番で売る手口もある。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "偽造部品をつかまないための買い方",
+    "source": {
+      "title": "減ることのない半導体/電子部品偽造",
+      "url": "https://eetimes.itmedia.co.jp/ee/articles/2104/27/news013_3.html",
+      "publisher": "EE Times Japan",
+      "date": "2021-04"
+    }
+  },
+  {
+    "id": "term-700",
+    "kind": "term",
+    "title": "正規代理店（認定ディストリビュータ）",
+    "summary": "メーカーと正式に契約して部品を仕入れ、出どころを示す書類を持つ販売店。偽造品を避けるには、まずメーカーの認定代理店の一覧から買うのが基本。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "無認可の電子部品販売業者を使うリスク",
+      "url": "https://resources.altium.com/jp/p/perils-using-unauthorized-electronic-component-distributors",
+      "publisher": "Altium",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-430",
+    "kind": "buyer",
+    "title": "ブローカーは在庫が本当にあるか確かめる",
+    "summary": "在庫を持っていないのに持っていると言うブローカーもいる。在庫の写真やロット情報、証明書類で実在を確かめ、届いたら受け入れ検査をするのが自衛策とされる。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "ブローカーが在庫を持っているか見分ける方法",
+      "url": "https://resources.altium.com/jp/p/how-tell-if-electronic-parts-broker-actually-holds-inventory",
+      "publisher": "Altium",
+      "date": null
+    }
+  },
+  {
+    "id": "question-741",
+    "kind": "question",
+    "title": "古いPLCはいつまで直してもらえる？",
+    "summary": "三菱電機は修理対応を生産中止後7年間としている。MELSEC-Aの小形は2014年9月に生産中止、修理受付は2021年9月末で終わった。工場の古い盤はまず形名と期限を確認。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "古いPLCの修理期限、確かめ方と次の一手",
+    "source": {
+      "title": "MELSEC 更新・リニューアル",
+      "url": "https://www.mitsubishielectric.co.jp/fa/products/update/renewal.html",
+      "publisher": "三菱電機",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-536",
+    "kind": "trend",
+    "official": true,
+    "title": "PLCの電源ユニットも生産中止",
+    "summary": "三菱電機は旧型PLC用の電源ユニットA61PN/A61RPを、部品の入手難を理由に2025年12月末で生産中止とし、修理は2032年末まで。本体より後で終わる部品もあり期限表の確認が要る。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "MELSEC-A/QnA 生産中止のご案内",
+      "url": "https://www.mitsubishielectric.co.jp/fa/products/cnt/plca/pmerit/renewal/discon.html",
+      "publisher": "三菱電機",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-427",
+    "kind": "pain",
+    "title": "PLCの自動変換は全部は移せない",
+    "summary": "三菱電機の無償の変換ツールはラダープログラムが対象で、それ以外は扱わない。自動変換できなかった箇所は抜き出されるが、直すのは手作業。更新の工数見積もりで見落としやすい。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "PLCの置き換えで手間がかかるところ",
+    "source": {
+      "title": "リニューアル支援ツール",
+      "url": "https://www.mitsubishielectric.co.jp/fa/products/cnt/plca/pmerit/renewal/case/support_tool.html",
+      "publisher": "三菱電機",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-431",
+    "kind": "buyer",
+    "title": "PLC更新は補用品の確保から",
+    "summary": "生産中止の案内では、受注締切までに補用品を買うよう呼びかけている。すぐ全面更新できない工場は、予備機を確保しつつ、更新を頼む盤屋を探しておく。",
+    "industries": [
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "source": {
+      "title": "MELSEC-A リニューアル",
+      "url": "https://www.mitsubishielectric.co.jp/fa/products/cnt/plca/pmerit/renewal/index.html",
+      "publisher": "三菱電機",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-428",
+    "kind": "pain",
+    "title": "資金が集まっても量産で遅れる",
+    "summary": "Kickstarterの統計として、資金調達に成功したハードウェアスタートアップの4分の3以上が予定どおり生産・出荷できていないと紹介されている。量産の手前でつまずく例が多い。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "組立"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "試作はできたのに量産できない理由",
+    "source": {
+      "title": "ハードウェアスタートアップの量産支援",
+      "url": "https://ascii.jp/elem/000/001/540/1540089/",
+      "publisher": "ASCII",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-429",
+    "kind": "pain",
+    "title": "町工場は新規・小ロットを受けにくい",
+    "summary": "中小の工場は大企業からの受託が中心で、新しい客や小ロットの注文を受けていないことが多く、スタートアップとの連携が難しかったとされる。受けるなら受けると書くだけで目立つ。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "source": {
+      "title": "ハードウェアスタートアップの量産支援",
+      "url": "https://ascii.jp/elem/000/001/540/1540089/",
+      "publisher": "ASCII",
+      "date": null
+    }
+  },
+  {
+    "id": "success-548",
+    "kind": "success",
+    "title": "試作ネットワークで量産前を支える",
+    "summary": "京都では、スタートアップ支援の取り組みが、部品加工から装置開発まで手がける50社超の試作ネットワークと組み、量産に向けた試作を支えた。共同の窓口は小さな工場の発信にもなる。",
+    "industries": [
+      "電子部品",
+      "組立",
+      "装置"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "町工場の連携でスタートアップの試作を受ける",
+    "source": {
+      "title": "ハードウェアスタートアップの量産支援",
+      "url": "https://ascii.jp/elem/000/001/540/1540089/",
+      "publisher": "ASCII",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-537",
+    "kind": "trend",
+    "official": true,
+    "title": "国のものづくりスタートアップ支援",
+    "summary": "経産省は、試作や量産を支える工場などの支援機関とハードウェアスタートアップをつなぐ支援事業を行ってきた。中小の工場が支援機関として登録する道もある。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "ものづくりスタートアップ支援事業 公募説明",
+      "url": "https://sii.or.jp/startup29r/uploads/koubosetsumeikai_meti.pdf",
+      "publisher": "経済産業省",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-432",
+    "kind": "buyer",
+    "title": "EMS選びは展示会と紹介で候補を出す",
+    "summary": "委託先は業界の展示会、マッチング、業界団体の紹介で洗い出し、実績で数社に絞り、価格だけでなく品質・技術・納期・サポートで比べ、量産前に試作で評価する流れが紹介されている。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "組立"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "EMSの委託先を選ぶときの比べ方",
+    "source": {
+      "title": "OEM生産で失敗しない 委託先選定から契約まで",
+      "url": "https://www.theckb.com/archive/thorough-explanation-from-contractor-selection-to-quality-control-contract-to-avoid-failures-in-oem-production/",
+      "publisher": "THE CKB",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-430",
+    "kind": "pain",
+    "title": "任せきりだと設計の力が残らない",
+    "summary": "委託先に設計まで任せると、ノウハウが自社にたまらず、同じ委託先を使う他社と差がつきにくいという指摘がある。どこまで自社で持つかを先に決めておく。",
+    "industries": [
+      "電子部品",
+      "基板実装"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "EMSとは 企業選びのポイント",
+      "url": "https://www.digima-japan.com/knowhow/world/17933.php",
+      "publisher": "Digima〜出島〜",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-742",
+    "kind": "question",
+    "title": "筐体は図面がなくても作れる？",
+    "summary": "精密板金で電子機器の筐体を手がける中小の会社には、図面がない段階や少量の試作から受けるところがある。手書きのスケッチと中の基板の寸法があれば相談できる。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "電子機器のケース、図面なしで頼める？",
+    "source": {
+      "title": "企業PR資料 精密板金",
+      "url": "https://www.pref.saitama.lg.jp/documents/237128/0435_hosiss.pdf",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-743",
+    "kind": "question",
+    "title": "最初は既製ケースの追加工でいい？",
+    "summary": "試作の初めは既製のケースに穴あけや印刷を足してコストと納期を抑え、量産が見えてから板金や樹脂の専用筐体に移る流れが多い。既製ケースの追加工を実績に載せる会社もある。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "既製ケースか専用筐体か、試作の選び方",
+    "source": {
+      "title": "筐体 製品試作 一覧",
+      "url": "https://mono.ipros.com/cg2/製品試作/筐体",
+      "publisher": "イプロス ものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-433",
+    "kind": "buyer",
+    "title": "試作の依頼先はマッチングサイトでも探す",
+    "summary": "試作を頼める会社は、ビジネスマッチングの案件サイトで募集して探す方法もある。筐体・基板・組立をまとめて任せたいときは、一貫対応できる会社に絞って声をかける。",
+    "industries": [
+      "電子部品",
+      "組立"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "試作 依頼先の探し方",
+      "url": "https://www.biz.ne.jp/subject/industry/prototype/",
+      "publisher": "ビジネスチャンス・ナビ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-549",
+    "kind": "success",
+    "title": "技術者が検索する言い方で題を付ける",
+    "summary": "同じ解説では「アルミ切削の精度を0.01mm以下にする方法」のように、検討中の技術者や購買担当が打つ言葉に合う題の記事が効くとされる。盤・検査・治具でも同じ考え方が使える。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業ホームページのBtoB集客",
+      "url": "https://jinrai.co.jp/blog/seizougyou-homepage-btob/",
+      "publisher": "迅雷",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-434",
+    "kind": "buyer",
+    "title": "BtoBは問い合わせより閲覧で見る",
+    "summary": "製造業のBtoBサイトは問い合わせが月1〜5件ほどと少なめなので、アクセス数やコラムごとの閲覧数を指標に見るべきだとされる。少ない問い合わせでも1件の重みは大きい。",
+    "industries": [
+      "all"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "製造業ホームページのBtoB集客",
+      "url": "https://jinrai.co.jp/blog/seizougyou-homepage-btob/",
+      "publisher": "迅雷",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-538",
+    "kind": "trend",
+    "official": true,
+    "title": "省力化補助金のカタログ型",
+    "summary": "中小企業省力化投資補助金のカタログ注文型は、事務局に登録された省力化製品を選んで入れる制度。製品本体は単価50万円以上が対象。外観検査装置も導入例に挙がる。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "省力化補助金で検査装置を入れられる？",
+    "source": {
+      "title": "省力化投資補助金 カタログ注文型",
+      "url": "https://www.ginga.or.jp/_cms/wp-content/uploads/2026/02/%E8%B3%87%E6%96%99%E2%91%A2%E7%9C%81%E5%8A%9B%E5%8C%96%E6%8A%95%E8%B3%87%E8%A3%9C%E5%8A%A9%E9%87%91%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E5%9E%8B.pdf",
+      "publisher": "銀河",
+      "date": "2026-02"
+    }
+  },
+  {
+    "id": "trend-539",
+    "kind": "trend",
+    "official": false,
+    "title": "省力化補助金の上限と補助率",
+    "summary": "補助金ポータルの掲載では、申請期間2026年3月19日〜2027年3月31日、上限1,000万円、補助率1/2、賃上げ要件を満たすと上限1,500万円。最新は公式サイトで確認を。",
+    "industries": [
+      "電子部品",
+      "装置"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業省力化投資補助金",
+      "url": "https://hojyokin-portal.jp/subsidies/70139",
+      "publisher": "補助金ポータル",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "question-744",
+    "kind": "question",
+    "title": "自動外観検査装置は省力化の例？",
+    "summary": "中小企業庁の資料では、最新のデジタルカメラやAIを使う自動外観検査装置が省力化投資の例に挙がっている。ただし実際にカタログ登録されているかは製品ごとに確認する。",
+    "industries": [
+      "電子部品",
+      "基板実装",
+      "装置"
+    ],
+    "useFor": [
+      "question_example",
+      "writer_hint"
+    ],
+    "source": {
+      "title": "中小企業省力化投資補助事業",
+      "url": "https://www.chusho.meti.go.jp/koukai/yosan/r6/shoryokuka.pdf",
+      "publisher": "中小企業庁",
+      "date": null
+    }
+  },
+  {
+    "id": "term-701",
+    "kind": "term",
+    "title": "全成分表示の並び順",
+    "summary": "化粧品は配合量が1%を超える成分を多い順に書く。1%以下と着色剤は順不同でよい。読む人は上の方を見ると中身の土台が分かる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "全成分表示の上から3つで分かること",
+    "source": {
+      "title": "全成分表示の読み方",
+      "url": "https://www.moneypost.jp/860066",
+      "publisher": "マネーポストWEB",
+      "date": null
+    }
+  },
+  {
+    "id": "question-745",
+    "kind": "question",
+    "title": "1%以下の成分は順不同？",
+    "summary": "はい。1%以下の成分は順番を自由に並べてよいので、美容成分が上に来ることもある。量の多さと並びを混同しないよう説明するとよい。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "成分の並びと配合量はどこまで一致する？",
+    "source": {
+      "title": "全成分表示の読み方",
+      "url": "https://www.moneypost.jp/860066",
+      "publisher": "マネーポストWEB",
+      "date": null
+    }
+  },
+  {
+    "id": "question-746",
+    "kind": "question",
+    "title": "薬用化粧品も全成分を書く？",
+    "summary": "医薬部外品の薬用化粧品は法律上の全成分表示の義務はない。ただ業界の自主基準で「有効成分」と「その他の成分」を分けて書くのが原則。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "薬用化粧品の成分表示が違う理由",
+    "source": {
+      "title": "全成分表示の読み方",
+      "url": "https://www.moneypost.jp/860066",
+      "publisher": "マネーポストWEB",
+      "date": null
+    }
+  },
+  {
+    "id": "term-702",
+    "kind": "term",
+    "title": "全成分表示の義務",
+    "summary": "化粧品は2001年から、配合した全部の成分を書く決まりになった。それまでは決められた成分だけを書く方式だった。量は書かなくてよい。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "全成分表示はいつから？何が変わった？",
+    "source": {
+      "title": "化粧品の全成分表示に関する発表資料",
+      "url": "https://www.mhlw.go.jp/www1/houdou/1201/h0118-3_4/h0118-88.html",
+      "publisher": "厚生労働省",
+      "date": "2000"
+    }
+  },
+  {
+    "id": "pain-431",
+    "kind": "pain",
+    "title": "成分の量は表示から読めない",
+    "summary": "全成分表示は名前と順番だけで、それぞれの量は分からない。お客から「何%入っていますか」と聞かれたとき、どう答えるか決めておきたい。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "「〇〇配合」の量を聞かれたときの答え方",
+    "source": {
+      "title": "全成分表示の読み方",
+      "url": "https://www.moneypost.jp/860066",
+      "publisher": "マネーポストWEB",
+      "date": null
+    }
+  },
+  {
+    "id": "term-703",
+    "kind": "term",
+    "title": "ポジティブリスト（化粧品）",
+    "summary": "防腐剤・紫外線吸収剤・タール色素は、使ってよい成分と上限量が国の基準で決まっている。ここに無い成分は使えない。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "防腐剤は何でも使えるわけではない",
+    "source": {
+      "title": "化粧品基準に関する通知",
+      "url": "https://www.tmiph.metro.tokyo.lg.jp/files/k_yakuji/i-sinsa/cosmetics/tsuuchi/200009290929.pdf",
+      "publisher": "東京都健康安全研究センター掲載",
+      "date": "2000-09"
+    }
+  },
+  {
+    "id": "question-747",
+    "kind": "question",
+    "title": "パラベンフリーは防腐剤なし？",
+    "summary": "違う。パラベン以外にも防腐剤はたくさんあるので、パラベンフリーでも別の防腐剤が入っていることがある。言葉の意味を正しく伝えたい。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "「〇〇フリー」表示の本当の意味",
+    "source": {
+      "title": "化粧品の防腐剤を正しく知る",
+      "url": "https://eleminist.com/article/4447",
+      "publisher": "ELEMINIST",
+      "date": null
+    }
+  },
+  {
+    "id": "question-748",
+    "kind": "question",
+    "title": "防腐剤はなぜ入れるの？",
+    "summary": "製造中や使っている間に菌が増えるのを防ぐため。日本の法律でも化粧品の微生物汚染を防ぐことが求められている。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "防腐剤を減らすときに工場が気にすること",
+    "source": {
+      "title": "パラベンの資料",
+      "url": "https://www.ueno-fc.co.jp/chemistry/pdf/PARABEN_HP DATA_2015_jp_3.pdf",
+      "publisher": "原料メーカー資料",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "pain-432",
+    "kind": "pain",
+    "title": "防腐剤を減らすと日持ちが心配",
+    "summary": "「無添加にしたい」という依頼で防腐剤を減らすと、菌への強さが落ちる。代わりの成分や容器の工夫、試験で確かめる手間が増える。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "防腐剤を減らした処方の作り方と確かめ方",
+    "source": {
+      "title": "化粧品の防腐剤を正しく知る",
+      "url": "https://eleminist.com/article/4447",
+      "publisher": "ELEMINIST",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-540",
+    "kind": "trend",
+    "official": true,
+    "title": "EUで表示が要る香料が増えた",
+    "summary": "EUは2023年の規則で、表示が必要な香料アレルゲンを大きく増やした。新しく56物質が足され、合計80物質ほどが対象とされる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "EU向け化粧品の香料表示が変わる",
+    "source": {
+      "title": "追加の香料アレルゲンの表示",
+      "url": "https://biorius.com/ja/cosmetic-news/%e8%bf%bd%e5%8a%a0%e3%81%ae%e9%a6%99%e6%96%99%e3%82%a2%e3%83%ac%e3%83%ab%e3%82%b2%e3%83%b3%e3%81%ae%e8%a1%a8%e7%a4%ba/",
+      "publisher": "Biorius",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-541",
+    "kind": "trend",
+    "official": true,
+    "title": "EU香料表示の切り替え期限",
+    "summary": "民間の解説では、新製品は2026年7月末、既存品は2028年7月末までに新しい香料表示が必要とされる。正確な日付は官報で確かめる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "EU向け在庫の表示切り替えスケジュール",
+    "source": {
+      "title": "EU香料アレルゲン拡大 2026",
+      "url": "https://www.registrarcorp.com/ja/blog/cosmetics/eu-fragrance-allergen-expansion-2026/",
+      "publisher": "Registrar Corp",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-542",
+    "kind": "trend",
+    "official": true,
+    "title": "国の研究が香料かぶれを調査",
+    "summary": "厚労省の研究で、日本の香料かぶれの原因の多くがEUで表示義務のある物質だったと報告。日本では香料アレルゲンの表示は議論の途中。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "香料アレルゲン表示、日本はどうなる？",
+    "source": {
+      "title": "香料アレルゲンに関する研究報告",
+      "url": "https://mhlw-grants.niph.go.jp/system/files/download_pdf/2024/202424041A.pdf",
+      "publisher": "厚生労働科学研究成果データベース",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-543",
+    "kind": "trend",
+    "official": true,
+    "title": "ステマ規制は2023年10月から",
+    "summary": "広告なのに広告と分からない表示は、景品表示法の不当表示になった。事業者が内容に関わり、消費者が広告と気づけないと違反になる。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "化粧品・サプリのPR投稿で必要な表記",
+    "source": {
+      "title": "ステマ規制を告示 10月1日から取り締まり",
+      "url": "https://data-max.co.jp/article/62920",
+      "publisher": "データ・マックス",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "trend-544",
+    "kind": "trend",
+    "official": true,
+    "title": "ステマ違反は措置命令の対象",
+    "summary": "ステマをした事業者は措置命令を受け、再発防止策などを求められる。命令に従わないと罰則もある。2024年6月に初の措置命令が出た。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ステマで措置命令を受けると何が起こる？",
+    "source": {
+      "title": "新・ステマ規制のリスク",
+      "url": "https://www.itmedia.co.jp/business/spv/2310/17/news050_2.html",
+      "publisher": "ITmedia ビジネスオンライン",
+      "date": "2023-10"
+    }
+  },
+  {
+    "id": "question-749",
+    "kind": "question",
+    "title": "商品を渡すだけでもステマ？",
+    "summary": "無料で渡しただけでは対象にならないが、投稿内容に事業者が関わるとステマになりうる。ポイントは「内容への関与」があるかどうか。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "インフルエンサーに商品を渡すときの線引き",
+    "source": {
+      "title": "新・ステマ規制のリスク",
+      "url": "https://www.itmedia.co.jp/business/spv/2310/17/news050_2.html",
+      "publisher": "ITmedia ビジネスオンライン",
+      "date": "2023-10"
+    }
+  },
+  {
+    "id": "pain-433",
+    "kind": "pain",
+    "title": "依頼した投稿の確認まで責任",
+    "summary": "インフルエンサーへの依頼では、投稿前の確認や投稿後の見守りが求められる。本人が作るブランド品の宣伝も規制の対象になる。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "PR依頼の前に決めておく確認の手順",
+    "source": {
+      "title": "ステマ規制の法律と注意点",
+      "url": "https://find-model.jp/insta-lab/stealth-marketing-laws-and-regulations/",
+      "publisher": "インスタラボ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-545",
+    "kind": "trend",
+    "official": true,
+    "title": "医師の保証と思わせる広告は禁止",
+    "summary": "薬機法66条は、医師などが効き目を保証したと誤解させる広告を禁じる。適正広告基準でも医療関係者の推薦の広告はだめとされる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "「医師も推薦」が化粧品で使えない理由",
+    "source": {
+      "title": "医師の推薦を使った広告と薬機法",
+      "url": "https://monolith.law/corporate/ad-doctor-recommendation",
+      "publisher": "モノリス法律事務所",
+      "date": null
+    }
+  },
+  {
+    "id": "term-704",
+    "kind": "term",
+    "title": "特記表示（配合目的の併記）",
+    "summary": "化粧品で特定の成分を目立たせて書くときは「保湿成分」など配合の目的を一緒に書く。有効成分のように見せないための決まり。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "「〇〇配合」と書くときのルール",
+    "source": {
+      "title": "化粧品の広告講習会資料",
+      "url": "https://www.tmiph.metro.tokyo.lg.jp/files/webkousyuukai/other/53b1a235e015bd1c5b60c434529a53921.pdf",
+      "publisher": "東京都健康安全研究センター",
+      "date": null
+    }
+  },
+  {
+    "id": "term-705",
+    "kind": "term",
+    "title": "化粧品等の適正広告ガイドライン",
+    "summary": "日本化粧品工業連合会が国の基準の範囲で化粧品向けの言い方の例をまとめた自主基準。2020年版がある。広告文を作る前に見ておく。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "化粧品の広告文を作る前に見る資料",
+    "source": {
+      "title": "化粧品等の適正広告ガイドライン2020年版",
+      "url": "https://supplier.netsea.jp/assets/pdf/hcia2020_ad_guide.pdf",
+      "publisher": "日本化粧品工業連合会",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "trend-546",
+    "kind": "trend",
+    "official": true,
+    "title": "適正広告基準は国の通知",
+    "summary": "医薬品等適正広告基準は、薬機法66条の考え方に守る事項を足して厚労省が通知したもの。化粧品・医薬部外品の広告もこれに沿う。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "化粧品広告のルールはどこに書いてある？",
+    "source": {
+      "title": "医薬品等適正広告基準 局長通知（新旧対照表）",
+      "url": "https://www.pref.nara.jp/secure/187104/局長通知（新旧対照表）.pdf",
+      "publisher": "奈良県掲載",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-434",
+    "kind": "pain",
+    "title": "効能の言い方で売り場の差",
+    "summary": "化粧品で言える効能は決まった範囲だけ。医薬部外品なら言える効能が広がるが承認が要る。どちらで作るかを最初に決める必要がある。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "化粧品と医薬部外品、どちらで作る？",
+    "source": {
+      "title": "化粧品等の適正広告ガイドライン2020年版",
+      "url": "https://supplier.netsea.jp/assets/pdf/hcia2020_ad_guide.pdf",
+      "publisher": "日本化粧品工業連合会",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "term-706",
+    "kind": "term",
+    "title": "医薬部外品の申請区分",
+    "summary": "医薬部外品の承認申請は、有効成分が新しいか、効能や剤形が違うかなどで区分が分かれ、出す資料の量が変わる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "医薬部外品の申請区分をやさしく",
+    "source": {
+      "title": "医薬部外品の承認申請Q&A",
+      "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/syonin_QA2.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-750",
+    "kind": "question",
+    "title": "前例のない添加物は使える？",
+    "summary": "既に承認された同じ種類の医薬部外品で使った前例がない添加物や、前例より多い量を入れると、扱いが重い申請区分になる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "薬用化粧品で成分を自由に選べない理由",
+    "source": {
+      "title": "医薬部外品の承認申請Q&A",
+      "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/syonin_QA2.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "question-751",
+    "kind": "question",
+    "title": "薬用の承認は誰が取る？",
+    "summary": "医薬部外品の承認は製造販売業者が取る。OEMで作るときは、委託先とブランド側のどちらが製造販売元になるか最初に確かめる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "薬用化粧品をOEMで作るときの役割分担",
+    "source": {
+      "title": "医薬部外品の申請区分と定義",
+      "url": "https://www.shigyo.co.jp/search_post/medical-cosmetics-liquor/iyakubugaihin/%e5%8c%bb%e8%96%ac%e9%83%a8%e5%a4%96%e5%93%81%e3%81%ae%e7%94%b3%e8%ab%8b%e5%8c%ba%e5%88%86%e3%81%a8%e5%ae%9a%e7%be%a9/",
+      "publisher": "化粧品許認可の解説サイト",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-435",
+    "kind": "pain",
+    "title": "承認基準にない成分の扱い",
+    "summary": "承認の前例がある成分でも、承認基準に入っていなければ扱いは慎重になる。基準の見直しは原則5年ごととされる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "「この成分で薬用に」の相談で確かめること",
+    "source": {
+      "title": "医薬部外品の承認申請Q&A",
+      "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/syonin_QA2.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "term-707",
+    "kind": "term",
+    "title": "安定性試験",
+    "summary": "化粧品が時間や温度で変わらないか確かめる試験。色・におい・分離などを見る。処方や容器、製造場所を変えたら試験をやり直すのが基本。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "安定性試験で何を見ている？",
+    "source": {
+      "title": "Stability and Compatibility Testing of Cosmetic Products",
+      "url": "https://news.ceway.eu/cosmetic-stability-compatibility-testing/",
+      "publisher": "Ceway",
+      "date": null
+    }
+  },
+  {
+    "id": "term-708",
+    "kind": "term",
+    "title": "化粧品の加速試験",
+    "summary": "高い温度などの厳しい条件に置いて、短い期間で長く保管したときの変化を予想する方法。開発を急ぐときに使われる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "加速試験で使用期限をどう決める？",
+    "source": {
+      "title": "加速安定性および適合性試験",
+      "url": "https://www.certifiedcosmetics.com/ja/?p=32936",
+      "publisher": "Certified Cosmetics",
+      "date": null
+    }
+  },
+  {
+    "id": "question-752",
+    "kind": "question",
+    "title": "容器を変えたら試験し直し？",
+    "summary": "海外の解説では、処方・作り方・製造場所・容器の種類や材質を変えたら、安定性試験をやるかやり直すべきとされる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "リニューアルで試験が必要になる場面",
+    "source": {
+      "title": "Stability and Compatibility Testing of Cosmetic Products",
+      "url": "https://news.ceway.eu/cosmetic-stability-compatibility-testing/",
+      "publisher": "Ceway",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-436",
+    "kind": "pain",
+    "title": "化粧品の安定性に統一基準なし",
+    "summary": "化粧品は種類が多く、国が決めた標準の安定性試験の手順はないとされる。どこまで試すかは作る側が決め、説明できるようにしておく。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "自社の安定性試験の考え方を公開する",
+    "source": {
+      "title": "Stability and Compatibility Testing of Cosmetic Products",
+      "url": "https://news.ceway.eu/cosmetic-stability-compatibility-testing/",
+      "publisher": "Ceway",
+      "date": null
+    }
+  },
+  {
+    "id": "question-753",
+    "kind": "question",
+    "title": "加速試験はどのくらいの期間？",
+    "summary": "ある海外の試験機関の商品では4週間の加速試験で12か月の保存期間を推定する。期間や温度は商品と委託先ごとに確かめる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試験期間を含めた開発スケジュール",
+    "source": {
+      "title": "加速安定性および適合性試験",
+      "url": "https://www.certifiedcosmetics.com/ja/?p=32936",
+      "publisher": "Certified Cosmetics",
+      "date": null
+    }
+  },
+  {
+    "id": "term-709",
+    "kind": "term",
+    "title": "パッチテスト",
+    "summary": "疑わしい物質を薄めて皮膚に貼り、48時間後などに反応を見る試験。かぶれの原因を調べるのに使われる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "パッチテストで分かること、分からないこと",
+    "source": {
+      "title": "パッチテスト",
+      "url": "https://kotobank.jp/word/%E3%83%91%E3%83%83%E3%83%81%E3%83%86%E3%82%B9%E3%83%88-3164804",
+      "publisher": "コトバンク",
+      "date": null
+    }
+  },
+  {
+    "id": "question-754",
+    "kind": "question",
+    "title": "パッチテスト済みなら安心？",
+    "summary": "全員にかぶれが起きないという意味ではない。化粧品には異常があれば使用をやめる旨の注意を書くことが求められる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "「パッチテスト済み」の正しい伝え方",
+    "source": {
+      "title": "パッチテスト",
+      "url": "https://kotobank.jp/word/%E3%83%91%E3%83%83%E3%83%81%E3%83%86%E3%82%B9%E3%83%88-3164804",
+      "publisher": "コトバンク",
+      "date": null
+    }
+  },
+  {
+    "id": "term-710",
+    "kind": "term",
+    "title": "染毛剤の使用前の皮膚試験",
+    "summary": "染毛剤は容器や外箱に「使う前に必ずパッチテストを」と書くよう示されている。一般の化粧品とは扱いが違う。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ヘアカラーの注意書きはなぜ長い？",
+    "source": {
+      "title": "染毛剤等の表示に関する資料",
+      "url": "https://www.pref.wakayama.lg.jp/prefg/050400/seizou/tuti/H18_7_9_d/fil/9-9.pdf",
+      "publisher": "和歌山県",
+      "date": null
+    }
+  },
+  {
+    "id": "question-755",
+    "kind": "question",
+    "title": "オーガニック表示に国の基準は？",
+    "summary": "日本には化粧品のオーガニックの公的な統一基準はない。配合の基準はまちまちなので、第三者の認証が信頼の目安になる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "オーガニックコスメと名乗る条件",
+    "source": {
+      "title": "オーガニックコスメ「コスモス認証」とは",
+      "url": "https://eleminist.com/article/1777",
+      "publisher": "ELEMINIST",
+      "date": null
+    }
+  },
+  {
+    "id": "term-711",
+    "kind": "term",
+    "title": "ISO 16128",
+    "summary": "天然・オーガニック成分の定義と、その割合の計算方法を示す国際規格。表示ルールそのものではなく、法律で認められた保存料も使える。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "天然由来指数とは？",
+    "source": {
+      "title": "Natural and organic cosmetics: 5 questions about ISO 16128",
+      "url": "https://www.afnor.org/en/?p=85057",
+      "publisher": "AFNOR",
+      "date": null
+    }
+  },
+  {
+    "id": "term-712",
+    "kind": "term",
+    "title": "COSMOS認証",
+    "summary": "欧州の5団体が2011年に作ったオーガニックコスメの国際的な認証。原料の由来や作り方、環境面まで審査する。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外のオーガニック認証の違い",
+    "source": {
+      "title": "オーガニックコスメ「コスモス認証」とは",
+      "url": "https://eleminist.com/article/1777",
+      "publisher": "ELEMINIST",
+      "date": null
+    }
+  },
+  {
+    "id": "term-713",
+    "kind": "term",
+    "title": "JOCA基準",
+    "summary": "日本オーガニックコスメ協会の基準。石油や石油由来の合成成分を使わないことなどを求める国内の民間基準。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "国内のオーガニック基準をやさしく",
+    "source": {
+      "title": "日本オーガニックコスメ協会のJOCA基準",
+      "url": "https://maharani.jp/maharanihenna/?p=17217",
+      "publisher": "化粧品メーカーのサイト",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-437",
+    "kind": "pain",
+    "title": "ヴィーガン表示の根拠集め",
+    "summary": "ヴィーガンをうたうには動物由来成分を使っていないことの確認が要り、原料ごとに書類を集める手間がかかる。認証の要件は団体ごとに違う。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "ヴィーガン化粧品を作るときの確認項目",
+    "source": {
+      "title": "オーガニックコスメ「コスモス認証」とは",
+      "url": "https://eleminist.com/article/1777",
+      "publisher": "ELEMINIST",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-547",
+    "kind": "trend",
+    "official": false,
+    "title": "化粧品輸出は中国が最大",
+    "summary": "テュフズードの説明では、日本の化粧品輸出の約半分を中国が占め、最大の輸出先とされる。中国の規則を知ることが欠かせない。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中国向け化粧品の基本",
+    "source": {
+      "title": "中国化粧品市場ウェビナー",
+      "url": "https://www.tuvsud.com/ja-jp/resource-centre/webinar/jp-chinese-cosmetics-market",
+      "publisher": "テュフズードジャパン",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-548",
+    "kind": "trend",
+    "official": true,
+    "title": "中国は一般化粧品の動物実験を撤廃",
+    "summary": "2021年の制度改正で、中国は輸入する一般化粧品の動物実験の義務をなくした。美白や日焼け止めなど特殊化粧品は別扱い。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中国へ化粧品を出す前に知ること",
+    "source": {
+      "title": "中国が一般化粧品の動物実験義務を撤廃",
+      "url": "https://www.wwdjapan.com/?p=1190621",
+      "publisher": "WWDJAPAN",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "term-714",
+    "kind": "term",
+    "title": "特殊化粧品（中国）",
+    "summary": "中国では染毛剤・パーマ剤・美白・日焼け止め・育毛剤などが特殊化粧品。ほかは一般化粧品で、手続きの重さが違う。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中国の化粧品分類と日本の違い",
+    "source": {
+      "title": "New Chinese cosmetics regulation now in force",
+      "url": "https://www.exponent.com/article/new-chinese-cosmetics-regulation-now-force-animal-testing-no-longer-required-general",
+      "publisher": "Exponent",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "trend-549",
+    "kind": "trend",
+    "official": true,
+    "title": "EU輸出は化粧品規則に沿う",
+    "summary": "JETROによると、EUでは化粧品規則で成分の制限、責任者、ラベル、EUへの製品情報の提出が決まっている。輸出前に確かめる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "EUへ化粧品を出す手続きの全体図",
+    "source": {
+      "title": "EUへの化粧品輸出の手続き",
+      "url": "https://www.jetro.go.jp/world/qa/04A-030301.html",
+      "publisher": "JETRO",
+      "date": null
+    }
+  },
+  {
+    "id": "term-715",
+    "kind": "term",
+    "title": "CPNP",
+    "summary": "EUで化粧品を売る前に製品を届け出る仕組み。前提として、安全性評価などを含む製品情報ファイルを作る。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "CPNPと製品情報ファイル",
+    "source": {
+      "title": "CPNPとは",
+      "url": "https://biorius.com/ja/cosmetic-news/cpnp/",
+      "publisher": "Biorius",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-550",
+    "kind": "trend",
+    "official": true,
+    "title": "米国は化粧品の規制を強化",
+    "summary": "米国は2022年のMoCRAで、化粧品の施設登録や製品の登録、有害事象の報告などを求めるようになった。責任者の役割も決まった。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "アメリカに化粧品を出すときの新ルール",
+    "source": {
+      "title": "Cosmetics Responsible Person（MoCRA）",
+      "url": "https://www.registrarcorp.com/ja/blog/cosmetics/mocra/cosmetics-responsible-person/",
+      "publisher": "Registrar Corp",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-438",
+    "kind": "pain",
+    "title": "輸出先ごとに処方とラベル",
+    "summary": "国によって使えない成分や表示のルールが違い、同じ処方・ラベルで出せないことがある。現地の責任者を立てる必要がある国も多い。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "輸出に強いOEM先の見分け方",
+    "source": {
+      "title": "CPNPとは",
+      "url": "https://biorius.com/ja/cosmetic-news/cpnp/",
+      "publisher": "Biorius",
+      "date": null
+    }
+  },
+  {
+    "id": "question-756",
+    "kind": "question",
+    "title": "容器は金型を作らないとだめ？",
+    "summary": "容器メーカーの規格型に色や印刷を加えれば、金型を作らずにオリジナル風の容器にでき、立ち上げの費用を抑えられる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "既製容器でブランドらしさを出す方法",
+    "source": {
+      "title": "化粧品容器（規格型へのデザイン加工）",
+      "url": "https://mono.ipros.com/product/detail/2000793108",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-439",
+    "kind": "pain",
+    "title": "容器の最小ロットが中身より多い",
+    "summary": "中身は少なく作れても、容器や印刷の最小ロットが大きいと在庫が残る。容器の数と中身の数を合わせて見積もる必要がある。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "中身と容器のロットのずれを防ぐ",
+    "source": {
+      "title": "化粧品容器（規格型へのデザイン加工）",
+      "url": "https://mono.ipros.com/product/detail/2000793108",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "question-757",
+    "kind": "question",
+    "title": "OEM契約で何を決める？",
+    "summary": "作る中身、品質と検査の基準、商標の使い方、秘密を守る約束などを決める。あいまいだと品質や納期、知財のもめごとになる。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "OEM契約で最低限決めること",
+    "source": {
+      "title": "OEM契約とは",
+      "url": "https://biz.moneyforward.com/contract/basic/7036/",
+      "publisher": "マネーフォワード クラウド契約",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "question-758",
+    "kind": "question",
+    "title": "お金を出せば処方は自分のもの？",
+    "summary": "そうとは限らない。製造費を払っても、設計や処方の権利は自動では移らないと海外の解説も指摘する。契約で書いておく。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "処方の権利は誰のもの？",
+    "source": {
+      "title": "Key clauses in OEM contracts",
+      "url": "https://www.amarrie.com/blogs/b2b-skincare-insights/key-clauses-in-oem-contracts-intellectual-property-rights-quality-inspection-standards-and-liability-for-breach-of-contract",
+      "publisher": "Amarrie",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-440",
+    "kind": "pain",
+    "title": "OEMはノウハウ流出が心配",
+    "summary": "OEMでは発注側も受託側も技術やノウハウが漏れるおそれがある。秘密を守る約束と、使ってよい範囲を契約で決めておく。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "OEM先に話す情報と話さない情報",
+    "source": {
+      "title": "OEM契約の注意点",
+      "url": "https://www.legalontech.com/jp/media/oem",
+      "publisher": "LegalOn Technologies",
+      "date": null
+    }
+  },
+  {
+    "id": "question-759",
+    "kind": "question",
+    "title": "品質の問題が出たら？",
+    "summary": "検査・監査・直す手順を契約に入れておくとよいとされる。どこまでが誰の責任か、回収時の費用も話しておく。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "品質トラブルの対応を契約で決める",
+    "source": {
+      "title": "OEM契約チェックリスト",
+      "url": "https://crexgroup.com/ja/consulting/operation/oem-agreement-checklist/",
+      "publisher": "CREX",
+      "date": null
+    }
+  },
+  {
+    "id": "term-716",
+    "kind": "term",
+    "title": "化粧品GMP（ISO 22716）",
+    "summary": "化粧品の製造・管理・保管・出荷の品質の決まり。日本化粧品工業連合会はISO 22716を業界の自主基準にしている。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "化粧品GMPで工場は何をしている？",
+    "source": {
+      "title": "化粧品GMPの資料",
+      "url": "https://www.pref.kyoto.jp/yakumu/documents/3.pdf",
+      "publisher": "京都府",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-435",
+    "kind": "buyer",
+    "title": "工場の認証は範囲まで見る",
+    "summary": "ISO 22716の審査は第三者の認証機関が行う。認証の有無だけでなく、どの工程が対象か、製造業許可があるかも確かめる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "OEM先の認証書の読み方",
+    "source": {
+      "title": "化粧品GMP ISO22716",
+      "url": "https://www.tuvsud.com/ja-jp/resource-centre/stories/cosmetics-gmp-iso22716",
+      "publisher": "テュフズードジャパン",
+      "date": null
+    }
+  },
+  {
+    "id": "term-717",
+    "kind": "term",
+    "title": "GMPの対象外の工程",
+    "summary": "化粧品GMPは製造・管理・保管・出荷が中心で、研究開発や営業、物流には使わないとされる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "GMPが守る範囲と守らない範囲",
+    "source": {
+      "title": "化粧品GMP ISO22716",
+      "url": "https://www.tuvsud.com/ja-jp/resource-centre/stories/cosmetics-gmp-iso22716",
+      "publisher": "テュフズードジャパン",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-551",
+    "kind": "trend",
+    "official": true,
+    "title": "健康被害の報告が義務に",
+    "summary": "紅麹の問題を受け、2024年9月から機能性表示食品で医師が診断した健康被害の情報を保健所などへ報告することが義務になった。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "機能性表示食品の新しい報告ルール",
+    "source": {
+      "title": "改正・機能性表示食品制度が9月1日スタート",
+      "url": "https://www.data-max.co.jp/article/73210",
+      "publisher": "データ・マックス",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "trend-552",
+    "kind": "trend",
+    "official": true,
+    "title": "表示の書き方も見直し",
+    "summary": "2026年9月から、機能性表示食品の表示で国の審査があるトクホとは違うことを分かるようにするなどの見直しが入る。包材の切り替えが要る。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "機能性表示食品のパッケージ変更点",
+    "source": {
+      "title": "機能性表示食品制度の改正資料",
+      "url": "https://www.pref.aichi.jp/uploaded/life/624894_2908559_misc.pdf",
+      "publisher": "愛知県",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-553",
+    "kind": "trend",
+    "official": true,
+    "title": "届出後の自己点検が義務",
+    "summary": "届出後の定期的な自己点検と公表が義務になり、2025年4月以降の新しい届出は研究のまとめ方の国際指針への準拠が求められる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "機能性表示食品の届出後にやること",
+    "source": {
+      "title": "機能性表示食品制度の見直し状況",
+      "url": "https://www.cao.go.jp/consumer/kabusoshiki/syokuhinhyouji/doc/250731_shiryou4.pdf",
+      "publisher": "消費者委員会（消費者庁資料）",
+      "date": "2025-07"
+    }
+  },
+  {
+    "id": "trend-554",
+    "kind": "trend",
+    "official": true,
+    "title": "自己点検の報告期限は2026年3月",
+    "summary": "2025年3月末までに公表された製品は、2026年3月末までに自己点検の結果を報告する必要があった。消費者庁は事業者へ繰り返し周知した。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "届出を出しっぱなしにしない",
+    "source": {
+      "title": "消費者庁長官記者会見",
+      "url": "https://www.caa.go.jp/notice/statement/horii/045673.html",
+      "publisher": "消費者庁",
+      "date": "2026-03"
+    }
+  },
+  {
+    "id": "trend-555",
+    "kind": "trend",
+    "official": true,
+    "title": "錠剤・カプセルの自己点検表",
+    "summary": "消費者庁は2025年11月、天然抽出物を使う錠剤・カプセルの機能性表示食品向けに、製造体制を確かめる自己点検表を出した。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "GMP義務化に向けた自己点検",
+    "source": {
+      "title": "錠剤・カプセル剤の機能性表示食品 自己点検表",
+      "url": "https://www.caa.go.jp/notice/entry/044289/",
+      "publisher": "消費者庁",
+      "date": "2025-11"
+    }
+  },
+  {
+    "id": "question-760",
+    "kind": "question",
+    "title": "成分量が届出より少ないと？",
+    "summary": "実際の含有量が届出の量を下回ると、届出を撤回しなければならないとされる。一時的なミスで改善策を取った場合は除かれる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "機能性関与成分の量をどう管理する？",
+    "source": {
+      "title": "機能性表示食品の届出撤回の基準",
+      "url": "https://www.data-max.co.jp/article/46736",
+      "publisher": "データ・マックス",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-556",
+    "kind": "trend",
+    "official": false,
+    "title": "緊急点検で廃業の届出者も",
+    "summary": "紅麹問題後の緊急点検では、届出者1671社のうち22社が倒産や廃業していたと報じられた。データの更新漏れも見つかった。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "届出情報の更新を怠るリスク",
+    "source": {
+      "title": "機能性表示食品 緊急点検の結果",
+      "url": "https://ecnomikata.com/ecnews/42474",
+      "publisher": "ECのミカタ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-557",
+    "kind": "trend",
+    "official": true,
+    "title": "GMP義務化は2026年9月に開始",
+    "summary": "2026年9月1日から、天然抽出物を使う錠剤・カプセルの機能性表示食品にGMPに沿った製造と品質管理が義務になった。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "GMP義務化でOEM先選びが変わる",
+    "source": {
+      "title": "完全義務化されたGMPと製造品質の話",
+      "url": "https://news.mynavi.jp/kikaku/20260929-4981703/",
+      "publisher": "マイナビニュース",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "term-718",
+    "kind": "term",
+    "title": "栄養機能食品",
+    "summary": "決められたビタミン・ミネラルなどが基準量入っていれば、国への届出なしで機能を表示できる自己認証の制度。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "栄養機能食品と機能性表示食品の違い",
+    "source": {
+      "title": "栄養機能食品に関するお知らせ",
+      "url": "https://www.caa.go.jp/notice/entry/046303/",
+      "publisher": "消費者庁",
+      "date": null
+    }
+  },
+  {
+    "id": "question-761",
+    "kind": "question",
+    "title": "栄養機能食品の対象は何種類？",
+    "summary": "消費者庁の資料では20種類。脂肪酸1、ミネラル6、ビタミン13。古い解説には違う数もあるので最新を確かめる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "栄養機能食品にできる栄養素",
+    "source": {
+      "title": "栄養機能食品に関するお知らせ",
+      "url": "https://www.caa.go.jp/notice/entry/046303/",
+      "publisher": "消費者庁",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-441",
+    "kind": "pain",
+    "title": "1日量の上限と下限に合わせる",
+    "summary": "栄養機能食品は1日の目安量に入る成分量を基準の下限と上限の間に収め、決まった文言と注意書きを書く必要がある。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "栄養機能食品の配合量を決める手順",
+    "source": {
+      "title": "栄養成分表示 第5章 栄養機能食品",
+      "url": "https://www.hokeniryo.metro.tokyo.lg.jp/shokuhin/hyouji/kyouzai/files/eiyouseibun_chapter_5_kinoushokuhin.pdf",
+      "publisher": "東京都保健医療局",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-558",
+    "kind": "trend",
+    "official": true,
+    "title": "栄養機能食品の基準も見直し",
+    "summary": "消費者庁は2025・2026年度に検討会を開き、栄養機能食品の上限・下限、機能の文言、注意書きの改正案をまとめている。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "栄養機能食品の改正で変わること",
+    "source": {
+      "title": "食品表示に関する会議資料（栄養機能食品）",
+      "url": "https://www.caa.go.jp/policies/policy/food_labeling/meeting_materials/assets/food_labeling_cms206_20260619_11.pdf",
+      "publisher": "消費者庁",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "trend-559",
+    "kind": "trend",
+    "official": true,
+    "title": "健康食品の広告の留意事項",
+    "summary": "消費者庁は効果が十分に示されていないのに期待させる広告を、景品表示法と健康増進法の禁止対象と整理。2022年12月に一部改定。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "健康食品の広告で気をつけること",
+    "source": {
+      "title": "健康食品に関する景品表示法及び健康増進法上の留意事項",
+      "url": "https://kouseikyoku.mhlw.go.jp/kantoshinetsu/gyomu/bu_ka/shokuhin/documents/kenkoshokuhinryuijikoh.pdf",
+      "publisher": "関東信越厚生局掲載（消費者庁）",
+      "date": "2022-12"
+    }
+  },
+  {
+    "id": "question-762",
+    "kind": "question",
+    "title": "体験談なら効果を書ける？",
+    "summary": "体験談やタレントの声、医師のコメントも効果をほのめかす表示になりうると国の委員会で議論された。言い換えでも避けたい。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "体験談で効果を伝えてはいけない理由",
+    "source": {
+      "title": "健康食品の表示に関する消費者委員会資料",
+      "url": "https://www.cao.go.jp/consumer/iinkai/2015/002/doc/20151020_shiryou3_1.pdf",
+      "publisher": "消費者委員会",
+      "date": "2015-10"
+    }
+  },
+  {
+    "id": "term-719",
+    "kind": "term",
+    "title": "健康食品GMPマーク",
+    "summary": "原料の受け入れから出荷まで決まった管理をする工場が認定を受けると、製品にGMPマークを付けられる。審査は第三者機関が行う。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "GMPマークの意味",
+    "source": {
+      "title": "健康食品のGMP",
+      "url": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/dl/kenkou_shokuhin_gmp.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-436",
+    "kind": "buyer",
+    "title": "GMP認定工場の数から探す",
+    "summary": "日本健康・栄養食品協会のGMP認定工場は2023年度で177件と報告されている。委託先選びでは認定の有無を最初に確かめる人が多い。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "GMP認定工場を自社サイトで示す",
+    "source": {
+      "title": "事業報告（令和5年度）",
+      "url": "https://www.jhnfa.org/r5ji.pdf",
+      "publisher": "日本健康・栄養食品協会",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "term-720",
+    "kind": "term",
+    "title": "GMPの第三者認証機関",
+    "summary": "健康食品GMPの国内の審査機関は日本健康・栄養食品協会と日本健康食品規格協会の2つ。どちらも工場ごとに審査する。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "健康食品GMPの認証機関の違い",
+    "source": {
+      "title": "健康食品のGMP",
+      "url": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/dl/kenkou_shokuhin_gmp.pdf",
+      "publisher": "厚生労働省",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-442",
+    "kind": "pain",
+    "title": "汚染の原因は原料が多い",
+    "summary": "第三者検査機関の試験では、サプリの意図しない汚染の主な原因は原料であることが多いとされる。原料の受け入れ検査が大事。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "原料の受け入れ検査で見ること",
+    "source": {
+      "title": "高リスク原材料",
+      "url": "https://sport.wetestyoutrust.com/ja/news/high-risk-raw-materials",
+      "publisher": "LGC",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-437",
+    "kind": "buyer",
+    "title": "原料は直接取引と書類で選ぶ",
+    "summary": "海外から来る原料は中間業者が多いほど産地違いや異物のおそれが増える。一次の仕入れ先との取引や分析証明書を確かめる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "原料の産地と証明書を公開する",
+    "source": {
+      "title": "高リスク原材料",
+      "url": "https://sport.wetestyoutrust.com/ja/news/high-risk-raw-materials",
+      "publisher": "LGC",
+      "date": null
+    }
+  },
+  {
+    "id": "question-763",
+    "kind": "question",
+    "title": "海外のカプセルOEMの納期は？",
+    "summary": "海外の受託製造サイトでは、ハードカプセルの製造の納期を10〜30日としていた。国内とは条件が違うので比べるときは注意。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "サプリの製造納期の内訳",
+    "source": {
+      "title": "Health Supplements: Hard Capsule OEM",
+      "url": "https://www.hktdc.com/event/hkmedicalfair/en/product/1Z03O2KZJ",
+      "publisher": "HKTDC",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-438",
+    "kind": "buyer",
+    "title": "剤形ごとに最小ロットを聞く",
+    "summary": "サプリの最小ロットは錠剤・カプセル・粉末など剤形で違う。比べるときは剤形ごとの最低数、試作の数、包材の追加費を聞く。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "剤形別の最小ロット表を作る",
+    "source": {
+      "title": "サプリメントOEM（イプロス掲載一覧）",
+      "url": "https://mono.ipros.com/en/cg3/Food supplement OEM manufacturing",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-439",
+    "kind": "buyer",
+    "title": "見積は内訳で比べる",
+    "summary": "OEMの見積には原料・加工・包材・試作の費用が入る。金型、デザイン、安定性試験、輸送保険などの追加費用も前もって聞く。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "OEM見積の内訳を公開する",
+    "source": {
+      "title": "OEM生産で失敗しないために",
+      "url": "https://www.theckb.com/archive/thorough-explanation-from-contractor-selection-to-quality-control-contract-to-avoid-failures-in-oem-production/",
+      "publisher": "THE CKB",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-440",
+    "kind": "buyer",
+    "title": "届出の支援範囲を確かめる",
+    "summary": "機能性表示食品の届出を支援するOEM会社もあるが、書類作り、研究データ、大学との連携など範囲は会社ごとに違う。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "届出支援でどこまで手伝うかを書く",
+    "source": {
+      "title": "サプリメントOEM（イプロス掲載一覧）",
+      "url": "https://mono.ipros.com/en/cg3/Food supplement OEM manufacturing",
+      "publisher": "イプロスものづくり",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-441",
+    "kind": "buyer",
+    "title": "作りたい品目の実績を見る",
+    "summary": "OEM先は設備や方針で扱える品目が限られることがある。作りたい商品の分野で開発の実績があるかを最初に確かめる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "得意な品目と実績を一覧で見せる",
+    "source": {
+      "title": "化粧品OEM先の選び方",
+      "url": "https://www.commercepick.com/archives/73969",
+      "publisher": "コマースピック",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-442",
+    "kind": "buyer",
+    "title": "OEMかODMかを先に決める",
+    "summary": "OEMは仕様をブランド側が決めるので処方の知識が要る。処方から任せたいならODMに近い形を選ぶ。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "処方から相談できるかを明記する",
+    "source": {
+      "title": "OEM生産で失敗しないために",
+      "url": "https://www.theckb.com/archive/thorough-explanation-from-contractor-selection-to-quality-control-contract-to-avoid-failures-in-oem-production/",
+      "publisher": "THE CKB",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-443",
+    "kind": "buyer",
+    "title": "6つの軸で依頼先を比べる",
+    "summary": "ある化粧品OEM会社は、見積条件・価格・対応力・進め方・最小ロット・得意分野の6点で比べるよう勧めている。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "比較される軸に合わせて自社を説明",
+    "source": {
+      "title": "化粧品OEMの比較ポイント",
+      "url": "https://pr.mono.ipros.com/orioncosmetics/product/detail/2001613588/",
+      "publisher": "イプロス掲載の化粧品OEM会社",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-444",
+    "kind": "buyer",
+    "title": "初参入はOEMで費用を抑える",
+    "summary": "化粧品を自社で一から作ると許可や設備が要る。OEMなら初期費用を抑え、専門家の支えを受けて始められる。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "question_example"
+    ],
+    "articleIdea": "初めての化粧品づくりの相談窓口",
+    "source": {
+      "title": "化粧品OEMとは",
+      "url": "https://www.post.japanpost.jp/bizpost/column/sales_promotion22/cosmetics-oem/",
+      "publisher": "日本郵便",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-445",
+    "kind": "buyer",
+    "title": "複数社の見積で比べる",
+    "summary": "OEM先は数社に絞り、仕様書・希望ロット・納期を示して見積をとる。価格だけでなく品質・技術・納期・支えの体制で比べる。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "見積依頼の前に用意するもの",
+    "source": {
+      "title": "OEM生産で失敗しないために",
+      "url": "https://www.theckb.com/archive/thorough-explanation-from-contractor-selection-to-quality-control-contract-to-avoid-failures-in-oem-production/",
+      "publisher": "THE CKB",
+      "date": null
+    }
+  },
+  {
+    "id": "success-550",
+    "kind": "success",
+    "title": "専門メディアに連載して信頼",
+    "summary": "ある化粧品OEM会社は、EC業界のメディアで差別化やペルソナ、商品開発をテーマにコラムを連載し、見込み客に知見を届けている。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "ブランドづくりの悩みに答える連載",
+    "source": {
+      "title": "化粧品OEM会社の専門家コラム",
+      "url": "https://www.commercepick.com/archives/tag/%e5%a4%a9%e7%9c%9f%e5%a0%82",
+      "publisher": "コマースピック",
+      "date": null
+    }
+  },
+  {
+    "id": "success-551",
+    "kind": "success",
+    "title": "企画から顧客対応まで受ける",
+    "summary": "佐賀県の健康食品OEM会社は、企画から製造、コールセンター対応まで受け、委託元に商品改善を提案する形を打ち出した。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "製造以外にできることを見せる",
+    "source": {
+      "title": "BtoC事例集（健康食品のODEM）",
+      "url": "https://www.kyushu.meti.go.jp/jirei/btoc/pdf/toyo.pdf",
+      "publisher": "九州経済産業局",
+      "date": null
+    }
+  },
+  {
+    "id": "success-552",
+    "kind": "success",
+    "title": "比較の軸に合わせて発信",
+    "summary": "受託・OEMの集客では、技術・品質管理・小ロット・認証・納期を発注者の比べ方に合わせて伝え、問い合わせ後の流れまで整えるとよいとされる。",
+    "industries": [
+      "化粧品OEM",
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "発注者が比べる5項目で自社を書く",
+    "source": {
+      "title": "OEM・受託生産の集客",
+      "url": "https://www.shopowner-support.net/attracting_customers/manufacturing/oem/",
+      "publisher": "ショップオーナーサポート",
+      "date": null
+    }
+  },
+  {
+    "id": "success-553",
+    "kind": "success",
+    "title": "検索順位より問い合わせ数",
+    "summary": "化粧品OEMのサイト改善の依頼では、検索順位だけでなく問い合わせ件数を目標にする条件が出ていた。狙う言葉は化粧品OEM・ODMなど。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "shiori_tip"
+    ],
+    "articleIdea": "問い合わせにつながる記事のテーマ",
+    "source": {
+      "title": "化粧品OEMサイトのSEO改善の依頼",
+      "url": "https://www.biz.ne.jp/subject/toi_detail.html?tid=983801",
+      "publisher": "比較ビズ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-554",
+    "kind": "success",
+    "title": "発注前の疑問を記事に",
+    "summary": "日本郵便のコラムは、費用や許可を理由に自社開発をためらう企業に向け、OEMの利点と選び方を説明する。迷う段階の読者を狙う形。",
+    "industries": [
+      "化粧品OEM"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "「自社ブランドを作りたい」人向けの記事",
+    "source": {
+      "title": "化粧品OEMとは",
+      "url": "https://www.post.japanpost.jp/bizpost/column/sales_promotion22/cosmetics-oem/",
+      "publisher": "日本郵便",
+      "date": null
+    }
+  },
+  {
+    "id": "success-555",
+    "kind": "success",
+    "title": "規制の変化を先回りで解説",
+    "summary": "機能性表示食品のGMP義務化のような制度の変化は、発注者が不安に思う話題。分かりやすく解説すると相談のきっかけになる。",
+    "industries": [
+      "食品製造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "制度改正の解説記事で相談を集める",
+    "source": {
+      "title": "完全義務化されたGMPと製造品質の話",
+      "url": "https://news.mynavi.jp/kikaku/20260929-4981703/",
+      "publisher": "マイナビニュース",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "question-764",
+    "kind": "question",
+    "title": "鋳造の相談はまず数量から",
+    "summary": "ダイカストは金型代がかかる大量生産向け。鋳造の工法選びは、最初に何個作るか（ロット）を確かめるのが出発点だと加工会社の資料は説明する。",
+    "industries": [
+      "鋳造",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "何個なら砂型、何個からダイカスト？",
+    "source": {
+      "title": "鋳造方法の特徴と選定のポイント",
+      "url": "https://mono.ipros.com/product/detail/2000414785",
+      "publisher": "イプロス（加工会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-721",
+    "kind": "term",
+    "title": "鋳物と切削の分担は設計で決める",
+    "summary": "精度が要る面は鋳造後に削るのが前提。どこを鋳肌のまま、どこを削るかを設計の段階で決めておくと、費用と品質のつり合いがとりやすい。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "鋳物の『削る面』の決め方",
+    "source": {
+      "title": "鋳造方法の特徴と選定のポイント",
+      "url": "https://mono.ipros.com/product/detail/2000414785",
+      "publisher": "イプロス（加工会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-765",
+    "kind": "question",
+    "title": "少量でも砂型で見た目よく作れる？",
+    "summary": "砂型でもダイカストに近い寸法と鋳肌を出せるとうたう鋳造会社がある。開発段階の試作や多品種・小ロットに向くという。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "砂型の試作はどこまで量産に近い？",
+    "source": {
+      "title": "砂型鋳造による高品質な精密鋳物",
+      "url": "https://mono.ipros.com/product/detail/2000512146",
+      "publisher": "イプロス（鋳造会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-722",
+    "kind": "term",
+    "title": "加工レス（鋳造で穴まで作る）",
+    "summary": "型の精度を上げ、穴などを鋳造の段階で作って後の機械加工を減らす考え方。加工費が減り、型代も早く回収できると説明される。",
+    "industries": [
+      "鋳造",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "『加工レス』で部品代はどこまで下がる？",
+    "source": {
+      "title": "ダイカストの加工レス化事例",
+      "url": "https://mono.ipros.com/product/detail/2000742000",
+      "publisher": "イプロス（ダイカスト会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-443",
+    "kind": "pain",
+    "title": "ダイカスト試作の型代が回収できない",
+    "summary": "量産はダイカストの製品でも、試作は数が少なく高い金型代を回収しにくい。代わりに削り出すと材料の性質が違い、性能評価に使えないことがある。",
+    "industries": [
+      "鋳造",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ダイカスト品の試作、削り出しで足りる？",
+    "source": {
+      "title": "ダイカスト試作の課題（ホワイトペーパー）",
+      "url": "https://active.nikkeibp.co.jp/atcl/wp/b/20/05/21/00555/",
+      "publisher": "日経BP Active",
+      "date": "2020-05"
+    }
+  },
+  {
+    "id": "term-723",
+    "kind": "term",
+    "title": "石膏鋳造（プラスターキャスト）",
+    "summary": "石膏の型にアルミなどを流す鋳造。金型を作らず量産品に近い仕上がりが得られ、初期費用と開発期間を抑える試作の手段として紹介されている。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "question_example"
+    ],
+    "articleIdea": "金型なしでダイカスト品を試作する方法",
+    "source": {
+      "title": "石膏鋳造による試作の紹介",
+      "url": "https://special.nikkeibp.co.jp/atclh/NXT/25/MPF2025/kyoeidesign/",
+      "publisher": "日経クロステック Special",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "question-766",
+    "kind": "question",
+    "title": "石膏鋳造の試作は何日でできる？",
+    "summary": "石膏鋳造を受ける会社の例では、簡易な型なので型費を抑えられ、3Dデータがあれば最短7日で出荷するとしている（その会社の案内による）。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試作鋳物の納期を決めるもの",
+    "source": {
+      "title": "石膏鋳造の短納期試作",
+      "url": "https://mono.ipros.com/product/detail/2000179250",
+      "publisher": "イプロス（鋳造会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-560",
+    "kind": "trend",
+    "official": true,
+    "title": "中小ロット向けのダイカスト型づくり",
+    "summary": "国の支援事業の資料は、ダイカストは型に時間と費用がかかるが精度が高く、アルミ鋳物は精度で劣るが型費が安く少量でも回収しやすいと整理。多品種少量化で中小ロット向けの型が課題とする。",
+    "industries": [
+      "鋳造",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "ダイカストとアルミ鋳物の分かれ目",
+    "source": {
+      "title": "戦略的基盤技術高度化支援事業の研究開発計画",
+      "url": "https://www.chusho.meti.go.jp/sapoin/index.php/files/project/link/4337/9252",
+      "publisher": "中小企業庁（サポイン）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-446",
+    "kind": "buyer",
+    "title": "想定ロットを伝えると型の作りが変わる",
+    "summary": "ダイカスト型は、見込む生産数に合わせて設計や作り方を変える提案があると国の支援事業の事例は紹介する。発注時に年間数と製品の寿命を伝えるのが近道。",
+    "industries": [
+      "鋳造",
+      "金型"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "question_example"
+    ],
+    "articleIdea": "見積もり前に伝えたい『年間数』",
+    "source": {
+      "title": "サポイン事業の研究開発プロジェクト",
+      "url": "https://www.chusho.meti.go.jp/sapoin/index.php/cooperation/project/detail/4285",
+      "publisher": "中小企業庁（サポイン）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-767",
+    "kind": "question",
+    "title": "3Dプリントの樹脂型は何個まで？",
+    "summary": "3Dプリンタで作る射出成形用の型は、条件によるが数百個ほどまで成形できると紹介されている。量産と同じ材料で試せるのが利点。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "樹脂型・アルミ型・鋼型の数量の目安",
+    "source": {
+      "title": "3Dプリンタで成形型を作るデジタルモールド",
+      "url": "https://newswitch.jp/p/5204",
+      "publisher": "ニュースイッチ（日刊工業新聞）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-561",
+    "kind": "trend",
+    "official": true,
+    "title": "樹脂3Dプリント型で200ショット超",
+    "summary": "山梨県の公設試は、樹脂3Dプリンタで作った型を金型の代わりに使う実験で、小型円盤形状なら200ショット以上でも型が傷まなかったと報告している。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "公設試の実験で見る3Dプリント型の実力",
+    "source": {
+      "title": "3Dプリンタ製樹脂型による射出成形（研究報告）",
+      "url": "https://www.pref.yamanashi.jp/documents/104586/p13_02-11.pdf",
+      "publisher": "山梨県工業技術センター",
+      "date": null
+    }
+  },
+  {
+    "id": "success-556",
+    "kind": "success",
+    "title": "樹脂型と切削の合わせ技を見せる",
+    "summary": "展示会で、3Dプリントした樹脂型と切削加工を組み合わせ、短納期で試作から小ロットまで作れることを、仕上がりの違いとともに見せた例がある。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工法の組み合わせを写真で比べる記事",
+    "source": {
+      "title": "3Dプリントした樹脂型と切削加工で短納期かつ高品質な試作/小ロット生産を実現",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2003/12/news019.html",
+      "publisher": "MONOist",
+      "date": "2020-03"
+    }
+  },
+  {
+    "id": "term-724",
+    "kind": "term",
+    "title": "シリコーン注型用の簡易型",
+    "summary": "簡易な樹脂型に常温で固まるシリコーンを流し込み、シリコーン製品を試作するやり方。金型を作る前の形や手触りの確認に使える。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "シリコーン部品の試作はどう頼む？",
+    "source": {
+      "title": "簡易樹脂型によるシリコーン試作",
+      "url": "https://masg.co.jp/sys_img/pdf/182_1tp.pdf",
+      "publisher": "加工会社の案内資料",
+      "date": null
+    }
+  },
+  {
+    "id": "question-768",
+    "kind": "question",
+    "title": "3Dプリントの試作形状は型で作れる？",
+    "summary": "3Dプリンタなら作れる形でも、量産の金型では型が開くときの干渉やアンダーカットで作れないことがある。試作のまま量産図にしない注意が要る。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試作OKでも型で作れない形の例",
+    "source": {
+      "title": "【トラブル1】試作がそのまま使えない!? 3Dプリンタと量産金型の違い",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2011/12/news008_2.html",
+      "publisher": "MONOist",
+      "date": "2020-11"
+    }
+  },
+  {
+    "id": "pain-444",
+    "kind": "pain",
+    "title": "本金型を先に作り始めて作り直し",
+    "summary": "量産の本金型は高く時間もかかる。開発途中で並行して作り始めると、型を直しながら納期に合わせることになり、作り直しの危険を抱える。",
+    "industries": [
+      "金型",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "本金型に進んでよい合図はいつ？",
+    "source": {
+      "title": "手作り試作部品と量産部品の作り方を知る【後編】",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2504/14/news006.html",
+      "publisher": "MONOist",
+      "date": "2025-04"
+    }
+  },
+  {
+    "id": "question-769",
+    "kind": "question",
+    "title": "量産部品はいつ作り始めればいい？",
+    "summary": "試作で十分な検証結果が出て、これ以上の設計変更がなく、そのCADデータで量産品を作ってよいと判断できた時点が目安とされる。",
+    "industries": [
+      "金型",
+      "樹脂成形",
+      "プレス"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "試作から量産へ、切り替えの判断表",
+    "source": {
+      "title": "手作り試作部品と量産部品の作り方を知る【後編】",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2504/14/news006.html",
+      "publisher": "MONOist",
+      "date": "2025-04"
+    }
+  },
+  {
+    "id": "term-725",
+    "kind": "term",
+    "title": "量産試作は量産と同じ条件で組む",
+    "summary": "量産試作の組み立ては、ねじの締め付けトルクなども量産工場と同じ条件にするのが望ましい。検証は問題を出し切るのが目的で、問題が少ないときこそ疑う。",
+    "industries": [
+      "金型",
+      "樹脂成形",
+      "プレス"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "量産試作で見落としやすい3つのこと",
+    "source": {
+      "title": "量産試作の「組み立て」と「検証」は慎重に!!",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2104/15/news008.html",
+      "publisher": "MONOist",
+      "date": "2021-04"
+    }
+  },
+  {
+    "id": "success-557",
+    "kind": "success",
+    "title": "試作は砂型、量産で金型に切り替え",
+    "summary": "立ち上げ期の少量は砂型（生型）で鋳造し、数が増えた段階で金型化を提案、中子のいらない形にも変えて費用と納期を改善した鋳物会社の事例がある。",
+    "industries": [
+      "鋳造",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "数量に合わせて型を変えた事例の書き方",
+    "source": {
+      "title": "中子レス化と金型化によるコストダウン事例",
+      "url": "https://pr.mono.ipros.com/karumo/product/detail/2001660983/",
+      "publisher": "イプロス（鋳物会社の事例）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-770",
+    "kind": "question",
+    "title": "射出金型の寿命は何ショット？",
+    "summary": "一般的な射出成形の金型は30万〜40万ショットが寿命の目安とよく言われる。ただし材料や構造、手入れで大きく変わるため、型ごとに確かめる。",
+    "industries": [
+      "樹脂成形",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "型の寿命と更新費の話し合い方",
+    "source": {
+      "title": "金型の長寿命化の案内",
+      "url": "https://www.nogami-gk.co.jp/mail/tennji/flyer_news1.pdf",
+      "publisher": "金型関連会社の案内チラシ",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-445",
+    "kind": "pain",
+    "title": "補給品は20年の供給義務が重い",
+    "summary": "日本金属プレス工業協会の資料では、補給品の課題として少量でも単価が据え置かれること、20年に及ぶ長期の供給義務が挙がった（22件中11件）。",
+    "industries": [
+      "プレス",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "量産が終わった後の補給品の値決め",
+    "source": {
+      "title": "型取引に関する日本金属プレス工業協会の資料",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/automotive_supply_chain/pdf/002_06_00.pdf",
+      "publisher": "経済産業省（自動車サプライチェーン関連の会議資料）",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "pain-446",
+    "kind": "pain",
+    "title": "自社の型の保管料が払われない",
+    "summary": "同協会の資料では、型取引の課題として自社資産の型の保管料未払い、膨大な無償管理の手間、廃棄が進まないことが多く挙がった（22件中14件）。",
+    "industries": [
+      "プレス",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "型の保管料を請求する文面の例",
+    "source": {
+      "title": "型取引に関する日本金属プレス工業協会の資料",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/automotive_supply_chain/pdf/002_06_00.pdf",
+      "publisher": "経済産業省（自動車サプライチェーン関連の会議資料）",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "question-771",
+    "kind": "question",
+    "title": "使わない型はいつ捨ててよい？",
+    "summary": "国の協議会の報告書は、廃棄を考える年数の目安を自動車は量産終了後15年、産業機械は10〜15年、電機・電子は最終生産後3年とした（2019年12月）。",
+    "industries": [
+      "金型",
+      "プレス",
+      "鋳造",
+      "鍛造",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "業界別・型を保管する年数の目安",
+    "source": {
+      "title": "型取引の適正化推進協議会 報告書",
+      "url": "https://www.jama.or.jp/library/publish/pdf/katatorihiki_2019_12.pdf",
+      "publisher": "型取引の適正化推進協議会（中小企業庁）",
+      "date": "2019-12"
+    }
+  },
+  {
+    "id": "term-726",
+    "kind": "term",
+    "title": "金型の寄託契約",
+    "summary": "型の持ち主が、預かる側と保管の条件や費用を決めて結ぶ契約。電機業界団体は、生産終了から廃棄までの業務の流れや契約のひな型を本にまとめている。",
+    "industries": [
+      "金型",
+      "プレス",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "型を預かるときに決めておくこと",
+    "source": {
+      "title": "金型管理の実務（書籍の目次）",
+      "url": "https://www.jeita.or.jp/japanese/public/pdf/736toc.pdf",
+      "publisher": "電子情報技術産業協会（JEITA）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-562",
+    "kind": "trend",
+    "official": true,
+    "title": "電機業界も金型管理の指針を出す",
+    "summary": "電子情報技術産業協会は金型管理を適正にする指針を示し、発注側と受注側の双方が社内ルールを整え、共通の認識を持つことが大切だとしている。",
+    "industries": [
+      "金型",
+      "プレス",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "電機・電子向けの型管理ルール",
+    "source": {
+      "title": "JEITAの金型管理に関する案内",
+      "url": "https://www.jeita.or.jp/japanese/assets/pdf/letter/vol30/23.pdf",
+      "publisher": "電子情報技術産業協会（JEITA）",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-447",
+    "kind": "buyer",
+    "title": "作った会社と連絡がとれない型",
+    "summary": "作った会社と連絡がとれない、修理先がない他社製の型も、状態を確かめた上で直せる範囲を事前に打ち合わせて引き受ける保全会社がある。",
+    "industries": [
+      "金型",
+      "樹脂成形",
+      "プレス"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "question_example"
+    ],
+    "articleIdea": "他社製の型を直してもらうときの準備",
+    "source": {
+      "title": "他社製金型のメンテナンス",
+      "url": "https://pr.mono.ipros.com/katasystems/product/detail/2001631044/",
+      "publisher": "イプロス（金型保全会社のページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-558",
+    "kind": "success",
+    "title": "『図面なしでも修理』を打ち出す",
+    "summary": "金型の図面やデータがなくても修理すると大きく掲げる金型会社がある。移管や廃業で図面が残らない型に困る発注者の検索に合う言い方。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "図面のない型の修理、何が要る？",
+    "source": {
+      "title": "図面やデータが無くても金型修理",
+      "url": "https://mono.ipros.com/product/detail/401068001",
+      "publisher": "イプロス（金型会社の製品ページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-727",
+    "kind": "term",
+    "title": "金型用のブランド鋼",
+    "summary": "金型の鋼材には、JISなど規格の工具鋼のほか、鉄鋼メーカーが独自に作るブランド鋼がある。海外型や古い型を直すときは、どの鋼か分かると話が早い。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "金型の鋼材の違いを発注者向けに",
+    "source": {
+      "title": "金型用鋼の技術解説",
+      "url": "https://www.daido.co.jp/common/pdf/pages/technology/journal/backno/2010/81_1/06_technical_review.pdf",
+      "publisher": "大同特殊鋼 技術誌",
+      "date": "2010"
+    }
+  },
+  {
+    "id": "buyer-448",
+    "kind": "buyer",
+    "title": "移管前に型の形と制約を確かめる",
+    "summary": "量産型には型開きの干渉やアンダーカットなど試作と違う制約がある。型を別の会社へ移す前に、形と構造、成形機との相性を確かめる記事は需要がある。",
+    "industries": [
+      "金型",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "金型を別の会社へ移すときのチェック表",
+    "source": {
+      "title": "【トラブル10】金型の修正が必要になったらどうしたらよいか?",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/2109/29/news005_2.html",
+      "publisher": "MONOist",
+      "date": "2021-09"
+    }
+  },
+  {
+    "id": "trend-563",
+    "kind": "trend",
+    "official": true,
+    "title": "金型輸出は2025年に2,040億円",
+    "summary": "日本金型工業会のまとめでは、2025年の金型輸出は2,040億円で前年より5%増。国別では米国が715億円で最も多かった。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "日本の金型はどこへ売れている？",
+    "source": {
+      "title": "金型統計の解説（2026年版）",
+      "url": "https://www.jdmia.or.jp/toukei/about_toukei_2026.pdf",
+      "publisher": "日本金型工業会",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-564",
+    "kind": "trend",
+    "official": true,
+    "title": "金型輸入の半分超は中国から",
+    "summary": "同工業会の2025年版の解説では、2024年の金型輸入は1,416億円（13.2%増）で、中国が794億円と約56%を占めた（読み取りは原資料で要確認）。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "海外型と国内型、どう比べる？",
+    "source": {
+      "title": "金型統計の解説（2025年版）",
+      "url": "https://www.jdmia.or.jp/toukei/about_toukei_2025.pdf",
+      "publisher": "日本金型工業会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-565",
+    "kind": "trend",
+    "official": true,
+    "title": "国内の金型は約4,300事業所",
+    "summary": "同工業会の資料では、2023年の金型の生産は約1兆4,332億円、事業所は約4,300、働く人は約7万5千人とされている。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "数字で見る日本の金型産業",
+    "source": {
+      "title": "金型統計の解説（2026年版）",
+      "url": "https://www.jdmia.or.jp/toukei/about_toukei_2026.pdf",
+      "publisher": "日本金型工業会",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "trend-566",
+    "kind": "trend",
+    "official": false,
+    "title": "中国の金型は高級品でも力をつけた",
+    "summary": "中国の金型会社は高級な金型でも技術と品質を大きく上げ、輸出も伸びていると解説されている。安さだけの比較では選べなくなっている。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "国内の型屋が選ばれる理由を書く",
+    "source": {
+      "title": "中国の金型産業の解説",
+      "url": "https://qdj-prototype.com/ja/?p=13189",
+      "publisher": "海外の試作会社のブログ",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-567",
+    "kind": "trend",
+    "official": false,
+    "title": "金型会社の退出が4年連続で増加",
+    "summary": "帝国データバンクによると、2025年1〜9月に市場から退いた金型会社は126件（倒産36件、休廃業・解散90件）で、4年連続の増加だった。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "取引先の型屋がなくなる前にすること",
+    "source": {
+      "title": "金型産業が苦境「倒産・廃業」4年連続増加",
+      "url": "https://www.zaikei.co.jp/releases/3126518/",
+      "publisher": "財経新聞（帝国データバンク発表）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-568",
+    "kind": "trend",
+    "official": false,
+    "title": "金型会社の6割が業績悪化",
+    "summary": "同じ調査で、2024年度は赤字が37.3%、減益が23.0%。技術者や経営者の高齢化、原料高を価格に乗せられないことが背景に挙がっている。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "型代の値上げを伝える記事",
+    "source": {
+      "title": "金型産業が苦境「倒産・廃業」4年連続増加",
+      "url": "https://www.zaikei.co.jp/releases/3126518/",
+      "publisher": "財経新聞（帝国データバンク発表）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-449",
+    "kind": "buyer",
+    "title": "型屋が続くかを発注前に確かめる",
+    "summary": "金型会社の休廃業が増えており、型の修理や改造を頼める先がなくなる危険がある。後継者や設備の更新、技能の引き継ぎを取引前に確かめたい。",
+    "industries": [
+      "金型",
+      "樹脂成形",
+      "プレス"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "question_example"
+    ],
+    "articleIdea": "10年先も頼める型屋の見分け方",
+    "source": {
+      "title": "金型産業が苦境「倒産・廃業」4年連続増加",
+      "url": "https://www.zaikei.co.jp/releases/3126518/",
+      "publisher": "財経新聞（帝国データバンク発表）",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "trend-569",
+    "kind": "trend",
+    "official": false,
+    "title": "金型会社の売却案件が多い",
+    "summary": "事業承継の仲介サイトには金型設計・製造の売却案件が多く載り、後継者がいないことを理由に挙げる例が目立つ。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "M&Aで型屋の技術を残す",
+    "source": {
+      "title": "金型設計・製造の売却案件一覧",
+      "url": "https://batonz.jp/sell_cases/bk_2400000/bk_2401001/",
+      "publisher": "バトンズ（事業承継マッチング）",
+      "date": null
+    }
+  },
+  {
+    "id": "trend-570",
+    "kind": "trend",
+    "official": true,
+    "title": "業界誌で下請法改正やインド特集",
+    "summary": "日本金型工業会の機関誌『金型』2025年春号は、下請法改正の記事やインドの金型産業の特集を載せている。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "取適法で型屋の取引はどう変わる？",
+    "source": {
+      "title": "機関誌「金型」第200号 目次",
+      "url": "https://www.jdmia.or.jp/kaihou/document/mokuji_200.pdf",
+      "publisher": "日本金型工業会",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "buyer-450",
+    "kind": "buyer",
+    "title": "金型・プレスの展示会で探す",
+    "summary": "金型展・金属プレス加工技術展を兼ねたINTERMOLD2026は4月に大阪で開かれ、事前登録で無料。設計や生産技術、購買の担当者が来場の対象。",
+    "industries": [
+      "金型",
+      "プレス"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "article_idea"
+    ],
+    "articleIdea": "展示会の前に出すブログの作り方",
+    "source": {
+      "title": "INTERMOLD2026 大阪 イベント情報",
+      "url": "https://funnel-ai.jp/event-list/event/intermold-osaka-2026/",
+      "publisher": "展示会情報サイト",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "term-728",
+    "kind": "term",
+    "title": "JIS B 0403（鋳造品の寸法公差）",
+    "summary": "鋳物の寸法の公差の等級と削り代の等級を決めた規格。図面に一括で書く普通公差にも、個別の寸法の公差にも使える。本文は有料。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "鋳物の図面に公差をどう書く？",
+    "source": {
+      "title": "JIS B 0403 Castings - System of dimensional tolerances and machining allowances",
+      "url": "https://6sku3uaup9f9.din.de/en/standard/jis-b-0403/14289004",
+      "publisher": "DIN（規格販売）",
+      "date": "1995"
+    }
+  },
+  {
+    "id": "question-772",
+    "kind": "question",
+    "title": "鋳物の公差は誰が型を作る前提？",
+    "summary": "JIS B 0403の公差は、鋳物会社が木型や金型を用意するか、その責任を持つ場合を前提にしている。型を支給するなら公差の話も別に決める。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "型を支給するときの公差の決め方",
+    "source": {
+      "title": "JIS B 0403 Castings - System of dimensional tolerances and machining allowances",
+      "url": "https://6sku3uaup9f9.din.de/en/standard/jis-b-0403/14289004",
+      "publisher": "DIN（規格販売）",
+      "date": "1995"
+    }
+  },
+  {
+    "id": "term-729",
+    "kind": "term",
+    "title": "鋳物は肉厚で公差が一段ゆるむ",
+    "summary": "鋳造公差の表の注記では、CT1〜CT15の肉厚には一つ大きい公差等級を当てる。肉の厚さは外形の寸法より公差が粗くなると知っておく。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "肉厚の寸法、どこまで指定できる？",
+    "source": {
+      "title": "鋳造寸法公差の技術資料",
+      "url": "https://static.nbk1560.com/images/ja-JP/product/technical_data/tyuzou_sunpoukousa_TR/tyuzou_sunpoukousa_TR_1.pdf",
+      "publisher": "鍋屋バイテック（技術資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-773",
+    "kind": "question",
+    "title": "小さな寸法も鋳物の普通公差でよい？",
+    "summary": "同じ注記では、16mmまでの寸法にはCT13〜CT16の普通公差を当てないとしている。小さな寸法は個別に公差を書く必要がある。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "鋳物図面で個別公差を書く場所",
+    "source": {
+      "title": "鋳造寸法公差の技術資料",
+      "url": "https://static.nbk1560.com/images/ja-JP/product/technical_data/tyuzou_sunpoukousa_TR/tyuzou_sunpoukousa_TR_1.pdf",
+      "publisher": "鍋屋バイテック（技術資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-774",
+    "kind": "question",
+    "title": "砂型と機械込めで精度は違う？",
+    "summary": "鋳造公差の資料には、工法ごとの公差等級の目安が載り、手込めの砂型と機械込め・シェルモールドでは当てはまる等級の幅が違う。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "工法で変わる鋳物の精度の目安",
+    "source": {
+      "title": "鋳造寸法公差の技術資料",
+      "url": "https://static.nbk1560.com/images/ja-JP/product/technical_data/tyuzou_sunpoukousa_TR/tyuzou_sunpoukousa_TR_1.pdf",
+      "publisher": "鍋屋バイテック（技術資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-730",
+    "kind": "term",
+    "title": "規格表は正誤表も確かめる",
+    "summary": "JIS B 0403には2014年に正誤表が出ており、付属の表の注記にある材質の書き方が直された。古い表を写すと誤りが残ることがある。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "source": {
+      "title": "JIS B 0403 正誤表",
+      "url": "https://webdesk.jsa.or.jp/pdf/errata/jis_b_00403_000_000_1995_cor_1_201405_e_ch.pdf",
+      "publisher": "日本規格協会",
+      "date": "2014-05"
+    }
+  },
+  {
+    "id": "question-775",
+    "kind": "question",
+    "title": "鋳物のリブはどこに付ける？",
+    "summary": "鋳鉄の円板に輪の形のリブを付けた研究では、半径の3〜4割の位置が最も効き、重さ8%増で曲げ強さが5割以上上がったと報告された。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "軽くて強い鋳物のリブの考え方",
+    "source": {
+      "title": "鋳鉄円板のリブ補強に関する研究",
+      "url": "https://www.jstage.jst.go.jp/article/imono/53/2/53_2_73/_article/-char/ja",
+      "publisher": "日本鋳造工学会誌『鋳物』（J-STAGE）",
+      "date": null
+    }
+  },
+  {
+    "id": "pain-447",
+    "kind": "pain",
+    "title": "樹脂の肉厚ルールを鋳物に流用しない",
+    "summary": "リブの厚さを基本肉厚の5〜6割にするといった目安は樹脂成形の話。鋳物は固まり方と縮み方が違うので、鋳物会社の設計の目安で確かめる。",
+    "industries": [
+      "鋳造",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "樹脂と鋳物、肉厚の考え方の違い",
+    "source": {
+      "title": "リブ設計における均一な肉厚",
+      "url": "https://zetarmold.com/ja/%e3%83%aa%e3%83%96%e8%a8%ad%e8%a8%88%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e5%9d%87%e4%b8%80%e3%81%aa%e8%82%89%e5%8e%9a/",
+      "publisher": "射出成形会社のブログ",
+      "date": null
+    }
+  },
+  {
+    "id": "term-731",
+    "kind": "term",
+    "title": "積層砂型は中子と主型を一体で作れる",
+    "summary": "砂型の3Dプリントでは、これまで上型・下型・中子を別々に作っていた形でも一体で造形でき、模型がいらず設計変更もしやすいと公設試が報告している。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "中空の鋳物を型なしで作る",
+    "source": {
+      "title": "砂型積層造形に関する研究報告",
+      "url": "https://www.pref.mie.lg.jp/common/content/000417084.pdf",
+      "publisher": "三重県工業研究所",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "success-559",
+    "kind": "success",
+    "title": "木型25日を砂型3Dで6日に",
+    "summary": "ある鋳物会社は、工作機械部品の試作で木型に25日かかっていたものを砂型の3Dプリントで6日にしたと事例を載せる。条件で変わると添えている。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "『何日が何日に』を書く事例記事",
+    "source": {
+      "title": "砂型3Dプリンターによる試作",
+      "url": "https://pr.mono.ipros.com/hinode-ms/product/detail/2000509848",
+      "publisher": "イプロス（鋳物会社の事例）",
+      "date": null
+    }
+  },
+  {
+    "id": "question-776",
+    "kind": "question",
+    "title": "精密鋳造ならいつも寸法が出る？",
+    "summary": "精密鋳造は鋳放しで高い寸法精度が出るといわれるが、方案から鋳込みまでの管理が十分でないと期待した値は出ないと公設試の資料は述べる。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "精密鋳造の会社を管理の仕方で選ぶ",
+    "source": {
+      "title": "精密鋳造の寸法精度に関する報告",
+      "url": "https://antique.oita-ri.jp/wp-content/uploads/2015/05/1987_04.pdf",
+      "publisher": "大分県産業科学技術センター",
+      "date": "1987"
+    }
+  },
+  {
+    "id": "question-777",
+    "kind": "question",
+    "title": "試作は板金、量産はプレス？",
+    "summary": "精密板金で試作して仕様が決まったら、量産でプレス加工へ移るのが一般的な流れと解説されている。同じ形でも数量で工法が変わる。",
+    "industries": [
+      "プレス",
+      "金型"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "板金からプレスへ、切り替えの目安",
+    "source": {
+      "title": "金属板を「切る・抜く・曲げる」――精密板金加工とプレス加工",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1911/20/news015_3.html",
+      "publisher": "MONOist",
+      "date": "2019-11"
+    }
+  },
+  {
+    "id": "success-560",
+    "kind": "success",
+    "title": "レーザー導入でロット制限をなくす",
+    "summary": "プレスの穴あけ・切断は型が要り少量だと単価が合わなかったが、レーザー加工にして型の費用と時間がなくなり、受けるロットの制限もなくなった例がある。",
+    "industries": [
+      "プレス",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "少量でも断らない理由を書く",
+    "source": {
+      "title": "レーザー加工による金型レス化の事例",
+      "url": "https://mono.ipros.com/product/detail/2000694706",
+      "publisher": "イプロス（加工会社の事例）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-732",
+    "kind": "term",
+    "title": "レーザーブランキング",
+    "summary": "板の外形をプレスの型でなくレーザーで切り抜くこと。型がいらず、切り口に残る応力が少ないため、高張力鋼板では次の成形で割れにくいと説明される。",
+    "industries": [
+      "プレス"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "プレス抜きとレーザー抜き、どっち？",
+    "source": {
+      "title": "レーザーブランキング装置の紹介",
+      "url": "https://kanadevia.com/hitz-tech/pdf/2020r33_1_12.pdf",
+      "publisher": "カナデビア 技報",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "success-561",
+    "kind": "success",
+    "title": "金型レスでもプレス並みの精度",
+    "summary": "型を作らない板金で、プレス品と同等以上の寸法精度（形状によって±0.05以下）を出すと埼玉県の企業紹介で打ち出す会社がある。",
+    "industries": [
+      "プレス"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "金型レスで頼めるもの・頼めないもの",
+    "source": {
+      "title": "企業紹介資料（金型レス生産）",
+      "url": "https://www.pref.saitama.lg.jp/documents/236460/0149_craftechokamoto.pdf",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-451",
+    "kind": "buyer",
+    "title": "型の保管がいらない作り方を選ぶ",
+    "summary": "専用の型を作らない板金なら初期費用が減り、型の保管も要らないと訴える会社がある。型の保管問題に悩む発注者には選ぶ理由になる。",
+    "industries": [
+      "プレス",
+      "金型"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "question_example"
+    ],
+    "articleIdea": "型を持たない部品調達という選択",
+    "source": {
+      "title": "企業紹介資料（金型レス板金）",
+      "url": "https://www.pref.saitama.lg.jp/documents/248252/03_iguchiissei.pdf",
+      "publisher": "埼玉県",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-452",
+    "kind": "buyer",
+    "title": "プレス会社は板厚とトン数で絞る",
+    "summary": "県の企業紹介では、板厚0.1〜6mm、プレス300tまで、金型は内製と能力を示す例がある。作りたい部品の板厚と大きさを設備表と照らすと候補が絞れる。",
+    "industries": [
+      "プレス"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "articleIdea": "設備表の読み方：プレスのトン数とは",
+    "source": {
+      "title": "企業紹介資料（金属プレス）",
+      "url": "https://www.pref.mie.lg.jp/common/content/000941063.pdf",
+      "publisher": "三重県",
+      "date": null
+    }
+  },
+  {
+    "id": "buyer-453",
+    "kind": "buyer",
+    "title": "プレスは得意な加工で選ぶ",
+    "summary": "プレス加工には抜き・曲げ・絞り・成形・圧縮があり、単発・順送・トランスファーの方式も使い分ける。会社ごとに得意が違うので、必要な加工を先に整理する。",
+    "industries": [
+      "プレス"
+    ],
+    "useFor": [
+      "shiori_tip",
+      "question_example"
+    ],
+    "articleIdea": "絞りが得意なプレス屋の見つけ方",
+    "source": {
+      "title": "企業講話資料（プレス加工）",
+      "url": "https://www.pref.nagano.lg.jp/jinzai/sangyo/kaihatsu/koka/p-tech/documents/231121-2.pdf",
+      "publisher": "長野県",
+      "date": "2023-11"
+    }
+  },
+  {
+    "id": "buyer-454",
+    "kind": "buyer",
+    "title": "設備の一覧サイトで候補を探す",
+    "summary": "製造業の情報サイトには、プレス機を持つ会社や設備の紹介が一覧で載っている。候補の洗い出しに使い、その後に各社のサイトで得意分野を比べる。",
+    "industries": [
+      "プレス"
+    ],
+    "useFor": [
+      "shiori_tip"
+    ],
+    "articleIdea": "設備名で検索される会社になる",
+    "source": {
+      "title": "プレス機 メーカー・企業の製品一覧",
+      "url": "https://www.ipros.com/cg2/プレス機/",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "question-778",
+    "kind": "question",
+    "title": "図面がなくても鍛造を頼める？",
+    "summary": "図面が決まっていない、現物しかない部品でも、図面作りや再現品の製作から受ける鍛造会社がある。材料や公差も用途と強さの条件から一緒に決める。",
+    "industries": [
+      "鍛造"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "現物だけで鍛造品を作り直す流れ",
+    "source": {
+      "title": "鍛造品の図面製作・再現製作",
+      "url": "https://pr.mono.ipros.com/toyokokusai/product/detail/2001601878/",
+      "publisher": "イプロス（鍛造品の取扱会社）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-733",
+    "kind": "term",
+    "title": "ニアネットシェイプで削りを減らす",
+    "summary": "完成品に近い形まで鍛造などで作り、後の切削を減らす考え方。費用が下がり材料の無駄も減り、鍛造による強さの向上も見込めると公設試は説明する。",
+    "industries": [
+      "鍛造",
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "削り出しを鍛造に変えると何が得？",
+    "source": {
+      "title": "ニアネットシェイプ塑性加工技術",
+      "url": "https://www.itic.pref.ibaraki.jp/publication/doc/result/h20/H20_06-06.pdf",
+      "publisher": "茨城県工業技術センター",
+      "date": "2008"
+    }
+  },
+  {
+    "id": "term-734",
+    "kind": "term",
+    "title": "鍛造品の原価は材料・型・不良",
+    "summary": "鍛造品の原価では、直接材料費・金型費・仕損（不良）費の3つを減らすことが全体のコストダウンで大きな割合を占めるとする研究がある。",
+    "industries": [
+      "鍛造"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "鍛造品の見積もりの内訳を見せる",
+    "source": {
+      "title": "鍛造品のコスト低減に関する論文",
+      "url": "https://ynu.repo.nii.ac.jp/record/4607/files/10269003.pdf",
+      "publisher": "横浜国立大学 学術リポジトリ",
+      "date": null
+    }
+  },
+  {
+    "id": "success-562",
+    "kind": "success",
+    "title": "鍛造化の提案資料を配る",
+    "summary": "切削品やダイカスト品を鍛造に変える提案資料で、工法の違い、良い点と悪い点、初期費用や費用の比較を載せて配る会社がある。",
+    "industries": [
+      "鍛造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "工法転換の比較表をブログで公開",
+    "source": {
+      "title": "金属切削加工品・ダイカスト鋳造品の鍛造化のご提案",
+      "url": "https://mono.ipros.com/product/detail/2000465239",
+      "publisher": "イプロス（鍛造会社の資料）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-563",
+    "kind": "success",
+    "title": "20代中心の型屋が勘・コツをデータに",
+    "summary": "冷間鍛造用の金型を作る専業メーカーで、現場の中心が20代になり、職人の勘やコツをデータにして技能を引き継いだ例が報じられた。",
+    "industries": [
+      "金型",
+      "鍛造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "若手が育つ型屋の仕組みを書く",
+    "source": {
+      "title": "現場の中心が20代の金型専業メーカー",
+      "url": "https://newswitch.jp/p/24128",
+      "publisher": "ニュースイッチ（日刊工業新聞）",
+      "date": null
+    }
+  },
+  {
+    "id": "term-735",
+    "kind": "term",
+    "title": "型の要件を製品設計の3Dに入れる",
+    "summary": "製品設計の段階で金型の要件を3Dデータに入れると、アンダーカットや部品の干渉を前もってつぶせ、手戻りが減ると解説されている。",
+    "industries": [
+      "金型",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "writer_hint",
+      "article_idea"
+    ],
+    "articleIdea": "設計者に知ってほしい型の都合",
+    "source": {
+      "title": "金型設計の3次元化と自動化",
+      "url": "https://monoist.itmedia.co.jp/mn/spv/1601/27/news010.html",
+      "publisher": "MONOist",
+      "date": "2016-01"
+    }
+  },
+  {
+    "id": "trend-571",
+    "kind": "trend",
+    "official": false,
+    "title": "熟練の知見をAIで共有する型CAD",
+    "summary": "2026年9月発表の金型向け3次元CAD/CAMは、熟練者の高齢化と人手不足を背景に、3Dデータと熟練の知見をAIで次の工程に生かす方向を打ち出した。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "AI時代の型屋の技能継承",
+    "source": {
+      "title": "3DデータとAIで金型製作の業務改革を加速する「CADmeister 2026」",
+      "url": "https://www.afpbb.com/articles/fp/3654742",
+      "publisher": "AFPBB News（プレスリリース）",
+      "date": "2026-09"
+    }
+  },
+  {
+    "id": "success-564",
+    "kind": "success",
+    "title": "鋳造所のXが日常の投稿で6万人",
+    "summary": "ある鋳造所の公式Xは、飾らない現場の雰囲気を意識した投稿で約6万フォロワーを集めたと広告業界誌で紹介された。",
+    "industries": [
+      "鋳造"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "鋳物の現場を発信するネタ帳",
+    "source": {
+      "title": "木村鋳造所の公式X リアルさ意識の投稿で6万フォロワー",
+      "url": "https://www.advertimes.com/?p=467201",
+      "publisher": "AdverTimes（宣伝会議）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-565",
+    "kind": "success",
+    "title": "技術・人・こだわりを棚卸しする",
+    "summary": "市の町工場向け講座では、自社の技術・製品・人・こだわりを棚卸しして発信のネタを掘り起こす。『書くことがない』悩みに向く進め方。",
+    "industries": [
+      "金型",
+      "プレス",
+      "鋳造",
+      "鍛造",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "shiori_tip"
+    ],
+    "articleIdea": "発信ネタを30個出す棚卸し表",
+    "source": {
+      "title": "町工場向け情報発信講座チラシ",
+      "url": "https://www.city.yao.osaka.jp/_res/projects/default_project/_page_/001/024/753/tirashi.pdf",
+      "publisher": "八尾市",
+      "date": null
+    }
+  },
+  {
+    "id": "success-566",
+    "kind": "success",
+    "title": "課題解決を書いて訪問3倍",
+    "summary": "大手グループの受託加工会社は、技術紹介中心で相談してよいか分かりにくかったサイトを作り直し、月の訪問者が最大3倍、検討中の相談も増えたという（制作会社の発表）。",
+    "industries": [
+      "金型",
+      "プレス",
+      "樹脂成形"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "『できること』より『解ける困りごと』",
+    "source": {
+      "title": "受託加工メーカーのWebサイト制作とSEO対策事例",
+      "url": "https://ainews.washinmura.jp/ainews/en/article/techport-co-jp/2026-06-12-nissha%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%8F%97%E8%A8%97%E5%8A%A0%E5%B7%A5%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC-nissha%E3%82%A4%E3%83%B3%E3%83%80%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%82%BA%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE-w",
+      "publisher": "AIニュース（制作会社の発表の紹介）",
+      "date": "2026-06"
+    }
+  },
+  {
+    "id": "success-567",
+    "kind": "success",
+    "title": "他社製の型の保守を前面に出す",
+    "summary": "『製作元と連絡がとれない』『修理先がない』と発注者の困りごとの言葉で他社製金型の保守を案内する会社がある。困った人が検索する言葉と合う。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "他社製の型の相談事例を記事にする",
+    "source": {
+      "title": "他社製金型のメンテナンス",
+      "url": "https://pr.mono.ipros.com/katasystems/product/detail/2001631054/",
+      "publisher": "イプロス（金型保全会社のページ）",
+      "date": null
+    }
+  },
+  {
+    "id": "success-568",
+    "kind": "success",
+    "title": "測定で精度を証明した事例を載せる",
+    "summary": "自動車部品メーカーの困りごとに対し、レーザー顕微鏡で形状を測って精度を保証した、と課題と解決の流れで事例を載せる金型関連の会社がある。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "article_idea",
+      "writer_hint"
+    ],
+    "articleIdea": "測定データ付きの事例記事の型",
+    "source": {
+      "title": "加工事例ニュース",
+      "url": "https://mono.ipros.com/news/detail/124856",
+      "publisher": "イプロス",
+      "date": null
+    }
+  },
+  {
+    "id": "success-569",
+    "kind": "success",
+    "title": "型屋が載せたい『型の行き先』",
+    "summary": "金型の輸出先は米国が最大と業界団体が公表している。自社の型がどの業界・どの国の製品に使われるかを書くと、規模の小さな型屋でも信頼が伝わる。",
+    "industries": [
+      "金型"
+    ],
+    "useFor": [
+      "writer_hint"
+    ],
+    "articleIdea": "自社の型が使われる製品の紹介",
+    "source": {
+      "title": "金型統計の解説（2026年版）",
+      "url": "https://www.jdmia.or.jp/toukei/about_toukei_2026.pdf",
+      "publisher": "日本金型工業会",
+      "date": "2026"
+    }
+  },
+  {
+    "id": "pain-448",
+    "kind": "pain",
+    "title": "型の無償保管の根絶を業界が訴え",
+    "summary": "日本金属プレス工業協会の2026年の資料は、金型などの無償保管問題をなくすことを主題に掲げ、会員の声を集めて国の会議に示した。",
+    "industries": [
+      "プレス",
+      "金型"
+    ],
+    "useFor": [
+      "article_idea"
+    ],
+    "articleIdea": "型の保管ルールをサイトに書く",
+    "source": {
+      "title": "型取引に関する日本金属プレス工業協会の資料",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/automotive_supply_chain/pdf/002_06_00.pdf",
+      "publisher": "経済産業省（自動車サプライチェーン関連の会議資料）",
+      "date": "2026-04"
+    }
+  },
+  {
+    "id": "question-779",
+    "kind": "question",
+    "title": "鋳物・板金は型なしで頼める？",
+    "summary": "積層砂型による鋳物の試作や金型レスの板金など、型を作らない工法が広がっている。少量や試作では、型を作る前提を外して見積もりを比べる余地がある。",
+    "industries": [
+      "鋳造",
+      "プレス"
+    ],
+    "useFor": [
+      "question_example",
+      "article_idea"
+    ],
+    "articleIdea": "型を作らない工法の一覧と向き不向き",
+    "source": {
+      "title": "型レス試作（砂型積層造形）",
+      "url": "https://mono.ipros.com/news/detail/169531",
+      "publisher": "イプロス",
+      "date": null
+    }
   }
 ];
