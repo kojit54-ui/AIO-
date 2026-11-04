@@ -55,6 +55,9 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
             <Link href="/admin/usage" className="text-brand-dark underline">
               利用金額と利用頻度へ
             </Link>
+            <Link href="/admin/knowledge" className="text-brand-dark underline">
+              製造業の知識表へ
+            </Link>
             <Link href="/admin/trial" className="text-brand-dark underline">
               30秒でためすの見守り（AIを止める・上限）へ
             </Link>

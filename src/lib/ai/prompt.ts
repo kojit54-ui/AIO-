@@ -5,6 +5,7 @@ import type { Block, FactCheckKind } from "@/types/domain";
 import { MAX_HEADINGS } from "@/lib/limits";
 import { aioReviewerRules, aioWriterRules } from "@/lib/aioNews";
 import { PURPOSE_FOR_AI } from "@/lib/brand";
+import { mfgReviewerRules, mfgWriterRules, readerQuestionsFor } from "@/lib/manufacturing";
 import type { GenerationInput } from "./input";
 
 /** outline・body・rewrite は書き手、review と aio_check は点検役、images は画像の提案役が受け持つ（docs/DECISIONS.md 2026-10-23、2026-11-02） */
@@ -113,10 +114,29 @@ export function buildUserPrompt(
 
 <materials>
 ${asData(input)}
-</materials>${draft}${review}
+</materials>${draft}${review}${manufacturingGuide(kind, input)}
 
 次の形のJSONで返してください：
 ${OUTPUT_SPEC[kind]}`;
+}
+
+/**
+ * 製造業の会社のとき、製造業の知識表（src/lib/manufacturing）から、書き方のコツと「読む人がよく抱く疑問」の例を足す。
+ * 疑問の例は見出しを選ぶ参考で、記事の事実としては使わせない。画像の提案には足さない。
+ */
+function manufacturingGuide(kind: GenerationKind, input: GenerationInput): string {
+  const business = [input.profile?.business, input.profile?.targetCustomers].filter(Boolean).join(" ");
+  if (kind === "images") return "";
+  if (kind === "review" || kind === "aio_check") return mfgReviewerRules(business);
+  const rules = mfgWriterRules(business);
+  if (!rules) return "";
+  const qs = readerQuestionsFor(business, 6).map((q) => q.title);
+  return `${rules}
+- <reader_questions> は、製造業の発注者がよく抱く疑問の例です。今回のテーマに合うものがあれば、見出しの問いの参考にしてください。中身の事実は素材からだけ書き、ここから数字や事例を作らないでください。
+
+<reader_questions>
+${asData(qs, 0)}
+</reader_questions>`;
 }
 
 export interface OutlineResult {

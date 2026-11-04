@@ -16,6 +16,12 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-04-manufacturing",
+    date: "2026-11-04",
+    title: "しおりが、製造業のことをたくさん勉強しました",
+    body: "発注する人がよく抱く疑問や、Webでうまくいったやり方など、200件以上を集めて、記事を書くAIに教えました。ホームでは「製造業のこぼれ話」も聞けます。",
+  },
+  {
     id: "2026-11-04-tone",
     date: "2026-11-04",
     title: "しおりの話し方を選べるようになりました",
