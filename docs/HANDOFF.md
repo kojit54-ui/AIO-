@@ -36,6 +36,13 @@
 
 ## 記録
 
+### 2026-11-04 CC（Claude、プロジェクトのスレッド）利用金額と利用頻度の管理画面
+- ブランチ：claude/project-thread-cnj6dn
+- きっかけ：田村さんの「今後やりたいこと」（マイページ、Googleログイン、ワンタイムログイン、課金、利用規約、アップデートの通知、管理者の利用金額・利用頻度、製造業特化）。計画は Claude Doc https://claude.ai/artifact/8XHwGDM9KrXG73yVTmT4bZ 。順番は T6-1〜T6-9（docs/TASKS.md）
+- 変更点：/admin/usage（全社管理者のみ）。今月・先月のAIの費用（会社ごと・使いみちごと）、月の予算の使い方、30秒でためすの費用、会社ごとの最後に使った日・使った日数（7日／30日）・答えた質問・記事の数。2週間以上使っていない会社とまだ始めていない会社を上に出す。「使った」は顧客担当者のログイン・答え・記事・AI・監査ログだけ（コタムの作業は数えない）。?sample=1 で見本。集計は src/lib/admin/usage.ts（テストあり）。SQLの追加なし
+- 確認結果：lint・型検査・テスト通過。375px と 1280px で見本の表示を確認
+- 次の作業：T6-2 マイページ
+
 ### 2026-11-03 CC（Claude、プロジェクトのスレッド）1年後のAIの答え・AIの町すごろく
 - ブランチ / コミット：claude/project-thread-ksfvfg
 - 変更点：src/app/try/FutureAnswer.tsx と src/lib/tryout.ts の futureScene（案3）。src/components/TownBoard.tsx と src/lib/growth/town.ts（案4、ホームのスタンプ帳の上）
