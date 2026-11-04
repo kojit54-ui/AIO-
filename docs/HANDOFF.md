@@ -36,6 +36,12 @@
 
 ## 記録
 
+### 2026-11-04 CC（Claude、プロジェクトのスレッド）マイページ
+- ブランチ：claude/project-thread-cnj6dn
+- 変更点：/mypage（社名を直す、ログインしているメール、しおり通信の受け取り、会社の情報へ、ログアウト）。画面の右上に「マイページ」。社名は /api/organizations/[id]/name（所属を確かめてから service role で name だけ更新、audit_logs に organization.renamed）。src/lib/orgName.ts（テストあり）。擬似APIに renameOrganization・accountEmail。SQLの追加なし
+- 確認結果：lint・型検査・テスト通過。試作データで 375px・1280px、社名を直すところまで確認
+- 次の作業：T6-3 アップデートが伝わる仕組み
+
 ### 2026-11-04 CC（Claude、プロジェクトのスレッド）利用金額と利用頻度の管理画面
 - ブランチ：claude/project-thread-cnj6dn
 - きっかけ：田村さんの「今後やりたいこと」（マイページ、Googleログイン、ワンタイムログイン、課金、利用規約、アップデートの通知、管理者の利用金額・利用頻度、製造業特化）。計画は Claude Doc https://claude.ai/artifact/8XHwGDM9KrXG73yVTmT4bZ 。順番は T6-1〜T6-9（docs/TASKS.md）
