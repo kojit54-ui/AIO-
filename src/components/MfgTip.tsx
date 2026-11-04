@@ -1,19 +1,41 @@
 "use client";
 
 // ホームの「製造業のこぼれ話」：製造業の知識表から、その日のひとつをしおりが話す（docs/TASKS.md T6-5）
+// 知識表のデータは大きいので、ブラウザには送らず /api/manufacturing/tip で1つだけ受け取る。
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ShioriTalk } from "@/components/talk";
-import { MFG_KIND_LABEL, isManufacturing, mfgTipOfDay } from "@/lib/manufacturing";
+import { MFG_KIND_LABEL, isManufacturing } from "@/lib/manufacturing/detect";
+import type { MfgKind } from "@/lib/manufacturing/types";
 
 const jstDay = (ms: number) => new Date(ms + 9 * 3600_000).toISOString().slice(0, 10);
+
+interface Tip {
+  id: string;
+  kind: MfgKind;
+  title: string;
+  summary: string;
+  articleIdea: string | null;
+  source: { title: string; url: string; publisher: string };
+}
 
 export function MfgTip({ business }: { business: string | null | undefined }) {
   const [day] = useState(() => jstDay(Date.now()));
   const [offset, setOffset] = useState(0);
-  if (!isManufacturing(business)) return null;
-  const tip = mfgTipOfDay(`${day}:${offset}`, business);
-  if (!tip) return null;
+  const [tip, setTip] = useState<Tip | null>(null);
+  const on = isManufacturing(business);
+  useEffect(() => {
+    if (!on) return;
+    let alive = true;
+    fetch("/api/manufacturing/tip", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ day: `${day}:${offset}`, business }) })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d: { tip: Tip | null } | null) => alive && d && setTip(d.tip))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [on, day, offset, business]);
+  if (!on || !tip) return null;
   return (
     <section className="card space-y-2" aria-labelledby="mfg-tip-heading">
       <h2 id="mfg-tip-heading" className="inline-block rounded-full bg-brand-soft px-3 text-sm font-bold text-brand-dark">

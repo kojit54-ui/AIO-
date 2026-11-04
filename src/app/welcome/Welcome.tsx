@@ -13,9 +13,9 @@ import { BigShiori, Logo, Reveal, useInView } from "@/components/landing";
 import { ShioriTalk, Typed } from "@/components/talk";
 import { CHOSEN_STAGES, SERVICE_COMPANION, SERVICE_MOST_IMPORTANT } from "@/lib/brand";
 import { useStore } from "@/mock/store";
-import { MFG_ITEMS, mfgCounts } from "@/lib/manufacturing";
+import type { MfgShowcase } from "@/lib/manufacturing";
 
-export function Welcome() {
+export function Welcome({ makers }: { makers: MfgShowcase }) {
   const { ready, user } = useStore();
   // ログイン中なら、入口のボタンは「続きから」にする
   const signedIn = ready && !!user;
@@ -44,7 +44,7 @@ export function Welcome() {
       <Quiz />
       <ThreeSteps />
       <KeepGoing />
-      <ForMakers />
+      <ForMakers m={makers} />
       <ForYou />
       <FinalCall startHref={startHref} startLabel={startLabel} signedIn={signedIn} />
 
@@ -520,15 +520,15 @@ function KeepGoing() {
 }
 
 /** 製造業に特化している理由（製造業の知識表から） */
-function ForMakers() {
-  const counts = mfgCounts();
-  // 発注する人の疑問から、加工の相談らしいものを見せる（経営の悩みの問いは除く）
-  const samples = MFG_ITEMS.filter((x) => x.kind === "question" && !x.industries.includes("all")).slice(0, 8);
+function ForMakers({ m }: { m: MfgShowcase }) {
+  const { counts, samples, industries, total } = m;
   const stats: [string, number][] = [
     ["発注する人の疑問", counts.question],
+    ["つまずく言葉のやさしい説明", counts.term],
     ["買い手の探し方・決め方", counts.buyer],
     ["製造業の悩み", counts.pain],
     ["Webでうまくいったやり方", counts.success],
+    ["最近の動き", counts.trend],
   ];
   return (
     <section className="py-12">
@@ -538,10 +538,10 @@ function ForMakers() {
         </Reveal>
         <Reveal delay={0.05}>
           <p className="mx-auto max-w-3xl text-center text-muted">
-            公的機関や業界メディア、調査の公開情報から、製造業の悩みや、発注する人がよく抱く疑問など {MFG_ITEMS.length}件 を集めて、AIに教えています。だから「小ロットでも頼める？」「図面がなくても大丈夫？」のような、お客様が本当に知りたいことに答える記事になります。これからも増やしていきます。
+            公的機関や業界団体、業界メディア、調査の公開情報を巡回して、{industries}の業種について、製造業の悩みや、発注する人がよく抱く疑問、つまずきやすい言葉など {total.toLocaleString()}件 を集め、AIに教えています。だから「小ロットでも頼める？」「図面がなくても大丈夫？」のような、お客様が本当に知りたいことに答える記事になります。これからも増やしていきます。
           </p>
         </Reveal>
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {stats.map(([label, n], i) => (
             <li key={label}>
               <Reveal delay={i * 0.06} className="card h-full text-center">

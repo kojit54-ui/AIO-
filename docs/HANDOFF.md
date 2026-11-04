@@ -33,6 +33,13 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-04 CC（Claude、プロジェクトのスレッド）製造業の知識表・第2弾
+- ブランチ / コミット：claude/project-thread-cnj6dn
+- 変更点：知識表を213件→1,515件（29業種）に。新しい種類 term（言葉のやさしい説明、347件）。記事の書き手に `<reader_terms>` を渡す（readerTermsFor）。src/lib/manufacturing/detect.ts に業種の当て方を分け、ブラウザに data.ts（約1MB）を送らないよう、入口のページはサーバーで mfgShowcase、ホームのこぼれ話は /api/manufacturing/tip で1件だけ受け取る。こぼれ話は3回に2回その会社の業種の話。管理画面に業種でしぼる・100件ずつ表示
+- 確認結果：lint・型検査・単体テスト（形・重なり・業種ごとの件数・言葉の説明・こぼれ話の業種）・本番ビルドが通過。ビルド後の chunks で data.ts が入るのは /admin/knowledge だけと確認。/welcome と /admin/knowledge を375px・1280pxで確認
+- 未完了：各班が「出典の対応が推定」と報告した十数件の確認（docs/MANUFACTURING.md）、まだ薄い話題、定期の集め直し（田村さんの確認待ち）、イプロス・キーエンスの直接読み（ネットワーク許可待ち）
+- 次の作業と担当：CX がレビュー → 田村さんに見てもらう
+
 ### 2026-11-04 CC（Claude、プロジェクトのスレッド「サービス名を決めてドメインに載せる」）
 - ブランチ / コミット：claude/project-thread-2u7gw9（名前の変更は PR #84 でマージ済み。この記録は docs のみ）
 - 変更点：サービス名「AIOえらばれ帳」（src/lib/brand.ts の SERVICE_NAME・SERVICE_TAGLINE・SERVICE_OPERATOR、ロゴ、/shiori・/try の題名、しおり通信の送り主名）。アドレスを https://aio-erabare.jp に切り替え

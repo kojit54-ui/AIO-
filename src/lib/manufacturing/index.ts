@@ -7,45 +7,8 @@ import type { MfgItem, MfgKind } from "./types";
 export { MFG_COLLECTED_AT, MFG_ITEMS };
 export type { MfgItem, MfgKind };
 
-export const MFG_KIND_LABEL: Record<MfgKind, string> = {
-  pain: "経営の悩み",
-  question: "発注する人の疑問",
-  success: "Webでうまくいったやり方",
-  buyer: "買い手の探し方・決め方",
-  trend: "最近の動き",
-};
-
-/** 会社の説明に出てくる言葉から、業種を当てる */
-const INDUSTRY_WORDS: [string, RegExp][] = [
-  ["切削加工", /切削|旋盤|フライス|マシニング|NC加工|削り/],
-  ["板金", /板金|曲げ|レーザー加工|レーザ加工|シャーリング/],
-  ["溶接", /溶接|製缶|TIG|MIG/],
-  ["プレス", /プレス|打ち抜き|絞り/],
-  ["樹脂成形", /樹脂|射出|成形|プラスチック|ブロー/],
-  ["金型", /金型/],
-  ["鋳造", /鋳造|鋳物|ダイカスト/],
-  ["鍛造", /鍛造/],
-  ["表面処理", /めっき|メッキ|塗装|アルマイト|表面処理|コーティング/],
-  ["熱処理", /熱処理|焼入れ|焼き入れ/],
-  ["研磨", /研磨|研削|バフ/],
-  ["放電加工", /放電/],
-  ["3Dプリンタ", /3D ?プリ|積層造形/],
-  ["印刷", /印刷|パッケージ|紙器|製本/],
-  ["木工", /木工|家具|木材/],
-  ["食品製造", /食品|菓子|惣菜|OEM/],
-  ["金属加工", /金属|鉄工|部品加工|精密加工/],
-  ["機械部品", /機械部品|部品|装置/],
-];
-
-/** 会社の説明（事業内容など）から業種を選ぶ。製造業らしくなければ空 */
-export function detectIndustries(text: string | null | undefined): string[] {
-  if (!text) return [];
-  return INDUSTRY_WORDS.filter(([, re]) => re.test(text)).map(([name]) => name);
-}
-
-export function isManufacturing(text: string | null | undefined): boolean {
-  return detectIndustries(text).length > 0 || /製造|加工|工場|町工場|ものづくり/.test(text ?? "");
-}
+export { MFG_KIND_LABEL, detectIndustries, isManufacturing } from "./detect";
+import { detectIndustries, isManufacturing } from "./detect";
 
 function matches(item: MfgItem, industries: string[]): number {
   if (item.industries.some((i) => industries.includes(i))) return 2;
@@ -95,15 +58,52 @@ export function mfgReviewerRules(business: string | null | undefined): string {
 /** しおりのひとことに使えるもの（その日で変わる） */
 export function mfgTipOfDay(dayKey: string, business?: string | null): MfgItem | null {
   const inds = detectIndustries(business);
-  const pool = MFG_ITEMS.filter((x) => (x.kind === "buyer" || x.kind === "success") && matches(x, inds) > 0);
-  if (!pool.length) return null;
+  const all = MFG_ITEMS.filter((x) => (x.kind === "buyer" || x.kind === "success" || x.kind === "term") && matches(x, inds) > 0);
+  if (!all.length) return null;
   let h = 0;
   for (const c of dayKey) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  return pool[h % pool.length];
+  // 3回のうち2回は、その会社の業種の話にする（どの業種にも合う話は数が多く、それだけになりやすい）
+  const own = all.filter((x) => matches(x, inds) === 2);
+  const pool = own.length >= 5 && h % 3 !== 0 ? own : all;
+  return pool[(h >>> 2) % pool.length];
+}
+
+/** 読む人がつまずきそうな言葉（業種が合うもの・どの業種にも合うもの）。記事で言葉に短い説明を添える参考 */
+export function readerTermsFor(business: string | null | undefined, n = 6): MfgItem[] {
+  const inds = detectIndustries(business);
+  return MFG_ITEMS.filter((x) => x.kind === "term" && matches(x, inds) > 0)
+    .sort((a, b) => matches(b, inds) - matches(a, inds))
+    .slice(0, n);
 }
 
 export function mfgCounts(): Record<MfgKind, number> {
-  const c = { pain: 0, question: 0, success: 0, buyer: 0, trend: 0 } as Record<MfgKind, number>;
+  const c = { pain: 0, question: 0, success: 0, buyer: 0, trend: 0, term: 0 } as Record<MfgKind, number>;
   for (const x of MFG_ITEMS) c[x.kind] += 1;
   return c;
+}
+
+/** 入口のページに見せる数字と例。サーバーで作って、データ全体はブラウザに送らない */
+export interface MfgShowcase {
+  total: number;
+  industries: number;
+  counts: Record<MfgKind, number>;
+  samples: { id: string; title: string }[];
+}
+
+export function mfgShowcase(): MfgShowcase {
+  // 発注する人の疑問から、業種ごとの加工の相談らしいものを、業種が重ならないように見せる
+  const seen = new Set<string>();
+  const samples: { id: string; title: string }[] = [];
+  for (const x of MFG_ITEMS) {
+    if (x.kind !== "question" || x.industries.includes("all") || seen.has(x.industries[0])) continue;
+    seen.add(x.industries[0]);
+    samples.push({ id: x.id, title: x.title });
+    if (samples.length >= 12) break;
+  }
+  return {
+    total: MFG_ITEMS.length,
+    industries: new Set(MFG_ITEMS.flatMap((x) => x.industries).filter((i) => i !== "all")).size,
+    counts: mfgCounts(),
+    samples,
+  };
 }
