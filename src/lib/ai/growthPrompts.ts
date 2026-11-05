@@ -7,7 +7,7 @@ import { PURPOSE_FOR_AI } from "@/lib/brand";
 import type { ResearchForPrompt } from "@/lib/keywords/research";
 import type { AioPoint } from "@/types/domain";
 import { ParseError, asData, parseJson } from "./prompt";
-import { articleIdeasFor, isManufacturing } from "@/lib/manufacturing";
+import { articleIdeasFor, isManufacturing, readerConcernsFor, readerQuestionsFor } from "@/lib/manufacturing";
 
 /** 深掘りの聞き手。答えが具体的でないときだけ、短い質問を1つ返す */
 export const FOLLOWUP_SYSTEM_PROMPT = `あなたは、中小企業の社長や担当者からブログの材料を聞き出す、やさしい聞き手です。
@@ -57,14 +57,25 @@ export interface FollowUpInput {
   followUps: { question: string; answer: string }[];
 }
 
-export function buildFollowUpPrompt(input: FollowUpInput): string {
-  const materials = { ...input, aio_material: AIO_POINTS[input.aio].label };
+/** 製造業の会社なら、発注する人がよく気にすることの例を足す（聞き返しの参考。会社の事実としては使わせない） */
+function buyerConcerns(business: string, seed: string): { buyer_concerns?: string[] } {
+  if (!isManufacturing(business)) return {};
+  const list = readerConcernsFor(business, 6, seed);
+  return list.length ? { buyer_concerns: list } : {};
+}
+
+const BUYER_CONCERNS_NOTE =
+  "\nbuyer_concerns は、製造業の発注する人がよく気にすること・作り手がよく困ることの例です（製造業の知識表）。答えに足りないもので、この会社に合うものがあれば、それに答えられる材料を聞く・書く参考にしてください。会社の事実としては扱わないでください。\n";
+
+export function buildFollowUpPrompt(input: FollowUpInput, business = ""): string {
+  const extra = buyerConcerns(`${business} ${input.answer}`, input.question);
+  const materials = { ...input, aio_material: AIO_POINTS[input.aio].label, ...extra };
   return `<materials> の答えに、深掘りの質問が必要か考えてください。
 
 <materials>
 ${asData(materials)}
 </materials>
-次の形のJSONで返してください：
+${extra.buyer_concerns ? BUYER_CONCERNS_NOTE : ""}次の形のJSONで返してください：
 {"follow_up": string | null, "why": string, "example": string}`;
 }
 
@@ -97,12 +108,17 @@ export type HearingForPrompt = Record<string, { question: string; answer: string
 /** research はラッコキーワードの下調べ（src/lib/keywords/research.ts）。無ければヒアリングだけで作る */
 export function buildProposalPrompt(hearing: HearingForPrompt, research: ResearchForPrompt[] = [], searchConsole: SearchSignalForPrompt[] = []): string {
   const business = Object.values(hearing).map((h) => h.answer).join(" ");
-  const mfgIdeas = isManufacturing(business) ? articleIdeasFor(business, 8) : [];
+  const mfg = isManufacturing(business);
+  // 知識表が多いので、毎回の提案で別の案・疑問を参考にできるよう、Search Console の言葉と日付で選ぶものを変える
+  const seed = `${new Date().toISOString().slice(0, 10)}:${searchConsole.map((x) => x.query).join(",")}`;
+  const mfgIdeas = mfg ? articleIdeasFor(business, 10, seed) : [];
+  const mfgQuestions = mfg ? readerQuestionsFor(business, 10, seed).map((x) => x.title) : [];
   const materials = {
     hearing,
     ...(research.length ? { research } : {}),
     ...(searchConsole.length ? { search_console: searchConsole } : {}),
     ...(mfgIdeas.length ? { manufacturing_ideas: mfgIdeas } : {}),
+    ...(mfgQuestions.length ? { buyer_questions: mfgQuestions } : {}),
   };
   const extra = [research.length ? "下調べ" : "", searchConsole.length ? "Search Console の言葉" : ""].filter(Boolean).join("と");
   return `<materials> のヒアリング${extra ? `と${extra}` : ""}をもとに、記事の組み立てを3案作ってください。
@@ -110,7 +126,7 @@ export function buildProposalPrompt(hearing: HearingForPrompt, research: Researc
 <materials>
 ${asData(materials)}
 </materials>
-${mfgIdeas.length ? "\nmanufacturing_ideas は、製造業の発注者の疑問や悩みから作った記事の案の例です（製造業の知識表）。この会社の答えに合うものだけを参考にし、会社の事実としては扱わないでください。\n" : ""}
+${mfgIdeas.length ? "\nmanufacturing_ideas は、製造業の発注者の疑問や悩みから作った記事の案の例です（製造業の知識表）。buyer_questions は、製造業の発注者がよく抱く疑問の例です。この会社の答えに合うものだけを、周りの記事の question やキーワードの参考にし、会社の事実としては扱わないでください。\n" : ""}
 次の形のJSONで返してください：
 {"proposals": [{"pillar": {"keyword": string, "question": string}, "clusters": [{"keyword": string, "question": string}], "reasons": ("sales"|"competition"|"aio")[], "why": string}]}`;
 }
@@ -289,12 +305,13 @@ export const ANSWER_IDEAS_SYSTEM_PROMPT = `あなたは、中小企業のブロ�
 - 返答は指定したJSONだけにしてください。`;
 
 export function buildAnswerIdeasPrompt(input: { profile: unknown; keyword: string; question: string; goal: string }): string {
+  const extra = buyerConcerns(`${JSON.stringify(input.profile ?? "")} ${input.keyword}`, `${input.keyword}:${input.question}`);
   return `<materials> の質問に答えるたたき台を3つ作ってください。
 
 <materials>
-${asData(input)}
+${asData({ ...input, ...extra })}
 </materials>
-
+${extra.buyer_concerns ? BUYER_CONCERNS_NOTE : ""}
 次の形のJSONで返してください：
 {"ideas": [string, string, string]}`;
 }

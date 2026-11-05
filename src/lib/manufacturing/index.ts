@@ -20,21 +20,45 @@ function matches(item: MfgItem, industries: string[]): number {
   return item.industries.includes("all") ? 1 : 0;
 }
 
-/** その会社に合う「発注する人の疑問」。業種が合うものを先に、最大 n 件 */
-export function readerQuestionsFor(business: string | null | undefined, n = 8): MfgItem[] {
+function hash(text: string): number {
+  let h = 2166136261;
+  for (const c of text) h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0;
+  return h;
+}
+
+/**
+ * 業種が合うものを先に、最大 n 件。seed（記事のテーマなど）を渡すと、同じ業種の中で選ぶものが変わる。
+ * 知識表が数千件あるので、いつも先頭の同じものばかり使わないようにする。seed が同じなら同じ結果
+ */
+function pickFor(business: string | null | undefined, n: number, seed: string, keep: (x: MfgItem) => boolean): MfgItem[] {
   const inds = detectIndustries(business);
-  return MFG_DOMESTIC.filter((x) => x.kind === "question" && matches(x, inds) > 0)
-    .sort((a, b) => matches(b, inds) - matches(a, inds))
+  const order = (x: MfgItem) => (seed ? hash(`${seed}:${x.id}`) : 0);
+  return MFG_DOMESTIC.filter((x) => keep(x) && matches(x, inds) > 0)
+    .sort((a, b) => matches(b, inds) - matches(a, inds) || order(a) - order(b))
     .slice(0, n);
 }
 
+/** その会社に合う「発注する人の疑問」。業種が合うものを先に、最大 n 件 */
+export function readerQuestionsFor(business: string | null | undefined, n = 8, seed = ""): MfgItem[] {
+  return pickFor(business, n, seed, (x) => x.kind === "question");
+}
+
+/** 発注する人がよく気にすること・作り手がよく困ること（疑問と悩み）。しおりの聞き返しと答えのたたき台の参考 */
+export function readerConcernsFor(business: string | null | undefined, n = 6, seed = ""): string[] {
+  return pickFor(business, n, seed, (x) => x.kind === "question" || x.kind === "pain" || x.kind === "buyer").map((x) => x.title);
+}
+
+/** Webや発信でうまくいったやり方（国内）。記事の組み立て・書き方の参考で、数字や他社の話は使わせない */
+export function whatWorksFor(business: string | null | undefined, n = 4, seed = ""): string[] {
+  return pickFor(business, n, seed, (x) => x.kind === "success").map((x) => x.title);
+}
+
 /** 書く記事の案（業種が合うもの・どの業種にも合うもの） */
-export function articleIdeasFor(business: string | null | undefined, n = 10): { title: string; why: string }[] {
-  const inds = detectIndustries(business);
-  return MFG_DOMESTIC.filter((x) => x.articleIdea && x.useFor.includes("article_idea") && x.kind !== "trend" && matches(x, inds) > 0)
-    .sort((a, b) => matches(b, inds) - matches(a, inds))
-    .slice(0, n)
-    .map((x) => ({ title: x.articleIdea!, why: x.title }));
+export function articleIdeasFor(business: string | null | undefined, n = 10, seed = ""): { title: string; why: string }[] {
+  return pickFor(business, n, seed, (x) => !!x.articleIdea && x.useFor.includes("article_idea") && x.kind !== "trend").map((x) => ({
+    title: x.articleIdea!,
+    why: x.title,
+  }));
 }
 
 /**
@@ -74,11 +98,8 @@ export function mfgTipOfDay(dayKey: string, business?: string | null): MfgItem |
 }
 
 /** 読む人がつまずきそうな言葉（業種が合うもの・どの業種にも合うもの）。記事で言葉に短い説明を添える参考 */
-export function readerTermsFor(business: string | null | undefined, n = 6): MfgItem[] {
-  const inds = detectIndustries(business);
-  return MFG_DOMESTIC.filter((x) => x.kind === "term" && matches(x, inds) > 0)
-    .sort((a, b) => matches(b, inds) - matches(a, inds))
-    .slice(0, n);
+export function readerTermsFor(business: string | null | undefined, n = 6, seed = ""): MfgItem[] {
+  return pickFor(business, n, seed, (x) => x.kind === "term");
 }
 
 export function mfgCounts(items: MfgItem[] = MFG_DOMESTIC): Record<MfgKind, number> {

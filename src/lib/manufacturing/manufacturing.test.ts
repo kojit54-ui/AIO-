@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { MFG_DOMESTIC, MFG_ITEMS, MFG_OVERSEAS, articleIdeasFor, detectIndustries, isManufacturing, mfgCounts, mfgTipOfDay, mfgWriterRules, readerQuestionsFor, readerTermsFor } from "./index";
+import { MFG_DOMESTIC, MFG_ITEMS, MFG_OVERSEAS, articleIdeasFor, detectIndustries, isManufacturing, mfgCounts, mfgTipOfDay, mfgWriterRules, readerConcernsFor, readerQuestionsFor, readerTermsFor, whatWorksFor } from "./index";
 
 describe("製造業の知識表", () => {
   it("形・長さ・出典がそろっている", () => {
@@ -68,5 +68,14 @@ describe("製造業の知識表", () => {
       for (const x of [...readerQuestionsFor(b, 50), ...readerTermsFor(b, 50)]) expect(x.region, x.id).toBeUndefined();
       for (let i = 0; i < 40; i++) expect(mfgTipOfDay(`2026-12-${i}`, b)?.region).toBeUndefined();
     }
+  });
+
+  it("テーマが変わると、同じ業種の中で選ぶものが変わる（同じテーマなら同じ）", () => {
+    const a = readerQuestionsFor("精密板金と溶接", 6, "ステンレス 溶接 歪み").map((x) => x.id);
+    const b = readerQuestionsFor("精密板金と溶接", 6, "板金 見積もり 短納期").map((x) => x.id);
+    expect(a).toEqual(readerQuestionsFor("精密板金と溶接", 6, "ステンレス 溶接 歪み").map((x) => x.id));
+    expect(a).not.toEqual(b);
+    expect(whatWorksFor("精密板金と溶接", 4, "x").length).toBe(4);
+    expect(readerConcernsFor("オフセット印刷", 6, "y").length).toBe(6);
   });
 });

@@ -5,7 +5,7 @@ import type { Block, FactCheckKind } from "@/types/domain";
 import { MAX_HEADINGS } from "@/lib/limits";
 import { aioReviewerRules, aioWriterRules } from "@/lib/aioNews";
 import { PURPOSE_FOR_AI } from "@/lib/brand";
-import { mfgReviewerRules, mfgWriterRules, readerQuestionsFor, readerTermsFor } from "@/lib/manufacturing";
+import { mfgReviewerRules, mfgWriterRules, readerQuestionsFor, readerTermsFor, whatWorksFor } from "@/lib/manufacturing";
 import type { GenerationInput } from "./input";
 
 /** outline・body・rewrite は書き手、review と aio_check は点検役、images は画像の提案役が受け持つ（docs/DECISIONS.md 2026-10-23、2026-11-02） */
@@ -130,8 +130,11 @@ function manufacturingGuide(kind: GenerationKind, input: GenerationInput): strin
   if (kind === "review" || kind === "aio_check") return mfgReviewerRules(business);
   const rules = mfgWriterRules(business);
   if (!rules) return "";
-  const qs = readerQuestionsFor(business, 6).map((q) => q.title);
-  const terms = readerTermsFor(business, 6).map((t) => ({ word: t.title, plain: t.summary }));
+  // 記事のテーマで選ぶものを変える（同じ業種でも、記事ごとに違う疑問・言葉・やり方を参考にする）
+  const seed = input.theme?.title ?? "";
+  const qs = readerQuestionsFor(business, 6, seed).map((q) => q.title);
+  const terms = readerTermsFor(business, 6, seed).map((t) => ({ word: t.title, plain: t.summary }));
+  const works = whatWorksFor(business, 4, seed);
   const termGuide = terms.length
     ? `
 - <reader_terms> は、発注する人がつまずきやすい言葉と、そのやさしい説明の例です。記事にその言葉が出てきたら、初めて出すところで短い説明を添える参考にしてください。会社の事実としては使わないでください。
@@ -145,7 +148,16 @@ ${asData(terms, 0)}
 
 <reader_questions>
 ${asData(qs, 0)}
-</reader_questions>${termGuide}`;
+</reader_questions>${termGuide}${
+    works.length
+      ? `
+- <what_works> は、製造業の会社のWebの記事や発信でうまくいったやり方の例です。記事の組み立てや見せ方（実績の書き方・よくある質問・事例の並べ方など）の参考にだけ使ってください。他社の話・数字・事例として記事に書かないでください。
+
+<what_works>
+${asData(works, 0)}
+</what_works>`
+      : ""
+  }`;
 }
 
 export interface OutlineResult {

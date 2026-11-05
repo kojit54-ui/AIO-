@@ -4,6 +4,7 @@ import { ParseError } from "./prompt";
 import {
   FOLLOWUP_SYSTEM_PROMPT,
   PROPOSAL_SYSTEM_PROMPT,
+  buildAnswerIdeasPrompt,
   buildFollowUpPrompt,
   buildProposalPrompt,
   parseFollowUp,
@@ -85,5 +86,21 @@ describe("この記事の答えとタイトル案", () => {
     const { TITLE_IDEAS_SYSTEM_PROMPT, buildTitleIdeasPrompt } = await import("./growthPrompts");
     expect(TITLE_IDEAS_SYSTEM_PROMPT).toContain("作らないでください");
     expect(buildTitleIdeasPrompt({ profile: {}, keyword: "内窓 費用", reader: "r", answers: [] })).toContain("内窓 費用");
+  });
+});
+
+describe("製造業の知識表を、聞き返し・たたき台・提案に生かす", () => {
+  const fu = { question: "どんな加工が得意ですか", aio: "experience" as const, answer: "ステンレスの板金と溶接です", followUps: [] };
+  it("製造業の会社のときだけ、発注する人がよく気にすることを足す", () => {
+    expect(buildFollowUpPrompt(fu, "精密板金と溶接の町工場")).toContain("buyer_concerns");
+    expect(buildFollowUpPrompt({ ...fu, answer: "駅前の美容室です" }, "美容室")).not.toContain("buyer_concerns");
+    const ideas = buildAnswerIdeasPrompt({ profile: { business: "オフセット印刷と製本" }, keyword: "冊子 印刷 小ロット", question: "よくある相談は？", goal: "" });
+    expect(ideas).toContain("buyer_concerns");
+    expect(buildAnswerIdeasPrompt({ profile: { business: "税理士事務所" }, keyword: "相続", question: "よくある相談は？", goal: "" })).not.toContain("buyer_concerns");
+  });
+  it("提案には、記事の案と発注する人の疑問を足す", () => {
+    const p = buildProposalPrompt({ biz: { question: "事業", answer: "樹脂の射出成形と金型", followUps: [] } });
+    expect(p).toContain("manufacturing_ideas");
+    expect(p).toContain("buyer_questions");
   });
 });
