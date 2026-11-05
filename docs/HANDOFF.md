@@ -33,6 +33,12 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-05 CC（Claude、プロジェクトのスレッド）製造業の知識表を週2回集め、しおり・記事・提案に使う
+
+- 変更点：集め方を docs/MANUFACTURING_RESEARCH.md と scripts/manufacturing/merge.py に。しおりの聞き返し・答えのたたき台に buyer_concerns、書き手に <what_works>、提案に buyer_questions。選ぶものはテーマで変わる（pickFor）
+- 確認：lint・型検査・テスト
+- 次の作業：定期作業（火・金）の結果を見る
+
 ### 2026-11-04 CC（Claude、プロジェクトのスレッド）製造業の知識表・海外の箱1回目
 
 - 変更点：海外の事例・調査を6班で集め、海外129件→638件（国内は6,683件のまま）

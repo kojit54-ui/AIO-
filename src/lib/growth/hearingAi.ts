@@ -103,6 +103,9 @@ export async function runHearingFollowUp(deps: HearingDeps, req: FollowUpRequest
   if (followUps.length >= MAX_AI_DEEP_DIVES || followUps.some((f) => !f.answer.trim())) return { ok: true, followUp: null };
 
   const input = { question: q.label, aio: q.aio, answer: text, followUps };
+  // 製造業の会社なら、発注する人がよく気にすることを聞き返しの参考に足す（会社の情報が読めなければ答えだけで見る）
+  const loaded = await profileForIdeas(deps.user, req.organizationId).catch(() => null);
+  const business = loaded?.ok ? JSON.stringify(loaded.profile).slice(0, 4000) : "";
   const b = await begin(deps, req.organizationId, req.idempotencyKey, JSON.stringify(input).length);
   if (!b.ok) return b;
   const signal = AbortSignal.timeout(FOLLOWUP_TIMEOUT_MS);
@@ -114,7 +117,7 @@ export async function runHearingFollowUp(deps: HearingDeps, req: FollowUpRequest
       const question = nextDeepDive(q, { questionId: q.id, text, followUps });
       followUp = question ? { question, why: "", example: "" } : null;
     } else {
-      const res = await deps.provider.complete({ kind: "hearing", system: FOLLOWUP_SYSTEM_PROMPT, user: buildFollowUpPrompt(input), maxOutputTokens: 600, signal });
+      const res = await deps.provider.complete({ kind: "hearing", system: FOLLOWUP_SYSTEM_PROMPT, user: buildFollowUpPrompt(input, business), maxOutputTokens: 600, signal });
       usage = res.usage;
       followUp = parseFollowUpWithWhy(res.text);
     }
