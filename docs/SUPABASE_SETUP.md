@@ -53,3 +53,14 @@
 3. Supabase → Authentication → Sign In / Providers → Google を有効にし、クライアント ID とクライアント シークレットを貼って Save。「Allow new users to sign up」はオフのまま
 4. Supabase → Authentication → URL Configuration の Redirect URLs に `https://aio-erabare.jp/auth/confirm**` があること
 5. Vercel の環境変数 `NEXT_PUBLIC_GOOGLE_LOGIN=on` を足して Redeploy（ビルド時に埋め込まれるため）
+
+## メールの6桁の番号でログイン（T6-8）
+
+ログインのメールに、リンクと一緒に6桁の番号を載せる。リンクがスマホでうまく開けない人や、パソコンで入りたいのにメールはスマホで読む人のため。番号は Supabase が作り、`verifyOtp({ type: "email" })` で確かめる（src/lib/auth/loginCode.ts）。
+
+1. Supabase → Authentication → Emails → Magic Link の Body の「ログインする」の行の下に足して Save
+   ```
+   <p>または、ログインの画面で次の番号を入れてください：<b style="font-size:24px;letter-spacing:4px">{{ .Token }}</b></p>
+   ```
+2. Authentication → Providers → Email の「Email OTP Length」が 6 であること（6〜8桁なら受けられる）
+3. Vercel の環境変数 `NEXT_PUBLIC_LOGIN_CODE=on` を足して Redeploy

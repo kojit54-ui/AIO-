@@ -6,9 +6,9 @@ import { useFormStatus } from "react-dom";
 import { LoginStage, useGreeting } from "@/components/landing";
 import { Notice } from "@/components/ui";
 import type { GoogleLoginError } from "@/lib/auth/google";
-import { type LoginState, sendLoginLink, signInWithGoogle } from "./actions";
+import { type CodeState, type LoginState, sendLoginLink, signInWithGoogle, verifyLoginCode } from "./actions";
 
-export function EmailLogin({ next, linkError, googleError = null, googleEnabled = false }: { next: string; linkError: boolean; googleError?: GoogleLoginError | null; googleEnabled?: boolean }) {
+export function EmailLogin({ next, linkError, googleError = null, googleEnabled = false, codeEnabled = false }: { next: string; linkError: boolean; googleError?: GoogleLoginError | null; googleEnabled?: boolean; codeEnabled?: boolean }) {
   const [state, action, pending] = useActionState<LoginState, FormData>(sendLoginLink, { sent: false });
   const hello = useGreeting();
 
@@ -34,7 +34,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
         </Notice>
       )}
       {!state.sent && googleEnabled && <GoogleButton next={next} />}
-      {state.sent ? <MailSent /> : (
+      {state.sent ? <MailSent email={codeEnabled ? state.email : undefined} next={state.next ?? next} /> : (
         <form action={action} className="card space-y-4 p-6">
           <input type="hidden" name="next" value={next} />
           <h2 className="text-xl font-black">ログイン</h2>
@@ -112,10 +112,12 @@ function GoogleMark() {
 }
 
 /** メールを送ったあと。次にやることを1つずつ見せる */
-function MailSent() {
+function MailSent({ email, next }: { email?: string; next: string }) {
   const steps = [
     { icon: "📬", text: "メールを開く", note: "数分で届きます" },
-    { icon: "👆", text: "メールの中のリンクを押す", note: "このブラウザで開いてください" },
+    email
+      ? { icon: "👆", text: "メールの中のリンクを押す", note: "または、メールの6桁の番号を下に入れる" }
+      : { icon: "👆", text: "メールの中のリンクを押す", note: "このブラウザで開いてください" },
     { icon: "🎉", text: "ログインできたら、スタート！", note: "" },
   ];
   return (
@@ -140,6 +142,7 @@ function MailSent() {
           </li>
         ))}
       </ol>
+      {email && <CodeForm email={email} next={next} />}
       <details className="rounded-2xl bg-canvas px-4 py-2 text-sm">
         <summary className="cursor-pointer font-bold">メールが届かないときは</summary>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
@@ -149,5 +152,32 @@ function MailSent() {
         </ul>
       </details>
     </div>
+  );
+}
+
+/** メールの6桁の番号を入れる（src/lib/auth/loginCode.ts） */
+function CodeForm({ email, next }: { email: string; next: string }) {
+  const [state, action, pending] = useActionState<CodeState, FormData>(verifyLoginCode, {});
+  return (
+    <form action={action} className="space-y-2 rounded-2xl border-2 border-sun-soft bg-sun-soft/40 p-4">
+      <input type="hidden" name="email" value={email} />
+      <input type="hidden" name="next" value={next} />
+      <label className="block">
+        <span className="field-label">メールに書いてある6桁の番号</span>
+        <input
+          name="code"
+          required
+          inputMode="numeric"
+          autoComplete="one-time-code"
+          maxLength={10}
+          placeholder="123456"
+          className="field min-h-14 text-center text-2xl font-black tracking-[0.4em]"
+        />
+      </label>
+      {state.error && <p className="text-sm text-danger">{state.error}</p>}
+      <button type="submit" className="btn-primary min-h-12 w-full" disabled={pending}>
+        {pending ? "確かめています…" : "番号でログイン"}
+      </button>
+    </form>
   );
 }
