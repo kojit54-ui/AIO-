@@ -33,6 +33,10 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-06 CC（Claude、定期作業）製造業の知識表・週2回の収集（金）
+
+- ブランチ：claude/mfg-research-20261106。新しい角度6つで398件を足し、国内7,081件・海外638件。lint・型検査・テスト通過
+
 ### 2026-11-05 CC（Claude、プロジェクトのスレッド）製造業の知識表を週2回集め、しおり・記事・提案に使う
 
 - 変更点：集め方を docs/MANUFACTURING_RESEARCH.md と scripts/manufacturing/merge.py に。しおりの聞き返し・答えのたたき台に buyer_concerns、書き手に <what_works>、提案に buyer_questions。選ぶものはテーマで変わる（pickFor）
