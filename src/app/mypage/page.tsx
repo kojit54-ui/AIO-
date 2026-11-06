@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ShioriTalk } from "@/components/talk";
 import { Notice } from "@/components/ui";
+import { LegalLinks } from "@/components/LegalLinks";
 import { ORG_NAME_MAX, normalizeOrgName } from "@/lib/orgName";
 import { TONES } from "@/lib/shioriTone";
 import { useShioriTone } from "@/components/useShioriTone";
@@ -71,6 +72,7 @@ export default function MyPage() {
           ログアウト
         </button>
       </section>
+      <LegalLinks />
     </main>
   );
 }

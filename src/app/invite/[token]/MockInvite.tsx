@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { ConsentNote } from "@/components/LegalLinks";
 import { useParams, useRouter } from "next/navigation";
 import { InviteLetter } from "@/components/InviteLetter";
 import { EmptyState } from "@/components/ui";
@@ -34,12 +34,7 @@ export function MockInvite() {
   return (
     <InviteLetter organizationName={org.name} recipientName={user.name.replace(/（.*$/, "")} message={null} isFree>
       <div className="space-y-3">
-        <p className="text-sm text-muted">
-          入力した内容は、記事を作るためにAIへ送信します。他の会社に見られることはありません。
-          <Link href="/login" className="underline">
-            利用規約とプライバシーについて（準備中）
-          </Link>
-        </p>
+        <ConsentNote />
         <button
           type="button"
           className="btn-primary min-h-14 w-full text-lg"

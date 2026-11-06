@@ -1,5 +1,6 @@
 "use client";
 
+import { ConsentNote } from "@/components/LegalLinks";
 import { useState, useTransition } from "react";
 import { InviteLetter } from "@/components/InviteLetter";
 import { LoginStage } from "@/components/landing";
@@ -31,9 +32,7 @@ export function AcceptInvite({ token, organizationName, maskedEmail, letter }: {
   return (
     <InviteLetter organizationName={organizationName} recipientName={letter?.recipientName} message={letter?.message} isFree={letter?.isFree ?? false}>
       <div className="space-y-3">
-        <p className="text-sm text-muted">
-          入力した内容は、記事を作るためにAIへ送信します。他の会社に見られることはありません。利用規約とプライバシーの説明は準備中です。
-        </p>
+        <ConsentNote />
         <p className="text-sm">招待先のメールアドレス：{maskedEmail}</p>
         {result && !result.ok && <Notice tone="danger">{FAILED[result.reason === "valid" ? "error" : result.reason]}</Notice>}
         <button type="button" className="btn-primary min-h-14 w-full text-lg" disabled={pending} onClick={() => start(async () => setResult(await acceptInvite(token)))}>

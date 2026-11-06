@@ -4,6 +4,7 @@
 // 2026-11-03 田村さん「登録したくなる、ワクワクする、ログインしたくなるページにしたい」。
 // しおりの絵は動かさない。動くのは吹き出し・まわりの小物・スクロールで出てくるカード。
 
+import { LegalLinks } from "@/components/LegalLinks";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Shiori, type ShioriMood } from "@/components/fun";
@@ -112,6 +113,7 @@ export function LoginStage({ mood, lines, title, children }: { mood: ShioriMood;
         </section>
         <div className="animate-rise space-y-4 [animation-delay:.15s] md:pt-6">{children}</div>
       </main>
+      <LegalLinks className="pb-6" />
     </div>
   );
 }
