@@ -6,6 +6,7 @@ import { describe, expect, it } from "vitest";
 import { COACHING_NOTES, ORGANIZATIONS, QUESTIONS, REFERENCE_ARTICLES, THEMES } from "@/mock/data";
 import { getAiSetup } from "./config";
 import { generateHeadingImage } from "./images";
+import { liveStepProblems, liveStepSummary } from "./liveCheck";
 import { generateReviewedBody, generateOutline } from "./provider";
 
 const live = process.env.npm_lifecycle_event === "test:live" || process.env.AI_LIVE === "1";
@@ -35,9 +36,13 @@ describe.skipIf(!live)("本物のAPI", () => {
     const outline = await generateOutline(setup.text, ctx);
     const roles = { writer: setup.textFor("body"), reviewer: setup.textFor("review"), imageIdeas: setup.textFor("images") };
     const body = await generateReviewedBody(roles, ctx, outline.outline.map((o) => o.heading));
-    console.log(JSON.stringify({ outline, body }, null, 2));
+    // 本文はログに出さない（CLAUDE.md）。役割ごとの成否と件数だけを出す
+    console.log(liveStepSummary(body));
     expect(body.body.length).toBeGreaterThan(0);
-    expect(body.imageSuggestions.length).toBeGreaterThan(0);
+    // 点検・書き直し・画像の提案は本番では失敗しても下書きで進むが、試すときは失敗を不合格にする
+    // 点検役は REVIEW_PROVIDER が無ければ anthropic（Claude）。キーが無いと書き手が代わりに点検してしまうので確かめる
+    const expectedReviewer = process.env.REVIEW_PROVIDER || "anthropic";
+    expect(liveStepProblems(body, expectedReviewer), liveStepSummary(body)).toEqual([]);
 
     if (!setup.imageIsSample && setup.imageMode === "generate") {
       const img = await generateHeadingImage(setup.image, body.imageSuggestions[0]);
