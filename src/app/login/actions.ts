@@ -1,5 +1,7 @@
 "use server";
 
+import { redirect } from "next/navigation";
+import { googleRedirectTo, isGoogleLoginEnabled } from "@/lib/auth/google";
 import { siteOrigin } from "@/lib/auth/origin";
 import { safeNextPath } from "@/lib/auth/token";
 import { createServerSupabase } from "@/lib/supabase/server";
@@ -24,4 +26,18 @@ export async function sendLoginLink(_prev: LoginState, form: FormData): Promise<
   // 送信回数の制限だけは利用者に伝える。それ以外（未登録など）は送れたときと同じ表示にする
   if (error?.status === 429) return { sent: false, error: "短い時間に何度も送信されました。少し待ってからお試しください" };
   return { sent: true };
+}
+
+/** Googleでログイン。Google の画面へ移る。招待されていない人は、戻ってきたあとに断る（src/lib/auth/google.ts） */
+export async function signInWithGoogle(form: FormData): Promise<void> {
+  if (!isGoogleLoginEnabled()) redirect("/login");
+  const next = safeNextPath(String(form.get("next") ?? ""));
+  const origin = await siteOrigin();
+  const supabase = await createServerSupabase();
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: { redirectTo: googleRedirectTo(origin, next), queryParams: { prompt: "select_account" } },
+  });
+  if (error || !data.url) redirect("/login?error=google_failed");
+  redirect(data.url);
 }

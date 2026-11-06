@@ -33,6 +33,12 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）Googleでログイン
+- ブランチ：claude/project-thread-fdzisk（main の上に作り直し）
+- 変更点：src/lib/auth/google.ts（ボタンを出すか・戻り先・エラーの見分け）、login/actions.ts の signInWithGoogle（signInWithOAuth、prompt=select_account）、/auth/confirm に via=google（招待されていなければログアウト）、ログイン画面の「Googleでログイン」とエラー表示。T6-7 は CX の担当だったが、Codex が動いていないため CC が作った（認証部分なので CX のレビューを希望）
+- 確認結果：lint・型検査・単体テスト、375px・1280pxの表示。本物の Google での確認は設定待ち
+- 次の作業：田村さんが docs/SUPABASE_SETUP.md「Googleでログイン」の1〜5 → 招待済みのアドレスで入れる・未招待の Google では断られる、の2つを試す
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）利用規約・プライバシーポリシー・特商法の表記（案）
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/lib/legal.ts（文面・LEGAL_DRAFT・【要確認：…】）、src/components/LegalPage.tsx、/terms・/privacy・/tokushoho（ログインなしで読める、検索に出さない）、src/components/LegalLinks.tsx（案のあいだは何も出さない。招待状の ConsentNote は「準備中」のまま）
