@@ -43,3 +43,13 @@
 3. 本人がリンクを開いて「同意してはじめる」→ 招待先のメールアドレスにログイン用のメールが届く
 4. メールのリンクを開くとログインする。次からは /login でメールアドレスを入れるとログイン用のメールが届く
 5. 退会・担当外れは /admin/invitations の「所属を外す」。その人は何も見えなくなり、未使用の招待も無効になる。招待し直すと戻れる
+
+## Googleでログイン（T6-7）
+
+招待制のまま、招待されたメールアドレスと同じ Google アカウントだけ入れる。「Allow new users to sign up」がオフなので、招待されていない Google アカウントは作られない。念のため /auth/confirm（via=google）で所属か全社管理者かを確かめ、無ければログアウトさせる（src/lib/auth/google.ts）。
+
+1. Google Cloud（プロジェクト cotam-aio）→ 「APIとサービス」→「OAuth 同意画面」（Google Auth Platform）：アプリ名「AIOえらばれ帳」、サポートメール、対象は「外部」、承認済みドメイン aio-erabare.jp と supabase.co。公開ステータスを「本番環境」にする（テストのままだと登録したテストユーザーしか入れない）。スコープは email・profile・openid だけなので審査はいらない
+2. 「認証情報」→「OAuth クライアント ID を作成」→ 種類「ウェブ アプリケーション」。承認済みのリダイレクト URI に `https://<SupabaseのプロジェクトID>.supabase.co/auth/v1/callback`（ステージングは https://yxpteazaakcpyfvuikap.supabase.co/auth/v1/callback）
+3. Supabase → Authentication → Sign In / Providers → Google を有効にし、クライアント ID とクライアント シークレットを貼って Save。「Allow new users to sign up」はオフのまま
+4. Supabase → Authentication → URL Configuration の Redirect URLs に `https://aio-erabare.jp/auth/confirm**` があること
+5. Vercel の環境変数 `NEXT_PUBLIC_GOOGLE_LOGIN=on` を足して Redeploy（ビルド時に埋め込まれるため）
