@@ -6,6 +6,7 @@
 // サービスの定義は src/lib/brand.ts（AIに選ばれて、お客様に選ばれる。いちばん大切なのはお客様に選ばれること）。
 // 紹介される・売上が上がると約束はしない（決めるのはAI）。料金はまだ決まっていないので出さない。
 
+import { LegalLinks } from "@/components/LegalLinks";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
@@ -55,6 +56,7 @@ export function Welcome({ makers }: { makers: MfgShowcase }) {
           </Link>
         </p>
         <p>株式会社コタム</p>
+        <LegalLinks />
       </footer>
     </div>
   );

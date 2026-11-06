@@ -33,6 +33,13 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）利用規約・プライバシーポリシー・特商法の表記（案）
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：src/lib/legal.ts（文面・LEGAL_DRAFT・【要確認：…】）、src/components/LegalPage.tsx、/terms・/privacy・/tokushoho（ログインなしで読める、検索に出さない）、src/components/LegalLinks.tsx（案のあいだは何も出さない。招待状の ConsentNote は「準備中」のまま）
+- 確認結果：lint・型検査・単体テスト439件、375px・1280pxで横にはみ出さない
+- 未完了：田村さんが文面と【要確認】を確認 → 埋めて LEGAL_DRAFT=false（legal.test.ts が、残ったまま公開するのを止める）
+- 次の作業：Googleでログイン（T6-7）
+
 ### 2026-11-06 CC（Claude、プロジェクトのスレッド）本物のAPIテストで点検の失敗を見逃さない
 - ブランチ：claude/project-thread-u6be7b
 - 変更点：src/lib/ai/liveCheck.ts（役割ごとの成否を調べる・本文を出さないまとめ）、src/lib/ai/live.test.ts（点検・書き直し・画像の提案の失敗、点検役が anthropic 以外に入れかわったら不合格。本文のログ出力をやめ、成否と件数だけ出す）、src/lib/ai/liveCheck.test.ts
