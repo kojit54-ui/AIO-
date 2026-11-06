@@ -33,6 +33,11 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）メールの6桁の番号でログイン
+- 変更点：src/lib/auth/loginCode.ts（on/off、全角・すきまを直す）、login/actions.ts の verifyLoginCode（verifyOtp type=email）、メールを送ったあとの画面に番号の入力欄
+- 確認結果：lint・型検査・単体テスト、375pxの表示（番号が足りないときの案内）
+- 次の作業：田村さんが方式（メールの6桁／SMS）を選ぶ。メールなら docs/SUPABASE_SETUP.md「メールの6桁の番号」の1〜3
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）Googleでログイン
 - ブランチ：claude/project-thread-fdzisk（main の上に作り直し）
 - 変更点：src/lib/auth/google.ts（ボタンを出すか・戻り先・エラーの見分け）、login/actions.ts の signInWithGoogle（signInWithOAuth、prompt=select_account）、/auth/confirm に via=google（招待されていなければログアウト）、ログイン画面の「Googleでログイン」とエラー表示。T6-7 は CX の担当だったが、Codex が動いていないため CC が作った（認証部分なので CX のレビューを希望）
