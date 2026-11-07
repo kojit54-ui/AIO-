@@ -3,6 +3,7 @@
 
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import { badges } from "@/lib/growth/badges";
+import { townPosition, townSteps } from "@/lib/growth/town";
 import { monthlySummary, writingStreak } from "@/lib/growth/monthly";
 import { nearQueries } from "@/lib/growth/nearQueries";
 import type { MockDb } from "@/mock/store";
@@ -23,6 +24,8 @@ export interface NewsletterInput {
   /** 取ったスタンプの id（次の月に「新しく取ったもの」を出すため、送った記録に残す） */
   stampIds: string[];
   nextStamp: { title: string; how: string } | null;
+  /** AIの町すごろく（2026-11-07 ゲームを1つにまとめた）。お問い合わせのマスはブラウザに覚えるので、メールでは数えない */
+  town: { at: number; total: number; next: { label: string; how: string } | null };
   search: { impressions: number; clicks: number; near: { query: string; position: number }[] } | null;
   mentioned: boolean;
 }
@@ -40,6 +43,9 @@ export function newsletterInput(db: MockDb, orgId: string, month: string, prevSt
   const list = badges(db, orgId, end);
   const sc = (db.searchConsole ?? []).find((x) => x.organizationId === orgId && x.verifiedAt && x.snapshot);
   const next = list.find((b) => !b.got);
+  const steps = townSteps(db, orgId, false, end);
+  const at = townPosition(steps);
+  const nextSquare = steps[at] ?? null;
   return {
     orgName: org?.name ?? "",
     month,
@@ -54,6 +60,7 @@ export function newsletterInput(db: MockDb, orgId: string, month: string, prevSt
     newStamps: prevStampIds ? list.filter((b) => b.got && !prevStampIds.includes(b.id)).map((b) => b.title) : [],
     stampIds: list.filter((b) => b.got).map((b) => b.id),
     nextStamp: next ? { title: next.title, how: next.how } : null,
+    town: { at, total: steps.length, next: nextSquare ? { label: nextSquare.label, how: nextSquare.how } : null },
     search: sc?.snapshot
       ? {
           impressions: sc.snapshot.totals.impressions,
@@ -97,9 +104,9 @@ export function renderNewsletter(i: NewsletterInput, links: { appUrl: string; un
     ...stats.map((x) => `・${x.label}：${x.value}`),
     i.streak > 0 ? `・🔥 ${i.streak}か月つづけて書いています` : "",
     "",
-    `■ スタンプ帳（${i.stampsGot} / ${i.stampsTotal}）`,
+    `■ AIの町すごろく（${i.town.at} / ${i.town.total}マス）`,
     ...(i.newStamps.length ? [`・今月もらったスタンプ：${i.newStamps.join("、")}`] : []),
-    i.nextStamp ? `・次のスタンプ「${i.nextStamp.title}」：${i.nextStamp.how}` : "・スタンプが全部そろいました！",
+    i.town.next ? `・次のマス「${i.town.next.label}」：${i.town.next.how}` : "・ゴールまで進みました！",
   ];
   const news = updatesInMonth(i.month);
   if (news.length) lines.push("", "■ 今月、新しくなったこと", ...news.map((u) => `・${u.title}`), `${links.appUrl}/updates`);
@@ -141,7 +148,7 @@ export function renderNewsletter(i: NewsletterInput, links: { appUrl: string; un
 <td style="vertical-align:bottom"><div style="background:#ffffff;border:2px solid #dbe7fb;border-radius:18px 18px 18px 4px;padding:10px 14px;font-size:14px;font-weight:700">${esc(shioriLine(i))}</div></td>
 </tr></table></td></tr>
 ${card(h("今月のまとめ") + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>${statCells}</tr></table>` + (i.streak > 0 ? `<p style="margin:10px 0 0;text-align:center"><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#ffc93c;font-weight:900;font-size:13px">🔥 ${i.streak}か月つづけて書いています</span></p>` : ""))}
-${card(h(`🎖️ スタンプ帳 ${i.stampsGot} / ${i.stampsTotal}`) + (i.newStamps.length ? `<p style="margin:0 0 6px;font-size:14px">今月もらったスタンプ：<b>${esc(i.newStamps.join("、"))}</b></p>` : "") + `<p style="margin:0;font-size:13px;color:#5b6b80">${i.nextStamp ? `次は「${esc(i.nextStamp.title)}」：${esc(i.nextStamp.how)}` : "スタンプが全部そろいました！"}</p>`)}
+${card(h(`🏘️ AIの町すごろく ${i.town.at} / ${i.town.total}マス`) + (i.newStamps.length ? `<p style="margin:0 0 6px;font-size:14px">今月もらったスタンプ：<b>${esc(i.newStamps.join("、"))}</b></p>` : "") + `<p style="margin:0;font-size:13px;color:#5b6b80">${i.town.next ? `次のマスは「${esc(i.town.next.label)}」：${esc(i.town.next.how)}` : "ゴールまで進みました！"}</p>`)}
 ${newsHtml}
 ${searchHtml}
 <tr><td style="padding:16px 24px;text-align:center"><a href="${esc(links.appUrl)}" style="display:inline-block;padding:14px 28px;border-radius:999px;background:#2f6fdb;color:#ffffff;font-weight:900;font-size:16px;text-decoration:none">来月の1本を書く →</a><p style="margin:8px 0 0;font-size:12px;color:#5b6b80">質問に答えるだけで記事になります。</p></td></tr>

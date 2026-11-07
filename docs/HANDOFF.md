@@ -119,6 +119,11 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）コーチ画面・しおり通信もすごろくの言い方に
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：src/lib/newsletter/content.ts に town（すごろくのマスと次のマス。お問い合わせのマスはブラウザに覚えるのでメールでは数えない）、「スタンプ帳 x/y」を「AIの町すごろく x / 7マス」に。src/app/coach/page.tsx の札も「すごろく x/7マス」。送った記録の stamp_ids はそのまま（今月もらったスタンプを出すため）
+- 確認結果：lint・型検査・テスト通過（しおり通信のテストを追加）
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）ゲームの仕組みを1つにまとめる
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/lib/growth/town.ts（townPosition は一番先の達成マスの次、skippedSteps、SIDE_STAMP_IDS、テストあり）、TownBoard に「まだ」の印・とばしたマス・寄り道スタンプ、ホームから StampBook を外した、ShioriGrowth のポイント表示をなくした、ホームのたたむボタンを「お知らせ・今月の記録を見る」に
