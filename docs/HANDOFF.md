@@ -38,6 +38,13 @@
 - 確認結果：キャッシュなしの手元ビルドが #125 で2分58秒 → 約20秒（変換 2.6分 → 数秒）。lint・型検査・単体テスト
 - 原因：5MBの .ts の変換。#124 が33秒だったのは Vercel のキャッシュが効いたためで、#125 はルートのレイアウトを変えて全ページの変換がやり直しになり、重さが表に出た
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）AIOえらばれ帳のブランドを作る
+- ブランチ：claude/project-thread-1gko29
+- 変更点：docs/BRAND.md（正本）、src/lib/brandBook.ts、/brand（ブランドブック。検索に出す、下の案内に「ブランドとロゴ」）、public/brand/（ロゴのSVG・PNG・ZIP）、ヘッダーのロゴを新しいマークに（landing.tsx の Logo・BrandMark、AppShell）、src/app/icon.svg・apple-icon.png・opengraph-image.png
+- 確認結果：lint・型検査・単体テスト、375px・1280pxで横にはみ出さない
+- 未完了：田村さんが文面とロゴを確認。読み方「えらばれちょう」は未確認
+- 次の作業：名刺・資料・Canvaのテンプレートにロゴを使う
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）入口ページとLPを充実させる
 - ブランチ：claude/project-thread-g4swqz
 - 変更点：/welcome の「お客様は、AIに相談しはじめました」を2カラムから1列に（田村さん「2カラムが見づらい、文字が多い」）。上のメニュー・下の案内（src/components/site.tsx）、よくある質問（src/lib/faq.ts、FAQPage の構造化データ）、AIOの読みもの（/column と /column/[slug]、記事は src/lib/column.ts、Article と BreadcrumbList の構造化データ）。/welcome・/column・/try・/shiori だけ検索に出す（src/lib/publicPages.ts の INDEX_ROBOTS）、robots.txt と sitemap.xml を追加

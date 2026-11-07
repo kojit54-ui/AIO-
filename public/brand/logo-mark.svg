@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="AIOえらばれ帳のマーク"><title>AIOえらばれ帳のマーク</title>
+<g>
+  <rect x="20" y="18" width="90" height="94" rx="16" fill="#9bd3ff"/>
+  <rect x="24" y="16" width="84" height="92" rx="14" fill="#ffffff"/>
+  <rect x="14" y="14" width="88" height="98" rx="16" fill="#2f6fdb"/>
+  <path d="M30 14 H34 V112 H30 A16 16 0 0 1 14 96 V30 A16 16 0 0 1 30 14 Z" fill="#2258b8"/>
+  <path d="M78 6 H92 A2 2 0 0 1 94 8 V44 L85 37 L76 44 V8 A2 2 0 0 1 78 6 Z" fill="#ffc93c"/>
+  <path fill="#ffffff" d="M60,43 C63.3,59.2 68.8,64.7 85,68 C68.8,71.3 63.3,76.8 60,93 C56.7,76.8 51.2,71.3 35,68 C51.2,64.7 56.7,59.2 60,43 Z"/>
+  <path fill="#ffc93c" d="M84,83 C85.056,88.184 86.816,89.944 92,91 C86.816,92.056 85.056,93.816 84,99 C82.944,93.816 81.184,92.056 76,91 C81.184,89.944 82.944,88.184 84,83 Z"/>
+</g>
+</svg>

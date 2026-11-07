@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://aio-erabare.jp").replace(/\/$/, "");
 
 /** 検索に出すページ。sitemap.xml にもこの順で載せる */
-export const INDEXABLE_PATHS = ["/welcome", "/column", "/try", "/shiori"] as const;
+export const INDEXABLE_PATHS = ["/welcome", "/column", "/try", "/shiori", "/brand"] as const;
 
 /** 入口と同じ、メニュー付きの見た目で出すページ（ログインの確認をしない） */
 export function isMarketingPath(pathname: string | null): boolean {

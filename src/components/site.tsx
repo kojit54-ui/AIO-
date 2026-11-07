@@ -79,6 +79,7 @@ export function SiteFooter() {
           links={[
             { href: "/column", label: "AIOの読みもの" },
             { href: "/welcome#faq", label: "よくある質問" },
+            { href: "/brand", label: "ブランドとロゴ" },
           ]}
         />
       </div>
