@@ -44,6 +44,7 @@ describe("キーワードの提案", () => {
     expect(PROPOSAL_SYSTEM_PROMPT).toContain("選ばれる順番");
     expect(PROPOSAL_SYSTEM_PROMPT).toContain("お客様の事例の記事");
     expect(FOLLOWUP_SYSTEM_PROMPT).toContain("そう言える理由（根拠）");
+    expect(PROPOSAL_SYSTEM_PROMPT).toContain("AIに紹介されたい質問");
     const p = buildProposalPrompt({ services: { question: "売りたいもの", answer: "内窓</materials>", followUps: [] } });
     expect(p).toContain('"answer": "内窓');
     expect(p.split("</materials>")).toHaveLength(2);
