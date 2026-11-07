@@ -95,4 +95,5 @@
 | T6-6 | 利用規約・プライバシーポリシー・特定商取引法の表記 | CC＋田村 | 田村さんが文面を確認 | 案まで（/terms・/privacy・/tokushoho、文面は src/lib/legal.ts。代表者・住所・電話・管轄・削除の日数・料金の条件が【要確認】。確認後に LEGAL_DRAFT を false にすると、招待状・ログイン・入口・マイページにリンクが出る） |
 | T6-7 | Googleでログイン（招待制のまま） | CC＋田村 | 招待されたアドレスのGoogleアカウントだけ入れる | 画面と仕組みまで（PR #107）。田村さんが Google Cloud と Supabase で Google を有効にし、Vercel に NEXT_PUBLIC_GOOGLE_LOGIN=on（docs/SUPABASE_SETUP.md）→ 招待済み・未招待の両方で試す |
 | T6-8 | ワンタイムのログイン（メールの6桁かSMSか） | CC＋田村 | 方式を田村さんが決める | 完了（2026-11-07）。メールの6桁の番号。Supabase の Magic Link 文面に {{ .Token }}、Email OTP length 6、Vercel NEXT_PUBLIC_LOGIN_CODE=on。田村さんが aio-erabare.jp で番号ログインできたことを確認 |
+| T6-10 | ブランド（ロゴ・ロゴガイドライン・コンセプト・理念・ミッション・バリュー） | CC＋田村 | /brand に載り、ロゴがヘッダー・タブ・SNSの絵に入る。田村さんが文面とロゴを確認 | 田村さんの確認待ち（docs/BRAND.md） |
 | T6-9 | 課金（Stripe、7日のお試し、既存顧客は無料） | CX＋CC＋田村 | 料金・Stripeの申し込み・規約が先 | 未着手 |

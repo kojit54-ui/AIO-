@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/mock/store";
 import { EmptyState, PageSkeleton } from "./ui";
 import { SERVICE_NAME } from "@/lib/brand";
+import { BrandMark } from "@/components/landing";
 import { isLegalPath } from "@/lib/legal";
 import { isMarketingPath } from "@/lib/publicPages";
 
@@ -51,9 +52,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <header className="border-b border-line bg-surface/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 sm:px-6">
           <Link href={user.role === "coach" ? "/coach" : "/"} className="group flex min-w-0 items-center gap-3 font-bold">
-            <span className="grid h-10 w-10 shrink-0 -rotate-6 place-items-center rounded-xl bg-brand text-lg text-white transition-transform group-hover:rotate-6" aria-hidden>
-              ✎
-            </span>
+            <BrandMark className="h-10 w-10 shrink-0 transition-transform group-hover:-rotate-6 group-hover:scale-105" />
             <span className="min-w-0">
               <span className="block text-sm font-medium text-muted">{SERVICE_NAME}</span>
               <span className="block truncate text-lg font-black">{org ? org.name : "コタム管理画面"}</span>

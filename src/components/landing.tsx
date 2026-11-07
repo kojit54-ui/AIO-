@@ -59,19 +59,26 @@ export function useGreeting(): string {
   return text;
 }
 
-/** ロゴ（ヘッダーの左） */
+/** ロゴ（ヘッダーの左）。マークは public/brand/logo-mark.svg。使い方は /brand と docs/BRAND.md */
 export function Logo({ href = "/welcome" }: { href?: string }) {
   return (
-    <Link href={href} className="group flex items-center gap-2.5 font-black">
-      <span className="grid h-10 w-10 shrink-0 -rotate-6 place-items-center rounded-xl bg-brand text-lg text-white transition-transform group-hover:rotate-6" aria-hidden>
-        ✎
-      </span>
-      <span className="leading-tight">
-        <span className="block text-xs font-bold text-muted">{SERVICE_TAGLINE}</span>
-        <span className="block">{SERVICE_NAME}</span>
+    <Link href={href} className="group flex items-center gap-2 font-black" aria-label={SERVICE_NAME}>
+      <BrandMark className="h-10 w-10 shrink-0 transition-transform group-hover:-rotate-6 group-hover:scale-105" />
+      <span className="leading-tight" aria-hidden>
+        <span className="block text-xs font-bold tracking-wider text-muted">{SERVICE_TAGLINE}</span>
+        <span className="block whitespace-nowrap">
+          <span className="text-brand">AIO</span>
+          {SERVICE_NAME.replace(/^AIO/, "")}
+        </span>
       </span>
     </Link>
   );
+}
+
+/** ロゴのマーク（帳面＋しおり＋AIのきらめき） */
+export function BrandMark({ className = "h-10 w-10" }: { className?: string }) {
+  // eslint-disable-next-line @next/next/no-img-element -- 小さな固定のSVG。最適化は不要
+  return <img src="/brand/logo-mark.svg" alt="" width={40} height={40} className={className} />;
 }
 
 const PERKS = [
