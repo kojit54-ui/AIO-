@@ -13,6 +13,7 @@ import { ApiError, useStore } from "@/mock/store";
 import { needsFollowUp } from "@/mock/sampleGenerator";
 import type { AioPoint, Answer } from "@/types/domain";
 import { GuideName } from "@/components/useGuide";
+import { VoiceInput } from "@/components/VoiceInput";
 
 type SaveState = "idle" | "saving" | "saved" | "error";
 
@@ -217,6 +218,7 @@ export default function QuestionsPage() {
               disabled={current.unknown}
               onChange={(e) => setCurrent({ text: e.target.value })}
             />
+            <VoiceInput disabled={current.unknown} onText={(said) => setCurrent({ text: current.text ? `${current.text}${/[。、\n]$/.test(current.text) ? "" : "。"}${said}` : said })} />
             <label className={`inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-dashed px-4 py-1.5 text-[0.95rem] transition-colors ${current.unknown ? "border-brand bg-brand-soft text-brand-dark" : "border-line text-muted hover:border-brand"}`}>
               <input type="checkbox" className="h-4 w-4 accent-brand" checked={current.unknown} onChange={(e) => setCurrent({ unknown: e.target.checked })} />
               まだ分からない
@@ -264,6 +266,7 @@ export default function QuestionsPage() {
             {PREVIOUS_CASE_QUESTION.label}
           </label>
           <textarea id="prev-followup" className="field min-h-24" placeholder={exampleOf(PREVIOUS_CASE_QUESTION)} value={prevAnswer} onChange={(e) => setPrevAnswer(e.target.value)} />
+          <VoiceInput onText={(said) => setPrevAnswer(prevAnswer ? `${prevAnswer}。${said}` : said)} />
         </section>
       )}
       {step === 0 && !showFollowUp && <WhyAio compact />}

@@ -14,6 +14,8 @@ import { StampBook } from "@/components/StampBook";
 import { TownBoard } from "@/components/TownBoard";
 import { WhatsNew } from "@/components/WhatsNew";
 import { MfgTip } from "@/components/MfgTip";
+import { MoreOnHome, NextStepCard } from "@/components/NextStep";
+import { nextStep } from "@/lib/nextStep";
 import { useShioriTone } from "@/components/useShioriTone";
 import { homeLines, homeMood, referenceTime } from "@/lib/shioriTone";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
@@ -46,6 +48,7 @@ export default function HomePage() {
     daysSinceLastWork: lastWork ? Math.max(0, Math.floor((referenceTime(month, nowMs) - lastWork) / 86_400_000)) : null,
   };
   const lines = homeLines(tone, situation);
+  const step = nextStep(list, situation.publishedThisMonth);
 
   return (
     <main className="page space-y-6">
@@ -64,6 +67,7 @@ export default function HomePage() {
         <ShioriTalk mood={homeMood(tone, situation)} size="lg" lines={lines} />
         <ChosenPath className="mt-2" />
       </div>
+      <NextStepCard step={step} href={step.articleId ? articleHref(db, step.articleId) : "/articles/new"} />
       <WhatsNew />
       {/* コタムの方針は、あるときだけ出す（無いときに「準備中」と出して待たせない。2026-11-03） */}
       {note && (
@@ -76,32 +80,18 @@ export default function HomePage() {
         </section>
       )}
 
-      <section className="grid gap-3 sm:grid-cols-2" aria-label="記事を書く">
-        <Link href="/articles/new" className="btn-primary min-h-16 text-xl">
-          今月の記事を書く
-          <span className="inline-block animate-nudge" aria-hidden>
-            →
-          </span>
-        </Link>
-        {inProgress ? (
-          <Link href={articleHref(db, inProgress.id)} className="btn-secondary min-h-16 text-lg">
-            書きかけの記事を続ける
-          </Link>
-        ) : (
-          <p className="flex min-h-16 items-center justify-center rounded-full border-2 border-dashed border-line px-4 text-muted">
-            書きかけの記事はありません
-          </p>
-        )}
-      </section>
-
-      <AioNews />
-      <MfgTip business={org?.profile?.business} />
 
       <TownBoard db={db} orgId={orgId} orgName={org?.name ?? ""} />
-      <StampBook db={db} orgId={orgId} />
-      <ShioriGrowth db={db} orgId={orgId} />
-      <MonthlyGrowth db={db} orgId={orgId} month={month} />
-      <SearchConsoleCard db={db} orgId={orgId} />
+
+      {/* 読み物と記録は畳む（3AIの検討：ホームが長くて「次の1手」が埋もれる。2026-11-07） */}
+      <MoreOnHome>
+        <AioNews />
+        <MfgTip business={org?.profile?.business} />
+        <StampBook db={db} orgId={orgId} />
+        <ShioriGrowth db={db} orgId={orgId} />
+        <MonthlyGrowth db={db} orgId={orgId} month={month} />
+        <SearchConsoleCard db={db} orgId={orgId} />
+      </MoreOnHome>
 
       <section aria-labelledby="list-heading">
         <h2 id="list-heading" className="mb-3 text-lg font-bold">

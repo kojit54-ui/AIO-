@@ -119,6 +119,13 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）続けたくなる仕組み（3AIで検討）
+- ブランチ：claude/project-thread-fdzisk
+- 検討：画面写真と概要を GPT（gpt-6.1-sol）と Gemini（gemini-4-argon）に渡して案を出させ、互いの案とClaudeの実装案を批評させて順番を決めた（A→B→E→C、Dは次）。記録は /mnt/project-files/retention-council/
+- 変更点：src/lib/nextStep.ts（次の1手・公開のひとこと。テストあり）、src/components/NextStep.tsx（NextStepCard・MoreOnHome）、src/components/VoiceInput.tsx（声で答える）、ホームの並び替え、書きかけの吹き出しを「再開できます」の言い方に、公開完了のひとこと、新しくなったことに1つ
+- 確認結果：lint・型検査・テスト通過。375px・1280px でホームと質問画面
+- 次の作業：D 次に書く日（メール）、写真から始める、記事の読むだけモード、すごろく・スタンプ・理解度の一本化
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）画面の言葉を選んだ案内役の名前に
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：withGuideName（テストあり）、useGuideText・GuideName・GuideText（src/components/useGuide.ts）。ShioriTalk と WaitingScreen は自動で置きかえ。見出し（スタンプ帳・メモ帳・AIOニュース・理解度・しおりに教える など）を GuideName に。しおり通信は固定
