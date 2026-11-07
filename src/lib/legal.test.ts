@@ -15,7 +15,8 @@ describe("利用規約・プライバシーポリシー", () => {
   it("AIへ送ることと、送り先の会社を書いている", () => {
     const text = PRIVACY.sections.flatMap((s) => s.items).join("\n");
     for (const name of ["OpenAI", "Anthropic", "Google", "Supabase", "Resend"]) expect(text).toContain(name);
-    expect(text).toContain("学習には使わない");
+    expect(text).toContain("学習に使われない");
+    expect(text).toContain("Stripe");
   });
 
   it("AIOの成果を約束しない", () => {
