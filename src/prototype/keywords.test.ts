@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { HEARING_QUESTIONS, type KeywordPlan, type KeywordRow, computeGrowth, planFromProposal, sampleProposals } from "./growth";
-import { countByStatus, cycleStatus, groupByPillar, moveItem, newKeywordRow, nextKeyword, normalizeRows, sellItemOf, sellItemsFromAnswer, shioriMessage, sortByRecommendation, toggleDone } from "./keywords";
+import { CASE_STUDY_GOAL, caseStudyHint, countByStatus, cycleStatus, groupByPillar, moveItem, newKeywordRow, nextKeyword, normalizeRows, sellItemOf, sellItemsFromAnswer, shioriMessage, sortByRecommendation, toggleDone } from "./keywords";
 
 const answers = Object.fromEntries(HEARING_QUESTIONS.map((q) => [q.id, { questionId: q.id, text: q.example.replace(/^例：/, ""), followUps: [] }]));
 const plan = planFromProposal(sampleProposals(answers)[0]);
@@ -105,5 +105,21 @@ describe("今売りたいものの順番", () => {
     expect(moveItem(list, 0, 2)).toEqual([2, 3, 1]);
     expect(moveItem(list, 2, -5)).toEqual([3, 1, 2]);
     expect(list).toEqual([1, 2, 3]);
+  });
+});
+
+describe("お客様の事例の記事（docs/AIO.md「選ばれる決め手」）", () => {
+  it("事例の記事を数え、目安に足りないと足すよう声をかける。記事が無ければ何も言わない", () => {
+    const rows = normalizeRows(plan);
+    const hint = caseStudyHint(rows)!;
+    expect(hint.count).toBe(rows.filter((r) => /事例|どう変わった/.test(r.keyword + r.question)).length);
+    expect(caseStudyHint([])).toBeNull();
+    const cases = Array.from({ length: CASE_STUDY_GOAL }, (_, i) => ({ ...rows[0], id: `c${i}`, keyword: `内窓 事例 ${i}`, question: "" }));
+    expect(caseStudyHint(cases)!.message).toContain("そろっている");
+    expect(caseStudyHint([{ ...rows[0], keyword: "内窓 費用", question: "費用の目安" }])!.message).toContain("足してみよう");
+  });
+
+  it("サンプルの提案は、どの案にも事例の記事が入っている", () => {
+    for (const p of sampleProposals(answers)) expect(p.clusters.some((c) => /事例/.test(c.keyword))).toBe(true);
   });
 });

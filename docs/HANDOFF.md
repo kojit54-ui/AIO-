@@ -151,6 +151,12 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）CVRの資料を記事作りとキーワード設計に
+- ブランチ：claude/project-thread-08ub3t
+- 変更点：docs/AIO.md に「選ばれる決め手」（田村さんの参考資料の要点と、このサービスでやること）。書き手・点検役の指示（src/lib/ai/prompt.ts）、深掘りとキーワードの提案の指示（src/lib/ai/growthPrompts.ts）に、誰に向けるか・強みは根拠と数字で・事例の6要素・専門の一貫を追加。AIOのチェックに「強みの根拠」（proof）を足して13項目（src/types/domain.ts、src/lib/aioCheck.ts、AioCheckPanel のしるし、tips）。ヒアリングの「お客様」「選ばれる理由」のヒント文、サンプルの提案に事例の記事。書く記事リストに「お客様の事例 x / 3本」（src/prototype/keywords.ts の caseStudyHint、/prototype/keywords）。DB変更なし
+- 確認結果：lint・型検査・単体テスト（494件）が通過。書く記事リストを375px・1280pxで表示し、横スクロールなし
+- 未完了：本物のAIでの記事の見直し。次の候補は docs/AIO.md「まだやっていないこと」（会社ごとの強みの文を土台にする、事例専用の一問一答など）
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）コーチ画面・しおり通信もすごろくの言い方に
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/lib/newsletter/content.ts に town（すごろくのマスと次のマス。お問い合わせのマスはブラウザに覚えるのでメールでは数えない）、「スタンプ帳 x/y」を「AIの町すごろく x / 7マス」に。src/app/coach/page.tsx の札も「すごろく x/7マス」。送った記録の stamp_ids はそのまま（今月もらったスタンプを出すため）

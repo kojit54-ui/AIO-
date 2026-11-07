@@ -10,6 +10,8 @@ import {
   PRIORITY_LABEL,
   SOURCE_LABEL,
   MAX_KEYWORD,
+  CASE_STUDY_GOAL,
+  caseStudyHint,
   countByStatus,
   cycleStatus,
   groupByPillar,
@@ -113,6 +115,7 @@ export default function KeywordsPage() {
   const sellItems = g.sellItems ?? sellItemsFromAnswer(g.answers.services?.text ?? "");
   const next = nextKeyword(rows, sellItems);
   const nextSell = next ? sellItemOf(next, sellItems) : null;
+  const cases = caseStudyHint(rows);
   const parked = rows.filter((r) => r.parked);
   const visible = (list: Row[]) => list.filter((r) => filter === "all" || r.status === filter);
   const groups = groupByPillar(rows);
@@ -249,6 +252,22 @@ export default function KeywordsPage() {
           <Link href={`/prototype/write/${next.id}`} className="btn-primary">
             {next.status === "writing" ? "続きを書く" : "この記事を書く"}
           </Link>
+        </section>
+      )}
+
+      {cases && (
+        <section className="card flex animate-rise flex-wrap items-center gap-3" aria-labelledby="case-heading">
+          <div className="flex gap-1.5" aria-hidden>
+            {Array.from({ length: CASE_STUDY_GOAL }, (_, i) => (
+              <span key={i} className={`h-4 w-4 rounded-full border-2 ${i < cases.count ? "border-ok-bright bg-ok-bright" : "border-line bg-surface"}`} />
+            ))}
+          </div>
+          <div className="min-w-0 flex-1">
+            <h2 id="case-heading" className="text-sm font-bold">
+              頼むかを決める「お客様の事例」 {Math.min(cases.count, CASE_STUDY_GOAL)} / {CASE_STUDY_GOAL}本
+            </h2>
+            <p className="text-sm text-muted">{cases.message}</p>
+          </div>
         </section>
       )}
 

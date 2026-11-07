@@ -31,6 +31,15 @@ export const AIO_CHECK_LIST: { key: AioCheckKey; stage: ChosenStage; label: stri
     ...ASK[k],
   })),
   {
+    // 2026-11-07 CVRの資料（docs/AIO.md「選ばれる決め手」）。AIに紹介されて来た人は、ほとんど決めて最後の確認に来る
+    key: "proof",
+    stage: "people",
+    label: "強みの根拠",
+    what: "誰に向けた強みか、なぜそう言えるか（根拠）、数字が書かれているか。「丁寧な対応」「豊富な実績」のような、どの会社にも書ける言葉だけになっていないか。AIに紹介されて来た人は、ここを読んで頼むかを決めます。",
+    ask: "このお客様に、ほかの会社ではなく選ばれる理由は何ですか。そう言える理由や数字も教えてください",
+    example: "例：同じ職人が現地調査から仕上げまで担当するので、打ち合わせのずれが起きにくい。この10年で約300件",
+  },
+  {
     key: "facts",
     stage: "people",
     label: "数字・実績の確かさ",
@@ -67,6 +76,9 @@ export const MAX_AIO_QUESTIONS = 3;
 const plain = (blocks: Block[]) => blocks.flatMap((b) => (b.type === "list" ? b.items : [b.text])).join("\n");
 const answered = (answers: Answer[], id: string) => answers.some((a) => a.questionId === id && !a.unknown && a.text.trim());
 
+/** どの会社にも書ける強みの言葉。根拠と数字が無いと、AIにも読む人にも選ぶ理由にならない（docs/AIO.md「選ばれる決め手」） */
+export const VAGUE_STRENGTH = /丁寧な対応|豊富な(経験|実績|知識)|親身|寄り添|高品質|お客様第一|誠心誠意|安心・安全|確かな技術/;
+
 const AI_TONE = /いかがでしたか|と言えるでしょう|ではないでしょうか|重要です。|まとめると|魅力的/;
 
 /**
@@ -91,6 +103,11 @@ export function sampleAioCheck(input: { body: Block[]; answers: Answer[]; profil
     feeling: answered(input.answers, "q6") || /と言われ|と言って|うれし|喜ん|大切に|気持ち/.test(text) ? [true, "お客様の気持ちや作り手の想いが伝わります"] : [false, "お客様の言葉や、大切にしたことがまだありません"],
     action: answered(input.answers, "q5") || (!!input.profile?.contact && text.includes(input.profile.contact)) ? [true, "問い合わせ先があります"] : [false, "読んだ人が次にすることがありません"],
     trust: usedBanned.length === 0 ? [true, "大げさな言い切りはありません"] : [false, "根拠を示しにくい言い切りがあります"],
+    proof: VAGUE_STRENGTH.test(text)
+      ? [false, "どの会社にも書ける強みの言葉があります。根拠や数字に置きかえましょう"]
+      : /[0-9０-９]/.test(text) && (answered(input.answers, "q2") || /ので|ため|から/.test(text))
+        ? [true, "強みが、根拠と数字で書けています"]
+        : [false, "強みを支える根拠や数字がまだありません"],
     facts: unchecked === 0 ? [true, "数字や実績は確認済みです"] : [false, `数字や実績が${unchecked}か所、まだ確認されていません（「確かめる」から確かめられます）`],
     words: usedBanned.length === 0 ? [true, "使ってほしくない言葉は入っていません"] : [false, `「${usedBanned.join("」「")}」が入っています`],
     ai_tone: AI_TONE.test(text) ? [false, "決まり文句のような言い回しがあります"] : [true, "決まり文句は見当たりません"],
