@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { AUTO_OUTFIT, guideFile, guideOf, resolveOutfit, seasonalOutfit } from "./guideCharacter";
 import { GUIDE_WIDTHS } from "./guideWidths";
 
-const MOODS = ["ask", "joy", "sad", "right", "welldone", "think", "surprise", "cheer", "idea", "coffee", "point", "bow", "jersey-cheer", "jersey-stretch", "jersey-done"];
+const MOODS = ["angry", "ask", "joy", "sad", "right", "welldone", "think", "surprise", "cheer", "idea", "coffee", "point", "bow", "jersey-cheer", "jersey-stretch", "jersey-done"];
 
 describe("案内役の服", () => {
   const shiori = guideOf("shiori");

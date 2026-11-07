@@ -56,7 +56,7 @@ export const GUIDES: GuideCharacter[] = [
       { id: "out", label: "お出かけ", file: "gen-out" },
     ],
   },
-  { id: "koyuki", name: "こゆき", note: "元気なオコジョ。いっしょにがんばる", file: "koyuki", outfits: [] },
+  { id: "koyuki", name: "こゆき", note: "本物そっくりのオコジョ。怒るとこわい", file: "koyuki", outfits: [] },
 ];
 
 export const DEFAULT_GUIDE: GuideId = "shiori";

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ALL_HOME_LINES, TONES, homeCase, homeLines, isTone, referenceTime } from "./shioriTone";
+import { ALL_HOME_LINES, TONES, homeCase, homeLines, isTone, referenceTime, homeMood } from "./shioriTone";
 
 const base = { publishedThisMonth: 0, workedThisMonth: 0, inProgress: false, totalArticles: 3, daysSinceLastWork: 3 };
 
@@ -35,5 +35,17 @@ describe("今の時刻", () => {
   it("今月ならそのまま、前の月ならその月の終わり", () => {
     expect(referenceTime("2026-11", now)).toBe(now);
     expect(new Date(referenceTime("2026-10", now)).toISOString()).toBe("2026-10-31T14:59:59.999Z");
+  });
+});
+
+describe("ホームの表情", () => {
+  const base = { publishedThisMonth: 0, workedThisMonth: 0, inProgress: false, totalArticles: 3, daysSinceLastWork: 40 };
+  it("きびしめで、書く手が止まっているときだけ本気で怒る", () => {
+    expect(homeMood("strict", base)).toBe("angry");
+    expect(homeMood("strict", { ...base, inProgress: true, daysSinceLastWork: 8 })).toBe("angry");
+    expect(homeMood("strict", { ...base, publishedThisMonth: 1 })).toBe("jersey-cheer");
+    expect(homeMood("strict", { ...base, totalArticles: 0, daysSinceLastWork: null })).toBe("jersey-cheer");
+    expect(homeMood("normal", base)).toBe("jersey-cheer");
+    expect(homeMood("gentle", base)).toBe("jersey-cheer");
   });
 });
