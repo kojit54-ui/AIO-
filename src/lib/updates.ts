@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-legal",
+    date: "2026-11-07",
+    title: "利用規約とプライバシーポリシーができました",
+    body: "預かった情報の扱い方や、AIへ送るもの・送らないものを、かたい言葉をなるべく使わずに書きました。各章に「かんたんに言うと」があります。",
+    href: "/privacy",
+    linkLabel: "プライバシーポリシーを見る",
+  },
+  {
     id: "2026-11-07-one-game",
     date: "2026-11-07",
     title: "スタンプは「AIの町すごろく」にまとまりました",
