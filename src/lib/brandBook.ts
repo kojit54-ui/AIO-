@@ -1,132 +1,142 @@
-// AIOえらばれ帳のブランド（2026-11-07 田村さん「ロゴ、ロゴガイドライン、ブランドコンセプト、理念、ミッションバリュー」）。
-// 正本は docs/BRAND.md。/brand のページはここから表示する。ロゴの元データは public/brand/。
-// サービスの定義（AIに選ばれて、これから出会うお客様に選ばれる会社へ）は src/lib/brand.ts と docs/AIO.md に合わせる。
+// AIOえらばれ帳のブランド。正本は docs/BRAND.md。/brand のページはここから表示する。ロゴは public/brand/。
+// 2026-11-07 田村さん「ロゴ、ロゴガイドライン、ブランドコンセプト、理念、ミッションバリュー」。
+// 同日「クオリティ低い。AIっぽい」→ GPT・Gemini・Claude にブランドのプロとして批評させ、作り直した（第2版）。
+// 4つ角のきらめき・絵文字・角丸カード・「伴走」「〜な世の中へ」のような定型は使わない。
+// サービスの定義（AIに選ばれたあと、人に選ばれることがいちばん大切）は src/lib/brand.ts と docs/AIO.md に合わせる。
 
 import type { CSSProperties } from "react";
-import { SERVICE_PROMISE } from "@/lib/brand";
+
+/** ひとこと（ロゴの横・SNSの絵に添える） */
+export const BRAND_LINE = "現場の話を、選ばれる理由に。";
+
+/** 何をするサービスか（ひとことの下に添える説明） */
+export const BRAND_DESCRIPTOR = "町工場の仕事を聞きとり、AIにも、頼む人にも伝わる記事にする。";
 
 /** 読み方 */
 export const BRAND_READING = "エーアイオー えらばれちょう";
 
-/** ブランドコンセプト（ひとことと、その説明） */
-export const BRAND_CONCEPT = {
-  title: "「ここに頼みたい」を、1ページずつ書きためる帳面。",
+/** 理念（なぜやるか） */
+export const BRAND_PHILOSOPHY = {
+  title: "いい腕を、知り合いだけのものにしない。",
   body: [
-    "ものづくりの会社の強みは、現場の人の頭と手の中にあります。どんな工夫をして、どんな失敗を乗りこえて、どんなお客様に喜ばれてきたか。けれど、それはなかなか言葉になりません。",
-    "AIOえらばれ帳は、案内役の質問に答えるだけで、その強みを「AIにも、人にも伝わる言葉」に変えて、1ページずつ書きためていく帳面です。",
-    "AIに紹介されることは入口です。ゴールは、紹介されて読みに来たお客様が、たくさんのページの中から、あなたの会社のページにしおりをはさむこと。「ここに頼みたい」と思ってもらうことです。",
+    "長い付き合いのお客様は、その会社の腕をよく知っています。けれど、まだ会ったことのない人には、その腕が見えていません。",
+    "宣伝のうまい会社ばかりが目立って、まじめに仕事を積み上げてきた会社が「知られていない」だけで見過ごされる。それを終わらせたいと考えています。",
   ],
 };
 
-/** 名前に込めたこと */
-export const BRAND_NAME_PARTS = [
-  { word: "AIO", text: "AIの答えの中で、会社が紹介されるための工夫。AI時代の新しい入口です。" },
-  { word: "えらばれ", text: "AIに選ばれ、そのあと、これから出会うお客様に選ばれる。2つの「選ばれる」です。" },
-  { word: "帳", text: "1回で終わらず、毎月書きためていく帳面。続けるほど、会社の厚みになります。" },
-];
-
-/** 理念 */
-export const BRAND_PHILOSOPHY = {
-  title: "まじめな、いい仕事が、ちゃんと選ばれる世の中へ。",
-  body: "腕も誠意もあるのに、知られていないだけで選ばれない。そんな会社を、ひとつでも減らしたい。AIが答えを出す時代だからこそ、本当にいい仕事をしている会社が、正しく見つけられ、選ばれるようにします。",
-};
-
-/** ミッション（ひとことは SERVICE_PROMISE と同じ） */
+/** ミッション（何をするか） */
 export const BRAND_MISSION = {
-  title: SERVICE_PROMISE,
-  body: "ものづくりの会社が、AIに紹介され、記事を読んだお客様に「ここに頼みたい」と思ってもらえるまで、いっしょに走ります。むずかしいことはこちらが引き受け、会社の人には、答えることと、続けることだけをお願いします。",
+  title: "現場で聞いた仕事の話を、頼む人が判断できる記事にする。",
+  body: [
+    "何ができるのか。どんな材質や数量に応えられるのか。精度を出すために、どこを工夫しているのか。頼む前に知りたいことを、社長や職人さんの話から記事にします。",
+    "AIの検索で見つけてもらう工夫もします。ただ、最後に「ここに頼もう」と決めるのは人です。AIに選ばれたあと、人に選ばれること。いちばん大切にしているのは、そこです。",
+  ],
 };
 
-/** バリュー（大切にすること）。画面・質問・AIへの指示を作るときの判断のよりどころ */
-export const BRAND_VALUES: { icon: string; title: string; text: string; inService: string }[] = [
-  {
-    icon: "🤝",
-    title: "人に選ばれることを、いちばんに。",
-    text: "AIのための工夫で、読む人の気持ちを置き去りにしません。最後に選ぶのは、いつも人です。",
-    inService: "記事の点検は「AIに紹介されるか」と「読んだ人が頼みたくなるか」の2段で見ます。",
+/** 設備の一覧だけでは伝わらないこと（よくある紹介文 → 頼む人が知りたいこと） */
+export const BRAND_GAP = {
+  common: ["高精度・短納期", "多品種・小ロットに対応", "お客様第一、まごころ込めて", "最新の設備を完備"],
+  wanted: [
+    { q: "図面が固まる前でも、相談できるか", a: "試作の段階から相談にのった例と、そのときの進め方" },
+    { q: "うちの材質・寸法・数量を受けてもらえるか", a: "よく受ける材質と大きさ、1個から何個までか" },
+    { q: "精度はどうやって出しているのか", a: "測り方、治具の工夫、ベテランが見ているところ" },
+    { q: "難しいと言われたら、どうなるのか", a: "できない条件と、そのときに代わりに出せる案" },
+  ],
+};
+
+/** 話が記事になるまでの見本（架空の会社） */
+export const BRAND_SAMPLE = {
+  company: "見本：架空の金属加工会社",
+  talk: [
+    { who: "guide", text: "最近、お客様に「助かった」と言われた仕事はありますか？" },
+    { who: "user", text: "ステンレスの薄い板、1ミリのやつ。溶接すると曲がるって、よそで断られたのをうちでやった" },
+    { who: "guide", text: "曲がらないように、どんな工夫をしたんですか？" },
+    { who: "user", text: "治具を自分で作って、少しずつ点で付けていく。冷ましながら。時間はかかるけど" },
+  ],
+  article: {
+    heading: "厚さ1mmのステンレスを、ゆがませずに溶接するには",
+    body: "厚さ1mmのステンレスは、溶接の熱でゆがみやすい材料です。この仕事では、自分たちで作った治具（部品を動かないように固定する道具）を使い、少しずつ点で溶接しては冷ます方法をとりました。時間はかかりますが、熱のかかり方に気を配りながら進めています。",
   },
-  {
-    icon: "🔩",
-    title: "本当のことだけを書く。",
-    text: "経験・数字・お客様の声は、会社の人が話したことだけ。AIに作らせません。",
-    inService: "AIには「答えにない経験や数字を作らない」と約束させて書いています。",
-  },
-  {
-    icon: "🌱",
-    title: "むずかしい言葉を使わない。",
-    text: "専門語より、やることを伝えます。パソコンが苦手な人でも、ひとりで進められるように。",
-    inService: "質問には「なぜ聞くのか」を必ず添え、1回に1つだけ聞きます。",
-  },
-  {
-    icon: "🏃",
-    title: "一歩ずつ、ずっと伴走する。",
-    text: "一度に全部は求めません。月に1本、小さく続けることが、いちばんの近道です。",
-    inService: "すごろく・スタンプ帳・しおり通信で、続けたくなる仕組みを用意しています。",
-  },
-  {
-    icon: "🔍",
-    title: "最新を、正直に。",
-    text: "AIOの情報は、公式の発表だけをもとにします。分からないことは、分からないと言います。",
-    inService: "AIOの知識は毎週見直し、出どころのある情報だけを使います。",
-  },
+};
+
+/** AIと人の2つの段階（工程表の形で見せる） */
+export const BRAND_STEPS = [
+  { no: "01", title: "AIが探す", text: "発注先をAIに相談する人が増えています。記事では、できる材質・数量・仕事の進め方を具体的に書き、AIが候補を探すときの手がかりを整えます。" },
+  { no: "02", title: "人が読む", text: "記事を読んだ人が、できることと、その裏づけを確かめます。" },
+  { no: "03", title: "人が決める", text: "「この会社なら話が通じそうだ」と思えたとき、問い合わせが届きます。" },
 ];
 
-/** 話し方（ブランドの人柄） */
+/** AIについての正直な説明 */
+export const BRAND_AI_NOTE = "AIの答えにのることや、問い合わせの数を約束することはできません。AIの検索は毎週のように変わるため、公式に発表されたことだけをもとに、確かめられたことと、まだわからないことを分けてお伝えします。";
+
+/** 記事づくりの約束 */
+export const BRAND_PROMISES = [
+  { title: "実績や数字は、確かめられたものだけを書く。", text: "聞いていない経験や、確かめていない数字は書きません。AIにも、作り話をさせません。" },
+  { title: "「すごい」より、何ができるかを書く。", text: "材質・大きさ・数量・納期・相談の中身。頼む前に知りたいことを、具体的にします。" },
+  { title: "専門の言葉は、説明を添えて使う。", text: "正確さに必要な言葉は残し、はじめて読む人にもわかる一言を添えます。" },
+  { title: "公開する前に、会社の人が確かめる。", text: "仕事をいちばん知っているのは、その会社の人です。読んで、直してから公開します。" },
+  { title: "できないことや条件も、正直に書く。", text: "「ここまではできる」がはっきりしている会社が、いちばん信用されます。" },
+];
+
+/** 話し方 */
 export const BRAND_VOICE = {
-  summary: "明るく、やさしく、ときどきちょっとだけ厳しめ。となりで一緒に考える先輩のように話します。",
-  dos: ["です・ます で、短い文で話す", "まず結論、次に理由を1つだけ", "できたことは、ちゃんとほめる", "止まっているときは、はっきり声をかける"],
-  donts: ["カタカナの専門語を、そのまま使う（例：コンテンツ、エンゲージメント）", "「必ず上位に」「絶対に紹介される」と約束する", "相手を急かしたり、責めたりする"],
+  summary: "現場の人と話すときの言葉で話します。短く、具体的に。できたことはちゃんとほめ、止まっているときは、はっきり声をかけます。",
+  dos: ["です・ます で、1文を短く", "まず結論、次に理由を1つ", "数字や材料の名前など、具体的なことばを使う"],
+  donts: ["「伴走」「寄り添う」「〜な世の中へ」のような決まり文句", "「必ず上位に」「絶対に紹介される」という約束", "カタカナの専門語だけで済ませる（コンテンツ、エンゲージメント など）"],
 };
 
-/** ロゴの部品と意味 */
+/** ロゴの成り立ち */
+export const LOGO_STORY = "現場で使う帳面（野帳）をもとにしました。仕事の記録に、選ばれた印としてしおりを1本。AIを表す記号は、あえて入れていません。";
+
 export const LOGO_PARTS = [
-  { color: "var(--color-brand)", name: "青い帳面", text: "毎月書きためていく記事。会社の強みが1ページずつ厚くなっていきます。" },
-  { color: "var(--color-sun)", name: "黄色いしおり", text: "お客様が「ここだ」とはさむ印。そして、ずっと伴走する案内役のしおりです。" },
-  { color: "#ffffff", name: "白いきらめき", text: "AI。AIの答えの中で、会社が見つけられることを表します。" },
-  { color: "var(--color-sun)", name: "小さな星", text: "これから出会うお客様。AIに選ばれた先に、人との出会いがあります。" },
+  { no: "1", name: "藍の表紙", text: "作業着や図面の青。長く使える、頼れる道具の色です。" },
+  { no: "2", name: "背の溝", text: "綴じた背。小さくしても帳面に見える目じるしです。" },
+  { no: "3", name: "表題欄", text: "会社の名前を書く欄。その会社だけの記録です。" },
+  { no: "4", name: "真鍮のしおり", text: "お客様が選んだページの印。案内役「しおり」の名前のもとです。" },
 ];
 
-export type LogoFile = { file: string; label: string; use: string; dark?: boolean; tall?: boolean };
+export type LogoFile = { file: string; label: string; use: string; bg: "paper" | "white" | "indigo" | "sumi"; tall?: boolean; square?: boolean };
 
 /** ロゴの種類（public/brand/ に SVG と PNG がある） */
 export const LOGO_VARIANTS: LogoFile[] = [
-  { file: "logo-horizontal", label: "横組み（基本）", use: "ホームページ、資料、名刺など。迷ったらこれを使います。" },
-  { file: "logo-vertical", label: "縦組み", use: "正方形に近い場所、チラシの中央、看板など。", tall: true },
-  { file: "logo-mark", label: "マーク", use: "アイコン、SNSのプロフィール、小さな場所。" },
-  { file: "app-icon", label: "アプリのアイコン", use: "スマホのホーム画面、ブラウザのタブ。" },
+  { file: "logo-horizontal", label: "横組み（基本）", use: "ホームページ、資料、名刺。迷ったらこれ。", bg: "white" },
+  { file: "logo-vertical", label: "縦組み", use: "正方形に近い場所、チラシの中央、看板。", bg: "paper", tall: true },
+  { file: "logo-mark", label: "マーク", use: "SNSのアイコン、小さな場所。", bg: "white", square: true },
+  { file: "app-icon", label: "アプリのアイコン", use: "スマホのホーム画面、ブラウザのタブ。", bg: "white", square: true },
 ];
 
 /** 色の種類 */
 export const LOGO_COLORWAYS: LogoFile[] = [
-  { file: "logo-horizontal", label: "カラー", use: "白・うすい色の背景に。いちばん多く使います。" },
-  { file: "logo-horizontal-reverse", label: "カラー反転", use: "紺など、濃い色の背景に。", dark: true },
-  { file: "logo-horizontal-white", label: "白1色", use: "ブランドの青や写真の上に。", dark: true },
-  { file: "logo-horizontal-ink", label: "黒1色", use: "白黒の印刷、FAX、はんこ。" },
+  { file: "logo-horizontal", label: "カラー", use: "白・生成りの地に。", bg: "white" },
+  { file: "logo-horizontal-reverse", label: "カラー反転", use: "墨など、濃い地に。", bg: "sumi" },
+  { file: "logo-horizontal-white", label: "白1色", use: "藍の地や、写真の上に。", bg: "indigo" },
+  { file: "logo-horizontal-ink", label: "墨1色", use: "白黒の印刷、FAX、ゴム印。", bg: "white" },
 ];
 
-/** ブランドの色。割合の目安は 背景60・青30・黄10 */
+/** ブランドの色。藍はロゴと骨格、明るい青は画面の中で押す所 */
 export const BRAND_COLORS = [
-  { name: "えらばれブルー", hex: "#2f6fdb", rgb: "47, 111, 219", role: "ロゴの帳面、ボタン、見出し。いちばん大事な色", dark: true },
-  { name: "濃いブルー", hex: "#2258b8", rgb: "34, 88, 184", role: "帳面の背、押したときのボタン", dark: true },
-  { name: "しおりイエロー", hex: "#ffc93c", rgb: "255, 201, 60", role: "しおり、星、ほめるとき。少しだけ使う" },
-  { name: "そらいろ", hex: "#9bd3ff", rgb: "155, 211, 255", role: "帳面のページ、かざり" },
-  { name: "すみいろ", hex: "#1f2b3d", rgb: "31, 43, 61", role: "文字。真っ黒は使わない", dark: true },
-  { name: "あさのそら", hex: "#f2f8ff", rgb: "242, 248, 255", role: "画面や資料の背景" },
+  { name: "藍", hex: "#1e4f7c", rgb: "30, 79, 124", role: "ロゴ、見出し、ヘッダーなどの骨格", text: "#ffffff" },
+  { name: "真鍮", hex: "#e9b53b", rgb: "233, 181, 59", role: "しおり、確かめてほしい所。少しだけ", text: "#1f2a33" },
+  { name: "生成り", hex: "#f7f4ec", rgb: "247, 244, 236", role: "ブランドの紙面、読みものの地", text: "#1f2a33" },
+  { name: "墨", hex: "#1f2a33", rgb: "31, 42, 51", role: "文字、罫線。真っ黒は使わない", text: "#ffffff" },
+  { name: "画面の青", hex: "#2f6fdb", rgb: "47, 111, 219", role: "サービスの画面で、押すボタン・リンク", text: "#ffffff" },
 ];
 
 /** 書体 */
 export const BRAND_FONTS = [
-  { name: "Zen Maru Gothic（ゼン丸ゴシック）", weight: "900（いちばん太い）", use: "ロゴ・見出し", sample: "AIに選ばれて、お客様に選ばれる。", className: "font-black" },
-  { name: "Zen Maru Gothic（ゼン丸ゴシック）", weight: "500・700", use: "本文・説明", sample: "質問に答えるだけで、記事ができます。", className: "font-medium" },
+  { name: "Zen Kaku Gothic New（ゼン角ゴシック）", weight: "Black・Bold", use: "ロゴ、大きな見出し", sample: "いい腕を、知り合いだけのものにしない。", font: "kaku" as const },
+  { name: "Barlow Semi Condensed", weight: "Bold", use: "AIO、番号、寸法", sample: "AIO 01 02 03 — 120px", font: "barlow" as const },
+  { name: "Zen Maru Gothic（ゼン丸ゴシック）", weight: "Medium・Bold", use: "サービスの画面の文章、案内役のせりふ", sample: "質問に答えるだけで、記事ができます。", font: "maru" as const },
 ];
 
-/** ロゴの使い方のルール */
+/** ロゴの使い方 */
 export const LOGO_RULES = {
-  clearSpace: "ロゴのまわりには、マークの高さの4分の1以上の余白をあけます（しおりの幅くらい）。文字や写真、ふちを近づけません。",
+  clearSpace: "ロゴのまわりには、表題欄の高さ（マークの高さの約5分の1）以上の余白をあけます。",
   minSize: [
-    { label: "横組み", screen: "画面で幅 120px 以上", print: "印刷で幅 25mm 以上" },
-    { label: "縦組み", screen: "画面で幅 80px 以上", print: "印刷で幅 18mm 以上" },
-    { label: "マーク", screen: "画面で 16px 以上", print: "印刷で 5mm 以上" },
+    { label: "横組み", screen: "幅 120px 以上", print: "幅 25mm 以上" },
+    { label: "縦組み", screen: "幅 80px 以上", print: "幅 18mm 以上" },
+    { label: "マーク", screen: "24px 以上", print: "6mm 以上" },
+    { label: "16px用", screen: "ブラウザのタブだけ（favicon-16）", print: "使わない" },
   ],
   writing: [
     { ok: true, text: "AIOえらばれ帳" },
@@ -136,12 +146,12 @@ export const LOGO_RULES = {
   ],
 };
 
-/** やってはいけないこと。style はロゴの絵にかける崩し方（見本用） */
+/** やってはいけないこと。style はロゴにかける崩し方（見本用） */
 export const LOGO_DONTS: { label: string; style: CSSProperties }[] = [
-  { label: "伸ばす・つぶす", style: { transform: "scaleX(1.45)" } },
-  { label: "かたむける", style: { transform: "rotate(-14deg)" } },
-  { label: "色を変える", style: { filter: "hue-rotate(140deg)" } },
-  { label: "影やふちを付ける", style: { filter: "drop-shadow(5px 5px 0 #b42318)" } },
-  { label: "読みにくい背景に置く", style: { background: "repeating-linear-gradient(45deg,#2f6fdb 0 10px,#ffc93c 10px 20px)" } },
+  { label: "伸ばす・つぶす", style: { transform: "scaleX(1.4)" } },
+  { label: "かたむける", style: { transform: "rotate(-12deg)" } },
+  { label: "色を変える", style: { filter: "hue-rotate(150deg) saturate(1.6)" } },
+  { label: "影やふちを付ける", style: { filter: "drop-shadow(4px 4px 0 #b42318)" } },
+  { label: "読みにくい地に置く", style: { background: "repeating-linear-gradient(45deg,#1e4f7c 0 8px,#e9b53b 8px 16px)" } },
   { label: "うすくする", style: { opacity: 0.3 } },
 ];

@@ -1,11 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="AIOえらばれ帳のマーク"><title>AIOえらばれ帳のマーク</title>
-<g>
-  <defs><mask id="aioMonowhite" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120">
-    <rect width="120" height="120" fill="#fff"/>
-    <path d="M78 6 H92 A2 2 0 0 1 94 8 V44 L85 37 L76 44 V8 A2 2 0 0 1 78 6 Z" fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round"/>
-    <path d="M60,43 C63.3,59.2 68.8,64.7 85,68 C68.8,71.3 63.3,76.8 60,93 C56.7,76.8 51.2,71.3 35,68 C51.2,64.7 56.7,59.2 60,43 Z M84,83 C85.056,88.184 86.816,89.944 92,91 C86.816,92.056 85.056,93.816 84,99 C82.944,93.816 81.184,92.056 76,91 C81.184,89.944 82.944,88.184 84,83 Z" fill="#000"/>
-  </mask></defs>
-  <rect x="14" y="14" width="88" height="98" rx="16" fill="#ffffff" mask="url(#aioMonowhite)"/>
-  <path d="M78 6 H92 A2 2 0 0 1 94 8 V44 L85 37 L76 44 V8 A2 2 0 0 1 78 6 Z" fill="#ffffff"/>
-</g>
+<defs><mask id="m-white" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120"><rect width="120" height="120" fill="#fff"/>
+<rect x="34" y="3" width="3" height="102" fill="#000"/><rect x="47" y="21" width="36" height="18" rx="1.5" fill="#000"/>
+<rect x="66.5" y="83.5" width="16" height="21" fill="#000"/></mask></defs>
+<path fill="#FFFFFF" mask="url(#m-white)" d="M28,4 H86 A9,9 0 0 1 95,13 V95 A9,9 0 0 1 86,104 H28 A3,3 0 0 1 25,101 V7 A3,3 0 0 1 28,4 Z"/>
+<path fill="#FFFFFF" d="M69,86 H80 V116 L74.5,112 L69,116 Z"/>
 </svg>
