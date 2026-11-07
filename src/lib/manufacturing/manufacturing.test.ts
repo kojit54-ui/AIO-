@@ -79,3 +79,13 @@ describe("製造業の知識表", () => {
     expect(readerConcernsFor("オフセット印刷", 6, "y").length).toBe(6);
   });
 });
+
+describe("知識表の置き場所", () => {
+  it("データは data.json に置き、data.ts は読み込むだけにする（TSの配列に戻すと本番の公開が8分かかる）", async () => {
+    const { statSync } = await import("node:fs");
+    const { join } = await import("node:path");
+    const dir = join(process.cwd(), "src/lib/manufacturing");
+    expect(statSync(join(dir, "data.ts")).size).toBeLessThan(10_000);
+    expect(MFG_ITEMS.length).toBeGreaterThan(1000);
+  });
+});

@@ -1,27 +1,21 @@
 #!/usr/bin/env python3
-"""製造業の知識表（src/lib/manufacturing/data.ts）に、調べた結果の JSON を足す。
+"""製造業の知識表（src/lib/manufacturing/data.json）に、調べた結果の JSON を足す。
 
 使い方（docs/MANUFACTURING_RESEARCH.md）:
   python3 scripts/manufacturing/merge.py <調べた結果のフォルダ>            # 何件足せるかを見るだけ
-  python3 scripts/manufacturing/merge.py <調べた結果のフォルダ> --write    # data.ts に書き込む
+  python3 scripts/manufacturing/merge.py <調べた結果のフォルダ> --write    # data.json に書き込む
   python3 scripts/manufacturing/merge.py --export <フォルダ>               # 既にある見出しと出典URLの一覧を書き出す
 
 フォルダの *.json（ファイル名が ov で始まるものは海外の箱）を読み、見出しが同じ・よく似たもの、長すぎるもの、形が違うものを除き、
-種類ごとの続き番号の id を付けて足す。data.ts は型の検査が重くならないよう 1,000 件ずつの配列に分けて書く。
+種類ごとの続き番号の id を付けて足す。
+データは data.json に置く（TSの配列だとビルドが2分以上かかったため。2026-11-07）。data.ts は読み込むだけ。
 """
 import json, re, glob, sys, os, difflib
 from collections import Counter
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-DATA = os.path.join(ROOT, "src/lib/manufacturing/data.ts")
+DATA = os.path.join(ROOT, "src/lib/manufacturing/data.json")
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
-src = open(DATA).read()
-head = src[: src.index("export const MFG_ITEMS")]
-if "const MFG_PART_" in src:
-    old = []
-    for m in re.finditer(r"const MFG_PART_\d+: MfgItem\[\] = (\[.*?\n\]);", src, re.S): old += json.loads(m.group(1))
-else:
-    old = json.loads(src[src.index("= [", src.index("export const MFG_ITEMS")) + 2 :].rstrip().rstrip(";"))
-
+old = json.load(open(DATA, encoding="utf-8"))
 
 if not args:
     sys.exit(__doc__)
@@ -105,10 +99,7 @@ print("kinds", Counter(x["kind"] for x in allx))
 print("industries", Counter(i for x in allx for i in x["industries"]).most_common())
 print("unknown industries", unknown.most_common(30))
 if "--write" in sys.argv:
-    if "const MFG_PART_" in head: head = head[: head.index("// 型の検査が重くなりすぎないよう")]
-    parts = [allx[i:i + 1000] for i in range(0, len(allx), 1000)]
-    body = "// 型の検査が重くなりすぎないよう（TS2590）、1,000件ずつに分けてつなぐ\n"
-    body += "".join(f"const MFG_PART_{n}: MfgItem[] = " + json.dumps(p, ensure_ascii=False, indent=2) + ";\n\n" for n, p in enumerate(parts))
-    body += "export const MFG_ITEMS: MfgItem[] = [" + ", ".join(f"...MFG_PART_{n}" for n in range(len(parts))) + "];\n"
-    open(DATA, "w").write(head + body)
+    with open(DATA, "w", encoding="utf-8") as f:
+        json.dump(allx, f, ensure_ascii=False, indent=1)
+        f.write("\n")
     print("written")

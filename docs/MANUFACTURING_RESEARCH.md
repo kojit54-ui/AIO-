@@ -14,7 +14,7 @@
 4. 6つの班（サブエージェント）に分けて調べる。各班に、このファイルの「班への指示」をそのまま渡し、担当の角度とファイル名（`/tmp/mfg-research/NN_角度.json`。海外は `ovNN_角度.json`）を伝える。
    - WebSearch は1ターン全体で200回が上限。**1班25回まで**と必ず書く（10班×40回にしたら全班が20回前後で止まった）。
 5. 全班がそろったら、まず見るだけで件数を確かめる：`python3 scripts/manufacturing/merge.py /tmp/mfg-research`
-   問題なければ `--write` で data.ts に書き込む。
+   問題なければ `--write` で data.json に書き込む。
 6. `npm run lint`・`npm run typecheck`・`npm test` を通す。
 7. docs/MANUFACTURING.md の「収集」の節に1行（何回目・何件・どの角度）、このファイルの「調べ先の記録」に使った角度を足す。docs/HANDOFF.md にも1行。
 8. コミット → push → PR → マージ（田村さん「毎回聞かずにマージして」）。
