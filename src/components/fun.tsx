@@ -3,8 +3,9 @@
 // 書く人のやる気を保つための、動きのある部品（docs/UI.md「見た目」）。
 // 動きは prefers-reduced-motion で止まる（globals.css）。
 
-import { GUIDE_WIDTH, type GuideId } from "@/lib/guideCharacter";
-import { useGuide } from "@/components/useGuide";
+import { guideFile, guideOf, type GuideId } from "@/lib/guideCharacter";
+import { GUIDE_WIDTHS } from "@/lib/guideWidths";
+import { useGuideOutfit } from "@/components/useGuide";
 import { useEffect, useState } from "react";
 import type { AioPoint } from "@/types/domain";
 
@@ -141,53 +142,43 @@ export type ShioriMood =
   | "jersey-cheer"
   | "jersey-stretch"
   | "jersey-done";
-const SHIORI_WIDTH: Record<ShioriMood, number> = {
-  ask: 323,
-  joy: 232,
-  sad: 216,
-  right: 241,
-  welldone: 237,
-  think: 201,
-  surprise: 266,
-  cheer: 209,
-  idea: 231,
-  coffee: 212,
-  point: 250,
-  bow: 131,
-  "jersey-cheer": 240,
-  "jersey-stretch": 246,
-  "jersey-done": 255,
-};
+/** 案内役の絵の場所と幅。選んだ案内役（しおり・源さん・こゆき）と服で変わる（src/lib/guideCharacter.ts） */
+function guideImage(file: string, mood: ShioriMood): { src: string; width: number } {
+  return { src: `/guide/${file}-${mood}.webp`, width: GUIDE_WIDTHS[file]?.[mood] ?? 240 };
+}
 
-/** 案内役の絵の場所と幅。選んだ案内役（しおり・源さん・こゆき）で変わる（src/lib/guideCharacter.ts） */
-function guideImage(guide: GuideId, mood: ShioriMood): { src: string; width: number } {
-  if (guide === "shiori") return { src: `/guide/shiori-${mood}.webp`, width: SHIORI_WIDTH[mood] };
-  return { src: `/guide/${guide}-${mood}.webp`, width: GUIDE_WIDTH[guide][mood] ?? 240 };
+/** 今の案内役と服から、絵のファイル名の頭を決める。as を渡すと、その案内役のふだんの服 */
+function useGuideFile(mood: string, as?: GuideId): string {
+  const { guide, outfit } = useGuideOutfit();
+  if (as) {
+    const g = guideOf(as);
+    return guideFile(g, g.outfits[0], mood);
+  }
+  return guideFile(guide, outfit, mood);
 }
 
 /** 案内役の絵。場面に合わせて表情を選ぶ。as を渡すと、選んだ案内役にかかわらずその絵にする（しおりの自己紹介など） */
-export function Shiori({ mood, className = "h-32 w-auto", as }: { mood: ShioriMood; className?: string; as?: GuideId }) {
-  const [guide] = useGuide();
-  const img = guideImage(as ?? guide.id, mood);
+export function Shiori({ mood, className = "h-32 w-auto", as, file }: { mood: ShioriMood; className?: string; as?: GuideId; file?: string }) {
+  const chosen = useGuideFile(mood, as);
+  const img = guideImage(file ?? chosen, mood);
   return (
     // eslint-disable-next-line @next/next/no-img-element -- 透過の固定の絵。最適化は不要
     <img src={img.src} width={img.width} height={400} alt="" className={className} aria-hidden />
   );
 }
 
-/** 「しおりより」などに出す顔のアイコン */
+/** 「しおりより」などに出す顔のアイコン。服ごとに顔のアイコンがある */
 export function ShioriFace({ className = "h-10 w-10", as }: { className?: string; as?: GuideId }) {
-  const [guide] = useGuide();
+  const file = useGuideFile("joy", as);
   return (
     // eslint-disable-next-line @next/next/no-img-element -- 小さな固定の絵。最適化は不要
-    <img src={`/guide/${as ?? guide.id}-face.webp`} width={192} height={192} alt="" className={`${className} shrink-0 rounded-full bg-sky object-cover`} aria-hidden />
+    <img src={`/guide/${file}-face.webp`} width={192} height={192} alt="" className={`${className} shrink-0 rounded-full bg-sky object-cover`} aria-hidden />
   );
 }
 
 /** 絵の中の案内役。x は左端、高さ130に収める */
 function Secretary({ x, mood }: { x: number; mood: ShioriMood; delay?: number }) {
-  const [guide] = useGuide();
-  const img = guideImage(guide.id, mood);
+  const img = guideImage(useGuideFile(mood), mood);
   const w = Math.round((img.width / 400) * 130);
   // 案内役は動かさない（2026-11-02 田村さん）。動くのは周りの小物と吹き出しだけ
   return <image href={img.src} x={x} y={0} width={w} height={130} />;

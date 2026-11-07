@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-outfit",
+    date: "2026-11-07",
+    title: "案内役が着がえられるようになりました",
+    body: "しおりは、スーツ・作業着・カジュアル・冬のコート・夏の半そでから、源さんはスーツと作業着から選べます。「おまかせ」にすると、季節に合わせて着がえます。源さんは、白髪まじりのベテラン職人になりました。",
+    href: "/mypage",
+    linkLabel: "服を選ぶ",
+  },
+  {
     id: "2026-11-07-guide",
     date: "2026-11-07",
     title: "案内役を選べるようになりました",

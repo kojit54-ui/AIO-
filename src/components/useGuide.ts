@@ -4,9 +4,11 @@
 
 import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
-import { DEFAULT_GUIDE, guideOf, isGuideId, type GuideCharacter, type GuideId } from "@/lib/guideCharacter";
+import { DEFAULT_GUIDE, guideOf, isGuideId, resolveOutfit, type GuideCharacter, type GuideId, type Outfit } from "@/lib/guideCharacter";
 
 const KEY = "cotam-guide-v1";
+/** 案内役ごとに選んだ服（{"shiori":"work"} の形） */
+const OUTFIT_KEY = "cotam-guide-outfit-v1";
 const EVENT = "cotam-guide";
 
 function read(): GuideId {
@@ -15,6 +17,23 @@ function read(): GuideId {
     return isGuideId(v) ? v : DEFAULT_GUIDE;
   } catch {
     return DEFAULT_GUIDE;
+  }
+}
+
+function readOutfits(): string {
+  try {
+    return window.localStorage.getItem(OUTFIT_KEY) ?? "{}";
+  } catch {
+    return "{}";
+  }
+}
+
+function parseOutfits(raw: string): Record<string, string> {
+  try {
+    const v: unknown = JSON.parse(raw);
+    return v && typeof v === "object" ? (v as Record<string, string>) : {};
+  } catch {
+    return {};
   }
 }
 
@@ -31,16 +50,41 @@ function subscribe(cb: () => void) {
 const PUBLIC = ["/welcome", "/try", "/shiori", "/login", "/invite", "/terms", "/privacy", "/tokushoho"];
 export const isPublicPath = (p: string | null) => !!p && PUBLIC.some((x) => p === x || p.startsWith(`${x}/`));
 
-export function useGuide(): [GuideCharacter, (id: GuideId) => void] {
+export interface GuideState {
+  guide: GuideCharacter;
+  /** 今着ている服（着がえない案内役は undefined） */
+  outfit: Outfit | undefined;
+  /** 選んでいる服の id か "auto"（おまかせ）。未選択は undefined */
+  pickedOutfit: string | undefined;
+}
+
+function useGuideState(): GuideState {
   const picked = useSyncExternalStore(subscribe, read, () => DEFAULT_GUIDE);
-  const id = isPublicPath(usePathname()) ? DEFAULT_GUIDE : picked;
-  const set = (next: GuideId) => {
-    try {
-      window.localStorage.setItem(KEY, next);
-    } catch {
-      // 覚えられないときは しおり のまま
-    }
-    window.dispatchEvent(new Event(EVENT));
-  };
-  return [guideOf(id), set];
+  const rawOutfits = useSyncExternalStore(subscribe, readOutfits, () => "{}");
+  const pub = isPublicPath(usePathname());
+  const guide = guideOf(pub ? DEFAULT_GUIDE : picked);
+  // ログイン前の画面は、いつものスーツの しおり
+  const pickedOutfit = pub ? undefined : parseOutfits(rawOutfits)[guide.id];
+  return { guide, outfit: resolveOutfit(guide, pickedOutfit, new Date().getMonth() + 1), pickedOutfit };
+}
+
+function save(key: string, value: string) {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // 覚えられないときは ふだんのまま
+  }
+  window.dispatchEvent(new Event(EVENT));
+}
+
+export function useGuide(): [GuideCharacter, (id: GuideId) => void] {
+  const { guide } = useGuideState();
+  return [guide, (next: GuideId) => save(KEY, next)];
+}
+
+/** 案内役と服。setOutfit は今の案内役の服を選ぶ（"auto" でおまかせ） */
+export function useGuideOutfit(): GuideState & { setOutfit: (guide: GuideId, outfit: string) => void } {
+  const state = useGuideState();
+  const setOutfit = (g: GuideId, outfit: string) => save(OUTFIT_KEY, JSON.stringify({ ...parseOutfits(readOutfits()), [g]: outfit }));
+  return { ...state, setOutfit };
 }
