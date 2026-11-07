@@ -119,6 +119,11 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）スーツのしおりを作り直す
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：田村さん「スーツのしおりもジェミニに作り直させて」。ほかの服（作業着など）と同じ顔で、スーツとジャージの15表情と顔のアイコンを Gemini で作り直した（public/guide/shiori-*.webp、幅の表 src/lib/guideWidths.ts）。ブラウスは胸元を閉じた形にした
+- 確認結果：lint・型検査・テスト通過。絵の一覧を目で確認
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）案内役の服を選べるようにする
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/lib/guideCharacter.ts（服の一覧・おまかせ・guideFile、テストあり）、src/lib/guideWidths.ts（public/guide の絵から作る幅の表）、useGuide に useGuideOutfit、fun.tsx の絵と顔のアイコンが服で変わる、マイページの「〇〇の服」、新しくなったことに1つ。源さんの絵を白髪まじりのベテラン職人に差し替え、しおり4着・源さんスーツの絵を Gemini で追加
