@@ -119,6 +119,12 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）案内役の服を選べるようにする
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：src/lib/guideCharacter.ts（服の一覧・おまかせ・guideFile、テストあり）、src/lib/guideWidths.ts（public/guide の絵から作る幅の表）、useGuide に useGuideOutfit、fun.tsx の絵と顔のアイコンが服で変わる、マイページの「〇〇の服」、新しくなったことに1つ。源さんの絵を白髪まじりのベテラン職人に差し替え、しおり4着・源さんスーツの絵を Gemini で追加
+- 確認結果：lint・型検査・テスト通過。375px・1280px でマイページ
+- 次の作業：画面の言葉の「しおり」を選んだ案内役の名前に合わせる。源さん・こゆきの名前は仮
+
 ### 2026-11-04 CC（Claude、プロジェクトのスレッド）製造業の知識表
 - ブランチ：claude/project-thread-cnj6dn
 - 変更点：src/lib/manufacturing（data.ts 213件、index.ts、テスト）、書き手・点検役・記事の提案への差し込み（src/lib/ai/prompt.ts、growthPrompts.ts）、ホームの MfgTip、/admin/knowledge、入口のページの ForMakers、docs/MANUFACTURING.md

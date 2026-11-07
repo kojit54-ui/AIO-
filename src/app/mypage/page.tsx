@@ -10,9 +10,9 @@ import { LegalLinks } from "@/components/LegalLinks";
 import { ORG_NAME_MAX, normalizeOrgName } from "@/lib/orgName";
 import { PERSON_NAME_MAX, normalizePersonName } from "@/lib/personName";
 import { TONES } from "@/lib/shioriTone";
-import { GUIDES } from "@/lib/guideCharacter";
-import { useGuide } from "@/components/useGuide";
-import { ShioriFace } from "@/components/fun";
+import { AUTO_OUTFIT, GUIDES, seasonalOutfit } from "@/lib/guideCharacter";
+import { useGuide, useGuideOutfit } from "@/components/useGuide";
+import { Shiori, ShioriFace } from "@/components/fun";
 import { useShioriTone } from "@/components/useShioriTone";
 import { useStore } from "@/mock/store";
 
@@ -398,7 +398,8 @@ function NameCard({ current }: { current: string }) {
 
 /** 案内役を選ぶ（2026-11-07 田村さん「しおりだけじゃなくて、男の人と、キャラクターを選べるようにしたい」） */
 function GuideCard() {
-  const [guide, setGuide] = useGuide();
+  const { guide, outfit, pickedOutfit, setOutfit } = useGuideOutfit();
+  const [, setGuide] = useGuide();
   return (
     <section className="card space-y-3">
       <h2 className="font-black">案内役</h2>
@@ -419,7 +420,43 @@ function GuideCard() {
           </button>
         ))}
       </div>
-      <ShioriTalk key={guide.id} mood="joy" lines={[`${guide.name}です。これから、いっしょにがんばりましょう！`]} />
+      {guide.outfits.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="text-sm font-black">{guide.name}の服</h3>
+          <div role="radiogroup" aria-label={`${guide.name}の服`} className="flex gap-2 overflow-x-auto pb-1">
+            {guide.outfits.map((o, i) => {
+              const on = pickedOutfit === o.id || (!pickedOutfit && i === 0);
+              return (
+                <button
+                  key={o.id}
+                  type="button"
+                  role="radio"
+                  aria-checked={on}
+                  onClick={() => setOutfit(guide.id, o.id)}
+                  className={`flex w-20 shrink-0 flex-col items-center gap-1 rounded-2xl border-2 px-1 pb-2 pt-1 text-center transition ${on ? "border-brand bg-brand-soft" : "border-line bg-surface hover:border-brand"}`}
+                >
+                  <Shiori mood="ask" file={o.file} className="h-24 w-auto" />
+                  <span className="block text-xs font-black">{o.label}</span>
+                </button>
+              );
+            })}
+            {guide.outfits.length > 2 && (
+              <button
+                type="button"
+                role="radio"
+                aria-checked={pickedOutfit === AUTO_OUTFIT}
+                onClick={() => setOutfit(guide.id, AUTO_OUTFIT)}
+                className={`flex w-20 shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border-2 px-1 py-2 text-center transition ${pickedOutfit === AUTO_OUTFIT ? "border-brand bg-brand-soft" : "border-line bg-surface hover:border-brand"}`}
+              >
+                <span aria-hidden className="text-3xl">🍂</span>
+                <span className="block text-xs font-black">おまかせ</span>
+                <span className="block text-[10px] text-muted">季節で着がえる（今は{seasonalOutfit(guide, new Date().getMonth() + 1)?.label}）</span>
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+      <ShioriTalk key={`${guide.id}-${outfit?.id ?? ""}`} mood="joy" lines={[outfit && outfit !== guide.outfits[0] ? `${guide.name}です。今日は${outfit.label}で来ました。いっしょにがんばりましょう！` : `${guide.name}です。これから、いっしょにがんばりましょう！`]} />
     </section>
   );
 }
