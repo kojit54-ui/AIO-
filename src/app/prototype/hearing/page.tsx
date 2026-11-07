@@ -7,9 +7,10 @@ import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice, PageSkeleton } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { AioMeter, AioWhy, Cheer, WhyAio } from "@/prototype/components";
-import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, collectedAio, deepDiveWhy, nextDeepDive, pendingDeepDive, resumeIndex, withNewText, MAX_ANSWER, MAX_AI_DEEP_DIVES, MAX_DEEP_DIVES, hearingCheer, hearingProgress } from "@/prototype/growth";
+import { type AioPoint, HEARING_QUESTIONS, type HearingAnswer, collectedAio, deepDiveWhy, isAnswerDone, nextDeepDive, pendingDeepDive, resumeIndex, withNewText, MAX_ANSWER, MAX_AI_DEEP_DIVES, MAX_DEEP_DIVES, hearingCheer, hearingProgress } from "@/prototype/growth";
 import { growActions, useGrow, useGrowSync } from "@/prototype/store";
 import { type TryCarry, clearTryCarry, loadTryCarry } from "@/lib/tryoutCarry";
+import { hearingFillsFromKnowledge } from "@/lib/growth/knowledgeToHearing";
 
 /**
  * 顧客が1問ずつ答えるヒアリング。答えるたびに、AIが聞く理由を添えて深掘りの質問を返す（1問につき4回まで。2026-11-02）。
@@ -18,7 +19,7 @@ import { type TryCarry, clearTryCarry, loadTryCarry } from "@/lib/tryoutCarry";
 export default function HearingPage() {
   const g = useGrow();
   const sync = useGrowSync();
-  const { user } = useStore();
+  const { user, db } = useStore();
   const ai = sync.mode === "remote" && !!user;
   const orgId = user?.organizationIds[0];
   const [thinking, setThinking] = useState(false);
@@ -31,6 +32,9 @@ export default function HearingPage() {
   // 30秒でためすで入れた会社のこと（本人が覚えておくを選んだときだけ、このブラウザにある）
   const [carry, setCarry] = useState<TryCarry | null>(null);
   const [carried, setCarried] = useState(false);
+  // 取り込んだ知識で答えが分かった質問（飛ばした数と、自分で答えると決めたか）
+  const [skipped, setSkipped] = useState<string[] | null>(null);
+  const [ownWords, setOwnWords] = useState(false);
   useEffect(() => {
     const t = setTimeout(() => setCarry(loadTryCarry()), 0);
     return () => clearTimeout(t);
@@ -73,7 +77,9 @@ export default function HearingPage() {
   const deepNo = activeDeep ? saved.followUps.length + (pendingDeepDive(saved) ? 0 : 1) : 0;
   const progress = hearingProgress(current, total, deepNo, maxDeep);
   const answeredTimes = Object.values(g.answers).reduce((n, a) => n + (a.text.trim() && !a.draft ? 1 : 0) + a.followUps.filter((f) => f.answer.trim()).length, 0);
-  const cheerLine = hearingCheer({ remaining: total - current, deepNo, count: answeredTimes });
+  // 取り込んだ内容で飛ばした質問があっても、残りの数が合うように数える
+  const remaining = HEARING_QUESTIONS.filter((x) => !isAnswerDone(x, g.answers[x.id])).length || total - current;
+  const cheerLine = hearingCheer({ remaining, deepNo, count: answeredTimes });
 
   function go(to: number, cheerFor: AioPoint | null = null) {
     setCheer(cheerFor);
@@ -182,6 +188,44 @@ export default function HearingPage() {
         </p>
       </div>
 
+      {!ownWords && !skipped && (() => {
+        const notes = (db.knowledgeNotes ?? []).filter((n) => n.organizationId === orgId);
+        const fills = hearingFillsFromKnowledge(notes, g.answers);
+        if (!fills.length) return null;
+        const labels = fills.map((f) => HEARING_QUESTIONS.find((x) => x.id === f.questionId)?.label ?? f.questionId);
+        return (
+          <div className="card animate-pop space-y-3 border-2 border-brand bg-brand-soft/40">
+            <ShioriTalk mood="jersey-cheer" lines={[`取り込んでくれた内容で、${fills.length}問は答えが分かりました！`, "この質問は飛ばして、残りだけ聞きますね。中身はあとから「答えを見直す」で直せます。"]} />
+            <ul className="space-y-1 text-sm">
+              {fills.map((f, i) => (
+                <li key={f.questionId} className="rounded-2xl bg-white/70 px-3 py-2">
+                  <span className="font-bold">✓ {labels[i]}</span>
+                  <span className="block truncate text-muted">{f.text}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                className="btn-primary min-h-14 text-lg"
+                onClick={() => {
+                  for (const f of fills) growActions.saveAnswer({ questionId: f.questionId, text: f.text.slice(0, MAX_ANSWER), followUps: [], draft: false, deepDiveDone: true });
+                  setSkipped(labels);
+                  setStep(null);
+                  setDeep(null);
+                  setText("");
+                }}
+              >
+                {fills.length}問を飛ばして、残りに答える
+              </button>
+              <button type="button" className="btn-secondary" onClick={() => setOwnWords(true)}>
+                自分の言葉で答える
+              </button>
+            </div>
+          </div>
+        );
+      })()}
+      {skipped && <Notice tone="ok" title={`${skipped.length}問を、取り込んだ内容で答えました`}>{skipped.join("・")}。残りの質問だけ答えてください。</Notice>}
       {carry && (() => {
         // まだ答えていない問いにだけ、途中の答えとして入れる（「次へ」を押すまで決まらない）
         const fill = [

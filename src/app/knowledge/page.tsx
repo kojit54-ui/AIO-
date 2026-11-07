@@ -7,7 +7,7 @@
 // 3. これまでのブログ記事を、過去記事として足す（次の記事づくりに使う）
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChatExportImport } from "@/components/ChatExportImport";
 import { Confetti, Toast } from "@/components/fun";
 import { type GuideStep, ShioriTalk, StepGuide } from "@/components/talk";
@@ -31,10 +31,26 @@ const MODES: { id: Mode; icon: string; title: string; note: string; time: string
   { id: "blog", icon: "📝", title: "これまでのブログ記事を渡す", note: "書いてきた記事を1本ずつ貼り付け", time: "1本1分" },
 ];
 
+/** ホームの「ふだん使っているAI」から来たとき（/knowledge?mode=ask&ai=ChatGPT）は、そのやり方とAIを選んだ状態で始める */
+function fromUrl(): { mode: Mode | null; ai: string | null } {
+  if (typeof window === "undefined") return { mode: null, ai: null };
+  const q = new URLSearchParams(window.location.search);
+  const m = q.get("mode");
+  const a = q.get("ai");
+  return { mode: MODES.some((x) => x.id === m) ? (m as Mode) : null, ai: AI_LINKS.some((x) => x.name === a) ? a : null };
+}
+
 export default function KnowledgePage() {
   const { db, user, api } = useStore();
-  const [mode, setMode] = useState<Mode | null>(null);
-  const [ai, setAi] = useState(AI_LINKS[0].name);
+  const [start] = useState(fromUrl);
+  const [mode, setMode] = useState<Mode | null>(start.mode);
+  const [ai, setAi] = useState(start.ai ?? AI_LINKS[0].name);
+  // ホームから来たときは、やり方の選択を飛ばして手順のところまで動かす
+  useEffect(() => {
+    if (!start.mode) return;
+    const t = setTimeout(() => document.getElementById("teach-guide")?.scrollIntoView({ behavior: "smooth", block: "start" }), 600);
+    return () => clearTimeout(t);
+  }, [start.mode]);
   const [askStep, setAskStep] = useState(0);
   const [copied, setCopied] = useState(false);
   const [pasted, setPasted] = useState("");
@@ -119,16 +135,16 @@ export default function KnowledgePage() {
     {
       title: "AIを選ぶ",
       mood: "ask",
-      say: ["いつもどのAIを使っていますか？", "押すと、そのAIが新しい画面で開きます。"],
+      say: start.ai ? [`いつもの${start.ai}を開きましょう。`, "下のボタンを押すと、新しい画面で開きます。開いたら、この画面に戻ってきてくださいね。"] : ["いつもどのAIを使っていますか？", "押すと、そのAIが新しい画面で開きます。"],
       body: (
         <div className="flex flex-wrap gap-2">
-          {AI_LINKS.map((a) => (
+          {(start.ai ? AI_LINKS.filter((a) => a.name === start.ai) : AI_LINKS).map((a) => (
             <a
               key={a.name}
               href={a.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary"
+              className={start.ai ? "btn-primary min-h-14 text-lg" : "btn-secondary"}
               onClick={() => {
                 setAi(a.name);
                 setAskStep(1);
@@ -213,6 +229,14 @@ export default function KnowledgePage() {
         <ShioriTalk mood="ask" size="lg" lines={["会社のことを教えてもらえたら、次の記事からもっとあなたらしく書けます。", "やり方を3つ用意しました。どれから教えてくれますか？"]} />
       </div>
       {error && <Notice tone="warn" title={error} />}
+      {done && start.ai && (
+        <section className="card animate-pop space-y-3 border-2 border-brand">
+          <ShioriTalk mood="jersey-cheer" lines={[`${start.ai}からの取り込み、できました！`, "次は、会社のことを聞く質問です。取り込んだ内容で分かった質問は飛ばすので、残りだけ答えてください。"]} />
+          <Link href="/prototype/hearing" className="btn-primary min-h-14 w-full text-lg">
+            残りの質問に答える →
+          </Link>
+        </section>
+      )}
 
       <section aria-label="教え方を選ぶ" className="grid gap-3 sm:grid-cols-3">
         {MODES.map((m, i) => (

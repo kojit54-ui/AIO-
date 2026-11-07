@@ -16,6 +16,7 @@ import { WhatsNew } from "@/components/WhatsNew";
 import { MfgTip } from "@/components/MfgTip";
 import { MoreOnHome, NextStepCard } from "@/components/NextStep";
 import { NextWritingDay } from "@/components/NextWritingDay";
+import { FirstAiQuestion } from "@/components/FirstAiQuestion";
 import { nextStep } from "@/lib/nextStep";
 import { useShioriTone } from "@/components/useShioriTone";
 import { FIX_LINES, homeLines, homeMood, referenceTime } from "@/lib/shioriTone";
@@ -54,6 +55,7 @@ export default function HomePage() {
 
   return (
     <main className="page space-y-6">
+      <FirstAiQuestion hasKnowledge={(db.knowledgeNotes ?? []).some((n) => n.organizationId === orgId)} />
       {org?.profile && !org.profileApprovedAt && (
         <Notice tone="warn" title="まず、会社の情報を確かめてください">
           記事を書き始める前に、コタムが登録した会社の情報に間違いがないか見てください。{" "}
