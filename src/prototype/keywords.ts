@@ -179,3 +179,22 @@ export function shioriMessage(rows: Row[], items: SellItem[] = []): string {
   const head = c.published === 0 ? `書く記事が${c.all}本 並んだよ。` : `${c.all}本のうち ${c.published}本 やったね！`;
   return next ? `${head}次は「${next.keyword}」がおすすめ。` : head;
 }
+
+/** お客様の事例の記事か。言葉か「知りたいこと」で見る（docs/AIO.md「選ばれる決め手」） */
+const CASE_WORDS = /事例|実績|お客様の声|施工例|導入例|納入例|ビフォー|選ばれた理由|どう変わった|どう解決/;
+export const isCaseStudy = (r: KeywordRow) => CASE_WORDS.test(`${r.keyword} ${r.question}`);
+
+/** 狙うお客様に刺さる事例の目安。3本あると、読んだ人が「ここに頼もう」と決めやすい */
+export const CASE_STUDY_GOAL = 3;
+
+/** 事例の記事の数と、しおりのひとこと。記事が無いときは何も言わない */
+export function caseStudyHint(rows: Row[]): { count: number; message: string } | null {
+  const active = rows.filter((r) => !r.parked);
+  if (active.length === 0) return null;
+  const count = active.filter(isCaseStudy).length;
+  const message =
+    count >= CASE_STUDY_GOAL
+      ? `お客様の事例の記事が${count}本。AIに紹介されて来た人が「ここに頼もう」と決める材料がそろっているよ。`
+      : `お客様の事例の記事は${count}本。目安は${CASE_STUDY_GOAL}本。AIに紹介されて来た人は、事例を読んで頼むかを決めるよ。「〇〇 事例」の記事を足してみよう。`;
+  return { count, message };
+}

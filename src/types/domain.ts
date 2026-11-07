@@ -206,7 +206,7 @@ export interface Question {
 }
 
 /** AIOのチェックで見る項目。AIOの9つの材料に、数字の確かさ・使ってほしくない言葉・AIっぽさを足したもの（src/lib/aioCheck.ts） */
-export type AioCheckKey = AioPoint | "facts" | "words" | "ai_tone";
+export type AioCheckKey = AioPoint | "proof" | "facts" | "words" | "ai_tone";
 
 export interface AioCheckItem {
   key: AioCheckKey;
