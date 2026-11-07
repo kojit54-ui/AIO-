@@ -440,7 +440,7 @@ function GuideCard() {
                 </button>
               );
             })}
-            {guide.outfits.length > 2 && (
+            {guide.outfits.some((o) => o.id === "summer" || o.id === "winter") && (
               <button
                 type="button"
                 role="radio"
