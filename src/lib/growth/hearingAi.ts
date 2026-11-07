@@ -6,12 +6,14 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { buildImportPrompt, IMPORT_SYSTEM_PROMPT, parseImport } from "@/lib/ai/growthPrompts";
 import { MAX_IMPORT_CHARS, splitByHeadings, type ImportCandidate } from "./aiImport";
+import { PHOTO_THEMES_SYSTEM_PROMPT, buildPhotoThemesPrompt, parsePhotoThemes, type PhotoTheme } from "@/lib/ai/growthPrompts";
 import { ANSWER_IDEAS_SYSTEM_PROMPT, TITLE_IDEAS_SYSTEM_PROMPT, buildTitleIdeasPrompt, parseTitleIdeas, buildAnswerIdeasPrompt, parseAnswerIdeas, buildExamplesPrompt, buildFollowUpPrompt, buildProfilePrompt, EXAMPLES_SYSTEM_PROMPT, FOLLOWUP_SYSTEM_PROMPT, parseExamples, parseFollowUpWithWhy, parseProfile, PROFILE_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
 import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import { sampleQuestionExamples } from "./questionExamples";
 import { SAMPLE_ANSWER_IDEAS, sampleTitleIdeas } from "@/lib/answerIdeas";
 import { estimateCostYen } from "@/lib/ai/cost";
-import { failureReason, type AiProvider, type AiUsage } from "@/lib/ai/provider";
+import { AiProviderError, failureReason, type AiImageInput, type AiProvider, type AiUsage } from "@/lib/ai/provider";
+import { SAMPLE_PHOTO_THEMES } from "@/lib/photoStart";
 import { HEARING_QUESTIONS, MAX_AI_DEEP_DIVES, MAX_ANSWER, REQUIRED_FOR_PROPOSALS, isAnswerDone, nextDeepDive, type HearingAnswer } from "@/prototype/growth";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
 import type { CompanyProfile } from "@/types/domain";
@@ -355,3 +357,60 @@ export async function runTitleIdeas(deps: HearingDeps, req: TitleIdeasRequest): 
     return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "AIがタイトル案を作れませんでした。もう一度お試しください");
   }
 }
+
+export interface PhotoThemesRequest {
+  organizationId: string;
+  image: { mimeType: string; data: string };
+  memo: string;
+  idempotencyKey: string;
+}
+
+/** 写真1枚から、書ける記事のテーマを3つ考える（2026-11-07）。写真は保存せず、ログにも出さない */
+const FALLBACK_CODES = ["billing", "auth", "unavailable", "rate_limited"];
+
+export async function runPhotoThemes(deps: HearingDeps & { fallback?: AiProvider }, req: PhotoThemesRequest): Promise<{ ok: true; seen: string; themes: PhotoTheme[]; sample: boolean } | Fail> {
+  const { user: db } = deps;
+  if (!(await requireUser(db))) return fail(401, "session_expired", "ログインの有効期限が切れました");
+  const mime = req.image?.mimeType;
+  const data = typeof req.image?.data === "string" ? req.image.data : "";
+  if ((mime !== "image/jpeg" && mime !== "image/png" && mime !== "image/webp") || !data || !/^[A-Za-z0-9+/=]+$/.test(data)) return fail(400, "invalid_input", "写真を選び直してください");
+  if (data.length > MAX_PHOTO_BASE64) return fail(400, "invalid_input", "写真が大きすぎます。別の写真を選んでください");
+  const memo = typeof req.memo === "string" ? req.memo.trim().slice(0, 300) : "";
+  const loaded = await profileForIdeas(db, req.organizationId);
+  if (!loaded.ok) return loaded;
+
+  // 受付の文字数は、写真の分を一定（2,000字ぶん）として数える
+  const b = await begin(deps, req.organizationId, req.idempotencyKey, 2000 + memo.length);
+  if (!b.ok) return b;
+  const signal = AbortSignal.timeout(FOLLOWUP_TIMEOUT_MS);
+  let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
+  try {
+    let out: { seen: string; themes: PhotoTheme[] };
+    if (deps.isSample) out = SAMPLE_PHOTO_THEMES;
+    else {
+      const image: AiImageInput = { mimeType: mime, data };
+      const ask = (p: AiProvider) => p.complete({ kind: "hearing", system: PHOTO_THEMES_SYSTEM_PROMPT, user: buildPhotoThemesPrompt({ profile: loaded.profile, memo }), images: [image], maxOutputTokens: 2000, signal });
+      let res: Awaited<ReturnType<AiProvider["complete"]>>;
+      try {
+        res = await ask(deps.provider);
+      } catch (e) {
+        // 画像を読む役（既定は Google）がクレジット切れ・キー違いなどで使えないときは、書き手のAIで読む
+        if (!deps.fallback || deps.fallback === deps.provider || !(e instanceof AiProviderError) || !FALLBACK_CODES.includes(e.code)) throw e;
+        console.error("photo themes fallback", { runId: b.runId, reason: e.code });
+        res = await ask(deps.fallback);
+      }
+      usage = res.usage;
+      out = parsePhotoThemes(res.text);
+    }
+    await b.finish("succeeded", usage, null);
+    return { ok: true, ...out, sample: deps.isSample };
+  } catch (e) {
+    const reason = failureReason(e, signal);
+    console.error("photo themes failed", { runId: b.runId, reason });
+    await b.finish("failed", usage, reason);
+    return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "写真から考えられませんでした。もう一度お試しください");
+  }
+}
+
+/** 写真は画面で小さくしてから送る。base64で約2MBまで */
+export const MAX_PHOTO_BASE64 = 2_800_000;

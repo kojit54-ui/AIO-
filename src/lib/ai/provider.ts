@@ -37,6 +37,14 @@ export interface AiCompletionRequest {
   maxOutputTokens: number;
   quality?: AiQuality;
   signal?: AbortSignal;
+  /** いっしょに見せる写真（base64）。写真から記事を始めるときだけ使う */
+  images?: AiImageInput[];
+}
+
+export interface AiImageInput {
+  mimeType: "image/jpeg" | "image/png" | "image/webp";
+  /** base64（data: の前置きなし） */
+  data: string;
 }
 
 export interface AiProvider {

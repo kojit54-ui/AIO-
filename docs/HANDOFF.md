@@ -119,6 +119,13 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）写真1枚から記事を始める
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：AiCompletionRequest に images（Google・OpenAI・Anthropic の3つとも対応）、growthPrompts に写真からテーマ（PHOTO_THEMES_SYSTEM_PROMPT・parsePhotoThemes）、hearingAi に runPhotoThemes（読めないときは書き手のAIで読み直す）、/api/organizations/[id]/photo-themes、src/components/PhotoStart.tsx、src/lib/photoStart.ts（テストあり）
+- 確認結果：lint・型検査・テスト通過。375px・1280px で 写真を選ぶ→ひとこと→テーマ3つ→記事の質問へ（試作）。本物のAIでは GPT で写真を読んでテーマ3つが返ることを確認。Gemini はクラウド環境のキーで 402（前払いクレジット切れ）
+- 未完了：Gemini の前払いクレジットの確認（田村さん）。切れていても写真は GPT で読む
+- 次の作業：記事の読むだけモード、ゲーム要素の一本化
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）はじめてのログインで、いつものAIから取り込む
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/components/FirstAiQuestion.tsx（ホームで一度だけ聞く。答えはブラウザに cotam-first-ai-v1 で覚える。会社の知識があれば聞かない）、/knowledge が ?mode=ask&ai= で手順から始まる、取り込み後に「残りの質問に答える」、src/lib/growth/knowledgeToHearing.ts（見出しと質問の結びつけ、テストあり）とヒアリングの「N問を飛ばして、残りに答える」、残りの問いの数え方
