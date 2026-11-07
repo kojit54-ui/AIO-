@@ -6,7 +6,7 @@ import { EmptyState, StatusBadge, formatDate } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
 import { writingStreak } from "@/lib/growth/monthly";
-import { badges } from "@/lib/growth/badges";
+import { townPosition, townSteps } from "@/lib/growth/town";
 
 export default function CoachHome() {
   const { db, user, month } = useStore();
@@ -105,7 +105,7 @@ export default function CoachHome() {
             const lastWrite = db.versions.filter((v) => ids.has(v.articleId) && v.body.length > 0).reduce((m, v) => (v.createdAt > m ? v.createdAt : m), "");
             const quiet = !lastWrite || lastWrite.slice(0, 7) < month;
             const streak = writingStreak(db, o.id);
-            const stamps = badges(db, o.id);
+            const town = townSteps(db, o.id, false);
             const sc = (db.searchConsole ?? []).find((x) => x.organizationId === o.id && x.verifiedAt);
             return (
               <li key={o.id} className="animate-rise" style={{ animationDelay: `${0.1 + i * 0.06}s` }}>
@@ -115,7 +115,7 @@ export default function CoachHome() {
                   {ready && quiet && <span className="mt-1 inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">今月はまだ書いていません（声をかけるきっかけに）</span>}
                   <span className="mt-2 flex flex-wrap gap-1.5 text-xs font-bold">
                     <span className={`rounded-full px-2 py-0.5 ${streak >= 2 ? "bg-sun text-ink" : "bg-canvas text-muted"}`}>🔥 {streak}か月つづけて</span>
-                    <span className="rounded-full bg-canvas px-2 py-0.5">🎖️ スタンプ {stamps.filter((b) => b.got).length}/{stamps.length}</span>
+                    <span className="rounded-full bg-canvas px-2 py-0.5">🏘️ すごろく {townPosition(town)}/{town.length}マス</span>
                     <span className={`rounded-full px-2 py-0.5 ${sc ? "bg-ok-soft text-ok" : "bg-canvas text-muted"}`}>
                       🔍 {sc ? `検索に出た ${(sc.snapshot?.totals.impressions ?? 0).toLocaleString("ja-JP")}回` : "Search Console 未接続"}
                     </span>

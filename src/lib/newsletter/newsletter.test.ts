@@ -35,6 +35,15 @@ describe("しおり通信の中身", () => {
     expect(newsletterInput(db, "o1", "2026-10", ["first"]).newStamps).toEqual(["デビュー", "検索とつながった"]);
   });
 
+  it("すごろくの進み具合と次のマスを出す（スタンプ帳ではなく、すごろくの言い方で）", () => {
+    const i = newsletterInput(db, "o1", "2026-10");
+    expect(i.town.total).toBe(7);
+    expect(i.town.at).toBeGreaterThan(0);
+    const m = renderNewsletter(i, { appUrl: "https://app.example", unsubscribeUrl: "#" });
+    expect(m.text).toContain(`■ AIの町すごろく（${i.town.at} / 7マス）`);
+    expect(m.text).not.toContain("スタンプ帳");
+  });
+
   it("会社名などはエスケープし、受け取らないのリンクを入れる", () => {
     const m = renderNewsletter(newsletterInput(db, "o1", "2026-10"), { appUrl: "https://app.example", unsubscribeUrl: "https://app.example/u?x=1" });
     expect(m.subject).toBe("しおり通信 2026年10月号｜さくら<住まい>工房さまの今月のまとめ");
