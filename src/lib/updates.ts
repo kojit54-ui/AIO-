@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-first-ai",
+    date: "2026-11-07",
+    title: "ふだん使っているAIから、会社のことを取り込めるようになりました",
+    body: "ChatGPT・Claude・Gemini を使っていれば、しおりがいっしょに会社のことを取り込みます。取り込んだ内容で答えが分かる質問は、飛ばして残りだけ答えられます。",
+    href: "/knowledge?mode=ask",
+    linkLabel: "取り込んでみる",
+  },
+  {
     id: "2026-11-07-writing-day",
     date: "2026-11-07",
     title: "「次に書く日」を決められるようになりました",

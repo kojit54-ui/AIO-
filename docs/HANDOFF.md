@@ -119,6 +119,12 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）はじめてのログインで、いつものAIから取り込む
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：src/components/FirstAiQuestion.tsx（ホームで一度だけ聞く。答えはブラウザに cotam-first-ai-v1 で覚える。会社の知識があれば聞かない）、/knowledge が ?mode=ask&ai= で手順から始まる、取り込み後に「残りの質問に答える」、src/lib/growth/knowledgeToHearing.ts（見出しと質問の結びつけ、テストあり）とヒアリングの「N問を飛ばして、残りに答える」、残りの問いの数え方
+- 確認結果：lint・型検査・テスト通過。375px・1280px で、聞く→ChatGPT→手順→取り込み→4問を飛ばす、まで通した（試作）
+- 次の作業：写真から始める、記事の読むだけモード、ゲーム要素の一本化
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）次に書く日とお知らせメール
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/lib/writingDay.ts（日にち・テストあり）、src/components/NextWritingDay.tsx（ホームとブログに載せた後に出す）、src/lib/reminder/server.ts と /api/cron/writing-reminder（毎朝0時UTC＝9時JST、テストあり）、vercel.json に Cron を追加、supabase/migrations/20261107090000_writing_plans.sql（冪等）。ホームの案内役のひとことを「次にやること」と合わせた（FIX_LINES）
