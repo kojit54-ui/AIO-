@@ -119,6 +119,12 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）記事を読みながら直す
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：src/components/BlockEditor.tsx に「📖 読みながら直す／✏️ まとめて直す」。読む形では段落を押すとその場で入力欄・声で直す・短くする・伝わりやすくする・下に段落を追加・削除。変更案の表示は SuggestionBox にまとめた
+- 確認結果：lint・型検査・テスト通過。375px・1280px で 読む形→見出しを押して直す（試作）
+- 次の作業：ゲーム要素（すごろく・スタンプ・理解度）の一本化
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）写真1枚から記事を始める
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：AiCompletionRequest に images（Google・OpenAI・Anthropic の3つとも対応）、growthPrompts に写真からテーマ（PHOTO_THEMES_SYSTEM_PROMPT・parsePhotoThemes）、hearingAi に runPhotoThemes（読めないときは書き手のAIで読み直す）、/api/organizations/[id]/photo-themes、src/components/PhotoStart.tsx、src/lib/photoStart.ts（テストあり）
