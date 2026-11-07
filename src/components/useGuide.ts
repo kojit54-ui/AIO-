@@ -4,7 +4,7 @@
 
 import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
-import { DEFAULT_GUIDE, guideOf, isGuideId, resolveOutfit, type GuideCharacter, type GuideId, type Outfit } from "@/lib/guideCharacter";
+import { DEFAULT_GUIDE, guideOf, isGuideId, resolveOutfit, withGuideName, type GuideCharacter, type GuideId, type Outfit } from "@/lib/guideCharacter";
 
 const KEY = "cotam-guide-v1";
 /** 案内役ごとに選んだ服（{"shiori":"work"} の形） */
@@ -87,4 +87,21 @@ export function useGuideOutfit(): GuideState & { setOutfit: (guide: GuideId, out
   const state = useGuideState();
   const setOutfit = (g: GuideId, outfit: string) => save(OUTFIT_KEY, JSON.stringify({ ...parseOutfits(readOutfits()), [g]: outfit }));
   return { ...state, setOutfit };
+}
+
+/** 画面の言葉の「しおり」を、選んだ案内役の名前にする関数（ログイン前の画面は しおり のまま） */
+export function useGuideText(): (text: string) => string {
+  const { guide } = useGuideState();
+  return (text: string) => withGuideName(text, guide.name);
+}
+
+/** 選んだ案内役の名前（画面の文の中に置く） */
+export function GuideName() {
+  return useGuideState().guide.name;
+}
+
+/** 文の中の「しおり」を、選んだ案内役の名前にして出す */
+export function GuideText({ text }: { text: string }) {
+  const named = useGuideText();
+  return named(text);
 }

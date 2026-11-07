@@ -9,6 +9,7 @@ import { Shiori, type ShioriMood } from "@/components/fun";
 import { KNOWLEDGE_SOURCE_LABEL, type KnowledgeItem, type KnowledgeSource } from "@/lib/growth/knowledge";
 import { companyKnowledge, localHearing } from "@/lib/growth/localKnowledge";
 import type { MockDb } from "@/mock/store";
+import { GuideName } from "@/components/useGuide";
 
 export const SHIORI_LEVELS: { at: number; name: string; mood: ShioriMood }[] = [
   { at: 0, name: "はじめまして", mood: "bow" },
@@ -84,7 +85,7 @@ export function ShioriGrowth({ db, orgId }: { db: MockDb; orgId: string }) {
         </div>
         <div className="min-w-0 flex-1 basis-60 space-y-2">
           <h2 id="shiori-growth-heading" className="text-lg font-black">
-            しおりの、あなたの会社の理解度：<span className="text-brand">{lv.name}</span>
+            <GuideName />の、あなたの会社の理解度：<span className="text-brand">{lv.name}</span>
           </h2>
           <div>
             <div className="h-4 overflow-hidden rounded-full bg-canvas" role="progressbar" aria-label="次のレベルまで" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(lv.progress * 100)}>
@@ -94,7 +95,7 @@ export function ShioriGrowth({ db, orgId }: { db: MockDb; orgId: string }) {
               {lv.next ? `次の「${lv.next.name}」まで あと${lv.next.at - xp}ポイント` : "最高のレベルです。いつもありがとうございます！"}（今 {xp}ポイント）
             </p>
           </div>
-          <p className="text-sm">答えるほど、書くほど、しおりはあなたの会社に詳しくなり、次の記事があなたらしくなります。</p>
+          <p className="text-sm">答えるほど、書くほど、<GuideName />はあなたの会社に詳しくなり、次の記事があなたらしくなります。</p>
           <Link href="/knowledge" className="btn-secondary min-h-10 px-4 text-sm">
             ChatGPT・Claude・Gemini やブログから取り込む →
           </Link>
@@ -116,7 +117,7 @@ export function ShioriGrowth({ db, orgId }: { db: MockDb; orgId: string }) {
       </details>
 
       <div>
-        <h3 className="mb-2 font-black">📒 しおりのメモ帳（覚えていること {notes.length}件）</h3>
+        <h3 className="mb-2 font-black">📒 <GuideName />のメモ帳（覚えていること {notes.length}件）</h3>
         {notes.length === 0 ? (
           <p className="text-sm text-muted">
             まだあまり覚えていません。
@@ -147,7 +148,7 @@ export function KnowledgeUsed({ labels }: { labels: string[] }) {
     <section className="mb-4 flex animate-rise flex-wrap items-start gap-3 rounded-3xl border-2 border-brand-soft bg-surface/80 px-4 py-3" aria-label="今回使った会社の知識">
       <Shiori mood="idea" className="h-16 w-auto shrink-0" />
       <div className="min-w-0 flex-1">
-        <p className="font-bold">しおりが今回使った、あなたの会社の知識（{labels.length}件）</p>
+        <p className="font-bold"><GuideName />が今回使った、あなたの会社の知識（{labels.length}件）</p>
         <ul className="mt-1 flex flex-wrap gap-1.5 text-xs">
           {labels.map((l, i) => (
             <li key={l} className="animate-pop rounded-full bg-brand-soft px-2.5 py-1 font-bold text-brand-dark" style={{ animationDelay: `${i * 0.05}s` }}>

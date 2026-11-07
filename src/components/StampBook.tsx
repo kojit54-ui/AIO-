@@ -8,6 +8,7 @@ import { Confetti } from "@/components/fun";
 import { ShioriTalk } from "@/components/talk";
 import { badges, newlyGot } from "@/lib/growth/badges";
 import type { MockDb } from "@/mock/store";
+import { GuideName, GuideText } from "@/components/useGuide";
 
 const KEY = (orgId: string) => `stampbook:${orgId}`;
 
@@ -53,7 +54,7 @@ export function StampBook({ db, orgId }: { db: MockDb; orgId: string }) {
       {newest && <Confetti count={60} />}
       <div className="flex flex-wrap items-end justify-between gap-2">
         <h2 id="stamp-heading" className="text-lg font-black">
-          🎖️ しおりのスタンプ帳
+          🎖️ <GuideName />のスタンプ帳
         </h2>
         <p className="rounded-full bg-sun-soft px-3 py-0.5 text-sm font-black">
           {got.length} / {list.length} こ
@@ -76,7 +77,7 @@ export function StampBook({ db, orgId }: { db: MockDb; orgId: string }) {
             >
               {b.got ? b.icon : "？"}
             </span>
-            <span className={`mt-1 block text-[0.7rem] leading-tight ${b.got ? "font-bold" : "text-muted"}`}>{b.title}</span>
+            <span className={`mt-1 block text-[0.7rem] leading-tight ${b.got ? "font-bold" : "text-muted"}`}><GuideText text={b.title} /></span>
             <span className="sr-only">{b.got ? `${b.title}（取りました）` : `${b.title}（まだ。${b.how}）`}</span>
           </li>
         ))}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { AUTO_OUTFIT, guideFile, guideOf, resolveOutfit, seasonalOutfit } from "./guideCharacter";
+import { AUTO_OUTFIT, guideFile, guideOf, resolveOutfit, seasonalOutfit, withGuideName } from "./guideCharacter";
 import { GUIDE_WIDTHS } from "./guideWidths";
 
 const MOODS = ["angry", "ask", "joy", "sad", "right", "welldone", "think", "surprise", "cheer", "idea", "coffee", "point", "bow", "jersey-cheer", "jersey-stretch", "jersey-done"];
@@ -40,5 +40,13 @@ describe("案内役の服", () => {
         }
       }
     }
+  });
+});
+
+describe("画面の言葉の名前", () => {
+  it("しおりを選んだ案内役の名前にする。しおり通信はそのまま", () => {
+    expect(withGuideName("はじめまして、しおりです。しおり通信も届きます", "源さん")).toBe("はじめまして、源さんです。しおり通信も届きます");
+    expect(withGuideName("しおりのメモ帳", "こゆき")).toBe("こゆきのメモ帳");
+    expect(withGuideName("しおりです", "しおり")).toBe("しおりです");
   });
 });

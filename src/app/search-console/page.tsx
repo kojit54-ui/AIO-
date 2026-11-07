@@ -10,6 +10,7 @@ import { type GuideStep, StepGuide } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice } from "@/components/ui";
 import { ApiError, useStore } from "@/mock/store";
+import { GuideName } from "@/components/useGuide";
 
 const SC_USERS_URL = "https://search.google.com/search-console/users";
 
@@ -123,7 +124,7 @@ export default function SearchConsolePage() {
           ホームへ戻る
         </Link>
         <h1 className="text-2xl font-black">Search Console をつなぐ</h1>
-        <p className="text-muted">つなぐと、書いた記事がどんな言葉で検索に出ているかを、しおりがホームで見せます。次のテーマ選びにも使います。3分ほどで終わります。</p>
+        <p className="text-muted">つなぐと、書いた記事がどんな言葉で検索に出ているかを、<GuideName />がホームで見せます。次のテーマ選びにも使います。3分ほどで終わります。</p>
       </div>
 
       {link && !link.verifiedAt && link.lastError && <Notice tone="warn" title="まだつながっていません">{link.lastError}</Notice>}

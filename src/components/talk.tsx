@@ -6,6 +6,7 @@
 
 import { useEffect, useState } from "react";
 import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
+import { useGuideText } from "@/components/useGuide";
 
 const reduced = () => typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
@@ -73,7 +74,9 @@ export function ShioriTalk({
   children?: React.ReactNode;
   className?: string;
 }) {
-  const list = (Array.isArray(lines) ? lines : [lines]).filter(Boolean);
+  const named = useGuideText();
+  // せりふの「しおり」は、選んだ案内役の名前で話す
+  const list = (Array.isArray(lines) ? lines : [lines]).filter(Boolean).map(named);
   const key = list.join("\n");
   return <TalkInner key={key} mood={mood} list={list} size={size} hideOnPhone={hideOnPhone} className={className}>{children}</TalkInner>;
 }

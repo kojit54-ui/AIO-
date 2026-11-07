@@ -18,6 +18,7 @@ import { MAX_HEADINGS } from "@/lib/limits";
 import { MAX_IMAGE_MOOD, type ImageStyle } from "@/lib/ai/images";
 import { canApply } from "@/lib/workflow";
 import type { AiReviewCategory, Article, ArticleImage, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
+import { GuideName } from "@/components/useGuide";
 
 type Banner = { tone: "danger" | "ok" | "info"; message: string; session?: boolean } | null;
 
@@ -802,7 +803,7 @@ function AnswerPanel({ version }: { version: ArticleVersion }) {
 function PolicyPanel({ orgId }: { orgId: string }) {
   const { db, month } = useStore();
   const note = db.coachingNotes.find((n) => n.organizationId === orgId && n.targetMonth === month);
-  if (!note) return <p className="text-sm text-muted">今月の方針はありません。しおりのおすすめのテーマで、そのまま書けます。</p>;
+  if (!note) return <p className="text-sm text-muted">今月の方針はありません。<GuideName />のおすすめのテーマで、そのまま書けます。</p>;
   const rows: [string, string][] = [
     ["重点テーマ", note.focus],
     ["想定読者", note.audience],

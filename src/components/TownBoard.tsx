@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { Confetti } from "@/components/fun";
 import { TOWN_LEVELS, type TownStep, publishedCount, townLevel, townPosition, townSteps } from "@/lib/growth/town";
 import type { MockDb } from "@/mock/store";
+import { GuideText } from "@/components/useGuide";
 
 const INQUIRY_KEY = (orgId: string) => `town:inquiry:${orgId}`;
 const SEEN_KEY = (orgId: string) => `town:seen:${orgId}`;
@@ -121,7 +122,7 @@ export function TownView({
         <div className="flex flex-wrap items-center gap-3 rounded-2xl bg-canvas px-4 py-3">
           <p className="min-w-0 flex-1">
             <span className="block text-xs font-black text-brand-dark">次のマス：{current.label}</span>
-            <span className="font-bold">{current.how}</span>
+            <span className="font-bold"><GuideText text={current.how} /></span>
           </p>
           {!preview && current.id === "inquiry" && onInquiry && (
             <button type="button" className="btn-primary min-h-11 px-4 text-sm" onClick={() => onInquiry(true)}>
