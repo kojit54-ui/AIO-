@@ -64,7 +64,7 @@ export function Logo({ href = "/welcome" }: { href?: string }) {
   return (
     <Link href={href} className="group flex shrink-0 items-center" aria-label={SERVICE_NAME}>
       {/* eslint-disable-next-line @next/next/no-img-element -- 文字を輪郭にした固定のSVG。最適化は不要 */}
-      <img src="/brand/logo-horizontal.svg" alt="" width={483} height={120} className="h-9 w-auto transition-transform group-hover:-translate-y-0.5 sm:h-10" />
+      <img src="/brand/logo-horizontal.svg" alt="" width={483} height={120} className="h-10 w-auto transition-transform group-hover:-translate-y-0.5" />
     </Link>
   );
 }

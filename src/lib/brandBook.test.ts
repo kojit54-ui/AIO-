@@ -29,7 +29,7 @@ describe("ブランドブック", () => {
     const words = JSON.stringify(rest);
     expect(JSON.stringify(_voice)).toBe(JSON.stringify(BRAND_VOICE));
     for (const ng of ["寄り添", "世の中へ", "伴走"]) expect(words, ng).not.toContain(ng);
-    expect(BRAND_LINE).toBe("現場の話を、選ばれる理由に。");
+    expect(BRAND_LINE).toBe("いつもの仕事を、誰かの頼む理由に。");
     expect(BRAND_PROMISES).toHaveLength(5);
   });
 
@@ -45,5 +45,10 @@ describe("ブランドブック", () => {
 
   it("ブランドのページは検索とAIに見つけてもらう", () => {
     expect(INDEXABLE_PATHS).toContain("/brand");
+  });
+
+  it("カラー反転のロゴは、真鍮をしおりだけに使う（AIOを真鍮にしない）", () => {
+    const svg = readFileSync(join(process.cwd(), "public/brand/logo-horizontal-reverse.svg"), "utf8");
+    expect(svg.match(/#E9B53B/gi)?.length).toBe(1);
   });
 });
