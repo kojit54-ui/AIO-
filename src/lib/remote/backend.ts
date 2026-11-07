@@ -115,7 +115,7 @@ export class RemoteBackend {
       return;
     }
     const uid = auth.user.id;
-    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, knowledgeNotes, aioMentions, searchConsole, optouts, runs] = await Promise.all([
+    const [members, admin, orgs, notes, internal, themes, refs, articles, versions, facts, reviews, aioChecks, hearing, knowledgeNotes, aioMentions, searchConsole, optouts, runs, plan] = await Promise.all([
       c.from("memberships").select("organization_id, role").eq("user_id", uid).is("revoked_at", null),
       c.from("app_admins").select("user_id").eq("user_id", uid).maybeSingle(),
       c.from("organizations").select("*").order("name"),
@@ -134,6 +134,7 @@ export class RemoteBackend {
       c.from("search_console").select("*"),
       c.from("newsletter_optouts").select("user_id").eq("user_id", uid),
       c.from("generation_runs").select("organization_id, kind, status, created_at").gte("created_at", new Date(Date.now() - 32 * 864e5).toISOString()),
+      c.from("writing_plans").select("planned_on").eq("user_id", uid).maybeSingle(),
     ]);
     const failed = [members, orgs, notes, themes, refs, articles, versions, facts, reviews, runs].find((r) => r.error);
     if (failed) {
@@ -176,6 +177,8 @@ export class RemoteBackend {
         // 表を足す SQL（20261102120000_aio_check.sql）をまだ流していない環境でも、ほかの画面は動かす
         aioChecks: aioChecks.error ? [] : (aioChecks.data ?? []).map(toAioCheck),
         newsletterOptOut: !optouts.error && (optouts.data ?? []).length > 0,
+        // 表を足す SQL（20261107090000_writing_plans.sql）をまだ流していない環境では、決めていない扱い
+        nextWritingDay: plan.error ? null : ((plan.data?.planned_on as string | undefined) ?? null),
         aioMentions: aioMentions.error
           ? []
           : (aioMentions.data ?? []).map((r) => ({
@@ -566,6 +569,16 @@ export class RemoteBackend {
     setNewsletterOptOut: async (optOut) => {
       const user = this.requireUser();
       const { error } = optOut ? await this.client.from("newsletter_optouts").upsert({ user_id: user.id }) : await this.client.from("newsletter_optouts").delete().eq("user_id", user.id);
+      if (error) throw toApiError(error);
+      await this.load();
+    },
+
+    setNextWritingDay: async (orgId, day) => {
+      const user = this.requireUser();
+      const { error } =
+        day === null
+          ? await this.client.from("writing_plans").delete().eq("user_id", user.id)
+          : await this.client.from("writing_plans").upsert({ user_id: user.id, organization_id: orgId, planned_on: day, reminded_on: null, updated_at: new Date().toISOString() });
       if (error) throw toApiError(error);
       await this.load();
     },

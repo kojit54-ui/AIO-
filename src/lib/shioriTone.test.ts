@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ALL_HOME_LINES, TONES, homeCase, homeLines, isTone, referenceTime, homeMood } from "./shioriTone";
+import { ALL_HOME_LINES, FIX_LINES, TONES, homeCase, homeLines, isTone, referenceTime, homeMood } from "./shioriTone";
 
 const base = { publishedThisMonth: 0, workedThisMonth: 0, inProgress: false, totalArticles: 3, daysSinceLastWork: 3 };
 
@@ -19,7 +19,7 @@ describe("しおりの話し方", () => {
   });
 
   it("どの言い方でも、責める・脅す・約束する言葉を使わない", () => {
-    const all = [...Object.values(ALL_HOME_LINES).flatMap((c) => Object.values(c).flat()), ...TONES.map((t) => t.sample)];
+    const all = [...Object.values(ALL_HOME_LINES).flatMap((c) => Object.values(c).flat()), ...Object.values(FIX_LINES).flat(), ...TONES.map((t) => t.sample)];
     for (const line of all) expect(line).not.toMatch(/ダメ|だめ|怠け|なまけ|サボ|失格|最悪|必ず売|絶対|倒産|潰れ|バカ/);
   });
 

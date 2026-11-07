@@ -119,6 +119,13 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）次に書く日とお知らせメール
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：src/lib/writingDay.ts（日にち・テストあり）、src/components/NextWritingDay.tsx（ホームとブログに載せた後に出す）、src/lib/reminder/server.ts と /api/cron/writing-reminder（毎朝0時UTC＝9時JST、テストあり）、vercel.json に Cron を追加、supabase/migrations/20261107090000_writing_plans.sql（冪等）。ホームの案内役のひとことを「次にやること」と合わせた（FIX_LINES）
+- 確認結果：lint・型検査・テスト通過。375px・1280px でホームの「次に書く日」をえらぶ・変える・取り消す
+- 未完了：本番の Supabase で 20261107090000_writing_plans.sql を実行（田村さん、SQL Editor）。実行前でも画面は動き、決めた日が保存されないだけ（保存で失敗の表示）
+- 次の作業：写真から始める、記事の読むだけモード、ゲーム要素の一本化
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）続けたくなる仕組み（3AIで検討）
 - ブランチ：claude/project-thread-fdzisk
 - 検討：画面写真と概要を GPT（gpt-6.1-sol）と Gemini（gemini-4-argon）に渡して案を出させ、互いの案とClaudeの実装案を批評させて順番を決めた（A→B→E→C、Dは次）。記録は /mnt/project-files/retention-council/

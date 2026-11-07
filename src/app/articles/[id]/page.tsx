@@ -1,5 +1,6 @@
 "use client";
 
+import { NextWritingDay } from "@/components/NextWritingDay";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -872,6 +873,7 @@ function PublishDialog({ article, onCopy, onClose, onError }: { article: Article
   const [url, setUrl] = useState("");
   const [busy, setBusy] = useState(false);
   const [step, setStep] = useState(0);
+  const [openedAt] = useState(() => Date.now());
   const [copied, setCopied] = useState<Partial<Record<CopyKind, boolean>>>({});
   const copy = async (k: CopyKind) => {
     if (await onCopy(k)) setCopied((c) => ({ ...c, [k]: true }));
@@ -961,9 +963,12 @@ function PublishDialog({ article, onCopy, onClose, onError }: { article: Article
         onStep={setStep}
         doneSay={publishedLines(version?.body ?? [])}
         doneBody={
-          <button type="button" className="btn-primary" onClick={onClose}>
-            記事の画面に戻る
-          </button>
+          <div className="space-y-3">
+            <NextWritingDay orgId={article.organizationId} nowMs={openedAt} />
+            <button type="button" className="btn-primary" onClick={onClose}>
+              記事の画面に戻る
+            </button>
+          </div>
         }
       />
     </Dialog>
