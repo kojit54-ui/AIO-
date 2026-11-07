@@ -9,6 +9,7 @@ import { LegalLinks } from "@/components/LegalLinks";
 import { Logo } from "@/components/landing";
 import { SERVICE_OPERATOR } from "@/lib/brand";
 import { BRAND_LINE } from "@/lib/brandBook";
+import { TRY_HREF } from "@/lib/signup";
 import { useStore } from "@/mock/store";
 
 /** 上のメニュー。スマホでは2段目に小さく並べる */
@@ -70,7 +71,7 @@ export function SiteFooter() {
           title="サービス"
           links={[
             { href: "/welcome", label: "サービスのご紹介" },
-            { href: "/try", label: "30秒でためす（登録なし）" },
+            { href: TRY_HREF, label: "登録せずに試す" },
             { href: "/shiori", label: "案内役「しおり」の自己紹介" },
             { href: "/login", label: "ログイン" },
           ]}

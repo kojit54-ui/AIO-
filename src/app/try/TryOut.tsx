@@ -10,6 +10,7 @@ import { Logo } from "@/components/landing";
 import { ShioriTalk } from "@/components/talk";
 import { AIO_QUIZ } from "@/lib/tips";
 import { saveTryCarry } from "@/lib/tryoutCarry";
+import { WaitlistForm } from "@/components/WaitlistForm";
 import { FutureAnswer } from "./FutureAnswer";
 import {
   READINESS_QUESTIONS,
@@ -71,8 +72,15 @@ const REACT: Record<ReadinessAnswer, { mood: ShioriMood; say: string }> = {
   no: { mood: "cheer", say: "大丈夫！ここが伸びしろです。" },
 };
 
-export function TryOut() {
-  const [phase, setPhase] = useState<Phase>("intro");
+const QUICK_STAGES: { title: string; phases: Phase[] }[] = [
+  { title: "会社", phases: ["intro", "company"] },
+  { title: "記事", phases: ["write", "making", "done"] },
+];
+
+/** quick＝診断なしで、会社のこと→1問→記事の書き出し（入口ページの「登録せずに、記事づくりを試す」から） */
+export function TryOut({ quick = false }: { quick?: boolean }) {
+  const stages = quick ? QUICK_STAGES : STAGES;
+  const [phase, setPhase] = useState<Phase>(quick ? "company" : "intro");
   const [company, setCompany] = useState("");
   const [region, setRegion] = useState("");
   const [job, setJob] = useState("");
@@ -123,7 +131,7 @@ export function TryOut() {
     setPoints((p) => p + n);
     setBump((b) => b + 1);
   };
-  const stage = STAGES.findIndex((s) => s.phases.includes(phase));
+  const stage = stages.findIndex((s) => s.phases.includes(phase));
 
   // 画面が変わったら上に戻す（スマホで続きが見えるように）
   useEffect(() => {
@@ -135,15 +143,22 @@ export function TryOut() {
       <header className="sticky top-0 z-30 border-b border-line/70 bg-canvas/85 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6">
           <Logo />
-          <span key={bump} className={`rounded-full bg-sun px-3 py-1 text-sm font-black shadow-[0_3px_0_var(--color-sun-dark)] ${bump ? "animate-stamp" : ""}`} aria-live="polite">
-            ⭐ {points}pt
-          </span>
+          {quick && (
+            <Link href="/welcome" className="inline-flex min-h-10 items-center text-sm font-bold text-muted underline underline-offset-4 hover:text-ink">
+              ← 最初のページに戻る
+            </Link>
+          )}
+          {!quick && (
+            <span key={bump} className={`rounded-full bg-sun px-3 py-1 text-sm font-black shadow-[0_3px_0_var(--color-sun-dark)] ${bump ? "animate-stamp" : ""}`} aria-live="polite">
+              ⭐ {points}pt
+            </span>
+          )}
         </div>
       </header>
 
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6 sm:px-6">
-        <ol className="flex items-center gap-1" aria-label={`4つのうち${stage + 1}つめ`}>
-          {STAGES.map((s, i) => (
+        <ol className="flex items-center gap-1" aria-label={`${stages.length}つのうち${stage + 1}つめ`}>
+          {stages.map((s, i) => (
             <li key={s.title} className="flex min-w-0 flex-1 items-center gap-1">
               <span
                 className={`grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 text-sm font-black ${
@@ -153,17 +168,17 @@ export function TryOut() {
                 {i < stage || phase === "done" ? <span className="animate-stamp">⭐</span> : i + 1}
               </span>
               <span className={`min-w-0 truncate text-xs ${i === stage ? "font-black" : "text-muted"}`}>{s.title}</span>
-              {i < STAGES.length - 1 && <span className={`h-1 min-w-2 flex-1 rounded-full ${i < stage ? "bg-ok-bright" : "bg-line"}`} aria-hidden />}
+              {i < stages.length - 1 && <span className={`h-1 min-w-2 flex-1 rounded-full ${i < stage ? "bg-ok-bright" : "bg-line"}`} aria-hidden />}
             </li>
           ))}
         </ol>
 
         <div key={phase} className="animate-rise space-y-5">
-          {phase === "intro" && <Intro onStart={() => setPhase("company")} />}
+          {phase === "intro" && <Intro quick={quick} onStart={() => setPhase("company")} />}
 
           {phase === "company" && (
             <section className="card space-y-4">
-              <ShioriTalk mood="ask" lines={["まず、あなたの会社のことを3つだけ教えてください。", "入れた内容は保存しません。安心してくださいね。"]} />
+              <ShioriTalk mood="ask" lines={[quick ? "会社のことを3つ。そのあと、仕事の話を1問聞きます。答えから、記事の書き出しをつくります。" : "まず、あなたの会社のことを3つだけ教えてください。記事の書き出しに使います。", "入れた内容は保存しません。安心してくださいね。"]} />
               <Field label="会社の名前" value={company} onChange={setCompany} placeholder="例）山田製作所" />
               <Field label="会社のある地域" value={region} onChange={setRegion} placeholder="例）岐阜県関市" />
               <Field label="どんな仕事？" value={job} onChange={setJob} placeholder="例）金属の部品加工" />
@@ -173,10 +188,10 @@ export function TryOut() {
                 disabled={!company.trim() || !region.trim() || !job.trim()}
                 onClick={() => {
                   addPoints(30);
-                  setPhase("check");
+                  setPhase(quick ? "write" : "check");
                 }}
               >
-                診断スタート！ <span className="inline-block animate-nudge">→</span>
+                {quick ? "次へ" : "診断スタート！"} <span className="inline-block animate-nudge">→</span>
               </button>
             </section>
           )}
@@ -236,7 +251,8 @@ export function TryOut() {
 
           {phase === "write" && (
             <section className="card relative space-y-4">
-              <ShioriTalk mood="jersey-cheer" lines={["では、さっそく記事を書いてみましょう！", "最近うれしかった仕事を、1つだけ教えてください。話すように書けば大丈夫です。"]} />
+              <ShioriTalk mood="ask" lines={["では、さっそく記事を書いてみましょう！", "最近うれしかった仕事を、1つだけ教えてください。話すように書けば大丈夫です。"]} />
+              <p className="text-sm text-muted">お客様の名前や、秘密の図面・寸法は書かなくて大丈夫です。</p>
               {/* ロボットよけ。人には見えない */}
               <input
                 type="text"
@@ -277,7 +293,7 @@ export function TryOut() {
                   void make();
                 }}
               >
-                ✨ 記事にしてもらう
+                {quick ? "記事の書き出しを見る →" : "✨ 記事にしてもらう"}
               </button>
             </section>
           )}
@@ -316,23 +332,39 @@ function Field({ label, value, onChange, placeholder }: { label: string; value: 
   );
 }
 
-function Intro({ onStart }: { onStart: () => void }) {
+function Intro({ onStart, quick }: { onStart: () => void; quick: boolean }) {
+  const todo = quick
+    ? ["会社のことを3つ入れる", "最近うれしかった仕事を1つ書く", "その場で、記事の書き出しができる"]
+    : ["会社のことを3つ入れる", "6つの質問に「はい・いいえ」で答える", "1問答えて、記事の書き出しができる"];
   return (
     <section className="card relative space-y-4 overflow-hidden text-center">
       <span className="absolute -right-8 -top-8 h-32 w-32 animate-blob bg-sun-soft" aria-hidden />
-      <p className="relative inline-block rounded-full bg-brand-soft px-3 py-0.5 text-sm font-black text-brand-dark">登録なし・30秒</p>
-      <h1 className="relative text-3xl font-black leading-snug">
-        あなたの会社、
-        <br />
-        AIとお客様に選ばれる準備は
-        <br />
-        <span className="text-brand">できてる？</span>
-      </h1>
+      <p className="relative inline-block rounded-full bg-brand-soft px-3 py-0.5 text-sm font-black text-brand-dark">登録なし</p>
+      {quick ? (
+        <h1 className="relative text-3xl font-black leading-snug">
+          1問答えて、
+          <br />
+          <span className="text-brand">記事の書き出し</span>を
+          <br />
+          見てみましょう
+        </h1>
+      ) : (
+        <h1 className="relative text-3xl font-black leading-snug">
+          あなたの会社、
+          <br />
+          AIとお客様に選ばれる準備は
+          <br />
+          <span className="text-brand">できてる？</span>
+        </h1>
+      )}
       <div className="relative mx-auto max-w-md text-left">
-        <ShioriTalk mood="point" lines={["しおりが、あなたの会社を診断します！", "最後に、その場で記事の書き出しもつくっちゃいますよ。"]} />
+        <ShioriTalk
+          mood="point"
+          lines={quick ? ["しおりが、1つだけ質問します。", "答えてもらった話から、その場で記事の書き出しをつくります。"] : ["しおりが、あなたの会社を診断します！", "最後に、その場で記事の書き出しもつくっちゃいますよ。"]}
+        />
       </div>
       <ul className="relative mx-auto grid max-w-md gap-2 text-left" aria-label="やること">
-        {["会社のことを3つ入れる", "6つの質問に「はい・いいえ」で答える", "1問答えて、記事の書き出しができる"].map((t, i) => (
+        {todo.map((t, i) => (
           <li key={t} className="flex animate-rise items-center gap-3 rounded-2xl border-2 border-brand-soft px-3 py-2 font-bold" style={{ animationDelay: `${0.3 + i * 0.12}s` }}>
             <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand text-sm font-black text-white">{i + 1}</span>
             {t}
@@ -342,6 +374,13 @@ function Intro({ onStart }: { onStart: () => void }) {
       <button type="button" className="btn-primary relative min-h-16 w-full max-w-md text-xl" onClick={onStart}>
         ためしてみる <span className="inline-block animate-nudge">→</span>
       </button>
+      {quick && (
+        <p className="relative text-sm">
+          <Link href="/try" className="font-bold text-brand-dark underline">
+            AIOの準備度の診断つきでためす
+          </Link>
+        </p>
+      )}
     </section>
   );
 }
@@ -653,7 +692,12 @@ function Done({ outcome, story, future, onAgain, onKeep }: { outcome: Outcome; s
             </>
           )}
         </div>
-        <p className="mt-3 text-sm text-white/85">招待メールが届いていない方は、コタムの担当者にお声がけください。</p>
+        <div className="mx-auto mt-4 max-w-md text-left">
+          <p className="mb-2 text-sm text-white/85">新規のお申し込みは準備中です。招待された方は、上の「続きを書く」からログインできます。</p>
+          <div className="rounded-2xl bg-white p-3 text-sumi">
+            <WaitlistForm source="try" />
+          </div>
+        </div>
       </div>
       <p className="text-center">
         <button type="button" className="text-sm font-bold text-brand-dark underline" onClick={onAgain}>
