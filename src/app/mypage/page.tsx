@@ -34,16 +34,25 @@ export default function MyPage() {
         ホームへ戻る
       </Link>
       <h1 className="text-2xl font-black sm:text-3xl">マイページ</h1>
-      <ShioriTalk mood="point" lines={["ここでは、社名やしおりの話し方、メールの受け取りを変えられます。", "変えたいところだけ、1つずつどうぞ。"]} />
+      <ShioriTalk
+        mood="point"
+        lines={
+          org
+            ? ["ここでは、社名やしおりの話し方、メールの受け取りを変えられます。", "変えたいところだけ、1つずつどうぞ。"]
+            : ["ここでは、管理の画面へすぐ移れて、担当している会社の社名も直せます。", "しおりの話し方も、お客様と同じように試せますよ。"]
+        }
+      />
 
       {org && <OrgNameCard orgId={org.id} current={org.name} />}
 
-      {org && <ToneCard />}
+      {!org && <CoachShortcuts orgs={db.organizations.filter((o) => user.organizationIds.includes(o.id))} />}
+
+      <ToneCard />
 
       <section className="card space-y-1">
         <h2 className="font-black">ログインしているメールアドレス</h2>
         <p className="break-all text-lg font-bold">{email ?? "…"}</p>
-        <p className="text-sm text-muted">ログインのメールは、このアドレスに届きます。変えたいときは、コタムの担当者にお知らせください。</p>
+        <p className="text-sm text-muted">ログインのメールは、このアドレスに届きます。{org ? "変えたいときは、コタムの担当者にお知らせください。" : "Googleでログインするときも、このアドレスのアカウントを選んでください。"}</p>
       </section>
 
       {org && (
@@ -77,7 +86,7 @@ export default function MyPage() {
   );
 }
 
-function OrgNameCard({ orgId, current }: { orgId: string; current: string }) {
+function OrgNameCard({ orgId, current, flat = false }: { orgId: string; current: string; flat?: boolean }) {
   const { api } = useStore();
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState(current);
@@ -102,7 +111,7 @@ function OrgNameCard({ orgId, current }: { orgId: string; current: string }) {
   }
 
   return (
-    <section className="card space-y-3">
+    <section className={flat ? "space-y-3" : "card space-y-3"}>
       <h2 className="font-black">社名</h2>
       {editing ? (
         <form
@@ -215,5 +224,56 @@ function ToneCard() {
       </div>
       <ShioriTalk key={picked.id} mood={picked.id === "gentle" ? "joy" : picked.id === "strict" ? "point" : "cheer"} lines={[picked.sample]} />
     </section>
+  );
+}
+
+/** コタムの方のマイページ：管理の画面への近道と、担当している会社（2026-11-07 田村さん「管理画面で何もできない」） */
+function CoachShortcuts({ orgs }: { orgs: { id: string; name: string }[] }) {
+  const tools = [
+    { href: "/admin/invitations", icon: "✉️", label: "お客様を招待する", note: "招待状を作って送る" },
+    { href: "/admin/usage", icon: "📊", label: "利用金額と利用頻度", note: "AIの費用、会社ごとに使った日" },
+    { href: "/admin/trial", icon: "🧪", label: "「30秒でためす」の見守り", note: "回数・費用、AIを止める" },
+    { href: "/admin/knowledge", icon: "🏭", label: "製造業の知識表", note: "集めた悩み・疑問・事例" },
+    { href: "/updates", icon: "✨", label: "新しくなったこと", note: "お客様に出ているお知らせ" },
+  ];
+  return (
+    <>
+      <section className="card space-y-3">
+        <h2 className="font-black">管理の画面</h2>
+        <p className="text-sm text-muted">全社管理者として登録された方だけが開けます。</p>
+        <ul className="grid gap-2 sm:grid-cols-2">
+          {tools.map((t) => (
+            <li key={t.href}>
+              <Link href={t.href} className="flex items-center gap-3 rounded-2xl border-2 border-line bg-surface px-3 py-2 transition hover:border-brand">
+                <span className="text-2xl" aria-hidden>
+                  {t.icon}
+                </span>
+                <span className="min-w-0">
+                  <b className="block">{t.label}</b>
+                  <span className="block text-xs text-muted">{t.note}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="card space-y-2">
+        <h2 className="font-black">担当している会社</h2>
+        {orgs.length === 0 ? (
+          <p className="text-sm text-muted">まだありません。招待するとここに出ます。</p>
+        ) : (
+          <ul className="space-y-3">
+            {orgs.map((o) => (
+              <li key={o.id} className="space-y-2 rounded-2xl border-2 border-line p-3">
+                <Link href={`/coach/orgs/${o.id}`} className="text-sm font-bold text-brand-dark underline">
+                  この会社の画面を開く
+                </Link>
+                <OrgNameCard orgId={o.id} current={o.name} flat />
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </>
   );
 }
