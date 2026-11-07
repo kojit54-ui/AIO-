@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-guide-name",
+    date: "2026-11-07",
+    title: "選んだ案内役が、自分の名前で話すようになりました",
+    body: "源さんやこゆきを選ぶと、画面のせりふや「メモ帳」「スタンプ帳」なども、その名前で出るようになりました。",
+    href: "/mypage",
+    linkLabel: "案内役を選ぶ",
+  },
+  {
     id: "2026-11-07-koyuki-angry",
     date: "2026-11-07",
     title: "こゆきが本物そっくりになり、案内役が本気で怒るようになりました",

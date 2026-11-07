@@ -9,6 +9,7 @@ import { ApiError, useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
 import { nearQueries } from "@/lib/growth/nearQueries";
 import { ShioriTalk } from "@/components/talk";
+import { GuideName, GuideText } from "@/components/useGuide";
 
 export default function NewArticlePage() {
   const { db, user, api, month } = useStore();
@@ -74,11 +75,11 @@ export default function NewArticlePage() {
       <div>
         <h1 className="text-2xl font-black sm:text-3xl">どのテーマで書きますか？</h1>
         <p className="text-muted">
-          {themes.length > 0 ? `${monthLabel(month)}にコタムと決めたテーマです。書きやすいものを1つ選んでください。` : "書きたいテーマを自分で決めるか、しおりのおすすめから選べます。"}
+          <GuideText text={themes.length > 0 ? `${monthLabel(month)}にコタムと決めたテーマです。書きやすいものを1つ選んでください。` : "書きたいテーマを自分で決めるか、しおりのおすすめから選べます。"} />
         </p>
         {themes.length === 0 && (
           <Link href="/prototype/plan" className="mt-2 inline-block font-bold text-brand-dark underline">
-            しおりのおすすめから選ぶ（書く記事を決める）
+            <GuideName />のおすすめから選ぶ（書く記事を決める）
           </Link>
         )}
       </div>

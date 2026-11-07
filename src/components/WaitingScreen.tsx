@@ -5,6 +5,7 @@
 
 import { useEffect, useState } from "react";
 import { Shiori, type ShioriMood } from "@/components/fun";
+import { useGuideText } from "@/components/useGuide";
 import { AIO_POINTS } from "@/lib/aio";
 import type { AioPoint } from "@/types/domain";
 import { AIO_QUIZ, AIO_TIPS, SERVICE_TIPS } from "@/lib/tips";
@@ -24,7 +25,10 @@ const COLUMNS: { kind: "service" | "aio"; title: string; body: string }[] = Arra
  */
 export type WaitingFocus = { question: string; point: AioPoint; progress: string; remaining: number };
 
-export function WaitingScreen({ label, note = "この画面を閉じても続きます。", focus }: { label: string; note?: string; focus?: WaitingFocus }) {
+export function WaitingScreen({ label: rawLabel, note: rawNote = "この画面を閉じても続きます。", focus }: { label: string; note?: string; focus?: WaitingFocus }) {
+  const named = useGuideText();
+  const label = named(rawLabel);
+  const note = named(rawNote);
   // 毎回ちがうコラムから始める（この画面は操作のあとにだけ出るので、サーバーの描画とは食い違わない）
   // コタムのこだわりから始める
   const [start] = useState(() => {

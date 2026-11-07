@@ -6,6 +6,7 @@
 import { useMemo, useState } from "react";
 import { type GuideStep, StepGuide } from "@/components/talk";
 import { type ChatThread, SOURCE_LABEL, readChatExportFile, relevance, relevanceWords, threadsToImportText } from "@/lib/growth/chatExport";
+import { GuideName } from "@/components/useGuide";
 
 type Ai = "ChatGPT" | "Claude" | "Gemini";
 const OPEN: Record<Ai, { url: string; label: string }> = {
@@ -132,7 +133,7 @@ export function ChatExportImport({ hints, busy, onRead }: { hints: string[]; bus
       />
       {threads && (
         <div className="animate-pop space-y-3">
-          <p className="text-sm font-bold">いま{chosen.length}件を選んでいます。下のボタンで、しおりに読んでもらいます。</p>
+          <p className="text-sm font-bold">いま{chosen.length}件を選んでいます。下のボタンで、<GuideName />に読んでもらいます。</p>
           <input className="field" placeholder="例：見積もり（題名とあなたの発言から探します）" value={filter} onChange={(e) => setFilter(e.target.value)} aria-label="会話を探す" />
           <ul className="max-h-80 space-y-1 overflow-y-auto rounded-2xl bg-canvas p-2">
             {shown.slice(0, 200).map((t) => (
@@ -151,7 +152,7 @@ export function ChatExportImport({ hints, busy, onRead }: { hints: string[]; bus
             {shown.length > 200 && <li className="p-2 text-xs text-muted">ほかに{shown.length - 200}件あります。上の欄で探してください。</li>}
           </ul>
           <button type="button" className="btn-primary" disabled={busy || chosen.length === 0} onClick={() => onRead(threadsToImportText(chosen))}>
-            選んだ{chosen.length}件を、しおりに読んでもらう
+            選んだ{chosen.length}件を、<GuideName />に読んでもらう
             <span className="inline-block animate-nudge" aria-hidden>
               ✨
             </span>

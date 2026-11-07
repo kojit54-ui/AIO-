@@ -7,6 +7,7 @@ import { AIO_POINTS } from "@/lib/aio";
 import { AIO_NEWS_UPDATED, SOURCE_LABEL, aioNewsFor, formatNewsDate, latestAioNews, type AioNewsItem } from "@/lib/aioNews";
 import type { AioPoint } from "@/types/domain";
 import { Shiori, ShioriFace, Toast } from "./fun";
+import { GuideName } from "@/components/useGuide";
 
 const ICON_PATHS: Record<AioPoint, React.ReactNode> = {
   // 吹き出し
@@ -109,7 +110,7 @@ export function AioNews({ count = 3 }: { count?: number }) {
         <Shiori mood="idea" className="h-16 w-auto shrink-0 sm:h-28" />
         <div className="min-w-0 space-y-1.5">
           <h2 id="aio-news-heading" className="inline-block rounded-full bg-sun-soft px-3 text-sm font-bold">
-            しおりのAIOニュース
+            <GuideName />のAIOニュース
           </h2>
           <p className="text-lg font-black leading-snug">{top.title}</p>
           <p className="text-[0.95rem]">{top.forClient}</p>

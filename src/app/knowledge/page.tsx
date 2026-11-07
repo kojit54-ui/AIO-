@@ -16,6 +16,7 @@ import { EmptyState, Notice } from "@/components/ui";
 import { IMPORT_PROMPT, MAX_IMPORT_CHARS, type ImportCandidate } from "@/lib/growth/aiImport";
 import { localHearing } from "@/lib/growth/localKnowledge";
 import { ApiError, useStore } from "@/mock/store";
+import { GuideName, GuideText } from "@/components/useGuide";
 
 const AI_LINKS = [
   { name: "ChatGPT", url: "https://chatgpt.com/" },
@@ -184,7 +185,7 @@ export default function KnowledgePage() {
             onChange={(e) => setPasted(e.target.value)}
           />
           <button type="button" className="btn-primary" disabled={!pasted.trim() || reading} onClick={() => read()}>
-            しおりに読んでもらう
+            <GuideName />に読んでもらう
             <span className="inline-block animate-nudge" aria-hidden>
               ✨
             </span>
@@ -201,14 +202,14 @@ export default function KnowledgePage() {
       {done && (
         <>
           <Confetti count={50} />
-          <Toast key={done}>{done}</Toast>
+          <Toast key={done}><GuideText text={done} /></Toast>
         </>
       )}
       <div className="animate-rise space-y-2">
         <Link href="/" className="text-sm text-brand-dark underline">
           ホームへ戻る
         </Link>
-        <h1 className="text-2xl font-black sm:text-3xl">しおりに教える</h1>
+        <h1 className="text-2xl font-black sm:text-3xl"><GuideName />に教える</h1>
         <ShioriTalk mood="ask" size="lg" lines={["会社のことを教えてもらえたら、次の記事からもっとあなたらしく書けます。", "やり方を3つ用意しました。どれから教えてくれますか？"]} />
       </div>
       {error && <Notice tone="warn" title={error} />}
@@ -308,7 +309,7 @@ export default function KnowledgePage() {
 
       <section className="card animate-rise space-y-3" aria-labelledby="notes-heading">
         <h2 id="notes-heading" className="text-xl font-black">
-          しおりのノート（覚えていること {notes.length}件）
+          <GuideName />のノート（覚えていること {notes.length}件）
         </h2>
         {notes.length === 0 ? (
           <p className="text-sm text-muted">まだありません。上のどれかで教えると、ここに増えていきます。</p>

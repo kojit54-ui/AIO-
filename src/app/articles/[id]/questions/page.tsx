@@ -12,6 +12,7 @@ import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/da
 import { ApiError, useStore } from "@/mock/store";
 import { needsFollowUp } from "@/mock/sampleGenerator";
 import type { AioPoint, Answer } from "@/types/domain";
+import { GuideName } from "@/components/useGuide";
 
 type SaveState = "idle" | "saving" | "saved" | "error";
 
@@ -245,7 +246,7 @@ export default function QuestionsPage() {
           <p className="flex items-center gap-3 rounded-2xl bg-surface/70 px-4 py-3 text-sm">
             <ShioriFace className="h-12 w-12" />
             <span>
-              <b className="block">しおり（コタム）より</b>
+              <b className="block"><GuideName />（コタム）より</b>
               くわしい体験ほど、AIが紹介しやすく、読んだ人も安心して頼めます。
             </span>
           </p>

@@ -119,6 +119,12 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）画面の言葉を選んだ案内役の名前に
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：withGuideName（テストあり）、useGuideText・GuideName・GuideText（src/components/useGuide.ts）。ShioriTalk と WaitingScreen は自動で置きかえ。見出し（スタンプ帳・メモ帳・AIOニュース・理解度・しおりに教える など）を GuideName に。しおり通信は固定
+- 確認結果：lint・型検査・テスト通過。源さんを選んでホームの文に「しおり」が残らない（しおり通信を除く）ことを確認
+- 次の作業：AIの書き手・点検役の指示やメールの中の「しおり」は、サーバー側なので変えていない
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）こゆきをリアルに・本気で怒る表情
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：こゆきを本物に近いオコジョ16表情に差し替え。表情 angry を全員・全服に追加（Gemini）。ホームの表情を homeMood で決める（きびしめで止まっているときだけ angry。テストあり）。新しくなったことに1つ

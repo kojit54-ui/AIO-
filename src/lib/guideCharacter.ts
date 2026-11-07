@@ -82,3 +82,12 @@ export function guideFile(guide: GuideCharacter, outfit: Outfit | undefined, moo
   if (!outfit || mood.startsWith("jersey")) return guide.file;
   return outfit.file;
 }
+
+/**
+ * 画面の言葉の「しおり」を、選んだ案内役の名前にする（2026-11-07 田村さん「これでそれぞれ実装して」）。
+ * サービスのメールの名前「しおり通信」はそのまま
+ */
+export function withGuideName(text: string, name: string): string {
+  if (name === "しおり") return text;
+  return text.replace(/しおり(?!通信)/g, name);
+}

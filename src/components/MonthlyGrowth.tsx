@@ -11,6 +11,7 @@ import { Notice } from "@/components/ui";
 import { MONTHLY_MENTION_CHECKS } from "@/lib/growth/mentionQuestions";
 import { monthlySummary, writingStreak } from "@/lib/growth/monthly";
 import { ApiError, type MockDb, useStore } from "@/mock/store";
+import { GuideName, GuideText } from "@/components/useGuide";
 
 const ym = (iso: string) => iso.slice(0, 7);
 
@@ -71,13 +72,13 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
         {stats.map((x, i) => (
           <li key={x.label} className="animate-pop rounded-2xl bg-canvas p-3 text-center" style={{ animationDelay: `${i * 0.06}s` }}>
             <span className="block text-2xl font-black tabular-nums text-brand">{x.value}</span>
-            <span className="text-xs text-muted">{x.label}</span>
+            <span className="text-xs text-muted"><GuideText text={x.label} /></span>
           </li>
         ))}
       </ul>
 
       <div className="space-y-2 rounded-2xl border-2 border-brand-soft p-3">
-        <p className="font-black">AIに紹介されているか、しおりが調べます</p>
+        <p className="font-black">AIに紹介されているか、<GuideName />が調べます</p>
         <ShioriTalk
           mood={ever ? "jersey-done" : "think"}
           size="sm"

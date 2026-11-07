@@ -11,7 +11,7 @@ import { ORG_NAME_MAX, normalizeOrgName } from "@/lib/orgName";
 import { PERSON_NAME_MAX, normalizePersonName } from "@/lib/personName";
 import { TONES } from "@/lib/shioriTone";
 import { AUTO_OUTFIT, GUIDES, seasonalOutfit } from "@/lib/guideCharacter";
-import { useGuide, useGuideOutfit } from "@/components/useGuide";
+import { useGuide, useGuideOutfit, GuideName } from "@/components/useGuide";
 import { Shiori, ShioriFace } from "@/components/fun";
 import { useShioriTone } from "@/components/useShioriTone";
 import { useStore } from "@/mock/store";
@@ -219,7 +219,7 @@ function ToneCard() {
     <section className="card space-y-3">
       <h2 className="font-black">{guide.name}の話し方</h2>
       <p className="text-sm text-muted">{guide.name}がどのくらい厳しく声をかけるかを選べます。このパソコン・スマホで覚えます。</p>
-      <div role="radiogroup" aria-label="しおりの話し方" className="grid gap-2 sm:grid-cols-3">
+      <div role="radiogroup" aria-label={`${guide.name}の話し方`} className="grid gap-2 sm:grid-cols-3">
         {TONES.map((t) => (
           <button
             key={t.id}
@@ -357,7 +357,7 @@ function NameCard({ current }: { current: string }) {
             <span className="field-label text-sm">お名前</span>
             <input className="field" value={value} maxLength={PERSON_NAME_MAX + 5} placeholder="例）田村 巧次" onChange={(e) => setValue(e.target.value)} autoFocus />
           </label>
-          <p className="text-sm text-muted">しおりの呼びかけや、メールの宛名に使います。「さん」は付けなくて大丈夫です。</p>
+          <p className="text-sm text-muted"><GuideName />の呼びかけや、メールの宛名に使います。「さん」は付けなくて大丈夫です。</p>
           {error && <p className="text-sm font-bold text-danger">{error}</p>}
           <div className="flex flex-wrap gap-2">
             <button type="submit" className="btn-primary" disabled={!clean || clean === current || busy}>
