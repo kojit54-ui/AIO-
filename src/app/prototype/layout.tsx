@@ -14,6 +14,7 @@ import { SERVICE_NAME } from "@/lib/brand";
 const NAV = [
   { href: "/prototype", label: "ホーム" },
   { href: "/prototype/hearing", label: "会社のことを教える" },
+  { href: "/prototype/strengths", label: "強みの帳面" },
   { href: "/prototype/plan", label: "書く記事を決める" },
   { href: "/prototype/keywords", label: "書く記事リスト" },
   { href: "/prototype/coach", label: "コタムの画面" },

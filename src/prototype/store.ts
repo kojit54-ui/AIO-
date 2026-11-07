@@ -317,6 +317,8 @@ if (typeof window !== "undefined") {
 
 /** 今の状態を読む（画面の外、テスト用） */
 export const readGrowState = (): GrowState => load();
+/** 本物のデータのときの会社 id（試作では null） */
+export const currentGrowOrgId = (): string | null => remote?.organizationId ?? null;
 export const readGrowSync = (): GrowSync => sync;
 
 let sellSeq = 0;

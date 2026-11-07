@@ -18,6 +18,8 @@ import { HEARING_QUESTIONS, MAX_AI_DEEP_DIVES, MAX_ANSWER, REQUIRED_FOR_PROPOSAL
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
 import type { CompanyProfile } from "@/types/domain";
 import { hearingForPrompt } from "./proposals";
+import { buildStrengthBookPrompt, parseStrengthBook, STRENGTH_BOOK_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
+import { fillEmpty, normalizeBook, sampleBookFromHearing, type StrengthBook } from "@/lib/strength/book";
 
 type Fail = { ok: false; status: number; code: string; message: string };
 const fail = (status: number, code: string, message: string): Fail => ({ ok: false, status, code, message });
@@ -414,3 +416,57 @@ export async function runPhotoThemes(deps: HearingDeps & { fallback?: AiProvider
 
 /** 写真は画面で小さくしてから送る。base64で約2MBまで */
 export const MAX_PHOTO_BASE64 = 2_800_000;
+
+/**
+ * 強みの帳面の下書きを、ヒアリングの答えと会社の知識からAIが作る（docs/AIO.md「強みの帳面」）。
+ * すでに書いてある欄は変えず、空の欄だけを埋める。中身が変わったら、お客様が確かめ直すまでAIには使わない
+ */
+export async function runStrengthBookDraft(deps: HearingDeps, req: { organizationId: string; idempotencyKey: string }): Promise<{ ok: true; book: StrengthBook; confirmedAt: string | null } | Fail> {
+  const { user: db, admin } = deps;
+  const user = await requireUser(db);
+  if (!user) return fail(401, "session_expired", "ログインの有効期限が切れました");
+  const { data: membership } = await db.from("memberships").select("role").eq("user_id", user.id).eq("organization_id", req.organizationId).is("revoked_at", null).maybeSingle();
+  if (membership?.role !== "client_member") return fail(403, "forbidden", "強みの帳面を作れるのは、会社の担当の方です");
+  const [hearingRes, notesRes, bookRes] = await Promise.all([
+    db.from("hearing_answers").select("*").eq("organization_id", req.organizationId),
+    db.from("knowledge_notes").select("label, text").eq("organization_id", req.organizationId).order("created_at", { ascending: false }).limit(20),
+    db.from("strength_books").select("book, confirmed_at").eq("organization_id", req.organizationId).maybeSingle(),
+  ]);
+  if (hearingRes.error) return fail(500, "provider_error", "会社のことを読み込めませんでした。もう一度お試しください");
+  const answers: Record<string, HearingAnswer> = {};
+  for (const r of (hearingRes.data ?? []) as HearingAnswerRow[]) answers[r.question_id] = answerFromDb(r);
+  if (!Object.values(answers).some((a) => a.text.trim())) return fail(400, "invalid_input", "先に「会社のことを教える」で、いくつか答えてください");
+  const hearing = hearingForPrompt(answers, []);
+  const knowledge = ((notesRes.data ?? []) as { label: string; text: string }[]).map((n) => ({ label: n.label.slice(0, 80), text: n.text.slice(0, 600) }));
+  const current = normalizeBook(bookRes.data?.book ?? {});
+
+  const b = await begin(deps, req.organizationId, req.idempotencyKey, JSON.stringify({ hearing, knowledge }).length);
+  if (!b.ok) return b;
+  const signal = AbortSignal.timeout(PROFILE_TIMEOUT_MS);
+  let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
+  try {
+    let draft: StrengthBook;
+    if (deps.isSample) {
+      draft = sampleBookFromHearing(Object.fromEntries(Object.entries(answers).map(([k, v]) => [k, v.text])));
+    } else {
+      const res = await deps.provider.complete({ kind: "hearing", system: STRENGTH_BOOK_SYSTEM_PROMPT, user: buildStrengthBookPrompt(hearing, knowledge), maxOutputTokens: 3000, signal });
+      usage = res.usage;
+      draft = parseStrengthBook(res.text);
+    }
+    const book = fillEmpty(current, draft);
+    const changed = JSON.stringify(book) !== JSON.stringify(current);
+    const confirmedAt = changed ? null : ((bookRes.data?.confirmed_at as string | null) ?? null);
+    const now = new Date().toISOString();
+    const { error: saveError } = await admin
+      .from("strength_books")
+      .upsert({ organization_id: req.organizationId, book, confirmed_at: confirmedAt, drafted_at: now, updated_by: user.id, updated_at: now }, { onConflict: "organization_id" });
+    if (saveError) throw new Error("strength book save failed");
+    await b.finish("succeeded", usage, null);
+    return { ok: true, book, confirmedAt };
+  } catch (e) {
+    const reason = failureReason(e, signal);
+    console.error("strength book draft failed", { runId: b.runId, reason });
+    await b.finish("failed", usage, reason);
+    return fail(reason === "timeout" ? 504 : 502, reason === "timeout" ? "timeout" : "provider_error", AI_ERRORS[reason] ?? "下書きを作れませんでした。もう一度お試しください");
+  }
+}

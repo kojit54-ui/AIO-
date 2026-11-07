@@ -158,6 +158,12 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）強みの帳面
+- ブランチ：claude/project-thread-08ub3t
+- 変更点：src/lib/strength/book.ts（帳面の形・足りない所・AIへの指示・答えの足し方・下書きの合わせ方）、マイグレーション 20261107170000_strength_books.sql、下書きのAI（growthPrompts の STRENGTH_BOOK_SYSTEM_PROMPT、hearingAi の runStrengthBookDraft、/api/organizations/[id]/strength-book）、記事の素材に companyPrompt（src/lib/ai/input.ts、generation/server.ts、countedInputChars で受付の字数は今まで通り）、書き手・点検役・AIOのチェック・提案の指示、画面 /prototype/strengths とナビ「強みの帳面」
+- 確認結果：lint・型検査・単体テスト（505件）が通過。試作で下書き → 保存を375px・1280pxで操作し、横スクロールなし
+- 未完了：本物のAIで帳面ありの記事を見直す。目標の質問ごとの計測、事例専用の一問一答（docs/AIO.md「強みの帳面」のまだ無いもの）
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）CVRの資料を記事作りとキーワード設計に
 - ブランチ：claude/project-thread-08ub3t
 - 変更点：docs/AIO.md に「選ばれる決め手」（田村さんの参考資料の要点と、このサービスでやること）。書き手・点検役の指示（src/lib/ai/prompt.ts）、深掘りとキーワードの提案の指示（src/lib/ai/growthPrompts.ts）に、誰に向けるか・強みは根拠と数字で・事例の6要素・専門の一貫を追加。AIOのチェックに「強みの根拠」（proof）を足して13項目（src/types/domain.ts、src/lib/aioCheck.ts、AioCheckPanel のしるし、tips）。ヒアリングの「お客様」「選ばれる理由」のヒント文、サンプルの提案に事例の記事。書く記事リストに「お客様の事例 x / 3本」（src/prototype/keywords.ts の caseStudyHint、/prototype/keywords）。DB変更なし
