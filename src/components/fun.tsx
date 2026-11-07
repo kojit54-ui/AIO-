@@ -141,7 +141,9 @@ export type ShioriMood =
   | "bow"
   | "jersey-cheer"
   | "jersey-stretch"
-  | "jersey-done";
+  | "jersey-done"
+  /** 本気で怒っている（2026-11-07 田村さん「怒った時とか本気怒りしてる感じ」）。きびしめの話し方で、書く手が止まっているときに使う */
+  | "angry";
 /** 案内役の絵の場所と幅。選んだ案内役（しおり・源さん・こゆき）と服で変わる（src/lib/guideCharacter.ts） */
 function guideImage(file: string, mood: ShioriMood): { src: string; width: number } {
   return { src: `/guide/${file}-${mood}.webp`, width: GUIDE_WIDTHS[file]?.[mood] ?? 240 };

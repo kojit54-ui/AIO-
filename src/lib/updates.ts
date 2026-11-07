@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-koyuki-angry",
+    date: "2026-11-07",
+    title: "こゆきが本物そっくりになり、案内役が本気で怒るようになりました",
+    body: "オコジョのこゆきを、本物に近い姿に描き直しました。話し方を「きびしめ」にしていると、記事が止まっているときや今月まだ書いていないとき、ホームで案内役が本気で怒ります。",
+    href: "/mypage",
+    linkLabel: "案内役と話し方を選ぶ",
+  },
+  {
     id: "2026-11-07-outfit",
     date: "2026-11-07",
     title: "案内役が着がえられるようになりました",

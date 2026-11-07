@@ -15,7 +15,7 @@ import { TownBoard } from "@/components/TownBoard";
 import { WhatsNew } from "@/components/WhatsNew";
 import { MfgTip } from "@/components/MfgTip";
 import { useShioriTone } from "@/components/useShioriTone";
-import { homeLines, referenceTime } from "@/lib/shioriTone";
+import { homeLines, homeMood, referenceTime } from "@/lib/shioriTone";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
@@ -38,13 +38,14 @@ export default function HomePage() {
   const org = db.organizations.find((o) => o.id === orgId);
   const mine = db.articles.filter((a) => a.organizationId === orgId);
   const lastWork = mine.reduce((m, a) => Math.max(m, new Date(a.updatedAt).getTime() || 0), 0);
-  const lines = homeLines(tone, {
+  const situation = {
     publishedThisMonth: mine.filter((a) => a.publishedAt?.startsWith(month)).length,
     workedThisMonth: mine.filter((a) => a.updatedAt.startsWith(month)).length,
     inProgress: !!inProgress,
     totalArticles: mine.length,
     daysSinceLastWork: lastWork ? Math.max(0, Math.floor((referenceTime(month, nowMs) - lastWork) / 86_400_000)) : null,
-  });
+  };
+  const lines = homeLines(tone, situation);
 
   return (
     <main className="page space-y-6">
@@ -60,7 +61,7 @@ export default function HomePage() {
         <h1 className="text-2xl font-black leading-snug sm:text-3xl">
           {user.name}さん、こんにちは <Wave />
         </h1>
-        <ShioriTalk mood="jersey-cheer" size="lg" lines={lines} />
+        <ShioriTalk mood={homeMood(tone, situation)} size="lg" lines={lines} />
         <ChosenPath className="mt-2" />
       </div>
       <WhatsNew />

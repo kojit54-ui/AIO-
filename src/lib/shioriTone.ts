@@ -85,3 +85,9 @@ export function homeLines(tone: ShioriTone, s: HomeSituation): string[] {
 }
 
 export const ALL_HOME_LINES = LINES;
+
+/** ホームの案内役の表情。きびしめで書く手が止まっているときは本気で怒る。ほかはいつものジャージで応援 */
+export function homeMood(tone: ShioriTone, s: HomeSituation): "angry" | "jersey-cheer" {
+  const c = homeCase(s);
+  return tone === "strict" && (c === "inProgressStale" || c === "away" || c === "notYet") ? "angry" : "jersey-cheer";
+}
