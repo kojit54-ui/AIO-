@@ -3,6 +3,7 @@
 // できた提案は keyword_proposals に残り、同じ会社の人（顧客・コタム）の画面に人の手を介さず出る（docs/DECISIONS.md 2026-11-01）。
 // ヒアリングの答えや下調べの生データはログに出さず、顧客の画面にも出さない。
 
+import { bookToPrompt, normalizeBook } from "@/lib/strength/book";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { estimateCostYen } from "@/lib/ai/cost";
 import { buildProposalPrompt, parseProposals, PROPOSAL_SYSTEM_PROMPT, type HearingForPrompt, type ParsedProposal, type SearchSignalForPrompt } from "@/lib/ai/growthPrompts";
@@ -129,12 +130,15 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
   if (!auth.user) return fail(401, "session_expired", "ログインの有効期限が切れました");
 
   // 読み込みは利用者の権限（RLS）。他社の答えは読めない
-  const [{ data: answerRows, error: e1 }, { data: sellRows, error: e2 }, { data: scRow }] = await Promise.all([
+  const [{ data: answerRows, error: e1 }, { data: sellRows, error: e2 }, { data: scRow }, { data: bookRow }] = await Promise.all([
     db.from("hearing_answers").select("*").eq("organization_id", req.organizationId),
     db.from("sell_items").select("name").eq("organization_id", req.organizationId).order("rank"),
     // つながっていない会社や、表がまだ無い環境では使わない
     db.from("search_console").select("snapshot, verified_at").eq("organization_id", req.organizationId).maybeSingle(),
+    // 強みの帳面（お客様が確かめたものだけ。docs/AIO.md「強みの帳面」）
+    db.from("strength_books").select("book, confirmed_at").eq("organization_id", req.organizationId).maybeSingle(),
   ]);
+  const companyPrompt = bookRow?.confirmed_at ? bookToPrompt(normalizeBook(bookRow.book)) : "";
   const search = scRow?.verified_at ? searchSignals(scRow.snapshot as ScSnapshot | null) : [];
   if (e1 || e2) return fail(500, "provider_error", "会社のことを読み込めませんでした。もう一度お試しください");
   const answers: Record<string, HearingAnswer> = {};
@@ -186,7 +190,7 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
           console.error("keyword research failed", { runId: run.id, reason: e instanceof Error ? e.name : "other" });
         }
       }
-      proposals = await askProposals(deps.provider, hearing, research, search, signal, (u) => {
+      proposals = await askProposals(deps.provider, hearing, research, search, companyPrompt, signal, (u) => {
         usage = { inputTokens: usage.inputTokens + u.inputTokens, outputTokens: usage.outputTokens + u.outputTokens };
       });
     }
@@ -220,8 +224,8 @@ export async function runKeywordProposal(deps: ProposalDeps, req: { organization
 }
 
 /** 返事の形が違ったときは1回だけ聞き直す */
-async function askProposals(provider: AiProvider, hearing: HearingForPrompt, research: ResearchForPrompt[], search: SearchSignalForPrompt[], signal: AbortSignal, onUsage: (u: AiUsage) => void): Promise<ParsedProposal[]> {
-  const user = buildProposalPrompt(hearing, research, search);
+async function askProposals(provider: AiProvider, hearing: HearingForPrompt, research: ResearchForPrompt[], search: SearchSignalForPrompt[], companyPrompt: string, signal: AbortSignal, onUsage: (u: AiUsage) => void): Promise<ParsedProposal[]> {
+  const user = buildProposalPrompt(hearing, research, search, companyPrompt);
   for (let attempt = 0; ; attempt++) {
     const res = await provider.complete({ kind: "keyword_proposal", system: PROPOSAL_SYSTEM_PROMPT, user, maxOutputTokens: 6000, signal });
     onUsage(res.usage);
