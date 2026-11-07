@@ -6,38 +6,25 @@
 // サービスの定義は src/lib/brand.ts（AIに選ばれて、お客様に選ばれる。いちばん大切なのはお客様に選ばれること）。
 // 紹介される・売上が上がると約束はしない（決めるのはAI）。料金はまだ決まっていないので出さない。
 
-import { LegalLinks } from "@/components/LegalLinks";
+import { SiteFooter, SiteHeader, useStartLink } from "@/components/site";
+import { FAQ } from "@/lib/faq";
+import { COLUMNS } from "@/lib/column";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
-import { BigShiori, Logo, Reveal, useInView } from "@/components/landing";
+import { BigShiori, Reveal, useInView } from "@/components/landing";
 import { ShioriTalk, Typed } from "@/components/talk";
 import { CHOSEN_STAGES, SERVICE_COMPANION, SERVICE_MOST_IMPORTANT } from "@/lib/brand";
-import { useStore } from "@/mock/store";
 import type { MfgShowcase } from "@/lib/manufacturing";
 
 export function Welcome({ makers }: { makers: MfgShowcase }) {
-  const { ready, user } = useStore();
   // ログイン中なら、入口のボタンは「続きから」にする
-  const signedIn = ready && !!user;
-  const startHref = signedIn ? (user?.role === "coach" ? "/coach" : "/") : "/login";
+  const { signedIn, href: startHref } = useStartLink();
   const startLabel = signedIn ? "続きから書く" : "さっそく始める";
 
   return (
     <div className="overflow-x-clip">
-      <header className="sticky top-0 z-30 border-b border-line/70 bg-canvas/85 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6">
-          <Logo />
-          <div className="flex items-center gap-3">
-          <Link href="/shiori" className="hidden text-sm font-bold text-brand-dark underline-offset-4 hover:underline sm:inline">
-            しおりって？
-          </Link>
-          <Link href={startHref} className="btn-primary min-h-10 whitespace-nowrap px-4 py-1.5 text-sm">
-            {signedIn ? "続きから" : "ログイン"}
-          </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <Hero startHref={startHref} startLabel={startLabel} />
       <AiChat />
@@ -47,17 +34,11 @@ export function Welcome({ makers }: { makers: MfgShowcase }) {
       <KeepGoing />
       <ForMakers m={makers} />
       <ForYou />
+      <Faq />
+      <ColumnTeaser />
       <FinalCall startHref={startHref} startLabel={startLabel} signedIn={signedIn} />
 
-      <footer className="mx-auto max-w-6xl space-y-1 px-4 pb-6 pt-10 text-center text-sm text-muted sm:px-6">
-        <p>
-          <Link href="/shiori" className="font-bold text-brand-dark underline">
-            案内役「しおり」の自己紹介
-          </Link>
-        </p>
-        <p>株式会社コタム</p>
-        <LegalLinks />
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
@@ -195,43 +176,27 @@ function AiChat() {
 
   return (
     <section id="ai" className="scroll-mt-16 bg-surface/60 py-12">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+      <div className="mx-auto max-w-2xl px-4 sm:px-6">
         <Reveal>
           <SectionTitle kicker="いま、お客様の探し方が変わっています">
             お客様は、<span className="text-brand">AIに相談</span>しはじめました
           </SectionTitle>
         </Reveal>
 
-        <div className="grid items-start gap-6 md:grid-cols-[1fr_1.3fr]">
-          <Reveal className="space-y-3">
-            <div className="card flex items-center gap-3 px-4 py-3 opacity-80">
-              <span className="text-3xl" aria-hidden>
-                🔍
-              </span>
-              <p>
-                <b className="block text-sm text-muted">いままで</b>
-                検索して、たくさんのサイトを見くらべる
-              </p>
-            </div>
-            <p className="text-center text-2xl text-brand" aria-hidden>
-              ↓
-            </p>
-            <div className="card flex items-center gap-3 border-2 border-brand px-4 py-3">
-              <span className="text-3xl" aria-hidden>
-                💬
-              </span>
-              <p>
-                <b className="block text-sm text-brand-dark">これから</b>
-                AIに聞くと、AIが<b>おすすめの会社</b>を答えてくれる
-              </p>
-            </div>
-            <ShioriTalk
-              mood="point"
-              size="md"
-              className="pt-2"
-              lines={["AIに紹介されるのは、はじまりです。", "紹介されて読みに来た人に「ここに頼みたい」と思ってもらえて、はじめてお問い合わせが来るんです。", "その両方を、いっしょにつくりましょう！"]}
-            />
-          </Reveal>
+        {/* 2026-11-07 田村さん「2カラムが見づらい。文字が多くて目が散る」→ 1列にして、上から順に読むだけにする */}
+        <Reveal className="mb-5 grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-center">
+          <p className="rounded-2xl border-2 border-line bg-surface px-3 py-2 opacity-80">
+            <b className="block text-xs text-muted">いままで</b>
+            <span className="text-sm font-bold sm:text-base">🔍 検索して見くらべる</span>
+          </p>
+          <span className="animate-nudge text-2xl font-black text-brand" aria-hidden>
+            →
+          </span>
+          <p className="rounded-2xl border-2 border-brand bg-surface px-3 py-2">
+            <b className="block text-xs text-brand-dark">これから</b>
+            <span className="text-sm font-bold sm:text-base">💬 AIに聞く</span>
+          </p>
+        </Reveal>
 
           <div ref={ref} className="card relative space-y-3 bg-canvas/60 p-4 sm:p-5">
             <p className="flex items-center justify-between text-xs font-black text-muted">
@@ -296,7 +261,7 @@ function AiChat() {
               )}
             </div>
             <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line pt-3">
-              <p className="text-xs text-muted">紹介するかどうかはAIが、頼むかどうかは読んだ人が決めます。選ばれやすい材料を、いっしょにそろえます。</p>
+              <p className="text-xs text-muted">紹介するかはAIが、頼むかは読んだ人が決めます。</p>
               {step >= 6 && (
                 <button
                   type="button"
@@ -311,7 +276,9 @@ function AiChat() {
               )}
             </div>
           </div>
-        </div>
+        <Reveal className="mt-5">
+          <ShioriTalk mood="point" size="md" lines={["AIに紹介されて、読んだ人に「ここに頼みたい」と思ってもらう。その両方を、いっしょにつくりましょう！"]} />
+        </Reveal>
       </div>
     </section>
   );
@@ -427,7 +394,7 @@ const STEPS: { mood: ShioriMood; title: string; text: string; tag: string }[] = 
 
 function ThreeSteps() {
   return (
-    <section className="bg-surface/60 py-12">
+    <section id="how" className="scroll-mt-24 bg-surface/60 py-12">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Reveal>
           <SectionTitle kicker="むずかしいことはありません">やることは、3つだけ</SectionTitle>
@@ -540,7 +507,7 @@ function ForMakers({ m }: { m: MfgShowcase }) {
         </Reveal>
         <Reveal delay={0.05}>
           <p className="mx-auto max-w-3xl text-center text-muted">
-            公的機関や業界団体、業界メディア、調査の公開情報を巡回して、{industries}の業種について、製造業の悩みや、発注する人がよく抱く疑問、つまずきやすい言葉など {total.toLocaleString()}件 を集め、AIに教えています。だから「小ロットでも頼める？」「図面がなくても大丈夫？」のような、お客様が本当に知りたいことに答える記事になります。これからも増やしていきます。
+            公的機関や業界団体などの公開情報から、{industries}の業種の悩みや、発注する人の疑問を {total.toLocaleString()}件 集めて、AIに教えています。
           </p>
         </Reveal>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -597,6 +564,83 @@ function ForYou() {
             </li>
           ))}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+/** よくある質問。AIもこの形（質問と答え）を読みとりやすい */
+function Faq() {
+  return (
+    <section id="faq" className="scroll-mt-24 py-12">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        <Reveal>
+          <SectionTitle kicker="気になることに、先にお答えします">よくある質問</SectionTitle>
+        </Reveal>
+        <ul className="space-y-3">
+          {FAQ.map((f, i) => (
+            <li key={f.q}>
+              <Reveal delay={Math.min(i, 4) * 0.05}>
+                <details className="group card p-0 open:border-brand">
+                  <summary className="flex cursor-pointer list-none items-center gap-3 px-4 py-3 font-black [&::-webkit-details-marker]:hidden">
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand text-sm text-white" aria-hidden>
+                      Q
+                    </span>
+                    <span className="flex-1">{f.q}</span>
+                    <span className="text-xl text-brand transition-transform group-open:rotate-45" aria-hidden>
+                      ＋
+                    </span>
+                  </summary>
+                  <p className="border-t border-line px-4 py-3 leading-relaxed">{f.a}</p>
+                </details>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd() }} />
+    </section>
+  );
+}
+
+function faqJsonLd() {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  }).replace(/</g, "\\u003c");
+}
+
+/** AIOの読みもの（/column）の新しい記事 */
+function ColumnTeaser() {
+  const list = COLUMNS.slice(0, 3);
+  return (
+    <section className="bg-surface/60 py-12">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <Reveal>
+          <SectionTitle kicker="むずかしい言葉なしで">AIOの読みもの</SectionTitle>
+        </Reveal>
+        <ul className="grid gap-3 md:grid-cols-3">
+          {list.map((c, i) => (
+            <li key={c.slug}>
+              <Reveal delay={i * 0.08} className="h-full">
+                <Link href={`/column/${c.slug}`} className="card flex h-full flex-col gap-2 transition-transform hover:-translate-y-1">
+                  <span className="text-3xl" aria-hidden>
+                    {c.icon}
+                  </span>
+                  <b className="leading-snug">{c.title}</b>
+                  <span className="text-sm text-muted">{c.lead}</span>
+                  <span className="mt-auto text-sm font-bold text-brand-dark">読む →</span>
+                </Link>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-center">
+          <Link href="/column" className="font-bold text-brand-dark underline">
+            読みものをすべて見る
+          </Link>
+        </p>
       </div>
     </section>
   );

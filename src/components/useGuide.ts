@@ -47,7 +47,7 @@ function subscribe(cb: () => void) {
 }
 
 /** ログイン前の画面（入口・ためす・自己紹介・ログイン・招待・規約）は、サービスの顔の しおり のまま */
-const PUBLIC = ["/welcome", "/try", "/shiori", "/login", "/invite", "/terms", "/privacy", "/tokushoho"];
+const PUBLIC = ["/welcome", "/try", "/shiori", "/column", "/login", "/invite", "/terms", "/privacy", "/tokushoho"];
 export const isPublicPath = (p: string | null) => !!p && PUBLIC.some((x) => p === x || p.startsWith(`${x}/`));
 
 export interface GuideState {

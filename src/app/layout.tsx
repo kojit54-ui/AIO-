@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Zen_Maru_Gothic } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
 import { SERVICE_DESCRIPTION, SERVICE_NAME } from "@/lib/brand";
+import { SITE_URL } from "@/lib/publicPages";
 import { StoreProvider } from "@/mock/store";
 import "./globals.css";
 
@@ -9,6 +10,7 @@ import "./globals.css";
 const maru = Zen_Maru_Gothic({ weight: ["500", "700", "900"], subsets: ["latin"], variable: "--font-maru", display: "swap", preload: false });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: SERVICE_NAME,
   description: SERVICE_DESCRIPTION,
   robots: { index: false, follow: false },
