@@ -38,6 +38,12 @@
 - 確認結果：キャッシュなしの手元ビルドが #125 で2分58秒 → 約20秒（変換 2.6分 → 数秒）。lint・型検査・単体テスト
 - 原因：5MBの .ts の変換。#124 が33秒だったのは Vercel のキャッシュが効いたためで、#125 はルートのレイアウトを変えて全ページの変換がやり直しになり、重さが表に出た
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）ブランドの作り直し（第2版）
+- ブランチ：claude/project-thread-1gko29
+- 変更点：田村さん「クオリティ低い、AIっぽい」→ GPT・Gemini に3回批評させて作り直し。ロゴ（現場の野帳、scripts/brand/build.py）、public/brand/ 全部、icon・apple-icon・OG画像、src/lib/brandBook.ts（言葉）、/brand（図面の表題欄・罫線・見本の一問一答）、globals.css に藍・真鍮・生成り・墨、ヘッダーのロゴを横組みSVGに、docs/BRAND.md
+- 確認結果：lint・型検査・単体テスト、375px・1280pxで横にはみ出さない。批評は /mnt/project-files/brand-book/council/
+- 未完了：田村さんの確認。読み方。サイト全体のヘッダー（丸いログインボタン）を紙面に合わせるかは入口ページのスレッドと相談
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）AIOえらばれ帳のブランドを作る
 - ブランチ：claude/project-thread-1gko29
 - 変更点：docs/BRAND.md（正本）、src/lib/brandBook.ts、/brand（ブランドブック。検索に出す、下の案内に「ブランドとロゴ」）、public/brand/（ロゴのSVG・PNG・ZIP）、ヘッダーのロゴを新しいマークに（landing.tsx の Logo・BrandMark、AppShell）、src/app/icon.svg・apple-icon.png・opengraph-image.png
