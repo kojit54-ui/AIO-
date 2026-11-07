@@ -9,7 +9,7 @@ export const GUIDE_WIDTHS: Record<string, Record<string, number>> = {
   "shiori": {"ask": 193, "bow": 153, "cheer": 239, "coffee": 188, "idea": 209, "jersey-cheer": 238, "jersey-done": 200, "jersey-stretch": 295, "joy": 173, "point": 230, "right": 208, "sad": 191, "surprise": 241, "think": 186, "welldone": 173},
   "shiori-casual": {"ask": 256, "bow": 237, "cheer": 224, "coffee": 210, "idea": 212, "joy": 197, "point": 245, "right": 218, "sad": 198, "surprise": 289, "think": 191, "welldone": 194},
   "shiori-gym": {"ask": 245, "bow": 175, "cheer": 267, "coffee": 175, "idea": 202, "joy": 167, "point": 243, "right": 212, "sad": 169, "surprise": 250, "think": 163, "welldone": 170},
-  "shiori-out": {"ask": 227, "bow": 183, "cheer": 223, "coffee": 184, "idea": 190, "joy": 176, "point": 210, "right": 185, "sad": 184, "surprise": 229, "think": 184, "welldone": 182},
+  "shiori-out": {"ask": 235, "bow": 185, "cheer": 201, "coffee": 183, "idea": 184, "joy": 184, "point": 225, "right": 189, "sad": 184, "surprise": 254, "think": 184, "welldone": 184},
   "shiori-summer": {"ask": 215, "bow": 156, "cheer": 181, "coffee": 154, "idea": 170, "joy": 153, "point": 250, "right": 161, "sad": 146, "surprise": 187, "think": 154, "welldone": 158},
   "shiori-winter": {"ask": 259, "bow": 224, "cheer": 249, "coffee": 227, "idea": 240, "joy": 226, "point": 260, "right": 243, "sad": 221, "surprise": 275, "think": 215, "welldone": 226},
   "shiori-work": {"ask": 245, "bow": 256, "cheer": 264, "coffee": 243, "idea": 256, "joy": 220, "point": 278, "right": 256, "sad": 241, "surprise": 274, "think": 238, "welldone": 220},
