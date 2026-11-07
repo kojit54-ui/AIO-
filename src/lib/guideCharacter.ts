@@ -40,6 +40,8 @@ export const GUIDES: GuideCharacter[] = [
       { id: "casual", label: "カジュアル", file: "shiori-casual" },
       { id: "winter", label: "冬のコート", file: "shiori-winter" },
       { id: "summer", label: "夏の半そで", file: "shiori-summer" },
+      { id: "gym", label: "体操着", file: "shiori-gym" },
+      { id: "out", label: "お出かけ", file: "shiori-out" },
     ],
   },
   {
@@ -50,6 +52,8 @@ export const GUIDES: GuideCharacter[] = [
     outfits: [
       { id: "work", label: "作業着", file: "gen" },
       { id: "suit", label: "スーツ", file: "gen-suit" },
+      { id: "gym", label: "体操着", file: "gen-gym" },
+      { id: "out", label: "お出かけ", file: "gen-out" },
     ],
   },
   { id: "koyuki", name: "こゆき", note: "元気なオコジョ。いっしょにがんばる", file: "koyuki", outfits: [] },
