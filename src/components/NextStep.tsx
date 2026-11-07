@@ -50,7 +50,7 @@ const readOpen = () => {
   }
 };
 
-/** ニュース・こぼれ話・スタンプ帳・メモ帳・今月の成長をまとめて畳む。開いたかどうかはこのブラウザに覚える */
+/** ニュース・こぼれ話・メモ帳・今月の成長をまとめて畳む。開いたかどうかはこのブラウザに覚える */
 export function MoreOnHome({ children }: { children: React.ReactNode }) {
   const saved = useSyncExternalStore(subscribe, readOpen, () => false);
   const [override, setOverride] = useState<boolean | null>(null);
@@ -67,7 +67,7 @@ export function MoreOnHome({ children }: { children: React.ReactNode }) {
   return (
     <section aria-label="お知らせと記録" className="space-y-4">
       <button type="button" onClick={toggle} aria-expanded={open} className="btn-secondary min-h-14 w-full text-base">
-        {open ? "お知らせ・記録をしまう ▲" : "お知らせ・スタンプ・今月の記録を見る ▼"}
+        {open ? "お知らせ・記録をしまう ▲" : "お知らせ・今月の記録を見る ▼"}
       </button>
       {open && <div className="animate-rise space-y-6">{children}</div>}
     </section>

@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-one-game",
+    date: "2026-11-07",
+    title: "スタンプは「AIの町すごろく」にまとまりました",
+    body: "集めるものを1つにしました。順番どおりでなくても、できたところまで駒が進みます。とばしたマスは「まだ」と出るので、いつでも進められます。",
+    href: "/",
+    linkLabel: "ホームへ",
+  },
+  {
     id: "2026-11-07-read-edit",
     date: "2026-11-07",
     title: "記事を読みながら、気になる所だけ直せるようになりました",

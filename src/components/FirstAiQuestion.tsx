@@ -91,7 +91,7 @@ export function FirstAiQuestion({ hasKnowledge }: { hasKnowledge: boolean }) {
               <button type="button" className="font-semibold text-muted underline" onClick={() => close(picked)}>
                 あとでやる
               </button>
-              <span className="block text-xs text-muted">あとからでも、ホームの「お知らせ・スタンプ・今月の記録を見る」の中の「ChatGPT・Claude・Gemini やブログから取り込む」からできます。</span>
+              <span className="block text-xs text-muted">あとからでも、ホームの「お知らせ・今月の記録を見る」の中の「ChatGPT・Claude・Gemini やブログから取り込む」からできます。</span>
             </p>
           </>
         )}

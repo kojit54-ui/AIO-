@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { MockDb } from "@/mock/store";
-import { publishedCount, townLevel, townPosition, townSteps } from "./town";
+import { publishedCount, skippedSteps, townLevel, townPosition, townSteps, type TownStep } from "./town";
 
 const base = {
   organizations: [],
@@ -22,6 +22,15 @@ describe("AIの町すごろく", () => {
     const steps = townSteps(base, "o1", false);
     expect(townPosition(steps)).toBe(0);
     expect(townLevel(publishedCount(base, "o1")).level.name).toBe("空き地");
+  });
+
+  it("コマは、いちばん先まで進んだマスの次。飛ばしたマスがあっても戻さない", () => {
+    const st = (done: boolean[]) => done.map((d, i) => ({ id: String(i), icon: "", label: String(i), how: "", done: d }) as TownStep);
+    // 会社のことはまだだが、書いてチェックして載せた
+    const steps = st([false, true, true, true, false, false, false]);
+    expect(townPosition(steps)).toBe(4);
+    expect(skippedSteps(steps).map((s) => s.id)).toEqual(["0"]);
+    expect(townPosition(st([true, true, true, true, true, true, true]))).toBe(7);
   });
 
   it("最後の2マスは、AIに選ばれる・お客様に選ばれるの順", () => {

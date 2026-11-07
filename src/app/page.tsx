@@ -10,7 +10,6 @@ import { ChosenPath } from "@/components/ChosenPath";
 import { MonthlyGrowth } from "@/components/MonthlyGrowth";
 import { SearchConsoleCard } from "@/components/SearchConsoleCard";
 import { ShioriGrowth } from "@/components/ShioriGrowth";
-import { StampBook } from "@/components/StampBook";
 import { TownBoard } from "@/components/TownBoard";
 import { WhatsNew } from "@/components/WhatsNew";
 import { MfgTip } from "@/components/MfgTip";
@@ -92,7 +91,6 @@ export default function HomePage() {
       <MoreOnHome>
         <AioNews />
         <MfgTip business={org?.profile?.business} />
-        <StampBook db={db} orgId={orgId} />
         <ShioriGrowth db={db} orgId={orgId} />
         <MonthlyGrowth db={db} orgId={orgId} month={month} />
         <SearchConsoleCard db={db} orgId={orgId} />

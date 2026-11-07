@@ -53,11 +53,26 @@ export function townSteps(db: MockDb, orgId: string, inquiry: boolean, now = new
   ];
 }
 
-/** コマのいる場所＝最初のまだのマス。全部終わったらゴール（マスの数） */
+/**
+ * コマのいる場所＝いちばん先まで進んだマスの、次のマス。全部終わったらゴール（マスの数）。
+ * 途中のマスを飛ばしていても、戻さない（2026-11-07 3AIの検討。載せたのに「会社のことを教える」で止まっていた）
+ */
 export function townPosition(steps: TownStep[]): number {
-  const i = steps.findIndex((x) => !x.done);
-  return i === -1 ? steps.length : i;
+  let last = -1;
+  steps.forEach((x, i) => {
+    if (x.done) last = i;
+  });
+  return last + 1;
 }
+
+/** コマより手前で、まだのマス（飛ばしたマス）。あとからでも進められる */
+export function skippedSteps(steps: TownStep[]): TownStep[] {
+  const pos = townPosition(steps);
+  return steps.slice(0, pos).filter((x) => !x.done);
+}
+
+/** すごろくのマスに無い、寄り道のスタンプ（スタンプ帳のうち、すごろくと重ならないもの） */
+export const SIDE_STAMP_IDS = ["teach", "search", "perfect", "streak3"];
 
 /** ブログに載せた本数 */
 export function publishedCount(db: MockDb, orgId: string): number {
