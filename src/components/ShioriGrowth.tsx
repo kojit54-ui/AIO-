@@ -72,7 +72,8 @@ function KnowledgeCard({ item, i }: { item: KnowledgeItem; i: number }) {
 
 /** ホームの「しおりの理解度」と「しおりのメモ帳」 */
 export function ShioriGrowth({ db, orgId }: { db: MockDb; orgId: string }) {
-  const { xp, parts } = shioriXp(db, orgId);
+  // ポイントの数字は出さない（2026-11-07 3AIの検討：計算のルールを覚えるのは負担。覚えた件数という事実だけ見せる）
+  const { xp } = shioriXp(db, orgId);
   const lv = shioriLevel(xp);
   const notes = companyKnowledge(db, orgId);
   const shown = notes.slice(0, 6);
@@ -92,7 +93,7 @@ export function ShioriGrowth({ db, orgId }: { db: MockDb; orgId: string }) {
               <div className="h-full rounded-full bg-gradient-to-r from-sun to-brand transition-[width] duration-1000" style={{ width: `${Math.max(4, lv.progress * 100)}%` }} />
             </div>
             <p className="mt-1 text-sm text-muted">
-              {lv.next ? `次の「${lv.next.name}」まで あと${lv.next.at - xp}ポイント` : "最高のレベルです。いつもありがとうございます！"}（今 {xp}ポイント）
+              {lv.next ? `答えたり書いたりすると、次の「${lv.next.name}」に近づきます` : "最高のレベルです。いつもありがとうございます！"}・覚えていること {notes.length}件
             </p>
           </div>
           <p className="text-sm">答えるほど、書くほど、<GuideName />はあなたの会社に詳しくなり、次の記事があなたらしくなります。</p>
@@ -101,20 +102,6 @@ export function ShioriGrowth({ db, orgId }: { db: MockDb; orgId: string }) {
           </Link>
         </div>
       </div>
-
-      <details className="rounded-2xl bg-canvas p-3 text-sm">
-        <summary className="cursor-pointer font-bold text-brand-dark">ポイントのたまり方</summary>
-        <ul className="mt-2 grid gap-1 sm:grid-cols-2">
-          {parts.map((p) => (
-            <li key={p.label} className="flex justify-between gap-2">
-              <span>
-                {p.label}（1つ{p.each}ポイント）
-              </span>
-              <b className="tabular-nums">{p.count}</b>
-            </li>
-          ))}
-        </ul>
-      </details>
 
       <div>
         <h3 className="mb-2 font-black">📒 <GuideName />のメモ帳（覚えていること {notes.length}件）</h3>

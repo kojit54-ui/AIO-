@@ -119,6 +119,12 @@
 
 ## 記録
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）ゲームの仕組みを1つにまとめる
+- ブランチ：claude/project-thread-fdzisk
+- 変更点：src/lib/growth/town.ts（townPosition は一番先の達成マスの次、skippedSteps、SIDE_STAMP_IDS、テストあり）、TownBoard に「まだ」の印・とばしたマス・寄り道スタンプ、ホームから StampBook を外した、ShioriGrowth のポイント表示をなくした、ホームのたたむボタンを「お知らせ・今月の記録を見る」に
+- 確認結果：lint・型検査・テスト通過。375px・1280px で すごろく・理解度を確認（試作）
+- 次の作業：コーチ画面・しおり通信のスタンプ数の言い方をすごろくに合わせるか検討
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）記事を読みながら直す
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/components/BlockEditor.tsx に「📖 読みながら直す／✏️ まとめて直す」。読む形では段落を押すとその場で入力欄・声で直す・短くする・伝わりやすくする・下に段落を追加・削除。変更案の表示は SuggestionBox にまとめた

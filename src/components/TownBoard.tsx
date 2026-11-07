@@ -7,7 +7,8 @@
 
 import { useEffect, useState } from "react";
 import { Confetti } from "@/components/fun";
-import { TOWN_LEVELS, type TownStep, publishedCount, townLevel, townPosition, townSteps } from "@/lib/growth/town";
+import { SIDE_STAMP_IDS, TOWN_LEVELS, type TownStep, publishedCount, skippedSteps, townLevel, townPosition, townSteps } from "@/lib/growth/town";
+import { badges, type Badge } from "@/lib/growth/badges";
 import type { MockDb } from "@/mock/store";
 import { GuideText } from "@/components/useGuide";
 
@@ -43,7 +44,8 @@ export function TownBoard({ db, orgId, orgName }: { db: MockDb; orgId: string; o
 
   const steps = townSteps(db, orgId, inquiry);
   const published = publishedCount(db, orgId);
-  return <TownView steps={steps} published={published} orgId={orgId} orgName={orgName} loaded={loaded} onInquiry={(v) => {
+  const side = badges(db, orgId).filter((b) => SIDE_STAMP_IDS.includes(b.id));
+  return <TownView steps={steps} published={published} orgId={orgId} orgName={orgName} loaded={loaded} side={side} onInquiry={(v) => {
     write(INQUIRY_KEY(orgId), v ? "1" : null);
     setInquiry(v);
   }} />;
@@ -58,8 +60,11 @@ export function TownView({
   loaded = true,
   onInquiry,
   preview = false,
+  side = [],
 }: {
   steps: TownStep[];
+  /** 寄り道のスタンプ（すごろくのマスに無いもの） */
+  side?: Badge[];
   published: number;
   orgId: string;
   orgName: string;
@@ -93,6 +98,7 @@ export function TownView({
   const current = steps[Math.min(shown, steps.length - 1)];
   const mentioned = steps.find((s) => s.id === "mention")?.done ?? false;
   const inquired = steps.find((s) => s.id === "inquiry")?.done ?? false;
+  const skipped = skippedSteps(steps);
 
   return (
     <section className="card animate-rise space-y-4" aria-labelledby="town-heading">
@@ -112,7 +118,7 @@ export function TownView({
       <ol className="grid grid-cols-4 gap-2 sm:grid-cols-8" aria-label="すごろくのマス">
         <Cell n={0} icon="🏁" label="スタート" state="done" />
         {steps.map((s, i) => (
-          <Cell key={s.id} n={i + 1} icon={s.icon} label={s.label} stage={s.stage} state={i === shown && !goal ? "here" : s.done ? "done" : "todo"} />
+          <Cell key={s.id} n={i + 1} icon={s.icon} label={s.label} stage={s.stage} state={i === shown && !goal ? "here" : s.done ? "done" : i < pos ? "skipped" : "todo"} />
         ))}
       </ol>
 
@@ -124,6 +130,11 @@ export function TownView({
             <span className="block text-xs font-black text-brand-dark">次のマス：{current.label}</span>
             <span className="font-bold"><GuideText text={current.how} /></span>
           </p>
+          {skipped.length > 0 && (
+            <span className="block w-full text-xs text-muted">
+              とばしたマス：{skipped.map((x) => x.label).join("・")}（いつでも進められます）
+            </span>
+          )}
           {!preview && current.id === "inquiry" && onInquiry && (
             <button type="button" className="btn-primary min-h-11 px-4 text-sm" onClick={() => onInquiry(true)}>
               🎉 お問い合わせが来た！
@@ -138,6 +149,24 @@ export function TownView({
           </button>
         </p>
       )}
+      {side.length > 0 && (
+        <div className="rounded-2xl border border-line px-3 py-2">
+          <p className="mb-1 text-xs font-black text-muted">
+            寄り道スタンプ {side.filter((b) => b.got).length} / {side.length}
+          </p>
+          <ul className="flex flex-wrap gap-2">
+            {side.map((b) => (
+              <li key={b.id} title={b.got ? b.title : b.how} className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-bold ${b.got ? "bg-sun-soft" : "border border-dashed border-line text-muted"}`}>
+                <span aria-hidden className={b.got ? "" : "opacity-40 grayscale"}>
+                  {b.icon}
+                </span>
+                {b.got ? b.title : b.how}
+                <span className="sr-only">{b.got ? "（もらった）" : "（まだ）"}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <p className="text-xs text-muted">
         マスは、書いた・載せた・チェックした記録で進みます。建物は、ブログに載せた本数で{TOWN_LEVELS.length}段階に育ちます。お問い合わせはこのサービスでは分からないので、来たらご自分で押してください（このブラウザに覚えます）。
       </p>
@@ -145,9 +174,9 @@ export function TownView({
   );
 }
 
-function Cell({ n, icon, label, stage, state }: { n: number; icon: string; label: string; stage?: "ai" | "people"; state: "done" | "here" | "todo" }) {
+function Cell({ n, icon, label, stage, state }: { n: number; icon: string; label: string; stage?: "ai" | "people"; state: "done" | "here" | "todo" | "skipped" }) {
   const tone =
-    state === "todo"
+    state === "todo" || state === "skipped"
       ? "border-dashed border-line bg-surface text-muted"
       : stage === "people"
         ? "border-sun-dark bg-sun"
@@ -162,12 +191,13 @@ function Cell({ n, icon, label, stage, state }: { n: number; icon: string; label
           🏠
         </span>
       ) : (
-        <span className={`text-xl ${state === "todo" ? "opacity-50 grayscale" : ""}`} aria-hidden>
+        <span className={`text-xl ${state === "todo" || state === "skipped" ? "opacity-50 grayscale" : ""}`} aria-hidden>
           {icon}
         </span>
       )}
       <span className="text-[0.7rem] font-black leading-tight sm:text-xs">{label}</span>
       {state === "done" && n > 0 && <span className="sr-only">（済み）</span>}
+      {state === "skipped" && <span className="absolute right-1 top-0.5 rounded-full bg-sun px-1 text-[0.6rem] font-black text-ink">まだ</span>}
     </li>
   );
 }
