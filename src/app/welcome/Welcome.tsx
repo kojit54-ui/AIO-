@@ -37,6 +37,7 @@ export function Welcome({ makers }: { makers: MfgShowcase }) {
         <Hero signedIn={signedIn} href={href} />
         <Gap />
         <AiChat />
+        <Focus total={makers.total} industries={makers.industries} />
         <Steps />
         <Included total={makers.total} industries={makers.industries} />
         <KeepGoing />
@@ -297,9 +298,41 @@ const STEPS = [
   { who: "社長", title: "確かめて、載せる", text: "読んで、直してから、自社のホームページにご自身で載せます。自動投稿ではありません。載せ方は1ステップずつ案内します。" },
 ];
 
+/** 製造業だけにしぼっている理由。根拠のある言い方だけにする（数は知識表から） */
+function Focus({ total, industries }: { total: number; industries: number }) {
+  const rows = [
+    {
+      t: "聞くことが、決まっている",
+      d: "材質・大きさ・数量・精度・納期・できない条件。頼む人が判断に使うことを、案内役が順に聞きます。受けた相談・工夫・納め方を答えれば、そのまま仕事の事例の記事になります。",
+    },
+    {
+      t: `製造業の知識 ${total.toLocaleString()}件`,
+      d: `切削・板金・樹脂成形・金型など${industries}の業種の悩みや、発注する人の疑問を、公的機関・業界団体などの公開情報から集めています。質問と記事づくりの参考にします。`,
+    },
+    {
+      t: "記事が、同じ方向にたまる",
+      d: "書く記事は、受けたい仕事から決めます。毎月の記事がそろうほど、「この会社は何が得意か」が、読む人にもAIにも伝わりやすくなります。",
+    },
+  ];
+  return (
+    <Section kicker="なぜ製造業だけなのか" title="製造業の仕事に、しぼっています。" tone="white">
+      <p className="max-w-3xl leading-loose">「何でもできます」より「この仕事なら、ここ」と言える会社のほうが、頼む人にもAIにも選ぶ理由が伝わります。だから、このサービスも製造業にしぼりました。</p>
+      <ol className="mt-6 grid border-2 border-sumi md:grid-cols-3">
+        {rows.map((r, i) => (
+          <li key={r.t} className={`p-5 ${i > 0 ? "border-t-2 border-sumi md:border-l-2 md:border-t-0" : ""}`}>
+            <p className={`${num} text-sm font-bold text-indigo`}>0{i + 1}</p>
+            <p className="mt-1 text-lg font-bold leading-snug">{r.t}</p>
+            <p className="mt-2 text-sm leading-relaxed">{r.d}</p>
+          </li>
+        ))}
+      </ol>
+    </Section>
+  );
+}
+
 function Steps() {
   return (
-    <Section id="how" kicker="毎月やること" title="答える。確かめる。自社サイトに載せる。" tone="white">
+    <Section id="how" kicker="毎月やること" title="答える。確かめる。自社サイトに載せる。">
       <ol className="grid border-2 border-sumi md:grid-cols-3">
         {STEPS.map((s, i) => (
           <li key={s.title} className={`p-5 sm:p-6 ${i > 0 ? "border-t-2 border-sumi md:border-l-2 md:border-t-0" : ""}`}>
@@ -326,7 +359,7 @@ function Included({ total, industries }: { total: number; industries: number }) 
     ["毎月のお知らせ", "AIの検索の変化を、公式に発表されたことだけでお伝えします（しおり通信・毎月1日）"],
   ];
   return (
-    <Section kicker="含まれるもの" title="月額に含まれるもの。">
+    <Section kicker="含まれるもの" title="月額に含まれるもの。" tone="white">
       <p className="mb-4 font-bold">AIが下書きをつくり、社長が確かめて直し、自社サイトに載せるサービスです。</p>
       <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi bg-white text-sm sm:grid-cols-[11rem_1fr] sm:text-base">
         {rows.map(([k, v], i) => (
@@ -364,7 +397,7 @@ function KeepGoing() {
     { id: "koyuki", name: "こゆき", note: "本物そっくりのオコジョ" },
   ] as const;
   return (
-    <Section kicker="続けられる仕組み" title="毎月1本を、ひとりで続けなくていい。" tone="white">
+    <Section kicker="続けられる仕組み" title="毎月1本を、ひとりで続けなくていい。">
       <div ref={ref} className="grid gap-6 md:grid-cols-2">
         <figure className="border-2 border-sumi">
           <figcaption className="border-b-2 border-sumi px-4 py-2 text-xs font-bold">画面の見本：案内役を選ぶ</figcaption>
@@ -403,7 +436,7 @@ function KeepGoing() {
 
 function Promises() {
   return (
-    <Section kicker="記事づくりの約束" title="頼む人に、正直な帳面を。">
+    <Section kicker="記事づくりの約束" title="頼む人に、正直な帳面を。" tone="white">
       <ol className="border-2 border-sumi bg-white">
         {BRAND_PROMISES.map((p, i) => (
           <li key={p.title} className="grid grid-cols-[3.25rem_1fr] border-b border-sumi/30 last:border-0 sm:grid-cols-[4.5rem_1fr]">
@@ -436,7 +469,7 @@ function Price() {
     ["コタムのお客様", "招待制で、ご契約のあいだ無料です"],
   ];
   return (
-    <Section id="price" kicker="料金とお試し" title="料金と条件を、先にお伝えします。" tone="white">
+    <Section id="price" kicker="料金とお試し" title="料金と条件を、先にお伝えします。">
       <div className="grid gap-6 md:grid-cols-[1.4fr_1fr]">
         <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi text-sm sm:grid-cols-[8.5rem_1fr] sm:text-base">
           {rows.map(([k, v], i) => (
@@ -469,7 +502,7 @@ function Price() {
 /** よくある質問。AIもこの形（質問と答え）を読みとりやすい */
 function Faq() {
   return (
-    <Section id="faq" kicker="よくある質問" title="気になることに、先にお答えします。">
+    <Section id="faq" kicker="よくある質問" title="気になることに、先にお答えします。" tone="white">
       <ul className="border-2 border-sumi bg-white">
         {FAQ.map((f) => (
           <li key={f.q} className="border-b border-sumi/30 last:border-0">
