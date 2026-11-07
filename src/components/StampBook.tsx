@@ -78,7 +78,7 @@ export function StampBook({ db, orgId }: { db: MockDb; orgId: string }) {
               {b.got ? b.icon : "？"}
             </span>
             <span className={`mt-1 block text-[0.7rem] leading-tight ${b.got ? "font-bold" : "text-muted"}`}><GuideText text={b.title} /></span>
-            <span className="sr-only">{b.got ? `${b.title}（取りました）` : `${b.title}（まだ。${b.how}）`}</span>
+            <span className="sr-only"><GuideText text={b.got ? `${b.title}（取りました）` : `${b.title}（まだ。${b.how}）`} /></span>
           </li>
         ))}
       </ul>

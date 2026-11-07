@@ -150,7 +150,7 @@ export function StepGuide({
 }: {
   steps: GuideStep[];
   storageKey?: string;
-  doneSay?: string;
+  doneSay?: string | string[];
   doneBody?: React.ReactNode;
   step?: number;
   onStep?: (n: number) => void;

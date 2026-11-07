@@ -19,6 +19,7 @@ import { MAX_IMAGE_MOOD, type ImageStyle } from "@/lib/ai/images";
 import { canApply } from "@/lib/workflow";
 import type { AiReviewCategory, Article, ArticleImage, ArticleVersion, Block, FactCheckStatus } from "@/types/domain";
 import { GuideName } from "@/components/useGuide";
+import { publishedLines } from "@/lib/nextStep";
 
 type Banner = { tone: "danger" | "ok" | "info"; message: string; session?: boolean } | null;
 
@@ -866,7 +867,8 @@ type CopyKind = "title" | "body" | "html";
 
 /** ブログに載せる案内。ブログを開く → タイトル → 本文 → 画像 → 公開 → URL を、1つずつ進める（2026-11-02 田村さん） */
 function PublishDialog({ article, onCopy, onClose, onError }: { article: Article; onCopy: (k: CopyKind) => Promise<boolean>; onClose: () => void; onError: (e: unknown, f: string) => void }) {
-  const { api } = useStore();
+  const { api, db } = useStore();
+  const version = db.versions.find((v) => v.id === article.currentVersionId);
   const [url, setUrl] = useState("");
   const [busy, setBusy] = useState(false);
   const [step, setStep] = useState(0);
@@ -957,7 +959,7 @@ function PublishDialog({ article, onCopy, onClose, onError }: { article: Article
         steps={steps}
         step={step}
         onStep={setStep}
-        doneSay={["公開おめでとうございます！", "しおりも記事のことを覚えました。検索やAIにどう見られるか、これからいっしょに見ていきましょう。"].join("")}
+        doneSay={publishedLines(version?.body ?? [])}
         doneBody={
           <button type="button" className="btn-primary" onClick={onClose}>
             記事の画面に戻る
