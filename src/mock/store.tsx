@@ -46,6 +46,7 @@ import { localHearing } from "@/lib/growth/localKnowledge";
 import { pickKnowledge } from "@/lib/growth/knowledge";
 import { companyKnowledge } from "@/lib/growth/localKnowledge";
 import type { HearingAnswer } from "@/prototype/growth";
+import { isDay } from "@/lib/writingDay";
 
 export interface MockDb {
   organizations: Organization[];
@@ -69,6 +70,8 @@ export interface MockDb {
   searchConsole?: SearchConsoleLink[];
   /** ログインしている人が、しおり通信のメールを受け取らないと決めているか */
   newsletterOptOut?: boolean;
+  /** ログインしている人が決めた「次に書く日」（日本時間 YYYY-MM-DD）。その日の朝にメールで知らせる */
+  nextWritingDay?: string | null;
   draftAnswers: Record<string, { answers: Answer[]; step: number }>;
 }
 
@@ -692,6 +695,15 @@ function createApi(
       requireUser();
       await delay(200);
       commit({ ...getDb(), newsletterOptOut: optOut });
+    },
+
+    /** 次に書く日を決める（null で取り消す）。試作ではメールは送らない */
+    async setNextWritingDay(orgId: string, day: string | null) {
+      const user = requireUser();
+      requireOrg(user, orgId);
+      await delay(200);
+      if (day !== null && !isDay(day)) throw new ApiError("save_failed", "日にちを選び直してください");
+      commit({ ...getDb(), nextWritingDay: day });
     },
 
     /** しおり通信を自分あてに試しに送る（試作では送らず、送った形にだけする） */

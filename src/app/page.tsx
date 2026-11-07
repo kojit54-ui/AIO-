@@ -15,9 +15,10 @@ import { TownBoard } from "@/components/TownBoard";
 import { WhatsNew } from "@/components/WhatsNew";
 import { MfgTip } from "@/components/MfgTip";
 import { MoreOnHome, NextStepCard } from "@/components/NextStep";
+import { NextWritingDay } from "@/components/NextWritingDay";
 import { nextStep } from "@/lib/nextStep";
 import { useShioriTone } from "@/components/useShioriTone";
-import { homeLines, homeMood, referenceTime } from "@/lib/shioriTone";
+import { FIX_LINES, homeLines, homeMood, referenceTime } from "@/lib/shioriTone";
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
@@ -47,8 +48,9 @@ export default function HomePage() {
     totalArticles: mine.length,
     daysSinceLastWork: lastWork ? Math.max(0, Math.floor((referenceTime(month, nowMs) - lastWork) / 86_400_000)) : null,
   };
-  const lines = homeLines(tone, situation);
   const step = nextStep(list, situation.publishedThisMonth);
+  // 案内役のひとことは、下の「次にやること」ボタンと同じことを話す
+  const lines = step.kind === "fix" ? FIX_LINES[tone] : homeLines(tone, situation);
 
   return (
     <main className="page space-y-6">
@@ -68,6 +70,7 @@ export default function HomePage() {
         <ChosenPath className="mt-2" />
       </div>
       <NextStepCard step={step} href={step.articleId ? articleHref(db, step.articleId) : "/articles/new"} />
+      <NextWritingDay orgId={orgId} nowMs={nowMs} />
       <WhatsNew />
       {/* コタムの方針は、あるときだけ出す（無いときに「準備中」と出して待たせない。2026-11-03） */}
       {note && (

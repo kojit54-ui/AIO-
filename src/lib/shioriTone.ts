@@ -86,6 +86,13 @@ export function homeLines(tone: ShioriTone, s: HomeSituation): string[] {
 
 export const ALL_HOME_LINES = LINES;
 
+/** コタムから「直してほしい所」が届いているとき。ホームのボタンと同じことを話す */
+export const FIX_LINES: Record<ShioriTone, string[]> = {
+  gentle: ["コタムから、直してほしい所が届いていますよ。", "見てみて、できるところから直していきましょうね。"],
+  normal: ["コタムから、直してほしい所が届いています。", "直せばブログに載せられます。先にこちらを片づけましょう。"],
+  strict: ["コタムから、直してほしい所が届いています。", "直さないと、ブログに載せられません。今日、片づけましょう。"],
+};
+
 /** ホームの案内役の表情。きびしめで書く手が止まっているときは本気で怒る。ほかはいつものジャージで応援 */
 export function homeMood(tone: ShioriTone, s: HomeSituation): "angry" | "jersey-cheer" {
   const c = homeCase(s);

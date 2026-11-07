@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-writing-day",
+    date: "2026-11-07",
+    title: "「次に書く日」を決められるようになりました",
+    body: "ホームで、次に記事を書く日を「明日」「1週間後」などから選べます。決めた日の朝9時に、メールでお知らせします。日はいつでも変えたり、取り消したりできます。",
+    href: "/",
+    linkLabel: "ホームで決める",
+  },
+  {
     id: "2026-11-07-next-step",
     date: "2026-11-07",
     title: "ホームが「次にやること」1つから始まるようになりました",
