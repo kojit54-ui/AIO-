@@ -3,6 +3,7 @@
 // 画面試作用の擬似API。ブラウザ内に架空データを持ち、通信の遅れと失敗を再現する。
 // 関数の形は docs/DATA.md「API案」と揃えてあり、API接続時（T2-9）にこの層だけを差し替える。
 
+import { normalizePersonName } from "@/lib/personName";
 import { normalizeOrgName } from "@/lib/orgName";
 import { createContext, useContext, useMemo, useSyncExternalStore } from "react";
 import type {
@@ -163,6 +164,7 @@ function createApi(
   getUser: () => SessionUser | null,
   getSim: () => Simulation,
   clearSim: (k: keyof Simulation) => void,
+  setUser: (user: SessionUser) => void = () => undefined,
 ) {
   const delay = (ms: number) => new Promise((r) => setTimeout(r, getSim().slow ? ms * 4 : ms));
 
@@ -669,6 +671,16 @@ function createApi(
       commit({ ...db, organizations: db.organizations.map((o) => (o.id === orgId ? { ...o, name: clean } : o)) });
     },
 
+    /** 自分の名前を直す（マイページ） */
+    async renameSelf(name: string) {
+      const user = requireUser();
+      await delay(300);
+      checkSaveSimulations();
+      const clean = normalizePersonName(name);
+      if (!clean) throw new ApiError("save_failed", "お名前は1〜30文字で入れてください");
+      setUser({ ...user, name: clean });
+    },
+
     /** ログインしているメールアドレス（試作では架空） */
     async accountEmail(): Promise<string | null> {
       requireUser();
@@ -872,6 +884,7 @@ const api = createApi(
   () => backend.get().user,
   () => backend.get().sim,
   (k) => backend.set({ sim: { ...backend.get().sim, [k]: false } }),
+  (user) => backend.set({ user }),
 );
 
 const actions = {

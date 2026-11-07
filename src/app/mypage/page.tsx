@@ -8,6 +8,7 @@ import { ShioriTalk } from "@/components/talk";
 import { Notice } from "@/components/ui";
 import { LegalLinks } from "@/components/LegalLinks";
 import { ORG_NAME_MAX, normalizeOrgName } from "@/lib/orgName";
+import { PERSON_NAME_MAX, normalizePersonName } from "@/lib/personName";
 import { TONES } from "@/lib/shioriTone";
 import { useShioriTone } from "@/components/useShioriTone";
 import { useStore } from "@/mock/store";
@@ -52,7 +53,10 @@ export default function MyPage() {
       <section className="card space-y-1">
         <h2 className="font-black">ログインしているメールアドレス</h2>
         <p className="break-all text-lg font-bold">{email ?? "…"}</p>
-        <p className="text-sm text-muted">ログインのメールは、このアドレスに届きます。{org ? "変えたいときは、コタムの担当者にお知らせください。" : "Googleでログインするときも、このアドレスのアカウントを選んでください。"}</p>
+        <p className="text-sm text-muted">
+          ログインのメールは、このアドレスに届きます。
+          {org ? "変えたいときは、コタムの担当者にお知らせください。" : "Googleでログインするときも、このアドレスのアカウントを選んでください。"}
+        </p>
       </section>
 
       {org && (
@@ -74,6 +78,8 @@ export default function MyPage() {
           </Link>
         </section>
       )}
+
+      <NameCard current={user.name} />
 
       <section className="card flex flex-wrap items-center justify-between gap-3">
         <p className="font-bold">{user.name} さん</p>
@@ -126,7 +132,8 @@ function OrgNameCard({ orgId, current, flat = false }: { orgId: string; current:
             <input className="field" value={value} maxLength={ORG_NAME_MAX + 10} onChange={(e) => setValue(e.target.value)} autoFocus />
           </label>
           <p className="text-sm text-muted">
-            記事やAIへのお願いにも、この社名を使います。正式な名前（「株式会社」なども）で入れてください。{value.trim().length}／{ORG_NAME_MAX}文字
+            記事やAIへのお願いにも、この社名を使います。正式な名前（「株式会社」なども）で入れてください。
+            {value.trim().length}／{ORG_NAME_MAX}文字
           </p>
           {error && <p className="text-sm font-bold text-danger">{error}</p>}
           <div className="flex flex-wrap gap-2">
@@ -230,11 +237,36 @@ function ToneCard() {
 /** コタムの方のマイページ：管理の画面への近道と、担当している会社（2026-11-07 田村さん「管理画面で何もできない」） */
 function CoachShortcuts({ orgs }: { orgs: { id: string; name: string }[] }) {
   const tools = [
-    { href: "/admin/invitations", icon: "✉️", label: "お客様を招待する", note: "招待状を作って送る" },
-    { href: "/admin/usage", icon: "📊", label: "利用金額と利用頻度", note: "AIの費用、会社ごとに使った日" },
-    { href: "/admin/trial", icon: "🧪", label: "「30秒でためす」の見守り", note: "回数・費用、AIを止める" },
-    { href: "/admin/knowledge", icon: "🏭", label: "製造業の知識表", note: "集めた悩み・疑問・事例" },
-    { href: "/updates", icon: "✨", label: "新しくなったこと", note: "お客様に出ているお知らせ" },
+    {
+      href: "/admin/invitations",
+      icon: "✉️",
+      label: "お客様を招待する",
+      note: "招待状を作って送る",
+    },
+    {
+      href: "/admin/usage",
+      icon: "📊",
+      label: "利用金額と利用頻度",
+      note: "AIの費用、会社ごとに使った日",
+    },
+    {
+      href: "/admin/trial",
+      icon: "🧪",
+      label: "「30秒でためす」の見守り",
+      note: "回数・費用、AIを止める",
+    },
+    {
+      href: "/admin/knowledge",
+      icon: "🏭",
+      label: "製造業の知識表",
+      note: "集めた悩み・疑問・事例",
+    },
+    {
+      href: "/updates",
+      icon: "✨",
+      label: "新しくなったこと",
+      note: "お客様に出ているお知らせ",
+    },
   ];
   return (
     <>
@@ -275,5 +307,86 @@ function CoachShortcuts({ orgs }: { orgs: { id: string; name: string }[] }) {
         )}
       </section>
     </>
+  );
+}
+
+/** 担当者の名前（2026-11-07 田村さん「担当者の名前も入れたい」）。しおりの呼びかけやメールの宛名に使う */
+function NameCard({ current }: { current: string }) {
+  const { api } = useStore();
+  // まだ名前が無く、メールアドレスがそのまま入っているときは、空から入れてもらう
+  const looksLikeEmail = current.includes("@");
+  const [editing, setEditing] = useState(false);
+  const [value, setValue] = useState(looksLikeEmail ? "" : current);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [saved, setSaved] = useState(false);
+  const clean = normalizePersonName(value);
+
+  async function save() {
+    if (!clean) return;
+    setBusy(true);
+    setError(null);
+    try {
+      await api.renameSelf(clean);
+      setEditing(false);
+      setSaved(true);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "保存できませんでした。少し待ってからもう一度お試しください");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <section className="card space-y-3">
+      <h2 className="font-black">担当者のお名前</h2>
+      {editing ? (
+        <form
+          className="space-y-3"
+          onSubmit={(e) => {
+            e.preventDefault();
+            void save();
+          }}
+        >
+          <label className="block">
+            <span className="field-label text-sm">お名前</span>
+            <input className="field" value={value} maxLength={PERSON_NAME_MAX + 5} placeholder="例）田村 巧次" onChange={(e) => setValue(e.target.value)} autoFocus />
+          </label>
+          <p className="text-sm text-muted">しおりの呼びかけや、メールの宛名に使います。「さん」は付けなくて大丈夫です。</p>
+          {error && <p className="text-sm font-bold text-danger">{error}</p>}
+          <div className="flex flex-wrap gap-2">
+            <button type="submit" className="btn-primary" disabled={!clean || clean === current || busy}>
+              {busy ? "保存しています…" : "この名前にする"}
+            </button>
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={() => {
+                setEditing(false);
+                setError(null);
+              }}
+            >
+              やめる
+            </button>
+          </div>
+        </form>
+      ) : (
+        <>
+          <p className="text-xl font-black">{looksLikeEmail ? <span className="text-muted">まだ入っていません</span> : `${current} さん`}</p>
+          {saved && <Notice tone="ok" title="お名前を変えました" />}
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() => {
+              setValue(looksLikeEmail ? "" : current);
+              setSaved(false);
+              setEditing(true);
+            }}
+          >
+            {looksLikeEmail ? "お名前を入れる" : "お名前を直す"}
+          </button>
+        </>
+      )}
+    </section>
   );
 }
