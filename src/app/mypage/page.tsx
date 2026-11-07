@@ -10,6 +10,9 @@ import { LegalLinks } from "@/components/LegalLinks";
 import { ORG_NAME_MAX, normalizeOrgName } from "@/lib/orgName";
 import { PERSON_NAME_MAX, normalizePersonName } from "@/lib/personName";
 import { TONES } from "@/lib/shioriTone";
+import { GUIDES } from "@/lib/guideCharacter";
+import { useGuide } from "@/components/useGuide";
+import { ShioriFace } from "@/components/fun";
 import { useShioriTone } from "@/components/useShioriTone";
 import { useStore } from "@/mock/store";
 
@@ -39,14 +42,16 @@ export default function MyPage() {
         mood="point"
         lines={
           org
-            ? ["ここでは、社名やしおりの話し方、メールの受け取りを変えられます。", "変えたいところだけ、1つずつどうぞ。"]
-            : ["ここでは、管理の画面へすぐ移れて、担当している会社の社名も直せます。", "しおりの話し方も、お客様と同じように試せますよ。"]
+            ? ["ここでは、お名前や社名、案内役と話し方、メールの受け取りを変えられます。", "変えたいところだけ、1つずつどうぞ。"]
+            : ["ここでは、管理の画面へすぐ移れて、担当している会社の社名も直せます。", "案内役と話し方も、お客様と同じように試せますよ。"]
         }
       />
 
       {org && <OrgNameCard orgId={org.id} current={org.name} />}
 
       {!org && <CoachShortcuts orgs={db.organizations.filter((o) => user.organizationIds.includes(o.id))} />}
+
+      <GuideCard />
 
       <ToneCard />
 
@@ -81,8 +86,7 @@ export default function MyPage() {
 
       <NameCard current={user.name} />
 
-      <section className="card flex flex-wrap items-center justify-between gap-3">
-        <p className="font-bold">{user.name} さん</p>
+      <section className="card flex flex-wrap items-center justify-end gap-3">
         <button type="button" className="btn-secondary" onClick={logout}>
           ログアウト
         </button>
@@ -210,10 +214,11 @@ function NewsletterToggle() {
 function ToneCard() {
   const [tone, setTone] = useShioriTone();
   const picked = TONES.find((t) => t.id === tone) ?? TONES[1];
+  const [guide] = useGuide();
   return (
     <section className="card space-y-3">
-      <h2 className="font-black">しおりの話し方</h2>
-      <p className="text-sm text-muted">しおりがどのくらい厳しく声をかけるかを選べます。このパソコン・スマホで覚えます。</p>
+      <h2 className="font-black">{guide.name}の話し方</h2>
+      <p className="text-sm text-muted">{guide.name}がどのくらい厳しく声をかけるかを選べます。このパソコン・スマホで覚えます。</p>
       <div role="radiogroup" aria-label="しおりの話し方" className="grid gap-2 sm:grid-cols-3">
         {TONES.map((t) => (
           <button
@@ -387,6 +392,34 @@ function NameCard({ current }: { current: string }) {
           </button>
         </>
       )}
+    </section>
+  );
+}
+
+/** 案内役を選ぶ（2026-11-07 田村さん「しおりだけじゃなくて、男の人と、キャラクターを選べるようにしたい」） */
+function GuideCard() {
+  const [guide, setGuide] = useGuide();
+  return (
+    <section className="card space-y-3">
+      <h2 className="font-black">案内役</h2>
+      <p className="text-sm text-muted">いっしょに書いてくれる案内役を選べます。画面の絵がかわります。このパソコン・スマホで覚えます。</p>
+      <div role="radiogroup" aria-label="案内役" className="grid grid-cols-3 gap-2">
+        {GUIDES.map((g) => (
+          <button
+            key={g.id}
+            type="button"
+            role="radio"
+            aria-checked={guide.id === g.id}
+            onClick={() => setGuide(g.id)}
+            className={`flex flex-col items-center gap-1 rounded-2xl border-2 px-2 py-3 text-center transition ${guide.id === g.id ? "border-brand bg-brand-soft" : "border-line bg-surface hover:border-brand"}`}
+          >
+            <ShioriFace as={g.id} className="h-16 w-16" />
+            <span className="block font-black">{g.name}</span>
+            <span className="block text-xs text-muted">{g.note}</span>
+          </button>
+        ))}
+      </div>
+      <ShioriTalk key={guide.id} mood="joy" lines={[`${guide.name}です。これから、いっしょにがんばりましょう！`]} />
     </section>
   );
 }
