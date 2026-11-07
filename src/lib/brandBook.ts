@@ -6,11 +6,34 @@
 
 import type { CSSProperties } from "react";
 
-/** ひとこと（ロゴの横・SNSの絵に添える） */
-export const BRAND_LINE = "現場の話を、選ばれる理由に。";
+// 2026-11-07 第4版の言葉：田村さん「3者が9.5点になるまで」→ GPT 9.5・Gemini 9.7・Claude 9.5 で合意。
 
-/** 何をするサービスか（ひとことの下に添える説明） */
-export const BRAND_DESCRIPTOR = "町工場の仕事を聞きとり、AIにも、頼む人にも伝わる記事にする。";
+/** ブランドの芯（社内の判断基準。迷ったらここに戻る） */
+export const BRAND_ESSENCE = "頼む人のための、仕事の聞き書き。";
+
+/** ひとこと（ロゴの横・SNSの絵に添える） */
+export const BRAND_LINE = "いつもの仕事を、誰かの頼む理由に。";
+
+/** ひとことの下に添える説明（何をするか、どう進むか） */
+export const BRAND_DESCRIPTOR = "質問に答えると、AIが記事に。社長が確かめ、自社のホームページへ。毎月1本、仕事の話を書きためます。";
+
+/** 答え方（02の導入に添える） */
+export const BRAND_HOW = "声でも文字でも、写真1枚からでも。";
+
+/** ボディコピー（ブランドの考えを、社長に向けて） */
+export const BRAND_BODY = [
+  "どんな仕事ができるのか。どこを工夫しているのか。どんな条件なら引き受けられるのか。",
+  "社長にとっては当たり前のことが、まだ会ったことのないお客様には、いちばん知りたいことです。",
+  "案内役の質問に答えると、その話をAIが記事にします。社長が読み、直して、自社のホームページで公開します。",
+  "毎月1本ずつ増えていく記事は、AIに会社の仕事を伝える手がかりに。そして、読んだ人が「ここに頼めるか」を判断する材料になります。",
+];
+export const BRAND_BODY_CLOSE = "毎月1本、綴じた分だけ、会社の厚みになる。それが、えらばれ帳です。";
+
+/** 「帳」とは何か（名前の理由） */
+export const BRAND_LEDGER = {
+  title: "自社のホームページに毎月書きためていく、会社の「仕事の台帳」。",
+  body: "何ができるか、何を工夫しているか、どんな条件で頼めるかを、ひとつずつ残していく。記事は1本で終わる宣伝ではなく、綴じるほど厚くなる会社の記録です。",
+};
 
 /** 読み方 */
 export const BRAND_READING = "エーアイオー えらばれちょう";
@@ -26,9 +49,9 @@ export const BRAND_PHILOSOPHY = {
 
 /** ミッション（何をするか） */
 export const BRAND_MISSION = {
-  title: "現場で聞いた仕事の話を、頼む人が判断できる記事にする。",
+  title: "現場の話を聞き、頼む人が判断できる記事を、社長といっしょに書きためる。",
   body: [
-    "何ができるのか。どんな材質や数量に応えられるのか。精度を出すために、どこを工夫しているのか。頼む前に知りたいことを、社長や職人さんの話から記事にします。",
+    "何ができるのか。どんな材質や数量に応えられるのか。精度を出すために、どこを工夫しているのか。頼む前に知りたいことを、社長や職人さんの話から記事にします。書くのはAIでも、確かめて世に出すのは社長です。",
     "AIの検索で見つけてもらう工夫もします。ただ、最後に「ここに頼もう」と決めるのは人です。AIに選ばれたあと、人に選ばれること。いちばん大切にしているのは、そこです。",
   ],
 };
@@ -63,18 +86,20 @@ export const BRAND_SAMPLE = {
 export const BRAND_STEPS = [
   { no: "01", title: "AIが探す", text: "発注先をAIに相談する人が増えています。記事では、できる材質・数量・仕事の進め方を具体的に書き、AIが候補を探すときの手がかりを整えます。" },
   { no: "02", title: "人が読む", text: "記事を読んだ人が、できることと、その裏づけを確かめます。" },
-  { no: "03", title: "人が決める", text: "「この会社なら話が通じそうだ」と思えたとき、問い合わせが届きます。" },
+  { no: "03", title: "人が決める", text: "「この会社なら話が通じそうだ」と思えるか。記事を読んだ人が、相談するかどうかを判断します。" },
 ];
 
 /** AIについての正直な説明 */
-export const BRAND_AI_NOTE = "AIの答えにのることや、問い合わせの数を約束することはできません。AIの検索は毎週のように変わるため、公式に発表されたことだけをもとに、確かめられたことと、まだわからないことを分けてお伝えします。";
+export const BRAND_AI_NOTE = "AIの回答で紹介されることや、問い合わせが増えることは約束できません。AIの検索は毎週のように変わるため、公式に発表されたことだけをもとに、確かめられたことと、まだわからないことを分けてお伝えします。";
 
 /** 記事づくりの約束 */
+export const BRAND_PROMISE_HEADING = "頼む人に、正直な帳面を。";
+
 export const BRAND_PROMISES = [
-  { title: "実績や数字は、確かめられたものだけを書く。", text: "聞いていない経験や、確かめていない数字は書きません。AIにも、作り話をさせません。" },
+  { title: "実績や数字は、確かめられたことだけ。", text: "聞いていない経験や、確かめていない数字は書きません。AIにも、作り話をさせません。" },
   { title: "「すごい」より、何ができるかを書く。", text: "材質・大きさ・数量・納期・相談の中身。頼む前に知りたいことを、具体的にします。" },
-  { title: "専門の言葉は、説明を添えて使う。", text: "正確さに必要な言葉は残し、はじめて読む人にもわかる一言を添えます。" },
-  { title: "公開する前に、会社の人が確かめる。", text: "仕事をいちばん知っているのは、その会社の人です。読んで、直してから公開します。" },
+  { title: "専門の言葉には、説明を添える。", text: "正確さに必要な言葉は残し、はじめて読む人にもわかる一言を添えます。" },
+  { title: "公開する前に、社長の目で確かめる。", text: "仕事をいちばん知っているのは、その会社の人です。社長や担当の方が読んで、直してから公開します。" },
   { title: "できないことや条件も、正直に書く。", text: "「ここまではできる」がはっきりしている会社が、いちばん信用されます。" },
 ];
 
@@ -108,7 +133,7 @@ export const LOGO_VARIANTS: LogoFile[] = [
 /** 色の種類 */
 export const LOGO_COLORWAYS: LogoFile[] = [
   { file: "logo-horizontal", label: "カラー", use: "白・生成りの地に。", bg: "white" },
-  { file: "logo-horizontal-reverse", label: "カラー反転", use: "墨など、濃い地に。", bg: "sumi" },
+  { file: "logo-horizontal-reverse", label: "カラー反転", use: "墨など、濃い地に。表紙と文字は生成り、真鍮はしおりだけ。", bg: "sumi" },
   { file: "logo-horizontal-white", label: "白1色", use: "藍の地や、写真の上に。", bg: "indigo" },
   { file: "logo-horizontal-ink", label: "墨1色", use: "白黒の印刷、FAX、ゴム印。", bg: "white" },
 ];
@@ -124,17 +149,17 @@ export const BRAND_COLORS = [
 
 /** 書体 */
 export const BRAND_FONTS = [
-  { name: "Zen Kaku Gothic New（ゼン角ゴシック）", weight: "Black・Bold", use: "ロゴ、大きな見出し", sample: "いい腕を、知り合いだけのものにしない。", font: "kaku" as const },
+  { name: "Zen Kaku Gothic New（ゼン角ゴシック）", weight: "Black・Bold", use: "ロゴと見出し。Regular・Medium はブランドの紙面・資料・記事の見本の本文", sample: "いい腕を、知り合いだけのものにしない。", font: "kaku" as const },
   { name: "Barlow Semi Condensed", weight: "Bold", use: "AIO、番号、寸法", sample: "AIO 01 02 03 — 120px", font: "barlow" as const },
-  { name: "Zen Maru Gothic（ゼン丸ゴシック）", weight: "Medium・Bold", use: "サービスの画面の文章、案内役のせりふ", sample: "質問に答えるだけで、記事ができます。", font: "maru" as const },
+  { name: "Zen Maru Gothic（ゼン丸ゴシック）", weight: "Medium・Bold", use: "サービスの操作案内と、案内役のせりふ。記事や資料の本文には使わない", sample: "質問に答えるだけで、記事ができます。", font: "maru" as const },
 ];
 
 /** ロゴの使い方 */
 export const LOGO_RULES = {
   clearSpace: "ロゴのまわりには、表題欄の高さ（マークの高さの約5分の1）以上の余白をあけます。",
   minSize: [
-    { label: "横組み", screen: "幅 120px 以上", print: "幅 25mm 以上" },
-    { label: "縦組み", screen: "幅 80px 以上", print: "幅 18mm 以上" },
+    { label: "横組み", screen: "幅 160px 以上（それより狭い所はマークだけ）", print: "幅 30mm 以上（実寸で確かめるまでの目安）" },
+    { label: "縦組み", screen: "幅 128px 以上", print: "幅 25mm 以上" },
     { label: "マーク", screen: "24px 以上", print: "6mm 以上" },
     { label: "16px用", screen: "ブラウザのタブだけ（favicon-16）", print: "使わない" },
   ],

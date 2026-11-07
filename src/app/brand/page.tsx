@@ -6,7 +6,7 @@ import { INDEX_ROBOTS } from "@/lib/publicPages";
 import { BrandBook } from "./BrandBook";
 
 // ロゴと同じ書体で見出しを組む（docs/BRAND.md「書体」）。このページだけで読みこむ
-const kaku = Zen_Kaku_Gothic_New({ weight: ["700", "900"], subsets: ["latin"], variable: "--font-kaku", display: "swap", preload: false });
+const kaku = Zen_Kaku_Gothic_New({ weight: ["400", "500", "700", "900"], subsets: ["latin"], variable: "--font-kaku", display: "swap", preload: false });
 const barlow = Barlow_Semi_Condensed({ weight: ["600", "700"], subsets: ["latin"], variable: "--font-barlow", display: "swap" });
 
 export const metadata: Metadata = {

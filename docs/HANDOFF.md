@@ -33,6 +33,13 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）ブランド第3版
+- ブランチ / コミット：claude/project-thread-1gko29（main 8e62bd1 の上）
+- 変更点：田村さん「3者が9.5点になるまで」→ 言葉を3回（GPT 9.5・Gemini 9.7・Claude 9.5）、ロゴとページを3回（3回目 GPT 9.5・Gemini 9.7・Claude 9.5）練り直した。ひとこと「いつもの仕事を、誰かの頼む理由に。」、芯・ボディコピー・「帳」の定義・約束の見出し（src/lib/brandBook.ts、docs/BRAND.md）。カラー反転ロゴを「生成り＋しおりだけ真鍮」に、縦組みの墨1色を追加、最小サイズ160px、SNS画像を作り直し、/brand の本文を角ゴシックに、フッターの一行をひとことに
+- 確認結果：lint・型検査・テスト・build が通過。375px・1280px を目視。批評の全文は /mnt/project-files/brand-book/council/（c*・p*）
+- 未完了：田村さんのOK。読み方「えらばれちょう」。サイトの説明文に残る SERVICE_PROMISE（AIに選ばれて…）を替えるか
+- 次の作業と担当：田村さんの確認 → CC
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）本番の公開を速くする
 - 変更点：製造業の知識表を src/lib/manufacturing/data.json に移し、data.ts は読み込むだけに。scripts/manufacturing/merge.py も data.json を読み書きする。data.ts が大きくなったら落ちるテスト
 - 確認結果：キャッシュなしの手元ビルドが #125 で2分58秒 → 約20秒（変換 2.6分 → 数秒）。lint・型検査・単体テスト

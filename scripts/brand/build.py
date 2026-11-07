@@ -31,15 +31,16 @@ def ribbon_d(top=RBY, bottom=RBB):
 def mark(theme='color', small=False):
     """theme: color / reverse（濃い地） / white / ink。small=True は 24px 以下用（溝を太く、しおりは四角）"""
     spw = SPW * (1.6 if small else 1)
-    if theme in ('white', 'ink'):
-        fg = C['white'] if theme == 'white' else C['sumi']
+    if theme in ('white', 'ink', 'reverse'):
+        # reverse（濃い地）：表紙は生成り、溝と表題欄は地の色で抜き、真鍮はしおりだけ（3者の指摘 2026-11-07）
+        fg = {'white': C['white'], 'ink': C['sumi'], 'reverse': C['paper']}[theme]
         mid = f'm-{theme}{"-s" if small else ""}'
         # 1色版：しおりは本体の中では「抜き」、はみ出す所は「塗り」。形だけで読めるようにする
         return f'''<defs><mask id="{mid}" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120"><rect width="120" height="120" fill="#fff"/>
 <rect x="{SPX}" y="{Y0-1}" width="{spw}" height="{H+2}" fill="#000"/><rect x="{LBX}" y="{LBY}" width="{LBW}" height="{LBH}" rx="{LBR}" fill="#000"/>
 <rect x="{RBX-2.5}" y="{RBY-2.5}" width="{RBW+5}" height="{H-(RBY-Y0)+3}" fill="#000"/></mask></defs>
 <path fill="{fg}" mask="url(#{mid})" d="{body_d()}"/>
-<path fill="{fg}" d="{ribbon_d(RBY, RBB) if not small else f'M{RBX},{RBY} H{RBX+RBW} V{RBB} H{RBX} Z'}"/>'''
+<path fill="{C['brass'] if theme == 'reverse' else fg}" d="{ribbon_d(RBY, RBB) if not small else f'M{RBX},{RBY} H{RBX+RBW} V{RBB} H{RBX} Z'}"/>'''
     body = C['indigo']
     groove = C['paper'] if theme == 'color' else C['paper']
     return f'''<path fill="{body}" d="{body_d()}"/>
@@ -95,7 +96,7 @@ def wordmark(size, ink, accent):
 
 def colors(theme):
     if theme == 'color': return C['sumi'], C['indigo']
-    if theme == 'reverse': return C['white'], C['brass']
+    if theme == 'reverse': return C['paper'], C['paper']
     if theme == 'white': return C['white'], C['white']
     return C['sumi'], C['sumi']
 
@@ -140,7 +141,7 @@ if __name__ == '__main__':
         'logo-mark-white.svg': mark_file('white'), 'logo-mark-ink.svg': mark_file('ink'),
         'logo-horizontal.svg': horizontal()[0], 'logo-horizontal-reverse.svg': horizontal('reverse')[0],
         'logo-horizontal-white.svg': horizontal('white')[0], 'logo-horizontal-ink.svg': horizontal('ink')[0],
-        'logo-vertical.svg': vertical(), 'logo-vertical-white.svg': vertical('white'),
+        'logo-vertical.svg': vertical(), 'logo-vertical-white.svg': vertical('white'), 'logo-vertical-ink.svg': vertical('ink'),
         'app-icon.svg': app_icon(), 'favicon.svg': favicon(),
     }
     for n, s in files.items():
@@ -148,21 +149,27 @@ if __name__ == '__main__':
     print('ok', round(horizontal()[1]))
 
 def og():
+    # 3者の指摘（2026-11-07）：縮小しても読めるよう主文を主役に。ロゴ下の真鍮の線はしおりと重なるので外す
     Wd, Hd = 1200, 630
     logo, lw = horizontal()
     inner = logo.split('</title>', 1)[1].rsplit('</svg>', 1)[0]
-    sc = 1.25
-    d1, w1, _ = glyphs('現場の話を、選ばれる理由に。', 'zk900.ttf', 64, kern=None, tracking=0)
-    d2, w2, _ = glyphs('町工場の仕事を聞きとり、AIにも人にも伝わる記事にする。', 'zk700.ttf', 28, tracking=20)
+    sc = 380 / lw
+    L = 80
+    d1, w1, _ = glyphs('いつもの仕事を、', 'zk900.ttf', 68, kern=None, tracking=0)
+    d1b, w1b, _ = glyphs('誰かの頼む理由に。', 'zk900.ttf', 68, kern=None, tracking=0)
+    d2, w2, _ = glyphs('質問に答えると、AIが記事に。', 'zk700.ttf', 32, tracking=10)
+    d2b, w2b, _ = glyphs('社長が確かめ、自社のホームページへ。', 'zk700.ttf', 32, tracking=10)
+    op = glyphs('運営　株式会社コタム', 'zk700.ttf', 22)
     body = f'''<rect width="{Wd}" height="{Hd}" fill="{C['paper']}"/>
 <rect x="28" y="28" width="{Wd-56}" height="{Hd-56}" fill="none" stroke="{C['sumi']}" stroke-width="2"/>
-<g transform="translate(96,92) scale({sc})">{inner}</g>
-<rect x="96" y="268" width="80" height="6" fill="{C['brass']}"/>
-<path fill="{C['sumi']}" transform="translate(96,382)" d="{d1}"/>
-<path fill="{C['sumi']}" opacity=".8" transform="translate(96,450)" d="{d2}"/>
-<line x1="28" y1="520" x2="{Wd-28}" y2="520" stroke="{C['sumi']}" stroke-width="1"/>
-<path fill="{C['sumi']}" transform="translate(96,568)" d="{glyphs('aio-erabare.jp', 'barlow600.ttf', 26, use_palt=False)[0]}"/>
-<path fill="{C['sumi']}" transform="translate({Wd-96-glyphs('運営　株式会社コタム', 'zk700.ttf', 22)[1]:.1f},566)" d="{glyphs('運営　株式会社コタム', 'zk700.ttf', 22)[0]}"/>'''
+<g transform="translate({L-4*sc:.1f},62) scale({sc:.3f})">{inner}</g>
+<path fill="{C['sumi']}" transform="translate({L},{262})" d="{d1}"/>
+<path fill="{C['sumi']}" transform="translate({L},{346})" d="{d1b}"/>
+<path fill="{C['sumi']}" opacity=".85" transform="translate({L},{424})" d="{d2}"/>
+<path fill="{C['sumi']}" opacity=".85" transform="translate({L},{470})" d="{d2b}"/>
+<line x1="28" y1="530" x2="{Wd-28}" y2="530" stroke="{C['sumi']}" stroke-opacity=".3" stroke-width="1"/>
+<path fill="{C['sumi']}" transform="translate({L},574)" d="{glyphs('aio-erabare.jp', 'barlow600.ttf', 24, use_palt=False)[0]}"/>
+<path fill="{C['sumi']}" transform="translate({Wd-L-op[1]:.1f},572)" d="{op[0]}"/>'''
     return svg(Wd, Hd, body, 'AIOえらばれ帳')
 
 if __name__ == '__main__':
