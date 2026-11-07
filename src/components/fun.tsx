@@ -3,6 +3,8 @@
 // 書く人のやる気を保つための、動きのある部品（docs/UI.md「見た目」）。
 // 動きは prefers-reduced-motion で止まる（globals.css）。
 
+import { GUIDE_WIDTH, type GuideId } from "@/lib/guideCharacter";
+import { useGuide } from "@/components/useGuide";
 import { useEffect, useState } from "react";
 import type { AioPoint } from "@/types/domain";
 
@@ -157,27 +159,38 @@ const SHIORI_WIDTH: Record<ShioriMood, number> = {
   "jersey-done": 255,
 };
 
-/** しおりの絵。場面に合わせて表情を選ぶ */
-export function Shiori({ mood, className = "h-32 w-auto" }: { mood: ShioriMood; className?: string }) {
+/** 案内役の絵の場所と幅。選んだ案内役（しおり・源さん・こゆき）で変わる（src/lib/guideCharacter.ts） */
+function guideImage(guide: GuideId, mood: ShioriMood): { src: string; width: number } {
+  if (guide === "shiori") return { src: `/guide/shiori-${mood}.webp`, width: SHIORI_WIDTH[mood] };
+  return { src: `/guide/${guide}-${mood}.webp`, width: GUIDE_WIDTH[guide][mood] ?? 240 };
+}
+
+/** 案内役の絵。場面に合わせて表情を選ぶ。as を渡すと、選んだ案内役にかかわらずその絵にする（しおりの自己紹介など） */
+export function Shiori({ mood, className = "h-32 w-auto", as }: { mood: ShioriMood; className?: string; as?: GuideId }) {
+  const [guide] = useGuide();
+  const img = guideImage(as ?? guide.id, mood);
   return (
     // eslint-disable-next-line @next/next/no-img-element -- 透過の固定の絵。最適化は不要
-    <img src={`/guide/shiori-${mood}.webp`} width={SHIORI_WIDTH[mood]} height={400} alt="" className={className} aria-hidden />
+    <img src={img.src} width={img.width} height={400} alt="" className={className} aria-hidden />
   );
 }
 
 /** 「しおりより」などに出す顔のアイコン */
-export function ShioriFace({ className = "h-10 w-10" }: { className?: string }) {
+export function ShioriFace({ className = "h-10 w-10", as }: { className?: string; as?: GuideId }) {
+  const [guide] = useGuide();
   return (
     // eslint-disable-next-line @next/next/no-img-element -- 小さな固定の絵。最適化は不要
-    <img src="/guide/shiori-face.webp" width={192} height={192} alt="" className={`${className} shrink-0 rounded-full bg-sky object-cover`} aria-hidden />
+    <img src={`/guide/${as ?? guide.id}-face.webp`} width={192} height={192} alt="" className={`${className} shrink-0 rounded-full bg-sky object-cover`} aria-hidden />
   );
 }
 
-/** 絵の中のしおり。x は左端、高さ130に収める */
+/** 絵の中の案内役。x は左端、高さ130に収める */
 function Secretary({ x, mood }: { x: number; mood: ShioriMood; delay?: number }) {
-  const w = Math.round((SHIORI_WIDTH[mood] / 400) * 130);
-  // しおりは動かさない（2026-11-02 田村さん）。動くのは周りの小物と吹き出しだけ
-  return <image href={`/guide/shiori-${mood}.webp`} x={x} y={0} width={w} height={130} />;
+  const [guide] = useGuide();
+  const img = guideImage(guide.id, mood);
+  const w = Math.round((img.width / 400) * 130);
+  // 案内役は動かさない（2026-11-02 田村さん）。動くのは周りの小物と吹き出しだけ
+  return <image href={img.src} x={x} y={0} width={w} height={130} />;
 }
 
 /** しおりのひとこと。口もとから、ぽんと出る */

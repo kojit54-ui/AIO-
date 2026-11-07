@@ -5,6 +5,7 @@
 // 生成だけはAIのキーを持つサーバー（/api/articles/[id]/generations）を通す。
 // 件数が少ない前提（3〜5社）で、変更のたびに見える範囲をまとめて読み直す。
 
+import { normalizePersonName } from "@/lib/personName";
 import { createBrowserClient } from "@supabase/ssr";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -545,6 +546,15 @@ export class RemoteBackend {
       }).catch(() => null);
       const json = ((await res?.json().catch(() => ({}))) ?? {}) as { code?: string; message?: string };
       if (!res?.ok) throw new ApiError((json.code ?? "save_failed") as "save_failed", json.message ?? "保存できませんでした");
+      await this.load();
+    },
+
+    renameSelf: async (name) => {
+      this.requireUser();
+      const clean = normalizePersonName(name);
+      if (!clean) throw new ApiError("save_failed", "お名前は1〜30文字で入れてください");
+      const { error } = await this.client.auth.updateUser({ data: { name: clean } });
+      if (error) throw new ApiError("save_failed", "保存できませんでした。少し待ってからもう一度お試しください");
       await this.load();
     },
 

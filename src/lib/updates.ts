@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-guide",
+    date: "2026-11-07",
+    title: "案内役を選べるようになりました",
+    body: "しおりのほかに、ものづくりの先輩「源さん」と、オコジョの「こゆき」が仲間入りしました。マイページで、いっしょに書いてくれる案内役を選べます。お名前も、マイページで入れられるようになりました。",
+    href: "/mypage",
+    linkLabel: "案内役を選ぶ",
+  },
+  {
     id: "2026-11-04-manufacturing-2",
     date: "2026-11-04",
     title: "しおりが、製造業のことをもっと深く勉強しました",
