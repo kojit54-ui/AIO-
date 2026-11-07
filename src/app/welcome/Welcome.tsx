@@ -1,419 +1,342 @@
 "use client";
 
 // 入口のページ（サービスのご紹介）。ログインしていない人が最初に見る。
-// 2026-11-03 田村さん「登録したくなる、ワクワクする、ログインしたくなるページにしたい」。
-// 言葉は“やること”で書く（専門語を使わない）。AIOの考え方は docs/AIO.md（体験と数字が紹介されやすい・作り話をしない）。
-// サービスの定義は src/lib/brand.ts（AIに選ばれて、お客様に選ばれる。いちばん大切なのはお客様に選ばれること）。
-// 紹介される・売上が上がると約束はしない（決めるのはAI）。料金はまだ決まっていないので出さない。
+// 2026-11-07 田村さん「ブランドページとサービスサイトに乖離がある。目的は登録してもらうこと」→ GPT・Gemini・Claude で2回対話し、
+// 合意案で作り直した（/mnt/project-files/brand-book/lp-discussion.md、docs/DECISIONS.md）。
+// - 約束はブランド（docs/BRAND.md「頼む人に、正直な帳面を。」）にそろえる。「AIに選ばれた！」のような成果の先取りはしない
+// - 外側はブランドの紙面（生成り・藍・角ゴシック・罫線、絵文字なし）。キャラ・スタンプ・明るい青は「画面の見本」の枠の中と、押すボタンだけ
+// - 手順は「答える → 確かめて直す → 公開する」。料金と条件は隠さない（src/lib/legal.ts と同じ）
+// - いまは招待制なので、新規の方には「登録せずに試す」と「新規受付の案内（メール）」を出す。「さっそく始める」で行き止まりにしない
 
 import { SiteFooter, SiteHeader, useStartLink } from "@/components/site";
 import { FAQ } from "@/lib/faq";
 import { COLUMNS } from "@/lib/column";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
-import { BigShiori, Reveal, useInView } from "@/components/landing";
-import { ShioriTalk, Typed } from "@/components/talk";
-import { CHOSEN_STAGES, SERVICE_COMPANION, SERVICE_MOST_IMPORTANT } from "@/lib/brand";
+import { Shiori } from "@/components/fun";
+import { Reveal, useInView } from "@/components/landing";
+import { Typed } from "@/components/talk";
+import { BRAND_GAP, BRAND_LINE, BRAND_PROMISES, BRAND_SAMPLE } from "@/lib/brandBook";
+import { TRY_HREF } from "@/lib/signup";
+import { WaitlistForm } from "@/components/WaitlistForm";
+import { AIO_CHECK_LIST } from "@/lib/aioCheck";
 import type { MfgShowcase } from "@/lib/manufacturing";
 
+const kaku = "font-[family-name:var(--font-kaku)]";
+const num = "font-[family-name:var(--font-barlow)] tracking-wide";
+const maru = "font-[family-name:var(--font-maru)]";
+
+const KANJI = ["一", "二", "三", "四", "五"];
+
 export function Welcome({ makers }: { makers: MfgShowcase }) {
-  // ログイン中なら、入口のボタンは「続きから」にする
-  const { signedIn, href: startHref } = useStartLink();
-  const startLabel = signedIn ? "続きから書く" : "さっそく始める";
-
+  const { signedIn, href } = useStartLink();
   return (
-    <div className="overflow-x-clip">
+    <div className="overflow-x-clip bg-paper text-sumi">
       <SiteHeader />
-
-      <Hero startHref={startHref} startLabel={startLabel} />
-      <AiChat />
-      <TwoChosen />
-      <Quiz />
-      <ThreeSteps />
-      <KeepGoing />
-      <ForMakers m={makers} />
-      <ForYou />
-      <Faq />
-      <ColumnTeaser />
-      <FinalCall startHref={startHref} startLabel={startLabel} signedIn={signedIn} />
-
+      <main className={`${kaku} font-medium`}>
+        <Hero signedIn={signedIn} href={href} />
+        <Gap />
+        <AiChat />
+        <Steps />
+        <Included total={makers.total} industries={makers.industries} />
+        <KeepGoing />
+        <Promises />
+        <Price />
+        <Faq />
+        <ColumnTeaser />
+        <FinalCall signedIn={signedIn} href={href} />
+      </main>
       <SiteFooter />
     </div>
   );
 }
 
-/** 30秒でためす（/try）への入口。登録の前に、診断と記事の書き出しを体験できる */
-function TryBanner() {
+function Section({ id, kicker, title, children, tone = "paper" }: { id?: string; kicker: string; title: string; children: React.ReactNode; tone?: "paper" | "white" }) {
   return (
-    <Link
-      href="/try"
-      className="group flex animate-rise items-center gap-3 rounded-3xl border-2 border-sun-dark bg-sun-soft p-3 pr-4 shadow-[0_5px_0_var(--color-sun-dark)] transition-transform [animation-delay:.32s] hover:-translate-y-1 sm:max-w-lg"
-    >
-      <span className="grid h-14 w-14 shrink-0 animate-shine place-items-center rounded-2xl bg-sun text-3xl" aria-hidden>
-        🩺
-      </span>
-      <span className="min-w-0 flex-1">
-        <span className="block text-xs font-black text-warn">登録なし・30秒</span>
-        <span className="block font-black leading-snug">あなたの会社、AIとお客様に選ばれる準備はできてる？ 診断してみる</span>
-      </span>
-      <span className="text-2xl text-ink transition-transform group-hover:translate-x-1" aria-hidden>
-        →
-      </span>
+    <section id={id} className={`scroll-mt-20 border-t border-sumi/15 py-14 sm:py-20 ${tone === "white" ? "bg-white" : ""}`}>
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <Reveal>
+          <p className="text-sm font-bold text-indigo">{kicker}</p>
+          <h2 className={`${kaku} mt-2 text-[1.6rem] font-black leading-snug sm:text-4xl`}>
+            <Phrases text={title} />
+          </h2>
+        </Reveal>
+        <div className="mt-8">{children}</div>
+      </div>
+    </section>
+  );
+}
+
+/** 句読点の後ろでだけ折り返す */
+function Phrases({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/(?<=[、。])/).map((t, i) => (
+        <span key={i} className="inline-block max-w-full">
+          {t}
+        </span>
+      ))}
+    </>
+  );
+}
+
+/** 押せるボタンの組。主は「登録せずに試す」。いまは新規受付の前なので、案内とログインを添える */
+function SubLinks({ dark = false }: { dark?: boolean }) {
+  const sub = dark ? "text-paper underline decoration-paper/50" : "text-indigo underline decoration-indigo/40";
+  return (
+    <p className={`flex flex-col gap-y-2 text-sm font-bold sm:flex-row sm:flex-wrap sm:gap-x-5 ${dark ? "text-paper" : ""}`}>
+      <a href="#notify" className={`py-1 underline-offset-4 ${sub}`}>
+        新規受付の案内を受け取る
+      </a>
+      <Link href="/login" className={`py-1 underline-offset-4 ${sub}`}>
+        招待された方・ご利用中の方はログイン
+      </Link>
+    </p>
+  );
+}
+
+function MainButton({ signedIn, href }: { signedIn: boolean; href: string }) {
+  if (signedIn)
+    return (
+      <Link href={href} className="btn-primary min-h-14 px-7 text-lg">
+        続きから書く <span aria-hidden>→</span>
+      </Link>
+    );
+  return (
+    <Link href={TRY_HREF} className="btn-primary min-h-14 w-full px-7 text-lg sm:w-auto">
+      登録せずに、記事づくりを試す <span aria-hidden>→</span>
     </Link>
   );
 }
 
-function Hero({ startHref, startLabel }: { startHref: string; startLabel: string }) {
+/** スマホでは「見出し→ボタン→見本→ほかの入口と料金」の順。PCは左に文、右に見本 */
+function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
   return (
-    <section className="relative mx-auto grid max-w-6xl items-center gap-4 px-4 pb-10 pt-8 sm:px-6 md:grid-cols-[1.2fr_1fr] md:pb-16 md:pt-14">
-      <div className="space-y-5">
-        <p className="inline-flex animate-rise items-center gap-2 rounded-full bg-sun-soft px-3 py-1 text-sm font-black">
-          <span aria-hidden>✨</span> AIの時代の、会社のブログ
-        </p>
-        <h1 className="animate-rise text-[1.7rem] font-black leading-[1.35] [animation-delay:.08s] sm:text-5xl sm:leading-[1.3]">
-          AIに選ばれて、
-          <br />
-          これから出会う
-          <br />
-          <span className="relative inline-block">
-            <span className="relative z-10">お客様に選ばれる</span>
-            <span className="absolute inset-x-0 bottom-1 z-0 h-3 rounded-full bg-sun/70 sm:h-4" aria-hidden />
+    <section className="mx-auto grid max-w-6xl gap-x-10 gap-y-7 px-4 pb-14 pt-6 sm:px-6 md:grid-cols-[1.05fr_1fr] md:pb-20 md:pt-14">
+      <div className="md:self-end">
+        <p className="inline-block border-b-2 border-sumi pb-1 text-sm font-bold">製造業の一人親方〜30人の会社へ</p>
+        <h1 className={`${kaku} mt-5 text-[2rem] font-black leading-[1.35] sm:text-[3.1rem]`}>
+          <span className="block">仕事の話に</span>
+          <span className="block">答えるだけ。</span>
+          <span className="mt-1 block text-[1.55rem] leading-snug sm:text-[2.3rem]">
+            <span className="inline-block">毎月1本、</span>
+            <span className="inline-block">自社サイトの記事に。</span>
           </span>
-          会社に。
         </h1>
-        <p className="animate-rise text-lg font-bold text-muted [animation-delay:.16s] sm:text-xl">
-          AIに「この会社がいいよ」と紹介されて、
-          <br className="hidden sm:inline" />
-          これから出会うお客様に
-          <br className="hidden sm:inline" />
-          「ここに頼みたい」と思ってもらえる記事を。
-          <br />
-          <span className="text-ink">{SERVICE_COMPANION}</span>
+        <p className="mt-5 max-w-xl text-base leading-[1.7] sm:text-[1.05rem] sm:leading-loose">
+          <span className="inline-block">案内役の質問に答えると、</span>
+          <span className="inline-block">AIが記事の下書きに。</span>
+          <span className="inline-block">確かめて直し、</span>
+          <span className="inline-block">自社サイトで公開します。</span>
         </p>
-        <div className="flex animate-rise flex-wrap items-center gap-3 [animation-delay:.24s]">
-          <Link href={startHref} className="btn-primary min-h-14 px-7 text-lg">
-            {startLabel}
-            <span className="inline-block animate-nudge" aria-hidden>
-              →
-            </span>
-          </Link>
-          <a href="#ai" className="btn-secondary min-h-14 px-6">
-            どんなサービス？
-            <span className="inline-block animate-hop" aria-hidden>
-              ↓
-            </span>
-          </a>
+        <p className="mt-3 text-sm font-bold text-sumi/70">{BRAND_LINE}</p>
+        <div className="mt-6">
+          <MainButton signedIn={signedIn} href={href} />
+          {!signedIn && <p className="mt-2 text-sm leading-[1.6] text-sumi/80">会社のこと3項目＋仕事の話1問で、記事の書き出しを試せます。</p>}
         </div>
-        <TryBanner />
       </div>
-
-      <div className="relative mx-auto mt-2 flex w-full max-w-sm justify-center md:mt-0">
-        <span className="absolute inset-6 -z-10 animate-blob bg-brand-soft" aria-hidden />
-        <span className="absolute right-6 top-10 -z-10 h-24 w-24 animate-blob rounded-full bg-sun-soft [animation-delay:-3s]" aria-hidden />
-        <BigShiori mood="jersey-cheer" className="animate-rise [animation-delay:.2s]" />
-        <FloatChip className="left-0 top-6" delay="0s">
-          🤖 AIに選ばれた！
-        </FloatChip>
-        <FloatChip className="-right-1 top-1/3" delay=".6s">
-          ⭐ スタンプ +1
-        </FloatChip>
-        <FloatChip className="bottom-6 left-2" delay="1.2s">
-          🤝 お客様に選ばれた！
-        </FloatChip>
+      <div className="md:col-start-2 md:row-span-2 md:row-start-1 md:self-center">
+        <SampleScreen />
       </div>
+      {!signedIn && (
+        <div className="space-y-4 md:self-start">
+          <SubLinks />
+          <p className="border-t border-sumi/20 pt-3 text-sm leading-relaxed text-sumi/80">
+            月額50,000円（税抜）。新規のお申し込みは準備中です。コタムのお客様は、招待制で無料でお使いいただけます。
+            <a href="#price" className="ml-1 font-bold text-indigo underline underline-offset-4">
+              料金とお試し
+            </a>
+          </p>
+        </div>
+      )}
     </section>
   );
 }
 
-/** しおりのまわりで、ふわふわ浮く札（しおり自身は動かさない） */
-function FloatChip({ children, className, delay }: { children: React.ReactNode; className: string; delay: string }) {
+/** 画面の見本：社長の答えから、記事ができるまで。枠の中だけ、サービスの画面の見た目（明るい青・丸ゴシック・案内役） */
+function SampleScreen() {
+  const talk = BRAND_SAMPLE.talk.slice(2);
   return (
-    <span className={`absolute animate-pop rounded-full border-2 border-line bg-surface px-3 py-1 text-sm font-black shadow-[0_4px_0_var(--color-line)] ${className}`} style={{ animationDelay: delay }} aria-hidden>
-      <span className="inline-block animate-float" style={{ animationDelay: delay }}>
-        {children}
-      </span>
-    </span>
+    <figure className="border-2 border-sumi bg-white">
+      <figcaption className="flex items-center justify-between border-b-2 border-sumi px-4 py-2 text-xs font-bold">
+        <span>画面の見本</span>
+        <span className="text-sumi/60">{BRAND_SAMPLE.company}</span>
+      </figcaption>
+      <div className={`${maru} space-y-3 bg-canvas px-4 py-4`}>
+        {talk.map((t, i) =>
+          t.who === "guide" ? (
+            <div key={i} className="flex items-end gap-2">
+              <Shiori mood="ask" as="shiori" className="h-14 w-auto shrink-0" />
+              <p className="rounded-2xl rounded-bl-md border-2 border-line bg-surface px-3 py-2 font-bold leading-relaxed">{t.text}</p>
+            </div>
+          ) : (
+            <p key={i} className="ml-auto w-fit max-w-[88%] rounded-2xl rounded-br-md bg-brand px-3 py-2 font-bold leading-relaxed text-white">
+              <span className="sr-only">社長：</span>
+              {t.text}
+            </p>
+          ),
+        )}
+      </div>
+      <p className="border-y border-sumi/30 bg-paper px-4 py-1.5 text-center text-xs font-bold text-sumi/70">↓ AIが記事に。社長が確かめてから公開</p>
+      <div className="px-5 py-4">
+        <p className="text-xs font-bold text-sumi/60">できあがった記事の一部（見本）</p>
+        <p className={`${kaku} mt-1 text-lg font-black leading-snug`}>
+          <Phrases text={BRAND_SAMPLE.article.heading} />
+        </p>
+        <p className="mt-2 line-clamp-4 text-sm leading-relaxed">{BRAND_SAMPLE.article.body}</p>
+      </div>
+      <div className="flex items-center gap-3 border-t-2 border-sumi px-4 py-2.5">
+        <span className="flex shrink-0 -space-x-2" aria-hidden>
+          {["shiori", "gen", "koyuki"].map((g) => (
+            // eslint-disable-next-line @next/next/no-img-element -- 小さな固定の絵
+            <img key={g} src={`/guide/${g}-face.webp`} width={192} height={192} alt="" className="h-9 w-9 rounded-full border-2 border-white bg-sky object-cover" />
+          ))}
+        </span>
+        <span className="text-sm font-bold">案内役は3人から選べます</span>
+      </div>
+    </figure>
   );
 }
 
-function SectionTitle({ kicker, children }: { kicker: string; children: React.ReactNode }) {
+/** 設備の一覧だけでは伝わらない（ブランドページの01と同じ中身） */
+function Gap() {
   return (
-    <div className="mb-5 space-y-1 text-center">
-      <p className="text-sm font-black text-brand">{kicker}</p>
-      <h2 className="text-2xl font-black leading-snug sm:text-3xl">{children}</h2>
-    </div>
+    <Section kicker="なぜ記事なのか" title="設備の一覧だけでは、伝わらない仕事がある。" tone="white">
+      <div className="grid border-2 border-sumi md:grid-cols-[1fr_1.6fr]">
+        <div className="border-b-2 border-sumi bg-paper p-5 md:border-b-0 md:border-r-2">
+          <p className="text-sm font-bold text-sumi/70">この言葉だけでは、まだ伝わらないこと</p>
+          <ul className="mt-3 space-y-1 text-lg font-bold leading-[1.9]">
+            {BRAND_GAP.common.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+          <p className="mt-4 text-sm leading-relaxed">どれも大切な強みです。ただ、この言葉だけでは、頼む人は「自分の仕事を頼めるか」まで判断できません。</p>
+        </div>
+        <div>
+          <p className="bg-sumi px-4 py-2 text-sm font-bold text-paper sm:hidden">頼む人が知りたいこと → 記事で伝えること</p>
+          <div className="hidden grid-cols-2 bg-sumi text-sm font-bold text-paper sm:grid">
+            <p className="px-4 py-2">頼む人が知りたいこと</p>
+            <p className="border-l border-paper/30 px-4 py-2">記事で伝えること</p>
+          </div>
+          {BRAND_GAP.wanted.map((w) => (
+            <div key={w.q} className="grid border-b border-sumi/30 last:border-0 sm:grid-cols-2">
+              <p className="px-4 pt-3 font-bold leading-snug sm:py-3">{w.q}</p>
+              <p className="px-4 pb-3 pt-1 text-sm leading-relaxed sm:border-l sm:border-sumi/30 sm:py-3">
+                <span className="mr-1 font-bold text-indigo sm:hidden">→</span>
+                {w.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Section>
   );
 }
 
 const ASK = "愛知で、金属の部品を10個だけ作ってくれる会社はある？";
-const ANSWER_BEFORE = "小さな数の相談なら、";
-const ANSWER_COMPANY = "〇〇製作所（あなたの会社）";
-const ANSWER_AFTER = "がよさそうです。10個からの試作を受けた例をブログで紹介していて、相談の窓口もあります。";
+const ANSWER = "小さな数の試作を受けている会社として、〇〇製作所があります。ホームページの記事で、10個からの試作を受けた例と、そのときの進め方を紹介しています。";
 
-const READER_THINKS = "10個でも、ていねいに相談にのってくれそう。ここに頼もう！";
-
-/**
- * お客様がAIに相談して、あなたの会社が紹介され（AIに選ばれる）、
- * 記事を読んだ人が問い合わせる（お客様に選ばれる）までの様子（イメージ）。見えたら自動で流れる
- */
+/** 発注先をAIに相談する人の画面（イメージ）。見えたら1回だけ流れる */
 function AiChat() {
   const [ref, seen] = useInView<HTMLDivElement>(0.35);
-  // 0:待ち 1:お客様が打つ 2:AIが考える 3:AIが答える 4:AIに選ばれた 5:記事を読む 6:お客様に選ばれた
   const [step, setStep] = useState(0);
-  const [round, setRound] = useState(0);
   useEffect(() => {
-    if (seen && step === 0) {
-      const t = setTimeout(() => setStep(1), 300);
-      return () => clearTimeout(t);
-    }
-  }, [seen, step, round]);
+    if (!seen || step !== 0) return;
+    const t = setTimeout(() => setStep(1), 300);
+    return () => clearTimeout(t);
+  }, [seen, step]);
   useEffect(() => {
-    if (step !== 2 && step !== 4) return;
-    const t = setTimeout(() => setStep(step + 1), step === 2 ? 1300 : 1400);
+    if (step !== 2) return;
+    const t = setTimeout(() => setStep(3), 1200);
     return () => clearTimeout(t);
   }, [step]);
 
   return (
-    <section id="ai" className="scroll-mt-16 bg-surface/60 py-12">
-      <div className="mx-auto max-w-2xl px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="いま、お客様の探し方が変わっています">
-            お客様は、<span className="text-brand">AIに相談</span>しはじめました
-          </SectionTitle>
-        </Reveal>
-
-        {/* 2026-11-07 田村さん「2カラムが見づらい。文字が多くて目が散る」→ 1列にして、上から順に読むだけにする */}
-        <Reveal className="mb-5 grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-center">
-          <p className="rounded-2xl border-2 border-line bg-surface px-3 py-2 opacity-80">
-            <b className="block text-xs text-muted">いままで</b>
-            <span className="text-sm font-bold sm:text-base">🔍 検索して見くらべる</span>
+    <Section id="ai" kicker="AIと人" title="AIが候補を探し、人が記事を読んで決める。">
+      <div className="grid gap-8 md:grid-cols-[1fr_1.1fr] md:items-start">
+        <div className="space-y-4 leading-loose">
+          <p>発注先を探すとき、検索だけでなく、AIに相談する人も出てきました。AIは、ホームページに書かれた具体的な仕事の記録を、候補を探す手がかりにします。</p>
+          <p>そして最後に「ここに頼もう」と決めるのは、記事を読んだ人です。できる材質や数量、工夫や条件が書いてあれば、相談するかどうかを判断できます。</p>
+          <p className="border-l-4 border-indigo pl-3 text-sm font-bold">AIの回答で紹介されることや、問い合わせが増えることは約束できません。</p>
+        </div>
+        <div ref={ref} className="border-2 border-sumi bg-white">
+          <p className="border-b-2 border-sumi px-4 py-2 text-xs font-bold">AIに相談している画面（イメージ）</p>
+          <p className="sr-only">
+            相談する人：{ASK} AI：{ANSWER}
           </p>
-          <span className="animate-nudge text-2xl font-black text-brand" aria-hidden>
-            →
-          </span>
-          <p className="rounded-2xl border-2 border-brand bg-surface px-3 py-2">
-            <b className="block text-xs text-brand-dark">これから</b>
-            <span className="text-sm font-bold sm:text-base">💬 AIに聞く</span>
-          </p>
-        </Reveal>
-
-          <div ref={ref} className="card relative space-y-3 bg-canvas/60 p-4 sm:p-5">
-            <p className="flex items-center justify-between text-xs font-black text-muted">
-              <span>{step >= 5 ? "記事を読んでいる人（イメージ）" : "AIに相談している画面（イメージ）"}</span>
-              <span className="flex gap-1" aria-hidden>
-                <i className="h-2.5 w-2.5 rounded-full bg-danger/60" />
-                <i className="h-2.5 w-2.5 rounded-full bg-sun" />
-                <i className="h-2.5 w-2.5 rounded-full bg-ok-bright" />
-              </span>
-            </p>
-            <p className="sr-only">
-              お客様：{ASK} AI：{ANSWER_BEFORE}
-              {ANSWER_COMPANY}
-              {ANSWER_AFTER} 記事を読んだ人：{READER_THINKS}
-            </p>
-            <div className="min-h-64 space-y-3 sm:min-h-[26rem]" aria-hidden key={round}>
-              {step >= 1 && (
-                <div className="ml-auto w-fit max-w-[85%] origin-bottom-right animate-bubble rounded-3xl rounded-br-md bg-brand px-4 py-2.5 font-bold text-white">
-                  {step === 1 ? <Typed text={ASK} speed={45} delay={200} onDone={() => setTimeout(() => setStep(2), 400)} /> : ASK}
-                </div>
-              )}
-              {step >= 2 && (
-                <div className="flex items-start gap-2">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink text-white">✦</span>
-                  <div className="min-w-0 origin-top-left animate-bubble rounded-3xl rounded-tl-md border-2 border-line bg-surface px-4 py-2.5 leading-relaxed">
-                    {step === 2 ? (
-                      <span className="inline-flex gap-1 py-1">
-                        {[0, 1, 2].map((i) => (
-                          <span key={i} className="h-2 w-2 animate-dot rounded-full bg-muted" style={{ animationDelay: `${i * 0.15}s` }} />
-                        ))}
-                      </span>
-                    ) : step === 3 ? (
-                      <Typed text={ANSWER_BEFORE + ANSWER_COMPANY + ANSWER_AFTER} speed={32} delay={100} onDone={() => setTimeout(() => setStep(4), 300)} />
-                    ) : (
-                      <>
-                        {ANSWER_BEFORE}
-                        <mark className="rounded-md bg-sun/70 px-1 font-black text-ink">{ANSWER_COMPANY}</mark>
-                        {ANSWER_AFTER}
-                      </>
-                    )}
-                  </div>
-                </div>
-              )}
-              {step >= 4 && (
-                <div className="flex justify-center pt-1">
-                  <span className="animate-stamp rounded-full border-2 border-brand bg-brand-soft px-4 py-1.5 font-black text-brand-dark shadow-[0_4px_0_var(--color-brand)]">🤖 1. AIに選ばれた！</span>
-                </div>
-              )}
-              {step >= 5 && (
-                <div className="animate-rise space-y-2 rounded-3xl border-2 border-line bg-surface p-3">
-                  <p className="text-xs font-black text-muted">〇〇製作所のブログ</p>
-                  <p className="font-black leading-snug">10個からの試作、5日でお届けしたお話</p>
-                  <div className="ml-auto w-fit max-w-[90%] origin-bottom-right animate-bubble rounded-3xl rounded-br-md bg-sun-soft px-4 py-2 text-sm font-bold">
-                    💭 {step === 5 ? <Typed text={READER_THINKS} speed={45} delay={300} onDone={() => setTimeout(() => setStep(6), 400)} /> : READER_THINKS}
-                  </div>
-                </div>
-              )}
-              {step >= 6 && (
-                <div className="flex justify-center">
-                  <span className="animate-stamp rounded-full border-2 border-sun-dark bg-sun px-4 py-1.5 font-black text-ink shadow-[0_4px_0_var(--color-sun-dark)]">🤝 2. お客様に選ばれた！ お問い合わせが来ました</span>
-                </div>
-              )}
-            </div>
-            <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line pt-3">
-              <p className="text-xs text-muted">紹介するかはAIが、頼むかは読んだ人が決めます。</p>
-              {step >= 6 && (
-                <button
-                  type="button"
-                  className="text-sm font-bold text-brand-dark underline"
-                  onClick={() => {
-                    setRound((r) => r + 1);
-                    setStep(0);
-                  }}
-                >
-                  もう一度見る
-                </button>
-              )}
-            </div>
+          <div className={`${maru} min-h-56 space-y-3 bg-canvas p-4`} aria-hidden>
+            {step >= 1 && (
+              <div className="ml-auto w-fit max-w-[88%] rounded-2xl rounded-br-md bg-brand px-3 py-2 font-bold text-white">
+                {step === 1 ? <Typed text={ASK} speed={40} delay={150} onDone={() => setTimeout(() => setStep(2), 300)} /> : ASK}
+              </div>
+            )}
+            {step >= 2 && (
+              <div className="w-fit max-w-[92%] rounded-2xl rounded-tl-md border-2 border-line bg-surface px-3 py-2 leading-relaxed">
+                {step === 2 ? (
+                  <span className="inline-flex gap-1 py-1">
+                    {[0, 1, 2].map((i) => (
+                      <span key={i} className="h-2 w-2 animate-dot rounded-full bg-muted" style={{ animationDelay: `${i * 0.15}s` }} />
+                    ))}
+                  </span>
+                ) : (
+                  <Typed text={ANSWER} speed={26} delay={80} />
+                )}
+              </div>
+            )}
           </div>
-        <Reveal className="mt-5">
-          <ShioriTalk mood="point" size="md" lines={["AIに紹介されて、読んだ人に「ここに頼みたい」と思ってもらう。その両方を、いっしょにつくりましょう！"]} />
-        </Reveal>
+          <p className="border-t border-sumi/30 px-4 py-2 text-xs text-sumi/70">紹介するかはAIが、頼むかは読んだ人が決めます。</p>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
-/** このサービスの定義。2つの「選ばれる」と、いちばん大切なこと */
-function TwoChosen() {
-  return (
-    <section className="py-12">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="このサービスが目指すこと">2つの「選ばれる」</SectionTitle>
-        </Reveal>
-        <ol className="grid items-stretch gap-3 sm:grid-cols-[1fr_auto_1fr]">
-          {CHOSEN_STAGES.map((st, i) => (
-            <li key={st.key} className="contents">
-              {i > 0 && (
-                <span className="grid place-items-center text-3xl font-black text-brand" aria-hidden>
-                  <span className="inline-block animate-hop sm:hidden">↓</span>
-                  <span className="hidden animate-nudge sm:inline-block">→</span>
-                </span>
-              )}
-              <Reveal delay={i * 0.15} className={`card flex h-full flex-col items-center gap-2 text-center ${st.key === "people" ? "border-2 border-sun bg-sun-soft" : ""}`}>
-                <span className="grid h-16 w-16 animate-pop place-items-center rounded-full bg-surface text-4xl shadow" aria-hidden>
-                  {st.icon}
-                </span>
-                <p className="text-sm font-black text-brand">ステップ{st.step}</p>
-                <h3 className="text-2xl font-black">{st.label}</h3>
-                <p className="text-muted">{st.text}</p>
-                {st.key === "people" && <span className="mt-auto rounded-full bg-sun px-3 py-0.5 text-sm font-black">いちばん大切</span>}
-              </Reveal>
-            </li>
-          ))}
-        </ol>
-        <Reveal delay={0.3} className="mt-5">
-          <ShioriTalk mood="point" size="md" lines={[SERVICE_MOST_IMPORTANT, "だから、しおりは「AIに伝わる材料」と「読んだ人が安心できる、あなたの会社らしさ」の両方を聞きますね。"]} />
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-const CHOICES = [
-  { id: "a", text: "高品質・短納期で、どんなご要望にもお応えします。", ok: false },
-  { id: "b", text: "厚さ1mmのステンレス板で、部品を10個、5日でお届けしました。", ok: true },
+const STEPS = [
+  { who: "社長", title: "質問に答える", text: "案内役が、なぜ聞くのかを添えて1問ずつ聞きます。文字でも声でも、写真1枚からでも。わからない質問は飛ばせます。" },
+  { who: "AI", title: "記事にまとめる", text: `答えから記事を書き、${AIO_CHECK_LIST.length}項目の「AIOのチェック」で見直します。足りない所は、案内役が聞き返します。` },
+  { who: "社長", title: "確かめて、載せる", text: "読んで、直してから、自社のホームページにご自身で載せます。自動投稿ではありません。載せ方は1ステップずつ案内します。" },
 ];
 
-/** AIにもお客様にも選ばれるのはどっち？ 1問だけのクイズ */
-function Quiz() {
-  const [picked, setPicked] = useState<string | null>(null);
-  const [tries, setTries] = useState(0);
-  const right = CHOICES.find((c) => c.id === picked)?.ok;
-  const talk: { mood: ShioriMood; lines: string[] } =
-    picked === null
-      ? { mood: "ask", lines: ["ここでクイズです！", "AIにも、読んだ人にも選ばれるのは、どっちの書き方だと思いますか？"] }
-      : right
-        ? { mood: "right", lines: ["正解です！すごい！", "AIは「この会社にしかない経験」と「数字」がある記事を紹介しやすいんです。", "読んだ人も「ここなら安心して頼める」と思えますよね。だから、しおりはあなたの会社の経験を、くわしく聞きますね。"] }
-        : { mood: "think", lines: ["おしい！", "どの会社でも言える言葉だと、AIは紹介しにくいんです。もう一度えらんでみてください。"] };
-
+function Steps() {
   return (
-    <section className="py-12">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="30秒でわかる">AIにもお客様にも選ばれるのは、どっち？</SectionTitle>
-        </Reveal>
-        <Reveal className="card space-y-4">
-          {right && <Confetti count={50} />}
-          <ShioriTalk key={`${picked}-${tries}`} mood={talk.mood} lines={talk.lines} size="md" />
-          <div className="grid gap-3 sm:grid-cols-2" role="group" aria-label="えらぶ">
-            {CHOICES.map((c, i) => {
-              const chosen = picked === c.id;
-              const state = chosen ? (c.ok ? "ok" : "ng") : right && c.ok ? "ok" : "idle";
-              return (
-                <button
-                  key={c.id}
-                  type="button"
-                  disabled={!!right}
-                  aria-pressed={chosen}
-                  onClick={() => {
-                    setPicked(c.id);
-                    setTries((n) => n + 1);
-                  }}
-                  className={`relative rounded-3xl border-2 p-4 text-left font-bold transition-transform duration-150 enabled:hover:-translate-y-1 ${
-                    state === "ok" ? "border-ok-bright bg-ok-soft" : state === "ng" ? "animate-[nod_.5s_ease-in-out] border-danger/50 bg-danger-soft" : "border-line bg-surface shadow-[0_4px_0_var(--color-line)] enabled:hover:border-brand"
-                  }`}
-                >
-                  <span className="mb-1 block text-sm font-black text-brand">{i === 0 ? "A" : "B"}</span>
-                  {c.text}
-                  {state === "ok" && (
-                    <span className="absolute -right-2 -top-3 animate-stamp rounded-full bg-ok-bright px-2.5 py-0.5 text-sm font-black text-white">⭕ 正解 +10pt</span>
-                  )}
-                  {state === "ng" && <span className="absolute -right-2 -top-3 animate-stamp rounded-full bg-danger px-2.5 py-0.5 text-sm font-black text-white">❌ おしい</span>}
-                </button>
-              );
-            })}
-          </div>
-          {right && (
-            <p className="animate-rise rounded-2xl bg-sun-soft px-4 py-3 text-sm font-bold">
-              💡 ポイント：Bには「何を・いくつ・何日で」という<b>実際の経験と数字</b>があります。これはAIにはつくれない、あなたの会社だけの材料です。読んだ人にも「頼んだらこうなる」が伝わります。
+    <Section id="how" kicker="毎月やること" title="答える。確かめる。自社サイトに載せる。" tone="white">
+      <ol className="grid border-2 border-sumi md:grid-cols-3">
+        {STEPS.map((s, i) => (
+          <li key={s.title} className={`p-5 sm:p-6 ${i > 0 ? "border-t-2 border-sumi md:border-l-2 md:border-t-0" : ""}`}>
+            <p className="flex items-baseline justify-between">
+              <span className={`${num} text-4xl font-bold text-indigo`}>0{i + 1}</span>
+              <span className={`px-2 py-0.5 text-xs font-bold ${s.who === "社長" ? "bg-sumi text-paper" : "border border-sumi"}`}>{s.who}</span>
             </p>
-          )}
-        </Reveal>
-      </div>
-    </section>
+            <h3 className={`${kaku} mt-2 text-xl font-black`}>{s.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 }
 
-const STEPS: { mood: ShioriMood; title: string; text: string; tag: string }[] = [
-  { mood: "ask", title: "しおりの質問に答える", text: "話すように答えるだけ。うまく書こうとしなくて大丈夫です。わからない質問は飛ばせます。", tag: "あなた" },
-  { mood: "think", title: "AIが記事にまとめる", text: "あなたの答えから、AIに紹介されやすく、読んだ人に伝わる記事をつくります。AIOのチェックもおまかせ。", tag: "AIにおまかせ" },
-  { mood: "jersey-done", title: "ブログに載せる", text: "載せ方も1ステップずつ案内します。載せたらスタンプがもらえます！", tag: "あなた" },
-];
-
-function ThreeSteps() {
+/** 月額に含まれるもの。いまできることだけを書く */
+function Included({ total, industries }: { total: number; industries: number }) {
+  const rows: [string, string][] = [
+    ["記事", `毎月1本。案内役の質問、AIによる記事づくり、AIOのチェック（${AIO_CHECK_LIST.length}項目）まで`],
+    ["確認・修正の機能", "社長が画面の上で読んで、直せます。足りない所は案内役が聞き返します"],
+    ["掲載手順の案内", "確かめた記事を、自社のホームページ（ブログ）にご自身で載せます。自動投稿ではありません。操作は画面で順に案内します"],
+    ["製造業の知識", `${industries}の業種の悩みや、発注する人の疑問など${total.toLocaleString()}件を公的機関・業界団体などの公開情報から集め、記事づくりの参考にしています`],
+    ["毎月のお知らせ", "AIの検索の変化を、公式に発表されたことだけでお伝えします（しおり通信・毎月1日）"],
+  ];
   return (
-    <section id="how" className="scroll-mt-24 bg-surface/60 py-12">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="むずかしいことはありません">やることは、3つだけ</SectionTitle>
-        </Reveal>
-        <ol className="grid gap-4 md:grid-cols-3">
-          {STEPS.map((s, i) => (
-            <li key={s.title}>
-              <Reveal delay={i * 0.12} className="card relative flex h-full flex-col items-center gap-2 pt-8 text-center">
-                <span className="absolute -top-4 left-1/2 grid h-10 w-10 -translate-x-1/2 place-items-center rounded-full border-4 border-canvas bg-brand text-lg font-black text-white">{i + 1}</span>
-                <Shiori mood={s.mood} className="h-28 w-auto" />
-                <span className={`rounded-full px-3 text-xs font-black ${s.tag === "あなた" ? "bg-brand-soft text-brand-dark" : "bg-sun-soft"}`}>{s.tag}</span>
-                <h3 className="text-xl font-black">{s.title}</h3>
-                <p className="text-muted">{s.text}</p>
-              </Reveal>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
+    <Section kicker="含まれるもの" title="月額に含まれるもの。">
+      <p className="mb-4 font-bold">AIが下書きをつくり、社長が確かめて直し、自社サイトに載せるサービスです。</p>
+      <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi bg-white text-sm sm:grid-cols-[11rem_1fr] sm:text-base">
+        {rows.map(([k, v], i) => (
+          <div key={k} className="contents">
+            <dt className={`px-4 py-3 font-bold text-sumi/70 ${i > 0 ? "border-t border-sumi/30" : ""}`}>{k}</dt>
+            <dd className={`border-l border-sumi/30 px-4 py-3 leading-relaxed ${i > 0 ? "border-t" : ""}`}>{v}</dd>
+          </div>
+        ))}
+      </dl>
+    </Section>
   );
 }
 
@@ -422,184 +345,154 @@ const STAMPS = [
   { icon: "✏️", title: "はじめての1本" },
   { icon: "🚀", title: "デビュー" },
   { icon: "🔍", title: "AIOチェック" },
+  { icon: "📚", title: "5本の書き手" },
   { icon: "🔥", title: "3か月つづけた" },
-  { icon: "🏆", title: "AIに紹介された" },
 ];
 
-/** 続けるのが楽しくなるしかけ（スタンプ帳・しおりが育つ）。見えたら1つずつスタンプが押される */
+/** 続けられる仕組み。枠の中は、実際の画面と同じ見た目 */
 function KeepGoing() {
   const [ref, seen] = useInView<HTMLDivElement>(0.3);
   const [n, setN] = useState(0);
   useEffect(() => {
     if (!seen || n >= 4) return;
-    const t = setTimeout(() => setN((x) => x + 1), n === 0 ? 400 : 650);
+    const t = setTimeout(() => setN((x) => x + 1), n === 0 ? 400 : 600);
     return () => clearTimeout(t);
   }, [seen, n]);
-  const level = Math.min(n, 4);
-
+  const guides = [
+    { id: "shiori", name: "しおり", note: "ちょっと厳しめの、頼れるお姉さん" },
+    { id: "gen", name: "源さん", note: "白髪まじりの、ベテラン職人" },
+    { id: "koyuki", name: "こゆき", note: "本物そっくりのオコジョ" },
+  ] as const;
   return (
-    <section className="py-12">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="ゲームみたいに続けられる">書くほど、楽しくなる</SectionTitle>
-        </Reveal>
-        <div ref={ref} className="grid gap-4 md:grid-cols-2">
-          <div className="card space-y-3">
-            <h3 className="flex items-center justify-between text-lg font-black">
-              🎖️ スタンプ帳
-              <span className="rounded-full bg-sun-soft px-3 text-sm">
-                {n} / {STAMPS.length} こ
-              </span>
-            </h3>
-            <ul className="grid grid-cols-3 gap-2">
-              {STAMPS.map((s, i) => {
-                const got = i < n;
-                return (
-                  <li key={s.title} className={`grid place-items-center gap-1 rounded-2xl border-2 p-2 text-center ${got ? "border-sun bg-sun-soft" : "border-dashed border-line"}`}>
-                    <span className={`grid h-12 w-12 place-items-center rounded-full text-2xl ${got ? "animate-stamp bg-surface shadow" : "bg-canvas opacity-40 grayscale"}`} aria-hidden>
-                      {s.icon}
-                    </span>
-                    <span className={`text-xs font-bold leading-tight ${got ? "" : "text-muted"}`}>{s.title}</span>
-                  </li>
-                );
-              })}
-            </ul>
-            <p className="text-sm text-muted">記事を書く、ブログに載せる、続ける。そのたびにスタンプが増えます。</p>
-          </div>
-          <div className="card space-y-3">
-            <h3 className="text-lg font-black">🌱 しおりが育つ</h3>
-            <div className="flex items-end gap-3">
-              <Shiori mood={level >= 4 ? "welldone" : "idea"} className="h-28 w-auto" />
-              <div className="min-w-0 flex-1 space-y-2 pb-2">
-                <p className="font-black">
-                  しおりの理解度 <span className="text-2xl text-brand">Lv.{level + 1}</span>
-                </p>
-                <div className="h-4 overflow-hidden rounded-full bg-canvas-deep" aria-hidden>
-                  <div className="h-full rounded-full bg-gradient-to-r from-brand to-sky transition-[width] duration-700 ease-[cubic-bezier(.3,1.4,.5,1)]" style={{ width: `${15 + level * 20}%` }} />
-                </div>
-                {level >= 4 && <p className="animate-stamp text-sm font-black text-brand-dark">⬆ レベルアップ！</p>}
-              </div>
-            </div>
-            <p className="text-sm text-muted">会社のことを教えるほど、しおりがあなたの会社にくわしくなり、記事がどんどん「あなたの会社らしく」なります。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/** 製造業に特化している理由（製造業の知識表から） */
-function ForMakers({ m }: { m: MfgShowcase }) {
-  const { counts, samples, industries, total } = m;
-  const stats: [string, number][] = [
-    ["発注する人の疑問", counts.question],
-    ["つまずく言葉のやさしい説明", counts.term],
-    ["買い手の探し方・決め方", counts.buyer],
-    ["製造業の悩み", counts.pain],
-    ["Webでうまくいったやり方", counts.success],
-    ["最近の動き", counts.trend],
-  ];
-  return (
-    <section className="py-12">
-      <div className="mx-auto max-w-5xl space-y-5 px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="製造業に特化しています">しおりは、ものづくりの現場を勉強しています</SectionTitle>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <p className="mx-auto max-w-3xl text-center text-muted">
-            公的機関や業界団体などの公開情報から、{industries}の業種の悩みや、発注する人の疑問を {total.toLocaleString()}件 集めて、AIに教えています。
-          </p>
-        </Reveal>
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {stats.map(([label, n], i) => (
-            <li key={label}>
-              <Reveal delay={i * 0.06} className="card h-full text-center">
-                <span className="block text-3xl font-black text-brand">{n}</span>
-                <span className="text-sm font-bold">{label}</span>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-        <Reveal delay={0.1}>
-          <p className="mb-2 text-center text-sm font-bold">お客様がよく抱く疑問の例</p>
-          <ul className="flex flex-wrap justify-center gap-2">
-            {samples.map((x) => (
-              <li key={x.id} className="rounded-full border-2 border-line bg-surface px-3 py-1 text-sm">
-                「{x.title}」
+    <Section kicker="続けられる仕組み" title="毎月1本を、ひとりで続けなくていい。" tone="white">
+      <div ref={ref} className="grid gap-6 md:grid-cols-2">
+        <figure className="border-2 border-sumi">
+          <figcaption className="border-b-2 border-sumi px-4 py-2 text-xs font-bold">画面の見本：案内役を選ぶ</figcaption>
+          <ul className={`${maru} grid grid-cols-3 gap-2 bg-canvas p-3`}>
+            {guides.map((g) => (
+              <li key={g.id} className="flex flex-col items-center rounded-2xl border-2 border-line bg-surface p-2 text-center">
+                <Shiori mood="joy" as={g.id} className="h-24 w-auto" />
+                <b className="mt-1">{g.name}</b>
+                <span className="text-xs leading-snug text-muted">{g.note}</span>
               </li>
             ))}
           </ul>
-        </Reveal>
+          <p className="px-4 py-3 text-sm leading-relaxed">話しやすい案内役を選べます。手が止まっているときは、案内役のほうから声をかけます。</p>
+        </figure>
+        <figure className="border-2 border-sumi">
+          <figcaption className="border-b-2 border-sumi px-4 py-2 text-xs font-bold">画面の見本：スタンプ帳</figcaption>
+          <ul className={`${maru} grid grid-cols-3 gap-2 bg-canvas p-3`}>
+            {STAMPS.map((s, i) => {
+              const got = i < n;
+              return (
+                <li key={s.title} className={`grid place-items-center gap-1 rounded-2xl border-2 p-2 text-center ${got ? "border-sun bg-sun-soft" : "border-dashed border-line bg-surface"}`}>
+                  <span className={`grid h-11 w-11 place-items-center rounded-full text-2xl ${got ? "animate-stamp bg-surface shadow" : "opacity-40 grayscale"}`} aria-hidden>
+                    {s.icon}
+                  </span>
+                  <span className={`text-xs font-bold leading-tight ${got ? "" : "text-muted"}`}>{s.title}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="px-4 py-3 text-sm leading-relaxed">答える、書く、載せる、続ける。そのたびにスタンプがたまり、書いた記事が帳面のように増えていきます。</p>
+        </figure>
       </div>
-    </section>
+    </Section>
   );
 }
 
-const FOR_YOU = [
-  { icon: "🔧", title: "ものづくりの会社のための", text: "ひとり親方から30人くらいの会社まで。現場の経験こそが、いちばんの材料です。" },
-  { icon: "🖱️", title: "パソコンが苦手でも大丈夫", text: "ボタンは大きく、やることは1つずつ。しおりが毎回となりで案内します。" },
-  { icon: "📝", title: "文章が苦手でも大丈夫", text: "質問に答えるだけ。文章はAIが整えます。あなたは読んで直すだけ。" },
-  { icon: "🙅", title: "うそは書きません", text: "AIが数字や実績をつくり話しないよう、あなたの答えだけで書きます。" },
-];
-
-function ForYou() {
+function Promises() {
   return (
-    <section className="bg-surface/60 py-12">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="安心してください">こんな方のためのサービスです</SectionTitle>
-        </Reveal>
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {FOR_YOU.map((f, i) => (
-            <li key={f.title}>
-              <Reveal delay={i * 0.08} className="card flex h-full items-start gap-3">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-soft text-2xl" aria-hidden>
-                  {f.icon}
-                </span>
-                <span>
-                  <b className="block text-lg">{f.title}</b>
-                  <span className="text-muted">{f.text}</span>
-                </span>
-              </Reveal>
-            </li>
+    <Section kicker="記事づくりの約束" title="頼む人に、正直な帳面を。">
+      <ol className="border-2 border-sumi bg-white">
+        {BRAND_PROMISES.map((p, i) => (
+          <li key={p.title} className="grid grid-cols-[3.25rem_1fr] border-b border-sumi/30 last:border-0 sm:grid-cols-[4.5rem_1fr]">
+            <span className={`${kaku} grid place-items-center border-r border-sumi/30 text-xl font-black text-indigo`}>{KANJI[i]}</span>
+            <div className="px-4 py-3.5">
+              <p className="font-black leading-snug">{p.title}</p>
+              <p className="mt-1 text-sm leading-relaxed text-sumi/80">{p.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p className="mt-4 text-sm leading-relaxed text-sumi/80">
+        AIの回答で紹介されることや、問い合わせ・受注が増えることは約束しません。考え方は
+        <Link href="/brand" className="mx-1 font-bold text-indigo underline underline-offset-4">
+          ブランドのページ
+        </Link>
+        にまとめています。
+      </p>
+    </Section>
+  );
+}
+
+/** 料金とお試し。条件は利用規約・特定商取引法の表記（src/lib/legal.ts）と同じにする */
+function Price() {
+  const rows: [string, string][] = [
+    ["料金", "月額50,000円（税抜。税込55,000円）。記事は毎月1本"],
+    ["お試し", "はじめての方は7日間無料。申し込みのときにクレジットカードを登録します"],
+    ["請求", "お試しが終わった日に初回を請求し、毎月自動で更新します。初めての請求の前の日にメールでお知らせします"],
+    ["解約", "マイページからいつでも。お試しのあいだに解約すれば、料金はかかりません"],
+    ["コタムのお客様", "招待制で、ご契約のあいだ無料です"],
+  ];
+  return (
+    <Section id="price" kicker="料金とお試し" title="料金と条件を、先にお伝えします。" tone="white">
+      <div className="grid gap-6 md:grid-cols-[1.4fr_1fr]">
+        <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi text-sm sm:grid-cols-[8.5rem_1fr] sm:text-base">
+          {rows.map(([k, v], i) => (
+            <div key={k} className="contents">
+              <dt className={`px-4 py-3 font-bold text-sumi/70 ${i > 0 ? "border-t border-sumi/30" : ""}`}>{k}</dt>
+              <dd className={`border-l border-sumi/30 px-4 py-3 leading-relaxed ${i > 0 ? "border-t" : ""} ${i === 0 ? "font-black" : ""}`}>{v}</dd>
+            </div>
           ))}
-        </ul>
+        </dl>
+        <div className="self-start border-2 border-sumi bg-paper p-5 md:p-6">
+          <p className="font-black">新規のお申し込みは、準備中です。</p>
+          <p className="mt-2 text-sm leading-relaxed">受付を始めるときに、メールでお知らせします。それまでは、登録せずに記事づくりを試せます。</p>
+          <div id="notify" className="mt-4 scroll-mt-24">
+            <WaitlistForm source="price" />
+          </div>
+          <p className="mt-4 flex flex-col gap-2 text-sm font-bold">
+            <Link href={TRY_HREF} className="text-indigo underline underline-offset-4">
+              登録せずに、記事づくりを試す
+            </Link>
+            <Link href="/tokushoho" className="text-sumi/70 underline underline-offset-4">
+              特定商取引法にもとづく表記
+            </Link>
+          </p>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
 /** よくある質問。AIもこの形（質問と答え）を読みとりやすい */
 function Faq() {
   return (
-    <section id="faq" className="scroll-mt-24 py-12">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="気になることに、先にお答えします">よくある質問</SectionTitle>
-        </Reveal>
-        <ul className="space-y-3">
-          {FAQ.map((f, i) => (
-            <li key={f.q}>
-              <Reveal delay={Math.min(i, 4) * 0.05}>
-                <details className="group card p-0 open:border-brand">
-                  <summary className="flex cursor-pointer list-none items-center gap-3 px-4 py-3 font-black [&::-webkit-details-marker]:hidden">
-                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand text-sm text-white" aria-hidden>
-                      Q
-                    </span>
-                    <span className="flex-1">{f.q}</span>
-                    <span className="text-xl text-brand transition-transform group-open:rotate-45" aria-hidden>
-                      ＋
-                    </span>
-                  </summary>
-                  <p className="border-t border-line px-4 py-3 leading-relaxed">{f.a}</p>
-                </details>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <Section id="faq" kicker="よくある質問" title="気になることに、先にお答えします。">
+      <ul className="border-2 border-sumi bg-white">
+        {FAQ.map((f) => (
+          <li key={f.q} className="border-b border-sumi/30 last:border-0">
+            <details className="group">
+              <summary className="flex min-h-12 cursor-pointer list-none items-center gap-3 px-4 py-3 font-bold [&::-webkit-details-marker]:hidden">
+                <span className={`${num} text-indigo`} aria-hidden>
+                  Q
+                </span>
+                <span className="flex-1">{f.q}</span>
+                <span className="text-xl text-indigo group-open:hidden" aria-hidden>
+                  ＋
+                </span>
+                <span className="hidden text-xl text-indigo group-open:inline" aria-hidden>
+                  －
+                </span>
+              </summary>
+              <p className="border-t border-sumi/15 bg-paper px-4 py-3 leading-relaxed">{f.a}</p>
+            </details>
+          </li>
+        ))}
+      </ul>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd() }} />
-    </section>
+    </Section>
   );
 }
 
@@ -615,70 +508,45 @@ function faqJsonLd() {
 function ColumnTeaser() {
   const list = COLUMNS.slice(0, 3);
   return (
-    <section className="bg-surface/60 py-12">
+    <section className="border-t border-sumi/15 py-12">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <Reveal>
-          <SectionTitle kicker="むずかしい言葉なしで">AIOの読みもの</SectionTitle>
-        </Reveal>
-        <ul className="grid gap-3 md:grid-cols-3">
+        <div className="flex items-baseline justify-between gap-3">
+          <h2 className={`${kaku} text-xl font-black`}>AIOの読みもの</h2>
+          <Link href="/column" className="text-sm font-bold text-indigo underline underline-offset-4">
+            すべて見る
+          </Link>
+        </div>
+        <ul className="mt-4 grid border-t-2 border-sumi md:grid-cols-3">
           {list.map((c, i) => (
-            <li key={c.slug}>
-              <Reveal delay={i * 0.08} className="h-full">
-                <Link href={`/column/${c.slug}`} className="card flex h-full flex-col gap-2 transition-transform hover:-translate-y-1">
-                  <span className="text-3xl" aria-hidden>
-                    {c.icon}
-                  </span>
-                  <b className="leading-snug">{c.title}</b>
-                  <span className="text-sm text-muted">{c.lead}</span>
-                  <span className="mt-auto text-sm font-bold text-brand-dark">読む →</span>
-                </Link>
-              </Reveal>
+            <li key={c.slug} className={`border-b border-sumi/30 ${i > 0 ? "md:border-l" : ""}`}>
+              <Link href={`/column/${c.slug}`} className="block h-full p-4 hover:bg-white">
+                <b className="leading-snug">{c.title}</b>
+                <span className="mt-1 block text-sm text-sumi/75">{c.lead}</span>
+              </Link>
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-center">
-          <Link href="/column" className="font-bold text-brand-dark underline">
-            読みものをすべて見る
-          </Link>
-        </p>
       </div>
     </section>
   );
 }
 
-function FinalCall({ startHref, startLabel, signedIn }: { startHref: string; startLabel: string; signedIn: boolean }) {
+function FinalCall({ signedIn, href }: { signedIn: boolean; href: string }) {
   return (
-    <section className="py-12">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <Reveal className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand to-[#4f8ff0] p-6 text-white shadow-[0_8px_0_var(--color-brand-dark)] sm:p-10">
-          <span className="absolute -right-10 -top-10 h-40 w-40 animate-blob bg-white/10" aria-hidden />
-          <div className="relative grid items-end gap-4 sm:grid-cols-[auto_1fr]">
-            <Shiori mood="bow" className="mx-auto h-36 w-auto sm:h-48" />
-            <div className="space-y-4">
-              <h2 className="text-2xl font-black leading-snug sm:text-3xl">
-                さあ、AIに選ばれて、
-                <br className="sm:hidden" />
-                お客様に選ばれる会社になろう！
-              </h2>
-              <p className="font-bold text-white/90">まずは、しおりの質問に3つ答えるところから。最初のスタンプがもらえます。</p>
-              <Link href={startHref} className="btn min-h-14 border-sun bg-sun px-7 text-lg text-ink shadow-[0_4px_0_var(--color-sun-dark)] hover:-translate-y-0.5">
-                {startLabel}
-                <span className="inline-block animate-nudge" aria-hidden>
-                  →
-                </span>
-              </Link>
-              {!signedIn && (
-                <p className="text-sm text-white/85">
-                  招待メールが届いていない方は、コタムの担当者にお声がけください。
-                  <br />
-                  <Link href="/try" className="font-bold text-white underline">
-                    まずは30秒でためしてみる →
-                  </Link>
-                </p>
-              )}
-            </div>
+    <section className="bg-indigo py-14 text-paper sm:py-[72px]">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        <div>
+          <p className="text-sm font-bold text-paper/80">{BRAND_LINE}</p>
+          <h2 className={`${kaku} mt-2 text-[1.6rem] font-black leading-snug sm:text-4xl`}>
+            <span className="inline-block">まずは、仕事の話を</span>
+            <span className="inline-block">1つ聞かせてください。</span>
+          </h2>
+          <p className="mt-3 max-w-xl leading-relaxed text-paper/90">最近うれしかった仕事を1つ書くと、その場で記事の書き出しができます。会社の名前・地域・仕事の3つも入れます。登録はいりません。</p>
+          <div className="mt-6 space-y-3">
+            <MainButton signedIn={signedIn} href={href} />
+            {!signedIn && <SubLinks dark />}
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

@@ -5,11 +5,12 @@ import { TryOut } from "./TryOut";
 
 export const metadata: Metadata = {
   robots: INDEX_ROBOTS,
-  title: `30秒でためす｜${SERVICE_NAME}`,
-  description: "あなたの会社がAIとお客様に選ばれる準備度を診断し、1問答えるとその場で記事の書き出しができます。",
+  title: `登録せずに、記事づくりを試す｜${SERVICE_NAME}`,
+  description: "最近うれしかった仕事を1つ書くと、その場で記事の書き出しができます。登録はいりません。診断つきの形でもためせます。",
 };
 
-/** 登録の前にためせるページ。ログインなしで見られる */
-export default function TryPage() {
-  return <TryOut />;
+/** 登録の前にためせるページ。ログインなしで見られる。?mode=quick は診断なしで1問だけ（入口ページから） */
+export default async function TryPage({ searchParams }: { searchParams: Promise<{ mode?: string }> }) {
+  const { mode } = await searchParams;
+  return <TryOut quick={mode === "quick"} />;
 }

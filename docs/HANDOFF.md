@@ -33,6 +33,13 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）入口ページの作り直し
+- ブランチ / コミット：claude/project-thread-1gko29（main ef69376 の上）
+- 変更点：田村さん「ブランドページとサービスサイトに乖離。登録してもらうのがゴール」→ GPT・Gemini・Claude で2回対話した合意案（/mnt/project-files/brand-book/lp-discussion.md）で /welcome を作り直し。外装はブランド（生成り・藍・角ゴ・罫線）、キャラと明るい青は「画面の見本」の枠とボタンだけ。成果の先取り（AIに選ばれた！）を外し、手順は「答える→確かめる→自社サイトに載せる」。主ボタン「登録せずに、記事づくりを試す」→ /try?mode=quick（会社のこと3項目＋1問）。料金と条件を掲載。新規受付の案内フォーム（/api/waitlist → signup_waitlist、管理 /admin/waitlist）。FAQの料金・公開の答えを規約にそろえた
+- 確認結果：lint・型検査・テストが通過。375px・1280px を目視。3者の採点（3回目）GPT 9.6・Gemini 9.9・Claude 9.5（記録 /mnt/project-files/brand-book/council/w*）
+- 未完了：supabase/migrations/20261107150000_signup_waitlist.sql を本番に流す（流してから公開。表が無いとフォームは「送信できませんでした」になる）。SERVICE_PROMISE（AIに選ばれて…）を替えるかは田村さんの判断。カード先登録のお試しを開けたら受付フォームを申し込みに替える
+- 次の作業と担当：表を本番に作る → 送信を確かめる → CC がマージ。案内を送るときは /admin/waitlist から
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）ブランド第3版
 - ブランチ / コミット：claude/project-thread-1gko29（main 8e62bd1 の上）
 - 変更点：田村さん「3者が9.5点になるまで」→ 言葉を3回（GPT 9.5・Gemini 9.7・Claude 9.5）、ロゴとページを3回（3回目 GPT 9.5・Gemini 9.7・Claude 9.5）練り直した。ひとこと「いつもの仕事を、誰かの頼む理由に。」、芯・ボディコピー・「帳」の定義・約束の見出し（src/lib/brandBook.ts、docs/BRAND.md）。カラー反転ロゴを「生成り＋しおりだけ真鍮」に、縦組みの墨1色を追加、最小サイズ160px、SNS画像を作り直し、/brand の本文を角ゴシックに、フッターの一行をひとことに
