@@ -10,6 +10,7 @@ import { isOrgReady } from "@/lib/selectors";
 import { nearQueries } from "@/lib/growth/nearQueries";
 import { ShioriTalk } from "@/components/talk";
 import { GuideName, GuideText } from "@/components/useGuide";
+import { PhotoStart } from "@/components/PhotoStart";
 
 export default function NewArticlePage() {
   const { db, user, api, month } = useStore();
@@ -84,6 +85,8 @@ export default function NewArticlePage() {
         )}
       </div>
       {error && <Notice tone="danger" title={error} />}
+
+      <PhotoStart orgId={orgId} busy={busy} onPick={(t) => start({ customTheme: { title: t.title, readerProblem: t.readerProblem } })} />
 
       {near.length > 0 && (
         <section className="card animate-rise space-y-3 border-2 border-sun" aria-labelledby="near-heading">

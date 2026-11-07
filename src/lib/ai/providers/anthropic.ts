@@ -28,7 +28,14 @@ export function createAnthropicProvider(opts: AnthropicOptions): AiProvider {
             model: quality === "finish" ? opts.finishModel : opts.draftModel,
             max_tokens: req.maxOutputTokens,
             system: req.system,
-            messages: [{ role: "user", content: req.user }],
+            messages: [
+              {
+                role: "user",
+                content: req.images?.length
+                  ? [...req.images.map((i) => ({ type: "image" as const, source: { type: "base64" as const, media_type: i.mimeType, data: i.data } })), { type: "text" as const, text: req.user }]
+                  : req.user,
+              },
+            ],
             output_config: { effort: EFFORT[quality] },
             // 安全側の判定で断られたとき、サーバー側で既定の代替モデルに回す
             betas: ["server-side-fallback-2026-07-01"],

@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-photo-start",
+    date: "2026-11-07",
+    title: "現場の写真1枚から、記事を書き始められるようになりました",
+    body: "「新しい記事を書く」で写真を選ぶと、しおりが写真を見て、書けるテーマを3つ考えます。写真は保存しません。",
+    href: "/articles/new",
+    linkLabel: "写真から始める",
+  },
+  {
     id: "2026-11-07-first-ai",
     date: "2026-11-07",
     title: "ふだん使っているAIから、会社のことを取り込めるようになりました",

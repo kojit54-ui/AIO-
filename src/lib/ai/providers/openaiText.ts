@@ -44,7 +44,9 @@ export function createOpenAiTextProvider(opts: OpenAiTextOptions): AiProvider {
           body: JSON.stringify({
             model: quality === "finish" ? opts.finishModel : opts.draftModel,
             instructions: req.system,
-            input: withJsonHint(req.user),
+            input: req.images?.length
+              ? [{ role: "user", content: [...req.images.map((i) => ({ type: "input_image", image_url: `data:${i.mimeType};base64,${i.data}` })), { type: "input_text", text: withJsonHint(req.user) }] }]
+              : withJsonHint(req.user),
             max_output_tokens: req.maxOutputTokens,
             reasoning: { effort: EFFORT[quality] },
             text: { format: { type: "json_object" } },

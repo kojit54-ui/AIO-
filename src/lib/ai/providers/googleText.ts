@@ -28,7 +28,7 @@ export function createGoogleTextProvider(opts: GoogleTextOptions): AiProvider {
       try {
         res = await generateContent({
           model: quality === "finish" ? opts.finishModel : opts.draftModel,
-          contents: req.user,
+          contents: req.images?.length ? [{ role: "user", parts: [...req.images.map((i) => ({ inlineData: { mimeType: i.mimeType, data: i.data } })), { text: req.user }] }] : req.user,
           config: {
             systemInstruction: req.system,
             maxOutputTokens: req.maxOutputTokens,
