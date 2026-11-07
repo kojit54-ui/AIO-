@@ -7,6 +7,7 @@ import { useStore } from "@/mock/store";
 import { EmptyState, PageSkeleton } from "./ui";
 import { SERVICE_NAME } from "@/lib/brand";
 import { isLegalPath } from "@/lib/legal";
+import { isMarketingPath } from "@/lib/publicPages";
 
 /** ログイン必須の画面を包む。未ログインならログイン画面へ */
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -14,7 +15,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   // ログイン・招待・認証の処理と、全社管理者の画面は架空データのログインを使わない
-  const isLogin = isLegalPath(pathname) || pathname === "/login" || pathname === "/welcome" || pathname === "/try" || pathname === "/shiori" || pathname.startsWith("/invite/") || pathname.startsWith("/auth/") || pathname.startsWith("/admin/");
+  const isLogin = isLegalPath(pathname) || isMarketingPath(pathname) || pathname === "/login" || pathname.startsWith("/invite/") || pathname.startsWith("/auth/") || pathname.startsWith("/admin/");
   const isLegal = isLegalPath(pathname);
   // 新しい流れの画面試作は、ログインせずに架空の会社で見られる（データはブラウザの中だけ）
   const isPrototype = pathname === "/prototype" || pathname.startsWith("/prototype/");
@@ -30,7 +31,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   const demo = mode === "mock" ? <DemoPanel /> : null;
   if (isPrototype) return <>{children}</>;
-  if (pathname === "/welcome" || pathname === "/try" || pathname === "/shiori" || isLegal) return <>{children}</>;
+  if (isMarketingPath(pathname) || isLegal) return <>{children}</>;
   if (isLogin) return <>{children}{demo}</>;
   if (ready && !user && loadError) {
     return (

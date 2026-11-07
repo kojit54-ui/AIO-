@@ -33,6 +33,13 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）入口ページとLPを充実させる
+- ブランチ：claude/project-thread-g4swqz
+- 変更点：/welcome の「お客様は、AIに相談しはじめました」を2カラムから1列に（田村さん「2カラムが見づらい、文字が多い」）。上のメニュー・下の案内（src/components/site.tsx）、よくある質問（src/lib/faq.ts、FAQPage の構造化データ）、AIOの読みもの（/column と /column/[slug]、記事は src/lib/column.ts、Article と BreadcrumbList の構造化データ）。/welcome・/column・/try・/shiori だけ検索に出す（src/lib/publicPages.ts の INDEX_ROBOTS）、robots.txt と sitemap.xml を追加
+- 確認結果：lint・型検査・単体テスト、375px・1280pxで横にはみ出さない（画面は /mnt/project-files/lp-2026-11-07/）
+- 未完了：記事をWordPressで出すか、このアプリの中で続けるかは田村さんの選択待ち。ほかのサービスサイトはクラウド環境の通信許可外で見られなかった
+- 次の作業：本番で https://aio-erabare.jp/sitemap.xml を Search Console に送る。読みものを増やす（このサービス自身で書く）
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）メールの6桁の番号でログイン
 - 変更点：src/lib/auth/loginCode.ts（on/off、全角・すきまを直す）、login/actions.ts の verifyLoginCode（verifyOtp type=email）、メールを送ったあとの画面に番号の入力欄
 - 確認結果：lint・型検査・単体テスト、375pxの表示（番号が足りないときの案内）

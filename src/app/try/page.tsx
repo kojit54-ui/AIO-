@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { INDEX_ROBOTS } from "@/lib/publicPages";
 import { SERVICE_NAME } from "@/lib/brand";
 import { TryOut } from "./TryOut";
 
 export const metadata: Metadata = {
+  robots: INDEX_ROBOTS,
   title: `30秒でためす｜${SERVICE_NAME}`,
   description: "あなたの会社がAIとお客様に選ばれる準備度を診断し、1問答えるとその場で記事の書き出しができます。",
 };
