@@ -6,8 +6,10 @@
 
 | 環境 | プロジェクト名 | 場所 | URL | 作成日 |
 |---|---|---|---|---|
-| 検証 | cotam-blog-staging（組織 co-tam、Free） | South Asia (Mumbai) | https://yxpteazaakcpyfvuikap.supabase.co | 2026-10-22 |
-| 本番 | 未作成。Northeast Asia (Tokyo) で作る | | | |
+| 本番（aio-erabare.jp） | aio-erabare-tokyo（組織 co-tam、Pro） | Northeast Asia (Tokyo) | https://qzmoasfypcjkyfiwqjan.supabase.co | 2026-11-07 |
+| 旧（止める） | cotam-blog-staging | South Asia (Mumbai) | https://yxpteazaakcpyfvuikap.supabase.co | 2026-10-22 |
+
+2026-11-07 にムンバイから東京へ引っ越した。表・関数は supabase/migrations/ を順に流し（後半は supabase/move/tokyo_rest.sql にまとめた）、データは表ごとに写して、両方の中身のハッシュ（md5）が一致することを確かめた。記事の画像（Storage）は写していないので、作り直すと出る。ログインの設定（SMTP・Magic Linkの文面・URL・Google・Email OTP Length・新規登録オフ）は東京側に入れ直した。Google のリダイレクト URI に https://qzmoasfypcjkyfiwqjan.supabase.co/auth/v1/callback を足した。
 
 検証用のアプリは Vercel のプロジェクト aio（kojit54-ui's projects、Hobby）で、https://aio-erabare.jp （2026-11-04 から。前の https://aio-roan.vercel.app も開ける）。main に入ると自動で公開される。
 環境変数は NEXT_PUBLIC_SUPABASE_URL・NEXT_PUBLIC_SUPABASE_ANON_KEY・SUPABASE_SERVICE_ROLE_KEY の3つ（2026-10-22）。AIのキーは未設定のため、生成はサンプルになる。

@@ -16,6 +16,14 @@ export interface AppUpdate {
 
 export const UPDATES: AppUpdate[] = [
   {
+    id: "2026-11-07-tokyo",
+    date: "2026-11-07",
+    title: "預かったデータを日本（東京）に置くようになりました",
+    body: "答えや記事などのデータの保存場所を、インドから日本（東京）に移しました。画面の使い方は変わりません。プライバシーポリシーも直しました。",
+    href: "/privacy",
+    linkLabel: "プライバシーポリシーを見る",
+  },
+  {
     id: "2026-11-07-legal",
     date: "2026-11-07",
     title: "利用規約とプライバシーポリシーができました",
