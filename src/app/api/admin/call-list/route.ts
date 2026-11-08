@@ -18,7 +18,9 @@ export interface CallListItem {
   /** 最後に使ってから何日か（null＝まだ使っていない、undefined＝分からない） */
   daysSinceActive?: number | null;
   /** 最後に声をかけた日時とひとこと（記録の表が無いときは出さない） */
-  lastContact?: { at: string; note: string } | null;
+  lastContact?: { at: string; note: string; nextOn?: string | null } | null;
+  /** 会社ごとの連絡先（担当者名・電話番号。表がまだ無ければ出さない） */
+  info?: { name: string; phone: string } | null;
   /** その会社のお客様のメールアドレス（すぐ連絡できるように。全社管理者にだけ返す） */
   emails?: string[];
 }
@@ -44,7 +46,7 @@ export async function GET() {
   // 声をかけた記録（supabase/migrations/20261108150000_org_contacts.sql）。表がまだ無ければ記録の欄を出さない
   const { data: contacts, error } = await createAdminSupabase()
     .from("org_contacts")
-    .select("organization_id, note, created_at")
+    .select("organization_id, note, created_at, next_contact_on")
     .in("organization_id", orgs.length ? orgs.map((o) => o.id) : ["00000000-0000-0000-0000-000000000000"])
     .order("created_at", { ascending: false })
     .limit(500);
@@ -52,7 +54,19 @@ export async function GET() {
   if (contactsEnabled) {
     for (const o of orgs) {
       const c = contacts?.find((x) => x.organization_id === o.id);
-      o.lastContact = c ? { at: c.created_at, note: c.note } : null;
+      o.lastContact = c ? { at: c.created_at, note: c.note, nextOn: c.next_contact_on ?? null } : null;
+    }
+  }
+  if (orgs.length) {
+    const { data: infos, error: infoError } = await createAdminSupabase()
+      .from("org_contact_info")
+      .select("organization_id, contact_name, phone")
+      .in("organization_id", orgs.map((o) => o.id));
+    if (!infoError) {
+      for (const o of orgs) {
+        const i = infos?.find((x) => x.organization_id === o.id);
+        o.info = i ? { name: i.contact_name, phone: i.phone } : null;
+      }
     }
   }
   // 連絡先（2026-11-08 管理者役「誰に連絡すればいいか画面で分からない」）
