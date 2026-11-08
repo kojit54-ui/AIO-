@@ -105,6 +105,17 @@ export default async function AdminTrialPage() {
           </form>
         </div>
         <p className="text-sm text-muted">止めても /try は見本で最後まで動きます。</p>
+        {/* 動いていても、手当てのいる記録があれば上でも知らせる（2026-11-08 管理者役「下まで読まないと分からない」） */}
+        {(() => {
+          const todo = groupTrialReasons(reasons).filter((g) => g.next && !g.next.startsWith("ためした人の入力"));
+          if (todo.length === 0) return null;
+          const last = todo.map((g) => lastAt.get(g.label) ?? "").sort().at(-1);
+          return (
+            <a href="#reasons" className="block rounded-xl bg-warn-soft px-3 py-2 text-sm font-bold text-warn underline-offset-4 hover:underline">
+              手当てのいる記録が{todo.length}種類あります{last ? `（最後：${fmtAt(last)}）` : ""}。下の「見本に切り替えた理由」を見る →
+            </a>
+          );
+        })()}
       </section>
 
       <section className="grid gap-3 sm:grid-cols-3">
@@ -139,7 +150,7 @@ export default async function AdminTrialPage() {
       </section>
 
       <section className="card space-y-2">
-        <h2 className="font-black">今月、見本に切り替えた理由</h2>
+        <h2 id="reasons" className="scroll-mt-4 font-black">今月、見本に切り替えた理由</h2>
         {reasons.length === 0 ? (
           <p className="text-muted">ありません。</p>
         ) : (

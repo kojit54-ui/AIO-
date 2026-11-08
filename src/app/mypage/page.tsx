@@ -417,7 +417,7 @@ function GuideCard() {
       {guide.outfits.length > 0 && (
         <div className="space-y-2">
           <h3 className="text-sm font-black">{guide.name}の服</h3>
-          <div role="radiogroup" aria-label={`${guide.name}の服`} className="flex gap-2 overflow-x-auto pb-1">
+          <div role="radiogroup" aria-label={`${guide.name}の服`} className="flex flex-wrap gap-2 pb-1">
             {guide.outfits.map((o, i) => {
               const on = pickedOutfit === o.id || (!pickedOutfit && i === 0);
               return (

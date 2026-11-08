@@ -58,6 +58,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <span className="block truncate text-lg font-black">{org ? org.name : "コタム管理画面"}</span>
             </span>
           </Link>
+          {/* マイページでは、上のマイページとログアウトを出さない（ページの下にログアウトがある。2026-11-08 お客様役「押し間違えてログアウトしそう」） */}
+          {pathname !== "/mypage" && (
           <div className="flex items-center gap-3 text-sm">
             <Link
               href="/mypage"
@@ -78,6 +80,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               ログアウト
             </button>
           </div>
+          )}
         </div>
       </header>
       {children}
