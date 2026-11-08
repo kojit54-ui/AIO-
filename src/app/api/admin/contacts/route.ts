@@ -7,6 +7,21 @@ import { createServerSupabase } from "@/lib/supabase/server";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
+/** 会社ごとの、最後に声をかけた記録（利用金額と利用頻度の画面で使う） */
+export async function GET() {
+  if (!isSupabaseConfigured()) return NextResponse.json({ error: "not_configured" }, { status: 404 });
+  const supabase = await createServerSupabase();
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const { data: isAdmin } = await supabase.from("app_admins").select("user_id").eq("user_id", auth.user.id).maybeSingle();
+  if (!isAdmin) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  const { data, error } = await createAdminSupabase().from("org_contacts").select("organization_id, note, created_at").order("created_at", { ascending: false }).limit(1000);
+  if (error) return NextResponse.json({ error: "unavailable" }, { status: 503 });
+  const contacts: Record<string, { at: string; note: string }> = {};
+  for (const c of data ?? []) if (!contacts[c.organization_id]) contacts[c.organization_id] = { at: c.created_at, note: c.note };
+  return NextResponse.json({ contacts }, { headers: { "cache-control": "no-store" } });
+}
+
 export async function POST(request: Request) {
   if (!isSupabaseConfigured()) return NextResponse.json({ error: "not_configured" }, { status: 404 });
   const supabase = await createServerSupabase();

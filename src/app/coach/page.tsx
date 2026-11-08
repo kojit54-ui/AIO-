@@ -64,8 +64,19 @@ export default function CoachHome() {
       return { org: o, reasons };
     })
     .filter((x) => x.reasons.length > 0)
-    .map((x) => ({ id: x.org.id, name: x.org.name, reasons: x.reasons, daysSinceActive: null as number | null }));
-  const calls: CallListItem[] = serverCalls ?? callList;
+    .map((x) => ({ id: x.org.id, name: x.org.name, reasons: x.reasons }));
+  // AIOのチェックで、お客様の答え待ちがある会社も「声をかけたい」に入れる（理由に付ける）
+  const waitingOrgIds = new Set(latestChecks.filter((c) => c.status !== "done").map((c) => c.organizationId));
+  const withChecks = (list: CallListItem[]): CallListItem[] => {
+    const out = list.map((x) => (waitingOrgIds.has(x.id) ? { ...x, reasons: [...x.reasons, "AIOのチェックの答え待ち"] } : x));
+    for (const id of waitingOrgIds) {
+      const org = orgs.find((o) => o.id === id);
+      if (org && !out.some((x) => x.id === id)) out.push({ id, name: org.name, reasons: ["AIOのチェックの答え待ち"] });
+    }
+    // 理由の多い会社から
+    return out.sort((x, y) => y.reasons.length - x.reasons.length);
+  };
+  const calls: CallListItem[] = withChecks(serverCalls ?? callList);
   const commentedAfter = (articleId: string, at: string) => db.reviews.some((r) => r.articleId === articleId && r.createdAt >= at);
 
   return (
@@ -108,7 +119,7 @@ export default function CoachHome() {
                       {r}
                     </span>
                   ))}
-                  {serverCalls && (
+                  {serverCalls && daysSinceActive !== undefined && (
                     <span className="text-xs text-muted">最後に使った日：{daysSinceActive === null ? "まだ" : daysSinceActive === 0 ? "今日" : `${daysSinceActive}日前`}</span>
                   )}
                   <span className="ml-auto text-sm font-bold text-brand">
