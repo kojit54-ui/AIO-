@@ -61,6 +61,10 @@ describe("読みものの写真", () => {
     }
   });
 
+  it("見出しごとに1枚、写真かしおりのイラストがある（2026-11-08 田村さん「1見出し1画像を目標」）", () => {
+    for (const c of COLUMNS) for (const s of c.sections) expect(s.photo, `${c.slug}「${s.h}」に絵がない`).toBeTruthy();
+  });
+
   it("しおりのイラストは、何を表すかと、しおりが何をしているかまで alt に書く（2026-11-08 田村さん「altにもしっかり情報を」）", () => {
     const illustrations = COLUMNS.flatMap((c) => [c.hero, ...c.sections.map((s) => s.photo)]).filter((p) => !!p?.illustration);
     expect(illustrations.length).toBeGreaterThan(0);
