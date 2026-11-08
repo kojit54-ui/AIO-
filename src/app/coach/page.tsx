@@ -27,6 +27,19 @@ export default function CoachHome() {
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
     .filter((c, i, all) => all.findIndex((x) => x.articleId === c.articleId) === i)
     .slice(0, 10);
+  // 声をかけたい会社（2026-11-08 管理者役の採点「声をかける順がトップで分からない」）
+  const callList = orgs
+    .map((o) => {
+      const articles = db.articles.filter((a) => a.organizationId === o.id);
+      const ids = new Set(articles.map((a) => a.id));
+      const lastWrite = db.versions.filter((v) => ids.has(v.articleId) && v.body.length > 0).reduce((m, v) => (v.createdAt > m ? v.createdAt : m), "");
+      const reasons: string[] = [];
+      if (!isOrgReady(db, o.id)) reasons.push("初期設定が途中");
+      else if (!lastWrite || lastWrite.slice(0, 7) < month) reasons.push("今月はまだ書いていない");
+      if (articles.length > 0 && !articles.some((a) => a.status === "published")) reasons.push("記事をまだ1本も載せていない");
+      return { org: o, reasons };
+    })
+    .filter((x) => x.reasons.length > 0);
   const commentedAfter = (articleId: string, at: string) => db.reviews.some((r) => r.articleId === articleId && r.createdAt >= at);
 
   return (
@@ -46,6 +59,38 @@ export default function CoachHome() {
         </div>
         <Shiori mood={latestChecks.length > 0 ? "point" : "coffee"} className="hidden h-36 w-auto shrink-0 sm:block" />
       </div>
+
+      <section aria-labelledby="call-heading" className="card space-y-3 border-warn">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 id="call-heading" className="text-lg font-bold">
+            声をかけたい会社 {callList.length}社
+          </h2>
+          <Link href="/admin/usage" className="text-sm font-bold text-brand-dark underline">
+            費用と使った日も見る →
+          </Link>
+        </div>
+        {callList.length === 0 ? (
+          <p className="text-muted">いまはありません。どの会社も進んでいます。</p>
+        ) : (
+          <ul className="space-y-2">
+            {callList.map(({ org, reasons }) => (
+              <li key={org.id}>
+                <Link href={`/coach/orgs/${org.id}`} className="group flex flex-wrap items-center gap-2 rounded-2xl bg-canvas px-4 py-2 hover:bg-brand-soft">
+                  <b className="mr-1">{org.name}</b>
+                  {reasons.map((r) => (
+                    <span key={r} className="rounded-full bg-warn-soft px-2.5 py-0.5 text-xs font-bold text-warn">
+                      {r}
+                    </span>
+                  ))}
+                  <span className="ml-auto text-sm font-bold text-brand">
+                    見る <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
 
       <section aria-labelledby="checks-heading">
         <h2 id="checks-heading" className="mb-3 text-lg font-bold">
@@ -139,6 +184,7 @@ export default function CoachHome() {
                       </span>
                     </span>
                   </span>
+                  <span className="mt-3 block text-sm font-bold text-brand">この会社の記事とやり取りを見る →</span>
                 </Link>
               </li>
             );
@@ -165,6 +211,7 @@ export default function CoachHome() {
                   <span className="flex items-center gap-3 text-sm">
                     <StatusBadge status={a.status} />
                     {a.publishedWithoutApproval && <span className="text-warn">未承認で公開</span>}
+                    <span className="font-bold text-brand">見る →</span>
                   </span>
                 </Link>
               </li>
