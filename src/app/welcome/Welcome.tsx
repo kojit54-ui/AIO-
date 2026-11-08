@@ -97,6 +97,26 @@ function SubLinks({ dark = false }: { dark?: boolean }) {
   );
 }
 
+/** しおりのひとこと（2026-11-08 3者の合意：枠の外で喋るのは、しおり1人・5か所まで。吹き出しは見えたときに1回だけ出る） */
+function Says({ text, big = false }: { text: string; big?: boolean }) {
+  const [ref, seen] = useInView<HTMLDivElement>(0.6);
+  return (
+    <div ref={ref} className="flex items-end gap-2.5">
+      {/* 胸から上だけを見せる */}
+      <span className={`block shrink-0 overflow-hidden ${big ? "h-[72px] sm:h-36" : "h-14 sm:h-16"}`} aria-hidden>
+        <Shiori mood="ask" as="shiori" className={`${big ? "h-[180px] sm:h-[360px]" : "h-[140px] sm:h-[160px]"} w-auto max-w-none`} />
+      </span>
+      <p
+        className={`${maru} relative mb-1.5 w-fit max-w-md rounded-2xl rounded-bl-sm border-2 border-brand-soft bg-white px-4 py-2.5 font-bold leading-relaxed text-ink shadow-sm ${big ? "text-[0.95rem] sm:text-base" : "text-sm sm:text-[0.95rem]"} ${seen ? "animate-bubble" : "opacity-0"}`}
+        style={{ transformOrigin: "left bottom" }}
+      >
+        <span className="sr-only">しおり：</span>
+        {text}
+      </p>
+    </div>
+  );
+}
+
 function MainButton({ signedIn, href }: { signedIn: boolean; href: string }) {
   if (signedIn)
     return (
@@ -105,8 +125,8 @@ function MainButton({ signedIn, href }: { signedIn: boolean; href: string }) {
       </Link>
     );
   return (
-    <Link href={TRY_HREF} className="btn-primary min-h-14 w-full px-7 text-lg sm:w-auto">
-      登録せずに、記事づくりを試す <span aria-hidden>→</span>
+    <Link href={TRY_HREF} className="btn-primary min-h-14 w-full px-4 text-[1.05rem] sm:w-auto sm:px-7 sm:text-lg">
+      登録せずに、記事の書き出しを試す <span aria-hidden>→</span>
     </Link>
   );
 }
@@ -114,10 +134,10 @@ function MainButton({ signedIn, href }: { signedIn: boolean; href: string }) {
 /** スマホでは「見出し→ボタン→見本→ほかの入口と料金」の順。PCは左に文、右に見本 */
 function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
   return (
-    <section className="mx-auto grid max-w-6xl gap-x-10 gap-y-7 px-4 pb-14 pt-6 sm:px-6 md:grid-cols-[1.05fr_1fr] md:pb-20 md:pt-14">
+    <section className="mx-auto grid max-w-6xl gap-x-10 gap-y-7 px-4 pb-14 pt-4 sm:px-6 md:grid-cols-[1.05fr_1fr] md:pb-20 md:pt-14">
       <div className="md:self-end">
         <p className="inline-block border-b-2 border-sumi pb-1 text-sm font-bold">製造業の一人親方〜30人の会社へ</p>
-        <h1 className={`${kaku} mt-5 text-[2rem] font-black leading-[1.35] sm:text-[3.1rem]`}>
+        <h1 className={`${kaku} mt-4 text-[2rem] font-black leading-[1.35] sm:text-[3.1rem]`}>
           <span className="block">仕事の話に</span>
           <span className="block">答えるだけ。</span>
           <span className="mt-1 block text-[1.55rem] leading-snug sm:text-[2.3rem]">
@@ -125,16 +145,21 @@ function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
             <span className="inline-block">自社サイトの記事に。</span>
           </span>
         </h1>
-        <p className="mt-5 max-w-xl text-base leading-[1.7] sm:text-[1.05rem] sm:leading-loose">
+        <p className="mt-3 max-w-xl text-base leading-[1.7] sm:mt-5 sm:text-[1.05rem] sm:leading-loose">
           <span className="inline-block">案内役の質問に答えると、</span>
           <span className="inline-block">AIが記事の下書きに。</span>
           <span className="inline-block">確かめて直し、</span>
           <span className="inline-block">自社サイトで公開します。</span>
         </p>
-        <p className="mt-3 text-sm font-bold text-sumi/70">{BRAND_LINE}</p>
-        <div className="mt-6">
+        <p className="mt-2 text-sm font-bold text-sumi/70 sm:mt-3">{BRAND_LINE}</p>
+        {!signedIn && (
+          <div className="mt-3 sm:mt-5">
+            <Says big text="パソコンが苦手でも大丈夫。いつもの言葉で、お仕事の話を聞かせてください。" />
+          </div>
+        )}
+        <div className="mt-4">
           <MainButton signedIn={signedIn} href={href} />
-          {!signedIn && <p className="mt-2 text-sm leading-[1.6] text-sumi/80">会社のこと3項目＋仕事の話1問で、記事の書き出しを試せます。</p>}
+          {!signedIn && <p className="mt-2 text-sm leading-[1.6] text-sumi/80">会社のこと3項目＋仕事の話1問で、記事の書き出しを試せます。対応する端末なら、声でも答えられます。</p>}
         </div>
       </div>
       <div className="md:col-start-2 md:row-span-2 md:row-start-1 md:self-center">
@@ -159,8 +184,8 @@ function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
 function SampleScreen() {
   const talk = BRAND_SAMPLE.talk.slice(2);
   return (
-    <figure className="border-2 border-sumi bg-white">
-      <figcaption className="flex items-center justify-between border-b-2 border-sumi px-4 py-2 text-xs font-bold">
+    <figure className="overflow-hidden rounded-2xl border border-sumi/25 bg-white shadow-[0_10px_30px_-12px_rgba(31,42,51,0.35)]">
+      <figcaption className="flex items-center justify-between border-b border-sumi/20 px-4 py-2 text-xs font-bold">
         <span>画面の見本</span>
         <span className="text-sumi/60">{BRAND_SAMPLE.company}</span>
       </figcaption>
@@ -187,14 +212,14 @@ function SampleScreen() {
         </p>
         <p className="mt-2 line-clamp-4 text-sm leading-relaxed">{BRAND_SAMPLE.article.body}</p>
       </div>
-      <div className="flex items-center gap-3 border-t-2 border-sumi px-4 py-2.5">
+      <div className="flex items-center gap-3 border-t border-sumi/20 px-4 py-2.5">
         <span className="flex shrink-0 -space-x-2" aria-hidden>
           {["shiori", "gen", "koyuki"].map((g) => (
             // eslint-disable-next-line @next/next/no-img-element -- 小さな固定の絵
             <img key={g} src={`/guide/${g}-face.webp`} width={192} height={192} alt="" className="h-9 w-9 rounded-full border-2 border-white bg-sky object-cover" />
           ))}
         </span>
-        <span className="text-sm font-bold">案内役は3人から選べます</span>
+        <span className="text-sm font-bold">案内役は3タイプから選べます</span>
       </div>
     </figure>
   );
@@ -370,6 +395,9 @@ function StrengthBook() {
 function Steps() {
   return (
     <Section id="how" kicker="毎月やること" title="答える。確かめる。自社サイトに載せる。" tone="white">
+      <div className="mb-5">
+        <Says text="専門の言葉のままで大丈夫。聞き足りない所は、私から聞きますね。" />
+      </div>
       <ol className="grid border-2 border-sumi md:grid-cols-3">
         {STEPS.map((s, i) => (
           <li key={s.title} className={`p-5 sm:p-6 ${i > 0 ? "border-t-2 border-sumi md:border-l-2 md:border-t-0" : ""}`}>
@@ -382,6 +410,9 @@ function Steps() {
           </li>
         ))}
       </ol>
+      <div className="mt-5 flex md:justify-end">
+        <Says text="ホームページへの載せ方も、画面で1つずつ案内しますね。" />
+      </div>
     </Section>
   );
 }
@@ -519,13 +550,13 @@ function Price() {
         </dl>
         <div className="self-start border-2 border-sumi bg-paper p-5 md:p-6">
           <p className="font-black">新規のお申し込みは、準備中です。</p>
-          <p className="mt-2 text-sm leading-relaxed">受付を始めるときに、メールでお知らせします。それまでは、登録せずに記事づくりを試せます。</p>
+          <p className="mt-2 text-sm leading-relaxed">受付を始めるときに、メールでお知らせします。それまでは、登録せずに記事の書き出しを試せます。</p>
           <div id="notify" className="mt-4 scroll-mt-24">
             <WaitlistForm source="price" />
           </div>
           <p className="mt-4 flex flex-col gap-2 text-sm font-bold">
             <Link href={TRY_HREF} className="text-indigo underline underline-offset-4">
-              登録せずに、記事づくりを試す
+              登録せずに、記事の書き出しを試す
             </Link>
             <Link href="/tokushoho" className="text-sumi/70 underline underline-offset-4">
               特定商取引法にもとづく表記
@@ -613,7 +644,12 @@ function FinalCall({ signedIn, href }: { signedIn: boolean; href: string }) {
             <span className="inline-block">1つ聞かせてください。</span>
           </h2>
           <p className="mt-3 max-w-xl leading-relaxed text-paper/90">最近うれしかった仕事を1つ書くと、その場で記事の書き出しができます。会社の名前・地域・仕事の3つも入れます。登録はいりません。</p>
-          <div className="mt-6 space-y-3">
+          {!signedIn && (
+            <div className="mt-6">
+              <Says text="うまく話せなくても大丈夫。まずは1問だけ、気軽に試してみてください。" />
+            </div>
+          )}
+          <div className="mt-5 space-y-3">
             <MainButton signedIn={signedIn} href={href} />
             {!signedIn && <SubLinks dark />}
           </div>
