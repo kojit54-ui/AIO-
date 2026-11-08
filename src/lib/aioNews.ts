@@ -29,10 +29,22 @@ export interface AioNewsItem {
 }
 
 /** 知識表を最後に見直した日。docs/AIO.md の「最終更新」と同じ日にする（テストで確かめる） */
-export const AIO_NEWS_UPDATED = "2026-11-01";
+export const AIO_NEWS_UPDATED = "2026-11-08";
 
 /** 新しい順に並べる */
 export const AIO_NEWS: AioNewsItem[] = [
+  {
+    id: "2026-11-02-chatgpt-search-volume",
+    date: "2026-11-04",
+    source: "report",
+    sourceName: "報道（OpenAI の担当者の話を Gizmodo などが紹介）",
+    url: "https://gizmodo.com/chatgpt-claims-to-have-achieved-20-of-googles-search-volume-2000834464",
+    title: "ChatGPTで調べる人も、Googleの約2割まで増えたそうです",
+    forClient:
+      "OpenAI の担当者が「ChatGPTで検索が使われる回数は、Googleの約2割」と話したと報道されました。数え方は公開されていませんが、Googleだけでなく、ChatGPTに相談するお客様も増えています。お客様がふだん聞く言葉そのままの質問に答えておくと、どちらのAIにも紹介されやすくなります。",
+    point: "qa",
+    soWeAsk: "お客様からよく聞かれる質問と、その答え",
+  },
   {
     id: "2026-10-15-google-links",
     date: "2026-10-15",
