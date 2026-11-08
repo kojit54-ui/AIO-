@@ -17,10 +17,17 @@ async function step(fn: () => Promise<StepResult>): Promise<StepResult> {
 
 export async function GET(request: NextRequest) {
   const secret = process.env.CRON_SECRET?.trim();
-  if (!secret || request.headers.get("authorization") !== `Bearer ${secret}`) return NextResponse.json({ code: "forbidden" }, { status: 401 });
+  if (!secret || request.headers.get("authorization") !== `Bearer ${secret}`) {
+    // 毎朝の Cron が届いているかをログで確かめられるように、断ったときも1行だけ残す（鍵は出さない）
+    console.log("[indexing]", JSON.stringify({ code: "forbidden", secretSet: !!secret }));
+    return NextResponse.json({ code: "forbidden" }, { status: 401 });
+  }
   const days = Math.min(Math.max(Number(request.nextUrl.searchParams.get("days")) || 2, 1), 60);
   const urls = freshUrls(new Date(), days);
-  if (request.nextUrl.searchParams.get("dry") === "1" || !urls.length) return NextResponse.json({ urls, sent: false });
+  if (request.nextUrl.searchParams.get("dry") === "1" || !urls.length) {
+    console.log("[indexing]", JSON.stringify({ urls: urls.length, sent: false }));
+    return NextResponse.json({ urls, sent: false });
+  }
   const [indexNow, webSub, searchConsole] = await Promise.all([step(() => submitIndexNow(urls)), step(() => pingWebSub()), step(() => submitSitemaps())]);
   const result = { urls, sent: true, indexNow, webSub, searchConsole };
   // URLと結果だけを残す（本文・鍵は出さない）
