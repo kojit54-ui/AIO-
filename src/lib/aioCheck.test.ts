@@ -19,6 +19,13 @@ describe("AIOのチェック（試作のサンプル）", () => {
     expect(r.questions.some((q) => q.key === "facts")).toBe(false);
   });
 
+  it("強みが、どの会社にも書ける言葉だけなら「強みの根拠」を足りない項目にする", () => {
+    const vague = sampleAioCheck({ body: [{ type: "paragraph", text: "丁寧な対応で、豊富な実績があります。" }], answers: [], profile: null, facts: [] });
+    expect(vague.items.find((i) => i.key === "proof")?.ok).toBe(false);
+    const concrete = sampleAioCheck({ body: [{ type: "paragraph", text: "同じ職人が最後まで担当するので、この10年で約300件、打ち合わせのずれがありません。" }], answers: [], profile: null, facts: [] });
+    expect(concrete.items.find((i) => i.key === "proof")?.ok).toBe(true);
+  });
+
   it("使ってほしくない言葉が本文にあれば、足りない項目にする", () => {
     const profile = { business: "", targetCustomers: "", strengths: "", tone: "", bannedExpressions: "「業界最安」「絶対に」", contact: "" };
     const r = sampleAioCheck({ body: [{ type: "paragraph", text: "業界最安で工事します" }], answers: [], profile, facts: [] });

@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import { Shiori, type ShioriMood } from "@/components/fun";
 import { ChosenPath } from "@/components/ChosenPath";
 import { ShioriTalk } from "@/components/talk";
-import { SERVICE_NAME, SERVICE_TAGLINE } from "@/lib/brand";
+import { SERVICE_NAME } from "@/lib/brand";
 
 /** 画面に入ったら true になる（1回だけ） */
 export function useInView<T extends Element>(threshold = 0.25): [React.RefObject<T | null>, boolean] {
@@ -59,18 +59,12 @@ export function useGreeting(): string {
   return text;
 }
 
-/** ロゴ（ヘッダーの左）。マークは public/brand/logo-mark.svg。使い方は /brand と docs/BRAND.md */
+/** ロゴ（ヘッダーの左）。public/brand/logo-horizontal.svg。使い方は /brand と docs/BRAND.md */
 export function Logo({ href = "/welcome" }: { href?: string }) {
   return (
-    <Link href={href} className="group flex items-center gap-2 font-black" aria-label={SERVICE_NAME}>
-      <BrandMark className="h-10 w-10 shrink-0 transition-transform group-hover:-rotate-6 group-hover:scale-105" />
-      <span className="leading-tight" aria-hidden>
-        <span className="block text-xs font-bold tracking-wider text-muted">{SERVICE_TAGLINE}</span>
-        <span className="block whitespace-nowrap">
-          <span className="text-brand">AIO</span>
-          {SERVICE_NAME.replace(/^AIO/, "")}
-        </span>
-      </span>
+    <Link href={href} className="group flex shrink-0 items-center" aria-label={SERVICE_NAME}>
+      {/* eslint-disable-next-line @next/next/no-img-element -- 文字を輪郭にした固定のSVG。最適化は不要 */}
+      <img src="/brand/logo-horizontal.svg" alt="" width={483} height={120} className="h-10 w-auto transition-transform group-hover:-translate-y-0.5" />
     </Link>
   );
 }

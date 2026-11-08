@@ -33,10 +33,30 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）入口ページの作り直し
+- ブランチ / コミット：claude/project-thread-1gko29（main ef69376 の上）
+- 変更点：田村さん「ブランドページとサービスサイトに乖離。登録してもらうのがゴール」→ GPT・Gemini・Claude で2回対話した合意案（/mnt/project-files/brand-book/lp-discussion.md）で /welcome を作り直し。外装はブランド（生成り・藍・角ゴ・罫線）、キャラと明るい青は「画面の見本」の枠とボタンだけ。成果の先取り（AIに選ばれた！）を外し、手順は「答える→確かめる→自社サイトに載せる」。主ボタン「登録せずに、記事づくりを試す」→ /try?mode=quick（会社のこと3項目＋1問）。料金と条件を掲載。新規受付の案内フォーム（/api/waitlist → signup_waitlist、管理 /admin/waitlist）。FAQの料金・公開の答えを規約にそろえた
+- 確認結果：lint・型検査・テストが通過。375px・1280px を目視。3者の採点（3回目）GPT 9.6・Gemini 9.9・Claude 9.5（記録 /mnt/project-files/brand-book/council/w*）
+- 未完了：supabase/migrations/20261107150000_signup_waitlist.sql を本番に流す（流してから公開。表が無いとフォームは「送信できませんでした」になる）。SERVICE_PROMISE（AIに選ばれて…）を替えるかは田村さんの判断。カード先登録のお試しを開けたら受付フォームを申し込みに替える
+- 次の作業と担当：表を本番に作る → 送信を確かめる → CC がマージ。案内を送るときは /admin/waitlist から
+
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）ブランド第3版
+- ブランチ / コミット：claude/project-thread-1gko29（main 8e62bd1 の上）
+- 変更点：田村さん「3者が9.5点になるまで」→ 言葉を3回（GPT 9.5・Gemini 9.7・Claude 9.5）、ロゴとページを3回（3回目 GPT 9.5・Gemini 9.7・Claude 9.5）練り直した。ひとこと「いつもの仕事を、誰かの頼む理由に。」、芯・ボディコピー・「帳」の定義・約束の見出し（src/lib/brandBook.ts、docs/BRAND.md）。カラー反転ロゴを「生成り＋しおりだけ真鍮」に、縦組みの墨1色を追加、最小サイズ160px、SNS画像を作り直し、/brand の本文を角ゴシックに、フッターの一行をひとことに
+- 確認結果：lint・型検査・テスト・build が通過。375px・1280px を目視。批評の全文は /mnt/project-files/brand-book/council/（c*・p*）
+- 未完了：田村さんのOK。読み方「えらばれちょう」。サイトの説明文に残る SERVICE_PROMISE（AIに選ばれて…）を替えるか
+- 次の作業と担当：田村さんの確認 → CC
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）本番の公開を速くする
 - 変更点：製造業の知識表を src/lib/manufacturing/data.json に移し、data.ts は読み込むだけに。scripts/manufacturing/merge.py も data.json を読み書きする。data.ts が大きくなったら落ちるテスト
 - 確認結果：キャッシュなしの手元ビルドが #125 で2分58秒 → 約20秒（変換 2.6分 → 数秒）。lint・型検査・単体テスト
 - 原因：5MBの .ts の変換。#124 が33秒だったのは Vercel のキャッシュが効いたためで、#125 はルートのレイアウトを変えて全ページの変換がやり直しになり、重さが表に出た
+
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）ブランドの作り直し（第2版）
+- ブランチ：claude/project-thread-1gko29
+- 変更点：田村さん「クオリティ低い、AIっぽい」→ GPT・Gemini に3回批評させて作り直し。ロゴ（現場の野帳、scripts/brand/build.py）、public/brand/ 全部、icon・apple-icon・OG画像、src/lib/brandBook.ts（言葉）、/brand（図面の表題欄・罫線・見本の一問一答）、globals.css に藍・真鍮・生成り・墨、ヘッダーのロゴを横組みSVGに、docs/BRAND.md
+- 確認結果：lint・型検査・単体テスト、375px・1280pxで横にはみ出さない。批評は /mnt/project-files/brand-book/council/
+- 未完了：田村さんの確認。読み方。サイト全体のヘッダー（丸いログインボタン）を紙面に合わせるかは入口ページのスレッドと相談
 
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）AIOえらばれ帳のブランドを作る
 - ブランチ：claude/project-thread-1gko29
@@ -137,6 +157,18 @@
 - 次の作業と担当：本番（Supabase 東京・Vercel Pro）を作るときも同じドメインを向ける（T3-1）。Search Console のサービスアカウントはドメインに関係しないため変更なし
 
 ## 記録
+
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）強みの帳面
+- ブランチ：claude/project-thread-08ub3t
+- 変更点：src/lib/strength/book.ts（帳面の形・足りない所・AIへの指示・答えの足し方・下書きの合わせ方）、マイグレーション 20261107170000_strength_books.sql、下書きのAI（growthPrompts の STRENGTH_BOOK_SYSTEM_PROMPT、hearingAi の runStrengthBookDraft、/api/organizations/[id]/strength-book）、記事の素材に companyPrompt（src/lib/ai/input.ts、generation/server.ts、countedInputChars で受付の字数は今まで通り）、書き手・点検役・AIOのチェック・提案の指示、画面 /prototype/strengths とナビ「強みの帳面」
+- 確認結果：lint・型検査・単体テスト（505件）が通過。試作で下書き → 保存を375px・1280pxで操作し、横スクロールなし
+- 未完了：本物のAIで帳面ありの記事を見直す。目標の質問ごとの計測、事例専用の一問一答（docs/AIO.md「強みの帳面」のまだ無いもの）
+
+### 2026-11-07 CC（Claude、プロジェクトのスレッド）CVRの資料を記事作りとキーワード設計に
+- ブランチ：claude/project-thread-08ub3t
+- 変更点：docs/AIO.md に「選ばれる決め手」（田村さんの参考資料の要点と、このサービスでやること）。書き手・点検役の指示（src/lib/ai/prompt.ts）、深掘りとキーワードの提案の指示（src/lib/ai/growthPrompts.ts）に、誰に向けるか・強みは根拠と数字で・事例の6要素・専門の一貫を追加。AIOのチェックに「強みの根拠」（proof）を足して13項目（src/types/domain.ts、src/lib/aioCheck.ts、AioCheckPanel のしるし、tips）。ヒアリングの「お客様」「選ばれる理由」のヒント文、サンプルの提案に事例の記事。書く記事リストに「お客様の事例 x / 3本」（src/prototype/keywords.ts の caseStudyHint、/prototype/keywords）。DB変更なし
+- 確認結果：lint・型検査・単体テスト（494件）が通過。書く記事リストを375px・1280pxで表示し、横スクロールなし
+- 未完了：本物のAIでの記事の見直し。次の候補は docs/AIO.md「まだやっていないこと」（会社ごとの強みの文を土台にする、事例専用の一問一答など）
 
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）コーチ画面・しおり通信もすごろくの言い方に
 - ブランチ：claude/project-thread-fdzisk

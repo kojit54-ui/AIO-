@@ -18,7 +18,7 @@ const AIO_KEYS = new Set<string>(["experience", "numbers", "entity", "qa", "comp
 /** 項目のしるし。AIOの材料は材料のアイコン、ほかは決まった記号 */
 function CheckIcon({ k, className = "h-5 w-5" }: { k: AioCheckKey; className?: string }) {
   if (AIO_KEYS.has(k)) return <AioIcon point={k as AioPoint} className={className} />;
-  const path = { facts: "M4 20h16M7 16l3-8 3 5 2-3 2 6", words: "M4 6h16M4 12h10M4 18h7M17 15l4 4m0-4l-4 4", ai_tone: "M12 3l2 5 5 .5-4 3.5 1.5 5L12 14l-4.5 3 1.5-5-4-3.5L10 8z" }[k as "facts" | "words" | "ai_tone"];
+  const path = { proof: "M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6zM9 12l2 2 4-4", facts: "M4 20h16M7 16l3-8 3 5 2-3 2 6", words: "M4 6h16M4 12h10M4 18h7M17 15l4 4m0-4l-4 4", ai_tone: "M12 3l2 5 5 .5-4 3.5 1.5 5L12 14l-4.5 3 1.5-5-4-3.5L10 8z" }[k as "proof" | "facts" | "words" | "ai_tone"];
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       <path d={path} />

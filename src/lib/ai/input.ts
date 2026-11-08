@@ -3,6 +3,7 @@
 // 渡さないのは：コタム内部メモ、他社のデータ、未確認のプロフィール。
 
 import type { KnowledgeItem } from "@/lib/growth/knowledge";
+import { bookToPrompt, type StrengthBook } from "@/lib/strength/book";
 import type { Answer, CoachingNote, Organization, Question, ReferenceArticle, Theme } from "@/types/domain";
 
 /** 1回の入力の上限（docs/DECISIONS.md） */
@@ -17,6 +18,8 @@ export interface GenerationContext {
   referenceArticles: ReferenceArticle[];
   /** 会社の知識（これまでに聞いたこと）。src/lib/growth/knowledge.ts で選んだもの */
   knowledge?: KnowledgeItem[];
+  /** お客様が確かめた強みの帳面（src/lib/strength/book.ts）。確かめていない下書きは渡さない */
+  strengthBook?: StrengthBook | null;
 }
 
 export interface GenerationInput {
@@ -29,6 +32,11 @@ export interface GenerationInput {
   referenceArticles: { title: string; body: string }[];
   /** 文字数の上限で削った過去記事の数 */
   droppedReferenceCount: number;
+  /**
+   * この会社だけの指示（強みの帳面から作る。docs/AIO.md「強みの帳面」）。
+   * 素材の上限（8,000字）とは別に数え、上限は MAX_BOOK_PROMPT_CHARS
+   */
+  companyPrompt?: string;
 }
 
 export class InputError extends Error {
@@ -38,7 +46,14 @@ export class InputError extends Error {
 }
 
 function size(input: GenerationInput): number {
-  return JSON.stringify(input).length;
+  return countedInputChars(input);
+}
+
+/** 上限と受付（generation_runs.input_chars は8,000字まで）で数える文字数。この会社だけの指示は別に数える */
+export function countedInputChars(input: GenerationInput): number {
+  const { companyPrompt: _p, ...rest } = input;
+  void _p;
+  return JSON.stringify(rest).length;
 }
 
 export function buildGenerationInput(ctx: GenerationContext): GenerationInput {
@@ -92,5 +107,6 @@ export function buildGenerationInput(ctx: GenerationContext): GenerationInput {
     }
     input.referenceArticles = next.referenceArticles;
   }
-  return input;
+  const companyPrompt = ctx.strengthBook ? bookToPrompt(ctx.strengthBook) : "";
+  return companyPrompt ? { ...input, companyPrompt } : input;
 }

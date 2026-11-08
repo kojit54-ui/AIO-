@@ -7,7 +7,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LegalLinks } from "@/components/LegalLinks";
 import { Logo } from "@/components/landing";
-import { SERVICE_OPERATOR, SERVICE_PROMISE } from "@/lib/brand";
+import { SERVICE_OPERATOR } from "@/lib/brand";
+import { BRAND_LINE } from "@/lib/brandBook";
+import { TRY_HREF } from "@/lib/signup";
 import { useStore } from "@/mock/store";
 
 /** 上のメニュー。スマホでは2段目に小さく並べる */
@@ -62,14 +64,14 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:grid-cols-[1.4fr_1fr_1fr] sm:px-6">
         <div className="space-y-2">
           <Logo />
-          <p className="text-sm text-muted">{SERVICE_PROMISE}</p>
+          <p className="text-sm text-muted">{BRAND_LINE}</p>
           <p className="text-sm text-muted">運営：{SERVICE_OPERATOR}</p>
         </div>
         <FooterList
           title="サービス"
           links={[
             { href: "/welcome", label: "サービスのご紹介" },
-            { href: "/try", label: "30秒でためす（登録なし）" },
+            { href: TRY_HREF, label: "登録せずに試す" },
             { href: "/shiori", label: "案内役「しおり」の自己紹介" },
             { href: "/login", label: "ログイン" },
           ]}

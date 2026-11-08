@@ -331,6 +331,12 @@ interface GenerationRun {
 - search_console：1社1行。site_url（https://example.jp/ か sc-domain:example.jp）、verified_at（読めたら入る。権限を外されたら空に戻す）、last_error（お客様に見せる文）、snapshot（{range, totals, queries, pages}、src/types/domain.ts の ScSnapshot）、fetched_at
 - 読めるのは同じ会社の人（お客様・コタム）。書くのはサーバー（service role）だけ。入口は POST /api/organizations/:id/search-console（つなぐ。お客様だけ）と /search-console/refresh（12時間より古ければ読み直す）、GET /api/search-console-account（足してもらうアドレス）
 
+## 強みの帳面（supabase/migrations/20261107170000_strength_books.sql）
+
+- strength_books：会社ごとに1行（organization_id が主キー）。book（jsonb。src/lib/strength/book.ts の StrengthBook：specialty・targets・strengths・wins・records・voice・avoid）、confirmed_at（お客様が保存した日時。空なら下書きでAIに渡さない）、drafted_at（AIが下書きした日時）、updated_by、updated_at
+- 読むのは会社のメンバー（コタム含む）。書く・直すのはその会社のお客様だけ（RLS）。AIの下書きはサーバー（service role、/api/organizations/[id]/strength-book）が書き、受付は start_hearing_ai（月の回数・予算に数える）
+- 記事（outline・body・rewrite・review・aio_check・images）と、キーワードの提案で、確かめた帳面を「この会社だけの指示」（companyPrompt、3,200字まで）として渡す。素材の上限（8,000字、generation_runs.input_chars）とは別に数える
+
 ## しおり通信（supabase/migrations/20261103090000_newsletter.sql）
 
 - newsletter_optouts：受け取らないと決めた人（user_id）。本人だけが見て、足して、消せる。メールの「受け取らない」のリンクはサーバーが足す

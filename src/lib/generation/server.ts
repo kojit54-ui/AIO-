@@ -4,13 +4,14 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { estimateCostYen } from "@/lib/ai/cost";
-import { buildGenerationInput, type GenerationContext, InputError } from "@/lib/ai/input";
+import { buildGenerationInput, countedInputChars, type GenerationContext, InputError } from "@/lib/ai/input";
 import { AiProviderError, type AiProvider, type BodyRoles, type StepUsage, failureReason, generateImageIdeas, generateOutline, generateReviewedBody } from "@/lib/ai/provider";
 import { ParseError } from "@/lib/ai/prompt";
 import { fromArticle, fromMonth, toArticle, toCoachingNote, toOrganization, toReferenceArticle, toTheme, toVersion, currentMonthJst } from "@/lib/remote/mapping";
 import { applyAction } from "@/lib/workflow";
 import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import { PLAN_QUESTIONS, planOf } from "@/lib/articlePlan";
+import { normalizeBook } from "@/lib/strength/book";
 import { buildKnowledge, editPairs, pickKnowledge, type KnowledgeItem, type PastArticle } from "@/lib/growth/knowledge";
 import { type HearingAnswer } from "@/prototype/growth";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
@@ -97,7 +98,7 @@ export async function runGeneration(
   let knowledgeUsed: string[] = [];
   try {
     const built = buildGenerationInput(ctx);
-    inputChars = JSON.stringify(built).length;
+    inputChars = countedInputChars(built);
     knowledgeUsed = built.companyKnowledge.map((k) => k.label);
   } catch (e) {
     if (e instanceof InputError) return fail(400, "invalid_input", e.message);
@@ -282,7 +283,7 @@ export async function runImageIdeas(
   if (!base || !headings.length) return fail(400, "invalid_input", "先に本文を作ってください");
   let inputChars: number;
   try {
-    inputChars = JSON.stringify(buildGenerationInput(ctx)).length;
+    inputChars = countedInputChars(buildGenerationInput(ctx));
   } catch (e) {
     if (e instanceof InputError) return fail(400, "invalid_input", e.message);
     throw e;
@@ -341,7 +342,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
   const article = toArticle(articleRow);
   const orgId = article.organizationId;
   const month = currentMonthJst();
-  const [orgRes, themeRes, noteRes, refsRes, currentRes, hearingRes, aioRes, notesRes, pastRes] = await Promise.all([
+  const [orgRes, themeRes, noteRes, refsRes, currentRes, hearingRes, aioRes, notesRes, pastRes, bookRes] = await Promise.all([
     db.from("organizations").select("*").eq("id", orgId).single(),
     db.from("themes").select("*").eq("id", article.themeId).single(),
     db.from("coaching_notes").select("*").eq("organization_id", orgId).eq("target_month", fromMonth(month)).maybeSingle(),
@@ -354,6 +355,8 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
     db.from("aio_checks").select("questions, answers, created_at").eq("organization_id", orgId).order("created_at", { ascending: false }).limit(10),
     db.from("knowledge_notes").select("label, text, created_at").eq("organization_id", orgId).order("created_at", { ascending: false }).limit(40),
     db.from("articles").select("id, status, current_version_id, updated_at").eq("organization_id", orgId).neq("id", article.id).not("current_version_id", "is", null).order("updated_at", { ascending: false }).limit(8),
+    // 強みの帳面（お客様が確かめたものだけ。表が無い・読めないときは帳面なしで進める）
+    db.from("strength_books").select("book, confirmed_at").eq("organization_id", orgId).maybeSingle(),
   ]);
   // 1つでも読めなければ、足りない材料で（費用をかけて）作らない
   if (orgRes.error || themeRes.error || noteRes.error || refsRes.error || currentRes.error || (article.currentVersionId && !currentRes.data)) return fail(500, "save_failed", "データを読み込めませんでした");
@@ -374,6 +377,7 @@ export async function loadGenerationContext(db: SupabaseClient, articleRow: Reco
     answers,
     referenceArticles: (refsRes.data ?? []).map(toReferenceArticle),
     knowledge,
+    strengthBook: !bookRes?.error && bookRes?.data?.confirmed_at ? normalizeBook(bookRes.data.book) : null,
   };
   return { ok: true as const, ctx, org, theme, base, answers };
 }

@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
+import { Barlow_Semi_Condensed, Zen_Kaku_Gothic_New } from "next/font/google";
 import { SERVICE_NAME } from "@/lib/brand";
-import { BRAND_CONCEPT } from "@/lib/brandBook";
+import { BRAND_DESCRIPTOR, BRAND_LINE } from "@/lib/brandBook";
 import { INDEX_ROBOTS } from "@/lib/publicPages";
 import { BrandBook } from "./BrandBook";
+
+// ロゴと同じ書体で見出しを組む（docs/BRAND.md「書体」）。このページだけで読みこむ
+const kaku = Zen_Kaku_Gothic_New({ weight: ["400", "500", "700", "900"], subsets: ["latin"], variable: "--font-kaku", display: "swap", preload: false });
+const barlow = Barlow_Semi_Condensed({ weight: ["600", "700"], subsets: ["latin"], variable: "--font-barlow", display: "swap" });
 
 export const metadata: Metadata = {
   robots: INDEX_ROBOTS,
   title: `ブランドとロゴ｜${SERVICE_NAME}`,
-  description: `${SERVICE_NAME}のブランドコンセプト・理念・ミッション・バリューと、ロゴの使い方。${BRAND_CONCEPT.title}`,
+  description: `${BRAND_LINE}${BRAND_DESCRIPTOR}${SERVICE_NAME}の理念・ミッション・記事づくりの約束と、ロゴの使い方。`,
   alternates: { canonical: "/brand" },
 };
 
 /** ブランドとロゴのページ。ログインなしで見られる */
 export default function BrandPage() {
-  return <BrandBook />;
+  return (
+    <div className={`${kaku.variable} ${barlow.variable}`}>
+      <BrandBook />
+    </div>
+  );
 }

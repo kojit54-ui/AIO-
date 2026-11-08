@@ -53,7 +53,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
     label: "どんなお客様が多いですか",
     aio: "qa",
     example: "例：市内の60代のご夫婦。子どもが独立して、家を住みやすくしたい",
-    tip: "実際によく来るお客様を1人思い浮かべてください。年代、家族、きっかけなど。",
+    tip: "実際によく来るお客様の中で、うちがいちばん力になれる人を1人思い浮かべてください。業種や年代、規模、きっかけなど。「どなたでも」より、1人にしぼるほうが選ばれます。",
     deepDives: ["そのお客様は、何がきっかけで相談に来られますか", "依頼の前に、どんなことで迷われたり、不安に思われたりしていましたか"],
   },
   {
@@ -69,7 +69,7 @@ export const HEARING_QUESTIONS: HearingQuestion[] = [
     label: "ほかの会社ではなく、選ばれる理由は何ですか",
     aio: "experience",
     example: "例：一級建築士が現地調査から工事の管理まで担当する。工事後の点検が無料",
-    tip: "お客様に言われてうれしかった言葉を思い出すと書きやすいです。",
+    tip: "お客様に言われてうれしかった言葉を思い出すと書きやすいです。「丁寧」「親身」だけでなく、何をしているか・なぜそう言えるか・数字（年数や件数）まで書けると、ほかの会社との違いが伝わります。",
     deepDives: ["その強みが伝わったお客様の、具体的なエピソードを1つ教えてください", "そのとき、お客様はどんな言葉をかけてくれましたか", "その強みを数字で表せますか（年数、件数など）"],
   },
   {
@@ -255,6 +255,7 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
         k("p_compare_2", `${service} 見積もり 見方`, "見積もりで確かめるところ"),
         k("p_compare_3", `${business} 相談 タイミング`, "いつ相談すればよいか"),
         k("p_compare_4", `${service} 保証`, "工事の後の保証や点検"),
+        k("p_compare_5", `${service} 選ばれた理由 事例`, "どんなお客様の、どんな困りごとが、どう変わったか"),
       ],
       reasons: ["competition", "sales"],
       why: "よく比べられる相手との違いを伝える記事のセットです。選ばれる理由が生きます。",
@@ -266,6 +267,7 @@ export function sampleProposals(answers: Record<string, HearingAnswer>): PillarP
         ...faqs.map((f, i) => k(`p_faq_${i + 1}`, f.replace(/[？?]$/, ""), `「${f.replace(/[？?]$/, "")}」への答え`)),
         k(`p_faq_${faqs.length + 1}`, `${business} 流れ`, "相談から完了までの流れ"),
         k(`p_faq_${faqs.length + 2}`, `${business} 注意点`, "頼む前に気をつけること"),
+        k(`p_faq_${faqs.length + 3}`, `${business} 相談 事例`, "相談したお客様が、どう解決したか"),
       ],
       reasons: ["aio"],
       why: "お客様の質問にそのまま答える記事のセットです。質問と答えがはっきりした記事は、AIに紹介されやすくなります。",

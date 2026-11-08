@@ -1,126 +1,176 @@
+# AIOえらばれ帳 ロゴ v3（現場の野帳）。3AIの批評をうけて寸法から作り直し。
 import os, sys
-sys.path.insert(0, os.path.dirname(__file__))
-from text import text_path
-F = os.path.join(os.path.dirname(__file__), '..', 'font')
-W900 = os.path.join(F, 'zm900.ttf'); W700 = os.path.join(F, 'zm700.ttf')
-OUT = sys.argv[1] if len(sys.argv) > 1 else 'out'
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, '..'))
+from text import font, palt_map
+from fontTools.pens.svgPathPen import SVGPathPen
+from fontTools.pens.transformPen import TransformPen
+from fontTools.pens.boundsPen import BoundsPen
+F = os.path.join(HERE, '..', '..', 'font')
+OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, 'out')
 os.makedirs(OUT, exist_ok=True)
 
-C = dict(brand='#2f6fdb', dark='#2258b8', sun='#ffc93c', sunDark='#e0a800', ink='#1f2b3d', sky='#9bd3ff', paper='#ffffff', muted='#55637a')
+C = dict(indigo='#1E4F7C', brass='#E9B53B', paper='#F7F4EC', sumi='#1F2A33', white='#FFFFFF')
 
-def sparkle(cx, cy, r, k=0.22):
-    """4つの角を持つ、ふっくらした星（AIのきらめき）"""
-    i = r * k
-    return (f"M{cx},{cy-r} C{cx+i*0.6},{cy-i*1.6} {cx+i*1.6},{cy-i*0.6} {cx+r},{cy} "
-            f"C{cx+i*1.6},{cy+i*0.6} {cx+i*0.6},{cy+i*1.6} {cx},{cy+r} "
-            f"C{cx-i*0.6},{cy+i*1.6} {cx-i*1.6},{cy+i*0.6} {cx-r},{cy} "
-            f"C{cx-i*1.6},{cy-i*0.6} {cx-i*0.6},{cy-i*1.6} {cx},{cy-r} Z")
+# ---------- マーク（本体 70x100、しおりは下へ12はみ出す。座標は 0..120） ----------
+X0, Y0, W, H = 25, 4, 70, 100        # 本体
+RB, RF = 3, 9                         # 綴じ側・小口側の角の半径
+SPX, SPW = X0 + 9, 3                  # 背の溝
+LBX, LBY, LBW, LBH, LBR = X0 + 22, Y0 + 17, 36, 18, 1.5   # 表題欄
+RBX, RBW, RBY, RBB, VD = X0 + 44, 11, Y0 + 82, Y0 + H + 12, 4   # しおり（上端・下端・V字の深さ）
 
-def mark(c=C, mono=None):
-    """マーク（120x120）。帳面（青）＋しおり（黄）＋AIのきらめき（白）。
-    mono='white' / 'ink' で1色版"""
-    if mono:
-        fg = '#ffffff' if mono == 'white' else c['ink']
-        mid = 'aioMono' + mono
-        # 1色版：表紙は塗り、きらめきは抜き、しおりは表紙とのあいだにすきまを空けて見せる
-        return f'''<g>
-  <defs><mask id="{mid}" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120">
-    <rect width="120" height="120" fill="#fff"/>
-    <path d="M78 6 H92 A2 2 0 0 1 94 8 V44 L85 37 L76 44 V8 A2 2 0 0 1 78 6 Z" fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round"/>
-    <path d="{sparkle(60, 68, 25)} {sparkle(84, 91, 8)}" fill="#000"/>
-  </mask></defs>
-  <rect x="14" y="14" width="88" height="98" rx="16" fill="{fg}" mask="url(#{mid})"/>
-  <path d="M78 6 H92 A2 2 0 0 1 94 8 V44 L85 37 L76 44 V8 A2 2 0 0 1 78 6 Z" fill="{fg}"/>
-</g>'''
-    return f'''<g>
-  <rect x="20" y="18" width="90" height="94" rx="16" fill="{c['sky']}"/>
-  <rect x="24" y="16" width="84" height="92" rx="14" fill="#ffffff"/>
-  <rect x="14" y="14" width="88" height="98" rx="16" fill="{c['brand']}"/>
-  <path d="M30 14 H34 V112 H30 A16 16 0 0 1 14 96 V30 A16 16 0 0 1 30 14 Z" fill="{c['dark']}"/>
-  <path d="M78 6 H92 A2 2 0 0 1 94 8 V44 L85 37 L76 44 V8 A2 2 0 0 1 78 6 Z" fill="{c['sun']}"/>
-  <path fill="#ffffff" d="{sparkle(60, 68, 25)}"/>
-  <path fill="{c['sun']}" d="{sparkle(84, 91, 8)}"/>
-</g>'''
+def body_d():
+    x1, y1 = X0 + W, Y0 + H
+    return (f"M{X0+RB},{Y0} H{x1-RF} A{RF},{RF} 0 0 1 {x1},{Y0+RF} V{y1-RF} A{RF},{RF} 0 0 1 {x1-RF},{y1} "
+            f"H{X0+RB} A{RB},{RB} 0 0 1 {X0},{y1-RB} V{Y0+RB} A{RB},{RB} 0 0 1 {X0+RB},{Y0} Z")
 
-def svg(w, h, body, title):
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:.0f} {h:.0f}" width="{w:.0f}" height="{h:.0f}" role="img" aria-label="{title}"><title>{title}</title>\n{body}\n</svg>\n'
+def ribbon_d(top=RBY, bottom=RBB):
+    cx = RBX + RBW / 2
+    return f"M{RBX},{top} H{RBX+RBW} V{bottom} L{cx},{bottom-VD} L{RBX},{bottom} Z"
 
-def words(x, y, size, ink, accent, tag_color, tagline=True, align='left', total_w=None):
-    """「AI時代の、」＋「AIOえらばれ帳」。y は名前のベースライン"""
-    aio_d, aio_w = text_path('AIO', W900, size, 0, 0, tracking=10)
-    gap = size * 0.06
-    rest_d, rest_w = text_path('えらばれ帳', W900, size, 0, 0, tracking=0)
-    name_w = aio_w + gap + rest_w
-    tsize = size * 0.36
-    tag_d, tag_w = text_path('AI時代の、', W700, tsize, 0, 0, tracking=60)
-    ox = x if align == 'left' else x - name_w / 2
-    tx = ox if align == 'left' else x - tag_w / 2
-    out = []
-    if tagline:
-        out.append(f'<path fill="{tag_color}" transform="translate({tx:.2f},{y - size*0.98:.2f})" d="{text_path("AI時代の、", W700, tsize, 0, 0, tracking=60)[0]}"/>')
-    out.append(f'<path fill="{accent}" transform="translate({ox:.2f},{y:.2f})" d="{aio_d}"/>')
-    out.append(f'<path fill="{ink}" transform="translate({ox + aio_w + gap:.2f},{y:.2f})" d="{rest_d}"/>')
-    return '\n'.join(out), name_w
+def mark(theme='color', small=False):
+    """theme: color / reverse（濃い地） / white / ink。small=True は 24px 以下用（溝を太く、しおりは四角）"""
+    spw = SPW * (1.6 if small else 1)
+    if theme in ('white', 'ink', 'reverse'):
+        # reverse（濃い地）：表紙は生成り、溝と表題欄は地の色で抜き、真鍮はしおりだけ（3者の指摘 2026-11-07）
+        fg = {'white': C['white'], 'ink': C['sumi'], 'reverse': C['paper']}[theme]
+        mid = f'm-{theme}{"-s" if small else ""}'
+        # 1色版：しおりは本体の中では「抜き」、はみ出す所は「塗り」。形だけで読めるようにする
+        return f'''<defs><mask id="{mid}" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120"><rect width="120" height="120" fill="#fff"/>
+<rect x="{SPX}" y="{Y0-1}" width="{spw}" height="{H+2}" fill="#000"/><rect x="{LBX}" y="{LBY}" width="{LBW}" height="{LBH}" rx="{LBR}" fill="#000"/>
+<rect x="{RBX-2.5}" y="{RBY-2.5}" width="{RBW+5}" height="{H-(RBY-Y0)+3}" fill="#000"/></mask></defs>
+<path fill="{fg}" mask="url(#{mid})" d="{body_d()}"/>
+<path fill="{C['brass'] if theme == 'reverse' else fg}" d="{ribbon_d(RBY, RBB) if not small else f'M{RBX},{RBY} H{RBX+RBW} V{RBB} H{RBX} Z'}"/>'''
+    body = C['indigo']
+    groove = C['paper'] if theme == 'color' else C['paper']
+    return f'''<path fill="{body}" d="{body_d()}"/>
+<rect x="{SPX}" y="{Y0}" width="{spw}" height="{H}" fill="{groove}"/>
+<rect x="{LBX}" y="{LBY}" width="{LBW}" height="{LBH}" rx="{LBR}" fill="{C['paper']}"/>
+<path fill="{C['brass']}" d="{ribbon_d() if not small else f'M{RBX},{RBY} H{RBX+RBW} V{RBB} H{RBX} Z'}"/>'''
+
+# ---------- ワードマーク ----------
+def glyphs(text, fontfile, size, kern=None, tracking=0, use_palt=True):
+    """返り値: (path_d, width, (ymin, ymax) 字面の上下, 各字の左端)"""
+    f = font(os.path.join(F, fontfile))
+    upm = f['head'].unitsPerEm; s = size / upm
+    gs = f.getGlyphSet(); cmap = f.getBestCmap(); hmtx = f['hmtx']
+    pm = palt_map(f) if use_palt else {}
+    pen = SVGPathPen(gs, ntos=lambda v: ('%.2f' % v).rstrip('0').rstrip('.'))
+    bp = BoundsPen(gs)
+    cx = 0; lefts = []
+    for i, ch in enumerate(text):
+        g = cmap[ord(ch)]
+        xp, xa = pm.get(g, (0, 0))
+        if i > 0 and kern: cx += kern.get(text[i-1:i+1], 0)
+        lefts.append(cx * s)
+        gs[g].draw(TransformPen(pen, (s, 0, 0, -s, (cx + xp) * s, 0)))
+        gs[g].draw(TransformPen(bp, (s, 0, 0, -s, (cx + xp) * s, 0)))
+        cx += hmtx[g][0] + xa + (tracking if i < len(text) - 1 else 0)
+    b = bp.bounds  # (xmin, ymin, xmax, ymax) SVG座標（y下向き）
+    return pen.getCommands(), cx * s, b
+
+KANA_KERN = {'えら': -40, 'らば': -70, 'ばれ': -10}   # Geminiの指摘（1000分率）
+def wordmark(size, ink, accent):
+    """「AIO」+「えらばれ」+「帳」。返り値: (svg要素, 幅, 字面の上, 字面の下)。y=0 が和文のベースライン"""
+    kd, kw, kb = glyphs('えらばれ', 'zk900.ttf', size, kern=KANA_KERN)
+    # 「帳」は同じ Black を 95% にして、字面の中央を「えらばれ」にそろえる（Boldだと腰くだけに見えた）
+    cd, cw, cb = glyphs('帳', 'zk900.ttf', size * 0.95)
+    top, bot = kb[1], kb[3]
+    face = bot - top
+    # AIO の大文字の高さ＝和文の字面の 0.80、字面の中央にそろえて 1.5% 上へ
+    a_test, _, ab = glyphs('AIO', 'barlow700.ttf', 100, use_palt=False)
+    cap = ab[3] - ab[1]
+    asize = 100 * face * 0.80 / cap
+    ad, aw, abx = glyphs('AIO', 'barlow700.ttf', asize, kern={'AI': -30, 'IO': 20}, tracking=30, use_palt=False)
+    a_mid = (abx[1] + abx[3]) / 2
+    k_mid = (top + bot) / 2 - face * 0.015
+    ay = k_mid - a_mid
+    gap = size * 0.10
+    kx = aw + gap
+    cx = kx + kw + size * (-30 / 1000)
+    cy = ((kb[1] + kb[3]) - (cb[1] + cb[3])) / 2   # 帳の字面の中央を、かなの字面の中央へ
+    el = (f'<path fill="{accent}" transform="translate(0,{ay:.2f})" d="{ad}"/>'
+          f'<path fill="{ink}" transform="translate({kx:.2f},0)" d="{kd}"/>'
+          f'<path fill="{ink}" transform="translate({cx:.2f},{cy:.2f})" d="{cd}"/>')
+    return el, cx + cw, top, bot
+
+def colors(theme):
+    if theme == 'color': return C['sumi'], C['indigo']
+    if theme == 'reverse': return C['paper'], C['paper']
+    if theme == 'white': return C['white'], C['white']
+    return C['sumi'], C['sumi']
+
+def svg(w, h, body, label):
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:.0f} {h:.0f}" width="{w:.0f}" height="{h:.0f}" role="img" aria-label="{label}">'
+            f'<title>{label}</title>\n{body}\n</svg>\n')
 
 def horizontal(theme='color'):
-    ink, accent, tag = C['ink'], C['brand'], C['muted']
-    m = mark()
-    if theme == 'white': ink, accent, tag = '#ffffff', '#ffffff', '#ffffffcc'; m = mark(mono='white')
-    if theme == 'reverse': ink, accent, tag = '#ffffff', C['sun'], '#ffffffd9'
-    if theme == 'ink': ink, accent, tag = C['ink'], C['ink'], C['ink']; m = mark(mono='ink')
-    size = 64
-    w_body, name_w = words(148, 96, size, ink, accent, tag)
-    W = 148 + name_w + 8
-    return svg(W, 120, f'{m}\n{w_body}', 'AIOえらばれ帳'), W
+    ink, acc = colors(theme)
+    size = 56
+    el, ww, top, bot = wordmark(size, ink, acc)
+    # 文字の字面の中央を、マーク本体の中央（y=54）に合わせる
+    base = 54 - (top + bot) / 2
+    mx = 120 - X0 - W + size * 0.42   # マークの右端から和文 0.42 字
+    x = X0 + W + size * 0.42
+    Wd = x + ww + 6
+    return svg(Wd, 120, f'<g transform="translate(-{X0-4},0)">{mark(theme)}</g>\n<g transform="translate({x-X0+4:.2f},{base:.2f})">{el}</g>', 'AIOえらばれ帳'), Wd - 0
 
 def vertical(theme='color'):
-    ink, accent, tag = C['ink'], C['brand'], C['muted']
-    m = mark()
-    if theme == 'white': ink, accent, tag = '#ffffff', '#ffffff', '#ffffffcc'; m = mark(mono='white')
-    if theme == 'ink': ink, accent, tag = C['ink'], C['ink'], C['ink']; m = mark(mono='ink')
-    size = 56
-    _, name_w = words(0, 0, size, ink, accent, tag, tagline=False)
-    W = max(name_w, 200) + 16
-    body, _ = words(W/2, 222, size, ink, accent, tag, align='center')
-    return svg(W, 240, f'<g transform="translate({W/2-66:.2f},0) scale(1.1)">{m}</g>\n{body}', 'AIOえらばれ帳')
+    ink, acc = colors(theme)
+    size = 50
+    el, ww, top, bot = wordmark(size, ink, acc)
+    Wd = max(ww, 120) + 24
+    mark_scale = 1.15
+    my = 8
+    ty = my + 116 * mark_scale + 20 - top
+    return svg(Wd, ty + bot + 12, f'<g transform="translate({Wd/2 - 60*mark_scale:.2f},{my}) scale({mark_scale})">{mark(theme)}</g>\n<g transform="translate({(Wd-ww)/2:.2f},{ty:.2f})">{el}</g>', 'AIOえらばれ帳')
 
-def mark_file(theme='color'):
-    m = mark() if theme == 'color' else mark(mono=theme)
-    return svg(120, 120, m, 'AIOえらばれ帳のマーク')
+def mark_file(theme='color', small=False):
+    return svg(120, 120, mark(theme, small), 'AIOえらばれ帳のマーク')
 
 def app_icon():
-    # 角丸の白い台の上にマーク（アプリ・ファビコン用）
-    return svg(120, 120, f'<rect width="120" height="120" rx="26" fill="#f2f8ff"/><g transform="translate(9,9) scale(0.85)">{mark()}</g>', 'AIOえらばれ帳')
+    # 生成りの台に、マーク（ホーム画面・ブラウザのタブ）
+    return svg(120, 120, f'<rect width="120" height="120" rx="26" fill="{C["paper"]}"/><g transform="translate(12,10) scale(0.8)">{mark()}</g>', 'AIOえらばれ帳')
 
-files = {
-  'logo-mark.svg': mark_file(), 'logo-mark-white.svg': mark_file('white'), 'logo-mark-ink.svg': mark_file('ink'),
-  'logo-horizontal.svg': horizontal()[0], 'logo-horizontal-reverse.svg': horizontal('reverse')[0],
-  'logo-horizontal-white.svg': horizontal('white')[0], 'logo-horizontal-ink.svg': horizontal('ink')[0],
-  'logo-vertical.svg': vertical(), 'logo-vertical-white.svg': vertical('white'),
-  'app-icon.svg': app_icon(),
-}
-for n, s in files.items():
-    open(os.path.join(OUT, n), 'w').write(s)
-print('wrote', len(files), 'width', horizontal()[1])
+def favicon():
+    return svg(120, 120, f'<rect width="120" height="120" rx="22" fill="{C["paper"]}"/><g transform="translate(6,3) scale(0.95)">{mark(small=True)}</g>', 'AIOえらばれ帳')
 
-# --- SNSで共有されたときの絵（1200x630） ---
+if __name__ == '__main__':
+    files = {
+        'logo-mark.svg': mark_file(), 'favicon-16.svg': mark_file(small=True),
+        'logo-mark-white.svg': mark_file('white'), 'logo-mark-ink.svg': mark_file('ink'),
+        'logo-horizontal.svg': horizontal()[0], 'logo-horizontal-reverse.svg': horizontal('reverse')[0],
+        'logo-horizontal-white.svg': horizontal('white')[0], 'logo-horizontal-ink.svg': horizontal('ink')[0],
+        'logo-vertical.svg': vertical(), 'logo-vertical-white.svg': vertical('white'), 'logo-vertical-ink.svg': vertical('ink'),
+        'app-icon.svg': app_icon(), 'favicon.svg': favicon(),
+    }
+    for n, s in files.items():
+        open(os.path.join(OUT, n), 'w').write(s)
+    print('ok', round(horizontal()[1]))
+
 def og():
-    W, H = 1200, 630
+    # 3者の指摘（2026-11-07）：縮小しても読めるよう主文を主役に。ロゴ下の真鍮の線はしおりと重なるので外す
+    Wd, Hd = 1200, 630
     logo, lw = horizontal()
-    inner = logo.split('\n', 1)[1].rsplit('</svg>', 1)[0].split('</title>', 1)[-1]
-    sc = 1.15
-    lx = (W - lw * sc) / 2
-    p1, w1 = text_path('AIに選ばれて、', W900, 46, 0, 0, tracking=20)
-    p2, w2 = text_path('これから出会うお客様に選ばれる会社へ。', W900, 46, 0, 0, tracking=20)
-    p3, w3 = text_path('ものづくりの会社のための、AIO記事づくり', W700, 26, 0, 0, tracking=60)
-    body = f'''<rect width="{W}" height="{H}" fill="#f2f8ff"/>
-<circle cx="80" cy="70" r="190" fill="#e2efff"/><circle cx="1140" cy="600" r="230" fill="#e2efff"/>
-<circle cx="1110" cy="90" r="70" fill="#fff4d1"/>
-<path fill="#ffc93c" d="{sparkle(1040, 520, 22)}"/><path fill="#9bd3ff" d="{sparkle(150, 520, 14)}"/><path fill="#ffc93c" d="{sparkle(200, 470, 8)}"/>
-<g transform="translate({lx:.1f},70) scale({sc})">{inner}</g>
-<path fill="#1f2b3d" transform="translate({(W-w1)/2:.1f},{330})" d="{p1}"/>
-<path fill="#1f2b3d" transform="translate({(W-w2)/2:.1f},{400})" d="{p2}"/>
-<rect x="{(W-w3)/2-28:.1f}" y="452" width="{w3+56:.1f}" height="54" rx="27" fill="#2f6fdb"/>
-<path fill="#ffffff" transform="translate({(W-w3)/2:.1f},{489})" d="{p3}"/>'''
-    return svg(W, H, body, 'AIOえらばれ帳')
-open(os.path.join(OUT, 'og.svg'), 'w').write(og())
+    inner = logo.split('</title>', 1)[1].rsplit('</svg>', 1)[0]
+    sc = 380 / lw
+    L = 80
+    d1, w1, _ = glyphs('いつもの仕事を、', 'zk900.ttf', 68, kern=None, tracking=0)
+    d1b, w1b, _ = glyphs('誰かの頼む理由に。', 'zk900.ttf', 68, kern=None, tracking=0)
+    d2, w2, _ = glyphs('質問に答えると、AIが記事に。', 'zk700.ttf', 32, tracking=10)
+    d2b, w2b, _ = glyphs('社長が確かめ、自社のホームページへ。', 'zk700.ttf', 32, tracking=10)
+    op = glyphs('運営　株式会社コタム', 'zk700.ttf', 22)
+    body = f'''<rect width="{Wd}" height="{Hd}" fill="{C['paper']}"/>
+<rect x="28" y="28" width="{Wd-56}" height="{Hd-56}" fill="none" stroke="{C['sumi']}" stroke-width="2"/>
+<g transform="translate({L-4*sc:.1f},62) scale({sc:.3f})">{inner}</g>
+<path fill="{C['sumi']}" transform="translate({L},{262})" d="{d1}"/>
+<path fill="{C['sumi']}" transform="translate({L},{346})" d="{d1b}"/>
+<path fill="{C['sumi']}" opacity=".85" transform="translate({L},{424})" d="{d2}"/>
+<path fill="{C['sumi']}" opacity=".85" transform="translate({L},{470})" d="{d2b}"/>
+<line x1="28" y1="530" x2="{Wd-28}" y2="530" stroke="{C['sumi']}" stroke-opacity=".3" stroke-width="1"/>
+<path fill="{C['sumi']}" transform="translate({L},574)" d="{glyphs('aio-erabare.jp', 'barlow600.ttf', 24, use_palt=False)[0]}"/>
+<path fill="{C['sumi']}" transform="translate({Wd-L-op[1]:.1f},572)" d="{op[0]}"/>'''
+    return svg(Wd, Hd, body, 'AIOえらばれ帳')
+
+if __name__ == '__main__':
+    open(os.path.join(OUT, 'og.svg'), 'w').write(og())

@@ -22,6 +22,11 @@
   --color-ok: #17804f;
   --color-ok-bright: #22a06b;
   --color-ok-soft: #ddf5ea;
+  /* ブランドの色（docs/BRAND.md）。藍はロゴと骨格、真鍮はしおり、生成りはブランドの紙面、墨は文字と罫線 */
+  --color-indigo: #1e4f7c;
+  --color-brass: #e9b53b;
+  --color-paper: #f7f4ec;
+  --color-sumi: #1f2a33;
   --font-sans: var(--font-maru), "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
 
   --animate-enter: enter 0.55s cubic-bezier(0.2, 1.3, 0.4, 1) both;

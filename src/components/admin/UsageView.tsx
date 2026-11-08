@@ -32,6 +32,9 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
           <Link href="/admin/knowledge" className="text-brand-dark underline">
             製造業の知識表
           </Link>
+          <Link href="/admin/waitlist" className="text-brand-dark underline">
+            新規受付の案内を待っている人
+          </Link>
         </nav>
       </div>
 

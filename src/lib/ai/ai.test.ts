@@ -66,6 +66,10 @@ describe("prompt", () => {
     // AIOの材料（docs/AIO.md）を書き手と点検役の両方に伝える
     for (const name of AIO_MATERIAL_NAMES) expect(REVIEW_SYSTEM_PROMPT).toContain(name);
     expect(SYSTEM_PROMPT).toContain("AIO");
+    // CVRの資料（docs/AIO.md「選ばれる決め手」）：抽象的な強みで終わらせず、根拠と数字で。事例は6つの流れ
+    expect(SYSTEM_PROMPT).toContain("どの会社にも書ける言葉");
+    expect(SYSTEM_PROMPT).toContain("選んだ決め手");
+    expect(REVIEW_SYSTEM_PROMPT).toContain("根拠と数字");
     expect(buildUserPrompt("outline", buildGenerationInput(ctx()))).toContain("<materials>");
   });
 

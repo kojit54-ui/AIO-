@@ -6,7 +6,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { buildAioApplyPrompt, buildAioCheckPrompt, parseAioCheck, AIO_APPLY_SYSTEM_PROMPT, AIO_CHECK_SYSTEM_PROMPT } from "@/lib/ai/aioCheckPrompt";
 import { estimateCostYen } from "@/lib/ai/cost";
-import { buildGenerationInput, InputError } from "@/lib/ai/input";
+import { buildGenerationInput, countedInputChars, InputError } from "@/lib/ai/input";
 import { type AiProvider, type AiUsage, failureReason } from "@/lib/ai/provider";
 import { parseBodyResult } from "@/lib/ai/prompt";
 import { fromArticle, toAioCheck, toArticle } from "@/lib/remote/mapping";
@@ -60,7 +60,7 @@ async function begin(deps: Deps, articleId: string, idempotencyKey: string) {
   if (!loaded.base || loaded.base.body.length === 0) return fail(400, "invalid_input", "本文ができてからチェックできます");
   let inputChars: number;
   try {
-    inputChars = JSON.stringify(buildGenerationInput(loaded.ctx)).length;
+    inputChars = countedInputChars(buildGenerationInput(loaded.ctx));
   } catch (e) {
     if (e instanceof InputError) return fail(400, "invalid_input", e.message);
     throw e;
