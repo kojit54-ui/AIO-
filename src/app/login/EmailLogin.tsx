@@ -40,6 +40,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
           <h2 className="text-xl font-black">
             招待されたメールアドレスで<span className="inline-block">ログイン</span>
           </h2>
+          <p className="-mt-2 text-sm text-muted">自社サイトの記事づくりを、AIとしおりがお手伝いするサービスです。</p>
           <label className="block">
             <span className="field-label">メールアドレス</span>
             <input name="email" type="email" required autoComplete="email" inputMode="email" defaultValue={state.email} key={state.email ?? ""} placeholder="例）tanaka@example.co.jp" className="field min-h-14 text-lg" />
@@ -55,7 +56,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
               </>
             ) : (
               <>
-                {codeEnabled ? "6桁の番号をメールで受け取る" : "ログイン用のメールを送る"}
+                {codeEnabled ? "番号をメールで受け取る" : "ログイン用のメールを送る"}
                 <span className="inline-block animate-nudge" aria-hidden>
                   →
                 </span>
@@ -79,16 +80,15 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
 /** Googleでログイン。招待されたアドレスの Google アカウントだけ入れる */
 function GoogleButton({ next }: { next: string }) {
   return (
-    <form action={signInWithGoogle} className="card space-y-3 p-6">
-      <input type="hidden" name="next" value={next} />
-      <p className="flex items-center gap-3 text-sm font-bold text-muted" aria-hidden>
-        <span className="h-px flex-1 bg-line" />
-        または、Googleで
-        <span className="h-px flex-1 bg-line" />
-      </p>
-      <GoogleSubmit />
-      <p className="text-sm text-muted">招待されたメールアドレスが Gmail などの Google アカウントなら、ボタン1つで入れます。</p>
-    </form>
+    // メールでのログインを主にし、Google は開いたときだけ見せる（2026-11-08 お客様役の採点「どちらで入るか迷う」）
+    <details className="card p-0">
+      <summary className="cursor-pointer px-6 py-4 text-center font-bold text-brand-dark">Googleでログインする方はこちら</summary>
+      <form action={signInWithGoogle} className="space-y-3 px-6 pb-6">
+        <input type="hidden" name="next" value={next} />
+        <GoogleSubmit />
+        <p className="text-sm text-muted">招待されたメールアドレスが Gmail などの Google アカウントのときだけ使えます。</p>
+      </form>
+    </details>
   );
 }
 
@@ -126,6 +126,7 @@ function MailSent({ email, next }: { email?: string; next: string }) {
       <summary className="cursor-pointer font-bold">メールが届かないときは</summary>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
         <li>迷惑メールのフォルダを見てください</li>
+        <li>番号のかわりに、メールの中の「ログインする」を押しても入れます</li>
         <li>メールアドレスが、招待されたものと同じか確かめてください（{retry}）</li>
         <li>それでも届かないときは、コタムの担当者にお声がけください</li>
       </ul>
@@ -138,11 +139,10 @@ function MailSent({ email, next }: { email?: string; next: string }) {
           <p className="text-sm text-muted">送り先</p>
           <p className="break-all text-lg font-black">{email}</p>
           <p className="text-sm text-muted">
-            招待されたアドレスなら、数分で届きます。件名は「AIOえらばれ帳 ログイン用のリンク」。違っていたら {retry}
+            招待されたアドレスなら、数分でメールが届きます。メールを開き、本文の6桁の番号を確かめてください。違っていたら {retry}
           </p>
         </div>
         <CodeForm email={email} next={next} />
-        <p className="text-sm text-muted">メールの中のリンクを押しても入れます。</p>
         {trouble}
       </div>
     );
@@ -192,7 +192,8 @@ function CodeForm({ email, next }: { email: string; next: string }) {
       <input type="hidden" name="email" value={email} />
       <input type="hidden" name="next" value={next} />
       <label className="block">
-        <span className="field-label">メールを見たら、この画面に戻って6桁の番号を入れてください</span>
+        <span className="field-label">メール本文の6桁の番号を、ここに入れてください</span>
+        <span className="mb-1 block text-sm text-muted">メールを見たら、この画面に戻ってきてください。</span>
         <input
           name="code"
           required

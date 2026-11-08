@@ -59,7 +59,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </span>
           </Link>
           <div className="flex items-center gap-3 text-sm">
-            <Link href="/mypage" className="flex items-center gap-1 font-bold text-brand-dark underline-offset-4 hover:underline">
+            <Link
+              href="/mypage"
+              aria-current={pathname === "/mypage" ? "page" : undefined}
+              className={`flex items-center gap-1 font-bold underline-offset-4 hover:underline ${pathname === "/mypage" ? "pointer-events-none border-b-2 border-brand text-ink" : "text-brand-dark"}`}
+            >
               <span aria-hidden>👤</span>
               <span className="max-w-[9rem] truncate">マイページ</span>
             </Link>

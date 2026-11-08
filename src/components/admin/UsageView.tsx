@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { ContactButton, type LastContact } from "@/components/admin/ContactButton";
 import { HEARING_QUESTIONS } from "@/prototype/growth";
 import { needsCall, orgNudges, PACE_LABEL, type OrgPace, type UsageSummary } from "@/lib/admin/usage";
 
@@ -19,7 +23,29 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
   const total = HEARING_QUESTIONS.length;
   const waiting = s.orgs.filter((o) => needsCall(o, total));
   // 声をかけたい会社を上に（それ以外の並びは元のまま）
-  const orgs = [...waiting, ...s.orgs.filter((o) => !needsCall(o, total))];
+  const [query, setQuery] = useState("");
+  const [onlyWaiting, setOnlyWaiting] = useState(false);
+  const [sort, setSort] = useState<"call" | "idle" | "cost">("call");
+  // 声をかけた記録（表が無い・読めないときは出さない）
+  const [contacts, setContacts] = useState<Record<string, LastContact> | null>(null);
+  useEffect(() => {
+    if (sample) return;
+    let alive = true;
+    fetch("/api/admin/contacts", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: { contacts?: Record<string, LastContact> } | null) => alive && j?.contacts && setContacts(j.contacts))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [sample]);
+  const base = [...waiting, ...(onlyWaiting ? [] : s.orgs.filter((o) => !needsCall(o, total)))].filter((o) => !query.trim() || o.name.includes(query.trim()));
+  const orgs =
+    sort === "idle"
+      ? [...base].sort((a, b) => (b.daysSinceActive ?? 9999) - (a.daysSinceActive ?? 9999))
+      : sort === "cost"
+        ? [...base].sort((a, b) => b.costThisMonth - a.costThisMonth)
+        : base;
   return (
     <main className="page max-w-4xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -54,12 +80,28 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
       </section>
 
       <section className="card space-y-3">
-        <h2 className="font-black">会社ごと</h2>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="font-black">会社ごと</h2>
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <label className="flex items-center gap-1.5 font-bold">
+              <input type="checkbox" checked={onlyWaiting} onChange={(e) => setOnlyWaiting(e.target.checked)} className="h-4 w-4" />
+              声をかけたい会社だけ
+            </label>
+            <select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)} aria-label="並べ方" className="field min-h-10 w-auto py-1">
+              <option value="call">声をかけたい順</option>
+              <option value="idle">使っていない日が長い順</option>
+              <option value="cost">今月の費用が多い順</option>
+            </select>
+            <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="会社名でさがす" aria-label="会社名でさがす" className="field min-h-10 max-w-[12rem] py-1" />
+          </div>
+        </div>
         <p className="text-xs text-muted">
           使い方の目安：よく使っています＝この7日に1日以上／このところ少なめ＝この7日は0日／2週間以上 使っていません＝14日以上あいている。印が「声をかけたい」の会社は、使っていても途中で止まっているところがあります。
         </p>
         {s.orgs.length === 0 ? (
           <p className="text-muted">まだ会社がありません。</p>
+        ) : orgs.length === 0 ? (
+          <p className="text-muted">当てはまる会社はありません。</p>
         ) : (
           <ul className="space-y-3">
             {orgs.map((o) => (
@@ -91,6 +133,11 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
                   <Item label="会社のこと" value={`${Math.min(o.answered, total)} / ${total} 問`} />
                   <Item label="記事" value={`${o.articles} 本（載せた ${o.published} 本）`} />
                 </dl>
+                {contacts && (
+                  <div className="mt-2">
+                    <ContactButton organizationId={o.id} last={contacts[o.id] ?? null} onSaved={(c) => setContacts((m) => ({ ...(m ?? {}), [o.id]: c }))} />
+                  </div>
+                )}
                 {!sample && (
                   <Link href={`/coach/orgs/${o.id}`} className="mt-2 inline-block text-sm font-bold text-brand-dark underline">
                     この会社の記事とやり取りを見る →
@@ -105,6 +152,11 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
       <section className="grid gap-4 sm:grid-cols-2">
         <div className="card space-y-3">
           <h2 className="font-black">この2週間、使った会社の数</h2>
+          {s.perDay.length > 0 && (
+            <p className="text-xs text-muted">
+              {md(s.perDay[0].day)}〜{md(s.perDay[s.perDay.length - 1].day)}（右はしが今日）
+            </p>
+          )}
           <ol className="flex h-32 items-end gap-1" aria-label="日ごとの会社の数">
             {s.perDay.map((x) => (
               <li key={x.day} className="flex flex-1 flex-col items-center gap-1" title={`${x.day}：${x.orgs}社`}>
@@ -140,6 +192,9 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
     </main>
   );
 }
+
+/** 「2026-11-08」→「11/8」 */
+const md = (d: string) => `${Number(d.slice(5, 7))}/${Number(d.slice(8))}`;
 
 function Stat({ label, value, note }: { label: string; value: string; note: string }) {
   return (
