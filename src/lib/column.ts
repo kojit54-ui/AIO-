@@ -24,7 +24,7 @@ export interface ColumnPhoto {
   src: string;
   /** 何が写っているか（読み上げと検索のため） */
   alt: string;
-  /** しおりのイラスト（Geminiで作る）。注意書きを「イラストはイメージです」にする */
+  /** しおりのイラスト（Geminiで作る）。写真の注意書き「写真はイメージです」を付けない */
   illustration?: boolean;
 }
 
