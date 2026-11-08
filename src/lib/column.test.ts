@@ -58,8 +58,6 @@ describe("読みものの写真", () => {
       expect(p.src.startsWith("/column/")).toBe(true);
       expect(fs.existsSync(`public${p.src}`)).toBe(true);
       expect(p.alt.length).toBeGreaterThanOrEqual(40);
-<<<<<<< HEAD
-=======
     }
   });
 
@@ -70,7 +68,6 @@ describe("読みものの写真", () => {
       expect(p!.alt.length).toBeGreaterThanOrEqual(60);
       expect(p!.alt).toContain("しおり");
       expect(p!.alt).toContain("イメージ");
->>>>>>> origin/main
     }
   });
 
