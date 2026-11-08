@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteFooter, SiteHeader } from "@/components/site";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import { COLUMNS, jpDate } from "@/lib/column";
 import { INDEX_ROBOTS } from "@/lib/publicPages";
@@ -8,39 +7,35 @@ import { INDEX_ROBOTS } from "@/lib/publicPages";
 export const metadata: Metadata = {
   robots: INDEX_ROBOTS,
   title: `AIOの読みもの｜${SERVICE_NAME}`,
-  description: "ものづくりの会社が、AIに紹介されて、これから出会うお客様に選ばれるための読みもの。むずかしい言葉なしで、まずやることをまとめています。",
+  description: "小さな製造業の社長に向けて、AIOの基本と、AIOえらばれ帳の中身を、公式の発表と確かめられたことだけで書いています。",
   alternates: { canonical: "/column" },
 };
 
 /** AIOの読みもの（記事の一覧）。ログインなしで読める */
 export default function ColumnIndex() {
   return (
-    <div className="overflow-x-clip">
-      <SiteHeader />
-      <main className="mx-auto max-w-4xl px-4 pb-10 pt-8 sm:px-6">
-        <p className="text-sm font-black text-brand">むずかしい言葉なしで</p>
-        <h1 className="mt-1 text-3xl font-black leading-snug sm:text-4xl">AIOの読みもの</h1>
-        <p className="mt-2 text-muted">ものづくりの会社が、AIに紹介されて、これから出会うお客様に選ばれるために。まず知っておきたいことを、{SERVICE_OPERATOR}がまとめています。</p>
-        <ul className="mt-6 space-y-3">
-          {COLUMNS.map((c) => (
-            <li key={c.slug}>
-              <Link href={`/column/${c.slug}`} className="card flex items-start gap-4 transition-transform hover:-translate-y-0.5">
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-soft text-3xl" aria-hidden>
-                  {c.icon}
+    <main className="mx-auto max-w-4xl px-4 pb-14 pt-10 sm:px-6">
+      <p className="text-sm font-bold text-indigo">読みもの</p>
+      <h1 className="mt-2 text-3xl font-black leading-snug sm:text-4xl">AIOの読みもの</h1>
+      <p className="mt-3 leading-relaxed">
+        小さな製造業の社長に向けて、AIOの基本と、このサービスの中身を書いています。公式の発表で確かめられたことと、まだ分からないことを分けて書くのが決まりです。文責：{SERVICE_OPERATOR}
+      </p>
+      <ol className="mt-8 border-t-2 border-sumi">
+        {COLUMNS.map((c, i) => (
+          <li key={c.slug} className="border-b border-sumi/30">
+            <Link href={`/column/${c.slug}`} className="grid grid-cols-[2.5rem_1fr] gap-3 py-5 hover:bg-white sm:grid-cols-[3.5rem_1fr]">
+              <span className="font-[family-name:var(--font-barlow)] text-2xl font-bold text-indigo sm:text-3xl">{String(i + 1).padStart(2, "0")}</span>
+              <span className="min-w-0">
+                <b className="block text-lg leading-snug">{c.title}</b>
+                <span className="mt-1 block text-sm leading-relaxed text-sumi/75">{c.lead}</span>
+                <span className="mt-1 block text-xs text-sumi/60">
+                  <time dateTime={c.updated}>{jpDate(c.updated)}</time> 更新
                 </span>
-                <span className="min-w-0 space-y-1">
-                  <b className="block text-lg leading-snug">{c.title}</b>
-                  <span className="block text-sm text-muted">{c.lead}</span>
-                  <time dateTime={c.published} className="block text-xs text-muted">
-                    {jpDate(c.published)}
-                  </time>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </main>
-      <SiteFooter />
-    </div>
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </main>
   );
 }

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SiteFooter, SiteHeader } from "@/components/site";
-import { ShioriTalk } from "@/components/talk";
+import { Shiori } from "@/components/fun";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
-import { COLUMNS, findColumn, jpDate } from "@/lib/column";
+import { COLUMNS, findColumn, jpDate, type Column, type Interview } from "@/lib/column";
 import { INDEX_ROBOTS, SITE_URL } from "@/lib/publicPages";
+import { TRY_HREF } from "@/lib/signup";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/** 検索とAIに、記事であることと、書いた会社・日付を伝える */
-function jsonLd(c: NonNullable<ReturnType<typeof findColumn>>) {
+/** 検索とAIに、記事であることと、書いた会社・日付を伝える。画面に出ている中身だけを書く */
+function jsonLd(c: Column) {
   const url = `${SITE_URL}/column/${c.slug}`;
   return JSON.stringify([
     {
@@ -55,131 +55,158 @@ function jsonLd(c: NonNullable<ReturnType<typeof findColumn>>) {
   ]).replace(/</g, "\\u003c");
 }
 
-/** AIOの読みもの（1本）。見出しは問い、各節の最初に短く答える（このサービスがすすめる書き方と同じ） */
+const maru = "font-[family-name:var(--font-maru)]";
+
+/** 案内役のせりふ（丸ゴシック）。しおりは「聞く人」なので、問いかけと確認の声かけだけ */
+function ShioriLine({ text, mood }: { text: string; mood: "ask" | "bow" }) {
+  return (
+    <div className="flex items-end gap-3 border-y border-sumi/30 py-3">
+      <Shiori mood={mood} as="shiori" className="h-20 w-auto shrink-0 sm:h-24" />
+      <p className={`${maru} pb-2 font-bold leading-relaxed`}>
+        <span className="mb-0.5 block text-xs text-sumi/60">しおり（案内役）</span>
+        {text}
+      </p>
+    </div>
+  );
+}
+
+/** 聞き書きの例。台本の形で、架空であることを枠の上に出す */
+function InterviewBox({ iv }: { iv: Interview }) {
+  return (
+    <figure className="border-2 border-sumi bg-white">
+      <figcaption className="flex flex-wrap items-center justify-between gap-x-3 border-b-2 border-sumi px-4 py-2 text-xs font-bold">
+        <span>聞き書きの例</span>
+        <span className="text-sumi/60">架空の例です（{iv.who}）</span>
+      </figcaption>
+      <dl className="text-sm sm:text-base">
+        {iv.lines.map((l, i) => (
+          <div key={i} className={`grid grid-cols-[4.5rem_1fr] ${i > 0 ? "border-t border-sumi/20" : ""}`}>
+            <dt className={`px-3 py-2.5 text-xs font-bold sm:text-sm ${l.by === "しおり" ? "text-indigo" : "text-sumi/70"}`}>{l.by}</dt>
+            <dd className={`border-l border-sumi/20 px-3 py-2.5 leading-relaxed ${l.by === "しおり" ? maru : ""}`}>{l.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </figure>
+  );
+}
+
+/** AIOの読みもの（1本）。地の文が8割：見出しは問い、最初に短い答え。聞き書きの例は架空と明記 */
 export default async function ColumnPage({ params }: Props) {
   const c = findColumn((await params).slug);
   if (!c) notFound();
-  const others = COLUMNS.filter((x) => x.slug !== c.slug).slice(0, 2);
+  const others = COLUMNS.filter((x) => x.slug !== c.slug).slice(0, 3);
 
   return (
-    <div className="overflow-x-clip">
-      <SiteHeader />
-      <main className="mx-auto max-w-3xl px-4 pb-10 pt-6 sm:px-6">
-        <nav aria-label="いまの場所" className="text-sm text-muted">
-          <Link href="/column" className="font-bold text-brand-dark underline">
-            AIOの読みもの
-          </Link>
-          <span aria-hidden> ／ </span>
-          <span>この記事</span>
-        </nav>
+    <main className="mx-auto max-w-3xl px-4 pb-14 pt-6 sm:px-6">
+      <nav aria-label="いまの場所" className="text-sm">
+        <Link href="/column" className="font-bold text-indigo underline underline-offset-4">
+          AIOの読みもの
+        </Link>
+      </nav>
 
-        <article className="mt-4">
-          <header className="space-y-2">
-            <span className="text-4xl" aria-hidden>
-              {c.icon}
-            </span>
-            <h1 className="text-2xl font-black leading-snug sm:text-4xl sm:leading-snug">{c.title}</h1>
-            <p className="text-sm text-muted">
-              <time dateTime={c.published}>{jpDate(c.published)}</time>
-              {c.updated !== c.published && (
-                <>
-                  （更新 <time dateTime={c.updated}>{jpDate(c.updated)}</time>）
-                </>
-              )}
-              ・{SERVICE_OPERATOR}
-            </p>
-          </header>
+      <article className="mt-5">
+        <header className="border-b-2 border-sumi pb-4">
+          <h1 className="text-[1.6rem] font-black leading-snug sm:text-4xl sm:leading-snug">{c.title}</h1>
+          <p className="mt-3 text-sm text-sumi/70">
+            <time dateTime={c.updated}>{jpDate(c.updated)}</time> 更新・内容の確認 <time dateTime={c.checked}>{jpDate(c.checked)}</time>・文責 {SERVICE_OPERATOR}
+          </p>
+        </header>
 
-          <section aria-labelledby="summary" className="mt-6 rounded-3xl border-2 border-sun bg-sun-soft p-4 sm:p-5">
-            <h2 id="summary" className="font-black">
-              💡 この記事の答え
-            </h2>
-            <ul className="mt-2 space-y-1.5">
-              {c.summary.map((s) => (
-                <li key={s} className="flex gap-2 font-bold">
-                  <span className="text-brand" aria-hidden>
-                    ✓
-                  </span>
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <div className="mt-8 space-y-8">
-            {c.sections.map((s) => (
-              <section key={s.h} className="space-y-3">
-                <h2 className="text-xl font-black leading-snug sm:text-2xl">{s.h}</h2>
-                <p className="rounded-2xl border-l-4 border-brand bg-brand-soft/60 px-4 py-2 font-bold">{s.answer}</p>
-                {s.body?.map((b) => (
-                  <p key={b} className="leading-loose">
-                    {b}
-                  </p>
-                ))}
-                {s.list && (
-                  <ul className="list-disc space-y-1 pl-6 leading-relaxed">
-                    {s.list.map((l) => (
-                      <li key={l}>{l}</li>
-                    ))}
-                  </ul>
-                )}
-              </section>
+        <section aria-labelledby="summary" className="mt-6 border-2 border-sumi bg-white">
+          <h2 id="summary" className="border-b-2 border-sumi px-4 py-2 text-sm font-bold">
+            この記事の答え
+          </h2>
+          <ol className="px-4 py-3">
+            {c.summary.map((s, i) => (
+              <li key={s} className={`grid grid-cols-[1.75rem_1fr] py-1.5 font-bold leading-relaxed ${i > 0 ? "border-t border-sumi/15" : ""}`}>
+                <span className="font-[family-name:var(--font-barlow)] text-indigo">{i + 1}</span>
+                {s}
+              </li>
             ))}
-          </div>
+          </ol>
+        </section>
 
-          <div className="mt-8">
-            <ShioriTalk mood="point" size="md" lines={[c.shiori]} />
-          </div>
+        <div className="mt-6">
+          <ShioriLine text={c.opening} mood="ask" />
+        </div>
 
+        <div className="mt-10 space-y-12">
+          {c.sections.map((s) => (
+            <section key={s.h} className="space-y-4">
+              <h2 className="border-l-4 border-indigo pl-3 text-xl font-black leading-snug sm:text-2xl">{s.h}</h2>
+              <p className="font-bold leading-relaxed">{s.answer}</p>
+              {s.body?.map((b) => (
+                <p key={b} className="leading-loose">
+                  {b}
+                </p>
+              ))}
+              {s.list && (
+                <ul className="border-t border-sumi/30">
+                  {s.list.map((l) => (
+                    <li key={l} className="border-b border-sumi/30 py-2 pl-4 leading-relaxed [text-indent:-1rem]">
+                      ・{l}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {s.interview && <InterviewBox iv={s.interview} />}
+            </section>
+          ))}
+        </div>
+
+        <div className="mt-12">
+          <ShioriLine text={c.shiori} mood="bow" />
+        </div>
+
+        <footer className="mt-8 space-y-3 text-sm">
           {c.sources && (
-            <section className="mt-8 text-sm">
-              <h2 className="font-black">もとにした公式の情報</h2>
+            <div>
+              <h2 className="font-bold">もとにした公式の情報</h2>
               <ul className="mt-1 space-y-1">
                 {c.sources.map((s) => (
                   <li key={s.url}>
-                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-brand-dark underline">
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-indigo underline underline-offset-4">
                       {s.label}
                     </a>
                   </li>
                 ))}
               </ul>
-            </section>
+            </div>
           )}
-        </article>
+          <p className="text-sumi/70">
+            「聞き書きの例」は、イメージをつかむための架空の例で、実在のお客様の事例ではありません。AIの検索の仕組みは変わるため、内容は確認日の時点のものです。
+          </p>
+        </footer>
+      </article>
 
-        <aside className="mt-10 space-y-3 rounded-[2rem] bg-gradient-to-br from-brand to-[#4f8ff0] p-5 text-white shadow-[0_6px_0_var(--color-brand-dark)] sm:p-7">
-          <p className="text-xl font-black leading-snug">あなたの会社は、AIとお客様に選ばれる準備ができていますか？</p>
-          <p className="text-white/90">登録なし・30秒で診断できます。</p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/try" className="btn min-h-12 border-sun bg-sun px-5 text-ink shadow-[0_4px_0_var(--color-sun-dark)]">
-              30秒でためす →
-            </Link>
-            <Link href="/welcome" className="btn min-h-12 border-white/70 bg-white/10 px-5 text-white">
-              サービスのご紹介
-            </Link>
-          </div>
-        </aside>
+      <aside className="mt-12 bg-indigo p-5 text-paper sm:p-7">
+        <p className="text-xl font-black leading-snug">仕事の話を1つ書くと、その場で記事の書き出しができます。</p>
+        <p className="mt-2 text-paper/90">登録はいりません。会社の名前・地域・仕事の3つと、最近うれしかった仕事を1つ。</p>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link href={TRY_HREF} className="btn min-h-12 border-brass bg-brass px-5 text-sumi">
+            登録せずに、記事づくりを試す
+          </Link>
+          <Link href="/welcome" className="btn min-h-12 border-paper/70 bg-transparent px-5 text-paper">
+            サービスのご紹介
+          </Link>
+        </div>
+      </aside>
 
-        {others.length > 0 && (
-          <section className="mt-10">
-            <h2 className="mb-3 font-black">ほかの読みもの</h2>
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {others.map((o) => (
-                <li key={o.slug}>
-                  <Link href={`/column/${o.slug}`} className="card flex h-full items-start gap-3">
-                    <span className="text-2xl" aria-hidden>
-                      {o.icon}
-                    </span>
-                    <b className="leading-snug">{o.title}</b>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-      </main>
-      <SiteFooter />
+      {others.length > 0 && (
+        <section className="mt-12">
+          <h2 className="font-black">ほかの読みもの</h2>
+          <ul className="mt-3 border-t-2 border-sumi">
+            {others.map((o) => (
+              <li key={o.slug} className="border-b border-sumi/30">
+                <Link href={`/column/${o.slug}`} className="block py-3 font-bold leading-snug hover:bg-white">
+                  {o.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(c) }} />
-    </div>
+    </main>
   );
 }
