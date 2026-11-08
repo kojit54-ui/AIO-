@@ -73,8 +73,9 @@ export default function CoachHome() {
       const org = orgs.find((o) => o.id === id);
       if (org && !out.some((x) => x.id === id)) out.push({ id, name: org.name, reasons: ["AIOのチェックの答え待ち"] });
     }
-    // 理由の多い会社から
-    return out.sort((x, y) => y.reasons.length - x.reasons.length);
+    // まだ声をかけていない会社 → 前に声をかけたのが古い会社 → 理由の多い会社の順（2026-11-08 管理者役「昨日電話した会社が一番上」）
+    const contactedAt = (x: CallListItem) => x.lastContact?.at ?? "";
+    return out.sort((x, y) => contactedAt(x).localeCompare(contactedAt(y)) || y.reasons.length - x.reasons.length);
   };
   const calls: CallListItem[] = withChecks(serverCalls ?? callList);
   const commentedAfter = (articleId: string, at: string) => db.reviews.some((r) => r.articleId === articleId && r.createdAt >= at);
@@ -110,7 +111,7 @@ export default function CoachHome() {
           <p className="text-muted">いまはありません。どの会社も進んでいます。</p>
         ) : (
           <ul className="space-y-2">
-            {calls.map(({ id, name, reasons, daysSinceActive, lastContact }) => (
+            {calls.map(({ id, name, reasons, daysSinceActive, lastContact, emails }) => (
               <li key={id} className="space-y-2 rounded-2xl bg-canvas p-2">
                 <Link href={`/coach/orgs/${id}`} className="group flex flex-wrap items-center gap-2 rounded-xl px-2 py-1 hover:bg-brand-soft">
                   <b className="mr-1">{name}</b>
@@ -126,6 +127,16 @@ export default function CoachHome() {
                     見る <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>→</span>
                   </span>
                 </Link>
+                {emails && emails.length > 0 && (
+                  <p className="flex flex-wrap gap-x-3 gap-y-1 px-2 text-sm">
+                    <span className="text-muted">連絡先：</span>
+                    {emails.map((e) => (
+                      <a key={e} href={`mailto:${e}`} className="break-all font-bold text-brand-dark underline">
+                        {e}
+                      </a>
+                    ))}
+                  </p>
+                )}
                 {contactsEnabled && (
                   <div className="px-2 pb-1">
                     <ContactButton
