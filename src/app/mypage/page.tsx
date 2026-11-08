@@ -115,8 +115,8 @@ function OrgNameCard({ orgId, current, flat = false }: { orgId: string; current:
   }
 
   return (
-    <section className={flat ? "space-y-3" : "card space-y-3"}>
-      <h2 className="font-black">社名</h2>
+    <section className={flat ? "space-y-2" : "card space-y-2 !py-4"}>
+      <h2 className="text-sm font-black text-muted">社名</h2>
       {editing ? (
         <form
           className="space-y-3"
@@ -153,11 +153,12 @@ function OrgNameCard({ orgId, current, flat = false }: { orgId: string; current:
         </form>
       ) : (
         <>
-          <p className="text-xl font-black">{current}</p>
-          {saved && <Notice tone="ok" title="社名を変えました。これからの記事とAIへのお願いに使います" />}
+          {/* 1行にまとめて小さく（2026-11-08 お客様役「案内役までが遠い」） */}
+          <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className="min-w-0 break-all text-lg font-black">{current}</p>
           <button
             type="button"
-            className="btn-secondary"
+            className="btn-secondary min-h-10 px-3 py-1 text-sm"
             onClick={() => {
               setValue(current);
               setSaved(false);
@@ -166,6 +167,8 @@ function OrgNameCard({ orgId, current, flat = false }: { orgId: string; current:
           >
             社名を直す
           </button>
+          </div>
+          {saved && <Notice tone="ok" title="社名を変えました。これからの記事とAIへのお願いに使います" />}
         </>
       )}
     </section>
@@ -337,8 +340,8 @@ function NameCard({ current }: { current: string }) {
   }
 
   return (
-    <section className="card space-y-3">
-      <h2 className="font-black">担当者のお名前</h2>
+    <section className="card space-y-2 !py-4">
+      <h2 className="text-sm font-black text-muted">担当者のお名前</h2>
       {editing ? (
         <form
           className="space-y-3"
@@ -371,11 +374,11 @@ function NameCard({ current }: { current: string }) {
         </form>
       ) : (
         <>
-          <p className="text-xl font-black">{looksLikeEmail ? <span className="text-muted">まだ入っていません</span> : `${current} さん`}</p>
-          {saved && <Notice tone="ok" title="お名前を変えました" />}
+          <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className="min-w-0 text-lg font-black">{looksLikeEmail ? <span className="text-muted">まだ入っていません</span> : `${current} さん`}</p>
           <button
             type="button"
-            className="btn-secondary"
+            className="btn-secondary min-h-10 px-3 py-1 text-sm"
             onClick={() => {
               setValue(looksLikeEmail ? "" : current);
               setSaved(false);
@@ -384,6 +387,8 @@ function NameCard({ current }: { current: string }) {
           >
             {looksLikeEmail ? "お名前を入れる" : "お名前を直す"}
           </button>
+          </div>
+          {saved && <Notice tone="ok" title="お名前を変えました" />}
         </>
       )}
     </section>
