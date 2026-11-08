@@ -57,7 +57,7 @@ describe("読みものの写真", () => {
     for (const p of photos) {
       expect(p.src.startsWith("/column/")).toBe(true);
       expect(fs.existsSync(`public${p.src}`)).toBe(true);
-      expect(p.alt.length).toBeGreaterThan(5);
+      expect(p.alt.length).toBeGreaterThanOrEqual(40);
     }
   });
 
