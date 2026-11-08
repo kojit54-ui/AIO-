@@ -34,11 +34,14 @@ export default function MyPage() {
 
   return (
     <main className="page max-w-2xl space-y-5">
-      <Link href={user.role === "coach" ? "/coach" : "/"} className="text-sm text-brand-dark underline">
-        ホームへ戻る
+      <Link href={user.role === "coach" ? "/coach" : "/"} className="btn-secondary min-h-11 px-4 py-2">
+        <span aria-hidden>←</span> ホームへ戻る
       </Link>
       <h1 className="text-2xl font-black sm:text-3xl">マイページ</h1>
       <p className="text-muted">{org ? "お名前・社名・案内役・メールの受け取りを変えられます。変えたいところだけどうぞ。" : "管理の画面へすぐ移れます。担当している会社の社名や、案内役も変えられます。"}</p>
+
+      {/* 上の説明と同じ順（お名前・社名・案内役・メール）に並べる */}
+      <NameCard current={user.name} />
 
       {org && <OrgNameCard orgId={org.id} current={org.name} />}
 
@@ -76,8 +79,6 @@ export default function MyPage() {
           </Link>
         </section>
       )}
-
-      <NameCard current={user.name} />
 
       <section className="card flex flex-wrap items-center justify-end gap-3">
         <button type="button" className="btn-secondary" onClick={logout}>
@@ -211,7 +212,7 @@ function ToneCard() {
   return (
     <section className="card space-y-3">
       <h2 className="font-black">{guide.name}の話し方</h2>
-      <p className="text-sm text-muted">{guide.name}がどのくらい厳しく声をかけるかを選べます。このパソコン・スマホで覚えます。</p>
+      <p className="text-sm text-muted">{guide.name}がどのくらい厳しく声をかけるかを選べます。次にこの画面を開いたときも、選んだままです。</p>
       <div role="radiogroup" aria-label={`${guide.name}の話し方`} className="grid gap-2 sm:grid-cols-3">
         {TONES.map((t) => (
           <button
@@ -396,7 +397,7 @@ function GuideCard() {
   return (
     <section className="card space-y-3">
       <h2 className="font-black">案内役</h2>
-      <p className="text-sm text-muted">いっしょに書いてくれる案内役を選べます。画面の絵がかわります。このパソコン・スマホで覚えます。</p>
+      <p className="text-sm text-muted">いっしょに書いてくれる案内役を選べます。画面の絵がかわります。次に開いたときも、選んだままです。</p>
       <div role="radiogroup" aria-label="案内役" className="grid grid-cols-3 gap-2">
         {GUIDES.map((g) => (
           <button

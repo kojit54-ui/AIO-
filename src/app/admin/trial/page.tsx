@@ -5,7 +5,7 @@ import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { setTrialEnabled, setTrialLimits } from "./actions";
 import { TRIAL_RANGES } from "./ranges";
-import { trialReason } from "@/lib/admin/trialReason";
+import { groupTrialReasons } from "@/lib/admin/trialReason";
 
 // 30秒でためす（/try）の見守り。全社管理者だけ。入力は残していないので、回数と費用と、見本に切り替えた理由だけを見る。
 
@@ -131,14 +131,18 @@ export default async function AdminTrialPage() {
           <p className="text-muted">ありません。</p>
         ) : (
           <ul className="space-y-1">
-            {reasons.map(([k, n]) => (
-              <li key={k} className="flex justify-between rounded-xl bg-canvas px-3 py-1">
-                <span>
-                  {trialReason(k).label}
-                  {trialReason(k).next && <span className="block text-sm text-brand-dark">やること：{trialReason(k).next}</span>}
-                  {trialReason(k).detail && <span className="block text-xs text-muted">{trialReason(k).detail}</span>}
+            {groupTrialReasons(reasons).map((g) => (
+              <li key={g.label} className="flex justify-between gap-3 rounded-xl bg-canvas px-3 py-1">
+                <span className="min-w-0">
+                  {g.label}
+                  {g.next && <span className="block text-sm text-brand-dark">やること：{g.next}</span>}
+                  {g.details.map((d) => (
+                    <span key={d} className="block break-all text-xs text-muted">
+                      {d}
+                    </span>
+                  ))}
                 </span>
-                <b>{n} 回</b>
+                <b className="shrink-0 whitespace-nowrap">{g.count} 回</b>
               </li>
             ))}
           </ul>

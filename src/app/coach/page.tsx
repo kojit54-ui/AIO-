@@ -66,7 +66,7 @@ export default function CoachHome() {
             声をかけたい会社 {callList.length}社
           </h2>
           <Link href="/admin/usage" className="text-sm font-bold text-brand-dark underline">
-            費用と使った日も見る →
+            質問の進み具合・費用・使った日を見る →
           </Link>
         </div>
         {callList.length === 0 ? (
@@ -206,7 +206,9 @@ export default function CoachHome() {
                 <Link href={`/articles/${a.id}`} className="card flex flex-col gap-1 px-5 py-4 transition-transform hover:-translate-y-0.5 hover:border-brand sm:flex-row sm:items-center sm:gap-4">
                   <span className="min-w-0 flex-1">
                     <span className="block font-bold">{db.versions.find((v) => v.id === a.currentVersionId)?.title}</span>
-                    <span className="block text-sm text-muted">{db.organizations.find((o) => o.id === a.organizationId)?.name}</span>
+                    <span className="block text-sm text-muted">
+                      {db.organizations.find((o) => o.id === a.organizationId)?.name}・{formatDate(a.updatedAt)}に更新
+                    </span>
                   </span>
                   <span className="flex items-center gap-3 text-sm">
                     <StatusBadge status={a.status} />
