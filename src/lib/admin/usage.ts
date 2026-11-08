@@ -101,6 +101,24 @@ export const PACE_LABEL: Record<OrgPace, string> = {
 
 const DAY = 24 * 3600_000;
 
+/**
+ * よく使っていても声をかけたほうがよいわけ（2026-11-08 管理者役の採点「初期設定が途中でも『よく使っています』で見落とす」）。
+ * 長く使っていない・まだ始めていない会社は pace で分かるので、ここでは数えない
+ */
+export function orgNudges(o: Pick<OrgUsage, "pace" | "answered" | "articles" | "published">, hearingTotal: number): string[] {
+  if (o.pace === "never") return [];
+  const out: string[] = [];
+  if (o.answered < hearingTotal) out.push(`会社のことが途中（${Math.min(o.answered, hearingTotal)}/${hearingTotal}問）`);
+  if (o.articles === 0) out.push("まだ記事を作っていない");
+  else if (o.published === 0) out.push("記事をまだ1本も載せていない");
+  return out;
+}
+
+/** 声をかけたい会社か（長く使っていない・まだ始めていない・途中で止まっている） */
+export function needsCall(o: Pick<OrgUsage, "pace" | "answered" | "articles" | "published">, hearingTotal: number): boolean {
+  return o.pace === "sleeping" || o.pace === "never" || orgNudges(o, hearingTotal).length > 0;
+}
+
 /** 日本時間の日付（YYYY-MM-DD） */
 export const jstDay = (d: Date) => new Date(d.getTime() + 9 * 3600_000).toISOString().slice(0, 10);
 

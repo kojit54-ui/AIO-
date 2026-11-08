@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import { EmptyState, Notice } from "@/components/ui";
 import { createAdminSupabase } from "@/lib/supabase/admin";
@@ -6,37 +5,9 @@ import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { setTrialEnabled, setTrialLimits } from "./actions";
 import { TRIAL_RANGES } from "./ranges";
+import { trialReason } from "@/lib/admin/trialReason";
 
 // 30秒でためす（/try）の見守り。全社管理者だけ。入力は残していないので、回数と費用と、見本に切り替えた理由だけを見る。
-
-const REASON: Record<string, string> = {
-  number: "入力にない数字が入っていた",
-  boast: "大げさな言葉が入っていた",
-  link: "URLが入っていた",
-  format: "答えの形が違った",
-  off_topic: "仕事の話でなかった",
-  timeout: "時間切れ",
-  provider_error: "AIの失敗",
-  auth: "AIのキーが正しくない",
-  billing: "AIの提供元の残高が足りない",
-  rate_limited: "AIの利用上限",
-  refused: "AIが断った",
-  truncated: "AIの答えが途中で切れた",
-  unavailable: "AIにつながらなかった",
-  parse: "答えの形が違った",
-  other: "そのほかの失敗",
-  disabled: "止めている",
-  visitor_limit: "1人1日の上限",
-  daily_limit: "全体の1日の上限",
-  budget_exceeded: "月の予算の上限",
-};
-
-/** 「unavailable_400」「unavailable_400:invalid_value:model」のように状態コード付きの理由も読めるように */
-function reasonLabel(code: string): string {
-  const m = /^([a-z_]+?)_(\d{3})(?::(.+))?$/.exec(code);
-  if (m && REASON[m[1]]) return `${REASON[m[1]]}（${m[2]}${m[3] ? `・${m[3]}` : ""}）`;
-  return REASON[code] ?? code;
-}
 
 const jstDay = (d: Date) => new Date(d.getTime() + 9 * 3600_000).toISOString().slice(0, 10);
 
@@ -110,14 +81,6 @@ export default async function AdminTrialPage() {
     <main className="page max-w-3xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h1 className="text-2xl font-black sm:text-3xl">30秒でためすの見守り</h1>
-        <div className="flex flex-wrap gap-x-4 text-sm font-bold">
-          <Link href="/admin/usage" className="text-brand-dark underline">
-            利用金額と利用頻度へ
-          </Link>
-          <Link href="/admin/invitations" className="text-brand-dark underline">
-            招待と所属の管理へ
-          </Link>
-        </div>
       </div>
 
       <section className={`card space-y-3 border-2 ${settings.trial_ai_enabled ? "border-ok-bright" : "border-danger"}`}>
@@ -170,7 +133,10 @@ export default async function AdminTrialPage() {
           <ul className="space-y-1">
             {reasons.map(([k, n]) => (
               <li key={k} className="flex justify-between rounded-xl bg-canvas px-3 py-1">
-                <span>{reasonLabel(k)}</span>
+                <span>
+                  {trialReason(k).label}
+                  {trialReason(k).detail && <span className="block text-xs text-muted">{trialReason(k).detail}</span>}
+                </span>
                 <b>{n} 回</b>
               </li>
             ))}

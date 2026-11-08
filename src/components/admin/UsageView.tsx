@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HEARING_QUESTIONS } from "@/prototype/growth";
-import { PACE_LABEL, type OrgPace, type UsageSummary } from "@/lib/admin/usage";
+import { needsCall, orgNudges, PACE_LABEL, type OrgPace, type UsageSummary } from "@/lib/admin/usage";
 
 const yen = (n: number) => `${Math.round(n).toLocaleString()} 円`;
 const date = (s: string) => new Date(s).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo", month: "numeric", day: "numeric" });
@@ -16,26 +16,14 @@ const PACE_STYLE: Record<OrgPace, string> = {
 export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) {
   const pct = Math.round(s.budgetRatio * 100);
   const peak = Math.max(1, ...s.perDay.map((d) => d.orgs));
-  const waiting = s.orgs.filter((o) => o.pace === "sleeping" || o.pace === "never");
   const total = HEARING_QUESTIONS.length;
+  const waiting = s.orgs.filter((o) => needsCall(o, total));
+  // 声をかけたい会社を上に（それ以外の並びは元のまま）
+  const orgs = [...waiting, ...s.orgs.filter((o) => !needsCall(o, total))];
   return (
     <main className="page max-w-4xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h1 className="text-2xl font-black sm:text-3xl">利用金額と利用頻度</h1>
-        <nav className="flex flex-wrap gap-3 text-sm font-bold">
-          <Link href="/admin/invitations" className="text-brand-dark underline">
-            招待と所属
-          </Link>
-          <Link href="/admin/trial" className="text-brand-dark underline">
-            30秒でためすの見守り
-          </Link>
-          <Link href="/admin/knowledge" className="text-brand-dark underline">
-            製造業の知識表
-          </Link>
-          <Link href="/admin/waitlist" className="text-brand-dark underline">
-            新規受付の案内を待っている人
-          </Link>
-        </nav>
       </div>
 
       {sample && (
@@ -50,7 +38,7 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
         <Stat
           label="声をかけたい会社"
           value={`${waiting.length} 社`}
-          note={waiting.length ? "2週間以上使っていない・まだ始めていない" : "みなさん使っています"}
+          note={waiting.length ? "使っていない・始めていない・途中で止まっている" : "みなさん順調です"}
         />
       </section>
 
@@ -71,12 +59,21 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
           <p className="text-muted">まだ会社がありません。</p>
         ) : (
           <ul className="space-y-3">
-            {s.orgs.map((o) => (
-              <li key={o.id} className="rounded-2xl border border-line bg-surface p-3">
+            {orgs.map((o) => (
+              <li key={o.id} className={`rounded-2xl border bg-surface p-3 ${needsCall(o, total) ? "border-warn" : "border-line"}`}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-lg font-black">{o.name}</p>
                   <span className={`rounded-full px-3 py-1 text-xs font-bold ${PACE_STYLE[o.pace]}`}>{PACE_LABEL[o.pace]}</span>
                 </div>
+                {orgNudges(o, total).length > 0 && (
+                  <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="声をかけたいわけ">
+                    {orgNudges(o, total).map((n) => (
+                      <li key={n} className="rounded-full bg-warn-soft px-3 py-1 text-xs font-bold text-warn">
+                        {n}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm sm:grid-cols-4">
                   <Item label="最後に使った日" value={o.lastActiveAt ? `${date(o.lastActiveAt)}（${o.daysSinceActive === 0 ? "今日" : `${o.daysSinceActive}日前`}）` : "—"} />
                   <Item label="使った日数" value={`7日で${o.activeDays7}日／30日で${o.activeDays30}日`} />
@@ -85,6 +82,11 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
                   <Item label="会社のこと" value={`${Math.min(o.answered, total)} / ${total} 問`} />
                   <Item label="記事" value={`${o.articles} 本（載せた ${o.published} 本）`} />
                 </dl>
+                {!sample && (
+                  <Link href={`/coach/orgs/${o.id}`} className="mt-2 inline-block text-sm font-bold text-brand-dark underline">
+                    この会社の記事とやり取りを見る →
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

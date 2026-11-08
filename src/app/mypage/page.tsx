@@ -38,14 +38,7 @@ export default function MyPage() {
         ホームへ戻る
       </Link>
       <h1 className="text-2xl font-black sm:text-3xl">マイページ</h1>
-      <ShioriTalk
-        mood="point"
-        lines={
-          org
-            ? ["ここでは、お名前や社名、案内役と話し方、メールの受け取りを変えられます。", "変えたいところだけ、1つずつどうぞ。"]
-            : ["ここでは、管理の画面へすぐ移れて、担当している会社の社名も直せます。", "案内役と話し方も、お客様と同じように試せますよ。"]
-        }
-      />
+      <p className="text-muted">{org ? "お名前・社名・案内役・メールの受け取りを変えられます。変えたいところだけどうぞ。" : "管理の画面へすぐ移れます。担当している会社の社名や、案内役も変えられます。"}</p>
 
       {org && <OrgNameCard orgId={org.id} current={org.name} />}
 
