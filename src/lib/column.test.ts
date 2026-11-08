@@ -65,11 +65,14 @@ describe("読みものの写真", () => {
     for (const c of COLUMNS) for (const s of c.sections) expect(s.photo || s.figure, `${c.slug}「${s.h}」に写真も図もない`).toBeTruthy();
   });
 
-  it("しおりのイラストは使わず、しおりの一問一答は1記事に1か所まで（2026-11-08 田村さん「写実的なものとしおりがあると違和感。控えめに」）", () => {
+  it("しおりのイラストは使わず、しおりの一問一答は見出し4つなら2か所、5つ以上なら3か所、隣り合わせない（2026-11-08 田村さん「写実的なものとしおりがあると違和感」→ 11-09「読むのは製造業の社長。対話は一度だけじゃない方が見やすい」）", () => {
     for (const c of COLUMNS) {
       const photos = [c.hero, ...c.sections.map((s) => s.photo)];
       expect(photos.some((p) => p?.illustration), `${c.slug} にしおりのイラストがある`).toBe(false);
-      expect(c.sections.reduce((n, s) => n + (s.chat?.length ?? 0), 0), `${c.slug} の一問一答が多い`).toBeLessThanOrEqual(1);
+      const at = c.sections.flatMap((s, i) => (s.chat?.length ? [i] : []));
+      for (const s of c.sections) expect(s.chat?.length ?? 0, `${c.slug} の1つの見出しに一問一答が2つ以上`).toBeLessThanOrEqual(1);
+      expect(at.length, `${c.slug} の一問一答の数`).toBe(c.sections.length >= 5 ? 3 : 2);
+      for (let k = 1; k < at.length; k++) expect(at[k] - at[k - 1], `${c.slug} の一問一答が隣り合う見出しにある`).toBeGreaterThan(1);
       expect(c.opening, `${c.slug} に opening（しおりの問いかけ）がある`).toBeUndefined();
       expect(c.shiori, `${c.slug} に shiori（しおりのひとこと）がある`).toBeUndefined();
     }
