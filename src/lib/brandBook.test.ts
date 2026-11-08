@@ -51,4 +51,12 @@ describe("ブランドブック", () => {
     const svg = readFileSync(join(process.cwd(), "public/brand/logo-horizontal-reverse.svg"), "utf8");
     expect(svg.match(/#E9B53B/gi)?.length).toBe(1);
   });
+
+  it("/brand は社長向け：ロゴの作業用の情報（色番号・ダウンロード一覧・決まり）は /brand/logo に置く（2026-11-08 田村さん）", () => {
+    const main = readFileSync(join(process.cwd(), "src/app/brand/BrandBook.tsx"), "utf8");
+    for (const ng of ["RGB", "LOGO_RULES", "LOGO_DONTS", "DOWNLOADS", "BRAND_FONTS"]) expect(main, ng).not.toContain(ng);
+    expect(main).toContain('href="/welcome"');
+    expect(main).toContain('href="/brand/logo"');
+    expect(existsSync(join(process.cwd(), "src/app/brand/logo/page.tsx"))).toBe(true);
+  });
 });

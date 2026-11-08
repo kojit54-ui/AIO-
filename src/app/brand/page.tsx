@@ -12,7 +12,7 @@ const barlow = Barlow_Semi_Condensed({ weight: ["600", "700"], subsets: ["latin"
 export const metadata: Metadata = {
   robots: INDEX_ROBOTS,
   title: `ブランドとロゴ｜${SERVICE_NAME}`,
-  description: `${BRAND_LINE}${BRAND_DESCRIPTOR}${SERVICE_NAME}の理念・ミッション・記事づくりの約束と、ロゴの使い方。`,
+  description: `${BRAND_LINE}${BRAND_DESCRIPTOR}${SERVICE_NAME}の理念・ミッション・記事づくりの約束と、運営する会社のこと。`,
   alternates: { canonical: "/brand" },
 };
 
