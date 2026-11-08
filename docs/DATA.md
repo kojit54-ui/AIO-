@@ -341,3 +341,9 @@ interface GenerationRun {
 
 - newsletter_optouts：受け取らないと決めた人（user_id）。本人だけが見て、足して、消せる。メールの「受け取らない」のリンクはサーバーが足す
 - newsletter_sends：送った記録（会社・人・月が主キー）。stamp_ids に、送ったときに取っていたスタンプ。同じ会社の人だけ読め、書くのはサーバーだけ
+
+## 声をかけた記録（supabase/migrations/20261108150000_org_contacts.sql）
+
+- `org_contacts`：会社・誰が・いつ・ひとこと（200字まで）。担当のトップの「声をかけたい会社」で「声をかけたら記録する」を押すと1行増える
+- 読み書きはサーバー（service role）だけ。`/api/admin/contacts`（残す）と `/api/admin/call-list`（最後の記録を返す）が、全社管理者かどうかを確かめてから使う
+- 表がまだ無い環境では、記録の欄を出さない（画面は壊れない）

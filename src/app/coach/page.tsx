@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { CallListItem } from "@/app/api/admin/call-list/route";
 import { AdminNav } from "@/components/admin/AdminNav";
+import { ContactButton } from "@/components/admin/ContactButton";
 import { Shiori, Wave } from "@/components/fun";
 import { EmptyState, StatusBadge, formatDate } from "@/components/ui";
 import { useStore } from "@/mock/store";
@@ -15,11 +16,16 @@ export default function CoachHome() {
   const { db, user, month } = useStore();
   // 全社管理者なら「利用金額と利用頻度」と同じ判定（質問の進み具合・最後に使った日つき）を使う。読めなければ画面の中のデータで出す
   const [serverCalls, setServerCalls] = useState<CallListItem[] | null>(null);
+  const [contactsEnabled, setContactsEnabled] = useState(false);
   useEffect(() => {
     let alive = true;
     fetch("/api/admin/call-list", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : null))
-      .then((j: { orgs?: CallListItem[] } | null) => alive && j?.orgs && setServerCalls(j.orgs))
+      .then((j: { orgs?: CallListItem[]; contactsEnabled?: boolean } | null) => {
+        if (!alive || !j?.orgs) return;
+        setServerCalls(j.orgs);
+        setContactsEnabled(Boolean(j.contactsEnabled));
+      })
       .catch(() => undefined);
     return () => {
       alive = false;
@@ -89,9 +95,9 @@ export default function CoachHome() {
           <p className="text-muted">いまはありません。どの会社も進んでいます。</p>
         ) : (
           <ul className="space-y-2">
-            {calls.map(({ id, name, reasons, daysSinceActive }) => (
-              <li key={id}>
-                <Link href={`/coach/orgs/${id}`} className="group flex flex-wrap items-center gap-2 rounded-2xl bg-canvas px-4 py-2 hover:bg-brand-soft">
+            {calls.map(({ id, name, reasons, daysSinceActive, lastContact }) => (
+              <li key={id} className="space-y-2 rounded-2xl bg-canvas p-2">
+                <Link href={`/coach/orgs/${id}`} className="group flex flex-wrap items-center gap-2 rounded-xl px-2 py-1 hover:bg-brand-soft">
                   <b className="mr-1">{name}</b>
                   {reasons.map((r) => (
                     <span key={r} className="rounded-full bg-warn-soft px-2.5 py-0.5 text-xs font-bold text-warn">
@@ -105,6 +111,15 @@ export default function CoachHome() {
                     見る <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>→</span>
                   </span>
                 </Link>
+                {contactsEnabled && (
+                  <div className="px-2 pb-1">
+                    <ContactButton
+                      organizationId={id}
+                      last={lastContact ?? null}
+                      onSaved={(c) => setServerCalls((list) => list?.map((x) => (x.id === id ? { ...x, lastContact: c } : x)) ?? list)}
+                    />
+                  </div>
+                )}
               </li>
             ))}
           </ul>
