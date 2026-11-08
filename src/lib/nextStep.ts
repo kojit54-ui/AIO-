@@ -3,6 +3,7 @@
 // 吹き出しと同じく「止まっています」ではなく「ここから再開できます」の言い方にする。
 
 import type { ArticleStatus } from "@/types/domain";
+import { ARTICLES_PER_MONTH_MAX } from "@/lib/articleQuota";
 
 export interface NextStepArticle {
   id: string;
@@ -40,7 +41,9 @@ export function nextStep(list: NextStepArticle[], publishedThisMonth: number): N
   const draft = list.find((a) => a.status === "drafting");
   if (draft) return { kind: "continue", lead: "答えは残っています。前回の続きからできます", label: "前回の続きに答える", title: shortTitle(draft.title, 30), articleId: draft.id };
   if (publishedThisMonth === 0) return { kind: "start", lead: "質問に答えるだけで、記事になります", label: "今月の1本を書き始める" };
-  return { kind: "more", lead: "今月の1本は公開できました。おつかれさまでした", label: "もう1本書いておく" };
+  // 記事は毎月1本から10本まで（src/lib/articleQuota.ts）。上限まで書いたら、来月を案内する
+  if (publishedThisMonth >= ARTICLES_PER_MONTH_MAX) return { kind: "more", lead: `今月は${publishedThisMonth}本公開できました。今月の分（${ARTICLES_PER_MONTH_MAX}本まで）は書き終わりです。来月の分の質問には、いまから答えておけます`, label: "来月の記事の質問に答えておく" };
+  return { kind: "more", lead: `今月は${publishedThisMonth}本公開できました。記事は毎月${ARTICLES_PER_MONTH_MAX}本まで書けます`, label: "もう1本書いておく" };
 }
 
 /**

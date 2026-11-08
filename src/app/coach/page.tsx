@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import type { CallListItem } from "@/app/api/admin/call-list/route";
 import { AdminNav } from "@/components/admin/AdminNav";
 import { ContactButton } from "@/components/admin/ContactButton";
+import { ContactInfo } from "@/components/admin/ContactInfo";
+import { jstToday, sortCalls } from "@/lib/admin/callOrder";
 import { Shiori, Wave } from "@/components/fun";
 import { EmptyState, StatusBadge, formatDate } from "@/components/ui";
 import { useStore } from "@/mock/store";
@@ -73,9 +75,8 @@ export default function CoachHome() {
       const org = orgs.find((o) => o.id === id);
       if (org && !out.some((x) => x.id === id)) out.push({ id, name: org.name, reasons: ["AIOのチェックの答え待ち"] });
     }
-    // まだ声をかけていない会社 → 前に声をかけたのが古い会社 → 理由の多い会社の順（2026-11-08 管理者役「昨日電話した会社が一番上」）
-    const contactedAt = (x: CallListItem) => x.lastContact?.at ?? "";
-    return out.sort((x, y) => contactedAt(x).localeCompare(contactedAt(y)) || y.reasons.length - x.reasons.length);
+    // 次に連絡する日が来た会社 → まだ声をかけていない会社 → …（src/lib/admin/callOrder.ts）
+    return sortCalls(out, jstToday());
   };
   const calls: CallListItem[] = withChecks(serverCalls ?? callList);
   const commentedAfter = (articleId: string, at: string) => db.reviews.some((r) => r.articleId === articleId && r.createdAt >= at);
@@ -111,7 +112,7 @@ export default function CoachHome() {
           <p className="text-muted">いまはありません。どの会社も進んでいます。</p>
         ) : (
           <ul className="space-y-2">
-            {calls.map(({ id, name, reasons, daysSinceActive, lastContact, emails }) => (
+            {calls.map(({ id, name, reasons, daysSinceActive, lastContact, emails, info }) => (
               <li key={id} className="space-y-2 rounded-2xl bg-canvas p-2">
                 <Link href={`/coach/orgs/${id}`} className="group flex flex-wrap items-center gap-2 rounded-xl px-2 py-1 hover:bg-brand-soft">
                   <b className="mr-1">{name}</b>
@@ -127,6 +128,15 @@ export default function CoachHome() {
                     見る <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>→</span>
                   </span>
                 </Link>
+                {contactsEnabled && info !== undefined && (
+                  <div className="px-2">
+                    <ContactInfo
+                      organizationId={id}
+                      info={info}
+                      onSaved={(i) => setServerCalls((list) => list?.map((x) => (x.id === id ? { ...x, info: i } : x)) ?? list)}
+                    />
+                  </div>
+                )}
                 {emails && emails.length > 0 && (
                   <p className="flex flex-wrap gap-x-3 gap-y-1 px-2 text-sm">
                     <span className="text-muted">連絡先：</span>
@@ -135,6 +145,9 @@ export default function CoachHome() {
                         {e}
                       </a>
                     ))}
+                    <Link href={`/admin/invitations?org=${id}`} className="text-brand-dark underline">
+                      招待と所属を開く
+                    </Link>
                   </p>
                 )}
                 {contactsEnabled && (

@@ -54,3 +54,38 @@ describe("既存のお客様の扱いを、サイトに出さない（2026-11-08
     expect(text).not.toMatch(/ご契約のあいだ無料/);
   });
 });
+
+describe("記事の本数は「毎月1本から10本まで」（2026-11-08 田村さん「最低1本。毎月10本まで」）", () => {
+  it("料金の文・規約・特商法・構造化データに、同じ本数が入っている", async () => {
+    const { ARTICLES_PER_MONTH_LABEL, ARTICLES_PER_MONTH_MAX } = await import("@/lib/articleQuota");
+    const { TERMS } = await import("@/lib/legal");
+    expect(ARTICLES_PER_MONTH_MAX).toBe(10);
+    expect(ARTICLES_PER_MONTH_LABEL).toBe("毎月1本から10本まで");
+    expect(PRICE_LABEL).toContain(ARTICLES_PER_MONTH_LABEL);
+    expect(tokushoho).toContain(ARTICLES_PER_MONTH_LABEL);
+    expect(JSON.stringify(TERMS)).toContain(ARTICLES_PER_MONTH_LABEL);
+    expect(serviceJsonLd().description).toContain(ARTICLES_PER_MONTH_LABEL);
+    expect(FAQ.map((f) => f.a).join("")).toContain("毎月1本から10本まで");
+  });
+
+  it("サイトのどこにも「記事は毎月1本」だけの書き方が残っていない（読みものを足しても見張る）", async () => {
+    const { COLUMNS } = await import("@/lib/column");
+    const { LEGAL_DOCS } = await import("@/lib/legal");
+    const brand = await import("@/lib/brandBook");
+    const text = [
+      fs.readFileSync("src/app/welcome/Welcome.tsx", "utf8"),
+      fs.readFileSync("src/app/welcome/page.tsx", "utf8"),
+      fs.readFileSync("src/app/about/page.tsx", "utf8"),
+      fs.readFileSync("src/app/brand/BrandBook.tsx", "utf8"),
+      JSON.stringify(brand),
+      JSON.stringify(FAQ),
+      JSON.stringify(COLUMNS),
+      JSON.stringify(LEGAL_DOCS),
+      PRICE_LABEL,
+      JSON.stringify(serviceJsonLd()),
+    ].join("\n");
+    // 「毎月1本から」はよい。「記事は毎月1本です」「毎月1本の記事づくり」「毎月1本。」のように本数を1本と言い切る形はだめ
+    expect(text).not.toMatch(/(記事は|記事：|発行", ")毎月1本(?!から)/);
+    expect(text).not.toMatch(/毎月1本(の記事づくり|。|です|、自社)/);
+  });
+});

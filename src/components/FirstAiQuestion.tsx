@@ -68,7 +68,7 @@ export function FirstAiQuestion({ hasKnowledge }: { hasKnowledge: boolean }) {
               <span className="text-sm font-bold opacity-90">このまま記事づくりへ</span>
             </button>
             <details className="rounded-2xl border-2 border-line px-3 py-2">
-              <summary className="cursor-pointer text-center font-bold text-brand-dark">使ったことがある</summary>
+              <summary className="cursor-pointer text-center font-bold text-brand-dark">使ったことがある<span className="block text-sm font-bold text-muted">どのAIかを選んで、記事づくりへ</span></summary>
               <p className="mt-2 text-sm text-muted">そのAIに会社のことを話したことがあれば、その中身を使えるので、質問が少し減ります。</p>
             <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
               {FIRST_AIS.map((a) => (
