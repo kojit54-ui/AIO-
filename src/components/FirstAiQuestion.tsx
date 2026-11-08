@@ -64,8 +64,8 @@ export function FirstAiQuestion({ hasKnowledge }: { hasKnowledge: boolean }) {
             {/* 吹き出しは文字が順に出るので、答える理由は動かない文でも書いておく */}
             <p className="rounded-2xl bg-brand-soft/60 px-4 py-2 text-sm font-bold text-brand-dark">AIを知らなくても大丈夫です。説明をあなたに合わせるための質問で、どちらを選んでも記事づくりへ進みます。</p>
             <button type="button" className="btn-primary min-h-16 w-full flex-col gap-0 text-lg leading-tight" onClick={() => pick("none")}>
-              <span>はじめて・よくわからない</span>
-              <span className="text-sm font-bold opacity-90">このまま記事づくりへ</span>
+              <span>記事づくりを始める</span>
+              <span className="text-sm font-bold opacity-90">AIははじめて・よくわからない方も、こちら</span>
             </button>
             <details className="rounded-2xl border-2 border-line px-3 py-2">
               <summary className="cursor-pointer text-center font-bold text-brand-dark">使ったことがある<span className="block text-sm font-bold text-muted">どのAIかを選んで、記事づくりへ</span></summary>
