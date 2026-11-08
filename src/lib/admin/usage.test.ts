@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { lastMonthStart, previousMonth, summarizeUsage, type UsageInput } from "./usage";
+import { lastMonthStart, needsCall, orgNudges, previousMonth, summarizeUsage, type UsageInput } from "./usage";
 
 // 2026-11-04 16:00 日本時間
 const now = new Date("2026-11-04T07:00:00Z");
@@ -91,5 +91,23 @@ describe("月の計算", () => {
   });
   it("先月の1日0時（日本時間）から集める", () => {
     expect(lastMonthStart(now).toISOString()).toBe("2026-09-30T15:00:00.000Z");
+  });
+});
+
+describe("orgNudges / needsCall（よく使っていても止まっている会社を見落とさない）", () => {
+  const base = { pace: "active" as const, answered: 8, articles: 2, published: 1 };
+  it("会社のことが終わり、記事を載せていれば声かけ不要", () => {
+    expect(orgNudges(base, 8)).toEqual([]);
+    expect(needsCall(base, 8)).toBe(false);
+  });
+  it("会社のことが途中・記事を載せていないと、よく使っていても声をかける", () => {
+    expect(orgNudges({ ...base, answered: 2, published: 0 }, 8)).toEqual(["会社のことが途中（2/8問）", "記事をまだ1本も載せていない"]);
+    expect(needsCall({ ...base, published: 0 }, 8)).toBe(true);
+    expect(orgNudges({ ...base, articles: 0, published: 0 }, 8)).toEqual(["まだ記事を作っていない"]);
+  });
+  it("まだ始めていない・長く使っていない会社は pace で声をかける（わけは重ねない）", () => {
+    expect(orgNudges({ ...base, pace: "never", answered: 0, articles: 0, published: 0 }, 8)).toEqual([]);
+    expect(needsCall({ ...base, pace: "never" }, 8)).toBe(true);
+    expect(needsCall({ ...base, pace: "sleeping" }, 8)).toBe(true);
   });
 });

@@ -48,25 +48,9 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
 
   return (
     <main className="page max-w-3xl space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div>
-          <h1 className="text-2xl font-black sm:text-3xl">招待と所属の管理</h1>
-          <div className="flex flex-wrap gap-x-4 text-sm font-bold">
-            <Link href="/admin/usage" className="text-brand-dark underline">
-              利用金額と利用頻度へ
-            </Link>
-            <Link href="/admin/knowledge" className="text-brand-dark underline">
-              製造業の知識表へ
-            </Link>
-            <Link href="/admin/trial" className="text-brand-dark underline">
-              30秒でためすの見守り（AIを止める・上限）へ
-            </Link>
-          </div>
-        </div>
-        <form action="/auth/signout" method="post" className="flex items-center gap-3 text-sm">
-          <span className="text-muted">{auth.user.email}</span>
-          <button type="submit" className="btn-secondary min-h-9 px-3 py-1 text-sm">ログアウト</button>
-        </form>
+      <div>
+        <h1 className="text-2xl font-black sm:text-3xl">招待と所属の管理</h1>
+        <p className="text-sm text-muted">会社を選んで招待を送ります。招待した人が登録するまでは「招待中」に出ます。</p>
       </div>
 
       <section className="card space-y-3">
@@ -91,18 +75,20 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
           <section className="card space-y-3">
             <h2 className="text-lg font-bold">{current.name}に招待する</h2>
             <InviteForm organizationId={current.id} organizationName={current.name} />
-            {pending && pending.length > 0 && (
-              <div>
-                <h3 className="font-bold">未使用の招待</h3>
-                <ul className="text-sm text-muted">
+            <div className="rounded-2xl bg-canvas p-3">
+              <h3 className="font-bold">招待中（まだ登録していない人）</h3>
+              {pending && pending.length > 0 ? (
+                <ul className="mt-1 space-y-1 text-sm">
                   {pending.map((i) => (
                     <li key={i.id}>
-                      {i.email}（{ROLE_LABEL[i.role]}、{date(i.expires_at)}まで）
+                      {i.email}（{ROLE_LABEL[i.role]}、招待は{date(i.expires_at)}まで有効）
                     </li>
                   ))}
                 </ul>
-              </div>
-            )}
+              ) : (
+                <p className="mt-1 text-sm text-muted">いません。</p>
+              )}
+            </div>
           </section>
 
           <section className="card space-y-3">

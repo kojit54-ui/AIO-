@@ -29,7 +29,7 @@ export interface AioNewsItem {
 }
 
 /** 知識表を最後に見直した日。docs/AIO.md の「最終更新」と同じ日にする（テストで確かめる） */
-export const AIO_NEWS_UPDATED = "2026-10-25";
+export const AIO_NEWS_UPDATED = "2026-11-01";
 
 /** 新しい順に並べる */
 export const AIO_NEWS: AioNewsItem[] = [

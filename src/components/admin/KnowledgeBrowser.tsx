@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   MFG_COLLECTED_AT,
@@ -59,14 +58,6 @@ export function KnowledgeBrowser() {
     <main className="page max-w-4xl space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h1 className="text-2xl font-black sm:text-3xl">製造業の知識表</h1>
-        <nav className="flex flex-wrap gap-3 text-sm font-bold">
-          <Link href="/admin/usage" className="text-brand-dark underline">
-            利用金額と利用頻度
-          </Link>
-          <Link href="/admin/invitations" className="text-brand-dark underline">
-            招待と所属
-          </Link>
-        </nav>
       </div>
       <section className="card space-y-2">
         <p>

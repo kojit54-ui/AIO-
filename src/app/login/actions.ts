@@ -34,6 +34,8 @@ export async function sendLoginLink(_prev: LoginState, form: FormData): Promise<
 
 export interface CodeState {
   error?: string;
+  /** ログインできたときの行き先。画面側でページごと読み直して移る */
+  next?: string;
 }
 
 /** メールに書いた6桁の番号でログイン（src/lib/auth/loginCode.ts）。合っていれば行き先へ移る */
@@ -47,7 +49,9 @@ export async function verifyLoginCode(_prev: CodeState, form: FormData): Promise
   const { error } = await supabase.auth.verifyOtp({ email, token: code, type: "email" });
   if (error?.status === 429) return { error: "短い時間に何度も試されました。少し待ってからお試しください" };
   if (error) return { error: "番号がちがうか、期限が切れています。新しいメールの番号を入れてください" };
-  redirect(next);
+  // redirect() だと画面の中だけで移り、ログイン前に読んだ状態（未ログイン）のまま入口ページへ戻されるため、
+  // 行き先を返して画面側でページごと読み直す（docs/LESSONS.md）
+  return { next };
 }
 
 /** Googleでログイン。Google の画面へ移る。招待されていない人は、戻ってきたあとに断る（src/lib/auth/google.ts） */

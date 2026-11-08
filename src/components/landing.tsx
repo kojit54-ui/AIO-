@@ -84,7 +84,7 @@ const PERKS = [
 /**
  * ログイン・招待の画面の土台。左（スマホでは上）にしおりと「入るとできること」、右に入力。
  */
-export function LoginStage({ mood, lines, title, children }: { mood: ShioriMood; lines: string[]; title: React.ReactNode; children: React.ReactNode }) {
+export function LoginStage({ mood, lines, title, children, compact = false }: { mood: ShioriMood; lines: string[]; title: React.ReactNode; children: React.ReactNode; compact?: boolean }) {
   return (
     <div className="min-h-dvh">
       <header className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
@@ -96,11 +96,15 @@ export function LoginStage({ mood, lines, title, children }: { mood: ShioriMood;
       <main className="mx-auto grid w-full max-w-5xl items-start gap-6 px-4 pb-10 pt-2 sm:px-6 md:grid-cols-[1.05fr_1fr] md:gap-10 md:pt-8">
         <section className="relative animate-rise overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand to-[#4f8ff0] p-5 text-white shadow-[0_8px_0_var(--color-brand-dark)] sm:p-7">
           <Sparkles />
-          <h1 className="relative text-2xl font-black leading-snug sm:text-3xl">{title}</h1>
-          <div className="relative mt-4 text-ink">
+          <h1 className="relative text-xl font-black leading-snug sm:text-3xl">{title}</h1>
+          {/* compact：メールを送ったあと。スマホでは番号の欄を最初の画面に入れるため、しおりは出さない */}
+          <div className={`relative mt-4 text-ink ${compact ? "hidden md:block" : ""}`}>
             <ShioriTalk mood={mood} lines={lines} size="lg" />
           </div>
-          <ChosenPath tone="onBlue" className="relative mt-4" />
+          {/* スマホでは入力欄を最初の画面に入れるため、図は出さない */}
+          <div className="relative mt-4 hidden md:block">
+            <ChosenPath tone="onBlue" />
+          </div>
           <ul className="relative mt-4 hidden space-y-2 md:block" aria-label="ログインするとできること">
             {PERKS.map((p, i) => (
               <li key={p.text} className="flex animate-rise items-center gap-3 rounded-2xl bg-white/15 px-4 py-2 font-bold" style={{ animationDelay: `${0.4 + i * 0.12}s` }}>

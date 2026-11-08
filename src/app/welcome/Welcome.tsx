@@ -38,6 +38,7 @@ export function Welcome({ makers }: { makers: MfgShowcase }) {
         <Gap />
         <AiChat />
         <Focus total={makers.total} industries={makers.industries} />
+        <StrengthBook />
         <Steps />
         <Included total={makers.total} industries={makers.industries} />
         <KeepGoing />
@@ -96,6 +97,26 @@ function SubLinks({ dark = false }: { dark?: boolean }) {
   );
 }
 
+/** しおりのひとこと（2026-11-08 3者の合意：枠の外で喋るのは、しおり1人・5か所まで。吹き出しは見えたときに1回だけ出る） */
+function Says({ text, big = false }: { text: string; big?: boolean }) {
+  const [ref, seen] = useInView<HTMLDivElement>(0.6);
+  return (
+    <div ref={ref} className="flex items-end gap-2.5">
+      {/* 胸から上だけを見せる */}
+      <span className={`block shrink-0 overflow-hidden ${big ? "h-[72px] sm:h-36" : "h-14 sm:h-16"}`} aria-hidden>
+        <Shiori mood="ask" as="shiori" className={`${big ? "h-[180px] sm:h-[360px]" : "h-[140px] sm:h-[160px]"} w-auto max-w-none`} />
+      </span>
+      <p
+        className={`${maru} relative mb-1.5 w-fit max-w-md rounded-2xl rounded-bl-sm border-2 border-brand-soft bg-white px-4 py-2.5 font-bold leading-relaxed text-ink shadow-sm ${big ? "text-[0.95rem] sm:text-base" : "text-sm sm:text-[0.95rem]"} ${seen ? "animate-bubble" : "opacity-0"}`}
+        style={{ transformOrigin: "left bottom" }}
+      >
+        <span className="sr-only">しおり：</span>
+        {text}
+      </p>
+    </div>
+  );
+}
+
 function MainButton({ signedIn, href }: { signedIn: boolean; href: string }) {
   if (signedIn)
     return (
@@ -104,8 +125,8 @@ function MainButton({ signedIn, href }: { signedIn: boolean; href: string }) {
       </Link>
     );
   return (
-    <Link href={TRY_HREF} className="btn-primary min-h-14 w-full px-7 text-lg sm:w-auto">
-      登録せずに、記事づくりを試す <span aria-hidden>→</span>
+    <Link href={TRY_HREF} className="btn-primary min-h-14 w-full px-4 text-[1.05rem] sm:w-auto sm:px-7 sm:text-lg">
+      登録せずに、記事の書き出しを試す <span aria-hidden>→</span>
     </Link>
   );
 }
@@ -113,10 +134,10 @@ function MainButton({ signedIn, href }: { signedIn: boolean; href: string }) {
 /** スマホでは「見出し→ボタン→見本→ほかの入口と料金」の順。PCは左に文、右に見本 */
 function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
   return (
-    <section className="mx-auto grid max-w-6xl gap-x-10 gap-y-7 px-4 pb-14 pt-6 sm:px-6 md:grid-cols-[1.05fr_1fr] md:pb-20 md:pt-14">
+    <section className="mx-auto grid max-w-6xl gap-x-10 gap-y-7 px-4 pb-14 pt-4 sm:px-6 md:grid-cols-[1.05fr_1fr] md:pb-20 md:pt-14">
       <div className="md:self-end">
         <p className="inline-block border-b-2 border-sumi pb-1 text-sm font-bold">製造業の一人親方〜30人の会社へ</p>
-        <h1 className={`${kaku} mt-5 text-[2rem] font-black leading-[1.35] sm:text-[3.1rem]`}>
+        <h1 className={`${kaku} mt-4 text-[2rem] font-black leading-[1.35] sm:text-[3.1rem]`}>
           <span className="block">仕事の話に</span>
           <span className="block">答えるだけ。</span>
           <span className="mt-1 block text-[1.55rem] leading-snug sm:text-[2.3rem]">
@@ -124,16 +145,21 @@ function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
             <span className="inline-block">自社サイトの記事に。</span>
           </span>
         </h1>
-        <p className="mt-5 max-w-xl text-base leading-[1.7] sm:text-[1.05rem] sm:leading-loose">
+        <p className="mt-3 max-w-xl text-base leading-[1.7] sm:mt-5 sm:text-[1.05rem] sm:leading-loose">
           <span className="inline-block">案内役の質問に答えると、</span>
           <span className="inline-block">AIが記事の下書きに。</span>
           <span className="inline-block">確かめて直し、</span>
           <span className="inline-block">自社サイトで公開します。</span>
         </p>
-        <p className="mt-3 text-sm font-bold text-sumi/70">{BRAND_LINE}</p>
-        <div className="mt-6">
+        <p className="mt-2 text-sm font-bold text-sumi/70 sm:mt-3">{BRAND_LINE}</p>
+        {!signedIn && (
+          <div className="mt-3 sm:mt-5">
+            <Says big text="パソコンが苦手でも大丈夫。いつもの言葉で、お仕事の話を聞かせてください。" />
+          </div>
+        )}
+        <div className="mt-4">
           <MainButton signedIn={signedIn} href={href} />
-          {!signedIn && <p className="mt-2 text-sm leading-[1.6] text-sumi/80">会社のこと3項目＋仕事の話1問で、記事の書き出しを試せます。</p>}
+          {!signedIn && <p className="mt-2 text-sm leading-[1.6] text-sumi/80">会社のこと3項目＋仕事の話1問で、記事の書き出しを試せます。対応する端末なら、声でも答えられます。</p>}
         </div>
       </div>
       <div className="md:col-start-2 md:row-span-2 md:row-start-1 md:self-center">
@@ -158,8 +184,8 @@ function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
 function SampleScreen() {
   const talk = BRAND_SAMPLE.talk.slice(2);
   return (
-    <figure className="border-2 border-sumi bg-white">
-      <figcaption className="flex items-center justify-between border-b-2 border-sumi px-4 py-2 text-xs font-bold">
+    <figure className="overflow-hidden rounded-2xl border border-sumi/25 bg-white shadow-[0_10px_30px_-12px_rgba(31,42,51,0.35)]">
+      <figcaption className="flex items-center justify-between border-b border-sumi/20 px-4 py-2 text-xs font-bold">
         <span>画面の見本</span>
         <span className="text-sumi/60">{BRAND_SAMPLE.company}</span>
       </figcaption>
@@ -172,13 +198,13 @@ function SampleScreen() {
             </div>
           ) : (
             <p key={i} className="ml-auto w-fit max-w-[88%] rounded-2xl rounded-br-md bg-brand px-3 py-2 font-bold leading-relaxed text-white">
-              <span className="sr-only">社長：</span>
+              <span className="sr-only">社長・担当者：</span>
               {t.text}
             </p>
           ),
         )}
       </div>
-      <p className="border-y border-sumi/30 bg-paper px-4 py-1.5 text-center text-xs font-bold text-sumi/70">↓ AIが記事に。社長が確かめてから公開</p>
+      <p className="border-y border-sumi/30 bg-paper px-4 py-1.5 text-center text-xs font-bold text-sumi/70">↓ AIが記事に。社長や担当の方が確かめてから公開</p>
       <div className="px-5 py-4">
         <p className="text-xs font-bold text-sumi/60">できあがった記事の一部（見本）</p>
         <p className={`${kaku} mt-1 text-lg font-black leading-snug`}>
@@ -186,14 +212,14 @@ function SampleScreen() {
         </p>
         <p className="mt-2 line-clamp-4 text-sm leading-relaxed">{BRAND_SAMPLE.article.body}</p>
       </div>
-      <div className="flex items-center gap-3 border-t-2 border-sumi px-4 py-2.5">
+      <div className="flex items-center gap-3 border-t border-sumi/20 px-4 py-2.5">
         <span className="flex shrink-0 -space-x-2" aria-hidden>
           {["shiori", "gen", "koyuki"].map((g) => (
             // eslint-disable-next-line @next/next/no-img-element -- 小さな固定の絵
             <img key={g} src={`/guide/${g}-face.webp`} width={192} height={192} alt="" className="h-9 w-9 rounded-full border-2 border-white bg-sky object-cover" />
           ))}
         </span>
-        <span className="text-sm font-bold">案内役は3人から選べます</span>
+        <span className="text-sm font-bold">案内役は3タイプから選べます</span>
       </div>
     </figure>
   );
@@ -293,9 +319,9 @@ function AiChat() {
 }
 
 const STEPS = [
-  { who: "社長", title: "質問に答える", text: "案内役が、なぜ聞くのかを添えて1問ずつ聞きます。文字でも声でも、写真1枚からでも。わからない質問は飛ばせます。" },
+  { who: "社長・担当者", title: "質問に答える", text: "案内役が、なぜ聞くのかを添えて1問ずつ聞きます。文字でも声でも、写真1枚からでも。わからない質問は飛ばせます。" },
   { who: "AI", title: "記事にまとめる", text: `答えから記事を書き、${AIO_CHECK_LIST.length}項目の「AIOのチェック」で見直します。足りない所は、案内役が聞き返します。` },
-  { who: "社長", title: "確かめて、載せる", text: "読んで、直してから、自社のホームページにご自身で載せます。自動投稿ではありません。載せ方は1ステップずつ案内します。" },
+  { who: "社長・担当者", title: "確かめて、載せる", text: "読んで、直してから、自社のホームページにご自身で載せます。自動投稿ではありません。載せ方は1ステップずつ案内します。" },
 ];
 
 /** 製造業だけにしぼっている理由。根拠のある言い方だけにする（数は知識表から） */
@@ -330,21 +356,63 @@ function Focus({ total, industries }: { total: number; industries: number }) {
   );
 }
 
+/** 強みの帳面。言えるのは「自分で作って持てる」まで（他社との比較・価格・「勝る」は出さない。DECISIONS 2026-11-08） */
+function StrengthBook() {
+  const rows: [string, string][] = [
+    ["得意なこと", "例：図面の無い部品の、1個からの作り直し"],
+    ["お客様と困りごと", "例：古い設備の保全担当／交換部品が手に入らない"],
+    ["強み・根拠・数字", "例：図面が無くても作れる／現物を測って図面を起こす／この10年で約300点"],
+    ["選ばれる決め手", "例：見積もりの前に、現物を見に行く"],
+    ["うちらしい書き方", "例：ですます調。専門用語にはひとこと説明。「業界最安」「絶対」は使わない"],
+  ];
+  return (
+    <Section kicker="強みの帳面" title="強みの文と、自社専用の書き方を、自分で持てる。">
+      <div className="grid gap-8 md:grid-cols-[1fr_1.1fr] md:items-start">
+        <div className="space-y-4 leading-loose">
+          <p>会社の得意なことや選ばれる理由をまとめた「強みの文」と、伝え方をそろえる「自社専用の書き方」。案内役の質問に答えながら自分で作り、毎月の記事づくりで育てていけます。</p>
+          <p>AIが下書きし、足りない所は案内役が1問ずつ聞きます。下書きのままの帳面は使いません。社長や担当の方が確かめて保存した帳面を、記事を書くAI・点検するAI・AIOのチェック・記事の提案に、毎回「この会社だけの指示」として渡します。</p>
+          <p className="border-l-4 border-indigo pl-3 text-sm leading-relaxed">対面での聞き取りや、ホームページの技術的な直し、AIの回答での表示の計測はしていません。月額50,000円（税抜。税込55,000円）に含まれます。</p>
+        </div>
+        <div className="border-2 border-sumi bg-white">
+          <p className="flex items-center justify-between border-b-2 border-sumi px-4 py-2 text-xs font-bold">
+            <span>画面の見本</span>
+            <span className="text-sumi/60">見本：架空の金属加工会社</span>
+          </p>
+          <dl className="text-sm">
+            {rows.map(([k, v], i) => (
+              <div key={k} className={`grid grid-cols-[7.5rem_1fr] ${i > 0 ? "border-t border-sumi/30" : ""}`}>
+                <dt className="px-4 py-3 font-bold text-sumi/70">{k}</dt>
+                <dd className="border-l border-sumi/30 px-4 py-3 leading-relaxed">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
 function Steps() {
   return (
-    <Section id="how" kicker="毎月やること" title="答える。確かめる。自社サイトに載せる。">
+    <Section id="how" kicker="毎月やること" title="答える。確かめる。自社サイトに載せる。" tone="white">
+      <div className="mb-5">
+        <Says text="専門の言葉のままで大丈夫。聞き足りない所は、私から聞きますね。" />
+      </div>
       <ol className="grid border-2 border-sumi md:grid-cols-3">
         {STEPS.map((s, i) => (
           <li key={s.title} className={`p-5 sm:p-6 ${i > 0 ? "border-t-2 border-sumi md:border-l-2 md:border-t-0" : ""}`}>
             <p className="flex items-baseline justify-between">
               <span className={`${num} text-4xl font-bold text-indigo`}>0{i + 1}</span>
-              <span className={`px-2 py-0.5 text-xs font-bold ${s.who === "社長" ? "bg-sumi text-paper" : "border border-sumi"}`}>{s.who}</span>
+              <span className={`px-2 py-0.5 text-xs font-bold ${s.who !== "AI" ? "bg-sumi text-paper" : "border border-sumi"}`}>{s.who}</span>
             </p>
             <h3 className={`${kaku} mt-2 text-xl font-black`}>{s.title}</h3>
             <p className="mt-2 text-sm leading-relaxed">{s.text}</p>
           </li>
         ))}
       </ol>
+      <div className="mt-5 flex md:justify-end">
+        <Says text="ホームページへの載せ方も、画面で1つずつ案内しますね。" />
+      </div>
     </Section>
   );
 }
@@ -353,14 +421,15 @@ function Steps() {
 function Included({ total, industries }: { total: number; industries: number }) {
   const rows: [string, string][] = [
     ["記事", `毎月1本。案内役の質問、AIによる記事づくり、AIOのチェック（${AIO_CHECK_LIST.length}項目）まで`],
-    ["確認・修正の機能", "社長が画面の上で読んで、直せます。足りない所は案内役が聞き返します"],
+    ["確認・修正の機能", "社長や担当の方が画面の上で読んで、直せます。足りない所は案内役が聞き返します"],
+    ["強みの帳面", "得意なこと・お客様と困りごと・強みの根拠と数字・選ばれる決め手を、一問一答で書きためる帳面。記事・点検・チェック・提案のAIに毎回渡します"],
     ["掲載手順の案内", "確かめた記事を、自社のホームページ（ブログ）にご自身で載せます。自動投稿ではありません。操作は画面で順に案内します"],
     ["製造業の知識", `${industries}の業種の悩みや、発注する人の疑問など${total.toLocaleString()}件を公的機関・業界団体などの公開情報から集め、記事づくりの参考にしています`],
     ["毎月のお知らせ", "AIの検索の変化を、公式に発表されたことだけでお伝えします（しおり通信・毎月1日）"],
   ];
   return (
-    <Section kicker="含まれるもの" title="月額に含まれるもの。" tone="white">
-      <p className="mb-4 font-bold">AIが下書きをつくり、社長が確かめて直し、自社サイトに載せるサービスです。</p>
+    <Section kicker="含まれるもの" title="月額に含まれるもの。">
+      <p className="mb-4 font-bold">AIが下書きをつくり、社長や担当の方が確かめて直し、自社サイトに載せるサービスです。</p>
       <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi bg-white text-sm sm:grid-cols-[11rem_1fr] sm:text-base">
         {rows.map(([k, v], i) => (
           <div key={k} className="contents">
@@ -397,7 +466,7 @@ function KeepGoing() {
     { id: "koyuki", name: "こゆき", note: "本物そっくりのオコジョ" },
   ] as const;
   return (
-    <Section kicker="続けられる仕組み" title="毎月1本を、ひとりで続けなくていい。">
+    <Section kicker="続けられる仕組み" title="毎月1本を、ひとりで続けなくていい。" tone="white">
       <div ref={ref} className="grid gap-6 md:grid-cols-2">
         <figure className="border-2 border-sumi">
           <figcaption className="border-b-2 border-sumi px-4 py-2 text-xs font-bold">画面の見本：案内役を選ぶ</figcaption>
@@ -436,7 +505,7 @@ function KeepGoing() {
 
 function Promises() {
   return (
-    <Section kicker="記事づくりの約束" title="頼む人に、正直な帳面を。" tone="white">
+    <Section kicker="記事づくりの約束" title="頼む人に、正直な帳面を。">
       <ol className="border-2 border-sumi bg-white">
         {BRAND_PROMISES.map((p, i) => (
           <li key={p.title} className="grid grid-cols-[3.25rem_1fr] border-b border-sumi/30 last:border-0 sm:grid-cols-[4.5rem_1fr]">
@@ -469,7 +538,7 @@ function Price() {
     ["コタムのお客様", "招待制で、ご契約のあいだ無料です"],
   ];
   return (
-    <Section id="price" kicker="料金とお試し" title="料金と条件を、先にお伝えします。">
+    <Section id="price" kicker="料金とお試し" title="料金と条件を、先にお伝えします。" tone="white">
       <div className="grid gap-6 md:grid-cols-[1.4fr_1fr]">
         <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi text-sm sm:grid-cols-[8.5rem_1fr] sm:text-base">
           {rows.map(([k, v], i) => (
@@ -481,13 +550,13 @@ function Price() {
         </dl>
         <div className="self-start border-2 border-sumi bg-paper p-5 md:p-6">
           <p className="font-black">新規のお申し込みは、準備中です。</p>
-          <p className="mt-2 text-sm leading-relaxed">受付を始めるときに、メールでお知らせします。それまでは、登録せずに記事づくりを試せます。</p>
+          <p className="mt-2 text-sm leading-relaxed">受付を始めるときに、メールでお知らせします。それまでは、登録せずに記事の書き出しを試せます。</p>
           <div id="notify" className="mt-4 scroll-mt-24">
             <WaitlistForm source="price" />
           </div>
           <p className="mt-4 flex flex-col gap-2 text-sm font-bold">
             <Link href={TRY_HREF} className="text-indigo underline underline-offset-4">
-              登録せずに、記事づくりを試す
+              登録せずに、記事の書き出しを試す
             </Link>
             <Link href="/tokushoho" className="text-sumi/70 underline underline-offset-4">
               特定商取引法にもとづく表記
@@ -502,7 +571,7 @@ function Price() {
 /** よくある質問。AIもこの形（質問と答え）を読みとりやすい */
 function Faq() {
   return (
-    <Section id="faq" kicker="よくある質問" title="気になることに、先にお答えします。" tone="white">
+    <Section id="faq" kicker="よくある質問" title="気になることに、先にお答えします。">
       <ul className="border-2 border-sumi bg-white">
         {FAQ.map((f) => (
           <li key={f.q} className="border-b border-sumi/30 last:border-0">
@@ -575,7 +644,12 @@ function FinalCall({ signedIn, href }: { signedIn: boolean; href: string }) {
             <span className="inline-block">1つ聞かせてください。</span>
           </h2>
           <p className="mt-3 max-w-xl leading-relaxed text-paper/90">最近うれしかった仕事を1つ書くと、その場で記事の書き出しができます。会社の名前・地域・仕事の3つも入れます。登録はいりません。</p>
-          <div className="mt-6 space-y-3">
+          {!signedIn && (
+            <div className="mt-6">
+              <Says text="うまく話せなくても大丈夫。まずは1問だけ、気軽に試してみてください。" />
+            </div>
+          )}
+          <div className="mt-5 space-y-3">
             <MainButton signedIn={signedIn} href={href} />
             {!signedIn && <SubLinks dark />}
           </div>
