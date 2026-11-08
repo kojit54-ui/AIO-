@@ -28,7 +28,7 @@ export async function sendLoginLink(_prev: LoginState, form: FormData): Promise<
     options: { shouldCreateUser: false, emailRedirectTo: `${origin}/auth/confirm?next=${encodeURIComponent(next)}` },
   });
   // 送信回数の制限だけは利用者に伝える。それ以外（未登録など）は送れたときと同じ表示にする
-  if (error?.status === 429) return { sent: false, error: "短い時間に何度も送信されました。少し待ってからお試しください" };
+  if (error?.status === 429) return { sent: false, email, error: "続けて送ったため、少し休んでいます。1分ほど待ってから、もう一度押してください。前に届いたメールの番号でも入れます" };
   return { sent: true, email, next };
 }
 
@@ -47,7 +47,7 @@ export async function verifyLoginCode(_prev: CodeState, form: FormData): Promise
   if (!code) return { error: "メールに書いてある6桁の数字を入れてください" };
   const supabase = await createServerSupabase();
   const { error } = await supabase.auth.verifyOtp({ email, token: code, type: "email" });
-  if (error?.status === 429) return { error: "短い時間に何度も試されました。少し待ってからお試しください" };
+  if (error?.status === 429) return { error: "続けて試したため、少し休んでいます。1分ほど待ってから、もう一度入れてください" };
   if (error) return { error: "番号がちがうか、期限が切れています。新しいメールの番号を入れてください" };
   // redirect() だと画面の中だけで移り、ログイン前に読んだ状態（未ログイン）のまま入口ページへ戻されるため、
   // 行き先を返して画面側でページごと読み直す（docs/LESSONS.md）

@@ -113,7 +113,8 @@ export default async function AdminTrialPage() {
       </section>
 
       <section className="card space-y-3">
-        <h2 className="font-black">この2週間の回数</h2>
+        <h2 className="font-black">この2週間、ためされた回数</h2>
+        <p className="text-xs text-muted">AIで作れた回と、見本に切り替えた回を合わせた数です。</p>
         <ol className="flex h-32 items-end gap-1" aria-label="日ごとの回数">
           {perDay.map((x) => (
             <li key={x.d} className="flex flex-1 flex-col items-center gap-1" title={`${x.d}：${x.n}回`}>

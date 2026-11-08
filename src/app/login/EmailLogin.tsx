@@ -17,7 +17,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
       mood={state.sent ? "joy" : "bow"}
       compact={state.sent && codeEnabled}
       title={state.sent ? "メールを送りました！" : <>{hello}！<br />今日もいっしょに書きましょう</>}
-      lines={state.sent ? [codeEnabled ? "メールに届いた6桁の番号を、下に入れてください。" : "メールのリンクを押したら、すぐ始められますよ。", "待ってますね！"] : ["案内役のしおりです。", codeEnabled ? "招待されたメールアドレスを入れると、6桁の番号が届きます。パスワードはいりません！" : "招待されたメールアドレスを入れると、ログイン用のメールが届きます。パスワードはいりません！"]}
+      lines={state.sent ? [codeEnabled ? "メールに届いた6桁の番号を、下に入れてください。" : "メールのリンクを押したら、すぐ始められますよ。", "待ってますね！"] : [codeEnabled ? "メールに届く6桁の番号で入れます。パスワードはいりません！" : "メールに届くリンクで入れます。パスワードはいりません！"]}
     >
       {linkError && (
         <Notice tone="warn" title="ログイン用のリンクが使えませんでした">
@@ -42,7 +42,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
           </h2>
           <label className="block">
             <span className="field-label">メールアドレス</span>
-            <input name="email" type="email" required autoComplete="email" inputMode="email" placeholder="例）tanaka@example.co.jp" className="field min-h-14 text-lg" />
+            <input name="email" type="email" required autoComplete="email" inputMode="email" defaultValue={state.email} key={state.email ?? ""} placeholder="例）tanaka@example.co.jp" className="field min-h-14 text-lg" />
           </label>
           {state.error && <p className="text-sm text-danger">{state.error}</p>}
           <button type="submit" className="btn-primary min-h-14 w-full text-lg" disabled={pending}>
@@ -55,14 +55,14 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
               </>
             ) : (
               <>
-                ログイン用のメールを送る
+                {codeEnabled ? "6桁の番号をメールで受け取る" : "ログイン用のメールを送る"}
                 <span className="inline-block animate-nudge" aria-hidden>
                   →
                 </span>
               </>
             )}
           </button>
-          <p className="text-sm text-muted">{codeEnabled ? "招待されたメールアドレスに、6桁の番号とログイン用のリンクを送ります。" : "招待されたメールアドレスに、ログイン用のリンクを送ります。"}</p>
+          <p className="text-sm text-muted">{codeEnabled ? "届いたメールの6桁の番号を、次の画面で入れます。" : "招待されたメールアドレスに、ログイン用のリンクを送ります。"}</p>
         </form>
       )}
       {!state.sent && googleEnabled && <GoogleButton next={next} />}
