@@ -11,6 +11,7 @@ import { ShioriTalk } from "@/components/talk";
 import { AIO_QUIZ } from "@/lib/tips";
 import { saveTryCarry } from "@/lib/tryoutCarry";
 import { WaitlistForm } from "@/components/WaitlistForm";
+import { VoiceInput } from "@/components/VoiceInput";
 import { FutureAnswer } from "./FutureAnswer";
 import {
   READINESS_QUESTIONS,
@@ -77,7 +78,7 @@ const QUICK_STAGES: { title: string; phases: Phase[] }[] = [
   { title: "記事", phases: ["write", "making", "done"] },
 ];
 
-/** quick＝診断なしで、会社のこと→1問→記事の書き出し（入口ページの「登録せずに、記事づくりを試す」から） */
+/** quick＝診断なしで、会社のこと→1問→記事の書き出し（入口ページの「登録せずに、記事の書き出しを試す」から） */
 export function TryOut({ quick = false }: { quick?: boolean }) {
   const stages = quick ? QUICK_STAGES : STAGES;
   const [phase, setPhase] = useState<Phase>(quick ? "company" : "intro");
@@ -278,6 +279,12 @@ export function TryOut({ quick = false }: { quick?: boolean }) {
                   placeholder="例）急ぎの試作を頼まれて、なんとか間に合わせた。お客様にとても喜ばれた。"
                 />
               </label>
+              <VoiceInput
+                onText={(said) => {
+                  setStory((prev) => (prev ? `${prev}${/[。、\n]$/.test(prev) ? "" : "。"}${said}` : said).slice(0, 400));
+                  setWriteNote("");
+                }}
+              />
               {(writeNote || (story.trim().length >= 5 && storyProblem(story))) && (
                 <p className="flex animate-rise items-start gap-2 rounded-2xl bg-sun-soft px-3 py-2 font-bold" role="status">
                   <span aria-hidden>💡</span>
