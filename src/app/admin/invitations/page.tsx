@@ -33,7 +33,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
   const { org } = await searchParams;
   const { data: orgs } = await supabase.from("organizations").select("id, name").order("name");
   // 会社ごとの「招待中」の人数（会社を切り替えなくても、登録待ちが分かるように）
-  const { data: allPending } = await supabase.from("invitations").select("organization_id").is("accepted_at", null).gt("expires_at", new Date().toISOString());
+  const { data: allPending } = await supabase.from("invitations").select("organization_id, email, created_at").is("accepted_at", null).gt("expires_at", new Date().toISOString());
   const pendingCount = new Map<string, number>();
   for (const p of allPending ?? []) pendingCount.set(p.organization_id, (pendingCount.get(p.organization_id) ?? 0) + 1);
   const current = orgs?.find((o) => o.id === org) ?? orgs?.[0];
@@ -56,6 +56,29 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
         <h1 className="text-2xl font-black sm:text-3xl">招待と所属の管理</h1>
         <p className="text-sm text-muted">会社を選んで招待を送ります。招待した人が登録するまでは「招待中」に出ます。</p>
       </div>
+
+      {/* 全社の招待中をまとめて（2026-11-08 管理者役「1社ずつ切り替えないと登録待ちが見えない」） */}
+      {allPending && allPending.length > 0 && (
+        <section className="card space-y-2">
+          <h2 className="text-lg font-bold">全社の招待中（まだ登録していない人） {allPending.length}人</h2>
+          <ul className="space-y-1 text-sm">
+            {[...allPending]
+              .sort((a, b) => a.created_at.localeCompare(b.created_at))
+              .map((p) => (
+                <li key={`${p.organization_id}:${p.email}`} className="flex flex-wrap items-center gap-x-3 gap-y-0.5 rounded-xl bg-canvas px-3 py-1.5">
+                  <a href={`?org=${p.organization_id}`} className="font-bold text-brand-dark underline">
+                    {orgs?.find((o) => o.id === p.organization_id)?.name ?? "（会社）"}
+                  </a>
+                  <span className="break-all">{p.email}</span>
+                  <span className="text-xs text-muted">
+                    {new Date(p.created_at).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo", month: "numeric", day: "numeric" })}に招待
+                  </span>
+                </li>
+              ))}
+          </ul>
+          <p className="text-xs text-muted">古い順です。会社名を押すと、その会社の画面で招待を送り直せます。</p>
+        </section>
+      )}
 
       <section className="card space-y-3">
         <h2 className="text-lg font-bold">会社を選ぶ</h2>
