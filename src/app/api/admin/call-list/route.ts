@@ -15,7 +15,8 @@ export interface CallListItem {
   id: string;
   name: string;
   reasons: string[];
-  daysSinceActive: number | null;
+  /** 最後に使ってから何日か（null＝まだ使っていない、undefined＝分からない） */
+  daysSinceActive?: number | null;
   /** 最後に声をかけた日時とひとこと（記録の表が無いときは出さない） */
   lastContact?: { at: string; note: string } | null;
 }

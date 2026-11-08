@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import { EmptyState } from "@/components/ui";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
@@ -59,16 +58,21 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
 
       <section className="card space-y-3">
         <h2 className="text-lg font-bold">会社</h2>
-        <ul className="flex flex-wrap gap-2">
-          {orgs?.map((o) => (
-            <li key={o.id}>
-              <Link href={`?org=${o.id}`} className={o.id === current?.id ? "btn-primary min-h-9 px-3 py-1" : "btn-secondary min-h-9 px-3 py-1"}>
+        {/* 会社が増えても探せるよう、選ぶ欄にする（入力すると頭文字で選べる） */}
+        <form method="get" className="flex flex-wrap items-center gap-2">
+          <select name="org" defaultValue={current?.id} aria-label="会社を選ぶ" className="field w-auto min-w-[16rem]">
+            {orgs?.map((o) => (
+              <option key={o.id} value={o.id}>
                 {o.name}
-                {pendingCount.get(o.id) ? <span className="ml-1 rounded-full bg-sun-soft px-2 text-xs font-bold text-ink">招待中 {pendingCount.get(o.id)}</span> : null}
-              </Link>
-            </li>
-          ))}
-        </ul>
+                {pendingCount.get(o.id) ? `（招待中 ${pendingCount.get(o.id)}）` : ""}
+              </option>
+            ))}
+          </select>
+          <button type="submit" className="btn-secondary min-h-10 px-4 py-1">
+            この会社を開く
+          </button>
+          <span className="text-sm text-muted">全{orgs?.length ?? 0}社</span>
+        </form>
         <form action={createOrganization} className="flex flex-wrap gap-2">
           <input name="name" required placeholder="会社名" className="field max-w-xs" aria-label="追加する会社名" />
           <button type="submit" className="btn-secondary">会社を追加</button>

@@ -60,13 +60,14 @@ export function FirstAiQuestion({ hasKnowledge }: { hasKnowledge: boolean }) {
           <>
             <ShioriTalk mood="ask" lines={[g("はじめまして、しおりです。記事づくりを始める前に、ひとつだけ聞かせてください。"), "ふだん、ChatGPT などのAIを使っていますか？"]} />
             {/* 吹き出しは文字が順に出るので、答える理由は動かない文でも書いておく */}
-            <p className="rounded-2xl bg-brand-soft/60 px-4 py-2 text-sm font-bold text-brand-dark">AIを使っていなくても、記事づくりはすぐ始められます。ChatGPT などに会社のことを話したことがあれば、その内容を写して使えるので、質問が少し減ります。</p>
+            <p className="rounded-2xl bg-brand-soft/60 px-4 py-2 text-sm font-bold text-brand-dark">AIを知らなくても大丈夫です。質問に答えるだけで記事になります。</p>
             <button type="button" className="btn-primary min-h-16 w-full flex-col gap-0 text-lg leading-tight" onClick={() => pick("none")}>
-              <span>AIがわからない・使っていない</span>
-              <span className="text-sm font-bold opacity-90">このまま始める</span>
+              <span>記事づくりを始める</span>
+              <span className="text-sm font-bold opacity-90">AIは使っていない・わからない</span>
             </button>
             <details className="rounded-2xl border-2 border-line px-3 py-2">
               <summary className="cursor-pointer text-center font-bold text-brand-dark">すでにAIを使っている方はこちら</summary>
+              <p className="mt-2 text-sm text-muted">そのAIに会社のことを話したことがあれば、その中身を使えるので、質問が少し減ります。</p>
             <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
               {FIRST_AIS.map((a) => (
                 <button key={a} type="button" className="btn-secondary min-h-14 text-lg" onClick={() => pick(a)}>

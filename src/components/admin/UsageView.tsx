@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ContactButton, type LastContact } from "@/components/admin/ContactButton";
 import { HEARING_QUESTIONS } from "@/prototype/growth";
 import { needsCall, orgNudges, PACE_LABEL, type OrgPace, type UsageSummary } from "@/lib/admin/usage";
 
@@ -24,7 +25,27 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
   // 声をかけたい会社を上に（それ以外の並びは元のまま）
   const [query, setQuery] = useState("");
   const [onlyWaiting, setOnlyWaiting] = useState(false);
-  const orgs = [...waiting, ...(onlyWaiting ? [] : s.orgs.filter((o) => !needsCall(o, total)))].filter((o) => !query.trim() || o.name.includes(query.trim()));
+  const [sort, setSort] = useState<"call" | "idle" | "cost">("call");
+  // 声をかけた記録（表が無い・読めないときは出さない）
+  const [contacts, setContacts] = useState<Record<string, LastContact> | null>(null);
+  useEffect(() => {
+    if (sample) return;
+    let alive = true;
+    fetch("/api/admin/contacts", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: { contacts?: Record<string, LastContact> } | null) => alive && j?.contacts && setContacts(j.contacts))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [sample]);
+  const base = [...waiting, ...(onlyWaiting ? [] : s.orgs.filter((o) => !needsCall(o, total)))].filter((o) => !query.trim() || o.name.includes(query.trim()));
+  const orgs =
+    sort === "idle"
+      ? [...base].sort((a, b) => (b.daysSinceActive ?? 9999) - (a.daysSinceActive ?? 9999))
+      : sort === "cost"
+        ? [...base].sort((a, b) => b.costThisMonth - a.costThisMonth)
+        : base;
   return (
     <main className="page max-w-4xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -66,6 +87,11 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
               <input type="checkbox" checked={onlyWaiting} onChange={(e) => setOnlyWaiting(e.target.checked)} className="h-4 w-4" />
               声をかけたい会社だけ
             </label>
+            <select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)} aria-label="並べ方" className="field min-h-10 w-auto py-1">
+              <option value="call">声をかけたい順</option>
+              <option value="idle">使っていない日が長い順</option>
+              <option value="cost">今月の費用が多い順</option>
+            </select>
             <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="会社名でさがす" aria-label="会社名でさがす" className="field min-h-10 max-w-[12rem] py-1" />
           </div>
         </div>
@@ -107,6 +133,11 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
                   <Item label="会社のこと" value={`${Math.min(o.answered, total)} / ${total} 問`} />
                   <Item label="記事" value={`${o.articles} 本（載せた ${o.published} 本）`} />
                 </dl>
+                {contacts && (
+                  <div className="mt-2">
+                    <ContactButton organizationId={o.id} last={contacts[o.id] ?? null} onSaved={(c) => setContacts((m) => ({ ...(m ?? {}), [o.id]: c }))} />
+                  </div>
+                )}
                 {!sample && (
                   <Link href={`/coach/orgs/${o.id}`} className="mt-2 inline-block text-sm font-bold text-brand-dark underline">
                     この会社の記事とやり取りを見る →
