@@ -33,6 +33,18 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-08 CC（Claude、プロジェクトのスレッド）運営会社と編集方針・構造化データ
+- ブランチ / コミット：claude/project-thread-g4swqz
+- 変更点：/about（運営会社・サービスの料金と受付状況・読みものの編集方針6項目）を追加し、検索に出すページとサイトマップに入れた。入口ページに Service（料金 50,000円・税抜、受付準備中を説明に含む）の構造化データ。読みものの文責を /about へリンクし、Article の author/publisher に /about の url。会社の情報・料金・受付状態は src/lib/about.ts にまとめ、特商法表記・FAQ・入口ページの文と食い違わないかをテストで確かめる
+- 確認結果：テスト516件・ビルド通過、375px・1280pxで横スクロールなし、構造化データが読めることを確認
+- 次の作業と担当：新規受付を始めるときは src/lib/about.ts の SALES_STATUS と入口ページを一緒に直す（テストが知らせる）
+
+### 2026-11-08 CC（Claude、プロジェクトのスレッド）読みものの残り7本
+- ブランチ / コミット：claude/project-thread-g4swqz
+- 変更点：/column に7本を追加（what-to-write・trial-checklist・keep-secrets・case-study・one-article-a-month・write-or-outsource・after-publishing）。12本の計画がそろった。aio-cost の要約を「AIの答えでの表示の計測は入っていない」に直した（Search Console の数字はアプリで見られるため）
+- 確認結果：GPT・Gemini で2回校閲（/mnt/project-files/column-council/r4・r5）。秘密保持は「名前を伏せる≠約束を守る」、Search Console は閲覧のみ・AI分は分けられない、と直した。テスト512件・ビルド通過、375px・1280pxで横スクロールなし
+- 次の作業と担当：Service・Offer の構造化データ、運営・編集方針ページ（CC）
+
 ### 2026-11-08 CC（Claude、プロジェクトのスレッド）読みもの5本を3AIで選んで書く
 - ブランチ / コミット：claude/project-thread-g4swqz
 - 変更点：/column の記事を5本に（AIOとは・費用と月5万円・聞き書きの流れ・具体例・読み取れるか確かめる）。src/lib/column.ts の形を「この記事の答え」「しおりの問い」「聞き書きの例（架空と明記）」「出典・確認日・文責」に変更。/column をブランドの紙面（生成り・墨・罫線）にした layout を追加
