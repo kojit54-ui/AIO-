@@ -2,7 +2,7 @@
 // 使い方：GEMINI_API_KEY=... node scripts/column/shiori.mjs <名前> "<しおりがしている場面（英語）>"
 // 手本として public/guide のしおりの絵（スーツ）を渡し、同じ顔・同じ絵柄にする。色は入口ページと同じ生成りと藍。
 // 2026-11-08 田村さん「この方向でOK」「Geminiに渡すときにウォーターマークなしで、とお願いして」。
-// 文字・ロゴ・本物の画面（Googleなど）・ウォーターマーク・署名は描かせない。画面には「イラストはイメージです」と出す（ColumnPhoto.illustration）。
+// 文字・ロゴ・本物の画面（Googleなど）・ウォーターマーク・署名は描かせない。記事では illustration: true を付け、注意書きは出さない（田村さん「AIにやらせてるっぽさが出る」）。
 // 1枚あたりの費用はおおむね数円〜十数円（Google AI Studio の前払い残高から引かれる）。
 
 import { GoogleGenAI } from "@google/genai";
