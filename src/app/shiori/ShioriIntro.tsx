@@ -75,7 +75,7 @@ export function ShioriIntro() {
           <BigShiori mood="bow" />
         </div>
         <div className="space-y-4">
-          <p className="inline-block animate-rise rounded-full bg-sun-soft px-3 py-0.5 text-sm font-black">コタムのAIO案内役</p>
+          <p className="inline-block animate-rise rounded-full bg-sun-soft px-3 py-0.5 text-sm font-black">AIOの案内役</p>
           <h1 className="animate-rise text-4xl font-black [animation-delay:.08s] sm:text-5xl">
             しおり<span className="ml-2 text-lg text-muted">です</span>
           </h1>
