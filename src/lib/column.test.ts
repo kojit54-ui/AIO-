@@ -61,6 +61,16 @@ describe("読みものの写真", () => {
     }
   });
 
+  it("しおりのイラストは、何を表すかと、しおりが何をしているかまで alt に書く（2026-11-08 田村さん「altにもしっかり情報を」）", () => {
+    const illustrations = COLUMNS.flatMap((c) => [c.hero, ...c.sections.map((s) => s.photo)]).filter((p) => !!p?.illustration);
+    expect(illustrations.length).toBeGreaterThan(0);
+    for (const p of illustrations) {
+      expect(p!.alt.length).toBeGreaterThanOrEqual(60);
+      expect(p!.alt).toContain("しおり");
+      expect(p!.alt).toContain("イメージ");
+    }
+  });
+
   it("しおりに聞いてみた は、質問と答えがある", () => {
     for (const c of COLUMNS) for (const s of c.sections) for (const t of s.chat ?? []) {
       expect(t.q.length).toBeGreaterThan(0);

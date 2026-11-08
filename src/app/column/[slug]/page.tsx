@@ -37,6 +37,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 /** 検索とAIに、記事であることと、書いた会社・日付を伝える。画面に出ている中身だけを書く */
+/** 記事の写真・イラスト（いちばん上の写真が先） */
+function columnImages(c: Column) {
+  return [c.hero, ...c.sections.map((s) => s.photo)].filter((p): p is NonNullable<typeof p> => !!p);
+}
+
 function jsonLd(c: Column) {
   const url = `${SITE_URL}/column/${c.slug}`;
   return JSON.stringify([
@@ -50,7 +55,10 @@ function jsonLd(c: Column) {
       author: { "@type": "Organization", name: SERVICE_OPERATOR, url: `${SITE_URL}/about` },
       publisher: { "@type": "Organization", name: SERVICE_OPERATOR, url: `${SITE_URL}/about` },
       mainEntityOfPage: url,
-      ...(c.hero ? { image: `${SITE_URL}${c.hero.src}` } : {}),
+      // 写真・イラストは、何が写っているか（alt）も添えて伝える
+      ...(columnImages(c).length
+        ? { image: columnImages(c).map((p) => ({ "@type": "ImageObject", contentUrl: `${SITE_URL}${p.src}`, url: `${SITE_URL}${p.src}`, caption: p.alt, description: p.alt })) }
+        : {}),
       inLanguage: "ja",
     },
     {
@@ -105,7 +113,9 @@ function PhotoFigure({ photo, priority = false }: { photo: ColumnPhoto; priority
   return (
     <figure className="border-2 border-sumi bg-white">
       <Image src={photo.src} alt={photo.alt} width={1600} height={900} priority={priority} sizes="(min-width: 768px) 720px, 100vw" className="block h-auto w-full" />
-      <figcaption className="border-t-2 border-sumi px-3 py-1.5 text-xs text-sumi/60">写真はイメージです（実在の会社・製品ではありません）</figcaption>
+      <figcaption className="border-t-2 border-sumi px-3 py-1.5 text-xs text-sumi/60">
+        {photo.illustration ? "イラストはイメージです（案内役のしおりと、実際の画面ではない図です）" : "写真はイメージです（実在の会社・製品ではありません）"}
+      </figcaption>
     </figure>
   );
 }
