@@ -135,6 +135,9 @@ export default function CoachHome() {
                         {e}
                       </a>
                     ))}
+                    <Link href={`/admin/invitations?org=${id}`} className="text-brand-dark underline">
+                      招待と所属を開く
+                    </Link>
                   </p>
                 )}
                 {contactsEnabled && (
