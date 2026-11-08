@@ -38,3 +38,4 @@ if (!data) {
 const out = `public/column/${name}.webp`;
 await sharp(Buffer.from(data, "base64")).resize({ width: 1600, height: 900, fit: "cover" }).webp({ quality: 80 }).toFile(out);
 console.log(`保存しました：${out}（${Math.round(fs.statSync(out).size / 1024)}KB）`);
+console.log("四隅までウォーターマーク・文字・ロゴがないか見てから使う。alt は40字以上で場面と記事の話を書く（docs/COLUMN_BACKLOG.md）");
