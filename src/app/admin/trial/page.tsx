@@ -6,6 +6,7 @@ import { createServerSupabase } from "@/lib/supabase/server";
 import { setTrialEnabled, setTrialLimits } from "./actions";
 import { TRIAL_RANGES } from "./ranges";
 import { groupTrialReasons, trialReason } from "@/lib/admin/trialReason";
+import { CopyText } from "@/components/admin/CopyText";
 
 // 30秒でためす（/try）の見守り。全社管理者だけ。入力は残していないので、回数と費用と、見本に切り替えた理由だけを見る。
 
@@ -154,6 +155,12 @@ export default async function AdminTrialPage() {
                       {d}
                     </span>
                   ))}
+                  {g.details.length > 0 && (
+                    <CopyText
+                      label="開発の担当への報告をコピー"
+                      text={`【30秒でためす】${g.label}（今月${g.count}回${lastAt.get(g.label) ? `、最後は${fmtAt(lastAt.get(g.label)!)}` : ""}）\n${g.details.join("\n")}`}
+                    />
+                  )}
                 </span>
                 <b className="shrink-0 whitespace-nowrap">{g.count} 回</b>
               </li>

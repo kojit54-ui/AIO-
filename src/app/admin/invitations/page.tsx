@@ -58,9 +58,10 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
       </div>
 
       {/* 全社の招待中をまとめて（2026-11-08 管理者役「1社ずつ切り替えないと登録待ちが見えない」） */}
-      {allPending && allPending.length > 0 && (
+      {allPending && (
         <section className="card space-y-2">
           <h2 className="text-lg font-bold">全社の招待中（まだ登録していない人） {allPending.length}人</h2>
+          {allPending.length === 0 && <p className="text-sm text-muted">いまはいません。招待した人は、みなさん登録済みです。</p>}
           <ul className="space-y-1 text-sm">
             {[...allPending]
               .sort((a, b) => a.created_at.localeCompare(b.created_at))
