@@ -38,6 +38,7 @@ export function Welcome({ makers }: { makers: MfgShowcase }) {
         <Gap />
         <AiChat />
         <Focus total={makers.total} industries={makers.industries} />
+        <StrengthBook />
         <Steps />
         <Included total={makers.total} industries={makers.industries} />
         <KeepGoing />
@@ -330,9 +331,45 @@ function Focus({ total, industries }: { total: number; industries: number }) {
   );
 }
 
+/** 強みの帳面。言えるのは「自分で作って持てる」まで（他社との比較・価格・「勝る」は出さない。DECISIONS 2026-11-08） */
+function StrengthBook() {
+  const rows: [string, string][] = [
+    ["得意なこと", "例：図面の無い部品の、1個からの作り直し"],
+    ["お客様と困りごと", "例：古い設備の保全担当／交換部品が手に入らない"],
+    ["強み・根拠・数字", "例：図面が無くても作れる／現物を測って図面を起こす／この10年で約300点"],
+    ["選ばれる決め手", "例：見積もりの前に、現物を見に行く"],
+    ["うちらしい書き方", "例：ですます調。専門用語にはひとこと説明。「業界最安」「絶対」は使わない"],
+  ];
+  return (
+    <Section kicker="強みの帳面" title="強みの文と、自社専用の書き方を、自分で持てる。">
+      <div className="grid gap-8 md:grid-cols-[1fr_1.1fr] md:items-start">
+        <div className="space-y-4 leading-loose">
+          <p>会社の得意なことや選ばれる理由をまとめた「強みの文」と、伝え方をそろえる「自社専用の書き方」。案内役の質問に答えながら自分で作り、毎月の記事づくりで育てていけます。</p>
+          <p>AIが下書きし、足りない所は案内役が1問ずつ聞きます。下書きのままの帳面は使いません。社長が確かめて保存した帳面を、記事を書くAI・点検するAI・AIOのチェック・記事の提案に、毎回「この会社だけの指示」として渡します。</p>
+          <p className="border-l-4 border-indigo pl-3 text-sm leading-relaxed">対面での聞き取りや、ホームページの技術的な直し、AIの回答での表示の計測はしていません。月額50,000円（税抜。税込55,000円）に含まれます。</p>
+        </div>
+        <div className="border-2 border-sumi bg-white">
+          <p className="flex items-center justify-between border-b-2 border-sumi px-4 py-2 text-xs font-bold">
+            <span>画面の見本</span>
+            <span className="text-sumi/60">見本：架空の金属加工会社</span>
+          </p>
+          <dl className="text-sm">
+            {rows.map(([k, v], i) => (
+              <div key={k} className={`grid grid-cols-[7.5rem_1fr] ${i > 0 ? "border-t border-sumi/30" : ""}`}>
+                <dt className="px-4 py-3 font-bold text-sumi/70">{k}</dt>
+                <dd className="border-l border-sumi/30 px-4 py-3 leading-relaxed">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
 function Steps() {
   return (
-    <Section id="how" kicker="毎月やること" title="答える。確かめる。自社サイトに載せる。">
+    <Section id="how" kicker="毎月やること" title="答える。確かめる。自社サイトに載せる。" tone="white">
       <ol className="grid border-2 border-sumi md:grid-cols-3">
         {STEPS.map((s, i) => (
           <li key={s.title} className={`p-5 sm:p-6 ${i > 0 ? "border-t-2 border-sumi md:border-l-2 md:border-t-0" : ""}`}>
@@ -354,12 +391,13 @@ function Included({ total, industries }: { total: number; industries: number }) 
   const rows: [string, string][] = [
     ["記事", `毎月1本。案内役の質問、AIによる記事づくり、AIOのチェック（${AIO_CHECK_LIST.length}項目）まで`],
     ["確認・修正の機能", "社長が画面の上で読んで、直せます。足りない所は案内役が聞き返します"],
+    ["強みの帳面", "得意なこと・お客様と困りごと・強みの根拠と数字・選ばれる決め手を、一問一答で書きためる帳面。記事・点検・チェック・提案のAIに毎回渡します"],
     ["掲載手順の案内", "確かめた記事を、自社のホームページ（ブログ）にご自身で載せます。自動投稿ではありません。操作は画面で順に案内します"],
     ["製造業の知識", `${industries}の業種の悩みや、発注する人の疑問など${total.toLocaleString()}件を公的機関・業界団体などの公開情報から集め、記事づくりの参考にしています`],
     ["毎月のお知らせ", "AIの検索の変化を、公式に発表されたことだけでお伝えします（しおり通信・毎月1日）"],
   ];
   return (
-    <Section kicker="含まれるもの" title="月額に含まれるもの。" tone="white">
+    <Section kicker="含まれるもの" title="月額に含まれるもの。">
       <p className="mb-4 font-bold">AIが下書きをつくり、社長が確かめて直し、自社サイトに載せるサービスです。</p>
       <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi bg-white text-sm sm:grid-cols-[11rem_1fr] sm:text-base">
         {rows.map(([k, v], i) => (
@@ -397,7 +435,7 @@ function KeepGoing() {
     { id: "koyuki", name: "こゆき", note: "本物そっくりのオコジョ" },
   ] as const;
   return (
-    <Section kicker="続けられる仕組み" title="毎月1本を、ひとりで続けなくていい。">
+    <Section kicker="続けられる仕組み" title="毎月1本を、ひとりで続けなくていい。" tone="white">
       <div ref={ref} className="grid gap-6 md:grid-cols-2">
         <figure className="border-2 border-sumi">
           <figcaption className="border-b-2 border-sumi px-4 py-2 text-xs font-bold">画面の見本：案内役を選ぶ</figcaption>
@@ -436,7 +474,7 @@ function KeepGoing() {
 
 function Promises() {
   return (
-    <Section kicker="記事づくりの約束" title="頼む人に、正直な帳面を。" tone="white">
+    <Section kicker="記事づくりの約束" title="頼む人に、正直な帳面を。">
       <ol className="border-2 border-sumi bg-white">
         {BRAND_PROMISES.map((p, i) => (
           <li key={p.title} className="grid grid-cols-[3.25rem_1fr] border-b border-sumi/30 last:border-0 sm:grid-cols-[4.5rem_1fr]">
@@ -469,7 +507,7 @@ function Price() {
     ["コタムのお客様", "招待制で、ご契約のあいだ無料です"],
   ];
   return (
-    <Section id="price" kicker="料金とお試し" title="料金と条件を、先にお伝えします。">
+    <Section id="price" kicker="料金とお試し" title="料金と条件を、先にお伝えします。" tone="white">
       <div className="grid gap-6 md:grid-cols-[1.4fr_1fr]">
         <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi text-sm sm:grid-cols-[8.5rem_1fr] sm:text-base">
           {rows.map(([k, v], i) => (
@@ -502,7 +540,7 @@ function Price() {
 /** よくある質問。AIもこの形（質問と答え）を読みとりやすい */
 function Faq() {
   return (
-    <Section id="faq" kicker="よくある質問" title="気になることに、先にお答えします。" tone="white">
+    <Section id="faq" kicker="よくある質問" title="気になることに、先にお答えします。">
       <ul className="border-2 border-sumi bg-white">
         {FAQ.map((f) => (
           <li key={f.q} className="border-b border-sumi/30 last:border-0">
