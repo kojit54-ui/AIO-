@@ -47,6 +47,19 @@ const waitIdle = async (ms = 90000) => {
   }
 };
 
+// 見出しと箇条書きの形を残して画面の文字を取る（## 見出し・1. 番号・「・」）。採点役が形も見られるように
+export async function markedText(page) {
+  await page.evaluate(() => {
+    const main = document.querySelector("main");
+    if (!main) return;
+    main.querySelectorAll("h2").forEach((h) => h.prepend("## "));
+    main.querySelectorAll("h3").forEach((h) => h.prepend("### "));
+    main.querySelectorAll("ol").forEach((ol) => ol.querySelectorAll(":scope > li").forEach((li, i) => li.prepend(`${i + 1}. `)));
+    main.querySelectorAll("ul > li").forEach((li) => li.prepend("・"));
+  });
+  return page.locator("main").innerText().catch(() => "");
+}
+
 // 画面の文字から本文だけを取り出す（直すボタン・画像・確認の欄を落とす）
 function cleanBody(t) {
   const start = t.indexOf("そこだけ直せます。");
@@ -162,7 +175,7 @@ async function write() {
   const article = {
     url: p.url(),
     title: await p.locator("#title, input[aria-label*=タイトル]").first().inputValue().catch(() => ""),
-    text: cleanBody(await p.locator("main").innerText().catch(() => "")),
+    text: cleanBody(await markedText(p)),
   };
   writeFileSync(`${out}/article.json`, JSON.stringify(article, null, 2));
   log("body saved:", article.text.length, "chars");
