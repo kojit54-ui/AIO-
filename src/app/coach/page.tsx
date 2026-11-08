@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import type { CallListItem } from "@/app/api/admin/call-list/route";
 import { AdminNav } from "@/components/admin/AdminNav";
 import { Shiori, Wave } from "@/components/fun";
 import { EmptyState, StatusBadge, formatDate } from "@/components/ui";
@@ -11,6 +13,18 @@ import { townPosition, townSteps } from "@/lib/growth/town";
 
 export default function CoachHome() {
   const { db, user, month } = useStore();
+  // 全社管理者なら「利用金額と利用頻度」と同じ判定（質問の進み具合・最後に使った日つき）を使う。読めなければ画面の中のデータで出す
+  const [serverCalls, setServerCalls] = useState<CallListItem[] | null>(null);
+  useEffect(() => {
+    let alive = true;
+    fetch("/api/admin/call-list", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: { orgs?: CallListItem[] } | null) => alive && j?.orgs && setServerCalls(j.orgs))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, []);
   if (!user) return null;
   if (user.role !== "coach") {
     return (
@@ -39,7 +53,9 @@ export default function CoachHome() {
       if (articles.length > 0 && !articles.some((a) => a.status === "published")) reasons.push("記事をまだ1本も載せていない");
       return { org: o, reasons };
     })
-    .filter((x) => x.reasons.length > 0);
+    .filter((x) => x.reasons.length > 0)
+    .map((x) => ({ id: x.org.id, name: x.org.name, reasons: x.reasons, daysSinceActive: null as number | null }));
+  const calls: CallListItem[] = serverCalls ?? callList;
   const commentedAfter = (articleId: string, at: string) => db.reviews.some((r) => r.articleId === articleId && r.createdAt >= at);
 
   return (
@@ -63,25 +79,28 @@ export default function CoachHome() {
       <section aria-labelledby="call-heading" className="card space-y-3 border-warn">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 id="call-heading" className="text-lg font-bold">
-            声をかけたい会社 {callList.length}社
+            声をかけたい会社 {calls.length}社
           </h2>
           <Link href="/admin/usage" className="text-sm font-bold text-brand-dark underline">
             質問の進み具合・費用・使った日を見る →
           </Link>
         </div>
-        {callList.length === 0 ? (
+        {calls.length === 0 ? (
           <p className="text-muted">いまはありません。どの会社も進んでいます。</p>
         ) : (
           <ul className="space-y-2">
-            {callList.map(({ org, reasons }) => (
-              <li key={org.id}>
-                <Link href={`/coach/orgs/${org.id}`} className="group flex flex-wrap items-center gap-2 rounded-2xl bg-canvas px-4 py-2 hover:bg-brand-soft">
-                  <b className="mr-1">{org.name}</b>
+            {calls.map(({ id, name, reasons, daysSinceActive }) => (
+              <li key={id}>
+                <Link href={`/coach/orgs/${id}`} className="group flex flex-wrap items-center gap-2 rounded-2xl bg-canvas px-4 py-2 hover:bg-brand-soft">
+                  <b className="mr-1">{name}</b>
                   {reasons.map((r) => (
                     <span key={r} className="rounded-full bg-warn-soft px-2.5 py-0.5 text-xs font-bold text-warn">
                       {r}
                     </span>
                   ))}
+                  {serverCalls && (
+                    <span className="text-xs text-muted">最後に使った日：{daysSinceActive === null ? "まだ" : daysSinceActive === 0 ? "今日" : `${daysSinceActive}日前`}</span>
+                  )}
                   <span className="ml-auto text-sm font-bold text-brand">
                     見る <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>→</span>
                   </span>

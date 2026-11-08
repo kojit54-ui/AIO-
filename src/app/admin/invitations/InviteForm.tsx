@@ -58,6 +58,7 @@ export function InviteForm({ organizationId, organizationName }: { organizationI
             {pending ? "作成中…" : "招待リンクを作る"}
           </button>
         </div>
+        <p className="text-sm text-muted">メールは自動では送りません。できたリンクをコピーして、ご本人にメールなどで送ってください（7日間有効）。</p>
       </form>
       {preview && (
         <div className="rounded-3xl border-2 border-dashed border-brand bg-canvas p-2">

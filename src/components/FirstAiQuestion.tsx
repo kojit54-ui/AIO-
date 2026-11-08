@@ -58,12 +58,12 @@ export function FirstAiQuestion({ hasKnowledge }: { hasKnowledge: boolean }) {
         </h2>
         {picked === null && (
           <>
-            <ShioriTalk mood="ask" lines={[g("はじめまして、しおりです。記事づくりを始める前に、ひとつだけ聞かせてください。"), "ふだん、ChatGPT・Claude・Gemini などのAIを使っていますか？ 使っていれば、会社のことをそこから取り込めるので、質問が減ります。"]} />
+            <ShioriTalk mood="ask" lines={[g("はじめまして、しおりです。記事づくりを始める前に、ひとつだけ聞かせてください。"), "ふだん、ChatGPT などのAIを使っていますか？"]} />
             {/* 吹き出しは文字が順に出るので、答える理由は動かない文でも書いておく */}
-            <p className="rounded-2xl bg-brand-soft/60 px-4 py-2 text-sm font-bold text-brand-dark">記事の案内を合わせるために聞いています。わからなければ、いちばん上で大丈夫です。</p>
+            <p className="rounded-2xl bg-brand-soft/60 px-4 py-2 text-sm font-bold text-brand-dark">使っていれば、会社のことをそこから取り込めるので、質問が減ります。使っていなくても、記事づくりはすぐ始められます。</p>
             <p className="text-center text-sm font-bold text-muted">はじめての方・迷った方はこちら</p>
             <button type="button" className="btn-primary min-h-14 w-full text-lg" onClick={() => pick("none")}>
-              使っていない・よくわからない
+              使っていない・わからない（このまま始める）
             </button>
             <p className="pt-2 text-center text-sm font-bold text-muted">すでに使っている方は、そのAIを選んでください</p>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
