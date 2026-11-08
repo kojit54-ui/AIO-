@@ -39,9 +39,9 @@ export const AIO_NEWS: AioNewsItem[] = [
     source: "report",
     sourceName: "報道（OpenAI の担当者の話を Gizmodo などが紹介）",
     url: "https://gizmodo.com/chatgpt-claims-to-have-achieved-20-of-googles-search-volume-2000834464",
-    title: "ChatGPTで調べる人も、Googleの約2割まで増えたそうです",
+    title: "ChatGPTの検索回数は、Googleの約2割という報道がありました",
     forClient:
-      "OpenAI の担当者が「ChatGPTで検索が使われる回数は、Googleの約2割」と話したと報道されました。数え方は公開されていませんが、Googleだけでなく、ChatGPTに相談するお客様も増えています。お客様がふだん聞く言葉そのままの質問に答えておくと、どちらのAIにも紹介されやすくなります。",
+      "OpenAI の担当者が「ChatGPTで検索が使われる回数は、Googleの約2割」と話したと報道されました。人数ではなく検索の回数の話で、数え方も公開されていませんが、Googleだけでなく、ChatGPTで調べる場面も増えています。お客様がふだん聞く言葉そのままの質問に答えておくと、どちらのAIにも紹介されやすくなります。",
     point: "qa",
     soWeAsk: "お客様からよく聞かれる質問と、その答え",
   },
