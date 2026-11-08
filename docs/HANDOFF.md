@@ -205,6 +205,12 @@
 
 ## 記録
 
+### 2026-11-08 CC（Claude、プロジェクトのスレッド）読みもののAIっぽさをなくす（1本目 llmo）
+- ブランチ：claude/project-thread-v0032t
+- 変更点：しおりのイラストをやめ、見出しごとの絵を図（src/lib/column.ts の figure：flow・table・pair・check）に。ColumnChat を罫線の小さな一問一答に。前置き（intro）・急ぐ人向けの案内（jump）・結び（closing）・関連記事のリンク（see）。冒頭写真は2:1に切る。題名・見出しは言葉の途中で折らない（word-break:auto-phrase）。llmo を全面書き直し、写真を llmo-desk.webp に
+- 確認結果：3AI（GPT・Gemini・Claude）×3役＝9人で採点、8.9→9.1→9.4→9.5→9.5点。lint・型検査・単体テストが通過、375px・1280pxで表示確認
+- 未完了：ほかの14本を同じ形に直す（しおりのイラスト60枚を外す）。直し終えたら column.test.ts で「イラスト禁止」「chat は1記事1か所」を見張る
+
 ### 2026-11-07 CC（Claude、プロジェクトのスレッド）強みの帳面
 - ブランチ：claude/project-thread-08ub3t
 - 変更点：src/lib/strength/book.ts（帳面の形・足りない所・AIへの指示・答えの足し方・下書きの合わせ方）、マイグレーション 20261107170000_strength_books.sql、下書きのAI（growthPrompts の STRENGTH_BOOK_SYSTEM_PROMPT、hearingAi の runStrengthBookDraft、/api/organizations/[id]/strength-book）、記事の素材に companyPrompt（src/lib/ai/input.ts、generation/server.ts、countedInputChars で受付の字数は今まで通り）、書き手・点検役・AIOのチェック・提案の指示、画面 /prototype/strengths とナビ「強みの帳面」

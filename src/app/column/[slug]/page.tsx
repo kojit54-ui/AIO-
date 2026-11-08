@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Shiori } from "@/components/fun";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import Image from "next/image";
 import { ColumnChat } from "@/components/ColumnChat";
-import { COLUMNS, isNewColumn, jpDate, newestColumns, publishedColumns, type Column, type ColumnPhoto, type Interview } from "@/lib/column";
+import { COLUMNS, isNewColumn, jpDate, newestColumns, publishedColumns, type Column, type ColumnFigure, type ColumnPhoto, type Interview } from "@/lib/column";
 import { INDEX_ROBOTS, SITE_URL } from "@/lib/publicPages";
 import { TRY_HREF } from "@/lib/signup";
 
@@ -75,19 +74,6 @@ function jsonLd(c: Column) {
 
 const maru = "font-[family-name:var(--font-maru)]";
 
-/** 案内役のせりふ（丸ゴシック）。しおりは「聞く人」なので、問いかけと確認の声かけだけ */
-function ShioriLine({ text, mood }: { text: string; mood: "ask" | "bow" }) {
-  return (
-    <div className="flex items-end gap-3 border-y border-sumi/30 py-3">
-      <Shiori mood={mood} as="shiori" className="h-20 w-auto shrink-0 sm:h-24" />
-      <p className={`${maru} pb-2 font-bold leading-relaxed`}>
-        <span className="mb-0.5 block text-xs text-sumi/60">しおり（案内役）</span>
-        {text}
-      </p>
-    </div>
-  );
-}
-
 /** 聞き書きの例。台本の形で、架空であることを枠の上に出す */
 function InterviewBox({ iv }: { iv: Interview }) {
   return (
@@ -108,13 +94,92 @@ function InterviewBox({ iv }: { iv: Interview }) {
   );
 }
 
-/** 写真。実在の会社・製品ではないので「写真はイメージです」と添える */
-function PhotoFigure({ photo, priority = false }: { photo: ColumnPhoto; priority?: boolean }) {
+/** 図や表（罫線と藍）。文字はHTMLのまま（読み上げ・検索・AIが読める）。スマホでは縦に並ぶ */
+function FigureBox({ f }: { f: ColumnFigure }) {
   return (
     <figure className="border-2 border-sumi bg-white">
-      <Image src={photo.src} alt={photo.alt} width={1600} height={900} priority={priority} sizes="(min-width: 768px) 720px, 100vw" className="block h-auto w-full" />
+      <figcaption className="border-b-2 border-sumi px-4 py-2 text-sm font-bold">{f.title}</figcaption>
+      <div className="px-4 py-4">
+        {f.kind === "flow" && (
+          <ol className="space-y-2">
+            {f.steps.map((st, i) => (
+              <li key={st.label}>
+                {i > 0 && (
+                  <span className="mb-2 block pl-5 text-indigo" aria-hidden>
+                    ↓
+                  </span>
+                )}
+                <div className="border border-indigo/50 bg-paper px-3 py-2">
+                  <p className="font-bold text-indigo">{st.label}</p>
+                  {st.note && <p className="mt-0.5 text-sm leading-relaxed">{st.note}</p>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        )}
+        {f.kind === "table" && (
+          <table className="w-full border-collapse text-sm sm:text-base">
+            <thead className="max-sm:hidden">
+              <tr className="border-b-2 border-sumi text-left">
+                <th className="w-32 py-2 pr-3">{f.head[0]}</th>
+                <th className="py-2">{f.head[1]}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {f.rows.map(([k, v]) => (
+                <tr key={k} className="border-b border-sumi/30 max-sm:block max-sm:py-2">
+                  <th scope="row" className="py-2 pr-3 text-left align-top font-bold text-indigo max-sm:block max-sm:py-0">
+                    {k}
+                  </th>
+                  <td className="py-2 leading-relaxed max-sm:block max-sm:py-0">{v}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+        {f.kind === "pair" && (
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[f.left, f.right].map((side, i) => (
+              <div key={side.label} className={`border px-3 py-3 ${i === 0 ? "border-indigo bg-paper" : "border-dashed border-sumi/50"}`}>
+                <p className={`font-bold ${i === 0 ? "text-indigo" : "text-sumi/70"}`}>{side.label}</p>
+                <ul className="mt-1 space-y-1 text-sm leading-relaxed">
+                  {side.items.map((it) => (
+                    <li key={it} className="pl-4 [text-indent:-1rem]">
+                      ・{it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+        {f.kind === "check" && (
+          <ul className="border-t border-sumi/30">
+            {f.items.map((it) => (
+              <li key={it.label} className="flex gap-3 border-b border-sumi/30 py-2.5 leading-relaxed">
+                <span className="mt-1 inline-block h-4 w-4 shrink-0 border-2 border-sumi" aria-hidden />
+                <span>
+                  <span className="block font-bold">{it.label}</span>
+                  {it.note && <span className="mt-1 block text-sm text-sumi/80">{it.note}</span>}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {f.note && <p className="mt-3 text-xs leading-relaxed text-sumi/70">※{f.note}</p>}
+      </div>
+    </figure>
+  );
+}
+
+/** 写真。実在の会社・製品ではないので「写真はイメージです」と添える */
+// 冒頭の写真は横長に切って高さを抑える（2026-11-08 3AI会議「写真の存在感を下げるほうが帳面らしい」）
+function PhotoFigure({ photo, priority = false, wide = false }: { photo: ColumnPhoto; priority?: boolean; wide?: boolean }) {
+  return (
+    <figure className="border-2 border-sumi bg-white">
+      <Image src={photo.src} alt={photo.alt} width={1600} height={900} priority={priority} sizes="(min-width: 768px) 720px, 100vw" className={`block h-auto w-full ${wide ? "aspect-[2/1] object-cover" : ""}`} />
       {/* しおりのイラストには注意書きを付けない（2026-11-08 田村さん「AIにやらせてるっぽさが出る」）。写真は実在に見えるので付ける */}
-      {!photo.illustration && <figcaption className="border-t-2 border-sumi px-3 py-1.5 text-xs text-sumi/60">写真はイメージです（実在の会社・製品ではありません）</figcaption>}
+      {!photo.illustration && <figcaption className="border-t-2 border-sumi px-3 py-1.5 text-xs text-sumi/60">写真はイメージです</figcaption>}
     </figure>
   );
 }
@@ -138,11 +203,26 @@ export default async function ColumnPage({ params }: Props) {
 
       <article className="mt-5">
         <header className="border-b-2 border-sumi pb-4">
-          <h1 className="text-[1.6rem] font-black leading-snug sm:text-4xl sm:leading-snug">{c.title}</h1>
+          <h1 className="text-[1.6rem] font-black leading-snug [word-break:auto-phrase] sm:text-4xl sm:leading-snug">{c.title}</h1>
           <p className="mt-3 text-sm text-sumi/70">
             <time dateTime={c.updated}>{jpDate(c.updated)}</time> 更新・内容の確認 <time dateTime={c.checked}>{jpDate(c.checked)}</time>・文責 <Link href="/about" className="underline underline-offset-4">{SERVICE_OPERATOR}</Link>
           </p>
         </header>
+
+        {(c.intro ?? c.opening) && (
+          <p className="mt-5 leading-loose">
+            {c.intro ?? c.opening}
+            {c.jump && (
+              <>
+                {c.jump.lead}
+                <a href={`#s${c.jump.section}`} className="font-bold text-indigo underline underline-offset-4">
+                  {c.sections[c.jump.section - 1]?.h}
+                </a>
+                {c.jump.after}
+              </>
+            )}
+          </p>
+        )}
 
         <section aria-labelledby="summary" className="mt-6 border-2 border-sumi bg-white">
           <h2 id="summary" className="border-b-2 border-sumi px-4 py-2 text-sm font-bold">
@@ -160,20 +240,18 @@ export default async function ColumnPage({ params }: Props) {
 
         {c.hero && (
           <div className="mt-6">
-            <PhotoFigure photo={c.hero} priority />
+            <PhotoFigure photo={c.hero} priority wide />
           </div>
         )}
 
-        <div className="mt-6">
-          <ShioriLine text={c.opening} mood="ask" />
-        </div>
 
         <div className="mt-10 space-y-12">
-          {c.sections.map((s) => (
-            <section key={s.h} className="space-y-4">
-              <h2 className="border-l-4 border-indigo pl-3 text-xl font-black leading-snug sm:text-2xl">{s.h}</h2>
+          {c.sections.map((s, i) => (
+            <section key={s.h} id={`s${i + 1}`} className="scroll-mt-20 space-y-4">
+              <h2 className="border-l-4 border-indigo pl-3 text-xl font-black leading-snug [word-break:auto-phrase] sm:text-2xl">{s.h}</h2>
               <p className="font-bold leading-relaxed">{s.answer}</p>
               {s.photo && <PhotoFigure photo={s.photo} />}
+              {s.figure && <FigureBox f={s.figure} />}
               {s.body?.map((b) => (
                 <p key={b} className="leading-loose">
                   {b}
@@ -188,15 +266,26 @@ export default async function ColumnPage({ params }: Props) {
                   ))}
                 </ul>
               )}
+              {s.after?.map((b) => (
+                <p key={b} className="leading-loose">
+                  {b}
+                </p>
+              ))}
+              {s.see && (
+                <p className="leading-loose">
+                  {s.see.lead}
+                  <Link href={`/column/${s.see.slug}`} className="font-bold text-indigo underline underline-offset-4">
+                    {s.see.label}
+                  </Link>
+                </p>
+              )}
               {s.interview && <InterviewBox iv={s.interview} />}
               {s.chat && <ColumnChat turns={s.chat} />}
             </section>
           ))}
         </div>
 
-        <div className="mt-12">
-          <ShioriLine text={c.shiori} mood="bow" />
-        </div>
+        {c.closing && <p className="mt-12 border-t border-sumi/40 pt-6 leading-loose">{c.closing}</p>}
 
         <footer className="mt-8 space-y-3 text-sm">
           {c.sources && (
@@ -214,7 +303,9 @@ export default async function ColumnPage({ params }: Props) {
             </div>
           )}
           <p className="text-sumi/70">
-            「聞き書きの例」は、イメージをつかむための架空の例で、実在のお客様の事例ではありません。AIの検索の仕組みは変わるため、内容は確認日の時点のものです。
+            {c.sections.some((x) => x.chat) && "「しおりに聞いてみた」は、よくある疑問をもとに編集部がまとめた一問一答です。"}
+            {c.sections.some((x) => x.interview) && "「聞き書きの例」は、イメージをつかむための架空の例で、実在のお客様の事例ではありません。"}
+            AIの検索のしくみは変わるため、内容は確認日の時点のものです。
           </p>
         </footer>
       </article>
