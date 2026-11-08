@@ -9,15 +9,24 @@ export const ROLES = {
   aio: "あなたはAIO（AI検索に選ばれるための最適化）の専門家です。ChatGPT検索・Google AI Overviews・Perplexity が、この記事を引用・紹介したくなるかを見てください：冒頭で質問に短く答えているか、見出しが検索される問いの形か、具体的な事実（地域・会社・数字・手順）がはっきりか、信頼できるか（誇張・根拠のない断定がないか）、紹介されたあと読んだ人に選ばれる形か。",
 };
 
+const persona = JSON.parse(readFileSync(new URL("./persona.json", import.meta.url), "utf8"));
+const materials = { ...persona.hearing, 深掘りの答え: persona.followUp, ...persona.article };
+
 export function brief(role, article) {
   return `${ROLES[role]}
 
 次の記事を、10点満点（小数1桁）で厳しく採点してください。9.5点は「プロが手を入れずにそのまま公開できる」水準です。
 記事は、町工場の社長がスマホで質問に答え、AIが下書きを書いたものです（架空の会社）。社長は文章を書くのが苦手なので、直す点は「この記事の文」だけでなく「AIへの指示や、社長への質問の仕方をどう変えればよいか」まで書いてください。
 
+<materials>
+${JSON.stringify(materials)}
+</materials>
+
 <article>
 ${JSON.stringify(article)}
 </article>
+
+<materials> は社長が答えた内容（記事の材料）です。材料に無い事実・数字・言葉を記事が作っていないかは、材料と見比べて判断してください。材料にあることを「作り話では」と減点しないでください。
 
 次のJSONだけで返してください：
 {"score": number, "good": [string, string], "fixes": [{"problem": string, "how": string}]}
