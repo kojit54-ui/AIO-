@@ -348,3 +348,8 @@ interface GenerationRun {
 - `org_contacts`：会社・誰が・いつ・ひとこと（200字まで）。担当のトップの「声をかけたい会社」で「声をかけたら記録する」を押すと1行増える
 - 読み書きはサーバー（service role）だけ。`/api/admin/contacts`（残す）と `/api/admin/call-list`（最後の記録を返す）が、全社管理者かどうかを確かめてから使う
 - 表がまだ無い環境では、記録の欄を出さない（画面は壊れない）
+
+## 次に連絡する日と連絡先（supabase/migrations/20261108170000_org_contact_followup.sql）
+
+- `org_contacts.next_contact_on`：次に連絡する日（任意、ふだん1週間後）。担当のトップでは、この日が来た会社を一番上に出す（src/lib/admin/callOrder.ts）
+- `org_contact_info`：会社ごとの担当者名（40字）・電話番号（30字）。読む・書くのはサーバー（/api/admin/contact-info・/api/admin/call-list）だけ。お客様の画面からは見えない

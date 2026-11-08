@@ -4,15 +4,21 @@
 
 import { useState } from "react";
 import { formatDate } from "@/components/ui";
+import { jstToday, nextOnLabel } from "@/lib/admin/callOrder";
 
-export type LastContact = { at: string; note: string } | null;
+export type LastContact = { at: string; note: string; nextOn?: string | null } | null;
+
+const plusDays = (day: string, n: number) => new Date(Date.parse(day) + n * 86_400_000).toISOString().slice(0, 10);
 
 export function ContactButton({ organizationId, last, onSaved }: { organizationId: string; last: LastContact; onSaved: (c: LastContact) => void }) {
   const [open, setOpen] = useState(false);
   const [note, setNote] = useState("");
+  const today = jstToday();
+  // 次に連絡する日は、ふだん1週間後（空にすれば決めない）
+  const [nextOn, setNextOn] = useState(() => plusDays(today, 7));
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
-  const [history, setHistory] = useState<{ at: string; note: string }[] | null>(null);
+  const [history, setHistory] = useState<{ at: string; note: string; nextOn?: string | null }[] | null>(null);
   const loadHistory = () => {
     if (history) return;
     fetch(`/api/admin/contacts?org=${organizationId}`, { cache: "no-store" })
@@ -23,13 +29,14 @@ export function ContactButton({ organizationId, last, onSaved }: { organizationI
   const save = async () => {
     setBusy(true);
     setError(false);
-    const r = await fetch("/api/admin/contacts", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ organizationId, note }) }).catch(() => null);
+    const r = await fetch("/api/admin/contacts", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ organizationId, note, nextOn: nextOn || null }) }).catch(() => null);
     const j = r?.ok ? ((await r.json()) as { lastContact: LastContact }) : null;
     setBusy(false);
     if (!j) return setError(true);
     onSaved(j.lastContact);
     setHistory(null);
     setNote("");
+    setNextOn(plusDays(today, 7));
     setOpen(false);
   };
   return (
@@ -37,6 +44,9 @@ export function ContactButton({ organizationId, last, onSaved }: { organizationI
       <p className={last ? "text-muted" : "font-bold text-warn"}>
         {last ? `前に声をかけた日：${formatDate(last.at)}${last.note ? `「${last.note}」` : ""}` : "まだ声をかけていません"}
       </p>
+      {last?.nextOn && (
+        <p className={nextOnLabel(last.nextOn, today).due ? "font-bold text-danger" : "font-bold text-brand-dark"}>{nextOnLabel(last.nextOn, today).text}</p>
+      )}
       {last && (
         <details onToggle={(e) => (e.currentTarget as HTMLDetailsElement).open && loadHistory()}>
           <summary className="cursor-pointer text-xs font-bold text-brand-dark">これまでの記録を見る</summary>
@@ -48,6 +58,7 @@ export function ContactButton({ organizationId, last, onSaved }: { organizationI
                 <li key={h.at}>
                   {formatDate(h.at)}
                   {h.note ? `「${h.note}」` : ""}
+                  {h.nextOn ? `（次は${Number(h.nextOn.slice(5, 7))}/${Number(h.nextOn.slice(8, 10))}）` : ""}
                 </li>
               ))}
             </ul>
@@ -57,6 +68,10 @@ export function ContactButton({ organizationId, last, onSaved }: { organizationI
       {open ? (
         <div className="flex flex-wrap items-center gap-2">
           <input value={note} onChange={(e) => setNote(e.target.value)} maxLength={200} placeholder="ひとこと（任意）例）電話。来週書くとのこと" className="field min-h-9 flex-1 py-1" aria-label="声をかけたときのひとこと" />
+          <label className="flex items-center gap-1 text-muted">
+            次に連絡する日
+            <input type="date" value={nextOn} min={today} onChange={(e) => setNextOn(e.target.value)} className="field min-h-9 w-auto py-1" />
+          </label>
           <button type="button" className="btn-primary min-h-9 px-3 py-1" disabled={busy} onClick={save}>
             {busy ? "残しています…" : "残す"}
           </button>
