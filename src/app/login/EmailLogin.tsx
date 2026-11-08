@@ -139,7 +139,7 @@ function MailSent({ email, next }: { email?: string; next: string }) {
           <p className="text-sm text-muted">送り先</p>
           <p className="break-all text-lg font-black">{email}</p>
           <p className="text-sm text-muted">
-            招待されたアドレスなら、数分で届きます（件名「AIOえらばれ帳 ログイン用のリンク」）。違っていたら {retry}
+            招待されたアドレスなら、数分でメールが届きます。メールを開き、本文の6桁の番号を確かめてください。違っていたら {retry}
           </p>
         </div>
         <CodeForm email={email} next={next} />

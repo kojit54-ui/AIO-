@@ -51,22 +51,22 @@ export function FirstAiQuestion({ hasKnowledge }: { hasKnowledge: boolean }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-ink/60 p-4 sm:items-center" role="dialog" aria-modal="true" aria-labelledby="first-ai-title">
+    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-ink/75 p-4 backdrop-blur-sm sm:items-center" role="dialog" aria-modal="true" aria-labelledby="first-ai-title">
       <div className="card my-auto w-full max-w-lg animate-pop space-y-4">
         <h2 id="first-ai-title" className="sr-only">
           ふだん使っているAIはありますか
         </h2>
         {picked === null && (
           <>
-            <ShioriTalk mood="ask" lines={[g("はじめまして、しおりです。記事づくりを始める前に、ひとつだけ聞かせてください。"), "ふだん、ChatGPT などのAIを使っていますか？"]} />
+            <ShioriTalk mood="ask" lines={[g("はじめまして、しおりです。記事づくりを始める前に、ひとつだけ聞かせてください。"), "ChatGPT などのAIを、使ったことはありますか？"]} />
             {/* 吹き出しは文字が順に出るので、答える理由は動かない文でも書いておく */}
             <p className="rounded-2xl bg-brand-soft/60 px-4 py-2 text-sm font-bold text-brand-dark">AIを知らなくても大丈夫です。質問に答えるだけで記事になります。</p>
             <button type="button" className="btn-primary min-h-16 w-full flex-col gap-0 text-lg leading-tight" onClick={() => pick("none")}>
-              <span>記事づくりを始める</span>
-              <span className="text-sm font-bold opacity-90">AIは使っていない・わからない</span>
+              <span>はじめて・よくわからない方はこちら</span>
+              <span className="text-sm font-bold opacity-90">このまま記事づくりへ進みます</span>
             </button>
             <details className="rounded-2xl border-2 border-line px-3 py-2">
-              <summary className="cursor-pointer text-center font-bold text-brand-dark">すでにAIを使っている方はこちら</summary>
+              <summary className="cursor-pointer text-center font-bold text-brand-dark">使ったことがある方はこちら</summary>
               <p className="mt-2 text-sm text-muted">そのAIに会社のことを話したことがあれば、その中身を使えるので、質問が少し減ります。</p>
             <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
               {FIRST_AIS.map((a) => (

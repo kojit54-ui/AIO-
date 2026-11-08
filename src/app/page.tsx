@@ -65,7 +65,8 @@ export default function HomePage() {
       )}
       <div className="animate-rise space-y-1">
         <h1 className="text-2xl font-black leading-snug sm:text-3xl">
-          {user.name}さん、こんにちは <Wave />
+          {/* 名前を入れていない人はメールアドレスが入るので、そのときは名前を出さない */}
+          {user.name && !user.name.includes("@") ? `${user.name}さん、` : ""}こんにちは <Wave />
         </h1>
         <ShioriTalk mood={homeMood(tone, situation)} size="lg" lines={lines} />
         <ChosenPath className="mt-2" />
