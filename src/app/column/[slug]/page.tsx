@@ -113,9 +113,8 @@ function PhotoFigure({ photo, priority = false }: { photo: ColumnPhoto; priority
   return (
     <figure className="border-2 border-sumi bg-white">
       <Image src={photo.src} alt={photo.alt} width={1600} height={900} priority={priority} sizes="(min-width: 768px) 720px, 100vw" className="block h-auto w-full" />
-      <figcaption className="border-t-2 border-sumi px-3 py-1.5 text-xs text-sumi/60">
-        {photo.illustration ? "イラストはイメージです（案内役のしおりと、実際の画面ではない図です）" : "写真はイメージです（実在の会社・製品ではありません）"}
-      </figcaption>
+      {/* しおりのイラストには注意書きを付けない（2026-11-08 田村さん「AIにやらせてるっぽさが出る」）。写真は実在に見えるので付ける */}
+      {!photo.illustration && <figcaption className="border-t-2 border-sumi px-3 py-1.5 text-xs text-sumi/60">写真はイメージです（実在の会社・製品ではありません）</figcaption>}
     </figure>
   );
 }
