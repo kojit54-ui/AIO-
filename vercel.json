@@ -1,6 +1,7 @@
 {
   "crons": [
     { "path": "/api/cron/newsletter", "schedule": "0 0 1 * *" },
-    { "path": "/api/cron/writing-reminder", "schedule": "0 0 * * *" }
+    { "path": "/api/cron/writing-reminder", "schedule": "0 0 * * *" },
+    { "path": "/api/cron/indexing", "schedule": "15 22 * * *" }
   ]
 }

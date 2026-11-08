@@ -40,7 +40,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
           <h2 className="text-xl font-black">
             招待されたメールアドレスで<span className="inline-block">ログイン</span>
           </h2>
-          <p className="-mt-2 text-sm text-muted">自社サイトの記事づくりを、AIとしおりがお手伝いするサービスです。</p>
+          <p className="-mt-2 text-sm text-muted">自社サイトの記事づくりを、AIと案内役のしおりがお手伝いするサービスです。</p>
           <label className="block">
             <span className="field-label">メールアドレス</span>
             <input name="email" type="email" required autoComplete="email" inputMode="email" defaultValue={state.email} key={state.email ?? ""} placeholder="例）tanaka@example.co.jp" className="field min-h-14 text-lg" />
@@ -82,7 +82,7 @@ function GoogleButton({ next }: { next: string }) {
   return (
     // メールでのログインを主にし、Google は開いたときだけ見せる（2026-11-08 お客様役の採点「どちらで入るか迷う」）
     <details className="card p-0">
-      <summary className="cursor-pointer px-6 py-4 text-center font-bold text-brand-dark">Googleでログインする方はこちら</summary>
+      <summary className="cursor-pointer px-6 py-4 text-center font-bold text-brand-dark">別の方法：Googleでログインする（Gmailで招待された方）</summary>
       <form action={signInWithGoogle} className="space-y-3 px-6 pb-6">
         <input type="hidden" name="next" value={next} />
         <GoogleSubmit />
@@ -138,10 +138,18 @@ function MailSent({ email, next }: { email?: string; next: string }) {
         <div className="space-y-1">
           <p className="text-sm text-muted">送り先</p>
           <p className="break-all text-lg font-black">{email}</p>
-          <p className="text-sm text-muted">
-            招待されたアドレスなら、数分でメールが届きます。メールを開き、本文の6桁の番号を確かめてください。違っていたら {retry}
-          </p>
+          <p className="text-sm text-muted">違っていたら {retry}</p>
         </div>
+        {/* 2026-11-08 お客様役の採点「次に何をするかを番号で」 */}
+        {/* 押せるボタンに見えないよう、枠をつけない */}
+        <ol className="space-y-1.5 text-sm">
+          {["この画面は閉じずに、スマホやパソコンのメールを開く（数分で届きます）", "メール本文の6桁の番号を見る", "この画面に戻り、下の欄に番号を入れる"].map((t, i) => (
+            <li key={t} className="flex items-start gap-2">
+              <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-soft text-xs font-black text-brand-dark">{i + 1}</span>
+              <span className="font-bold">{t}</span>
+            </li>
+          ))}
+        </ol>
         <CodeForm email={email} next={next} />
         {trouble}
       </div>
@@ -193,14 +201,13 @@ function CodeForm({ email, next }: { email: string; next: string }) {
       <input type="hidden" name="next" value={next} />
       <label className="block">
         <span className="field-label">メール本文の6桁の番号を、ここに入れてください</span>
-        <span className="mb-1 block text-sm text-muted">メールを見たら、この画面に戻ってきてください。</span>
         <input
           name="code"
           required
           inputMode="numeric"
           autoComplete="one-time-code"
           maxLength={10}
-          placeholder="123456"
+          placeholder="6桁の番号"
           className="field min-h-14 text-center text-2xl font-black tracking-[0.4em]"
         />
       </label>

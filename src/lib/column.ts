@@ -1053,3 +1053,29 @@ export function jpDate(d: string): string {
   const [y, m, day] = d.split("-").map(Number);
   return `${y}年${m}月${day}日`;
 }
+
+/** 日本時間の今日（YYYY-MM-DD） */
+export function todayJst(now: Date = new Date()): string {
+  return new Date(now.getTime() + 9 * 3600_000).toISOString().slice(0, 10);
+}
+
+/**
+ * 公開日を迎えた読みもの（並びは COLUMNS のまま＝会議で決めた優先順）。
+ * 公開日を先の日付にして入れておけば、その日（日本時間）になったときに一覧・記事・サイトマップ・フィードへ出る。
+ * 毎日1本の自動公開は、この日付で出し分ける（docs/DECISIONS.md 2026-11-08「新しい記事をGoogleに早く見つけてもらう」）
+ */
+export function publishedColumns(now: Date = new Date()): Column[] {
+  const today = todayJst(now);
+  return COLUMNS.filter((c) => c.published <= today);
+}
+
+/** 新しく出た順（公開日→更新日の新しい順）。内部リンクの「新しい読みもの」に使う */
+export function newestColumns(now: Date = new Date()): Column[] {
+  return [...publishedColumns(now)].sort((a, b) => b.published.localeCompare(a.published) || b.updated.localeCompare(a.updated));
+}
+
+/** 公開から7日以内なら「新着」 */
+export function isNewColumn(c: Column, now: Date = new Date()): boolean {
+  const days = (Date.parse(todayJst(now)) - Date.parse(c.published)) / 86_400_000;
+  return days >= 0 && days < 7;
+}

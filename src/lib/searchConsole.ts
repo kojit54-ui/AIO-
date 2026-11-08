@@ -41,11 +41,14 @@ export function scAccount(env: Record<string, string | undefined> = process.env)
 
 const b64url = (s: string | Buffer) => Buffer.from(s).toString("base64").replace(/=+$/, "").replace(/\+/g, "-").replace(/\//g, "_");
 
-async function accessToken(account: { email: string; key: string }, doFetch: typeof fetch): Promise<string> {
+const READONLY_SCOPE = "https://www.googleapis.com/auth/webmasters.readonly";
+
+/** サービスアカウントで Google のアクセストークンをもらう。scope は読むだけ（既定）か、サイトマップの送信（webmasters）か */
+export async function accessToken(account: { email: string; key: string }, doFetch: typeof fetch, scope: string = READONLY_SCOPE): Promise<string> {
   const now = Math.floor(Date.now() / 1000);
   const header = b64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
   const claims = b64url(
-    JSON.stringify({ iss: account.email, scope: "https://www.googleapis.com/auth/webmasters.readonly", aud: "https://oauth2.googleapis.com/token", iat: now, exp: now + 3600 }),
+    JSON.stringify({ iss: account.email, scope, aud: "https://oauth2.googleapis.com/token", iat: now, exp: now + 3600 }),
   );
   let privateKey;
   try {

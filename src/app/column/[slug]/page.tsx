@@ -5,26 +5,33 @@ import { Shiori } from "@/components/fun";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import Image from "next/image";
 import { Reveal } from "@/components/landing";
-import { COLUMNS, findColumn, jpDate, type ChatTurn, type Column, type ColumnPhoto, type Interview } from "@/lib/column";
+import { COLUMNS, isNewColumn, jpDate, newestColumns, publishedColumns, type ChatTurn, type Column, type ColumnPhoto, type Interview } from "@/lib/column";
 import { INDEX_ROBOTS, SITE_URL } from "@/lib/publicPages";
 import { TRY_HREF } from "@/lib/signup";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
+// 公開日を先にして入れた記事は、その日（日本時間）になってから1時間以内に読めるようになる
+export const revalidate = 3600;
+
+/** 公開日を迎えた記事だけ返す */
+function findPublished(slug: string): Column | undefined {
+  return publishedColumns().find((c) => c.slug === slug);
+}
 
 export function generateStaticParams() {
   return COLUMNS.map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const c = findColumn((await params).slug);
+  const c = findPublished((await params).slug);
   if (!c) return {};
   return {
     robots: INDEX_ROBOTS,
     title: `${c.title}｜${SERVICE_NAME}`,
     description: c.lead,
-    alternates: { canonical: `/column/${c.slug}` },
+    alternates: { canonical: `/column/${c.slug}`, types: { "application/atom+xml": "/column/feed.xml" } },
     openGraph: { type: "article", title: c.title, description: c.lead, publishedTime: c.published, modifiedTime: c.updated, ...(c.hero ? { images: [{ url: c.hero.src, alt: c.hero.alt }] } : {}) },
   };
 }
@@ -137,9 +144,12 @@ function ChatBox({ turns }: { turns: ChatTurn[] }) {
 
 /** AIOの読みもの（1本）。地の文が8割：見出しは問い、最初に短い答え。聞き書きの例は架空と明記 */
 export default async function ColumnPage({ params }: Props) {
-  const c = findColumn((await params).slug);
+  const c = findPublished((await params).slug);
   if (!c) notFound();
-  const others = COLUMNS.filter((x) => x.slug !== c.slug).slice(0, 3);
+  // 新しく出た記事3本を先に、続けて優先順の記事（あわせて5本まで）。毎日出る記事にも、ほかの記事からのリンクがつく
+  const others = [...newestColumns().slice(0, 4), ...publishedColumns()]
+    .filter((x, i, all) => x.slug !== c.slug && all.findIndex((y) => y.slug === x.slug) === i)
+    .slice(0, 5);
 
   return (
     <main className="mx-auto max-w-3xl px-4 pb-14 pt-6 sm:px-6">
@@ -252,6 +262,7 @@ export default async function ColumnPage({ params }: Props) {
             {others.map((o) => (
               <li key={o.slug} className="border-b border-sumi/30">
                 <Link href={`/column/${o.slug}`} className="block py-3 font-bold leading-snug hover:bg-white">
+                  {isNewColumn(o) && <span className="mr-2 inline-block bg-brass px-1.5 align-middle text-xs font-bold text-sumi">新着</span>}
                   {o.title}
                 </Link>
               </li>
