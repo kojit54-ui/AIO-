@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { loadUsageSummary } from "@/lib/admin/loadUsage";
+import { createAdminSupabase } from "@/lib/supabase/admin";
 import { needsCall, orgNudges, PACE_LABEL } from "@/lib/admin/usage";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
@@ -15,6 +16,8 @@ export interface CallListItem {
   name: string;
   reasons: string[];
   daysSinceActive: number | null;
+  /** 最後に声をかけた日時とひとこと（記録の表が無いときは出さない） */
+  lastContact?: { at: string; note: string } | null;
 }
 
 export async function GET() {
@@ -35,5 +38,19 @@ export async function GET() {
       reasons: [...(o.pace === "sleeping" || o.pace === "never" ? [PACE_LABEL[o.pace]] : []), ...orgNudges(o, total)],
       daysSinceActive: o.daysSinceActive,
     }));
-  return NextResponse.json({ orgs }, { headers: { "cache-control": "no-store" } });
+  // 声をかけた記録（supabase/migrations/20261108150000_org_contacts.sql）。表がまだ無ければ記録の欄を出さない
+  const { data: contacts, error } = await createAdminSupabase()
+    .from("org_contacts")
+    .select("organization_id, note, created_at")
+    .in("organization_id", orgs.length ? orgs.map((o) => o.id) : ["00000000-0000-0000-0000-000000000000"])
+    .order("created_at", { ascending: false })
+    .limit(500);
+  const contactsEnabled = !error;
+  if (contactsEnabled) {
+    for (const o of orgs) {
+      const c = contacts?.find((x) => x.organization_id === o.id);
+      o.lastContact = c ? { at: c.created_at, note: c.note } : null;
+    }
+  }
+  return NextResponse.json({ orgs, contactsEnabled }, { headers: { "cache-control": "no-store" } });
 }

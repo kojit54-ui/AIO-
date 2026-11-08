@@ -40,6 +40,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
           <h2 className="text-xl font-black">
             招待されたメールアドレスで<span className="inline-block">ログイン</span>
           </h2>
+          <p className="-mt-2 text-sm text-muted">自社サイトの記事づくりを、AIとしおりがお手伝いするサービスです。</p>
           <label className="block">
             <span className="field-label">メールアドレス</span>
             <input name="email" type="email" required autoComplete="email" inputMode="email" defaultValue={state.email} key={state.email ?? ""} placeholder="例）tanaka@example.co.jp" className="field min-h-14 text-lg" />
@@ -55,7 +56,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
               </>
             ) : (
               <>
-                {codeEnabled ? "6桁の番号をメールで受け取る" : "ログイン用のメールを送る"}
+                {codeEnabled ? "番号をメールで受け取る" : "ログイン用のメールを送る"}
                 <span className="inline-block animate-nudge" aria-hidden>
                   →
                 </span>
@@ -138,11 +139,11 @@ function MailSent({ email, next }: { email?: string; next: string }) {
           <p className="text-sm text-muted">送り先</p>
           <p className="break-all text-lg font-black">{email}</p>
           <p className="text-sm text-muted">
-            招待されたアドレスなら、数分で届きます。件名は「AIOえらばれ帳 ログイン用のリンク」。違っていたら {retry}
+            招待されたアドレスなら、数分で届きます。件名は「AIOえらばれ帳 ログイン用のリンク」で、本文に6桁の番号があります。違っていたら {retry}
           </p>
         </div>
         <CodeForm email={email} next={next} />
-        <p className="text-sm text-muted">メールの中のリンクを押しても入れます。</p>
+        <p className="text-sm text-muted">番号を入れずに、メールの中のリンクから入ることもできます。</p>
         {trouble}
       </div>
     );

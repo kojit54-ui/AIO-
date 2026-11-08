@@ -58,7 +58,7 @@ export function InviteForm({ organizationId, organizationName }: { organizationI
             {pending ? "作成中…" : "招待リンクを作る"}
           </button>
         </div>
-        <p className="text-sm text-muted">メールは自動では送りません。できたリンクをコピーして、ご本人にメールなどで送ってください（7日間有効）。</p>
+        <p className="text-sm text-muted">リンクができたら「メールソフトで送る」を押すと、宛先・件名・本文が入ったメールが開きます（7日間有効）。</p>
       </form>
       {preview && (
         <div className="rounded-3xl border-2 border-dashed border-brand bg-canvas p-2">
@@ -79,7 +79,13 @@ export function InviteForm({ organizationId, organizationName }: { organizationI
             onClick={() => navigator.clipboard.writeText(state.link!).then(() => setCopied(true), () => setCopied(false))}
           >
             {copied ? "コピーしました" : "リンクをコピー"}
-          </button>
+          </button>{" "}
+          <a
+            className="btn-primary min-h-9 px-3 py-1 text-sm"
+            href={`mailto:${encodeURIComponent(state.email ?? "")}?subject=${encodeURIComponent(`${organizationName}様　AIOえらばれ帳へのご招待`)}&body=${encodeURIComponent(`${recipientName ? `${recipientName}様` : "ご担当者様"}\n\n${message || DEFAULT_INVITE_MESSAGE}\n\n下のリンクから始められます（7日間有効）。\n${state.link}\n\n株式会社コタム`)}`}
+          >
+            メールソフトで送る
+          </a>
         </Notice>
       )}
     </div>
