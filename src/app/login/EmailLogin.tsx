@@ -138,10 +138,17 @@ function MailSent({ email, next }: { email?: string; next: string }) {
         <div className="space-y-1">
           <p className="text-sm text-muted">送り先</p>
           <p className="break-all text-lg font-black">{email}</p>
-          <p className="text-sm text-muted">
-            招待されたアドレスなら、数分でメールが届きます。メールを開き、本文の6桁の番号を確かめてください。違っていたら {retry}
-          </p>
+          <p className="text-sm text-muted">違っていたら {retry}</p>
         </div>
+        {/* 2026-11-08 お客様役の採点「次に何をするかを番号で」 */}
+        <ol className="grid gap-2 text-sm sm:grid-cols-3">
+          {["メールアプリを開く（数分で届きます）", "本文の6桁の番号を見る", "この画面に戻って入れる"].map((t, i) => (
+            <li key={t} className="flex items-center gap-2 rounded-2xl border-2 border-brand-soft px-3 py-2">
+              <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand text-xs font-black text-white">{i + 1}</span>
+              <b>{t}</b>
+            </li>
+          ))}
+        </ol>
         <CodeForm email={email} next={next} />
         {trouble}
       </div>
@@ -193,14 +200,13 @@ function CodeForm({ email, next }: { email: string; next: string }) {
       <input type="hidden" name="next" value={next} />
       <label className="block">
         <span className="field-label">メール本文の6桁の番号を、ここに入れてください</span>
-        <span className="mb-1 block text-sm text-muted">メールを見たら、この画面に戻ってきてください。</span>
         <input
           name="code"
           required
           inputMode="numeric"
           autoComplete="one-time-code"
           maxLength={10}
-          placeholder="123456"
+          placeholder="6桁の番号"
           className="field min-h-14 text-center text-2xl font-black tracking-[0.4em]"
         />
       </label>
