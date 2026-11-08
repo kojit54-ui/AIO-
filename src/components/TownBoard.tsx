@@ -152,7 +152,7 @@ export function TownView({
           )}
           {/* 次のマスへ進む場所をはっきり見せる（2026-11-08 お客様役「押す場所が分からない」） */}
           {!preview && nextHref(current.id) && (
-            <a href={nextHref(current.id)!} className="btn-primary min-h-11 px-4 text-sm">
+            <a href={nextHref(current.id)!} className="btn-primary min-h-11 w-full px-4 text-sm sm:w-auto">
               {NEXT_LABEL[current.id] ?? "進む"} →
             </a>
           )}
