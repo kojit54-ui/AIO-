@@ -18,7 +18,7 @@ export default function ColumnIndex() {
       <p className="text-sm font-bold text-indigo">読みもの</p>
       <h1 className="mt-2 text-3xl font-black leading-snug sm:text-4xl">AIOの読みもの</h1>
       <p className="mt-3 leading-relaxed">
-        小さな製造業の社長に向けて、AIOの基本と、このサービスの中身を書いています。公式の発表で確かめられたことと、まだ分からないことを分けて書くのが決まりです。文責：{SERVICE_OPERATOR}
+        小さな製造業の社長に向けて、AIOの基本と、このサービスの中身を書いています。公式の発表で確かめられたことと、まだ分からないことを分けて書くのが決まりです。文責：<Link href="/about" className="underline underline-offset-4">{SERVICE_OPERATOR}</Link>（編集方針）
       </p>
       <ol className="mt-8 border-t-2 border-sumi">
         {COLUMNS.map((c, i) => (

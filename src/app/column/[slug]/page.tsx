@@ -38,8 +38,8 @@ function jsonLd(c: Column) {
       description: c.lead,
       datePublished: c.published,
       dateModified: c.updated,
-      author: { "@type": "Organization", name: SERVICE_OPERATOR },
-      publisher: { "@type": "Organization", name: SERVICE_OPERATOR },
+      author: { "@type": "Organization", name: SERVICE_OPERATOR, url: `${SITE_URL}/about` },
+      publisher: { "@type": "Organization", name: SERVICE_OPERATOR, url: `${SITE_URL}/about` },
       mainEntityOfPage: url,
       inLanguage: "ja",
     },
@@ -108,7 +108,7 @@ export default async function ColumnPage({ params }: Props) {
         <header className="border-b-2 border-sumi pb-4">
           <h1 className="text-[1.6rem] font-black leading-snug sm:text-4xl sm:leading-snug">{c.title}</h1>
           <p className="mt-3 text-sm text-sumi/70">
-            <time dateTime={c.updated}>{jpDate(c.updated)}</time> 更新・内容の確認 <time dateTime={c.checked}>{jpDate(c.checked)}</time>・文責 {SERVICE_OPERATOR}
+            <time dateTime={c.updated}>{jpDate(c.updated)}</time> 更新・内容の確認 <time dateTime={c.checked}>{jpDate(c.checked)}</time>・文責 <Link href="/about" className="underline underline-offset-4">{SERVICE_OPERATOR}</Link>
           </p>
         </header>
 

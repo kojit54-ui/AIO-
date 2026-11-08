@@ -8,6 +8,7 @@
 // - 手順は「答える → 確かめて直す → 公開する」。料金と条件は隠さない（src/lib/legal.ts と同じ）
 // - いまは招待制なので、新規の方には「登録せずに試す」と「新規受付の案内（メール）」を出す。「さっそく始める」で行き止まりにしない
 
+import { serviceJsonLd } from "@/lib/about";
 import { SiteFooter, SiteHeader, useStartLink } from "@/components/site";
 import { FAQ } from "@/lib/faq";
 import { COLUMNS } from "@/lib/column";
@@ -594,6 +595,7 @@ function Faq() {
         ))}
       </ul>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd() }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd()).replace(/</g, "\\u003c") }} />
     </Section>
   );
 }
