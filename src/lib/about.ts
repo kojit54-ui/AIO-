@@ -21,7 +21,7 @@ export const COMPANY = {
 /** 料金と受付の状態（画面に出している文と同じ） */
 export const PRICE_JPY = 50000;
 export const PRICE_LABEL = "月額50,000円（税抜。税込55,000円）、記事は毎月1本";
-export const SALES_STATUS = "新規のお申し込みは準備中です。コタムのお客様は、招待制で無料でお使いいただけます。";
+export const SALES_STATUS = "新規のお申し込みは準備中です。";
 
 /** 読みもの（/column）の編集方針。記事の書き方の約束 */
 export const EDITORIAL_POLICY: { h: string; text: string }[] = [

@@ -36,3 +36,14 @@ describe("運営会社と編集方針・構造化データ", () => {
     expect(sitemap().map((u) => new URL(u.url).pathname)).toContain("/about");
   });
 });
+
+// 2026-11-08 田村さん「既存のお客様は無料、は絶対に出さないで」。外から見えるページの元になるファイルに書かない
+describe("外向けのページに、既存のお客様が無料だと書かない", () => {
+  const files = ["src/app/welcome/Welcome.tsx", "src/lib/column.ts", "src/lib/faq.ts", "src/lib/legal.ts", "src/lib/about.ts", "src/app/try/TryOut.tsx", "src/lib/publicPages.ts"];
+  it.each(files)("%s", (f) => {
+    if (!fs.existsSync(f)) return;
+    const s = fs.readFileSync(f, "utf8");
+    expect(s).not.toMatch(/(コタムの(既存の)?お客様|招待(した|された)?お客様|ご招待|既存のお客様)[^。\n]{0,40}無料/);
+    expect(s).not.toMatch(/無料[^。\n]{0,20}(コタムのお客様|既存のお客様)/);
+  });
+});
