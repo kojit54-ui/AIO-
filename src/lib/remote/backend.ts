@@ -9,7 +9,7 @@ import { normalizePersonName } from "@/lib/personName";
 import { createBrowserClient } from "@supabase/ssr";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { Answer, Article, ArticleImage, Block, CompanyProfile, FactCheckStatus, GenerationErrorCode, ReviewDecision, ScSnapshot, SessionUser } from "@/types/domain";
+import type { Answer, Article, ArticleImage, ArticleVersion, Block, CompanyProfile, FactCheckStatus, GenerationErrorCode, ReviewDecision, ScSnapshot, SessionUser } from "@/types/domain";
 import { applyAction, type ArticleAction, TransitionError } from "@/lib/workflow";
 import { extractFactChecks } from "@/mock/sampleGenerator";
 import type { MockApi, MockDb, Simulation } from "@/mock/store";
@@ -290,7 +290,8 @@ export class RemoteBackend {
 
   private async generate(articleId: string, body: Record<string, unknown>) {
     this.requireUser();
-    let res: Response;
+    const before = this.article(articleId).currentVersionId;
+    let res: Response | null = null;
     try {
       res = await fetch(`/api/articles/${encodeURIComponent(articleId)}/generations`, {
         method: "POST",
@@ -298,17 +299,35 @@ export class RemoteBackend {
         body: JSON.stringify({ ...body, idempotencyKey: crypto.randomUUID() }),
       });
     } catch {
-      throw new ApiError("provider_error", GENERATION_MESSAGES.provider_error);
+      res = null;
     }
-    const json = (await res.json().catch(() => ({}))) as { code?: string; message?: string; versionId?: string };
+    const json = res ? ((await res.json().catch(() => ({}))) as { code?: string; message?: string; versionId?: string }) : {};
     await this.load();
-    if (!res.ok || !json.versionId) {
+    if (!res?.ok || !json.versionId) {
+      // 本文づくりは長いと、保存までできたのに返事だけ届かないことがある（2026-11-08 本番の通しテスト）。
+      // 返事が無い・中身が無いときは少し待って読み直し、新しい版ができていればそれを使う（同じ記事を2回作らせない）
+      if (!res || !json.code) {
+        const found = await this.waitForNewVersion(articleId, before);
+        if (found) return found;
+      }
+      if (!res) throw new ApiError("provider_error", GENERATION_MESSAGES.provider_error);
       const code = (json.code ?? "provider_error") as GenerationErrorCode | "session_expired" | "forbidden" | "not_found";
       throw new ApiError(code, json.message ?? GENERATION_MESSAGES[code as GenerationErrorCode] ?? GENERATION_MESSAGES.provider_error);
     }
     const v = this.state.db.versions.find((x) => x.id === json.versionId);
     if (!v) throw new ApiError("not_found", "前の内容が見つかりません");
     return v;
+  }
+
+  /** 生成の返事が届かなかったとき、新しい版が保存されていないか数回読み直す */
+  private async waitForNewVersion(articleId: string, before: string | null): Promise<ArticleVersion | null> {
+    for (let i = 0; i < 8; i++) {
+      const now = this.state.db.articles.find((a) => a.id === articleId)?.currentVersionId ?? null;
+      if (now && now !== before) return this.state.db.versions.find((x) => x.id === now) ?? null;
+      await new Promise((r) => setTimeout(r, 5000));
+      await this.load();
+    }
+    return null;
   }
 
   readonly api: MockApi = {
