@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import { Shiori } from "@/components/fun";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import Image from "next/image";
-import { Reveal } from "@/components/landing";
-import { COLUMNS, isNewColumn, jpDate, newestColumns, publishedColumns, type ChatTurn, type Column, type ColumnPhoto, type Interview } from "@/lib/column";
+import { ColumnChat } from "@/components/ColumnChat";
+import { COLUMNS, isNewColumn, jpDate, newestColumns, publishedColumns, type Column, type ColumnPhoto, type Interview } from "@/lib/column";
 import { INDEX_ROBOTS, SITE_URL } from "@/lib/publicPages";
 import { TRY_HREF } from "@/lib/signup";
 
@@ -110,38 +110,6 @@ function PhotoFigure({ photo, priority = false }: { photo: ColumnPhoto; priority
   );
 }
 
-/** しおりに聞いてみた：読んでいる方の質問に、しおりがチャットのように答える */
-function ChatBox({ turns }: { turns: ChatTurn[] }) {
-  return (
-    <aside aria-label="しおりに聞いてみた" className="border-2 border-sumi bg-[#eef3f8]">
-      <p className="border-b-2 border-sumi bg-white px-4 py-2 text-xs font-bold">しおりに聞いてみた</p>
-      <div className="space-y-4 px-3 py-4 sm:px-5">
-        {turns.map((t, i) => (
-          <div key={t.q} className="space-y-3">
-            <Reveal delay={i * 0.1} className="flex justify-end">
-              <p className="max-w-[85%] rounded-2xl rounded-br-sm border border-sumi/30 bg-white px-4 py-2.5 leading-relaxed shadow-sm">
-                <span className="mb-0.5 block text-xs font-bold text-sumi/60">読んでいる方</span>
-                {t.q}
-              </p>
-            </Reveal>
-            <Reveal delay={i * 0.1 + 0.25} className="flex items-end gap-2">
-              <Shiori mood="joy" as="shiori" className="h-12 w-auto shrink-0 sm:h-14" />
-              <div className={`${maru} max-w-[85%] rounded-2xl rounded-bl-sm bg-indigo px-4 py-2.5 leading-relaxed text-white shadow-sm`}>
-                <span className="mb-0.5 block text-xs font-bold text-white/70">しおり</span>
-                {t.a.map((x) => (
-                  <p key={x} className="mt-1 first:mt-0">
-                    {x}
-                  </p>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        ))}
-      </div>
-    </aside>
-  );
-}
-
 /** AIOの読みもの（1本）。地の文が8割：見出しは問い、最初に短い答え。聞き書きの例は架空と明記 */
 export default async function ColumnPage({ params }: Props) {
   const c = findPublished((await params).slug);
@@ -212,7 +180,7 @@ export default async function ColumnPage({ params }: Props) {
                 </ul>
               )}
               {s.interview && <InterviewBox iv={s.interview} />}
-              {s.chat && <ChatBox turns={s.chat} />}
+              {s.chat && <ColumnChat turns={s.chat} />}
             </section>
           ))}
         </div>
