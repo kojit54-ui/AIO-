@@ -3,6 +3,8 @@ import { EmptyState, Notice } from "@/components/ui";
 import { createAdminSupabase } from "@/lib/supabase/admin";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
+import { markNotified } from "./actions";
+import { CopyEmails } from "./CopyEmails";
 
 // 新規受付の案内を受け取りたい人の一覧（入口ページ・試すページから）。全社管理者だけ。
 // 受付を始めるときに、ここに並んだ人へ知らせる。メールは画面の外（ログなど）に出さない。
@@ -55,6 +57,24 @@ export default async function AdminWaitlistPage() {
       <p className="text-muted">
         いま <b className="text-ink">{rows.length}人</b>。入口ページと試すページの「受付開始の案内を受け取る」から届いたメールです。受付を始めるときに、この人たちへ知らせます。
       </p>
+      <div className="card space-y-2">
+        <h2 className="font-black">受付を始めるときの手順</h2>
+        <ol className="list-decimal space-y-1 pl-5 text-sm">
+          <li>「まとめてコピー」で、まだ知らせていない人のアドレスをコピーする</li>
+          <li>メールソフトの BCC に貼って、受付開始のお知らせを送る</li>
+          <li>送ったら「全員を知らせた にする」を押す（1人ずつなら各行の「知らせた」）</li>
+        </ol>
+        <div className="flex flex-wrap items-center gap-2">
+          <CopyEmails emails={rows.filter((r) => !r.notified_at).map((r) => r.email)} />
+          {rows.some((r) => !r.notified_at) && (
+            <form action={markNotified}>
+              <button type="submit" className="btn-secondary min-h-10 px-4 py-1">
+                全員を知らせた にする
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
       {rows.length === 0 ? (
         <EmptyState title="まだいません">届いたら、ここに新しい順に並びます。</EmptyState>
       ) : (
@@ -64,8 +84,17 @@ export default async function AdminWaitlistPage() {
               <span className="break-all font-bold">{r.email}</span>
               <span className="text-sm text-muted">
                 {SOURCE[r.source] ?? r.source}・{fmt(r.created_at)}
-                {r.notified_at ? "・お知らせ済み" : ""}
               </span>
+              {r.notified_at ? (
+                <span className="rounded-full bg-ok-soft px-2.5 text-sm font-bold text-ok">知らせた（{fmt(r.notified_at)}）</span>
+              ) : (
+                <form action={markNotified}>
+                  <input type="hidden" name="email" value={r.email} />
+                  <button type="submit" className="btn-secondary min-h-9 px-3 py-1 text-sm">
+                    知らせた
+                  </button>
+                </form>
+              )}
             </li>
           ))}
         </ul>

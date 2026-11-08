@@ -57,7 +57,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
       </div>
 
       <section className="card space-y-3">
-        <h2 className="text-lg font-bold">会社</h2>
+        <h2 className="text-lg font-bold">会社を選ぶ</h2>
         {/* 会社が増えても探せるよう、選ぶ欄にする（入力すると頭文字で選べる） */}
         <form method="get" className="flex flex-wrap items-center gap-2">
           <select name="org" defaultValue={current?.id} aria-label="会社を選ぶ" className="field w-auto min-w-[16rem]">
@@ -73,6 +73,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
           </button>
           <span className="text-sm text-muted">全{orgs?.length ?? 0}社</span>
         </form>
+        <h3 className="border-t border-line pt-3 font-bold">新しい会社を登録する</h3>
         <form action={createOrganization} className="flex flex-wrap gap-2">
           <input name="name" required placeholder="会社名" className="field max-w-xs" aria-label="追加する会社名" />
           <button type="submit" className="btn-secondary">会社を追加</button>

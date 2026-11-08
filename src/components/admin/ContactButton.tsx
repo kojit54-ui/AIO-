@@ -12,6 +12,14 @@ export function ContactButton({ organizationId, last, onSaved }: { organizationI
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
+  const [history, setHistory] = useState<{ at: string; note: string }[] | null>(null);
+  const loadHistory = () => {
+    if (history) return;
+    fetch(`/api/admin/contacts?org=${organizationId}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: { history?: { at: string; note: string }[] } | null) => setHistory(j?.history ?? []))
+      .catch(() => setHistory([]));
+  };
   const save = async () => {
     setBusy(true);
     setError(false);
@@ -20,6 +28,7 @@ export function ContactButton({ organizationId, last, onSaved }: { organizationI
     setBusy(false);
     if (!j) return setError(true);
     onSaved(j.lastContact);
+    setHistory(null);
     setNote("");
     setOpen(false);
   };
@@ -28,6 +37,23 @@ export function ContactButton({ organizationId, last, onSaved }: { organizationI
       <p className={last ? "text-muted" : "font-bold text-warn"}>
         {last ? `前に声をかけた日：${formatDate(last.at)}${last.note ? `「${last.note}」` : ""}` : "まだ声をかけていません"}
       </p>
+      {last && (
+        <details onToggle={(e) => (e.currentTarget as HTMLDetailsElement).open && loadHistory()}>
+          <summary className="cursor-pointer text-xs font-bold text-brand-dark">これまでの記録を見る</summary>
+          {history === null ? (
+            <p className="text-xs text-muted">読んでいます…</p>
+          ) : (
+            <ul className="mt-1 space-y-0.5 text-xs text-muted">
+              {history.map((h) => (
+                <li key={h.at}>
+                  {formatDate(h.at)}
+                  {h.note ? `「${h.note}」` : ""}
+                </li>
+              ))}
+            </ul>
+          )}
+        </details>
+      )}
       {open ? (
         <div className="flex flex-wrap items-center gap-2">
           <input value={note} onChange={(e) => setNote(e.target.value)} maxLength={200} placeholder="ひとこと（任意）例）電話。来週書くとのこと" className="field min-h-9 flex-1 py-1" aria-label="声をかけたときのひとこと" />
