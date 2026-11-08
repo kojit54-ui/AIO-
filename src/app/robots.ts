@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { FEED_PATH } from "@/lib/indexing";
 import { SITE_URL } from "@/lib/publicPages";
 
 // 検索とAIの読みとりを止めない（OAI-SearchBot・Googlebot など）。docs/AIO.md「いま分かっている公式の考え方」。
@@ -6,7 +7,8 @@ import { SITE_URL } from "@/lib/publicPages";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: "*", allow: "/", disallow: ["/api/", "/admin/", "/auth/", "/invite/"] }],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    // Google は RSS/Atom フィードもサイトマップとして読む（新しい記事を早く見つけるため）
+    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}${FEED_PATH}`],
     host: SITE_URL,
   };
 }
