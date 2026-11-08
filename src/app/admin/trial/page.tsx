@@ -5,7 +5,7 @@ import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { setTrialEnabled, setTrialLimits } from "./actions";
 import { TRIAL_RANGES } from "./ranges";
-import { groupTrialReasons } from "@/lib/admin/trialReason";
+import { groupTrialReasons, trialReason } from "@/lib/admin/trialReason";
 
 // 30秒でためす（/try）の見守り。全社管理者だけ。入力は残していないので、回数と費用と、見本に切り替えた理由だけを見る。
 
@@ -72,6 +72,14 @@ export default async function AdminTrialPage() {
   const reasons = Object.entries(
     rejected.reduce<Record<string, number>>((m, r) => ((m[r.error_code ?? "other"] = (m[r.error_code ?? "other"] ?? 0) + 1), m), {}),
   ).sort((a, b) => b[1] - a[1]);
+  // 理由ごとの最後に起きた時刻（2026-11-08 管理者役の採点「いつ起きたかが分からない」）
+  const lastAt = new Map<string, string>();
+  for (const r of rejected) {
+    const label = trialReason(r.error_code ?? "other").label;
+    if (!lastAt.has(label) || r.created_at > lastAt.get(label)!) lastAt.set(label, r.created_at);
+  }
+  const fmtAt = (iso: string) =>
+    new Date(iso).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" });
   const days = Array.from({ length: 14 }, (_, i) => jstDay(new Date(now.getTime() - (13 - i) * 24 * 3600_000)));
   const perDay = days.map((d) => ({ d, n: list.filter((r) => jstDay(new Date(r.created_at)) === d).length }));
   const peak = Math.max(1, ...perDay.map((x) => x.n));
@@ -110,6 +118,7 @@ export default async function AdminTrialPage() {
           <div className={`h-full rounded-full ${budgetRatio >= 0.8 ? "bg-danger" : "bg-brand"}`} style={{ width: `${budgetRatio * 100}%` }} />
         </div>
         <p className="text-sm text-muted">{Math.round(budgetRatio * 100)}% を使いました。上限に着くと、その月はAIを呼ばずに見本で動きます。</p>
+        <p className="text-xs text-muted">この予算は「30秒でためす」だけの分です。お客様の記事づくりの費用とは別に数えます。どちらも「利用金額と利用頻度」の画面に並べて出ます。</p>
       </section>
 
       <section className="card space-y-3">
@@ -138,6 +147,7 @@ export default async function AdminTrialPage() {
               <li key={g.label} className="flex justify-between gap-3 rounded-xl bg-canvas px-3 py-1">
                 <span className="min-w-0">
                   {g.label}
+                  {lastAt.get(g.label) && <span className="block text-xs text-muted">最後に起きた時刻：{fmtAt(lastAt.get(g.label)!)}</span>}
                   {g.next && <span className="block text-sm text-brand-dark">やること：{g.next}</span>}
                   {g.details.map((d) => (
                     <span key={d} className="block break-all text-xs text-muted">

@@ -1,3 +1,4 @@
+import { AutoSubmitSelect } from "@/components/admin/AutoSubmitSelect";
 import { redirect } from "next/navigation";
 import { EmptyState } from "@/components/ui";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
@@ -60,18 +61,20 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
         <h2 className="text-lg font-bold">会社を選ぶ</h2>
         {/* 会社が増えても探せるよう、選ぶ欄にする（入力すると頭文字で選べる） */}
         <form method="get" className="flex flex-wrap items-center gap-2">
-          <select name="org" defaultValue={current?.id} aria-label="会社を選ぶ" className="field w-auto min-w-[16rem]">
+          <AutoSubmitSelect name="org" defaultValue={current?.id} aria-label="会社を選ぶ" className="field w-auto min-w-[16rem]">
             {orgs?.map((o) => (
               <option key={o.id} value={o.id}>
                 {o.name}
                 {pendingCount.get(o.id) ? `（招待中 ${pendingCount.get(o.id)}）` : ""}
               </option>
             ))}
-          </select>
-          <button type="submit" className="btn-secondary min-h-10 px-4 py-1">
-            この会社を開く
-          </button>
-          <span className="text-sm text-muted">全{orgs?.length ?? 0}社</span>
+          </AutoSubmitSelect>
+          <noscript>
+            <button type="submit" className="btn-secondary min-h-10 px-4 py-1">
+              この会社を開く
+            </button>
+          </noscript>
+          <span className="text-sm text-muted">全{orgs?.length ?? 0}社・選ぶとすぐ開きます</span>
         </form>
         <h3 className="border-t border-line pt-3 font-bold">新しい会社を登録する</h3>
         <form action={createOrganization} className="flex flex-wrap gap-2">
