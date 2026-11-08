@@ -33,6 +33,12 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-08 CC（Claude、プロジェクトのスレッド）新しい記事をGoogleに早く見つけてもらう
+- ブランチ：claude/project-thread-7y2cjw
+- 変更点：src/lib/indexing.ts（IndexNow・WebSub・Search Console へのサイトマップ送信・Atomフィード）、/api/cron/indexing（毎朝7:15 JST、vercel.json）、/column/feed.xml、public/<IndexNowの鍵>.txt、robots にフィード、column.ts に publishedColumns／newestColumns（公開日を迎えた記事だけ出す）、一覧・記事の下に「新着」、入口の読みものは新しい順3本、sitemap・一覧・記事・入口に revalidate 3600。searchConsole.ts の accessToken に scope 引数
+- 確認結果：単体テスト528件・型検査・lint・build 通過。next start で robots・sitemap・feed・鍵ファイル・Cronの401を確認。375px・1280px で表示確認
+- 次の作業：Search Console でサービス用アカウントをオーナーに追加（田村さん、1回だけ）→ Cron の結果で searchConsole.ok を確認。毎日の自動公開は、読みものの published を先の日付にして入れれば連動する
+
 ### 2026-11-08 CC（Claude、プロジェクトのスレッド）運営会社と編集方針・構造化データ
 - ブランチ / コミット：claude/project-thread-g4swqz
 - 変更点：/about（運営会社・サービスの料金と受付状況・読みものの編集方針6項目）を追加し、検索に出すページとサイトマップに入れた。入口ページに Service（料金 50,000円・税抜、受付準備中を説明に含む）の構造化データ。読みものの文責を /about へリンクし、Article の author/publisher に /about の url。会社の情報・料金・受付状態は src/lib/about.ts にまとめ、特商法表記・FAQ・入口ページの文と食い違わないかをテストで確かめる
