@@ -3,7 +3,7 @@
 - 2026-11-07 田村さん「ロゴ、ロゴガイドライン、ブランドコンセプト、理念、ミッションバリュー。クオリティ高いものを。サイトにも掲載」→ 第1版（PR #129）
 - 同日 田村さん「クオリティ低い。AIっぽい。3AIをブランドのプロとして批評させて、そこから」→ GPT・Gemini・Claude で3回批評して作り直した第2版。批評の全文は /mnt/project-files/brand-book/council/
 - 同日 田村さん「3者が9.5点になるまでやろう。ブランドコンセプト大事。妥協したくない」→ 言葉を3回練り直した第3版（GPT 9.5・Gemini 9.7・Claude 9.5）。「記事を作る」でなく「会社の仕事の台帳を毎月書きためる」ことを芯にし、名前の「帳」の理由をはっきりさせた
-- 公開ページ：https://aio-erabare.jp/brand （文面は src/lib/brandBook.ts。このファイルと食い違わせない）
+- 公開ページ：https://aio-erabare.jp/brand （文面は src/lib/brandBook.ts。このファイルと食い違わせない）。社長向け。ロゴを使う人向けの決まり・色番号・ダウンロード一覧は https://aio-erabare.jp/brand/logo （検索に出さない。2026-11-08）
 - ロゴの元データ：public/brand/（SVGは文字を輪郭化。PNGは3倍。aio-erabare-logo.zip）。作り直しは scripts/brand/
 - 共有用の絵：src/app/opengraph-image.png、src/app/icon.svg、src/app/apple-icon.png
 
