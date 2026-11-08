@@ -19,6 +19,8 @@ export interface CallListItem {
   daysSinceActive?: number | null;
   /** 最後に声をかけた日時とひとこと（記録の表が無いときは出さない） */
   lastContact?: { at: string; note: string } | null;
+  /** その会社のお客様のメールアドレス（すぐ連絡できるように。全社管理者にだけ返す） */
+  emails?: string[];
 }
 
 export async function GET() {
@@ -51,6 +53,27 @@ export async function GET() {
     for (const o of orgs) {
       const c = contacts?.find((x) => x.organization_id === o.id);
       o.lastContact = c ? { at: c.created_at, note: c.note } : null;
+    }
+  }
+  // 連絡先（2026-11-08 管理者役「誰に連絡すればいいか画面で分からない」）
+  if (orgs.length) {
+    const admin = createAdminSupabase();
+    const { data: ms } = await admin
+      .from("memberships")
+      .select("user_id, organization_id")
+      .eq("role", "client_member")
+      .is("revoked_at", null)
+      .in("organization_id", orgs.map((o) => o.id));
+    const ids = [...new Set((ms ?? []).map((m) => m.user_id))].slice(0, 100);
+    const emailOf = new Map<string, string>();
+    await Promise.all(
+      ids.map(async (id) => {
+        const { data } = await admin.auth.admin.getUserById(id);
+        if (data?.user?.email) emailOf.set(id, data.user.email);
+      }),
+    );
+    for (const o of orgs) {
+      o.emails = (ms ?? []).filter((m) => m.organization_id === o.id).flatMap((m) => (emailOf.has(m.user_id) ? [emailOf.get(m.user_id)!] : [])).slice(0, 3);
     }
   }
   return NextResponse.json({ orgs, contactsEnabled }, { headers: { "cache-control": "no-store" } });

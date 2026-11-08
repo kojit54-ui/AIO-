@@ -49,3 +49,22 @@ describe("AIOの読みもの", () => {
     expect(isMarketingPath("/columns")).toBe(false);
   });
 });
+
+describe("読みものの写真", () => {
+  it("使っている写真が public/column/ にあり、説明（alt）がある", async () => {
+    const fs = await import("node:fs");
+    const photos = COLUMNS.flatMap((c) => [c.hero, ...c.sections.map((s) => s.photo)]).filter((p) => !!p);
+    for (const p of photos) {
+      expect(p.src.startsWith("/column/")).toBe(true);
+      expect(fs.existsSync(`public${p.src}`)).toBe(true);
+      expect(p.alt.length).toBeGreaterThan(5);
+    }
+  });
+
+  it("しおりに聞いてみた は、質問と答えがある", () => {
+    for (const c of COLUMNS) for (const s of c.sections) for (const t of s.chat ?? []) {
+      expect(t.q.length).toBeGreaterThan(0);
+      expect(t.a.length).toBeGreaterThan(0);
+    }
+  });
+});

@@ -3,27 +3,36 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Shiori } from "@/components/fun";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
-import { COLUMNS, findColumn, jpDate, type Column, type Interview } from "@/lib/column";
+import Image from "next/image";
+import { Reveal } from "@/components/landing";
+import { COLUMNS, isNewColumn, jpDate, newestColumns, publishedColumns, type ChatTurn, type Column, type ColumnPhoto, type Interview } from "@/lib/column";
 import { INDEX_ROBOTS, SITE_URL } from "@/lib/publicPages";
 import { TRY_HREF } from "@/lib/signup";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
+// 公開日を先にして入れた記事は、その日（日本時間）になってから1時間以内に読めるようになる
+export const revalidate = 3600;
+
+/** 公開日を迎えた記事だけ返す */
+function findPublished(slug: string): Column | undefined {
+  return publishedColumns().find((c) => c.slug === slug);
+}
 
 export function generateStaticParams() {
   return COLUMNS.map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const c = findColumn((await params).slug);
+  const c = findPublished((await params).slug);
   if (!c) return {};
   return {
     robots: INDEX_ROBOTS,
     title: `${c.title}｜${SERVICE_NAME}`,
     description: c.lead,
-    alternates: { canonical: `/column/${c.slug}` },
-    openGraph: { type: "article", title: c.title, description: c.lead, publishedTime: c.published, modifiedTime: c.updated },
+    alternates: { canonical: `/column/${c.slug}`, types: { "application/atom+xml": "/column/feed.xml" } },
+    openGraph: { type: "article", title: c.title, description: c.lead, publishedTime: c.published, modifiedTime: c.updated, ...(c.hero ? { images: [{ url: c.hero.src, alt: c.hero.alt }] } : {}) },
   };
 }
 
@@ -41,6 +50,7 @@ function jsonLd(c: Column) {
       author: { "@type": "Organization", name: SERVICE_OPERATOR, url: `${SITE_URL}/about` },
       publisher: { "@type": "Organization", name: SERVICE_OPERATOR, url: `${SITE_URL}/about` },
       mainEntityOfPage: url,
+      ...(c.hero ? { image: `${SITE_URL}${c.hero.src}` } : {}),
       inLanguage: "ja",
     },
     {
@@ -90,11 +100,56 @@ function InterviewBox({ iv }: { iv: Interview }) {
   );
 }
 
+/** 写真。実在の会社・製品ではないので「写真はイメージです」と添える */
+function PhotoFigure({ photo, priority = false }: { photo: ColumnPhoto; priority?: boolean }) {
+  return (
+    <figure className="border-2 border-sumi bg-white">
+      <Image src={photo.src} alt={photo.alt} width={1600} height={900} priority={priority} sizes="(min-width: 768px) 720px, 100vw" className="block h-auto w-full" />
+      <figcaption className="border-t-2 border-sumi px-3 py-1.5 text-xs text-sumi/60">写真はイメージです（実在の会社・製品ではありません）</figcaption>
+    </figure>
+  );
+}
+
+/** しおりに聞いてみた：読んでいる方の質問に、しおりがチャットのように答える */
+function ChatBox({ turns }: { turns: ChatTurn[] }) {
+  return (
+    <aside aria-label="しおりに聞いてみた" className="border-2 border-sumi bg-[#eef3f8]">
+      <p className="border-b-2 border-sumi bg-white px-4 py-2 text-xs font-bold">しおりに聞いてみた</p>
+      <div className="space-y-4 px-3 py-4 sm:px-5">
+        {turns.map((t, i) => (
+          <div key={t.q} className="space-y-3">
+            <Reveal delay={i * 0.1} className="flex justify-end">
+              <p className="max-w-[85%] rounded-2xl rounded-br-sm border border-sumi/30 bg-white px-4 py-2.5 leading-relaxed shadow-sm">
+                <span className="mb-0.5 block text-xs font-bold text-sumi/60">読んでいる方</span>
+                {t.q}
+              </p>
+            </Reveal>
+            <Reveal delay={i * 0.1 + 0.25} className="flex items-end gap-2">
+              <Shiori mood="joy" as="shiori" className="h-12 w-auto shrink-0 sm:h-14" />
+              <div className={`${maru} max-w-[85%] rounded-2xl rounded-bl-sm bg-indigo px-4 py-2.5 leading-relaxed text-white shadow-sm`}>
+                <span className="mb-0.5 block text-xs font-bold text-white/70">しおり</span>
+                {t.a.map((x) => (
+                  <p key={x} className="mt-1 first:mt-0">
+                    {x}
+                  </p>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        ))}
+      </div>
+    </aside>
+  );
+}
+
 /** AIOの読みもの（1本）。地の文が8割：見出しは問い、最初に短い答え。聞き書きの例は架空と明記 */
 export default async function ColumnPage({ params }: Props) {
-  const c = findColumn((await params).slug);
+  const c = findPublished((await params).slug);
   if (!c) notFound();
-  const others = COLUMNS.filter((x) => x.slug !== c.slug).slice(0, 3);
+  // 新しく出た記事3本を先に、続けて優先順の記事（あわせて5本まで）。毎日出る記事にも、ほかの記事からのリンクがつく
+  const others = [...newestColumns().slice(0, 4), ...publishedColumns()]
+    .filter((x, i, all) => x.slug !== c.slug && all.findIndex((y) => y.slug === x.slug) === i)
+    .slice(0, 5);
 
   return (
     <main className="mx-auto max-w-3xl px-4 pb-14 pt-6 sm:px-6">
@@ -126,6 +181,12 @@ export default async function ColumnPage({ params }: Props) {
           </ol>
         </section>
 
+        {c.hero && (
+          <div className="mt-6">
+            <PhotoFigure photo={c.hero} priority />
+          </div>
+        )}
+
         <div className="mt-6">
           <ShioriLine text={c.opening} mood="ask" />
         </div>
@@ -135,6 +196,7 @@ export default async function ColumnPage({ params }: Props) {
             <section key={s.h} className="space-y-4">
               <h2 className="border-l-4 border-indigo pl-3 text-xl font-black leading-snug sm:text-2xl">{s.h}</h2>
               <p className="font-bold leading-relaxed">{s.answer}</p>
+              {s.photo && <PhotoFigure photo={s.photo} />}
               {s.body?.map((b) => (
                 <p key={b} className="leading-loose">
                   {b}
@@ -150,6 +212,7 @@ export default async function ColumnPage({ params }: Props) {
                 </ul>
               )}
               {s.interview && <InterviewBox iv={s.interview} />}
+              {s.chat && <ChatBox turns={s.chat} />}
             </section>
           ))}
         </div>
@@ -199,6 +262,7 @@ export default async function ColumnPage({ params }: Props) {
             {others.map((o) => (
               <li key={o.slug} className="border-b border-sumi/30">
                 <Link href={`/column/${o.slug}`} className="block py-3 font-bold leading-snug hover:bg-white">
+                  {isNewColumn(o) && <span className="mr-2 inline-block bg-brass px-1.5 align-middle text-xs font-bold text-sumi">新着</span>}
                   {o.title}
                 </Link>
               </li>
