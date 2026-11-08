@@ -32,6 +32,10 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
 
   const { org } = await searchParams;
   const { data: orgs } = await supabase.from("organizations").select("id, name").order("name");
+  // 会社ごとの「招待中」の人数（会社を切り替えなくても、登録待ちが分かるように）
+  const { data: allPending } = await supabase.from("invitations").select("organization_id").is("accepted_at", null).gt("expires_at", new Date().toISOString());
+  const pendingCount = new Map<string, number>();
+  for (const p of allPending ?? []) pendingCount.set(p.organization_id, (pendingCount.get(p.organization_id) ?? 0) + 1);
   const current = orgs?.find((o) => o.id === org) ?? orgs?.[0];
   const [{ data: members }, { data: pending }] = current
     ? await Promise.all([
@@ -60,6 +64,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
             <li key={o.id}>
               <Link href={`?org=${o.id}`} className={o.id === current?.id ? "btn-primary min-h-9 px-3 py-1" : "btn-secondary min-h-9 px-3 py-1"}>
                 {o.name}
+                {pendingCount.get(o.id) ? <span className="ml-1 rounded-full bg-sun-soft px-2 text-xs font-bold text-ink">招待中 {pendingCount.get(o.id)}</span> : null}
               </Link>
             </li>
           ))}

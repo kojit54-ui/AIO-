@@ -17,7 +17,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
       mood={state.sent ? "joy" : "bow"}
       compact={state.sent && codeEnabled}
       title={state.sent ? "メールを送りました！" : <>{hello}！<br />今日もいっしょに書きましょう</>}
-      lines={state.sent ? [codeEnabled ? "メールに届いた6桁の番号を、下に入れてください。" : "メールのリンクを押したら、すぐ始められますよ。", "待ってますね！"] : ["案内役のしおりです。", "メールアドレスを入れるだけで入れます。パスワードはいりません！"]}
+      lines={state.sent ? [codeEnabled ? "メールに届いた6桁の番号を、下に入れてください。" : "メールのリンクを押したら、すぐ始められますよ。", "待ってますね！"] : ["案内役のしおりです。", codeEnabled ? "招待されたメールアドレスを入れると、6桁の番号が届きます。パスワードはいりません！" : "招待されたメールアドレスを入れると、ログイン用のメールが届きます。パスワードはいりません！"]}
     >
       {linkError && (
         <Notice tone="warn" title="ログイン用のリンクが使えませんでした">
@@ -37,7 +37,9 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
       {state.sent ? <MailSent email={codeEnabled ? state.email : undefined} next={state.next ?? next} /> : (
         <form action={action} className="card space-y-4 p-6">
           <input type="hidden" name="next" value={next} />
-          <h2 className="text-xl font-black">招待されたメールアドレスでログイン</h2>
+          <h2 className="text-xl font-black">
+            招待されたメールアドレスで<span className="inline-block">ログイン</span>
+          </h2>
           <label className="block">
             <span className="field-label">メールアドレス</span>
             <input name="email" type="email" required autoComplete="email" inputMode="email" placeholder="例）tanaka@example.co.jp" className="field min-h-14 text-lg" />
@@ -190,7 +192,7 @@ function CodeForm({ email, next }: { email: string; next: string }) {
       <input type="hidden" name="email" value={email} />
       <input type="hidden" name="next" value={next} />
       <label className="block">
-        <span className="field-label">メールに届いた6桁の番号を入れてください</span>
+        <span className="field-label">メールを見たら、この画面に戻って6桁の番号を入れてください</span>
         <input
           name="code"
           required

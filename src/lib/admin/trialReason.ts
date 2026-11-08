@@ -82,3 +82,17 @@ export function trialReason(code: string): {
     next: key ? NEXT[key] : null,
   };
 }
+
+/** 同じ見出しになる理由は1行にまとめる（技術的な記録は並べて残す） */
+export function groupTrialReasons(reasons: [string, number][]): { label: string; next: string | null; details: string[]; count: number }[] {
+  const out: { label: string; next: string | null; details: string[]; count: number }[] = [];
+  for (const [code, n] of reasons) {
+    const r = trialReason(code);
+    const g = out.find((x) => x.label === r.label);
+    if (g) {
+      g.count += n;
+      if (r.detail && !g.details.includes(r.detail)) g.details.push(r.detail);
+    } else out.push({ label: r.label, next: r.next, details: r.detail ? [r.detail] : [], count: n });
+  }
+  return out.sort((a, b) => b.count - a.count);
+}

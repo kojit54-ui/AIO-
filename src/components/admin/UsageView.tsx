@@ -55,6 +55,9 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
 
       <section className="card space-y-3">
         <h2 className="font-black">会社ごと</h2>
+        <p className="text-xs text-muted">
+          使い方の目安：よく使っています＝この7日に1日以上／このところ少なめ＝この7日は0日／2週間以上 使っていません＝14日以上あいている。印が「声をかけたい」の会社は、使っていても途中で止まっているところがあります。
+        </p>
         {s.orgs.length === 0 ? (
           <p className="text-muted">まだ会社がありません。</p>
         ) : (
@@ -132,7 +135,7 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
       </section>
 
       <p className="text-xs text-muted">
-        費用はAIの提供元の料金から出した目安です。「使った日」は顧客担当者がログインした日、質問に答えた日、記事を作った日、AIを使った日です。記事の本文や答えの中身はこの画面に出しません。
+        費用はAIの提供元の料金から出した目安です。1円未満を四捨五入しているので、合計と内訳の足し算が1円ほどずれることがあります。「使った日」は顧客担当者がログインした日、質問に答えた日、記事を作った日、AIを使った日です。記事の本文や答えの中身はこの画面に出しません。
       </p>
     </main>
   );
