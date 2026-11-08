@@ -24,9 +24,12 @@ export async function GET(request: NextRequest) {
   }
   const days = Math.min(Math.max(Number(request.nextUrl.searchParams.get("days")) || 2, 1), 60);
   const urls = freshUrls(new Date(), days);
-  if (request.nextUrl.searchParams.get("dry") === "1" || !urls.length) {
-    console.log("[indexing]", JSON.stringify({ urls: urls.length, sent: false }));
-    return NextResponse.json({ urls, sent: false });
+  if (request.nextUrl.searchParams.get("dry") === "1") return NextResponse.json({ urls, sent: false });
+  if (!urls.length) {
+    // 新しい記事が無い日も、Search Console へのサイトマップ送信だけは行う（送れる状態かを毎日ログで確かめられる）
+    const searchConsole = await step(() => submitSitemaps());
+    console.log("[indexing]", JSON.stringify({ urls: 0, sent: false, searchConsole }));
+    return NextResponse.json({ urls, sent: false, searchConsole });
   }
   const [indexNow, webSub, searchConsole] = await Promise.all([step(() => submitIndexNow(urls)), step(() => pingWebSub()), step(() => submitSitemaps())]);
   const result = { urls, sent: true, indexNow, webSub, searchConsole };
