@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import { LoginStage, useGreeting } from "@/components/landing";
 import { Notice } from "@/components/ui";
@@ -158,6 +158,11 @@ function MailSent({ email, next }: { email?: string; next: string }) {
 /** メールの6桁の番号を入れる（src/lib/auth/loginCode.ts） */
 function CodeForm({ email, next }: { email: string; next: string }) {
   const [state, action, pending] = useActionState<CodeState, FormData>(verifyLoginCode, {});
+  // ログインできたら、ページごと読み直して行き先へ（画面の中だけで移ると、ログイン前の状態が残る）
+  useEffect(() => {
+    if (state.next) window.location.assign(state.next);
+  }, [state.next]);
+  const busy = pending || Boolean(state.next);
   return (
     <form action={action} className="space-y-2 rounded-2xl border-2 border-sun-soft bg-sun-soft/40 p-4">
       <input type="hidden" name="email" value={email} />
@@ -175,8 +180,8 @@ function CodeForm({ email, next }: { email: string; next: string }) {
         />
       </label>
       {state.error && <p className="text-sm text-danger">{state.error}</p>}
-      <button type="submit" className="btn-primary min-h-12 w-full" disabled={pending}>
-        {pending ? "確かめています…" : "番号でログイン"}
+      <button type="submit" className="btn-primary min-h-12 w-full" disabled={busy}>
+        {busy ? "確かめています…" : "番号でログイン"}
       </button>
     </form>
   );
