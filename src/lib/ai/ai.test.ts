@@ -133,3 +133,9 @@ describe("記事の作戦（読む人・答え・タイトル）をAIに渡す",
     expect(SYSTEM_PROMPT).toContain("最初の段落");
   });
 });
+
+describe("会社名をAIに渡す", () => {
+  it("記事に誰の記事かを書けるよう、会社名を入れる", () => {
+    expect(buildGenerationInput(ctx()).companyName).toBe(sakura.name);
+  });
+});

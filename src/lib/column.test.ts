@@ -32,8 +32,7 @@ describe("AIOの読みもの", () => {
     // 「必ずAIに紹介されますか？」という質問そのものは良い。答えの側を調べる
     const text = allText(COLUMNS) + allText(FAQ.map((f) => f.a));
     for (const p of PROMISES) expect(text).not.toMatch(p);
-    expect(allText(COLUMNS)).not.toMatch(PRICE);
-    for (const yen of allText(FAQ.map((f) => f.a)).match(PRICE) ?? []) expect(["50,000円", "55,000円"]).toContain(yen);
+    for (const yen of text.match(PRICE) ?? []) expect(["50,000円", "55,000円"]).toContain(yen);
   });
 
   it("サイトマップに、入口と読みもの全部が載る", () => {

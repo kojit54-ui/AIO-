@@ -23,6 +23,8 @@ export interface GenerationContext {
 }
 
 export interface GenerationInput {
+  /** 会社名。AIが「誰の記事か」を本文に書けるように渡す（2026-11-08 採点で会社名が無いと指摘） */
+  companyName: string;
   profile: Organization["profile"];
   coachingNote: Pick<CoachingNote, "focus" | "audience" | "purpose" | "avoid" | "clientVisibleNote"> | null;
   theme: Pick<Theme, "title" | "readerProblem" | "message">;
@@ -67,6 +69,7 @@ export function buildGenerationInput(ctx: GenerationContext): GenerationInput {
     .map((a) => ({ question: ctx.questions.find((q) => q.id === a.questionId)?.label ?? a.questionId, answer: a.text.trim() }));
 
   const input: GenerationInput = {
+    companyName: ctx.organization.name,
     profile: ctx.organization.profileApprovedAt ? ctx.organization.profile : null,
     coachingNote: ctx.note
       ? {
