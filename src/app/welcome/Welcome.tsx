@@ -173,13 +173,13 @@ function SampleScreen() {
             </div>
           ) : (
             <p key={i} className="ml-auto w-fit max-w-[88%] rounded-2xl rounded-br-md bg-brand px-3 py-2 font-bold leading-relaxed text-white">
-              <span className="sr-only">社長：</span>
+              <span className="sr-only">社長・担当者：</span>
               {t.text}
             </p>
           ),
         )}
       </div>
-      <p className="border-y border-sumi/30 bg-paper px-4 py-1.5 text-center text-xs font-bold text-sumi/70">↓ AIが記事に。社長が確かめてから公開</p>
+      <p className="border-y border-sumi/30 bg-paper px-4 py-1.5 text-center text-xs font-bold text-sumi/70">↓ AIが記事に。社長や担当の方が確かめてから公開</p>
       <div className="px-5 py-4">
         <p className="text-xs font-bold text-sumi/60">できあがった記事の一部（見本）</p>
         <p className={`${kaku} mt-1 text-lg font-black leading-snug`}>
@@ -294,9 +294,9 @@ function AiChat() {
 }
 
 const STEPS = [
-  { who: "社長", title: "質問に答える", text: "案内役が、なぜ聞くのかを添えて1問ずつ聞きます。文字でも声でも、写真1枚からでも。わからない質問は飛ばせます。" },
+  { who: "社長・担当者", title: "質問に答える", text: "案内役が、なぜ聞くのかを添えて1問ずつ聞きます。文字でも声でも、写真1枚からでも。わからない質問は飛ばせます。" },
   { who: "AI", title: "記事にまとめる", text: `答えから記事を書き、${AIO_CHECK_LIST.length}項目の「AIOのチェック」で見直します。足りない所は、案内役が聞き返します。` },
-  { who: "社長", title: "確かめて、載せる", text: "読んで、直してから、自社のホームページにご自身で載せます。自動投稿ではありません。載せ方は1ステップずつ案内します。" },
+  { who: "社長・担当者", title: "確かめて、載せる", text: "読んで、直してから、自社のホームページにご自身で載せます。自動投稿ではありません。載せ方は1ステップずつ案内します。" },
 ];
 
 /** 製造業だけにしぼっている理由。根拠のある言い方だけにする（数は知識表から） */
@@ -345,7 +345,7 @@ function StrengthBook() {
       <div className="grid gap-8 md:grid-cols-[1fr_1.1fr] md:items-start">
         <div className="space-y-4 leading-loose">
           <p>会社の得意なことや選ばれる理由をまとめた「強みの文」と、伝え方をそろえる「自社専用の書き方」。案内役の質問に答えながら自分で作り、毎月の記事づくりで育てていけます。</p>
-          <p>AIが下書きし、足りない所は案内役が1問ずつ聞きます。下書きのままの帳面は使いません。社長が確かめて保存した帳面を、記事を書くAI・点検するAI・AIOのチェック・記事の提案に、毎回「この会社だけの指示」として渡します。</p>
+          <p>AIが下書きし、足りない所は案内役が1問ずつ聞きます。下書きのままの帳面は使いません。社長や担当の方が確かめて保存した帳面を、記事を書くAI・点検するAI・AIOのチェック・記事の提案に、毎回「この会社だけの指示」として渡します。</p>
           <p className="border-l-4 border-indigo pl-3 text-sm leading-relaxed">対面での聞き取りや、ホームページの技術的な直し、AIの回答での表示の計測はしていません。月額50,000円（税抜。税込55,000円）に含まれます。</p>
         </div>
         <div className="border-2 border-sumi bg-white">
@@ -375,7 +375,7 @@ function Steps() {
           <li key={s.title} className={`p-5 sm:p-6 ${i > 0 ? "border-t-2 border-sumi md:border-l-2 md:border-t-0" : ""}`}>
             <p className="flex items-baseline justify-between">
               <span className={`${num} text-4xl font-bold text-indigo`}>0{i + 1}</span>
-              <span className={`px-2 py-0.5 text-xs font-bold ${s.who === "社長" ? "bg-sumi text-paper" : "border border-sumi"}`}>{s.who}</span>
+              <span className={`px-2 py-0.5 text-xs font-bold ${s.who !== "AI" ? "bg-sumi text-paper" : "border border-sumi"}`}>{s.who}</span>
             </p>
             <h3 className={`${kaku} mt-2 text-xl font-black`}>{s.title}</h3>
             <p className="mt-2 text-sm leading-relaxed">{s.text}</p>
@@ -390,7 +390,7 @@ function Steps() {
 function Included({ total, industries }: { total: number; industries: number }) {
   const rows: [string, string][] = [
     ["記事", `毎月1本。案内役の質問、AIによる記事づくり、AIOのチェック（${AIO_CHECK_LIST.length}項目）まで`],
-    ["確認・修正の機能", "社長が画面の上で読んで、直せます。足りない所は案内役が聞き返します"],
+    ["確認・修正の機能", "社長や担当の方が画面の上で読んで、直せます。足りない所は案内役が聞き返します"],
     ["強みの帳面", "得意なこと・お客様と困りごと・強みの根拠と数字・選ばれる決め手を、一問一答で書きためる帳面。記事・点検・チェック・提案のAIに毎回渡します"],
     ["掲載手順の案内", "確かめた記事を、自社のホームページ（ブログ）にご自身で載せます。自動投稿ではありません。操作は画面で順に案内します"],
     ["製造業の知識", `${industries}の業種の悩みや、発注する人の疑問など${total.toLocaleString()}件を公的機関・業界団体などの公開情報から集め、記事づくりの参考にしています`],
@@ -398,7 +398,7 @@ function Included({ total, industries }: { total: number; industries: number }) 
   ];
   return (
     <Section kicker="含まれるもの" title="月額に含まれるもの。">
-      <p className="mb-4 font-bold">AIが下書きをつくり、社長が確かめて直し、自社サイトに載せるサービスです。</p>
+      <p className="mb-4 font-bold">AIが下書きをつくり、社長や担当の方が確かめて直し、自社サイトに載せるサービスです。</p>
       <dl className="grid grid-cols-[7.5rem_1fr] border-2 border-sumi bg-white text-sm sm:grid-cols-[11rem_1fr] sm:text-base">
         {rows.map(([k, v], i) => (
           <div key={k} className="contents">
