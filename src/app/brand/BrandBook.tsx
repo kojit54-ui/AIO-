@@ -3,44 +3,49 @@
 // ブランドとロゴ（/brand）第2版。文面は src/lib/brandBook.ts、正本は docs/BRAND.md。ロゴは public/brand/。
 // 2026-11-07 田村さん「クオリティ低い。AIっぽい」→ 3AIの批評をうけて作り直した。
 // 見た目の決まり：生成りの紙に墨の罫線、角は丸めない（最大2px）、絵文字は使わない、番号と寸法線で組む。
-// 「世界観を見せる」より「頼む前の不安に答える」順番（仕事 → 見本 → AIと人 → 理念 → 約束 → ロゴ）。
+// 「世界観を見せる」より「頼む前の不安に答える」順番（仕事 → 見本 → AIと人 → 理念 → 約束 → 運営 → ロゴの意味）。
+// 2026-11-08 田村さん「このコンテンツは誰向け？」→ 読者は製造業の社長。ロゴの種類・決まり・色番号・書体・ダウンロード一覧は /brand/logo へ移した。
 
 /* eslint-disable @next/next/no-img-element -- ロゴの見本は固定のSVG。崩しの見本もそのまま見せたい */
 
 import Link from "next/link";
-import { useState } from "react";
 import { Reveal } from "@/components/landing";
 import { SiteFooter, SiteHeader } from "@/components/site";
-import { Toast, useFlash } from "@/components/fun";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import {
   BRAND_AI_NOTE,
+  BRAND_AIO_NOTE,
   BRAND_BODY,
   BRAND_BODY_CLOSE,
   BRAND_COLORS,
   BRAND_DESCRIPTOR,
   BRAND_ESSENCE,
-  BRAND_FONTS,
+  BRAND_ESSENCE_NOTE,
   BRAND_GAP,
   BRAND_HOW,
   BRAND_LEDGER,
   BRAND_LINE,
   BRAND_MISSION,
+  BRAND_OPERATOR,
   BRAND_PHILOSOPHY,
   BRAND_PROMISE_HEADING,
   BRAND_PROMISES,
   BRAND_READING,
   BRAND_SAMPLE,
+  BRAND_SECRETS,
   BRAND_STEPS,
-  BRAND_VOICE,
-  LOGO_COLORWAYS,
-  LOGO_DONTS,
   LOGO_PARTS,
-  LOGO_RULES,
   LOGO_STORY,
-  LOGO_VARIANTS,
-  type LogoFile,
 } from "@/lib/brandBook";
+import { COMPANY, PRICE_LABEL } from "@/lib/about";
+
+/** 色の意味（社長向け。色の番号は /brand/logo に） */
+const COLOR_MEANING: Record<string, string> = {
+  藍: "作業着や図面の青。長く使える道具の色",
+  真鍮: "しおりの色。選ばれた所の目じるし",
+  生成り: "帳面の紙。記事を書きためる地",
+  墨: "書き込む文字と罫線",
+};
 
 const kaku = "font-[family-name:var(--font-kaku)]";
 const num = "font-[family-name:var(--font-barlow)] tracking-wide";
@@ -51,31 +56,16 @@ const TOC = [
   { id: "ai", no: "03", label: "AIと人" },
   { id: "mission", no: "04", label: "芯・理念・ミッション" },
   { id: "promise", no: "05", label: "記事づくりの約束" },
-  { id: "logo", no: "06", label: "ロゴ" },
-  { id: "rules", no: "07", label: "ロゴの使い方" },
-  { id: "colors", no: "08", label: "色と書体" },
-  { id: "download", no: "09", label: "ダウンロード" },
+  { id: "operator", no: "06", label: "運営について" },
+  { id: "logo", no: "07", label: "ロゴに込めた考え" },
 ];
 
 const KANJI = ["一", "二", "三", "四", "五"];
 
 export function BrandBook() {
-  const [copied, setCopied] = useState("");
-  const [flash, fire] = useFlash();
-  const copy = (hex: string) => {
-    navigator.clipboard?.writeText(hex).then(
-      () => {
-        setCopied(hex);
-        fire();
-      },
-      () => undefined,
-    );
-  };
-
   return (
     <div className="overflow-x-clip bg-paper text-sumi">
       <SiteHeader />
-      {flash > 0 && <Toast key={flash}>{copied} をコピーしました</Toast>}
       <main className={`${kaku} mx-auto max-w-5xl px-4 pb-16 pt-6 font-medium sm:px-6 sm:pt-10`}>
         {/* 表紙：図面の表題欄の形 */}
         <section className="border-2 border-sumi bg-paper">
@@ -89,11 +79,12 @@ export function BrandBook() {
                 <Phrases text={BRAND_DESCRIPTOR} lines />
               </p>
             </div>
-            <dl className="grid grid-cols-[6.5rem_1fr] grid-rows-[repeat(4,auto)_1fr] border-t-2 border-sumi text-sm md:border-l-2 md:border-t-0">
+            <dl className="grid grid-cols-[6.5rem_1fr] grid-rows-[repeat(5,auto)_1fr] border-t-2 border-sumi text-sm md:border-l-2 md:border-t-0">
               {[
                 ["対象", "製造業の一人親方〜30人の会社"],
                 ["形式", "招待制のWebサービス"],
                 ["発行", "毎月1本から10本まで、自社のホームページへ"],
+                ["料金", "月額50,000円（税抜。税込55,000円）"],
                 ["運営", SERVICE_OPERATOR],
               ].map(([k, v]) => (
                 <div key={k} className="contents">
@@ -148,6 +139,7 @@ export function BrandBook() {
                 {b}
               </p>
             ))}
+            <p className="mb-4 text-sm leading-relaxed text-sumi/80">{BRAND_AIO_NOTE}</p>
             <p className={`${kaku} mt-6 border-l-[6px] border-brass pl-4 text-xl font-black leading-relaxed sm:text-2xl`}>
               <Phrases text={BRAND_BODY_CLOSE} />
             </p>
@@ -213,7 +205,7 @@ export function BrandBook() {
               </h3>
               <p className="mt-3 leading-loose">{BRAND_SAMPLE.article.body}</p>
               <p className="mt-4 border-l-4 border-brass pl-3 text-sm leading-relaxed">
-                「1mm」「ステンレス」「治具」「点で付けて冷ます」。話の中にあった具体的な言葉が、AIにも、頼む人にも届く手がかりになります。書いてあるのは話してくれたことだけで、専門の言葉には説明を添えています。
+                「1mm」「ステンレス」「治具」「点で付けて冷ます」。話の中にあった具体的な言葉が、AIにも、頼む人にも届く手がかりになります。社長の話をもとに、仕事の内容や条件を変えずに記事にしています。専門の言葉には説明を添えています。
               </p>
             </div>
           </div>
@@ -244,7 +236,7 @@ export function BrandBook() {
                 <p className={`${kaku} text-[1.4rem] font-black leading-snug sm:text-4xl`}>
                   <Phrases text={BRAND_ESSENCE} />
                 </p>
-                <p className="mt-3 max-w-3xl leading-loose">社内で迷ったときに戻る言葉です。その記事は、頼む人のためになっているか。社長の話を、聞いたとおりに書いているか。</p>
+                <p className="mt-3 max-w-3xl leading-loose">{BRAND_ESSENCE_NOTE}</p>
               </div>
             </Reveal>
             {[
@@ -284,23 +276,68 @@ export function BrandBook() {
               </Reveal>
             ))}
           </ol>
-          <div className="mt-6 grid gap-6 border-t border-sumi/30 pt-5 md:grid-cols-[9rem_1fr]">
-            <p className="font-bold text-indigo">話し方</p>
+          <div className="mt-6 grid gap-3 border-l-4 border-brass bg-white p-5 md:grid-cols-[9rem_1fr]">
+            <p className="font-bold text-indigo">話してよい範囲</p>
             <div>
-              <p className="leading-relaxed">{BRAND_VOICE.summary}</p>
-              <div className="mt-3 grid gap-4 text-sm sm:grid-cols-2">
-                <List title="こう話す" mark="○" items={BRAND_VOICE.dos} tone="text-ok" />
-                <List title="使わない" mark="×" items={BRAND_VOICE.donts} tone="text-danger" />
-              </div>
+              <p className={`${kaku} text-lg font-black leading-snug`}>{BRAND_SECRETS.title}</p>
+              <p className="mt-1 text-sm leading-relaxed">{BRAND_SECRETS.text}</p>
             </div>
           </div>
         </Section>
 
-        {/* 06 ロゴ */}
-        <Section id="logo" no="06" kicker="ロゴ" title="現場の帳面に、しおりを一本。">
+        {/* 06 運営について */}
+        <Section id="operator" no="06" kicker="運営について" title={BRAND_OPERATOR.title}>
+          <div className="grid gap-6 md:grid-cols-[9rem_1fr]">
+            <p className="font-bold text-indigo">{SERVICE_OPERATOR}</p>
+            <div className="max-w-3xl">
+              {BRAND_OPERATOR.body.map((b) => (
+                <p key={b} className="mb-4 leading-loose">
+                  {b}
+                </p>
+              ))}
+              <dl className="mt-2 grid grid-cols-[6.5rem_1fr] border-y border-sumi text-sm">
+                {[
+                  ["代表", COMPANY.representative],
+                  ["所在地", `〒${COMPANY.postalCode} ${COMPANY.address}`],
+                  ["電話", COMPANY.telephone],
+                ].map(([k, v]) => (
+                  <div key={k} className="contents">
+                    <dt className="border-b border-sumi/30 py-2 font-bold text-sumi/70 last-of-type:border-0">{k}</dt>
+                    <dd className="border-b border-sumi/30 py-2 font-bold">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-3 text-sm">
+                <Link href="/about" className="font-bold text-indigo underline underline-offset-4">
+                  運営会社と編集方針
+                </Link>
+                も、あわせてご覧ください。
+              </p>
+            </div>
+          </div>
+
+          {/* 次の一歩：入口ページへ（押す所だけ明るい青） */}
+          <div className="mt-10 border-2 border-sumi bg-white p-5 sm:p-7">
+            <p className={`${kaku} text-xl font-black leading-snug sm:text-2xl`}>
+              <Phrases text="実際の画面・料金・はじめ方は、ご案内のページにまとめています。" />
+            </p>
+            <p className="mt-2 text-sm leading-relaxed">料金は{PRICE_LABEL}です。</p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href="/welcome" className="btn-primary min-h-12 px-6 text-base">
+                サービスのご案内を見る
+              </Link>
+              <Link href="/try?mode=quick" className="min-h-11 content-center font-bold text-brand underline underline-offset-4">
+                登録せずに、記事の書き出しを試す
+              </Link>
+            </div>
+          </div>
+        </Section>
+
+        {/* 07 帳面に込めた考え（ロゴの意味と色。作業用の決まりは /brand/logo へ） */}
+        <Section id="logo" no="07" kicker="ロゴに込めた考え" title="現場の帳面に、しおりを一本。">
           <div className="grid border-2 border-sumi md:grid-cols-[1fr_1.1fr]">
             <div className="relative grid place-items-center border-b-2 border-sumi bg-white p-6 md:border-b-0 md:border-r-2">
-              <ConstructionMark />
+              <img src="/brand/logo-mark.svg" alt="AIOえらばれ帳のマーク（藍の帳面に真鍮のしおり）" width={160} height={160} className="h-auto w-40 sm:w-48" />
             </div>
             <div className="p-5 sm:p-7">
               <dl className="mb-5 grid grid-cols-[4rem_1fr] border-y border-sumi text-sm">
@@ -323,156 +360,41 @@ export function BrandBook() {
               </ol>
             </div>
           </div>
-
-          <h3 className="mt-10 text-lg font-black">ロゴの種類</h3>
-          <LogoGrid items={LOGO_VARIANTS} />
-          <h3 className="mt-10 text-lg font-black">色の種類</h3>
-          <LogoGrid items={LOGO_COLORWAYS} />
-        </Section>
-
-        {/* 07 ロゴの使い方 */}
-        <Section id="rules" no="07" kicker="ロゴガイドライン" title="ロゴの使い方">
-          <div className="grid border-2 border-sumi md:grid-cols-2">
-            <div className="border-b-2 border-sumi p-5 md:border-b-0 md:border-r-2">
-              <h3 className="font-black">まわりの余白</h3>
-              <div className="mt-4 bg-white p-4">
-                <div className="relative mx-auto max-w-[18rem] border border-dashed border-indigo p-[7%]">
-                  <img src="/brand/logo-horizontal.svg" alt="" width={483} height={120} className="h-auto w-full" />
-                  <span className={`${num} absolute -top-5 left-1/2 -translate-x-1/2 text-xs font-bold text-indigo`}>x</span>
-                  <span className={`${num} absolute -left-4 top-1/2 -translate-y-1/2 text-xs font-bold text-indigo`}>x</span>
-                </div>
-              </div>
-              <p className="mt-3 text-sm leading-relaxed">{LOGO_RULES.clearSpace}（図の x）</p>
-            </div>
-            <div className="p-5">
-              <h3 className="font-black">いちばん小さいサイズ</h3>
-              <ul className="mt-2 text-sm">
-                {LOGO_RULES.minSize.map((m) => (
-                  <li key={m.label} className="flex flex-wrap gap-x-3 border-b border-sumi/30 py-2 last:border-0">
-                    <b className="w-14 shrink-0">{m.label}</b>
-                    <span>画面で{m.screen}</span>
-                    <span className="text-sumi/70">印刷で{m.print}</span>
-                  </li>
-                ))}
-              </ul>
-              <h3 className="mt-5 font-black">名前の書き方</h3>
-              <ul className="mt-2 space-y-1 text-sm">
-                {LOGO_RULES.writing.map((w) => (
-                  <li key={w.text} className="flex gap-2">
-                    <b className={w.ok ? "text-ok" : "text-danger"} aria-label={w.ok ? "よい" : "よくない"}>
-                      {w.ok ? "○" : "×"}
-                    </b>
-                    <span className={w.ok ? "font-bold" : ""}>{w.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <h3 className="mt-10 text-lg font-black">やってはいけないこと</h3>
-          <div className="mt-3 grid grid-cols-2 border-l border-t border-sumi md:grid-cols-3">
-            {LOGO_DONTS.map((d) => (
-              <div key={d.label} className="border-b border-r border-sumi p-3">
-                <div className="grid h-24 place-items-center overflow-hidden bg-white px-3">
-                  <img src="/brand/logo-horizontal.svg" alt="" width={483} height={120} className="h-auto w-full max-w-[10rem]" style={d.style} />
-                </div>
-                <p className="mt-2 flex items-center gap-1.5 text-sm font-bold">
-                  <span className="text-danger" aria-hidden>
-                    ×
-                  </span>
-                  {d.label}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-3 text-sm leading-relaxed">ほかにも、マークと文字の位置を入れかえる、文字だけ別の書体にする、マークにきらめきや星を足す、などはしないでください。</p>
-        </Section>
-
-        {/* 08 色と書体 */}
-        <Section id="colors" no="08" kicker="色と書体" title="藍と真鍮と、生成りの紙。">
-          <p className="leading-relaxed">ブランドの骨格は藍、しおりと「確かめてほしい所」だけが真鍮。サービスの画面では、押すボタンとリンクに明るい青を使います。2つの青は役目を分け、となりに並べるときは間に白か生成りをはさみます。色をおすと、色の番号をコピーできます。</p>
-          <div className="mt-5 grid grid-cols-2 border-l border-t border-sumi sm:grid-cols-3 lg:grid-cols-5">
-            {BRAND_COLORS.map((c) => (
-              <button key={c.hex} type="button" onClick={() => copy(c.hex)} className="border-b border-r border-sumi text-left transition-opacity hover:opacity-90">
-                <span className={`${num} flex h-24 items-end p-3 text-sm font-bold`} style={{ background: c.hex, color: c.text }}>
-                  {c.hex.toUpperCase()}
-                </span>
-                <span className="block bg-white p-3">
+          <ul className="mt-6 grid grid-cols-2 border-l border-t border-sumi sm:grid-cols-4">
+            {BRAND_COLORS.slice(0, 4).map((c) => (
+              <li key={c.hex} className="border-b border-r border-sumi bg-white">
+                <span className="block h-12" style={{ background: c.hex }} aria-hidden />
+                <span className="block p-3">
                   <b className="block">{c.name}</b>
-                  <span className={`${num} block text-xs text-sumi/70`}>RGB {c.rgb}</span>
-                  <span className="mt-1 block text-sm leading-snug">{c.role}</span>
-                </span>
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-8 border-t-2 border-sumi">
-            {BRAND_FONTS.map((f) => (
-              <div key={f.name} className="grid gap-2 border-b border-sumi/30 py-4 md:grid-cols-[1fr_16rem] md:items-end">
-                <p className={`text-2xl leading-snug sm:text-3xl ${f.font === "kaku" ? `${kaku} font-black` : f.font === "barlow" ? `${num} font-bold` : "font-bold font-[family-name:var(--font-maru)]"}`}>{f.sample}</p>
-                <p className="text-sm">
-                  <b className="block">{f.name}</b>
-                  <span className="text-sumi/70">
-                    {f.weight}・{f.use}
-                  </span>
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-3 text-sm leading-relaxed text-sumi/80">本文の大きさの目安：ブランドの紙面 16px・行の高さ 1.8〜1.9、記事 16〜18px・1.8、案内役のせりふ 16px・1.7。どれも無料で使える書体です（Google Fonts）。</p>
-        </Section>
-
-        {/* 09 ダウンロード */}
-        <Section id="download" no="09" kicker="ダウンロード" title="ロゴのデータ">
-          <div className="flex flex-col items-start gap-4 border-2 border-sumi bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-bold">すべての種類のロゴ（SVG・PNG）を1つにまとめています。</p>
-            <a href="/brand/aio-erabare-logo.zip" download className="inline-flex min-h-12 items-center bg-indigo px-5 font-bold text-white shadow-[0_3px_0_var(--color-sumi)] transition-transform active:translate-y-0.5">
-              まとめてダウンロード（ZIP）
-            </a>
-          </div>
-          <ul className="mt-4 border-t border-sumi text-sm">
-            {DOWNLOADS.map((d) => (
-              <li key={d.file} className="flex items-center justify-between gap-2 border-b border-sumi/30 py-2.5">
-                <span className="font-bold">{d.label}</span>
-                <span className="flex gap-4">
-                  {d.formats.map((ext) => (
-                    <a key={ext} href={`/brand/${d.file}.${ext}`} download className={`${num} font-bold text-indigo underline underline-offset-4`}>
-                      {ext.toUpperCase()}
-                    </a>
-                  ))}
+                  <span className="mt-1 block text-sm leading-snug">{COLOR_MEANING[c.name] ?? c.role}</span>
                 </span>
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-sm leading-relaxed">
-            ホームページや資料にはSVG、WordやPowerPointにはPNGが便利です。ご利用の会社が「{SERVICE_NAME}で記事を書いています」と紹介してくださるときも、このページのルールでお使いください。わからないことは
-            <Link href="/welcome#faq" className="font-bold text-indigo underline underline-offset-4">
-              よくある質問
-            </Link>
-            からどうぞ。
-          </p>
-          <p className={`${num} mt-8 border-t border-sumi/30 pt-3 text-sm text-sumi/70`}>第3版　2026年11月</p>
+
+          {/* ロゴをお使いになる方へ（作業用の情報は別ページ） */}
+          <div className="mt-12 border-t-2 border-sumi pt-6">
+            <p className="font-black">ロゴをお使いになる方へ</p>
+            <div className="mt-3 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm leading-relaxed">
+                すべての種類のロゴ（SVG・PNG）を1つにまとめています。使い方の決まりは
+                <Link href="/brand/logo" className="mx-1 font-bold text-indigo underline underline-offset-4">
+                  ロゴの使い方
+                </Link>
+                のページにあります。
+              </p>
+              <a href="/brand/aio-erabare-logo.zip" download className="inline-flex min-h-12 shrink-0 items-center border-2 border-sumi bg-paper px-5 font-bold">
+                ロゴをダウンロード（ZIP）
+              </a>
+            </div>
+            <p className={`${num} mt-8 border-t border-sumi/30 pt-3 text-sm text-sumi/70`}>第3版　2026年11月</p>
+          </div>
         </Section>
       </main>
       <SiteFooter />
     </div>
   );
 }
-
-const DOWNLOADS: { file: string; label: string; formats: string[] }[] = [
-  { file: "logo-horizontal", label: "横組み（カラー）", formats: ["svg", "png"] },
-  { file: "logo-horizontal-reverse", label: "横組み（カラー反転）", formats: ["svg", "png"] },
-  { file: "logo-horizontal-white", label: "横組み（白1色）", formats: ["svg", "png"] },
-  { file: "logo-horizontal-ink", label: "横組み（墨1色）", formats: ["svg", "png"] },
-  { file: "logo-vertical", label: "縦組み（カラー）", formats: ["svg", "png"] },
-  { file: "logo-vertical-white", label: "縦組み（白1色）", formats: ["svg", "png"] },
-  { file: "logo-vertical-ink", label: "縦組み（墨1色）", formats: ["svg", "png"] },
-  { file: "logo-mark", label: "マーク（カラー）", formats: ["svg", "png"] },
-  { file: "logo-mark-white", label: "マーク（白1色）", formats: ["svg", "png"] },
-  { file: "logo-mark-ink", label: "マーク（墨1色）", formats: ["svg", "png"] },
-  { file: "favicon-16", label: "マーク（16px・タブ専用）", formats: ["svg", "png"] },
-  { file: "app-icon", label: "アプリのアイコン", formats: ["svg", "png"] },
-];
 
 /** 「、」「。」のあとで折り返す（ことばの途中の改行を防ぐ） */
 /** 句読点の後ろでだけ折り返す。lines=true は文（。）ごとに改行する */
@@ -512,70 +434,5 @@ function Section({ id, no, kicker, title, children }: { id: string; no: string; 
       </Reveal>
       <div className="mt-6">{children}</div>
     </section>
-  );
-}
-
-const BG: Record<LogoFile["bg"], string> = { white: "bg-white", paper: "bg-paper", indigo: "bg-indigo", sumi: "bg-sumi" };
-
-function LogoGrid({ items }: { items: LogoFile[] }) {
-  return (
-    <div className="mt-3 grid border-l border-t border-sumi sm:grid-cols-2">
-      {items.map((v) => (
-        <div key={v.file} className="border-b border-r border-sumi">
-          <div className={`grid h-40 place-items-center px-6 ${BG[v.bg]}`}>
-            <img src={`/brand/${v.file}.svg`} alt={`${v.label}のロゴ`} className={v.tall ? "h-32 w-auto" : v.square ? "h-24 w-24" : "h-auto w-full max-w-[16rem]"} />
-          </div>
-          <div className="border-t border-sumi bg-paper px-4 py-3">
-            <p className="font-black">{v.label}</p>
-            <p className="text-sm leading-relaxed">{v.use}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/** マークの作図（寸法線つき）。public/brand/logo-mark.svg と同じ形 */
-function ConstructionMark() {
-  return (
-    <svg viewBox="-14 -14 148 148" className="mx-auto h-auto w-full max-w-[19rem]" role="img" aria-label="マークの作図。本体は幅70・高さ100、しおりは下に12はみ出す">
-      <defs>
-        <pattern id="grid5" width="5" height="5" patternUnits="userSpaceOnUse">
-          <path d="M5 0H0V5" fill="none" stroke="#1f2a33" strokeOpacity=".08" strokeWidth=".4" />
-        </pattern>
-      </defs>
-      <rect x="-14" y="-14" width="148" height="148" fill="url(#grid5)" />
-      <image href="/brand/logo-mark.svg" x="0" y="0" width="120" height="120" />
-      <g stroke="#1e4f7c" strokeWidth=".6" fill="none">
-        <path d="M25 112v8M95 112v8M25 118h70" />
-        <path d="M14 4h8M14 104h8M17 4v100" />
-        <path d="M47 21h36v18H47z" strokeDasharray="2 1.5" />
-        <path d="M100 86h8M100 116h8M104 86v30" />
-      </g>
-      <g fill="#1e4f7c" fontSize="6" fontWeight="700" fontFamily="var(--font-barlow), sans-serif" textAnchor="middle">
-        <text x="60" y="127">70</text>
-        <text x="9" y="56" transform="rotate(-90 9 56)">100</text>
-        <text x="113" y="103">+12</text>
-        <text x="65" y="17">表題欄 36×18</text>
-      </g>
-    </svg>
-  );
-}
-
-function List({ title, mark, tone, items }: { title: string; mark: string; tone: string; items: string[] }) {
-  return (
-    <div>
-      <p className={`font-black ${tone}`}>{title}</p>
-      <ul className="mt-1 space-y-1">
-        {items.map((t) => (
-          <li key={t} className="flex gap-2">
-            <b className={tone} aria-hidden>
-              {mark}
-            </b>
-            {t}
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }

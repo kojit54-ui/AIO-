@@ -143,13 +143,14 @@ function MailSent({ email, next }: { email?: string; next: string }) {
         {/* 2026-11-08 お客様役の採点「次に何をするかを番号で」 */}
         {/* 押せるボタンに見えないよう、枠をつけない */}
         <ol className="space-y-1.5 text-sm">
-          {["メールアプリに切り替える（スマホはホーム画面から。パソコンはメールソフトで。数分で届きます）", "メール本文の6桁の番号を見る", "ブラウザに戻ると、この画面のままです。下の欄に番号を入れる"].map((t, i) => (
+          {["メールを開く（数分で届きます）", "本文の6桁の番号を見る", "この画面に戻って、下の欄に入れる"].map((t, i) => (
             <li key={t} className="flex items-start gap-2">
               <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-soft text-xs font-black text-brand-dark">{i + 1}</span>
               <span className="font-bold">{t}</span>
             </li>
           ))}
         </ol>
+        <p className="text-xs text-muted">メールを見ているあいだも、この画面はそのまま残ります。</p>
         <CodeForm email={email} next={next} />
         {trouble}
       </div>

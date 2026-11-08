@@ -58,6 +58,19 @@ describe("読みものの写真", () => {
       expect(p.src.startsWith("/column/")).toBe(true);
       expect(fs.existsSync(`public${p.src}`)).toBe(true);
       expect(p.alt.length).toBeGreaterThanOrEqual(40);
+<<<<<<< HEAD
+=======
+    }
+  });
+
+  it("しおりのイラストは、何を表すかと、しおりが何をしているかまで alt に書く（2026-11-08 田村さん「altにもしっかり情報を」）", () => {
+    const illustrations = COLUMNS.flatMap((c) => [c.hero, ...c.sections.map((s) => s.photo)]).filter((p) => !!p?.illustration);
+    expect(illustrations.length).toBeGreaterThan(0);
+    for (const p of illustrations) {
+      expect(p!.alt.length).toBeGreaterThanOrEqual(60);
+      expect(p!.alt).toContain("しおり");
+      expect(p!.alt).toContain("イメージ");
+>>>>>>> origin/main
     }
   });
 
