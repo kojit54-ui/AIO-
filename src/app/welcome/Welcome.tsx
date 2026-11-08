@@ -170,7 +170,7 @@ function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
         <div className="space-y-4 md:self-start">
           <SubLinks />
           <p className="border-t border-sumi/20 pt-3 text-sm leading-relaxed text-sumi/80">
-            月額50,000円（税抜）。新規のお申し込みは準備中です。コタムのお客様は、招待制で無料でお使いいただけます。
+            月額50,000円（税抜）。新規のお申し込みは準備中です。
             <a href="#price" className="ml-1 font-bold text-indigo underline underline-offset-4">
               料金とお試し
             </a>
@@ -536,7 +536,6 @@ function Price() {
     ["お試し", "はじめての方は7日間無料。申し込みのときにクレジットカードを登録します"],
     ["請求", "お試しが終わった日に初回を請求し、毎月自動で更新します。初めての請求の前の日にメールでお知らせします"],
     ["解約", "マイページからいつでも。お試しのあいだに解約すれば、料金はかかりません"],
-    ["コタムのお客様", "招待制で、ご契約のあいだ無料です"],
   ];
   return (
     <Section id="price" kicker="料金とお試し" title="料金と条件を、先にお伝えします。" tone="white">

@@ -319,9 +319,10 @@ export class RemoteBackend {
     return v;
   }
 
-  /** 生成の返事が届かなかったとき、新しい版が保存されていないか数回読み直す */
+  /** 生成の返事が届かなかったとき、新しい版が保存されていないか読み直す。
+   * サーバーは最大300秒（maxDuration）まで書き続けるので、通信が先に切れても5分までは待つ */
   private async waitForNewVersion(articleId: string, before: string | null): Promise<ArticleVersion | null> {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 60; i++) {
       const now = this.state.db.articles.find((a) => a.id === articleId)?.currentVersionId ?? null;
       if (now && now !== before) return this.state.db.versions.find((x) => x.id === now) ?? null;
       await new Promise((r) => setTimeout(r, 5000));
