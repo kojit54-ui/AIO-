@@ -84,7 +84,7 @@ const PERKS = [
 /**
  * ログイン・招待の画面の土台。左（スマホでは上）にしおりと「入るとできること」、右に入力。
  */
-export function LoginStage({ mood, lines, title, children }: { mood: ShioriMood; lines: string[]; title: React.ReactNode; children: React.ReactNode }) {
+export function LoginStage({ mood, lines, title, children, compact = false }: { mood: ShioriMood; lines: string[]; title: React.ReactNode; children: React.ReactNode; compact?: boolean }) {
   return (
     <div className="min-h-dvh">
       <header className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
@@ -97,7 +97,8 @@ export function LoginStage({ mood, lines, title, children }: { mood: ShioriMood;
         <section className="relative animate-rise overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand to-[#4f8ff0] p-5 text-white shadow-[0_8px_0_var(--color-brand-dark)] sm:p-7">
           <Sparkles />
           <h1 className="relative text-xl font-black leading-snug sm:text-3xl">{title}</h1>
-          <div className="relative mt-4 text-ink">
+          {/* compact：メールを送ったあと。スマホでは番号の欄を最初の画面に入れるため、しおりは出さない */}
+          <div className={`relative mt-4 text-ink ${compact ? "hidden md:block" : ""}`}>
             <ShioriTalk mood={mood} lines={lines} size="lg" />
           </div>
           {/* スマホでは入力欄を最初の画面に入れるため、図は出さない */}

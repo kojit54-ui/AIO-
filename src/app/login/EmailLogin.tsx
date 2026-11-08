@@ -15,6 +15,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
   return (
     <LoginStage
       mood={state.sent ? "joy" : "bow"}
+      compact={state.sent && codeEnabled}
       title={state.sent ? "メールを送りました！" : <>{hello}！<br />今日もいっしょに書きましょう</>}
       lines={state.sent ? [codeEnabled ? "メールに届いた6桁の番号を、下に入れてください。" : "メールのリンクを押したら、すぐ始められますよ。", "待ってますね！"] : ["案内役のしおりです。", "メールアドレスを入れるだけで入れます。パスワードはいりません！"]}
     >
@@ -111,18 +112,44 @@ function GoogleMark() {
   );
 }
 
-/** メールを送ったあと。次にやることを1つずつ見せる */
+/** メールを送ったあと。番号で入れるときは、番号の欄をいちばん上に置く */
 function MailSent({ email, next }: { email?: string; next: string }) {
-  const steps = email
-    ? [
-        { icon: "📬", text: "メールを開く", note: "数分で届きます。件名は「AIOえらばれ帳 ログイン用のリンク」" },
-        { icon: "🔢", text: "6桁の番号を、下の欄に入れる", note: "メールのリンクを押しても入れます" },
-      ]
-    : [
-        { icon: "📬", text: "メールを開く", note: "数分で届きます" },
-        { icon: "👆", text: "メールの中のリンクを押す", note: "このブラウザで開いてください" },
-        { icon: "🎉", text: "ログインできたら、スタート！", note: "" },
-      ];
+  const retry = (
+    <a href={`/login?next=${encodeURIComponent(next)}`} className="font-bold text-brand-dark underline">
+      メールアドレスを入れ直す
+    </a>
+  );
+  const trouble = (
+    <details className="rounded-2xl bg-canvas px-4 py-2 text-sm">
+      <summary className="cursor-pointer font-bold">メールが届かないときは</summary>
+      <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
+        <li>迷惑メールのフォルダを見てください</li>
+        <li>メールアドレスが、招待されたものと同じか確かめてください（{retry}）</li>
+        <li>それでも届かないときは、コタムの担当者にお声がけください</li>
+      </ul>
+    </details>
+  );
+  if (email) {
+    return (
+      <div className="card space-y-4 p-6">
+        <div className="space-y-1">
+          <p className="text-sm text-muted">送り先</p>
+          <p className="break-all text-lg font-black">{email}</p>
+          <p className="text-sm text-muted">
+            招待されたアドレスなら、数分で届きます。件名は「AIOえらばれ帳 ログイン用のリンク」。違っていたら {retry}
+          </p>
+        </div>
+        <CodeForm email={email} next={next} />
+        <p className="text-sm text-muted">メールの中のリンクを押しても入れます。</p>
+        {trouble}
+      </div>
+    );
+  }
+  const steps = [
+    { icon: "📬", text: "メールを開く", note: "数分で届きます" },
+    { icon: "👆", text: "メールの中のリンクを押す", note: "このブラウザで開いてください" },
+    { icon: "🎉", text: "ログインできたら、スタート！", note: "" },
+  ];
   return (
     <div className="card space-y-4 p-6">
       <div className="flex items-center gap-3">
@@ -145,15 +172,7 @@ function MailSent({ email, next }: { email?: string; next: string }) {
           </li>
         ))}
       </ol>
-      {email && <CodeForm email={email} next={next} />}
-      <details className="rounded-2xl bg-canvas px-4 py-2 text-sm">
-        <summary className="cursor-pointer font-bold">メールが届かないときは</summary>
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
-          <li>迷惑メールのフォルダを見てください</li>
-          <li>メールアドレスが、招待されたものと同じか確かめてください</li>
-          <li>それでも届かないときは、コタムの担当者にお声がけください</li>
-        </ul>
-      </details>
+      {trouble}
     </div>
   );
 }
@@ -171,7 +190,7 @@ function CodeForm({ email, next }: { email: string; next: string }) {
       <input type="hidden" name="email" value={email} />
       <input type="hidden" name="next" value={next} />
       <label className="block">
-        <span className="field-label">メールに書いてある6桁の番号</span>
+        <span className="field-label">メールに届いた6桁の番号を入れてください</span>
         <input
           name="code"
           required

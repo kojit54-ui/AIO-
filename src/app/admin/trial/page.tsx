@@ -135,6 +135,7 @@ export default async function AdminTrialPage() {
               <li key={k} className="flex justify-between rounded-xl bg-canvas px-3 py-1">
                 <span>
                   {trialReason(k).label}
+                  {trialReason(k).next && <span className="block text-sm text-brand-dark">やること：{trialReason(k).next}</span>}
                   {trialReason(k).detail && <span className="block text-xs text-muted">{trialReason(k).detail}</span>}
                 </span>
                 <b>{n} 回</b>

@@ -63,7 +63,13 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
               <li key={o.id} className={`rounded-2xl border bg-surface p-3 ${needsCall(o, total) ? "border-warn" : "border-line"}`}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-lg font-black">{o.name}</p>
-                  <span className={`rounded-full px-3 py-1 text-xs font-bold ${PACE_STYLE[o.pace]}`}>{PACE_LABEL[o.pace]}</span>
+                  {/* 使う回数は多くても途中で止まっている会社は、緑の印より「声をかけたい」を先に見せる */}
+                  <span className="flex flex-wrap items-center gap-1.5">
+                    {needsCall(o, total) && <span className="rounded-full bg-warn px-3 py-1 text-xs font-bold text-white">声をかけたい</span>}
+                    <span className={`rounded-full px-3 py-1 text-xs font-bold ${needsCall(o, total) && (o.pace === "active" || o.pace === "slow") ? "bg-canvas text-muted" : PACE_STYLE[o.pace]}`}>
+                      {needsCall(o, total) && (o.pace === "active" || o.pace === "slow") ? `使う回数：${PACE_LABEL[o.pace]}` : PACE_LABEL[o.pace]}
+                    </span>
+                  </span>
                 </div>
                 {orgNudges(o, total).length > 0 && (
                   <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="声をかけたいわけ">
