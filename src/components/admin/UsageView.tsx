@@ -28,12 +28,17 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
   const [sort, setSort] = useState<"call" | "idle" | "cost">("call");
   // 声をかけた記録（表が無い・読めないときは出さない）
   const [contacts, setContacts] = useState<Record<string, LastContact> | null>(null);
+  const [people, setPeople] = useState<Record<string, { name: string; phone: string; emails: string[] }>>({});
   useEffect(() => {
     if (sample) return;
     let alive = true;
     fetch("/api/admin/contacts", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : null))
-      .then((j: { contacts?: Record<string, LastContact> } | null) => alive && j?.contacts && setContacts(j.contacts))
+      .then((j: { contacts?: Record<string, LastContact>; people?: Record<string, { name: string; phone: string; emails: string[] }> } | null) => {
+        if (!alive || !j?.contacts) return;
+        setContacts(j.contacts);
+        setPeople(j.people ?? {});
+      })
       .catch(() => undefined);
     return () => {
       alive = false;
@@ -133,6 +138,22 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
                   <Item label="会社のこと" value={`${Math.min(o.answered, total)} / ${total} 問`} />
                   <Item label="記事" value={`${o.articles} 本（載せた ${o.published} 本）`} />
                 </dl>
+                {people[o.id] && (
+                  <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+                    <span className="text-muted">連絡先：</span>
+                    {people[o.id].name && <b>{people[o.id].name}</b>}
+                    {people[o.id].phone && (
+                      <a href={`tel:${people[o.id].phone.replace(/[^\d+]/g, "")}`} className="font-bold text-brand-dark underline">
+                        電話 {people[o.id].phone}
+                      </a>
+                    )}
+                    {people[o.id].emails.map((e) => (
+                      <a key={e} href={`mailto:${e}`} className="break-all font-bold text-brand-dark underline">
+                        {e}
+                      </a>
+                    ))}
+                  </p>
+                )}
                 {contacts && (
                   <div className="mt-2">
                     <ContactButton organizationId={o.id} last={contacts[o.id] ?? null} onSaved={(c) => setContacts((m) => ({ ...(m ?? {}), [o.id]: c }))} />

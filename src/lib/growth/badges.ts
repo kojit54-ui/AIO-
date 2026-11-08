@@ -36,7 +36,7 @@ export function badges(db: MockDb, orgId: string, now = new Date()): Badge[] {
     b("publish", "🚀", "デビュー", "記事を1本ブログに載せる", published >= 1),
     b("check", "🔍", "AIOチェック", "AIOのチェックを1回する", checks.length >= 1),
     b("teach", "📒", "しおりの先生", "しおりに会社の知識を5つ教える", notes + blogs >= 5),
-    b("search", "🌐", "検索とつながった", "Search Console をつなぐ", sc),
+    b("search", "🌐", "検索とつながった", "Googleの検索の記録をつなぐ（任意）", sc),
     b("perfect", "💯", "満点", "AIOのチェックで全部OKになる", perfect),
     b("streak3", "🔥", "3か月つづけた", "3か月つづけて記事を書く", streak >= 3),
     b("five", "📚", "5本の書き手", "記事を5本ブログに載せる", published >= 5),
