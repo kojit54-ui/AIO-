@@ -11,7 +11,7 @@
 import { serviceJsonLd } from "@/lib/about";
 import { SiteFooter, SiteHeader, useStartLink } from "@/components/site";
 import { FAQ } from "@/lib/faq";
-import { COLUMNS } from "@/lib/column";
+import type { Column } from "@/lib/column";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Shiori } from "@/components/fun";
@@ -29,7 +29,7 @@ const maru = "font-[family-name:var(--font-maru)]";
 
 const KANJI = ["一", "二", "三", "四", "五"];
 
-export function Welcome({ makers }: { makers: MfgShowcase }) {
+export function Welcome({ makers, columns }: { makers: MfgShowcase; columns: Column[] }) {
   const { signedIn, href } = useStartLink();
   return (
     <div className="overflow-x-clip bg-paper text-sumi">
@@ -46,7 +46,7 @@ export function Welcome({ makers }: { makers: MfgShowcase }) {
         <Promises />
         <Price />
         <Faq />
-        <ColumnTeaser />
+        <ColumnTeaser list={columns} />
         <FinalCall signedIn={signedIn} href={href} />
       </main>
       <SiteFooter />
@@ -608,8 +608,7 @@ function faqJsonLd() {
 }
 
 /** AIOの読みもの（/column）の新しい記事 */
-function ColumnTeaser() {
-  const list = COLUMNS.slice(0, 3);
+function ColumnTeaser({ list }: { list: Column[] }) {
   return (
     <section className="border-t border-sumi/15 py-12">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
