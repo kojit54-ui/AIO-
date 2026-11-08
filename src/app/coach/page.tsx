@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AdminNav } from "@/components/admin/AdminNav";
 import { Shiori, Wave } from "@/components/fun";
 import { EmptyState, StatusBadge, formatDate } from "@/components/ui";
 import { useStore } from "@/mock/store";
@@ -30,10 +31,12 @@ export default function CoachHome() {
 
   return (
     <main className="page space-y-6">
+      <AdminNav />
       <div className="flex animate-rise items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-black leading-snug sm:text-3xl">
-            {user.name}さん、おつかれさまです <Wave />
+            {/* 名前を入れていない人はメールアドレスが入るので、そのときは出さない */}
+            {user.name && !user.name.includes("@") ? `${user.name}さん、` : ""}おつかれさまです <Wave />
           </h1>
           <p className="text-muted">
             {latestChecks.length > 0

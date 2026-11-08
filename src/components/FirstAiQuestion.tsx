@@ -58,7 +58,11 @@ export function FirstAiQuestion({ hasKnowledge }: { hasKnowledge: boolean }) {
         </h2>
         {picked === null && (
           <>
-            <ShioriTalk mood="ask" lines={[g("はじめまして、しおりです。最初にひとつだけ聞かせてください。"), "ふだん、ChatGPT・Claude・Gemini などのAIを使っていますか？"]} />
+            <ShioriTalk mood="ask" lines={[g("はじめまして、しおりです。記事づくりを始める前に、ひとつだけ聞かせてください。"), "ふだん、ChatGPT・Claude・Gemini などのAIを使っていますか？ 使っていれば、会社のことをそこから取り込めるので、質問が減ります。"]} />
+            <button type="button" className="btn-secondary min-h-14 w-full text-lg" onClick={() => pick("none")}>
+              使っていない・よくわからない
+            </button>
+            <p className="text-center text-sm font-bold text-muted">使っているAIがあれば、選んでください</p>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
               {FIRST_AIS.map((a) => (
                 <button key={a} type="button" className="btn-secondary min-h-14 text-lg" onClick={() => pick(a)}>
@@ -66,9 +70,6 @@ export function FirstAiQuestion({ hasKnowledge }: { hasKnowledge: boolean }) {
                 </button>
               ))}
             </div>
-            <button type="button" className="btn-secondary min-h-12 w-full" onClick={() => pick("none")}>
-              使っていない・よくわからない
-            </button>
           </>
         )}
         {picked && picked !== "none" && (

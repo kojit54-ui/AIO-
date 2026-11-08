@@ -16,7 +16,7 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
     <LoginStage
       mood={state.sent ? "joy" : "bow"}
       title={state.sent ? "メールを送りました！" : <>{hello}！<br />今日もいっしょに書きましょう</>}
-      lines={state.sent ? ["メールのリンクを押したら、すぐ始められますよ。", "待ってますね！"] : ["案内役のしおりです。", googleEnabled ? "Googleのボタンか、メールアドレスで入れます。パスワードはいりません！" : "メールアドレスを入れるだけで入れます。パスワードはいりません！"]}
+      lines={state.sent ? [codeEnabled ? "メールに届いた6桁の番号を、下に入れてください。" : "メールのリンクを押したら、すぐ始められますよ。", "待ってますね！"] : ["案内役のしおりです。", "メールアドレスを入れるだけで入れます。パスワードはいりません！"]}
     >
       {linkError && (
         <Notice tone="warn" title="ログイン用のリンクが使えませんでした">
@@ -33,11 +33,10 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
           少し待ってから、もう一度お試しください。メールでのログインも使えます。
         </Notice>
       )}
-      {!state.sent && googleEnabled && <GoogleButton next={next} />}
       {state.sent ? <MailSent email={codeEnabled ? state.email : undefined} next={state.next ?? next} /> : (
         <form action={action} className="card space-y-4 p-6">
           <input type="hidden" name="next" value={next} />
-          <h2 className="text-xl font-black">ログイン</h2>
+          <h2 className="text-xl font-black">招待されたメールアドレスでログイン</h2>
           <label className="block">
             <span className="field-label">メールアドレス</span>
             <input name="email" type="email" required autoComplete="email" inputMode="email" placeholder="例）tanaka@example.co.jp" className="field min-h-14 text-lg" />
@@ -60,9 +59,10 @@ export function EmailLogin({ next, linkError, googleError = null, googleEnabled 
               </>
             )}
           </button>
-          <p className="text-sm text-muted">招待されたメールアドレスに、ログイン用のリンクを送ります。</p>
+          <p className="text-sm text-muted">{codeEnabled ? "招待されたメールアドレスに、6桁の番号とログイン用のリンクを送ります。" : "招待されたメールアドレスに、ログイン用のリンクを送ります。"}</p>
         </form>
       )}
+      {!state.sent && googleEnabled && <GoogleButton next={next} />}
       <p className="text-center text-sm text-muted">
         はじめての方は{" "}
         <Link href="/welcome" className="font-bold text-brand-dark underline">
@@ -78,13 +78,13 @@ function GoogleButton({ next }: { next: string }) {
   return (
     <form action={signInWithGoogle} className="card space-y-3 p-6">
       <input type="hidden" name="next" value={next} />
-      <GoogleSubmit />
-      <p className="text-sm text-muted">招待されたメールアドレスが Gmail などの Google アカウントなら、ボタン1つで入れます。</p>
       <p className="flex items-center gap-3 text-sm font-bold text-muted" aria-hidden>
         <span className="h-px flex-1 bg-line" />
-        または、メールで
+        または、Googleで
         <span className="h-px flex-1 bg-line" />
       </p>
+      <GoogleSubmit />
+      <p className="text-sm text-muted">招待されたメールアドレスが Gmail などの Google アカウントなら、ボタン1つで入れます。</p>
     </form>
   );
 }
@@ -113,13 +113,16 @@ function GoogleMark() {
 
 /** メールを送ったあと。次にやることを1つずつ見せる */
 function MailSent({ email, next }: { email?: string; next: string }) {
-  const steps = [
-    { icon: "📬", text: "メールを開く", note: "数分で届きます" },
-    email
-      ? { icon: "👆", text: "メールの中のリンクを押す", note: "または、メールの6桁の番号を下に入れる" }
-      : { icon: "👆", text: "メールの中のリンクを押す", note: "このブラウザで開いてください" },
-    { icon: "🎉", text: "ログインできたら、スタート！", note: "" },
-  ];
+  const steps = email
+    ? [
+        { icon: "📬", text: "メールを開く", note: "数分で届きます。件名は「AIOえらばれ帳 ログイン用のリンク」" },
+        { icon: "🔢", text: "6桁の番号を、下の欄に入れる", note: "メールのリンクを押しても入れます" },
+      ]
+    : [
+        { icon: "📬", text: "メールを開く", note: "数分で届きます" },
+        { icon: "👆", text: "メールの中のリンクを押す", note: "このブラウザで開いてください" },
+        { icon: "🎉", text: "ログインできたら、スタート！", note: "" },
+      ];
   return (
     <div className="card space-y-4 p-6">
       <div className="flex items-center gap-3">

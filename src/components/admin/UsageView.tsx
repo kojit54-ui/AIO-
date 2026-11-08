@@ -1,9 +1,20 @@
-import Link from "next/link";
 import { HEARING_QUESTIONS } from "@/prototype/growth";
-import { PACE_LABEL, type OrgPace, type UsageSummary } from "@/lib/admin/usage";
+import Link from "next/link";
+import {
+  needsCall,
+  orgNudges,
+  PACE_LABEL,
+  type OrgPace,
+  type UsageSummary,
+} from "@/lib/admin/usage";
 
 const yen = (n: number) => `${Math.round(n).toLocaleString()} 円`;
-const date = (s: string) => new Date(s).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo", month: "numeric", day: "numeric" });
+const date = (s: string) =>
+  new Date(s).toLocaleDateString("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    month: "numeric",
+    day: "numeric",
+  });
 
 const PACE_STYLE: Record<OrgPace, string> = {
   sleeping: "bg-danger-soft text-danger",
@@ -13,29 +24,23 @@ const PACE_STYLE: Record<OrgPace, string> = {
 };
 
 /** 全社管理者の「利用金額と利用頻度」。数字だけを見せ、記事の本文や入力は出さない */
-export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) {
+export function UsageView({
+  s,
+  sample,
+}: {
+  s: UsageSummary;
+  sample?: boolean;
+}) {
   const pct = Math.round(s.budgetRatio * 100);
   const peak = Math.max(1, ...s.perDay.map((d) => d.orgs));
-  const waiting = s.orgs.filter((o) => o.pace === "sleeping" || o.pace === "never");
   const total = HEARING_QUESTIONS.length;
+  const waiting = s.orgs.filter((o) => needsCall(o, total));
+  // 声をかけたい会社を上に（それ以外の並びは元のまま）
+  const orgs = [...waiting, ...s.orgs.filter((o) => !needsCall(o, total))];
   return (
     <main className="page max-w-4xl space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h1 className="text-2xl font-black sm:text-3xl">利用金額と利用頻度</h1>
-        <nav className="flex flex-wrap gap-3 text-sm font-bold">
-          <Link href="/admin/invitations" className="text-brand-dark underline">
-            招待と所属
-          </Link>
-          <Link href="/admin/trial" className="text-brand-dark underline">
-            30秒でためすの見守り
-          </Link>
-          <Link href="/admin/knowledge" className="text-brand-dark underline">
-            製造業の知識表
-          </Link>
-          <Link href="/admin/waitlist" className="text-brand-dark underline">
-            新規受付の案内を待っている人
-          </Link>
-        </nav>
       </div>
 
       {sample && (
@@ -45,23 +50,44 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
       )}
 
       <section className="grid gap-3 sm:grid-cols-3">
-        <Stat label={`${s.monthLabel}のAIの費用`} value={yen(s.costThisMonth)} note={`${s.lastMonthLabel}は ${yen(s.costLastMonth)}`} />
-        <Stat label="30秒でためすの費用" value={yen(s.trialCostThisMonth)} note="ログインなしのお試し。別の予算" />
+        <Stat
+          label={`${s.monthLabel}のAIの費用`}
+          value={yen(s.costThisMonth)}
+          note={`${s.lastMonthLabel}は ${yen(s.costLastMonth)}`}
+        />
+        <Stat
+          label="30秒でためすの費用"
+          value={yen(s.trialCostThisMonth)}
+          note="ログインなしのお試し。別の予算"
+        />
         <Stat
           label="声をかけたい会社"
           value={`${waiting.length} 社`}
-          note={waiting.length ? "2週間以上使っていない・まだ始めていない" : "みなさん使っています"}
+          note={
+            waiting.length
+              ? "使っていない・始めていない・途中で止まっている"
+              : "みなさん順調です"
+          }
         />
       </section>
 
       <section className="card space-y-2">
         <h2 className="font-black">今月の予算の使い方</h2>
-        <div className="h-4 overflow-hidden rounded-full bg-canvas-deep" role="img" aria-label={`${pct}%`}>
-          <div className={`h-full rounded-full ${s.budgetRatio >= 0.8 ? "bg-danger" : "bg-brand"}`} style={{ width: `${s.budgetRatio * 100}%` }} />
+        <div
+          className="h-4 overflow-hidden rounded-full bg-canvas-deep"
+          role="img"
+          aria-label={`${pct}%`}
+        >
+          <div
+            className={`h-full rounded-full ${s.budgetRatio >= 0.8 ? "bg-danger" : "bg-brand"}`}
+            style={{ width: `${s.budgetRatio * 100}%` }}
+          />
         </div>
         <p className="text-sm text-muted">
-          月の予算 {yen(s.budgetYen)} のうち {pct}% を使いました。上限に着くと、その月はAIで作れなくなります。
-          {s.failedThisMonth > 0 && ` 今月、AIで作れなかった回が ${s.failedThisMonth} 回ありました。`}
+          月の予算 {yen(s.budgetYen)} のうち {pct}%
+          を使いました。上限に着くと、その月はAIで作れなくなります。
+          {s.failedThisMonth > 0 &&
+            ` 今月、AIで作れなかった回が ${s.failedThisMonth} 回ありました。`}
         </p>
       </section>
 
@@ -71,22 +97,77 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
           <p className="text-muted">まだ会社がありません。</p>
         ) : (
           <ul className="space-y-3">
-            {s.orgs.map((o) => (
-              <li key={o.id} className="rounded-2xl border border-line bg-surface p-3">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-lg font-black">{o.name}</p>
-                  <span className={`rounded-full px-3 py-1 text-xs font-bold ${PACE_STYLE[o.pace]}`}>{PACE_LABEL[o.pace]}</span>
-                </div>
-                <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm sm:grid-cols-4">
-                  <Item label="最後に使った日" value={o.lastActiveAt ? `${date(o.lastActiveAt)}（${o.daysSinceActive === 0 ? "今日" : `${o.daysSinceActive}日前`}）` : "—"} />
-                  <Item label="使った日数" value={`7日で${o.activeDays7}日／30日で${o.activeDays30}日`} />
-                  <Item label={`${s.monthLabel}の費用`} value={`${yen(o.costThisMonth)}（${o.aiRunsThisMonth}回）`} />
-                  <Item label={`${s.lastMonthLabel}の費用`} value={yen(o.costLastMonth)} />
-                  <Item label="会社のこと" value={`${Math.min(o.answered, total)} / ${total} 問`} />
-                  <Item label="記事" value={`${o.articles} 本（載せた ${o.published} 本）`} />
-                </dl>
-              </li>
-            ))}
+            {orgs.map((o) => {
+              const nudges = orgNudges(o, total);
+              return (
+                <li
+                  key={o.id}
+                  className={`rounded-2xl border bg-surface p-3 ${needsCall(o, total) ? "border-warn" : "border-line"}`}
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-lg font-black">{o.name}</p>
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-bold ${PACE_STYLE[o.pace]}`}
+                    >
+                      {PACE_LABEL[o.pace]}
+                    </span>
+                  </div>
+                  {nudges.length > 0 && (
+                    <ul
+                      className="mt-2 flex flex-wrap gap-1.5"
+                      aria-label="声をかけたいわけ"
+                    >
+                      {nudges.map((n) => (
+                        <li
+                          key={n}
+                          className="rounded-full bg-warn-soft px-3 py-1 text-xs font-bold text-warn"
+                        >
+                          {n}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm sm:grid-cols-4">
+                    <Item
+                      label="最後に使った日"
+                      value={
+                        o.lastActiveAt
+                          ? `${date(o.lastActiveAt)}（${o.daysSinceActive === 0 ? "今日" : `${o.daysSinceActive}日前`}）`
+                          : "—"
+                      }
+                    />
+                    <Item
+                      label="使った日数"
+                      value={`7日で${o.activeDays7}日／30日で${o.activeDays30}日`}
+                    />
+                    <Item
+                      label={`${s.monthLabel}の費用`}
+                      value={`${yen(o.costThisMonth)}（${o.aiRunsThisMonth}回）`}
+                    />
+                    <Item
+                      label={`${s.lastMonthLabel}の費用`}
+                      value={yen(o.costLastMonth)}
+                    />
+                    <Item
+                      label="会社のこと"
+                      value={`${Math.min(o.answered, total)} / ${total} 問`}
+                    />
+                    <Item
+                      label="記事"
+                      value={`${o.articles} 本（載せた ${o.published} 本）`}
+                    />
+                  </dl>
+                  {!sample && (
+                    <Link
+                      href={`/coach/orgs/${o.id}`}
+                      className="mt-2 inline-block text-sm font-bold text-brand-dark underline"
+                    >
+                      この会社の記事とやり取りを見る →
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         )}
       </section>
@@ -94,12 +175,29 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
       <section className="grid gap-4 sm:grid-cols-2">
         <div className="card space-y-3">
           <h2 className="font-black">この2週間、使った会社の数</h2>
-          <ol className="flex h-32 items-end gap-1" aria-label="日ごとの会社の数">
+          <ol
+            className="flex h-32 items-end gap-1"
+            aria-label="日ごとの会社の数"
+          >
             {s.perDay.map((x) => (
-              <li key={x.day} className="flex flex-1 flex-col items-center gap-1" title={`${x.day}：${x.orgs}社`}>
-                <span className="text-[10px] font-bold text-muted">{x.orgs || ""}</span>
-                <span className="w-full rounded-t-md bg-brand" style={{ height: `${(x.orgs / peak) * 88}px`, minHeight: x.orgs ? 3 : 0 }} />
-                <span className="text-[10px] text-muted">{Number(x.day.slice(8))}</span>
+              <li
+                key={x.day}
+                className="flex flex-1 flex-col items-center gap-1"
+                title={`${x.day}：${x.orgs}社`}
+              >
+                <span className="text-[10px] font-bold text-muted">
+                  {x.orgs || ""}
+                </span>
+                <span
+                  className="w-full rounded-t-md bg-brand"
+                  style={{
+                    height: `${(x.orgs / peak) * 88}px`,
+                    minHeight: x.orgs ? 3 : 0,
+                  }}
+                />
+                <span className="text-[10px] text-muted">
+                  {Number(x.day.slice(8))}
+                </span>
               </li>
             ))}
           </ol>
@@ -111,7 +209,10 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
           ) : (
             <ul className="space-y-1">
               {s.byKind.map((k) => (
-                <li key={k.kind} className="flex justify-between gap-2 rounded-xl bg-canvas px-3 py-1">
+                <li
+                  key={k.kind}
+                  className="flex justify-between gap-2 rounded-xl bg-canvas px-3 py-1"
+                >
                   <span>{k.label}</span>
                   <b className="whitespace-nowrap">
                     {yen(k.cost)}（{k.runs}回）
@@ -130,7 +231,15 @@ export function UsageView({ s, sample }: { s: UsageSummary; sample?: boolean }) 
   );
 }
 
-function Stat({ label, value, note }: { label: string; value: string; note: string }) {
+function Stat({
+  label,
+  value,
+  note,
+}: {
+  label: string;
+  value: string;
+  note: string;
+}) {
   return (
     <div className="card">
       <p className="text-sm font-bold text-muted">{label}</p>
