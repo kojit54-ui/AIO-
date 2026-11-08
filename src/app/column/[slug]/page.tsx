@@ -140,8 +140,8 @@ function FigureBox({ f }: { f: ColumnFigure }) {
         {f.kind === "pair" && (
           <div className="grid gap-3 sm:grid-cols-2">
             {[f.left, f.right].map((side, i) => (
-              <div key={side.label} className={`border px-3 py-3 ${i === 0 ? "border-indigo bg-paper" : "border-dashed border-sumi/50"}`}>
-                <p className={`font-bold ${i === 0 ? "text-indigo" : "text-sumi/70"}`}>{side.label}</p>
+              <div key={side.label} className={`border px-3 py-3 ${f.strong === undefined ? "border-sumi/40" : (f.strong === "left") === (i === 0) ? "border-indigo bg-paper" : "border-dashed border-sumi/50"}`}>
+                <p className={`font-bold ${f.strong !== undefined && (f.strong === "left") !== (i === 0) ? "text-sumi/70" : "text-indigo"}`}>{side.label}</p>
                 <ul className="mt-1 space-y-1 text-sm leading-relaxed">
                   {side.items.map((it) => (
                     <li key={it} className="pl-4 [text-indent:-1rem]">
