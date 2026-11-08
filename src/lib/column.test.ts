@@ -61,18 +61,22 @@ describe("読みものの写真", () => {
     }
   });
 
-  it("見出しごとに1枚、写真かしおりのイラストがある（2026-11-08 田村さん「1見出し1画像を目標」）", () => {
-    for (const c of COLUMNS) for (const s of c.sections) expect(s.photo, `${c.slug}「${s.h}」に絵がない`).toBeTruthy();
+  it("見出しごとに、写真か図が1つある（2026-11-08 田村さん「1見出し1画像を目標」。しおりの絵は写真と混ぜるとAIっぽいので図に置き換え）", () => {
+    for (const c of COLUMNS) for (const s of c.sections) expect(s.photo || s.figure, `${c.slug}「${s.h}」に写真も図もない`).toBeTruthy();
   });
 
   it("しおりのイラストは、何を表すかと、しおりが何をしているかまで alt に書く（2026-11-08 田村さん「altにもしっかり情報を」）", () => {
     const illustrations = COLUMNS.flatMap((c) => [c.hero, ...c.sections.map((s) => s.photo)]).filter((p) => !!p?.illustration);
-    expect(illustrations.length).toBeGreaterThan(0);
     for (const p of illustrations) {
       expect(p!.alt.length).toBeGreaterThanOrEqual(60);
       expect(p!.alt).toContain("しおり");
       expect(p!.alt).toContain("イメージ");
     }
+  });
+
+  it("関連する読みものへの案内は、ある記事を指す", () => {
+    const slugs = new Set(COLUMNS.map((c) => c.slug));
+    for (const c of COLUMNS) for (const s of c.sections) if (s.see) expect(slugs.has(s.see.slug), `${c.slug} → ${s.see.slug}`).toBe(true);
   });
 
   it("しおりに聞いてみた は、質問と答えがある", () => {
