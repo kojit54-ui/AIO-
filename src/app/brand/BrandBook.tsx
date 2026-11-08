@@ -93,7 +93,7 @@ export function BrandBook() {
               {[
                 ["対象", "製造業の一人親方〜30人の会社"],
                 ["形式", "招待制のWebサービス"],
-                ["発行", "毎月1本、自社のホームページへ"],
+                ["発行", "毎月1本から10本まで、自社のホームページへ"],
                 ["運営", SERVICE_OPERATOR],
               ].map(([k, v]) => (
                 <div key={k} className="contents">

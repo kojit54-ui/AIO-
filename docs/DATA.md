@@ -13,7 +13,8 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 | profile | jsonb | 事業、対象顧客、強み、文体、禁止表現、問い合わせ先 |
 | profile_approved_at | timestamptz | 顧客が確認した日時。AIへ渡すのは確認済みのプロフィールのみ |
 | review_policy | text | `optional`（初期値）または `required` |
-| monthly_generation_limit | int | 初期値 30 |
+| monthly_generation_limit | int | 初期値 50（2026-11-08 に30から変更） |
+| monthly_article_limit | int | 初期値 10。その月に初めて本文ができた記事の本数の上限（docs/DECISIONS.md 2026-11-08） |
 
 ### memberships
 | 列 | 型 | 説明 |
@@ -138,7 +139,7 @@ DBは Supabase（PostgreSQL）を想定。会社単位のデータはすべて `
 3. 10分（app_settings.generation_timeout_seconds）を過ぎた実行中の受付は `timeout` で失敗にする
 4. 同じ会社で実行中があれば `busy`
 5. 全社の今月の費用が予算に達していれば `budget_exceeded`
-6. 本文（kind=body）だけ、会社の月の上限（organizations.monthly_generation_limit）と記事ごとの上限（app_settings.article_body_limit、初期値10）。失敗した回と時間切れの回は数えない。超えれば `limit_reached`
+6. 本文（kind=body）だけ、会社の月の上限（organizations.monthly_generation_limit）と記事ごとの上限（app_settings.article_body_limit、初期値10）。失敗した回と時間切れの回は数えない。超えれば `limit_reached`。その前に、まだ本文の無い記事なら、会社の今月の本数（その月に初めて本文ができた記事の数）が organizations.monthly_article_limit に着いていれば `article_limit`（画面には limit_reached として「今月は記事を10本作りました」）
 7. 画像（kind=image）は記事ごとの回数（app_settings.article_image_limit、初期値10）。1回でアイキャッチと見出しごとの画像をまとめて作る。失敗した回は数えない。費用は作れた枚数×画像の提供元の単価（google 11円、openai 38円。src/lib/generation/images.ts の IMAGE_COST_YEN）
 
 画面は `get_generation(run_id)` で状態を問い合わせる。時間を過ぎた受付はここでも失敗（timeout）になるので、次の生成を押さなくても「生成中」のままにならない。

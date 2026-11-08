@@ -163,6 +163,30 @@ describe("上限", () => {
   });
 });
 
+describe("記事の本数（毎月10本まで。2026-11-08 田村さん）", () => {
+  it("初期値は月10本", async () => {
+    const r = (await db.query<{ monthly_article_limit: number }>("select monthly_article_limit from public.organizations where id = $1", [ORG_B])).rows[0];
+    expect(r.monthly_article_limit).toBe(10);
+  });
+
+  it("その月に初めて本文ができた記事が上限に着くと、新しい記事は止まる。作り直しと先月の記事・失敗した回は数えない", async () => {
+    await db.exec("update public.organizations set monthly_article_limit = 1 where id = '" + ORG + "'");
+    try {
+      await finish((await start(U.client, ART2, "body")).id, "failed"); // 失敗は数えない
+      await finish((await start(U.client, ART, "body")).id, "succeeded");
+      await expect(start(U.client, ART2, "body")).rejects.toThrow("article_limit");
+      // 今月すでに本文がある記事は、作り直せる
+      expect((await start(U.client, ART, "body")).status).toBe("queued");
+      await db.exec("delete from public.generation_runs where status = 'queued'");
+      // 先月に本文ができた記事は、今月の本数に数えない
+      await db.exec("update public.generation_runs set created_at = app.month_start() - interval '1 day'");
+      expect((await start(U.client, ART2, "body")).status).toBe("queued");
+    } finally {
+      await db.exec("update public.organizations set monthly_article_limit = 10 where id = '" + ORG + "'");
+    }
+  });
+});
+
 describe("予算", () => {
   it("全社の今月の費用が予算に達すると、どの会社も新しい生成を止める", async () => {
     await db.exec("update public.app_settings set monthly_budget_yen = 100");
