@@ -205,6 +205,12 @@
 
 ## 記録
 
+### 2026-11-08 CC（Claude、プロジェクトのスレッド）読みもの14本を新しい形に
+- ブランチ：claude/project-thread-v0032t
+- 変更点：llmo 以外の14本を、しおりのイラストなし・見出しごとの図・前置き/結びの形に書き直し（GPTが書き直し → GPT・Gemini・Claude が採点 → 直す、を6回）。しおりのイラスト62枚を削除。column.test.ts で「イラスト禁止・一問一答は1記事1か所・opening/shiori なし」を見張る。対比図（pair）は左右を同じ重さで見せ、すすめる側があるときだけ strong を付ける
+- 確認結果：最後の採点は Gemini 9.2〜9.6、GPT 8.8〜9.3、Claude 9.3〜9.6（1つ前の版）。GPTの残りの指摘は、書き出し用の見出し（前置き：など）や聞き書きの例を変える提案が多く、型のルールで採らなかった。lint・型検査・単体テスト・build 通過、375px・1280px で表示確認
+- 未完了：写真のない記事に冒頭写真を足すかは未定（足すなら小道具を盛らない1枚）
+
 ### 2026-11-08 CC（Claude、プロジェクトのスレッド）読みもののAIっぽさをなくす（1本目 llmo）
 - ブランチ：claude/project-thread-v0032t
 - 変更点：しおりのイラストをやめ、見出しごとの絵を図（src/lib/column.ts の figure：flow・table・pair・check）に。ColumnChat を罫線の小さな一問一答に。前置き（intro）・急ぐ人向けの案内（jump）・結び（closing）・関連記事のリンク（see）。冒頭写真は2:1に切る。題名・見出しは言葉の途中で折らない（word-break:auto-phrase）。llmo を全面書き直し、写真を llmo-desk.webp に

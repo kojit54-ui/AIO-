@@ -65,12 +65,13 @@ describe("読みものの写真", () => {
     for (const c of COLUMNS) for (const s of c.sections) expect(s.photo || s.figure, `${c.slug}「${s.h}」に写真も図もない`).toBeTruthy();
   });
 
-  it("しおりのイラストは、何を表すかと、しおりが何をしているかまで alt に書く（2026-11-08 田村さん「altにもしっかり情報を」）", () => {
-    const illustrations = COLUMNS.flatMap((c) => [c.hero, ...c.sections.map((s) => s.photo)]).filter((p) => !!p?.illustration);
-    for (const p of illustrations) {
-      expect(p!.alt.length).toBeGreaterThanOrEqual(60);
-      expect(p!.alt).toContain("しおり");
-      expect(p!.alt).toContain("イメージ");
+  it("しおりのイラストは使わず、しおりの一問一答は1記事に1か所まで（2026-11-08 田村さん「写実的なものとしおりがあると違和感。控えめに」）", () => {
+    for (const c of COLUMNS) {
+      const photos = [c.hero, ...c.sections.map((s) => s.photo)];
+      expect(photos.some((p) => p?.illustration), `${c.slug} にしおりのイラストがある`).toBe(false);
+      expect(c.sections.reduce((n, s) => n + (s.chat?.length ?? 0), 0), `${c.slug} の一問一答が多い`).toBeLessThanOrEqual(1);
+      expect(c.opening, `${c.slug} に opening（しおりの問いかけ）がある`).toBeUndefined();
+      expect(c.shiori, `${c.slug} に shiori（しおりのひとこと）がある`).toBeUndefined();
     }
   });
 
