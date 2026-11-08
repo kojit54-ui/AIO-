@@ -33,6 +33,17 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-08 CC（Claude、プロジェクトのスレッド）記事の本数を「毎月1本から10本まで」に
+- ブランチ / コミット：claude/project-thread-v0032t
+- 変更点：田村さん「記事は毎月1本、は違う。最低1本、毎月10本まで」。本数の文を src/lib/articleQuota.ts にまとめ、入口（見出し・含まれるもの・料金）・/about と構造化データ（PRICE_LABEL）・よくある質問・読みもの3本・利用規約第3条・特商法・ブランドブックの言葉を直した。DBは supabase/migrations/20261108170000_monthly_article_limit.sql（会社ごとに月10本、作り直しは数えない。生成回数の上限は30→50）。ホームの「次の1手」に今月の本数と月10本までを出す
+- 確認結果：lint・型検査・テスト（DBの本数の上限のテストと、サイトの文の見張りを追加）・build が通過。375px／1280px で /welcome・/about・/terms・/tokushoho を確認
+- 次の作業と担当：読みものを足すときは ARTICLES_PER_MONTH_LABEL を使う（docs/LESSONS.md）
+### 2026-11-08 CC（Claude、プロジェクトのスレッド）読みもの：写真・しおりに聞いてみた・新しい3本
+- ブランチ / コミット：claude/project-thread-g4swqz
+- 変更点：記事の型に hero・photo（public/column/*.webp、「写真はイメージです」を表示）と chat（しおりに聞いてみた、チャット風・スクロールで順に出る）を追加。新しい記事 llmo・homepage-contents・equipment。写真は scripts/column/photo.mjs（Gemini 画像モデル、文字・ロゴ・顔のアップなし）、校閲は scripts/column/review.mjs と src/lib/columnDump.test.ts。テーマ候補と毎日1本の手順は docs/COLUMN_BACKLOG.md
+- 確認結果：GPT・Gemini で2回校閲（1回目 7.5〜9.2点 → 2回目 GPT 8.8〜9.2・Gemini 9.4〜9.5、残りの指摘も反映）。テスト530件・ビルド通過、375px・1280pxで横スクロールなし
+- 次の作業と担当：毎日1本の定期作業（docs/COLUMN_BACKLOG.md の手順）
+
 ### 2026-11-08 CC（Claude、プロジェクトのスレッド）新しい記事をGoogleに早く見つけてもらう
 - ブランチ：claude/project-thread-7y2cjw
 - 変更点：src/lib/indexing.ts（IndexNow・WebSub・Search Console へのサイトマップ送信・Atomフィード）、/api/cron/indexing（毎朝7:15 JST、vercel.json）、/column/feed.xml、public/<IndexNowの鍵>.txt、robots にフィード、column.ts に publishedColumns／newestColumns（公開日を迎えた記事だけ出す）、一覧・記事の下に「新着」、入口の読みものは新しい順3本、sitemap・一覧・記事・入口に revalidate 3600。searchConsole.ts の accessToken に scope 引数
