@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow_Semi_Condensed, Zen_Kaku_Gothic_New } from "next/font/google";
 import { INDEX_ROBOTS } from "@/lib/publicPages";
 import { SERVICE_NAME } from "@/lib/brand";
+import { newestColumns } from "@/lib/column";
 import { mfgShowcase } from "@/lib/manufacturing";
 import { Welcome } from "./Welcome";
 
@@ -15,11 +16,14 @@ export const metadata: Metadata = {
   description: "製造業の一人親方〜30人の会社へ。案内役の質問に答えると、AIが仕事の工夫や対応できることを記事にまとめます。社長が確かめてから、自社サイトで公開。登録せずに試せます。",
 };
 
+// 新しく出た読みものを、作り直しなしで1時間以内に入口へ出す（入口からのリンクで早く見つけてもらう）
+export const revalidate = 3600;
+
 /** 入口のページ（サービスのご紹介）。ログインしなくても見られる */
 export default function WelcomePage() {
   return (
     <div className={`${kaku.variable} ${barlow.variable}`}>
-      <Welcome makers={mfgShowcase()} />
+      <Welcome makers={mfgShowcase()} columns={newestColumns().slice(0, 3)} />
     </div>
   );
 }
