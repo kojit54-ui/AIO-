@@ -11,6 +11,7 @@ import { fromArticle, fromMonth, toArticle, toCoachingNote, toOrganization, toRe
 import { applyAction } from "@/lib/workflow";
 import { FOLLOW_UP_QUESTION, PREVIOUS_CASE_QUESTION, QUESTIONS } from "@/mock/data";
 import { PLAN_QUESTIONS, planOf } from "@/lib/articlePlan";
+import { ARTICLES_PER_MONTH_MAX } from "@/lib/articleQuota";
 import { normalizeBook } from "@/lib/strength/book";
 import { buildKnowledge, editPairs, pickKnowledge, type KnowledgeItem, type PastArticle } from "@/lib/growth/knowledge";
 import { type HearingAnswer } from "@/prototype/growth";
@@ -34,6 +35,8 @@ const fail = (status: number, code: string, message: string): Extract<Generation
 
 /** start_generation の例外メッセージ（エラーコード）を画面の応答にする */
 const START_ERRORS: Record<string, [number, string]> = {
+  // 記事の本数（毎月10本まで）。回数の上限より先に見る（どちらも limit_reached として返す）
+  article_limit: [429, `今月は記事を${ARTICLES_PER_MONTH_MAX}本作りました。新しい記事は来月から作れます。今月の記事の書き直しはできます`],
   busy: [409, "同じ会社で文章を作っている途中です。終わってからもう一度お試しください"],
   limit_reached: [429, "今月の生成回数の上限に達しました。コタムにご相談ください"],
   budget_exceeded: [429, "今月は新しい文章を作れなくなっています。コタムにご連絡ください"],
@@ -111,7 +114,7 @@ export async function runGeneration(
     .single<{ id: string; status: string; result_version_id: string | null; error_code: string | null }>();
   if (startError || !run) {
     const code = Object.keys(START_ERRORS).find((k) => startError?.message?.includes(k));
-    if (code) return fail(START_ERRORS[code][0], code, START_ERRORS[code][1]);
+    if (code) return fail(START_ERRORS[code][0], code === "article_limit" ? "limit_reached" : code, START_ERRORS[code][1]);
     return fail(500, "provider_error", "受け付けられませんでした。もう一度お試しください");
   }
   if (run.status === "succeeded" && run.result_version_id) return { ok: true, versionId: run.result_version_id };
@@ -294,7 +297,7 @@ export async function runImageIdeas(
     .single<{ id: string; status: string }>();
   if (startError || !run) {
     const code = Object.keys(START_ERRORS).find((k) => startError?.message?.includes(k));
-    if (code) return fail(START_ERRORS[code][0], code, START_ERRORS[code][1]);
+    if (code) return fail(START_ERRORS[code][0], code === "article_limit" ? "limit_reached" : code, START_ERRORS[code][1]);
     return fail(500, "provider_error", "受け付けられませんでした。もう一度お試しください");
   }
   if (run.status === "succeeded") return { ok: true, versionId: base.id };

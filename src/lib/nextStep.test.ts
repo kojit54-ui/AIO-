@@ -11,6 +11,12 @@ describe("ホームの次の1手", () => {
     expect(nextStep([a("1", "published")], 1)).toMatchObject({ kind: "more" });
     expect(nextStep([], 0).kind).toBe("start");
   });
+  it("今月公開した本数と、月10本までを伝える。10本に着いたら来月の分を案内する", () => {
+    expect(nextStep([a("1", "published")], 3).lead).toContain("今月は3本公開できました。記事は毎月10本まで書けます");
+    const full = nextStep([a("1", "published")], 10);
+    expect(full.lead).toContain("10本まで");
+    expect(full.label).toBe("来月の記事の質問に答えておく");
+  });
 
   it("責める言い方をしない", () => {
     const all = [nextStep([a("1", "changes_requested")], 0), nextStep([a("1", "drafting")], 0), nextStep([], 0), nextStep([], 1)];

@@ -21,6 +21,7 @@ import { BRAND_GAP, BRAND_LINE, BRAND_PROMISES, BRAND_SAMPLE } from "@/lib/brand
 import { TRY_HREF } from "@/lib/signup";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { AIO_CHECK_LIST } from "@/lib/aioCheck";
+import { ARTICLES_PER_MONTH_LABEL } from "@/lib/articleQuota";
 import type { MfgShowcase } from "@/lib/manufacturing";
 
 const kaku = "font-[family-name:var(--font-kaku)]";
@@ -142,7 +143,7 @@ function Hero({ signedIn, href }: { signedIn: boolean; href: string }) {
           <span className="block">仕事の話に</span>
           <span className="block">答えるだけ。</span>
           <span className="mt-1 block text-[1.55rem] leading-snug sm:text-[2.3rem]">
-            <span className="inline-block">毎月1本、</span>
+            <span className="inline-block">毎月1本から、</span>
             <span className="inline-block">自社サイトの記事に。</span>
           </span>
         </h1>
@@ -421,7 +422,7 @@ function Steps() {
 /** 月額に含まれるもの。いまできることだけを書く */
 function Included({ total, industries }: { total: number; industries: number }) {
   const rows: [string, string][] = [
-    ["記事", `毎月1本。案内役の質問、AIによる記事づくり、AIOのチェック（${AIO_CHECK_LIST.length}項目）まで`],
+    ["記事", `${ARTICLES_PER_MONTH_LABEL}。案内役の質問、AIによる記事づくり、AIOのチェック（${AIO_CHECK_LIST.length}項目）まで`],
     ["確認・修正の機能", "社長や担当の方が画面の上で読んで、直せます。足りない所は案内役が聞き返します"],
     ["強みの帳面", "得意なこと・お客様と困りごと・強みの根拠と数字・選ばれる決め手を、一問一答で書きためる帳面。記事・点検・チェック・提案のAIに毎回渡します"],
     ["掲載手順の案内", "確かめた記事を、自社のホームページ（ブログ）にご自身で載せます。自動投稿ではありません。操作は画面で順に案内します"],
@@ -467,7 +468,7 @@ function KeepGoing() {
     { id: "koyuki", name: "こゆき", note: "本物そっくりのオコジョ" },
   ] as const;
   return (
-    <Section kicker="続けられる仕組み" title="毎月1本を、ひとりで続けなくていい。" tone="white">
+    <Section kicker="続けられる仕組み" title="毎月の記事を、ひとりで続けなくていい。" tone="white">
       <div ref={ref} className="grid gap-6 md:grid-cols-2">
         <figure className="border-2 border-sumi">
           <figcaption className="border-b-2 border-sumi px-4 py-2 text-xs font-bold">画面の見本：案内役を選ぶ</figcaption>
@@ -532,7 +533,7 @@ function Promises() {
 /** 料金とお試し。条件は利用規約・特定商取引法の表記（src/lib/legal.ts）と同じにする */
 function Price() {
   const rows: [string, string][] = [
-    ["料金", "月額50,000円（税抜。税込55,000円）。記事は毎月1本"],
+    ["料金", `月額50,000円（税抜。税込55,000円）。記事は${ARTICLES_PER_MONTH_LABEL}`],
     ["お試し", "はじめての方は7日間無料。申し込みのときにクレジットカードを登録します"],
     ["請求", "お試しが終わった日に初回を請求し、毎月自動で更新します。初めての請求の前の日にメールでお知らせします"],
     ["解約", "マイページからいつでも。お試しのあいだに解約すれば、料金はかかりません"],

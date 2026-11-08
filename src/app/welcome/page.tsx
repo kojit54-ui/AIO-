@@ -11,7 +11,7 @@ const barlow = Barlow_Semi_Condensed({ weight: ["600", "700"], subsets: ["latin"
 
 export const metadata: Metadata = {
   robots: INDEX_ROBOTS,
-  title: `仕事の話に答えるだけ。毎月1本、自社サイトの記事に｜${SERVICE_NAME}`,
+  title: `仕事の話に答えるだけ。毎月1本から、自社サイトの記事に｜${SERVICE_NAME}`,
   description: "製造業の一人親方〜30人の会社へ。案内役の質問に答えると、AIが仕事の工夫や対応できることを記事にまとめます。社長が確かめてから、自社サイトで公開。登録せずに試せます。",
 };
 

@@ -33,6 +33,12 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-08 CC（Claude、プロジェクトのスレッド）記事の本数を「毎月1本から10本まで」に
+- ブランチ / コミット：claude/project-thread-v0032t
+- 変更点：田村さん「記事は毎月1本、は違う。最低1本、毎月10本まで」。本数の文を src/lib/articleQuota.ts にまとめ、入口（見出し・含まれるもの・料金）・/about と構造化データ（PRICE_LABEL）・よくある質問・読みもの3本・利用規約第3条・特商法・ブランドブックの言葉を直した。DBは supabase/migrations/20261108170000_monthly_article_limit.sql（会社ごとに月10本、作り直しは数えない。生成回数の上限は30→50）。ホームの「次の1手」に今月の本数と月10本までを出す
+- 確認結果：lint・型検査・テスト（DBの本数の上限のテストと、サイトの文の見張りを追加）・build が通過。375px／1280px で /welcome・/about・/terms・/tokushoho を確認
+- 次の作業と担当：読みものを足すときは ARTICLES_PER_MONTH_LABEL を使う（docs/LESSONS.md）
+
 ### 2026-11-08 CC（Claude、プロジェクトのスレッド）運営会社と編集方針・構造化データ
 - ブランチ / コミット：claude/project-thread-g4swqz
 - 変更点：/about（運営会社・サービスの料金と受付状況・読みものの編集方針6項目）を追加し、検索に出すページとサイトマップに入れた。入口ページに Service（料金 50,000円・税抜、受付準備中を説明に含む）の構造化データ。読みものの文責を /about へリンクし、Article の author/publisher に /about の url。会社の情報・料金・受付状態は src/lib/about.ts にまとめ、特商法表記・FAQ・入口ページの文と食い違わないかをテストで確かめる

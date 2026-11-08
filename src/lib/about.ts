@@ -2,6 +2,7 @@
 // 会社の情報は、コタムのホームページ（https://co-tam.co.jp/company/）と特定商取引法の表記（src/lib/legal.ts）に合わせる。
 // 料金・受付の状態は、入口ページ・よくある質問・利用規約と同じ文にする（食い違うと、AIにも人にも信用されない）。
 
+import { ARTICLES_PER_MONTH_LABEL } from "@/lib/articleQuota";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import { CONTACT_EMAIL } from "@/lib/legal";
 import { SITE_URL } from "@/lib/publicPages";
@@ -20,7 +21,7 @@ export const COMPANY = {
 
 /** 料金と受付の状態（画面に出している文と同じ） */
 export const PRICE_JPY = 50000;
-export const PRICE_LABEL = "月額50,000円（税抜。税込55,000円）、記事は毎月1本";
+export const PRICE_LABEL = `月額50,000円（税抜。税込55,000円）、記事は${ARTICLES_PER_MONTH_LABEL}`;
 // 既存のお客様の扱い（招待・料金）は、サイトのどこにも出さない（2026-11-08 田村さん「絶対に出さないで」）
 export const SALES_STATUS = "新規のお申し込みは準備中です。";
 
