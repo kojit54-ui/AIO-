@@ -36,3 +36,21 @@ describe("運営会社と編集方針・構造化データ", () => {
     expect(sitemap().map((u) => new URL(u.url).pathname)).toContain("/about");
   });
 });
+
+describe("既存のお客様の扱いを、サイトに出さない（2026-11-08 田村さん）", () => {
+  it("入口・よくある質問・読みもの・規約・運営会社のページに「既存のお客様は無料」の言葉がない", async () => {
+    const { COLUMNS } = await import("@/lib/column");
+    const { LEGAL_DOCS } = await import("@/lib/legal");
+    const text = [
+      fs.readFileSync("src/app/welcome/Welcome.tsx", "utf8"),
+      fs.readFileSync("src/app/about/page.tsx", "utf8"),
+      JSON.stringify(FAQ),
+      JSON.stringify(COLUMNS),
+      JSON.stringify(LEGAL_DOCS),
+      JSON.stringify(serviceJsonLd()),
+    ].join("\n");
+    expect(text).not.toMatch(/(コタムの|既存の|ご招待した|招待した)お客様.{0,40}無料/);
+    expect(text).not.toMatch(/招待制で(、)?.{0,20}無料/);
+    expect(text).not.toMatch(/ご契約のあいだ無料/);
+  });
+});
