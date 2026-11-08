@@ -17,6 +17,7 @@ export default function CoachHome() {
   // 全社管理者なら「利用金額と利用頻度」と同じ判定（質問の進み具合・最後に使った日つき）を使う。読めなければ画面の中のデータで出す
   const [serverCalls, setServerCalls] = useState<CallListItem[] | null>(null);
   const [contactsEnabled, setContactsEnabled] = useState(false);
+  const [query, setQuery] = useState("");
   useEffect(() => {
     let alive = true;
     fetch("/api/admin/call-list", { cache: "no-store" })
@@ -46,7 +47,10 @@ export default function CoachHome() {
     .filter((c) => user.organizationIds.includes(c.organizationId))
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
     .filter((c, i, all) => all.findIndex((x) => x.articleId === c.articleId) === i)
-    .slice(0, 10);
+    .slice(0, 10)
+    // 答え待ち（お客様の返事が要るもの）を上に
+    .sort((a, b) => Number(a.status === "done") - Number(b.status === "done"));
+  const waitingChecks = latestChecks.filter((c) => c.status !== "done").length;
   // 声をかけたい会社（2026-11-08 管理者役の採点「声をかける順がトップで分からない」）
   const callList = orgs
     .map((o) => {
@@ -128,7 +132,7 @@ export default function CoachHome() {
 
       <section aria-labelledby="checks-heading">
         <h2 id="checks-heading" className="mb-3 text-lg font-bold">
-          最近のAIOのチェック
+          最近のAIOのチェック{waitingChecks > 0 && <span className="ml-2 rounded-full bg-sun-soft px-2.5 text-sm">答え待ち {waitingChecks}件</span>}
         </h2>
         {latestChecks.length === 0 ? (
           <EmptyState mood="coffee" title="AIOのチェックをした記事はまだありません" />
@@ -175,11 +179,15 @@ export default function CoachHome() {
       </section>
 
       <section aria-labelledby="orgs-heading">
-        <h2 id="orgs-heading" className="mb-3 text-lg font-bold">
-          担当企業
-        </h2>
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+          <h2 id="orgs-heading" className="text-lg font-bold">
+            担当企業 {orgs.length}社
+          </h2>
+          <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="会社名でさがす" aria-label="会社名でさがす" className="field min-h-10 max-w-xs py-1" />
+        </div>
+        {query && !orgs.some((o) => o.name.includes(query.trim())) && <p className="text-muted">「{query}」の会社は見つかりませんでした。</p>}
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {orgs.map((o, i) => {
+          {orgs.filter((o) => !query.trim() || o.name.includes(query.trim())).map((o, i) => {
             const articles = db.articles.filter((a) => a.organizationId === o.id);
             const ready = isOrgReady(db, o.id);
             // 続けてもらうための目印（2026-11-03）。最近書いていない会社は、声をかけるきっかけにする
