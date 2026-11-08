@@ -1,0 +1,71 @@
+// 9人の採点（GPT・Gemini・Claude × 書く人・読む人・AIOの人）のうち、GPT と Gemini の6人を呼ぶ。Claude の3人は会話の中で同じ指示文で採点する。
+// 使い方: node scripts/e2e/council.mjs <article.json> <出力フォルダ>
+// 記事の本文はAIに渡すだけで、ログには出さない。
+import { readFileSync, writeFileSync } from "node:fs";
+
+export const ROLES = {
+  writer: "あなたはWebライティングのプロの編集者（BtoBの製造業ブログを多数手がけた）です。構成（結論が先か、見出しがタイトルの約束に沿うか）、読みやすさ、独自性（この会社にしか書けない一次情報）、AIっぽい決まり文句がないか、作り話がないかを見てください。",
+  reader: "あなたはこの記事の見込み客です：埼玉の食品工場で設備保全を担当する40代。古い機械の部品が壊れ、図面もメーカーもなく困って検索しました。ITやWebの言葉は苦手です。読んで、分かりやすいか、自分のことだと思えたか、この会社に頼みたいと思ったか、次に何をすればよいか分かったかを、正直に見てください。",
+  aio: "あなたはAIO（AI検索に選ばれるための最適化）の専門家です。ChatGPT検索・Google AI Overviews・Perplexity が、この記事を引用・紹介したくなるかを見てください：冒頭で質問に短く答えているか、見出しが検索される問いの形か、具体的な事実（地域・会社・数字・手順）がはっきりか、信頼できるか（誇張・根拠のない断定がないか）、紹介されたあと読んだ人に選ばれる形か。",
+};
+
+export function brief(role, article) {
+  return `${ROLES[role]}
+
+次の記事を、10点満点（小数1桁）で厳しく採点してください。9.5点は「プロが手を入れずにそのまま公開できる」水準です。
+記事は、町工場の社長がスマホで質問に答え、AIが下書きを書いたものです（架空の会社）。社長は文章を書くのが苦手なので、直す点は「この記事の文」だけでなく「AIへの指示や、社長への質問の仕方をどう変えればよいか」まで書いてください。
+
+<article>
+${JSON.stringify(article)}
+</article>
+
+次のJSONだけで返してください：
+{"score": number, "good": [string, string], "fixes": [{"problem": string, "how": string}]}
+fixes は大事な順に最大5つ。how は具体的に（どの見出し・どの文をどう変えるか、AIへの指示に何を足すか）。`;
+}
+
+async function gpt(prompt) {
+  const res = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: { authorization: `Bearer ${process.env.OPENAI_API_KEY}`, "content-type": "application/json" },
+    body: JSON.stringify({ model: process.env.OPENAI_TEXT_MODEL || "gpt-6.1-sol", input: prompt }),
+  });
+  const j = await res.json();
+  if (!res.ok) throw new Error(`openai ${res.status} ${j.error?.message ?? ""}`);
+  return j.output_text ?? j.output?.flatMap((o) => o.content ?? []).map((c) => c.text ?? "").join("") ?? "";
+}
+
+async function gemini(prompt) {
+  const model = process.env.GEMINI_TEXT_MODEL || "gemini-4-argon";
+  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+    method: "POST",
+    headers: { "x-goog-api-key": process.env.GEMINI_API_KEY, "content-type": "application/json" },
+    body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }], generationConfig: { responseMimeType: "application/json" } }),
+  });
+  const j = await res.json();
+  if (!res.ok) throw new Error(`gemini ${res.status} ${j.error?.message ?? ""}`);
+  return j.candidates?.[0]?.content?.parts?.map((x) => x.text ?? "").join("") ?? "";
+}
+
+function parse(text) {
+  const s = text.indexOf("{");
+  const e = text.lastIndexOf("}");
+  return JSON.parse(text.slice(s, e + 1));
+}
+
+if (process.argv[2]) {
+  const article = JSON.parse(readFileSync(process.argv[2], "utf8"));
+  const outDir = process.argv[3] || ".";
+  const jobs = [];
+  for (const [name, call] of [["gpt", gpt], ["gemini", gemini]])
+    for (const role of Object.keys(ROLES))
+      jobs.push(
+        call(brief(role, { title: article.title, body: article.text }))
+          .then((t) => ({ who: name, role, ...parse(t) }))
+          .catch((e) => ({ who: name, role, error: e.message })),
+      );
+  const results = await Promise.all(jobs);
+  writeFileSync(`${outDir}/council.json`, JSON.stringify(results, null, 2));
+  for (const r of results) console.log(r.who, r.role, r.error ?? r.score);
+  writeFileSync(`${outDir}/brief-claude.txt`, Object.keys(ROLES).map((r) => `=== ${r} ===\n${brief(r, { title: article.title, body: article.text })}`).join("\n\n"));
+}
