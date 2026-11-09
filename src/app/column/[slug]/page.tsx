@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import Image from "next/image";
 import { ColumnChat } from "@/components/ColumnChat";
+import { ColumnIntro } from "@/components/ColumnIntro";
 import { COLUMNS, isNewColumn, jpDate, newestColumns, publishedColumns, type Column, type ColumnFigure, type ColumnPhoto, type Interview } from "@/lib/column";
 import { INDEX_ROBOTS, SITE_URL } from "@/lib/publicPages";
 import { TRY_HREF } from "@/lib/signup";
@@ -210,7 +211,7 @@ export default async function ColumnPage({ params }: Props) {
         </header>
 
         {(c.intro ?? c.opening) && (
-          <p className="mt-5 leading-loose">
+          <ColumnIntro mood={c.introMood ?? "point"}>
             {c.intro ?? c.opening}
             {c.jump && (
               <>
@@ -221,7 +222,7 @@ export default async function ColumnPage({ params }: Props) {
                 {c.jump.after}
               </>
             )}
-          </p>
+          </ColumnIntro>
         )}
 
         <section aria-labelledby="summary" className="mt-6 border-2 border-sumi bg-white">

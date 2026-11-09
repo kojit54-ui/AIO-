@@ -33,6 +33,12 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-09 CC（Claude、プロジェクトのスレッド）読みものの出だしをしおりが話す
+- ブランチ / コミット：claude/project-thread-v0032t
+- 変更点：src/components/ColumnIntro.tsx（しおりの全身の絵＋吹き出し、出てから「…」→文）。column.ts に introMood（INTRO_MOODS）を足し、16本に表情を割り当て。column.test.ts で表情の絵があること・隣の記事と同じ顔でないことを検査。docs/COLUMN_BACKLOG.md・LESSONS.md
+- 確認結果：単体テスト、型検査、lint、build。375px・1280px で表示と横スクロールなしを確認
+- 次の作業と担当：毎日の自動記事も introMood を付ける（手順書に反映済み、テストが見張る）
+
 ### 2026-11-09 CC（Claude、プロジェクトのスレッド）読みものの対話を増やす
 - ブランチ / コミット：claude/project-thread-v0032t
 - 変更点：「しおりに聞いてみた」を全16本で見出し4つなら2か所・5〜6つなら3か所に（GPTで作成、隣り合わせない）。ColumnChat で答えの前に「…」を0.5秒見せる（田村さんが選択。動きを減らす設定・印刷は最初から全部表示）。column.test.ts を数と位置の検査に変更。docs/COLUMN_BACKLOG.md・LESSONS.md を更新
