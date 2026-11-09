@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Confetti, Shiori, type ShioriMood } from "@/components/fun";
 import { Logo } from "@/components/landing";
 import { ShioriTalk } from "@/components/talk";
+import { trackEvent } from "@/lib/analytics";
 import { AIO_QUIZ } from "@/lib/tips";
 import { saveTryCarry } from "@/lib/tryoutCarry";
 import { WaitlistForm } from "@/components/WaitlistForm";
@@ -111,12 +112,18 @@ export function TryOut({ quick = false }: { quick?: boolean }) {
         body: JSON.stringify({ company, region, job, story, answers, startedAt, website }),
       });
       const data = (await res.json().catch(() => null)) as { mode?: string; reason?: string; result?: TrialResultView; message?: string } | null;
-      if (res.ok && data?.mode === "ai" && data.result) setOutcome({ mode: "ai", reason: "", result: data.result });
+      if (res.ok && data?.mode === "ai" && data.result) {
+        setOutcome({ mode: "ai", reason: "", result: data.result });
+        trackEvent("try_result", { mode: "ai" });
+      }
       else if (data?.reason === "off_topic" || res.status === 400) {
         // 記事にできない答えは、見本にせず書き直してもらう（そのまま載せない）
         setWriteNote(data?.message ?? "お仕事のお話が読み取れませんでした。どんなお仕事で、何がうれしかったかを書いてみてください。");
         setPhase("write");
-      } else setOutcome(fallback(data?.reason ?? "unavailable"));
+      } else {
+        setOutcome(fallback(data?.reason ?? "unavailable"));
+        trackEvent("try_result", { mode: "sample" });
+      }
     } catch {
       setOutcome(fallback("unavailable"));
     }

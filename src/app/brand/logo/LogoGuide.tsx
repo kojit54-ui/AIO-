@@ -36,7 +36,7 @@ export function LogoGuide() {
       <main className={`${kaku} mx-auto max-w-5xl px-4 pb-16 pt-6 font-medium sm:px-6 sm:pt-10`}>
         <p className="text-sm font-bold">
           <Link href="/brand" className="text-indigo underline underline-offset-4">
-            ブランドとロゴ
+            えらばれ帳が大切にしていること
           </Link>
           <span className="mx-2 text-sumi/50">/</span>ロゴの使い方
         </p>

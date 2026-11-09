@@ -10,7 +10,7 @@ import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 export const LEGAL_DRAFT = false;
 
 /** いつの版か（表示用） */
-export const LEGAL_VERSION = "2026年11月8日";
+export const LEGAL_VERSION = "2026年11月9日";
 
 /** 埋めていない所のしるし。画面では黄色の札になる */
 export const TODO_MARK = "【要確認：";
@@ -147,6 +147,7 @@ export const PRIVACY: LegalDoc = {
         "有料プランのとき：お支払いの状況（カードの種類と下4けた、請求日など）。カード番号そのものは、決済会社の Stripe が預かり、コタムは持ちません",
         "使った記録：ログインした日時、使った機能、AIを使った回数と費用。本文や答えの中身は、管理のための画面に出しません",
         "ログインのために、ブラウザに小さな記録（クッキー）を残します",
+        "ログインしなくても見られるページ（サービスのご紹介・読みもの・ためす など）では、どのページがどれくらい見られたかを知るために、Google アナリティクスを使います。クッキーなどで、見たページ・使った端末やブラウザ・おおまかな地域などが Google に送られます。お名前やメールアドレス、ログインしてからの画面の内容は送りません",
         "「30秒でためす」では、使いすぎを防ぐために、接続元の情報から見分けるための値を作って、回数を数えることだけに使います",
       ],
     },
@@ -181,7 +182,7 @@ export const PRIVACY: LegalDoc = {
         "Resend（アメリカ）：ログインのメール、しおり通信の送信",
         "Stripe（アメリカ）：クレジットカードの決済（有料プランのとき）",
         "ラッコ株式会社（日本）：キーワードの検索数を調べる（送るのはキーワードだけです）",
-        "Google（アメリカ）：Search Console の数字を読む（読むだけで、書きかえません）",
+        "Google（アメリカ）：Search Console の数字を読む（読むだけで、書きかえません）。Google アナリティクスで、ログインしなくても見られるページの見られ方を数える（止めたい方は、Google のオプトアウト アドオン https://tools.google.com/dlpage/gaoptout?hl=ja を使えます。Google の扱い方は https://policies.google.com/technologies/partner-sites?hl=ja ）",
         "任せる会社とは、情報を安全に扱うことを約束した契約や決まりのもとで、必要な分だけを渡します。",
       ],
     },

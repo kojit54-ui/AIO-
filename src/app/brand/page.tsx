@@ -11,12 +11,12 @@ const barlow = Barlow_Semi_Condensed({ weight: ["600", "700"], subsets: ["latin"
 
 export const metadata: Metadata = {
   robots: INDEX_ROBOTS,
-  title: `ブランドとロゴ｜${SERVICE_NAME}`,
+  title: `えらばれ帳が大切にしていること｜${SERVICE_NAME}`,
   description: `${BRAND_LINE}${BRAND_DESCRIPTOR}${SERVICE_NAME}の理念・ミッション・記事づくりの約束と、運営する会社のこと。`,
   alternates: { canonical: "/brand" },
 };
 
-/** ブランドとロゴのページ。ログインなしで見られる */
+/** えらばれ帳が大切にしていること（/brand）。ログインなしで見られる */
 export default function BrandPage() {
   return (
     <div className={`${kaku.variable} ${barlow.variable}`}>
