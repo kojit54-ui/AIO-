@@ -170,3 +170,10 @@
 - 使わないもの：Googleのサイトマップ ping（2023年に廃止）。Indexing API（Google公式で求人とライブ配信のページ専用）。Google は IndexNow を使っていない
 - Search Console API での送信は、サービス用アカウント aio-reader@cotam-aio.iam.gserviceaccount.com がプロパティの「オーナー」のときだけ動く。送れないときは Cron の結果（ログ）に理由が出る
 - なぜ：2026-11-08 田村さん「Googleにいち早くインデックスしてもらえるような仕組みを整えたい」。読みものを毎日1本出すため。どれも見つけてもらうのを早めるだけで、載ること・順位は約束されない
+
+## 2026-11-09 Googleアナリティクス（GA4）を入れる
+- 決めたこと：測定ID G-Q8T74H2F1B を Vercel の環境変数 NEXT_PUBLIC_GA_ID（本番だけ）に入れ、src/components/Analytics.tsx で読み込む。数えるのは入口・読みもの・ためす・しおり・/brand・/about・規約類だけ。ほかの画面ではタグを読み込まず、途中で移ったときは ga-disable で送信を止める。ページの数え方はこちらで送る（send_page_view: false）ので、GA4 の拡張計測機能の「ブラウザの履歴イベントに基づくページの変更」は切る
+- 数える行動：generate_lead（受付フォームを送れた。form＝どのページか）、try_result（ためすで結果が出た。mode＝ai/sample）。GA4 で generate_lead をキーイベントにする
+- 使わないもの：Googleが案内したタグマネージャーのタグ（GTM-58KZ7RX3）。中身が空で、送るページを細かく分けられないため
+- プライバシーポリシーに Google アナリティクスの利用とオプトアウトの方法を足した
+- なぜ：2026-11-09 田村さん「アナリティクスの登録」。入口と読みものが売上につながっているかを見るため

@@ -39,6 +39,13 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-09 CC（Claude、プロジェクトのスレッド）Googleアナリティクス
+- ブランチ / コミット：claude/project-thread-4phjho
+- 変更点：src/lib/analytics.ts（数えるページ・送るアドレスの掃除・行動の送信）、src/components/Analytics.tsx（layout に追加）、受付フォームと /try に行動の計測、プライバシーポリシーに追記。Vercel に NEXT_PUBLIC_GA_ID（本番）を登録
+- 確認結果：lint・型検査・テスト通過。本番相当のビルドで /welcome・/column で page_view、/login では送らないことを Playwright で確認
+- 未完了：GA4 側で generate_lead をキーイベントにする、Search Console とのリンク（田村さんの画面操作）
+
+
 ### 2026-11-09 CC（Claude、プロジェクトのスレッド）しおりが途中と結びでも話す
 - ブランチ / コミット：claude/project-thread-v0032t
 - 変更点：ColumnIntro.tsx を ShioriBubble に一般化。column.ts に section.talk（1記事1か所）と closingMood を足し、16本に入れた（途中のひとことはGPT案が決まり文句・作業指示の連続になったので手で書いた）。column.test.ts で数・位置・顔の違いを検査。docs/COLUMN_BACKLOG.md

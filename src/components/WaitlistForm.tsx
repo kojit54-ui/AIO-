@@ -3,6 +3,7 @@
 // 新規受付の案内を受け取るフォーム（入口ページ・試すページ）。メールだけを聞く。保存できたら「受け付けました」。
 // 失敗したら入力を残して、もう一度送れるようにする。
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { normalizeEmail, type WaitlistSource } from "@/lib/waitlist";
 
 export function WaitlistForm({ source, dark = false }: { source: WaitlistSource; dark?: boolean }) {
@@ -19,6 +20,8 @@ export function WaitlistForm({ source, dark = false }: { source: WaitlistSource;
     try {
       const res = await fetch("/api/waitlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, source, website, startedAt }) });
       setState(res.ok ? "done" : res.status === 400 ? "invalid" : "error");
+      // どのページの受付から来たかだけ数える（メールアドレスは送らない）
+      if (res.ok) trackEvent("generate_lead", { form: source });
     } catch {
       setState("error");
     }
