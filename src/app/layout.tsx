@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Zen_Maru_Gothic } from "next/font/google";
+import { Analytics } from "@/components/Analytics";
 import { AppShell } from "@/components/AppShell";
 import { SERVICE_DESCRIPTION, SERVICE_NAME } from "@/lib/brand";
 import { SITE_URL } from "@/lib/publicPages";
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StoreProvider>
           <AppShell>{children}</AppShell>
         </StoreProvider>
+        <Analytics />
       </body>
     </html>
   );
