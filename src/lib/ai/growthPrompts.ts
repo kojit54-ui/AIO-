@@ -7,7 +7,7 @@ import { PURPOSE_FOR_AI } from "@/lib/brand";
 import type { ResearchForPrompt } from "@/lib/keywords/research";
 import type { AioPoint } from "@/types/domain";
 import { ParseError, asData, parseJson } from "./prompt";
-import { articleIdeasFor, isManufacturing, readerConcernsFor, readerQuestionsFor } from "@/lib/manufacturing";
+import { articleIdeasFor, isManufacturing, peerCasesFor, readerConcernsFor, readerQuestionsFor } from "@/lib/manufacturing";
 import { isEmptyBook, normalizeBook, type StrengthBook } from "@/lib/strength/book";
 
 /** 深掘りの聞き手。答えが具体的でないときだけ、短い質問を1つ返す */
@@ -66,14 +66,19 @@ export interface FollowUpInput {
 }
 
 /** 製造業の会社なら、発注する人がよく気にすることの例を足す（聞き返しの参考。会社の事実としては使わせない） */
-function buyerConcerns(business: string, seed: string): { buyer_concerns?: string[] } {
+function buyerConcerns(business: string, seed: string): { buyer_concerns?: string[]; peer_cases?: string[] } {
   if (!isManufacturing(business)) return {};
   const list = readerConcernsFor(business, 6, seed);
-  return list.length ? { buyer_concerns: list } : {};
+  // 同じ業種の会社の取り組みの型（補助金の採択計画・成果事例）。似た経験を聞き出すきっかけに
+  const peers = peerCasesFor(business, 3, seed).map((x) => x.title);
+  return { ...(list.length ? { buyer_concerns: list } : {}), ...(peers.length ? { peer_cases: peers } : {}) };
 }
 
 const BUYER_CONCERNS_NOTE =
   "\nbuyer_concerns は、製造業の発注する人がよく気にすること・作り手がよく困ることの例です（製造業の知識表）。答えに足りないもので、この会社に合うものがあれば、それに答えられる材料を聞く・書く参考にしてください。会社の事実としては扱わないでください。\n";
+
+const PEER_CASES_NOTE =
+  "\npeer_cases は、同じ業種の会社が取り組んだことの型の例です（補助金の採択計画・成果事例から、会社名を出さずにまとめたもの）。この会社にも似た経験（設備・新しい市場・技術の生かし方）がありそうなら、それを聞き出す参考にしてください。他社の話として質問に書いたり、会社の事実として扱ったりしないでください。\n";
 
 export function buildFollowUpPrompt(input: FollowUpInput, business = ""): string {
   const extra = buyerConcerns(`${business} ${input.answer}`, input.question);
@@ -83,7 +88,7 @@ export function buildFollowUpPrompt(input: FollowUpInput, business = ""): string
 <materials>
 ${asData(materials)}
 </materials>
-${extra.buyer_concerns ? BUYER_CONCERNS_NOTE : ""}次の形のJSONで返してください：
+${extra.buyer_concerns ? BUYER_CONCERNS_NOTE : ""}${extra.peer_cases ? PEER_CASES_NOTE : ""}次の形のJSONで返してください：
 {"follow_up": string | null, "why": string, "example": string}`;
 }
 

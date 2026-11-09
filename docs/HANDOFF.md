@@ -12,6 +12,13 @@
 - 未完了：本物のAPIでの確認、画面からの呼び出し（認証の後）
 - 次の作業と担当：タムさんが OPENAI_API_KEY を設定 → CC が `npm run test:live` で確認 → CX が接続部分をレビュー
 
+### 2026-11-09 CC（Claude、プロジェクトのスレッド）知識表を一括データで増やす
+- ブランチ：claude/project-thread-ryffts
+- 変更点：製造業の知識表に2,302件を足して国内9,383件・海外638件に（src/lib/manufacturing/data.json）。新しい種類 stat（国の統計の数字625件、e-Stat 経済構造実態調査）と case（同業の取り組み951件、事業再構築補助金の採択計画5,648件・ものづくり補助金の成果事例4,560件から型にした）。industryFactsFor・peerCasesFor を足し、記事の書き手（<industry_facts>、出典つきで使ってよい）としおりの深掘り（peer_cases）につないだ。検索の6班で展示会・用語・成果事例集・認定事例も約430件。merge.py は数字だけが違う見出しを重なりとして捨てないように。道具 scripts/manufacturing/bulk/
+- 確認結果：単体テスト558件・型検査・lint・build 通過。管理画面 /admin/knowledge の種類のボタンが2つ増える（MFG_KIND_LABEL から自動）。画面の見た目は本番で確認していない
+- 未完了：Gビズインフォ（アクセストークンが要る。後回し）
+- 次の作業と担当：e-Stat の新しい年（毎年7月ごろ）と事業再構築の新しい回が出たら、docs/MANUFACTURING_RESEARCH.md「一括で取れる元」の手順で足す
+
 ### 2026-11-09 CC（Claude、プロジェクトのスレッド）記事の点数
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/lib/articleScore.ts（+test）。AIOのチェックの結果から100点満点の点数・段・点数を上げるには・質問に答えたときの点数・前回からの伸びを計算。AioCheckPanel に ScoreCard（数え上げの動き）、質問のウィンドウに「いまの点数→答えると何点」、ブログに載せる枠といままでの記事の一覧に点数。関門にはしない。DB変更なし

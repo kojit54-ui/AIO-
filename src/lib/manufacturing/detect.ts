@@ -10,6 +10,8 @@ export const MFG_KIND_LABEL: Record<MfgKind, string> = {
   buyer: "買い手の探し方・決め方",
   trend: "最近の動き",
   term: "言葉のやさしい説明",
+  case: "同業の取り組み",
+  stat: "国の統計の数字",
 };
 
 /** 会社の説明に出てくる言葉から、業種を当てる */
