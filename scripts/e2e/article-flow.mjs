@@ -232,7 +232,8 @@ async function write() {
   await p.click('button:has-text("この流れで本文を書く")');
   await p.waitForTimeout(5000);
   // 本文ができると「読みながら直す」が出る（点検と書き直しまで入れて数分かかる）
-  await p.locator("text=読みながら直す").first().waitFor({ timeout: 900000 });
+  const done = await waitAny(["読みながら直す", "新しい記事は来月から"], 900000);
+  if (done === "新しい記事は来月から") throw new Error("テスト会社の今月の記事の上限に当たった（organizations.monthly_article_limit を上げる）");
   await p.waitForTimeout(3000);
   await snap("body");
   const article = {
