@@ -4,12 +4,13 @@
 // お客様：何をチェックするかを見てから実施 → 結果 → 足りない所をしおりと一問一答 → 記事に反映。
 // コタム：結果とやり取りを読むだけ（コメントは記事の画面の「コメントを残す」から）。
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AioIcon } from "@/components/aio";
 import { Confetti, Shiori, Toast } from "@/components/fun";
 import { ShioriTalk } from "@/components/talk";
 import { GeneratingOverlay, formatDate } from "@/components/ui";
 import { AIO_CHECK_GROUPS, AIO_CHECK_LIST, aioCheckLabel } from "@/lib/aioCheck";
+import { articleScore, effectiveItems, previousScore, scoreOf, type ArticleScore } from "@/lib/articleScore";
 import { useStore } from "@/mock/store";
 import type { AioCheck, AioCheckKey, AioPoint, Answer, Article, ArticleVersion } from "@/types/domain";
 
@@ -78,26 +79,90 @@ export function AioCheckList({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function CheckResult({ check, applied }: { check: AioCheck; applied: boolean }) {
+/** 0 から点数まで数え上げる（動きで「点数が出た」と分かるように） */
+function CountUp({ to }: { to: number }) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    let raf = 0;
+    const start = performance.now();
+    const tick = (t: number) => {
+      const p = reduce ? 1 : Math.min(1, (t - start) / 900);
+      setN(Math.round(to * (1 - (1 - p) ** 3)));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [to]);
+  return <>{n}</>;
+}
+
+/** 点数の色。低くても赤にしない（叱られている感じにしない） */
+const scoreTone = (score: number) => (score >= 85 ? "text-ok" : score >= 60 ? "text-brand-dark" : "text-ink");
+
+/** いまの点数（100点満点）と、点数を上げるには。関門ではなく、目安として見せる */
+export function ScoreCard({ s, delta, compact = false }: { s: ArticleScore; delta?: number | null; compact?: boolean }) {
+  return (
+    <div className="space-y-2 rounded-2xl bg-canvas p-3" aria-live="polite">
+      <div className="flex flex-wrap items-end justify-between gap-2">
+        <p className="text-sm font-bold text-muted">記事のいまの点数</p>
+        {delta != null && delta > 0 && <p className="animate-pop rounded-full bg-ok-soft px-2.5 py-0.5 text-sm font-black text-ok">前より +{delta}点</p>}
+      </div>
+      <p className="flex items-baseline gap-2">
+        <span className={`text-5xl font-black tabular-nums leading-none ${scoreTone(s.score)}`}>
+          <CountUp to={s.score} />
+        </span>
+        <span className="font-bold text-muted">/ 100点</span>
+        <span className={`ml-auto rounded-full px-3 py-0.5 text-sm font-black ${s.score >= 85 ? "bg-ok-soft text-ok" : "bg-sun-soft text-ink"}`}>{s.level.label}</span>
+      </p>
+      <div className="relative h-3 overflow-hidden rounded-full bg-surface ring-1 ring-line" aria-hidden>
+        {s.potential > s.score && <div className="absolute inset-y-0 left-0 rounded-full bg-sun-soft" style={{ width: `${s.potential}%` }} />}
+        <div className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-sun to-ok-bright transition-[width] duration-700" style={{ width: `${s.score}%` }} />
+      </div>
+      <p className="text-sm">{s.level.message}</p>
+      {s.potential > s.score && (
+        <p className="text-sm font-bold text-brand-dark">
+          AIからの質問に答えると、<span className="text-lg">{s.potential}点</span>まで上がります。
+        </p>
+      )}
+      {!compact && s.tips.length > 0 && (
+        <div className="space-y-1.5">
+          <p className="text-sm font-bold">点数を上げるには</p>
+          <ul className="space-y-1.5 text-sm">
+            {s.tips.slice(0, 3).map((t) => (
+              <li key={t.key} className="flex items-start gap-2 rounded-xl bg-surface px-2.5 py-2 ring-1 ring-line">
+                <span className="mt-0.5 shrink-0 rounded-full bg-sun px-2 text-xs font-black text-ink">+{t.gain}点</span>
+                <span className="min-w-0">
+                  <b className="block">
+                    {t.label}
+                    {t.askedCount > 0 && <span className="ml-1 text-xs font-bold text-brand-dark">（AIの質問 {t.askedCount}問）</span>}
+                  </b>
+                  <span className="block text-muted">{t.ask}</span>
+                  {t.example && <span className="block text-xs text-muted">{t.example}</span>}
+                </span>
+              </li>
+            ))}
+          </ul>
+          {s.tips.length > 3 && <p className="text-xs text-muted">ほかに{s.tips.length - 3}つあります（下の一覧の「！」）。</p>}
+        </div>
+      )}
+      <p className="text-xs text-muted">点数が低くても、ブログには載せられます。</p>
+    </div>
+  );
+}
+
+function CheckResult({ check, applied, delta }: { check: AioCheck; applied: boolean; delta: number | null }) {
   // 答えを書き足した項目は、書き足したことが分かるようにする
-  const answered = new Set(applied ? check.questions.filter((q) => check.answers.some((a) => a.questionId === q.id && !a.unknown && a.text.trim())).map((q) => q.key) : []);
-  const items = check.items.map((i) => (answered.has(i.key) ? { ...i, ok: true, note: "答えてもらった内容を書き足しました" } : i));
-  const good = items.filter((i) => i.ok).length;
+  const items = effectiveItems(check, applied);
+  const s = articleScore(check, applied);
   return (
     <div className="space-y-3">
-      <div>
-        <p className="flex items-baseline justify-between gap-2">
-          <b>チェックの結果</b>
-          <span className="text-sm text-muted">
-            {good} / {items.length} 項目OK
-          </span>
-        </p>
-        <div className="mt-1 h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>
-          <div className="h-full rounded-full bg-gradient-to-r from-sun to-ok-bright transition-[width] duration-700" style={{ width: `${items.length ? (good / items.length) * 100 : 0}%` }} />
-        </div>
-        {check.summary && !applied && <p className="mt-2 text-sm">{check.summary}</p>}
-        {check.isSample && <p className="mt-1 text-xs text-warn">サンプル（AIは未接続）</p>}
-      </div>
+      <ScoreCard s={s} delta={delta} />
+      {check.summary && !applied && <p className="text-sm">{check.summary}</p>}
+      {check.isSample && <p className="text-xs text-warn">サンプル（AIは未接続）</p>}
+      <p className="text-sm font-bold">
+        チェックの結果（{s.ok} / {s.total} 項目OK）
+      </p>
       {AIO_CHECK_GROUPS.map((g) => (
         <div key={g.key} className="space-y-1.5">
           <StageTag stage={g} />
@@ -255,7 +320,7 @@ export function useAioCheck(article: Article, version: ArticleVersion, onError: 
     setBusy("check");
     try {
       const c = await api.runAioCheck(article.id);
-      if (c.status === "done") setCelebrate("チェック完了！AIにもお客様にも選ばれやすい記事です");
+      if (c.status === "done") setCelebrate(`チェック完了！いまの点数は${articleScore(c, false).score}点です`);
       // 足りない所があれば、すぐに質問のウィンドウを開く
       else setAskOpen(true);
     } catch (e) {
@@ -291,10 +356,25 @@ export function AioCheckBanner({ ctl, dirty }: { ctl: AioCheckControl; dirty: bo
       <Shiori mood={asking ? "ask" : "point"} className="h-24 w-auto shrink-0" />
       <div className="mb-3 min-w-0 flex-1 basis-56">
         <p className="text-lg font-black">{asking ? `AIから質問が${forCurrent.questions.length}つ届いています` : "ブログに載せる前に、AIOのチェックをしましょう"}</p>
+        {asking && (() => {
+          const sc = articleScore(forCurrent, false);
+          return (
+            <p className="my-1 flex flex-wrap items-baseline gap-x-2 font-bold">
+              <span>
+                いまの点数 <span className="text-2xl font-black tabular-nums">{sc.score}</span>点
+              </span>
+              {sc.potential > sc.score && (
+                <span className="text-brand-dark">
+                  → 答えると <span className="text-2xl font-black tabular-nums">{sc.potential}</span>点
+                </span>
+              )}
+            </p>
+          );
+        })()}
         <p className="text-sm">
           {asking
-            ? `答えると、AIにも読んだ人にも選ばれやすい記事になります。${open < forCurrent.questions.length ? `（あと${open}問）` : ""}`
-            : `AIに選ばれて、読んだ人の心が動く記事か、${AIO_CHECK_LIST.length}の項目をAIがチェックします。足りない所は、AIが質問します。`}
+            ? `答えると、AIにも読んだ人にも選ばれやすい記事になります。いまの点数でも、ブログには載せられます。${open < forCurrent.questions.length ? `（あと${open}問）` : ""}`
+            : `AIに選ばれて、読んだ人の心が動く記事か、${AIO_CHECK_LIST.length}の項目をAIがチェックして、記事の点数（100点満点）を出します。足りない所は、AIが質問します。`}
         </p>
       </div>
       <button
@@ -315,7 +395,7 @@ export function AioCheckBanner({ ctl, dirty }: { ctl: AioCheckControl; dirty: bo
 /** チェック後にポコッと出る、質問に答えるウィンドウ */
 function AskDialog({ ctl, check }: { ctl: AioCheckControl; check: AioCheck }) {
   const ng = check.items.filter((i) => !i.ok);
-  const good = check.items.length - ng.length;
+  const sc = articleScore(check, false);
   return (
     <div
       className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-ink/50 p-3 sm:items-center sm:p-6"
@@ -333,7 +413,7 @@ function AskDialog({ ctl, check }: { ctl: AioCheckControl; check: AioCheck }) {
                 チェックが終わりました！
               </h2>
               <p className="text-sm text-muted">
-                {check.items.length}項目のうち <b className="text-ink">{good}項目OK</b>。あと少しで、もっとAIに紹介されやすくなります。
+                いまの点数は <b className="text-2xl font-black text-ink">{sc.score}点</b>。質問に答えると <b className="text-brand-dark">{sc.potential}点</b>まで上がります。
               </p>
             </div>
           </div>
@@ -341,8 +421,9 @@ function AskDialog({ ctl, check }: { ctl: AioCheckControl; check: AioCheck }) {
             あとで答える
           </button>
         </div>
-        <div className="h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>
-          <div className="h-full rounded-full bg-gradient-to-r from-sun to-ok-bright" style={{ width: `${check.items.length ? (good / check.items.length) * 100 : 0}%` }} />
+        <div className="relative h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>
+          <div className="absolute inset-y-0 left-0 rounded-full bg-sun-soft" style={{ width: `${sc.potential}%` }} />
+          <div className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-sun to-ok-bright" style={{ width: `${sc.score}%` }} />
         </div>
         {check.summary && <p>{check.summary}</p>}
         {ng.length > 0 && (
@@ -395,7 +476,7 @@ export function AioCheckPanel({ ctl, isCoach, dirty }: { ctl: AioCheckControl; i
         <>
           <ShioriTalk
             mood="point"
-            lines={isCoach ? "この内容は、まだAIOのチェックをしていません。" : ["ブログに載せる前に、AIが記事をチェックします。", "AIの検索に紹介されやすいか、足りない所はないかを見て、必要なら質問しますね。"]}
+            lines={isCoach ? "この内容は、まだAIOのチェックをしていません。" : ["ブログに載せる前に、AIが記事をチェックします。", "AIの検索に紹介されやすいか、足りない所はないかを見て、記事の点数（100点満点）を出します。足りない所は質問しますね。"]}
           />
           <AioCheckList />
           {latest && <p className="text-xs text-muted">前回のチェック：{formatDate(latest.createdAt)}（そのあと記事が直されています）</p>}
@@ -420,10 +501,14 @@ export function AioCheckPanel({ ctl, isCoach, dirty }: { ctl: AioCheckControl; i
               <Shiori mood={applied ? "welldone" : "right"} className="h-24 w-auto shrink-0" />
               <p className="mb-3 text-sm font-bold">
                 {applied ? "答えを記事に書き込みました。読んで、自分の言葉になっているか確かめてください。" : "チェック完了！このままブログに載せられます。"}
+                {!isCoach && articleScore(forCurrent, applied).score < 100 && " もう一度チェックすると、残りの項目もAIが質問して、さらに点数を上げられます。"}
               </p>
             </div>
           )}
-          <CheckResult check={forCurrent} applied={applied} />
+          <CheckResult check={forCurrent} applied={applied} delta={applied ? scoreOf(effectiveItems(forCurrent, true)) - scoreOf(forCurrent.items) : (() => {
+            const prev = previousScore(checks, forCurrent.articleId, forCurrent.id);
+            return prev == null ? null : articleScore(forCurrent, false).score - prev;
+          })()} />
           {forCurrent.status === "asking" && !isCoach && (
             <button type="button" className="btn-primary w-full" onClick={() => ctl.setAskOpen(true)}>
               AIからの質問に答える（{forCurrent.questions.length}問）
@@ -432,7 +517,7 @@ export function AioCheckPanel({ ctl, isCoach, dirty }: { ctl: AioCheckControl; i
           {(isCoach || forCurrent.status === "done") && <QaLog check={forCurrent} />}
           {!isCoach && forCurrent.status === "done" && (
             <button type="button" className="btn-secondary w-full" disabled={busy !== null || dirty} onClick={run}>
-              もう一度チェックする
+              {articleScore(forCurrent, applied).score < 100 ? "もう一度チェックして、点数を上げる" : "もう一度チェックする"}
             </button>
           )}
           <AioCheckList compact />
@@ -446,7 +531,7 @@ export function AioCheckPanel({ ctl, isCoach, dirty }: { ctl: AioCheckControl; i
             {checks.map((c) => (
               <li key={c.id} className="space-y-1">
                 <p className="text-xs text-muted">
-                  {formatDate(c.createdAt)}・{c.items.filter((i) => i.ok).length} / {c.items.length} 項目OK・{c.status === "done" ? "終わり" : "答え待ち"}
+                  {formatDate(c.createdAt)}・{scoreOf(c.items)}点・{c.status === "done" ? "終わり" : "答え待ち"}
                 </p>
                 <QaLog check={c} />
               </li>

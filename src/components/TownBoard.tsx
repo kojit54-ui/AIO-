@@ -31,7 +31,19 @@ function write(key: string, value: string | null) {
   }
 }
 
+const NEXT_LABEL: Record<string, string> = {
+  hello: "質問に答える",
+  first: "記事を書く",
+  check: "記事のチェックへ進む",
+  publish: "記事を開く",
+  five: "次の記事を書く",
+};
+
 export function TownBoard({ db, orgId, orgName }: { db: MockDb; orgId: string; orgName: string }) {
+  // マスごとの行き先。チェック・載せるは、いちばん新しい記事へ
+  const latest = db.articles.filter((a) => a.organizationId === orgId).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0];
+  const nextHref = (id: string): string | null =>
+    id === "hello" ? "/profile" : id === "first" || id === "five" ? "/articles/new" : id === "check" || id === "publish" ? (latest ? `/articles/${latest.id}` : "/articles/new") : null;
   const [inquiry, setInquiry] = useState(false);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
@@ -45,7 +57,7 @@ export function TownBoard({ db, orgId, orgName }: { db: MockDb; orgId: string; o
   const steps = townSteps(db, orgId, inquiry);
   const published = publishedCount(db, orgId);
   const side = badges(db, orgId).filter((b) => SIDE_STAMP_IDS.includes(b.id));
-  return <TownView steps={steps} published={published} orgId={orgId} orgName={orgName} loaded={loaded} side={side} onInquiry={(v) => {
+  return <TownView steps={steps} published={published} orgId={orgId} orgName={orgName} loaded={loaded} side={side} nextHref={nextHref} onInquiry={(v) => {
     write(INQUIRY_KEY(orgId), v ? "1" : null);
     setInquiry(v);
   }} />;
@@ -61,7 +73,10 @@ export function TownView({
   onInquiry,
   preview = false,
   side = [],
+  nextHref = () => null,
 }: {
+  /** 次のマスへ進む行き先（無ければボタンを出さない） */
+  nextHref?: (id: string) => string | null;
   steps: TownStep[];
   /** 寄り道のスタンプ（すごろくのマスに無いもの） */
   side?: Badge[];
@@ -135,6 +150,12 @@ export function TownView({
               とばしたマス：{skipped.map((x) => x.label).join("・")}（いつでも進められます）
             </span>
           )}
+          {/* 次のマスへ進む場所をはっきり見せる（2026-11-08 お客様役「押す場所が分からない」） */}
+          {!preview && nextHref(current.id) && (
+            <a href={nextHref(current.id)!} className="btn-primary min-h-11 w-full px-4 text-sm sm:w-auto">
+              {NEXT_LABEL[current.id] ?? "進む"} →
+            </a>
+          )}
           {!preview && current.id === "inquiry" && onInquiry && (
             <button type="button" className="btn-primary min-h-11 px-4 text-sm" onClick={() => onInquiry(true)}>
               🎉 お問い合わせが来た！
@@ -168,7 +189,7 @@ export function TownView({
         </div>
       )}
       <p className="text-xs text-muted">
-        マスは、書いた・載せた・チェックした記録で進みます。建物は、ブログに載せた本数で{TOWN_LEVELS.length}段階に育ちます。お問い合わせはこのサービスでは分からないので、来たらご自分で押してください（このブラウザに覚えます）。
+        マスは、書いた・載せた・チェックした記録で進みます。建物は、ブログに載せた本数で{TOWN_LEVELS.length}段階に育ちます。お問い合わせはこのサービスでは分からないので、来たらご自分で押してください（いま使っているスマホ・パソコンに記録されます）。
       </p>
     </section>
   );

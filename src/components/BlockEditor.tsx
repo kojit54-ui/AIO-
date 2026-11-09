@@ -63,10 +63,10 @@ export function BlockEditor({ blocks, onChange, readOnly }: { blocks: Block[]; o
 
   const modeSwitch = (
     <div className="grid grid-cols-2 gap-2" role="tablist" aria-label="本文の直し方">
-      <button type="button" role="tab" aria-selected={mode === "read"} className={mode === "read" ? "btn-primary min-h-11 text-sm" : "btn-secondary min-h-11 text-sm"} onClick={() => { setMode("read"); setSuggestion(null); }}>
+      <button type="button" role="tab" aria-selected={mode === "read"} className={mode === "read" ? "btn-primary min-h-11 whitespace-nowrap px-2 text-sm" : "btn-secondary min-h-11 whitespace-nowrap px-2 text-sm"} onClick={() => { setMode("read"); setSuggestion(null); }}>
         📖 読みながら直す
       </button>
-      <button type="button" role="tab" aria-selected={mode === "all"} className={mode === "all" ? "btn-primary min-h-11 text-sm" : "btn-secondary min-h-11 text-sm"} onClick={() => { setMode("all"); setSuggestion(null); }}>
+      <button type="button" role="tab" aria-selected={mode === "all"} className={mode === "all" ? "btn-primary min-h-11 whitespace-nowrap px-2 text-sm" : "btn-secondary min-h-11 whitespace-nowrap px-2 text-sm"} onClick={() => { setMode("all"); setSuggestion(null); }}>
         ✏️ まとめて直す
       </button>
     </div>

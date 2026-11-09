@@ -27,7 +27,29 @@ export async function GET(request: Request) {
   if (error) return NextResponse.json({ error: "unavailable" }, { status: 503 });
   const contacts: Record<string, { at: string; note: string; nextOn: string | null }> = {};
   for (const c of data ?? []) if (!contacts[c.organization_id]) contacts[c.organization_id] = { at: c.created_at, note: c.note, nextOn: c.next_contact_on ?? null };
-  return NextResponse.json({ contacts }, { headers: { "cache-control": "no-store" } });
+  // 会社ごとの連絡先（担当者名・電話・お客様のメール）。利用金額と利用頻度の会社カードに出す
+  const admin = createAdminSupabase();
+  const people: Record<string, { name: string; phone: string; emails: string[] }> = {};
+  const [{ data: infos }, { data: ms }] = await Promise.all([
+    admin.from("org_contact_info").select("organization_id, contact_name, phone"),
+    admin.from("memberships").select("user_id, organization_id").eq("role", "client_member").is("revoked_at", null).limit(300),
+  ]);
+  for (const i of infos ?? []) people[i.organization_id] = { name: i.contact_name, phone: i.phone, emails: [] };
+  const ids = [...new Set((ms ?? []).map((m) => m.user_id))].slice(0, 100);
+  const emailOf = new Map<string, string>();
+  await Promise.all(
+    ids.map(async (id) => {
+      const { data: u } = await admin.auth.admin.getUserById(id);
+      if (u?.user?.email) emailOf.set(id, u.user.email);
+    }),
+  );
+  for (const m of ms ?? []) {
+    const e = emailOf.get(m.user_id);
+    if (!e) continue;
+    people[m.organization_id] ??= { name: "", phone: "", emails: [] };
+    if (people[m.organization_id].emails.length < 3) people[m.organization_id].emails.push(e);
+  }
+  return NextResponse.json({ contacts, people }, { headers: { "cache-control": "no-store" } });
 }
 
 export async function POST(request: Request) {

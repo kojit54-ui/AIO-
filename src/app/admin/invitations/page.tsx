@@ -49,6 +49,12 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
           .order("created_at", { ascending: false }),
       ])
     : [{ data: [] }, { data: [] }];
+  // 所属している人の宛名（招待のときに入れた名前。2026-11-08 管理者役「メールだけでは誰か分からない」）
+  const { data: invitedNames } = current
+    ? await supabase.from("invitations").select("email, recipient_name").eq("organization_id", current.id).not("recipient_name", "is", null)
+    : { data: [] };
+  const nameOf = new Map<string, string>();
+  for (const n of invitedNames ?? []) if (n.recipient_name) nameOf.set(String(n.email).toLowerCase(), n.recipient_name);
 
   return (
     <main className="page max-w-3xl space-y-6">
@@ -135,6 +141,7 @@ export default async function AdminInvitationsPage({ searchParams }: { searchPar
               {members?.map((m: { membership_id: string; email: string; role: string; revoked_at: string | null }) => (
                 <li key={m.membership_id} className="flex flex-wrap items-center justify-between gap-2 py-2">
                   <span>
+                    {nameOf.get(m.email.toLowerCase()) ? <b className="mr-1">{nameOf.get(m.email.toLowerCase())}</b> : <span className="mr-1 text-xs text-muted">（名前は未登録）</span>}
                     {m.email}（{ROLE_LABEL[m.role]}）{m.revoked_at && <span className="text-muted"> ・{date(m.revoked_at)}に外しました</span>}
                   </span>
                   {!m.revoked_at && (

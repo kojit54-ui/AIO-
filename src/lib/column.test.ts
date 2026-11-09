@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import sitemap from "@/app/sitemap";
 import { COLUMNS, findColumn, jpDate } from "./column";
@@ -61,20 +63,52 @@ describe("読みものの写真", () => {
     }
   });
 
-  it("しおりのイラストは、何を表すかと、しおりが何をしているかまで alt に書く（2026-11-08 田村さん「altにもしっかり情報を」）", () => {
-    const illustrations = COLUMNS.flatMap((c) => [c.hero, ...c.sections.map((s) => s.photo)]).filter((p) => !!p?.illustration);
-    expect(illustrations.length).toBeGreaterThan(0);
-    for (const p of illustrations) {
-      expect(p!.alt.length).toBeGreaterThanOrEqual(60);
-      expect(p!.alt).toContain("しおり");
-      expect(p!.alt).toContain("イメージ");
+  it("見出しごとに、写真か図が1つある（2026-11-08 田村さん「1見出し1画像を目標」。しおりの絵は写真と混ぜるとAIっぽいので図に置き換え）", () => {
+    for (const c of COLUMNS) for (const s of c.sections) expect(s.photo || s.figure, `${c.slug}「${s.h}」に写真も図もない`).toBeTruthy();
+  });
+
+  it("しおりのイラストは使わず、しおりの一問一答は見出し4つなら2か所、5つ以上なら3か所、隣り合わせない（2026-11-08 田村さん「写実的なものとしおりがあると違和感」→ 11-09「読むのは製造業の社長。対話は一度だけじゃない方が見やすい」）", () => {
+    for (const c of COLUMNS) {
+      const photos = [c.hero, ...c.sections.map((s) => s.photo)];
+      expect(photos.some((p) => p?.illustration), `${c.slug} にしおりのイラストがある`).toBe(false);
+      const at = c.sections.flatMap((s, i) => (s.chat?.length ? [i] : []));
+      for (const s of c.sections) expect(s.chat?.length ?? 0, `${c.slug} の1つの見出しに一問一答が2つ以上`).toBeLessThanOrEqual(1);
+      expect(at.length, `${c.slug} の一問一答の数`).toBe(c.sections.length >= 5 ? 3 : 2);
+      for (let k = 1; k < at.length; k++) expect(at[k] - at[k - 1], `${c.slug} の一問一答が隣り合う見出しにある`).toBeGreaterThan(1);
+      expect(c.opening, `${c.slug} に opening（しおりの問いかけ）がある`).toBeUndefined();
+      expect(c.shiori, `${c.slug} に shiori（しおりのひとこと）がある`).toBeUndefined();
     }
+  });
+
+  it("関連する読みものへの案内は、ある記事を指す", () => {
+    const slugs = new Set(COLUMNS.map((c) => c.slug));
+    for (const c of COLUMNS) for (const s of c.sections) if (s.see) expect(slugs.has(s.see.slug), `${c.slug} → ${s.see.slug}`).toBe(true);
   });
 
   it("しおりに聞いてみた は、質問と答えがある", () => {
     for (const c of COLUMNS) for (const s of c.sections) for (const t of s.chat ?? []) {
       expect(t.q.length).toBeGreaterThan(0);
       expect(t.a.length).toBeGreaterThan(0);
+    }
+  });
+  it("出だしはしおりが話す。表情の絵があり、続く記事で同じ顔が並ばない（2026-11-09 田村さん「出だしをしおりにしゃべらせて。いろんな表情を」）", () => {
+    for (const c of COLUMNS) {
+      expect(c.intro, `${c.slug} に出だし（intro）がない`).toBeTruthy();
+      expect(c.introMood, `${c.slug} にしおりの表情（introMood）がない`).toBeTruthy();
+      expect(existsSync(join(process.cwd(), "public/guide", `shiori-${c.introMood}.webp`)), `${c.slug} の表情の絵がない`).toBe(true);
+    }
+    for (let i = 1; i < COLUMNS.length; i++) expect(COLUMNS[i].introMood, `${COLUMNS[i - 1].slug} と ${COLUMNS[i].slug} が同じ顔`).not.toBe(COLUMNS[i - 1].introMood);
+  });
+  it("途中で1回と結びでも、しおりが話す。chat のない見出しに置き、出だし・途中・結びは違う顔（2026-11-09 田村さん「途中でもういっかい出てくるくらい。最後の結びもしゃべらせて」）", () => {
+    for (const c of COLUMNS) {
+      const talks = c.sections.filter((s) => s.talk);
+      expect(talks.length, `${c.slug} の途中のひとことの数`).toBe(1);
+      expect(talks[0].chat, `${c.slug} の途中のひとことが「しおりに聞いてみた」と同じ見出しにある`).toBeUndefined();
+      expect(c.sections[0].talk ?? c.sections.at(-1)?.talk, `${c.slug} の途中のひとことが最初か最後の見出しにある`).toBeUndefined();
+      expect(c.closing && c.closingMood, `${c.slug} に結びか結びの表情がない`).toBeTruthy();
+      const moods = [c.introMood, talks[0].talk?.mood, c.closingMood];
+      expect(new Set(moods).size, `${c.slug} で同じ顔が続く`).toBe(3);
+      for (const m of moods) expect(existsSync(join(process.cwd(), "public/guide", `shiori-${m}.webp`)), `${c.slug} の ${m} の絵がない`).toBe(true);
     }
   });
 });

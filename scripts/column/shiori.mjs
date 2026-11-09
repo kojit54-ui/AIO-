@@ -1,4 +1,5 @@
 // 読みもの（/column）に入れる、しおりのイラストを Gemini で作り、public/column/<名前>.webp に保存する。
+// 2026-11-08 田村さん「写実的な写真としおりが混ざるとAIっぽい」で、読みものにはしおりのイラストを使わなくなった（docs/COLUMN_BACKLOG.md）。ほかの用途のために残す。
 // 使い方：GEMINI_API_KEY=... node scripts/column/shiori.mjs <名前> "<しおりがしている場面（英語）>"
 // 手本として public/guide のしおりの絵（スーツ）を渡し、同じ顔・同じ絵柄にする。色は入口ページと同じ生成りと藍。
 // 2026-11-08 田村さん「この方向でOK」「Geminiに渡すときにウォーターマークなしで、とお願いして」。
@@ -27,7 +28,8 @@ export const SHIORI_PROMPT = (s) => `Use the woman in the reference images as th
 Wide 16:9 illustration for a Japanese business blog article for small manufacturing companies.
 Scene: ${s}
 Color palette: warm off-white paper background (#F6F3EC), deep indigo (#1F3A5F) accents, a little brass/gold. Calm, friendly, not flashy. Plenty of empty space, but keep the main subject near the center so it is not cut off on phones.
-Strict rules: no watermark, no signature, no artist mark, no AI logo or sparkle mark in any corner. No text, no letters, no numbers, no logos, no brand marks anywhere in the image. Do not draw the Google logo or any real product screen; use simple flat icons and blank lines instead.`;
+Strict rules: no watermark, no signature, no artist mark, no AI logo or sparkle mark in any corner. No text, no letters, no numbers, no logos, no brand marks anywhere in the image. Do not draw the Google logo or any real product screen; use simple flat icons and blank lines instead.
+Full-bleed scene that fills the whole frame edge to edge: no borders, no frames, no white margins, no inset panels. Papers, signs, clipboards and screens show only blank lines, never writing. Shiori has exactly two hands.`;
 
 const ai = new GoogleGenAI({ apiKey: key });
 const res = await ai.models.generateContent({
