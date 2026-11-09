@@ -45,6 +45,13 @@ describe("記事の点数", () => {
     expect(s.tips[0].ask).toBe("?");
   });
 
+  it("足すと上がる点数の合計が、満点までの差と合う（四捨五入でずれない）", () => {
+    for (let n = 0; n < all.length; n++) {
+      const s = articleScore(check(all.slice(n)), false);
+      expect(s.tips.reduce((a, t) => a + t.gain, 0)).toBe(100 - s.score);
+    }
+  });
+
   it("答えを書き込んだ項目はOKとして数える。「まだ分からない」は数えない", () => {
     const base = { status: "done" as const, resultVersionId: "v2", questions: [{ id: "q1", key: all[0], text: "?", example: "" }, { id: "q2", key: all[1], text: "?", example: "" }] };
     const c = check(all.slice(2), { ...base, answers: [{ questionId: "q1", text: "答え", unknown: false }, { questionId: "q2", text: "", unknown: true }] });

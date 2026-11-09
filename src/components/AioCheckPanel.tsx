@@ -133,7 +133,10 @@ export function ScoreCard({ s, delta, compact = false }: { s: ArticleScore; delt
               <li key={t.key} className="flex items-start gap-2 rounded-xl bg-surface px-2.5 py-2 ring-1 ring-line">
                 <span className="mt-0.5 shrink-0 rounded-full bg-sun px-2 text-xs font-black text-ink">+{t.gain}点</span>
                 <span className="min-w-0">
-                  <b className="block">{t.label}</b>
+                  <b className="block">
+                    {t.label}
+                    {t.askedCount > 0 && <span className="ml-1 text-xs font-bold text-brand-dark">（AIの質問 {t.askedCount}問）</span>}
+                  </b>
                   <span className="block text-muted">{t.ask}</span>
                   {t.example && <span className="block text-xs text-muted">{t.example}</span>}
                 </span>
@@ -370,7 +373,7 @@ export function AioCheckBanner({ ctl, dirty }: { ctl: AioCheckControl; dirty: bo
         })()}
         <p className="text-sm">
           {asking
-            ? `答えると、AIにも読んだ人にも選ばれやすい記事になります。${open < forCurrent.questions.length ? `（あと${open}問）` : ""}`
+            ? `答えると、AIにも読んだ人にも選ばれやすい記事になります。いまの点数でも、ブログには載せられます。${open < forCurrent.questions.length ? `（あと${open}問）` : ""}`
             : `AIに選ばれて、読んだ人の心が動く記事か、${AIO_CHECK_LIST.length}の項目をAIがチェックして、記事の点数（100点満点）を出します。足りない所は、AIが質問します。`}
         </p>
       </div>
