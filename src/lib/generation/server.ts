@@ -40,6 +40,8 @@ const START_ERRORS: Record<string, [number, string]> = {
   busy: [409, "同じ会社で文章を作っている途中です。終わってからもう一度お試しください"],
   limit_reached: [429, "今月の生成回数の上限に達しました。コタムにご相談ください"],
   budget_exceeded: [429, "今月は新しい文章を作れなくなっています。コタムにご連絡ください"],
+  // お試しもご契約も切れた会社（DBの guard_billing）
+  billing_inactive: [402, "ご契約が終わっているため、AIを使えません。マイページの「お支払い」をご確認ください"],
   invalid_input: [400, "入力の内容を確認してください"],
   forbidden: [403, "この記事で文章を作る権限がありません"],
 };

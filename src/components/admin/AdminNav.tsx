@@ -13,6 +13,7 @@ export const ADMIN_LINKS = [
   { href: "/admin/trial", label: "30秒でためす" },
   { href: "/admin/knowledge", label: "製造業の知識表" },
   { href: "/admin/waitlist", label: "新規受付の案内" },
+  { href: "/admin/billing", label: "お支払い" },
 ] as const;
 
 export function isAdminLinkActive(pathname: string, href: string): boolean {

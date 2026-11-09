@@ -189,7 +189,7 @@ function MailSent({ email, next }: { email?: string; next: string }) {
 }
 
 /** メールの6桁の番号を入れる（src/lib/auth/loginCode.ts） */
-function CodeForm({ email, next }: { email: string; next: string }) {
+export function CodeForm({ email, next }: { email: string; next: string }) {
   const [state, action, pending] = useActionState<CodeState, FormData>(verifyLoginCode, {});
   // ログインできたら、ページごと読み直して行き先へ（画面の中だけで移ると、ログイン前の状態が残る）
   useEffect(() => {

@@ -33,6 +33,8 @@ const START_ERRORS: Record<string, [number, string]> = {
   busy: [409, "同じ会社で生成している途中です。終わってからもう一度お試しください"],
   limit_reached: [429, "この記事で画像を作れる回数の上限に達しました。コタムにご相談ください"],
   budget_exceeded: [429, "今月は新しい画像を作れなくなっています。コタムにご連絡ください"],
+  // お試しもご契約も切れた会社（DBの guard_billing）
+  billing_inactive: [402, "ご契約が終わっているため、AIを使えません。マイページの「お支払い」をご確認ください"],
   forbidden: [403, "この記事で画像を作る権限がありません"],
   invalid_input: [400, "入力の内容を確認してください"],
 };
