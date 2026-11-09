@@ -22,6 +22,7 @@ import { FIX_LINES, homeLines, homeMood, referenceTime } from "@/lib/shioriTone"
 import { EmptyState, Notice, StatusBadge, formatDate, monthLabel } from "@/components/ui";
 import { useStore } from "@/mock/store";
 import { articleHref, articleSummaries } from "@/lib/selectors";
+import { currentScore } from "@/lib/articleScore";
 
 export default function HomePage() {
   const { db, user, month } = useStore();
@@ -105,7 +106,9 @@ export default function HomePage() {
           <EmptyState mood="jersey-cheer" title="まだ記事はありません">「今月の記事を書く」から始めましょう。</EmptyState>
         ) : (
           <ul className="space-y-3">
-            {list.map((a, i) => (
+            {list.map((a, i) => {
+              const score = currentScore(db.aioChecks, a.id, db.articles.find((x) => x.id === a.id)?.currentVersionId);
+              return (
               <li key={a.id} className="animate-rise" style={{ animationDelay: `${0.15 + i * 0.06}s` }}>
                 <Link href={articleHref(db, a.id)} className="card flex flex-col gap-1 px-5 py-4 transition-transform hover:-translate-y-0.5 hover:border-brand sm:flex-row sm:items-center sm:gap-4">
                   <span className="min-w-0 flex-1">
@@ -114,12 +117,14 @@ export default function HomePage() {
                   </span>
                   <span className="flex flex-wrap items-center gap-3 text-sm">
                     <StatusBadge status={a.status} />
+                    {score && <span className={`rounded-full px-2.5 font-black ${score.score >= 85 ? "bg-ok-soft text-ok" : "bg-sun-soft"}`}>{score.score}点</span>}
                     {a.hasCoachComment && <span className="text-brand-dark">コメントあり</span>}
                     <span className="text-muted">更新 {formatDate(a.updatedAt)}</span>
                   </span>
                 </Link>
               </li>
-            ))}
+              );
+            })}
           </ul>
         )}
       </section>
