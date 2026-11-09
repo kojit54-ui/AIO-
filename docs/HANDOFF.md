@@ -16,7 +16,7 @@
 - ブランチ：claude/project-thread-fdzisk
 - 変更点：src/lib/articleScore.ts（+test）。AIOのチェックの結果から100点満点の点数・段・点数を上げるには・質問に答えたときの点数・前回からの伸びを計算。AioCheckPanel に ScoreCard（数え上げの動き）、質問のウィンドウに「いまの点数→答えると何点」、ブログに載せる枠といままでの記事の一覧に点数。関門にはしない。DB変更なし
 - 確認結果：単体テスト・型検査・lint 通過。試作データで 1280px・375px を表示確認（77点→答えて92点、前より+15点）
-- 次の作業：本番でお客様役の採点
+- 採点（お客様役 article、docs/ROLE_TEST.md）：1回目 GPT 9.2・Gemini 9.6（+点の合計が合わない、質問数とヒントの数が合わない、スマホで「載せられる」が見えない）→ 直して 2回目 GPT 9.5・Gemini 9.7 で合格
 
 ### 2026-10-20 CC（Claude、プロジェクトのスレッド）その3
 - ブランチ / コミット：feat/ai-providers（feat/prototype の上）
