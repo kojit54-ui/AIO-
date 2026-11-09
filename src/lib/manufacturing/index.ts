@@ -55,7 +55,7 @@ export function whatWorksFor(business: string | null | undefined, n = 4, seed = 
 
 /** 書く記事の案（業種が合うもの・どの業種にも合うもの） */
 export function articleIdeasFor(business: string | null | undefined, n = 10, seed = ""): { title: string; why: string }[] {
-  return pickFor(business, n, seed, (x) => !!x.articleIdea && x.useFor.includes("article_idea") && x.kind !== "trend").map((x) => ({
+  return pickFor(business, n, seed, (x) => !!x.articleIdea && x.useFor.includes("article_idea") && x.kind !== "trend" && x.kind !== "stat").map((x) => ({
     title: x.articleIdea!,
     why: x.title,
   }));
@@ -87,7 +87,7 @@ export function mfgReviewerRules(business: string | null | undefined): string {
 /** しおりのひとことに使えるもの（その日で変わる） */
 export function mfgTipOfDay(dayKey: string, business?: string | null): MfgItem | null {
   const inds = detectIndustries(business);
-  const all = MFG_DOMESTIC.filter((x) => (x.kind === "buyer" || x.kind === "success" || x.kind === "term") && matches(x, inds) > 0);
+  const all = MFG_DOMESTIC.filter((x) => (x.kind === "buyer" || x.kind === "success" || x.kind === "term" || x.kind === "case" || x.kind === "stat") && matches(x, inds) > 0);
   if (!all.length) return null;
   let h = 0;
   for (const c of dayKey) h = (h * 31 + c.charCodeAt(0)) >>> 0;
@@ -102,8 +102,23 @@ export function readerTermsFor(business: string | null | undefined, n = 6, seed 
   return pickFor(business, n, seed, (x) => x.kind === "term");
 }
 
+/**
+ * その会社の業種の、国の統計の数字（経済構造実態調査など）。業種がぴったり合うものだけ、最大 n 件。
+ * 記事で業界の規模や地域の特徴に触れるときの根拠で、使うときは出典（調査名と年）を本文に書く。
+ */
+export function industryFactsFor(business: string | null | undefined, n = 3, seed = ""): MfgItem[] {
+  const inds = detectIndustries(business);
+  return pickFor(business, n * 3, seed, (x) => x.kind === "stat" && matches(x, inds) === 2).slice(0, n);
+}
+
+/** 同じ業種の会社の取り組み（補助金の採択計画・成果事例の型）。しおりの質問や記事の案の参考 */
+export function peerCasesFor(business: string | null | undefined, n = 6, seed = ""): MfgItem[] {
+  const inds = detectIndustries(business);
+  return pickFor(business, n * 3, seed, (x) => x.kind === "case" && matches(x, inds) === 2).slice(0, n);
+}
+
 export function mfgCounts(items: MfgItem[] = MFG_DOMESTIC): Record<MfgKind, number> {
-  const c = { pain: 0, question: 0, success: 0, buyer: 0, trend: 0, term: 0 } as Record<MfgKind, number>;
+  const c = { pain: 0, question: 0, success: 0, buyer: 0, trend: 0, term: 0, case: 0, stat: 0 } as Record<MfgKind, number>;
   for (const x of items) c[x.kind] += 1;
   return c;
 }

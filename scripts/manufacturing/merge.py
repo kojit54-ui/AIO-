@@ -34,7 +34,7 @@ ALIAS = {"切削": "切削加工", "研磨": "研削", "機械": "機械部品",
          "サプリ": "食品製造", "精密加工": "金属加工", "部品加工": "金属加工", "ダイカスト": "鋳造", "電子機器": "電子部品",
          "装置設計": "装置", "省力化装置": "装置", "化粧品製造": "化粧品OEM", "研削加工": "研削", "製本": "印刷", "製版": "印刷", "特殊印刷": "印刷", "ラベル印刷": "印刷", "印刷関連": "印刷", "印刷関連業": "印刷", "印刷業": "印刷", "印刷機": "印刷機械", "印刷機械業": "印刷機械", "紙器加工": "パッケージ"}
 KNOWN = set("切削加工 研削 放電加工 板金 プレス 溶接 製缶 樹脂成形 ゴム 金型 鋳造 鍛造 熱処理 表面処理 塗装 食品製造 化粧品OEM 印刷 パッケージ 木工 繊維 電子部品 基板実装 組立 装置 治具 3Dプリンタ 金属加工 機械部品 印刷機械".split()) | {"ばね・線材","ねじ・締結部品","歯車","パイプ加工","医療機器","半導体","自動車部品","航空宇宙","看板・サイン","ガラス・セラミック","化学・塗料・接着剤","建材・金物","刃物・工具","食品機械","産業機械","精密機器","紙加工","プラスチック加工品","酒・醸造"}
-KINDS = {"pain", "question", "success", "buyer", "trend", "term"}
+KINDS = {"pain", "question", "success", "buyer", "trend", "term", "case", "stat"}
 USES = {"question_example", "article_idea", "writer_hint", "shiori_tip"}
 
 def norm_inds(l):
@@ -69,7 +69,8 @@ for f in sorted(glob.glob(os.path.join(R, "*.json"))):
         kk = key(t)
         if kk in seen: drop["dup_title"] += 1; continue
         close = difflib.get_close_matches(kk, keys_by_kind.get(k, []), n=1, cutoff=0.86)
-        if close: drop["near_dup"] += 1; continue
+        # 数字だけが違う見出し（統計の「全国719か所」と「全国1,856か所」など）は別のものとして残す
+        if close and re.findall(r"\d+", close[0]) == re.findall(r"\d+", kk): drop["near_dup"] += 1; continue
         d = srcd.get("date"); d = str(d).strip() if d not in (None, "") else None
         if d and not re.match(r"^\d{4}(-\d{2})?$", str(d)):
             m = re.match(r"^(\d{4})(?:[-/.](\d{1,2}))?", str(d))
