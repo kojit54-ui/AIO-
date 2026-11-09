@@ -45,6 +45,8 @@ export interface ScoreTip {
   gain: number;
   /** AIが今回の質問で聞いている項目か */
   asked: boolean;
+  /** この項目についてのAIの質問の数 */
+  askedCount: number;
 }
 
 export interface ArticleScore {
@@ -63,14 +65,20 @@ export function articleScore(check: AioCheck, applied: boolean): ArticleScore {
   const score = scoreOf(items);
   const askedKeys = new Set(check.status === "asking" ? check.questions.map((q) => q.key) : []);
   const order = (k: AioCheckKey) => AIO_CHECK_LIST.findIndex((c) => c.key === k);
-  const tips = items
+  const sorted = items
     .filter((i) => !i.ok)
-    .map((i): ScoreTip => {
-      const c = AIO_CHECK_LIST.find((x) => x.key === i.key);
-      const flipped = items.map((x) => (x.key === i.key ? { ...x, ok: true } : x));
-      return { key: i.key, label: c?.label.split("（")[0] ?? i.key, note: i.note, ask: c?.ask ?? "", example: c?.example ?? "", gain: scoreOf(flipped) - score, asked: askedKeys.has(i.key) };
-    })
-    .sort((a, b) => Number(b.asked) - Number(a.asked) || order(a.key) - order(b.key));
+    .sort((a, b) => Number(askedKeys.has(b.key)) - Number(askedKeys.has(a.key)) || order(a.key) - order(b.key));
+  // 上から順に足したときの増え方で点数を出す（四捨五入のずれで、足し算が合わなくならないように）
+  let work = items;
+  const tips = sorted.map((i): ScoreTip => {
+    const c = AIO_CHECK_LIST.find((x) => x.key === i.key);
+    const before = scoreOf(work);
+    work = work.map((x) => (x.key === i.key ? { ...x, ok: true } : x));
+    // AIが聞いている項目は、その記事に合わせたAIの質問の言葉を使う（決まった例は別の業種の話のことがある）
+    const qs = askedKeys.has(i.key) ? check.questions.filter((x) => x.key === i.key) : [];
+    const q = qs[0];
+    return { key: i.key, label: c?.label.split("（")[0] ?? i.key, note: i.note, ask: q?.text || c?.ask || "", example: q ? q.example : (c?.example ?? ""), gain: scoreOf(work) - before, asked: !!q, askedCount: qs.length };
+  });
   const potential = scoreOf(items.map((x) => (askedKeys.has(x.key) ? { ...x, ok: true } : x)));
   return { score, ok: items.filter((i) => i.ok).length, total: items.length, level: scoreLevel(score), tips, potential };
 }
