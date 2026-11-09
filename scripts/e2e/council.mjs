@@ -14,10 +14,19 @@ export const ROLES = {
 
 const materials = { ...persona.hearing, 深掘りの答え: persona.followUp, ...persona.article };
 
+// 前回の指摘（PREV=前回の council.json と claude.json をまとめたファイル）。直ったかを先に確かめてもらう
+const prev = process.env.PREV ? JSON.parse(readFileSync(process.env.PREV, "utf8")) : [];
+
 export function brief(role, article) {
+  const prevFixes = prev.filter((r) => r.role === role).flatMap((r) => (r.fixes ?? []).map((f) => f.problem));
   return `${ROLES[role]}
 
 次の記事を、10点満点（小数1桁）で厳しく採点してください。9.5点は「プロが手を入れずにそのまま公開できる」水準です。
+
+採点のきまり：
+- 点数は「この材料から、どれだけ良い記事にできたか」で付ける。材料に無いこと（数字・日数・費用・写真・ほかの事例など）が足りない点は減点しない。fixes に入れず、ask（社長に聞けば記事が良くなること）に書く。
+- 人によって好みが分かれること（見出しを全部問いの形にするか、専門用語をどこまで入れるか等）は減点しない。読み違い・作り話・言い切りすぎ・同じ話の繰り返し・答えになっていない見出しなど、誰が読んでも直したほうがよい点だけを fixes に書く。
+${prevFixes.length ? `- 前回、次の指摘がありました。まず直ったかを確かめ、直っていれば減点しないでください：\n${prevFixes.map((x) => `  ・${x}`).join("\n")}\n` : ""}
 記事は、町工場の社長がスマホで質問に答え、AIが下書きを書いたものです（架空の会社）。社長は文章を書くのが苦手なので、直す点は「この記事の文」だけでなく「AIへの指示や、社長への質問の仕方をどう変えればよいか」まで書いてください。
 
 <materials>
@@ -33,7 +42,7 @@ ${persona._reviewNote ?? "会社名「テスト製作所（自動テスト用）
 記事の「## 」は見出し、「1. 」は番号つきの箇条書き、「・」は箇条書きとして画面に表示されています。
 
 次のJSONだけで返してください：
-{"score": number, "good": [string, string], "fixes": [{"problem": string, "how": string}]}
+{"score": number, "good": [string, string], "fixes": [{"problem": string, "how": string}], "ask": [string]}
 fixes は大事な順に最大5つ。how は具体的に（どの見出し・どの文をどう変えるか、AIへの指示に何を足すか）。`;
 }
 
