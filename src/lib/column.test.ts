@@ -99,4 +99,16 @@ describe("読みものの写真", () => {
     }
     for (let i = 1; i < COLUMNS.length; i++) expect(COLUMNS[i].introMood, `${COLUMNS[i - 1].slug} と ${COLUMNS[i].slug} が同じ顔`).not.toBe(COLUMNS[i - 1].introMood);
   });
+  it("途中で1回と結びでも、しおりが話す。chat のない見出しに置き、出だし・途中・結びは違う顔（2026-11-09 田村さん「途中でもういっかい出てくるくらい。最後の結びもしゃべらせて」）", () => {
+    for (const c of COLUMNS) {
+      const talks = c.sections.filter((s) => s.talk);
+      expect(talks.length, `${c.slug} の途中のひとことの数`).toBe(1);
+      expect(talks[0].chat, `${c.slug} の途中のひとことが「しおりに聞いてみた」と同じ見出しにある`).toBeUndefined();
+      expect(c.sections[0].talk ?? c.sections.at(-1)?.talk, `${c.slug} の途中のひとことが最初か最後の見出しにある`).toBeUndefined();
+      expect(c.closing && c.closingMood, `${c.slug} に結びか結びの表情がない`).toBeTruthy();
+      const moods = [c.introMood, talks[0].talk?.mood, c.closingMood];
+      expect(new Set(moods).size, `${c.slug} で同じ顔が続く`).toBe(3);
+      for (const m of moods) expect(existsSync(join(process.cwd(), "public/guide", `shiori-${m}.webp`)), `${c.slug} の ${m} の絵がない`).toBe(true);
+    }
+  });
 });

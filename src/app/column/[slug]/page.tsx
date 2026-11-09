@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { SERVICE_NAME, SERVICE_OPERATOR } from "@/lib/brand";
 import Image from "next/image";
 import { ColumnChat } from "@/components/ColumnChat";
-import { ColumnIntro } from "@/components/ColumnIntro";
+import { ColumnIntro, ShioriBubble } from "@/components/ColumnIntro";
 import { COLUMNS, isNewColumn, jpDate, newestColumns, publishedColumns, type Column, type ColumnFigure, type ColumnPhoto, type Interview } from "@/lib/column";
 import { INDEX_ROBOTS, SITE_URL } from "@/lib/publicPages";
 import { TRY_HREF } from "@/lib/signup";
@@ -282,11 +282,22 @@ export default async function ColumnPage({ params }: Props) {
               )}
               {s.interview && <InterviewBox iv={s.interview} />}
               {s.chat && <ColumnChat turns={s.chat} />}
+              {s.talk && (
+                <ShioriBubble mood={s.talk.mood} label="しおり" size="md" className="mt-8">
+                  {s.talk.text}
+                </ShioriBubble>
+              )}
             </section>
           ))}
         </div>
 
-        {c.closing && <p className="mt-12 border-t border-sumi/40 pt-6 leading-loose">{c.closing}</p>}
+        {c.closing && (
+          <div className="mt-12 border-t border-sumi/40 pt-2">
+            <ShioriBubble mood={c.closingMood ?? "cheer"} label="しおり">
+              {c.closing}
+            </ShioriBubble>
+          </div>
+        )}
 
         <footer className="mt-8 space-y-3 text-sm">
           {c.sources && (

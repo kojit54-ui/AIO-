@@ -33,6 +33,11 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-09 CC（Claude、プロジェクトのスレッド）しおりが途中と結びでも話す
+- ブランチ / コミット：claude/project-thread-v0032t
+- 変更点：ColumnIntro.tsx を ShioriBubble に一般化。column.ts に section.talk（1記事1か所）と closingMood を足し、16本に入れた（途中のひとことはGPT案が決まり文句・作業指示の連続になったので手で書いた）。column.test.ts で数・位置・顔の違いを検査。docs/COLUMN_BACKLOG.md
+- 確認結果：単体テスト、型検査、lint、build。375px・1280px で表示を確認
+
 ### 2026-11-09 CC（Claude、プロジェクトのスレッド）読みものの出だしをしおりが話す
 - ブランチ / コミット：claude/project-thread-v0032t
 - 変更点：src/components/ColumnIntro.tsx（しおりの全身の絵＋吹き出し、出てから「…」→文）。column.ts に introMood（INTRO_MOODS）を足し、16本に表情を割り当て。column.test.ts で表情の絵があること・隣の記事と同じ顔でないことを検査。docs/COLUMN_BACKLOG.md・LESSONS.md
