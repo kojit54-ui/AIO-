@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { KnowledgeUsed } from "@/components/ShioriGrowth";
+import { currentScore } from "@/lib/articleScore";
 import { AioCheckBanner, AioCheckOverlays, AioCheckPanel, useAioCheck } from "@/components/AioCheckPanel";
 import { BlockEditor } from "@/components/BlockEditor";
 import { Confetti, ShioriFace, Toast } from "@/components/fun";
@@ -93,6 +94,7 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
   }
 
   const aio = useAioCheck(article, version, handleError);
+  const score = currentScore(db.aioChecks, article.id, version);
 
   async function save(force = false) {
     setBusy("save");
@@ -252,7 +254,13 @@ function ArticleWorkspace({ article, version }: { article: Article; version: Art
             <div className="card space-y-3">
               <p className="text-lg font-bold">ブログに載せる</p>
               {unchecked > 0 && <Notice tone="warn" title={`確かめてほしいところが${unchecked}か所あります`}>数字や名前が正しいか、先に確かめるのがおすすめです。</Notice>}
-              {!aioDone && <p className="text-sm text-muted">AIOのチェックがまだです。先にチェックしておくのがおすすめです。</p>}
+              {!aioDone && !score && <p className="text-sm text-muted">AIOのチェックがまだです。チェックすると記事の点数が出ます（点数が低くても載せられます）。</p>}
+              {score && (
+                <p className="text-sm">
+                  いまの点数 <b className="text-lg font-black">{score.score}点</b>
+                  {score.score < 100 && <span className="text-muted">（このまま載せられます。上の「点数を上げるには」で、もっと選ばれやすくなります）</span>}
+                </p>
+              )}
               <button type="button" className="btn-primary w-full" disabled={!canPublish || busy !== null} onClick={() => setPublishOpen(true)}>
                 ブログに載せる（1つずつ案内します）
               </button>
