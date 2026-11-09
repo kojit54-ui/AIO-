@@ -11,7 +11,8 @@ const env = process.env;
 const stage = process.argv[2] || "all";
 const out = process.argv[3] || "/tmp/e2e-out";
 mkdirSync(out, { recursive: true });
-const persona = JSON.parse(readFileSync(new URL("./persona.json", import.meta.url), "utf8"));
+// PERSONA=crop-ozaki.json のように、別の会社の答えに切り替えられる
+const persona = JSON.parse(readFileSync(new URL(`./${process.env.PERSONA || "persona.json"}`, import.meta.url), "utf8"));
 const host = new URL(env.E2E_BASE).hostname;
 
 const b = await chromium.launch();
@@ -73,17 +74,27 @@ async function hearing() {
   await go("/prototype/hearing");
   // 深掘り（もう少しだけ）は1回だけ答え、2回目からは「この話はここまでにする」で次へ進む
   for (let i = 0; i < 40; i++) {
-    if (!(await visible("#answer"))) break;
+    // 答えたあとはAIが聞き返しを考えるので、入力欄が戻るまで最大90秒待つ（出なければ終わり）
+    let ready = false;
+    for (let t = 0; t < 45 && !ready; t++) {
+      ready = await visible("#answer");
+      if (!ready) await p.waitForTimeout(2000);
+    }
+    if (!ready) break;
     const head = await p.locator("text=/\\d+問目/").first().innerText().catch(() => "");
     const n = Number(head.match(/(\d+)問目/)?.[1] ?? 0);
     const deepNo = Number(head.match(/もう少しだけ\s*(\d+)回目/)?.[1] ?? 0);
     if (deepNo >= 2) {
       log("深掘りを終える:", n);
       await p.click("text=この話はここまでにする");
-    } else if (deepNo === 1) {
+    } else if (deepNo === 1 && (persona.followUps?.[n - 1] ?? (persona.followUps ? "" : persona.followUp))) {
+      // 聞き返しには、その問いに用意した答え（followUps）だけを返す。無ければ「ここまで」にする
       log("深掘りに答える:", n);
       await p.fill("#answer", persona.followUps?.[n - 1] ?? persona.followUp);
       await p.click("button[type=submit]");
+    } else if (deepNo === 1) {
+      log("深掘りは答えずに終える:", n);
+      await p.click("text=この話はここまでにする");
     } else {
       const key = Object.keys(persona.hearing)[n - 1];
       log("答える:", n, key);
@@ -118,23 +129,74 @@ async function plan() {
   await go("/prototype/plan");
   let seen = await waitAny(["しおりにおすすめを出してもらう", "このセットで書いていく", "この記事を書く", "続きを書く"], 60000);
   log("plan:", seen);
-  if (seen === "しおりにおすすめを出してもらう") {
+  // 会社の情報を確かめた直後は、裏で別の文章づくりが走っていて「作っている途中です」と出ることがある。待って押し直す
+  for (let i = 0; i < 6 && seen === "しおりにおすすめを出してもらう"; i++) {
     await p.click('button:has-text("しおりにおすすめを出してもらう")');
-    seen = await waitAny(["このセットで書いていく"], 240000);
+    seen = await waitAny(["このセットで書いていく", "作っている途中です"], 240000);
+    if (seen === "作っている途中です") {
+      log("ほかの文章づくりが終わるのを待つ");
+      await p.waitForTimeout(30000);
+      await go("/prototype/plan");
+      seen = await waitAny(["しおりにおすすめを出してもらう", "このセットで書いていく"], 60000);
+    }
   }
-  if (seen === "このセットで書いていく") {
-    await p.locator('button:has-text("このセットで書いていく")').first().click();
-    seen = await waitAny(["この記事を書く"], 60000);
+  // persona.topic があれば、事例に合うまとめ記事のセットを選ぶ（答えと記事のテーマがずれないように）
+  const topic = persona.topic ?? [];
+  const fits = (t) => !topic.length || topic.some((w) => t.includes(w));
+  if (topic.length && seen !== "このセットで書いていく") {
+    const next = await p.locator("#first-heading").locator("xpath=..").innerText().catch(() => "");
+    if (!fits(next)) {
+      log("事例に合わないセットなので選び直す");
+      p.once("dialog", (d) => d.accept());
+      await p.click('button:has-text("記事のセットを選び直す")');
+      seen = await waitAny(["このセットで書いていく", "しおりにおすすめを出してもらう"], 60000);
+      if (seen === "しおりにおすすめを出してもらう") {
+        await p.click('button:has-text("しおりにおすすめを出してもらう")');
+        seen = await waitAny(["このセットで書いていく"], 240000);
+      }
+    }
+  }
+  for (let round = 0; round < 3 && seen === "このセットで書いていく"; round++) {
+    const cards = p.locator("li.card", { has: p.locator('button:has-text("このセットで書いていく")') });
+    const n = await cards.count();
+    let pick = -1;
+    for (let i = 0; i < n; i++) {
+      const t = await cards.nth(i).locator("p.text-lg").innerText().catch(() => "");
+      if (fits(t)) { pick = i; break; }
+    }
+    if (pick < 0 && round < 2) {
+      log("事例に合うセットが無いので、おすすめを出し直す");
+      await p.click('button:has-text("おすすめを出し直す")');
+      await p.waitForTimeout(5000);
+      seen = await waitAny(["このセットで書いていく"], 240000);
+      continue;
+    }
+    await cards.nth(Math.max(pick, 0)).locator('button:has-text("このセットで書いていく")').click();
+    seen = await waitAny(["この記事を書く", "続きを書く"], 60000);
   }
   await snap("plan-done");
   if (!seen) throw new Error("書く記事リストができなかった");
 }
 
+// 書く記事リストに persona.keyword を足す（事例に合う記事をおすすめが出さないとき）
+async function addKeyword() {
+  await go("/prototype/keywords");
+  await p.locator("#new-keyword").waitFor({ timeout: 60000 });
+  await p.fill("#new-keyword", persona.keyword);
+  await p.click('form:has(#new-keyword) button[type=submit]');
+  await p.waitForTimeout(4000);
+  log("記事を足した:", persona.keyword);
+}
+
 async function write() {
-  await go("/prototype/plan");
-  await waitAny(["この記事を書く", "続きを書く"], 60000);
-  const link = p.locator('a:has-text("この記事を書く"), a:has-text("続きを書く")').first();
-  await link.click();
+  if (process.env.WRITE_ID) {
+    // 書く記事を決めて開く（WRITE_ID は書く記事リストの行の id）
+    await go(`/prototype/write/${process.env.WRITE_ID}`);
+  } else {
+    await go("/prototype/plan");
+    await waitAny(["この記事を書く", "続きを書く"], 60000);
+    await p.locator('a:has-text("この記事を書く"), a:has-text("続きを書く")').first().click();
+  }
   await p.locator('#answer, button:has-text("答えを見直す")').first().waitFor({ timeout: 60000 }).catch(() => {});
   // 前に答えた記事なら、答えを見直して今の persona の答えに入れ替える
   if (!(await visible("#answer")) && (await visible('button:has-text("答えを見直す")'))) await p.locator('button:has-text("答えを見直す")').first().click();
@@ -185,6 +247,7 @@ try {
   if (stage === "hearing" || stage === "all") await hearing();
   if (stage === "profile" || stage === "all") await profile();
   if (stage === "plan" || stage === "all") await plan();
+  if (stage === "addkw") await addKeyword();
   if (stage === "write" || stage === "all") await write();
 } catch (e) {
   log("ERROR", e.message);
