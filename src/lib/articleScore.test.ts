@@ -42,6 +42,7 @@ describe("記事の点数", () => {
     expect(s.tips[0].key).toBe(all[1]);
     expect(s.tips[0].asked).toBe(true);
     expect(s.potential).toBeGreaterThan(s.score);
+    expect(s.tips[0].ask).toBe("?");
   });
 
   it("足すと上がる点数の合計が、満点までの差と合う（四捨五入でずれない）", () => {

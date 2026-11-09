@@ -356,6 +356,21 @@ export function AioCheckBanner({ ctl, dirty }: { ctl: AioCheckControl; dirty: bo
       <Shiori mood={asking ? "ask" : "point"} className="h-24 w-auto shrink-0" />
       <div className="mb-3 min-w-0 flex-1 basis-56">
         <p className="text-lg font-black">{asking ? `AIから質問が${forCurrent.questions.length}つ届いています` : "ブログに載せる前に、AIOのチェックをしましょう"}</p>
+        {asking && (() => {
+          const sc = articleScore(forCurrent, false);
+          return (
+            <p className="my-1 flex flex-wrap items-baseline gap-x-2 font-bold">
+              <span>
+                いまの点数 <span className="text-2xl font-black tabular-nums">{sc.score}</span>点
+              </span>
+              {sc.potential > sc.score && (
+                <span className="text-brand-dark">
+                  → 答えると <span className="text-2xl font-black tabular-nums">{sc.potential}</span>点
+                </span>
+              )}
+            </p>
+          );
+        })()}
         <p className="text-sm">
           {asking
             ? `答えると、AIにも読んだ人にも選ばれやすい記事になります。いまの点数でも、ブログには載せられます。${open < forCurrent.questions.length ? `（あと${open}問）` : ""}`

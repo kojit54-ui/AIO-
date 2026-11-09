@@ -28,7 +28,7 @@ export interface ScoreLevel {
 export const SCORE_LEVELS: ScoreLevel[] = [
   { min: 100, label: "満点", message: "全部そろいました。AIにも、読んだ人にも選ばれやすい記事です。" },
   { min: 85, label: "とてもよい", message: "このまま載せて大丈夫です。あと少しで満点です。" },
-  { min: 70, label: "よい", message: "載せられます。下の1つを足すと、もっと選ばれやすくなります。" },
+  { min: 70, label: "よい", message: "載せられます。下のどれか1つを足すと、もっと選ばれやすくなります。" },
   { min: 50, label: "あと少し", message: "載せることはできます。下の質問に答えると、ぐっと点数が上がります。" },
   { min: 0, label: "これから", message: "まず載せても大丈夫です。下の質問に1つ答えるだけでも点数が上がります。" },
 ];
