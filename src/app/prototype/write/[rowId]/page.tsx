@@ -212,8 +212,8 @@ export default function WritePage() {
           <button type="button" className="btn-secondary" onClick={() => setStep(Math.max(0, step - 1))} disabled={step === 0}>
             戻る
           </button>
-          <button type="submit" className="btn-primary" disabled={!value.trim()}>
-            {step === qs.length - 1 ? "答え終わった" : "次へ"}
+          <button type="submit" className={!value.trim() && q.optional ? "btn-secondary" : "btn-primary"} disabled={!value.trim() && !q.optional}>
+            {!value.trim() && q.optional ? "分からないので次へ" : step === qs.length - 1 ? "答え終わった" : "次へ"}
           </button>
         </div>
       </form>
