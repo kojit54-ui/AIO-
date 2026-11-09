@@ -522,7 +522,7 @@ function Promises() {
       <p className="mt-4 text-sm leading-relaxed text-sumi/80">
         AIの回答で紹介されることや、問い合わせ・受注が増えることは約束しません。考え方は
         <Link href="/brand" className="mx-1 font-bold text-indigo underline underline-offset-4">
-          ブランドのページ
+          「えらばれ帳が大切にしていること」
         </Link>
         にまとめています。
       </p>
