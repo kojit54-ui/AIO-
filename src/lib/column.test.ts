@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import sitemap from "@/app/sitemap";
 import { COLUMNS, findColumn, jpDate } from "./column";
@@ -88,5 +90,13 @@ describe("読みものの写真", () => {
       expect(t.q.length).toBeGreaterThan(0);
       expect(t.a.length).toBeGreaterThan(0);
     }
+  });
+  it("出だしはしおりが話す。表情の絵があり、続く記事で同じ顔が並ばない（2026-11-09 田村さん「出だしをしおりにしゃべらせて。いろんな表情を」）", () => {
+    for (const c of COLUMNS) {
+      expect(c.intro, `${c.slug} に出だし（intro）がない`).toBeTruthy();
+      expect(c.introMood, `${c.slug} にしおりの表情（introMood）がない`).toBeTruthy();
+      expect(existsSync(join(process.cwd(), "public/guide", `shiori-${c.introMood}.webp`)), `${c.slug} の表情の絵がない`).toBe(true);
+    }
+    for (let i = 1; i < COLUMNS.length; i++) expect(COLUMNS[i].introMood, `${COLUMNS[i - 1].slug} と ${COLUMNS[i].slug} が同じ顔`).not.toBe(COLUMNS[i - 1].introMood);
   });
 });
