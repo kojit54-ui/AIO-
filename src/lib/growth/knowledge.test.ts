@@ -17,9 +17,20 @@ describe("会社の知識", () => {
       pastArticles: [{ articleId: "a1", title: "結露の話", published: true, answers: [{ questionId: "q1", text: "窓の結露", unknown: false }], body: [{ type: "paragraph", text: "冬の結露について" }] }],
       questions,
     });
-    expect(items.map((i) => i.source)).toEqual(["hearing", "aio_check", "published", "article"]);
-    expect(items[0].text).toContain("現地調査から");
+    expect(items.map((i) => i.source)).toEqual(["hearing", "hearing", "aio_check", "published", "article"]);
+    expect(items[1].label).toBe("選ばれる理由（深掘りの答え）");
+    expect(items[1].text).toContain("現地調査から");
     expect(items.some((i) => i.text.includes("途中"))).toBe(false);
+  });
+
+  it("長い答えのあとでも、深掘りの答え（別の事例など）が切れて落ちない", () => {
+    const items = buildKnowledge({
+      hearing: { strengths: { questionId: "strengths", text: "あ".repeat(400), followUps: [{ question: "例は？", answer: "横浜のクリーニング店の事例" }] } },
+      aioAnswers: [],
+      pastArticles: [],
+      questions,
+    });
+    expect(items.some((i) => i.text.includes("横浜のクリーニング店の事例"))).toBe(true);
   });
 
   it("文字数の目安に収まる分だけ選ぶ", () => {

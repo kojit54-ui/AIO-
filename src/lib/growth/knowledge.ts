@@ -17,7 +17,7 @@ export interface KnowledgeItem {
 }
 
 /** AIに渡す会社の知識の合計の目安（入力全体は8,000字まで） */
-export const MAX_KNOWLEDGE_CHARS = 2400;
+export const MAX_KNOWLEDGE_CHARS = 3600;
 const ITEM_CHARS = 320;
 
 /** 会社のこと（ヒアリング）の問いの短い名前。画面のメモ帳と「今回使った知識」に出す */
@@ -109,8 +109,11 @@ export function buildKnowledge(input: {
   for (const q of HEARING_QUESTIONS) {
     const a = input.hearing[q.id];
     if (!a?.text.trim() || a.draft) continue;
+    // 答えと深掘りの答えを別にする。1つにまとめて切ると、長い答えのあとの深掘り（別の事例など）が落ちていた（2026-11-10 クロップオザキの採点で判明）
+    const label = HEARING_SHORT[q.id] ?? q.label.replace(/[？?]$/, "");
+    items.push({ source: "hearing", label, text: cut(a.text, 480) });
     const deep = a.followUps.filter((f) => f.answer.trim()).map((f) => `${f.question}→${f.answer.trim()}`);
-    items.push({ source: "hearing", label: HEARING_SHORT[q.id] ?? q.label.replace(/[？?]$/, ""), text: cut([a.text, ...deep].join("／")) });
+    if (deep.length) items.push({ source: "hearing", label: `${label}（深掘りの答え）`, text: cut(deep.join("／"), 480) });
   }
   for (const n of input.notes ?? []) {
     items.push({ source: "imported", label: cut(n.label, 40), text: cut(n.text) });
