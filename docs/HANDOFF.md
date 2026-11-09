@@ -5,6 +5,12 @@
 ## 記録の書式
 
 ```
+### 2026-11-09 CC（Claude、プロジェクトのスレッド）クロップオザキで記事を9人採点（14〜17回目）
+- 変更点：PR #225（記事を書く指示を約7,300字→約4,300字にグループ分け・食い違い解消）、#226（最初の答えを言い切る・事例の言い直しと案内の重ねがけを防ぐ）、#227（タイトル案に読む人の悩みの言葉を入れる・書き出しに連絡先を並べない）、#228（点検役に重なり探し。17回目で下がったため弱めた）
+- 確認結果：GPT・Geminiの6人平均で ボタン 7.9→7.9→7.8→7.4、面ファスナー 8.1→7.9→8.1→7.8。タイトルは改善（「毛が絡まりにくい」が入った）。1回ごとのぶれが±0.5あり、指示文の足し引きでは8点前後で頭打ち
+- 残る減点の多く：素材が足りないこと（ボタンの事例と「100個・型代15,000円」の関係、事例の実際の日数、型代の中身、面ファスナーの最低数）。社長に聞く質問は /mnt/project-files/e2e-council/crop-ozaki-questions.md
+- 次の作業：社長の答えを scripts/e2e/crop-ozaki*.json に入れて再採点。指示文はこれ以上足さず、繰り返しは書き直し後の機械的な検査（同じ文の重なりを数える）を検討
+
 ### 2026-10-22 CC（Claude、プロジェクトのスレッド）その4
 - ブランチ / コミット：claude/project-thread-iawszb（claude/project-thread-g8uiym の上）
 - 変更点：文章の既定を OpenAI に変更。src/lib/ai/providers/openaiText.ts（Responses API を HTTP で呼ぶ。JSONで返させ、store: false）。config.ts に TEXT_PROVIDER（openai／anthropic）を追加。.env.example、docs/AI_SETUP.md、docs/DECISIONS.md を更新。依存の追加なし
