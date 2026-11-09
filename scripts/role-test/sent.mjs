@@ -1,7 +1,8 @@
 // 役割別テスト：ログイン画面と「メールを送りました」画面を、スマホの幅で撮る（docs/ROLE_TEST.md）
-// node scripts/role-test/sent.cjs <出力フォルダ> <email>
+// node scripts/role-test/sent.mjs <出力フォルダ> <email>
 // 番号のメールが1通届くので、直前のログインから1分あける（続けて送ると 429）
-const { chromium } = require("playwright");
+import { createRequire } from "node:module";
+const { chromium } = createRequire(import.meta.url)("playwright");
 const BASE = process.env.BASE || "https://aio-erabare.jp";
 const [S, email] = process.argv.slice(2);
 (async () => {

@@ -10,9 +10,9 @@
 ## 手順
 1. 本番に出してから試す（ブランチのためし公開はしない。vercel.json）
 2. 撮る（ログインの番号はメールで届く。Gmail コネクタで tamura@co-tam.co.jp の受信箱から「次の番号を入れてください：NNNNNN」を読み、宛先で2人を見分けて `<出力>/code-<role>.txt` に書く）
-   - お客様：`FULL=1 node scripts/role-test/browse.cjs <出力> customer tamura+kyaku@co-tam.co.jp /,/mypage`
-   - 管理者：`FULL=1 node scripts/role-test/browse.cjs <出力> admin tamura@co-tam.co.jp /coach,/admin/usage,/admin/invitations,/admin/trial,/admin/waitlist`
-   - 1分あけてから：`node scripts/role-test/sent.cjs <出力> tamura+kyaku@co-tam.co.jp`（続けて送ると 429）
+   - お客様：`FULL=1 node scripts/role-test/browse.mjs <出力> customer tamura+kyaku@co-tam.co.jp /,/mypage`
+   - 管理者：`FULL=1 node scripts/role-test/browse.mjs <出力> admin tamura@co-tam.co.jp /coach,/admin/usage,/admin/invitations,/admin/trial,/admin/waitlist`
+   - 1分あけてから：`node scripts/role-test/sent.mjs <出力> tamura+kyaku@co-tam.co.jp`（続けて送ると 429）
 3. 採点：`node scripts/role-test/score.mjs <customer|admin> <出力> [前回の出力] [直したことのメモ.txt]`
 4. 減点の理由を直し、2 から繰り返す。両方の役で GPT・Gemini とも 9.5 以上で終わり
 

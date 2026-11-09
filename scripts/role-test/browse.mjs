@@ -1,8 +1,10 @@
 // 役割別テスト：本番にログインして画面を撮る（docs/ROLE_TEST.md）
-// node scripts/role-test/browse.cjs <出力フォルダ> <role> <email|-> <ページ,カンマ区切り>
+// node scripts/role-test/browse.mjs <出力フォルダ> <role> <email|-> <ページ,カンマ区切り>
 // ログインの6桁の番号は、<出力フォルダ>/code-<role>.txt に書くと読み取って入れる（Gmail で読む）。
 // 環境変数：BASE（既定 https://aio-erabare.jp）、FULL=1 で縦に長い全体を撮る、CONTACT=1 で担当のトップの記録ボタンも試す
-const { chromium } = require('playwright'); const fs=require('fs');
+import { createRequire } from "node:module";
+const { chromium } = createRequire(import.meta.url)("playwright");
+import fs from "node:fs";
 const BASE = process.env.BASE || 'https://aio-erabare.jp';
 const [S, role, email, pagesArg] = process.argv.slice(2); const pages = pagesArg.split(',');
 const out = { role, steps: [] }; const log = (k, v) => { out.steps.push({ k, v }); console.log(k, JSON.stringify(v)); };
@@ -26,7 +28,7 @@ const out = { role, steps: [] }; const log = (k, v) => { out.steps.push({ k, v }
   for (const path of pages) {
     for (const w of [1280, 375]) {
       await p.setViewportSize({ width: w, height: w === 375 ? 812 : 900 });
-      const t0 = Date.now(); const r = await p.goto(BASE + path, { waitUntil: 'networkidle' }).catch(e => null);
+      const t0 = Date.now(); const r = await p.goto(BASE + path, { waitUntil: 'networkidle' }).catch(() => null);
       await p.waitForTimeout(3500);
       const txt = (await p.innerText('body').catch(() => '')).replace(/\s+/g, ' ');
       const overflow = await p.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);

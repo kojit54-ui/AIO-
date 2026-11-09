@@ -1,6 +1,6 @@
 // 役割別テスト：画面の写しを GPT と Gemini に採点させる（docs/ROLE_TEST.md）
 // node scripts/role-test/score.mjs <customer|admin> <出力フォルダ> [前回の結果フォルダ] [直したことのメモ.txt]
-// 画像は <出力フォルダ> の決まった名前（browse.cjs・sent.cjs が撮るもの）を使う。結果は <出力フォルダ>/score-<gpt|gemini>-<role>.md
+// 画像は <出力フォルダ> の決まった名前（browse.mjs・sent.mjs が撮るもの）を使う。結果は <出力フォルダ>/score-<gpt|gemini>-<role>.md
 // キーは環境変数 OPENAI_API_KEY・GEMINI_API_KEY（.env.local。コードやログに出さない）
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
