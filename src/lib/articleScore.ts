@@ -28,7 +28,7 @@ export interface ScoreLevel {
 export const SCORE_LEVELS: ScoreLevel[] = [
   { min: 100, label: "満点", message: "全部そろいました。AIにも、読んだ人にも選ばれやすい記事です。" },
   { min: 85, label: "とてもよい", message: "このまま載せて大丈夫です。あと少しで満点です。" },
-  { min: 70, label: "よい", message: "載せられます。下の1つを足すと、もっと選ばれやすくなります。" },
+  { min: 70, label: "よい", message: "載せられます。下のどれか1つを足すと、もっと選ばれやすくなります。" },
   { min: 50, label: "あと少し", message: "載せることはできます。下の質問に答えると、ぐっと点数が上がります。" },
   { min: 0, label: "これから", message: "まず載せても大丈夫です。下の質問に1つ答えるだけでも点数が上がります。" },
 ];
@@ -68,7 +68,9 @@ export function articleScore(check: AioCheck, applied: boolean): ArticleScore {
     .map((i): ScoreTip => {
       const c = AIO_CHECK_LIST.find((x) => x.key === i.key);
       const flipped = items.map((x) => (x.key === i.key ? { ...x, ok: true } : x));
-      return { key: i.key, label: c?.label.split("（")[0] ?? i.key, note: i.note, ask: c?.ask ?? "", example: c?.example ?? "", gain: scoreOf(flipped) - score, asked: askedKeys.has(i.key) };
+      // AIが聞いている項目は、その記事に合わせたAIの質問の言葉を使う（決まった例は別の業種の話のことがある）
+      const q = askedKeys.has(i.key) ? check.questions.find((x) => x.key === i.key) : undefined;
+      return { key: i.key, label: c?.label.split("（")[0] ?? i.key, note: i.note, ask: q?.text || c?.ask || "", example: q ? q.example : (c?.example ?? ""), gain: scoreOf(flipped) - score, asked: !!q };
     })
     .sort((a, b) => Number(b.asked) - Number(a.asked) || order(a.key) - order(b.key));
   const potential = scoreOf(items.map((x) => (askedKeys.has(x.key) ? { ...x, ok: true } : x)));

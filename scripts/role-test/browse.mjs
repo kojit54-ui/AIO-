@@ -9,7 +9,8 @@ const BASE = process.env.BASE || 'https://aio-erabare.jp';
 const [S, role, email, pagesArg] = process.argv.slice(2); const pages = pagesArg.split(',');
 const out = { role, steps: [] }; const log = (k, v) => { out.steps.push({ k, v }); console.log(k, JSON.stringify(v)); };
 (async () => {
-  const b = await chromium.launch(); const c = await b.newContext({ viewport: { width: 1280, height: 900 } }); const p = await c.newPage();
+  const b = await chromium.launch(); // 動きを止めて撮る（全体の写しで、動きの途中の薄い表示が写らないように）
+  const c = await b.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' }); const p = await c.newPage();
   const errs = []; p.on('pageerror', e => errs.push('pageerror: ' + e.message)); p.on('console', m => { if (m.type()==='error') errs.push('console: ' + m.text().slice(0,200)); });
   p.on('response', r => { if (r.status() >= 500) errs.push(r.status() + ' ' + r.url()); });
   if (email !== '-') {
