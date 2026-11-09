@@ -1,8 +1,9 @@
 // 毎朝、新しく出た・直した読みものを検索エンジンに知らせる（src/lib/indexing.ts）。Vercel の Cron（vercel.json）から呼ぶ。
-// 自動公開のあとにすぐ知らせたいときも、同じ CRON_SECRET を付けてここを呼べばよい。?dry=1 なら送らずに中身だけ返す。
+// 自動公開のあとにすぐ知らせたいときも、CRON_SECRET か SCHEDULER_SECRET を付けてここを呼べばよい。?dry=1 なら送らずに中身だけ返す。
 // ?days=7 で、さかのぼる日数を変えられる（最初の1回など）。
 
 import { type NextRequest, NextResponse } from "next/server";
+import { cronCaller } from "@/lib/cron/auth";
 import { freshUrls, pingWebSub, submitIndexNow, submitSitemaps, type StepResult } from "@/lib/indexing";
 
 export const dynamic = "force-dynamic";
@@ -16,12 +17,10 @@ async function step(fn: () => Promise<StepResult>): Promise<StepResult> {
 }
 
 export async function GET(request: NextRequest) {
-  const secret = process.env.CRON_SECRET?.trim();
-  if (!secret || request.headers.get("authorization") !== `Bearer ${secret}`) {
-    // 毎朝の Cron が届いているかをログで確かめられるように、断ったときも1行だけ残す（鍵は出さない）
-    console.log("[indexing]", JSON.stringify({ code: "forbidden", secretSet: !!secret }));
-    return NextResponse.json({ code: "forbidden" }, { status: 401 });
-  }
+  const caller = cronCaller(request.headers.get("authorization"));
+  // 毎朝の呼び出しが届いているかをログで確かめられるように、誰から呼ばれたかを1行残す（鍵は出さない）
+  console.log("[indexing]", JSON.stringify({ caller: caller ?? "forbidden" }));
+  if (!caller) return NextResponse.json({ code: "forbidden" }, { status: 401 });
   const days = Math.min(Math.max(Number(request.nextUrl.searchParams.get("days")) || 2, 1), 60);
   const urls = freshUrls(new Date(), days);
   if (request.nextUrl.searchParams.get("dry") === "1") return NextResponse.json({ urls, sent: false });

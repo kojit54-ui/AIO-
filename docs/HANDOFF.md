@@ -5,6 +5,11 @@
 ## 記録の書式
 
 ```
+### 2026-11-10 CC（Claude、プロジェクトのスレッド）サイトの自動作業を Supabase の pg_cron からも呼ぶ
+- 変更点：src/lib/cron/auth.ts（CRON_SECRET か SCHEDULER_SECRET を受ける）を4本の /api/cron/* で使い、呼ばれたら「[ルート名] {caller}」をログに残す。supabase/migrations/20261110080000_scheduler_pg_cron.sql（pg_cron・pg_net、call_site_job、4本の登録。pg_cron の無い PGlite では飛ばす）
+- 確認結果：lint・型検査・単体テスト（577件）通過。11/9 22:08〜23:06 UTC の本番ログに indexing の呼び出しなし（Vercel の Cron が動いていない）
+- 本番に入れる手順：Vercel に SCHEDULER_SECRET を追加 → 本番デプロイ → Supabase の Vault に同じ値を scheduler_secret で入れる → マイグレーションを流す → `select public.call_site_job('/api/cron/indexing?dry=1')` で試す
+
 ### 2026-11-10 CC（定期作業）読みもの「小ロット・試作の受け方を、条件つきで書くには」（small-lot）を公開。写真2枚、3社点検4回目で GPT 9.5・Gemini 9.8・Claude 9.5
 
 ### 2026-11-09 CC（Claude、プロジェクトのスレッド）クロップオザキで記事を9人採点（14〜17回目）
