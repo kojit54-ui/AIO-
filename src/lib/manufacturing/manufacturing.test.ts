@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { MFG_DOMESTIC, MFG_ITEMS, MFG_OVERSEAS, articleIdeasFor, detectIndustries, isManufacturing, mfgCounts, mfgTipOfDay, mfgWriterRules, readerConcernsFor, readerQuestionsFor, readerTermsFor, whatWorksFor } from "./index";
+import { MFG_DOMESTIC, MFG_ITEMS, MFG_OVERSEAS, articleIdeasFor, detectIndustries, industryFactsFor, isManufacturing, mfgCounts, peerCasesFor, mfgTipOfDay, mfgWriterRules, readerConcernsFor, readerQuestionsFor, readerTermsFor, whatWorksFor } from "./index";
 
 describe("製造業の知識表", () => {
   it("形・長さ・出典がそろっている", () => {
@@ -14,10 +14,29 @@ describe("製造業の知識表", () => {
     }
   });
 
-  it("6つの種類がそろっている", () => {
+  it("8つの種類がそろっている", () => {
     const c = mfgCounts();
-    expect(Object.keys(c).length).toBe(6);
+    expect(Object.keys(c).length).toBe(8);
     for (const k of Object.keys(c) as (keyof typeof c)[]) expect(c[k], k).toBeGreaterThan(40);
+  });
+
+  it("国の統計の数字は、業種がぴったり合うものだけを出典つきで渡す", () => {
+    const facts = industryFactsFor("金型の設計と製作", 3);
+    expect(facts.length).toBe(3);
+    for (const x of facts) {
+      expect(x.kind).toBe("stat");
+      expect(x.industries).toContain("金型");
+      expect(x.source.publisher).toBeTruthy();
+    }
+    expect(industryFactsFor("住宅のリフォーム", 3)).toEqual([]);
+  });
+
+  it("同業の取り組み（補助金の採択計画・成果事例）は、業種が合うものを出し、会社名を書かない", () => {
+    const cases = peerCasesFor("精密板金と溶接", 3);
+    expect(cases.length).toBe(3);
+    for (const x of cases) expect(x.industries.some((i) => i === "板金" || i === "溶接")).toBe(true);
+    const named = MFG_ITEMS.filter((x) => (x.kind === "case" || x.kind === "stat") && /株式会社|有限会社|合同会社|（株）|\(株\)|㈱/.test(x.title + x.summary));
+    expect(named.map((x) => x.id)).toEqual([]);
   });
 
   it("同じ見出しが重ならない", () => {
