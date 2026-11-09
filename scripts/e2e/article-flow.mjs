@@ -206,8 +206,8 @@ async function write() {
     if (!(await visible("#answer"))) break;
     const label = (await p.locator("label[for=answer]").innerText()).trim();
     const cur = await p.inputValue("#answer");
-    const key = label.includes("誰のどんな悩み") ? null : label.includes("どんな相談") ? "a1" : label.includes("どう対応") ? "a2" : label.includes("結果") ? "a3" : label.includes("誤解") ? "a4" : label.includes("喜んで") ? "a6" : label.includes("次に何を") ? "a5" : null;
-    if (key) await p.fill("#answer", persona.article[key]);
+    const key = label.includes("誰のどんな悩み") ? null : label.includes("どんな相談") ? "a1" : label.includes("どう対応") ? "a2" : label.includes("結果") ? "a3" : label.includes("いつもは") ? "a7" : label.includes("誤解") ? "a4" : label.includes("喜んで") ? "a6" : label.includes("次に何を") ? "a5" : null;
+    if (key) await p.fill("#answer", persona.article[key] ?? "");
     else if (label.includes("誰のどんな悩み") && persona.who) await p.fill("#answer", persona.who);
     else if (!cur.trim()) await p.fill("#answer", "図面がなくて部品を作り直せず困っている、工場の保全担当の人");
     log("記事の質問:", label.slice(0, 24), key ?? "(読む人)");
