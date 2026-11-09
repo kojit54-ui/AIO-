@@ -4,3 +4,9 @@
 
 /** 登録せずに試す。/try を、診断なしの「会社のこと3項目＋1問で記事の書き出し」の形で開く */
 export const TRY_HREF = "/try?mode=quick";
+
+/** 申し込みの画面（カード先登録の7日間お試し）。src/app/signup */
+export const SIGNUP_HREF = "/signup";
+
+/** 入口ページに申し込みのボタンを出すか。田村さんが受付開始を決めたら、Vercel に NEXT_PUBLIC_SIGNUP_OPEN=on を入れる */
+export const isSignupOpen = () => process.env.NEXT_PUBLIC_SIGNUP_OPEN?.trim() === "on";

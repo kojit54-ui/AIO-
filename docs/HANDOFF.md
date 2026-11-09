@@ -39,6 +39,13 @@
 - 次の作業と担当：
 ```
 
+### 2026-11-09 CC（Claude、プロジェクトのスレッド）カード払いの申し込み（T6-9）
+- ブランチ：claude/project-thread-xb3iqs
+- 変更点：/signup（会社名・お名前・メール→6桁の番号→最終確認と規約の同意→Stripe Checkout）、/signup/done、マイページの「お支払い」（Stripe のカスタマーポータル）、/admin/billing、/api/stripe/webhook（イベントIDで読み直す）、/api/billing/status・portal、請求前日のメール（/api/cron/billing-reminder 毎朝9:05 JST）。DB：supabase/migrations/20261109150000_billing.sql（org_billing と、使えない会社のAIを止めるトリガー）。src/lib/billing/。SDKなし。手順 docs/BILLING_SETUP.md
+- 確認結果：単体テスト（日付・最終確認の項目・規約との一致・申し込める人・Webhookの読み取り・メール）とDBのテスト、型検査、lint、build。375px・1280px で /signup の表示と横スクロールなし
+- 未完了：SQL を本番に流す（田村さんの返事待ち）、STRIPE_SECRET_KEY（テスト）を Vercel に入れてテストモードで端から端まで、3AIの採点
+- 次の作業と担当：田村さんが Stripe のアカウントとテストの鍵 → CC が通しの確認と採点 → 田村さんが本番の鍵と受付開始を決める
+
 ### 2026-11-09 CC（Claude、プロジェクトのスレッド）Googleアナリティクス
 - ブランチ / コミット：claude/project-thread-4phjho
 - 変更点：src/lib/analytics.ts（数えるページ・送るアドレスの掃除・行動の送信）、src/components/Analytics.tsx（layout に追加）、受付フォームと /try に行動の計測、プライバシーポリシーに追記。Vercel に NEXT_PUBLIC_GA_ID（本番）を登録

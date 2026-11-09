@@ -6,6 +6,7 @@
 // 件数が少ない前提（3〜5社）で、変更のたびに見える範囲をまとめて読み直す。
 
 import { normalizePersonName } from "@/lib/personName";
+import { CONFIRM_PATH } from "@/lib/billing/plan";
 import { createBrowserClient } from "@supabase/ssr";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -153,6 +154,11 @@ export class RemoteBackend {
     const user: SessionUser | null =
       organizationIds.length > 0 ? { id: uid, name: (auth.user.user_metadata?.name as string) || auth.user.email || "利用者", role, organizationIds } : null;
 
+    // 申し込みの途中（会社を作る前・カード登録の前）の人は、最終確認の画面へ戻す
+    if (!user && !isAdmin && auth.user.user_metadata?.signup_org_name) {
+      window.location.replace(CONFIRM_PATH);
+      return;
+    }
     const runRows = runs.data ?? [];
     const articleRows = articles.data ?? [];
     this.set({

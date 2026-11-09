@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/mock/store";
 import { EmptyState, PageSkeleton } from "./ui";
+import { BillingGate } from "./BillingGate";
 import { SERVICE_NAME } from "@/lib/brand";
 import { BrandMark } from "@/components/landing";
 import { isLegalPath } from "@/lib/legal";
@@ -16,7 +17,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   // ログイン・招待・認証の処理と、全社管理者の画面は架空データのログインを使わない
-  const isLogin = isLegalPath(pathname) || isMarketingPath(pathname) || pathname === "/login" || pathname.startsWith("/invite/") || pathname.startsWith("/auth/") || pathname.startsWith("/admin/");
+  const isLogin = isLegalPath(pathname) || isMarketingPath(pathname) || pathname === "/login" || pathname === "/signup" || pathname.startsWith("/signup/") || pathname.startsWith("/invite/") || pathname.startsWith("/auth/") || pathname.startsWith("/admin/");
   const isLegal = isLegalPath(pathname);
   // 新しい流れの画面試作は、ログインせずに架空の会社で見られる（データはブラウザの中だけ）
   const isPrototype = pathname === "/prototype" || pathname.startsWith("/prototype/");
@@ -83,7 +84,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           )}
         </div>
       </header>
-      {children}
+      <BillingGate active={mode !== "mock" && user.role === "client_member"} pathname={pathname}>
+        {children}
+      </BillingGate>
       {demo}
     </>
   );

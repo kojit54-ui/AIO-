@@ -18,7 +18,7 @@ import { Shiori } from "@/components/fun";
 import { Reveal, useInView } from "@/components/landing";
 import { Typed } from "@/components/talk";
 import { BRAND_GAP, BRAND_LINE, BRAND_PROMISES, BRAND_SAMPLE } from "@/lib/brandBook";
-import { TRY_HREF } from "@/lib/signup";
+import { SIGNUP_HREF, TRY_HREF, isSignupOpen } from "@/lib/signup";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { AIO_CHECK_LIST } from "@/lib/aioCheck";
 import { ARTICLES_PER_MONTH_LABEL } from "@/lib/articleQuota";
@@ -550,11 +550,23 @@ function Price() {
           ))}
         </dl>
         <div className="self-start border-2 border-sumi bg-paper p-5 md:p-6">
-          <p className="font-black">新規のお申し込みは、準備中です。</p>
-          <p className="mt-2 text-sm leading-relaxed">受付を始めるときに、メールでお知らせします。それまでは、登録せずに記事の書き出しを試せます。</p>
-          <div id="notify" className="mt-4 scroll-mt-24">
-            <WaitlistForm source="price" />
-          </div>
+          {isSignupOpen() ? (
+            <>
+              <p className="font-black">7日間、無料でためせます。</p>
+              <p className="mt-2 text-sm leading-relaxed">申し込みのときにカードを登録します。お試しのあいだに解約すれば、料金はかかりません。</p>
+              <Link href={SIGNUP_HREF} className="btn-primary mt-4 min-h-14 w-full text-lg">
+                申し込む（7日間無料）
+              </Link>
+            </>
+          ) : (
+            <>
+              <p className="font-black">新規のお申し込みは、準備中です。</p>
+              <p className="mt-2 text-sm leading-relaxed">受付を始めるときに、メールでお知らせします。それまでは、登録せずに記事の書き出しを試せます。</p>
+              <div id="notify" className="mt-4 scroll-mt-24">
+                <WaitlistForm source="price" />
+              </div>
+            </>
+          )}
           <p className="mt-4 flex flex-col gap-2 text-sm font-bold">
             <Link href={TRY_HREF} className="text-indigo underline underline-offset-4">
               登録せずに、記事の書き出しを試す
