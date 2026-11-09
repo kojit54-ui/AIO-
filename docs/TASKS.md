@@ -96,4 +96,4 @@
 | T6-7 | Googleでログイン（招待制のまま） | CC＋田村 | 招待されたアドレスのGoogleアカウントだけ入れる | 画面と仕組みまで（PR #107）。田村さんが Google Cloud と Supabase で Google を有効にし、Vercel に NEXT_PUBLIC_GOOGLE_LOGIN=on（docs/SUPABASE_SETUP.md）→ 招待済み・未招待の両方で試す |
 | T6-8 | ワンタイムのログイン（メールの6桁かSMSか） | CC＋田村 | 方式を田村さんが決める | 完了（2026-11-07）。メールの6桁の番号。Supabase の Magic Link 文面に {{ .Token }}、Email OTP length 6、Vercel NEXT_PUBLIC_LOGIN_CODE=on。田村さんが aio-erabare.jp で番号ログインできたことを確認 |
 | T6-10 | ブランド（ロゴ・ロゴガイドライン・コンセプト・理念・ミッション・バリュー） | CC＋田村 | /brand に載り、ロゴがヘッダー・タブ・SNSの絵に入る。田村さんが文面とロゴを確認 | 田村さんの確認待ち（docs/BRAND.md） |
-| T6-9 | 課金（Stripe、7日のお試し、既存顧客は無料） | CX＋CC＋田村 | 料金・Stripeの申し込み・規約が先 | 料金と規約は決定（DECISIONS 2026-11-07）。申し込み画面の必須事項も DECISIONS に。残りは Stripe の申し込み（田村さん）と実装 |
+| T6-9 | 課金（Stripe、7日のお試し、既存顧客は無料） | CX＋CC＋田村 | 料金・Stripeの申し込み・規約が先 | 申し込み・お試し・Webhook・カスタマーポータル・AIの停止・請求前日のメールを実装（2026-11-09、docs/BILLING_SETUP.md）。残りはテストモードでの通し確認（Stripeのテストの鍵待ち）、本番の鍵と受付開始の判断（田村さん） |

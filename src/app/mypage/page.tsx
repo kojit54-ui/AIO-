@@ -15,6 +15,8 @@ import { useGuide, useGuideOutfit, GuideName } from "@/components/useGuide";
 import { Shiori, ShioriFace } from "@/components/fun";
 import { useShioriTone } from "@/components/useShioriTone";
 import { useStore } from "@/mock/store";
+import { PortalButton, useBilling } from "@/components/BillingGate";
+import { CONFIRM_PATH, PRICE_LABEL } from "@/lib/billing/plan";
 
 export default function MyPage() {
   const { db, user, api, logout } = useStore();
@@ -59,6 +61,8 @@ export default function MyPage() {
           {org ? "変えたいときは、コタムの担当者にお知らせください。" : "Googleでログインするときも、このアドレスのアカウントを選んでください。"}
         </p>
       </section>
+
+      {org && <BillingCard />}
 
       {org && (
         <section className="card space-y-3">
@@ -456,6 +460,35 @@ function GuideCard() {
         </div>
       )}
       <ShioriTalk key={`${guide.id}-${outfit?.id ?? ""}`} mood="joy" lines={[outfit && outfit !== guide.outfits[0] ? `${guide.name}です。今日は${outfit.label}で来ました。いっしょにがんばりましょう！` : `${guide.name}です。これから、いっしょにがんばりましょう！`]} />
+    </section>
+  );
+}
+
+/** お支払い（カード払いで申し込んだ会社だけ）。Stripe の画面から戻ってきたときは、Stripe から読み直す */
+function BillingCard() {
+  const { mode } = useStore();
+  const [back] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("billing") === "back");
+  const [billing] = useBilling(mode !== "mock", back);
+  if (!billing || billing.plan !== "stripe") return null;
+  const v = billing.view;
+  const restart = billing.status === "canceled" || billing.status === "incomplete" || billing.status === "incomplete_expired";
+  return (
+    <section id="billing" className="card space-y-3">
+      <h2 className="font-black">お支払い</h2>
+      {v && (
+        <Notice tone={v.tone === "ok" ? "ok" : v.tone === "warn" ? "warn" : "danger"} title={v.title}>
+          {v.detail}
+        </Notice>
+      )}
+      <p className="text-sm text-muted">{PRICE_LABEL}。カードの変更・解約・領収書は、決済会社 Stripe の画面で行います。解約しても、いまの月の終わりまで使えます（日割りの返金はありません）。</p>
+      <div className="flex flex-wrap gap-2">
+        {billing.canPortal && <PortalButton />}
+        {restart && (
+          <Link href={CONFIRM_PATH} className="btn-primary">
+            {billing.status === "incomplete" ? "カードを登録する" : "もう一度申し込む"}
+          </Link>
+        )}
+      </div>
     </section>
   );
 }

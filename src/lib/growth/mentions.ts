@@ -81,7 +81,7 @@ export async function runMentionCheck(
     .rpc("start_hearing_ai", { p_organization_id: req.organizationId, p_idempotency_key: req.idempotencyKey, p_input_chars: JSON.stringify(questions).length })
     .single<{ id: string; status: string }>();
   if (error || !run) {
-    const code = ["busy", "limit_reached", "budget_exceeded", "forbidden"].find((k) => error?.message?.includes(k)) ?? "provider_error";
+    const code = ["busy", "limit_reached", "budget_exceeded", "billing_inactive", "forbidden"].find((k) => error?.message?.includes(k)) ?? "provider_error";
     return fail(code === "forbidden" ? 403 : 429, code, code === "busy" ? "AIがほかの作業をしています。少し待ってからお試しください" : "今は調べられません。コタムにご相談ください");
   }
   if (run.status !== "queued") return fail(409, "busy", "同じ受付が実行中です");

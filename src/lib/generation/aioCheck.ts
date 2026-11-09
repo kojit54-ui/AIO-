@@ -20,6 +20,8 @@ const START_ERRORS: Record<string, [number, string]> = {
   busy: [409, "同じ会社でAIが作業している途中です。終わってからもう一度お試しください"],
   limit_reached: [429, "この記事でAIOのチェックができる回数を使い切りました。コタムにご相談ください"],
   budget_exceeded: [429, "今月はAIを使えなくなっています。コタムにご連絡ください"],
+  // お試しもご契約も切れた会社（DBの guard_billing）
+  billing_inactive: [402, "ご契約が終わっているため、AIを使えません。マイページの「お支払い」をご確認ください"],
   invalid_input: [400, "入力の内容を確認してください"],
   forbidden: [403, "この記事でAIOのチェックをする権限がありません"],
 };
