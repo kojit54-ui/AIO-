@@ -42,6 +42,7 @@ describe("記事の点数", () => {
     expect(s.tips[0].key).toBe(all[1]);
     expect(s.tips[0].asked).toBe(true);
     expect(s.potential).toBeGreaterThan(s.score);
+    expect(s.tips[0].ask).toBe("?");
   });
 
   it("答えを書き込んだ項目はOKとして数える。「まだ分からない」は数えない", () => {
