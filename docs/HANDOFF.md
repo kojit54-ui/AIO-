@@ -13,6 +13,8 @@
 - 確認結果：lint・型検査・単体テスト（577件）通過。11/9 22:08〜23:06 UTC の本番ログに indexing の呼び出しなし（Vercel の Cron が動いていない）
 - 本番に入れる手順：Vercel に SCHEDULER_SECRET を追加 → 本番デプロイ → Supabase の Vault に同じ値を scheduler_secret で入れる → マイグレーションを流す → `select public.call_site_job('/api/cron/indexing?dry=1')` で試す
 
+### 2026-11-10 CC（定期作業）読みもの「「短納期」と書く前に｜納期の目安を条件つきで伝える書き方」（lead-time）を公開。写真2枚（5枚作成）、3社点検4回目で GPT 9.3（残りは言い回しの指摘で反映済み）・Gemini 9.5・Claude 9.5
+
 ### 2026-11-10 CC（定期作業）読みもの「小ロット・試作の受け方を、条件つきで書くには」（small-lot）を公開。写真2枚、3社点検4回目で GPT 9.5・Gemini 9.8・Claude 9.5
 
 ### 2026-11-09 CC（Claude、プロジェクトのスレッド）クロップオザキで記事を9人採点（14〜17回目）
