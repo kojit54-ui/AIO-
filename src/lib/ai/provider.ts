@@ -178,11 +178,18 @@ export async function generateReviewedBody(
   const optional = async <T>(step: StepUsage["step"], provider: AiProvider, req: Omit<AiCompletionRequest, "signal">, parse: (t: string) => T): Promise<T | null> => {
     let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
     try {
-      const res = await provider.complete({ ...req, signal });
-      usage = res.usage;
-      const parsed = parse(res.text);
-      steps.push({ step, provider: provider.name, usage, ok: true });
-      return parsed;
+      // 返答がJSONとして読めなかったときだけ、1回だけ作り直す（2026-11-10 Claudeの書き直しで parse が1件）
+      for (let attempt = 0; ; attempt++) {
+        const res = await provider.complete({ ...req, signal });
+        usage = { inputTokens: usage.inputTokens + res.usage.inputTokens, outputTokens: usage.outputTokens + res.usage.outputTokens };
+        try {
+          const parsed = parse(res.text);
+          steps.push({ step, provider: provider.name, usage, ok: true });
+          return parsed;
+        } catch (e) {
+          if (!(e instanceof ParseError) || attempt >= 1 || signal?.aborted) throw e;
+        }
+      }
     } catch (e) {
       steps.push({ step, provider: provider.name, usage, ok: false, error: failureReason(e, signal) });
       return null;

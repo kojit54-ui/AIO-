@@ -21,6 +21,8 @@ const EFFORT: Record<AiQuality, "low" | "medium" | "high"> = { quick: "low", dra
  */
 const THINKING_HEADROOM: Record<AiQuality, number> = { quick: 2000, draft: 8000, finish: 16000 };
 const MAX_NON_STREAMING_TOKENS = 21000;
+/** JSONで返させる指示のとき、文字列の中の " で壊れないように添える（日本語の引用は「」を使わせる） */
+const JSON_NOTE = "\n\n（JSONで返すときは、JSONだけを返し、文字列の中で引用するときは「」を使い、半角の \" を使うなら \\\" とエスケープしてください。）";
 export function anthropicMaxTokens(requested: number, quality: AiQuality): number {
   return Math.max(requested, Math.min(requested + THINKING_HEADROOM[quality], MAX_NON_STREAMING_TOKENS));
 }
@@ -38,7 +40,7 @@ export function createAnthropicProvider(opts: AnthropicOptions): AiProvider {
           {
             model: quality === "finish" ? opts.finishModel : opts.draftModel,
             max_tokens: anthropicMaxTokens(req.maxOutputTokens, quality),
-            system: req.system,
+            system: `${req.system}${JSON_NOTE}`,
             messages: [
               {
                 role: "user",

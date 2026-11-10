@@ -294,8 +294,8 @@ describe("役割分担（書く → 点検 → 書き直し、画像の提案）
     expect(r.body[1]).toEqual({ type: "paragraph", text: "下書き" });
     expect(r.review?.rewritten).toBe(false);
     expect(r.imageSuggestions).toEqual([]);
-    // 返答が読めなかった書き直しも、使った分は残す
-    expect(r.steps.find((s) => s.step === "rewrite")).toMatchObject({ ok: false, usage: { inputTokens: 1000 } });
+    // 返答が読めなかった書き直しは1回だけ作り直し、2回分の使った量を残す
+    expect(r.steps.find((s) => s.step === "rewrite")).toMatchObject({ ok: false, error: "parse", usage: { inputTokens: 2000 } });
     // 失敗の種類だけを残す（返答の中身は残さない）
     expect(r.steps.find((s) => s.step === "images")).toMatchObject({ ok: false, error: "unavailable" });
     expect(r.steps.find((s) => s.step === "rewrite")).toMatchObject({ error: "parse" });
