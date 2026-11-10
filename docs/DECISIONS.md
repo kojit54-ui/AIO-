@@ -186,3 +186,9 @@
 - しおりの深掘りには、業種が合う case を3つ `peer_cases` で渡す（似た経験を聞き出す参考だけ）。記事の提案には case の記事案も混ざる
 - 補助金の一覧は、成果ではなく「採択された計画」「成果事例として紹介された取り組み」と書く。件数を書くときは全件を数えて「当方調べ」と書く
 - なぜ：2026-11-09 田村さん「ごそっと増やせる別角度」「全部やってほしい。これ系のサービスの第一人者になりたい」。AIは数字の根拠と出典のある文章を引用しやすい。同業の取り組みは、お客様が自分の強みや新しい挑戦を思い出すきっかけになる
+
+## 2026-11-10 サイトの自動作業を Supabase の pg_cron からも呼ぶ
+
+- 決めたこと：vercel.json の自動作業4本（indexing・writing-reminder・billing-reminder・newsletter）を、Supabase の pg_cron＋pg_net からも同じ時刻（UTC）に呼ぶ（supabase/migrations/20261110080000_scheduler_pg_cron.sql）。鍵は SCHEDULER_SECRET（Vercel の環境変数）と、同じ値を Supabase の Vault の scheduler_secret に入れる。/api/cron/* は CRON_SECRET か SCHEDULER_SECRET のどちらでも受ける（src/lib/cron/auth.ts）。vercel.json の crons は残す（4本とも二重に呼ばれても害がない：送ったかを記録している・知らせ直しは無害）
+- なぜ：2026-11-09・11-10 の朝、/api/cron/indexing が一度も呼ばれていなかった（本番のログで確認。CRON_SECRET は設定済み・本番デプロイは READY）。Vercel の Hobby はログが1時間しか残らず、Cron の登録状態もコネクタから見えないため、Vercel 側だけに頼らず呼び出し元を増やした。各ルートは呼ばれるたびに「[ルート名] {caller}」をログに1行残す（vercel-cron／scheduler／forbidden）ので、どちらから届いたかが分かる
+- 見直し：pg_cron で1週間動いたら、Vercel の Cron が届いているかをログで確かめ、届いていなければ vercel.json の crons を消す
