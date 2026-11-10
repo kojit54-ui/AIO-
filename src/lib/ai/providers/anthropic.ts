@@ -14,6 +14,17 @@ export interface AnthropicOptions {
 
 const EFFORT: Record<AiQuality, "low" | "medium" | "high"> = { quick: "low", draft: "medium", finish: "high" };
 
+/**
+ * Claude は答える前に考える分も max_tokens に数える。呼び出し側の上限（返答の長さの目安）だけを渡すと、
+ * 短い上限（タイトル案1000など）では考えるだけで使い切って途中で切れる（2026-11-10 本番で truncated）。
+ * 考える分の余裕を足す。ただし SDK は非ストリーミングで約21,333を超えると断るので、その手前で止める。
+ */
+const THINKING_HEADROOM: Record<AiQuality, number> = { quick: 2000, draft: 8000, finish: 16000 };
+const MAX_NON_STREAMING_TOKENS = 21000;
+export function anthropicMaxTokens(requested: number, quality: AiQuality): number {
+  return Math.max(requested, Math.min(requested + THINKING_HEADROOM[quality], MAX_NON_STREAMING_TOKENS));
+}
+
 export function createAnthropicProvider(opts: AnthropicOptions): AiProvider {
   const client = new Anthropic({ apiKey: opts.apiKey, fetch: opts.fetch, maxRetries: 2 });
 
@@ -26,7 +37,7 @@ export function createAnthropicProvider(opts: AnthropicOptions): AiProvider {
         res = await client.beta.messages.create(
           {
             model: quality === "finish" ? opts.finishModel : opts.draftModel,
-            max_tokens: req.maxOutputTokens,
+            max_tokens: anthropicMaxTokens(req.maxOutputTokens, quality),
             system: req.system,
             messages: [
               {
