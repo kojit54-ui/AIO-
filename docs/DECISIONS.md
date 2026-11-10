@@ -192,3 +192,9 @@
 - 決めたこと：vercel.json の自動作業4本（indexing・writing-reminder・billing-reminder・newsletter）を、Supabase の pg_cron＋pg_net からも同じ時刻（UTC）に呼ぶ（supabase/migrations/20261110080000_scheduler_pg_cron.sql）。鍵は SCHEDULER_SECRET（Vercel の環境変数）と、同じ値を Supabase の Vault の scheduler_secret に入れる。/api/cron/* は CRON_SECRET か SCHEDULER_SECRET のどちらでも受ける（src/lib/cron/auth.ts）。vercel.json の crons は残す（4本とも二重に呼ばれても害がない：送ったかを記録している・知らせ直しは無害）
 - なぜ：2026-11-09・11-10 の朝、/api/cron/indexing が一度も呼ばれていなかった（本番のログで確認。CRON_SECRET は設定済み・本番デプロイは READY）。Vercel の Hobby はログが1時間しか残らず、Cron の登録状態もコネクタから見えないため、Vercel 側だけに頼らず呼び出し元を増やした。各ルートは呼ばれるたびに「[ルート名] {caller}」をログに1行残す（vercel-cron／scheduler／forbidden）ので、どちらから届いたかが分かる
 - 見直し：pg_cron で1週間動いたら、Vercel の Cron が届いているかをログで確かめ、届いていなければ vercel.json の crons を消す
+
+## 2026-11-10 書き手をClaude、点検をGPTに入れ替える
+
+- 決めたこと：本番の環境変数で TEXT_PROVIDER=anthropic（見出し案・本文・書き直し・質問づくりなど）、REVIEW_PROVIDER=openai（点検とAIOのチェック）、ANTHROPIC_TEXT_MODEL=claude-opus-5-5。画像の提案は Google のまま。コードの既定値（config.ts）は変えていないので、環境変数を消せば元（書き手GPT・点検Claude）に戻る
+- なぜ：クロップオザキの記事で、同じ素材・同じ指示文・同じ見出しで比べたところ、6人採点でボタン GPT 8.6 → Claude 8.9、面ファスナーは 8.7 で同じ。残る減点（同じ説明のくり返し・見出しとのずれ）は細かい決まりを守る力の差で、Claudeのほうが伸びしろがある。書き手と点検は別のAIにして、自分のクセを見落とさないようにする（田村さん判断）
+- 見直し：1週間ほど本番の記事と9人採点で様子を見る。費用は cost.ts の単価表で確かめる（Opus は Sonnet より高い）
