@@ -328,3 +328,14 @@ describe("役割分担（書く → 点検 → 書き直し、画像の提案）
     expect(() => parseReviewResult(JSON.stringify({ findings: [{ category: "unknown", excerpt: "x", advice: "y" }] }))).toThrow(ParseError);
   });
 });
+
+describe("Claude の max_tokens に考える分の余裕を足す", () => {
+  it("短い上限でも考える分で切れないよう足し、SDKの非ストリーミングの上限は超えない", async () => {
+    const { anthropicMaxTokens } = await import("./providers/anthropic");
+    expect(anthropicMaxTokens(1000, "draft")).toBe(9000);
+    expect(anthropicMaxTokens(600, "quick")).toBe(2600);
+    expect(anthropicMaxTokens(16000, "draft")).toBe(21000);
+    expect(anthropicMaxTokens(16000, "finish")).toBe(21000);
+    expect(anthropicMaxTokens(30000, "draft")).toBe(30000);
+  });
+});
