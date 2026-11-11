@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { writingStreak } from "@/lib/growth/monthly";
 import type { MockDb } from "@/mock/store";
-import { cleanAnswerText, companyNameVariants, mentionQuestions, questionsToWrite, siteDomain, usableQuestion } from "./mentionQuestions";
+import { cleanAnswerText, companyNameVariants, excerptForDisplay, siteName, mentionQuestions, questionsToWrite, siteDomain, usableQuestion } from "./mentionQuestions";
 import { findMention } from "./mentions";
 
 const ans = (questionId: string, text: string) => ({ questionId, text, followUps: [] });
@@ -37,6 +37,13 @@ describe("まだ紹介されていない質問から書く", () => {
     expect(cleanAnswerText("詳しくは[こちら](https://a.jp)を。")).toBe("詳しくはこちらを。");
   });
 
+  it("参考にしたサイトは名前で、答えの抜き出しは文の切れ目で見せる", () => {
+    expect(siteName({ url: "https://tcd.jp/", title: "東京のブランディング会社｜ブランド戦略の株式会社TCD" })).toBe("ブランド戦略の株式会社TCD");
+    expect(siteName({ url: "https://www.a.jp/x", title: "" })).toBe("a.jp");
+    expect(excerptForDisplay("候補はA社です。理由は実績が多いことです。B社は、得意な分野")).toBe("候補はA社です。理由は実績が多いことです。");
+    expect(excerptForDisplay("短い答えで途中")).toBe("短い答えで途中…");
+  });
+
   it("AIが作った質問は、短すぎ・長すぎ・会社名入り・質問でないものを使わない", () => {
     expect(usableQuestion("東京都中央区で製造業のブランディングを頼むなら、どこがおすすめ？", ["コタム"])).toBe(true);
     expect(usableQuestion("コタムに頼むならどう？", ["コタム"])).toBe(false);
@@ -59,6 +66,7 @@ describe("まだ紹介されていない質問から書く", () => {
       m("D？", false, "2026-11-01T00:00:00Z", [], true),
     ];
     const out = questionsToWrite(list.map((x) => ({ ...x, createdAt: x.createdAt.replace("11-05", "11-01") })), ["C？"]);
+    expect(questionsToWrite([m("困っている。誰に相談？", false, "2026-11-01T00:00:00Z"), m("川口で板金を頼むなら、どこがおすすめ？", false, "2026-11-01T00:00:00Z")], [])[0].question).toContain("おすすめ");
     expect(out.map((q) => q.question)).toEqual(["A？", "B？"]);
     // 新しい回があれば、前の回の質問は出さない
     expect(questionsToWrite(list, []).map((q) => q.question)).toEqual([]);

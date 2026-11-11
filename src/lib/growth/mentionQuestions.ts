@@ -51,7 +51,7 @@ export function siteDomain(url: string | null | undefined): string | null {
 
 export interface QuestionToWrite {
   question: string;
-  /** AIがその答えで参考にしたサイト（ドメイン、2つまで） */
+  /** AIがその答えで参考にしたサイト（サイトの名前、2つまで） */
   citedSites: string[];
 }
 
@@ -73,7 +73,28 @@ export function questionsToWrite(
   return [...latest.values()]
     .filter((m) => !m.mentioned && !m.isSample && !written.has(m.question.trim()))
     .slice(0, max)
-    .map((m) => ({ question: m.question, citedSites: [...new Set(m.sources.map((s) => siteDomain(s.url)).filter((d): d is string => !!d))].slice(0, 2) }));
+    // 依頼先を探す質問（「どこがおすすめ？」など）を先に。頼む直前の人に、いちばん近い質問だから
+    .sort((a, b) => Number(isPickQuestion(b.question)) - Number(isPickQuestion(a.question)))
+    .map((m) => ({ question: m.question, citedSites: [...new Set(m.sources.map((s) => siteName(s)).filter((d): d is string => !!d))].slice(0, 2) }));
+}
+
+/** 依頼先を探す聞き方の質問か */
+export const isPickQuestion = (q: string) => /どこ|おすすめ|会社は|頼むなら/.test(q);
+
+/** 出典の名前を短く（「東京のブランディング会社｜ブランド戦略の株式会社TCD」→ 後ろの「ブランド戦略の株式会社TCD」）。無ければドメイン */
+export function siteName(source: { url: string; title?: string }): string | null {
+  const parts = (source.title ?? "").split(/\s*[|｜]\s*|\s+[-–—]\s+/).map((x) => x.trim()).filter(Boolean);
+  const pick = parts.find((x) => /株式会社|有限会社|合同会社|（株）|協会|機構|庁|省|県|市|区|町|村|組合|会議所/.test(x)) ?? parts[parts.length - 1] ?? parts[0];
+  const name = pick && !/^https?:/.test(pick) ? Array.from(pick).slice(0, 24).join("") : null;
+  return name || siteDomain(source.url);
+}
+
+/** AIの答えの抜き出しを、文の切れ目で終える。途中で切れたら「…」を付ける */
+export function excerptForDisplay(text: string): string {
+  const t = cleanAnswerText(text);
+  if (/[。！？!?」）)]$/.test(t)) return t;
+  const cut = Math.max(t.lastIndexOf("。"), t.lastIndexOf("！"), t.lastIndexOf("？"));
+  return cut >= 15 ? t.slice(0, cut + 1) : `${t}…`;
 }
 
 /** 質問から記事を始めるときの「誰のどんな悩み」 */
