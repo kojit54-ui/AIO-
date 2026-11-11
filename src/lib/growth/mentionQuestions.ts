@@ -56,7 +56,7 @@ export interface QuestionToWrite {
 }
 
 /**
- * AIに聞いても、まだ会社が出てこない質問。いちばん新しい結果だけで判断し、
+ * AIに聞いても、まだ会社が出てこない質問。いちばん新しい回の結果だけで判断し、
  * 同じ質問をテーマにした記事があるものと、サンプルは外す。記事を書くきっかけに使う
  */
 export function questionsToWrite(
@@ -64,8 +64,11 @@ export function questionsToWrite(
   writtenThemes: string[],
   max = 3,
 ): QuestionToWrite[] {
+  // 使うのは、いちばん新しい回の結果だけ（質問の作り方が変わると、前の回の質問は今の会社に合わないことがある）
+  const sorted = [...mentions].filter((m) => !m.isSample).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const lastRun = sorted[0]?.createdAt.slice(0, 16);
   const latest = new Map<string, (typeof mentions)[number]>();
-  for (const m of [...mentions].sort((a, b) => b.createdAt.localeCompare(a.createdAt))) if (!latest.has(m.question)) latest.set(m.question, m);
+  for (const m of sorted) if (m.createdAt.slice(0, 16) === lastRun && !latest.has(m.question)) latest.set(m.question, m);
   const written = new Set(writtenThemes.map((t) => t.trim()));
   return [...latest.values()]
     .filter((m) => !m.mentioned && !m.isSample && !written.has(m.question.trim()))

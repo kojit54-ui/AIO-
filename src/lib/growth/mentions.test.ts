@@ -58,8 +58,10 @@ describe("まだ紹介されていない質問から書く", () => {
       m("C？", false, "2026-11-01T00:00:00Z"),
       m("D？", false, "2026-11-01T00:00:00Z", [], true),
     ];
-    const out = questionsToWrite(list, ["C？"]);
-    expect(out.map((q) => q.question)).toEqual(["A？"]);
+    const out = questionsToWrite(list.map((x) => ({ ...x, createdAt: x.createdAt.replace("11-05", "11-01") })), ["C？"]);
+    expect(out.map((q) => q.question)).toEqual(["A？", "B？"]);
+    // 新しい回があれば、前の回の質問は出さない
+    expect(questionsToWrite(list, []).map((q) => q.question)).toEqual([]);
     expect(out[0].citedSites).toEqual(["rival.jp", "other.jp"]);
   });
 });
