@@ -31,8 +31,10 @@ export function mentionQuestions(hearing: Record<string, HearingAnswer>): string
 /** 会社名から、AIの答えに出てきそうな呼び方を作る（「株式会社さくら工房」→「さくら工房」も探す） */
 export function companyNameVariants(name: string): string[] {
   const base = name.trim();
-  const stripped = base.replace(/^(株式会社|有限会社|合同会社|合資会社|（株）|\(株\)|㈱|（有）|\(有\)|㈲)\s*/, "").replace(/\s*(株式会社|有限会社|合同会社|（株）|\(株\)|㈱)$/, "").trim();
-  return [...new Set([base, stripped, ...base.split(/[\s　]/)])].filter((n) => n.length >= 2 && !/^(株式会社|有限会社|合同会社)$/.test(n));
+  // 後ろの（ ）書き（「（本社）」など）は、AIの答えには出てこないことが多いので外した形も探す
+  const noParen = base.replace(/\s*[（(][^（）()]*[）)]\s*$/, "").trim();
+  const stripped = noParen.replace(/^(株式会社|有限会社|合同会社|合資会社|（株）|\(株\)|㈱|（有）|\(有\)|㈲)\s*/, "").replace(/\s*(株式会社|有限会社|合同会社|（株）|\(株\)|㈱)$/, "").trim();
+  return [...new Set([base, noParen, stripped, ...base.split(/[\s　]/)])].filter((n) => n.length >= 2 && !/^(株式会社|有限会社|合同会社)$/.test(n));
 }
 
 /** サイトのアドレスから、出典と比べる名前（ドメイン）を取り出す。Search Console の sc-domain: にも対応 */
@@ -73,3 +75,25 @@ export function questionsToWrite(
 
 /** 質問から記事を始めるときの「誰のどんな悩み」 */
 export const readerProblemForQuestion = (question: string) => `AIに「${question}」と聞いて、頼み先を探している人`;
+
+/** AIの答えの文から、Markdown の記号と、文中のリンク（出典は別に出す）を取る */
+export function cleanAnswerText(text: string): string {
+  return text
+    .replace(/\(\s*\[[^\]]*\]\([^)]*\)\s*\)/g, "") // （[tcd.jp](https://...)）のような出典の書き方
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/https?:\/\/\S+/g, "")
+    .replace(/\*\*|__|`/g, "")
+    .replace(/^#{1,6}\s*/gm, "")
+    .replace(/\s*#{2,}\s*$/gm, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+/** AIが作った質問として使えるか（短すぎ・長すぎ・会社名入り・質問でないものを外す） */
+export function usableQuestion(q: unknown, names: string[]): q is string {
+  if (typeof q !== "string") return false;
+  const s = q.trim();
+  const len = Array.from(s).length;
+  return len >= 8 && len <= 60 && /[？?]$/.test(s) && !names.some((n) => n.length >= 2 && s.includes(n));
+}
