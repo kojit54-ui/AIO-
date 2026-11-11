@@ -14,7 +14,7 @@ const OPENAI_MODEL = process.env.ROLE_TEST_OPENAI_MODEL || "gpt-6.1-sol";
 const GEMINI_MODEL = process.env.ROLE_TEST_GEMINI_MODEL || "gemini-4-argon";
 
 const [role, dir, prevDir, fixedFile] = process.argv.slice(2);
-if (!IMAGES[role] || !dir) {
+if ((!IMAGES[role] && !process.env.ROLE_IMAGES) || !dir) {
   console.error("使い方: node scripts/role-test/score.mjs <customer|article|admin> <出力フォルダ> [前回の結果フォルダ] [直したことのメモ.txt]");
   process.exit(1);
 }
@@ -27,7 +27,8 @@ if (prevDir) {
   if (prev.length) prompt += `\n## 前回の指摘（2人の採点者から。重なりあり）\n${prev.join("\n")}\n`;
 }
 if (fixedFile) prompt += `\n## 前回のあとに直したこと（参考）\n${readFileSync(fixedFile, "utf8")}\n`;
-const files = typeof IMAGES[role] === "function" ? IMAGES[role](dir) : IMAGES[role];
+// ROLE_IMAGES="a.png,b.png" で、決まった名前以外の写しを渡せる（新しい役を足すとき）
+const files = process.env.ROLE_IMAGES ? process.env.ROLE_IMAGES.split(",") : typeof IMAGES[role] === "function" ? IMAGES[role](dir) : IMAGES[role];
 const imgs = files.map((f) => readFileSync(`${dir}/${f}`).toString("base64"));
 
 async function gpt() {

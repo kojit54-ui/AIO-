@@ -8,7 +8,7 @@ import { EmptyState, Notice, monthLabel } from "@/components/ui";
 import { ApiError, useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
 import { nearQueries } from "@/lib/growth/nearQueries";
-import { questionsToWrite, readerProblemForQuestion } from "@/lib/growth/mentionQuestions";
+import { isPickQuestion, questionsToWrite, readerProblemForQuestion } from "@/lib/growth/mentionQuestions";
 import { articleSummaries } from "@/lib/selectors";
 import { ShioriTalk } from "@/components/talk";
 import { GuideName, GuideText } from "@/components/useGuide";
@@ -98,7 +98,7 @@ export default function NewArticlePage() {
           <h2 id="ai-q-heading" className="font-black">
             🤖 AIに聞いても、まだあなたの会社が出てこない質問
           </h2>
-          <ShioriTalk mood="idea" size="sm" lines={["お客様がAIに聞きそうな質問を、代わりにAIに聞いてみた結果です。", "この質問にそのまま答える記事を書くと、AIに紹介されるきっかけになります。いちばんの近道ですよ。"]} />
+          <ShioriTalk mood="idea" size="sm" lines={["お客様がAIに聞きそうな質問を、代わりにAIに聞いてみた結果です。", "この質問に答える記事で、あなたの仕事と強みを伝えましょう。必ず紹介されるとは限りませんが、AIが参考にできる材料が増えます。"]} />
           <ul className="grid gap-2 sm:grid-cols-3">
             {aiQuestions.map((q, i) => (
               <li key={q.question} className="animate-pop" style={{ animationDelay: `${0.2 + i * 0.08}s` }}>
@@ -108,8 +108,17 @@ export default function NewArticlePage() {
                   className="group flex h-full w-full flex-col items-start gap-1 rounded-2xl border-2 border-line bg-surface p-3 text-left transition-transform hover:-translate-y-0.5 hover:border-brand disabled:opacity-60"
                   onClick={() => start({ customTheme: { title: q.question, readerProblem: readerProblemForQuestion(q.question) } })}
                 >
+                  {i === 0 && <span className="rounded-full bg-sun px-2 text-xs font-black text-ink">まずはこれから</span>}
                   <span className="font-black">「{q.question}」</span>
-                  {q.citedSites.length > 0 && <span className="text-xs text-muted">AIが参考にしたのは：{q.citedSites.join("、")}</span>}
+                  {i === 0 && isPickQuestion(q.question) && <span className="text-xs">頼み先を探している人が、そのままAIに聞く質問です。</span>}
+                  {q.citedSites.length > 0 && (
+                    <span className="block text-sm text-muted">
+                      <span className="block font-bold">AIが参考にしたサイト</span>
+                      {q.citedSites.map((n) => (
+                        <span key={n} className="block">・{n}</span>
+                      ))}
+                    </span>
+                  )}
                   <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-brand">
                     この質問に答える記事を書く
                     <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>

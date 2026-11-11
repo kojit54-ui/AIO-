@@ -31,8 +31,10 @@ export function mentionQuestions(hearing: Record<string, HearingAnswer>): string
 /** 会社名から、AIの答えに出てきそうな呼び方を作る（「株式会社さくら工房」→「さくら工房」も探す） */
 export function companyNameVariants(name: string): string[] {
   const base = name.trim();
-  const stripped = base.replace(/^(株式会社|有限会社|合同会社|合資会社|（株）|\(株\)|㈱|（有）|\(有\)|㈲)\s*/, "").replace(/\s*(株式会社|有限会社|合同会社|（株）|\(株\)|㈱)$/, "").trim();
-  return [...new Set([base, stripped, ...base.split(/[\s　]/)])].filter((n) => n.length >= 2 && !/^(株式会社|有限会社|合同会社)$/.test(n));
+  // 後ろの（ ）書き（「（本社）」など）は、AIの答えには出てこないことが多いので外した形も探す
+  const noParen = base.replace(/\s*[（(][^（）()]*[）)]\s*$/, "").trim();
+  const stripped = noParen.replace(/^(株式会社|有限会社|合同会社|合資会社|（株）|\(株\)|㈱|（有）|\(有\)|㈲)\s*/, "").replace(/\s*(株式会社|有限会社|合同会社|（株）|\(株\)|㈱)$/, "").trim();
+  return [...new Set([base, noParen, stripped, ...base.split(/[\s　]/)])].filter((n) => n.length >= 2 && !/^(株式会社|有限会社|合同会社)$/.test(n));
 }
 
 /** サイトのアドレスから、出典と比べる名前（ドメイン）を取り出す。Search Console の sc-domain: にも対応 */
@@ -49,12 +51,12 @@ export function siteDomain(url: string | null | undefined): string | null {
 
 export interface QuestionToWrite {
   question: string;
-  /** AIがその答えで参考にしたサイト（ドメイン、2つまで） */
+  /** AIがその答えで参考にしたサイト（サイトの名前、2つまで） */
   citedSites: string[];
 }
 
 /**
- * AIに聞いても、まだ会社が出てこない質問。いちばん新しい結果だけで判断し、
+ * AIに聞いても、まだ会社が出てこない質問。いちばん新しい回の結果だけで判断し、
  * 同じ質問をテーマにした記事があるものと、サンプルは外す。記事を書くきっかけに使う
  */
 export function questionsToWrite(
@@ -62,14 +64,60 @@ export function questionsToWrite(
   writtenThemes: string[],
   max = 3,
 ): QuestionToWrite[] {
+  // 使うのは、いちばん新しい回の結果だけ（質問の作り方が変わると、前の回の質問は今の会社に合わないことがある）
+  const sorted = [...mentions].filter((m) => !m.isSample).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const lastRun = sorted[0]?.createdAt.slice(0, 16);
   const latest = new Map<string, (typeof mentions)[number]>();
-  for (const m of [...mentions].sort((a, b) => b.createdAt.localeCompare(a.createdAt))) if (!latest.has(m.question)) latest.set(m.question, m);
+  for (const m of sorted) if (m.createdAt.slice(0, 16) === lastRun && !latest.has(m.question)) latest.set(m.question, m);
   const written = new Set(writtenThemes.map((t) => t.trim()));
   return [...latest.values()]
     .filter((m) => !m.mentioned && !m.isSample && !written.has(m.question.trim()))
     .slice(0, max)
-    .map((m) => ({ question: m.question, citedSites: [...new Set(m.sources.map((s) => siteDomain(s.url)).filter((d): d is string => !!d))].slice(0, 2) }));
+    // 依頼先を探す質問（「どこがおすすめ？」など）を先に。頼む直前の人に、いちばん近い質問だから
+    .sort((a, b) => Number(isPickQuestion(b.question)) - Number(isPickQuestion(a.question)))
+    .map((m) => ({ question: m.question, citedSites: [...new Set(m.sources.map((s) => siteName(s)).filter((d): d is string => !!d))].slice(0, 2) }));
+}
+
+/** 依頼先を探す聞き方の質問か */
+export const isPickQuestion = (q: string) => /どこ|おすすめ|会社は|頼むなら/.test(q);
+
+/** 出典の名前を短く（「東京のブランディング会社｜ブランド戦略の株式会社TCD」→ 後ろの「ブランド戦略の株式会社TCD」）。無ければドメイン */
+export function siteName(source: { url: string; title?: string }): string | null {
+  const parts = (source.title ?? "").split(/\s*[|｜]\s*|\s+[-–—]\s+/).map((x) => x.trim()).filter(Boolean);
+  const pick = parts.find((x) => /株式会社|有限会社|合同会社|（株）|協会|機構|庁|省|県|市|区|町|村|組合|会議所/.test(x)) ?? parts[parts.length - 1] ?? parts[0];
+  const name = pick && !/^https?:/.test(pick) ? Array.from(pick).slice(0, 24).join("") : null;
+  return name || siteDomain(source.url);
+}
+
+/** AIの答えの抜き出しを、文の切れ目で終える。途中で切れたら「…」を付ける */
+export function excerptForDisplay(text: string): string {
+  const t = cleanAnswerText(text);
+  if (/[。！？!?」）)]$/.test(t)) return t;
+  const cut = Math.max(t.lastIndexOf("。"), t.lastIndexOf("！"), t.lastIndexOf("？"));
+  return cut >= 15 ? t.slice(0, cut + 1) : `${t}…`;
 }
 
 /** 質問から記事を始めるときの「誰のどんな悩み」 */
 export const readerProblemForQuestion = (question: string) => `AIに「${question}」と聞いて、頼み先を探している人`;
+
+/** AIの答えの文から、Markdown の記号と、文中のリンク（出典は別に出す）を取る */
+export function cleanAnswerText(text: string): string {
+  return text
+    .replace(/\(\s*\[[^\]]*\]\([^)]*\)\s*\)/g, "") // （[tcd.jp](https://...)）のような出典の書き方
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/https?:\/\/\S+/g, "")
+    .replace(/\*\*|__|`/g, "")
+    .replace(/^#{1,6}\s*/gm, "")
+    .replace(/\s*#{2,}\s*$/gm, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+/** AIが作った質問として使えるか（短すぎ・長すぎ・会社名入り・質問でないものを外す） */
+export function usableQuestion(q: unknown, names: string[]): q is string {
+  if (typeof q !== "string") return false;
+  const s = q.trim();
+  const len = Array.from(s).length;
+  return len >= 8 && len <= 60 && /[？?]$/.test(s) && !names.some((n) => n.length >= 2 && s.includes(n));
+}

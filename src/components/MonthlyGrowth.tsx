@@ -8,7 +8,7 @@ import { useState } from "react";
 import { ShioriTalk } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice } from "@/components/ui";
-import { MONTHLY_MENTION_CHECKS } from "@/lib/growth/mentionQuestions";
+import { MONTHLY_MENTION_CHECKS, excerptForDisplay, siteName } from "@/lib/growth/mentionQuestions";
 import { articleSummaries } from "@/lib/selectors";
 import { monthlySummary, writingStreak } from "@/lib/growth/monthly";
 import { ApiError, type MockDb, useStore } from "@/mock/store";
@@ -61,7 +61,7 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
 
   return (
     <section className="card animate-rise space-y-4" aria-labelledby="monthly-heading">
-      {busy && <WaitingScreen label="AIに聞いています" note="地域とサービスの質問を、検索できるAIに聞いて、あなたの会社が出てくるか確かめています。" />}
+      {busy && <WaitingScreen label="AIに聞いています" note="お客様がAIに聞きそうな質問を3つ作って、検索できるAIに聞いています。あなたの会社が出てくるか確かめます（1分ほど）。" />}
       <div className="flex flex-wrap items-end justify-between gap-3">
         <h2 id="monthly-heading" className="text-lg font-black">
           📰 しおり通信 {y}年{Number(mo)}月号
@@ -84,10 +84,10 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
         <ShioriTalk
           mood={ever ? "jersey-done" : "think"}
           size="sm"
-          lines={[ever ? "AIに紹介されたことがありますよ！" : "お客様がAIに聞きそうな質問を、しおりが代わりに聞いてみます。", `答えや出典に、あなたの会社が出てくるか確かめますね。月${MONTHLY_MENTION_CHECKS}回まで調べられます。`]}
+          lines={[ever ? "AIに紹介されたことがありますよ！" : "お客様がAIに聞きそうな質問を、しおりが代わりに聞いてみます。", `答えや、AIが参考にしたサイトに、あなたの会社が出てくるか確かめますね。月${MONTHLY_MENTION_CHECKS}回まで調べられます。`]}
         >
           <button type="button" className="btn-primary" disabled={busy || runsThisMonth >= MONTHLY_MENTION_CHECKS} onClick={check}>
-            {runsThisMonth >= MONTHLY_MENTION_CHECKS ? "今月は調べ終わりました" : `今月のチェックをする（残り${MONTHLY_MENTION_CHECKS - runsThisMonth}回）`}
+            {runsThisMonth >= MONTHLY_MENTION_CHECKS ? `今月は調べ終わりました（来月1日から、また${MONTHLY_MENTION_CHECKS}回）` : `今月のチェックをする（残り${MONTHLY_MENTION_CHECKS - runsThisMonth}回）`}
           </button>
         </ShioriTalk>
         {error && <Notice tone="warn" title={error} />}
@@ -98,25 +98,29 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
                 <p className="font-bold">
                   {m.mentioned ? "🎉 紹介されました：" : "まだ出てきません："}「{m.question}」
                 </p>
-                <p className="text-muted">{m.excerpt}</p>
+                <p className="whitespace-pre-line text-muted">{excerptForDisplay(m.excerpt)}</p>
                 {!m.mentioned && !m.isSample && !writtenThemes.has(m.question) && (
-                  <Link href="/articles/new#ai-questions" className="mt-1 inline-flex items-center gap-1 font-bold text-brand-dark underline">
+                  <Link href="/articles/new#ai-questions" className="btn-secondary mt-2 min-h-10 px-4 text-sm">
                     この質問に答える記事を書く →
                   </Link>
                 )}
                 {m.sources.length > 0 && (
-                  <p className="mt-1 text-xs">
-                    出典：
-                    {m.sources.slice(0, 3).map((x, i) => (
-                      <a key={x.url} href={x.url} target="_blank" rel="noopener noreferrer" className="ml-1 text-brand-dark underline">
-                        {i + 1}. {x.title.slice(0, 30)}
-                      </a>
-                    ))}
-                  </p>
+                  <div className="mt-2 text-xs">
+                    <p className="font-bold">AIが参考にしたサイト</p>
+                    <ul className="mt-0.5 space-y-0.5">
+                      {m.sources.slice(0, 3).map((x) => (
+                        <li key={x.url}>
+                          <a href={x.url} target="_blank" rel="noopener noreferrer" className="text-brand-dark underline">
+                            {siteName(x)}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </li>
             ))}
-            {!ever && <li className="text-xs text-muted">記事を積み重ねるほど、AIに紹介されやすくなります。結果はAIのその時の答えなので、毎回変わることがあります。</li>}
+            {!ever && <li className="text-xs text-muted">記事を積み重ねると、AIが参考にできる材料が増えます。紹介されるかはAIが決めることで、同じ質問でも答えは毎回変わります。</li>}
           </ul>
         )}
       </div>
