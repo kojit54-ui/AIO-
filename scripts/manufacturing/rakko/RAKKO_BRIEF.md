@@ -32,3 +32,8 @@ JSON 配列を、指示されたファイル名で Bash（python）で書く。*
 `{"kind": "question"|"buyer"|"term"|"pain", "title": "...", "summary": "...", "industries": [...], "useFor": [...], "articleIdea": "（任意）", "source": {"title":"...","url":"https://...","publisher":"...","date": null}}`
 
 書き終えたら python で JSON が読めること・長さの上限・重なりが無いことを確かめ、6行で報告する（何件・kind別の件数・使ったクレジットの合計・使った検索語とドメイン・弱いところ・おもしろかった発見1つ）。
+
+### 第2回の追記（2026-11-12）
+- 前回（第1回）に influx-aio で使ったドメインは使わない：meviy.misumi-ec.com、jp.meviy.misumi-ec.com、jp.misumi-ec.com、www.nc-net.or.jp、www.keyence.co.jp、www.emidas.com、www.ipros.jp、www.ipros.com、monoist.itmedia.co.jp、mfg-hack.com、www.miyawakikoukan.com、www.p-ban.com、oem-make.com、shokuhin-oem.jp。
+- 新しいドメインは、headline の上位に何度も出る発注者向けの解説サイト、または competitive（4.5クレジット、2回まで）で見つける。
+- 同じフォルダの他の班の r*.json とも重ねない（書く直前に読み直す）。
