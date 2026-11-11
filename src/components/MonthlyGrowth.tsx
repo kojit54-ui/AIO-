@@ -9,6 +9,7 @@ import { ShioriTalk } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice } from "@/components/ui";
 import { MONTHLY_MENTION_CHECKS } from "@/lib/growth/mentionQuestions";
+import { articleSummaries } from "@/lib/selectors";
 import { monthlySummary, writingStreak } from "@/lib/growth/monthly";
 import { ApiError, type MockDb, useStore } from "@/mock/store";
 import { GuideName, GuideText } from "@/components/useGuide";
@@ -28,6 +29,7 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
   const latest = mentions.filter((m) => m.createdAt.slice(0, 16) === latestAt);
   const runsThisMonth = new Set(mentions.filter((m) => ym(m.createdAt) === month).map((m) => m.createdAt.slice(0, 16))).size;
   const ever = mentions.some((m) => m.mentioned);
+  const writtenThemes = new Set(articleSummaries(db, orgId).map((a) => a.themeTitle));
   const [y, mo] = month.split("-");
 
   async function toggleMail(on: boolean) {
@@ -97,6 +99,11 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
                   {m.mentioned ? "🎉 紹介されました：" : "まだ出てきません："}「{m.question}」
                 </p>
                 <p className="text-muted">{m.excerpt}</p>
+                {!m.mentioned && !m.isSample && !writtenThemes.has(m.question) && (
+                  <Link href="/articles/new#ai-questions" className="mt-1 inline-flex items-center gap-1 font-bold text-brand-dark underline">
+                    この質問に答える記事を書く →
+                  </Link>
+                )}
                 {m.sources.length > 0 && (
                   <p className="mt-1 text-xs">
                     出典：

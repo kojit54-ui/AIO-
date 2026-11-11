@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { writingStreak } from "@/lib/growth/monthly";
 import type { MockDb } from "@/mock/store";
-import { mentionQuestions } from "./mentionQuestions";
+import { companyNameVariants, mentionQuestions, questionsToWrite, siteDomain } from "./mentionQuestions";
 import { findMention } from "./mentions";
 
 const ans = (questionId: string, text: string) => ({ questionId, text, followUps: [] });
@@ -18,6 +18,35 @@ describe("AIに紹介されたかのチェック", () => {
     expect(findMention("さくら市なら、さくら住まい工房が評判です。", [], ["さくら住まい工房"], []).mentioned).toBe(true);
     expect(findMention("いくつかの会社があります。", [{ url: "https://sakura-reform.jp/blog/1", title: "t" }], ["X社"], ["sakura-reform.jp"]).mentioned).toBe(true);
     expect(findMention("いくつかの会社があります。", [], ["さくら住まい工房"], ["sakura-reform.jp"]).mentioned).toBe(false);
+  });
+});
+
+describe("まだ紹介されていない質問から書く", () => {
+  const m = (question: string, mentioned: boolean, createdAt: string, urls: string[] = [], isSample = false) => ({ question, mentioned, createdAt, isSample, sources: urls.map((url) => ({ url })) });
+
+  it("会社名は「株式会社」を外した呼び方でも探す", () => {
+    expect(companyNameVariants("株式会社さくら工房")).toContain("さくら工房");
+    expect(companyNameVariants("（有）みなと製作所")).toContain("みなと製作所");
+    expect(companyNameVariants("株式会社 コタム")).not.toContain("株式会社");
+  });
+
+  it("サイトのアドレスと Search Console の sc-domain: からドメインを取る", () => {
+    expect(siteDomain("https://www.sakura.jp/blog/1")).toBe("sakura.jp");
+    expect(siteDomain("sc-domain:sakura.jp")).toBe("sakura.jp");
+    expect(siteDomain("だめ")).toBeNull();
+  });
+
+  it("いちばん新しい結果でまだ出てこない質問だけを、AIが参考にしたサイトと一緒に返す", () => {
+    const list = [
+      m("A？", false, "2026-11-01T00:00:00Z", ["https://www.rival.jp/a", "https://rival.jp/b", "https://other.jp/"]),
+      m("B？", false, "2026-11-01T00:00:00Z"),
+      m("B？", true, "2026-11-05T00:00:00Z"),
+      m("C？", false, "2026-11-01T00:00:00Z"),
+      m("D？", false, "2026-11-01T00:00:00Z", [], true),
+    ];
+    const out = questionsToWrite(list, ["C？"]);
+    expect(out.map((q) => q.question)).toEqual(["A？"]);
+    expect(out[0].citedSites).toEqual(["rival.jp", "other.jp"]);
   });
 });
 

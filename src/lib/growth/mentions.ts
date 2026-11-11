@@ -8,7 +8,7 @@ import { DEFAULTS } from "@/lib/ai/config";
 import type { AiUsage } from "@/lib/ai/provider";
 import type { HearingAnswer } from "@/prototype/growth";
 import { answerFromDb, type HearingAnswerRow } from "@/prototype/remote";
-import { MONTHLY_MENTION_CHECKS, mentionQuestions } from "./mentionQuestions";
+import { MONTHLY_MENTION_CHECKS, companyNameVariants, mentionQuestions, siteDomain } from "./mentionQuestions";
 
 /** 答えと出典に、会社の名前かサイトが出てくるか */
 export function findMention(answer: string, sources: { url: string; title: string }[], names: string[], domains: string[]): { mentioned: boolean; excerpt: string } {
@@ -62,11 +62,13 @@ export async function runMentionCheck(
   const { data: auth } = await db.auth.getUser();
   if (!auth.user) return fail(401, "session_expired", "ログインの有効期限が切れました");
 
-  const [orgRes, hearingRes, articlesRes, monthRes] = await Promise.all([
+  const [orgRes, hearingRes, articlesRes, monthRes, scRes] = await Promise.all([
     db.from("organizations").select("name").eq("id", req.organizationId).maybeSingle(),
     db.from("hearing_answers").select("*").eq("organization_id", req.organizationId),
     db.from("articles").select("published_url").eq("organization_id", req.organizationId).not("published_url", "is", null),
     db.from("aio_mentions").select("created_at").eq("organization_id", req.organizationId).gte("created_at", new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), 1)).toISOString()),
+    // 会社のサイト（Search Console でつないだもの）も、出典に出たら「紹介された」と数える
+    db.from("search_console").select("site_url").eq("organization_id", req.organizationId).maybeSingle(),
   ]);
   if (!orgRes.data) return fail(404, "not_found", "会社が見つかりません");
   const hearing: Record<string, HearingAnswer> = {};
@@ -89,8 +91,12 @@ export async function runMentionCheck(
 
   const apiKey = env.OPENAI_API_KEY?.trim();
   const model = env.OPENAI_SEARCH_MODEL?.trim() || env.OPENAI_TEXT_MODEL?.trim() || DEFAULTS.openaiTextModel;
-  const names = [orgRes.data.name as string, ...(orgRes.data.name as string).split(/[\s　]/)].filter((n) => n.length >= 2);
-  const domains = [...new Set(((articlesRes.data ?? []) as { published_url: string }[]).flatMap((a) => { try { return [new URL(a.published_url).hostname.replace(/^www\./, "")]; } catch { return []; } }))];
+  const names = companyNameVariants(orgRes.data.name as string);
+  const domains = [
+    ...new Set(
+      [...((articlesRes.data ?? []) as { published_url: string }[]).map((a) => siteDomain(a.published_url)), siteDomain((scRes.data as { site_url?: string } | null)?.site_url)].filter((d): d is string => !!d),
+    ),
+  ];
   let usage: AiUsage = { inputTokens: 0, outputTokens: 0 };
   const signal = AbortSignal.timeout(120_000);
   try {
