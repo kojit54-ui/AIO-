@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { writingStreak } from "@/lib/growth/monthly";
 import type { MockDb } from "@/mock/store";
-import { companyNameVariants, mentionQuestions, questionsToWrite, siteDomain } from "./mentionQuestions";
+import { cleanAnswerText, companyNameVariants, mentionQuestions, questionsToWrite, siteDomain, usableQuestion } from "./mentionQuestions";
 import { findMention } from "./mentions";
 
 const ans = (questionId: string, text: string) => ({ questionId, text, followUps: [] });
@@ -28,6 +28,20 @@ describe("まだ紹介されていない質問から書く", () => {
     expect(companyNameVariants("株式会社さくら工房")).toContain("さくら工房");
     expect(companyNameVariants("（有）みなと製作所")).toContain("みなと製作所");
     expect(companyNameVariants("株式会社 コタム")).not.toContain("株式会社");
+    expect(companyNameVariants("株式会社さくら工房（本社）")).toContain("さくら工房");
+  });
+
+  it("AIの答えの Markdown の記号と文中のリンクを取る", () => {
+    const raw = "東京なら、**企業全体は「TCD」**がおすすめです。([tcd.jp](https://tcd.jp/tokyo?utm_source=openai)) ###";
+    expect(cleanAnswerText(raw)).toBe("東京なら、企業全体は「TCD」がおすすめです。");
+    expect(cleanAnswerText("詳しくは[こちら](https://a.jp)を。")).toBe("詳しくはこちらを。");
+  });
+
+  it("AIが作った質問は、短すぎ・長すぎ・会社名入り・質問でないものを使わない", () => {
+    expect(usableQuestion("東京都中央区で製造業のブランディングを頼むなら、どこがおすすめ？", ["コタム"])).toBe(true);
+    expect(usableQuestion("コタムに頼むならどう？", ["コタム"])).toBe(false);
+    expect(usableQuestion("ブランディング会社", [])).toBe(false);
+    expect(usableQuestion(3, [])).toBe(false);
   });
 
   it("サイトのアドレスと Search Console の sc-domain: からドメインを取る", () => {

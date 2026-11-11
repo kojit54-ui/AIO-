@@ -10,7 +10,7 @@
 
 ### 2026-11-12 CC（Claude、プロジェクトのスレッド）AIに出てこない質問から記事を書く
 - 変更点：src/lib/growth/mentionQuestions.ts に companyNameVariants・siteDomain・questionsToWrite。/articles/new のいちばん上に「AIに聞いても、まだあなたの会社が出てこない質問」（押すとその質問がテーマの記事が始まる）、しおり通信の結果にも同じ画面へのリンク。紹介されたかの判定（mentions.ts）に、株式会社などを外した社名と Search Console のサイトを足した
-- 確認結果：lint・型検査・単体テスト通過
+- 確認結果：lint・型検査・単体テスト通過。本番でテスト用の会社を実際に調べたら、質問が「東京都中央区であとを頼むなら…」のように壊れていた → 2つ目のPRで、質問をAI（GPT）に作らせ（会社名なし・60文字以内・？で終わるものだけ使う、だめなら従来の形）、答えの Markdown 記号と文中リンクを消し、社名の後ろの（ ）書きも外して探すようにした
 
 ### 2026-11-10 CC（Claude、プロジェクトのスレッド）サイトの自動作業を Supabase の pg_cron からも呼ぶ
 - 変更点：src/lib/cron/auth.ts（CRON_SECRET か SCHEDULER_SECRET を受ける）を4本の /api/cron/* で使い、呼ばれたら「[ルート名] {caller}」をログに残す。supabase/migrations/20261110080000_scheduler_pg_cron.sql（pg_cron・pg_net、call_site_job、4本の登録。pg_cron の無い PGlite では飛ばす）

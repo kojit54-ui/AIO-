@@ -8,7 +8,7 @@ import { useState } from "react";
 import { ShioriTalk } from "@/components/talk";
 import { WaitingScreen } from "@/components/WaitingScreen";
 import { Notice } from "@/components/ui";
-import { MONTHLY_MENTION_CHECKS } from "@/lib/growth/mentionQuestions";
+import { MONTHLY_MENTION_CHECKS, cleanAnswerText } from "@/lib/growth/mentionQuestions";
 import { articleSummaries } from "@/lib/selectors";
 import { monthlySummary, writingStreak } from "@/lib/growth/monthly";
 import { ApiError, type MockDb, useStore } from "@/mock/store";
@@ -98,7 +98,7 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
                 <p className="font-bold">
                   {m.mentioned ? "🎉 紹介されました：" : "まだ出てきません："}「{m.question}」
                 </p>
-                <p className="text-muted">{m.excerpt}</p>
+                <p className="whitespace-pre-line text-muted">{cleanAnswerText(m.excerpt)}</p>
                 {!m.mentioned && !m.isSample && !writtenThemes.has(m.question) && (
                   <Link href="/articles/new#ai-questions" className="mt-1 inline-flex items-center gap-1 font-bold text-brand-dark underline">
                     この質問に答える記事を書く →
