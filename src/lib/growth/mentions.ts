@@ -152,17 +152,16 @@ export async function runMentionCheck(
       if (made) usage = { inputTokens: usage.inputTokens + made.usage.inputTokens, outputTokens: usage.outputTokens + made.usage.outputTokens };
       if (made && made.questions.length >= 2) asked = made.questions;
     }
-    const rows = [];
-    for (const q of asked) {
-      if (!apiKey) {
-        rows.push({ organization_id: req.organizationId, question: q, mentioned: false, excerpt: "サンプル（AIは未接続）：検索できるAIのキーが入ると、ここに答えが入ります。", sources: [], provider: "sample", is_sample: true });
-        continue;
-      }
-      const r = await askWithSearch(apiKey, model, q, signal, deps.fetch);
-      usage = { inputTokens: usage.inputTokens + r.usage.inputTokens, outputTokens: usage.outputTokens + r.usage.outputTokens };
-      const m = findMention(r.text, r.sources, names, domains);
-      rows.push({ organization_id: req.organizationId, question: q, mentioned: m.mentioned, excerpt: m.excerpt, sources: r.sources, provider: "openai", is_sample: false });
-    }
+    // 3つの質問は同時に聞く（1つずつだと1分半ほどかかり、待つ人が離れる）
+    const rows = await Promise.all(
+      asked.map(async (q) => {
+        if (!apiKey) return { organization_id: req.organizationId, question: q, mentioned: false, excerpt: "サンプル（AIは未接続）：検索できるAIのキーが入ると、ここに答えが入ります。", sources: [] as { url: string; title: string }[], provider: "sample", is_sample: true };
+        const r = await askWithSearch(apiKey, model, q, signal, deps.fetch);
+        usage = { inputTokens: usage.inputTokens + r.usage.inputTokens, outputTokens: usage.outputTokens + r.usage.outputTokens };
+        const m = findMention(r.text, r.sources, names, domains);
+        return { organization_id: req.organizationId, question: q, mentioned: m.mentioned, excerpt: m.excerpt, sources: r.sources, provider: "openai", is_sample: false };
+      }),
+    );
     const { error: insErr } = await admin.from("aio_mentions").insert(rows);
     if (insErr) throw new Error("mentions insert failed");
     // 検索の利用料は文章の単価とは別。ここでは文章の分だけを数える（docs/DECISIONS.md に記録）

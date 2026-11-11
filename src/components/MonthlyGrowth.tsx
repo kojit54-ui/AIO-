@@ -61,7 +61,7 @@ export function MonthlyGrowth({ db, orgId, month }: { db: MockDb; orgId: string;
 
   return (
     <section className="card animate-rise space-y-4" aria-labelledby="monthly-heading">
-      {busy && <WaitingScreen label="AIに聞いています" note="地域とサービスの質問を、検索できるAIに聞いて、あなたの会社が出てくるか確かめています。" />}
+      {busy && <WaitingScreen label="AIに聞いています" note="お客様がAIに聞きそうな質問を3つ作って、検索できるAIに聞いています。あなたの会社が出てくるか確かめます（1分ほど）。" />}
       <div className="flex flex-wrap items-end justify-between gap-3">
         <h2 id="monthly-heading" className="text-lg font-black">
           📰 しおり通信 {y}年{Number(mo)}月号
