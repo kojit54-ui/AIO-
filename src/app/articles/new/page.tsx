@@ -111,7 +111,14 @@ export default function NewArticlePage() {
                   {i === 0 && <span className="rounded-full bg-sun px-2 text-xs font-black text-ink">まずはこれから</span>}
                   <span className="font-black">「{q.question}」</span>
                   {i === 0 && isPickQuestion(q.question) && <span className="text-xs">頼み先を探している人が、そのままAIに聞く質問です。</span>}
-                  {q.citedSites.length > 0 && <span className="text-xs text-muted">AIが参考にしたサイト：{q.citedSites.join("、")}</span>}
+                  {q.citedSites.length > 0 && (
+                    <span className="block text-sm text-muted">
+                      <span className="block font-bold">AIが参考にしたサイト</span>
+                      {q.citedSites.map((n) => (
+                        <span key={n} className="block">・{n}</span>
+                      ))}
+                    </span>
+                  )}
                   <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-brand">
                     この質問に答える記事を書く
                     <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>
