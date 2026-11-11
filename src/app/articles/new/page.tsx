@@ -8,6 +8,8 @@ import { EmptyState, Notice, monthLabel } from "@/components/ui";
 import { ApiError, useStore } from "@/mock/store";
 import { isOrgReady } from "@/lib/selectors";
 import { nearQueries } from "@/lib/growth/nearQueries";
+import { questionsToWrite, readerProblemForQuestion } from "@/lib/growth/mentionQuestions";
+import { articleSummaries } from "@/lib/selectors";
 import { ShioriTalk } from "@/components/talk";
 import { GuideName, GuideText } from "@/components/useGuide";
 import { PhotoStart } from "@/components/PhotoStart";
@@ -58,6 +60,11 @@ export default function NewArticlePage() {
   // Search Console の伸びしろのある言葉（つながっている会社だけ）。会社名だけの言葉は外す
   const sc = (db.searchConsole ?? []).find((x) => x.organizationId === orgId && x.verifiedAt);
   const near = nearQueries(sc?.snapshot, { exclude: [org?.name ?? ""] });
+  // AIに聞いても、まだ会社が出てこない質問（しおり通信の「AIに紹介されているか」の結果から）
+  const aiQuestions = questionsToWrite(
+    (db.aioMentions ?? []).filter((m) => m.organizationId === orgId),
+    articleSummaries(db, orgId).map((a) => a.themeTitle),
+  );
 
   async function start(input: Parameters<typeof api.createArticle>[0]) {
     setBusy(true);
@@ -85,6 +92,36 @@ export default function NewArticlePage() {
         )}
       </div>
       {error && <Notice tone="danger" title={error} />}
+
+      {aiQuestions.length > 0 && (
+        <section id="ai-questions" className="card animate-rise scroll-mt-4 space-y-3 border-2 border-brand" aria-labelledby="ai-q-heading">
+          <h2 id="ai-q-heading" className="font-black">
+            🤖 AIに聞いても、まだあなたの会社が出てこない質問
+          </h2>
+          <ShioriTalk mood="idea" size="sm" lines={["お客様がAIに聞きそうな質問を、代わりにAIに聞いてみた結果です。", "この質問にそのまま答える記事を書くと、AIに紹介されるきっかけになります。いちばんの近道ですよ。"]} />
+          <ul className="grid gap-2 sm:grid-cols-3">
+            {aiQuestions.map((q, i) => (
+              <li key={q.question} className="animate-pop" style={{ animationDelay: `${0.2 + i * 0.08}s` }}>
+                <button
+                  type="button"
+                  disabled={busy}
+                  className="group flex h-full w-full flex-col items-start gap-1 rounded-2xl border-2 border-line bg-surface p-3 text-left transition-transform hover:-translate-y-0.5 hover:border-brand disabled:opacity-60"
+                  onClick={() => start({ customTheme: { title: q.question, readerProblem: readerProblemForQuestion(q.question) } })}
+                >
+                  <span className="font-black">「{q.question}」</span>
+                  {q.citedSites.length > 0 && <span className="text-xs text-muted">AIが参考にしたのは：{q.citedSites.join("、")}</span>}
+                  <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-brand">
+                    この質問に答える記事を書く
+                    <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden>
+                      →
+                    </span>
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <PhotoStart orgId={orgId} busy={busy} onPick={(t) => start({ customTheme: { title: t.title, readerProblem: t.readerProblem } })} />
 

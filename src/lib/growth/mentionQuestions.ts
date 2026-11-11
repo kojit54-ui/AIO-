@@ -27,3 +27,49 @@ export function mentionQuestions(hearing: Record<string, HearingAnswer>): string
   return [...new Set(out)].slice(0, MAX_MENTION_QUESTIONS);
 }
 
+
+/** 会社名から、AIの答えに出てきそうな呼び方を作る（「株式会社さくら工房」→「さくら工房」も探す） */
+export function companyNameVariants(name: string): string[] {
+  const base = name.trim();
+  const stripped = base.replace(/^(株式会社|有限会社|合同会社|合資会社|（株）|\(株\)|㈱|（有）|\(有\)|㈲)\s*/, "").replace(/\s*(株式会社|有限会社|合同会社|（株）|\(株\)|㈱)$/, "").trim();
+  return [...new Set([base, stripped, ...base.split(/[\s　]/)])].filter((n) => n.length >= 2 && !/^(株式会社|有限会社|合同会社)$/.test(n));
+}
+
+/** サイトのアドレスから、出典と比べる名前（ドメイン）を取り出す。Search Console の sc-domain: にも対応 */
+export function siteDomain(url: string | null | undefined): string | null {
+  if (!url) return null;
+  const s = url.trim();
+  if (s.startsWith("sc-domain:")) return s.slice("sc-domain:".length).replace(/^www\./, "") || null;
+  try {
+    return new URL(s).hostname.replace(/^www\./, "") || null;
+  } catch {
+    return null;
+  }
+}
+
+export interface QuestionToWrite {
+  question: string;
+  /** AIがその答えで参考にしたサイト（ドメイン、2つまで） */
+  citedSites: string[];
+}
+
+/**
+ * AIに聞いても、まだ会社が出てこない質問。いちばん新しい結果だけで判断し、
+ * 同じ質問をテーマにした記事があるものと、サンプルは外す。記事を書くきっかけに使う
+ */
+export function questionsToWrite(
+  mentions: { question: string; mentioned: boolean; isSample: boolean; createdAt: string; sources: { url: string }[] }[],
+  writtenThemes: string[],
+  max = 3,
+): QuestionToWrite[] {
+  const latest = new Map<string, (typeof mentions)[number]>();
+  for (const m of [...mentions].sort((a, b) => b.createdAt.localeCompare(a.createdAt))) if (!latest.has(m.question)) latest.set(m.question, m);
+  const written = new Set(writtenThemes.map((t) => t.trim()));
+  return [...latest.values()]
+    .filter((m) => !m.mentioned && !m.isSample && !written.has(m.question.trim()))
+    .slice(0, max)
+    .map((m) => ({ question: m.question, citedSites: [...new Set(m.sources.map((s) => siteDomain(s.url)).filter((d): d is string => !!d))].slice(0, 2) }));
+}
+
+/** 質問から記事を始めるときの「誰のどんな悩み」 */
+export const readerProblemForQuestion = (question: string) => `AIに「${question}」と聞いて、頼み先を探している人`;
