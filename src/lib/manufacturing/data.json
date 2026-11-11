@@ -218243,5 +218243,8047 @@
    "publisher": "Quartz",
    "date": "2018"
   }
+ },
+ {
+  "id": "question-1728",
+  "kind": "question",
+  "title": "セラミックの加工はなぜ難しい？",
+  "summary": "答えに入れるとよいこと：硬いのにもろい性質、刃物が効きにくいこと、少しの負荷で欠けやひびが出ること、焼くと縮むため焼いた後の仕上げが要ること。",
+  "industries": [
+   "ガラス・セラミック",
+   "研削"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "セラミック加工が難しい理由と当社の工夫",
+  "source": {
+   "title": "セラミックの加工は難しい？特長や用途、加工方法を解説",
+   "url": "https://www.tpc.toray/column/detail05/",
+   "publisher": "東レ・プレシジョン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1729",
+  "kind": "question",
+  "title": "セラミックは焼くとどれくらい縮む？",
+  "summary": "答えに入れるとよいこと：焼き固める工程で全体が縮むこと（一例として約1〜2割とする解説がある）、縮みを見込んだ寸法設計、焼いた後に研削で精度を出す流れ。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "焼結収縮を見込んだセラミック部品の設計",
+  "source": {
+   "title": "セラミックの加工は難しい？特長や用途、加工方法を解説",
+   "url": "https://www.tpc.toray/column/detail05/",
+   "publisher": "東レ・プレシジョン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1730",
+  "kind": "question",
+  "title": "セラミックは焼く前と後どちらで削る？",
+  "summary": "答えに入れるとよいこと：焼く前の柔らかい状態で大まかに形を作る方法と、焼いた後にダイヤモンド工具で仕上げる方法の違い、精度とコストの関係。",
+  "industries": [
+   "ガラス・セラミック",
+   "切削加工",
+   "研削"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "生加工と焼結後加工の使い分け",
+  "source": {
+   "title": "セラミック加工とは？ 加工種類と各特徴についてご紹介します",
+   "url": "https://evort.jp/categories/ceramic-processing",
+   "publisher": "evort",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1731",
+  "kind": "question",
+  "title": "セラミック加工にはどんな方法がある？",
+  "summary": "答えに入れるとよいこと：切削、研削、研磨、放電（電気を通す材料だけ）、レーザー、溶射など。形・精度・数量でどれを選ぶかの目安も添える。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "セラミック加工方法の選び方早見表",
+  "source": {
+   "title": "セラミックの加工は難しい？特長や用途、加工方法を解説",
+   "url": "https://www.tpc.toray/column/detail05/",
+   "publisher": "東レ・プレシジョン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1732",
+  "kind": "question",
+  "title": "セラミック部品の欠けは防げる？",
+  "summary": "答えに入れるとよいこと：欠け（チッピング）をゼロにするのは難しいこと、工具や砥石の選び方、回転・送り・切込みの条件、固定のしかた、検査と再発防止。",
+  "industries": [
+   "ガラス・セラミック",
+   "研削"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "チッピングを減らす当社の段取り",
+  "source": {
+   "title": "セラミックス加工の基礎とコツ",
+   "url": "https://www.nitolex.co.jp/ceramics/",
+   "publisher": "ニートレックス",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1733",
+  "kind": "question",
+  "title": "セラミック部品の図面で気をつける点は？",
+  "summary": "答えに入れるとよいこと：欠けやすい鋭い角・薄い壁・細い穴を避ける、面取りやRを指示する、公差と面粗さは必要な面だけ厳しくする、焼結収縮を見込む。",
+  "industries": [
+   "ガラス・セラミック",
+   "機械部品"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "セラミック部品の図面チェックリスト",
+  "source": {
+   "title": "セラミックス加工の基礎とコツ",
+   "url": "https://www.nitolex.co.jp/ceramics/",
+   "publisher": "ニートレックス",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1734",
+  "kind": "question",
+  "title": "セラミック加工の見積前に何を準備する？",
+  "summary": "答えに入れるとよいこと：材質、図面か寸法、数量、大事な面（機能面）の指定、求める精度、用途。重要面を図面ではっきり伝えると話が早いこと。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "見積依頼の前にそろえる5つの情報",
+  "source": {
+   "title": "セラミックス加工の基礎とコツ",
+   "url": "https://www.nitolex.co.jp/ceramics/",
+   "publisher": "ニートレックス",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1735",
+  "kind": "question",
+  "title": "セラミックに穴をあけるコツは？",
+  "summary": "答えに入れるとよいこと：穴が抜ける瞬間に欠けやすいこと、裏当てなど抜け際の対策、少しずつ深くする段階的な穴あけ、材質ごと（アルミナ・ジルコニア・窒化ケイ素）の違い。",
+  "industries": [
+   "ガラス・セラミック",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "セラミックの穴あけで割らない工夫",
+  "source": {
+   "title": "セラミックスの穴あけ加工方法とは？失敗を防ぐ効果的なやり方をご紹介",
+   "url": "https://www.dijet-tool.com/media/column/ceramics",
+   "publisher": "dijet-tool.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1736",
+  "kind": "question",
+  "title": "セラミックは試作1個から頼める？",
+  "summary": "答えに入れるとよいこと：1個からの試作に応じる加工先があること、材料の種類、納期の一例（約2週間〜1か月とうたう例がある）、量産との違い。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "セラミック試作1個から量産までの流れ",
+  "source": {
+   "title": "セラミック精密加工｜セラミックスファクトリー",
+   "url": "https://www.kida.co.jp/ceramic/machining.htm",
+   "publisher": "セラミックスファクトリー",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1737",
+  "kind": "question",
+  "title": "セラミックの弱点はどう補う？",
+  "summary": "答えに入れるとよいこと：衝撃や急な温度変化に弱いもろさ、金属や樹脂との性質の違い、形の工夫や他材料との組み合わせで弱点を補う考え方。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "金属からセラミックへ置き換えるときの注意",
+  "source": {
+   "title": "セラミックとは？素材の特徴と加工方法を徹底解説",
+   "url": "https://www.fukasawa.co.jp/column/7750/",
+   "publisher": "fukasawa.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1184",
+  "kind": "buyer",
+  "title": "セラミック加工の頼み先の選び方",
+  "summary": "材質の得意不得意、試作と量産の両方に応じるか、加工方法の幅、検査体制を見る。比較記事でも選定ポイントとして取り上げられている。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "セラミック加工先を選ぶ5つの視点",
+  "source": {
+   "title": "セラミック加工とは？ 加工種類と各特徴についてご紹介します",
+   "url": "https://evort.jp/categories/ceramic-processing",
+   "publisher": "evort",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1185",
+  "kind": "buyer",
+  "title": "セラミック加工先を一覧で探す発注者",
+  "summary": "発注者は比較サイトで加工会社を一覧し、材質や加工内容で絞り込む。掲載社は百社以上に上る分野で、得意材質や事例の見せ方が選ばれる決め手になる。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "比較サイトで選ばれる会社紹介ページ",
+  "source": {
+   "title": "セラミック加工の会社163社 注目ランキング【2026年】| Metoree",
+   "url": "https://metoree.com/categories/9050/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1344",
+  "kind": "term",
+  "title": "ファインセラミックス",
+  "summary": "原料を精製・調整し、形や焼き方を細かく管理して作る工業用セラミックス。陶磁器などの昔ながらのセラミックスと区別して呼ばれ、部品や電子材料に使われる。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "セラミック加工とは？ 加工種類と各特徴についてご紹介します",
+   "url": "https://evort.jp/categories/ceramic-processing",
+   "publisher": "evort",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1345",
+  "kind": "term",
+  "title": "アルミナ（酸化アルミニウム）",
+  "summary": "代表的なファインセラミックスの材料。硬く、電気を通しにくく、熱や薬品に強い。半導体製造装置の部品や基板、ノズルなどに広く使われる標準的な材質。",
+  "industries": [
+   "ガラス・セラミック",
+   "半導体"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "アルミナ・酸化アルミニウムの特徴（セラミックスの基礎）",
+   "url": "https://www.kida.co.jp/study/material_al2o3.htm",
+   "publisher": "セラミックスファクトリー",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1346",
+  "kind": "term",
+  "title": "セラミックスの主な材質",
+  "summary": "アルミナ、ジルコニア（割れにくい）、窒化ケイ素（熱の急変に強い）、炭化ケイ素（硬く熱に強い）、窒化アルミ（熱を伝えやすい）など、用途で選び分ける。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "セラミックスの種類と物性 セラミックスの基礎",
+   "url": "https://www.kida.co.jp/study/material.htm",
+   "publisher": "セラミックスファクトリー",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1347",
+  "kind": "term",
+  "title": "マシナブルセラミックス",
+  "summary": "一般の工作機械でも削れるように作られたセラミックス。試作や小ロットの部品で使われることが多く、焼成後の研削が難しい形にも向く。",
+  "industries": [
+   "ガラス・セラミック",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "セラミック精密加工｜セラミックスファクトリー",
+   "url": "https://www.kida.co.jp/ceramic/machining.htm",
+   "publisher": "セラミックスファクトリー",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1348",
+  "kind": "term",
+  "title": "ガラスセラミックス（結晶化ガラス）",
+  "summary": "特殊なガラスを再び加熱し、中に細かな結晶をつくった材料。熱膨張が小さく急な温度変化で割れにくい。調理器の天板や精密機器の部品に使われる。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ガラスセラミックスとは？ 特徴・製造方法・用途例について解説",
+   "url": "https://evort.jp/article/glass-ceramics",
+   "publisher": "evort",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1738",
+  "kind": "question",
+  "title": "ファインセラミックスと陶器の違いは？",
+  "summary": "答えに入れるとよいこと：原料の精製度、成分や焼き方の管理、強さや精度の違い、身近な使われ方（電子部品・機械部品）と陶磁器との比較。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "身近なファインセラミックスの使い道",
+  "source": {
+   "title": "セラミックとは？素材の特徴と加工方法を徹底解説",
+   "url": "https://www.fukasawa.co.jp/column/7750/",
+   "publisher": "fukasawa.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1349",
+  "kind": "term",
+  "title": "チッピング（研削の欠け）",
+  "summary": "工具の刃先や加工品の角が小さく欠けること。研削では評価基準を決めて原因（砥石・条件・固定）を探り対策する。セラミックやガラスの加工で特に問題になる。",
+  "industries": [
+   "研削",
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "研削加工におけるチッピングとは（評価基準・原因・対策について）",
+   "url": "https://www.tools.jtekt.co.jp/members/column/c-chipping/",
+   "publisher": "ジェイテクトグラインディングツール",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1739",
+  "kind": "question",
+  "title": "砥石は材料でどう選ぶ？",
+  "summary": "答えに入れるとよいこと：作業（切断・研削・仕上げ）で砥石の形を選ぶこと、砥粒の目安（一般鋼はA、ステンレスはWA、アルミなど非鉄はGC）。",
+  "industries": [
+   "研削",
+   "刃物・工具"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "材料別の砥石選び早見表",
+  "source": {
+   "title": "グラインダー用研削砥石の選び方 - ニートレックス",
+   "url": "https://www.nitolex.co.jp/grindertoishi/",
+   "publisher": "ニートレックス",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1350",
+  "kind": "term",
+  "title": "平面研削盤",
+  "summary": "回転する砥石で工作物の面を高い精度で平らに削る機械。砥石軸が水平の横軸型と垂直の立軸型があり、鉄などはマグネットチャックで固定する。",
+  "industries": [
+   "研削"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "平面研削盤とは？種類や加工方法・砥石の選び方までプロが徹底解説",
+   "url": "https://www.nitolex.co.jp/heimenkensaku/",
+   "publisher": "ニートレックス",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1740",
+  "kind": "question",
+  "title": "ガラス加工にはどんな種類がある？",
+  "summary": "答えに入れるとよいこと：切断、穴あけ、研削・研磨、接合、コーティング、強化などの熱処理。用途ごとにどれを組み合わせるか。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "ガラス加工の種類と依頼のポイント",
+  "source": {
+   "title": "ガラス加工の種類や特徴（切断・穴あけ・研磨）｜ガラスについての豆知識",
+   "url": "https://www.iiyamapgc.co.jp/contents/2/",
+   "publisher": "飯山特殊硝子",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1741",
+  "kind": "question",
+  "title": "ガラスの切り口の仕上げはどう選ぶ？",
+  "summary": "答えに入れるとよいこと：切りっぱなし、糸面、平磨き、R（丸み）、傾斜、面取りの違い。見た目・安全性・費用の差と、使う場所に応じた選び方。",
+  "industries": [
+   "ガラス・セラミック",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "ガラスの小口加工を使い分ける",
+  "source": {
+   "title": "板ガラス加工の種類と選び方",
+   "url": "https://glass-kouji.com/types-of-flat-glass-processing-and-how-to-select/",
+   "publisher": "ガラス工事ドットコム",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1742",
+  "kind": "question",
+  "title": "ガラス加工で起きやすい不良は？",
+  "summary": "答えに入れるとよいこと：製造や加工で起きる傷・欠け・泡などの不良の例と、どう検査するか。強化や合わせなど特殊加工の工程も触れる。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "ガラス製品の不良と検査の基本",
+  "source": {
+   "title": "ガラスの加工方法とは？種類や起こりうる不良、検査方法を紹介",
+   "url": "https://products.sint.co.jp/blog/glass-processing-methods",
+   "publisher": "products.sint.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1743",
+  "kind": "question",
+  "title": "加工でガラスの割れ方は変わる？",
+  "summary": "答えに入れるとよいこと：普通の板ガラス、強化ガラス、合わせガラスなどで割れたときの形が違うこと、用途（安全性）に合わせた選び方。",
+  "industries": [
+   "ガラス・セラミック",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "割れ方で選ぶガラスの種類",
+  "source": {
+   "title": "ガラス加工の種類と方法 | ものづくりプレス | 富士ゴム化成",
+   "url": "https://www.fujigom.co.jp/manufacturing/20231007-1197/",
+   "publisher": "富士ゴム化成",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1229",
+  "kind": "pain",
+  "title": "仕様書なしでガラス加工を頼みたい",
+  "summary": "「設計書や仕様書がなくても相談できる」とうたう加工先がある。発注者は図面がないことを理由に相談をためらいがちで、受け付ける側はその旨を明示すると声がかかりやすい。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "図面がなくてもガラス加工を相談する方法",
+  "source": {
+   "title": "ガラス加工の種類って？方法や特徴などを解説",
+   "url": "https://www.mitsuya-gr.co.jp/2024/07/16/glass-processing/",
+   "publisher": "mitsuya-gr.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1744",
+  "kind": "question",
+  "title": "網入りガラスは防犯に効く？",
+  "summary": "答えに入れるとよいこと：網入りは火災時に破片が落ちにくくする防火用であり、防犯用ではないこと、日差しや冷暖房の温度差で熱割れしやすいこと。",
+  "industries": [
+   "ガラス・セラミック",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "網入りガラスの役割と注意点",
+  "source": {
+   "title": "【網入りガラスとは】ガラスの種類辞典",
+   "url": "https://www.order-glass.com/shop/column/dictionary/glass/wire-glass/",
+   "publisher": "オーダーガラス板.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1745",
+  "kind": "question",
+  "title": "型ガラスとすりガラスの違いは？",
+  "summary": "答えに入れるとよいこと：型ガラスは製造時に凹凸模様をつけたもの、すりガラスは表面を荒らしたもの。すりガラスは濡れると透けやすく、水回りには型ガラスが向くこと。",
+  "industries": [
+   "ガラス・セラミック",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "目隠しガラスの選び方",
+  "source": {
+   "title": "「型ガラス」と「すりガラス」の特徴の違い・選び方のコツ",
+   "url": "https://www.order-glass.com/shop/column/figured-glass-vs-frosted-glass/",
+   "publisher": "オーダーガラス板.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1746",
+  "kind": "question",
+  "title": "複層ガラスは今のサッシに入る？",
+  "summary": "答えに入れるとよいこと：2枚のガラスの間に空気層がある分だけ厚いこと、古い窓枠に入らない場合があること、ガラス交換・カバー工法・内窓などの選択肢。",
+  "industries": [
+   "ガラス・セラミック",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "複層ガラスに替える前の確認",
+  "source": {
+   "title": "【複層ガラスとは】ペアガラスの基礎知識 - オーダーガラス板.com",
+   "url": "https://www.order-glass.com/shop/column/dictionary/glass/pair-glass/",
+   "publisher": "オーダーガラス板.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1747",
+  "kind": "question",
+  "title": "ペアガラスで防音もできる？",
+  "summary": "答えに入れるとよいこと：一般的な複層ガラスは断熱・結露対策が主で防音効果は大きくないこと、防音を重視するなら厚さの違うガラスの組み合わせや内窓を検討すること。",
+  "industries": [
+   "ガラス・セラミック",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "断熱と防音で選ぶ窓ガラス",
+  "source": {
+   "title": "ペアガラスと二重サッシの違いとメリット・デメリット",
+   "url": "https://www.order-glass.com/shop/column/68/",
+   "publisher": "オーダーガラス板.com",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1230",
+  "kind": "pain",
+  "title": "ガラス加工でできない加工がある",
+  "summary": "通販のオーダーガラスでも「対応できない加工」をはっきり示している。発注者はできることとできないことを先に知りたいので、受け付けない加工や条件を載せると問い合わせの手戻りが減る。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "当社でできないガラス加工一覧",
+  "source": {
+   "title": "【ガラス板の加工】特殊加工・ オーダーメイドOK／お見積◎｜オーダーガラス板.com",
+   "url": "https://www.order-glass.com/shop/column/processings/",
+   "publisher": "オーダーガラス板.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1748",
+  "kind": "question",
+  "title": "アクリルとガラスはどう選ぶ？",
+  "summary": "答えに入れるとよいこと：アクリルはガラスより軽く割れにくいが、熱に弱く傷がつきやすいこと。耐熱や傷の付きにくさが必要ならガラス、軽さ・安全性ならアクリル。",
+  "industries": [
+   "ガラス・セラミック",
+   "プラスチック加工品",
+   "看板・サイン"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "アクリルとガラスの使い分け",
+  "source": {
+   "title": "アクリルとプラスチックの違いとは？ - オーダーガラス板.com",
+   "url": "https://www.order-glass.com/shop/column/acrylic-vs-plastic/",
+   "publisher": "オーダーガラス板.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1749",
+  "kind": "question",
+  "title": "ガラスの天井で注意することは？",
+  "summary": "答えに入れるとよいこと：雪・風・落下物に耐えるため強化ガラスや合わせガラスを使うこと、熱の出入りへの断熱・遮熱、結露と雨仕舞い、清掃のしやすさ。",
+  "industries": [
+   "ガラス・セラミック",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "天窓・ガラス屋根の設計ポイント",
+  "source": {
+   "title": "建築における“ガラスの天井”とは？ 光を取り込む透明天井の魅力",
+   "url": "https://glass-kouji.com/the-charm-of-glass-ceilings-that-bring-in-light/",
+   "publisher": "ガラス工事ドットコム",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1351",
+  "kind": "term",
+  "title": "ガラス基板（ガラスコア基板）",
+  "summary": "半導体パッケージなどの芯にガラスを使う基板。熱で伸び縮みしにくく平らで、高速の信号が劣化しにくい。もろさや細い貫通穴（TGV）の加工コストが課題とされる。",
+  "industries": [
+   "ガラス・セラミック",
+   "半導体",
+   "電子部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "「ガラス基板」とは？生成AI時代を支える半導体の進化",
+   "url": "https://www.iiyamapgc.co.jp/contents/6/",
+   "publisher": "飯山特殊硝子",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1750",
+  "kind": "question",
+  "title": "石英ガラスの加工はなぜ難しい？",
+  "summary": "答えに入れるとよいこと：硬くてもろく割れやすい、形が複雑なものが多い、求められる精度が厳しい、高温で白く濁る（失透）おそれがある、の4点。",
+  "industries": [
+   "ガラス・セラミック",
+   "半導体"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "石英ガラス加工の4つの壁",
+  "source": {
+   "title": "石英ガラスの加工が難しい4つの理由 - ものづくりサイエンスナビ",
+   "url": "https://m-science-navi.com/industry/glass-ceramic/maker10_not/",
+   "publisher": "ものづくりサイエンスナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1751",
+  "kind": "question",
+  "title": "天然石英と合成石英はどう選ぶ？",
+  "summary": "答えに入れるとよいこと：天然の水晶や珪石を溶かす溶融石英と、化学原料から作る合成石英の違い（純度・透明度・価格）、用途ごとの選び方。",
+  "industries": [
+   "ガラス・セラミック",
+   "半導体"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "天然石英と合成石英の選び方",
+  "source": {
+   "title": "石英ガラスの種類と特徴を徹底解説｜天然石英と合成石英の違いと選定のポイント",
+   "url": "https://m-science-navi.com/control/liquid/maker46-oth/",
+   "publisher": "ものづくりサイエンスナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1352",
+  "kind": "term",
+  "title": "石英ガラス",
+  "summary": "二酸化ケイ素の純度がきわめて高いガラス。熱に強く、熱でほとんど膨らまず、紫外から赤外まで光をよく通す。半導体製造装置の部品や理化学器具に使われる。",
+  "industries": [
+   "ガラス・セラミック",
+   "半導体"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "半導体製造を支える石英ガラス加工とは？特性や用途について解説",
+   "url": "https://www.iiyamapgc.co.jp/contents/1/",
+   "publisher": "飯山特殊硝子",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1353",
+  "kind": "term",
+  "title": "石英の火加工",
+  "summary": "バーナーなどの火で石英ガラスを溶かして曲げたり、つないだりする加工。機械による切削・切断、表面仕上げと組み合わせて理化学器具や半導体部品を作る。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "石英加工.com",
+   "url": "https://sekiei-kakou.com/",
+   "publisher": "石英加工.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1752",
+  "kind": "question",
+  "title": "石英部品は修理・再生できる？",
+  "summary": "答えに入れるとよいこと：石英加工の専門サイトでは試作・特注に加えて再生・修理のサービスも示していること、新品との費用・納期の比べ方。",
+  "industries": [
+   "ガラス・セラミック",
+   "半導体"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "石英部品の修理という選択肢",
+  "source": {
+   "title": "石英加工.com",
+   "url": "https://sekiei-kakou.com/",
+   "publisher": "石英加工.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1753",
+  "kind": "question",
+  "title": "石英ガラスの研削で欠けを防ぐには？",
+  "summary": "答えに入れるとよいこと：硬くもろい性質、研削ホイールの種類と選び方、欠けが出る要因（砥石・条件・固定）とその対策。",
+  "industries": [
+   "ガラス・セラミック",
+   "研削"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "石英ガラスの研削で欠けを減らす",
+  "source": {
+   "title": "石英ガラスの特性と研削方法｜研削技術サイト",
+   "url": "https://www.tools.jtekt.co.jp/members/column/c-quartzglass_grinding/",
+   "publisher": "ジェイテクトグラインディングツール",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1186",
+  "kind": "buyer",
+  "title": "石英ガラス加工先の探し方",
+  "summary": "石英ガラスの加工会社は比較サイトで百社以上が並ぶ。発注者は火加工か機械加工か、試作対応、修理対応の有無で絞るため、得意分野を一言で示すと選ばれやすい。",
+  "industries": [
+   "ガラス・セラミック",
+   "半導体"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "石英加工の得意分野を一言で示す",
+  "source": {
+   "title": "石英ガラス加工の会社121社 注目ランキング【2026年】| Metoree",
+   "url": "https://metoree.com/categories/9029/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1354",
+  "kind": "term",
+  "title": "合成石英の原料",
+  "summary": "合成石英は四塩化ケイ素などの化学原料から作るため不純物が少なく透明度が高い。天然の水晶や珪石を溶かす溶融石英とは原料から異なる。",
+  "industries": [
+   "ガラス・セラミック",
+   "半導体"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "石英ガラスの種類と特長",
+   "url": "https://sekiei-kakou.com/column/types-and-features/",
+   "publisher": "石英加工.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1754",
+  "kind": "question",
+  "title": "紙製什器の費用は何で決まる？",
+  "summary": "答えに入れるとよいこと：大きさと構造の複雑さ、印刷の有無と色数、厚紙か段ボールかの部材、数量（多いほど単価が下がる）、組み立て済みかどうか。",
+  "industries": [
+   "紙加工",
+   "パッケージ",
+   "看板・サイン"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "紙製什器の見積の読み方",
+  "source": {
+   "title": "紙製什器の制作費はいくら？費用相場とコストダウンのコツ",
+   "url": "https://www.displayland.jp/lecture/2025/04/17_2920/",
+   "publisher": "ディスプレイLAND",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1755",
+  "kind": "question",
+  "title": "紙製什器を安く作るには？",
+  "summary": "答えに入れるとよいこと：形をシンプルにする、量産しやすい設計にする、印刷を必要な分に絞る、共通パーツを使う、設置期間に合わせて仕様を変える。",
+  "industries": [
+   "紙加工",
+   "パッケージ"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "紙製什器のコストを下げる5つの工夫",
+  "source": {
+   "title": "紙製什器の制作費はいくら？費用相場とコストダウンのコツ",
+   "url": "https://www.displayland.jp/lecture/2025/04/17_2920/",
+   "publisher": "ディスプレイLAND",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1756",
+  "kind": "question",
+  "title": "紙製什器は1点から作れる？",
+  "summary": "答えに入れるとよいこと：1点からオーダーできる例があること、設計費・制作費・デザイン費に分かれる料金の考え方、注文の流れ。",
+  "industries": [
+   "紙加工",
+   "パッケージ"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "紙製什器を1点から頼む流れ",
+  "source": {
+   "title": "オーダーメイド｜オリジナル紙製什器の製作 ｜紙製什器ドットコム",
+   "url": "https://kamiseijuki.com/pages/made-to-order",
+   "publisher": "紙製什器ドットコム",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1355",
+  "kind": "term",
+  "title": "既製型の紙什器",
+  "summary": "抜き型をあらかじめ用意した形の紙什器。型代がかからず少数から印刷だけを変えて作れるため、試験販売や短期の販促に向く。",
+  "industries": [
+   "紙加工",
+   "パッケージ",
+   "印刷"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "紙什器カタアル｜型代0円、1台からオリジナル印刷対応・全22種類ラインナップ",
+   "url": "https://igarashi-seihako.co.jp/kata-aru/",
+   "publisher": "igarashi-seihako.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1757",
+  "kind": "question",
+  "title": "特注什器の費用を抑えるには？",
+  "summary": "答えに入れるとよいこと：木工・スチール・アクリルなど素材による価格の違い、設計の工夫、素材の選び方、検品の考え方の3つから抑える方法。",
+  "industries": [
+   "木工",
+   "看板・サイン"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "特注什器のコストダウン3つの方法",
+  "source": {
+   "title": "特注什器の費用相場は？価格を抑える3つの方法をプロが解説",
+   "url": "https://koreca.co.jp/topics/column/1259/",
+   "publisher": "コレカ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1758",
+  "kind": "question",
+  "title": "木製什器の見積はどこを見る？",
+  "summary": "答えに入れるとよいこと：材料費と加工費の内訳、納入・設置費が想定を超えるケース、「標準仕様」の中身、追加費用が出やすい項目、曖昧な表現の確認。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "木製什器の見積書チェック",
+  "source": {
+   "title": "木製什器製作の費用相場と工期｜大阪で押さえる5つの進め方",
+   "url": "https://endokougei.com/archives/1687",
+   "publisher": "endokougei.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1759",
+  "kind": "question",
+  "title": "木製什器の工期は何で延びる？",
+  "summary": "答えに入れるとよいこと：設計段階の図面承認の遅れ、季節や気候の影響（木材の乾燥・塗装）、急ぎの場合にできること・できないこと。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "木製什器の工期を読む",
+  "source": {
+   "title": "木製什器製作の費用相場と工期｜大阪で押さえる5つの進め方",
+   "url": "https://endokougei.com/archives/1687",
+   "publisher": "endokougei.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1760",
+  "kind": "question",
+  "title": "見積が他社と3〜4倍違うのはなぜ？",
+  "summary": "答えに入れるとよいこと：材料・仕上げ・構造の違い、設置費や運搬費が含まれるか、保証範囲の違いなど、同じ条件で比べるための確認点。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "見積比較で条件をそろえる方法",
+  "source": {
+   "title": "木製什器製作の費用相場と工期｜大阪で押さえる5つの進め方",
+   "url": "https://endokougei.com/archives/1687",
+   "publisher": "endokougei.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1761",
+  "kind": "question",
+  "title": "店舗什器を発注する前に何を測る？",
+  "summary": "答えに入れるとよいこと：現地調査で測る項目と記録のしかた、既存什器の撤去と搬入の段取り、営業を続けながら施工する計画の相談。",
+  "industries": [
+   "木工",
+   "看板・サイン"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "現地調査から納品までの流れ",
+  "source": {
+   "title": "什器製作大阪｜小売店舗で押さえる費用相場と5つの発注基準",
+   "url": "https://endokougei.com/archives/1701",
+   "publisher": "endokougei.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1762",
+  "kind": "question",
+  "title": "什器と家具の違いは？",
+  "summary": "答えに入れるとよいこと：什器は店舗やオフィスで使う業務用、家具は主に家庭用という違い。既製品と造作什器の違いと、それぞれの費用の考え方。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "什器と家具の違いをやさしく",
+  "source": {
+   "title": "店舗什器とは？家具との違い、デザイン・製作事例、費用、メリット",
+   "url": "https://anlg.co.jp/design-furniture/",
+   "publisher": "ANALOG",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1763",
+  "kind": "question",
+  "title": "造作什器にするメリットは？",
+  "summary": "答えに入れるとよいこと：空間と一体にした演出、棚下照明など設備の組み込み、店舗運営に合わせたモジュール化などのカスタマイズ。",
+  "industries": [
+   "木工",
+   "看板・サイン"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "造作什器で売り場が変わった事例",
+  "source": {
+   "title": "店舗什器とは？家具との違い、デザイン・製作事例、費用、メリット",
+   "url": "https://anlg.co.jp/design-furniture/",
+   "publisher": "ANALOG",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1764",
+  "kind": "question",
+  "title": "販促什器にはどんな種類がある？",
+  "summary": "答えに入れるとよいこと：販促什器の主な種類（売り場に置く・吊るすなど）、費用は種類と個数で大きく変わること、企画から制作までの流れ。",
+  "industries": [
+   "紙加工",
+   "看板・サイン",
+   "印刷"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "販促什器の種類と費用の目安",
+  "source": {
+   "title": "販促什器の企画・制作会社をお探しの方へ！種類や費用相場など",
+   "url": "https://jem-wow.co.jp/column/novelty-type/",
+   "publisher": "JEM",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1356",
+  "kind": "term",
+  "title": "什器",
+  "summary": "店舗やオフィスで使う陳列棚、ハンガー、ショーケース、レジカウンター、デスクなどの備品・器具の総称。家庭用の家具より実用性や効率を重視する。",
+  "industries": [
+   "木工",
+   "看板・サイン"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "什器とは？【特注什器のプロが解説】種類・用途から製作の想いまで",
+   "url": "https://koreca.co.jp/topics/column/1239/",
+   "publisher": "コレカ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1357",
+  "kind": "term",
+  "title": "化粧板（メラミン・ポリ）",
+  "summary": "合板などの表面に、樹脂や木目を印刷した紙、薄い天然木を貼った板。メラミンは傷・熱・水に強く天板向き、ポリ合板は加工しやすく棚の内側などに使われる。",
+  "industries": [
+   "木工",
+   "建材・金物"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "特注什器の素材講座②｜化粧板とは？メラミン・ポリ・突板の違い",
+   "url": "https://koreca.co.jp/topics/column/1686/",
+   "publisher": "コレカ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1358",
+  "kind": "term",
+  "title": "木口処理",
+  "summary": "板の切り口（木口）を保護し見た目を整える仕上げ。木口テープ、樹脂のエッジ材、天然木の薄板などを貼る。木口は水を吸いやすく、割れや膨らみの原因になる。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "木口処理とは？種類・特徴・おすすめ素材を特注什器のプロが解説",
+   "url": "https://koreca.co.jp/topics/column/2447/",
+   "publisher": "コレカ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1359",
+  "kind": "term",
+  "title": "フラッシュ構造",
+  "summary": "木の枠と桟で骨組みを作り、両面に合板などを貼って平らに仕上げる作り方。中が空洞に近く軽くて安い。中まで詰めた「ベタ芯」と区別して呼ばれる。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "特注什器の「フラッシュ構造」「ベタ芯」とは？意味と違いを解説",
+   "url": "https://koreca.co.jp/topics/column/4341/",
+   "publisher": "コレカ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1765",
+  "kind": "question",
+  "title": "オーダー家具の費用の内訳は？",
+  "summary": "答えに入れるとよいこと：材料費、設計費、加工費（職人の人件費）、取り付け費の4つ。それぞれ何で増減するかを具体例で示す。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "オーダー家具の見積の内訳",
+  "source": {
+   "title": "オーダー家具の費用はなぜ高い？価格の内訳とコストを抑える3つのコツ",
+   "url": "https://www.taiken-o.jp/blog/blog/192567",
+   "publisher": "taiken-o.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1766",
+  "kind": "question",
+  "title": "オーダー家具を安くするコツは？",
+  "summary": "答えに入れるとよいこと：デザインをシンプルにする、見えない所は素材を変えるなど適材適所にする、サイズや仕様を見直す。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "オーダー家具の費用を抑える3つのコツ",
+  "source": {
+   "title": "オーダー家具の費用はなぜ高い？価格の内訳とコストを抑える3つのコツ",
+   "url": "https://www.taiken-o.jp/blog/blog/192567",
+   "publisher": "taiken-o.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1767",
+  "kind": "question",
+  "title": "オーダー家具の値段に定価はある？",
+  "summary": "答えに入れるとよいこと：定価がなく仕様ごとに見積になること、値段を決める要素、見積を確認するときの注意点、既製品と迷ったときの考え方。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "オーダー家具は見積で決まる",
+  "source": {
+   "title": "【家具の種類別】オーダー家具の相場価格はどれくらい？",
+   "url": "https://andwall.shop/archives/columns/order_marketprice",
+   "publisher": "AND WALL FURNITURE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1768",
+  "kind": "question",
+  "title": "オーダー家具の取付費・運搬費は別？",
+  "summary": "答えに入れるとよいこと：本体価格とは別に取付施工費や運搬交通費がかかる例があること、見積でどこまで含むかを確認すること。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "オーダー家具の本体以外の費用",
+  "source": {
+   "title": "参考価格 - オーダー家具・造作家具・壁面収納 K'S FURNITURE",
+   "url": "https://ks-furniture.net/plan/",
+   "publisher": "ks-furniture.net",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1769",
+  "kind": "question",
+  "title": "オーダー家具の種類別の相場は？",
+  "summary": "答えに入れるとよいこと：食器棚・テレビボード・壁面収納など家具別の目安、メリットとデメリット、施工事例。相場は仕様で大きく変わる前提で示す。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "家具別に見るオーダー家具の目安",
+  "source": {
+   "title": "オーダー家具の相場徹底解説！～特徴や施工事例をご紹介",
+   "url": "https://leaf-web.com/utile/column/24456/",
+   "publisher": "leaf-web.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1770",
+  "kind": "question",
+  "title": "オーダー家具は既製品より高い？",
+  "summary": "答えに入れるとよいこと：オーダーでも費用を抑える方法があること、サイズがぴったり合う・長く使えるなどの価値、どんな場合に既製品が向くか。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "オーダー家具と既製品の比べ方",
+  "source": {
+   "title": "オーダーメイド家具って実は安い？費用を抑える方法はある？",
+   "url": "https://andwall.shop/archives/columns/order_price",
+   "publisher": "AND WALL FURNITURE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1771",
+  "kind": "question",
+  "title": "框戸とフラッシュ戸の違いは？",
+  "summary": "答えに入れるとよいこと：框戸は枠の中にガラスや板をはめた戸で丈夫・立体的だが重く高め、フラッシュ戸は骨組みの両面に板を貼った平らな戸で軽く安い。",
+  "industries": [
+   "木工",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "框戸とフラッシュ戸の選び方",
+  "source": {
+   "title": "框戸とは？フラッシュ戸との違いを徹底解説！",
+   "url": "https://www.taiken-o.jp/blog/fittings/200022",
+   "publisher": "taiken-o.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1772",
+  "kind": "question",
+  "title": "大工と建具屋の違いは？",
+  "summary": "答えに入れるとよいこと：大工は土台・柱・梁など骨組み、建具屋は戸・障子・ふすまなど開け閉めする部分を作り、現場で調整して取り付ける。修理や張替えも頼めること。",
+  "industries": [
+   "木工",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "建具屋に頼めること",
+  "source": {
+   "title": "大工と建具屋の違いとは？仕事内容や役割を徹底比較",
+   "url": "https://www.taiken-o.jp/blog/blog/183554",
+   "publisher": "taiken-o.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1773",
+  "kind": "question",
+  "title": "建具工事と内装工事の違いは？",
+  "summary": "答えに入れるとよいこと：建具工事はドアや引き戸などの製作・取り付け、内装工事は床・壁・天井などの仕上げ。どちらに何を頼むかの目安。",
+  "industries": [
+   "木工",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "建具工事の範囲を知る",
+  "source": {
+   "title": "建具工事と内装工事の違いって何？知っておきたい基礎知識とは",
+   "url": "https://www.taiken-o.jp/blog/blog/178996",
+   "publisher": "taiken-o.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1231",
+  "kind": "pain",
+  "title": "造作カウンターで後悔したくない",
+  "summary": "造作カウンターは「よくある後悔」をテーマにした解説が読まれている。施主や設計者は失敗例を先に知りたいので、作り手が失敗しない設計ルールを示すと相談につながる。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "造作カウンターの失敗例と対策",
+  "source": {
+   "title": "造作カウンターのよくある後悔とは？プロが教える失敗しない設計ルール",
+   "url": "https://www.taiken-o.jp/blog/fittings/207973",
+   "publisher": "taiken-o.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1232",
+  "kind": "pain",
+  "title": "木製サッシは後悔しないか不安",
+  "summary": "木製サッシのデメリットと対策をまとめた記事がある。買い手は木の手入れや耐久性に不安を持つため、弱点と対策を正直に示すことが信頼につながる。",
+  "industries": [
+   "木工",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "木製サッシの弱点と手入れ",
+  "source": {
+   "title": "木製サッシで後悔？3つのデメリットとプロが教える「失敗しない」対策",
+   "url": "https://www.taiken-o.jp/blog/fittings/203586",
+   "publisher": "taiken-o.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1360",
+  "kind": "term",
+  "title": "針葉樹と広葉樹",
+  "summary": "スギ・ヒノキなどの針葉樹は軽く柔らかく加工しやすいので構造材に、ナラ・ケヤキなどの広葉樹は硬く傷つきにくいので家具や床材に向く。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "木材の魅力と種類：知っておきたい基本知識",
+   "url": "https://www.taiken-o.jp/blog/blog/174113",
+   "publisher": "taiken-o.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1774",
+  "kind": "question",
+  "title": "紙器と段ボールの違いは？",
+  "summary": "答えに入れるとよいこと：紙器は板紙で作る箱（化粧箱など）、段ボール箱は波形の芯をはさんだ段ボールで作る輸送向けの箱。紙箱・カートンという呼び方との関係と素材の違い。",
+  "industries": [
+   "紙加工",
+   "パッケージ"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "紙器・紙箱・段ボールの違い",
+  "source": {
+   "title": "『紙箱』とは？「紙器」「カートン」「段ボール箱」の違いや素材",
+   "url": "https://www.komagata.co.jp/info/15086/",
+   "publisher": "化粧箱屋ドットコム",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1775",
+  "kind": "question",
+  "title": "紙器はどうやってできる？",
+  "summary": "答えに入れるとよいこと：紙器の種類と特長、設計とデザインから始まる製造の流れ、初期費用がどれくらいかかるか、デザインから相談できるか。",
+  "industries": [
+   "紙加工",
+   "パッケージ",
+   "印刷"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "紙器ができるまでの工程",
+  "source": {
+   "title": "紙器とは～種類、特長と製造の流れを解説",
+   "url": "https://siki.ntp-k.co.jp/column/detail01/",
+   "publisher": "日本トーカンパッケージ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1776",
+  "kind": "question",
+  "title": "紙器にはどんな種類がある？",
+  "summary": "答えに入れるとよいこと：印刷紙器、段ボール箱、貼箱、簡易箱などの分類と、材料になる板紙・段ボールの種類。",
+  "industries": [
+   "紙加工",
+   "パッケージ"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "紙器の種類と使い分け",
+  "source": {
+   "title": "紙器パッケージのことなら東京紙器工業組合",
+   "url": "https://tokyoshiki.or.jp/info.htm",
+   "publisher": "東京紙器工業組合",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1361",
+  "kind": "term",
+  "title": "紙器",
+  "summary": "板紙などを使い、印刷や型抜き・折り・貼りで作る紙製の容器やパッケージ。無味無臭で印刷しやすく、再生利用しやすいのが特長。",
+  "industries": [
+   "紙加工",
+   "パッケージ"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "紙器とは～種類、特長と製造の流れを解説",
+   "url": "https://siki.ntp-k.co.jp/column/detail01/",
+   "publisher": "日本トーカンパッケージ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1362",
+  "kind": "term",
+  "title": "印刷紙器",
+  "summary": "板紙に印刷してから型抜き・組み立てで作る紙箱。折りたたんで保管でき、使うときに組み立てられる。化粧品・医薬品・菓子などで最も一般的な箱。",
+  "industries": [
+   "紙加工",
+   "パッケージ",
+   "印刷"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "印刷紙器とは | マツダ紙工業",
+   "url": "https://matsuda-siko.com/products/printing/",
+   "publisher": "matsuda-siko.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1363",
+  "kind": "term",
+  "title": "貼箱",
+  "summary": "板紙で作った箱の外側に紙などを貼って仕上げた箱。組み立て済みで届き、高級感が出しやすい。折りたためる印刷紙器とは作りが異なる。",
+  "industries": [
+   "紙加工",
+   "パッケージ"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "泰清紙器製作所｜紙器・貼箱とは",
+   "url": "https://taiseishiki.co.jp/shikiharibako.html",
+   "publisher": "taiseishiki.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1364",
+  "kind": "term",
+  "title": "紙器印刷",
+  "summary": "紙器の表面に文字や絵柄を刷る技術。素材ごとに適した印刷方式があり、商品の魅力を伝え、他の商品との見分けやすさやブランドの印象づくりにも役立つ。",
+  "industries": [
+   "紙加工",
+   "印刷",
+   "パッケージ"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "紙器印刷とは－SHIFT ON（シフト オン）の用語集",
+   "url": "https://shifton.kpp-gr.com/glossary/paperboard_printing/",
+   "publisher": "SHIFT ON",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1365",
+  "kind": "term",
+  "title": "剥離紙（セパレーター）",
+  "summary": "シールやテープの粘着面を使う直前まで守る裏紙。紙やフィルムに剥がれやすくする剤（主にシリコーン系）を塗ってある。紙の場合は間に目止め層を入れることが多い。",
+  "industries": [
+   "紙加工",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "剥離紙とは - SHIFT ON（シフト オン）",
+   "url": "https://shifton.kpp-gr.com/glossary/release-paper/",
+   "publisher": "SHIFT ON",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1233",
+  "kind": "pain",
+  "title": "リサイクルできない紙加工",
+  "summary": "段ボールは回収率が非常に高い一方、油・食品の汚れや強い臭い、ろう引き・アルミ・ラミネート加工の箱はリサイクルに回せない。加工の選び方を発注者に説明する必要がある。",
+  "industries": [
+   "紙加工",
+   "パッケージ"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "リサイクルしやすい箱の仕様",
+  "source": {
+   "title": "【完全ガイド】段ボールリサイクル注意点のすべて",
+   "url": "https://shifton.kpp-gr.com/media/tip/a199",
+   "publisher": "SHIFT ON",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1366",
+  "kind": "term",
+  "title": "ケアマーク（天地無用など）",
+  "summary": "荷物の扱い方を示す印。天地無用（上下を逆にしない）、取扱注意、水濡れ注意、ワレモノ注意などがあり、箱の印刷で入れることが多い。",
+  "industries": [
+   "紙加工",
+   "パッケージ",
+   "印刷"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "天地無用とは？ダンボールの『ケアマーク』の種類と注意点を解説",
+   "url": "https://package.poppybox.jp/blog/knowledge/p6592/",
+   "publisher": "パッケージNOW！",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1367",
+  "kind": "term",
+  "title": "製作金物",
+  "summary": "特定の用途や現場に合わせて設計・製造するオーダーメイドの金属製品。手すり、階段部材、看板のフレーム、工場の架台などが代表例。",
+  "industries": [
+   "建材・金物",
+   "金属加工",
+   "板金",
+   "溶接"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "【最新版】知っておきたい製作金物の基本と活用法｜製作金物の製造プロセスと選び方の完全ガイド",
+   "url": "https://www.meidens.com/kanamono/column/seisaku-kanamono/",
+   "publisher": "製作金物・電材・管材.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1777",
+  "kind": "question",
+  "title": "製作金物の依頼に必要な情報は？",
+  "summary": "答えに入れるとよいこと：用途、設置場所、寸法、材質、数量、仕上げ、希望納期。見積の流れ、小ロットや1点だけの依頼が可能か、納期の目安。",
+  "industries": [
+   "建材・金物",
+   "金属加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "製作金物を頼むときの準備",
+  "source": {
+   "title": "【最新版】知っておきたい製作金物の基本と活用法｜製作金物の製造プロセスと選び方の完全ガイド",
+   "url": "https://www.meidens.com/kanamono/column/seisaku-kanamono/",
+   "publisher": "製作金物・電材・管材.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1778",
+  "kind": "question",
+  "title": "製作金物はどうやって作る？",
+  "summary": "答えに入れるとよいこと：素材の選定と図面作成、切断・穴あけ・抜き・曲げ、溶接・仕上げという流れ。建築金物と装飾金物の違い。",
+  "industries": [
+   "建材・金物",
+   "金属加工",
+   "溶接"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "製作金物ができるまで",
+  "source": {
+   "title": "製作金物なら富士金属｜ 作りかたと建築金物・装飾金物を解説",
+   "url": "https://fujikinzoku.com/kanamono/",
+   "publisher": "fujikinzoku.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1368",
+  "kind": "term",
+  "title": "製作金物（構造設計での扱い）",
+  "summary": "既製品ではなく特注で作る金物。構造設計では、耐力を計算する構造設計者が設計し、構造図に示して既製金物と区別して扱う。",
+  "industries": [
+   "建材・金物"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "製作金物（せいさくかなもの） - 構造金物相談所",
+   "url": "https://mp-kanamono.jp/archives/glossary/%E8%A3%BD%E4%BD%9C%E9%87%91%E7%89%A9%E3%81%9B%E3%81%84%E3%81%95%E3%81%8F%E3%81%8B%E3%81%AA%E3%82%82%E3%81%AE",
+   "publisher": "構造金物相談所",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1779",
+  "kind": "question",
+  "title": "建築金物の材質はどう選ぶ？",
+  "summary": "答えに入れるとよいこと：ステンレス、亜鉛めっき鋼板、アルミ、真鍮・銅合金の特徴、曲げ・切断・溶接・表面処理（ヘアラインなど）の加工、金物の品質が建物の寿命に関わること。",
+  "industries": [
+   "建材・金物",
+   "金属加工",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "建築金物の材質の選び方",
+  "source": {
+   "title": "建築金物とは？―材質や加工の基礎からプロのこだわりまで―",
+   "url": "https://lea-building.com/blog/8265/",
+   "publisher": "lea-building.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1369",
+  "kind": "term",
+  "title": "笠木",
+  "summary": "ベランダの手すり壁や屋上の立ち上がり壁、塀などの一番上にかぶせる仕上げ材。雨水が壁の中に入るのを防ぐ。外部ではアルミ・ステンレス・ガルバリウム鋼板が多い。",
+  "industries": [
+   "建材・金物",
+   "板金"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "建築金物「笠木」とは？ 種類・素材・役割・施工のポイントまで",
+   "url": "https://lea-building.com/blog/8273/",
+   "publisher": "lea-building.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1187",
+  "kind": "buyer",
+  "title": "製作金物の単価の中身を知りたい",
+  "summary": "建設業の団体が「製作金物の単価構成」の解説を刊行している。元請や設計側は単価の内訳で見積を比べるため、作り手も材料・加工・取付の内訳を分けて示すと通りやすい。",
+  "industries": [
+   "建材・金物",
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "製作金物の見積内訳の示し方",
+  "source": {
+   "title": "刊行物・資料 | 日本建設業連合会（建築屋さんのための製作金物単価構成の解説）",
+   "url": "https://www.nikkenren.com/publication/detail.html?ci=112",
+   "publisher": "日本建設業連合会",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1370",
+  "kind": "term",
+  "title": "建築金物と製作金物",
+  "summary": "建築金物は建物に使う金属製品の総称（既製品も含む）。製作金物はそのうち現場や用途に合わせて特注で作るもの。金物屋の解説でも呼び分けが説明されている。",
+  "industries": [
+   "建材・金物"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "金物屋スタッフブログ◆製作金物とは、建築金物とは",
+   "url": "https://www.takushinkogyo.co.jp/blog/1192/",
+   "publisher": "takushinkogyo.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1371",
+  "kind": "term",
+  "title": "ブリキとトタン",
+  "summary": "どちらも鉄板にめっきした材料。ブリキはスズめっきで缶や容器など屋内向け、トタンは亜鉛めっきで屋根や外壁など屋外向け。",
+  "industries": [
+   "建材・金物",
+   "金属加工",
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "【最新版】ブリキの用途と特性｜電材や特注金物で選ばれる理由",
+   "url": "https://www.meidens.com/kanamono/column/tinplate/",
+   "publisher": "製作金物・電材・管材.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1372",
+  "kind": "term",
+  "title": "アングル（山形鋼）",
+  "summary": "断面がL字の鋼材。軽くて曲げやねじれに強く、切断や溶接がしやすい。機械のフレーム、架台、鉄骨の補強などに使う。2辺が同じ長さのものと違うものがある。",
+  "industries": [
+   "建材・金物",
+   "金属加工",
+   "製缶"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "【最新版】アングル台の完全ガイド",
+   "url": "https://www.meidens.com/kanamono/column/angle-mount-2/",
+   "publisher": "製作金物・電材・管材.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1373",
+  "kind": "term",
+  "title": "ネスティング",
+  "summary": "1枚の板から複数の部品を効率よく切り出すための並べ方を決めること。端材を減らし材料の歩留まりを上げる。CAD/CAMソフトで自動配置することが多い。",
+  "industries": [
+   "板金",
+   "金属加工",
+   "木工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "【最新版】ネスティングとは何か？意味と特注金物の解説",
+   "url": "https://www.meidens.com/kanamono/column/nesting/",
+   "publisher": "製作金物・電材・管材.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1374",
+  "kind": "term",
+  "title": "マスキング（加工時の保護）",
+  "summary": "塗装やめっきで、色や処理をつけたくない部分をテープや保護剤で覆うこと。境目をきれいに分け、加工の要らない面を守る。",
+  "industries": [
+   "塗装",
+   "表面処理",
+   "建材・金物"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "【最新版】マスキングの意味とは？塗装での養生作業とテープの使い方",
+   "url": "https://www.meidens.com/kanamono/column/masking/",
+   "publisher": "製作金物・電材・管材.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1375",
+  "kind": "term",
+  "title": "プルボックス",
+  "summary": "電気工事で電線の引き込み、方向転換、分岐・接続のために設ける箱。鉄製、屋外向けのステンレス製、樹脂製があり、特注で作ることもある。",
+  "industries": [
+   "建材・金物",
+   "板金"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "【最新版】プルボックスの基礎知識と種類｜設置のポイント解説",
+   "url": "https://www.meidens.com/kanamono/column/pull-box/",
+   "publisher": "製作金物・電材・管材.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1376",
+  "kind": "term",
+  "title": "スタンション",
+  "summary": "支柱のこと。工事現場の手すりや親綱用の支柱、トラック荷台の柱、店舗の行列整理用のポールなど、業界によって指すものが違う。",
+  "industries": [
+   "建材・金物",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "スタンションポールの基本知識と用途・選び方を徹底解説",
+   "url": "https://www.meidens.com/kanamono/column/stanchion-pole/",
+   "publisher": "製作金物・電材・管材.com",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1234",
+  "kind": "pain",
+  "title": "セラミック加工の頼み先が見つからない",
+  "summary": "「セラミック加工をしてくれる業者は？」という質問が多く探されている。金属加工の取引先では断られやすく、材質と加工内容で対応できる会社を一から探す発注者が多い。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "セラミック加工はどこに頼めばいい？",
+  "source": {
+   "title": "セラミック加工の会社163社 注目ランキング【2026年】| Metoree",
+   "url": "https://metoree.com/categories/9050/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1188",
+  "kind": "buyer",
+  "title": "ガラス加工を依頼する先の決め方",
+  "summary": "切断・穴あけ・強化・小口・表面加工のどこまで一社でできるかを見る。仕様書がなくても相談できるか、試作に応じるかも比べる材料になる。",
+  "industries": [
+   "ガラス・セラミック"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "ガラス加工を一社にまとめて頼む利点",
+  "source": {
+   "title": "ガラス加工の種類って？方法や特徴などを解説",
+   "url": "https://www.mitsuya-gr.co.jp/2024/07/16/glass-processing/",
+   "publisher": "mitsuya-gr.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1235",
+  "kind": "pain",
+  "title": "「紙器」という言葉が伝わらない",
+  "summary": "「紙器」は読み方や意味を尋ねる質問が多く、発注者には紙箱・化粧箱・カートンなどの言い方のほうが通じやすい。会社紹介では身近な呼び方を併記すると探されやすい。",
+  "industries": [
+   "紙加工",
+   "パッケージ"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "紙器・紙箱・化粧箱、呼び方の違い",
+  "source": {
+   "title": "『紙箱』とは？「紙器」「カートン」「段ボール箱」の違いや素材",
+   "url": "https://www.komagata.co.jp/info/15086/",
+   "publisher": "化粧箱屋ドットコム",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1189",
+  "kind": "buyer",
+  "title": "木製・店舗什器の業者の選び方",
+  "summary": "施工実績から現場対応力や設計の引き出しを見る。見積書の細かさと説明のていねいさが、納期と品質を左右するとして判断基準に挙げられている。",
+  "industries": [
+   "木工",
+   "看板・サイン"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "什器業者を選ぶ5つの基準",
+  "source": {
+   "title": "什器製作大阪｜小売店舗で押さえる費用相場と5つの発注基準",
+   "url": "https://endokougei.com/archives/1701",
+   "publisher": "endokougei.com",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1236",
+  "kind": "pain",
+  "title": "オーダー家具は高いと思われている",
+  "summary": "「オーダー家具ってやっぱり高い？」という不安が根強い。定価がなく見積次第なので、値段を決める要素と相場の幅を先に見せると相談のハードルが下がる。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "オーダー家具の値段が決まる仕組み",
+  "source": {
+   "title": "【家具の種類別】オーダー家具の相場価格はどれくらい？",
+   "url": "https://andwall.shop/archives/columns/order_marketprice",
+   "publisher": "AND WALL FURNITURE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1780",
+  "kind": "question",
+  "title": "制御盤の製作を頼む流れは？",
+  "summary": "問い合わせ、見積もり、注文書、製作、導通検査、納品、入金という順で進む例がある。各段階で発注側が出す資料を先に示すと相談しやすい。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "制御盤を頼む流れと準備する資料",
+  "source": {
+   "title": "製作のご依頼について",
+   "url": "https://okdenki.jp/flow/",
+   "publisher": "OK電機",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1781",
+  "kind": "question",
+  "title": "制御盤は図面なしでも頼める？",
+  "summary": "図面がなくても試作や短納期で制御盤をつくる会社がある。手元の資料で何から始められるかを示すと、問い合わせの壁が下がる。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "図面なしの制御盤相談で伝えること",
+  "source": {
+   "title": "制御盤・組立サービス",
+   "url": "https://kabu-alpha.com/service/service_assembly.html",
+   "publisher": "株式会社アルファ",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1237",
+  "kind": "pain",
+  "title": "制御盤を社内でつくる人手が足りない",
+  "summary": "制御盤の製作を外に出したい理由として、人手や設備の不足、急な案件への対応が挙がる。受ける側はどこまで肩代わりできるかを書くとよい。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "制御盤・組立サービス",
+   "url": "https://kabu-alpha.com/service/service_assembly.html",
+   "publisher": "株式会社アルファ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1190",
+  "kind": "buyer",
+  "title": "制御盤は試作と短納期の対応を見る",
+  "summary": "制御盤の外注先を選ぶときは、試作1台や短納期にどこまで応じるかを確かめる。対応の流れとよくある質問を公開している会社は比べやすい。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "制御盤・組立サービス",
+   "url": "https://kabu-alpha.com/service/service_assembly.html",
+   "publisher": "株式会社アルファ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1191",
+  "kind": "buyer",
+  "title": "制御盤は全数検査と成績書を見る",
+  "summary": "図面支給の制御盤製作では、絶縁抵抗や耐電圧を全数で検査し、試験成績書を付ける会社がある。発注前に検査項目と書類を確かめる。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "図面支給での制御盤製作",
+   "url": "https://sankoudenki.com/control-panel/",
+   "publisher": "三晃電機",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1782",
+  "kind": "question",
+  "title": "制御盤は1面からでも頼める？",
+  "summary": "図面を渡せば1面から制御盤を製作する会社がある。数量が少なくても、検査や書類の範囲がどうなるかをあわせて聞くとよい。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "1面から頼める制御盤製作の進め方",
+  "source": {
+   "title": "図面支給での制御盤製作",
+   "url": "https://sankoudenki.com/control-panel/",
+   "publisher": "三晃電機",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1377",
+  "kind": "term",
+  "title": "線番管理（せんばんかんり）",
+  "summary": "制御盤の電線ごとに番号を付け、図面と照らして配線する管理のこと。電線の色分けとあわせて、点検や改造のときに追いやすくなる。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "図面支給での制御盤製作",
+   "url": "https://sankoudenki.com/control-panel/",
+   "publisher": "三晃電機",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1783",
+  "kind": "question",
+  "title": "制御盤の配線に決まりはある？",
+  "summary": "動力線と信号線を分けて通す、熱がこもらない配置にする、規格に沿うといった考え方がある。配線の決まりは設計段階で固める。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "制御盤の配線で守る基本の考え方",
+  "source": {
+   "title": "制御盤設計とは？図面の種類と流れ",
+   "url": "https://iotec-biz.com/column/seigyoban-sekkei/",
+   "publisher": "IoTec",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1784",
+  "kind": "question",
+  "title": "制御盤の設計はどう進む？",
+  "summary": "制御盤の設計は、仕様決めから図面作成、部品選定、製作、試験まで複数の工程を順に進める。依頼前に確認する項目の一覧を用意するとよい。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "制御盤設計の工程と依頼前の確認",
+  "source": {
+   "title": "制御盤設計とは？図面の種類と流れ",
+   "url": "https://iotec-biz.com/column/seigyoban-sekkei/",
+   "publisher": "IoTec",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1238",
+  "kind": "pain",
+  "title": "装置と制御盤を別に頼んで合わない",
+  "summary": "装置本体と制御盤を別々の会社に頼むと、仕様のすり合わせが足りず手戻りが出ることがある。どちらがまとめ役かを先に決めておく。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "制御盤設計とは？図面の種類と流れ",
+   "url": "https://iotec-biz.com/column/seigyoban-sekkei/",
+   "publisher": "IoTec",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1785",
+  "kind": "question",
+  "title": "制御盤と配電盤は何が違う？",
+  "summary": "制御盤はPLCや電磁接触器、端子台などで機械の動きを制御する盤。配電盤や分電盤は電気を各所へ分けて送る役目をもつ。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "制御盤・配電盤・分電盤の違い",
+  "source": {
+   "title": "制御盤とは",
+   "url": "https://www.nippo-co.com/odm-kiban/odm-013/",
+   "publisher": "日邦",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1786",
+  "kind": "question",
+  "title": "制御盤の製作会社はどう探す？",
+  "summary": "製作会社をまとめて載せた比較サイトで、所在地や得意分野から候補を挙げる方法がある。自社の強みを一言で示すと候補に残りやすい。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "制御盤の製作会社を選ぶ前の見方",
+  "source": {
+   "title": "制御盤製作の会社一覧",
+   "url": "https://metoree.com/categories/11425/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1378",
+  "kind": "term",
+  "title": "ケーブルグランド",
+  "summary": "盤や機器にケーブルを引き込む口に付け、水やほこりの侵入と抜けを防ぐ部品。ねじの種類と、通すケーブルの外径に合わせて選ぶ。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ケーブルグランドとは",
+   "url": "https://metoree.com/categories/2434/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1379",
+  "kind": "term",
+  "title": "UPS（無停電電源装置）の方式",
+  "summary": "停電時に電気を送り続ける装置で、常時商用、ラインインタラクティブ、常時インバータの方式がある。工場では設備や制御機器の保護に使う。",
+  "industries": [
+   "装置",
+   "電子部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "UPSの種類",
+   "url": "https://www.kuzumi-denshi.co.jp/media/column/a9",
+   "publisher": "九州電子",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1787",
+  "kind": "question",
+  "title": "CVケーブルとVVFの違いは？",
+  "summary": "CVケーブルは最高許容温度が90℃とされ、VVFの60℃より高い。流せる電流や使う場所が変わるので、用途に合わせて選ぶ。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "CVとVVF、ケーブルの選び分け",
+  "source": {
+   "title": "CVケーブルとは",
+   "url": "https://metoree.com/categories/2156/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1380",
+  "kind": "term",
+  "title": "CVTケーブル",
+  "summary": "単心のCVケーブル3本をより合わせたもの。熱を逃がしやすく許容電流が大きいうえ、曲げやすい。心線は黒・白・赤で見分ける。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "CVTケーブルとは",
+   "url": "https://www.nichigoh.co.jp/column/101867/",
+   "publisher": "日合通信電線",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1788",
+  "kind": "question",
+  "title": "電線とケーブルの違いは？",
+  "summary": "電線は導体を絶縁体で覆ったもので、ケーブルはさらに外側をシースで守ったもの。シースのないコードは移動して使う機器向けとされる。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "電線・ケーブル・コードの違い",
+  "source": {
+   "title": "電線とケーブルの違い",
+   "url": "https://www.nichigoh.co.jp/column/101573/",
+   "publisher": "日合通信電線",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1789",
+  "kind": "question",
+  "title": "電線はどこに使えてケーブルは？",
+  "summary": "電線は管の中や機器の内部で使い、ケーブルは壁に直接固定したり屋外で使ったりできる。使う場所を図面に書くと選定ミスが減る。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "使う場所で決める電線とケーブル",
+  "source": {
+   "title": "電線とケーブルの違い",
+   "url": "https://www.taiyocable.com/column/3137/",
+   "publisher": "太陽ケーブルテック",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1381",
+  "kind": "term",
+  "title": "VCT・VCTFケーブル",
+  "summary": "VCTは600V以下で動かして使う機器向けのケーブル。VCTFは300V以下の屋内の小さな機器向けで、用途と電圧で使い分ける。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "VCTケーブルとは",
+   "url": "https://www.taiyocable.com/column/3158/",
+   "publisher": "太陽ケーブルテック",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1382",
+  "kind": "term",
+  "title": "FPケーブル（耐火ケーブル）",
+  "summary": "非常用電源の回路に使う耐火ケーブル。FPは露出配線向けで、FPCは管の中にも通せる。耐火性能の一例として840℃で30分が示される。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "FPケーブルとは",
+   "url": "https://www.taiyocable.com/column/3161/",
+   "publisher": "太陽ケーブルテック",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1383",
+  "kind": "term",
+  "title": "キャブタイヤケーブル",
+  "summary": "電気を流したまま動かせる、曲げに強いケーブル。外側の素材にはゴムとビニルがあり、使う環境で選ぶ。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "キャブタイヤケーブルとは",
+   "url": "https://metoree.com/categories/5596/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1239",
+  "kind": "pain",
+  "title": "アルミ線は軽いが太く必要",
+  "summary": "アルミケーブルは銅より30〜50%ほど軽いとされる（目安）。一方で電気の通りやすさは銅の約6割で太くする必要があり、異種金属の腐食対策も要る。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "アルミケーブルとは",
+   "url": "https://metoree.com/categories/10862/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1790",
+  "kind": "question",
+  "title": "ハーネス加工はどんな工程？",
+  "summary": "電線の切断と被覆むき、端子の圧着やはんだ付け、コネクタへの組み込みと結束、導通・絶縁の検査という順で進む。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "ハーネス加工の工程を順に説明",
+  "source": {
+   "title": "ハーネス加工の工程",
+   "url": "https://chiyoda-denshi.com/column/category-01/13520/",
+   "publisher": "千代田電子",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1791",
+  "kind": "question",
+  "title": "圧着と圧接の違いは？",
+  "summary": "圧着は被覆をむいた電線に端子をかしめる方法。圧接は被覆をむかずに刃を食い込ませて接続する。どちらも専用工具を使い、むきすぎに注意する。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "圧着と圧接の違いと使い分け",
+  "source": {
+   "title": "コネクタの圧着と圧接",
+   "url": "https://chiyoda-denshi.com/column/category-03/15170/",
+   "publisher": "千代田電子",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1192",
+  "kind": "buyer",
+  "title": "ハーネスは図面化の手伝いで選ぶ",
+  "summary": "図面がない段階でも図面化を手伝い、複数の電線をまとめた組ハーネスにする提案をする加工先がある。設計の手間ごと任せたい発注者に響く。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "ワイヤーハーネス加工センター.com",
+   "url": "https://chiyoda-denshi.com/",
+   "publisher": "千代田電子",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1240",
+  "kind": "pain",
+  "title": "端子の型番が分からず頼めない",
+  "summary": "ハーネスを頼みたいが、使う端子やコネクタの型番が分からないという悩みがある。型番から端子を探す手伝いを示すと相談の入口になる。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ワイヤーハーネス加工センター.com",
+   "url": "https://chiyoda-denshi.com/",
+   "publisher": "千代田電子",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1792",
+  "kind": "question",
+  "title": "ハーネスは手書きの図でも頼める？",
+  "summary": "手書きの図面からハーネスを製作する加工先もある。電線の長さ、端子、本数など、最低限伝える情報を一覧で示すとよい。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "手書き図でハーネスを頼むときの情報",
+  "source": {
+   "title": "ハーネス｜鐘通",
+   "url": "https://www.kanetuu.co.jp/products/p-harness/",
+   "publisher": "鐘通",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1793",
+  "kind": "question",
+  "title": "特殊な端子のハーネスも頼める？",
+  "summary": "特殊な端子や融着・圧接などの加工にも応じる加工先がある。対応できる端子や工法を一覧にしておくと、問い合わせの判断が早い。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "特殊端子のハーネスを頼む前に",
+  "source": {
+   "title": "ハーネス｜鐘通",
+   "url": "https://www.kanetuu.co.jp/products/p-harness/",
+   "publisher": "鐘通",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1193",
+  "kind": "buyer",
+  "title": "ハーネスはRoHS・UL対応を聞く",
+  "summary": "ハーネスの外注では、RoHSやULへの対応、不良が出たときの対応、海外への発送ができるかを先に確かめる発注者が多い。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "ハーネス｜鐘通",
+   "url": "https://www.kanetuu.co.jp/products/p-harness/",
+   "publisher": "鐘通",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1794",
+  "kind": "question",
+  "title": "ハーネスを短納期でつくるには？",
+  "summary": "図面を早く確定すること、部品の在庫と調達、加工の機械化、人員の確保が納期を左右する。自社で作るか外に頼むかも判断材料になる。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "ハーネスの納期を縮める4つの条件",
+  "source": {
+   "title": "ワイヤーハーネスを短納期で製作するには",
+   "url": "http://www.shinkou-inds.co.jp/how-to-produce-wirehearness-in-shortterm",
+   "publisher": "シンコウ産業",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1241",
+  "kind": "pain",
+  "title": "ハーネスの部品待ちで納期が延びる",
+  "summary": "端子やコネクタの調達に時間がかかり、ハーネスの納期が延びることがある。部品在庫を持つ加工先は、そのことを具体的に示すとよい。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ワイヤーハーネスを短納期で製作するには",
+   "url": "http://www.shinkou-inds.co.jp/how-to-produce-wirehearness-in-shortterm",
+   "publisher": "シンコウ産業",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1242",
+  "kind": "pain",
+  "title": "ハーネスは手作業が多く自動化が難しい",
+  "summary": "ハーネス製造は機械化できる工程と人の手に頼る工程が混ざる。どこを機械化しているかを示すと、量と納期の安心材料になる。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ワイヤーハーネスを短納期で製作するには",
+   "url": "http://www.shinkou-inds.co.jp/how-to-produce-wirehearness-in-shortterm",
+   "publisher": "シンコウ産業",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1194",
+  "kind": "buyer",
+  "title": "ハーネス業者は技術・費用・量で選ぶ",
+  "summary": "ハーネスやケーブルの加工業者は、技術の要件、費用、頼める数量の3点で比べられる。自社がどの数量に強いかを書くと選ばれやすい。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "オススメのハーネス加工業者・ケーブル加工業者５選",
+   "url": "https://minnano-daikou.com/media/cableharness/",
+   "publisher": "みんなのコア業務",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1384",
+  "kind": "term",
+  "title": "ワイヤーハーネスの構成",
+  "summary": "電線、端子、コネクタ、保護材を組み合わせて束ねた配線部品。まとめて組むことで配線の手間と誤配線を減らせる。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ワイヤーハーネスとは",
+   "url": "https://www.shinpo-e.co.jp/media/uncategorized/wire-harness",
+   "publisher": "新報",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1795",
+  "kind": "question",
+  "title": "EV用の高電圧ハーネスとは？",
+  "summary": "車のハーネスには低電圧のものと、EVやハイブリッド車で使う高電圧のものがある。高電圧用は求められる安全性や部品が異なる。",
+  "industries": [
+   "自動車部品",
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "低電圧と高電圧ハーネスの違い",
+  "source": {
+   "title": "自動車用ワイヤーハーネス",
+   "url": "https://marunix.co.jp/news4/",
+   "publisher": "マルニックス",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1385",
+  "kind": "term",
+  "title": "産業機械用のハーネス",
+  "summary": "車載用とは別に、産業機械や装置の中で使うハーネスがある。機械ごとに仕様が異なり、少量で多品種になりやすい。",
+  "industries": [
+   "産業機械",
+   "組立",
+   "電子部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ワイヤーハーネスとは",
+   "url": "https://marunix.co.jp/news3/",
+   "publisher": "マルニックス",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1386",
+  "kind": "term",
+  "title": "圧着端子（丸型・Y型）",
+  "summary": "電線の先に付けて、ねじ止めでつなぐ端子。被覆なしの裸端子と被覆付きがあり、電線の太さとねじの大きさに合わせて専用工具で圧着する。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "圧着端子とは",
+   "url": "https://metoree.com/categories/3211/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1796",
+  "kind": "question",
+  "title": "圧着で端子と工具を合わせる理由は？",
+  "summary": "電線の太さ、端子、工具の型が合わないと接触不良や発熱の原因になる。最後まで握らないと開かないラチェット付きの工具で品質をそろえる。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "圧着の品質を決める3つの組み合わせ",
+  "source": {
+   "title": "用語集：圧着",
+   "url": "https://product.minebeamitsumi.com/faq/glossary/detail/crimp.html",
+   "publisher": "ミネベアミツミ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1387",
+  "kind": "term",
+  "title": "FFC（フレキシブルフラットケーブル）",
+  "summary": "薄く平らな配線部品で、機器内の基板どうしをつなぐ。選ぶときはピン数、ピッチ、接点が表か裏かを確かめる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "用語集：FFC",
+   "url": "https://product.minebeamitsumi.com/faq/glossary/detail/ffc.html",
+   "publisher": "ミネベアミツミ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1797",
+  "kind": "question",
+  "title": "防水コネクタの等級はどう選ぶ？",
+  "summary": "防水コネクタは防水・防じんの等級で選ぶ。IP65から高圧洗浄にも耐えるIP69Kまであり、使う場所の水のかかり方で決める。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "防水コネクタのIP等級の選び方",
+  "source": {
+   "title": "防水コネクタとは",
+   "url": "https://metoree.com/categories/3490/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1388",
+  "kind": "term",
+  "title": "電子機器組立て技能士",
+  "summary": "はんだ付け、束線、組立の実技がある国家資格。3級は実務経験不要で、2級は原則2年の実務が要る。2級の合格率は例年5割前後とされる（目安）。",
+  "industries": [
+   "電子部品",
+   "組立",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "電子機器組立て技能士とは",
+   "url": "https://job.persol-factorypartners.co.jp/blog/electronic-equipment-assembly-technician/",
+   "publisher": "パーソルファクトリーパートナーズ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1798",
+  "kind": "question",
+  "title": "組立工の腕前は何で示せる？",
+  "summary": "電子機器の組立には国家資格の電子機器組立て技能士があり、実技にはんだ付けや束線を含む。資格者の人数は技術力を伝える材料になる。",
+  "industries": [
+   "電子部品",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "組立の技術力を資格で伝える",
+  "source": {
+   "title": "電子機器組立て技能士とは",
+   "url": "https://job.persol-factorypartners.co.jp/blog/electronic-equipment-assembly-technician/",
+   "publisher": "パーソルファクトリーパートナーズ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1799",
+  "kind": "question",
+  "title": "EMSと下請けは何が違う？",
+  "summary": "EMSは設計の段階から関わり、部品調達から製造・検査まで請け負う形が多い。言われた作業だけを受ける下請けとは任される範囲が違う。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "EMSと下請けの違いを説明する",
+  "source": {
+   "title": "EMSとは？電子機器の受託製造",
+   "url": "https://www.ps-t.co.jp/column/ems-electronics/",
+   "publisher": "PST",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1243",
+  "kind": "pain",
+  "title": "EMSとの責任の分け方があいまい",
+  "summary": "設計の不具合か製造の不具合かで責任の所在があいまいになると、トラブルの対応が遅れる。責任の分け方を契約前に決めておく。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "EMSとは？電子機器の受託製造",
+   "url": "https://www.ps-t.co.jp/column/ems-electronics/",
+   "publisher": "PST",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1800",
+  "kind": "question",
+  "title": "EMSに相談する前に何を用意する？",
+  "summary": "製品の概要、想定数量、時期、手元にある図面や部品表などを伝えると話が早い。試作から相談できるかも確かめる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "EMSに相談する前の準備リスト",
+  "source": {
+   "title": "EMSとは？電子機器の受託製造",
+   "url": "https://www.ps-t.co.jp/column/ems-electronics/",
+   "publisher": "PST",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1801",
+  "kind": "question",
+  "title": "仕様書なしでもEMSに相談できる？",
+  "summary": "仕様書が固まっていない段階から相談できるEMSがある。どの段階から関われるか、どこまで一貫して受けられるかが選ぶ目安になる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "仕様が固まる前のEMS相談",
+  "source": {
+   "title": "EMS委託先の選び方",
+   "url": "https://www.macnica.co.jp/business/semiconductor/articles/basic/140659/",
+   "publisher": "マクニカ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1195",
+  "kind": "buyer",
+  "title": "EMSは長期供給と調達力を見る",
+  "summary": "EMSを選ぶときは、部品を長く安定して調達できるか、似た製品を作っている他社との関係に問題がないかを確かめる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "EMS委託先の選び方",
+   "url": "https://www.macnica.co.jp/business/semiconductor/articles/basic/140659/",
+   "publisher": "マクニカ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1196",
+  "kind": "buyer",
+  "title": "EMSは費用の内訳が見えるか確かめる",
+  "summary": "委託先を比べるときは、見積もりの内訳が分かるかを見る。費用の中身が見えると、量や仕様を変えたときの話もしやすい。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "EMS委託先の選び方",
+   "url": "https://www.macnica.co.jp/business/semiconductor/articles/basic/140659/",
+   "publisher": "マクニカ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1802",
+  "kind": "question",
+  "title": "EMSはどんな手順で導入する？",
+  "summary": "EMSは要件の整理から委託先の比較、試作、評価、量産へと段階を踏んで導入する進め方が紹介されている。業界ごとの向き不向きもある。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "EMS導入の進め方と確認点",
+  "source": {
+   "title": "EMSとは",
+   "url": "https://www.limno.co.jp/column/ems/",
+   "publisher": "LIMNO",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1244",
+  "kind": "pain",
+  "title": "部品1点の不足でラインが止まる",
+  "summary": "電子機器は部品が1点欠けても生産が止まる。委託先を選ぶときは部品調達の力と、自社で作る割合を確かめておく。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "EMS工場の選び方と調達リスク",
+   "url": "https://oem-ems-partners.com/column/2864/",
+   "publisher": "OEM・EMSパートナーズ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1197",
+  "kind": "buyer",
+  "title": "EMS工場は見学で確かめる",
+  "summary": "EMSを選ぶ前に工場を見学し、設備や管理の様子を自分の目で確かめる発注者がいる。依頼前に伝える情報もあわせて整理しておく。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "EMS工場の選び方と調達リスク",
+   "url": "https://oem-ems-partners.com/column/2864/",
+   "publisher": "OEM・EMSパートナーズ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1803",
+  "kind": "question",
+  "title": "鉛フリーはんだは何が違う？",
+  "summary": "鉛フリーはんだは従来のはんだより融点が20〜45℃高いとされる（目安）。作業温度が上がるため、こて先が早く傷みやすい。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "鉛フリーはんだで変わる作業",
+  "source": {
+   "title": "鉛フリーはんだとは",
+   "url": "https://oem-ems-partners.com/column/1157/",
+   "publisher": "OEM・EMSパートナーズ",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1245",
+  "kind": "pain",
+  "title": "外に任せると社内に技術が残らない",
+  "summary": "EMSに製造を任せると、品質の管理が難しくなり、製造のノウハウが社内にたまりにくい。トラブル時の対応が遅れることもある。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "EMSのメリット・デメリット",
+   "url": "https://www.sanshin.co.jp/column/odm_oem/20251114/",
+   "publisher": "三信電気",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1804",
+  "kind": "question",
+  "title": "EMSは国内と海外どちらに頼む？",
+  "summary": "国内と海外のEMSでは、費用、納期、意思疎通、品質管理のしやすさが異なる。数量や製品の性格で使い分ける考え方がある。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "国内EMSと海外EMSの選び分け",
+  "source": {
+   "title": "EMSのメリット・デメリット",
+   "url": "https://www.sanshin.co.jp/column/odm_oem/20251114/",
+   "publisher": "三信電気",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1805",
+  "kind": "question",
+  "title": "受託製造を使う利点は？",
+  "summary": "固定費を抑えられる、本業に集中できる、製品を早く市場に出せるといった利点がある。OEMやODMなど任せる範囲で形が分かれる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "受託製造を使う3つの利点",
+  "source": {
+   "title": "受託製造（OEM/EMS/ODM/JDM）とは",
+   "url": "https://product.minebeamitsumi.com/technology/custom/what-is-ems.html",
+   "publisher": "ミネベアミツミ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1389",
+  "kind": "term",
+  "title": "JDM（共同で設計する受託製造）",
+  "summary": "受託製造の形の一つで、委託側と受託側が共同で設計・開発する。OEMやODM、EMSとあわせて、任せる範囲の違いで整理される。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "受託製造（OEM/EMS/ODM/JDM）とは",
+   "url": "https://product.minebeamitsumi.com/technology/custom/what-is-ems.html",
+   "publisher": "ミネベアミツミ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1806",
+  "kind": "question",
+  "title": "受託製造とOEMは何が違う？",
+  "summary": "受託製造は他社の製品をつくる仕事の総称で、OEMやODM、EMSはその形の違い。下請けや協力工場との関係もあわせて整理される。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "受託製造・OEM・下請けの違い",
+  "source": {
+   "title": "EMSとは？受託製造・OEM・ODM・下請け・協力工場の違い",
+   "url": "https://www.fujita-denki.co.jp/topics/Column/a18",
+   "publisher": "藤田電機",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1246",
+  "kind": "pain",
+  "title": "受託側は価格と量を相手に左右される",
+  "summary": "受託製造では、価格や生産量が委託元の都合で決まりやすい。特定の取引先に頼りすぎない工夫が受託側の課題になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "EMSとは？受託製造・OEM・ODM・下請け・協力工場の違い",
+   "url": "https://www.fujita-denki.co.jp/topics/Column/a18",
+   "publisher": "藤田電機",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1198",
+  "kind": "buyer",
+  "title": "EMSは追跡の仕組みを確かめる",
+  "summary": "いつ、どの部品で、どの工程を通ったかを追える仕組みがあるかを確かめる。不具合が出たときの調べやすさに直結する。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "LeadEMS",
+   "url": "https://www.lead-ems.com/",
+   "publisher": "LeadEMS",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1199",
+  "kind": "buyer",
+  "title": "EMSとの契約は重要な条項を先に見る",
+  "summary": "EMSとの契約では、品質、責任、知的財産などの条項を先に確かめる。工場を監査する際の確認項目もあらかじめ用意しておく。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "LeadEMS",
+   "url": "https://www.lead-ems.com/",
+   "publisher": "LeadEMS",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1807",
+  "kind": "question",
+  "title": "生産中止の部品対応もEMSに頼める？",
+  "summary": "部品の生産中止への対応や、試作・少量生産まで受けるEMSがある。量産後の部品の入れ替えまで相談できるかを確かめる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "生産中止の部品対応まで任せる",
+  "source": {
+   "title": "LeadEMS",
+   "url": "https://www.lead-ems.com/",
+   "publisher": "LeadEMS",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1808",
+  "kind": "question",
+  "title": "EOLとディスコンの違いは？",
+  "summary": "どちらも生産の終了を指すが、メーカーが終了を正式に知らせる仕組みがEOLで、仕様変更の通知はPCNと呼ばれる。言葉をそろえて社内で共有する。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "EOL・ディスコン・PCNの違い",
+  "source": {
+   "title": "EOL対策ガイド",
+   "url": "https://h-toa.toaele.com/column/2767",
+   "publisher": "東亜エレクトロニクス",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1809",
+  "kind": "question",
+  "title": "EOLの通知が来たら何から？",
+  "summary": "影響する製品を洗い出し、在庫と需要を見て優先順位を決める。代わりの部品で基板の改版が要るかどうかも早めに判断する。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "EOL通知を受けた後の手順",
+  "source": {
+   "title": "EOL対策ガイド",
+   "url": "https://h-toa.toaele.com/column/2767",
+   "publisher": "東亜エレクトロニクス",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1247",
+  "kind": "pain",
+  "title": "代替部品で基板の改版が要る",
+  "summary": "形や端子の配置が違う代替部品を使うと、基板の設計を直す必要が出る。費用と期間がかかるため、早めの判断が求められる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "EOL対策ガイド",
+   "url": "https://h-toa.toaele.com/column/2767",
+   "publisher": "東亜エレクトロニクス",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1390",
+  "kind": "term",
+  "title": "LTB（最終購入）",
+  "summary": "部品の生産終了前に、必要な数をまとめて買っておくこと。互換品を探す、回路を設計し直すといった手段とあわせて検討する。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ICがEoLで互換品がないとき",
+   "url": "https://d-clue.com/blog/solution/eol/",
+   "publisher": "D-CLUE",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1248",
+  "kind": "pain",
+  "title": "互換品のないICが生産終了に",
+  "summary": "互換品がないICが生産終了になると、設計の中身が分からない、システム全体に影響する、ハードとソフトの両方が分かる人がいない、という壁にあたる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ICがEoLで互換品がないとき",
+   "url": "https://d-clue.com/blog/solution/eol/",
+   "publisher": "D-CLUE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1810",
+  "kind": "question",
+  "title": "代替部品はどう探す？",
+  "summary": "互換品の対照表やデータベース、商社への問い合わせで候補を探す。電気的な特性、形、環境規制への適合を比べて絞り込む。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "代替部品を探す3つの方法",
+  "source": {
+   "title": "代替部品の探し方",
+   "url": "https://www.shinpo-e.co.jp/media/uncategorized/alternative-parts",
+   "publisher": "新報",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1200",
+  "kind": "buyer",
+  "title": "代替部品は実機での評価まで見る",
+  "summary": "代替部品は仕様書の比較だけでなく、実機に載せた評価や信頼性試験まで行う。評価まで手伝える取引先は頼りにされる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "代替部品の探し方",
+   "url": "https://www.shinpo-e.co.jp/media/uncategorized/alternative-parts",
+   "publisher": "新報",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1391",
+  "kind": "term",
+  "title": "代替品のレベル分け",
+  "summary": "代替部品を、そのまま置き換えられるもの、一部変更が要るもの、設計変更が要るものなどに分けて考える方法。社内の判断をそろえやすい。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "電子部品の代替品とライフサイクル",
+   "url": "https://note.com/kumu_works/n/nac7779b8b141",
+   "publisher": "note",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1249",
+  "kind": "pain",
+  "title": "設計と調達で代替品の意味が違う",
+  "summary": "設計部門と調達部門で「代替品」の定義が食い違い、話がかみ合わないことがある。判断が特定の人に偏る属人化も課題になる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "電子部品の代替品とライフサイクル",
+   "url": "https://note.com/kumu_works/n/nac7779b8b141",
+   "publisher": "note",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1392",
+  "kind": "term",
+  "title": "マルチソース",
+  "summary": "同じ機能の部品を複数のメーカーから買える状態にしておくこと。部品の生産終了や供給不足への備えになる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "電子部品の代替品とライフサイクル",
+   "url": "https://note.com/kumu_works/n/nac7779b8b141",
+   "publisher": "note",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1811",
+  "kind": "question",
+  "title": "生産終了後の再設計はどう進む？",
+  "summary": "代替部品の調査、特性の比較、回路・基板・ソフトの改版、信頼性試験という順で進める。一連の作業を外部に任せる方法もある。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "生産終了部品の再設計の流れ",
+  "source": {
+   "title": "EOL対応サービス",
+   "url": "https://engineering-technology.brexa.com/electrical-design/eol-support/",
+   "publisher": "BREXA",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1201",
+  "kind": "buyer",
+  "title": "生産終了の情報を早く知る",
+  "summary": "カタログから外れた部品の情報を調べるサービスがある。部品表をもとに生産終了の予定を早く知れば、対策に時間をかけられる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "EOL情報調査",
+   "url": "https://www.zukentec.co.jp/zukentecnews/epi001/",
+   "publisher": "図研テック",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1393",
+  "kind": "term",
+  "title": "製造中止情報の調査サービス",
+  "summary": "部品表を預けて、使っている部品の製造中止情報を調べてもらうサービス。自社で一つずつ調べる手間を減らせる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "製造中止情報調査サービス",
+   "url": "https://www.oeg.co.jp/ele-part/eol.html",
+   "publisher": "OEG",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1812",
+  "kind": "question",
+  "title": "部品が生産終了になる理由は？",
+  "summary": "需要の減少、製造設備や材料の都合、新しい製品への切り替えなどで生産終了になる。理由と調べ方、対処法を整理しておくと慌てずに済む。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "電子部品が生産終了になる理由",
+  "source": {
+   "title": "電子部品のEOLとは",
+   "url": "https://www.sanshin.co.jp/column/odm_oem/electronic-parts-eol/",
+   "publisher": "三信電気",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1813",
+  "kind": "question",
+  "title": "SMT実装はどんな流れ？",
+  "summary": "はんだを基板に印刷し、部品を載せ、リフロー炉で溶かして固め、外観検査で確かめる。両面に載せて高密度にできるのが特長。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "SMT実装の4工程",
+  "source": {
+   "title": "SMT実装の工程",
+   "url": "https://www.shinpo-e.co.jp/media/uncategorized/smt-process",
+   "publisher": "新報",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1814",
+  "kind": "question",
+  "title": "AOIとX線検査の違いは？",
+  "summary": "AOIはカメラで表面のはんだや部品を見る検査。X線検査はBGAの下など外から見えない接合や空洞を調べる。目的で組み合わせる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "実装基板の検査方法の違い",
+  "source": {
+   "title": "実装基板の検査",
+   "url": "https://www.shinpo-e.co.jp/media/uncategorized/pcba-inspection",
+   "publisher": "新報",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1394",
+  "kind": "term",
+  "title": "ICT（インサーキットテスト）",
+  "summary": "実装した基板に針を当て、部品や配線が電気的に正しくつながっているかを確かめる検査。外観検査では分からない不良を見つける。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "実装基板の検査",
+   "url": "https://www.shinpo-e.co.jp/media/uncategorized/pcba-inspection",
+   "publisher": "新報",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1815",
+  "kind": "question",
+  "title": "基板と基盤は何が違う？",
+  "summary": "電子部品を載せる板は「基板」と書く。「基盤」は物事の土台という意味で、文章や見積書では使い分けに気をつける。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "基板と基盤、正しい書き方",
+  "source": {
+   "title": "基板と基盤の違い",
+   "url": "https://www.adogawa.co.jp/cat_construct/7583.html",
+   "publisher": "安曇川電子工業",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1395",
+  "kind": "term",
+  "title": "フラックス",
+  "summary": "はんだ付けの前に塗り、金属表面の酸化膜を取り除いて、はんだのぬれをよくする薬剤。金属用は残ると腐食の原因になるため洗浄が要る。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "フラックスとは",
+   "url": "https://www.adogawa.co.jp/cat_mounting/8008.html",
+   "publisher": "安曇川電子工業",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1816",
+  "kind": "question",
+  "title": "共晶はんだと鉛フリーの違いは？",
+  "summary": "融点は共晶はんだが約183℃、鉛フリーが約217〜220℃とされる（目安）。共晶は一気に固まり部品がずれにくいが、RoHSにより用途が限られる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "共晶はんだと鉛フリーの選び方",
+  "source": {
+   "title": "共晶はんだとは",
+   "url": "https://www.allowtex.co.jp/blog/detail/Ddzc9Onc",
+   "publisher": "アロウテックス",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1396",
+  "kind": "term",
+  "title": "PCB（プリント基板）の種類",
+  "summary": "プリント基板には片面、両面、多層、曲げられるFPCがある。部品の数や機器の大きさに応じて選ぶ。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "PCBとは",
+   "url": "https://www.allowtex.co.jp/blog/detail/eyZZv4Yf",
+   "publisher": "アロウテックス",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1817",
+  "kind": "question",
+  "title": "基板パターン設計の基本は？",
+  "summary": "電源のパターンは太くし、曲げる角は45度にする、基板の端から一定の距離をあけるといった基本がある。製造しやすさにも関わる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "基板パターン設計の基本ルール",
+  "source": {
+   "title": "基板パターン設計のポイント",
+   "url": "https://h-toa.toaele.com/points/578",
+   "publisher": "東亜エレクトロニクス",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1397",
+  "kind": "term",
+  "title": "DPA（破壊的物理解析）",
+  "summary": "電子部品を分解・切断して、内部の構造や作りに問題がないかを調べる解析。高い信頼性が求められる分野で使われる。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "DPA（破壊的物理解析）",
+   "url": "https://www.oeg.co.jp/analysis/dpa.html",
+   "publisher": "OEG",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1398",
+  "kind": "term",
+  "title": "UL94 V-0とVTM-0",
+  "summary": "プラスチックの燃えにくさの等級。V-0は成形した部品向け、VTM-0は薄いフィルム向けの試験で評価する。",
+  "industries": [
+   "電子部品",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "用語集：V-0",
+   "url": "https://product.minebeamitsumi.com/faq/glossary/detail/v-o.html",
+   "publisher": "ミネベアミツミ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1818",
+  "kind": "question",
+  "title": "環境試験の費用の目安は？",
+  "summary": "公設試験研究機関は1日数千円から1万円台、民間は数万円から数十万円以上が目安とされる。地域外の利用で割高になる場合もある。",
+  "industries": [
+   "電子部品",
+   "装置",
+   "精密機器"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "環境試験の頼み先と費用の目安",
+  "source": {
+   "title": "環境試験",
+   "url": "https://www.oeg.co.jp/Rel/environment.html",
+   "publisher": "OEG",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1202",
+  "kind": "buyer",
+  "title": "信頼性試験は外に頼み設備費を抑える",
+  "summary": "信頼性試験を外部に頼むと、試験設備を自社でそろえずに済む。車載向けなどの規格に沿った試験ができるかを確かめる。",
+  "industries": [
+   "電子部品",
+   "自動車部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "信頼性試験の資料",
+   "url": "https://www.oeg.co.jp/download/index.html",
+   "publisher": "OEG",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1819",
+  "kind": "question",
+  "title": "計測器の校正はどこに頼む？",
+  "summary": "計測器のメーカー、校正機関、商社に頼める。納期は2週間前後が一例で、現地に来てもらう出張校正もある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "計測器の校正の頼み方",
+  "source": {
+   "title": "計測器の校正",
+   "url": "https://www.oeg.co.jp/keisoku/index.html",
+   "publisher": "OEG",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1399",
+  "kind": "term",
+  "title": "JCSS（校正の証明）",
+  "summary": "国の制度に基づく校正の証明で、ISO/IEC 17025とあわせて校正の確かさを示す。証明書と、どの基準につながるかを示す体系図を受け取る。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "計測器の校正",
+   "url": "https://www.oeg.co.jp/keisoku/index.html",
+   "publisher": "OEG",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1820",
+  "kind": "question",
+  "title": "受託試験はどこに頼める？",
+  "summary": "電子部品や機器の試験を受託する会社がある。試験の種類、使う規格、報告書の形式を先に伝えると見積もりが早い。",
+  "industries": [
+   "電子部品",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "受託試験を頼む前に伝えること",
+  "source": {
+   "title": "受託試験",
+   "url": "https://www.oeg.co.jp/Rel/online.html",
+   "publisher": "OEG",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1400",
+  "kind": "term",
+  "title": "CpkとPpk（工程能力）",
+  "summary": "工程が規格内でどれだけ安定してつくれるかを示す指標。1.33以上が目安とされる。Cpkは安定した工程の短期のばらつき、Ppkは全データで計算する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "Cpkとは",
+   "url": "https://engineering-technology.brexa.com/blog/technavi/cpk/",
+   "publisher": "BREXA",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1401",
+  "kind": "term",
+  "title": "可動率（べきどうりつ）",
+  "summary": "設備を動かしたいときに動かせた割合で、最大100%。需要で変わる稼働率と違い、故障の少なさを示す。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "稼働率と可動率の違い",
+   "url": "https://engineering-technology.brexa.com/blog/technavi/operation-rate/",
+   "publisher": "BREXA",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1821",
+  "kind": "question",
+  "title": "請負と準委任の違いは？",
+  "summary": "請負は完成させる責任を負い、準委任は作業を誠実に行う責任を負う。製品の製造は請負の例で、契約書の名前より実態で判断される。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "請負と準委任、製造業の契約",
+  "source": {
+   "title": "請負と委任の違い",
+   "url": "https://engineering-technology.brexa.com/blog/technavi/business-outsourcing-contract-guide/",
+   "publisher": "BREXA",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1250",
+  "kind": "pain",
+  "title": "指示しすぎると偽装請負になる",
+  "summary": "外注先の作業者に直接細かく指示すると、偽装請負とみなされるおそれがある。指示の窓口と範囲を決めておく。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "請負と委任の違い",
+   "url": "https://engineering-technology.brexa.com/blog/technavi/business-outsourcing-contract-guide/",
+   "publisher": "BREXA",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1822",
+  "kind": "question",
+  "title": "外注と業務委託は何が違う？",
+  "summary": "外注は社外に仕事を出すこと全般を指し、業務委託はその契約の形の一つ。指揮命令の仕方によっては雇用とみなされる点に注意する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "外注と業務委託の違い",
+  "source": {
+   "title": "外注と業務委託の違い",
+   "url": "https://engineering-technology.brexa.com/blog/technavi/outsourcing-contracting-guide/",
+   "publisher": "BREXA",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1823",
+  "kind": "question",
+  "title": "図面支給で装置の組立だけ頼める？",
+  "summary": "図面を渡して装置の組立だけを代行してもらうことは可能とされる。部品の調達をどちらが行うかを先に決めておく。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "装置の組立だけを頼むときの準備",
+  "source": {
+   "title": "図面支給で装置組立代行は可能か",
+   "url": "https://shinwagiken.com/global-fa-navi/faq/00105/",
+   "publisher": "グローバルFAナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1203",
+  "kind": "buyer",
+  "title": "組立の外注は合否の基準を先に決める",
+  "summary": "組立を外注するときは、合否を判定する条件と、工程内・完成時の検査をあらかじめ決める。作業範囲と責任の分け方も明確にする。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "組立外注で失敗しない7つの確認事項",
+   "url": "https://lefixea.jp/mfg/articles/assembly-outsourcing90",
+   "publisher": "Lefixea",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1251",
+  "kind": "pain",
+  "title": "支給部品の在庫管理でもめる",
+  "summary": "組立外注では、支給する部品と委託先が調達する部品の区別や在庫の管理があいまいだと、欠品や数量違いでもめやすい。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "組立外注で失敗しない7つの確認事項",
+   "url": "https://lefixea.jp/mfg/articles/assembly-outsourcing90",
+   "publisher": "Lefixea",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1204",
+  "kind": "buyer",
+  "title": "組立の外注は初回ロットで確かめる",
+  "summary": "仕様変更や不具合のときの対応を決め、初回ロットで出来を確かめてから本格的に任せる。図面と作業指示書もそろえておく。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "組立外注で失敗しない7つの確認事項",
+   "url": "https://lefixea.jp/mfg/articles/assembly-outsourcing90",
+   "publisher": "Lefixea",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1205",
+  "kind": "buyer",
+  "title": "クリーンな環境で組立できるか見る",
+  "summary": "精密な装置の組立では、クリーンな環境で作業できるかが選ぶ条件になる。試運転や設置まで一貫して受けられるかも確かめる。",
+  "industries": [
+   "装置",
+   "半導体",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "製造事業",
+   "url": "https://www.moritetsu-jp.com/business/manufacturing.html",
+   "publisher": "森鉄工",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1824",
+  "kind": "question",
+  "title": "装置の試運転と据付まで頼める？",
+  "summary": "組立だけでなく、試運転や納入先での設置まで請け負う会社がある。どこまで任せられるかを一覧で示すと発注側が判断しやすい。",
+  "industries": [
+   "装置",
+   "組立",
+   "産業機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "組立から据付まで一貫で頼む",
+  "source": {
+   "title": "製造事業",
+   "url": "https://www.moritetsu-jp.com/business/manufacturing.html",
+   "publisher": "森鉄工",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1825",
+  "kind": "question",
+  "title": "半導体の前工程と後工程とは？",
+  "summary": "前工程はウエハー上に回路をつくる工程、後工程はチップを切り出して組み立て、検査する工程。製造装置もそれぞれに分かれる。",
+  "industries": [
+   "半導体",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "半導体の前工程と後工程",
+  "source": {
+   "title": "半導体製造装置メーカー",
+   "url": "https://metoree.com/categories/semiconductor-manufacturing-equipment/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1826",
+  "kind": "question",
+  "title": "クリーンルームはなぜ陽圧？",
+  "summary": "外の空気やほこりが入らないよう、室内の気圧を外より高くする。有害なガスを扱う部屋は、逆に陰圧にして外へ漏らさない。",
+  "industries": [
+   "半導体",
+   "装置",
+   "精密機器"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "陽圧と陰圧のクリーンルーム",
+  "source": {
+   "title": "陽圧と陰圧のクリーンルーム",
+   "url": "https://engineering-technology.brexa.com/blog/technavi/positive-negative-pressure-cleanroom/",
+   "publisher": "BREXA",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1827",
+  "kind": "question",
+  "title": "粉体塗装の色替えはなぜ手間？",
+  "summary": "答えに入れるとよいこと：色を変えるたびにブースやガン、回収装置に残った粉を掃除する必要があり、混色の心配と段取り時間が出ること。多品種・小ロットで色が多い注文は事前に相談してほしい、と伝える。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "色数が多い注文で粉体塗装を相談するコツ",
+  "source": {
+   "title": "粉体塗装とは？メリット・デメリットや塗料の種類による特徴を解説 - 広島で焼付塗装なら株式会社ムラカワ",
+   "url": "https://www.murakawa-tosou.jp/columns/columns-1899/",
+   "publisher": "murakawa-tosou.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1828",
+  "kind": "question",
+  "title": "粉体塗装は部分的に直せる？",
+  "summary": "答えに入れるとよいこと：粉体塗装は部分補修がしにくく、塗り直すときは古い塗膜をはがしてから塗る場合が多いこと。傷が付きやすい部品は、梱包や取り扱いを含めて最初に相談するとよい。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "粉体塗装品に傷が付いたときの直し方",
+  "source": {
+   "title": "粉体塗装とは？メリット・デメリットや塗料の種類による特徴を解説 - 広島で焼付塗装なら株式会社ムラカワ",
+   "url": "https://www.murakawa-tosou.jp/columns/columns-1899/",
+   "publisher": "murakawa-tosou.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1829",
+  "kind": "question",
+  "title": "粉体塗装の厚みで部品がはまらない？",
+  "summary": "答えに入れるとよいこと：粉体塗装は一度で厚い膜になりやすく（解説では一例として30〜150μm程度）、はめ合い部やねじ部の寸法に影響すること。マスキング箇所や寸法の見込みを図面で伝える大切さ。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "粉体塗装の膜厚を見込んだ図面の書き方",
+  "source": {
+   "title": "粉体塗装とは？メリット・デメリットや塗料の種類による特徴を解説 - 広島で焼付塗装なら株式会社ムラカワ",
+   "url": "https://www.murakawa-tosou.jp/columns/columns-1899/",
+   "publisher": "murakawa-tosou.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1206",
+  "kind": "buyer",
+  "title": "粉体塗装の見積もりが上下する3要素",
+  "summary": "粉体塗装の見積もりは、主に部品の形状、塗料の種類、下処理の内容で変わると上位ページは説明している。発注者は形と大きさが分かる図面や写真、求める性能、さびや旧塗膜の有無をそろえると比べやすい。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "粉体塗装の見積もり前にそろえる資料",
+  "source": {
+   "title": "粉体塗装の見積もりを決める3要素！主な価格帯と耐用年数とは",
+   "url": "https://www.funtaieco.com/data/price.html",
+   "publisher": "funtaieco.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1830",
+  "kind": "question",
+  "title": "箱物の粉体塗装は1㎡いくらが目安？",
+  "summary": "答えに入れるとよいこと：「AIによる概要」では箱物・工業用部品の一例として1㎡あたり2,000〜5,000円程度の目安が引かれていること。下地処理や剥離、小ロットで加算される点も合わせて書く。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "粉体塗装の費用目安と加算される作業",
+  "source": {
+   "title": "粉体塗装の費用について解説",
+   "url": "https://www.powdercoat-contractor.com/basic-knowledge/cost-painting.html",
+   "publisher": "powdercoat-contractor.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1207",
+  "kind": "buyer",
+  "title": "粉体塗装の依頼で最初に伝える項目",
+  "summary": "「AIによる概要」では、依頼は形状・サイズ・素材・色・数量を伝えて見積もりを取り、次に塗料の種類や焼付温度、納期をすり合わせる流れと説明。納期は一例として2〜4週間程度とされる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "初めての粉体塗装、問い合わせで伝えること",
+  "source": {
+   "title": "粉体塗装における人体への影響は少ない？主な理由やムラカワの対策 ...",
+   "url": "https://www.murakawa-tosou.jp/columns/columns-1889/",
+   "publisher": "murakawa-tosou.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1831",
+  "kind": "question",
+  "title": "粉体塗装に使う塗料と塗り方の種類は？",
+  "summary": "答えに入れるとよいこと：塗料は熱で固まる熱硬化性と、熱で溶ける熱可塑性に分かれること。塗り方は静電気で付ける静電粉体塗装と、温めた部品を粉の槽に浸す流動浸漬法が代表的なこと。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "粉体塗装の種類を発注者向けに整理",
+  "source": {
+   "title": "「粉体塗装とは？」‐5分でわかる用語解説。特徴からメリットやデメリットまで | withHOPE株式会社",
+   "url": "https://with-hope.com/2020/12/15/%E7%B2%89%E4%BD%93%E5%A1%97%E8%A3%85%E3%81%A8%E3%81%AF%EF%BC%9F%E2%80%90%E8%87%AA%E5%8B%95%E8%BB%8A%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E6%8A%80%E8%A1%93%E8%80%85%E3%81%8C%E8%A7%A3%E8%AA%AC/",
+   "publisher": "withHOPE",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1402",
+  "kind": "term",
+  "title": "流動浸漬法とは",
+  "summary": "温めた部品を、空気で粉体塗料が舞い上がった槽に浸して塗膜を付ける粉体塗装の方法。静電気で吹き付ける静電粉体塗装と並ぶ代表的なやり方として紹介されている。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "粉体塗装の特徴やメリット・デメリットを解説",
+   "url": "https://www.coatboo.com/method/powder.html",
+   "publisher": "coatboo.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1832",
+  "kind": "question",
+  "title": "アルミやステンレスも粉体塗装できる？",
+  "summary": "答えに入れるとよいこと：粉体塗装は焼付の熱に耐える金属が中心で、鉄だけでなくアルミやステンレスも対象になること。素材ごとに前処理が変わるため、材質を最初に伝えてほしいこと。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "素材別に見る粉体塗装の注意点",
+  "source": {
+   "title": "粉体塗装の特徴やメリット・デメリットを解説",
+   "url": "https://www.coatboo.com/method/powder.html",
+   "publisher": "coatboo.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1833",
+  "kind": "question",
+  "title": "粉体塗装は個人や小さな工場でもできる？",
+  "summary": "答えに入れるとよいこと：静電塗装機、粉の回収装置、焼付炉などの設備が必要で、導入費が大きいこと。少量なら設備を持つ塗装工場に頼むのが現実的で、相談時に数量と大きさを伝えるとよい。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "粉体塗装を内製するか外注するかの判断",
+  "source": {
+   "title": "粉体塗装のメリット・デメリット | 工業用 板金粉体塗装 .com",
+   "url": "https://www.knm-manufacturing.com/knowledge/%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/",
+   "publisher": "工業用 板金粉体塗装 .com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1834",
+  "kind": "question",
+  "title": "粉体塗装がはがれたらどうする？",
+  "summary": "答えに入れるとよいこと：はがれが起きた後の対処と、同じことを起こさない予防の両方。上位ページでは前処理の不足が原因に挙がりやすく、脱脂や化成処理など前処理工程の確認がかなめになる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "粉体塗装のはがれ、原因と予防",
+  "source": {
+   "title": "粉体塗装（パウダーコーティング）とは -メリットやデメリットを解説｜ノードソン株式会社",
+   "url": "https://nordson-web.jp/column/detail02/",
+   "publisher": "ノードソン",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1403",
+  "kind": "term",
+  "title": "VOC（揮発性有機化合物）とは",
+  "summary": "シンナーなどの有機溶剤から空気中に出る物質。溶剤を使う液体塗装では換気や排気の対策が要るが、粉体塗装は溶剤をほとんど使わないため排出がごく少ないと説明されている。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "粉体塗装（パウダーコーティング）とは -メリットやデメリットを解説｜ノードソン株式会社",
+   "url": "https://nordson-web.jp/column/detail02/",
+   "publisher": "ノードソン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1835",
+  "kind": "question",
+  "title": "液体から粉体に替えると塗料代は？",
+  "summary": "答えに入れるとよいこと：粉体塗装では部品に付かなかった粉を回収して条件により再利用できるため、塗料のむだを減らしやすいこと。上位ページでは切り替えで塗料コストを下げた事例も紹介されている。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "液体塗装から粉体塗装に替えるときの損得",
+  "source": {
+   "title": "粉体塗装（パウダーコーティング）とは -メリットやデメリットを解説｜ノードソン株式会社",
+   "url": "https://nordson-web.jp/column/detail02/",
+   "publisher": "ノードソン",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1208",
+  "kind": "buyer",
+  "title": "焼付塗装の見積もりは3段階で進む",
+  "summary": "上位ページでは、焼付塗装の見積もりは問い合わせ、ヒアリング、打ち合わせの順に進むと説明。料金は塗料の性能、形状、下処理で変わり、塗料ごとの耐用年数も合わせて検討するとよいとされる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "焼付塗装の見積もりの流れを図で見せる",
+  "source": {
+   "title": "焼付塗装の料金って？価格を決める要素や見積りについて解説 - 広島で焼付塗装なら株式会社ムラカワ",
+   "url": "https://www.murakawa-tosou.jp/columns/columns-1787/",
+   "publisher": "murakawa-tosou.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1836",
+  "kind": "question",
+  "title": "屋外品と屋内品で塗装はどう選ぶ？",
+  "summary": "答えに入れるとよいこと：雨や紫外線にさらされる屋外品は厚膜で耐候性の高い粉体塗装、なめらかな見た目や細かい色合わせが要る屋内の機器は液体の焼付塗装が向きやすいこと。使う場所を最初に聞く。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "使う場所で選ぶ焼付塗装と粉体塗装",
+  "source": {
+   "title": "焼付塗装と粉体塗装の違いって？ それぞれの特徴やメリット・デメリットは？ - 広島で焼付塗装なら株式会社ムラカワ",
+   "url": "https://www.murakawa-tosou.jp/columns/columns-1746/",
+   "publisher": "murakawa-tosou.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1837",
+  "kind": "question",
+  "title": "焼付塗装できない素材は？",
+  "summary": "答えに入れるとよいこと：100〜200℃前後の熱をかけるため、熱に弱い樹脂や木材には向かないこと。専用の乾燥炉が必要なことも。樹脂部品なら別の塗装方法を案内できるかを書くと親切。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "焼付塗装ができる素材・できない素材",
+  "source": {
+   "title": "焼付塗装とは？方法や工程・使える金属などの基礎知識をまとめて解説 - 広島で焼付塗装なら株式会社ムラカワ",
+   "url": "https://www.murakawa-tosou.jp/columns/columns-1850/",
+   "publisher": "murakawa-tosou.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1838",
+  "kind": "question",
+  "title": "焼付と粉体、小ロットに向くのは？",
+  "summary": "答えに入れるとよいこと：液体の焼付塗装は調色がしやすく多品種少量に対応しやすい一方、粉体塗装は色替えの掃除に手間がかかること。数量と色数を聞いてから工法を勧める姿勢。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "小ロット・多色の塗装はどちらの工法か",
+  "source": {
+   "title": "焼付塗装と粉体塗装の違い｜費用の決まり方と選び方",
+   "url": "https://www.yu-ko-oki.co.jp/2025/09/06/%E7%84%BC%E4%BB%98%E5%A1%97%E8%A3%85%E3%81%A8%E7%B2%89%E4%BD%93%E5%A1%97%E8%A3%85%E3%81%AE%E9%81%95%E3%81%84%E3%82%92%E5%BE%B9%E5%BA%95%E8%A7%A3%E8%AA%AC%EF%BD%9C%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88/",
+   "publisher": "ユーコー",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1839",
+  "kind": "question",
+  "title": "炉に入らない大きな部材は焼付できる？",
+  "summary": "答えに入れるとよいこと：自社の焼付炉に入る大きさと重さの上限、入らない場合にできる対応と代わりの方法。上位ページのよくある質問にも挙がっており、寸法を先に書いておくと問い合わせの手戻りが減る。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "大型部材の焼付塗装、先に確認すること",
+  "source": {
+   "title": "焼付塗装と粉体塗装の違い｜費用の決まり方と選び方",
+   "url": "https://www.yu-ko-oki.co.jp/2025/09/06/%E7%84%BC%E4%BB%98%E5%A1%97%E8%A3%85%E3%81%A8%E7%B2%89%E4%BD%93%E5%A1%97%E8%A3%85%E3%81%AE%E9%81%95%E3%81%84%E3%82%92%E5%BE%B9%E5%BA%95%E8%A7%A3%E8%AA%AC%EF%BD%9C%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88/",
+   "publisher": "ユーコー",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1209",
+  "kind": "buyer",
+  "title": "焼付・粉体を頼む前に決めておくこと",
+  "summary": "上位ページは、依頼前に素材、屋内か屋外か、求める見た目や耐久性、数量を決めておくよう勧めている。用途別の選び方や施工例、よくある質問を並べて、発注者が自分で絞り込めるようにしている。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "塗装依頼前のチェックリスト",
+  "source": {
+   "title": "焼付塗装と粉体塗装の違い｜費用の決まり方と選び方",
+   "url": "https://www.yu-ko-oki.co.jp/2025/09/06/%E7%84%BC%E4%BB%98%E5%A1%97%E8%A3%85%E3%81%A8%E7%B2%89%E4%BD%93%E5%A1%97%E8%A3%85%E3%81%AE%E9%81%95%E3%81%84%E3%82%92%E5%BE%B9%E5%BA%95%E8%A7%A3%E8%AA%AC%EF%BD%9C%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88/",
+   "publisher": "ユーコー",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1840",
+  "kind": "question",
+  "title": "メラミン・アクリル・フッ素焼付の違いは？",
+  "summary": "答えに入れるとよいこと：メラミンは安く平滑で屋内の鋼製家具など、アクリルは耐候性・耐薬品性があり電動工具や農機など、フッ素は高価だが耐候性が最も高く屋外の建材など、という使い分け。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "焼付塗料の種類と向く製品",
+  "source": {
+   "title": "焼付塗装とは？粉体塗装との違いや種類、メリット・デメリットを解説",
+   "url": "https://www.tsukasa-net.co.jp/topics/detail/1400",
+   "publisher": "司ゴム電材",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1841",
+  "kind": "question",
+  "title": "焼付塗装と自然乾燥塗装の違いは？",
+  "summary": "答えに入れるとよいこと：自然乾燥は溶剤が抜けて固まるのに対し、焼付は熱で塗料の分子どうしが結び付く（架橋）ため、緻密で傷やさびに強い膜になること。乾燥炉の有無も違い。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "焼付と常温乾燥、仕上がりの差",
+  "source": {
+   "title": "焼付塗装とは？粉体塗装との違いや種類、メリット・デメリットを解説",
+   "url": "https://www.tsukasa-net.co.jp/topics/detail/1400",
+   "publisher": "司ゴム電材",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1842",
+  "kind": "question",
+  "title": "焼付塗装はなぜ納期を縮めやすい？",
+  "summary": "答えに入れるとよいこと：加熱で数十分ほどで硬化するため、冷めればすぐ次の工程や梱包に進めること。自然乾燥より待ち時間が短く、量産で効く点。急ぎの相談に応じられる条件も書く。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "焼付塗装で短納期にできる理由",
+  "source": {
+   "title": "焼付塗装とは トソウペディア-塗装用語百科事典- - AP ONLINE",
+   "url": "https://aponline.jp/term/painting/baked-paint/",
+   "publisher": "AP ONLINE",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1210",
+  "kind": "buyer",
+  "title": "焼付塗装の見積もりで確かめる3点",
+  "summary": "上位ページは、焼付塗装を頼むときに①下地処理が見積もりに含まれるか、②その素材に対応できるか、③塗装の目的（防錆か見た目か）を確かめるよう勧める。価格が変わる理由として面積・形状・塗料も挙げる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "焼付塗装の見積もり比較のポイント",
+  "source": {
+   "title": "焼付塗装の費用はいくら？金属塗装の価格相場と個人依頼のポイント | 金属加工会社の株式会社金具屋",
+   "url": "https://kanaguyagroup.co.jp/column/archives/68201",
+   "publisher": "金具屋",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1843",
+  "kind": "question",
+  "title": "焼付塗装は1個・個人でも頼める？",
+  "summary": "答えに入れるとよいこと：個人や1個からの依頼に応じるか、その場合の最低料金や持ち込みの条件。上位ページは個人依頼とDIYの可否を分けて説明しており、断る場合も理由を書くと信頼につながる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "1個・個人からの塗装依頼の受け方",
+  "source": {
+   "title": "焼付塗装の費用はいくら？金属塗装の価格相場と個人依頼のポイント | 金属加工会社の株式会社金具屋",
+   "url": "https://kanaguyagroup.co.jp/column/archives/68201",
+   "publisher": "金具屋",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1252",
+  "kind": "pain",
+  "title": "焼付塗装の不良率が下がらない",
+  "summary": "上位ページは焼付塗装のよくある課題として、ゴミやブツによる不良率の問題を挙げ、対策事例と品質Q&Aを載せている。発注側は不良の出方と率を共有し、対策の実績がある塗装先を探している。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "焼付塗装のブツ不良を減らした事例",
+  "source": {
+   "title": "焼付塗装とは？大阪で金属塗装の塗装工場をお探しなら、 オークマ工塗",
+   "url": "https://www.okumakot.com/solution/solution3/",
+   "publisher": "オークマ工塗",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1253",
+  "kind": "pain",
+  "title": "塗装の頼み先が手いっぱいで回らない",
+  "summary": "上位ページは「焼付塗装の依頼先がキャパオーバーで困っている」という悩みを取り上げている。量産品の外注先を増やしたい発注者は、受けられる量と管理の体制を見て新しい塗装先を探す。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "塗装の外注先を増やすときの見極め方",
+  "source": {
+   "title": "焼付塗装とは？大阪で金属塗装の塗装工場をお探しなら、 オークマ工塗",
+   "url": "https://www.okumakot.com/solution/solution3/",
+   "publisher": "オークマ工塗",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1844",
+  "kind": "question",
+  "title": "焼付塗装とSOP塗装の違いは？",
+  "summary": "答えに入れるとよいこと：SOPは合成樹脂調合ペイントによる常温乾燥の塗装仕様で、屋内の鉄部・木部向き、安価だが耐候性は低いこと。焼付は工場の炉で硬化させる工業塗装で、図面の指定を確認する大切さ。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "図面の「SOP」指定と焼付塗装の違い",
+  "source": {
+   "title": "SOP塗装とは トソウペディア-塗装用語百科事典- - AP ONLINE",
+   "url": "https://aponline.jp/term/paint/soppaint/",
+   "publisher": "AP ONLINE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1845",
+  "kind": "question",
+  "title": "カチオン電着に屋外で上塗りが要るのは？",
+  "summary": "答えに入れるとよいこと：主流のカチオン電着は紫外線で塗膜が傷みやすく、屋外で見た目を保つには上塗りが必要なこと。防錆の下地として強い一方、仕上げ塗装とは役割が違う点。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "電着塗装と上塗りの組み合わせ方",
+  "source": {
+   "title": "カチオン電着塗装のメリットとデメリット｜他塗装法との比較を解説 - タマ化工株式会社",
+   "url": "https://www.tamakako.co.jp/column/compare/",
+   "publisher": "タマ化工",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1846",
+  "kind": "question",
+  "title": "電着塗装で色を選べる？",
+  "summary": "答えに入れるとよいこと：大きな塗料槽に部品を浸す方式のため、一つの槽で一色が基本で、黒やグレーなどの下地色が多いこと。色が必要なら上塗りと組み合わせる方法を案内する。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "電着塗装の色の選び方",
+  "source": {
+   "title": "カチオン電着塗装のメリットとデメリット｜他塗装法との比較を解説 - タマ化工株式会社",
+   "url": "https://www.tamakako.co.jp/column/compare/",
+   "publisher": "タマ化工",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1847",
+  "kind": "question",
+  "title": "電着塗装の膜の厚さはどのくらい？",
+  "summary": "答えに入れるとよいこと：電着塗装は薄く均一な膜が得意で、「AIによる概要」では一例として10〜30μm程度とされること。厚膜仕上げは苦手なため、厚みが要るなら粉体塗装などと比べる。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "電着塗装の膜厚と向く部品",
+  "source": {
+   "title": "「電着塗装とは？」-5分でわかる用語解説。特徴からメリットやデメリットまで | withHOPE株式会社",
+   "url": "https://with-hope.com/2020/11/24/%E3%80%8C%E9%9B%BB%E7%9D%80%E5%A1%97%E8%A3%85%E3%81%A8%E3%81%AF%EF%BC%9F%E3%80%8D/",
+   "publisher": "withHOPE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1848",
+  "kind": "question",
+  "title": "電着塗装の通電不良はなぜ起きる？",
+  "summary": "答えに入れるとよいこと：部品をつるすハンガーと部品の接触が悪いと電気が十分に流れず、膜が薄くなること。対策としてハンガーの掃除、接点の塗膜除去、つるし方の確認がある。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "電着塗装の不良と対策を事例で",
+  "source": {
+   "title": "「電着塗装とは？」-5分でわかる用語解説。特徴からメリットやデメリットまで | withHOPE株式会社",
+   "url": "https://with-hope.com/2020/11/24/%E3%80%8C%E9%9B%BB%E7%9D%80%E5%A1%97%E8%A3%85%E3%81%A8%E3%81%AF%EF%BC%9F%E3%80%8D/",
+   "publisher": "withHOPE",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1404",
+  "kind": "term",
+  "title": "泡かみ（電着塗装の不良）",
+  "summary": "塗料槽に部品を浸すとき、形によって空気が抜けずに残り、その部分に塗料が付かない不良。部品をつるす角度やジグの工夫で空気だまりを作らないようにするのが対策とされる。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "「電着塗装とは？」-5分でわかる用語解説。特徴からメリットやデメリットまで | withHOPE株式会社",
+   "url": "https://with-hope.com/2020/11/24/%E3%80%8C%E9%9B%BB%E7%9D%80%E5%A1%97%E8%A3%85%E3%81%A8%E3%81%AF%EF%BC%9F%E3%80%8D/",
+   "publisher": "withHOPE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1849",
+  "kind": "question",
+  "title": "電着塗装が端からはがれるのはなぜ？",
+  "summary": "答えに入れるとよいこと：脱脂や化成皮膜など前処理の不足、電圧や浴の管理、紫外線による劣化、角や端で膜が薄くなること、上塗りとの相性。はがれた場所と使用環境を聞くと原因を絞りやすい。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "電着塗装のはがれ、場所別の原因",
+  "source": {
+   "title": "カチオン電着塗装とは？仕組み・工程・メリット・デメリットを解説 | カチオン電着塗装.com",
+   "url": "https://cation-electrodeposition.com/column/285/",
+   "publisher": "カチオン電着塗装.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1850",
+  "kind": "question",
+  "title": "カチオン電着とアニオン電着の違いは？",
+  "summary": "答えに入れるとよいこと：カチオンは塗料がプラスに帯電して部品側をマイナスにする方式で、さびに強く現在の主流であること。アニオンはその逆。似ている点と違う点を並べて示すとわかりやすい。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "カチオンとアニオン、どちらを選ぶか",
+  "source": {
+   "title": "【徹底解説】アニオン電着塗装とカチオン電着塗装の違い | 三和鍍金",
+   "url": "https://sanwamekki.com/info/column/column_kiso/differences-between-anion-and-kation/",
+   "publisher": "三和鍍金",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1851",
+  "kind": "question",
+  "title": "電着塗装はどんな工程で進む？",
+  "summary": "答えに入れるとよいこと：脱脂・洗浄、表面調整・化成処理、電着、水洗、焼付硬化という流れ。前処理の出来が密着と防錆を左右するので、各工程で何を管理しているかを写真付きで見せるとよい。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "電着塗装の工程を写真で紹介",
+  "source": {
+   "title": "電着塗装とは？基礎から施工時のポイントまでをプロが解説 | 塗装コラム | 富士商事株式会社",
+   "url": "https://fuji-syoji.jp/column/17_electrodeposition-painting/",
+   "publisher": "富士商事",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1852",
+  "kind": "question",
+  "title": "板金品にカチオン電着を使う利点は？",
+  "summary": "答えに入れるとよいこと：防錆力と耐塩水性が高いこと、すき間や裏側にも塗料が回ること、膜厚が均一でタレや溜まりが出にくいこと、塗料の利用率が高いこと。一方で耐候性や色替えの弱点も書く。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "板金部品の防錆に電着塗装を選ぶ理由",
+  "source": {
+   "title": "カチオン電着塗装の基礎知識｜特徴と板金加工品への活用メリット｜司ゴム電材株式会社",
+   "url": "https://www.tsukasa-net.co.jp/topics/detail/1383",
+   "publisher": "司ゴム電材",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1853",
+  "kind": "question",
+  "title": "カチオン電着が向かない製品は？",
+  "summary": "答えに入れるとよいこと：カラフルな仕上げが求められる製品や、素材・形の特徴から電着に合わない製品があること。向かない場合に勧める別の塗装方法も合わせて書くと相談につながる。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "電着塗装が向かないケースと代わりの方法",
+  "source": {
+   "title": "こっそり聞きたい「カチオン電着塗装のデメリットって？」",
+   "url": "http://daiwaco.jp/kation/%E3%81%93%E3%81%A3%E3%81%9D%E3%82%8A%E8%81%9E%E3%81%8D%E3%81%9F%E3%81%84%E3%80%8C%E3%82%AB%E3%83%81%E3%82%AA%E3%83%B3%E9%9B%BB%E7%9D%80%E5%A1%97%E8%A3%85%E3%81%AE%E3%83%87%E3%83%A1%E3%83%AA%E3%83%83/",
+   "publisher": "daiwaco.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1211",
+  "kind": "buyer",
+  "title": "カチオン電着を選ぶ前に確かめる4点",
+  "summary": "上位ページは、①塗装の目的と要求仕様を決める、②製品がカチオン電着に合うか確かめる、③設備や業者の選定基準を見る、④試作で検証する、を発注前の確認点に挙げ、よくある失敗例も紹介している。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "電着塗装の発注前チェックリスト",
+  "source": {
+   "title": "カチオン電着塗装とはどんな塗装？メリット・デメリット・選定ポイントをわかりやすく解説｜製造業チャンネルポータルサイト",
+   "url": "https://seizogyo-channel.com/news/kachion/",
+   "publisher": "製造業チャンネル",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1254",
+  "kind": "pain",
+  "title": "電着・粉体・溶剤のどれにするか決められない",
+  "summary": "上位ページはカチオン電着をアニオン電着、粉体塗装、溶剤塗装と比べ、選定のポイントを整理している。発注者は防錆、色、膜厚、数量の条件から工法を選べず迷いやすく、比較表が役に立つ。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "工法選びに迷う人向けの比較表",
+  "source": {
+   "title": "カチオン電着塗装とはどんな塗装？メリット・デメリット・選定ポイントをわかりやすく解説｜製造業チャンネルポータルサイト",
+   "url": "https://seizogyo-channel.com/news/kachion/",
+   "publisher": "製造業チャンネル",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1405",
+  "kind": "term",
+  "title": "ジオメット処理",
+  "summary": "金属部品の防錆処理の一つで、カチオン電着の代わりとして検討されることがある。上位ページでは、電着の密着不良や傷部の耐食性低下などの悩みを補う提案として、熱がかかる部品向けに紹介されている。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "カチオン電着塗装のデメリット解消！黒ジオメット | mcsystems",
+   "url": "https://mcsystems.ne.jp/column/362/",
+   "publisher": "mcsystems",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1212",
+  "kind": "buyer",
+  "title": "電着塗装は「地域名＋工法」で探される",
+  "summary": "よくある質問には「大阪でカチオン電着塗装はどこでできますか」の形がある。発注者は地域と工法の組み合わせで頼み先を探すので、対応地域、工法、扱える大きさをページにはっきり書くと見つけてもらいやすい。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "工法ページに対応地域と寸法を書く",
+  "source": {
+   "title": "カチオン電着塗装とは技術的特徴と他手法との比較 - タマ化工株式会社",
+   "url": "https://tamakako.co.jp/about/",
+   "publisher": "タマ化工",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1406",
+  "kind": "term",
+  "title": "マスキング（塗装・表面処理）",
+  "summary": "塗料を付けてはいけない部分をテープや専用材で覆って守る作業。塗り分けの境目をきれいにする役割もある。めっきや加工でも、処理しない部分に保護剤を塗ることを同じくマスキングと呼ぶ。",
+  "industries": [
+   "塗装",
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "カチオン電着塗装におけるマスキングの重要性",
+   "url": "https://cation-electrodeposition.com/column/900/",
+   "publisher": "カチオン電着塗装.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1854",
+  "kind": "question",
+  "title": "溶剤・静電・焼付・粉体・電着はどう違う？",
+  "summary": "答えに入れるとよいこと：塗料の形（液体か粉か）、付け方（吹き付け、静電気、電気で浸す）、固め方（自然乾燥か焼付か）の3つの軸で整理すること。それぞれのメリット・デメリットを表にする。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "工業塗装の種類を3つの軸で整理",
+  "source": {
+   "title": "【溶剤、静電、焼付、粉体】さまざまな塗装の種類とメリットデメリットを解説 - タマ化工株式会社",
+   "url": "https://tamakako.co.jp/column/column03/",
+   "publisher": "タマ化工",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1407",
+  "kind": "term",
+  "title": "静電塗装とは",
+  "summary": "塗装機側で塗料の粒子を帯電させ、アースした部品に静電気の力で引き寄せて付ける方法。塗料のむだが減り、側面や裏側にも回り込みやすく、膜が均一になりやすいと説明されている。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "「静電塗装とは？」-5分でわかる用語解説。特徴からメリットや ...",
+   "url": "https://with-hope.com/2021/03/29/seiden-toso/",
+   "publisher": "withHOPE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1855",
+  "kind": "question",
+  "title": "静電塗装と電着塗装の違いは？",
+  "summary": "答えに入れるとよいこと：静電塗装は霧状の塗料を静電気で吸い付ける吹き付けの方法、電着塗装は水に溶かした塗料の槽に部品を浸して電気で付ける方法であること。仕上がりや向く部品の違いも示す。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "静電塗装と電着塗装を図で比べる",
+  "source": {
+   "title": "「静電塗装とは？」-5分でわかる用語解説。特徴からメリットや ...",
+   "url": "https://with-hope.com/2021/03/29/seiden-toso/",
+   "publisher": "withHOPE",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1408",
+  "kind": "term",
+  "title": "エアレス塗装とは",
+  "summary": "圧縮空気を使わず、ポンプで塗料そのものに高い圧力をかけて霧状に吹き出す塗装方法。広い面を速く、厚く塗れ、粘りの強い塗料も使える。鉄骨や大型機械などの工業塗装でも使われる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "スプレーガンの種類 - エアスプレーとエアレススプレーの違いや仕組みを解説｜ノードソン株式会社",
+   "url": "https://nordson-web.jp/column/detail05/",
+   "publisher": "ノードソン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1856",
+  "kind": "question",
+  "title": "エアスプレーとエアレスはどう使い分ける？",
+  "summary": "答えに入れるとよいこと：エアレスは速く厚く塗れて大きな面に向く一方、霧の粒が粗く鏡面のような仕上げには技術が要ること。仕上がりの細かさと作業量のどちらを重視するかで選ぶ。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "スプレーガンの種類と仕上がりの違い",
+  "source": {
+   "title": "スプレーガンの種類 - エアスプレーとエアレススプレーの違いや仕組みを解説｜ノードソン株式会社",
+   "url": "https://nordson-web.jp/column/detail05/",
+   "publisher": "ノードソン",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1409",
+  "kind": "term",
+  "title": "シボ塗装とは",
+  "summary": "高い粘度の塗料を低い空気圧で吹き付け、表面に細かな凹凸模様を付ける塗装。指紋や細かい傷が目立ちにくく、滑り止めにもなる。鏡面仕上げより下地処理の手間を減らせ、費用を抑えやすいとされる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "シボ塗装の特徴と塗装時のポイントとは？ - 筐体設計・製造.COM",
+   "url": "https://www.large-scale-plating.com/knowledge/%E3%82%B7%E3%83%9C%E5%A1%97%E8%A3%85%E3%81%AE%E7%89%B9%E5%BE%B4%E3%81%A8%E5%A1%97%E8%A3%85%E6%99%82%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%81%A8%E3%81%AF%EF%BC%9F/",
+   "publisher": "筐体設計・製造.COM",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1410",
+  "kind": "term",
+  "title": "エポキシ塗装とは",
+  "summary": "エポキシ樹脂の塗料を使う塗装で、密着性、耐薬品性、防錆性に優れる。紫外線に弱く表面が粉っぽく劣化しやすいため、屋外の仕上げには上塗り（トップコート）を重ねるのが基本とされる。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "エポキシ塗装の特徴と塗装面に与える効果を徹底解説！ | 筐体設計・製造.COM",
+   "url": "https://www.large-scale-plating.com/knowledge/%E3%82%A8%E3%83%9D%E3%82%AD%E3%82%B7%E5%A1%97%E8%A3%85%E3%81%AE%E7%89%B9%E5%BE%B4%E3%81%A8%E5%A1%97%E8%A3%85%E9%9D%A2%E3%81%AB%E4%B8%8E%E3%81%88%E3%82%8B%E5%8A%B9%E6%9E%9C%E3%82%92%E5%BE%B9%E5%BA%95/",
+   "publisher": "筐体設計・製造.COM",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1255",
+  "kind": "pain",
+  "title": "塗装を外注すると納期が延びる",
+  "summary": "上位ページの事例では、塗装工程を外に出していたためにリードタイムが長くなっていた。内製化と専用台車の活用で、納期短縮と運搬中の品質不良防止を両立したと紹介されている。",
+  "industries": [
+   "塗装",
+   "板金"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "塗装の外注で延びる納期を縮める方法",
+  "source": {
+   "title": "【塗装工程の内製化＆専用台車を活用し、リードタイム短縮と品質不良の防止を実現！】テクニカルニュース vol.81 | 筐体設計・製造.COM",
+   "url": "https://www.large-scale-plating.com/technicalnews/vol81/",
+   "publisher": "筐体設計・製造.COM",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1213",
+  "kind": "buyer",
+  "title": "塗装を丸ごと任せる「請負」という形",
+  "summary": "上位ページは、工業塗装の工程を外部に任せる塗装請負を、内製化、人材派遣、外部の塗装会社への依頼と比べている。業務請負には守るべきルールがあり、発注前に体制と指示系統を確認するのが前提になる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "塗装請負・派遣・外注の違い",
+  "source": {
+   "title": "塗装を『丸投げ』するという選択肢｜工業塗装業界の塗装請負サービスとは？ | 塗装コラム | 富士商事株式会社",
+   "url": "https://fuji-syoji.jp/column/22_contract/",
+   "publisher": "富士商事",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1214",
+  "kind": "buyer",
+  "title": "工業塗装の外注先を品質で比べる",
+  "summary": "上位ページは外注前の確認点として、塗料の選定、下地処理、施工方法、膜厚の管理、外観・密着性・耐食性の基準、チェックシートを挙げ、契約時に品質管理の項目を確かめるよう勧めている。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "塗装の外注先を選ぶ品質チェック表",
+  "source": {
+   "title": "外注前に確認！工業塗装の品質を左右するチェックポイント - monad-group’s blog",
+   "url": "https://monad-group.hatenablog.com/entry/2025/01/27/131518",
+   "publisher": "monad-group’s blog",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1215",
+  "kind": "buyer",
+  "title": "ロボット塗装の外注先は技術者を見る",
+  "summary": "上位ページは、ロボット塗装の外注先選びでは設備の有無より、塗装ロボットに動きを教える技術（ティーチング）を見るよう勧める。試作から量産への移行実績も比べたい点。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "ロボット塗装の委託先の選び方",
+  "source": {
+   "title": "自動車樹脂パーツ塗装でロボット塗装が選ばれる理由｜カチオン電着塗装・静電塗装の幸南工業株式会社",
+   "url": "https://www.kounan-web.co.jp/blog/%E8%87%AA%E5%8B%95%E8%BB%8A%E6%A8%B9%E8%84%82%E3%83%91%E3%83%BC%E3%83%84%E5%A1%97%E8%A3%85%E3%81%A7%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E5%A1%97%E8%A3%85%E3%81%8C%E9%81%B8%E3%81%B0%E3%82%8C%E3%82%8B/",
+   "publisher": "幸南工業",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1256",
+  "kind": "pain",
+  "title": "試作は良いのに量産で塗装がぶれる",
+  "summary": "上位ページは、ロボット塗装の委託でよくある悩みとして、試作から量産に移ると品質が安定しないこと、樹脂部品の帯電によるゴミ付着（ブツ）を挙げ、それぞれの解決策を示している。",
+  "industries": [
+   "塗装",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "量産で塗装品質をそろえる工夫",
+  "source": {
+   "title": "自動車樹脂パーツ塗装でロボット塗装が選ばれる理由｜カチオン電着塗装・静電塗装の幸南工業株式会社",
+   "url": "https://www.kounan-web.co.jp/blog/%E8%87%AA%E5%8B%95%E8%BB%8A%E6%A8%B9%E8%84%82%E3%83%91%E3%83%BC%E3%83%84%E5%A1%97%E8%A3%85%E3%81%A7%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E5%A1%97%E8%A3%85%E3%81%8C%E9%81%B8%E3%81%B0%E3%82%8C%E3%82%8B/",
+   "publisher": "幸南工業",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1216",
+  "kind": "buyer",
+  "title": "塗装先は対応素材の一覧で選ぶ",
+  "summary": "小物塗装の専門ページは、マグネシウム、真鍮、ステンレス、SECC・SPCC、鋳物、亜鉛、アルミ、PP・PC・ABSなど各種樹脂、ガラスと対応素材を並べ、費用のよくある質問も載せている。素材から探す発注者に合う形。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "対応素材の一覧ページを作る",
+  "source": {
+   "title": "費用について | 焼付塗装・金属塗装の専門家【埼玉塗装研究所】",
+   "url": "https://saitama-tk.com/faq_category/price/",
+   "publisher": "埼玉塗装研究所",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1217",
+  "kind": "buyer",
+  "title": "板金品の塗装は種類から先に決める",
+  "summary": "上位ページは板金塗装の種類として粉体、エポキシ、アクリル焼付、溶剤、フッ素を挙げ、種類の選び方と、見積もりを決める形状・塗装種類・下処理を説明。種類が決まると見積もりの比較がしやすい。",
+  "industries": [
+   "塗装",
+   "板金"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "板金部品の塗装種類の決め方",
+  "source": {
+   "title": "金属加工の板金塗装の見積りについて解説！塗装の種類ごとについてもご紹介！｜Mitsuri Media",
+   "url": "https://mitsu-ri.net/articles/processing0026",
+   "publisher": "Mitsuri Media",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1257",
+  "kind": "pain",
+  "title": "シンナーが入らず塗装が止まりそう",
+  "summary": "シンナー供給の不安を受け、上位ページでは希釈なしで塗れる弱溶剤塗料や水性塗料への切り替え、仕入れ先の分散が対策として紹介されている。塗装会社は代わりの仕様を発注者に早めに示す必要がある。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "シンナー不足でも止めない塗装の工夫",
+  "source": {
+   "title": "【2026年緊急情報】シンナー供給不安でも塗装現場を止めない塗料 ...",
+   "url": "https://aponline.jp/feature/study/24439/",
+   "publisher": "AP ONLINE",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1218",
+  "kind": "buyer",
+  "title": "塗装を頼む前に材料の在庫と納期を聞く",
+  "summary": "塗料不足の時期には、施工に使う材料の在庫と納期を早めに確かめることが勧められている。発注者は見積もり時に、塗料の入手見込みと代わりの仕様があるかを塗装会社に聞いておくと安心できる。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "材料不足の時期の塗装発注の注意",
+  "source": {
+   "title": "【2026年緊急情報】シンナー供給不安でも塗装現場を止めない塗料 ...",
+   "url": "https://aponline.jp/feature/study/24439/",
+   "publisher": "AP ONLINE",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1411",
+  "kind": "term",
+  "title": "さび止め塗料の種類",
+  "summary": "金属を水や酸素から守る下塗り用の塗料。密着と防錆に優れ主流のエポキシ樹脂系、密着は良いが乾きの遅い油性系、赤さびの上から塗れるさび転換型などがある。塗る前のさび落としが前提になる。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "錆止め塗料とは？選び方・種類・防錆効果について解説 - AP ONLINE",
+   "url": "https://aponline.jp/feature/study/19534/",
+   "publisher": "AP ONLINE",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1412",
+  "kind": "term",
+  "title": "ウォッシュプライマーとは",
+  "summary": "アルミや亜鉛めっき、ステンレスなど塗料が付きにくい金属の表面をわずかに化学的に荒らし、密着を高める下塗り。厚く塗ると不良の元になり、一例として8〜12μm程度の薄塗りが求められる。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ウォッシュプライマー トソウペディア-塗装用語百科事典-",
+   "url": "https://aponline.jp/term/paint/wash-primer/",
+   "publisher": "AP ONLINE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1857",
+  "kind": "question",
+  "title": "エンドミルはいつ再研磨に出す？",
+  "summary": "答えに入れるとよいこと：刃の逃げ面の摩耗幅で判断する方法と、刃先が欠けるチッピングが出たら出す目安。加工時間だけで決めず、摩耗を見て出すと再研磨代と工具寿命の両方に効く点。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "エンドミルを再研磨に出す見極め方",
+  "source": {
+   "title": "エンドミルを再研磨に出すタイミング | 技術情報 | MISUMI(ミスミ)",
+   "url": "https://jp.misumi-ec.com/tech-info/categories/machine_processing/mp01/b0036.html",
+   "publisher": "MISUMI 技術情報",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1258",
+  "kind": "pain",
+  "title": "再研磨に出す時期が人によってばらばら",
+  "summary": "技術Q&Aには「担当者によって再研磨に出すタイミングがばらばら」という相談がある。まだ使えるのか判断できず、早すぎれば費用がかさみ、遅すぎれば欠けて研磨できなくなる悩みがある。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "再研磨の判断基準を社内でそろえる",
+  "source": {
+   "title": "エンドミルを再研磨に出すタイミング | 技術情報 | MISUMI(ミスミ)",
+   "url": "https://jp.misumi-ec.com/tech-info/categories/machine_processing/mp01/b0036.html",
+   "publisher": "MISUMI 技術情報",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1858",
+  "kind": "question",
+  "title": "摩耗させすぎると再研磨代は上がる？",
+  "summary": "答えに入れるとよいこと：ボールエンドミルではR部の摩耗や欠けが大きいと、削る量が増えて研磨代が高くなったり研磨できなくなったりすること。早めに出す目安を摩耗の状態で示す。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "再研磨代を抑える出し方",
+  "source": {
+   "title": "超硬ボールエンドミルを再研磨へ出すタイミングを知りたい | 技術情報 | MISUMI(ミスミ)",
+   "url": "https://jp.misumi-ec.com/tech-info/categories/machine_processing/mp01/j0061.html",
+   "publisher": "MISUMI 技術情報",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1859",
+  "kind": "question",
+  "title": "再研磨の目安になる加工の変化は？",
+  "summary": "答えに入れるとよいこと：以前よりバリが多い、切削面がくすむ、面がむしれる、異音がする、といった現場で気づける変化。これらが出たら再研磨を考える、と具体的に書くと読み手が判断しやすい。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "現場で気づく再研磨のサイン",
+  "source": {
+   "title": "エンドミルも研磨できる？再研磨屋が研磨方法を大公開 - 切削工具の再研磨・製作・レンタルはツールリメイク",
+   "url": "https://toolremake.com/how-to-shapen-end-mills/",
+   "publisher": "ツールリメイク",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1860",
+  "kind": "question",
+  "title": "エンドミルの再研磨はどこを研ぐ？",
+  "summary": "答えに入れるとよいこと：基本は底刃の研磨で、外周刃の再研磨は径が変わるため注意が要ること。スクエア、ラフィング、ラジアス、ボールなど形ごとに研ぎ方が違う点も添える。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "形状別のエンドミル再研磨",
+  "source": {
+   "title": "エンドミルも研磨できる？再研磨屋が研磨方法を大公開 - 切削工具の再研磨・製作・レンタルはツールリメイク",
+   "url": "https://toolremake.com/how-to-shapen-end-mills/",
+   "publisher": "ツールリメイク",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1219",
+  "kind": "buyer",
+  "title": "再研磨は工具メーカーと専門業者で比べる",
+  "summary": "工具メーカーの再研磨サービスは、自社製工具の形を再現できることや検査、再コーティングまでの対応を強みに挙げる。発注者は精度、検査の内容、コーティング、価格と納期を専門業者と比べて選ぶ。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "メーカー再研磨と専門業者の違い",
+  "source": {
+   "title": "サービス案内：再研磨・再コーティング｜日進エンジニアリング",
+   "url": "https://www.ns-eg.com/service/01.html",
+   "publisher": "日進エンジニアリング",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1413",
+  "kind": "term",
+  "title": "再コーティング（工具）",
+  "summary": "再研磨で刃先のコーティングが削れた工具に、もう一度コーティングをかけ直すこと。超硬エンドミルなどの再研磨とセットで提供されることが多く、寿命を新品に近づける目的で行う。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "サービス案内：再研磨・再コーティング｜日進エンジニアリング",
+   "url": "https://www.ns-eg.com/service/01.html",
+   "publisher": "日進エンジニアリング",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1220",
+  "kind": "buyer",
+  "title": "再研磨の会社を選ぶ観点",
+  "summary": "再研磨の会社を一覧で比べるページでは、使用用途、原理、サービスの選び方を基礎知識として載せている。発注者は対応できる工具の種類、精度、納期、再コーティングの有無で会社を絞り込む。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "再研磨会社を比べる表の作り方",
+  "source": {
+   "title": "再研磨の会社26社 注目ランキング【2026年】| Metoree",
+   "url": "https://metoree.com/categories/9046/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1861",
+  "kind": "question",
+  "title": "チップソーやメタルソーの再研磨代は？",
+  "summary": "よくある質問では、チップソー、エンドミル、メタルソー、ドリルの再研磨の価格を尋ねる声が多い。答えに入れるとよいこと：価格が何で変わるか（径、刃数、欠けの程度）と、見積もりに必要な情報。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "再研磨の料金の決まり方を示す",
+  "source": {
+   "title": "再研磨の会社26社 注目ランキング【2026年】| Metoree",
+   "url": "https://metoree.com/categories/9046/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1862",
+  "kind": "question",
+  "title": "社内の工具研削盤で再研磨できる？",
+  "summary": "答えに入れるとよいこと：自動工具研削盤を使えば社内でもエンドミルの底刃などを研ぎ直せること、そのための設定の考え方。一方で精度や手間を考えて専門業者に出す選択肢も示す。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "工具の再研磨、内製と外注の分かれ目",
+  "source": {
+   "title": "自動工具研削盤GriStarシリーズで「エンドミル」を再研磨する１（２枚刃エンドミル） - サイバーRC",
+   "url": "https://cyber-rc.com/2024/09/29/em1/",
+   "publisher": "サイバーRC",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1863",
+  "kind": "question",
+  "title": "超硬ドリルとハイスドリルの違いは？",
+  "summary": "答えに入れるとよいこと：超硬は硬く摩耗しにくく高速・高精度の穴あけに向くが、衝撃に弱く折れやすく高価なこと。ハイスは粘りがあり扱いやすいこと。被削材と機械で選ぶ。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "ドリルの材質の選び方",
+  "source": {
+   "title": "どっちを使うべき？ハイスドリルVS超硬ドリル",
+   "url": "https://toolremake.com/difference-between-carbide-drills-and-hss-drills/",
+   "publisher": "ツールリメイク",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1414",
+  "kind": "term",
+  "title": "ラフィングエンドミルとは",
+  "summary": "外周の刃が波形になった荒加工専用のエンドミル。切削抵抗が小さく、切りくずが細かく分かれて出やすく、深い切り込みで速く削れる。加工面に筋が残るため仕上げには使わない。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ラフィングエンドミルの特徴とは？ service - 再研磨.com",
+   "url": "https://saikenma.com/service/service-1621/",
+   "publisher": "再研磨.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1864",
+  "kind": "question",
+  "title": "リーマで穴の精度を上げるには？",
+  "summary": "答えに入れるとよいこと：リーマはドリルの下穴を寸法どおり滑らかに仕上げる工具で、自分では穴をあけられないこと。下穴の大きさ、加工の流れ、刃の状態の管理（再研磨を含む）が精度を左右する。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "リーマ加工で穴径をそろえるコツ",
+  "source": {
+   "title": "リーマ加工の流れと穴径精度を上げる方法とは？｜商品・サービス紹介｜再研磨.com",
+   "url": "https://saikenma.com/service/service-1547/",
+   "publisher": "再研磨.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1415",
+  "kind": "term",
+  "title": "構成刃先とは",
+  "summary": "切削中に削りくずの一部が刃先に付いて固まり、刃先の代わりのように働いてしまう現象。仕上げ面が荒れたり寸法がずれたりする原因になり、切削条件や工具の選び方で抑える。",
+  "industries": [
+   "刃物・工具",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "構成刃先｜用語集｜再研磨.com",
+   "url": "https://saikenma.com/word/word-429/",
+   "publisher": "再研磨.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1221",
+  "kind": "buyer",
+  "title": "替え刃は機械メーカー以外にも頼める",
+  "summary": "上位ページは、産業用機械の替え刃を刃物メーカーに外注するメリット・デメリット、純正品との使い分け、業界別の選び方、発注前のチェックリストを説明。図面がなくても現物から再現できる場合がある。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "替え刃を純正以外で手配するときの注意",
+  "source": {
+   "title": "産業用刃物の替え刃の選び方｜現物からの再現、図面なしでも発注可能 – 利器株式会社",
+   "url": "https://rikijapan.jp/columns/industrial-blade-replacement-guide/",
+   "publisher": "利器",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1259",
+  "kind": "pain",
+  "title": "古い機械の替え刃が廃番で手に入らない",
+  "summary": "工業用刃物メーカーのコラムでは「古い機械対応の替え刃注文」や廃番品の解決策が取り上げられている。機械は使えるのに刃だけが手に入らず、現物から作れる先を探す発注者がいる。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "廃番の替え刃を現物から作る流れ",
+  "source": {
+   "title": "コラム | 工業用刃物・超硬研磨のスペシャリスト｜株式会社サン精機【岐阜県関市】",
+   "url": "https://sunseiki.com/blog",
+   "publisher": "サン精機",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1260",
+  "kind": "pain",
+  "title": "特殊な刃物を他社で断られた",
+  "summary": "工業用刃物のコラムには「他社で断られた案件も対応可能な解決策」「特殊刃物を短納期で」という題が並ぶ。形が特殊、数が少ない、急ぎといった理由で断られた発注者が次の頼み先を探している。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "断られた特殊刃物の相談事例",
+  "source": {
+   "title": "コラム | 工業用刃物・超硬研磨のスペシャリスト｜株式会社サン精機【岐阜県関市】",
+   "url": "https://sunseiki.com/blog",
+   "publisher": "サン精機",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1416",
+  "kind": "term",
+  "title": "刃物鋼の記号（SK・SKD・SKHなど）",
+  "summary": "機械刃物の材質の呼び名。SKは炭素工具鋼、SKSは低合金工具鋼、SKDはダイス鋼、SKHはハイス鋼、ほかにステンレス鋼、粉末ハイス、超硬がある。使用環境と使い方で選ぶと説明されている。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "① 機械刃物の設計について › 工業用機械刃物のオーダーメイド製作・製造【工業用機械刃物の製作工場】",
+   "url": "https://qoncut.com/result/07/186",
+   "publisher": "qoncut.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1222",
+  "kind": "buyer",
+  "title": "刃物の設計は切る物・機械・使い方から",
+  "summary": "機械刃物の設計を説明するページは、①何を切るか、②どの機械で使うか、③どう使うか、を最初に確かめる順番を示している。発注者はこの3点を伝えると、材質や形の提案を受けやすい。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "刃物の相談で最初に伝える3つのこと",
+  "source": {
+   "title": "① 機械刃物の設計について › 工業用機械刃物のオーダーメイド製作・製造【工業用機械刃物の製作工場】",
+   "url": "https://qoncut.com/result/07/186",
+   "publisher": "qoncut.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1223",
+  "kind": "buyer",
+  "title": "刃物研磨は技能士の在籍を目安に",
+  "summary": "刃物研磨業者の団体は、国家検定の切削工具研削技能士に合格した技術者がいる会社にロゴマークを示している。研ぎ直しの頼み先を探す発注者は、資格者の在籍や所在地を手がかりに選べる。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "研磨会社の資格・技能の見せ方",
+  "source": {
+   "title": "組合員一覧 - 全国機械用刃物研磨工業協同組合",
+   "url": "https://haken-kumiai.org/union-member/",
+   "publisher": "全国機械用刃物研磨工業協同組合",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1865",
+  "kind": "question",
+  "title": "刃先を薄くすると歩留まりは上がる？",
+  "summary": "答えに入れるとよいこと：切断で失う幅が減るぶん材料のむだが減ること。オーダーメイド刃物の事例では、コールドソーの刃先厚みを薄くして歩留まりを上げた例が紹介されている。強度との兼ね合いも書く。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "刃物の形を変えて材料ロスを減らす",
+  "source": {
+   "title": "神谷機工株式会社 | オーダーメイド専門の工業用刃物メーカー",
+   "url": "https://kamiya-saw.co.jp/",
+   "publisher": "神谷機工",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1866",
+  "kind": "question",
+  "title": "刃物で切りくずを減らせる？",
+  "summary": "答えに入れるとよいこと：刃の形や種類を変えると切りくずの量が変わること。工業用刃物の導入事例では、丸ナイフでのスリット加工に替えて切粉を大きく減らした例が紹介されている。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "切りくずを減らす刃物の選び方",
+  "source": {
+   "title": "神谷機工株式会社 | オーダーメイド専門の工業用刃物メーカー",
+   "url": "https://kamiya-saw.co.jp/",
+   "publisher": "神谷機工",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1224",
+  "kind": "buyer",
+  "title": "工業用刃物は「切る物」から探される",
+  "summary": "工業用刃物の情報サイトは、刃物の名前からだけでなく、切断する対象の製品から探せるようにしている。発注者は刃物の正式名を知らないことが多いので、切る物と業界で探せる入り口があると選ばれやすい。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "切る物から探せる刃物ページの作り方",
+  "source": {
+   "title": "パンチ | 工業用刃物なび.COM",
+   "url": "https://hamono-navi.com/items/cutlery/05/",
+   "publisher": "工業用刃物なび.COM",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1225",
+  "kind": "buyer",
+  "title": "刃物は使う業界ごとに探される",
+  "summary": "工業用刃物メーカーのサイトは、包装機、ワイヤーハーネス、食品用、衛生品用と業界・用途別に製品を並べ、解決事例も載せている。発注者は自分の業界で実績がある刃物メーカーを探す。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "業界別の刃物事例ページ",
+  "source": {
+   "title": "産業用刃物、工業用刃物、各種オーダーメイド刃物の製作なら大阪の福田刃物株式会社へ",
+   "url": "https://www.fukudahamono.co.jp/",
+   "publisher": "福田刃物",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1226",
+  "kind": "buyer",
+  "title": "試作は規格品の刃物で時間を縮める",
+  "summary": "工業用機械刃物のメーカーは、図面かサンプルを預かれば見積もりでき、試作の時間短縮とコストダウンのために規格品も用意していると案内している。まず規格品で試し、合えば特注に進む方法がある。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "規格品と特注刃物の使い分け",
+  "source": {
+   "title": "工業用機械刃物 カッター オーダーメイド・規格品",
+   "url": "https://www.ohi-kogyo.com/",
+   "publisher": "ohi-kogyo.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1867",
+  "kind": "question",
+  "title": "エポキシ接着剤が付かない素材は？",
+  "summary": "答えに入れるとよいこと：金属、ガラス、陶磁器、硬い樹脂などは強く付く一方、ポリエチレン、ポリプロピレン、シリコーンなど一部の樹脂には付きにくいこと。被着材を先に確かめる大切さ。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "エポキシ接着剤の得意・不得意な素材",
+  "source": {
+   "title": "エポキシ系接着剤シリーズ | 接着剤 | 家庭用 | セメダイン株式会社",
+   "url": "https://www.cemedine.co.jp/home/adhesive/epoxy/index.html",
+   "publisher": "セメダイン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1868",
+  "kind": "question",
+  "title": "2液エポキシが固まらないのはなぜ？",
+  "summary": "答えに入れるとよいこと：主剤と硬化剤の比率の誤りや混ぜ不足が硬化不良の原因になること。色が均一になるまで端まで混ぜ、固まるまで固定して待つ。作業手順を図で示すとよい。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "2液接着剤の硬化不良を防ぐ手順",
+  "source": {
+   "title": "エポキシ系接着剤シリーズ | 接着剤 | 家庭用 | セメダイン株式会社",
+   "url": "https://www.cemedine.co.jp/home/adhesive/epoxy/index.html",
+   "publisher": "セメダイン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1869",
+  "kind": "question",
+  "title": "PPやPEはなぜ接着しにくい？",
+  "summary": "答えに入れるとよいこと：表面の性質で接着剤をはじくため、通常の接着剤では付きにくいこと。専用のプライマーで表面を処理してから瞬間接着剤を使うか、対応品を選ぶ。油分の拭き取りも前提。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "難接着樹脂を接着する方法",
+  "source": {
+   "title": "セメダイン PPXセット",
+   "url": "https://www.cemedine.co.jp/home/products/polyolefin/ppx_p.html",
+   "publisher": "セメダイン",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1417",
+  "kind": "term",
+  "title": "接着の原理（アンカー効果など）",
+  "summary": "接着は、接着剤が表面の細かな凹凸に入り込んで固まる機械的な結合（アンカー効果）、分子どうしが引き合う力、化学反応による結合が組み合わさって成り立つと説明されている。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "接着ガイド：１．接着の原理 | 接着基礎知識 | セメダイン株式会社",
+   "url": "https://www.cemedine.co.jp/basic/pro/guide/principle.html",
+   "publisher": "セメダイン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1870",
+  "kind": "question",
+  "title": "接着はねじや溶接と比べて何が良い？",
+  "summary": "答えに入れるとよいこと：表面が平らに仕上がり見た目が良いこと、異なる材料どうしや薄い板をつなげること、つなぐと同時にすき間をふさげること。強度や耐久の確かめ方も合わせて書く。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "接着・ねじ・溶接の使い分け",
+  "source": {
+   "title": "接着ガイド：１．接着の原理 | 接着基礎知識 | セメダイン株式会社",
+   "url": "https://www.cemedine.co.jp/basic/pro/guide/principle.html",
+   "publisher": "セメダイン",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1418",
+  "kind": "term",
+  "title": "可とう性とは",
+  "summary": "材料が折れずにしなやかに曲がったりたわんだりする性質。力を除いたとき元に戻るかは問わない。反対は曲がらない剛性。接着剤や塗料では、揺れや衝撃に追従して割れにくい性質を指して使う。",
+  "industries": [
+   "塗装",
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "可とう性 | 用語集（か行） | 接着基礎知識 | セメダイン株式会社",
+   "url": "https://www.cemedine.co.jp/basic/word/ka/post_136.html",
+   "publisher": "セメダイン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1871",
+  "kind": "question",
+  "title": "金属どうしを強く接着するには？",
+  "summary": "答えに入れるとよいこと：よくある質問で「金属の接着剤で最強は」が多いこと。2液混合のアクリル系やエポキシ系が金属接合に使われ、溶接並みをうたう品もあること。荷重や温度など使う条件で選ぶ。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "金属接合に使う接着剤の選び方",
+  "source": {
+   "title": "金属CFRP用接着剤メタルロック | 家庭用 | セメダイン株式会社",
+   "url": "https://www.cemedine.co.jp/home/products/acrylic/metallock.html",
+   "publisher": "セメダイン",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1872",
+  "kind": "question",
+  "title": "塩ビの接着は硬質と軟質で違う？",
+  "summary": "答えに入れるとよいこと：硬質塩ビは表面を溶かして一体にする溶着型の接着剤、軟質塩ビは可塑剤の影響ではがれやすいので専用品を使うこと。素材が硬いか柔らかいかを最初に確かめる。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "塩ビ部品の接着剤の選び分け",
+  "source": {
+   "title": "素材や部位による接着剤選びのポイント：２．硬い塩化ビニルをつけたい! | 接着基礎知識 | セメダイン株式会社",
+   "url": "https://www.cemedine.co.jp/basic/home/uses/hardvinyl.html",
+   "publisher": "セメダイン",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1227",
+  "kind": "buyer",
+  "title": "構造用接着剤は選定ガイドで絞る",
+  "summary": "接着剤メーカーは構造用接着剤の製品選定ガイドを公開している。発注・設計担当は被着材の組み合わせ、必要な強度、作業できる時間、使用温度などの条件を整理してから、ガイドやメーカーに相談するとよい。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "構造用接着剤を選ぶ前に整理する条件",
+  "source": {
+   "title": "構造用接着剤 製品選定ガイド - 3M",
+   "url": "https://multimedia.3m.com/mws/media/2073596O/acs-384.pdf",
+   "publisher": "3M",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1873",
+  "kind": "question",
+  "title": "溶接の代わりに接着できる？",
+  "summary": "よくある質問には「溶接より強い金属接着剤は」がある。答えに入れるとよいこと：構造用接着剤には誤解も多いこと、荷重のかかり方、温度、耐久性で向き不向きが決まり、試作と試験で確かめること。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "溶接から接着への置き換えを考える",
+  "source": {
+   "title": "構造用接着剤のよくある 5 つの誤解 - 3M",
+   "url": "https://multimedia.3m.com/mws/media/2024681O/5-structural-adhesives-myths-disproved-white-paper-jp.pdf",
+   "publisher": "3M",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1419",
+  "kind": "term",
+  "title": "接着剤の分類の仕方",
+  "summary": "接着剤は、成分、形態（液状・フィルムなど）、固まり方・接着の仕方、機能、強度や硬さ、といった切り口で分けられると解説されている。どの切り口で選ぶかを決めると候補を絞りやすい。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "接着剤の種類、特徴、使用上の注意点（前編）｜接着ゼミ｜マコー株式会社",
+   "url": "https://www.macoho.co.jp/adhesive-seminar/type-of-adhesive.html",
+   "publisher": "マコー",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1874",
+  "kind": "question",
+  "title": "接着強度はどうやって測る？",
+  "summary": "よくある質問に「接着剤の強度を測定する方法は」がある。答えに入れるとよいこと：引っ張り、せん断、はく離など力のかけ方で試験が違うこと、接着した部分（接合部）の設計で強さが変わること。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "接着強度の試験方法を発注者向けに",
+  "source": {
+   "title": "構造用接着剤と接着接合部 - J-Stage",
+   "url": "https://www.jstage.jst.go.jp/article/networkedpolymer/39/2/39_91/_pdf",
+   "publisher": "J-STAGE",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1875",
+  "kind": "question",
+  "title": "形彫り・ワイヤ・細穴、どれに頼む？",
+  "summary": "答えに入れるとよいこと：形彫りは電極を押し当てて凹みを彫る、ワイヤは細線で輪郭を切り抜く、細穴はパイプ電極で深い小穴を開ける。欲しい形が「彫る・抜く・穴」のどれかで頼み先が決まる。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "放電加工3種の選び方を形の例で示す",
+  "source": {
+   "title": "放電加工機とは何か？特徴から種類、価格まで解説！",
+   "url": "https://edm-expertnavi.com/49/",
+   "publisher": "放電加工機 お役立ちナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1876",
+  "kind": "question",
+  "title": "ワイヤ放電の加工液は水と油どっち？",
+  "summary": "答えに入れるとよいこと：水は冷えやすく一般的で火災の心配が小さいが、鉄系はさびが出やすい。油は絶縁性が高く微細・鏡面に向くが、防火設備などで費用が上がる。材質と面の要求で選ぶ。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "水加工と油加工の違いを発注者向けに",
+  "source": {
+   "title": "イオン交換樹脂とは",
+   "url": "https://edm-expertnavi.com/551/",
+   "publisher": "放電加工機 お役立ちナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1877",
+  "kind": "question",
+  "title": "ワイヤの太さで仕上がりは変わる？",
+  "summary": "答えに入れるとよいこと：標準はφ0.2〜0.25mmが目安。細いほど小さい内角Rや微細形状に向くが、切れやすく価格も上がる。太いと速いが細かい形は苦手。図面の最小Rを先に伝える。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "ワイヤ径と内角Rの関係を図で説明",
+  "source": {
+   "title": "ワイヤ電極線を選ぶ上でチェックしておきたい６のコト",
+   "url": "https://edm-expertnavi.com/492/",
+   "publisher": "放電加工機 お役立ちナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1878",
+  "kind": "question",
+  "title": "内側の角はどこまで尖らせられる？",
+  "summary": "答えに入れるとよいこと：ワイヤの半径ぶん角に丸みが残る。一例としてφ0.2mm線で最小R約0.12mm、極細線なら0.02mm以下も可能という説明がある。尖った角が要るなら細線指定や別工法を相談。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "ピン角が必要なときの相談の仕方",
+  "source": {
+   "title": "ワイヤ放電加工機の基礎知識｜原理から最新技術、導入事例まで",
+   "url": "https://edm-expertnavi.com/537/",
+   "publisher": "放電加工機 お役立ちナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1879",
+  "kind": "question",
+  "title": "ワイヤ放電はなぜ何回も切る？",
+  "summary": "答えに入れるとよいこと：1回目は速さ優先の荒加工、2回目以降で寸法と面を整える。回数は2〜5回程度が目安。回数が増えるほど精度は上がるが時間と費用も増える。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "カット回数と費用・精度の関係",
+  "source": {
+   "title": "ワイヤ放電加工・形彫り放電加工に関するFAQ",
+   "url": "https://www.sodick.co.jp/support/support-info/faq/tool-faq/",
+   "publisher": "sodick.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1228",
+  "kind": "buyer",
+  "title": "カット回数を決めて外注する",
+  "summary": "上位の解説は、ワイヤーカットを外注する前にカット回数をどう決めるかを扱う。必要な精度と面に見合う回数を加工先と相談すると、過剰品質の費用を避けやすい。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "見積が高いときに見直すカット回数",
+  "source": {
+   "title": "ワイヤーカットとは？メリットやコストダウンの方法も解説！",
+   "url": "https://meta-navi.com/topics/1153/",
+   "publisher": "Meta-Navi",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1229",
+  "kind": "buyer",
+  "title": "材料を用意する前に加工先へ相談",
+  "summary": "放電加工の見積ページには「材料を準備する前に」という注意書きがある。材料の大きさや状態で段取りや費用が変わるため、手配の前に加工先に寸法や余肉を確かめる。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "材料支給で失敗しない事前確認",
+  "source": {
+   "title": "お見積り",
+   "url": "https://kkdaiki.co.jp/estimation/",
+   "publisher": "kkdaiki.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1880",
+  "kind": "question",
+  "title": "ワイヤ放電で作れない形は？",
+  "summary": "答えに入れるとよいこと：ワイヤは上下を貫いて切るため、底のあるくぼみや複雑な3次元曲面は苦手。電気を通さない樹脂やセラミックも不可。そうした形は形彫り放電や切削と組み合わせる。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "ワイヤ放電でできない形と代わりの方法",
+  "source": {
+   "title": "ワイヤ放電加工機とは？原理や特徴、注意点をイラスト付きで分かりやすく解説",
+   "url": "https://www.sodick.co.jp/survibes/articles/machine-tools/1586/",
+   "publisher": "sodick.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1881",
+  "kind": "question",
+  "title": "上下で形が違う部品も切れる？",
+  "summary": "答えに入れるとよいこと：ワイヤを傾けたり上下で別の輪郭を動かしたりして、上面と下面で形の違う部品や勾配付きの部品を切れる。抜き勾配のある型部品などの例を示すと伝わる。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "上下異形状のワイヤ加工事例",
+  "source": {
+   "title": "ワイヤ放電加工機の基礎知識｜原理から最新技術、導入事例まで",
+   "url": "https://edm-expertnavi.com/537/",
+   "publisher": "放電加工機 お役立ちナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1261",
+  "kind": "pain",
+  "title": "壊れた歯車を作り直したい",
+  "summary": "古い機械や農機具のローラー・歯車が壊れても、母材が硬くてもワイヤ放電で形を切り出して再現する加工例がある。図面がなくても現物から作れるか、まず相談したい人が多い。",
+  "industries": [
+   "放電加工",
+   "歯車",
+   "機械部品"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "壊れた部品の再製作をワイヤで",
+  "source": {
+   "title": "ワイヤ放電加工機の基礎知識｜原理から最新技術、導入事例まで",
+   "url": "https://edm-expertnavi.com/537/",
+   "publisher": "放電加工機 お役立ちナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1882",
+  "kind": "question",
+  "title": "放電加工で部品は歪む？",
+  "summary": "答えに入れるとよいこと：刃物が当たらない非接触加工なので、削る力による歪みやバリはほとんど出ない。薄物や細い部品に向く。一方、熱で表面に硬くもろい層ができる点は伝える。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "薄物を放電で加工する理由",
+  "source": {
+   "title": "放電加工の原理と電極無消耗回路",
+   "url": "https://www.sodick.co.jp/st/tech/principle.html",
+   "publisher": "sodick.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1883",
+  "kind": "question",
+  "title": "形彫り放電の電極は何で作る？",
+  "summary": "答えに入れるとよいこと：電極は銅やグラファイトなどで、欲しい形を反転させて作る。電極づくりも費用と日数に入る。同じ形を何個彫るか、仕上げ用の電極が要るかで見積が変わる。",
+  "industries": [
+   "放電加工",
+   "金型"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "形彫り放電の電極代の考え方",
+  "source": {
+   "title": "形彫り放電加工機とは？仕組みや特徴をイラスト付きで分かりやすく解説",
+   "url": "https://www.sodick.co.jp/survibes/articles/machine-tools/1922/",
+   "publisher": "sodick.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1884",
+  "kind": "question",
+  "title": "放電加工は金型で何を担う？",
+  "summary": "答えに入れるとよいこと：形彫りは刃物の入らない底付き形状やシャープな内角、ワイヤはプレス抜き型や硬いプレートの輪郭を担う。焼入れ後の硬い型材でも加工できるのが強み。",
+  "industries": [
+   "放電加工",
+   "金型"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "金型づくりでの放電の出番",
+  "source": {
+   "title": "金型製作における放電加工の役割",
+   "url": "https://edm-expertnavi.com/1231/",
+   "publisher": "放電加工機 お役立ちナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1885",
+  "kind": "question",
+  "title": "ワイヤ放電はなぜ夜も回せる？",
+  "summary": "答えに入れるとよいこと：ワイヤの自動送りと放電の制御が安定しているため、長時間の連続運転や夜間の無人運転に向く。段取りが済めば機械が進めるので、短納期の相談に応えやすい。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "無人運転で短納期に応える仕組み",
+  "source": {
+   "title": "ワイヤ放電加工機とは？原理や特徴、注意点をイラスト付きで分かりやすく解説",
+   "url": "https://www.sodick.co.jp/survibes/articles/machine-tools/1586/",
+   "publisher": "sodick.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1886",
+  "kind": "question",
+  "title": "金型なしで抜き形状を試作できる？",
+  "summary": "答えに入れるとよいこと：ワイヤ放電はプログラムで直接切り出すため、専用の型を作らずに試作や少量の抜き形状を作れる。型代を抑えたい試作段階で選ばれる理由として書ける。",
+  "industries": [
+   "放電加工",
+   "プレス"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "型を起こす前のワイヤ試作",
+  "source": {
+   "title": "ワイヤ放電加工機とは？原理や特徴、注意点をイラスト付きで分かりやすく解説",
+   "url": "https://www.sodick.co.jp/survibes/articles/machine-tools/1586/",
+   "publisher": "sodick.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1887",
+  "kind": "question",
+  "title": "航空エンジンの小さい穴はどう開ける？",
+  "summary": "答えに入れるとよいこと：細穴放電はパイプ状の細い電極で深い小穴を開ける方法で、ワイヤのスタート穴のほか、航空機エンジンの冷却孔にも使われると説明されている。",
+  "industries": [
+   "放電加工",
+   "航空宇宙"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "細穴放電と航空部品の関係",
+  "source": {
+   "title": "放電加工の原理と電極無消耗回路",
+   "url": "https://www.sodick.co.jp/st/tech/principle.html",
+   "publisher": "sodick.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1420",
+  "kind": "term",
+  "title": "Wire EDM（ワイヤ放電の英語）",
+  "summary": "ワイヤ放電加工は英語でWire EDMやWire-cut EDMと呼ぶ。形彫り放電はSinker EDM。海外の図面や問い合わせで出てくるので、英語ページに併記すると伝わりやすい。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "放電加工用語集",
+   "url": "https://www.sodick.co.jp/products/word/word_edm.html?id=9",
+   "publisher": "sodick.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1888",
+  "kind": "question",
+  "title": "放電加工機は何年使える？",
+  "summary": "答えに入れるとよいこと：法定耐用年数は約10〜15年、実際の更新目安は約12〜18年という説明がある。古くなるとねじやガイドの劣化で精度が落ち、補修部品の供給期限も更新の判断材料になる。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "設備の年数と精度の伝え方",
+  "source": {
+   "title": "放電加工機の耐用年数",
+   "url": "https://edm-expertnavi.com/611/",
+   "publisher": "放電加工機 お役立ちナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1889",
+  "kind": "question",
+  "title": "3Dプリントの金属はどう切り離す？",
+  "summary": "答えに入れるとよいこと：金属3Dプリンタで造形した部品をベース板から切り離すのにワイヤ放電が使われる。インコネルやチタンの積層品でも切れるという説明がある。",
+  "industries": [
+   "放電加工",
+   "3Dプリンタ"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "金属積層品の後工程をワイヤで",
+  "source": {
+   "title": "ワイヤーカット放電加工機の特徴",
+   "url": "https://www.stgjapan.jp/products/wire-cut_machine/index2.html",
+   "publisher": "stgjapan.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1230",
+  "kind": "buyer",
+  "title": "ワイヤーカットだけ頼める？",
+  "summary": "上位ページには「ワイヤーカットのみの加工にも対応」と打ち出す会社がある。前後工程を自社でする発注者は、単工程だけ頼めるかを探す。対応範囲をページに明記すると選ばれやすい。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "ワイヤーカット単工程の受け方",
+  "source": {
+   "title": "ワイヤーカット加工とは？ワイヤーカットのみの加工にも対応",
+   "url": "https://www.fujiiss.co.jp/wirecut.html",
+   "publisher": "fujiiss.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1231",
+  "kind": "buyer",
+  "title": "価格例を見て加工先を比べる",
+  "summary": "ワイヤーカットの解説記事では、加工会社の価格例を並べて比べる構成が上位に出る。価格の目安や事例を公開している会社は、比較記事に拾われやすい。",
+  "industries": [
+   "放電加工"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "価格例を載せるかどうかの判断",
+  "source": {
+   "title": "【ワイヤーカット】加工のメリット・デメリットや価格について徹底解説!!",
+   "url": "https://mitsu-ri.net/articles/wire-cut",
+   "publisher": "Mitsuri Media",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1890",
+  "kind": "question",
+  "title": "専用機と汎用機はどう違う？",
+  "summary": "答えに入れるとよいこと：汎用機は多くの作業に使える既製の機械、専用機は特定の工程や製品のために一から設計する一点もの。効果は大きいが、製品が変わると改造が要る点も書く。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "専用機と汎用機の選び分け",
+  "source": {
+   "title": "専用機の設計・製作／自動化と省力化を支える一貫開発体制",
+   "url": "https://www.sanshu-ind.co.jp/column/2025-04-02/",
+   "publisher": "sanshu-ind.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1232",
+  "kind": "buyer",
+  "title": "専用機の発注先は何で選ぶ？",
+  "summary": "上位の解説は、専用機開発の設計から製造までの流れ、発注先の選び方、導入後の注意点の順で書く。発注者は似た機械の実績、設計から据付までの範囲、導入後の対応を比べる。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "専用機の発注先を選ぶ3つの見方",
+  "source": {
+   "title": "専用機開発の全て：設計から製造までの流れと発注先の選定",
+   "url": "https://meisei-web.co.jp/2023-07-26/",
+   "publisher": "meisei-web.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1891",
+  "kind": "question",
+  "title": "専用機はどんな順で作る？",
+  "summary": "答えに入れるとよいこと：打ち合わせと提案、概略設計、詳細設計、部品の製作・調達、組立、調整・測定、納品の流れが一例。どこで発注者の確認が入るかを示すと安心される。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "専用機ができるまでの7ステップ",
+  "source": {
+   "title": "省力化装置・検証装置｜試験や作業を省力化する機械をオーダーメイドで製作",
+   "url": "https://www.zen.co.jp/business/13039/",
+   "publisher": "zen.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1233",
+  "kind": "buyer",
+  "title": "設計から据付まで一社に頼む",
+  "summary": "専用機メーカーの中には、設計から組立、試験、据付までを一貫して行うと打ち出す会社がある。発注者は窓口が一つで済むか、現地での据付まで任せられるかを見る。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "articleIdea": "一貫対応の範囲を示すページ",
+  "source": {
+   "title": "専用機設計製作",
+   "url": "https://www.asake-seiko.co.jp/service/",
+   "publisher": "asake-seiko.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1234",
+  "kind": "buyer",
+  "title": "実績は用途別に並べて見せる",
+  "summary": "専用機メーカーの実績ページは、試験機・測定器、切削専用機、治具、搬送装置・ローダー、自動機などの用途別に整理されている。発注者は自分の用途の見出しから探す。",
+  "industries": [
+   "産業機械",
+   "装置",
+   "治具"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "専用機の実績ページの分け方",
+  "source": {
+   "title": "専用機製作",
+   "url": "http://taihoeng.co.jp/work/original",
+   "publisher": "taihoeng.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1235",
+  "kind": "buyer",
+  "title": "公的な受発注サイトで探す",
+  "summary": "県の産業支援機関が運営する受発注マッチングサイトでは「専用機の設計・製作」の業種で受注企業を探せる。地域の専用機メーカーを探す発注者の入口の一つになる。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "articleIdea": "地域の受発注サイトへの登録",
+  "source": {
+   "title": "専用機の設計・製作｜製造業受発注マッチングサイト",
+   "url": "https://www.shigaplaza.or.jp/lims/industries/%E5%B0%82%E7%94%A8%E6%A9%9F%E3%81%AE%E8%A8%AD%E8%A8%88%E3%83%BB%E8%A3%BD%E4%BD%9C",
+   "publisher": "滋賀県産業支援プラザ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1892",
+  "kind": "question",
+  "title": "省力化と省人化はどう違う？",
+  "summary": "答えに入れるとよいこと：省力化は作業の負担や工数を減らすこと、省人化は必要な人数そのものを減らすこと。治具や自動機を入れても、空いた手を集めて配り直さないと人数は減らない。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "省力化と省人化の違いを例で",
+  "source": {
+   "title": "省人化と省力化の違いとは？少人化との関係｜人数が減る条件を整理",
+   "url": "https://iotec-biz.com/column/shojinka-shoryokuka/",
+   "publisher": "iotec-biz.com",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1262",
+  "kind": "pain",
+  "title": "楽になったのに人が減らない",
+  "summary": "装置を入れて作業は楽になったのに人数が変わらない、という悩み。空いた時間が各人に少しずつ散るためで、何人をどこまで減らすかを先に決めて工程を組み直す必要がある。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "省人化まで届かない理由",
+  "source": {
+   "title": "省人化と省力化の違いとは？少人化との関係｜人数が減る条件を整理",
+   "url": "https://iotec-biz.com/column/shojinka-shoryokuka/",
+   "publisher": "iotec-biz.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1893",
+  "kind": "question",
+  "title": "自動化はどの工程から始める？",
+  "summary": "答えに入れるとよいこと：まず工程を1つ選ぶ。どれだけ手間が減るか（省力化率）を数字で見て、搬送・供給、簡易自動化、ロボット、検査のどれが合うかを決める。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "最初の1工程の選び方",
+  "source": {
+   "title": "FA装置・省力化の選び方／導入ガイド｜失敗しない進め方と費用の考え方",
+   "url": "https://controls-kiki.com/column/fa-guide/",
+   "publisher": "controls-kiki.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1894",
+  "kind": "question",
+  "title": "省力化装置で何を自動化する？",
+  "summary": "答えに入れるとよいこと：繰り返しの頻度と時間、体への負担や危険、作業のばらつきと例外、前後工程のボトルネック、技術的にできるかと運用の5つで対象を絞る。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "自動化する作業を絞る5つの見方",
+  "source": {
+   "title": "省力化装置の受託開発は何を自動化する？対象作業を絞る5つの判断軸",
+   "url": "https://lefixea.jp/mfg/articles/manufacturing-ota-buyer-contract-development-202",
+   "publisher": "lefixea.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1263",
+  "kind": "pain",
+  "title": "例外が多い作業は自動化しにくい",
+  "summary": "製品の形や状態がばらつく、例外の判断が多い作業は、装置にしても止まりやすい。どの例外を人に残すかを先に整理しないと、作ったのに使えない装置になりやすい。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "人に残す作業の決め方",
+  "source": {
+   "title": "省力化装置の受託開発は何を自動化する？対象作業を絞る5つの判断軸",
+   "url": "https://lefixea.jp/mfg/articles/manufacturing-ota-buyer-contract-development-202",
+   "publisher": "lefixea.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1264",
+  "kind": "pain",
+  "title": "一気に自動化しようとして失敗",
+  "summary": "省力化でよくあるつまずきに、欲張って多くの工程を一度に自動化しようとすることが挙がる。範囲が広いほど仕様が固まらず、費用も膨らむ。1工程ずつ進めるのがよいとされる。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "小さく始める自動化",
+  "source": {
+   "title": "FA装置・省力化の選び方／導入ガイド｜失敗しない進め方と費用の考え方",
+   "url": "https://controls-kiki.com/column/fa-guide/",
+   "publisher": "controls-kiki.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1236",
+  "kind": "buyer",
+  "title": "相談先はメーカー・商社・SIer",
+  "summary": "省力化の相談先は、装置メーカー、商社、ロボットなどを組み合わせるSIerで役割が違う。何を自分で決めて、どこまで任せたいかで選び分ける、という解説が上位にある。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "3つの相談先の違い",
+  "source": {
+   "title": "FA装置・省力化の選び方／導入ガイド｜失敗しない進め方と費用の考え方",
+   "url": "https://controls-kiki.com/column/fa-guide/",
+   "publisher": "controls-kiki.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1895",
+  "kind": "question",
+  "title": "工場自動化の費用の内訳は？",
+  "summary": "答えに入れるとよいこと：設備導入費、設計・ソフト開発費、設置・教育・立ち上げ費、保守費、立ち上げ時の一時的な調整コストに分けて考える。本体価格だけで比べない。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "自動化費用の5つの内訳",
+  "source": {
+   "title": "工場ライン自動化のコストと費用回収、予算の立て方のポイント",
+   "url": "https://www.huropt.com/assignment/cost.html",
+   "publisher": "Huropt",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1896",
+  "kind": "question",
+  "title": "自動化の予算はどう立てる？",
+  "summary": "答えに入れるとよいこと：「いくらかかるか」より「何を自動化するか」から考える。自動化する作業の人件費を基に予算を立て、段階導入や補助金で負担を抑える。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "人件費から逆算する予算の立て方",
+  "source": {
+   "title": "「いくらかかるの？」ロボットシステム導入にかかる費用の考え方",
+   "url": "https://afit-namu.com/column/budget",
+   "publisher": "afit-namu.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1237",
+  "kind": "buyer",
+  "title": "段階導入で予算を抑える",
+  "summary": "自動化の費用解説では、一度に全部ではなく段階的に導入して予算を抑える方法や、提案型の会社に相談する方法が挙がる。最初の段階で効果を確かめてから広げられる。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "段階導入の進め方",
+  "source": {
+   "title": "工場ライン自動化のコストと費用回収、予算の立て方のポイント",
+   "url": "https://www.huropt.com/assignment/cost.html",
+   "publisher": "Huropt",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1897",
+  "kind": "question",
+  "title": "どんな作業なら元が取れる？",
+  "summary": "答えに入れるとよいこと：単純な作業で、しかも多くの人が関わっている工程ほど自動化の効果が出やすい。考え方を変えるとロボット導入の敷居が下がる、という説明がある。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "費用対効果が出やすい作業",
+  "source": {
+   "title": "【自動化費用の考え方】ロボット導入に必要な費用対効果の知識",
+   "url": "https://www.yasnaga.co.jp/techinfo/example/robot-cost.php",
+   "publisher": "yasnaga.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1265",
+  "kind": "pain",
+  "title": "自動化費用の認識がずれる",
+  "summary": "ロボット導入の費用では、発注側と作り手の間で認識違いが起こりやすい。本体以外に何が入るか、どこまでが見積の範囲かを初めにすり合わせないと、後で揉めやすい。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "見積範囲のすり合わせ方",
+  "source": {
+   "title": "【自動化費用の考え方】ロボット導入に必要な費用対効果の知識",
+   "url": "https://www.yasnaga.co.jp/techinfo/example/robot-cost.php",
+   "publisher": "yasnaga.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1898",
+  "kind": "question",
+  "title": "自動化の投資効果はどう測る？",
+  "summary": "答えに入れるとよいこと：主な費用項目と初期投資を出し、削減できる人件費などで投資回収（ROI）を計算する。IoTで稼働を見える化して効果を確かめる方法もある。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "投資回収の計算例",
+  "source": {
+   "title": "工場の生産設備自動化にかかる費用と投資回収の考え方",
+   "url": "https://ts-e.jp/diary/192487",
+   "publisher": "ts-e.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1899",
+  "kind": "question",
+  "title": "工場の自動化で困ることは？",
+  "summary": "答えに入れるとよいこと：人手不足や生産数のばらつき、危険作業の解消に役立つ一方、初期費用や扱える人の確保などのデメリットもある。両方を並べて判断材料にする。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "自動化のメリットと弱みの並べ方",
+  "source": {
+   "title": "工場の自動化とは？メリット・デメリット、成功事例を解説！",
+   "url": "https://engineer-knowledge.sakae-jp.com/jidouka-part1",
+   "publisher": "engineer-knowledge.sakae-jp.com",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1266",
+  "kind": "pain",
+  "title": "中小は省力化投資のハードルが高い",
+  "summary": "中小企業の省力化では、投資額の大きさや準備不足が壁になる。導入前に経営課題を確認し、比較と選定のポイントを押さえることが解決策として挙げられている。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "中小企業の省力化の始め方",
+  "source": {
+   "title": "一般産業機械の省力化とは？導入メリット・事例・失敗しない選び方を解説",
+   "url": "https://non-mainte.com/blog/1807",
+   "publisher": "non-mainte.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1421",
+  "kind": "term",
+  "title": "省力化装置",
+  "summary": "人の手作業を機械に置き換えるための装置の総称。コンベア、部品の供給機、検査装置など種類は多い。既製品で合わないときはオーダーメイドで作る。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "省力化装置とは｜種類・導入効果と省力化機械メーカーの選び方",
+   "url": "https://www.automatic-transferring-machine.com/glossary/%E7%9C%81%E5%8A%9B%E5%8C%96%E8%A3%85%E7%BD%AE/",
+   "publisher": "受託製造.COM",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1422",
+  "kind": "term",
+  "title": "コロコン（動力なしのローラー）",
+  "summary": "モーターを持たないフリーローラーのコンベアの通称。手で押したり傾斜で滑らせたりして物を運ぶ。安く簡単に搬送を楽にする手段として、動力付きコンベアと比べて説明できる。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "コンベア装置とコロコンにはどのような違いがありますか？",
+   "url": "https://www.automatic-transferring-machine.com/qa/%E3%82%B3%E3%83%B3%E3%83%99%E3%82%A2%E8%A3%85%E7%BD%AE%E3%81%AE%E4%BA%8B%E4%BE%8B%E3%81%AE%E4%B8%AD%E3%81%A7%E3%80%81%E3%82%B3%E3%83%AD%E3%82%B3%E3%83%B3%E3%81%A8%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99/",
+   "publisher": "受託製造.COM",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1423",
+  "kind": "term",
+  "title": "省力化効果判定シート",
+  "summary": "中小企業省力化投資補助金のカタログ注文型で、申請時に使う省力化の効果を判定するシート。補助金を使って装置を入れるとき、どれだけ手間が減るかを数字で示す材料になる。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "省力化効果判定シート｜中小企業省力化投資補助金",
+   "url": "https://shoryokuka.smrj.go.jp/catalog/dealer/effect/",
+   "publisher": "中小企業省力化投資補助金",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1424",
+  "kind": "term",
+  "title": "パーツフィーダ（部品供給機）",
+  "summary": "ばらばらの小さな部品を振動などで同じ向きにそろえ、次の工程へ自動で送る機械。振動ボウル式が一般的で、多品種ならカメラで向きを見てロボットが取る方式もある。",
+  "industries": [
+   "産業機械",
+   "装置",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "パーツフィーダーとは?種類や機能、選定方法について",
+   "url": "https://meisei-web.co.jp/parts/",
+   "publisher": "meisei-web.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1238",
+  "kind": "buyer",
+  "title": "パーツフィーダは部品を見せて相談",
+  "summary": "部品供給の自動化では、パーツフィーダの選定から相談できる会社がある。部品の形と向き、1分あたりの供給数、品種の数を伝え、現物を見せると合う方式を選びやすい。",
+  "industries": [
+   "産業機械",
+   "装置",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "パーツフィーダ相談で伝えること",
+  "source": {
+   "title": "生産設備を自動化する方法（費用とできる内容、事例の紹介）",
+   "url": "https://meisei-web.co.jp/2023-01-23/",
+   "publisher": "meisei-web.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1900",
+  "kind": "question",
+  "title": "寸法検査は自動化できる？",
+  "summary": "答えに入れるとよいこと：カメラで撮って複数寸法を測る方法、ロボットと測定機の組み合わせ、加工機上での測定などがある。光沢・黒・透明の品物は端が見えにくく難しい点も書く。",
+  "industries": [
+   "産業機械",
+   "装置",
+   "精密機器"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "寸法検査の自動化と苦手なもの",
+  "source": {
+   "title": "寸法検査の自動化",
+   "url": "https://meisei-web.co.jp/2025-11-27/",
+   "publisher": "meisei-web.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1901",
+  "kind": "question",
+  "title": "目視検査を減らすには？",
+  "summary": "答えに入れるとよいこと：自動化（画像検査など）、デジタル化（チェックシートの電子化）、標準化（あいまいな基準を数値にする）の3つの方向がある。まず基準をそろえることから。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "目視検査を見直す3つの方向",
+  "source": {
+   "title": "目視検査の課題と効率化の方法",
+   "url": "https://meisei-web.co.jp/2024-05-29/",
+   "publisher": "meisei-web.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1425",
+  "kind": "term",
+  "title": "導通検査",
+  "summary": "配線や回路が途中で切れずに電気的につながっているかを調べる検査。断線、誤配線、ショートを見つける。テスターを使い、必ず電源を切った状態で行う。",
+  "industries": [
+   "電子部品",
+   "組立",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "導通検査部",
+   "url": "https://meisei-web.co.jp/case/continuity_inspection/",
+   "publisher": "meisei-web.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1902",
+  "kind": "question",
+  "title": "ゲートカットは自動化できる？",
+  "summary": "答えに入れるとよいこと：樹脂成形品のゲート処理は、エアーニッパーを取出機に組み込む方式、刃を温めるヒートニッパー、超音波、専用の受け台で押し切る治具などで自動化・省力化できる。",
+  "industries": [
+   "樹脂成形",
+   "装置",
+   "治具"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "ゲート処理の手作業を減らす方法",
+  "source": {
+   "title": "ゲートカット装置",
+   "url": "https://meisei-web.co.jp/case/2025-05-13/",
+   "publisher": "meisei-web.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1426",
+  "kind": "term",
+  "title": "産業機械",
+  "summary": "工場や建設現場で人の作業を補助・代行する機械の総称。工作機械、製造装置や専用機、運搬機械、検査機器、ボイラなどを含む。発注先は種類ごとに分かれる。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "産業用機械とは？種類からメーカーへの発注方法を紹介",
+   "url": "https://meisei-web.co.jp/2023-10-27/",
+   "publisher": "meisei-web.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1427",
+  "kind": "term",
+  "title": "AGV・AMR（自動で走る運搬車）",
+  "summary": "工場や倉庫の床を自動で走って荷物を運ぶ車。AGVは決まった経路を、AMRは周りを見て自分で経路を選ぶ。重い物の手運びを減らす搬送装置の一つ。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "搬送装置 メーカー175社",
+   "url": "https://metoree.com/categories/transport-device/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1428",
+  "kind": "term",
+  "title": "パレットチェンジャー",
+  "summary": "工作機械で加工している間に、次の品物を載せたパレットの段取りを済ませて入れ替える装置。機械の止まる時間を減らし稼働率を上げる。物流では荷物を別のパレットに載せ替える装置も指す。",
+  "industries": [
+   "切削加工",
+   "装置"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "【図表あり】パレットチェンジャーとは？用途や種類について解説！",
+   "url": "https://sadoseimitsu.com/column/1-32/",
+   "publisher": "精密金属加工VA/VE技術ナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1903",
+  "kind": "question",
+  "title": "自動化の総額はどう見積もる？",
+  "summary": "答えに入れるとよいこと：工場自動化は人件費の削減が目的でも、総額がいくらになるかを先に知る必要がある。費用の範囲と予算の立て方をセットで示すと、検討の初期段階の人に役立つ。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "自動化の総額の見積もり方",
+  "source": {
+   "title": "工場自動化を行う場合のコストの総額は？予算の立て方も解説",
+   "url": "https://www.partsfeeder-practice.com/automation/cost.html",
+   "publisher": "partsfeeder-practice.com",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1904",
+  "kind": "question",
+  "title": "既製の食品機械で足りないときは？",
+  "summary": "答えに入れるとよいこと：味や食感へのこだわり、地域の特産品に合わせた加工、工場の広さや生産体制に合わない、の3場面でオーダーメイドが検討される。修理・改造・新規製作の線引きも示す。",
+  "industries": [
+   "食品機械",
+   "食品製造"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "既製品で困る3つの場面",
+  "source": {
+   "title": "既製品の食品機械で対応しきれていないと感じたとき——愛媛でオーダーメイドを考える",
+   "url": "https://iokitech.co.jp/column/96/",
+   "publisher": "iokitech.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1905",
+  "kind": "question",
+  "title": "修理・改造・新規、どれを選ぶ？",
+  "summary": "答えに入れるとよいこと：今の機械を直すか、手を加えるか、新しく作るかで判断が分かれる。費用、止められる期間、求める性能の差を並べ、補助金で負担を軽くする方法も添える。",
+  "industries": [
+   "食品機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "修理・改造・新規製作の判断",
+  "source": {
+   "title": "既製品の食品機械で対応しきれていないと感じたとき——愛媛でオーダーメイドを考える",
+   "url": "https://iokitech.co.jp/column/96/",
+   "publisher": "iokitech.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1906",
+  "kind": "question",
+  "title": "特注食品機械で大事な設計は？",
+  "summary": "答えに入れるとよいこと：材質と表面処理の選び方、洗いやすい構造、安全カバーとインターロック。加えて組立精度や熱による伸び、作業者が扱いやすい操作性まで考える。",
+  "industries": [
+   "食品機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "食品機械ならではの設計の要点",
+  "source": {
+   "title": "生産現場の課題を解決する、特注食品機械の開発事例：のしいか製造機の設計・製作プロセス全貌",
+   "url": "https://kanto-seimitsu.jp/blog/%E7%94%9F%E7%94%A3%E7%8F%BE%E5%A0%B4%E3%81%AE%E8%AA%B2%E9%A1%8C%E3%82%92%E8%A7%A3%E6%B1%BA%E3%81%99%E3%82%8B%E3%80%81%E7%89%B9%E6%B3%A8%E9%A3%9F%E5%93%81%E6%A9%9F%E6%A2%B0%E3%81%AE%E9%96%8B%E7%99%BA/",
+   "publisher": "kanto-seimitsu.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1907",
+  "kind": "question",
+  "title": "特注機は試運転で何を見る？",
+  "summary": "答えに入れるとよいこと：オーダーメイドの食品機械は、構想から完成までのうち試運転と調整が特に重要とされる。実際の原料で能力・品質・清掃のしやすさを確かめてから引き渡す。",
+  "industries": [
+   "食品機械"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "試運転で確かめる項目",
+  "source": {
+   "title": "既製品の食品機械で対応しきれていないと感じたとき——愛媛でオーダーメイドを考える",
+   "url": "https://iokitech.co.jp/column/96/",
+   "publisher": "iokitech.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1239",
+  "kind": "buyer",
+  "title": "試作できるテストルームがあるか",
+  "summary": "食品の自動機メーカーには、テストルームで実際の原料を使って試作し、最終製品まで作れるところがある。発注者は導入前に自社の原料で動くかを確かめたい。",
+  "industries": [
+   "食品機械",
+   "食品製造"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "テストルームでの事前試作",
+  "source": {
+   "title": "オリジナル自動機のご相談",
+   "url": "https://kobird.co.jp/service/original/",
+   "publisher": "kobird.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1240",
+  "kind": "buyer",
+  "title": "今ある装置のカスタマイズも頼む",
+  "summary": "食品工場の課題は新しい装置だけでなく、既存装置へのカスタマイズで解決できることもある。装置メーカーは開発フローと合わせて改造の相談も受けると示している。",
+  "industries": [
+   "食品機械"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "articleIdea": "既存装置の改造の相談窓口",
+  "source": {
+   "title": "食品ライン省人化、オーダーメイド食品製造自動化装置",
+   "url": "https://www.arplus.co.jp/order-made/",
+   "publisher": "arplus.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1241",
+  "kind": "buyer",
+  "title": "ラインの据付まで一括で頼む",
+  "summary": "食品加工機械をオーダーメイドで作る会社には、企画・設計からラインの構築、据付けまで一貫して請け負うところがある。混合機やコンベアなど複数の機械をまとめて頼みたい人に向く。",
+  "industries": [
+   "食品機械"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "articleIdea": "ライン一括対応の見せ方",
+  "source": {
+   "title": "事業内容",
+   "url": "https://www.888saka.jp/business/",
+   "publisher": "888saka.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1242",
+  "kind": "buyer",
+  "title": "特注品は食品の種類で探される",
+  "summary": "特注の食品機械は、豆腐の凝固機や麺のフライヤーなど、作る食品ごとに装置を並べて紹介されている。発注者は自社の食品名で探すため、品目別の実績が手がかりになる。",
+  "industries": [
+   "食品機械",
+   "食品製造"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "食品名で探される実績ページ",
+  "source": {
+   "title": "食品機械装置（特注品）",
+   "url": "https://kabukurihara.com/foodmachine_orginal/",
+   "publisher": "kabukurihara.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1429",
+  "kind": "term",
+  "title": "横ピロー包装機",
+  "summary": "コンベアで水平に送った品物をフィルムで筒状に包み、両端をシールして切る包装機。上からフィルムをかぶせる正ピローはトレー入り品、下から包む逆ピローはばら物に向く。",
+  "industries": [
+   "食品機械",
+   "パッケージ"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "横ピロー包装機 メーカー18社 注目ランキング【2026年】",
+   "url": "https://metoree.com/categories/3286/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1430",
+  "kind": "term",
+  "title": "深絞り包装機",
+  "summary": "ロール状の下フィルムを温めて容器の形にし、品物を入れて上フィルムで真空やガス置換をしながら密封する包装機。トレーを別に用意しなくてよい。",
+  "industries": [
+   "食品機械",
+   "パッケージ"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "深絞り包装機 メーカー18社 注目ランキング【2026年】",
+   "url": "https://metoree.com/categories/3327/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1908",
+  "kind": "question",
+  "title": "包装機械の値段はどのくらい？",
+  "summary": "答えに入れるとよいこと：小型の手動ラップ機は1〜2万円程度から、大型の自動包装機やラインは数百万円〜数千万円になる例がある（目安）。手動・半自動・全自動のどれかで大きく違う。",
+  "industries": [
+   "食品機械",
+   "パッケージ"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "包装機の価格帯の見方",
+  "source": {
+   "title": "包装機械 メーカー77社 注目ランキング&製品価格【2026年】",
+   "url": "https://metoree.com/categories/5013/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1431",
+  "kind": "term",
+  "title": "チャンバー式真空包装機",
+  "summary": "機械の中の部屋（チャンバー）全体の空気を抜いてから袋を閉じる真空包装機。袋の外も同時に減圧するので、スープやたれなど液体があっても吹きこぼれにくい。",
+  "industries": [
+   "食品機械",
+   "パッケージ"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "チャンバー式真空包装機 メーカー9社 注目ランキング【2026年】",
+   "url": "https://metoree.com/categories/9069/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1909",
+  "kind": "question",
+  "title": "航空機の部品は何点ある？",
+  "summary": "答えに入れるとよいこと：自動車が約2〜3万点なのに対し、大型の旅客機は100万〜300万点に及ぶという説明がある（目安）。部品の多さが品質管理の厳しさにつながる点を書く。",
+  "industries": [
+   "航空宇宙"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "航空機の部品の多さと品質管理",
+  "source": {
+   "title": "航空機の部品製造とは？求められる３つの要素と材質について",
+   "url": "https://sadoseimitsu.com/column/1/",
+   "publisher": "精密金属加工VA/VE技術ナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1432",
+  "kind": "term",
+  "title": "機体・エンジン・装備品",
+  "summary": "航空機の部品製造は、胴体や翼などの機体、エンジン、降着装置や計器などの装備品に分けて説明される。どの分野の部品を作れるかで、取引先や求められる認証が変わる。",
+  "industries": [
+   "航空宇宙"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "航空機の部品製造とは？求められる３つの要素と材質について",
+   "url": "https://sadoseimitsu.com/column/1/",
+   "publisher": "精密金属加工VA/VE技術ナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1433",
+  "kind": "term",
+  "title": "ニッケル基合金の種類",
+  "summary": "ニッケルを主成分とする合金。高温で強いインコネル系はジェットエンジン、海水に強いモネル系は海洋設備、熱で伸びにくいインバー系は精密機器に使われる。熱がこもり削りにくい。",
+  "industries": [
+   "航空宇宙",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "【表あり】ニッケル基合金とは？用途や切削加工のポイントについて解説！",
+   "url": "https://sadoseimitsu.com/column/1-39/",
+   "publisher": "精密金属加工VA/VE技術ナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1434",
+  "kind": "term",
+  "title": "析出硬化",
+  "summary": "金属の中に別の成分を細かく析出させて、強さや硬さを上げる熱処理の考え方。航空機部品に使われる一部のステンレスやアルミ合金の強さの理由として説明できる。",
+  "industries": [
+   "航空宇宙",
+   "熱処理"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "【図表で解説】析出硬化について",
+   "url": "https://sadoseimitsu.com/column/1-30/",
+   "publisher": "精密金属加工VA/VE技術ナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1243",
+  "kind": "buyer",
+  "title": "精度の実績を数字で見せる",
+  "summary": "航空機向けの加工実績ページは、材質と「真円度0.01」「同軸度0.01」のような精度の数字を部品ごとに並べている。発注者は似た材質・精度の実績があるかを数字で確かめる。",
+  "industries": [
+   "航空宇宙",
+   "切削加工"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "実績を材質と精度で並べる",
+  "source": {
+   "title": "航空機、航空産業向けの部品加工実績",
+   "url": "https://www.ono-seisakusho.co.jp/ct_industry/aircraft/",
+   "publisher": "ono-seisakusho.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1435",
+  "kind": "term",
+  "title": "航空機治工具",
+  "summary": "航空機の部品を組み立てたり検査したりするための大型の治具や工具。全長1.5mほどの治具の例もある。位置決めのピンやブッシュなどの標準部品も専用に作られている。",
+  "industries": [
+   "航空宇宙",
+   "治具"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "航空機治工具標準部品",
+   "url": "https://www.nabeya-mfg.co.jp/aircraft/",
+   "publisher": "nabeya-mfg.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1244",
+  "kind": "buyer",
+  "title": "加工から組立・出荷検査まで",
+  "summary": "航空機部品の会社は、加工だけでなく組立と出荷検査までを事業として並べて見せている。発注者は部品単体か、組み立てた状態で受け取れるかも比べる。",
+  "industries": [
+   "航空宇宙",
+   "組立"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "articleIdea": "一貫体制の見せ方",
+  "source": {
+   "title": "航空機部品",
+   "url": "http://www.mizunami-seiki.co.jp/business/aircraft-parts/index.html",
+   "publisher": "mizunami-seiki.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1245",
+  "kind": "buyer",
+  "title": "企業データベースで加工先を探す",
+  "summary": "「航空機部品加工」のキーワードで全国の会社を一覧できる企業データベースが上位に出る。発注者は地域や業界で絞り込んで候補を集めるので、登録情報を整えておくとよい。",
+  "industries": [
+   "航空宇宙",
+   "切削加工"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "articleIdea": "企業DBへの掲載情報の整え方",
+  "source": {
+   "title": "航空機部品加工の会社・企業一覧（全国）",
+   "url": "https://baseconnect.in/companies/keyword/6da09abf-c998-49b3-a7c5-a685b807ea35",
+   "publisher": "Baseconnect",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1910",
+  "kind": "question",
+  "title": "CFRPの加工は何が難しい？",
+  "summary": "答えに入れるとよいこと：上位記事は航空機部品のCFRP（炭素繊維強化プラスチック）加工の課題と解決策、チタン合金向けの工具、5軸加工のオーダーメイド工具を扱う。不良が出る点と工具選びを書く。",
+  "industries": [
+   "航空宇宙",
+   "刃物・工具"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "CFRP加工の課題と工具選び",
+  "source": {
+   "title": "航空機部品加工における特殊切削工具の最新トレンド",
+   "url": "https://hamatool.co.jp/2025/11/11/002/",
+   "publisher": "hamatool.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1246",
+  "kind": "buyer",
+  "title": "縫製工場は得意分野で選ぶ",
+  "summary": "縫製工場は、アパレル、バッグ・雑貨、厚物などで得意分野が分かれる。業務用品や厚手の資材を頼むなら、厚物を縫える設備と実績のある工場を探す。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "縫製工場の得意分野の見分け方",
+  "source": {
+   "title": "縫製工場の選び方｜製品開発担当者が失敗しない工場選定のポイント",
+   "url": "https://iizuka1971.com/hosei-kojo-erabikata/",
+   "publisher": "iizuka1971.com",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1267",
+  "kind": "pain",
+  "title": "価格だけで縫製工場を決めた",
+  "summary": "工場選びの失敗例として、価格だけで決める、設備を確認しない、技術経験が合っていない、が挙がる。製品トラブルや品質問題につながりやすい。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "縫製工場選びの失敗例",
+  "source": {
+   "title": "縫製工場の選び方｜製品開発担当者が失敗しない工場選定のポイント",
+   "url": "https://iizuka1971.com/hosei-kojo-erabikata/",
+   "publisher": "iizuka1971.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1247",
+  "kind": "buyer",
+  "title": "設備・実績・試作・提案で比べる",
+  "summary": "製品開発の担当者向けには、縫製工場を設備、製作実績、試作対応、技術提案の4点で比べる見方が示されている。とくに厚物や業務用品は設備の確認が欠かせない。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "縫製工場を比べる4つの軸",
+  "source": {
+   "title": "縫製工場の選び方｜製品開発担当者が失敗しない工場選定のポイント",
+   "url": "https://iizuka1971.com/hosei-kojo-erabikata/",
+   "publisher": "iizuka1971.com",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1248",
+  "kind": "buyer",
+  "title": "生地や副資材は誰が用意？",
+  "summary": "縫製工場に相談するときは、生地・副資材（ファスナーなど）、型紙と縫製仕様書、ネームや表示を誰が用意するかを最初に伝える。刺繍やプリントの有無も見積に響く。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "縫製依頼で伝える4項目",
+  "source": {
+   "title": "縫製工場へ依頼方法・流れ、縫製工場の選び方",
+   "url": "https://agluca.com/pages/request-method",
+   "publisher": "AGLUCA",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1911",
+  "kind": "question",
+  "title": "縫製の依頼はどんな順で進む？",
+  "summary": "答えに入れるとよいこと：デザインの提案、型紙・仕様書の作成、サンプル製作、量産見積、発注書の確認、量産、支払いの流れが一例。各段階で何を決めるかを示す。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "縫製依頼の流れと決めること",
+  "source": {
+   "title": "縫製依頼の際の流れ まとめ（簡易版）",
+   "url": "https://note.com/hiroitoshoten/n/nc875620c7eb1",
+   "publisher": "note",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1268",
+  "kind": "pain",
+  "title": "支払い条件で縫製の取引が揉める",
+  "summary": "縫製の依頼では、依頼する側が流れを知らないまま進めてトラブルになる例がある。サンプル代や支払いの時期など、支払いに関する取り決めを先にしておきたい。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "縫製取引の支払い条件",
+  "source": {
+   "title": "縫製依頼の際の流れ まとめ（簡易版）",
+   "url": "https://note.com/hiroitoshoten/n/nc875620c7eb1",
+   "publisher": "note",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1436",
+  "kind": "term",
+  "title": "工業用ミシン",
+  "summary": "工場での大量生産や長時間の連続運転を前提にした業務用ミシン。厚い帆布や革も縫え、直線縫い・厚物用・腕ミシンなど用途ごとに機種が分かれる。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "工業用ミシン メーカー13社",
+   "url": "https://metoree.com/categories/9631/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1437",
+  "kind": "term",
+  "title": "袋口縫いミシン",
+  "summary": "麻袋や紙袋、綿袋の口を素早く縫って閉じる持ち運びできるミシン。工場や物流の現場で使われる。洋裁の「袋縫い」とは別のもの。",
+  "industries": [
+   "繊維",
+   "パッケージ"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "袋縫いミシン メーカー7社",
+   "url": "https://metoree.com/categories/4944/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1438",
+  "kind": "term",
+  "title": "産業用縫製",
+  "summary": "衣料ではなく、大型マットや工業用フィルターなど、産業で使う布製品を縫う加工。縫製加工の会社一覧では、衣料と産業用を分けて探せる。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "縫製加工の会社447社 注目ランキング【2026年】",
+   "url": "https://metoree.com/categories/8928/",
+   "publisher": "Metoree",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1249",
+  "kind": "buyer",
+  "title": "工具袋や運搬袋を頼む先",
+  "summary": "工具袋、収納袋、機器の運搬袋などの業務用の袋は、産業資材の縫製を専門にする会社にOEMで頼める。高所作業向けなど用途に合わせた袋の開発例がある。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "業務用の袋を特注するには",
+  "source": {
+   "title": "工具袋・収納袋・器機運搬袋などのOEM生産",
+   "url": "https://nagasakish.co.jp/",
+   "publisher": "nagasakish.co.jp",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1439",
+  "kind": "term",
+  "title": "産業用繊維",
+  "summary": "衣料以外に使われる繊維のこと。不織布、繊維を使った複合材料、人工皮革など「繊維に見えない繊維」も含む。アパレルだけが繊維ではない、と説明できる。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "産業用繊維の世界 －アパレルだけが繊維じゃない－",
+   "url": "https://www.pref.toyama.jp/sections/1015/ecm/back/2007jun/tokushu/index1.html",
+   "publisher": "富山県",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1440",
+  "kind": "term",
+  "title": "産業資材用糸",
+  "summary": "工業用ミシン糸のうち、テントや資材など丈夫さが要る縫製に使う糸。衣料用とは太さや素材が違う。資材を縫う工場では糸の選び方も品質の一部になる。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "工業用ミシン糸・縫製副資材の販売",
+   "url": "https://www.itosyo.com/?ca=260",
+   "publisher": "itosyo.com",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1441",
+  "kind": "term",
+  "title": "フラットシーマー",
+  "summary": "生地の端を突き合わせて平らに縫い合わせる特殊ミシン。縫い目がごろつかないので、肌に当たる製品や厚物にも使われる。専門工場は工賃や縫える物を事前に公開している。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "フラットシーマーの縫製依頼について",
+   "url": "https://bisen.biz/category/%E3%83%95%E3%83%A9%E3%83%83%E3%83%88%E3%82%B7%E3%83%BC%E3%83%9E%E3%83%BC%E3%81%AE%E7%B8%AB%E8%A3%BD%E4%BE%9D%E9%A0%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
+   "publisher": "bisen.biz",
+   "date": null
+  }
  }
 ]
