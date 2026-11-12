@@ -181,7 +181,8 @@ export function AioMeter({ points, collected }: { points: AioPoint[]; collected:
             >
               {ok && <span className="absolute -inset-1 animate-ring rounded-[1.2rem] border-[3px] border-sun opacity-0" aria-hidden />}
               <AioIcon point={p} className="h-6 w-6" />
-              {AIO_POINTS[p].label}
+              {/* 小さな枠では括弧の中を省く（「体験（一次情報）」が折り返して読みにくい） */}
+              {AIO_POINTS[p].label.split("（")[0]}
               <span className="sr-only">{ok ? "（集まった）" : "（まだ）"}</span>
             </li>
           );
@@ -190,7 +191,7 @@ export function AioMeter({ points, collected }: { points: AioPoint[]; collected:
       {all.length > 0 && have === all.length && (
         <div className="flex animate-pop items-center gap-3 rounded-2xl bg-sun-soft p-2">
           <Shiori mood="right" className="h-24 w-auto shrink-0" />
-          <p className="font-bold">材料がぜんぶそろいました！AIにもお客様にも選ばれる記事になります。</p>
+          <p className="font-bold">材料がぜんぶそろいました！会社の違いが、AIにも読んだ人にも伝わりやすい記事になります。</p>
         </div>
       )}
       <div className="h-3 overflow-hidden rounded-full bg-canvas" aria-hidden>

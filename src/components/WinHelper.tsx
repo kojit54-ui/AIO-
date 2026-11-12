@@ -47,15 +47,18 @@ export function WinHelper({ remote, orgId, answer, onPick }: { remote: boolean; 
     <div className="space-y-2 rounded-2xl border-2 border-dashed border-brand-soft px-4 py-3 text-[0.95rem]">
       {wins.length > 0 && (
         <div>
-          <p className="font-bold">強みの帳面にある決め手（押すと答えに入ります）</p>
+          <p className="font-bold">強みの帳面にためた決め手（この記事に合うものを押すと、答えに入ります）</p>
           <ul className="mt-1 flex flex-wrap gap-2">
-            {wins.map((w) => (
-              <li key={w}>
-                <button type="button" className="rounded-full bg-canvas px-3 py-1.5 text-left text-sm hover:bg-brand-soft" onClick={() => onPick(w)}>
-                  {w}
-                </button>
-              </li>
-            ))}
+            {wins.map((w) => {
+              const used = hasWin({ ...book, wins: answer.split("\n") }, w);
+              return (
+                <li key={w}>
+                  <button type="button" disabled={used} className="rounded-full bg-canvas px-3 py-1.5 text-left text-sm hover:bg-brand-soft disabled:cursor-default disabled:text-muted disabled:hover:bg-canvas" onClick={() => onPick(w)}>
+                    {used ? `✓ ${w}（答えに入っています）` : w}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
