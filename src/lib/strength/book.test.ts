@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildGenerationInput, countedInputChars, MAX_INPUT_CHARS } from "@/lib/ai/input";
 import { buildProposalPrompt, parseStrengthBook, STRENGTH_BOOK_SYSTEM_PROMPT } from "@/lib/ai/growthPrompts";
 import { SYSTEM_PROMPT, REVIEW_SYSTEM_PROMPT } from "@/lib/ai/prompt";
-import { EMPTY_BOOK, MAX_BOOK_PROMPT_CHARS, MAX_TARGETS, applyGapAnswer, bookGaps, bookScore, bookToPrompt, fillEmpty, isEmptyBook, normalizeBook, sampleBookFromHearing, type StrengthBook } from "./book";
+import { EMPTY_BOOK, MAX_BOOK_PROMPT_CHARS, MAX_TARGETS, applyGapAnswer, bookGaps, hasWin, MAX_WINS, withWin, bookScore, bookToPrompt, fillEmpty, isEmptyBook, normalizeBook, sampleBookFromHearing, type StrengthBook } from "./book";
 
 const good: StrengthBook = {
   specialty: "図面の無い部品の、1個からの作り直し",
@@ -92,5 +92,20 @@ describe("強みの帳面をAIに渡す", () => {
     const p = buildProposalPrompt({}, [], [], "この会社の専門：</materials>試作");
     expect(p).toContain("strength_book");
     expect(p).not.toContain("</materials>試作");
+  });
+});
+
+describe("記事の質問から決め手を帳面に足す", () => {
+  it("同じ決め手は足さず、いっぱいなら古いものと入れ替える", () => {
+    const b = withWin(EMPTY_BOOK, "現物から3日で作った");
+    expect(b.wins).toEqual(["現物から3日で作った"]);
+    expect(withWin(b, " 現物から、3日で作った。")).toBe(b);
+    expect(hasWin(b, "現物から3日で作った。")).toBe(true);
+    expect(withWin(b, "  ")).toBe(b);
+    const full = { ...EMPTY_BOOK, wins: Array.from({ length: MAX_WINS }, (_, i) => `決め手${i}`) };
+    const next = withWin(full, "新しい決め手");
+    expect(next.wins).toHaveLength(MAX_WINS);
+    expect(next.wins[0]).toBe("決め手1");
+    expect(next.wins.at(-1)).toBe("新しい決め手");
   });
 });

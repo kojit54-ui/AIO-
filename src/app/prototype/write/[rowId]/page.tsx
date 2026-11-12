@@ -9,6 +9,7 @@ import { KIND_LABEL, articleQuestions, collectedAio, computeGrowth } from "@/pro
 import { growActions, resolveRowId, useGrow, useGrowSync } from "@/prototype/store";
 import { ApiError, useStore } from "@/mock/store";
 import { WaitingScreen } from "@/components/WaitingScreen";
+import { WinHelper } from "@/components/WinHelper";
 import { QUESTIONS } from "@/mock/data";
 import { toArticleAnswers } from "@/prototype/articleBridge";
 import { AIO_POINTS } from "@/lib/aio";
@@ -195,6 +196,11 @@ export default function WritePage() {
             <AioWhy point={q.aio} />
           </div>
           <AnswerIdeas key={q.id} orgId={orgId} keyword={row.keyword} question={q.label} point={q.aio} onPick={(idea) => { setStep(step); save({ ...answers, [q.id]: insertIdea(value, idea) }); inputRef.current?.focus(); }} />
+          {q.id === "a8" && (
+            <div className="mb-2">
+              <WinHelper remote={sync.mode === "remote"} orgId={orgId ?? null} answer={value} onPick={(win) => { setStep(step); save({ ...answers, [q.id]: insertIdea(value, win) }); }} />
+            </div>
+          )}
           <textarea
             id="answer"
             ref={inputRef}

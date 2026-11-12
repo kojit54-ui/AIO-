@@ -27,29 +27,18 @@ import {
   sampleBookFromHearing,
   type StrengthBook,
 } from "@/lib/strength/book";
+import { LOCAL_BOOK_KEY, readLocalBook } from "@/lib/strength/browser";
 import { useStore } from "@/mock/store";
 import { SAMPLE_LABEL } from "@/prototype/growth";
 import { currentGrowOrgId, useGrow } from "@/prototype/store";
-
-const LOCAL_KEY = "cotam-strength-book-v1";
 
 interface Saved {
   book: StrengthBook;
   confirmedAt: string | null;
 }
 
-function readLocal(): Saved {
-  try {
-    const raw = window.localStorage.getItem(LOCAL_KEY);
-    if (raw) {
-      const v = JSON.parse(raw) as { book?: unknown; confirmedAt?: unknown };
-      return { book: normalizeBook(v.book), confirmedAt: typeof v.confirmedAt === "string" ? v.confirmedAt : null };
-    }
-  } catch {
-    // 読めなければ空の帳面から
-  }
-  return { book: EMPTY_BOOK, confirmedAt: null };
-}
+const readLocal = readLocalBook;
+const LOCAL_KEY = LOCAL_BOOK_KEY;
 
 const client = () => {
   const env = getSupabaseEnv();

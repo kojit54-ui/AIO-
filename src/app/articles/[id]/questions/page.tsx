@@ -14,12 +14,13 @@ import { needsFollowUp } from "@/mock/sampleGenerator";
 import type { AioPoint, Answer } from "@/types/domain";
 import { GuideName } from "@/components/useGuide";
 import { VoiceInput } from "@/components/VoiceInput";
+import { WinHelper } from "@/components/WinHelper";
 
 type SaveState = "idle" | "saving" | "saved" | "error";
 
 export default function QuestionsPage() {
   const { id } = useParams<{ id: string }>();
-  const { db, user, api, login } = useStore();
+  const { db, user, api, login, mode } = useStore();
   const router = useRouter();
   const article = db.articles.find((a) => a.id === id);
   const draft = db.draftAnswers[id];
@@ -218,6 +219,9 @@ export default function QuestionsPage() {
               disabled={current.unknown}
               onChange={(e) => setCurrent({ text: e.target.value })}
             />
+            {question.id === "q8" && !current.unknown && (
+              <WinHelper remote={mode === "remote"} orgId={article.organizationId} answer={current.text} onPick={(win) => setCurrent({ text: current.text.trim() ? `${current.text.trimEnd()}\n${win}` : win })} />
+            )}
             <VoiceInput disabled={current.unknown} onText={(said) => setCurrent({ text: current.text ? `${current.text}${/[。、\n]$/.test(current.text) ? "" : "。"}${said}` : said })} />
             <label className={`inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-dashed px-4 py-1.5 text-[0.95rem] transition-colors ${current.unknown ? "border-brand bg-brand-soft text-brand-dark" : "border-line text-muted hover:border-brand"}`}>
               <input type="checkbox" className="h-4 w-4 accent-brand" checked={current.unknown} onChange={(e) => setCurrent({ unknown: e.target.checked })} />
@@ -248,7 +252,7 @@ export default function QuestionsPage() {
           <p className="flex items-center gap-3 rounded-2xl bg-surface/70 px-4 py-3 text-sm">
             <ShioriFace className="h-12 w-12" />
             <span>
-              <b className="block"><GuideName />（コタム）より</b>
+              <b className="block"><GuideName />より</b>
               くわしい体験ほど、AIが紹介しやすく、読んだ人も安心して頼めます。
             </span>
           </p>
