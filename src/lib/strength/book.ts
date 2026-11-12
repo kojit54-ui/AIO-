@@ -179,6 +179,21 @@ export function applyGapAnswer(b: StrengthBook, key: BookGap["key"], answer: str
   }
 }
 
+/** 同じ決め手か（空白と句読点の違いは見ない） */
+const winKey = (s: string) => s.replace(/[\s、。,.・「」]/g, "");
+export const hasWin = (b: StrengthBook, win: string) => !!winKey(win) && b.wins.some((w) => winKey(w) === winKey(win));
+
+/**
+ * 記事の質問で答えた「選ばれた決め手」を帳面に足す（2026-11-12）。同じものは足さない。
+ * いっぱいなら、いちばん古いものと入れ替える（新しい事例の核を残す）
+ */
+export function withWin(b: StrengthBook, win: string): StrengthBook {
+  const t = clip(win, MAX_FIELD);
+  if (!t || hasWin(b, t)) return b;
+  const wins = [...b.wins, t];
+  return { ...b, wins: wins.slice(Math.max(0, wins.length - MAX_WINS)) };
+}
+
 /** AIを使わない下書き（キーが無いときと試作）。ヒアリングの答えを、帳面の欄にそのまま置く */
 export function sampleBookFromHearing(answers: Record<string, string>): StrengthBook {
   const a = (id: string) => (answers[id] ?? "").trim();
