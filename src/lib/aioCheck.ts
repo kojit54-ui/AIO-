@@ -98,7 +98,7 @@ export function sampleAioCheck(input: { body: Block[]; answers: Answer[]; profil
     numbers: /[0-9０-９]/.test(text) ? [true, "数字が入っています"] : [false, "費用や日数などの数字がありません"],
     entity: input.profile ? [true, "会社のことが分かります"] : [false, "どこの会社の話かが分かりません"],
     qa: answered(input.answers, "q2") || answered(input.answers, "q2_followup") ? [true, "お客様の質問に答える形になっています"] : [false, "お客様の質問と答えがありません"],
-    comparison: /比べ|違い|選び|ほかの/.test(text) ? [true, "選ぶときの材料があります"] : [false, "ほかの頼み先と比べた違いがありません"],
+    comparison: answered(input.answers, "q8") || /比べ|違い|選び|ほかの/.test(text) ? [true, "選ぶときの材料があります"] : [false, "ほかの頼み先と比べた違いがありません"],
     expertise: answered(input.answers, "q4") ? [true, "プロならではの注意点があります"] : [false, "注意点やよくある誤解がありません"],
     feeling: answered(input.answers, "q6") || /と言われ|と言って|うれし|喜ん|大切に|気持ち/.test(text) ? [true, "お客様の気持ちや作り手の想いが伝わります"] : [false, "お客様の言葉や、大切にしたことがまだありません"],
     action: answered(input.answers, "q5") || (!!input.profile?.contact && text.includes(input.profile.contact)) ? [true, "問い合わせ先があります"] : [false, "読んだ人が次にすることがありません"],
