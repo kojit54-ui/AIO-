@@ -1,6 +1,6 @@
 # AIO：このサービスが目指すこと
 
-最終更新：2026-11-08（次の見直し：毎週月曜の定期更新。下の「更新の決まり」）
+最終更新：2026-11-15（次の見直し：毎週月曜の定期更新。下の「更新の決まり」）
 
 AIO（AI検索に紹介されるための工夫）は、このサービスを作るときの土台の考え方です。画面、質問、AIへの指示、点検は、すべてここに合わせます。AI検索の仕組みは日々変わるため、このファイルは常に最新に保ちます（田村さん、2026-10-23）。
 
@@ -67,7 +67,7 @@ AIO（AI検索に紹介されるための工夫）は、このサービスを作
 - AIは答えの中で、会社や記事を紹介する。紹介された会社に問い合わせが来る
 - だから、AIに「この地域でこのことなら、この会社」と紹介される記事を、顧客が自分で書き続けられるようにする
 
-## いま分かっている公式の考え方（2026-11-08 時点）
+## いま分かっている公式の考え方（2026-11-15 時点）
 
 公式のページは、この作業環境からは直接開けなかった。下は検索結果と報道からの要約で、正確な文言は未確認。
 
@@ -80,19 +80,23 @@ AIO（AI検索に紹介されるための工夫）は、このサービスを作
 - 2026年10月15日の公式の発表（Google の Keyword ブログ「More ways to connect with the web from Search」）：AIモードとAIによる概要で、文中のリンクをより上に、より多く出す。答えの終わりのリンクに画像を付ける。手続きなどで「公式の場所」になる1〜2サイトを答えの上に出す枠を試験中。ニュースの記事の並び（カルーセル）を国と言語を広げて出す。「優先するソース」の利用は年初から7倍超。流入が増えたかの数字は出していない（公式ページは未読、報道で確認）
 - 2026年10月25日〜11月1日：AIによる概要・AIモードの表示や引用の決まりについて、新しい公式の発表は見つからなかった。報道では、AIモードの広告を10か国に広げる話と、買い物の結果で「広告」と「すべての商品」を分けて見せる試験が出ている（広告と買い物の話で、記事が紹介される条件は変わらない。公式ページは未読）
 - 2026年11月2日〜8日：AIによる概要・AIモードの表示や引用の決まりについて、新しい公式の発表は見つからなかった（Search Central ブログの11月の新しい記事も検索では見つからず、公式ページは未読）。報道では、検索窓から「AIモード」のボタンを消す試験（ごく一部の人だけ、2026年10月30日に見つかった。Google のコメントなし）と、会社名・ブランド名の検索でAIによる概要が画面の右側に出るようになったという話が出ている。どちらも試験や観察の段階で、未確認。AIモードはほかの入口から使える（報道）
+- 2026年11月9日〜15日：2026年11月10日に「2026年11月のコアアップデート」が始まった（Google 検索ステータス ダッシュボードの公式の記録。全世界・全言語、最長2週間。報道で確認、ダッシュボードは未読）。狙いの説明は無く、Search Central ブログの記事も出ていない（報道）。いつもの順位の見直しで、AIによる概要・AIモードの引用の決まりが変わったという公式の発表は見つからなかった。順位が動くあいだは、Search Console の数字を比べるのは終わってからにする（報道が伝える Google の案内）。AIモードの標準のAIを新しいもの（Gemini 4 の一種）に替えたという報道もあるが、報道どうしで食い違い、公式の確認は未確認
 
 **OpenAI（ChatGPT の検索）**
 - ChatGPT の検索に出るには、サイトが OAI-SearchBot（検索用のクローラー）を拒否していないこと。学習用の GPTBot とは別に設定できる。出る位置は保証されない。順位の付け方は公開されていない
 - 2026年10月時点で、引用の仕方を変えたという公式の発表は見つからなかった。調査会社の集計（Ahrefs など、2026年3月と9月の比較）では、Reddit や Wikipedia の引用が減り、一次調査・公的機関・実際に試した記事の引用が増えたとされる。調査会社の数字で、公式の確認は無い（報道・未確認）
 - 2026年11月1日の確認でも、ChatGPT の検索の引用の仕方を変えたという公式の発表は見つからなかった。Muck Rack の2026年10月の調査では、ChatGPT の引用に占める報道記事の割合が1月の28.1%から9月の22%に下がったとされる（調査会社の数字、公式の確認は無い）。2026年10月7日の画面の変更（答えにボタンや表が出る）は、引用の条件の話ではない（報道）
 - 2026年11月2日に、OpenAI の担当者（消費者向け製品の責任者）が「ChatGPT で検索が使われる回数は、Google の検索の約2割（20%）」と話したと報道された（2026年11月4日ごろ各社が報道）。数えたのはウェブ検索が動いた質問だけで、Google 側の数え方は明かされていない。Google からの乗り換えの割合や市場の占有率ではない。調査会社 Ahrefs の2026年2月の推計は約12%（報道。OpenAI の公式ページは未読）。引用の仕方を変えたという公式の発表は、今週も見つからなかった
+- 2026年11月10日の公式の発表（OpenAI「Introducing Businesses in ChatGPT」、試験提供＝ベータ）：会社が ChatGPT の中の自社の情報を「Business Hub」で登録（申請）し、直し、ChatGPT でどれだけ話題に出てサイトに来てもらえたかを見られるようになった。登録は無料と報道されている。確認は会社の代表電話・メール・サイトのドメインなどで行う（報道で方法に食い違いあり）。OpenAI は「登録してもしなくても、ChatGPT はこれまでどおり自分で紹介先を選ぶ」としている。会社の代わりに答える「Business Agent」は米国の通販・オンラインサービスだけ。日本の会社が登録できるかは未確認（公式ページはこの作業環境から開けず、報道で確認）
+- 調査会社 Goodie の集計では、2026年10月31日ごろから ChatGPT の答えのうち引用先が1つも無いものが約1.5%から12.2%に増え、1つの答えの引用数も平均5.44から4.53に減ったとされる。ウェブ検索が動く回数が減ったためと見ているが、原因は分かっていない（調査会社の数字、公式の確認は無い）
 
 **Perplexity・Claude**
-- 2026年10月〜11月8日に、引用の条件が変わったという公式の発表は見つからなかった（未確認）
+- 2026年10月〜11月15日に、引用の条件が変わったという公式の発表は見つからなかった（未確認）
 
 **このサービスへの意味**
 - 小手先の技（専用ファイル、専用の目印、細切れの記事）より、その会社にしかない体験・数字・答えを、読む人に役立つ形で書くことが一番の近道。下の「材料」はこの考え方に沿っている
 - ChatGPT で検索が使われる回数も増えている（OpenAI の担当者の話では、検索の回数が Google の約2割。人数や占有率ではない。報道）。Google だけでなく ChatGPT にも紹介されるよう、OAI-SearchBot を拒否しないことと、お客様がAIに聞く言葉そのままの質問に答える記事が、これまで以上に大事になる。9つの材料は変えない
+- ChatGPT も、Google のビジネスプロフィールのように「会社の情報を会社自身が登録して直す」場所を作り始めた（2026年11月、試験提供）。登録しても紹介が約束されるわけではなく、紹介先はこれまでどおり ChatGPT が選ぶ。会社名・地域・お仕事の中身を、サイトでも記事でも同じ言葉ではっきり書いておく大切さは変わらない。日本で使えると確かめられたら、顧客に案内するかを考える（未確認）
 - Google も ChatGPT も、引用先をはっきり見せる方向に動いている（Google は2026年10月にリンクを上に出すと発表）。「この会社にしかない体験」と「問い合わせできる次の一歩」が、紹介されたあとにクリックと売上につながる
 - 顧客のサイトの設定（robots.txt で Googlebot や OAI-SearchBot を拒否していないか、ページがクロールできるか）は、コタムが最初に確かめる項目にする（チェック項目の画面は未作成）
 
@@ -149,9 +153,14 @@ AIO（AI検索に紹介されるための工夫）は、このサービスを作
 | 2026-11-01 | 「更新の決まり」に、AIOの知識表（src/lib/aioNews.ts）を同じPRで直す手順を追加。中身（AI検索の情報）は変えない | 田村さんの判断（最新情報を顧客に伝え、AIへの指示にも定期的に組み込む） |
 | 2026-11-01 | 週次の確認。Google・ChatGPT・Perplexity・Claude とも、記事が紹介される条件についての公式の変化なし。報道（AIモードの広告と買い物の表示の試験、ChatGPT の引用先の調査）を「公式の確認なし」として追記。8つの材料と知識表の項目は変えない（日付だけそろえる）。公式ページはこの作業環境から開けず、検索結果と報道で確認 | 報道：Search Engine Land、Muck Rack、TechCrunch（下の参考） |
 | 2026-11-08 | 週次の確認。Google・ChatGPT・Perplexity・Claude とも、記事が紹介される条件についての公式の変化なし。報道（OpenAI の担当者の「ChatGPT の検索は Google の約2割」、Google のAIモードのボタンを消す試験、ブランド名の検索でAIによる概要が右側に出る話）を「公式の確認なし」として追記。知識表に ChatGPT の検索の件を1件（報道、AIへの指示なし）足した。9つの材料と質問は変えない。Google の公式ページと Search Engine Roundtable はこの作業環境から開けず、検索結果と報道で確認 | 報道：Search Engine Roundtable、Gizmodo、PCQuest、Siècle Digital（下の参考） |
+| 2026-11-15 | 週次の確認。OpenAI が会社の情報を登録・管理できる「Businesses in ChatGPT／Business Hub」を試験提供で始めた（2026-11-10、公式。日本で使えるかは未確認）ことを追記し、知識表に1件（公式だが試験提供なので、AIへの指示なし）足した。Google の2026年11月のコアアップデート開始（2026-11-10）と、ChatGPT の引用が減ったという調査会社の集計を追記。AIによる概要・AIモード・Perplexity・Claude の引用の決まりは公式の変化なし。9つの材料と質問は変えない。OpenAI・Search Engine Journal・Search Engine Roundtable の公式ページや記事はこの作業環境から開けず、検索結果と報道で確認 | 公式：OpenAI「Introducing Businesses in ChatGPT」、Google 検索ステータス ダッシュボード。報道：Technology.org、Hashout、PPC Land、Search Engine Journal、Goodie（下の参考） |
 
 ## 参考
 
+- Businesses in ChatGPT・Business Hub（公式、2026-11-10）：https://openai.com/index/introducing-businesses-chatgpt/ 。報道：https://www.technology.org/2026/11/11/openai-businesses-in-chatgpt-business-hub-agents-beta/ 、https://hashout.jp/?p=14172 、https://www.digitaltoday.co.kr/jp/view/123966/openai-launches-business-hub-beta-for-managing-company-information-in-chatgpt
+- 2026年11月のコアアップデート（公式の記録：Google 検索ステータス ダッシュボード https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history 。報道、2026-11-10〜11）：https://www.searchenginejournal.com/google-november-2026-core-update/596614 、https://ppc.land/googles-core-update-shifts-rankings-for-up-to-2-weeks-before-black-friday/ 、https://www.seroundtable.com/google-november-2026-core-update-42504.html
+- AIモードの標準のAIの切り替えの報道（2026-11-12、ほかの報道と食い違い、未確認）：https://www.searchenginejournal.com/google-gemini-4-hydrogen-default-ai-mode/597096/
+- ChatGPT の引用が減ったという調査（Goodie、2026-11）：https://higoodie.com/blog/chatgpt-zero-citations-study/
 - ChatGPT の検索は Google の約2割、という OpenAI の担当者の話（報道、2026-11-04ごろ）：https://gizmodo.com/chatgpt-claims-to-have-achieved-20-of-googles-search-volume-2000834464 、https://www.seroundtable.com/chatgpt-20-percent-google-42451.html 、https://siecledigital.fr/2026/11/04/chatgpt-represente-desormais-20-du-volume-de-recherches-de-google-selon-openai/
 - 検索窓からAIモードのボタンを消す試験（報道、2026-11初め）：https://www.seroundtable.com/google-removing-ai-mode-42436.html 、https://www.pcquest.com/news/google-tests-removing-ai-mode-button-search-bar-12782808
 - ブランド名の検索でAIによる概要が右側に出る話（報道のまとめ、2026-11-03・11-06）：https://www.seroundtable.com/recap-11-03-2026-42442.html 、https://www.seroundtable.com/video-11-06-2026-42469.html
