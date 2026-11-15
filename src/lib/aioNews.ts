@@ -29,10 +29,22 @@ export interface AioNewsItem {
 }
 
 /** 知識表を最後に見直した日。docs/AIO.md の「最終更新」と同じ日にする（テストで確かめる） */
-export const AIO_NEWS_UPDATED = "2026-11-08";
+export const AIO_NEWS_UPDATED = "2026-11-15";
 
 /** 新しい順に並べる */
 export const AIO_NEWS: AioNewsItem[] = [
+  {
+    id: "2026-11-10-chatgpt-business-hub",
+    date: "2026-11-10",
+    source: "official",
+    sourceName: "OpenAI 公式の発表（試験提供）",
+    url: "https://openai.com/index/introducing-businesses-chatgpt/",
+    title: "ChatGPTに、会社が自分の情報を登録できる場所ができ始めました",
+    forClient:
+      "OpenAI が、ChatGPT の中の自社の情報を会社自身が登録して直せる「Business Hub」を、試験的に始めました。日本の会社が使えるかはまだ分かりません。登録しても紹介が約束されるわけではなく、紹介先はこれまでどおりAIが選びます。だからこそ、会社名・地域・お仕事の中身を、サイトや記事に同じ言葉ではっきり書いておくことが大切です。",
+    point: "entity",
+    soWeAsk: "会社名・地域・お仕事の中身",
+  },
   {
     id: "2026-11-02-chatgpt-search-volume",
     date: "2026-11-04",
