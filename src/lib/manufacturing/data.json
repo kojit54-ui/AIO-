@@ -234019,5 +234019,7171 @@
    "publisher": "D91 Labs",
    "date": null
   }
+ },
+ {
+  "id": "trend-1596",
+  "kind": "trend",
+  "official": true,
+  "title": "素形材の課題は提案する営業力",
+  "summary": "2025年3月に経済産業省が出した素形材産業ビジョンを紹介した記事。多くの会社が自社の技術や性能を自分から売り込む力を持てておらず、マーケティングが大事だと指摘している。",
+  "industries": [
+   "鋳造",
+   "鍛造",
+   "金型",
+   "熱処理",
+   "プレス"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "うちの技術で何ができるかを一枚で説明",
+  "source": {
+   "title": "「2025年版素形材産業ビジョン」から紐解く 日本の素形材産業の未来",
+   "url": "https://www.sokeizai-navi.com/sokeizai-maker/202505-sokeizai-sangyo-vision",
+   "publisher": "素形材ナビ",
+   "date": "2025-05"
+  }
+ },
+ {
+  "id": "pain-1315",
+  "kind": "pain",
+  "title": "「素形材」は言葉からして伝わらない",
+  "summary": "経済産業省の素形材産業ビジョン策定委員会では、素形材とは何かが分かりにくく認知度も低いことが、人を育て集める難しさの背景だと指摘された。専門用語のまま発信すると届かない。",
+  "industries": [
+   "鋳造",
+   "鍛造",
+   "熱処理",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "鋳造・鍛造を中学生にも分かる言葉で",
+  "source": {
+   "title": "素形材産業ビジョン策定委員会（第1回）",
+   "url": "https://www.meti.go.jp/policy/mono_info_service/mono/sokeizai/sokeizai-vision01.html",
+   "publisher": "経済産業省",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1316",
+  "kind": "pain",
+  "title": "脱炭素に手が回らない理由",
+  "summary": "2026年3月の素形材産業ビジョン紹介の講演資料によると、2024年の企業アンケートで、脱炭素に取り組めない理由は資金・人員・情報の不足が多かった。小さな工場ほど情報の入口が要る。",
+  "industries": [
+   "鋳造",
+   "鍛造",
+   "熱処理",
+   "金型"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "小さな工場の省エネ、まず何から？",
+  "source": {
+   "title": "素形材産業の持続的な発展に向けて ～素形材産業ビジョンの紹介～",
+   "url": "https://pub-files.atlas.jp/public/jstps2026/pdf/20260319haifu_ja_20260316103431888.pdf",
+   "publisher": "日本塑性加工学会 春期講演会 配布資料",
+   "date": "2026-03"
+  }
+ },
+ {
+  "id": "trend-1597",
+  "kind": "trend",
+  "official": true,
+  "title": "熱処理工業会が取引の実態を調査",
+  "summary": "日本金属熱処理工業会は国の求めに応じ、取引の実態を会員に聞く調査を続けている。令和7年度は会員184社を対象に77社が答えた。価格や支払い条件の改善が続く話題になっている。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "金属熱処理業界における自主行動計画フォローアップ調査（令和7年度）",
+   "url": "https://www.chusho.meti.go.jp/keiei/torihiki/koudoukeikaku/follow-up/r7/04.pdf",
+   "publisher": "日本金属熱処理工業会（中小企業庁掲載）",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1598",
+  "kind": "trend",
+  "official": true,
+  "title": "熱処理の取引は改善傾向、手形が残る",
+  "summary": "日本金属熱処理工業会が2024年3月に国の小委員会へ出した資料では、取引は全体に良くなりつつあるが、手形での支払いの改善などがまだ課題とされた。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "金属熱処理業界における自主行動計画フォローアップ調査について（令和6年3月8日）",
+   "url": "https://www.chusho.meti.go.jp/koukai/shingikai/torihikimondai/019/dl2/004.pdf",
+   "publisher": "日本金属熱処理工業会（中小企業庁掲載）",
+   "date": "2024-03"
+  }
+ },
+ {
+  "id": "trend-1599",
+  "kind": "trend",
+  "official": true,
+  "title": "粉末冶金でも取引調査が続く",
+  "summary": "日本粉末冶金工業会も取引の自主行動計画の調査を毎年行っている。令和7年度は正会員33社を対象に14社が回答した。業界ぐるみで価格転嫁を進める流れがある。",
+  "industries": [
+   "機械部品",
+   "自動車部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "日本粉末冶金工業会 自主行動計画フォローアップ調査（令和7年度）",
+   "url": "https://www.chusho.meti.go.jp/keiei/torihiki/koudoukeikaku/follow-up/r7/10.pdf",
+   "publisher": "日本粉末冶金工業会（中小企業庁掲載）",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1600",
+  "kind": "trend",
+  "official": true,
+  "title": "行動計画の見本にエネルギー価格",
+  "summary": "2025年5月の下請法などの改正を受け、経済産業省の業界向け自主行動計画の見本も2025年7月に改められ、原材料や人件費に加えエネルギー価格の変動も考えて十分に話し合うよう求めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "値上げのお願いをどう伝えるか",
+  "source": {
+   "title": "適正取引の推進と生産性・付加価値向上に向けた自主行動計画（2025年7月24日改正）",
+   "url": "https://www.chusho.meti.go.jp/keiei/torihiki/koudoukeikaku/kikai_seaj.pdf",
+   "publisher": "中小企業庁掲載（業界団体の計画）",
+   "date": "2025-07"
+  }
+ },
+ {
+  "id": "trend-1601",
+  "kind": "trend",
+  "official": true,
+  "title": "鋳造協会が健全な取引を呼びかけ",
+  "summary": "日本鋳造協会は2026年1月、会長名で健全な取引と安定供給に向けたお願いを出した。原材料や電気代の上昇を価格に反映することが、業界全体の関心事になっている。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "一般社団法人 日本鋳造協会 2026年1月の記事",
+   "url": "https://foundry.jp/2026/01/",
+   "publisher": "日本鋳造協会",
+   "date": "2026-01"
+  }
+ },
+ {
+  "id": "buyer-1275",
+  "kind": "buyer",
+  "title": "熱処理先を工業会サイトで探す",
+  "summary": "日本金属熱処理工業会のサイトには、処理したい素材にチェックを入れて会員を絞り込める検索がある。発注者は団体の名簿から候補を拾い、そこから各社サイトを見に行く。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "団体名簿から来た人が最初に見るページ",
+  "source": {
+   "title": "日本金属熱処理工業会 会員一覧",
+   "url": "https://www.netsushori.jp/member/",
+   "publisher": "日本金属熱処理工業会",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2477",
+  "kind": "success",
+  "title": "組合サイトのPR枠を使う",
+  "summary": "東部金属熱処理工業組合は入会案内で、賛助会員にPRの場を用意することを利点に挙げている。自社サイトだけでなく、団体サイトの紹介枠も見込み客の入口になる。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "東部金属熱処理工業組合",
+   "url": "https://tobu.or.jp/",
+   "publisher": "東部金属熱処理工業組合",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1276",
+  "kind": "buyer",
+  "title": "鋳物の仕入れ先を材質と工法で探す",
+  "summary": "日本鋳造協会の会員データベースは、地区・都道府県・材質・主な品目・造形方法で絞り込める。買い手は「どの材質を、どの工法で」で探すので、自社サイトにも同じ言葉を書いておきたい。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "対応材質と造形方法の一覧表",
+  "source": {
+   "title": "日本鋳造協会：会員DB",
+   "url": "http://foundry.jp/member/",
+   "publisher": "日本鋳造協会",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1277",
+  "kind": "buyer",
+  "title": "めっき先は県の組合から辿れる",
+  "summary": "全国鍍金工業組合連合会は都道府県ごとの工業組合でできていて、サイトに各地の組合の紹介ページがある。近くのめっき会社を探す発注者は、ここから地元の組合へ進む。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "全国鍍金工業組合連合会 新潟県の組合紹介",
+   "url": "https://zentoren.or.jp/zentoren/kumiai-11nigata.html",
+   "publisher": "全国鍍金工業組合連合会",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1278",
+  "kind": "buyer",
+  "title": "塗装は事務局が依頼先を紹介",
+  "summary": "東京工業塗装協同組合は加入工場の一覧を載せ、仕事を頼みたい人は事務局に問い合わせれば合う会員を紹介してもらえる仕組みにしている。紹介された先のサイトで最終判断される。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "紹介で来た人が確かめたい5つのこと",
+  "source": {
+   "title": "東京工業塗装協同組合",
+   "url": "https://www.coat-tokyo.com/",
+   "publisher": "東京工業塗装協同組合",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1279",
+  "kind": "buyer",
+  "title": "全国の工業塗装工場リスト",
+  "summary": "日本工業塗装協同組合連合会のサイトには、加盟する工場のリストがある。工業塗装の外注先を地域で探す人の入口になるので、掲載内容と自社サイトの説明をそろえておくとよい。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "工場リスト",
+   "url": "https://n-kotoren.jp/list/",
+   "publisher": "日本工業塗装協同組合連合会",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1280",
+  "kind": "buyer",
+  "title": "工業団地サイトから各社へ",
+  "summary": "沼津工業団地協同組合のサイトは、組合企業一覧から各社のホームページへ飛べるつくり。団地のつながりで来た買い手は、まず会社のサイトで得意分野を確かめる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "沼津工業団地協同組合",
+   "url": "https://www.nkd.or.jp/",
+   "publisher": "沼津工業団地協同組合",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2478",
+  "kind": "success",
+  "title": "団地ぐるみの共同受注窓口",
+  "summary": "大阪のある企業団地協同組合は共同受注の仕組みを公開し、展示会・パンフレット・インターネットで紹介を行い、団地内で別業種の会社に仕事を回す「横請け」も説明している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "自社でできない工程は誰に頼む？",
+  "source": {
+   "title": "ナニワ企業団地協同組合 共同受注のしくみ",
+   "url": "http://www.nkdk.org/joint_order/order.index.html",
+   "publisher": "ナニワ企業団地協同組合",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2479",
+  "kind": "success",
+  "title": "設計からアフターまで一括を打ち出す",
+  "summary": "仙台工業団地協同組合は、設計・製造からアフターサービスまでをワンストップで目指すと掲げ、組合企業の一覧を載せている。団地全体で「まとめて頼める」ことを伝えている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "仙台工業団地協同組合ホームページ",
+   "url": "https://www.hakusan.or.jp/",
+   "publisher": "仙台工業団地協同組合",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1281",
+  "kind": "buyer",
+  "title": "団地サイトのWeb問い合わせ",
+  "summary": "四街道工業団地協同組合のサイトには、Webからの問い合わせ窓口と組合企業一覧がある。発注先がまだ決まっていない買い手が、団地単位で相談する入口になっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "四街道工業団地協同組合",
+   "url": "https://yotsukaido-kogyo.com/",
+   "publisher": "四街道工業団地協同組合",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1282",
+  "kind": "buyer",
+  "title": "比較サイトで熱処理先を探す",
+  "summary": "部品調達の比較サイトでは、熱処理を扱う100社以上の製品・サービスが並ぶ。買い手は一覧で候補を絞るので、得意な処理と数量の幅をひと目で分かるよう書くのが大事。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "熱処理 - メーカー・企業125社の業務用製品ランキング",
+   "url": "https://mono.ipros.com/cg1/%E7%86%B1%E5%87%A6%E7%90%86/",
+   "publisher": "イプロス",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2480",
+  "kind": "success",
+  "title": "業界でめっきPR動画を作った",
+  "summary": "全国鍍金工業組合連合会は創立75周年の記念事業として、めっきを紹介するPR動画を作った。会員のめっき会社が自社サイトで紹介しており、団体の素材を各社が広めている。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "めっきって何？を動画と記事で",
+  "source": {
+   "title": "全国鍍金工業組合連合会で「めっきPR動画」を制作しました",
+   "url": "https://sanyoumekki.co.jp/pages/39/detail=1/b_id=7/r_id=84/",
+   "publisher": "会員のめっき会社のお知らせ",
+   "date": "2024-02"
+  }
+ },
+ {
+  "id": "trend-1602",
+  "kind": "trend",
+  "official": false,
+  "title": "めっき青年部が全国大会を開催",
+  "summary": "めっき会社の会員ブログによると、全国鍍金工業組合連合会の青年部会は2025年3月に金沢市で第1回の全国大会を開き、140名強の経営者・後継者らが事例発表や討論を行った。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "同業の集まりで学んだことを記事に",
+  "source": {
+   "title": "全国鍍金工業組合連合会 青年部会 全国大会に参加してきました",
+   "url": "https://www.usugidenkai.co.jp/%E5%85%A8%E5%9B%BD%E9%8D%8D%E9%87%91%E5%B7%A5%E6%A5%AD%E7%B5%84%E5%90%88%E9%80%A3%E5%90%88%E4%BC%9A-%E9%9D%92%E5%B9%B4%E9%83%A8%E4%BC%9A-%E5%85%A8%E5%9B%BD%E5%A4%A7%E4%BC%9A%E3%81%AB%E5%8F%82%E5%8A%A0/",
+   "publisher": "会員のめっき会社のブログ",
+   "date": "2025-03"
+  }
+ },
+ {
+  "id": "success-2481",
+  "kind": "success",
+  "title": "学生向けめっき体験会",
+  "summary": "大阪工業大学は大阪市・大阪府鍍金工業組合と組み、学生が亜鉛とニッケルの電気めっきを実際に体験する会を開いた。業界を知ってもらう入口として、体験の場づくりが使われている。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "工場見学・体験の様子を求職者向けに",
+  "source": {
+   "title": "電気めっき体験会を開催 大阪市・大阪府鍍金工業組合と連携",
+   "url": "https://www.oit.ac.jp/news/news/pressrelease9278.html",
+   "publisher": "大阪工業大学",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2482",
+  "kind": "success",
+  "title": "科学館でめっきを見せる",
+  "summary": "愛知県のめっき組合は名古屋市科学館にめっき装置を寄贈して実演し、今はめっき見本や紹介映像を展示している。若い人向けに紹介映像を学校などへ配ってきた。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "身の回りのめっき製品を写真で紹介",
+  "source": {
+   "title": "全国鍍金工業組合連合会 愛知県の組合紹介",
+   "url": "https://zentoren.or.jp/zentoren/kumiai-13aichi.html",
+   "publisher": "全国鍍金工業組合連合会",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2483",
+  "kind": "success",
+  "title": "若手の会で自主的に学ぶ",
+  "summary": "京都府のめっき組合の青年部は、若手経営者や技術者が勉強会・工場見学・研修旅行を自分たちで企画している。中小企業団体の情報誌が、自主性が広げるやりがいとして紹介した。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "会員個々の自主性で広がる可能性とやりがい｜鍍秀会",
+   "url": "https://tc-kyoto.or.jp/magazine/magazine-19195/",
+   "publisher": "京都府中小企業団体中央会",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1317",
+  "kind": "pain",
+  "title": "技能者が減り社内で教えられない",
+  "summary": "日本歯車工業会の専務理事は業界紙で、技能者が減って自社で教えるのが難しくなっていると危機感を示し、業界の存在感を高める必要があると述べた。",
+  "industries": [
+   "歯車"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "若手に歯車づくりをどう教えている？",
+  "source": {
+   "title": "日本歯車工業会 専務理事 宇都木 崇 氏｜オピニオン",
+   "url": "https://monoque.jp/opinion/post-393/",
+   "publisher": "日本物流新聞",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1603",
+  "kind": "trend",
+  "official": false,
+  "title": "歯車の基礎から学べる講座",
+  "summary": "日本歯車工業会は、歯車技術を基礎から応用まで順に学べる「JGMAギヤカレッジ」などで人材育成に力を入れていると、専務理事が業界紙で紹介した。",
+  "industries": [
+   "歯車"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "日本歯車工業会 専務理事 宇都木 崇 氏｜オピニオン",
+   "url": "https://monoque.jp/opinion/post-332/",
+   "publisher": "日本物流新聞",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2484",
+  "kind": "success",
+  "title": "会報の会員紹介で得意を一言に",
+  "summary": "日本歯車工業会の会報（2017年夏号）の新入会員紹介では、ある会社を「小〜中型・小ロット中心の歯車の設計・製作」と一言で紹介している。得意な大きさと数量を短く言えると覚えてもらいやすい。",
+  "industries": [
+   "歯車"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "うちの得意を一行で言うと",
+  "source": {
+   "title": "JGMA News vol.49",
+   "url": "https://www.jgma.org/wp-content/uploads/2017/08/jgmanews_49.pdf",
+   "publisher": "日本歯車工業会",
+   "date": "2017-08"
+  }
+ },
+ {
+  "id": "success-2485",
+  "kind": "success",
+  "title": "地域の工業展示会で自社をPR",
+  "summary": "長野県岡谷市の諏訪圏工業メッセは25回目を迎え、地元の会社が自社製品や技術力を見せて商談につなげる場になっていると長野日報が伝えた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "展示会で多かった質問をブログに",
+  "source": {
+   "title": "諏訪圏工業メッセ開幕 自社製品や技術力PR 長野県岡谷市（長野日報）",
+   "url": "https://news.yahoo.co.jp/articles/0b48b2c67207485275d23c32be2948338e9fe4cf",
+   "publisher": "長野日報（Yahoo!ニュース）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2486",
+  "kind": "success",
+  "title": "研究会で提案営業を続ける",
+  "summary": "長野地域の提案営業研究会は、会員企業の紹介ページに各社の提案技術を載せ、2013年から諏訪圏工業メッセへの出展を続けている。複数社で「提案できること」をそろえて見せている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "こんな改善を提案できます、の事例集",
+  "source": {
+   "title": "長野地域提案営業研究会",
+   "url": "http://www.teian-eigyo.nagano-koushin.jp/",
+   "publisher": "長野地域提案営業研究会",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2487",
+  "kind": "success",
+  "title": "県単位で出展企業の冊子を作る",
+  "summary": "新潟県の産業支援機関は、機械要素技術展に出る県内企業を一冊のガイドブックにまとめている。各社が短い言葉で得意技術を打ち出しており、紹介文の書き方の参考になる。",
+  "industries": [
+   "機械部品",
+   "切削加工",
+   "精密機器"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "にいがたの出展企業ガイドブック 機械要素技術展 第31回",
+   "url": "https://www.nico.or.jp/wp-content/uploads/2026/06/nico_R8mtech_guidebook.pdf",
+   "publisher": "にいがた産業創造機構",
+   "date": "2026-06"
+  }
+ },
+ {
+  "id": "success-2488",
+  "kind": "success",
+  "title": "出展一覧に「提案目的」を書く",
+  "summary": "長野県企業が刈谷市で開く新技術・新工法展示会の出展一覧は、会社ごとに適用分野と提案目的を書く形式。買い手の自動車関連企業が、誰に何を頼めるか一目で分かる。",
+  "industries": [
+   "自動車部品",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "適用分野と得意な提案を表にする",
+  "source": {
+   "title": "長野県新技術・新工法展示会in刈谷市産業振興センター 出展企業一覧",
+   "url": "https://www.nice-o.or.jp/wp-content/uploads/2025/07/%E9%95%B7%E9%87%8E%E7%9C%8C%E6%96%B0%E6%8A%80%E8%A1%93%E3%83%BB%E6%96%B0%E5%B7%A5%E6%B3%95%E5%B1%95%E7%A4%BA%E4%BC%9Ain%E5%88%88%E8%B0%B7%E5%B8%82%E7%94%A3%E6%A5%AD%E6%8C%AF%E8%88%88%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%EF%BC%889%E6%9C%884%E6%97%A5%EF%BC%89%E5%87%BA%E5%B1%95%E4%BC%81%E6%A5%AD%E4%B8%80%E8%A6%A7%EF%BC%880815%EF%BC%89.pdf",
+   "publisher": "長野県産業振興機構",
+   "date": "2025-07"
+  }
+ },
+ {
+  "id": "trend-1604",
+  "kind": "trend",
+  "official": false,
+  "title": "中央会が組合の発信を手伝う",
+  "summary": "愛知県中小企業団体中央会は「あいWEB」で業界組合と組合員企業の情報発信を支えるほか、月刊の機関誌を配り、組合青年部の結成や運営の相談にも乗っている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "中央会の概要",
+   "url": "https://www.aiweb.or.jp/chuoukai/",
+   "publisher": "愛知県中小企業団体中央会",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1605",
+  "kind": "trend",
+  "official": false,
+  "title": "業界団体の声で景気をつかむ",
+  "summary": "東京都中小企業団体中央会は主な業界団体の役職員150名（製造業58名）に情報連絡員を頼み、毎月景気の動きを報告してもらっている。月刊の情報誌の主な記事はサイトでも読める。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "東京中央会概要",
+   "url": "https://www.tokyochuokai.or.jp/gaiyou.html",
+   "publisher": "東京都中小企業団体中央会",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1606",
+  "kind": "trend",
+  "official": false,
+  "title": "中央会の指導員が組合を訪問",
+  "summary": "全国中小企業団体中央会の2016年の資料では、指導員や職員が組合などを訪ね、業界の課題の相談に乗ることを支援の特徴としている。組合経由で専門家につながる道がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "全国中小企業団体中央会 ～組織概要・支援の特徴～",
+   "url": "https://www.chusho.meti.go.jp/koukai/shingikai/shienbunkakai/2016/161208haifu4C.pdf",
+   "publisher": "全国中小企業団体中央会（中小企業庁掲載）",
+   "date": "2016-12"
+  }
+ },
+ {
+  "id": "trend-1607",
+  "kind": "trend",
+  "official": true,
+  "title": "粉末冶金の国際会議が横浜で",
+  "summary": "日本粉末冶金工業会の主催で2024年に国際会議WORLD PM2024がパシフィコ横浜で開かれ、会員企業がスポンサーや展示会出展で技術を発信した。",
+  "industries": [
+   "機械部品",
+   "自動車部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "WORLD PM2024 トップページ",
+   "url": "https://confit.atlas.jp/guide/event/worldpm2024/top",
+   "publisher": "WORLD PM2024",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "success-2489",
+  "kind": "success",
+  "title": "工業会の賞を製品紹介に使う",
+  "summary": "日本粉末冶金工業会は毎年、優れた焼結部品に工業会賞を贈り、受賞製品が専門誌で紹介される。賞は第三者の評価として、自社サイトで技術を伝える材料になる。",
+  "industries": [
+   "機械部品",
+   "自動車部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "受賞・認定を記事でどう紹介する？",
+  "source": {
+   "title": "焼結部品 ニーズに応える高機能化・高付加価値化製品 : 第40回 日本粉末冶金工業会賞受賞製品の紹介",
+   "url": "https://ndlsearch.ndl.go.jp/en/books/R000000004-I029658532",
+   "publisher": "国立国会図書館サーチ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1935",
+  "kind": "question",
+  "title": "焼結部品は何個から得になる？",
+  "summary": "住友電工の技術論文では、焼結部品は数千〜数万個をまとめて作る自動車部品の分野で広がったとされる。金型費がかかるので、少ない数では削り出しが有利になりやすい。答えでは見積もり比較を勧める。",
+  "industries": [
+   "機械部品",
+   "自動車部品",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "削り出しと焼結、数量での選び方",
+  "source": {
+   "title": "SEIテクニカルレビュー 焼結部品の論文",
+   "url": "https://sei.co.jp/technology/tr/bn188/pdf/sei10879.pdf",
+   "publisher": "住友電気工業",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1470",
+  "kind": "term",
+  "title": "ニアネット形状とは",
+  "summary": "完成品に近い形を一度で作ること。焼結では金型で粉を押し固めて焼くので、削る量が減り、切削品より安く作れることがある。精度が要る面は後から削ることもある。",
+  "industries": [
+   "機械部品",
+   "鋳造",
+   "鍛造"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "SEIテクニカルレビュー 粉末冶金の論文",
+   "url": "https://sei.co.jp/technology/tr/bn191/pdf/191-10.pdf",
+   "publisher": "住友電気工業",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1936",
+  "kind": "question",
+  "title": "焼結で作れない形はある？",
+  "summary": "焼結部品は平面方向の形の自由度は高いが、押す方向（高さ方向）は金型から抜けるかどうかで形が限られる。精度確保に削りや研削を足すことも多い。",
+  "industries": [
+   "機械部品"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "焼結に向く形・向かない形",
+  "source": {
+   "title": "戦略的基盤技術高度化支援事業 研究開発プロジェクト",
+   "url": "https://www.chusho.meti.go.jp/sapoin/index.php/cooperation/project/detail/2322",
+   "publisher": "中小企業庁",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2490",
+  "kind": "success",
+  "title": "鋳物部品の会社がフライパンをネット販売",
+  "summary": "日本ネット経済新聞によると、産業用の鋳物部品を作る会社が初の消費者向け事業として鋳物フライパンを通販で始め、広告を使わずSNSで知ってもらい、EC開設から約5年で累計7万枚超を売った。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "部品屋が自社商品をつくった理由",
+  "source": {
+   "title": "初のBtoC事業として鋳物のフライパンをネット販売 広告なしでも成長中",
+   "url": "https://netkeizai.com/articles/detail/10520",
+   "publisher": "日本ネット経済新聞",
+   "date": "2024-01"
+  }
+ },
+ {
+  "id": "success-2491",
+  "kind": "success",
+  "title": "工場見学と試食の場をつくる",
+  "summary": "日本ネット経済新聞の連載によると、鋳物フライパンを売る会社は2023年に工場見学や試食ができる体験施設を開き、サブスクも始めた。作る現場を見せることがファンづくりにつながっている。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "工場見学で伝えたいこと",
+  "source": {
+   "title": "【老舗の挑戦】初のtoC事業、広告なしで成長中（2024年1月11日号）",
+   "url": "https://www.bci.co.jp/netkeizai/serial/4750",
+   "publisher": "日本ネット経済新聞",
+   "date": "2024-01"
+  }
+ },
+ {
+  "id": "pain-1318",
+  "kind": "pain",
+  "title": "自社商品が売れず在庫の山",
+  "summary": "マンホールの蓋などを作る下請けの鋳物工場が自社商品に挑んだ話。アウトドア向けの鋳物は当初、年間売上が約30万円にとどまり在庫を抱えたとプレジデントオンラインが伝えた。良い物でも見つけてもらう工夫が要る。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "自社商品の失敗から学んだこと",
+  "source": {
+   "title": "広告費ゼロのフライパンで1億円…マンホールの蓋を作る「下請け町工場」を蘇らせた38歳職人が毎日続けた日課",
+   "url": "https://topics.smt.docomo.ne.jp/article/president/bizskills/president_109513",
+   "publisher": "プレジデントオンライン（dメニューニュース）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2492",
+  "kind": "success",
+  "title": "自分用に作った物が商品の種に",
+  "summary": "下請けの仕事が落ち込んだ鋳物工場では、職人が自分用に作ったフライパン型のプレートが自社商品の始まりになったとプレジデントオンラインが伝えた。現場の小さな工夫が発信のネタになる。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "職人が自分のために作った道具の話",
+  "source": {
+   "title": "広告費ゼロのフライパンで1億円…（Infoseekニュース）",
+   "url": "https://news.infoseek.co.jp/article/president_109513/",
+   "publisher": "プレジデントオンライン（Infoseekニュース）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2493",
+  "kind": "success",
+  "title": "値下げ競争から抜けて個人へ直販",
+  "summary": "値下げ競争に違和感を持った金属加工の町工場が、Webで個人向けの鉄フライパンを始めた。サイズや持ち手を選んで1個ずつ作るので値崩れしにくく、SNSで話題になったと取材記事が伝えた。",
+  "industries": [
+   "金属加工",
+   "板金"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "選べる注文で値崩れを防ぐ",
+  "source": {
+   "title": "ブランディングとはものづくり 町工場の規模のまま世界と戦いたい",
+   "url": "https://makingthingsnews.com/notes/fujita-kinzoku",
+   "publisher": "Making Things News",
+   "date": "2022-06"
+  }
+ },
+ {
+  "id": "success-2494",
+  "kind": "success",
+  "title": "独自の鋳造技術で産地を発信",
+  "summary": "燕三条の工場を訪ねる連載で、「世界最薄」をうたう独自の鋳造技術を持つ会社が、その技術を軸に産地の魅力を発信している様子が紹介された。一つの尖った技術が話題の入口になる。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "うちだけの技術を一つ選んで深掘り",
+  "source": {
+   "title": "【こうばを訪ねて vol.10】「世界最薄」を実現した唯一無二の鋳造技術で、「燕三条」を発信",
+   "url": "https://kajidonya.com/column/17601/",
+   "publisher": "かじどんや",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2495",
+  "kind": "success",
+  "title": "国の認定で自社商品を育てる",
+  "summary": "鋳物の特徴を生かし、肉がおいしく焼けるフライパンを作り売る事業が、地域産業資源を使う国の認定事業として載っている。認定は計画づくりと販路開拓の後押しになる。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "source": {
+   "title": "鋳物の特徴を活かしたお肉がおいしく焼けるフライパンシリーズの製造・販売事業",
+   "url": "https://j-net21.smrj.go.jp/solution/development/pdf/chiiki_shigen/chubu/pdf/4-01-009.pdf",
+   "publisher": "中小企業基盤整備機構 J-Net21",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2496",
+  "kind": "success",
+  "title": "書き続けて検索から問い合わせ",
+  "summary": "佐賀の制作会社の支援例では、町工場が記事を書き続けた結果、検索からの訪問と問い合わせが増えた。ただし最初の数か月はほとんど反応がなかったという（制作会社の発表）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "続けて3か月、変わったこと",
+  "source": {
+   "title": "町工場のホームページ集客実例",
+   "url": "https://r-labs.jp/%E7%94%BA%E5%B7%A5%E5%A0%B4%E3%81%AE%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E9%9B%86%E5%AE%A2%E5%AE%9F%E4%BE%8B/",
+   "publisher": "アルラボ（制作会社）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2497",
+  "kind": "success",
+  "title": "親しみやすさで問い合わせが毎月に",
+  "summary": "制作会社の事例紹介によると、町工場らしい親しみやすさを前に出すサイトに変えたばね会社では、それまで無かった問い合わせが毎月安定して来るようになった。",
+  "industries": [
+   "ばね・線材"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "社員の顔が見えるページづくり",
+  "source": {
+   "title": "親しみやすさは町工場の強み（製造業HP成功事例）",
+   "url": "https://keikakuhiroba-mfi.com/archives/6239",
+   "publisher": "計画広場（制作会社）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2498",
+  "kind": "success",
+  "title": "試作サービスをWebで直接受付",
+  "summary": "家具を作る町工場が、試作品づくりのサービスをWebで直接受け付ける形を整え、地域の外にも仕事を広げようとしている様子を自社サイトで紹介している。",
+  "industries": [
+   "木工"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "試作の頼み方を3ステップで",
+  "source": {
+   "title": "社会に広がり、地域に貢献し、新しい挑戦を続ける ― ユニークな町工場",
+   "url": "https://www.meikokk.com/post/%E7%A4%BE%E4%BC%9A%E3%81%AB%E5%BA%83%E3%81%8C%E3%82%8A%E3%80%81%E5%9C%B0%E5%9F%9F%E3%81%AB%E8%B2%A2%E7%8C%AE%E3%81%97%E3%80%81%E6%96%B0%E3%81%97%E3%81%84%E6%8C%91%E6%88%A6%E3%82%92%E7%B6%9A%E3%81%91%E3%82%8B-%E2%80%95-%E3%83%A6%E3%83%8B%E3%83%BC%E3%82%AF%E3%81%AA%E7%94%BA%E5%B7%A5%E5%A0%B4%E3%83%A1%E3%83%BC%E3%82%B3%E3%83%BC%E5%B7%A5%E6%A5%AD",
+   "publisher": "町工場の自社サイト",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2499",
+  "kind": "success",
+  "title": "特注ばねを1本からWeb注文",
+  "summary": "ばね専門商社の通販では、カタログに無いばねを1本から作り、21個以上は見積もり、単純な形で10個以内なら最短3日で出荷すると示している。条件をはっきり書くと注文しやすい。",
+  "industries": [
+   "ばね・線材"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "何本から・何日で、を表にする",
+  "source": {
+   "title": "Webで特注ばね 圧縮",
+   "url": "https://www.spring-net.com/order_ss/com/",
+   "publisher": "SPRING-NET（ばね専門商社の通販）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1319",
+  "kind": "pain",
+  "title": "塗装会社は営業専任がいない",
+  "summary": "制作会社の記事によると、中小の塗装会社では営業の専任がおらず、現場に出ながら社長が営業もこなすことが多い。手が空かない分、Webが代わりに説明する役になる。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "現場の合間に書ける記事のネタ",
+  "source": {
+   "title": "塗装業のホームページ集客を成功させる完全ガイド",
+   "url": "https://convy.co.jp/painting-website/",
+   "publisher": "CONVY（制作会社）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1937",
+  "kind": "question",
+  "title": "試作は数量に関係なく頼める？",
+  "summary": "熱処理会社の中には、共同開発や試作なら量の多い少ないにかかわらず小ロットから相談を受けると明記するところがある。答えでは数量の下限と試作の流れを書くと安心される。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "試作1回分の熱処理の頼み方",
+  "source": {
+   "title": "熱処理のことなら「日本テクノ」",
+   "url": "https://nihon-techno.co.jp/",
+   "publisher": "熱処理会社の公式サイト",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1938",
+  "kind": "question",
+  "title": "硬さは「○以上」で足りる？",
+  "summary": "硬さは「30以上」のように書くだけでは足りず、どの尺度で何から何までかを示し、測る場所や合否の基準も決めておくとよい。使う場所や荷重、寿命の要求も伝えると判断しやすい。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "硬さ指定の書き方の例",
+  "source": {
+   "title": "熱処理外注で焼戻し条件を伝える5つの要点",
+   "url": "https://lefixea.jp/mfg/articles/heat-treatment-outsourcing56",
+   "publisher": "LEFIXEA",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1939",
+  "kind": "question",
+  "title": "複雑な形の熱処理で注意は？",
+  "summary": "硬さだけを上げると割れやすくなる。歪みは炉の中での積み方や姿勢でも変わるので、歪みやすい部品だと先に伝えて置き方を相談するとよい。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "割れ・歪みを防ぐ相談の仕方",
+  "source": {
+   "title": "熱処理外注で複雑形状の部品を依頼する7つの注意点",
+   "url": "https://lefixea.jp/mfg/articles/heat-treatment-outsourcing18",
+   "publisher": "LEFIXEA",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1940",
+  "kind": "question",
+  "title": "精密な寸法は熱処理の前？後？",
+  "summary": "硬さが要る部品の細かい寸法は、硬くした後の状態で満たす前提で考える。柔らかいうちに寸法を合わせても、熱処理で歪めば意味がない。研削で仕上げる工程を見込む。",
+  "industries": [
+   "熱処理",
+   "研削",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "熱処理後の仕上げ代の考え方",
+  "source": {
+   "title": "熱処理後の後工程｜歪み・酸化スケール・硬化後仕上げと取り代の考え方",
+   "url": "https://kouteinavi.com/articles/post-heat-treatment-processing/",
+   "publisher": "工程ナビ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1283",
+  "kind": "buyer",
+  "title": "熱処理先は条件を選べる力で",
+  "summary": "材料の解説サイトでは、熱処理を外に出すときは設計の要求を正しく伝えるとともに、それに合う処理条件を選べる力のある会社を選ぶべきだとしている。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "条件提案の実例を載せる",
+  "source": {
+   "title": "熱処理の重要性",
+   "url": "https://www.matguide.com/tech/jitsumu-chishiki/netsushori.html",
+   "publisher": "マテリアルガイド",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1941",
+  "kind": "question",
+  "title": "硬さの測り方は決めておく？",
+  "summary": "特別な仕様や不安があるときは、硬さの検査方法などを事前に熱処理会社と話し合っておくと安心だと加工の相談窓口は勧める。完成品で測れるか、試験片や証明書の扱いも確認したい。",
+  "industries": [
+   "熱処理"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "articleIdea": "検査成績書で分かること",
+  "source": {
+   "title": "金属の熱処理とは？その種類・依頼するときのポイント、事例を紹介!",
+   "url": "https://digital-parts-factory.com/2022/03/14/%E9%87%91%E5%B1%9E%E3%81%AE%E7%86%B1%E5%87%A6%E7%90%86%E3%81%A8%E3%81%AF%EF%BC%9F%E3%81%9D%E3%81%AE%E7%A8%AE%E9%A1%9E%E3%83%BB%E4%BE%9D%E9%A0%BC%E3%81%99%E3%82%8B%E3%81%A8%E3%81%8D%E3%81%AE%E3%83%9D/",
+   "publisher": "加工の相談窓口",
+   "date": "2022-03"
+  }
+ },
+ {
+  "id": "question-1942",
+  "kind": "question",
+  "title": "材質選びの段階で相談すべき？",
+  "summary": "材質を決める段階で熱処理側に相談し、「この材質ならこの条件でこのくらい」と共通の理解を持つと、後から条件を何度も変える手間が減る。",
+  "industries": [
+   "熱処理",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "図面を描く前に相談してほしい理由",
+  "source": {
+   "title": "切削加工を外注する際の材質選定で失敗しない5つの確認方法",
+   "url": "https://lefixea.jp/mfg/articles/machining-outsourcing35",
+   "publisher": "LEFIXEA",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1471",
+  "kind": "term",
+  "title": "ばね定数と自由長",
+  "summary": "ばね定数はばねを一定の長さ縮めるのに要る力の大きさ、自由長は何も載せていないときの長さ。ミスミの規格品カタログでは、ばね定数の公差は±10%が標準とされている。",
+  "industries": [
+   "ばね・線材"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ミスミ FA用メカニカル標準部品 コイルばね",
+   "url": "https://chk0-jp.misumi-ec.com/pdf/fa/2018/p2_393_202108.pdf",
+   "publisher": "ミスミ",
+   "date": "2021-08"
+  }
+ },
+ {
+  "id": "question-1943",
+  "kind": "question",
+  "title": "図面なしで特注ばねを頼むには？",
+  "summary": "カタログの規格表には線径・外径・自由長・ばね定数・最大荷重などが並ぶ。図面がなくても、これに取り付け長さや縮む量、材質、端の形、巻く向きを添えると話が早い。",
+  "industries": [
+   "ばね・線材"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "図面がなくても伝わるばねの頼み方",
+  "source": {
+   "title": "ミスミ コイルばねカタログ",
+   "url": "https://in.c.misumi-ec.com/book/SAM1_02/pdf/0087.pdf",
+   "publisher": "ミスミ",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1472",
+  "kind": "term",
+  "title": "密着長は目安の数字",
+  "summary": "密着長はばねを最後まで縮めたときの長さ。ミスミのカタログでは参考値で、ロットによって多少ばらつくとされる。密着まで縮める使い方では余裕を見ておく。",
+  "industries": [
+   "ばね・線材"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ミスミ FA用メカニカル標準部品 ばね",
+   "url": "https://jp.misumi-ec.com/pdf/fa/2018/p2_405.pdf",
+   "publisher": "ミスミ",
+   "date": "2018"
+  }
+ },
+ {
+  "id": "question-1944",
+  "kind": "question",
+  "title": "鋼のめっきで割れが心配",
+  "summary": "鋼はめっき前の酸洗いで水素を吸いやすく、もろくなる（水素脆性）おそれがある。日本建設業連合会の資料は、特殊な鋼材なら事前にめっき会社と相談するよう勧めている。",
+  "industries": [
+   "表面処理",
+   "建材・金物"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "水素脆性とめっき前の相談",
+  "source": {
+   "title": "鉄骨工事Q&A A-7-8",
+   "url": "https://www.nikkenren.com/kenchiku/sekou/steel_frame_Q%26A/A-7-8.pdf",
+   "publisher": "日本建設業連合会",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1473",
+  "kind": "term",
+  "title": "歯車図面の基本の数字",
+  "summary": "歯車の図面には、歯の大きさを表すモジュール、歯の傾きの圧力角、歯数、精度等級などを表にして書く。島根大学の機械設計資料の図面例でもこの並びで示されている。",
+  "industries": [
+   "歯車"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "歯車の見積もりに要る項目",
+  "source": {
+   "title": "機械設計 参考資料（歯車の図面例）",
+   "url": "https://www.ecs.shimane-u.ac.jp/~shutingli/MDHW4Reference1.pdf",
+   "publisher": "島根大学",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1945",
+  "kind": "question",
+  "title": "歯車の精度等級、数字の見方は？",
+  "summary": "歯車の精度等級は旧JISと新JISで数字が違う。ミスミのカタログでは旧JIS B 1702の4級が新JIS B 1702-1の8級相当と対応づけている。どちらの規格か必ず書く。",
+  "industries": [
+   "歯車"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "旧JISと新JISの等級早見表",
+  "source": {
+   "title": "ミスミ FA用メカニカル標準部品 歯車",
+   "url": "https://jp.misumi-ec.com/pdf/fa/2018/p1_1603.pdf",
+   "publisher": "ミスミ",
+   "date": "2018"
+  }
+ },
+ {
+  "id": "question-1946",
+  "kind": "question",
+  "title": "公差を書かない寸法はどうなる？",
+  "summary": "カタログ品の歯車では、歯以外で指示のない寸法の公差表を別に決めている。特注のときも、図面に公差を書かない寸法をどう扱うか先に確かめておくと行き違いが減る。",
+  "industries": [
+   "歯車",
+   "機械部品"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "ミスミ FA用メカニカル標準部品 歯車（2015）",
+   "url": "https://jp.misumi-ec.com/pdf/fa/2015/p1_1541.pdf",
+   "publisher": "ミスミ",
+   "date": "2015"
+  }
+ },
+ {
+  "id": "term-1474",
+  "kind": "term",
+  "title": "技能士は合格者だけの呼び名",
+  "summary": "技能士は名称独占で、技能検定に合格した人しか名乗れない。会社紹介で書くときは「1級機械加工技能士」のように職種と等級までそろえると、発注者にも求職者にも伝わる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "うちの技能士の職種と等級を全部紹介します",
+  "source": {
+   "title": "技能検定制度の概要",
+   "url": "https://www.mhlw.go.jp/content/001068406.pdf",
+   "publisher": "厚生労働省",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1947",
+  "kind": "question",
+  "title": "技能士を名乗る根拠は法律？",
+  "summary": "職業能力開発促進法で、技能士でない人が技能士の名称を使うことは禁じられ、罰金の定めもあると静岡県が案内している。答えでは「合格証書がある人だけ」と書けば十分。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "技能士の名称について",
+   "url": "https://www.pref.shizuoka.jp/sangyoshigoto/shuroshien/nouryokukaihatsu/1003256/1026697.html",
+   "publisher": "静岡県",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1475",
+  "kind": "term",
+  "title": "合格証書の名義は等級で違う",
+  "summary": "特級・1級・単一等級は厚生労働大臣名、2級・3級は都道府県知事名か指定試験機関名の合格証書になる。厚労省のサイトでは対象は133職種（2026年3月時点）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "技能検定制度について",
+   "url": "https://waza.mhlw.go.jp/kenteiseido/index.html",
+   "publisher": "厚生労働省 技のとびら",
+   "date": "2026-03"
+  }
+ },
+ {
+  "id": "term-1476",
+  "kind": "term",
+  "title": "特級・1級・2級・3級の目安",
+  "summary": "厚労省の受検資格では、特級は1級合格後に実務5年以上、1級は実務7年以上、2級は2年以上、3級は実務経験があれば受けられる。学歴や訓練歴で年数は短くなる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "1級技能士は経験何年分の腕か",
+  "source": {
+   "title": "受検資格（都道府県知事の実施する職種）",
+   "url": "https://www.mhlw.go.jp/general/seido/syokunou/ginou/aramashi/menjyo.html",
+   "publisher": "厚生労働省",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1608",
+  "kind": "trend",
+  "official": true,
+  "title": "技能検定の受検者は1割減",
+  "summary": "厚労省の発表では令和6年度の技能検定の受検申請者は72万130人で前年度比11.1％減、合格者は32万5,560人、合格率は45.2％だった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "令和6年度「技能検定」実施状況",
+   "url": "https://waza.mhlw.go.jp/info/2025/0801-post-128.html",
+   "publisher": "厚生労働省 技のとびら",
+   "date": "2025-08"
+  }
+ },
+ {
+  "id": "term-1477",
+  "kind": "term",
+  "title": "2級技能士は「中級」",
+  "summary": "厚労省の令和6年度実施状況では、受検が最も多い等級は2級（中級相当）で27万2,141人。若手社員の目標として2級を掲げる会社が多い理由の説明に使える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "入社3年で2級技能士を目指す育て方",
+  "source": {
+   "title": "令和6年度 技能検定実施状況",
+   "url": "https://waza.mhlw.go.jp/shikennittei-naiyou/r6_ginoukentei_jyoukyou.pdf",
+   "publisher": "厚生労働省 技のとびら",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "term-1478",
+  "kind": "term",
+  "title": "社内検定認定制度",
+  "summary": "会社や団体が自分で行う社内検定のうち、基準を満たすものを厚生労働大臣が認定する制度。認定されると「厚生労働省認定」と表示できる。国家資格の技能検定とは別物。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "社内検定認定制度",
+   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/ability_skill/syanai/",
+   "publisher": "厚生労働省",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1609",
+  "kind": "trend",
+  "official": false,
+  "title": "業界団体の検定を外部の人も受検可",
+  "summary": "労働新聞の報道では、厚労省が認定する検定の受検対象を自社の社員以外にも広げる方針が示された。業界団体の検定が、転職者や学生の腕の証明にも使われていく流れ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "認定能力検定の対象者を拡大へ 厚労省方針",
+   "url": "https://www.rodo.co.jp/news/168244/",
+   "publisher": "労働新聞社",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1479",
+  "kind": "term",
+  "title": "技能グランプリ",
+  "summary": "一級技能士などから選ばれた熟練技能者が日本一を競う大会。若手中心の技能五輪とちがい、ベテランの腕の証明になる。出場歴や入賞歴は会社紹介の信頼材料になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "技能振興",
+   "url": "https://www.pref.chiba.lg.jp/sanjin/ginoushinkou/ginoushinkou.html",
+   "publisher": "千葉県",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2500",
+  "kind": "success",
+  "title": "大会出場を続け現場の質に還元",
+  "summary": "新潟県の設備会社は、技能グランプリ初出場から若手を技能五輪へ送り続け、その経験が現場の施工品質に生きていると県が紹介。大会は採用だけでなく品質の話として書ける。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "大会の練習が日々の仕事をどう変えたか",
+  "source": {
+   "title": "ブイブイ新潟 企業紹介",
+   "url": "https://www.pref.niigata.lg.jp/build-niigata/build-niigata-now/chiyoda-s.html",
+   "publisher": "新潟県",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2501",
+  "kind": "success",
+  "title": "先輩の大会姿で普通科生も応募",
+  "summary": "九州の経済誌は、先輩の大会での活躍が若手の意欲を高める循環ができ、インターンや職場見学を通じて普通科高校生の応募・採用も増えた会社を紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "技能大会に挑む先輩を高校生に見せる",
+  "source": {
+   "title": "データ・マックス 企業記事",
+   "url": "https://www.data-max.co.jp/article/49054",
+   "publisher": "データ・マックス",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1320",
+  "kind": "pain",
+  "title": "待遇だけでは大手に勝てない",
+  "summary": "信金中央金庫の研究所は、中小企業は待遇面で不利になりがちだが、達成感・承認・成長といった面の充足が働く意欲に大切だと分析。技能検定や大会はその「成長」を見せる材料になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業の人材確保に関するレポート",
+   "url": "https://www.scbri.jp/reports/.assets/industry_20250731-2.pdf",
+   "publisher": "信金中央金庫 地域・中小企業研究所",
+   "date": "2025-07"
+  }
+ },
+ {
+  "id": "trend-1610",
+  "kind": "trend",
+  "official": false,
+  "title": "技能五輪は日本で知られていない",
+  "summary": "トヨタ自動車の幹部が、日本では技能五輪の知名度が低く、愛知開催は知ってもらう機会になると発言したと日刊工業新聞系メディアが報道。出場歴を書くときは大会の説明も添える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "技能五輪の知名度に関する記事",
+   "url": "https://newswitch.jp/p/43025",
+   "publisher": "ニュースイッチ（日刊工業新聞社）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1611",
+  "kind": "trend",
+  "official": true,
+  "title": "技能五輪の練習費を県が助成",
+  "summary": "栃木県は、県内の中小企業などが行う技能五輪・若年者大会向けの技能向上訓練に、講師謝金や材料費などの一部を1企業・学校あたり25万円を上限に助成する要領を出している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "技能向上訓練費助成 実施要領",
+   "url": "https://www.pref.tochigi.lg.jp/f06/documents/20250408170915.pdf",
+   "publisher": "栃木県",
+   "date": "2025-04"
+  }
+ },
+ {
+  "id": "question-1948",
+  "kind": "question",
+  "title": "大会に出る旅費は出る？",
+  "summary": "静岡県では地域技能振興コーナーが、技能五輪全国大会や若年者ものづくり競技大会の選手と指導員に旅費や工具運搬の援助をしている。県予選もある。地元の窓口を書き添える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "技能競技大会",
+   "url": "https://www.pref.shizuoka.jp/sangyoshigoto/shuroshien/nouryokukaihatsu/1003256/1041806/1026554.html",
+   "publisher": "静岡県",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1480",
+  "kind": "term",
+  "title": "若年者ものづくり競技大会",
+  "summary": "工業高校や職業訓練校などで技能を学ぶ原則20歳以下が出る大会。第20回（2025年8月）は旋盤やフライス盤など15種目。入社前の受賞歴を社員紹介に書くと高校生に響く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "第20回若年者ものづくり競技大会",
+   "url": "https://www.mhlw.go.jp/content/11806001/001512472.pdf",
+   "publisher": "厚生労働省",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "term-1481",
+  "kind": "term",
+  "title": "生産性向上人材育成支援センター",
+  "summary": "ポリテクセンターなどに置かれた中小企業向けの窓口。相談から人材育成プランの提案、訓練の実施まで一貫して行う。社員教育の取り組みとしてブログに書きやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "生産性向上人材育成支援センターのご案内",
+   "url": "https://www.mhlw.go.jp/content/001759365.pdf",
+   "publisher": "厚生労働省",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1949",
+  "kind": "question",
+  "title": "ポリテクで社員研修できる？",
+  "summary": "静岡の案内では、生産性向上人材育成支援センターは2017年4月開設で、日程や会場を企業の希望に合わせて訓練を組める。在職者訓練、指導員派遣、設備の貸出もある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "うちの社員研修はポリテクで受けています",
+  "source": {
+   "title": "生産性向上人材育成支援センター",
+   "url": "https://jsite.mhlw.go.jp/shizuoka-roudoukyoku/var/rev0/0123/1498/201812916218.pdf",
+   "publisher": "静岡労働局",
+   "date": "2018"
+  }
+ },
+ {
+  "id": "success-2502",
+  "kind": "success",
+  "title": "訓練修了生は仕事に慣れるのが早い",
+  "summary": "宮崎労働局は、職業訓練の修了生は基礎の知識や技能を訓練で学んでいるため仕事への順応が早く、資格も訓練中に取っていると採用のメリットを説明している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "職業訓練修了者の採用について",
+   "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/content/contents/001981281.pdf",
+   "publisher": "宮崎労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1950",
+  "kind": "question",
+  "title": "訓練校にはどう求人を出す？",
+  "summary": "滋賀県の訓練校は、求人票を学校へ直接出すか、ハローワークで「テクノカレッジ併用求人」と伝えて出す方法を案内している。求人の出し方は県ごとにちがう。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "事業主の皆様へ（求人）",
+   "url": "https://www.pref.shiga.lg.jp/kougi/zigyounushi/103521.html",
+   "publisher": "滋賀県",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2503",
+  "kind": "success",
+  "title": "求人票に「訓練修了者歓迎」",
+  "summary": "愛知労働局は、求人票に「職業訓練修了者の応募歓迎」と書くとハローワークから訓練の受講者・修了者に情報が届くと案内。ハローワーク経由なら採用手数料はかからない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "職業訓練修了者の採用",
+   "url": "https://jsite.mhlw.go.jp/aichi-roudoukyoku/content/contents/002713155.pdf",
+   "publisher": "愛知労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1482",
+  "kind": "term",
+  "title": "有期実習型訓練",
+  "summary": "会社が有期で雇いながら実習と座学を組み合わせて育てる訓練。商工会議所の資料では、訓練中に適性を見極められ、採用のミスマッチや早期離職を減らせるとされる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "有期実習型訓練のご案内",
+   "url": "https://www.fuji-cci.or.jp/fcci/wordpress/wp-content/uploads/2018/05/48491359cd0229781e67d18f09f910e0.pdf",
+   "publisher": "富士商工会議所",
+   "date": "2018-05"
+  }
+ },
+ {
+  "id": "question-1951",
+  "kind": "question",
+  "title": "訓練修了生はいつから働ける？",
+  "summary": "山梨労働局の案内では、公共の訓練施設の修了生の就業開始は修了日の翌日以降。施設は無料職業紹介をしていて、直接求人を申し込むこともできる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "公共職業能力開発施設への求人",
+   "url": "https://jsite.mhlw.go.jp/yamanashi-roudoukyoku/content/contents/000801161.pdf",
+   "publisher": "山梨労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2504",
+  "kind": "success",
+  "title": "修了生の声で仕事の中身を伝える",
+  "summary": "香川のポリテクセンターは、機械・CADの訓練を修了して関連の仕事に就いた人の声を公開。年の離れた人と協力して学んだ話など、未経験者の不安に答える書き方の参考になる。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "未経験で入った社員の訓練から今まで",
+  "source": {
+   "title": "修了者の声（機械・CADオペレーション科）",
+   "url": "https://jsite.mhlw.go.jp/kagawa-roudoukyoku/content/contents/002846785.pdf",
+   "publisher": "香川労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1612",
+  "kind": "trend",
+  "official": true,
+  "title": "溶接訓練の就職率は8割超",
+  "summary": "和歌山労働局の訓練案内では、ポリテクセンター和歌山の溶接関連の訓練の令和6年度就職率は81.8％。溶接工の採用で訓練校とつながる根拠になる。",
+  "industries": [
+   "溶接",
+   "製缶"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "令和7年度 職業訓練案内",
+   "url": "https://jsite.mhlw.go.jp/wakayama-roudoukyoku/content/contents/kunrenR7_103.pdf",
+   "publisher": "和歌山労働局",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "term-1483",
+  "kind": "term",
+  "title": "事業主推薦制度（ポリテクカレッジ）",
+  "summary": "千葉県中小企業団体中央会の資料では、ポリテクカレッジに事業主の推薦で社員や後継者を送る制度が紹介され、二代目・三代目を育てたい声が挙がっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "後継者がポリテクカレッジで学んだこと",
+  "source": {
+   "title": "ポリテクカレッジのご案内",
+   "url": "https://chuokai-chiba.or.jp/chuokai/wp-content/uploads/2025/02/16387c31966da5894d1508df80e571fa.pdf",
+   "publisher": "千葉県中小企業団体中央会",
+   "date": "2025-02"
+  }
+ },
+ {
+  "id": "success-2505",
+  "kind": "success",
+  "title": "高専との共同研究は実用化前提",
+  "summary": "国立高専機構の資料では、高専と地元中小企業の共同研究は実用化を前提にしたものが多く、企業との特許の共同出願が出願の約7割を占めるという。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "高専の先生と一緒に作った治具の話",
+  "source": {
+   "title": "高専の知的財産",
+   "url": "https://research.kosen-k.go.jp/file/285",
+   "publisher": "国立高等専門学校機構",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2506",
+  "kind": "success",
+  "title": "2つの高専の技術で現場向け器具",
+  "summary": "熊本高専の吸着技術と苫小牧高専の高分子合成技術を組み合わせ、地元企業と土壌の重金属を現場で手早く測る器具を実用化した例を高専機構が紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "高専の産学連携事例",
+   "url": "https://research.kosen-k.go.jp/file/5638",
+   "publisher": "国立高等専門学校機構",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2507",
+  "kind": "success",
+  "title": "高専と組んで研究採択、受注増",
+  "summary": "一関高専が代表機関として国の研究事業に採択され、連携先の粉砕機関連の受注増につながった例を高専機構が紹介。学校との共同開発は受注の話としても書ける。",
+  "industries": [
+   "産業機械",
+   "装置"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "高専の地域連携事例",
+   "url": "https://research.kosen-k.go.jp/file/291",
+   "publisher": "国立高等専門学校機構",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1952",
+  "kind": "question",
+  "title": "高専や大学に技術相談できる？",
+  "summary": "福井県の産学連携の冊子では、県内の大学・高専の相談窓口と、高専と地元企業の連携事例を紹介。分析装置を持つ学校も多く、まず窓口に相談するのが早い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "産学官連携 事例集（令和6年度）",
+   "url": "https://www.pref.fukui.lg.jp/doc/daishi/miraikyoudoupurattohuxo-mufuku/daisi_d/fil/R6.pdf",
+   "publisher": "福井県",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "trend-1613",
+  "kind": "trend",
+  "official": true,
+  "title": "技科大と高専の地域プラットフォーム",
+  "summary": "文部科学省の資料で、技術科学大学と高専が連携し、地域の産学官金のプラットフォームを作る取り組みが示されている。地元高専は中小企業の技術相談の入口になりうる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "技科大・高専連携の取組",
+   "url": "https://www.mext.go.jp/content/1422167_3.pdf",
+   "publisher": "文部科学省",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1321",
+  "kind": "pain",
+  "title": "高専生に会う機会が作れない",
+  "summary": "メディア総研の同じ調査では、採用母集団の形成や高専との接点づくりが課題に挙がった。少人数の会社ほど、先生や学校の窓口との関係づくりから始める必要がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "高専生採用に関する調査",
+   "url": "https://resemom.jp/release/prtimes/20250422/142715.html",
+   "publisher": "メディア総研（リセマム掲載）",
+   "date": "2025-04"
+  }
+ },
+ {
+  "id": "success-2508",
+  "kind": "success",
+  "title": "高専生採用は先生との関係から",
+  "summary": "地方銀行系シンクタンクの採用資料は、高専生の採用には高専の教員との関係づくりが欠かせないと指摘。研究室の先生に会社の技術を知ってもらうことが入口になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業の採用資料",
+   "url": "https://www.sbic.co.jp/wordpress/file/20220518_saiyo2.pdf",
+   "publisher": "sbic.co.jp 掲載資料",
+   "date": "2022-05"
+  }
+ },
+ {
+  "id": "question-1953",
+  "kind": "question",
+  "title": "高専の求人サイトに載せるには",
+  "summary": "熊本高専は企業向けマニュアルを公開し、学校の就職支援サイトに求人やインターンを載せる手順を案内している。高専ごとに仕組みがあるので、まず学校の案内を確認する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "高専就職支援サイト 企業向けマニュアル2025",
+   "url": "https://kumamoto-nct.ac.jp/wp/wp-content/uploads/2025/04/kosen-support-kigyo-manual2025.pdf",
+   "publisher": "熊本高等専門学校",
+   "date": "2025-04"
+  }
+ },
+ {
+  "id": "pain-1322",
+  "kind": "pain",
+  "title": "中小の魅力が学生と親に届かない",
+  "summary": "千葉県の研究会資料は、中小企業の魅力が地元の学生や保護者に十分知られず、学生の志望が大企業や公務員に向きやすいと指摘。動画での発信が有効とされている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業の魅力発信に関する資料",
+   "url": "https://www.pref.chiba.lg.jp/keisei/genkist/kenkyukai/r5/documents/051031miryoku.pdf",
+   "publisher": "千葉県",
+   "date": "2023-10"
+  }
+ },
+ {
+  "id": "trend-1614",
+  "kind": "trend",
+  "official": false,
+  "title": "高専の夏インターンを単位に",
+  "summary": "日刊工業新聞系メディアは、夏のインターンシップを単位として認める高専の例を紹介し、企業と学校の双方に得のある関係づくりが求められていると伝えている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "高専とインターンシップ",
+   "url": "https://newswitch.jp/index.php/p/43404",
+   "publisher": "ニュースイッチ（日刊工業新聞社）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1484",
+  "kind": "term",
+  "title": "デュアルシステム（高校）",
+  "summary": "高校と企業が連携し、学校での学びと企業での長期実習を組み合わせる仕組み。普通のインターンより長く、受け入れ企業は生徒の適性と仕事ぶりをじっくり見られる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "デュアルシステムについて",
+   "url": "https://www.career-portal.pref.mie.lg.jp/photo/20260428-091053.pdf",
+   "publisher": "三重県",
+   "date": "2026-04"
+  }
+ },
+ {
+  "id": "success-2509",
+  "kind": "success",
+  "title": "卒業までに3か月以上企業で実習",
+  "summary": "東京都立葛西工科高校は2018年度にデュアルシステム科を置き、授業として卒業までに3か月以上企業で働く実習を行う。受け入れ企業は長期で生徒と関われる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "高校生の長期実習を受け入れた1年",
+  "source": {
+   "title": "デュアルシステム科の紹介",
+   "url": "https://www.metro.ed.jp/kasaikoka-h/l_pdf/dual_system_2023_02.pdf",
+   "publisher": "東京都立葛西工科高等学校",
+   "date": "2023"
+  }
+ },
+ {
+  "id": "pain-1323",
+  "kind": "pain",
+  "title": "長期実習の受け入れ先が足りない",
+  "summary": "神奈川県は企業での長期実習や地域との協働で実践的な職業教育に取り組むが、受け入れ先の拡大が課題としている。町工場が手を挙げれば学校との関係が深まる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "かながわデュアルシステムについて",
+   "url": "https://www.pref.kanagawa.jp/docs/dc4/senmon/dualsystem.html",
+   "publisher": "神奈川県",
+   "date": "2025-12"
+  }
+ },
+ {
+  "id": "success-2510",
+  "kind": "success",
+  "title": "協同組合ぐるみで工業高校と交流",
+  "summary": "岡山県の工業高校に、協同組合の会員企業など19社35人の社員が来校し、機械科2年生と話し合う交流会を2025年11月に開いた。1社では難しい学校との接点を組合で作れる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "工業高校の交流会で生徒に聞かれたこと",
+  "source": {
+   "title": "工業高校と地域企業の交流会",
+   "url": "https://www.pref.okayama.jp/uploaded/attachment/402925.pdf",
+   "publisher": "岡山県",
+   "date": "2025-11"
+  }
+ },
+ {
+  "id": "trend-1615",
+  "kind": "trend",
+  "official": true,
+  "title": "専門高校と企業を国が仲介",
+  "summary": "文部科学省の事業では、企業が登録すると事務局が専門高校の授業や実習のニーズに合わせて連携を仲介し、出前授業・見学・インターンにつなげる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "専門高校と企業の連携事業",
+   "url": "https://www.mext.go.jp/content/20260929_mxt_koukou02-100002846-001.pdf",
+   "publisher": "文部科学省",
+   "date": "2026-09"
+  }
+ },
+ {
+  "id": "success-2511",
+  "kind": "success",
+  "title": "ベテランと1対1で若手を育てる",
+  "summary": "和歌山の工業系の報告書で、地元の航空機器メーカーが若手1人にベテラン1人を付け、3か月の研修期間で集中的に育てる例が紹介されている。育て方は高校生と先生が知りたい情報。",
+  "industries": [
+   "航空宇宙"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "入社後3か月、先輩が横について教えます",
+  "source": {
+   "title": "地域産業と人材育成の報告書",
+   "url": "https://www.wkb.wakayama-c.ed.jp/genti/2017/houkoku2017.pdf",
+   "publisher": "和歌山県の工業高校",
+   "date": "2017"
+  }
+ },
+ {
+  "id": "question-1954",
+  "kind": "question",
+  "title": "求人票と会社の広告は何が違う？",
+  "summary": "都立工科高校の資料は、学校が扱う求人票は法律の基準を守った内容、ポスター等は企業の広告で求人票ではないと生徒に説明。ブログでは求人票の内容を補う情報を書く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "進路の手引き",
+   "url": "https://www.metro.ed.jp/nakanokoka-h/news/02bbaa73d69914e1020db4de8f37fcbb955b0966.pdf",
+   "publisher": "東京都立中野工科高等学校",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1616",
+  "kind": "trend",
+  "official": false,
+  "title": "求人票に無い魅力を映像で",
+  "summary": "工業高校生向けに、紙の求人票で伝えきれない職場の雰囲気や働く人、やりがいを映像で伝える企業紹介サービスが始まったと発表された。採用の発信は映像化が進む。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "企業紹介サービス「スクールキャリアサーチ」始動",
+   "url": "https://webtan.impress.co.jp/r/prtimes/items/000000015.000054856",
+   "publisher": "Web担当者Forum（PR TIMES掲載）",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1617",
+  "kind": "trend",
+  "official": true,
+  "title": "広島の高卒求人倍率4.33倍",
+  "summary": "広島労働局の集計（2025年7月末時点）では、2026年3月卒の高卒求人倍率は4.33倍、求人数は1万333人で前年同期比3.0％減。地域の数字は労働局の発表で確かめる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "新規高卒者の求人状況",
+   "url": "https://jsite.mhlw.go.jp/hiroshima-roudoukyoku/content/contents/002364556.pdf",
+   "publisher": "広島労働局",
+   "date": "2025-08"
+  }
+ },
+ {
+  "id": "term-1485",
+  "kind": "term",
+  "title": "高卒就職の一人一社制とは",
+  "summary": "高校生が就職活動の初めの時期に1社ずつ応募する慣行。法律ではなく、2003年からは都道府県ごとに方針を決める仕組み。応募は1社だけなので、会社の情報の濃さが決め手になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "「一人一社制」高卒就職の実態をデータで解きほぐす",
+   "url": "https://career-research.mynavi.jp/column/20260818_113933/",
+   "publisher": "マイナビキャリアリサーチLab",
+   "date": "2026-08"
+  }
+ },
+ {
+  "id": "buyer-1284",
+  "kind": "buyer",
+  "title": "高校生の人気業界はものづくり",
+  "summary": "ジンジブの調べでは、高校生向け就職イベントに参加した1,746人のうち、働きたい業界の1位は製造・ものづくりだった。興味はあるので、仕事の中身を伝えれば届く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "高校生が選んだ「なりたい職業・働きたい業界」2025",
+   "url": "https://webtan.impress.co.jp/n/2025/10/15/50212",
+   "publisher": "Web担当者Forum",
+   "date": "2025-10"
+  }
+ },
+ {
+  "id": "buyer-1285",
+  "kind": "buyer",
+  "title": "9割の家庭が進路を話し合う",
+  "summary": "全国高等学校PTA連合会とリクルートの2025年の調査では、高校生と保護者の約9割が進路について話し合っている。採用記事は保護者が読んでも安心できる内容にする。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "第12回 高校生と保護者の進路に関する意識調査 2025",
+   "url": "https://souken.shingakunet.com/research/pdf/2025_hogosha.pdf",
+   "publisher": "リクルート進学総研",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "buyer-1286",
+  "kind": "buyer",
+  "title": "地元就職は親の話が効く",
+  "summary": "宇都宮市の高校生の就職意識調査では、県内就職では両親の話の影響が大きいことがうかがえるとされた。保護者向けに、休み・給料・育て方を一目で分かるページを用意する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "保護者の方へ：入社後の1年をお見せします",
+  "source": {
+   "title": "高校生の就職意識調査",
+   "url": "https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/018/094/koukosei-shushokuishikichosa.pdf",
+   "publisher": "宇都宮市",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1618",
+  "kind": "trend",
+  "official": true,
+  "title": "高校生向け説明会は製造業が最多",
+  "summary": "ハローワーク福井主催の高校生向け企業説明会（2026年7月）では、参加企業のうち製造業が52社で最多。高校生の目に触れる場では製造業同士の競争になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "令和8年度 高校生サマー求人企業説明会",
+   "url": "https://jsite.mhlw.go.jp/fukui-roudoukyoku/content/contents/002767061.pdf",
+   "publisher": "福井労働局",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1619",
+  "kind": "trend",
+  "official": false,
+  "title": "公立高校の定員割れが広がる",
+  "summary": "2026年度の公立高校全日制入試では47都道府県のうち33道府県で志願倍率が1倍を下回ったと報じられた。工業高校の生徒も減り、学校とのつながりの価値が上がる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "公立高校入試の定員割れに関する記事",
+   "url": "https://coki.jp/article/column/70350/",
+   "publisher": "coki",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "pain-1324",
+  "kind": "pain",
+  "title": "工業高校の定員削減に業界が懸念",
+  "summary": "熊本県工業連合会は、県立高の定員見直しで工業系高校の定員と学科を減らす判断は慎重にと要望した。工業高校は地元産業への人材供給に直結するという理由。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "工業系高校の定員削減「慎重に」熊本県工業連合会が要望",
+   "url": "https://kumanichi.com/articles/1965986",
+   "publisher": "熊本日日新聞",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1620",
+  "kind": "trend",
+  "official": false,
+  "title": "工業高校の学科を「学科群」に",
+  "summary": "京都府は2027年度入試から府立工業高校などの工業系学科を改編し、複数の学科を学科群にまとめて2年次から専門を選ぶ形にすると発表した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "京都府立高校 工業系学科の改編",
+   "url": "https://resemom.jp/article/2025/12/03/84181.html",
+   "publisher": "リセマム",
+   "date": "2025-12"
+  }
+ },
+ {
+  "id": "term-1486",
+  "kind": "term",
+  "title": "卓越した技能者（現代の名工）",
+  "summary": "国が毎年、きわめて優れた技能者を表彰する制度。厚労省は令和7年度の表彰対象者142人を決めた。受賞者がいる会社は、その技の中身を紹介すると信頼の材料になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "令和7年度 卓越した技能者を決定しました",
+   "url": "https://waza.mhlw.go.jp/info/2025/1107-post-136.html",
+   "publisher": "厚生労働省 技のとびら",
+   "date": "2025-11"
+  }
+ },
+ {
+  "id": "success-2512",
+  "kind": "success",
+  "title": "インスタで職場の日常を発信",
+  "summary": "SNS支援会社KIKKAKEの事例によると、若手の応募が止まっていた従業員30人の金属加工会社が、社員と職場の日常をInstagramで伝え、応募が前年の3倍になったという。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "採用応募が前年の3倍に。Instagram採用広報",
+   "url": "https://kikkake-carrier.com/case/seizo-sns/",
+   "publisher": "KIKKAKE",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1621",
+  "kind": "trend",
+  "official": true,
+  "title": "技能検定の受検を県が助成",
+  "summary": "大分県は、従業員に技能検定を受けさせる企業に県が助成する制度を設けている。資格取得の支援制度は求人票や採用ページで「受検費用は会社負担」と書ける材料になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "source": {
+   "title": "技能検定受検支援の助成",
+   "url": "https://www.pref.oita.jp/uploaded/attachment/2265832.pdf",
+   "publisher": "大分県",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1487",
+  "kind": "term",
+  "title": "技能検定の目的",
+  "summary": "長野県の案内では、技能検定は働く人の技能を国として証明し、技能への社会の評価を高め、働く人の技能と地位を向上させることが目的。会社紹介では「国が認めた腕」と言い換えられる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "技能検定",
+   "url": "https://www.pref.nagano.lg.jp/jinzai/sangyo/shiken/ginou/kente.html",
+   "publisher": "長野県",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1955",
+  "kind": "question",
+  "title": "技能士になった人の話はどこで？",
+  "summary": "厚労省の技能検定ポータル「技のとびら」に合格者の声のページがあり、合格者や企業へのインタビューが載っている。社員の合格体験記を書くときの構成の参考になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "社員の技能検定合格体験記",
+  "source": {
+   "title": "合格者の声",
+   "url": "https://waza.mhlw.go.jp/goukakusya",
+   "publisher": "厚生労働省 技のとびら",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2513",
+  "kind": "success",
+  "title": "用途を医療用・食品用などに絞って書く",
+  "summary": "中小機構の登録の手引き（2018年）は、何にでも使えると書くより、実績のある用途を医療用・食品用などと絞ってリード文に置くと探されやすいと勧めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "医療用部品で当社が選ばれる理由",
+  "source": {
+   "title": "J-GoodTech 企業情報登録 ～検索・問合せされやすい登録の秘訣～",
+   "url": "https://jgoodtech.smrj.go.jp/pub/ja/assets/pdf/common/guide_registration-guideline.pdf",
+   "publisher": "中小企業基盤整備機構",
+   "date": "2018-10"
+  }
+ },
+ {
+  "id": "success-2514",
+  "kind": "success",
+  "title": "社内の呼び名でなく客の検索語で書く",
+  "summary": "同じ手引きは、社内で使う言葉と取引先が検索する言葉は一致しないとして、顧客が使いそうな類義語や関連語をタグに入れるよう勧めている。ブログの見出しにも使える考え方。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "J-GoodTech 企業情報登録 ～検索・問合せされやすい登録の秘訣～",
+   "url": "https://jgoodtech.smrj.go.jp/pub/ja/assets/pdf/common/guide_registration-guideline.pdf",
+   "publisher": "中小企業基盤整備機構",
+   "date": "2018-10"
+  }
+ },
+ {
+  "id": "success-2515",
+  "kind": "success",
+  "title": "生産体制と設備を具体的に書く",
+  "summary": "中小機構関東本部の案内は、一貫体制か協力企業があるか、保有機械、得意な材質や形状、対応業種、納入エリアを具体的に書き、業界で通じる言葉を使うよう勧めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "ジェグテック会員登録",
+   "url": "https://www.smrj.go.jp/regional_hq/kanto/sme/jgoodtech/02.html",
+   "publisher": "中小企業基盤整備機構 関東本部",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1488",
+  "kind": "term",
+  "title": "検索キーワード欄（タグ）",
+  "summary": "マッチングサイトで自社を見つけてもらうための言葉の登録欄。ジェグテックの操作ガイドでは最大30件まで登録できるとされ、加工法・材質・用途の言い換えを入れておくと拾われやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ジェグテック操作ガイド",
+   "url": "https://jgoodtech.smrj.go.jp/manual/doc/guide_sme_ja.pdf",
+   "publisher": "中小企業基盤整備機構",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1287",
+  "kind": "buyer",
+  "title": "大手は技術の検索サイトでも探す",
+  "summary": "J-Net21の解説によると、ジェグテックは中小機構が運営し、優れた技術を持つ中小製造業が技術や用途提案を発信し、大手メーカーなどが検索して直接商談する仕組みになっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "question_example"
+  ],
+  "articleIdea": "大手の技術者はどこで加工先を探すのか",
+  "source": {
+   "title": "「J-GoodTech（ジェグテック）」について教えてください。",
+   "url": "https://j-net21.smrj.go.jp/solution/qa/special/Q1015.html",
+   "publisher": "J-Net21（中小企業基盤整備機構）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2516",
+  "kind": "success",
+  "title": "助言でアピール文が1.5倍に",
+  "summary": "佐世保市産業支援センターの紹介記事では、強みを数行しか書けなかった企業が中小機構の担当者の助言で文章を約1.5倍にし、写真や動画も多く載せるよう心がけたという。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ジェグテック登録から取引成立まで全手順",
+   "url": "https://vside.jp/6336",
+   "publisher": "佐世保市産業支援センター VSIDE",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1325",
+  "kind": "pain",
+  "title": "自社の強みを数行しか書けない",
+  "summary": "技術はあっても、強みを文章にすると数行で終わってしまうという声がある。第三者に質問してもらいながら書くと量と具体性が増える、と支援機関の記事が紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "question_example"
+  ],
+  "source": {
+   "title": "ジェグテック登録から取引成立まで全手順",
+   "url": "https://vside.jp/6336",
+   "publisher": "佐世保市産業支援センター VSIDE",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1288",
+  "kind": "buyer",
+  "title": "マッチングサイトの自社ページも検索に出る",
+  "summary": "佐世保市産業支援センターの記事によると、ジェグテックの自社ページは技術や写真、PDF資料を載せられ、サイト内だけでなく一般の検索エンジンにも表示されるとされる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "ジェグテック登録から取引成立まで全手順",
+   "url": "https://vside.jp/6336",
+   "publisher": "佐世保市産業支援センター VSIDE",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2517",
+  "kind": "success",
+  "title": "一貫でできる工程を順に書く",
+  "summary": "山口県が配る中小機構の活用案内では、図面展開・切り曲げ・溶接・研磨・仕上げまで自社でできることを工程の順に具体的に書く例が示されている。",
+  "industries": [
+   "板金",
+   "溶接",
+   "製缶"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "図面1枚から完成品まで社内でつなぐ流れ",
+  "source": {
+   "title": "J-GoodTechの活用案内",
+   "url": "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/60642.pdf",
+   "publisher": "山口県（中小企業基盤整備機構の資料）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2518",
+  "kind": "success",
+  "title": "登録情報の充実が問い合わせの鍵",
+  "summary": "同じ案内は、登録した情報がサイト内検索の結果に表示されるため、内容を充実させることがマッチングや問い合わせの大事な点だとしている。自社サイトのFAQや事例も同じ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "J-GoodTechの活用案内",
+   "url": "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/60642.pdf",
+   "publisher": "山口県（中小企業基盤整備機構の資料）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1326",
+  "kind": "pain",
+  "title": "「何でもできる」は何もできないと同じ",
+  "summary": "商談会事務局の資料は、申込シートに何でもできる・何でも得意と書くと、発注側には特徴のない会社と映ると注意している。Webの会社紹介でも得意分野を絞る必要がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商談会参加にあたってのポイント 相手方（発注企業）の気持ちになって臨むことが大切です！！",
+   "url": "https://www.ki21.jp/bpshoudankai/point.pdf",
+   "publisher": "受発注商談会事務局（ki21.jp）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2519",
+  "kind": "success",
+  "title": "設備名より寸法や硬さの数字を",
+  "summary": "同じ資料は、設備を並べるだけでなく、扱える寸法や硬さなど具体的な数値を示すよう勧めている。加工事例ページにも最大寸法・材質・硬さを書くと伝わりやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "商談会参加にあたってのポイント 相手方（発注企業）の気持ちになって臨むことが大切です！！",
+   "url": "https://www.ki21.jp/bpshoudankai/point.pdf",
+   "publisher": "受発注商談会事務局（ki21.jp）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2520",
+  "kind": "success",
+  "title": "納期と品質を守れる根拠を書く",
+  "summary": "商談会の申込シートでは、納期や品質を守れると言うだけでなく、その根拠（検査体制や工程管理など）も書くよう勧めている。FAQの答えに根拠を添える書き方に使える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "納期を守るために当社がしている3つのこと",
+  "source": {
+   "title": "商談会参加にあたってのポイント 相手方（発注企業）の気持ちになって臨むことが大切です！！",
+   "url": "https://www.ki21.jp/bpshoudankai/point.pdf",
+   "publisher": "受発注商談会事務局（ki21.jp）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2521",
+  "kind": "success",
+  "title": "相手の製品を調べて接点を書く",
+  "summary": "同じ資料は、知名度で相手を選ぶのでなく、ホームページなどで相手の製品を調べ、自社技術との接点を考えてから申し込むよう勧めている。用途別ページを作るヒントになる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商談会参加にあたってのポイント 相手方（発注企業）の気持ちになって臨むことが大切です！！",
+   "url": "https://www.ki21.jp/bpshoudankai/point.pdf",
+   "publisher": "受発注商談会事務局（ki21.jp）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2522",
+  "kind": "success",
+  "title": "加工サンプルや写真で似た例を想像させる",
+  "summary": "商談会の資料は、加工サンプルや写真があると、発注側が自社の部品との似た点を想像しやすいとしている。Webでも近い形状の事例写真を並べると相談につながりやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商談会参加にあたってのポイント 相手方（発注企業）の気持ちになって臨むことが大切です！！",
+   "url": "https://www.ki21.jp/bpshoudankai/point.pdf",
+   "publisher": "受発注商談会事務局（ki21.jp）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2523",
+  "kind": "success",
+  "title": "加工精度は数値で書く",
+  "summary": "かごしま産業支援センターの2025年度商談会の受注企業概要書では、加工精度の欄に「5ミクロン単位まで対応」のように数値で書く例が見られる。",
+  "industries": [
+   "切削加工",
+   "研削",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "令和７年度 九州・中国７県合同広域商談会 受注企業概要書【鹿児島県】",
+   "url": "https://www.kmt-ti.or.jp/wp-content/uploads/2025/06/KigyouGaiyou_KagoshimaPrif.pdf",
+   "publisher": "かごしま産業支援センター",
+   "date": "2025-06"
+  }
+ },
+ {
+  "id": "success-2524",
+  "kind": "success",
+  "title": "材質の一覧と設備台数・資格者数",
+  "summary": "同じ概要書では、鉄・アルミ・ステンレス・銅など扱える材質を並べ、マシニングセンタや旋盤の機種と台数、保有資格者の人数を添える書き方が多い。会社案内ページの型に使える。",
+  "industries": [
+   "切削加工",
+   "金属加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "令和７年度 九州・中国７県合同広域商談会 受注企業概要書【鹿児島県】",
+   "url": "https://www.kmt-ti.or.jp/wp-content/uploads/2025/06/KigyouGaiyou_KagoshimaPrif.pdf",
+   "publisher": "かごしま産業支援センター",
+   "date": "2025-06"
+  }
+ },
+ {
+  "id": "buyer-1289",
+  "kind": "buyer",
+  "title": "発注側は材質・精度・資格をまず見る",
+  "summary": "広域商談会の受注企業概要書は「加工材質」「加工精度」「企業PR」「資格・特徴」の欄で組まれている。発注側が最初に見る項目と考え、Webでも同じ並びで見せるとよい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "令和７年度 九州・中国７県合同広域商談会 受注企業概要書【鹿児島県】",
+   "url": "https://www.kmt-ti.or.jp/wp-content/uploads/2025/06/KigyouGaiyou_KagoshimaPrif.pdf",
+   "publisher": "かごしま産業支援センター",
+   "date": "2025-06"
+  }
+ },
+ {
+  "id": "buyer-1290",
+  "kind": "buyer",
+  "title": "発注側は求める加工と精度を数字で出す",
+  "summary": "みやぎ産業振興機構の発注企業一覧では、商談先に求める加工内容と機械設備を分けて書き、要求精度を数値で示す例がある。受注側もその言葉に合わせて書くと噛み合う。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "発注企業一覧（商談先に求める加工内容）",
+   "url": "https://www.joho-miyagi.or.jp/wp-content/uploads/hatsu0801.pdf",
+   "publisher": "みやぎ産業振興機構",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2525",
+  "kind": "success",
+  "title": "発注企業の募集文をFAQの質問に",
+  "summary": "発注企業一覧に並ぶ「求める加工内容」は、発注者が実際に使う言葉の見本になる。これを自社FAQの質問文に置き換えると、検索やAIの質問と一致しやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "発注者が求める加工内容から作ったFAQ",
+  "source": {
+   "title": "発注企業一覧（商談先に求める加工内容）",
+   "url": "https://www.joho-miyagi.or.jp/wp-content/uploads/hatsu0801.pdf",
+   "publisher": "みやぎ産業振興機構",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2526",
+  "kind": "success",
+  "title": "現物がないときは写真付き資料",
+  "summary": "佐賀県の商談会資料は、商品情報を分かりやすく説明できるよう整理しておくことを勧め、現物サンプルが持ち込めない場合の写真付き資料の準備にも触れている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "商談会前に準備しておくこと",
+   "url": "https://www.pref.saga.lg.jp/kiji00320540/3_20540_11_syoudannkaikoukateki.pdf",
+   "publisher": "佐賀県",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2527",
+  "kind": "success",
+  "title": "名刺・カタログ・価格表・サンプル",
+  "summary": "日本政策金融公庫の食品向け商談会ガイドブックは、名刺・商品カタログ・価格表・商品サンプルの持参を勧めている。Webでも価格の目安と資料ダウンロードがあると比べてもらいやすい。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商談会ガイドブック フードビジネスの販路開拓を応援！",
+   "url": "https://www.jfc.go.jp/n/findings/pdf/syoudankaiguidebook.pdf",
+   "publisher": "日本政策金融公庫",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2528",
+  "kind": "success",
+  "title": "商談前の準備をまとめた手引き",
+  "summary": "京都産業21は商談を成功に導く手引き「虎の巻」を公開している。商談会の準備で整理した自社の強み・資料は、そのまま自社サイトの会社紹介やFAQの材料になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商談を成功に導く！虎の巻",
+   "url": "https://www.kyo.or.jp/ichioshi/toranomaki",
+   "publisher": "京都産業21",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2529",
+  "kind": "success",
+  "title": "競合の少ない語で異業種から引き合い",
+  "summary": "日経BizGateの記事（2018年）では、金型会社が自社の特徴を表し競合が少ない「プラモデル金型」という言葉を選んでサイトを整えたところ、異業種からの問い合わせが増えた。",
+  "industries": [
+   "金型"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "小ロットの樹脂部品にも使える金型の話",
+  "source": {
+   "title": "成果を出すBtoB企業のウェブサイト活用法",
+   "url": "https://bizgate.nikkei.co.jp/article/DGXMZO3109620029052018000000?channel=DF230420183757&page=4",
+   "publisher": "日経BizGate（日本政策金融公庫総合研究所の研究員による寄稿）",
+   "date": "2018-05"
+  }
+ },
+ {
+  "id": "success-2530",
+  "kind": "success",
+  "title": "技術力とワンストップ対応を前面に",
+  "summary": "同じ記事の金型会社は、サイトで技術力と、設計から製造までまとめて任せられることを強く打ち出した。頼める範囲が一目で分かることが異業種の相談を呼んだ。",
+  "industries": [
+   "金型",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "成果を出すBtoB企業のウェブサイト活用法",
+   "url": "https://bizgate.nikkei.co.jp/article/DGXMZO3109620029052018000000?channel=DF230420183757&page=4",
+   "publisher": "日経BizGate（日本政策金融公庫総合研究所の研究員による寄稿）",
+   "date": "2018-05"
+  }
+ },
+ {
+  "id": "success-2531",
+  "kind": "success",
+  "title": "SNS広告で元請けを探す方法も",
+  "summary": "日刊工業新聞の連載では、町工場が元請けを探す手段としてFacebook広告の使い方を解説している。記事やブログを広告で届けたい層に見せる考え方。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "＃５ 町工場がデジタル広告で元請けを探すなら【Facebook広告応用編】",
+   "url": "https://newswitch.jp/p/17678",
+   "publisher": "日刊工業新聞社（ニュースイッチ）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1622",
+  "kind": "trend",
+  "official": false,
+  "title": "町工場向け営業改革の連載",
+  "summary": "ニュースイッチは「小さなものづくり企業の営業改革大作戦」という連載で、製造業の営業現場で新規顧客を得た方法のうち町工場がすぐできるものを紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "小さなものづくり企業の営業改革大作戦の記事一覧",
+   "url": "https://newswitch.jp/feature/detail/123",
+   "publisher": "日刊工業新聞社（ニュースイッチ）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2532",
+  "kind": "success",
+  "title": "記者が技術を体験する記事の型",
+  "summary": "ニュースイッチには記者が町工場の技術を体験する記事がある。外の人がやってみて驚いた点を書く形は、自社ブログでも来客や新人の体験記として使える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "新人が初めて旋盤に触れた日の記録",
+  "source": {
+   "title": "町工場の技術を記者が体験！",
+   "url": "https://newswitch.jp/p/15600",
+   "publisher": "日刊工業新聞社（ニュースイッチ）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2533",
+  "kind": "success",
+  "title": "写真は光の方向と質で決まる",
+  "summary": "港区立産業振興センターの写真撮影入門セミナーは、撮影の基礎として「光の方向」と「光の質」を知ることを扱い、自分のスマホで撮る実践も行う内容だった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "売上UPにつながる写真撮影入門セミナー",
+   "url": "https://minato-sansin.com/event_seminar/photo2025/",
+   "publisher": "港区立産業振興センター",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "success-2534",
+  "kind": "success",
+  "title": "スマホの構え方と光の向きを学ぶ",
+  "summary": "吹田市の中小企業セミナー（2021年）は、スマホの構え方、光を当てる方向、設定、撮影後の加工までを扱ったと報告されている。製品写真の撮り直しの手順に使える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業セミナー「スマホでもできる！魅せる写真の撮り方講座」開催報告",
+   "url": "https://www.city.suita.osaka.jp/sangyo/1018028/1018033/1018035/1011685.html",
+   "publisher": "吹田市",
+   "date": "2021"
+  }
+ },
+ {
+  "id": "success-2535",
+  "kind": "success",
+  "title": "撮った後の補正まで練習する",
+  "summary": "石川県産業創出支援機構のセミナー（2025年4月）は、撮影の基礎と撮影後の加工を解説し、参加者全員が無料アプリで実際に撮影・補正を体験する形だった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "スマホで撮影セミナー ～スマホカメラで商品を引き立てるコツを教えます～",
+   "url": "https://www.isico.or.jp/event/dgnet/d31186048.html",
+   "publisher": "石川県産業創出支援機構（ISICO）",
+   "date": "2025-04"
+  }
+ },
+ {
+  "id": "trend-1623",
+  "kind": "trend",
+  "official": true,
+  "title": "支援機関がスマホ撮影講座を開く",
+  "summary": "滋賀県産業支援プラザは2024年8月、起業者や個人事業主向けにスマホでの商品撮影の基礎講座を開いた。事例写真を自分で撮る力は公的講座で身につけられる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "スマホで商品撮影基礎～ビジネス初心者向け写真撮影～",
+   "url": "https://www.shigaplaza.or.jp/news/event-sogyo-240828/",
+   "publisher": "滋賀県産業支援プラザ",
+   "date": "2024-08"
+  }
+ },
+ {
+  "id": "trend-1624",
+  "kind": "trend",
+  "official": true,
+  "title": "よろず拠点の撮影実践つき講座",
+  "summary": "大阪府よろず支援拠点は2026年4月、スマホ1台で撮影の実践まで行うセミナーを案内した。写真の撮り方は無料・低額の公的講座で学べる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "スマホ1台でファンを増やす！【撮影実践付き】セミナー",
+   "url": "https://www.yorozu-osaka.jp/news/2026-03-13-1044/",
+   "publisher": "大阪府よろず支援拠点",
+   "date": "2026-03"
+  }
+ },
+ {
+  "id": "success-2536",
+  "kind": "success",
+  "title": "写真は撮り方と使い方をセットで",
+  "summary": "三浦商工会議所のセミナーは、スマホで売上につながる写真の撮影法と、その活用法を一緒に学ぶ構成。撮った写真を事例ページやSNSのどこに使うかまで決めておくとよい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "スマホでＯＫ！売上アップに直結する写真の撮影法・活用法 セミナーカリキュラム",
+   "url": "https://www.miura-cci.com/update/docs/2ac185a52dbcfcdc40f76c9cb531e0a44695bfe4.pdf",
+   "publisher": "三浦商工会議所",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2537",
+  "kind": "success",
+  "title": "一眼レフなしでも撮影と編集",
+  "summary": "TOKYO創業ステーションのセミナーは、本格的なカメラがなくてもスマホで商品の魅力を上げる撮影と編集の技を学ぶ内容。加工品の写真もまずスマホで十分始められる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商品の魅力がグッと上がる！スマホでできる写真撮影・編集加工テクニック",
+   "url": "https://startup-station.jp/eventseminar/TAA0103?event_id=E000101362",
+   "publisher": "TOKYO創業ステーション（東京都中小企業振興公社）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1625",
+  "kind": "trend",
+  "official": true,
+  "title": "よろず拠点がYouTube入門講座",
+  "summary": "千葉県よろず支援拠点は2025年8月、普段のiPhoneでYouTubeを使って商品をPRする方法のセミナーを開いた。動画発信の最初の一歩は公的支援で学べる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "はじめようスマホとYouTubeで商品PR(iPhone編)",
+   "url": "https://chibayorozu.go.jp/event/250801am/",
+   "publisher": "千葉県よろず支援拠点",
+   "date": "2025-08"
+  }
+ },
+ {
+  "id": "success-2538",
+  "kind": "success",
+  "title": "動画制作とYouTube活用を入門から",
+  "summary": "福岡県よろず支援拠点は、売上アップのための動画制作とYouTube活用の入門セミナーを無料で開いている。加工の様子を短い動画にしてサイトに貼る準備に使える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "実践！売上アップのための動画制作＆『YouTube』活用セミナー【入門編】",
+   "url": "https://yorozu-fukuoka.go.jp/dougaseisakuyoutube/",
+   "publisher": "福岡県よろず支援拠点",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2539",
+  "kind": "success",
+  "title": "YouTubeも検索で見つかる場所",
+  "summary": "福岡県よろず支援拠点の講座は、YouTubeを検索で見つけてもらう工夫（いわゆる動画のSEO）を扱う。動画の題名や説明にも発注者が使う言葉を入れる発想。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "YouTubeでSEO？はじめての動画で無料集客セミナー",
+   "url": "https://yorozu-fukuoka.go.jp/douga-muryoushukyaku/",
+   "publisher": "福岡県よろず支援拠点",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2540",
+  "kind": "success",
+  "title": "まずスマホから投稿してみる",
+  "summary": "同拠点の別の講座では、YouTubeアプリでスマホから動画を投稿するところまで体験する。小さく試してから続け方を考える進め方が勧められている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "動画で集客！YouTubeのことがザクっとわかるセミナー",
+   "url": "https://yorozu-fukuoka.go.jp/youtube-wakaru",
+   "publisher": "福岡県よろず支援拠点",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2541",
+  "kind": "success",
+  "title": "動画の始め方と撮り方の基礎",
+  "summary": "石川県よろず支援拠点（2021年）の動画プロモーション講座は、YouTubeの概要・始め方・動画の撮り方を扱った。工程動画を作る前の基礎として参考になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "事業に活かす 動画プロモーション基礎～動画を使った PR YouTube～",
+   "url": "https://ishikawa-yorozushien.go.jp/seminar/9-15/",
+   "publisher": "石川県よろず支援拠点",
+   "date": "2021"
+  }
+ },
+ {
+  "id": "trend-1626",
+  "kind": "trend",
+  "official": true,
+  "title": "支援のノウハウも動画で公開",
+  "summary": "北海道よろず支援拠点は2025年度、地域の支援機関向けフォーラムの動画を中小機構のYouTubeで公開し、支援のノウハウや事例を紹介した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "「北海道よろず支援拠点 地域支援機関連携フォーラム」動画公開のご案内",
+   "url": "https://www.hsc.or.jp/news/2025yorozu_forum/",
+   "publisher": "北海道中小企業総合支援センター（北海道よろず支援拠点）",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "pain-1327",
+  "kind": "pain",
+  "title": "サイトを作ったのに問い合わせが来ない",
+  "summary": "千葉県よろず支援拠点は、ホームページを作ったのに問い合わせや購入につながらないという悩み（WEB改善点あるある）を扱う無料相談会を2026年10月に開く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "WEB関連の無料相談会（WEB改善点あるある）",
+   "url": "https://j-net21.smrj.go.jp/snavi2/articles/191410",
+   "publisher": "千葉県よろず支援拠点（千葉県産業振興センター）",
+   "date": "2026-10"
+  }
+ },
+ {
+  "id": "trend-1627",
+  "kind": "trend",
+  "official": true,
+  "title": "商工会議所のホームページ再設計講座",
+  "summary": "豊中商工会議所は2026年10月から全6回ほど、社長の思いを伝わるホームページに作り直す少人数講座を開く。発信の中身を作る支援が商工会議所でも増えている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "「社長の魂を《売れる商品》に変える 伝わるホームページ再設計道場」",
+   "url": "https://j-net21.smrj.go.jp/snavi2/articles/189708",
+   "publisher": "豊中商工会議所",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1628",
+  "kind": "trend",
+  "official": true,
+  "title": "6日間の実践型WEB改善講座",
+  "summary": "高知県産業振興センターは2022年、WEBサイトの改善点や運営のコツを6日間で学ぶ実践型セミナーを開いた。売上向上を目的に、作った後の運営に重点を置いている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "WEBサイト実践セミナー 2022",
+   "url": "https://joho-kochi.or.jp/seminar/pdf/website_jissen_2022.pdf",
+   "publisher": "高知県産業振興センター",
+   "date": "2022"
+  }
+ },
+ {
+  "id": "success-2542",
+  "kind": "success",
+  "title": "写真中心のサイトで閑散期の稼働が上昇",
+  "summary": "中小企業庁のミラサポplusによると、菓子店や農家から受託加工する事業者がサイトを写真中心に作り直し強みを整理したところ、閑散期の工場稼働率が17%から85%に伸びた。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "小ロットの受託加工を頼む前に知ること",
+  "source": {
+   "title": "「営業DX」の導入により、閑散期の工場稼働率が17%から85%へと大幅に伸長",
+   "url": "https://mirasapo-plus.go.jp/chinagecasestudy/33189/",
+   "publisher": "中小企業庁（ミラサポplus）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2543",
+  "kind": "success",
+  "title": "サイトに「勝手に営業」させる",
+  "summary": "同じ事例では、写真を多く使い訪問者に分かりやすいサイトにすることで、Webサイト自体が営業する仕組みを整えた。担当者がいない時間も説明役になる作りを目指す。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "「営業DX」の導入により、閑散期の工場稼働率が17%から85%へと大幅に伸長",
+   "url": "https://mirasapo-plus.go.jp/chinagecasestudy/33189/",
+   "publisher": "中小企業庁（ミラサポplus）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2544",
+  "kind": "success",
+  "title": "概算見積もりができる仕組み",
+  "summary": "同じ事例では、概算の見積もりがサイト上で分かる仕組みも入れた。費用の目安を先に示すと、小口の相談者も問い合わせしやすくなる。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "article_idea",
+   "question_example"
+  ],
+  "articleIdea": "受託加工の費用はどう決まる？目安と内訳",
+  "source": {
+   "title": "「営業DX」の導入により、閑散期の工場稼働率が17%から85%へと大幅に伸長",
+   "url": "https://mirasapo-plus.go.jp/chinagecasestudy/33189/",
+   "publisher": "中小企業庁（ミラサポplus）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1629",
+  "kind": "trend",
+  "official": true,
+  "title": "新規取引の成約件数を目標に",
+  "summary": "まつえ北商工会の経営発達支援計画は、新たな取引の成約件数を年度ごとの目標にし、小規模事業者の新規取引先獲得には展示会・商談会の活用が有効と整理している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "経営発達支援計画の概要（まつえ北商工会）",
+   "url": "https://www.chusho.meti.go.jp/keiei/shokibo/ninteikeikaku/download/32-01.pdf",
+   "publisher": "まつえ北商工会・松江市（中小企業庁 認定計画）",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1291",
+  "kind": "buyer",
+  "title": "製造業の業者選定で7割超がWebを見る",
+  "summary": "Intrix社の発表（2023年3月）によると、BtoB製造業の75%が企業のWebサイトを使って業者を選定しているという調査結果が出ている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "question_example"
+  ],
+  "source": {
+   "title": "製造業界における、業者選定プロセス上の企業Webサイト利用実態調査を実施",
+   "url": "https://www.intrix.co.jp/newsrelease/2023/0302/",
+   "publisher": "Intrix株式会社",
+   "date": "2023-03"
+  }
+ },
+ {
+  "id": "pain-1328",
+  "kind": "pain",
+  "title": "情報不足で候補から外される",
+  "summary": "同じIntrix社の発表では、Webサイトに十分な情報がないために選定候補から外される割合が36%とされた。対応範囲や設備が載っていないだけで比べてもらえない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "製造業界における、業者選定プロセス上の企業Webサイト利用実態調査を実施",
+   "url": "https://www.intrix.co.jp/newsrelease/2023/0302/",
+   "publisher": "Intrix株式会社",
+   "date": "2023-03"
+  }
+ },
+ {
+  "id": "success-2545",
+  "kind": "success",
+  "title": "選定で落ちない基本情報を先に",
+  "summary": "Intrix社の調査結果を踏まえると、技術コラムより先に、対応加工・材質・サイズ・設備などの基本情報が揃っているかを点検するのが優先になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "初めて当社を調べる方へ：対応範囲の一覧",
+  "source": {
+   "title": "製造業界における、業者選定プロセス上の企業Webサイト利用実態調査を実施",
+   "url": "https://www.intrix.co.jp/newsrelease/2023/0302/",
+   "publisher": "Intrix株式会社",
+   "date": "2023-03"
+  }
+ },
+ {
+  "id": "success-2546",
+  "kind": "success",
+  "title": "板金技術で作った小物を海外へ",
+  "summary": "JETROの動画では、自動車や医療機器の精密板金加工技術を使った折れにくいかんざしなど、町工場の技術から生まれた新商品が海外展開につながった例が紹介されている。",
+  "industries": [
+   "板金"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "本業の板金技術から生まれた自社製品の話",
+  "source": {
+   "title": "【JETRO】こんなところにビジネスの種が！ ‐町工場の海外展開‐",
+   "url": "https://www.youtube.com/watch?v=ngBs6WbE2es",
+   "publisher": "日本貿易振興機構（JETRO）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2547",
+  "kind": "success",
+  "title": "事例は課題・対応・結果の順で",
+  "summary": "制作会社（引き合い製作所）の解説は、加工事例を課題→対応→結果の順に書き、材質・精度・数量・納期・設備の項目を毎回そろえると比べやすいとしている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "加工事例ページの作り方｜引き合いにつながる書き方と載せる項目",
+   "url": "https://wk-partners.co.jp/industry/guide/case-study-page/",
+   "publisher": "引き合い製作所（制作会社）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2548",
+  "kind": "success",
+  "title": "条件は調達担当が確かめる順に",
+  "summary": "制作会社の解説記事は、材質・寸法・精度・ロットなどの加工条件を、調達担当者が確認しやすい順番で並べると伝わりやすいとしている。",
+  "industries": [
+   "切削加工",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "高石市の製造業ホームページ｜加工条件が伝わる技術情報設計",
+   "url": "https://myajo.net/tips/18644/",
+   "publisher": "制作会社（myajo.net）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2549",
+  "kind": "success",
+  "title": "精度の数字を用途の言葉に言い換える",
+  "summary": "制作会社Creatiaの解説は、「±0.005mmの精度」という仕様を、精密センサー部品や医療機器部品の高い精度に応えられる、と発注側の用途に置き換える例を示している。",
+  "industries": [
+   "切削加工",
+   "研削",
+   "精密機器"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "技術ページの書き方｜部品加工会社が問い合わせを増やす3ステップ",
+   "url": "https://creatia-studio.com/column/technical-page-writing-parts-manufacturing/",
+   "publisher": "Creatia（制作会社）",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1292",
+  "kind": "buyer",
+  "title": "情報収集の段階で資料を落とす",
+  "summary": "マーケティング会社グリーゼの調査によると、BtoBの購入者は情報収集段階で58%が資料をダウンロードし、44%がサイトを複数回見たと答えた。製造業に限った調査ではない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "source": {
+   "title": "BtoB購買プロセス調査レポート",
+   "url": "https://gliese.co.jp/success/resource_files/WP_report_salesprocess.pdf",
+   "publisher": "グリーゼ（マーケティング会社）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2550",
+  "kind": "success",
+  "title": "何度も見に来る人向けに読み物を",
+  "summary": "同じ調査では、比べる段階で同じサイトを何度も見る人が多い。技術コラムや事例を少しずつ足していくと、再訪のたびに新しい判断材料を渡せる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "BtoB購買プロセス調査レポート",
+   "url": "https://gliese.co.jp/success/resource_files/WP_report_salesprocess.pdf",
+   "publisher": "グリーゼ（マーケティング会社）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1489",
+  "kind": "term",
+  "title": "下地めっきと仕上げめっき",
+  "summary": "大阪産業技術研究所の技術資料は、全鍍連の手引きを引き、仕上げのめっきが色調・硬さ・摩耗への強さなどを受け持つと整理している。下地と役割が違うことを最初に説明すると伝わる。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "腐食に関する技術資料",
+   "url": "https://orist.jp/dl/izumi/archive/Gijutsu_shiryo/Corr.pdf",
+   "publisher": "大阪産業技術研究所",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2551",
+  "kind": "success",
+  "title": "公的な企業ポータルにも載せる",
+  "summary": "東京都中小企業振興公社の企業情報ポータルは、支援を受けた企業の事例や受発注情報、企業PR情報を発信している。自社サイト以外の公的な場にも情報を置くと見つかる入口が増える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "企業情報ポータル",
+   "url": "https://www.tokyo-kosha.or.jp/kigyo-portal/",
+   "publisher": "東京都中小企業振興公社",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2552",
+  "kind": "success",
+  "title": "商談相手の情報を先に集める",
+  "summary": "佐賀県の商談会資料は、商談したい相手（バイヤー）の情報を事前に集めておくよう勧めている。自社サイトでも、狙う業界の困りごとを調べてから記事の題材を決めるとよい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商談会前に準備しておくこと",
+   "url": "https://www.pref.saga.lg.jp/kiji00320540/3_20540_11_syoudannkaikoukateki.pdf",
+   "publisher": "佐賀県",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1956",
+  "kind": "question",
+  "title": "求める精度は何で伝えればいい？",
+  "summary": "発注企業一覧では要求精度を数値で示す書き方が使われている。FAQでは「公差はどこまで？」に対し、対応できる数値と、材質・寸法による条件を一緒に答えると判断しやすい。",
+  "industries": [
+   "切削加工",
+   "研削",
+   "金属加工"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "発注企業一覧（商談先に求める加工内容）",
+   "url": "https://www.joho-miyagi.or.jp/wp-content/uploads/hatsu0801.pdf",
+   "publisher": "みやぎ産業振興機構",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2553",
+  "kind": "success",
+  "title": "少人数で自社サイトを作り直す講座",
+  "summary": "豊中商工会議所の講座は定員6名ほどの少人数で、数回に分けて自社の思いや強みを言葉にし、ホームページを作り直す。一人で書けないときは公的講座を使う手がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "「社長の魂を《売れる商品》に変える 伝わるホームページ再設計道場」",
+   "url": "https://j-net21.smrj.go.jp/snavi2/articles/189708",
+   "publisher": "豊中商工会議所",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "success-2554",
+  "kind": "success",
+  "title": "売れなかった自社品を用途替えで再挑戦",
+  "summary": "富山の鋳物の町工場は、最初の自社品の卓上ベルが30個しか売れなかった。同じ音の技術を風鈴に生かすと3000個売れ、用途の見直しで道が開けた。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "最初の自社製品が売れなかった話と次の一手",
+  "source": {
+   "title": "卓上ハンドベルは「30個」惨敗！風鈴は「3000個」バカ売れの理由",
+   "url": "https://diamond.jp/articles/-/218370",
+   "publisher": "ダイヤモンド・オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2555",
+  "kind": "success",
+  "title": "大口頼みから小口を数多く受ける形へ",
+  "summary": "少数の大口取引先に売上を頼る形をやめ、小さな注文を数多く受けるロングテール型に切り替えるよう町工場に勧める記事。小口の入口はWebになりやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "1個からの小口注文を歓迎する理由",
+  "source": {
+   "title": "町工場は「パレートの法則」を捨て、「ロングテール戦略」に舵を切れ！",
+   "url": "https://diamond.jp/articles/-/175509",
+   "publisher": "ダイヤモンド・オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2556",
+  "kind": "success",
+  "title": "工場見学を産業観光として事業にする",
+  "summary": "年間12万人が訪れる鋳物の町工場が、工場見学を産業観光として事業にする方法を5つにまとめた。見学は知名度と販売の入口になる。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "工場見学で見てほしい工程の紹介",
+  "source": {
+   "title": "年間12万人の原動力！町工場が「産業観光」を事業化する5つの方法",
+   "url": "https://diamond.jp/articles/-/222139",
+   "publisher": "ダイヤモンド・オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1329",
+  "kind": "pain",
+  "title": "「うちは末端の下請けだから」と卑下する",
+  "summary": "自分たちは末端の下請けにすぎないと考え、強みを語れない町工場への助言を読者に問う記事。発信の前に、自社の価値を言葉にする段階でつまずく。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "【あなたならどんなアドバイスをする？】「自分たちは末端下請けなので…」と卑下する町工場",
+   "url": "https://diamond.jp/articles/-/371516",
+   "publisher": "ダイヤモンド・オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2557",
+  "kind": "success",
+  "title": "パート出身の社長が自社商品を100超に",
+  "summary": "札幌の特殊な衣料の会社は、週1勤務のパート出身の女性が社長となり、下請けに頼らず自社商品を100以上生み、福祉の分野で独自の地位を築いた。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "現場の困りごとから生まれた自社商品",
+  "source": {
+   "title": "週1勤務のパート出身女性が社長に…中小企業を一変させた\"脱･下請け\"経営のすごい中身",
+   "url": "https://toyokeizai.net/articles/-/941869",
+   "publisher": "東洋経済オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2558",
+  "kind": "success",
+  "title": "3人の町工場が国内唯一の楽器を作る",
+  "summary": "社員3人ほどの町工場が、資料も師匠もない中で国内唯一のシンバル作りに挑み、プロの楽団やバンドから支持されるまでになった。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "試行錯誤の記録をそのまま記事にする",
+  "source": {
+   "title": "従業員3人の町工場から｢世界5強｣に挑んだ！→｢資料も師匠ない｣逆境から《日本唯一のシンバル》をつくった76歳社長の執念",
+   "url": "https://toyokeizai.net/articles/-/926133",
+   "publisher": "東洋経済オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2559",
+  "kind": "success",
+  "title": "受託中心の石鹸工場が自社ブランドへ",
+  "summary": "大阪・八尾の老舗の石鹸工場は、受託製造中心から自社ブランドへ軸足を移した。家業を仕方なく継いだ後継ぎが、社員の力に気づいたことが転機に。",
+  "industries": [
+   "化粧品OEM"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "後継ぎが見つけた自社の強み",
+  "source": {
+   "title": "｢仕方なく｣家業を継いだ男性に起きた心境の変化 ｢うちの社員はすごい｣大阪府八尾市の木村石鹸",
+   "url": "https://toyokeizai.net/articles/-/833433",
+   "publisher": "東洋経済オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1630",
+  "kind": "trend",
+  "official": false,
+  "title": "買いたたきの構造からブランドづくりへ",
+  "summary": "工芸品の再生を語る記事で、大手が中小を買いたたく構造が中小メーカーを弱らせており、作り手自身がブランドをつくる方向へ移るべきだと述べられた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "瀕死の危機｢伝統工芸品｣を救う術はあるのか 中川政七が語る工芸品再生プラン",
+   "url": "https://toyokeizai.net/articles/-/163628",
+   "publisher": "東洋経済オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1631",
+  "kind": "trend",
+  "official": false,
+  "title": "70歳超の経営者の約半数が後継者未定",
+  "summary": "中小企業の後継者不足を扱う記事で、70歳を超える経営者の約半数が後継者を決めていないと報じた。町工場の廃業は取引先の調達にも響く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "日本の中小企業を襲う｢後継者不足｣という大問題 70歳を超える経営者の約半数が｢後継者未定｣",
+   "url": "https://toyokeizai.net/articles/-/834182",
+   "publisher": "東洋経済オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2560",
+  "kind": "success",
+  "title": "下請け専業から自社ブランドで売上20倍",
+  "summary": "墨田区の下請け専業だった石鹸工場は1995年に自社ブランドを立ち上げ、直営店を全国約80店に広げた。記事では2021年のグループ売上を92億円としている。",
+  "industries": [
+   "化粧品OEM"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "廃業目前だった下請け専業の町工場が\"おしゃれブランド\"で売り上げ20倍を実現した驚きの手法",
+   "url": "https://president.jp/articles/-/60187?page=3",
+   "publisher": "PRESIDENT Online",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2561",
+  "kind": "success",
+  "title": "40人の町工場が越境ECで車用品",
+  "summary": "従業員40人の町工場が、車にぴったり合うカップホルダーを作り、米国のAmazonに自社で出品して現地の消費者へ直接売る越境ECで1.5億円を売り上げた。",
+  "industries": [
+   "自動車部品",
+   "プラスチック加工品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "海外の個人に直接売るときの準備",
+  "source": {
+   "title": "｢まるでトヨタがつくったようだ｣従業員40人の町工場､｢ぴったりすぎるカップホルダー｣で1.5億円の大逆転劇",
+   "url": "https://president.jp/articles/-/115500",
+   "publisher": "PRESIDENT Online",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2562",
+  "kind": "success",
+  "title": "広告費ゼロ、Instagramと自社ECで1億円",
+  "summary": "マンホールの蓋を作る下請けの鋳物工場は、職人がフライパンを開発し、広告費をかけずInstagramと自社ECで売り、累計売上が1億円を超えた。毎日の発信が鍵。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "職人が毎日続けた発信の中身",
+  "source": {
+   "title": "広告費ゼロのフライパンで1億円…マンホールの蓋を作る｢下請け町工場｣を蘇らせた38歳職人が毎日続けた日課",
+   "url": "https://president.jp/articles/-/109513?page=1",
+   "publisher": "PRESIDENT Online",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2563",
+  "kind": "success",
+  "title": "月50枚から伸びた自社開発タオル",
+  "summary": "安い輸入品に仕事を奪われ廃業寸前だった岐阜の撚糸工場は、独自技術のタオルが発売当初は月50枚しか売れなかったが、粘って突破口をつかんだ。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "売れなかった時期に何を変えたか",
+  "source": {
+   "title": "｢安い中国製｣に仕事を奪われ､廃業寸前に…1カ月で50枚しか売れない｢日本産タオル｣で町工場が掴んだ突破口",
+   "url": "https://president.jp/articles/-/108613?page=4",
+   "publisher": "PRESIDENT Online",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2564",
+  "kind": "success",
+  "title": "きつい印象の工場が地元の人気職場に",
+  "summary": "暑い・狭い・臭いと言われたTシャツ印刷工場が、多様な人を受け入れる採用で応募の途切れない職場に変わった。年収1000万円超の社員もいるという。",
+  "industries": [
+   "印刷",
+   "繊維"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "求職者に向けた職場のありのままの紹介",
+  "source": {
+   "title": "年収1000万円超も…暑い､狭い､臭い､男だけのTシャツ印刷工場が\"地元の人気職場\"に激変した理由",
+   "url": "https://president.jp/articles/-/106193?page=1",
+   "publisher": "PRESIDENT Online",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1632",
+  "kind": "trend",
+  "official": false,
+  "title": "町工場が社員に生成AI教育を投資",
+  "summary": "静岡の板金の町工場は約70人のうち13人に生成AIで業務システムを作る教育を行い、500万円をかけた。溶接工が6時間でアプリを作った例も。",
+  "industries": [
+   "板金",
+   "溶接"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "溶接工が「6時間」でアプリを開発　静岡の町工場が「500万円」かけて生成AI教育をした、驚きの効果",
+   "url": "https://www.itmedia.co.jp/business/articles/2604/01/news011.html",
+   "publisher": "ITmedia ビジネスオンライン",
+   "date": "2026-04"
+  }
+ },
+ {
+  "id": "pain-1330",
+  "kind": "pain",
+  "title": "DXが進まない、効果を数字にしにくい",
+  "summary": "中小製造業のDXが進まない理由として、変革を担う人が少ないこと、効果を数字で示しにくく投資に慎重になることなどが挙げられた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小製造業のDXが進まない3つの原因 AI活用が「当たり前の風景」になる日は来るか",
+   "url": "https://www.itmedia.co.jp/business/articles/2601/13/news001.html",
+   "publisher": "ITmedia ビジネスオンライン",
+   "date": "2026-01"
+  }
+ },
+ {
+  "id": "trend-1633",
+  "kind": "trend",
+  "official": false,
+  "title": "「背中を見て覚えろ」からAIへの技能伝承",
+  "summary": "職人の勘や現場の誇りをAIに渡せるかが、日本の製造業の生き残りを左右すると論じる記事。技能の言葉化は発信の材料にもなる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「背中を見て覚えろ」の終焉　日本の製造業は生き残るために「現場のプライド」をAIに渡せるか",
+   "url": "https://www.itmedia.co.jp/business/articles/2602/20/news019.html",
+   "publisher": "ITmedia ビジネスオンライン",
+   "date": "2026-02"
+  }
+ },
+ {
+  "id": "buyer-1293",
+  "kind": "buyer",
+  "title": "2万点のカタログを探せる形にする",
+  "summary": "2万点超の製品を持つ工具メーカーは、分厚いカタログを検索アプリにして、顧客が合う製品を探せない悩みを解消し、海外開拓に生かした。加工動画もSNSで更新。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "製品の選び方を用途別にまとめる",
+  "source": {
+   "title": "分厚いカタログを検索アプリに、顧客の「探せない」解決　2万点超の製品抱える工具メーカーの海外開拓",
+   "url": "https://www.itmedia.co.jp/news/articles/2603/31/news046.html",
+   "publisher": "ITmedia NEWS",
+   "date": "2026-03"
+  }
+ },
+ {
+  "id": "success-2565",
+  "kind": "success",
+  "title": "工業用バーナーの町工場が野外ブランドに",
+  "summary": "工業用バーナーを作っていた町工場が、燃焼の技術を生かしてアウトドア用品のブランドを育て、世界で認められるようになった事例。",
+  "industries": [
+   "産業機械",
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "本業の技術を一般向け製品に生かす",
+  "source": {
+   "title": "アウトドア業界の下町ロケット。町工場発の「SOTO」の炎が世界に認められるワケ",
+   "url": "https://forbesjapan.com/articles/detail/34820",
+   "publisher": "Forbes JAPAN",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2566",
+  "kind": "success",
+  "title": "極細の手術針に名前を付けブランド化",
+  "summary": "髪の毛より細い手術針を作る会社は、自社製品に独自の名前を付けてブランドづくりを強め、医療の空白地帯へ広げようとしている。",
+  "industries": [
+   "医療機器"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "部品に名前を付けて覚えてもらう",
+  "source": {
+   "title": "世界最小手術針が切り開く医療の空白地帯 河野製作所の成長戦略",
+   "url": "https://forbesjapan.com/articles/detail/92482",
+   "publisher": "Forbes JAPAN",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2567",
+  "kind": "success",
+  "title": "外国人社員が自社ブランドの海外販路",
+  "summary": "大分の小さな会社は、伝統工芸と実用品を組み合わせた自社ブランド品を企画・製造し、多国籍の社員が海外の販路開拓を担っている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "伝統工芸を「科学」で経営。多国籍人材で育む自律型グローバル開拓エコシステム",
+   "url": "https://forbesjapan.com/articles/detail/46806",
+   "publisher": "Forbes JAPAN",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2568",
+  "kind": "success",
+  "title": "自社の強みを引き出すアイデアの広げ方",
+  "summary": "ものづくり企業向けに、自社の技術の強みを掘り起こし、新しい製品や見せ方へ広げる考え方をクリエイティブ集団が紹介した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ものづくり企業必見！自社の強みを引き出すWhatever流・アイデアの広げ方",
+   "url": "https://forbesjapan.com/articles/detail/42791",
+   "publisher": "Forbes JAPAN",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2569",
+  "kind": "success",
+  "title": "売上半減を機に卸から直販へ",
+  "summary": "燕三条の老舗調理器具メーカーはコロナ禍で売上が半減し、地元店への卸からオンライン直販へ広げた。3年半で直販の売上が総額8000万円になったと報じられた。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "職人の手仕事を直販で伝える工夫",
+  "source": {
+   "title": "コロナ直撃で売上高半減　燕三条の老舗調理器具メーカー、直販に活路",
+   "url": "https://business.nikkei.com/atcl/gen/19/00624/032600001/",
+   "publisher": "日経ビジネス電子版",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1294",
+  "kind": "buyer",
+  "title": "片道1時間以内の客に絞る町工場",
+  "summary": "移動に片道1時間以上かかる顧客とは取引しないと決めた町工場は、取引先の数が半分になった。近さを強みにする考え方は対応エリアの明示に通じる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "対応エリアと納品方法をはっきり書く",
+  "source": {
+   "title": "片道1時間以上の顧客とは取引しない町工場",
+   "url": "https://business.nikkei.com/atcl/report/15/269655/080800031/",
+   "publisher": "日経ビジネス電子版",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2570",
+  "kind": "success",
+  "title": "町工場が梱包材の通販で急成長",
+  "summary": "梱包材を作る町工場が通販の仕組みを整え、作り手から売り場を持つプラットフォーマーへ変わって急成長した事例。",
+  "industries": [
+   "パッケージ",
+   "紙加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "町工場からプラットフォーマーへ変身 梱包材通販で急成長",
+   "url": "https://business.nikkei.com/atcl/NBD/19/00111/00125/",
+   "publisher": "日経ビジネス電子版",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1331",
+  "kind": "pain",
+  "title": "価格転嫁できず賃上げできないの壁",
+  "summary": "「価格転嫁できないから賃上げは無理」は言い訳だとし、利益率23％を上げるTシャツ印刷会社の代表の覚悟を伝える記事。値上げの説明が中小の課題。",
+  "industries": [
+   "印刷",
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「価格転嫁できないから賃上げ無理」は言い訳　利益率23％、坂口捺染代表の覚悟",
+   "url": "https://business.nikkei.com/atcl/gen/19/00717/021700007/",
+   "publisher": "日経ビジネス電子版",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1295",
+  "kind": "buyer",
+  "title": "部品の受発注をつなぐ仕組みが広がる",
+  "summary": "板金・切削・製缶などに強い町工場と、産業機械やプラントの発注企業をつなぐ仲介事業の社長が、町工場はもっと強くなると語った。",
+  "industries": [
+   "板金",
+   "切削加工",
+   "製缶"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "加藤キャディ社長「町工場はもっと強くなる」 部品の受発注つなぐ",
+   "url": "https://business.nikkei.com/atcl/NBD/19/00119/00141/?P=4",
+   "publisher": "日経ビジネス電子版",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2571",
+  "kind": "success",
+  "title": "鉄加工の4代目が食品で新商品",
+  "summary": "鉄加工の町工場の4代目社長が、見た目も楽しい和風ピクルスを家族と試作を重ねて商品化し、成功した。異業種の新商品で会社を変えた例。",
+  "industries": [
+   "食品製造",
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「映える和風ピクルス」で大成功 開発者は町工場4代目社長",
+   "url": "https://xtrend.nikkei.com/atcl/contents/18/00397/00008/",
+   "publisher": "日経クロストレンド",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2572",
+  "kind": "success",
+  "title": "めっきの常識を覆す技術で世界へ",
+  "summary": "岐阜のめっきの町工場の2代目が、クロムを使わない表面処理を開発し、装置も外注せず自社で作って大きな世界市場に挑んでいる。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "環境規制に合う処理方法の説明",
+  "source": {
+   "title": "世界7兆円市場に挑む岐阜の町工場 クロムメッキの常識覆す2代目の手腕",
+   "url": "https://xtrend.nikkei.com/atcl/contents/18/01038/00014/",
+   "publisher": "日経クロストレンド",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1634",
+  "kind": "trend",
+  "official": false,
+  "title": "BtoB向けAI検索が仕入れ先を提案",
+  "summary": "中国アリババが、要件を伝えるとAIがサプライヤーを提案するBtoB向けのAI検索エンジンを出した。発注先探しもAIに聞く時代へ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "アリババ 世界初のBtoB向けAI検索エンジン「Accio」をリリース",
+   "url": "https://xtrend.nikkei.com/atcl/contents/18/00327/00217/",
+   "publisher": "日経クロストレンド",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2573",
+  "kind": "success",
+  "title": "近所の工場を回り曲げ装置を自作",
+  "summary": "大田区の町工場の社長は、自分で引いた図面を手に近くの工場を回り、厚いパイプをゆがみなく曲げる自動装置を2年半かけて完成させた。",
+  "industries": [
+   "パイプ加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "環境問題の本質は人間の〝超消費問題〟大田区の町工場社長が追及する「生かす」「戻す」を見据えたものづくりとは？",
+   "url": "https://wedge.ismedia.jp/articles/-/40914",
+   "publisher": "Wedge ONLINE",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2574",
+  "kind": "success",
+  "title": "本業の合間に作った200万円の音響機器",
+  "summary": "研究開発型の町工場は、社内の有志が本業の合間にレコードプレーヤーを一から設計した。200万円でも専門誌で紹介され、予想を超える注文が入った。",
+  "industries": [
+   "切削加工",
+   "精密機器"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "技術を見せるための自社製品づくり",
+  "source": {
+   "title": "ゼロから設計したレコードプレーヤーが話題！ “研究開発型町工場”がすごい！（リケラボ）",
+   "url": "https://gendai.media/articles/-/85269?page=2",
+   "publisher": "現代ビジネス",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1635",
+  "kind": "trend",
+  "official": false,
+  "title": "2030年代に迫る中小の大量倒産の危機",
+  "summary": "このままでは中小企業の多くがもたず、2030年代に大量倒産の危機が来ると論じる記事。取引先の廃業に備え、発注側も新しい仕入れ先を探す。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "このままでは中小企業の大半がもたない…「大量倒産の危機」が「2030年代」に迫る理由",
+   "url": "https://gendai.media/articles/-/138254",
+   "publisher": "現代ビジネス",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2575",
+  "kind": "success",
+  "title": "焚き火台が5日で初回100台完売",
+  "summary": "福岡の鉄工所は受注生産の負担から一般向けブランドを始め、キャンプ用の焚き火台が5日で初回100台売り切れた。BtoC売上2億円を目指す。",
+  "industries": [
+   "製缶",
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "アウトドア用品に生きる溶接の技",
+  "source": {
+   "title": "【福岡】5日で100台のヒット。目指せBtoC売上「2億円」",
+   "url": "https://newspicks.com/news/6994120/body/",
+   "publisher": "NewsPicks",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2576",
+  "kind": "success",
+  "title": "廃業寸前から世界を目指すブランドへ",
+  "summary": "廃業寸前だった岐阜の撚糸の町工場が、自社ブランドのタオルの大ヒットで業績を立て直し、世界を目指すブランド企業になった経緯。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "廃業寸前の町工場が、なぜ「世界を目指すブランド企業」になれたのか",
+   "url": "https://newspicks.com/news/16890502/body/",
+   "publisher": "NewsPicks",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2577",
+  "kind": "success",
+  "title": "早くから自社ECとメルマガで直販",
+  "summary": "東京・長野の鞄の工房は、下請けから直販に切り替え、2000年代初めから自社ECとメルマガを始め、今はSNSでも製品の価値を伝えて立ち直った。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "【東京･長野】町工房、下請けから直販への転換で起死回生",
+   "url": "https://newspicks.com/news/7259548/body",
+   "publisher": "NewsPicks",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1332",
+  "kind": "pain",
+  "title": "新規事業が当たり問合せに追われる",
+  "summary": "創業77年の樹脂の町工場が2020年に食器ブランドを始めて当たったが、問い合わせが殺到し、人手不足の中で対応に追われた。売れた後の体制も課題。",
+  "industries": [
+   "樹脂成形"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "問い合わせ前に読んでほしいよくある質問",
+  "source": {
+   "title": "創業77年の町工場が「新規事業で大当たり」 しかし問合せの嵐……人手不足の中、どう解決した？ (ITmedia ビジネスオンライン)",
+   "url": "https://newspicks.com/news/10890929/",
+   "publisher": "NewsPicks",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2578",
+  "kind": "success",
+  "title": "自社製品を持つ町工場が組んで出展",
+  "summary": "自社製品を開発する全国の町工場が集まり、共同で展示会に出る「町工場プロダクツ」の取り組み。1社では届かない買い手に会える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "日本中のものづくり町工場に元気を届ける「町工場プロダクツ」",
+   "url": "https://newspicks.com/news/10346524/body/",
+   "publisher": "NewsPicks",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2579",
+  "kind": "success",
+  "title": "鋳物メーカーが店を開き一般向けへ",
+  "summary": "静岡の鋳物メーカーがスズのぐい飲みなどを売る店を開き、一般向けに乗り出した。消費者への知名度向上と社員の意識改革が狙い。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "鋳物製造の栗田産業、BtoCブランド展開で知名度向上狙う",
+   "url": "https://www.nikkei.com/article/DGXZQOCC078990X00C23A4000000/",
+   "publisher": "日本経済新聞",
+   "date": "2023-04"
+  }
+ },
+ {
+  "id": "success-2580",
+  "kind": "success",
+  "title": "自社製品の開発で若者が集まる工場に",
+  "summary": "従業員20人未満の板金の町工場に年200人超が応募し、社員の8割が20代。売上半減の時期に始めた自社製品の開発が転機になった。",
+  "industries": [
+   "板金"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "自社製品づくりを求職者に伝える",
+  "source": {
+   "title": "従業員20人未満の「町工場」に年200人超が殺到、若者が集まりまくる“驚きの秘密”",
+   "url": "https://www.sbbit.jp/article/st/185446",
+   "publisher": "ビジネス+IT（Seizo Trend）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1636",
+  "kind": "trend",
+  "official": false,
+  "title": "町工場が自社の技術を他社に売る側へ",
+  "summary": "従業員38人で売上73億円の金沢の会社は、大企業に出していた製造向けAIの自動化技術を、中小の町工場にも届ける方向へ動いている。",
+  "industries": [
+   "装置",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "従業員38人で売上73億円の衝撃…世界初「製造AI」で常識を覆す「金沢の町工場」の正体",
+   "url": "https://www.sbbit.jp/article/st/186631",
+   "publisher": "ビジネス+IT（Seizo Trend）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1637",
+  "kind": "trend",
+  "official": false,
+  "title": "生成AIで受注から請求まで自作アプリ",
+  "summary": "岐阜の小さな町工場が生成AIを使い、傷の自動検出や受注から請求書発行までを一元管理するアプリ、毎朝連絡する「AI社員」まで自作した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ウソだろ…岐阜の小さな町工場に「AI社員」爆誕、Claude等でアプリ量産「神事例4選」",
+   "url": "https://www.sbbit.jp/article/st/185554",
+   "publisher": "ビジネス+IT（Seizo Trend）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1638",
+  "kind": "trend",
+  "official": false,
+  "title": "50代社員も生成AIを使う工場",
+  "summary": "愛知の町工場が全社員に生成AIを広げ、紙をなくしてバックヤードを軽くし、顧客とのやりとりに時間を回した。使われない壁を崩す4つの仕掛けを紹介。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "50代もGeminiで覚醒、愛知の町工場が「使われない壁」をぶち壊した「4つの仕掛け」",
+   "url": "https://www.sbbit.jp/article/st/186666",
+   "publisher": "ビジネス+IT（Seizo Trend）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2581",
+  "kind": "success",
+  "title": "売上8割減から調理器具で再起",
+  "summary": "東京下町の板金の町工場は大口取引が減って売上が8割落ち、社員を30人から15人に減らした。社長が妻のために作った卵とき器具が2億5000万円売れた。",
+  "industries": [
+   "板金"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "家族の困りごとから生まれた製品の話",
+  "source": {
+   "title": "売上8割減で瀕死の町工場が「卵とき」で2億5000万円…社員半減に耐えて作った“妻のため”のアイデア調理器具",
+   "url": "https://bunshun.jp/articles/-/89099",
+   "publisher": "文春オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1333",
+  "kind": "pain",
+  "title": "急な承継で社員が味方にならない",
+  "summary": "父が倒れ32歳で町工場を継いだ元主婦の2代目は、就任当初に従業員全員が敵になったと語る。急な事業承継で社内をまとめる苦労。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "父が突然倒れ「余命4日」と…32歳で町工場を継いだ“元主婦”2代目社長が語る、キツすぎる就任当時",
+   "url": "https://bunshun.jp/articles/-/75297?page=3",
+   "publisher": "文春オンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1639",
+  "kind": "trend",
+  "official": false,
+  "title": "会社員が町工場を買って社長になる",
+  "summary": "経営経験のない50代の会社員が町工場を買って社長になった話。後継者のいない町工場を個人が引き継ぐ道が広がっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "経営経験ゼロ、50代のサラリーマンが町工場を買って社長になった話",
+   "url": "https://gendai.media/articles/-/114461?page=2",
+   "publisher": "現代ビジネス",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1640",
+  "kind": "trend",
+  "official": false,
+  "title": "先行予約型クラファンで試作を問う",
+  "summary": "大手でも新製品を試作段階で先行予約型のクラウドファンディングに出し、市場の反応を確かめる動きが広がったと伝えた記事。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "2019年、大企業の「ヒットを生み出す法則」が変わってきた ──「ガイアの夜明け」密着、Makuakeに聞く",
+   "url": "https://www.businessinsider.jp/post-187594",
+   "publisher": "BUSINESS INSIDER JAPAN",
+   "date": "2019"
+  }
+ },
+ {
+  "id": "success-2582",
+  "kind": "success",
+  "title": "展示会の1点がセレクト店の目に",
+  "summary": "富山の鋳物の下請け工場は2001年、東京の展示会に自社製のベルを出し、セレクトショップに扱われたことから自社ブランドの食器や小物を広げた。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "展示会で出会った買い手の声",
+  "source": {
+   "title": "富山の鋳物メーカー「能作」による変革の秘密",
+   "url": "https://jbpress.ismedia.jp/articles/-/68781",
+   "publisher": "JBpress",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1641",
+  "kind": "trend",
+  "official": false,
+  "title": "作って売るSPAの力を中小にも",
+  "summary": "作る会社が自ら売り場まで持つ製造小売（SPA）の力を身に付けよう、と中小製造業に呼びかける記事。直販やECはその入口になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「SPA（製造小売）構築力」を身に付けよう",
+   "url": "https://jbpress.ismedia.jp/articles/-/69529",
+   "publisher": "JBpress",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1642",
+  "kind": "trend",
+  "official": true,
+  "title": "宮城は紙の企業ガイドを終えWebへ",
+  "summary": "宮城県は、ものづくり企業の紙のガイドブック発行を終え、Web上の企業ガイドに一本化して掲載企業を募っている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "宮城ものづくり企業ガイドについて",
+   "url": "https://www.pref.miyagi.jp/soshiki/shinsan/monodukuri-guide.html",
+   "publisher": "宮城県",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1296",
+  "kind": "buyer",
+  "title": "宮城の企業ガイドは設備や認証で探す",
+  "summary": "宮城ものづくり企業ガイドは、加工技術・設備・認証・関連分野など目的に合わせて企業を検索できる作り。発注側は条件から絞り込む。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "うちの設備と認証を一覧で紹介します",
+  "source": {
+   "title": "宮城ものづくり企業ガイド 掲載企業募集",
+   "url": "https://www.pref.miyagi.jp/documents/59792/bosyu.pdf",
+   "publisher": "宮城県",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1957",
+  "kind": "question",
+  "title": "自治体の企業ガイドに載るには？",
+  "summary": "宮城の例では掲載料は無料で、県内に拠点があり県の産業振興の協議会に加入していることが条件。まず地元の窓口に条件を聞くのが早い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "宮城ものづくり企業ガイド 掲載企業募集",
+   "url": "https://www.pref.miyagi.jp/documents/59792/bosyu.pdf",
+   "publisher": "宮城県",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1297",
+  "kind": "buyer",
+  "title": "北海道は支援センター経由で見積依頼",
+  "summary": "北海道の受注企業ガイドでは、発注側は支援センターを通して掲載企業に外注の打診や見積依頼ができる。直接より安心して頼める仕組み。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "北海道受注企業ガイド",
+   "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2023/04/hokkaidojuchuguide.pdf",
+   "publisher": "北海道中小企業総合支援センター",
+   "date": "2023-04"
+  }
+ },
+ {
+  "id": "trend-1643",
+  "kind": "trend",
+  "official": true,
+  "title": "北海道の受注企業ガイドに150社",
+  "summary": "北海道中小企業総合支援センターのガイドには、道内の中小製造業150社の概要・主要製品・得意技術が載っている（2023年版）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "北海道受注企業ガイド",
+   "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2023/04/hokkaidojuchuguide.pdf",
+   "publisher": "北海道中小企業総合支援センター",
+   "date": "2023-04"
+  }
+ },
+ {
+  "id": "trend-1644",
+  "kind": "trend",
+  "official": true,
+  "title": "三重のデジタルガイドに219社",
+  "summary": "三重県のものづくり企業デジタルガイドには219社が紹介され、掲載企業への問い合わせは各社へ直接行う形になっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "三重県ものづくり企業デジタルガイド掲載企業",
+   "url": "https://www.pref.mie.lg.jp/SSHUSEKI/HP/85982033339_00002.htm",
+   "publisher": "三重県",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1334",
+  "kind": "pain",
+  "title": "ガイドに載っても受注は約束されない",
+  "summary": "三重県は、デジタルガイドは商談のきっかけづくりが目的で取引を約束するものではないと明記。掲載後の問い合わせ対応と自社サイトが勝負になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "ガイドを見た方へ：うちに頼む前に知ってほしいこと",
+  "source": {
+   "title": "三重県ものづくり企業デジタルガイド 掲載案内",
+   "url": "https://www.pref.mie.lg.jp/common/content/001194638.pdf",
+   "publisher": "三重県",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1298",
+  "kind": "buyer",
+  "title": "県のガイドから自社サイトへ飛ぶ",
+  "summary": "三重県のガイドは掲載企業へ直接問い合わせる方式。発注側はガイドで候補を見つけ、各社のサイトで詳しく確かめてから連絡する流れになる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "三重県ものづくり企業デジタルガイド掲載企業",
+   "url": "https://www.pref.mie.lg.jp/SSHUSEKI/HP/85982033339_00002.htm",
+   "publisher": "三重県",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1645",
+  "kind": "trend",
+  "official": true,
+  "title": "札幌市が道外発注企業との商談会",
+  "summary": "札幌市は道外の発注企業と道内の受注企業を引き合わせる「ものづくりマッチング in SAPPORO」を開き、2026年7月22日の回を案内した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ものづくりマッチング in SAPPORO 案内",
+   "url": "https://www.city.sapporo.jp/keizai/seizo/shien/documents/r8sasshi.pdf",
+   "publisher": "札幌市",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1646",
+  "kind": "trend",
+  "official": false,
+  "title": "川口は「技術」そのものを認定",
+  "summary": "川口商工会議所は地元の製品（i-mono）と製造技術（i-waza）を認定。チラシでは製品73件・技術50件を認定済みとしている。",
+  "industries": [
+   "金属加工",
+   "鋳造",
+   "金型"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "川口i-mono・川口i-waza チラシ",
+   "url": "https://kawaguchicci.or.jp/brand/about/bland_doc/1_r7_brand_flyer.pdf",
+   "publisher": "川口商工会議所",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "success-2583",
+  "kind": "success",
+  "title": "地域の認定を記事の根拠にする",
+  "summary": "川口のi-wazaのように、地域団体が技術を認定する制度がある。認定を受けたら、何を評価されたかを記事で具体的に書くと信頼の裏付けになる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "地域の技術認定で評価されたポイント",
+  "source": {
+   "title": "川口i-mono・川口i-waza チラシ",
+   "url": "https://kawaguchicci.or.jp/brand/about/bland_doc/1_r7_brand_flyer.pdf",
+   "publisher": "川口商工会議所",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1647",
+  "kind": "trend",
+  "official": true,
+  "title": "川口市は出展企業を冊子で紹介",
+  "summary": "川口市は市産品フェアに出る企業を、優れた製品・技術を持つ会社として毎年の冊子にまとめて公開している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "川口市産品フェア 出展企業紹介 BUSINESS2024",
+   "url": "https://www.city.kawaguchi.lg.jp/material/files/group/104/BUSINESS2024.pdf",
+   "publisher": "川口市",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "success-2584",
+  "kind": "success",
+  "title": "ハローワークの冊子で求職者に届く",
+  "summary": "ハローワーク川口は、金型や めっきなど地元製造業6社の強みと仕事内容を紹介する冊子を作っている。採用向けの発信の場にもなる。",
+  "industries": [
+   "金型",
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ハローワーク川口 企業紹介冊子",
+   "url": "https://jsite.mhlw.go.jp/saitama-hellowork/content/contents/002875622.pdf",
+   "publisher": "ハローワーク川口",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2585",
+  "kind": "success",
+  "title": "精度の数字と一貫体制を前に出す",
+  "summary": "兵庫県の紹介シートで、尼崎の精密部品会社は0.003mmの精度と、加工から組立・試験まで社内でできる体制を強みに挙げている。",
+  "industries": [
+   "切削加工",
+   "航空宇宙"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "加工から試験まで社内で完結する理由",
+  "source": {
+   "title": "兵庫県 企業紹介シート（尼崎市・精密部品）",
+   "url": "https://web.pref.hyogo.lg.jp/hsk08/sangyoshinkou/documents/03_zeroseikou.pdf",
+   "publisher": "兵庫県",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2586",
+  "kind": "success",
+  "title": "小ロットに強い量産品メーカー",
+  "summary": "兵庫県の紹介シートで、尼崎の釘メーカーは冷間圧造の技術で多品種・小ロットにも応じられる点を打ち出している。量産品でも小回りを書く。",
+  "industries": [
+   "鍛造",
+   "ねじ・締結部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "量産品メーカーが小ロットに応える仕組み",
+  "source": {
+   "title": "兵庫県 企業紹介シート（尼崎市・釘製造）",
+   "url": "https://web.pref.hyogo.lg.jp/hsk08/sangyoshinkou/documents/01_amatei.pdf",
+   "publisher": "兵庫県",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2587",
+  "kind": "success",
+  "title": "工程を図面から検査まで並べる",
+  "summary": "尼崎産業フェアの出展ページで、ある板金会社は切断・曲げ・溶接・表面処理・組立・検査まで一貫で対応すると工程を順に示している。",
+  "industries": [
+   "板金",
+   "溶接"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "図面を受けてから納品までの工程",
+  "source": {
+   "title": "尼崎産業フェア 出展企業紹介",
+   "url": "https://pr.mono.ipros.com/amafair/product/detail/2001544504",
+   "publisher": "尼崎産業フェア実行委員会",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2588",
+  "kind": "success",
+  "title": "協力工場との連携も書いておく",
+  "summary": "尼崎産業フェアの出展ページには、海外の協力企業と組んで加工すると明記する会社もある。自社でできない範囲の頼み方を示すと相談が増えやすい。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "尼崎産業フェア 出展企業紹介",
+   "url": "https://pr.mono.ipros.com/amafair/product/detail/2001544452",
+   "publisher": "尼崎産業フェア実行委員会",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1648",
+  "kind": "trend",
+  "official": true,
+  "title": "尼崎・西淀川でものづくり就職フェア",
+  "summary": "ハローワークが尼崎と大阪・西淀川の製造業を集めた就職フェアを案内している。地域の就職催しも求職者に知ってもらう場になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "あま・にしよど ものづくり就職フェアin尼崎",
+   "url": "https://jsite.mhlw.go.jp/osaka-hellowork/list/umeda/monodukuri.html",
+   "publisher": "ハローワーク梅田",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1649",
+  "kind": "trend",
+  "official": true,
+  "title": "北九州はオンリーワン企業を認定",
+  "summary": "北九州市は独自の技術・製品を持つ中小企業を「オンリーワン企業」として認定し、一覧やPR動画を公開している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "北九州オンリーワン企業 募集",
+   "url": "https://ssl.city.kitakyushu.lg.jp/files/001090743.pdf",
+   "publisher": "北九州市",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1650",
+  "kind": "trend",
+  "official": false,
+  "title": "北九州メッセでものづくり技術振興展",
+  "summary": "2026年7月8〜10日、北九州メッセで「ふくおか未来ものづくり技術振興展2026」が開かれ、製造技術マッチングフェアも同時に行われる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ふくおか未来ものづくり技術振興展2026 出展案内",
+   "url": "https://solution-expo.jp/pdf/ふくおか未来ものづくり技術振興展2026出展のご案内.pdf",
+   "publisher": "ふくおか未来ものづくり技術振興展",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "success-2589",
+  "kind": "success",
+  "title": "子ども向けガイドで工場見学を受ける",
+  "summary": "山形県は小4版・中2版のものづくりガイドブックに企業見学を受け入れる会社を載せる。2026年度の募集は46社と62社。将来の担い手へ届く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "小学生の工場見学で伝えていること",
+  "source": {
+   "title": "やまがたものづくりガイドブック 掲載企業の募集",
+   "url": "https://www.pref.yamagata.jp/110009/sangyo/shokogyo/jinzai/monodukuri-guidebook-bosyu2026.html",
+   "publisher": "山形県",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1651",
+  "kind": "trend",
+  "official": false,
+  "title": "横浜の企業ガイドは日英2か国語",
+  "summary": "横浜ものづくり企業ガイドは日本語版と英語版を用意。掲載は2013年度の122社から2015年度の143社へ増えたとしている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "横浜ものづくり企業ガイド2019-2020",
+   "url": "https://www.idec.or.jp/renkei/guide/index.php",
+   "publisher": "横浜企業経営支援財団",
+   "date": "2019"
+  }
+ },
+ {
+  "id": "trend-1652",
+  "kind": "trend",
+  "official": true,
+  "title": "広島県受注企業ガイドが開設",
+  "summary": "ひろしま産業振興機構は2023年11月に県内ものづくり企業の紹介サイト「広島県受注企業ガイド」を公開。掲載は207社、掲載料は無料。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "広島県受注企業ガイドをオープン",
+   "url": "https://prtimes.jp/main/html/rd/p/000000068.000082865.html",
+   "publisher": "PR TIMES（ひろしま産業振興機構の発表）",
+   "date": "2023-11"
+  }
+ },
+ {
+  "id": "buyer-1299",
+  "kind": "buyer",
+  "title": "県のガイドは新規取引先選びの資料",
+  "summary": "ひろしま産業振興機構は、受注企業ガイドを発注企業が新しい取引先を選ぶための資料として使うよう呼びかけている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "広島県受注企業ガイド",
+   "url": "https://www.hiwave.or.jp/organization/base/guidebook/",
+   "publisher": "ひろしま産業振興機構",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1958",
+  "kind": "question",
+  "title": "広島のガイドに載る手順は？",
+  "summary": "広島県受注企業ガイドは、工場検索サイトに無料会員登録したうえで、財団の販路開拓の担当へ掲載を申し出る流れ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "広島県受注企業ガイド",
+   "url": "https://www.hiwave.or.jp/organization/base/guidebook/",
+   "publisher": "ひろしま産業振興機構",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1300",
+  "kind": "buyer",
+  "title": "静岡は「ものナビ」で企業を探す",
+  "summary": "静岡県産業振興財団のビジネスマッチング支援サイト「ものナビ」では、掲載企業703件を加工や業種から検索できる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ものナビ 静岡県ものづくり企業ナビ",
+   "url": "https://d10000000iqyieag.my.salesforce-sites.com/companysearch/",
+   "publisher": "静岡県産業振興財団",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1301",
+  "kind": "buyer",
+  "title": "諏訪圏は6市町村を一つのガイドで",
+  "summary": "NAGANOものづくり諏訪圏ガイドは、岡谷・諏訪・茅野・下諏訪・富士見・原の企業をまとめて探せる。広域で発注先を探す人向け。",
+  "industries": [
+   "精密機器",
+   "電子部品",
+   "治具"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "NAGANOものづくり諏訪圏ガイド",
+   "url": "https://suwa.monozukuri.or.jp/",
+   "publisher": "NPO諏訪圏ものづくり推進機構",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2590",
+  "kind": "success",
+  "title": "地域団体がまとめて企業を発信",
+  "summary": "NPO諏訪圏ものづくり推進機構は、EMS・精密加工・治具などの地域企業を製造業ポータルにまとめて掲載し、ビジネスマッチングにつないでいる。",
+  "industries": [
+   "精密機器",
+   "治具",
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "NPO諏訪圏ものづくり推進機構 公式サイト（イプロス）",
+   "url": "https://pr.mono.ipros.com/en/suwamo/product/detail/2001605605",
+   "publisher": "NPO諏訪圏ものづくり推進機構",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1653",
+  "kind": "trend",
+  "official": true,
+  "title": "大田区の加工技術商談会に104社",
+  "summary": "大田区加工技術展示商談会2024は104社・団体が出展。区は毎年約2,000人以上が来場し、多くの取引が成立していると案内している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "大田区加工技術展示商談会2024",
+   "url": "https://www.city.ota.tokyo.jp/kuseijoho/press/releaseR06/2024090501.html",
+   "publisher": "大田区",
+   "date": "2024-09"
+  }
+ },
+ {
+  "id": "buyer-1302",
+  "kind": "buyer",
+  "title": "商談会の成果は4か月後に確かめる",
+  "summary": "大田区の加工技術展示商談会は、会期の4か月後にアンケートで取引が成立したかを確かめている。商談はその場で決まらないのが普通。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "第10回大田区加工技術展示商談会 報告書",
+   "url": "https://www.pio-ota.jp/docs/10th_report.pdf",
+   "publisher": "大田区産業振興協会",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1303",
+  "kind": "buyer",
+  "title": "墨田区の企業ガイドは業種から絞る",
+  "summary": "墨田区の冊子では、企業ガイドで業種の中分類を選び、地域やキーワードで絞って探す手順を紹介。業種名と得意分野の言葉が大事。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "うちは何屋さん？業種と得意を一言で",
+  "source": {
+   "title": "SUMIDA Connect 2022",
+   "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/pr_brand_hyousyo/monodukuriprbooks/sumidachalleconnevol.files/sumicone2022.pdf",
+   "publisher": "墨田区",
+   "date": "2022-03"
+  }
+ },
+ {
+  "id": "success-2591",
+  "kind": "success",
+  "title": "設計の得意と組立の得意をつなぐ",
+  "summary": "墨田区の事例では、企画・設計が得意な事業所と配線・組立が得意な事業所が組み、試作まで一貫して開発できた。得意と不得意を書くと組む相手が見つかる。",
+  "industries": [
+   "組立",
+   "電子部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "うちが組む相手に求めること",
+  "source": {
+   "title": "SUMIDA Connect 2022",
+   "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/pr_brand_hyousyo/monodukuriprbooks/sumidachalleconnevol.files/sumicone2022.pdf",
+   "publisher": "墨田区",
+   "date": "2022-03"
+  }
+ },
+ {
+  "id": "buyer-1304",
+  "kind": "buyer",
+  "title": "まず区の無料相談窓口に聞く",
+  "summary": "墨田区は発注や連携の最初の窓口として、コーディネーター15名の無料相談「すみサポ」を案内。経営相談から技術相談へつないだ例もある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "SUMIDA Connect 2022",
+   "url": "https://www.city.sumida.lg.jp/sangyo_jigyosya/sangyo/pr_brand_hyousyo/monodukuriprbooks/sumidachalleconnevol.files/sumicone2022.pdf",
+   "publisher": "墨田区",
+   "date": "2022-03"
+  }
+ },
+ {
+  "id": "pain-1335",
+  "kind": "pain",
+  "title": "区内企業どうしの連携が進みにくい",
+  "summary": "墨田区の行政評価では、区内事業者どうしや事業どうしの連携をさらに進めることが課題とされている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "令和3年度 行政評価（産業）",
+   "url": "https://www.city.sumida.lg.jp/kuseijoho/gyousei_hyouka/r3gyouseihyouka.files/sangyou313.pdf",
+   "publisher": "墨田区",
+   "date": "2021"
+  }
+ },
+ {
+  "id": "buyer-1305",
+  "kind": "buyer",
+  "title": "府内約4,500社から外注先を無料で",
+  "summary": "大阪産業局のMOBIOは、納期が厳しい・高い技術の会社に頼みたいといった相談に、府内約4,500社から外注先を無料で探す。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "MOBIO ガイド",
+   "url": "https://www.konan-u.ac.jp/front/wp/wp-content/uploads/mobio-guide.pdf",
+   "publisher": "大阪産業局（甲南大学掲載）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1654",
+  "kind": "trend",
+  "official": true,
+  "title": "常設展示の出展料を市が助成",
+  "summary": "東大阪市の産業振興の機構は、クリエイション・コア東大阪の常設展示に市内製造業が出すときの出展料を助成し、マッチングを促している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "クリエイション・コア東大阪 常設展示 出展料助成",
+   "url": "https://hojyokin-portal.jp/subsidies/75751",
+   "publisher": "補助金ポータル",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1655",
+  "kind": "trend",
+  "official": false,
+  "title": "燕三条のセンターがVR展示館",
+  "summary": "燕三条地場産業振興センターは、地元の金属加工業など22社を紹介するVR展示館を開いた（2023年の日刊工業新聞報道）。",
+  "industries": [
+   "金属加工",
+   "刃物・工具"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "燕三条地場産業振興センターがVR展示館",
+   "url": "https://www.nikkan.co.jp/articles/view/00666250",
+   "publisher": "日刊工業新聞",
+   "date": "2023"
+  }
+ },
+ {
+  "id": "trend-1656",
+  "kind": "trend",
+  "official": false,
+  "title": "燕三条メッセは241社が出展",
+  "summary": "燕三条ものづくりメッセは企業間のマッチングを目的とした展示会で、2016年は241社が出展し日本海側最大級とした。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "燕三条ものづくりメッセ2016",
+   "url": "https://kyodonewsprwire.jp/release/201610185426",
+   "publisher": "共同通信PRワイヤー",
+   "date": "2016-10"
+  }
+ },
+ {
+  "id": "trend-1657",
+  "kind": "trend",
+  "official": true,
+  "title": "青森のあっせん成立は年12件",
+  "summary": "21あおもり産業総合支援センターの令和6年度報告では、取引あっせんの紹介38件・成立12件。前年度は紹介199件・成立17件。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "令和6年度 事業報告",
+   "url": "https://www.21aomori.or.jp/21aomori/images/2025/06/R6jigyouhoukoku.pdf",
+   "publisher": "21あおもり産業総合支援センター",
+   "date": "2025-06"
+  }
+ },
+ {
+  "id": "trend-1658",
+  "kind": "trend",
+  "official": true,
+  "title": "宮城のあっせんは成立40件",
+  "summary": "みやぎ産業振興機構の令和6年度報告では、個別取引あっせん（一般産業）で304件をあっせんし、商談成立40件・成立額約5,263万円。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "令和6年度 事業報告及び財務諸表等",
+   "url": "https://www.joho-miyagi.or.jp/wp-content/uploads/2025/06/R6_hokoku.pdf",
+   "publisher": "みやぎ産業振興機構",
+   "date": "2025-06"
+  }
+ },
+ {
+  "id": "trend-1659",
+  "kind": "trend",
+  "official": true,
+  "title": "島根の取引成立は目標5件に4件",
+  "summary": "しまね産業振興財団の令和6年度報告では、下請取引あっせん活動の取引成立件数は実績4件で、目標の5件に届かなかった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "令和6年度 事業報告書",
+   "url": "https://www.joho-shimane.or.jp/files/original/2025070213425755952894a36.pdf",
+   "publisher": "しまね産業振興財団",
+   "date": "2025-07"
+  }
+ },
+ {
+  "id": "term-1490",
+  "kind": "term",
+  "title": "あっせんの「紹介」と「成立」",
+  "summary": "紹介は候補として会社を引き合わせた数、成立は実際に取引が始まった数。青森の例では紹介38件に対し成立12件で、紹介だけでは受注にならない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "令和6年度 事業報告",
+   "url": "https://www.21aomori.or.jp/21aomori/images/2025/06/R6jigyouhoukoku.pdf",
+   "publisher": "21あおもり産業総合支援センター",
+   "date": "2025-06"
+  }
+ },
+ {
+  "id": "buyer-1306",
+  "kind": "buyer",
+  "title": "島根のガイド掲載企業へは財団経由",
+  "summary": "島根県受注企業ガイドブックは機械金属・樹脂・電気の企業をまとめ、掲載企業に連絡したいときは財団の販路支援の課が窓口になる。",
+  "industries": [
+   "金属加工",
+   "樹脂成形",
+   "電子部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "島根県受注企業ガイドブック",
+   "url": "https://www.joho-shimane.or.jp/org/m_support/ts-g/gb/",
+   "publisher": "しまね産業振興財団",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1660",
+  "kind": "trend",
+  "official": true,
+  "title": "愛知はあっせんコーディネーター新設",
+  "summary": "あいち産業振興機構は令和6年度から取引あっせんのコーディネーターを新たに置き、受発注のマッチング支援を強めるとした。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "理事長就任あいさつ",
+   "url": "https://www.aibsc.jp/wp-content/uploads/2024/07/〇理事長就任あいさつ.pdf",
+   "publisher": "あいち産業振興機構",
+   "date": "2024-07"
+  }
+ },
+ {
+  "id": "trend-1661",
+  "kind": "trend",
+  "official": true,
+  "title": "東京の受発注登録は3万3,600社",
+  "summary": "東京都の事業資料では、中小企業振興公社の受発注情報に登録する企業は令和5年度実績で33,600社（都外を含む）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "産業労働局 事業早見表",
+   "url": "https://www.sangyo-rodo.metro.tokyo.lg.jp/documents/d/sangyo-rodo/hayamihyo_naka-2-pdf",
+   "publisher": "東京都産業労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1491",
+  "kind": "term",
+  "title": "下請企業振興協会",
+  "summary": "都道府県ごとにある、受注したい中小企業と発注したい企業の取引をあっせんする公的な団体。全国の協会が県どうしの情報をつなぐ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "全国下請企業振興協会 パンフレット",
+   "url": "https://zenkyo.or.jp/gaiyou/pdf/pamphlet202606.pdf",
+   "publisher": "全国中小企業振興機関協会",
+   "date": "2026-06"
+  }
+ },
+ {
+  "id": "buyer-1307",
+  "kind": "buyer",
+  "title": "海外の日系加工先を探すリスト",
+  "summary": "大阪府は府内に本社がある中小製造業の海外拠点と取扱製品をまとめたリストを公開。海外で日系の加工先を探す発注者向け（2026年3月更新）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "大阪のものづくり企業 海外拠点リスト",
+   "url": "https://www.pref.osaka.lg.jp/o110070/keizaikoryu/mono_kaigaikyoten/index.html",
+   "publisher": "大阪府",
+   "date": "2026-03"
+  }
+ },
+ {
+  "id": "trend-1662",
+  "kind": "trend",
+  "official": true,
+  "title": "合同商談会は311社で754商談",
+  "summary": "九都県市合同商談会（2025年1月、さいたま）は発注側90社・受注側221社が参加し、商談は754回だった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "九都県市合同商談会の結果",
+   "url": "https://www.pref.saitama.lg.jp/documents/263965/news2025013102.pdf",
+   "publisher": "埼玉県",
+   "date": "2025-01"
+  }
+ },
+ {
+  "id": "buyer-1308",
+  "kind": "buyer",
+  "title": "発注側は受注側の半分以下",
+  "summary": "2025年の九都県市合同商談会では発注90社に受注221社。発注側は限られた時間で選ぶので、事前に何ができるかを短く示せる準備が要る。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "5分で伝わるうちの会社紹介",
+  "source": {
+   "title": "九都県市合同商談会の結果",
+   "url": "https://www.pref.saitama.lg.jp/documents/263965/news2025013102.pdf",
+   "publisher": "埼玉県",
+   "date": "2025-01"
+  }
+ },
+ {
+  "id": "buyer-1309",
+  "kind": "buyer",
+  "title": "発注側は設備・材質・ロットを示す",
+  "summary": "山形県の商談会の案件リストでは、発注企業がロット、求める設備（複合旋盤・5軸加工機・マシニングセンタ等）、条件を並べて外注先を探す。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商談会 発注企業 案件リスト",
+   "url": "https://www300.pref.yamagata.jp/documents/25121/list14.pdf",
+   "publisher": "山形県",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1959",
+  "kind": "question",
+  "title": "発注者がまず確かめる項目は？",
+  "summary": "商談会の案件票では加工内容・設備・材質・ロットが並ぶ。記事やサイトにも、持っている設備名、扱える材質、得意なロット数を書いておくと答えになる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "うちが得意なロットと材質",
+  "source": {
+   "title": "商談会 発注企業 案件リスト",
+   "url": "https://www300.pref.yamagata.jp/documents/25121/list14.pdf",
+   "publisher": "山形県",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1310",
+  "kind": "buyer",
+  "title": "案件リストを見て参加を決める",
+  "summary": "宮城・山形・福島の合同商談会では発注企業の案件リストが公開され、受注企業は外注内容を見て参加を判断するよう案内された。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "2022宮城・山形・福島合同商談会 発注企業 案件リスト",
+   "url": "https://www.joho-miyagi.or.jp/wp-content/uploads/2022/09/889f80e5e5fcb334d5f476d7ff0672d0.pdf",
+   "publisher": "みやぎ産業振興機構",
+   "date": "2022-09"
+  }
+ },
+ {
+  "id": "buyer-1311",
+  "kind": "buyer",
+  "title": "発注側は求める技術・設備を書く",
+  "summary": "北海道の商談会の発注案件票には、発注企業が受注企業に求める技術・設備を書く欄がある。自社の載せ方もこの欄に合わせると伝わる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "商談会 発注案件",
+   "url": "https://www.hsc.or.jp/hsc_wp/wp-content/uploads/2019/09/2019hachuanken902.pdf",
+   "publisher": "北海道中小企業総合支援センター",
+   "date": "2019-09"
+  }
+ },
+ {
+  "id": "trend-1663",
+  "kind": "trend",
+  "official": true,
+  "title": "ジェグテックは年1万件のマッチング",
+  "summary": "中小機構の運営する企業マッチングサイトJ-GoodTech（ジェグテック）は、年間約1万件のマッチング実績があると紹介されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "J-GoodTech 関連ニュース",
+   "url": "https://j-net21.smrj.go.jp/news/j84vtt000000kfmz.html",
+   "publisher": "中小企業基盤整備機構（J-Net21）",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1312",
+  "kind": "buyer",
+  "title": "大手の購買も公的サイトで探す",
+  "summary": "解説コラムによると、J-GoodTechには国内中小約3万社に加え、国内大手約1,100社も登録（2026年10月時点の公式サイト概数として）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "J-GoodTech 解説コラム",
+   "url": "https://www.issoh.co.jp/column/details/18073/",
+   "publisher": "一創（コラム）",
+   "date": "2026-10"
+  }
+ },
+ {
+  "id": "success-2592",
+  "kind": "success",
+  "title": "廃業する取引先の代わりを数週間で",
+  "summary": "葛飾区の受発注相談では、取引先の廃業を控えた発注者が、相談から数週間で新しい取引先を見つけた。その後、別の部品の発注にもつながった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "取引先の廃業で困っている方へ",
+  "source": {
+   "title": "受発注相談 マッチング事例を紹介します",
+   "url": "https://www.city.katsushika.lg.jp/business/1000011/1030233/1000070/1039193/1040116.html",
+   "publisher": "葛飾区",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1313",
+  "kind": "buyer",
+  "title": "代わりの外注先は区の相談で",
+  "summary": "葛飾区は受発注相談のマッチング事例を公開している。今の外注先が使えなくなったとき、発注者は区の相談窓口を頼る選択肢がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "受発注相談 マッチング事例を紹介します",
+   "url": "https://www.city.katsushika.lg.jp/business/1000011/1030233/1000070/1039193/1040116.html",
+   "publisher": "葛飾区",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2593",
+  "kind": "success",
+  "title": "県の機構の紹介で地元加工先と出会う",
+  "summary": "長野県産業振興機構は、電設工具メーカーの依頼を発注案件として探索し、地元の金属部品加工企業を紹介。要求に応える加工先と出会えたと評価された。",
+  "industries": [
+   "金属加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "地元の金属部品加工企業をあっ旋紹介",
+   "url": "https://www.nice-o.or.jp/case/case-69949/",
+   "publisher": "長野県産業振興機構",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1664",
+  "kind": "trend",
+  "official": true,
+  "title": "湖西市が受注企業ガイドブック",
+  "summary": "静岡県湖西市は市内製造業の技術をPRし販路開拓と企業間連携を進めるため受注企業ガイドブックを作成。次年度の掲載希望は市の担当へ連絡。",
+  "industries": [
+   "自動車部品",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "モノづくりのまち湖西 受注企業ガイドブック",
+   "url": "https://www.city.kosai.shizuoka.jp/kigyoshokai/news_list/15677.html",
+   "publisher": "湖西市",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1336",
+  "kind": "pain",
+  "title": "県のネットワーク掲載には審査",
+  "summary": "千葉県ものづくりネットワークは、技術・製品の独自性、設備などの開発資源、品質への取り組みなどを基準に掲載を審査する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "千葉県ものづくりネットワーク",
+   "url": "https://www.pref.chiba.lg.jp/sanshin/mononet/index.html",
+   "publisher": "千葉県",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2594",
+  "kind": "success",
+  "title": "審査の項目で強みを棚おろし",
+  "summary": "千葉県の掲載基準にある独自性・設備・品質の取り組みは、そのまま自社の強みを書き出す項目になる。ブログの柱にも使える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "うちの品質への取り組み3つ",
+  "source": {
+   "title": "千葉県ものづくりネットワーク",
+   "url": "https://www.pref.chiba.lg.jp/sanshin/mononet/index.html",
+   "publisher": "千葉県",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2595",
+  "kind": "success",
+  "title": "設備・技術の紹介ページで試作相談",
+  "summary": "イプロスのニュースでは、三重県のガイドに載る会社が設備や加工技術を紹介するページを通じ、OEMや開発・試作の問い合わせが増えたとしている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "試作の相談で最初に聞くこと",
+  "source": {
+   "title": "イプロス ニュース（三重県の掲載企業）",
+   "url": "https://www.ipros.com/news/detail/74298",
+   "publisher": "イプロス",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1492",
+  "kind": "term",
+  "title": "入札参加資格",
+  "summary": "役所の仕事を受けるために、あらかじめ自治体に登録して得る資格。自治体の企業ガイドへの掲載とは別の制度なので混同しない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "自治体はどうやって仕事を発注する民間企業を選ぶの?",
+   "url": "https://clip.zaigenkakuho.com/biz_column_191224/",
+   "publisher": "財源確保（コラム）",
+   "date": "2019-12"
+  }
+ },
+ {
+  "id": "trend-1665",
+  "kind": "trend",
+  "official": true,
+  "title": "横須賀市も受発注取引を後押し",
+  "summary": "横須賀市は市内製造業の受発注取引を促す取り組みをまとめたページを設け、市として取引づくりを後押ししている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "受・発注取引促進の取り組み",
+   "url": "https://www.city.yokosuka.kanagawa.jp/4421/shoukou/seizogyo/guide.html",
+   "publisher": "横須賀市",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1960",
+  "kind": "question",
+  "title": "公的なあっせんは無料？",
+  "summary": "大阪のMOBIOや宮城の企業ガイドのように、公的な外注先探し・掲載は無料のものが多い。記事では使った窓口名を出すと読む人の安心になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "MOBIO ガイド",
+   "url": "https://www.konan-u.ac.jp/front/wp/wp-content/uploads/mobio-guide.pdf",
+   "publisher": "大阪産業局（甲南大学掲載）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2596",
+  "kind": "success",
+  "title": "商談会の前に案件票を読む",
+  "summary": "合同商談会では発注企業の案件が事前に公開される例が多い。自社に合う案件を選び、加工例の写真や図面例を用意して臨むと商談が具体的になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "商談会に持っていく加工サンプル",
+  "source": {
+   "title": "2022宮城・山形・福島合同商談会 発注企業 案件リスト",
+   "url": "https://www.joho-miyagi.or.jp/wp-content/uploads/2022/09/889f80e5e5fcb334d5f476d7ff0672d0.pdf",
+   "publisher": "みやぎ産業振興機構",
+   "date": "2022-09"
+  }
+ },
+ {
+  "id": "buyer-1314",
+  "kind": "buyer",
+  "title": "海外拠点の有無も選ぶ条件に",
+  "summary": "大阪府の海外拠点リストは、現地で対応できる部材や加工メーカーを探す発注者に向けたもの。海外工場がある会社はその対応範囲を書いておくとよい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "大阪のものづくり企業 海外拠点リスト",
+   "url": "https://www.pref.osaka.lg.jp/o110070/keizaikoryu/mono_kaigaikyoten/index.html",
+   "publisher": "大阪府",
+   "date": "2026-03"
+  }
+ },
+ {
+  "id": "success-2597",
+  "kind": "success",
+  "title": "海外展は自治体の共同出展で",
+  "summary": "ハノーバーメッセの報告では、中小が単独で出すより、自治体の支援で何社か一緒に出すほうが来場者を集めやすいとされた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "共同出展で海外展に出た話の書き方",
+  "source": {
+   "title": "世界最大の産業展示会に82社の日本企業が参加、日本版モノづくりを訴求",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1803/01/news066_2.html",
+   "publisher": "MONOist",
+   "date": "2018-03"
+  }
+ },
+ {
+  "id": "pain-1337",
+  "kind": "pain",
+  "title": "海外展は事前準備で決まる",
+  "summary": "海外展示会に出た大手の担当者が「日本の常識は向こうで通じず、事前準備が大事」と振り返った。出すだけでは知名度も上がりにくい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "初めての海外展で準備したこと",
+  "source": {
+   "title": "世界最大の産業展示会に82社の日本企業が参加、日本版モノづくりを訴求",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1803/01/news066_2.html",
+   "publisher": "MONOist",
+   "date": "2018-03"
+  }
+ },
+ {
+  "id": "success-2598",
+  "kind": "success",
+  "title": "県パビリオンで欧州の需要を探る",
+  "summary": "長野県産業振興機構がハノーバーメッセ2023に県内中小4社を出展。手作業の巻き線技術を持つ会社は試作品を出し、欧州での需要を確かめる場にした。",
+  "industries": [
+   "電子部品",
+   "装置"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "試作品を海外展で見せて反応を聞く",
+  "source": {
+   "title": "ハノーバーメッセ2023 長野県パビリオン",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/2304/21/news091.html",
+   "publisher": "MONOist",
+   "date": "2023-04"
+  }
+ },
+ {
+  "id": "trend-1666",
+  "kind": "trend",
+  "official": false,
+  "title": "Formnextに日本勢はまだ少ない",
+  "summary": "2019年のformnextで日本からの出展は10社、国別15位にとどまり、首位はドイツだったとMONOistが報じた。",
+  "industries": [
+   "3Dプリンタ"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "海外AM展で日本の加工が目立つ理由",
+  "source": {
+   "title": "製造領域における3Dプリンタの価値を再認識――formnext 2019 フォトレポート",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1912/06/news019_3.html",
+   "publisher": "MONOist",
+   "date": "2019-12"
+  }
+ },
+ {
+  "id": "trend-1667",
+  "kind": "trend",
+  "official": false,
+  "title": "日本版Formnextで自動車の引き合い",
+  "summary": "2020年のフォームネクストフォーラム東京で、国産メーカーの大型樹脂ペレット対応3Dプリンタに自動車業界からの引き合いが多いと紹介された。",
+  "industries": [
+   "3Dプリンタ",
+   "自動車部品"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "日本版Formnext、多彩な材料に対応する3Dプリンタが集結",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/2010/21/news005_2.html",
+   "publisher": "MONOist",
+   "date": "2020-10"
+  }
+ },
+ {
+  "id": "buyer-1315",
+  "kind": "buyer",
+  "title": "海外は日本勢に精度と信頼性を見る",
+  "summary": "3DPrint.comの2024年の記事は、Formnextで中国勢が品ぞろえや量産力を押し出す一方、日本勢は精度と信頼性で見られていると書いた。",
+  "industries": [
+   "3Dプリンタ",
+   "精密機器"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "海外の買い手に精度をどう証明するか",
+  "source": {
+   "title": "Asian Manufacturing at Formnext 2024",
+   "url": "https://3dprint.com/314511/asian-manufacturing-at-formnext-2024-3d-printing-evolution-and-impact/",
+   "publisher": "3DPrint.com",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "trend-1668",
+  "kind": "trend",
+  "official": false,
+  "title": "海外のAM企業が東京の展示会へ",
+  "summary": "Formnext Asia Tokyo Forum 2025では、海外の3Dプリンタ関連企業が日本市場を狙って出展し、国内AM企業への認知を広げる目的を挙げた。",
+  "industries": [
+   "3Dプリンタ"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "Formnext Asia Tokyo Forum 2025 concludes",
+   "url": "https://formnextforum.jp.messefrankfurt.com/tokyo/en/press/press-releases/2025/FFT2025-3.html",
+   "publisher": "メッセフランクフルト",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1669",
+  "kind": "trend",
+  "official": false,
+  "title": "MD&Mは医療以外の買い手も来る",
+  "summary": "ジェトロの2023年3月の報告では、米国の医療機器見本市MD&M Westに試作加工・部品の会社が多く出て、自動車・航空宇宙・半導体の来場者も集まり、出展者同士の取引も見られた。",
+  "industries": [
+   "医療機器",
+   "切削加工",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "医療機器展で加工会社が見られる点",
+  "source": {
+   "title": "MD&M West 現地調査報告",
+   "url": "https://www.jetro.go.jp/ext_images/biz/trendreports/2023/63771ab8fb5407ce/20230301.pdf",
+   "publisher": "ジェトロ",
+   "date": "2023-03"
+  }
+ },
+ {
+  "id": "success-2599",
+  "kind": "success",
+  "title": "「選ばれる製造パートナー」と名乗る",
+  "summary": "Nisshaは2026年2月のMD&M Westに出展し、医療機器メーカーに選ばれる受託製造パートナーとして自社を打ち出した。大手の伝え方の例。",
+  "industries": [
+   "医療機器",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "受託加工を一言で名乗る書き方",
+  "source": {
+   "title": "Nissha Medical Technologies at MD&M West 2026",
+   "url": "https://www.nissha.com/english/news/2026/01/26_006.html",
+   "publisher": "Nissha",
+   "date": "2026-01"
+  }
+ },
+ {
+  "id": "pain-1338",
+  "kind": "pain",
+  "title": "英語サイトを置くだけでは来ない",
+  "summary": "日本語ページを英訳しただけの英語サイトは、英語圏の人が検索する言葉や比べるときに知りたい情報に答えられず、問い合わせが増えにくいと指摘されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "英訳サイトから一歩進める方法",
+  "source": {
+   "title": "英語SEO対策とは?英語サイトで海外リードを獲得する実務設計",
+   "url": "https://www.shopowner-support.net/?p=262966",
+   "publisher": "ショップオーナーサポート",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1961",
+  "kind": "question",
+  "title": "海外の買い手は規格や品質保証も見る",
+  "summary": "海外の発注者は製品名だけでなく、用途・工程・規格・品質保証・納入体制・技術資料まで確かめる。仕様を並べるだけでは選ばれにくい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "英語ページに載せる項目一覧",
+  "source": {
+   "title": "製造業の海外Webマーケティング戦略 技術商材でリード獲得する方法と事例",
+   "url": "https://www.shopowner-support.net/?p=262983",
+   "publisher": "ショップオーナーサポート",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2600",
+  "kind": "success",
+  "title": "海外向けは用途と規格に絞る",
+  "summary": "部品や加工技術のような専門の商材は、広く知ってもらうより特定の用途・工程・規格に絞って発信したほうが商談につながりやすいとされる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "一つの用途に絞った英語記事",
+  "source": {
+   "title": "製造業の海外Webマーケティング戦略 技術商材でリード獲得する方法と事例",
+   "url": "https://www.shopowner-support.net/?p=262983",
+   "publisher": "ショップオーナーサポート",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1493",
+  "kind": "term",
+  "title": "hreflang（言語ごとのページの印）",
+  "summary": "日本語・英語などのページを別のURLにし、どれが同じ内容の別言語かを検索エンジンに伝える印。Googleが案内している方法として紹介されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "英語SEO対策とは?英語サイトで海外リードを獲得する実務設計",
+   "url": "https://www.shopowner-support.net/?p=262966",
+   "publisher": "ショップオーナーサポート",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2601",
+  "kind": "success",
+  "title": "問い合わせへの返事の速さで選ばれる",
+  "summary": "発注者は取引先をすぐ決めたいことがあり、問い合わせへの素早い返事や試作・見積もりの速さが受注の決め手になるという。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "見積もり回答の目安時間を書く",
+  "source": {
+   "title": "町工場のWeb活用（週刊アスキー）",
+   "url": "https://weekly.ascii.jp/elem/000/001/778/1778538/2/",
+   "publisher": "週刊アスキー",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2602",
+  "kind": "success",
+  "title": "手がけた仕事を写真つき事例に",
+  "summary": "注文生産が中心の会社は、手がけた仕事を写真つきの「事例」として載せると、何ができる会社か伝わりやすいとされる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "事例ページの英語版の作り方",
+  "source": {
+   "title": "町工場のWeb活用（週刊アスキー）",
+   "url": "https://weekly.ascii.jp/elem/000/001/778/1778538/2/",
+   "publisher": "週刊アスキー",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2603",
+  "kind": "success",
+  "title": "越境BtoBは24時間以内に返信",
+  "summary": "機械を扱う中小商社がAlibaba.comで1日5〜6件の問い合わせを受け、24時間以内に返事をし、3か月でアジアの4社と成約した（Alibaba.com公開の事例）。",
+  "industries": [
+   "産業機械"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "海外の問い合わせへの返信ルール",
+  "source": {
+   "title": "Kyowa Machinery expands into global markets with Alibaba.com",
+   "url": "https://www.casestudies.com/company/alibabacom/case-study/alibabacom-brings-our-first-cross-border-trading-a-success",
+   "publisher": "Alibaba.com（casestudies.com）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2604",
+  "kind": "success",
+  "title": "ASEANの買い手と少しずつ取引",
+  "summary": "機械系の中小商社がAlibaba.comで30〜40社の買い手と取引を結び、2年で売上が2億円増えたとAlibaba.comの事例が伝える。素早い返事と信頼づくりを重視した。",
+  "industries": [
+   "産業機械"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Asahi Shoko achieves 200 million yen sales growth with Alibaba.com",
+   "url": "https://www.casestudies.com/company/alibabacom/case-study/asahi-shoko-co-ltd-customer-case-study",
+   "publisher": "Alibaba.com（casestudies.com）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2605",
+  "kind": "success",
+  "title": "自社サイトに加え買い手を探しに行く",
+  "summary": "化粧品OEMの会社は自社サイトへの海外問い合わせを待つだけでなくAlibaba.comで買い手を探し、マレーシア・シンガポール・香港で商談を得た（Alibaba.comの事例）。",
+  "industries": [
+   "化粧品OEM"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "待つ発信と探す発信の両方",
+  "source": {
+   "title": "Cosmetec Japan expands overseas sales with Alibaba.com",
+   "url": "https://www.casestudies.com/company/alibabacom/case-study/cosmetec-japan-ltd-customer-case-study",
+   "publisher": "Alibaba.com（casestudies.com）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2606",
+  "kind": "success",
+  "title": "国内の季節の波を海外でならす",
+  "summary": "茶と茶器の会社がAlibaba.comで50か国以上の客とつながり、季節で波のある国内販売に比べ一年中の需要を得た。月の売上は6か月で12倍になったと同社事例にある。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Kogetsuen achieves global sales growth with Alibaba.com",
+   "url": "https://www.casestudies.com/company/alibabacom/case-study/kogetsuen-customer-case-study",
+   "publisher": "Alibaba.com（casestudies.com）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1670",
+  "kind": "trend",
+  "official": false,
+  "title": "Alibaba.comは通年の展示会",
+  "summary": "Alibaba.comは海外未経験の中小企業でも挑戦できる「オンライン展示会」として紹介されている。海外で売りたい会社と海外バイヤーを結ぶBtoBの場。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "海外未経験の中小企業もチャレンジできる! オンライン展示会Alibaba.comで海外進出",
+   "url": "https://ecnomikata.com/original_news/30721/",
+   "publisher": "ECのミカタ",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1671",
+  "kind": "trend",
+  "official": true,
+  "title": "Japan Streetに海外バイヤー7千人超",
+  "summary": "九州経済産業局の2026年5月の資料によると、ジェトロのバイヤー専用サイトJapan Streetには7,200名以上の海外バイヤーと11,300社の国内サプライヤーが登録している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "ジェトロ越境EC支援の案内",
+   "url": "https://www.kyushu.meti.go.jp/seisaku/chuken/oshirase/260604_1_3.pdf",
+   "publisher": "九州経済産業局",
+   "date": "2026-05"
+  }
+ },
+ {
+  "id": "term-1494",
+  "kind": "term",
+  "title": "グローバルセリング",
+  "summary": "Amazon.co.jpに出店したまま、Amazon.comなど海外のAmazonにも出品できる仕組み。海外のFBA倉庫も使えるため、手軽な越境ECの入口とされる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Amazonグローバルセリングの解説",
+   "url": "https://ecnomikata.com/ecnews/45125/",
+   "publisher": "ECのミカタ",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1339",
+  "kind": "pain",
+  "title": "刃物などは国によって送れない",
+  "summary": "越境ECでは原料などの理由で国によって発送できない商品がある。刃物のように規制にかかりうる商品は、売る国のルールを先に確かめる必要がある。",
+  "industries": [
+   "刃物・工具"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "海外へ送れるか確かめる手順",
+  "source": {
+   "title": "Amazon販売戦略の全体像",
+   "url": "https://stock-sun.com/column/amazon-hanbai-strategy-overview/",
+   "publisher": "STOCK SUN",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1672",
+  "kind": "trend",
+  "official": false,
+  "title": "METALEXは出展減でも来場増",
+  "summary": "高知県産業振興センターの現地報告では、タイのMETALEXは出展社が2023年の766社から2024年は743社に減った一方、来場者は98,686人から101,937人に増えた。",
+  "industries": [
+   "切削加工",
+   "金属加工",
+   "金型"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "タイ通信 vol.6",
+   "url": "https://joho-kochi.or.jp/kaigai/file/thai_vol.6.pdf",
+   "publisher": "高知県産業振興センター",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1673",
+  "kind": "trend",
+  "official": true,
+  "title": "県がタイの金属加工展に県ブース",
+  "summary": "長野県は2025年、タイ・バンコクの工作機械・金属加工展METALEXへの出展について発表した。県単位でASEANの販路開拓を後押しする例。",
+  "industries": [
+   "金属加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "METALEX2025への出展",
+   "url": "https://www.pref.nagano.lg.jp/keieishien/happyou/documents/0425metalex2025.pdf",
+   "publisher": "長野県",
+   "date": "2025-04"
+  }
+ },
+ {
+  "id": "term-1495",
+  "kind": "term",
+  "title": "Shopify Markets",
+  "summary": "一つのネットショップで複数の国・地域を扱い、国ごとに言語・通貨・価格を変えられるShopifyの機能。Shopify公式ブログで紹介されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "グローバルコマースの始め方",
+   "url": "https://www.shopify.com/jp/blog/global-commerce-b-ja",
+   "publisher": "Shopify",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1340",
+  "kind": "pain",
+  "title": "越境ECの前に規制・決済・物流",
+  "summary": "越境ECを始める前には、売る国の輸入規制や禁止品目、決済方法、物流の体制を確かめる必要があるとShopifyは案内している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "越境ECの始め方",
+   "url": "https://www.shopify.com/jp/blog/how-to-start-ekkyoec",
+   "publisher": "Shopify",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2607",
+  "kind": "success",
+  "title": "越境ECは小さく始められる",
+  "summary": "日本商工会議所の資料は、越境ECは海外に直接店を出すよりリスクや費用を抑えられ、初期投資を少なく海外展開できると説明している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "まずECで海外の反応を見る",
+  "source": {
+   "title": "越境EC支援ブック",
+   "url": "https://www.jcci.or.jp/kokusai/ec_supportbook.pdf",
+   "publisher": "日本商工会議所",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1674",
+  "kind": "trend",
+  "official": false,
+  "title": "越境ECは中小機構も支える",
+  "summary": "日本政策金融公庫の海外展開事例集（2022年）は、中小機構が越境ECの活用や海外販路開拓を支援していると案内している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "海外展開事例集",
+   "url": "https://www.jfc.go.jp/n/finance/keiei/pdf/kaigaitenkai_zireisyu_2202.pdf",
+   "publisher": "日本政策金融公庫",
+   "date": "2022-02"
+  }
+ },
+ {
+  "id": "success-2608",
+  "kind": "success",
+  "title": "LinkedInは検討期間の長いBtoB向き",
+  "summary": "海外営業でLinkedInが成果を出しやすいのは、検討に時間がかかり複数人で決めるBtoB商材とされ、製造業の部材は当てはまりやすいという。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "英語LinkedInで加工技術を伝える",
+  "source": {
+   "title": "LinkedInを使った海外営業",
+   "url": "https://www.digima-japan.com/knowhow/world/expert-lxr-00001.php",
+   "publisher": "Digima〜出島〜",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1341",
+  "kind": "pain",
+  "title": "LinkedInは相手を広げすぎて失敗",
+  "summary": "LinkedInで海外営業をするときに最も多い失敗は、狙う相手が広すぎることだと解説されている。業界や職種を絞るのが先。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "LinkedInを使った海外営業",
+   "url": "https://www.digima-japan.com/knowhow/world/expert-lxr-00001.php",
+   "publisher": "Digima〜出島〜",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1675",
+  "kind": "trend",
+  "official": false,
+  "title": "中小機構は調査から進出後まで支援",
+  "summary": "中小機構の海外展開支援は、市場調査から展示会・商談会、マッチング、進出後の経営安定までの段階に分かれているとDigimaが紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "中小機構の海外展開支援",
+   "url": "https://www.digima-japan.com/knowhow/world/d-globalbusiness-261026-2.php",
+   "publisher": "Digima〜出島〜",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2609",
+  "kind": "success",
+  "title": "出展前に目的と狙う相手を決める",
+  "summary": "農林水産省の輸出セミナー資料は、初めての展示会では出展目的とターゲットをはっきりさせ、商談ツールと出展計画を用意してから臨むよう勧めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "海外展の前に用意した資料",
+  "source": {
+   "title": "はじめて展示会・見本市に出展するための心構え",
+   "url": "https://www.gfp1.maff.go.jp/uploads/2023/10/GFP輸出オンラインセミナー　～はじめて展示会・見本市に出展するための心構え～.pdf",
+   "publisher": "農林水産省 GFP",
+   "date": "2023-10"
+  }
+ },
+ {
+  "id": "success-2610",
+  "kind": "success",
+  "title": "展示会後のこまめなフォロー",
+  "summary": "同じ資料は、展示会の後こそバイヤーへのきめ細かなフォローで突破口をつくり、自社の強みでまとめることが大事だとしている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "展示会後の英語フォローメール",
+  "source": {
+   "title": "はじめて展示会・見本市に出展するための心構え",
+   "url": "https://www.gfp1.maff.go.jp/uploads/2023/10/GFP輸出オンラインセミナー　～はじめて展示会・見本市に出展するための心構え～.pdf",
+   "publisher": "農林水産省 GFP",
+   "date": "2023-10"
+  }
+ },
+ {
+  "id": "pain-1342",
+  "kind": "pain",
+  "title": "「出展しただけ」で終わる",
+  "summary": "中小機構が「出展しただけ」にせず成約につなげる講座を開くほど、展示会に出ても商談が続かないのは多くの中小企業に共通の悩みになっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "商談会・展示会を成功させたい!「出展しただけ」にしない、成約につなげるためのポイント",
+   "url": "https://j-net21.smrj.go.jp/snavi2/articles/188210",
+   "publisher": "J-Net21（中小機構）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1676",
+  "kind": "trend",
+  "official": true,
+  "title": "ジェトロの越境EC支援は原則無料",
+  "summary": "財務省の予算執行調査（2025年度）は、ジェトロの越境EC支援がJapan Street・JAPAN MALL・JAPAN STOREへの出品機会を原則自己負担なしで出していると説明した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "予算執行調査資料（越境EC等利活用促進事業）",
+   "url": "https://www.mof.go.jp/policy/budget/topics/budget_execution_audit/fy2025/sy0706/20.pdf",
+   "publisher": "財務省",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1677",
+  "kind": "trend",
+  "official": true,
+  "title": "輸出支援を受けて成功は約半数",
+  "summary": "財務省の2025年度の調査では、新輸出大国コンソーシアムの支援で輸出に成功したと答えた事業者は回答395者のうち195者と、半数ほどだった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "予算執行調査の反映状況",
+   "url": "https://www.mof.go.jp/policy/budget/topics/budget_execution_audit/fy2025/hanei/20.pdf",
+   "publisher": "財務省",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1678",
+  "kind": "trend",
+  "official": true,
+  "title": "県が海外展示会の出展費を助成",
+  "summary": "神奈川県は海外の展示会やオンライン展示会の出展費用の一部（費用の2分の1、上限30万円）を助成している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "海外展開支援の案内",
+   "url": "https://www.pref.kanagawa.jp/documents/62562/03.pdf",
+   "publisher": "神奈川県",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1679",
+  "kind": "trend",
+  "official": true,
+  "title": "初めての海外展に県ブース",
+  "summary": "茨城県はドイツのelectronica2024などに県ブースを出し、初めて海外販路に挑む県内ものづくり企業の共同出展を募った。",
+  "industries": [
+   "電子部品",
+   "基板実装"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "国際展示会への茨城県ブース出展企業募集",
+   "url": "https://www.pref.ibaraki.jp/somu/hodo/hodo/pressrelease/hodohappyoushiryou/2203/documents/260401chusyoukigyou.pdf",
+   "publisher": "茨城県",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "trend-1680",
+  "kind": "trend",
+  "official": true,
+  "title": "国は見本市で商談件数を増やす方針",
+  "summary": "経済産業省の2024年度予算資料は、海外見本市・国内外の商談会・ミッション派遣などを使い、中小企業の商談件数を増やすことを目指すとしている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "令和6年度予算 PR資料",
+   "url": "https://www.meti.go.jp/main/yosangaisan/fy2024/pr/ip/keikyo_08.pdf",
+   "publisher": "経済産業省",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "success-2611",
+  "kind": "success",
+  "title": "社内の反対を越えて米国展へ",
+  "summary": "埼玉の金属加工会社は医療機器・航空機向けを狙い、社長の反対の中で担当者が米国展示会に申し込んだ。初出展で米国企業から複数の引き合いがあり、社長も前向きになった。",
+  "industries": [
+   "金属加工",
+   "切削加工",
+   "医療機器",
+   "航空宇宙"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "初めて海外展に出たときの社内の話",
+  "source": {
+   "title": "ジェトロ活用事例（埼玉の金属加工会社）",
+   "url": "https://www.jetro.go.jp/case_study/kaneko.html",
+   "publisher": "ジェトロ",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2612",
+  "kind": "success",
+  "title": "社長自らLinkedInで英語発信",
+  "summary": "樹脂成形用の微細金型を作る埼玉の会社は、2024年12月から社長自身がLinkedInで英語の情報発信を始め、展示会と合わせて医療用金型の輸出に力を入れている。",
+  "industries": [
+   "金型",
+   "医療機器",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "社長が英語で技術を語る投稿",
+  "source": {
+   "title": "中小企業の海外展開（埼玉の金型会社）",
+   "url": "https://www.jetro.go.jp/biz/areareports/2025/ef76ae5a2de4c178.html",
+   "publisher": "ジェトロ",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1681",
+  "kind": "trend",
+  "official": true,
+  "title": "METALEXに日本パビリオン25社",
+  "summary": "ジェトロは2025年のタイMETALEXに日本パビリオンを設け、日本企業25社（うち10社は初出品）が技術力をアピールしてASEANの販路を広げる支援をすると発表した。",
+  "industries": [
+   "切削加工",
+   "金属加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "METALEX 2025 ジャパン・パビリオン",
+   "url": "https://www.jetro.go.jp/news/releases/2025/d9a8cf7001115469.html",
+   "publisher": "ジェトロ",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1682",
+  "kind": "trend",
+  "official": true,
+  "title": "ジェトロの海外展で4千件超の商談",
+  "summary": "ジェトロの資料では、海外展示会のジャパン・パビリオンに2019年度は165社以上が出て、4,014件以上の商談があった。会期後の成約までを支援の範囲にしている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "ものづくり分野の海外展示会支援",
+   "url": "https://www.jetro.go.jp/ext_images/industry/machinery/manufacturingseries20200727.pdf",
+   "publisher": "ジェトロ",
+   "date": "2020-07"
+  }
+ },
+ {
+  "id": "trend-1683",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "韓国：AIで中小73社が初輸出",
+  "summary": "韓国：KOTRAは2025年12月、AI貿易支援センターの取り組みで慶尚北道の中小企業73社がその年に初めての輸出を果たしたと報告し、全国20センターへ広げる考えを示した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "KOTRA AI Trade Support Center Achieves Results in Expanding Exports",
+   "url": "https://www.asiae.co.kr/en/article/2025122610041362688",
+   "publisher": "アジア経済",
+   "date": "2025-12"
+  }
+ },
+ {
+  "id": "trend-1684",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "韓国：公的機関がAlibabaで出店支援",
+  "summary": "韓国：KOTRAは2022年にAlibaba.comと提携し、化粧品・食品・日用品の小規模事業者270社に、商品ページ作りや店舗開設、輸出相談をまとめて支援した。",
+  "industries": [
+   "化粧品OEM",
+   "食品製造"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "KOTRA Partners with Alibaba.com",
+   "url": "https://www.asiae.co.kr/en/article/2022030708184210714",
+   "publisher": "アジア経済",
+   "date": "2022-03"
+  }
+ },
+ {
+  "id": "success-2613",
+  "kind": "success",
+  "region": "overseas",
+  "title": "韓国：専門家が代わりに出品と対応",
+  "summary": "韓国：KOTRAのKoalaプロジェクトでは、輸出の専門家が参加企業の商品をKOTRAのAlibaba.comアカウントに載せ、1年間の買い手探しとやり取りを代わりに行う。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "英語対応を外に任せるという選択",
+  "source": {
+   "title": "KOTRA Holds Online Export Support Seminar with Alibaba.com",
+   "url": "https://www.asiae.co.kr/en/article/2023031608464079513",
+   "publisher": "アジア経済",
+   "date": "2023-03"
+  }
+ },
+ {
+  "id": "success-2614",
+  "kind": "success",
+  "region": "overseas",
+  "title": "韓国：市の共同出展で日本の展示会へ",
+  "summary": "韓国：華城市は2024年、6社のグループで東京のM-TECHに出展し、42件の輸出商談、総額745万ドルの商談成果を報告した。日本の展示会に海外勢が来る例。",
+  "industries": [
+   "機械部品",
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "国内展示会で海外勢と並ぶとき",
+  "source": {
+   "title": "Hwaseong-si Achieves $7.45 Million Export Consultation Results at Japan M-TECH",
+   "url": "https://www.asiae.co.kr/en/article/2024062410185520625",
+   "publisher": "アジア経済",
+   "date": "2024-06"
+  }
+ },
+ {
+  "id": "trend-1685",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "韓国：中小のデジタル度は100点中40点台",
+  "summary": "韓国：2022年の調査で国内中小企業のデジタル化の点数は100点中40.7点、製造業は41.4点だった。64%が世界のデジタル化への備えの戦略がないと答えた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "64% of Small and Medium Enterprises Lack Strategies to Prepare for Global Digitalization",
+   "url": "https://www.asiae.co.kr/en/article/2023010810553239224",
+   "publisher": "アジア経済",
+   "date": "2023-01"
+  }
+ },
+ {
+  "id": "trend-1686",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "韓国：公的BtoB市場buyKOREA",
+  "summary": "韓国：buyKOREAはKOTRAが運営するBtoBの取引サイトで、韓国の供給者と海外バイヤーを結び、中小企業向けにオンライン輸出マーケティングを一括で提供している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "KOTRA buyKOREA service",
+   "url": "https://www.investkorea.org/upload/kotraexpress/2017/04/service.html",
+   "publisher": "Invest KOREA（KOTRA）",
+   "date": "2017-04"
+  }
+ },
+ {
+  "id": "term-1496",
+  "kind": "term",
+  "region": "overseas",
+  "title": "韓国：buyKOREAの仕組み",
+  "summary": "韓国：buyKOREAでは海外の買い手が商品一覧を見て売り手にオファーを送り、オンラインで支払いまでできる。公的な越境BtoBサイトの一例。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "buyKOREA",
+   "url": "https://www.kotra.or.kr/english/subList/41000046004",
+   "publisher": "KOTRA",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2615",
+  "kind": "success",
+  "region": "overseas",
+  "title": "韓国：中小メーカーが8か月で3地域と契約",
+  "summary": "韓国：ある中小メーカーはAlibaba.comで8か月のうちに豪州・カナダ・中東と輸出契約を結び、月20〜30件の問い合わせと売上10%増を得たとAlibaba.comの事例が伝える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Samwon Tuksu boosts export sales with Alibaba.com",
+   "url": "https://www.casestudies.com/company/alibabacom/case-study/e-commerce-makes-exporting-easy-for-small-and-medium-sized-businesses",
+   "publisher": "Alibaba.com（casestudies.com）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1687",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "韓国：輸出バウチャーで販促を選ぶ",
+  "summary": "韓国：2026年度の中小企業輸出支援の統合公告によると、輸出バウチャーは規模に合わせた海外マーケティングをパッケージで支援し、13分類6,800余りのサービスから選べる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "2026年度中小企業輸出支援事業統合公告",
+   "url": "https://grant-documents.thevc.kr/285117_2026%EB%85%84%EB%8F%84_%EC%A4%91%EC%86%8C%EA%B8%B0%EC%97%85_%EC%88%98%EC%B6%9C%EC%A7%80%EC%9B%90%EC%82%AC%EC%97%85_%ED%86%B5%ED%95%A9%EA%B3%B5%EA%B3%A0(251210)-%EC%B5%9C%EC%A2%85.pdf",
+   "publisher": "中小ベンチャー企業部（THE VC掲載）",
+   "date": "2025-12"
+  }
+ },
+ {
+  "id": "success-2616",
+  "kind": "success",
+  "region": "overseas",
+  "title": "韓国：外国語サイト作りも補助対象",
+  "summary": "韓国：輸出バウチャーでは海外進出の準備として、海外認証やデザイン開発とともに外国語ホームページの制作も使えると解説されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "英語サイトを国の補助で作る考え方",
+  "source": {
+   "title": "輸出バウチャーの解説",
+   "url": "https://tilnote.io/pages/67cc3403243b9589e1f5db1a",
+   "publisher": "tilnote",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1688",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "韓国：道が外国語の会社案内を支援",
+  "summary": "韓国：江原道は外国語のブローシャーやe-bookの制作を別の事業として支援している。地域の自治体が発信物づくりを後押しする例。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "海外マーケティング支援",
+   "url": "https://state.gwd.go.kr/portal/partinfo/investmentEconomy/overseasMarketing",
+   "publisher": "江原特別自治道",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1689",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "台湾：中小デジタル化に36億元",
+  "summary": "台湾：香港立法会の2021年の調査によると、台湾は2020年9月の中小企業デジタル化戦略で2021〜25年に36億台湾ドルを充て、32,000件の支援を目標にした。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "Government support for SMEs in technology adoption in selected places",
+   "url": "https://www.legco.gov.hk/research-publications/english/2021rt06-government-support-for-small-and-medium-enterprises-in-technology-adoption-in-selected-places-20210218-e.pdf",
+   "publisher": "香港立法会",
+   "date": "2021-02"
+  }
+ },
+ {
+  "id": "success-2617",
+  "kind": "success",
+  "region": "overseas",
+  "title": "台湾：相談窓口がサイト作りを手伝う",
+  "summary": "台湾：小規模事業向けの技術支援センターの網を通じて、中小企業がネット販売やマーケティングに慣れるよう、Webサイトのデザインなどを手助けしている（香港立法会の調査）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Government support for SMEs in technology adoption in selected places",
+   "url": "https://www.legco.gov.hk/research-publications/english/2021rt06-government-support-for-small-and-medium-enterprises-in-technology-adoption-in-selected-places-20210218-e.pdf",
+   "publisher": "香港立法会",
+   "date": "2021-02"
+  }
+ },
+ {
+  "id": "trend-1690",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "台湾：デジタル転換に1社10万元補助",
+  "summary": "台湾：2025年の論文プレプリントは、デジタル転換に取り組む中小企業に1社あたり最大10万台湾ドルの補助があると紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "Taiwan SME digital transformation（preprint）",
+   "url": "https://www.preprints.org/manuscript/202503.2254",
+   "publisher": "Preprints.org",
+   "date": "2025-03"
+  }
+ },
+ {
+  "id": "trend-1691",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "台湾：中小のAI・5G導入を後押し",
+  "summary": "台湾：Taiwan Newsは、政府が小さな会社のAIや5Gの導入を支援する動きをまとめて報じている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "Taiwan helps small companies with AI and 5G adoption",
+   "url": "https://www.taiwannews.com.tw/en/topic/SMEs",
+   "publisher": "Taiwan News",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2618",
+  "kind": "success",
+  "region": "overseas",
+  "title": "台湾：Googleの指導でサイト作り講座",
+  "summary": "台湾：小規模事業者向けに、デジタルマーケティングや広告、予算づくり、客に使いやすいWebサイト作りをGoogleのスタッフが指導する講座が開かれた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Fostering the digital transformation of micro, small and medium enterprises in Taiwan",
+   "url": "https://youthbusiness.org/news/fostering-the-digital-transformation-of-micro-small-and-medium-enterprises-in-taiwan",
+   "publisher": "Youth Business International",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1692",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "台湾：AIで海外バイヤーと引き合わせ",
+  "summary": "台湾：TAITRAは年次報告で、AIで台湾企業と海外バイヤーを結ぶAiEZ TRADEを始め、AIマッチングの催しで7,498万ドルの商機を生んだとしている（年は明記なし）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "TAITRA Annual Report",
+   "url": "https://annualreport.taitra.org.tw/en/",
+   "publisher": "TAITRA",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1693",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "台湾：中小向けBtoBサイトTaiwantrade",
+  "summary": "台湾：Taiwantradeは2002年に始まった台湾の貿易振興機関によるBtoBサイトで、中小企業の取引の場として作られている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "Taiwan: Taiwantrade",
+   "url": "https://globaledge.msu.edu/global-resources/resource/1374",
+   "publisher": "globalEDGE（ミシガン州立大学）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2619",
+  "kind": "success",
+  "region": "overseas",
+  "title": "台湾：工作機械展を3D仮想展示に",
+  "summary": "台湾：2020年の工作機械展TMTSはコロナ下で3Dの仮想展示TMTS Virtualを開き、出展719社のうち100を超えるオンラインショールームを用意した。",
+  "industries": [
+   "産業機械",
+   "切削加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "工場をオンラインで見せる方法",
+  "source": {
+   "title": "TMTS Virtual Debuts and Launches a Digital Marketing Innovation Platform",
+   "url": "https://www.tmts.tw/en/news_content/23",
+   "publisher": "TMTS",
+   "date": "2020-11"
+  }
+ },
+ {
+  "id": "success-2620",
+  "kind": "success",
+  "region": "overseas",
+  "title": "台湾：展示会の後に近くの工場を見せる",
+  "summary": "台湾：2026年3月に台中で開くTMTSは、会場で新製品を見せたあと、近くの工場で実際のものづくりを見てもらう組み合わせを打ち出した。",
+  "industries": [
+   "産業機械",
+   "切削加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "工場見学を受け入れる案内ページ",
+  "source": {
+   "title": "TMTS 2026: Online-Offline Integration",
+   "url": "https://www.tmts.tw/en/news_content/123",
+   "publisher": "TMTS",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1694",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "台湾：中小もAIで段取りと保全",
+  "summary": "台湾：TMTS 2026の報道では、大企業だけでなく多くの中小企業がAIで生産計画や保全を最適化し、人手不足への対応を示したという。",
+  "industries": [
+   "産業機械"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "Smart Manufacturing Momentum Accelerates TMTS 2026",
+   "url": "https://all-about-industries.com/tmts-2026-showcases-taiwans-industrial-strength-a-fc1102f060eac5af8395b8dc183fa009",
+   "publisher": "all-about-industries",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "success-2621",
+  "kind": "success",
+  "region": "overseas",
+  "title": "台湾：展示会後もSEOページで見せる",
+  "summary": "台湾：TMTSのメディア協力社は、会期前のメールマガジン、会期中の取材、検索に強い出展者ページなどで、展示会の後も海外への露出を続けると案内している。",
+  "industries": [
+   "産業機械"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "展示会の内容をブログに残す",
+  "source": {
+   "title": "TMTS 2026 highlights online-offline integration",
+   "url": "https://metalworkingnews.info/tmts-2026-taiwan-international-machine-tool-show-highlights-online-offline-integration",
+   "publisher": "Metalworking News",
+   "date": "2026"
+  }
  }
 ]
