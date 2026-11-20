@@ -241185,5 +241185,7426 @@
    "publisher": "Metalworking News",
    "date": "2026"
   }
+ },
+ {
+  "id": "pain-1343",
+  "kind": "pain",
+  "title": "小さな工場は売り込みより仕組み",
+  "summary": "プレス技術の増刊号の抜粋記事は、営業担当がいない小さな製造業は「売り込む」より「売れる仕組みを作る」ほうが合っていると説く。発信や問い合わせの受け皿づくりが仕組みの中心になる。",
+  "industries": [
+   "プレス",
+   "板金",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "営業がいない工場が問い合わせを待てる理由",
+  "source": {
+   "title": "小さな製造業の営業は「売れる仕組み」（プレス技術 増刊抜粋）",
+   "url": "https://newswitch.jp/p/35682",
+   "publisher": "日刊工業新聞社『プレス技術』（工場マガジンラック）",
+   "date": "2022"
+  }
+ },
+ {
+  "id": "success-2622",
+  "kind": "success",
+  "title": "SNSと見学イベントを連動",
+  "summary": "多品種少量の板金・プレス会社が、SNSでの発信に力を入れ、実際のイベントとも組み合わせていると紹介されている。プレス・溶接・表面処理まで一貫で受けられる点を強みとして打ち出している。",
+  "industries": [
+   "板金",
+   "プレス",
+   "溶接"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "一貫生産で発注先が減る話を工程写真で見せる",
+  "source": {
+   "title": "板金DXと自動化推進で生産能力強化を徹底",
+   "url": "https://kojomag.nikkan.co.jp/press/kishu/317",
+   "publisher": "日刊工業新聞社『プレス技術』（工場マガジンラック）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2623",
+  "kind": "success",
+  "title": "発信には専任の担当を置く",
+  "summary": "岐阜県のプレス関連会社は、HPやSNSは手軽に使えるが頻繁な更新には専任者が要るとして担当を付けた。自社製品の発信で社員の意識が変わり、新卒採用にも良い影響があったと語っている。",
+  "industries": [
+   "プレス",
+   "金型"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "更新が続く工場ブログの担当の決め方",
+  "source": {
+   "title": "自社製品開発の経験を通じてソリューション力を強化",
+   "url": "https://kojomag.nikkan.co.jp/press/kishu/52",
+   "publisher": "日刊工業新聞社『プレス技術』（工場マガジンラック）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1962",
+  "kind": "question",
+  "title": "見積もりの前提条件はどう書く？",
+  "summary": "仕様・数量・納期で原価は変わるので、見積書に条件をはっきり書き、仕様が決まった後に見積もり直す余地を残すのが大事と連載は説く。記事では条件次第で金額が変わる理由を説明すると親切。",
+  "industries": [
+   "プレス",
+   "金属加工",
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "同じ部品でも見積額が変わる3つの条件",
+  "source": {
+   "title": "値決めの鉄則 第4回 徹底的に「見積り条件」を抑える！",
+   "url": "https://kojomag.nikkan.co.jp/press/negime/58",
+   "publisher": "日刊工業新聞社『プレス技術』（工場マガジンラック）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1344",
+  "kind": "pain",
+  "title": "一社依存は2割以下が目安",
+  "summary": "プレス技術の連載「値決めの鉄則」は、安売りをしないための準備として、特定の顧客への依存を減らし、一社あたりの比率を将来20%以下にすることを目安に挙げている。新規の引き合いを増やす発信の動機になる。",
+  "industries": [
+   "プレス",
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "値決めの鉄則 第10回 安売りをしないための準備",
+   "url": "https://kojomag.nikkan.co.jp/press/negime/124",
+   "publisher": "日刊工業新聞社『プレス技術』（工場マガジンラック）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2624",
+  "kind": "success",
+  "title": "熟練の勘を数字で残す発信",
+  "summary": "型技術の連載「金型の未来を拓く技術者たち」は、冷間鍛造金型の会社が熟練者の勘やコツを数値にして技能伝承につなげる様子や、若手が焼入れ後の鋼を直接彫ってリードタイムを縮める取り組みを紹介している。",
+  "industries": [
+   "金型",
+   "鍛造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "職人の勘を数字にした結果を記事にする",
+  "source": {
+   "title": "金型の未来を拓く技術者たち（若手技術者の回）",
+   "url": "https://newswitch.jp/p/26401",
+   "publisher": "日刊工業新聞社『型技術』",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2625",
+  "kind": "success",
+  "title": "異業種出身の技術者を紹介",
+  "summary": "型技術の連載には、異業種から金型技術者になった人の仕事ぶりを紹介する回がある。経歴と今の担当業務を具体的に伝える形は、求職者向けの社員紹介記事の手本になる。",
+  "industries": [
+   "金型"
+  ],
+  "useFor": [
+   "article_idea",
+   "question_example"
+  ],
+  "articleIdea": "未経験から金型職人になった社員の1年",
+  "source": {
+   "title": "金型の未来を拓く技術者たち（異業種出身者の回）",
+   "url": "https://newswitch.jp/p/23582",
+   "publisher": "日刊工業新聞社『型技術』",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1345",
+  "kind": "pain",
+  "title": "金型業界の人材不足とデジタル化",
+  "summary": "型技術の連載で「金型人材の不足とデジタル化」が回のテーマとして取り上げられている。人が足りない中で技能をどう残すかは、金型会社の採用記事や技術記事の背景として書ける。",
+  "industries": [
+   "金型"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "第15回 金型人材の不足とデジタル化",
+   "url": "https://kojomag.nikkan.co.jp/kata/china/655",
+   "publisher": "日刊工業新聞社『型技術』",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2626",
+  "kind": "success",
+  "title": "図面数を見せて試作の速さを伝える",
+  "summary": "手づくり精密板金の会社は、独自の生産管理で常に200〜300点の図面を抱えながら試作を短納期で回していると紹介されている。創業時から品質と短納期で顧客を増やしてきたという。",
+  "industries": [
+   "板金"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "同時に何件の試作を回せるかを数字で書く",
+  "source": {
+   "title": "5Sを徹底し、手づくり精密板金で顧客満足度を追求する",
+   "url": "https://kojomag.nikkan.co.jp/koukan/kaizen/426",
+   "publisher": "日刊工業新聞社『工場管理』（工場マガジンラック）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2627",
+  "kind": "success",
+  "title": "細かい要望に機動力で応える",
+  "summary": "機械技術の企業紹介では、小回りの利く対応で細かいニーズに応えることが強みとして描かれている。小さな工場は規模より「頼みやすさ」を具体例で示すと伝わりやすい。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "細かいニーズに機動力を駆使して、応える",
+   "url": "https://kojomag.nikkan.co.jp/kikai/dokuji/51",
+   "publisher": "日刊工業新聞社『機械技術』（工場マガジンラック）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2628",
+  "kind": "success",
+  "title": "社内塾で若手の士気を上げる",
+  "summary": "日刊工業新聞の連載「モノづくり支える町工場の技」は、めっき会社が社内塾を開いて若手の意欲を高めている例を紹介。教育の仕組みは求職者に向けた発信の材料になる。",
+  "industries": [
+   "表面処理"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "めっきを一から学べる社内塾の中身",
+  "source": {
+   "title": "モノづくり支える町工場の技（83）メッキ社内塾で若手の士気向上",
+   "url": "https://www.nikkan.co.jp/articles/view/332632",
+   "publisher": "日刊工業新聞",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2629",
+  "kind": "success",
+  "title": "短納期と仕上がりの美しさを売りに",
+  "summary": "同じ連載で、クレーンを専門に作る会社が「美しく短納期」を武器にしている例が紹介されている。専業であることと納期を一緒に言うと、発注者が選ぶ理由が分かりやすい。",
+  "industries": [
+   "産業機械",
+   "製缶",
+   "溶接"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "モノづくり支える町工場の技（141）クレーン生産、美しく短納期に",
+   "url": "https://www.nikkan.co.jp/articles/view/00389613/0/9456",
+   "publisher": "日刊工業新聞",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2630",
+  "kind": "success",
+  "title": "小ロット短納期のばねで選ばれる",
+  "summary": "同じ連載で、ばねメーカーが小ロット・短納期の対応を強みにしている例が取り上げられている。何個から、何日で、を具体的に書くと試作担当者の検索に合う。",
+  "industries": [
+   "ばね・線材"
+  ],
+  "useFor": [
+   "article_idea",
+   "question_example"
+  ],
+  "articleIdea": "ばね試作は何個から何日で頼めるか",
+  "source": {
+   "title": "モノづくり支える町工場の技（102）",
+   "url": "https://www.nikkan.co.jp/articles/view/00351034/0/9455",
+   "publisher": "日刊工業新聞",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2631",
+  "kind": "success",
+  "title": "最短2日の納期をはっきり書く",
+  "summary": "日刊工業新聞の企業紹介ページで、ある加工会社は受注から納品まで最短2日、試作から量産まで対応と打ち出している。数字で書かれた納期は発注者が比べやすい。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "企業紹介（オンライン展示会ショーケース）",
+   "url": "https://showcase.nikkan.co.jp/2021s/preview/ochiaikoki/",
+   "publisher": "日刊工業新聞",
+   "date": "2021"
+  }
+ },
+ {
+  "id": "term-1497",
+  "kind": "term",
+  "title": "プレス加工メーカーの仕事の流れ",
+  "summary": "プレス技術は新入社員向けにプレス加工メーカーの部署ごとの役割を紹介する特集を組んだ。営業・設計・金型・量産・品質の流れを発注者向けにも一枚で説明すると、相談の入口が分かりやすくなる。",
+  "industries": [
+   "プレス",
+   "金型"
+  ],
+  "useFor": [
+   "article_idea",
+   "question_example"
+  ],
+  "articleIdea": "プレス部品ができるまで、誰が何をするか",
+  "source": {
+   "title": "プレス技術 特集「はじめてのプレス加工メーカー入門」紹介",
+   "url": "https://www.nikkan.co.jp/articles/view/00419749",
+   "publisher": "日刊工業新聞",
+   "date": "2017"
+  }
+ },
+ {
+  "id": "success-2632",
+  "kind": "success",
+  "title": "インスタで女性向けブランド",
+  "summary": "墨田区のゴム金型会社は自社ブランドを作り、30〜40代女性に向けてインスタグラムで発信。ブランドの存在が採用の場面でも前向きに受け止められたと話している。",
+  "industries": [
+   "ゴム",
+   "金型"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "下請けの金型屋が自社製品を作った理由",
+  "source": {
+   "title": "ゴム金型製造60年の町工場が作る「好きな香りを纏えるピアス」",
+   "url": "https://newswitch.jp/p/36535",
+   "publisher": "ニュースイッチ（日刊工業新聞社）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2633",
+  "kind": "success",
+  "title": "設計部門と直接話せる道を作る",
+  "summary": "山形の射出成形金型メーカーは、取引先の設計部門と直接やりとりするルートを開拓して下請けの立場から抜け出し、立て直しにつなげたと紹介されている。設計者に届く発信の大切さを示す例。",
+  "industries": [
+   "金型",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "設計段階で相談すると金型代が下がる理由",
+  "source": {
+   "title": "破綻寸前からの再起。満身創痍の金型メーカーが営業利益率10％へ",
+   "url": "https://newswitch.jp/p/6966",
+   "publisher": "ニュースイッチ（日刊工業新聞社）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1695",
+  "kind": "trend",
+  "official": false,
+  "title": "オンライン工場見学で新規開拓",
+  "summary": "製造業で、遠隔から製造現場を見せて新しい顧客を開拓する「オンライン工場見学」が広がりつつあると報じられた。動画やライブで現場を見せる方法は小さな工場にも応用できる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "来られない発注者のための動画工場見学",
+  "source": {
+   "title": "製造業で広がる「オンライン工場見学」、新たな販促スタイルは定着するか？",
+   "url": "https://newswitch.jp/p/25896",
+   "publisher": "ニュースイッチ（日刊工業新聞社）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1696",
+  "kind": "trend",
+  "official": false,
+  "title": "大田区で共同受発注の仕組み",
+  "summary": "大田区で約100社が加盟するデジタルの共同受発注の仕組みが始まった。展示会でPRを続け、大手から約30社の引き合いがあった一方、受注はまだ1社と報じられた（ニュースイッチ報道時点）。",
+  "industries": [
+   "切削加工",
+   "金属加工",
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "“ものづくりの町”東京都大田区で始まった、デジタル基盤で共同受発注",
+   "url": "https://newswitch.jp/p/36390",
+   "publisher": "ニュースイッチ（日刊工業新聞社）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2634",
+  "kind": "success",
+  "title": "SNSで入社希望者が増えた",
+  "summary": "ニュースイッチの企画「千葉でバズるカイシャ」は、千葉県の中小BtoB企業のSNS運用を紹介。ある会社はSNSを通じて入社希望者が増えたと話し、投稿の頻度や運用体制の例も載っている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "採用のための工場SNS、何を載せるか",
+  "source": {
+   "title": "千葉でバズるカイシャ",
+   "url": "https://newswitch.jp/p/34805",
+   "publisher": "ニュースイッチ（日刊工業新聞社）",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1316",
+  "kind": "buyer",
+  "title": "試作はマッチングで2〜3社比較",
+  "summary": "ジェイテクト系のマッチングサービスでは、発注者が図面や仕様を登録すると担当が2〜3社を選んで見積もりを取り、比べて選べる。町工場側は営業の手間と代金回収の不安が減るとされる。",
+  "industries": [
+   "板金",
+   "プレス",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "IT参入の「製造業マッチング」、ジェイテクトが町工場と迎え撃つ",
+   "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00001/04535/",
+   "publisher": "日経クロステック（日経BP）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1697",
+  "kind": "trend",
+  "official": false,
+  "title": "神戸市がオンライン展示会で橋渡し",
+  "summary": "神戸市は市内の中小製造業と全国のメーカーをつなぐマッチングの場「Log KOBE」を開設。オンライン展示会で現場の映像を見せられる点が利点として挙げられている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "オンライン展示会で神戸の中小製造業と全国のメーカーを橋渡し",
+   "url": "https://xtech.nikkei.com/atcl/nxt/news/18/08927/",
+   "publisher": "日経クロステック（日経BP）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1698",
+  "kind": "trend",
+  "official": false,
+  "title": "AIで強みを分析して発注者と仲介",
+  "summary": "NTTドコモは、AIで中小製造業の強みを分析し、試作や少量品を発注したい企業とつなぐ実験的なサービスを始めた。図面にもとづく個別受注の部品加工が対象。強みを言葉にしておく重要性が増す。",
+  "industries": [
+   "切削加工",
+   "機械部品",
+   "自動車部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "NTTドコモ、AIで中小製造業の強みを分析して発注企業とマッチング",
+   "url": "https://xtech.nikkei.com/atcl/nxt/news/18/08439/",
+   "publisher": "日経クロステック（日経BP）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1346",
+  "kind": "pain",
+  "title": "中小こそ強みをアピールすべき",
+  "summary": "大田区の精密部品会社の女性社長は、事業承継や人手不足に向き合いながら「中小企業こそ自社の強みを発信すべき」と語る。謙虚さゆえに発信を控えがちな町工場への呼びかけ。",
+  "industries": [
+   "切削加工",
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "中小企業こそアピールを、「町工場の娘」社長の信念",
+   "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00257/00077/",
+   "publisher": "日経クロステック（日経BP）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1699",
+  "kind": "trend",
+  "official": false,
+  "title": "町工場向け生産管理にAI",
+  "summary": "見積もりから受注・発注・請求までを一括で管理し、図面登録やAIによる不良情報の活用もできる町工場向けの生産管理システムが2024年に提供開始と報じられた。見積もりの速さは発信の売りにもなる。",
+  "industries": [
+   "切削加工",
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "AIで不良情報を管理・有効活用、町工場向けの生産管理システム",
+   "url": "https://xtech.nikkei.com/atcl/nxt/news/24/01060/",
+   "publisher": "日経クロステック（日経BP）",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "buyer-1317",
+  "kind": "buyer",
+  "title": "目利きが業界を越えて仲介",
+  "summary": "町工場をよく知る目利きが、別業界の発注者と部品加工の工場をつなぐ取引が生まれていると日経ものづくりが紹介。発注者は自分で加工先を探しきれず、仲介に頼る場面がある。",
+  "industries": [
+   "切削加工",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "業界を越えた新たな取引を創出、町工場を良く知る目利きが仲介",
+   "url": "https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00077/00006/",
+   "publisher": "日経ものづくり（日経BP）",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1318",
+  "kind": "buyer",
+  "title": "3Dデータで即見積もりが当たり前に",
+  "summary": "日経ものづくりは、3Dモデルを送ると即時に見積もりが出て最短で翌日出荷される部品調達サービスを紹介。発注者は速い見積もりに慣れつつあり、町工場も返答の目安を示す必要がある。",
+  "industries": [
+   "切削加工",
+   "板金",
+   "治具"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "見積もり回答は何日？当社の目安と理由",
+  "source": {
+   "title": "3Dモデルから即時見積もり、簡単発注と短納期で生産性向上を",
+   "url": "https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00077/00003/",
+   "publisher": "日経ものづくり（日経BP）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1700",
+  "kind": "trend",
+  "official": false,
+  "title": "コロナ後はデジタルで新事業へ",
+  "summary": "日経ものづくりは、町工場がコロナ後を見すえてデジタルを武器に新事業へ踏み出す動きを特集した。受注減をきっかけに、Webでの販路づくりや自社製品に取り組む例が増えた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "町工場のアフターコロナ、デジタル武器に新事業へ",
+   "url": "https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00009/00037/",
+   "publisher": "日経ものづくり（日経BP）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1701",
+  "kind": "trend",
+  "official": false,
+  "title": "町工場とベンチャーが組む動き",
+  "summary": "日経ものづくりは2015年、大企業頼みでは生き残れないとして、町工場とハードウエアベンチャーが組む動きを取り上げた。試作したい開発者は、相談に乗ってくれる町工場を探している。",
+  "industries": [
+   "切削加工",
+   "板金",
+   "3Dプリンタ"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "スタートアップの試作を受けるときの進め方",
+  "source": {
+   "title": "大企業頼みではもう生き残れない、町工場×ベンチャーが革新を起こす",
+   "url": "https://xtech.nikkei.com/dm/atcl/mag/15/101900074/101900002/",
+   "publisher": "日経ものづくり（日経BP）",
+   "date": "2015"
+  }
+ },
+ {
+  "id": "success-2635",
+  "kind": "success",
+  "title": "動画はYouTubeより自社サイトへ",
+  "summary": "MONOistの連載「間違いだらけの製造業デジタルマーケティング」は、動画はYouTubeに出すだけでは足りず、自社サイトの該当ページに埋め込むのが効果的だと述べる。工場や作業の様子が分かる映像が有効。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "視覚でどう訴える？ 製造業のマーケティングで有効なビジュアルコンテンツ活用",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/2412/09/news002_5.html",
+   "publisher": "MONOist（アイティメディア）",
+   "date": "2024-12"
+  }
+ },
+ {
+  "id": "buyer-1319",
+  "kind": "buyer",
+  "title": "特殊な試作は断られがち",
+  "summary": "電動車いすの会社は、ジェネレーティブデザインの部品の試作先探しに苦労し、最後に横浜の鋳物工場が引き受けた。新しい形状の試作は断られることが多く、挑戦を受ける姿勢を見せる工場は目立つ。",
+  "industries": [
+   "鋳造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "他社で断られた形状、まず相談してほしい理由",
+  "source": {
+   "title": "ジェネレーティブデザインを前に砂型鋳造の限界に挑んだ町工場",
+   "url": "https://monoist.itmedia.co.jp/mn/spv/1903/12/news139.html",
+   "publisher": "MONOist（アイティメディア）",
+   "date": "2019-03"
+  }
+ },
+ {
+  "id": "term-1498",
+  "kind": "term",
+  "title": "仲間回しとは",
+  "summary": "大田区などで、工程ごとに得意な近所の工場へ順に回して一つの製品を仕上げるやり方。「削る」「溶接する」などで担当を決める。発注者には一社で受けて他工程も手配できる強みとして説明できる。",
+  "industries": [
+   "切削加工",
+   "溶接",
+   "金属加工"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "一社に頼めば表面処理まで済む仕組み",
+  "source": {
+   "title": "大田区町工場の「仲間回し」が織り成すオープンファクトリー",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1512/04/news024_2.html",
+   "publisher": "MONOist（アイティメディア）",
+   "date": "2015-12"
+  }
+ },
+ {
+  "id": "trend-1702",
+  "kind": "trend",
+  "official": false,
+  "title": "鯖江市が動画スタジオを開設",
+  "summary": "眼鏡の町・鯖江市では、商工会議所の地下にYouTube向けの動画を撮って配信できるスタジオを開き、地元企業が製品をPRできるようにした。越境ECを手軽に始める仕組みも進めている。",
+  "industries": [
+   "精密機器",
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "メルカリ並みに手軽な越境ECも、「眼鏡の町」鯖江市が進めるモノづくりDX",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/2212/15/news010.html",
+   "publisher": "MONOist（アイティメディア）",
+   "date": "2022-12"
+  }
+ },
+ {
+  "id": "pain-1347",
+  "kind": "pain",
+  "title": "ネット発信の大切さと腰の重さ",
+  "summary": "MONOistのインタビューで研究者は、中小製造業にとってネットでの自社の発信が重要だと述べ、長野県の技術者の集まりがSNSでイベントの規模を広げた例を紹介。発信に手が回らない会社は多い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小製造業の情報発信についての研究者インタビュー",
+   "url": "https://monoist.itmedia.co.jp/mn/spv/2602/24/news066.html",
+   "publisher": "MONOist（アイティメディア）",
+   "date": "2026-02"
+  }
+ },
+ {
+  "id": "success-2636",
+  "kind": "success",
+  "title": "地域名＋業種で問い合わせ増",
+  "summary": "社員20人ほどの町工場が「都道府県名＋事業内容」の検索順位を1位近くまで上げ、問い合わせが月2件から10件に増えたと、製造業向け情報ブログが紹介している（発信元の紹介による数字）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "◯◯県で精密加工を探す人向けの記事",
+  "source": {
+   "title": "中小製造業でホームページのお問い合わせを増やす方法とは？成功事例を紹介！",
+   "url": "https://setchanblog.com/1823/",
+   "publisher": "せっちゃんブログ",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2637",
+  "kind": "success",
+  "title": "リニューアル後に問い合わせ増",
+  "summary": "制作会社の紹介によると、金属加工会社でリニューアル後に問い合わせが月0件から8件、樹脂成形会社で月5件から15件になった事例がある。ただし出典の検証はできない。",
+  "industries": [
+   "金属加工",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "製造業のホームページリニューアル事例と問い合わせ増加策",
+   "url": "https://soreiine.jp/magazine/industry/manufacturing-homepage/",
+   "publisher": "それいいね！マガジン",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2638",
+  "kind": "success",
+  "title": "営業代行を使いノウハウを社内に",
+  "summary": "大阪の精密板金・プレス加工会社は、営業人手不足で新規開拓が止まっていたため営業代行サービスを導入。ターゲット選定や提案の型を社内に残すことを重視した（サービス提供会社の発表による）。",
+  "industries": [
+   "板金",
+   "プレス"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "精密板金・プレス加工会社が営業体制を刷新",
+   "url": "https://ascii.jp/elem/000/004/376/4376601/",
+   "publisher": "ASCII.jp（営業製作所のプレスリリース）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1703",
+  "kind": "trend",
+  "official": false,
+  "title": "東大阪の町工場をバーチャル見学",
+  "summary": "2020年、新型コロナで工場見学や展示会が減るなか、東大阪の町工場を仮想空間で見学できる「OSAKA町工場EXPO2020」が開かれ、新規受注の獲得を狙った。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "東大阪の町工場見学をバーチャルで「OSAKA町工場EXPO」新規受注獲得目指す",
+   "url": "https://news.aperza.jp/%E6%9D%B1%E5%A4%A7%E9%98%AA%E3%81%AE%E7%94%BA%E5%B7%A5%E5%A0%B4%E8%A6%8B%E5%AD%A6%E3%82%92%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB%E3%81%A7-%E3%80%8Cosaka%E7%94%BA%E5%B7%A5%E5%A0%B4expo%E3%80%8D/",
+   "publisher": "Aperza News",
+   "date": "2020"
+  }
+ },
+ {
+  "id": "success-2639",
+  "kind": "success",
+  "title": "過去の見積もりを貯めて分析",
+  "summary": "関東経済産業局の2017年の事例集では、切削加工会社がクラウド見積サービスを開発。過去の見積データを貯めれば、発注者の依頼傾向を分析し新規顧客づくりに役立つと期待されている。",
+  "industries": [
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "よく来る見積依頼から分かる発注者の悩み",
+  "source": {
+   "title": "中小ものづくり企業IoT等活用事例集",
+   "url": "https://dl.ndl.go.jp/view/prepareDownload?itemId=info%3Andljp%2Fpid%2F11274246&contentNo=1",
+   "publisher": "経済産業省 関東経済産業局",
+   "date": "2017-03"
+  }
+ },
+ {
+  "id": "success-2640",
+  "kind": "success",
+  "title": "選ばれた称号が口コミを広げた",
+  "summary": "大田区の微細加工会社は、区の「工匠100人」に選ばれたことで全国に口コミが広がり販路拡大につながった。新潟の金型会社などは県外展示会の後に問い合わせや新規取引が増えたと報告されている。",
+  "industries": [
+   "切削加工",
+   "金型",
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "受賞・認定を記事で伝えて信頼につなげる",
+  "source": {
+   "title": "「中小ものづくり企業」の挑戦② ～“販路拡大”を目指して「情報発信」～",
+   "url": "https://dl.ndl.go.jp/view/prepareDownload?itemId=info:ndljp/pid/13125825",
+   "publisher": "国立国会図書館デジタルコレクション収録資料",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1963",
+  "kind": "question",
+  "title": "取引先は発信のどこを見る？",
+  "summary": "琉球大学の研究者は、中小製造企業の情報発信を、使うメディア・発信内容・取引先の反応の3つの観点で質問票調査した。何を載せれば取引先が反応するかを考える手がかりになる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小製造企業の情報発信に関する質問票調査",
+   "url": "https://u-ryukyu.repo.nii.ac.jp/record/2019611/files/No3p62.pdf",
+   "publisher": "琉球大学",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1320",
+  "kind": "buyer",
+  "title": "大企業の購買も通販で工具を買う",
+  "summary": "金融メディアの記事によると、モノタロウの大企業連携の売上は単体で28%伸び、売上に占める割合は31.6%の見込み。大きな会社の購買も、決まった品はネット経由で買う流れが強まっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "標準品は通販、特注は当社に頼む理由",
+  "source": {
+   "title": "モノタロウ、12年で時価総額22倍 間接材ECで成長する「工具のアマゾン」",
+   "url": "https://media.finasee.jp/articles/-/14025?page=2",
+   "publisher": "Finasee",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1704",
+  "kind": "trend",
+  "official": false,
+  "title": "工具通販の売上は2,881億円超",
+  "summary": "プレジデントの記事によると、モノタロウは創業25年目で売上高2,881億円を超えた。工具や消耗品の標準品はネットで買うのが当たり前になり、町工場は「通販で買えない仕事」を示す必要がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "通販では買えない加工とは何か",
+  "source": {
+   "title": "なぜ｢工具のアマゾン｣になれたのか",
+   "url": "https://president.jp/articles/-/94683?page=1",
+   "publisher": "プレジデントオンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2641",
+  "kind": "success",
+  "title": "端子メーカーが工具通販を新販路に",
+  "summary": "基板端子などを作るメーカーが、これまでの販売ルートに次ぐ新しい販路としてモノタロウでの取り扱いを始めたと発表（2023年2月開始）。自社サイトで取扱開始を告知し、通販で買える安心感も伝えた。",
+  "industries": [
+   "電子部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "通販で買える自社製品のお知らせを書く",
+  "source": {
+   "title": "㈱MonotaRO社の『モノタロウ』にて製品の取り扱いを開始",
+   "url": "https://www.fujicon-tb.co.jp/news/detail.html?id=9145",
+   "publisher": "メーカーのお知らせ",
+   "date": "2023-02"
+  }
+ },
+ {
+  "id": "question-1964",
+  "kind": "question",
+  "title": "通販大手に自社品を載せるには？",
+  "summary": "モノタロウの公式ヘルプでは、カタログ掲載外の商品の取扱い有無や新規取扱いの要望は「商品に関するお問合せ」で受け付けると案内。まず窓口に製品資料を送るのが入口になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "カタログ・チラシの掲載商品以外について",
+   "url": "https://help.monotaro.com/app/answers/detail/a_id/46/~/%E3%82%AB%E3%83%A9%E3%83%AD%E3%82%B0%E3%83%BB%E3%83%81%E3%83%A9%E3%82%B7%E3%81%AE%E6%8E%B2%E8%BC%89%E5%95%86%E5%93%81%E4%BB%A5%E5%A4%96%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
+   "publisher": "MonotaRO",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1965",
+  "kind": "question",
+  "title": "工具通販に載せると手数料はかかる？",
+  "summary": "広告メディアの解説によると、モノタロウは自社で仕入れた商品を載せる小売の形なので、掲載手数料はかからないとされる。取引希望の窓口から相談する流れ。条件は直接確認が必要。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "モノタロウの広告掲載料金、口コミ・評判や特徴リサーチ",
+   "url": "https://www.shopowner-support.net/attracting_customers/manufacturing/monotaro/",
+   "publisher": "キャククル",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1321",
+  "kind": "buyer",
+  "title": "通販の取扱いメーカー一覧から探す",
+  "summary": "部品情報サイトindexproは、MonotaROの取扱いメーカーとして402社を一覧にしている（掲載時点）。購買担当は、通販に載るメーカーから候補を探すこともある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「MonotaRO」の取扱いメーカー：402社",
+   "url": "https://www.indexpro.co.jp/distributor/handlingmaker?did=1466",
+   "publisher": "indexpro",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1705",
+  "kind": "trend",
+  "official": false,
+  "title": "通販大手は紙の専門カタログも出す",
+  "summary": "モノタロウは事業者向けの専門カタログ10冊を9月25日に発刊し、25.5万アイテムを紹介したと発表。現場では紙のカタログで探す人もまだ多い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "モノタロウ、事業者向け専門カタログ10冊を9月25日に発刊",
+   "url": "https://prtimes.jp/main/html/rd/p/000000341.000000537.html",
+   "publisher": "PR TIMES（MonotaRO）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1706",
+  "kind": "trend",
+  "official": false,
+  "title": "通販大手が法人の調達改革サイト",
+  "summary": "2015年、モノタロウは大規模事業者向けに間接資材の調達改革をうたう法人専用サイトを開設し、購買コスト削減のシミュレーション機能を用意した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "間接資材の調達改革 法人専用サービスサイト開設",
+   "url": "https://kyodonewsprwire.jp/release/201508273027",
+   "publisher": "共同通信PRワイヤー（MonotaRO）",
+   "date": "2015-08"
+  }
+ },
+ {
+  "id": "buyer-1322",
+  "kind": "buyer",
+  "title": "集中購買で発注の手間を減らす",
+  "summary": "モノタロウ社提供の資料（2026年9月）によると、4社の事例で発注1件あたりの時間や月の調達工数が減り、600万円の削減例もあった。取引先は発注先をしぼる方向に動いている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "取引先の購買が一本化しても選ばれる準備",
+  "source": {
+   "title": "株式会社MonotaRO 提供コンテンツ（間接材購買の改善）",
+   "url": "https://www.sbbit.jp/st/document/sp/24302",
+   "publisher": "ビジネス+IT",
+   "date": "2026-09"
+  }
+ },
+ {
+  "id": "buyer-1323",
+  "kind": "buyer",
+  "title": "購買システムで買い方を一本化",
+  "summary": "モノタロウ社の解説資料（2026年5月）は、集中購買の進め方や購買管理システムの選び方を紹介。取引先の購買は、システムに載る発注先を優先する傾向がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "株式会社MonotaRO 提供コンテンツ（集中購買の進め方）",
+   "url": "https://www.sbbit.jp/st/document/sp/24090",
+   "publisher": "ビジネス+IT",
+   "date": "2026-05"
+  }
+ },
+ {
+  "id": "buyer-1324",
+  "kind": "buyer",
+  "title": "拠点ごとにばらばらな買い方を嫌う",
+  "summary": "モノタロウの大企業向け資料では、拠点ごとに調達方法や取引条件がばらばらなことを間接材購買の課題に挙げる。購買側は条件をそろえやすい取引先を好む。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "見積・納期・支払い条件を明記する理由",
+  "source": {
+   "title": "大企業向け集中購買サービスの6大ポイントご紹介",
+   "url": "https://mono.ipros.com/product/detail/2000615359",
+   "publisher": "イプロス",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1325",
+  "kind": "buyer",
+  "title": "法人通販は請求書払いも選ぶ条件",
+  "summary": "プレジデントの記事は、アマゾンの法人通販が月末締めの請求書払いに対応したと紹介。法人の買い手は、価格だけでなく支払い方法も取引先選びの条件にする。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "支払い条件をサイトに書く",
+  "source": {
+   "title": "アマゾンの\"法人通販\"は業界を破壊するか（2ページ目）",
+   "url": "https://president.jp/articles/-/23298?page=2",
+   "publisher": "プレジデントオンライン",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1326",
+  "kind": "buyer",
+  "title": "消耗品はPBの安さで通販を選ぶ",
+  "summary": "製造業のIT担当の個人ブログ（2026年版）は、工具・現場資材・梱包資材・保護具はモノタロウのPBが安いと比較。標準品は価格で選ばれ、町工場の勝負所は別にある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "【2026年版】Amazonビジネスとモノタロウはどっちが安い？",
+   "url": "https://blog-lab.org/amazon-business-monotaro-comparison/11049/",
+   "publisher": "個人ブログ",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1707",
+  "kind": "trend",
+  "official": false,
+  "title": "工具卸の仕入先は3,700社超",
+  "summary": "トラスコ中山のIRページでは、仕入先3,729社（うち海外368社）、在庫62万アイテム、在庫金額681億円、商品登録714万アイテムと示す。大手卸は多数の作り手から仕入れて現場へ届ける。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "工具卸の仕入先になるという選択肢",
+  "source": {
+   "title": "数字で見るトラスコ",
+   "url": "https://www.trusco.co.jp/ir/individual/trusco_number/",
+   "publisher": "トラスコ中山",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1708",
+  "kind": "trend",
+  "official": false,
+  "title": "工具卸は在庫100万点をめざす",
+  "summary": "解説記事によると、トラスコ中山の在庫は2026年6月末で62万7,809アイテム、在庫から出荷できた割合は93.4%。2030年に100万アイテムへ増やす目標を掲げる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "トラスコ中山はなぜ在庫を減らさない？62万点のビジネスモデル",
+   "url": "https://comtri.jp/trusco-nakayama-business-model/",
+   "publisher": "comtri",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1709",
+  "kind": "trend",
+  "official": false,
+  "title": "工具卸が最大の物流拠点を愛知に",
+  "summary": "物流専門誌によると、トラスコ中山は愛知県北名古屋市で自社最大の物流センターを稼働。在庫を100万アイテム以上に広げ、まとめて届ける精度を上げる計画。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "トラスコ中山、愛知・北名古屋で自社最大の物流センターが稼働開始",
+   "url": "https://online.logi-biz.com/144568/",
+   "publisher": "LOGI-BIZ online",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1499",
+  "kind": "term",
+  "title": "ニアワセ（荷合わせ）",
+  "summary": "工具卸トラスコ中山の言い方で、別々の注文品を1つの荷物にまとめて届けること。物流誌によると、荷物が分かれて個数が増えるのを抑える狙いがある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "トラスコ中山、愛知・北名古屋で自社最大の物流センターが稼働開始",
+   "url": "https://online.logi-biz.com/144568/",
+   "publisher": "LOGI-BIZ online",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1710",
+  "kind": "trend",
+  "official": false,
+  "title": "在庫を持つ卸の戦略が評価された",
+  "summary": "トラスコ中山は2018年に競争戦略の賞であるポーター賞を受けた。当時の取扱いアイテム数は約173万点とされ、在庫で即納する仕組みが評価された。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "トラスコ中山株式会社（ポーター賞 受賞企業）",
+   "url": "https://www.porterprize.org/pastwinner/2018/12/06125002.html",
+   "publisher": "ポーター賞",
+   "date": "2018"
+  }
+ },
+ {
+  "id": "buyer-1327",
+  "kind": "buyer",
+  "title": "消耗品は置き工具で管理する",
+  "summary": "工場に棚を置き、使った分だけ払う置き工具サービスの導入例では、棚卸や手袋・安全靴の都度発注の手間が減ったという声が並ぶ。購買は消耗品の手間を外に出したがっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "MROストッカー 導入事例",
+   "url": "https://mono.ipros.com/product/detail/2000655687",
+   "publisher": "イプロス",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1711",
+  "kind": "trend",
+  "official": false,
+  "title": "置き工具に自動販売機型が登場",
+  "summary": "日刊工業新聞によると、トラスコ中山は2021年10月、置き工具サービス「MROストッカー」に自動販売機モデルを加えた。消耗品の受け取りも無人化が進む。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "トラスコ中山、置き工具に自販機モデル",
+   "url": "https://www.nikkan.co.jp/articles/view/00616091",
+   "publisher": "日刊工業新聞",
+   "date": "2021-10"
+  }
+ },
+ {
+  "id": "term-1500",
+  "kind": "term",
+  "title": "一次代理店",
+  "summary": "メーカーや大手卸から直接仕入れる販売店のこと。たとえばネジを軸にした専門商社が、トラスコ中山などの一次代理店であると名乗っている。その下に二次店が続く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "ねじ専門商社の製品ページ（イプロス）",
+   "url": "https://pr.mono.ipros.com/koyama/product/detail/2001491960/",
+   "publisher": "イプロス掲載の専門商社",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1501",
+  "kind": "term",
+  "title": "二次商社（工具販売店）",
+  "summary": "大手の工具卸から仕入れ、地域の工場へ売る販売店。機械工具商社の一覧サイトは、全国の機械工具販売店（二次商社）への卸売を主軸とする会社を紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "機械工具商社【企業一覧】",
+   "url": "https://c-tool.org/archives/1916",
+   "publisher": "c-tool",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1712",
+  "kind": "trend",
+  "official": false,
+  "title": "工具の中間流通が通販で変わる",
+  "summary": "ビジネスメディアの記事は、国内市場の縮小、メーカー直販の強化、ネット通販の拡大で、法人向け中間流通の環境が大きく変わったと分析。大口も小口も同じ価格の通販が広がる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "機械・工具業界の通販化が進む日本市場で見えてきた構造変化の動向",
+   "url": "https://biz-maps.com/media/?p=3403",
+   "publisher": "biz-maps",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1713",
+  "kind": "trend",
+  "official": false,
+  "title": "地域の機械卸は統合が進む見込み",
+  "summary": "日本M&Aセンターの解説では、地域の中小卸は経営者やベテラン営業の高齢化が進み、後継者不在が課題。大手商社による買収や地域卸同士の統合が増える見込みとする。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "なじみの商社が変わる時の備え",
+  "source": {
+   "title": "電気・機械専門卸業界のM&Aと事業承継の動向",
+   "url": "https://www.nihon-ma.co.jp/sector/electro_mechanicalWholesale.php",
+   "publisher": "日本M&Aセンター",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1714",
+  "kind": "trend",
+  "official": false,
+  "title": "商社の販売先の9割は中小企業",
+  "summary": "日刊工業新聞系の記事によると、山善の仕入れ先は約4,000社、販売先は約8,000社。事業承継支援の対象の約9割は中小の販売先で、後継者が育っていない例が多い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "山善の事業承継支援",
+   "url": "https://newswitch.jp/p/17925",
+   "publisher": "ニュースイッチ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1328",
+  "kind": "buyer",
+  "title": "ロボットは商社の試験場で試す",
+  "summary": "山善は2024年8月、協働ロボットをまとめて試せる「協働ロボットテストラボ」を新大阪エリアに開設。町工場は買う前に商社の場で動きを確かめられる。",
+  "industries": [
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "自動化の前に試せる場所の使い方",
+  "source": {
+   "title": "山善「協働ロボットテストラボ」8月22日オープン",
+   "url": "https://kyodonewsprwire.jp/release/202408205119",
+   "publisher": "共同通信PRワイヤー（山善）",
+   "date": "2024-08"
+  }
+ },
+ {
+  "id": "trend-1715",
+  "kind": "trend",
+  "official": false,
+  "title": "機械商社の展示会は海外でも",
+  "summary": "ユアサ商事のタイ法人は「ユアサグランドフェア」を開き、これまでのモノづくり中心からの転換を進めると案内。日本の機械商社の商談会は海外にも広がる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ユアサグランドフェア（タイ）",
+   "url": "https://smri.asia/jp/yuasa-th/news/5385",
+   "publisher": "SMRI",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2642",
+  "kind": "success",
+  "title": "下請けから売上7割が自社商品へ",
+  "summary": "船井総研のコラムでは、群馬県の町工場が下請けから転じ、今は売上の約7割を自社商品が占めると紹介。社長は「どんな町工場でもメーカーになれる」と語る。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "下請けの技術で作れる自社商品",
+  "source": {
+   "title": "町工場がメーカーになる方法",
+   "url": "https://smart-factory.funaisoken.co.jp/blogs/column/maker-5588",
+   "publisher": "船井総合研究所",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2643",
+  "kind": "success",
+  "title": "商圏を中部から関西へ広げた",
+  "summary": "営業支援サービス会社の事例によると、名古屋の町工場が営業代行の失敗を経て新規開拓を任せる仕組みを入れ、商圏を関西まで広げて大手食品機械メーカーを開拓した（宣伝を含む）。",
+  "industries": [
+   "切削加工",
+   "食品機械"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "町工場の商圏拡大はこうする！売上の柱を増やす方法とは",
+   "url": "https://anytive.com/magazine/asahi/",
+   "publisher": "Anytive",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1348",
+  "kind": "pain",
+  "title": "商社経由だと設計段階に関われない",
+  "summary": "営業支援会社のコラムは、商社を通すと発注元の設計者と話せず、直接取引なら設計段階から技術提案でき、試作や量産の機会を得やすいと主張する（一つの立場の意見）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "設計者に直接相談してほしい理由",
+  "source": {
+   "title": "町工場の利益を奪う商社は不要！メーカーと直接取引せよ！",
+   "url": "https://anytive.com/magazine/syousya/",
+   "publisher": "Anytive",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2644",
+  "kind": "success",
+  "title": "各国の商社員を工場で研修した",
+  "summary": "東大阪の町工場が30か国以上へ輸出する会社に育った例。海外の商社に任せきりにせず、各国の商社の社員を自社工場に招いて技術研修をしたのが特徴と紹介されている。",
+  "industries": [
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "商社の営業に技術を教える",
+  "source": {
+   "title": "町工場からグローバル企業へ、販路開拓の成功事例10選",
+   "url": "https://design-iwish.jp/%E7%94%BA%E5%B7%A5%E5%A0%B4%E3%81%8B%E3%82%89%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E4%BC%81%E6%A5%AD%E3%81%B8%E3%80%81%E8%B2%A9%E8%B7%AF%E9%96%8B%E6%8B%93%E3%81%AE%E6%88%90%E5%8A%9F%E4%BA%8B/",
+   "publisher": "デザイン会社のコラム",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1329",
+  "kind": "buyer",
+  "title": "ねじ商社は図面品も協力工場で作る",
+  "summary": "ねじ商社の発信では、規格品で足りないときは協力工場と組んで図面品や加工品を作り納めると説明。多くの協力工場を束ね、早く応えるのが商社の強みとする。",
+  "industries": [
+   "ねじ・締結部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "商社の協力工場に選ばれるには",
+  "source": {
+   "title": "「ねじの秘密」 ねじ商社の仕事―加工品",
+   "url": "https://note.com/fujimotosangyo/n/n104b68bf97aa",
+   "publisher": "ねじ商社のnote",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1330",
+  "kind": "buyer",
+  "title": "図面をまとめて渡し窓口を一つに",
+  "summary": "アルミ型材の加工会社の解説では、完成品の図面と条件をまとめて渡すと、元請けが協力会社と工程を組み立てるため、発注側の事務の手間が減るとする。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "一括で頼める範囲を図で示す",
+  "source": {
+   "title": "アルミ型材の一括発注のメリット",
+   "url": "https://ikoma-kogyo.com/blog/bulk-order-aluminum-extrusion-benefits",
+   "publisher": "加工会社のブログ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1966",
+  "kind": "question",
+  "title": "商社経由で加工を頼む利点は？",
+  "summary": "加工品の商社の解説では、商社経由は多品種・小ロット・短納期や組立済みユニットなど複雑な案件に向く。海外調達では通関や為替、輸送の心配まで任せられる点も挙げる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "商社経由で加工依頼するメリットとは？直接依頼との違いを比較",
+   "url": "https://fpa-s.com/%E5%95%86%E7%A4%BE%E7%B5%8C%E7%94%B1%E3%81%A7%E5%8A%A0%E5%B7%A5%E4%BE%9D%E9%A0%BC%E3%81%99%E3%82%8B%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88%E3%81%A8%E3%81%AF%EF%BC%9F%E7%9B%B4%E6%8E%A5%E4%BE%9D%E9%A0%BC/",
+   "publisher": "加工品商社のコラム",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1967",
+  "kind": "question",
+  "title": "商社に頼むと何をしてくれる？",
+  "summary": "マッチングサービスの解説では、商社は見積もりの取得、工場との調整、契約手続きを支援する一方、納品や検収は発注者と工場が直接やりとりする場合もある。直接のほうが単価を抑えやすい例もある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "初心者でもよく分かる！金属加工を商社に依頼するメリット・デメリット",
+   "url": "https://mitsu-ri.net/articles/metal-processing-trade-company-merits-demerits",
+   "publisher": "Mitsuri Media",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1968",
+  "kind": "question",
+  "title": "商社をやめて直接取引にすると？",
+  "summary": "マッチングサービスの比較記事では、直接取引に切り替えると商社が担っていた在庫や納期の管理を自社で負い、トラブル時の仲介役もいなくなると注意している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "商社型と直接取引型を比較！製造業マッチングサービスで気をつけること",
+   "url": "https://mitsu-ri.net/articles/trading-direct-comparison",
+   "publisher": "Mitsuri Media",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2645",
+  "kind": "success",
+  "title": "加工会社が商社部門で窓口を広げる",
+  "summary": "ある加工会社は、自社工場に加えて国内外の調達網と協力工場を組み合わせ、試作から量産まで図面をもとに一括で相談を受ける商社部門を設けている。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "自社でできない工程も受ける窓口",
+  "source": {
+   "title": "商社部門",
+   "url": "https://www.hirano-s.jp/procurement",
+   "publisher": "加工会社のサイト",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2646",
+  "kind": "success",
+  "title": "装置一式の加工品をまとめて受ける",
+  "summary": "新潟の部品加工会社は、単品部品だけでなく機械・装置一式の加工品製作もまとめて任せてほしいとコラムで呼びかける。発注側の窓口を減らす提案になっている。",
+  "industries": [
+   "装置",
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "機械・装置一式の加工品製作もお任せください！",
+   "url": "https://www.niigata-buhinkakou.com/column/417/",
+   "publisher": "加工会社のコラム",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1969",
+  "kind": "question",
+  "title": "依頼先は図面・精度・ロットで変わる？",
+  "summary": "受託製造の案内サイトは、部品加工を外注する前に、図面・材質・精度・ロットごとに依頼先を選び分けるよう整理している。試作と量産で頼む先が違うこともある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "部品加工を外注する前に確認すべきこと",
+   "url": "https://jutaku-seizo.net/contents/NxXGrtHK",
+   "publisher": "受託製造の手引き",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1331",
+  "kind": "buyer",
+  "title": "特徴が分からないサイトは外される",
+  "summary": "調査会社の発表によると、大手メーカーの新規外注先選びで半数以上が特徴の分かりにくいホームページの企業は候補から外すと回答。8割以上が何かに特化した業者に良い印象を持つ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "一番得意な加工を最初に書く",
+  "source": {
+   "title": "大手メーカーの新規外注先選びのポイントとは？",
+   "url": "https://prtimes.jp/main/html/rd/p/000000038.000055603.html",
+   "publisher": "PR TIMES",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1332",
+  "kind": "buyer",
+  "title": "最安値で選ぶと手直しで高くつく",
+  "summary": "金属加工会社のコラムは、見積もり金額だけ比べて最安の業者を選んだ結果、不良の手直しなどで総コストが上がった失敗例を紹介。品質・納期と合わせて見るよう勧める。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "安さ以外で比べてほしい点",
+  "source": {
+   "title": "金属加工の外注先を選ぶポイント",
+   "url": "https://yoshida-seiko.jp/column/1105/",
+   "publisher": "加工会社のコラム",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1333",
+  "kind": "buyer",
+  "title": "公差を数字で答えられるかを見る",
+  "summary": "金属会社の解説では、外注先を見極めるとき、同じ素材・形状・精度の加工実績があるか、公差を具体的な数値で答えられるかを確かめるよう勧めている。",
+  "industries": [
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "対応できる公差を数字で載せる",
+  "source": {
+   "title": "切削加工の外注先はどう選ぶか",
+   "url": "https://www.tatsumiya-metal.com/cutting-machining-outsourcing-guide/",
+   "publisher": "辰己屋金属",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1334",
+  "kind": "buyer",
+  "title": "初回は数個の試作で確かめる",
+  "summary": "加工マッチングサイトのチェックリストは、初めての取引では数個の試作を頼み、寸法精度などを確かめてから量産を任せる進め方を勧めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "試作1個から頼める流れを書く",
+  "source": {
+   "title": "外注先を選ぶ際のチェックリスト",
+   "url": "https://www.kanameta.jp/column/outsourcing-checklist-cost-quality-balance",
+   "publisher": "カナメタ",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1335",
+  "kind": "buyer",
+  "title": "条件検索の加工サービスを使う",
+  "summary": "製造業の営業支援会社の解説では、加工会社を材質・工法・地域などの条件で検索できるサービスを使って外注先を探す企業が増えているとする。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "製造業の外注先探しとは？",
+   "url": "https://eigyo-mfg.com/blog/6220/",
+   "publisher": "営業製作所",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1502",
+  "kind": "term",
+  "title": "帳合（ちょうあい）",
+  "summary": "作り手と買い手の間に卸や商社を入れ、帳簿上の取引をそこを通して行うこと。物の流れは直送でも、注文と請求は商社経由になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "帳合とは？小売業における帳合取引の意味や役割について解説",
+   "url": "https://www.freee.co.jp/kb/kb-hanbai-kanri/gathering/",
+   "publisher": "freee",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1336",
+  "kind": "buyer",
+  "title": "品質管理を理由に卸を指定される",
+  "summary": "食品の流通ブログでは、HACCP対応や品質管理の問題から、取引先に「今後は大手の卸を帳合に入れてほしい」と言われた例を紹介。買い手は管理のしやすさで商流を決めることがある。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "食品業界の帳合とは？帳合を迫られた話やメリット・デメリットも解説",
+   "url": "https://fish-neta.com/balance-account/",
+   "publisher": "お魚のネタ帳",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1337",
+  "kind": "buyer",
+  "title": "加工の調達窓口サイトに頼む",
+  "summary": "関東の機械加工の調達サイトは、1,000社を超える加工会社のネットワークから見積もりや加工先を紹介し、複数工程にまたがる加工も一括で扱うとしている。",
+  "industries": [
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「関東機械加工の窓口.com」とは",
+   "url": "https://kikaikako-hkss.com/about/",
+   "publisher": "関東機械加工の窓口.com",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2647",
+  "kind": "success",
+  "title": "協力工場をチーム化して一括受注",
+  "summary": "ある会社は全国の町工場ネットワークの窓口となり、協力工場をチームにまとめて、加工から処理・組立までを一括で相談できるようにしている。",
+  "industries": [
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "仲間の工場と組んで受ける範囲",
+  "source": {
+   "title": "全国町工場ネットワーク",
+   "url": "http://kms-jp.com/network/",
+   "publisher": "ケイ・エム・エス",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1338",
+  "kind": "buyer",
+  "title": "材料選びから加工まで一括で頼む",
+  "summary": "特殊鋼の商社は、材料選定から切断などの加工までワンストップで受け、ロットによっては1週間ほどで届けるとしている。材料と加工を別々に手配する手間が減る。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "クマガイ特殊鋼 製品情報",
+   "url": "https://pr.mono.ipros.com/kumagai-steel/product/detail/2000981383/",
+   "publisher": "イプロス掲載の特殊鋼商社",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1349",
+  "kind": "pain",
+  "title": "原価上昇分を転嫁できたのは半分強",
+  "summary": "全国商工団体連合会付属中小商工業研究所の緊急アンケート（2025年3月）では、原材料や燃料費の上昇分を少しでも転嫁できた下請事業者は半分強にとどまった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "下請事業者の価格転嫁・価格（単価）交渉 緊急アンケートのまとめ",
+   "url": "https://www.zenshoren.or.jp/wordpress/wp-content/uploads/2025/06/250611chousa.pdf",
+   "publisher": "全国商工団体連合会付属中小商工業研究所",
+   "date": "2025-03"
+  }
+ },
+ {
+  "id": "buyer-1339",
+  "kind": "buyer",
+  "title": "直接の一次請けで商流を浅く",
+  "summary": "部品加工会社のコラムは、商社を挟むとその分が調達価格に上乗せされ、加工会社が直接の一次請けになれば商流を浅くして商社マージンを省けると説明する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "直接頼むと何が変わるか",
+  "source": {
+   "title": "モノづくり企業と直接取引した方が良い4つの理由",
+   "url": "https://www.watanabe-lab.co.jp/24-12-16/",
+   "publisher": "加工会社のコラム",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1340",
+  "kind": "buyer",
+  "title": "購買は商社の付加価値を問い直す",
+  "summary": "調達担当者のブログは「取引先の商社は価値のある仕事をしていますか？」と問いかけ、商社の働きを見直す視点を示す。役割の薄い中間業者は外される可能性がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "取引先の商社は価値のある仕事をしていますか？",
+   "url": "https://tyoutatsumeister.hatenablog.com/entry/%E5%95%86%E7%A4%BE%E3%81%A8%E3%81%AE%E5%8F%96%E5%BC%95_1",
+   "publisher": "調達魂（ブログ）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1350",
+  "kind": "pain",
+  "title": "多重下請で下にしわ寄せが来る",
+  "summary": "基板実装の情報サイトは、多重下請けの構造では上位企業のコスト削減の負担が下位へ回りやすく、価格の主導権が発注側に偏りやすいと指摘する。",
+  "industries": [
+   "基板実装"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "なぜ日本の町工場は安く買い叩かれるのか",
+   "url": "https://money.hb449.com/archives/4426",
+   "publisher": "基板実装.com",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2648",
+  "kind": "success",
+  "title": "機械工具商社がDXで変わった",
+  "summary": "船井総研の顧客の声では、パソコンも苦手だった機械工具商社がDXに取り組み、今後の展望が大きく開けたと語る。商社側も発信と仕組みづくりを始めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "パソコンも苦手な会社がDX、機械工具商社の未来が大きく開けた",
+   "url": "https://www.funaisoken.co.jp/voice/fuji-nami",
+   "publisher": "船井総合研究所",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2649",
+  "kind": "success",
+  "title": "共同出展で1社100社超の見込み客",
+  "summary": "金属加工の関連会社がまとめて展示会に出て費用を分け合った結果、1社あたり100社以上の見込み客を得たと報告。単独では出展が重い会社の現実的な手になる。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "共同出展で出会った人に読ませる記事",
+  "source": {
+   "title": "展示会への共同出展",
+   "url": "https://nycinc.jp/case/%E5%B1%95%E7%A4%BA%E4%BC%9A%E3%81%B8%E3%81%AE%E5%85%B1%E5%90%8C%E5%87%BA%E5%B1%95/",
+   "publisher": "NYC",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2650",
+  "kind": "success",
+  "title": "展示会のあと工場見学へつなぐ",
+  "summary": "町工場向けの営業コンサルは、展示会で終わらせず、工場見学や直接の接点を作ることで新規開拓の率を上げられると説く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "工場見学の申し込み方を書く",
+  "source": {
+   "title": "展示会営業成功への鍵_新規開拓率向上は工場見学にあり！",
+   "url": "https://www.nna-osaka.co.jp/about-nna/sato-blog/post-11161/",
+   "publisher": "NNA",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1341",
+  "kind": "buyer",
+  "title": "地域の町工場展示会で発注先を探す",
+  "summary": "東京都葛飾区の「まちこうば」は、城東エリアの中小製造業が新規受注先や協業先を探せる展示会として出展者を募る。買い手は地域の展示会で加工先を見つける。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "出展案内",
+   "url": "https://machikouba.jp/exhibitors",
+   "publisher": "まちこうば",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1342",
+  "kind": "buyer",
+  "title": "商談会は発注企業を分野別に公開",
+  "summary": "大阪産業局のMOBIOは、大阪ものづくりマッチング商談会の発注企業一覧を機械加工・プレスなど分野ごとに公開。受注側は事前に相手を調べて臨める。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "発注企業一覧",
+   "url": "https://www.obda.or.jp/wp-content/uploads/2022/08/%E7%99%BA%E6%B3%A8%E4%BC%81%E6%A5%AD%E4%B8%80%E8%A6%A7-1.pdf",
+   "publisher": "大阪産業局",
+   "date": "2022-08"
+  }
+ },
+ {
+  "id": "buyer-1343",
+  "kind": "buyer",
+  "title": "地方銀行の商談会で加工先を探す",
+  "summary": "地方銀行が主催する「ものづくり企業展示・商談会2026」は出展者一覧を公開。金融機関の商談会も、発注側が新しい加工先と出会う場になっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "出展者一覧｜ものづくり企業展示・商談会2026",
+   "url": "https://www.ashigin-shoudankai.jp/monodukuri/list.html",
+   "publisher": "足利銀行 商談会",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1716",
+  "kind": "trend",
+  "official": true,
+  "title": "下請法は2026年から取適法へ",
+  "summary": "業界団体の手引きによると、2026年1月から下請法は「中小受託取引適正化法（取適法）」に名称が変わり、下請事業者は中小受託事業者、親事業者は委託事業者と呼ぶ。従業員基準も加わった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "取適法で変わる見積と支払い",
+  "source": {
+   "title": "取適法ガイドライン",
+   "url": "https://www.jbpa.or.jp/pdf/guideline/toriteki2026.pdf",
+   "publisher": "日本書籍出版協会",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1717",
+  "kind": "trend",
+  "official": false,
+  "title": "協議なしの値決めが禁止に",
+  "summary": "契約実務メディアによると、取適法では協議に応じない一方的な価格決定の禁止などが加わった。商社経由の製造委託でも、価格の話し合いを求めやすくなる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "値上げ相談の記録を残す",
+  "source": {
+   "title": "取適法の解説",
+   "url": "https://keiyaku-watch.jp/?p=34990",
+   "publisher": "契約ウォッチ",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1718",
+  "kind": "trend",
+  "official": true,
+  "title": "人手不足で省力化投資が進む",
+  "summary": "日本政策金融公庫の研究レポート（2024年6月）は、人手不足が中小製造業の売上機会や利益に影響し始め、省力化投資で根本的に解決しようとする企業の動きを取り上げた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "省力化投資で人手不足に対応する中小製造業",
+   "url": "https://www.jfc.go.jp/n/findings/pdf/soukenrepo_24_06_21.pdf",
+   "publisher": "日本政策金融公庫",
+   "date": "2024-06"
+  }
+ },
+ {
+  "id": "trend-1719",
+  "kind": "trend",
+  "official": true,
+  "title": "国内回帰の補助金を研究が検証",
+  "summary": "経済産業研究所のディスカッションペーパー（2023年）は、サプライチェーン補助金と国内回帰、友好国への生産移転を扱う。調達先を国内に戻す動きが国の政策でも後押しされた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "サプライチェーン補助金、国内回帰及びフレンド・ショアリング",
+   "url": "https://www.rieti.go.jp/jp/publications/pdp/23p001.pdf",
+   "publisher": "経済産業研究所",
+   "date": "2023"
+  }
+ },
+ {
+  "id": "buyer-1344",
+  "kind": "buyer",
+  "title": "小ロット成形は型の共用で安く",
+  "summary": "ある成形会社は、モールドベースを共用し入れ子だけを作る方式で小ロット樹脂成形を安くし、金型の資産計上も不要になるとしている。小ロットでは型費の抑え方が選ぶ基準になる。",
+  "industries": [
+   "樹脂成形",
+   "金型"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "小ロットの型費を下げる方法",
+  "source": {
+   "title": "小ロット樹脂成形",
+   "url": "https://pr.mono.ipros.com/protech-japan/product/detail/2001512204",
+   "publisher": "イプロス掲載の成形会社",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2651",
+  "kind": "success",
+  "title": "試作から量産まで一社で受ける",
+  "summary": "樹脂成形の会社は、3Dプリンタでの試作、アルミ型での小ロット成形、提携工場での量産まで一貫して受けると資料で案内。複数社に頼む手間を減らすことを売りにする。",
+  "industries": [
+   "樹脂成形",
+   "3Dプリンタ"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "試作から量産へ移る流れを書く",
+  "source": {
+   "title": "樹脂射出成型品 2025.09",
+   "url": "https://www.hotty.co.jp/wp/wp-content/uploads/2025/10/%E6%A8%B9%E8%84%82%E5%B0%84%E5%87%BA%E6%88%90%E5%9E%8B%E5%93%81-2025.09.pdf",
+   "publisher": "成形会社の資料",
+   "date": "2025-09"
+  }
+ },
+ {
+  "id": "success-2652",
+  "kind": "success",
+  "title": "掲載サイトから商談への道を作る",
+  "summary": "広告メディアの記事（2026年6月更新）は、アペルザやイプロスでカタログ掲載・製品ページ・資料ダウンロード・問い合わせをつなげば、展示会以外にも見込み客の入口を作れるとする。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "掲載サイトと自社記事をつなぐ",
+  "source": {
+   "title": "アペルザとイプロスの違いと活用法",
+   "url": "https://www.shopowner-support.net/?p=264495",
+   "publisher": "キャククル",
+   "date": "2026-06"
+  }
+ },
+ {
+  "id": "pain-1351",
+  "kind": "pain",
+  "title": "「何が得意か分からない」と言われる",
+  "summary": "大手の受注が減った工場向けの工事会社が、販路開拓の専門家から「得意分野が分からない」と指摘された。強みを言葉にできないと紹介も商談も広がらない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "「うちの得意」を一言で言えますか",
+  "source": {
+   "title": "ロカベン活用の現場 ロカベンで発見したセールスポイントで販路拡大",
+   "url": "https://mirasapo-plus.go.jp/hint/21853/",
+   "publisher": "ミラサポplus（中小企業庁）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2653",
+  "kind": "success",
+  "title": "工程に分けて強みを洗い出す",
+  "summary": "信用金庫の提案でロカベンを使い、仕事を調査・見積・施工に分けて点検。幅広い業種の工場営繕に対応できることが、同業にあまりない強みだと分かった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "工程ごとに見たうちの強み",
+  "source": {
+   "title": "ロカベン活用の現場 ロカベンで発見したセールスポイントで販路拡大",
+   "url": "https://mirasapo-plus.go.jp/hint/21853/",
+   "publisher": "ミラサポplus（中小企業庁）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2654",
+  "kind": "success",
+  "title": "強みが分かると商談で言い切れる",
+  "summary": "ロカベンで差別化の点がはっきりした会社は、商談で自信を持ってアピールできるようになり、新しい取引先が増えたと紹介されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "他社に頼むと困ること、うちならできること",
+  "source": {
+   "title": "ロカベン活用の現場 ロカベンで発見したセールスポイントで販路拡大",
+   "url": "https://mirasapo-plus.go.jp/hint/21853/",
+   "publisher": "ミラサポplus（中小企業庁）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1970",
+  "kind": "question",
+  "title": "銀行と将来の目標をどう話す？",
+  "summary": "ロカベンの企業向けガイドでは、まとめ欄に今の認識と将来の目標を書き、課題への手立てを金融機関や支援機関と話し合う流れが示されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "question_example"
+  ],
+  "articleIdea": "3年後に目指す姿と、そのための一歩",
+  "source": {
+   "title": "ガイドブック ローカルベンチマーク 企業編 SDGs/DX対応版",
+   "url": "https://mirasapo-plus.go.jp/resource/pdf/localbench-guide.pdf",
+   "publisher": "ミラサポplus（中小企業庁）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1503",
+  "kind": "term",
+  "title": "ローカルベンチマーク（ロカベン）",
+  "summary": "会社の健康診断に当たる経済産業省の道具。財務の数字に加え、商流・業務の流れなど数字にならない面をシートで整理し、金融機関や支援機関との対話に使う。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ローカルベンチマーク ガイドブック（企業編）SDGs/DX対応",
+   "url": "https://www.meti.go.jp/policy/economy/keiei_innovation/sangyokinyu/locaben/pdf/locaben_guidbook_sdgs-dx_kigyou.pdf",
+   "publisher": "経済産業省",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1720",
+  "kind": "trend",
+  "official": true,
+  "title": "金融機関の95%超がロカベンを知る",
+  "summary": "経済産業省の2021年1月の資料によると、ロカベンの認知度は全国の金融機関で95.5％、活用は約4割。数字にならない強みを話す場が広がっている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ローカルベンチマークの概要と今年度の取組",
+   "url": "https://www.kantei.go.jp/jp/singi/titeki2/tyousakai/kousou/kachi_design_wg/dai2/siryou5.pdf",
+   "publisher": "経済産業省 経済産業政策局 産業資金課（内閣官房会議資料）",
+   "date": "2021-01"
+  }
+ },
+ {
+  "id": "trend-1721",
+  "kind": "trend",
+  "official": true,
+  "title": "銀行の評価シートに非財務の欄",
+  "summary": "経済産業省の令和3年度調査によると、金融機関が使う事業性評価シートに、ロカベンの財務分析や非財務シートの要素を取り込む動きがある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ローカルベンチマークを含む中小企業の非財務情報活用及び事業性評価の実態把握に係る調査研究 報告書",
+   "url": "https://www.meti.go.jp/meti_lib/report/2021FY/000226.pdf",
+   "publisher": "経済産業省（委託調査）",
+   "date": "2022"
+  }
+ },
+ {
+  "id": "success-2655",
+  "kind": "success",
+  "title": "研磨や切削の会社にも未来志向の診断",
+  "summary": "秩父の商工会議所は非財務の聞き取りを重視し、先を見すえたロカベン支援を実施。対象には研磨加工や自動車部品の切削加工の会社も含まれる。",
+  "industries": [
+   "研削",
+   "切削加工",
+   "自動車部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "秩父版ローカルベンチマーク支援モデル（活用戦略会議資料）",
+   "url": "https://www.meti.go.jp/shingikai/economy/local_bench/pdf/011_03_00.pdf",
+   "publisher": "秩父商工会議所（経済産業省 会議資料）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1722",
+  "kind": "trend",
+  "official": true,
+  "title": "見える化の道具を並べて使う",
+  "summary": "青森県の令和元年度マニュアルは、経営デザインシートをロカベンや戦略マップと並べ、経営を見える化する道具として紹介。事業承継の事例も載る。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "戦略的経営展開マニュアル（令和元年度）",
+   "url": "https://www.pref.aomori.lg.jp/soshiki/sangyo/chikikigyo/files/R1_keieitenkai.pdf",
+   "publisher": "青森県",
+   "date": "2020"
+  }
+ },
+ {
+  "id": "success-2656",
+  "kind": "success",
+  "title": "代替わり前に強みを1枚で共有",
+  "summary": "印刷機械部品のロール加工を得意とする工場が、代替わりを前に経営デザインシートを作成。現社長と次の経営陣が強みと課題を同じ紙で確かめた。",
+  "industries": [
+   "切削加工",
+   "印刷機械"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "二代目と先代が話した「うちの強み」",
+  "source": {
+   "title": "経営デザインシートを活用したメリット(2)",
+   "url": "https://www.chugoku.meti.go.jp/ip/contents/115/index.html",
+   "publisher": "中国経済産業局 もうけの花道",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1504",
+  "kind": "term",
+  "title": "経営デザインシート",
+  "summary": "内閣府の知的財産戦略の部署が公開する1枚のシート。自社がどう価値を生んでいるかと、これから目指す姿をつなげて描き、知財のビジネス価値を考える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "経営をデザインする（知財のビジネス価値評価）",
+   "url": "https://www.cas.go.jp/jp/seisakukaigi/titeki2/keiei_design/index.html",
+   "publisher": "内閣府 知的財産戦略推進事務局",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2657",
+  "kind": "success",
+  "title": "塗装会社の社長が事例を発表",
+  "summary": "経営デザインシートの研究会で、塗装会社の社長が自社の作成事例を発表。作り手が自分の言葉で将来像を語る場になっている。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "第14回研究会「経営デザインシート活用事例発表研究会」",
+   "url": "https://www.ipaj.org/bunkakai/keiei_design/pdfs/20220421.pdf",
+   "publisher": "日本知財学会 経営デザイン分科会",
+   "date": "2022-04"
+  }
+ },
+ {
+  "id": "success-2658",
+  "kind": "success",
+  "title": "将来像を社員に見せて採用にも",
+  "summary": "内閣府の活用例では、社長と幹部が経営デザインシートで率直に話し合い、将来像の共通認識を作った。社員に示すことでキャリアの道筋も見えやすくなった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "10年後のうちと、そこで働く人",
+  "source": {
+   "title": "経営デザインシート活用例",
+   "url": "https://www.kantei.go.jp/jp/singi/titeki2/keiei_design/sys21_01.pdf",
+   "publisher": "内閣府 知的財産戦略推進事務局",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1723",
+  "kind": "trend",
+  "official": true,
+  "title": "デザイン経営が中小にも広がる",
+  "summary": "特許庁の中小向けハンドブック2は、デザイン経営宣言（2018年）から5年で支援機関の発信が全国に広がり、定着した会社はブランドづくりの効果を実感していると述べる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業のためのデザイン経営ハンドブック2",
+   "url": "https://www.jpo.go.jp/introduction/soshiki/design_keiei/document/chusho_2/chusho-handbook2_a4.pdf",
+   "publisher": "特許庁",
+   "date": "2023"
+  }
+ },
+ {
+  "id": "success-2659",
+  "kind": "success",
+  "title": "価値観を客にも共感で伝える",
+  "summary": "大阪府のデザイン経営の事例資料は、成功例の共通点として、経営者と社員、会社と顧客の間で価値観や理念が共感をもって共有されていることを挙げる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "うちが仕事で大事にしていること",
+  "source": {
+   "title": "デザイン経営 事例資料",
+   "url": "https://www.pref.osaka.lg.jp/documents/12073/186design.pdf",
+   "publisher": "大阪府",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2660",
+  "kind": "success",
+  "title": "知的資産の報告で売上が伸びた",
+  "summary": "中小機構の解説によると、特許庁の平成26年度調査で知的資産経営報告書を作った会社の5〜6割が売上や営業利益を伸ばし、4割ほどが雇用や設備投資を増やした。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "知的資産経営報告書の作成と活用",
+   "url": "https://j-net21.smrj.go.jp/special/tasuku/case16.html",
+   "publisher": "中小機構 J-Net21",
+   "date": "2019-08"
+  }
+ },
+ {
+  "id": "term-1505",
+  "kind": "term",
+  "title": "関係資産（取引先との関係）",
+  "summary": "知的資産の一つで、顧客や仕入先、金融機関との関係そのものを指す。人に付くノウハウ（人的）、仕組み（構造）と並ぶ分け方で、長い取引も強みになる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "知的資産経営報告書の作成と活用",
+   "url": "https://j-net21.smrj.go.jp/tasuku/case16.html",
+   "publisher": "中小機構 J-Net21",
+   "date": "2019-08"
+  }
+ },
+ {
+  "id": "pain-1352",
+  "kind": "pain",
+  "title": "辞める人と一緒に技が出ていく",
+  "summary": "中小機構の解説では、従業員が退職するときに持ち出される資産の例として技術やノウハウが挙がる。人に付いた技を書き残すことが課題になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "ベテランの技を言葉と写真で残す",
+  "source": {
+   "title": "知的資産経営報告書の作成と活用",
+   "url": "https://j-net21.smrj.go.jp/special/tasuku/case16.html",
+   "publisher": "中小機構 J-Net21",
+   "date": "2019-08"
+  }
+ },
+ {
+  "id": "success-2661",
+  "kind": "success",
+  "title": "銀行向けに作った報告書の65%が効果",
+  "summary": "中小機構の2014年調査では、金融機関向けを重視して知的資産経営報告書を作り開示した37社のうち約65%が効果ありと回答。重視しなかった19社は約32%。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "「知的資産経営報告書」作成企業の実態調査",
+   "url": "https://www.smrj.go.jp/research_case/knowledge/fbrion0000002pv0-att/h25chitekishisanchousa.pdf",
+   "publisher": "中小機構",
+   "date": "2014-03"
+  }
+ },
+ {
+  "id": "success-2662",
+  "kind": "success",
+  "title": "報告書が新しい取引先との会話の道具に",
+  "summary": "同じ中小機構の調査で、知的資産経営報告書は社内では経営と社員の意思疎通、社外では金融機関や新しい取引先に会社を伝える道具として効いていた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "初めての取引先に読んでほしい会社の話",
+  "source": {
+   "title": "「知的資産経営報告書」作成企業の実態調査",
+   "url": "https://www.smrj.go.jp/research_case/knowledge/fbrion0000002pv0-att/h25chitekishisanchousa.pdf",
+   "publisher": "中小機構",
+   "date": "2014-03"
+  }
+ },
+ {
+  "id": "success-2663",
+  "kind": "success",
+  "title": "強みの文書で審査が通りやすく",
+  "summary": "特許庁の資料では、知的資産の報告書で事業内容が正確に伝わり、金融機関に審査資料として評価された例や、金利優遇につながった例が紹介されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "知財を活用した中小企業向け融資について",
+   "url": "https://www.jpo.go.jp/resources/shingikai/kenkyukai/chusyo/document/03-shiryou/shiryou02.pdf",
+   "publisher": "特許庁",
+   "date": "2014-06"
+  }
+ },
+ {
+  "id": "success-2664",
+  "kind": "success",
+  "title": "銀行員が強みを知り取引先を紹介",
+  "summary": "経済産業省の金融機関向け資料では、報告書づくりに関わった銀行員が会社の強みを理解し、ビジネスマッチング（取引先の紹介）に生かした例がある。技術の評価は銀行側の課題とも。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "知的資産経営と地域金融機関",
+   "url": "https://www.meti.go.jp/policy/intellectual_assets/pdf/chiikikinnyukikan20130418.pdf",
+   "publisher": "経済産業省",
+   "date": "2013-04"
+  }
+ },
+ {
+  "id": "trend-1724",
+  "kind": "trend",
+  "official": true,
+  "title": "審査で数字以外を重く見る流れ",
+  "summary": "経済産業省の知的資産経営マニュアルは、中小企業庁の調査として、金融機関が中小向け貸出の審査で非財務の情報を重視するようになったと紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業のための知的資産経営マニュアル",
+   "url": "https://www.meti.go.jp/policy/intellectual_assets/pdf/00all.pdf",
+   "publisher": "経済産業省",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1725",
+  "kind": "trend",
+  "official": true,
+  "title": "戦略まで書いた報告ほど満足度高い",
+  "summary": "特許庁の令和6年度調査では、今の姿だけでなく今後の戦略や行動計画まで示した知財レポートほど満足度が高い傾向。保有知財を数字で評価してほしい声もあった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "知財レポートを活用した中小企業における金融機関への情報開示に関する調査研究",
+   "url": "https://www.jpo.go.jp/resources/report/chiiki-chusho/document/r6-chusho-chizaireport/01.pdf",
+   "publisher": "特許庁",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "term-1506",
+  "kind": "term",
+  "title": "知財ビジネス評価書と提案書の流れ",
+  "summary": "特許庁が平成26年度から金融機関に届けてきた資料。専門機関が技術の優位性や成長性と事業のつながりを分析し、銀行と専門家がそれを元に提案書を作って会社へ提案する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "知財を活用した事業性評価の手法を提案します！",
+   "url": "https://www.jpo.go.jp/resources/report/sonota-info/document/panhu/cyuusyou_tsuyomi.pdf",
+   "publisher": "特許庁",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1726",
+  "kind": "trend",
+  "official": true,
+  "title": "知財を見る力に銀行ごとの差",
+  "summary": "特許庁の2023年3月の報告書は、知財ビジネス評価書の活用で、金融機関によって取り組み姿勢に差が出始めていることを課題に挙げた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業における知財ビジネス評価書の活用に関する調査研究 報告書",
+   "url": "https://www.jpo.go.jp/resources/report/chiiki-chusho/document/r4-chusho-shien-kinyu-sokushin/report.pdf",
+   "publisher": "特許庁",
+   "date": "2023-03"
+  }
+ },
+ {
+  "id": "term-1507",
+  "kind": "term",
+  "title": "技術・経営力評価",
+  "summary": "県の産業支援機関が技術や経営の力を外部の目で評価し、報告書にまとめる制度。強みを第三者の言葉で示せるので、取引先や金融機関への説明に使える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "技術・経営力評価報告書（サンプル）",
+   "url": "https://web.hyogo-iic.ne.jp/files/keiei/hyoukaseido_sample_202106.pdf",
+   "publisher": "ひょうご産業活性化センター",
+   "date": "2021-06"
+  }
+ },
+ {
+  "id": "term-1508",
+  "kind": "term",
+  "title": "業種別支援の着眼点",
+  "summary": "金融庁が業種ごとに、金融機関が会社を理解し支援するときの見どころをまとめた資料。2026年3月版は帝国データバンクが作成し、融資手法や事例を追加した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "業種別支援の着眼点",
+   "url": "https://www.fsa.go.jp/policy/chuukai/gyousyubetu.html",
+   "publisher": "金融庁",
+   "date": "2026-03"
+  }
+ },
+ {
+  "id": "question-1971",
+  "kind": "question",
+  "title": "「利益率」が銀行の想定とずれたら",
+  "summary": "金融庁の製造業の着眼点は、会社の言う利益率と銀行の想定がずれるとき、材料費や労務費をどこまで引いたか確かめ、なおずれれば原価管理に課題がある可能性を指摘する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "articleIdea": "見積の内訳はこう決めています",
+  "source": {
+   "title": "業種別支援の着眼点（製造業）",
+   "url": "https://www.fsa.go.jp/policy/chuukai/240329gyosyubetu_08.pdf",
+   "publisher": "金融庁",
+   "date": "2024-03"
+  }
+ },
+ {
+  "id": "success-2665",
+  "kind": "success",
+  "title": "水産加工や印刷の改善事例",
+  "summary": "金融庁委託で帝国データバンクがまとめた2026年版の事例に、水産加工業や印刷業など製造業の改善例が含まれる。融資と本業支援を組み合わせた見方の参考になる。",
+  "industries": [
+   "食品製造",
+   "印刷"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "業種別支援の着眼点 支援事例（2026年3月）",
+   "url": "https://www.fsa.go.jp/policy/chuukai/2603gyousyubetu_shienjirei.pdf",
+   "publisher": "帝国データバンク（金融庁委託）",
+   "date": "2026-03"
+  }
+ },
+ {
+  "id": "trend-1727",
+  "kind": "trend",
+  "official": true,
+  "title": "事業性融資推進法が施行",
+  "summary": "「事業性融資の推進等に関する法律」が2026年5月25日に施行。土地や建物ではなく、会社の事業全体が生む価値を担保にする「企業価値担保権」ができた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "技術と信用で融資を受ける時代に",
+  "source": {
+   "title": "企業価値担保権",
+   "url": "https://www.fsa.go.jp/policy/kigyoukachi-tanpo/",
+   "publisher": "金融庁",
+   "date": "2026-05"
+  }
+ },
+ {
+  "id": "trend-1728",
+  "kind": "trend",
+  "official": false,
+  "title": "無形資産ごと事業を担保に",
+  "summary": "金融庁の参事官インタビューでは、企業価値担保権によって、技術や顧客との関係などの無形資産を含む事業全体を担保にした融資ができると説明している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "企業価値担保権 解説インタビュー",
+   "url": "https://www.fsa.go.jp/policy/kigyoukachi-tanpo/kinzai_20260407.pdf",
+   "publisher": "金融財政事情（金融庁掲載）",
+   "date": "2026-04"
+  }
+ },
+ {
+  "id": "pain-1353",
+  "kind": "pain",
+  "title": "担保と社長保証に頼る融資",
+  "summary": "中小機構の解説によると、これまでの融資は不動産担保や経営者保証に頼りがちだった。新制度は事業の実態や将来性に着目した融資を受けやすくする狙い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "事業性融資推進法の施行",
+   "url": "https://j-net21.smrj.go.jp/solution/law/20260812.html",
+   "publisher": "中小機構 J-Net21",
+   "date": "2026-08"
+  }
+ },
+ {
+  "id": "success-2666",
+  "kind": "success",
+  "title": "将来性を説明できる材料を持つ",
+  "summary": "事業性融資推進法の解説では、新制度は事業の将来性に着目する。日ごろから技術や実績、取引の広がりを言葉にしておくと、銀行にも取引先にも伝わりやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "事業性融資推進法とは",
+   "url": "https://sogyotecho.jp/jigyouseiyuushihou/",
+   "publisher": "創業手帳",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1729",
+  "kind": "trend",
+  "official": true,
+  "title": "銀行の支援を測るベンチマーク",
+  "summary": "金融庁は2016年、金融機関が自分の支援ぶりを測る「金融仲介機能のベンチマーク」を公表。事業性評価に基づく融資先数などの指標がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "金融仲介機能のベンチマークについて",
+   "url": "https://www.fsa.go.jp/news/28/sonota/20160915-3.html",
+   "publisher": "金融庁",
+   "date": "2016-09"
+  }
+ },
+ {
+  "id": "trend-1730",
+  "kind": "trend",
+  "official": false,
+  "title": "本業支援先は取引先の2%ほど",
+  "summary": "ある信用金庫が公表した令和6年度のベンチマークでは、本業支援先数は32先で全取引先の2.2%。手厚い支援を受けられる会社は限られる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "金融仲介機能のベンチマーク（令和6年度）",
+   "url": "https://www.shinkin.co.jp/ichii/images/finance_facilitation/benchmark.pdf",
+   "publisher": "信用金庫（ディスクロージャー）",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "success-2667",
+  "kind": "success",
+  "title": "EC専門家の客分析でサイト改修",
+  "summary": "京都の信用保証協会がネット集客に強い専門家を派遣。専門家の利用者分析をもとに、和菓子の製造小売の会社が自らサイトを改修し、ECとOEMを注力分野にした。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "どんな人がうちのサイトを見ているか",
+  "source": {
+   "title": "京都信用保証協会の経営支援事例集 ともに歩んだ8つの支援のストーリー",
+   "url": "https://kyosinpo.or.jp/wp-content/uploads/casestudies_03.pdf",
+   "publisher": "京都信用保証協会",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2668",
+  "kind": "success",
+  "title": "専門家の助言で営業ツール作り",
+  "summary": "京都の信用保証協会の事例集には、専門家のアドバイスを受けて営業ツールの制作に取りかかった事例が収められている。保証協会が融資後の販路づくりまで伴走する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "京都信用保証協会の経営支援事例集 ともに歩んだ8つの支援のストーリー",
+   "url": "https://kyosinpo.or.jp/wp-content/uploads/casestudies_03.pdf",
+   "publisher": "京都信用保証協会",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2669",
+  "kind": "success",
+  "title": "新規受注の営業方法を専門家と",
+  "summary": "埼玉の信用保証協会の事例集では、専門家派遣で新しい受注を取るための営業方法を一緒に考えたという利用者の声がある。派遣は最大8回。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "CUSTOMER'S VOICE 経営支援事例集",
+   "url": "https://www.cgc-saitama.or.jp/files/pamphlet/keieishienzirei.pdf",
+   "publisher": "埼玉県信用保証協会",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2670",
+  "kind": "success",
+  "title": "専門家の指導で新商品が売れた",
+  "summary": "北海道の信用保証協会の支店管内で、食品製造の会社が専門家から新商品開発や製造ラインの見直しを指導され、新商品が予想以上に売れた。派遣は無料で最長10回。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小事業者の経営改善支援、自ら汗かく信用保証協会",
+   "url": "https://kachimai.jp/article/index.php?no=562036",
+   "publisher": "十勝毎日新聞",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2671",
+  "kind": "success",
+  "title": "保証協会が営業体制づくりを助言",
+  "summary": "ある信用保証協会は食料品製造の会社と面談して業績を確かめ、外部と連携して中小企業診断士を派遣。売上をならすため、新規取引先を開く営業体制を助言した。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "信用保証協会の経営支援事例",
+   "url": "https://www.fsa.go.jp/policy/chuukai/r5-6_case03.pdf",
+   "publisher": "金融庁（掲載事例）",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1731",
+  "kind": "trend",
+  "official": true,
+  "title": "全国51保証協会の経営支援に予算",
+  "summary": "経済産業省の予算資料によると、全国に51ある信用保証協会が専門家派遣などで中小企業の経営支援を行うことを、国が後押ししている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "令和6年度概算要求 PR資料（信用保証協会の経営支援）",
+   "url": "https://www.meti.go.jp/main/yosangaisan/fy2024/pr/ip/chuki_05.pdf",
+   "publisher": "中小企業庁",
+   "date": "2023-08"
+  }
+ },
+ {
+  "id": "success-2672",
+  "kind": "success",
+  "title": "リニューアルで注文が戻った",
+  "summary": "島根の信用保証協会の事例では、専門家派遣を使ったリニューアルと商品開発の効果で、顧客からの注文が戻り受注が回復した（飲食業の例）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "経営支援サービス｜経営改善支援",
+   "url": "https://www.shimane-cgc.or.jp/management/business_support",
+   "publisher": "島根県信用保証協会",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1732",
+  "kind": "trend",
+  "official": false,
+  "title": "地銀の取引先紹介は年8万件超",
+  "summary": "全国地方銀行協会が2025年9月に公表した資料によると、2024年度の地方銀行のビジネスマッチング成約件数は81,282件。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "地方銀行における「地域密着型金融」に関する取り組み状況（2024年度）",
+   "url": "https://www.chiginkyo.or.jp/regional_banks/initiative/community_based/assets/mitchaku2024.pdf",
+   "publisher": "全国地方銀行協会",
+   "date": "2025-09"
+  }
+ },
+ {
+  "id": "trend-1733",
+  "kind": "trend",
+  "official": false,
+  "title": "地銀は国内外の販路開拓を支援",
+  "summary": "全国地方銀行協会の資料は、成長段階の取引先への国内外の販路開拓支援を、地域密着型金融の取り組み項目に挙げている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "地方銀行における地域密着型金融の取組状況（2020年度）",
+   "url": "https://www.chiginkyo.or.jp/regional_banks/initiative/community_based/assets/2020_torikumijyokyo_all.pdf",
+   "publisher": "全国地方銀行協会",
+   "date": "2021"
+  }
+ },
+ {
+  "id": "trend-1734",
+  "kind": "trend",
+  "official": false,
+  "title": "第二地銀でもマッチング増加",
+  "summary": "第二地方銀行協会は2025年10月の金融審議会資料で、ビジネスマッチング、事業承継・M&A、再生ファンドへの出資が増加傾向だと整理した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "金融審議会「地域金融力の強化に関するワーキング・グループ」資料",
+   "url": "https://www.fsa.go.jp/singi/singi_kinyu/chiikikinyuryoku_wg/gijishidai/20251002/03.pdf",
+   "publisher": "第二地方銀行協会",
+   "date": "2025-10"
+  }
+ },
+ {
+  "id": "buyer-1345",
+  "kind": "buyer",
+  "title": "買い手が先に注文を出す商談会",
+  "summary": "十六銀行のサプライヤー探索サービスは逆見本市の形。買い手が部品や材料の発注ニーズを先に示し、銀行が応えられる取引先を探す。これまで3,200以上の商談を設定。",
+  "industries": [
+   "機械部品",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "こんな部品の相談を受けています",
+  "source": {
+   "title": "サプライヤー探索サービス（逆見本市商談会）",
+   "url": "https://www.juroku.co.jp/corp/support/supplier.html",
+   "publisher": "十六銀行",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2673",
+  "kind": "success",
+  "title": "書類選考を通ると個別商談へ",
+  "summary": "十六銀行の逆見本市では、サプライヤー側は書類選考を通ると個別商談に進む。加工実績や対応範囲を紙やWebで先に示せる会社が有利になる。",
+  "industries": [
+   "切削加工",
+   "板金",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "writer_hint"
+  ],
+  "articleIdea": "対応できる材質・サイズ・数量の一覧",
+  "source": {
+   "title": "十六銀行の製造業企業支援「サプライヤー探索サービス（逆見本市商談会）」",
+   "url": "https://www.jst.go.jp/tt/journal/journal_contents/2017/02/1702-07_article.html",
+   "publisher": "産学官連携ジャーナル（JST）",
+   "date": "2017-02"
+  }
+ },
+ {
+  "id": "buyer-1346",
+  "kind": "buyer",
+  "title": "府の窓口が加工先を紹介",
+  "summary": "大阪府の「ものづくりB2Bネットワーク」は、部品発注や加工、試作の依頼を受けて対応できるものづくり企業を紹介する仕組み。南都銀行も金融機関として協力する。",
+  "industries": [
+   "金属加工",
+   "切削加工",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "ビジネスマッチング｜南都銀行",
+   "url": "https://www.nantobank.co.jp/hojin/keiei/business/",
+   "publisher": "南都銀行",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1354",
+  "kind": "pain",
+  "title": "銀行の紹介は成約を約束しない",
+  "summary": "鳥取銀行はビジネスマッチングについて、取引先の紹介や商談の成約を確約するものではないと明記。紹介の後は自社の説明力で決まる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ビジネスマッチング｜鳥取銀行",
+   "url": "https://www.tottoribank.co.jp/business/support/matching/index.html",
+   "publisher": "鳥取銀行",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1735",
+  "kind": "trend",
+  "official": false,
+  "title": "紹介した商談が年6千件近く成約",
+  "summary": "静岡銀行の公表では、平成27年度に5,965件の商談が成約し、582億円の融資につながった。銀行の紹介が取引先の売上と融資を結ぶ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "地域密着型金融の取組み実績（平成27年度）",
+   "url": "https://www.shizuokabank.co.jp/companyinfo/cmn/pdf/csr/jisseki_280630.pdf",
+   "publisher": "静岡銀行",
+   "date": "2016-06"
+  }
+ },
+ {
+  "id": "trend-1736",
+  "kind": "trend",
+  "official": false,
+  "title": "中期計画にマッチング件数の目標",
+  "summary": "群馬銀行は2025年の中期経営計画で、ビジネスマッチング件数（3年累計）を目標の一つに掲げる。銀行も紹介の数を成果として追っている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中期経営計画",
+   "url": "https://www.gunmabank.co.jp/ir/library/pdf/2025/midterm.pdf",
+   "publisher": "群馬銀行",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "success-2674",
+  "kind": "success",
+  "title": "信金の合同商談会に500社超",
+  "summary": "2025年の「よい仕事おこし」フェアは全国253の信用金庫が協賛し、505社が出展、各信金が推すものづくり企業も集まった（日刊工業新聞の記事）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "全国信金の推しの逸品が集結「2025“よい仕事おこし”フェア」開催",
+   "url": "https://www.nikkan.co.jp/articles/view/00765464",
+   "publisher": "日刊工業新聞",
+   "date": "2025-11"
+  }
+ },
+ {
+  "id": "pain-1355",
+  "kind": "pain",
+  "title": "商談件数と成約件数は別もの",
+  "summary": "信金の合同商談会は毎年4千件超の商談が報じられるが、商談は話をした数で契約数ではない。展示会後に追いかけて読める情報が要る。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "全国の信金連携 中小商談会に500団体超が出展",
+   "url": "https://www.nikkei.com/article/DGXZQOCC260T20W5A121C2000000/",
+   "publisher": "日本経済新聞",
+   "date": "2025-11"
+  }
+ },
+ {
+  "id": "success-2675",
+  "kind": "success",
+  "title": "部品メーカーの自社製品に80社",
+  "summary": "信金の商談会で、精密部品メーカーが新しい収益源として開発した暖炉を出展。ホテルや飲食店など約80社が関心を示し、約10社が購入の意思を示した。",
+  "industries": [
+   "機械部品",
+   "精密機器"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "下請けの技術で作った自社製品の話",
+  "source": {
+   "title": "よい仕事おこしフェア閉幕 出展ブース にぎわう商談",
+   "url": "https://www.tokyo-np.co.jp/article/218616",
+   "publisher": "東京新聞",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2676",
+  "kind": "success",
+  "title": "常設マッチングサイトで約80件成約",
+  "summary": "城南信用金庫の「よい仕事おこしネットワーク」は、フェアとは別の常設マッチングサイトで約80件の案件が成約したと紹介されている（2020年経済産業大臣賞）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "地域金融連携 ③城南信用金庫「よい仕事おこしネットワーク」",
+   "url": "https://www.jilc.or.jp/files/libs/3187/202403141648588296.pdf",
+   "publisher": "日本立地センター",
+   "date": "2024-03"
+  }
+ },
+ {
+  "id": "trend-1737",
+  "kind": "trend",
+  "official": false,
+  "title": "地元信金のマッチングフェア",
+  "summary": "桐生信用金庫の「ビジネスマッチングフェア2025」には173の企業・団体がブースを出した。地元金融機関の展示会は身近な販路の入り口になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ビジネスマッチングフェア2025 開催報告",
+   "url": "https://www.shinkin.co.jp/kiryu/pdf/businessmatching.pdf",
+   "publisher": "桐生信用金庫",
+   "date": "2025-11"
+  }
+ },
+ {
+  "id": "trend-1738",
+  "kind": "trend",
+  "official": true,
+  "title": "中小の7割がデジタル化進んだ",
+  "summary": "日本政策金融公庫の2024年3月調査（4,350社回答）で、5年前よりデジタル化が進んだ会社は69.6%。製造業と非製造業の差はほとんどない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業動向トピックス No.181 中小企業におけるデジタル化の実態",
+   "url": "https://www.jfc.go.jp/n/findings/pdf/topics_no181_2409_1.pdf",
+   "publisher": "日本政策金融公庫 総合研究所",
+   "date": "2024-09"
+  }
+ },
+ {
+  "id": "pain-1356",
+  "kind": "pain",
+  "title": "ホームページはあるが中身が古い",
+  "summary": "日本公庫の研究ノートでは、デジタル化の成果は主に業務の効率化・標準化。ホームページは多くの会社が持つが、販路の成果まで語られることは少ない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "研究ノート 中小企業におけるデジタル化の実態",
+   "url": "https://www.jfc.go.jp/n/findings/pdf/tyousa_gttupou_2412.pdf",
+   "publisher": "日本政策金融公庫 総合研究所",
+   "date": "2024-12"
+  }
+ },
+ {
+  "id": "trend-1739",
+  "kind": "trend",
+  "official": true,
+  "title": "銀行はIT会社につなぐ役に",
+  "summary": "経済産業省の2025年3月のDX支援事例集で、常陽銀行はITのコンサルを銀行が抱えるのは負担が大きく、最初からIT事業者を紹介する方が効率的との考えを示した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "DX支援取組事例集",
+   "url": "https://www.meti.go.jp/policy/it_policy/investment/dx-shien/dx-shienjireishu.pdf",
+   "publisher": "経済産業省",
+   "date": "2025-03"
+  }
+ },
+ {
+  "id": "trend-1740",
+  "kind": "trend",
+  "official": false,
+  "title": "ECとSNSを企業価値につなぐ",
+  "summary": "信金中央金庫の研究所は「事業の革新」に挑む中小企業のシリーズで、EC・SNSの活用を長い目での企業価値向上につなげる視点を取り上げた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「事業の革新」に挑む中小企業④（EC・SNS活用編）",
+   "url": "https://www.scbri.jp/publication/.assets/geppo_2024-5-4.pdf",
+   "publisher": "信金中央金庫 地域・中小企業研究所",
+   "date": "2024-05"
+  }
+ },
+ {
+  "id": "trend-1741",
+  "kind": "trend",
+  "official": false,
+  "title": "信金の景気調査で情報発信を調査",
+  "summary": "信金中央金庫の研究所は2016年、全国中小企業景気動向調査の特別調査として、中小企業の事業上の情報収集・発信の実態を取り上げた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "全国中小企業景気動向調査 特別調査（情報収集・発信）",
+   "url": "https://www.scbri.jp/publication/.assets/geppo_2016-8-2.pdf",
+   "publisher": "信金中央金庫 地域・中小企業研究所",
+   "date": "2016-08"
+  }
+ },
+ {
+  "id": "success-2677",
+  "kind": "success",
+  "title": "信金の専門家派遣でHPと集客",
+  "summary": "全国信用金庫協会の平成28年度事例集に、信用金庫が専門家派遣制度を使って取引先のホームページ作成やPR、集客を支援した例がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "信用金庫における地域密着型金融に関する取組み事例集（平成28年度）",
+   "url": "https://www.shinkin.org/torikumi/area/chiiki/pdf/chiiki28nendo.pdf",
+   "publisher": "全国信用金庫協会",
+   "date": "2017-12"
+  }
+ },
+ {
+  "id": "success-2678",
+  "kind": "success",
+  "title": "補助金でECサイトと広告費",
+  "summary": "西武信用金庫の案内では、製造業者が事業転換に補助金を使い、ECサイトをつくる費用や広告宣伝費をまかなった例が紹介されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "補助金＆助成金を自社経営に活かそう！",
+   "url": "https://www.shinkin.co.jp/seibu/business/loan/subsidy.html",
+   "publisher": "西武信用金庫",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1357",
+  "kind": "pain",
+  "title": "販路開拓の人も時間も足りない",
+  "summary": "2025年版小規模企業白書の事例では、自社で販路開拓に取り組める人材と時間が足りず、新商品開発や販路開拓ができる専門人材の確保が課題だった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "2025年版 小規模企業白書 第1節 小規模事業者の経営力の向上",
+   "url": "https://www.chusho.meti.go.jp/pamflet/hakusyo/2025/shokibo/b2_1_1.html",
+   "publisher": "中小企業庁",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1742",
+  "kind": "trend",
+  "official": false,
+  "title": "銀行から説明がなかった3割",
+  "summary": "東京商工会議所の2025年12月の調査で、民間金融機関からの説明について約3割が「説明がなかった」と回答。価格転嫁はBtoCよりBtoBで進んでいた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「中小企業の経営課題に関するアンケート」調査結果",
+   "url": "https://www.tokyo-cci.or.jp/page.jsp?id=1208203",
+   "publisher": "東京商工会議所",
+   "date": "2025-12"
+  }
+ },
+ {
+  "id": "trend-1743",
+  "kind": "trend",
+  "official": false,
+  "title": "販売価格を上げた会社が69%",
+  "summary": "大阪シティ信用金庫の2025年2月の取引先調査で、販売価格を引き上げた会社は69.0%と前年の63.5%から5.5ポイント増えた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業における販売価格の動向と価格転嫁について",
+   "url": "https://www.osaka-city-shinkin.co.jp/houjin/pdf/2024/2025-2-27.pdf",
+   "publisher": "大阪シティ信用金庫",
+   "date": "2025-02"
+  }
+ },
+ {
+  "id": "question-1972",
+  "kind": "question",
+  "title": "後継者の育て方も見られる",
+  "summary": "事業承継と事業性評価の解説では、金融機関は後継者の有無だけでなく、育成が計画的に進んでいるかも評価の大事な点として見るという。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "次の世代が任されている仕事",
+  "source": {
+   "title": "事業承継と事業性評価 後継者だけでなく事業の将来性を銀行はどう見るのか",
+   "url": "https://kikumoto-taxfp.com/%E4%BA%8B%E6%A5%AD%E6%89%BF%E7%B6%99%E3%81%A8%E4%BA%8B%E6%A5%AD%E6%80%A7%E8%A9%95%E4%BE%A1%E3%80%80%E5%BE%8C%E7%B6%99%E8%80%85%E3%81%A0%E3%81%91%E3%81%A7%E3%81%AA%E3%81%8F%E4%BA%8B%E6%A5%AD%E3%81%AE/",
+   "publisher": "税理士事務所の解説記事",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1347",
+  "kind": "buyer",
+  "title": "主要客への依存度を確かめる",
+  "summary": "製造業のM&A解説では、買い手は主要顧客や仕入先・外注先との関係、特定の人への依存を確認するという。取引先の広がりは外からの評価に直結する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "いろいろな業界からの注文の例",
+  "source": {
+   "title": "製造業M&A・事業承継｜売却相場・事例と成功のポイント",
+   "url": "https://ma.sharemall.co.jp/columns/manufacturing-industry-ma",
+   "publisher": "M&A仲介会社の解説記事",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2679",
+  "kind": "success",
+  "title": "スマホ前提で原稿を直し2週間で採用",
+  "summary": "Indeedの公開事例。ある会社はスマホで読まれる前提で求人原稿を見直し、実際の勤務時間などを書き足した。改善から約2週間で採用が決まった。媒体自身の事例なので宣伝の面もある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "スマホで読む人向けに求人を書き直した話",
+  "source": {
+   "title": "Indeed PLUS 活用事例",
+   "url": "https://jp.indeed.com/lead/indeedplus-case-chubu",
+   "publisher": "Indeed Japan",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2680",
+  "kind": "success",
+  "title": "溶接工の求人は経験不問と指導役を前に",
+  "summary": "Indeedの溶接工向け求人の書き方では、例文で経験不問・資格取得の支援・先輩がつく指導を前面に出している。未経験者が「自分でもできるか」を判断しやすくなる。",
+  "industries": [
+   "溶接",
+   "製缶"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "未経験から溶接工になるまでの最初の1年",
+  "source": {
+   "title": "溶接工の求人票の書き方",
+   "url": "https://jp.indeed.com/%E6%B1%82%E4%BA%BA%E5%BA%83%E5%91%8A/%E6%B1%82%E4%BA%BA%E7%A5%A8%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9/%E6%BA%B6%E6%8E%A5%E5%B7%A5",
+   "publisher": "Indeed Japan",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2681",
+  "kind": "success",
+  "title": "金属加工の求人は取引先の業界を書く",
+  "summary": "Indeedの金属加工の例文は、自動車・鉄道・半導体関連など取引先の業界と未経験歓迎を具体的に示す。何を作る会社か分かると、仕事の誇りや安定感が伝わりやすい。",
+  "industries": [
+   "金属加工",
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "うちの部品はどこで使われているか",
+  "source": {
+   "title": "金属加工の求人票の書き方",
+   "url": "https://jp.indeed.com/求人広告/求人票の書き方/金属加工",
+   "publisher": "Indeed Japan",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2682",
+  "kind": "success",
+  "title": "写真つき求人は応募率が4割高い",
+  "summary": "Indeedの発表によると、画像を載せた求人は載せない求人より応募率が40%高かった。工場に限った数字ではないが、作業風景や職場の写真を添える理由になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "Indeed の求人に画像を掲載するメリット",
+   "url": "https://jp.indeed.com/%E6%B1%82%E4%BA%BA%E5%BA%83%E5%91%8A/c/info/show-merits-to-post-jobs-with-images",
+   "publisher": "Indeed Japan",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1358",
+  "kind": "pain",
+  "title": "検索語が入っていない求人は出てこない",
+  "summary": "Indeedの解説では、求職者が実際に検索する言葉が原稿に入っていないと表示されにくい。「NC旋盤」「マシニング」など機械名や作業名を職種名・本文に入れておく必要がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "求人のパフォーマンスを上げる4つのポイント",
+   "url": "https://jp.indeed.com/求人広告/c/info/jd-performance-4pt",
+   "publisher": "Indeed Japan",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2683",
+  "kind": "success",
+  "title": "求人票を直し応募が月1人→月8人",
+  "summary": "厚生労働省の委託事業の事例集（令和7年度）。製缶板金を含む建設用金属製品の会社は、職種名と仕事内容を分かりやすくし応募が月1人ほどから月8人ほどに。給与を同業並みに上げ4人応募3人採用の例も載る。",
+  "industries": [
+   "製缶",
+   "板金",
+   "建材・金物"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "求人票の職種名を変えたら応募が来た",
+  "source": {
+   "title": "事業主のための求人票の改善事例集",
+   "url": "https://www.hellowork.mhlw.go.jp/doc/kaizen-jireishuu.pdf",
+   "publisher": "厚生労働省",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "term-1509",
+  "kind": "term",
+  "title": "求人の年齢制限は原則禁止",
+  "summary": "2007年10月から、募集・採用で年齢を制限することは原則として禁止。定年を上限にする、若手を長期で育てるなど決められた例外理由に当てはまるときだけ認められ、求人票で理由を選ぶ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "募集・採用における年齢制限禁止について",
+   "url": "https://www.hellowork.mhlw.go.jp/enterprise/age_limit.html",
+   "publisher": "厚生労働省（ハローワーク）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1510",
+  "kind": "term",
+  "title": "ハローワーク求人に写真を10枚まで",
+  "summary": "厚生労働省の求人者マイページ利用マニュアルでは、建物の外観・作業風景・製品などの画像を登録できる。JPEGやPNGなどで10ファイルまで、1ファイル2MB以内。写る人の肖像権の確認も求められる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "ハローワークインターネットサービス 求人者マイページ利用者マニュアル",
+   "url": "https://www.mhlw.go.jp/content/11600000/000880876.pdf",
+   "publisher": "厚生労働省",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1744",
+  "kind": "trend",
+  "official": true,
+  "title": "採用と定着に成功した中小20社の事例集",
+  "summary": "厚生労働省は、採用や定着に成功している中小企業20社に聞き取りをし「地域で活躍する中小企業の採用と定着 成功事例集」として公開した。誰もが働ける環境づくりが共通点として紹介されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "「地域で活躍する中小企業の採用と定着 成功事例集」を作成しました",
+   "url": "https://www.mhlw.go.jp/stf/newpage_38019.html",
+   "publisher": "厚生労働省",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2684",
+  "kind": "success",
+  "title": "自社製品を通じて製造業の魅力を伝える",
+  "summary": "厚生労働省の成功事例集より。兵庫県の金属加工などを手がける会社は、自社製品を通じてものづくりの魅力を伝える場を作った。社員のやる気が上がり、若い人の離職が減ったと紹介されている。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "自社製品づくりが若手の定着に効いた理由",
+  "source": {
+   "title": "地域で活躍する中小企業の採用と定着 成功事例集",
+   "url": "https://www.mhlw.go.jp/content/11600000/001230639.pdf",
+   "publisher": "厚生労働省",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1973",
+  "kind": "question",
+  "title": "求職者が一番見るのは仕事内容の欄",
+  "summary": "大阪のハローワークの資料では、求職者が最も注目するのは「仕事の内容」欄。扱う材料の重さ、具体的な作業、勤務シフト（夜勤の有無）の3点を必ず書くよう勧めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "求人票の書き方（製造）",
+   "url": "https://jsite.mhlw.go.jp/osaka-hellowork/content/contents/002394138.pdf",
+   "publisher": "大阪労働局（ハローワーク）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2685",
+  "kind": "success",
+  "title": "「安全装置つき」の一文で不安を減らす",
+  "summary": "大阪のハローワークの製造業向け資料は、重い物の有無や「安全装置付きの機械なので未経験でも可能」といった一文を例に挙げる。危なそう・重そうという不安に先回りして答える書き方。",
+  "industries": [
+   "切削加工",
+   "プレス",
+   "板金"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "うちの機械は危なくない？安全の仕組み",
+  "source": {
+   "title": "求人票記載のポイント（製造編）",
+   "url": "https://jsite.mhlw.go.jp/osaka-hellowork/content/contents/002279847.pdf",
+   "publisher": "大阪労働局（ハローワーク）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1974",
+  "kind": "question",
+  "title": "重い物は何kgか、台車はあるか",
+  "summary": "広島労働局とハローワークの資料では、重量物の有無を「〇kg程度」「台車の有無」と具体的に書く例を示す。立ち仕事か、空調はあるかも書くと、体力に不安がある人も判断しやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "求人票作成のポイント",
+   "url": "https://jsite.mhlw.go.jp/hiroshima-roudoukyoku/content/contents/002179897.pdf",
+   "publisher": "広島労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1359",
+  "kind": "pain",
+  "title": "作業名を並べただけでは伝わらない",
+  "summary": "神奈川のハローワークの資料は、職種名や作業名を並べるだけの書き方をNG例として挙げる。誰と、何を、どんな道具で、1日どう進めるかが浮かぶ文章にするよう勧めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "求人票の書き方",
+   "url": "https://jsite.mhlw.go.jp/kanagawa-hellowork/content/contents/001418113.pdf",
+   "publisher": "神奈川労働局（ハローワーク）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1360",
+  "kind": "pain",
+  "title": "一覧に出るのは仕事内容の最初の3行",
+  "summary": "福岡労働局の資料では、検索結果の一覧に表示されるのは仕事内容の最初の3行だけ。大事な情報を先頭に書き、職種名も仕事が想像できる名前にするよう勧めている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "魅力ある求人票の作り方",
+   "url": "https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/content/contents/002228432.pdf",
+   "publisher": "福岡労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1361",
+  "kind": "pain",
+  "title": "条件を付けすぎると応募を逃す",
+  "summary": "福岡労働局の資料は、必要以上の応募条件を付けると応募者を取りこぼすと指摘する。経験年数や資格は「必須」と「あれば尚可」を分けて書くと、育てがいのある人も応募できる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "魅力ある求人票の作り方",
+   "url": "https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/content/contents/002228432.pdf",
+   "publisher": "福岡労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2686",
+  "kind": "success",
+  "title": "年間休日と定着の実績を数字で示す",
+  "summary": "新潟県長岡のハローワーク資料では、製品検査や食品製造などの例で、年間休日の日数、有給の取得率、未経験で入った人の定着状況を書く方法を紹介。数字は安心材料になる。",
+  "industries": [
+   "食品製造",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "求人票PRのポイント",
+   "url": "https://jsite.mhlw.go.jp/niigata-hellowork/content/contents/002335378.pdf",
+   "publisher": "新潟労働局（ハローワーク長岡）",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1348",
+  "kind": "buyer",
+  "title": "求職者は仕事内容・時間・賃金の順で見る",
+  "summary": "ハローワーク鹿島（佐賀）が2024年12月に求職者104人に聞いた調査では、重視する項目は仕事内容、勤務時間、賃金の順。子育て世代では休日が1位だった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "子育て中の人に休日の実際を伝える",
+  "source": {
+   "title": "求職者アンケート結果",
+   "url": "https://jsite.mhlw.go.jp/saga-roudoukyoku/content/contents/002184337.pdf",
+   "publisher": "佐賀労働局（ハローワーク鹿島）",
+   "date": "2024-12"
+  }
+ },
+ {
+  "id": "success-2687",
+  "kind": "success",
+  "title": "求人に社屋写真やSNSのQRを載せる",
+  "summary": "青森労働局の案内では、ハローワーク求人に社屋や作業風景、研修の様子、会社のLINE・InstagramのQRコードの画像を載せられる。求人票の文字では伝わらない雰囲気を補える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "画像で企業PR",
+   "url": "https://jsite.mhlw.go.jp/aomori-roudoukyoku/content/contents/002649602.pdf",
+   "publisher": "青森労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1511",
+  "kind": "term",
+  "title": "オンライン自主応募",
+  "summary": "ハローワーク求人で、求職者が窓口の紹介を通さず自分のマイページから直接応募できる仕組み。求人ごとに受け付けるか選べる。応募が増える見込みがある一方、助成金の対象外になるなど注意点がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "ハローワークインターネットサービスの機能",
+   "url": "https://jsite.mhlw.go.jp/tokyo-hellowork/content/contents/002622557.pdf",
+   "publisher": "東京労働局（ハローワーク）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2688",
+  "kind": "success",
+  "title": "未経験向けと経験者向けで求人を分ける",
+  "summary": "長野労働局の求人者向け案内では、未経験者の立場で求人票を書くこと、未経験者と経験者で求人を分けて出すことを勧めている。同じ欄に両方を書くより、それぞれに響く言葉を選べる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "求人者支援メニュー",
+   "url": "https://jsite.mhlw.go.jp/nagano-roudoukyoku/content/contents/kyuujinsya-shienmenu20250303.pdf",
+   "publisher": "長野労働局",
+   "date": "2025-03"
+  }
+ },
+ {
+  "id": "trend-1745",
+  "kind": "trend",
+  "official": true,
+  "title": "求人情報は正確で最新に（2022年改正）",
+  "summary": "2022年10月施行の改正職業安定法で、求人情報を正確・最新に保つ義務ができ、うその表示や誤解させる表示が禁止された。新聞・Web・アプリなど媒体を問わない。募集を終えたら求人を下げる必要がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "令和4年10月1日から改正職業安定法が施行されます",
+   "url": "https://jsite.mhlw.go.jp/tochigi-roudoukyoku/content/contents/20221001.pdf",
+   "publisher": "栃木労働局",
+   "date": "2022-10"
+  }
+ },
+ {
+  "id": "question-1975",
+  "kind": "question",
+  "title": "求人の写真は小さく表示される",
+  "summary": "兵庫労働局の案内では、ハローワーク求人の画像は作業工程や雰囲気を伝えるのに有効だが小さく表示されるため、細かい文字入りの画像は避ける。他人の著作物を使うときは許可が要る。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "求人への画像登録について",
+   "url": "https://jsite.mhlw.go.jp/hyogo-roudoukyoku/content/contents/002788003.pdf",
+   "publisher": "兵庫労働局",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2689",
+  "kind": "success",
+  "title": "10人規模の工場、求人票を2枚に分け採用",
+  "summary": "名古屋市の相談事例。従業員10〜15人の製造業は応募も問い合わせもゼロだった。専門用語を避け仕事内容を具体的にし、未経験者向けと経験者向けの2枚に分けて出したところ採用が決まった。",
+  "industries": [
+   "金属加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "専門用語を使わずに仕事を説明してみる",
+  "source": {
+   "title": "ハローワークの求人票見直しにより採用決定",
+   "url": "https://www.city.nagoya.jp/keizai/cmsfiles/contents/0000055/55513/desk_case_a.pdf",
+   "publisher": "名古屋市",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2690",
+  "kind": "success",
+  "title": "研削の会社がフルタイムにこだわらず採用",
+  "summary": "中部経済産業局の事例。研削加工の会社は女性や主婦層を中心に採用を進めた。個人に合わせた柔軟な勤務時間を認め、工場見学で求人と実際の差を埋め、職場環境も整えた。",
+  "industries": [
+   "研削"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "短時間でも働ける研削の仕事とは",
+  "source": {
+   "title": "人材確保の取組事例",
+   "url": "https://www.chubu.meti.go.jp/b32jinzai/jirei/pdf/jirei14.pdf",
+   "publisher": "中部経済産業局",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2691",
+  "kind": "success",
+  "title": "Airワークで公開1週間に応募2人",
+  "summary": "新潟県村上市の採用支援事業の資料。セミナー後にAirワークで求人を公開した事業者が1週間で2人の応募を得た。事業全体では応募を得たのは2社・計3人、採用できたのは1社で、業種は不明。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "採用力向上支援事業の実施結果",
+   "url": "https://www.city.murakami.lg.jp/uploaded/attachment/67691.pdf",
+   "publisher": "村上市",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1746",
+  "kind": "trend",
+  "official": true,
+  "title": "人手不足は求人像を決めてから募集",
+  "summary": "中小企業庁の人手不足対応の事例集は、経営課題の見直し→解決策の検討→求める人材像と集め方の明確化→募集・採用→定着支援の順で取り組みを整理している。媒体選びより前にやることがある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "人手不足対応事例集",
+   "url": "https://www.chusho.meti.go.jp/keiei/koyou/hitodebusoku/download/jieri_r3.pdf",
+   "publisher": "中小企業庁",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2692",
+  "kind": "success",
+  "title": "主婦向けパート求人は丁寧な指導を強調",
+  "summary": "中小機構のJ-Net21のQ&Aでは、主婦層をパートで雇うなら「簡単ですぐ覚えられる」「丁寧に教える」点を強調すると不安が和らぐとする。明るい職場であることを添えると安心感が増す。",
+  "industries": [
+   "組立",
+   "食品製造"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "パート社員を募集する際の求人広告のポイント",
+   "url": "https://j-net21.smrj.go.jp/qa/hr/Q0127.html",
+   "publisher": "中小企業基盤整備機構（J-Net21）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1512",
+  "kind": "term",
+  "title": "Airワーク 採用管理",
+  "summary": "リクルートの無料の求人ページ作成サービス。作った求人はIndeedやGoogle、Yahoo! JAPANの求人検索に自動で連携される。有料のIndeed PLUSを使うと連携する求人サイトにも載る。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Airワーク 採用管理とは？仕組み・掲載方法・掲載料金",
+   "url": "https://www.neo-career.co.jp/humanresource/?p=59124",
+   "publisher": "ネオキャリア",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1976",
+  "kind": "question",
+  "title": "費用をかけずに始めるならハローワーク",
+  "summary": "採用支援会社の解説では、ハローワークは無料で求人を出せるため、費用をかけずに採用を始めたい中小製造業に向く。製造業特化の求人サイトは掲載料がかかるものが多い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "製造業の求人媒体の選び方",
+   "url": "https://www.neo-career.co.jp/humanresource/?p=23113",
+   "publisher": "ネオキャリア",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2693",
+  "kind": "success",
+  "title": "ジモティーは社長の顔が見える文面で",
+  "summary": "採用支援ブログの指摘では、ジモティーは個人間のやり取りが基本の場なので、代表者の顔が見える文面のほうが反応が良い。職場写真を3〜5枚載せるとよいとも。検証された数字ではない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "社長が自分の言葉で書く求人",
+  "source": {
+   "title": "無料で地元の人を採用する方法",
+   "url": "https://atsoho.com/blog/muryou-kyujin-jimoto",
+   "publisher": "atsoho",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2694",
+  "kind": "success",
+  "title": "地方はチラシとQRコードを組み合わせる",
+  "summary": "同じ記事は、地方ではチラシやポスティングに求人ページのQRコードを付ける方法も有効だと紹介する。ネットで仕事を探さない近所の人にも届く。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "無料で地元の人を採用する方法",
+   "url": "https://atsoho.com/blog/muryou-kyujin-jimoto",
+   "publisher": "atsoho",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2695",
+  "kind": "success",
+  "title": "2人1組で育てる体制を求人に書く",
+  "summary": "ジモティーに載った紙加工会社の求人例は、未経験者を常に2人1組で約3年かけて育てる体制、残業が少ないこと、勤続10年以上の社員が多いことを前面に出し、不安と定着の両方に答えている。",
+  "industries": [
+   "紙加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "機械オペレーターの正社員求人（ジモティー）",
+   "url": "https://jmty.jp/aichi/job-dis/article-1qdjwr",
+   "publisher": "ジモティー",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1977",
+  "kind": "question",
+  "title": "無料の求人サイトで本当に応募は来る？",
+  "summary": "エンゲージは掲載無料をうたい、導入企業の9割が1か月以内に応募があったと自社サイトで示している（注記つき）。ただし公開事例は製造業以外が多く、工場での効果は自分で確かめる必要がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "engage 導入事例",
+   "url": "https://en-gage.net/company/page",
+   "publisher": "エン・ジャパン（engage）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1513",
+  "kind": "term",
+  "title": "採用ピッチ資料",
+  "summary": "求人票に書ききれない事業内容、社風、働く環境、待遇、選考の流れを候補者向けにまとめたスライド。投資家向けのピッチ資料を採用に応用したもので、入社を判断する材料になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "町工場の採用ピッチを1枚ずつ作る",
+  "source": {
+   "title": "採用ピッチ資料とは",
+   "url": "https://www.issoh.co.jp/md/column/18792",
+   "publisher": "issoh",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2696",
+  "kind": "success",
+  "title": "採用ピッチは担当工程まで具体的に",
+  "summary": "採用ピッチ資料の作り方の解説では「大きな仕事に関われます」だけでは抽象的で、業界・課題・規模・担当工程まで書くと仕事が浮かぶとする。町工場なら製品・工程・任せる範囲を書く形になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "採用ピッチ資料の作り方",
+   "url": "https://www.wantedly.com/hiringeek/recruit/engineer_recruitment_pitch/",
+   "publisher": "Wantedly",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2697",
+  "kind": "success",
+  "title": "採用ピッチは事例を見て型を借りる",
+  "summary": "CREXのガイドは採用ピッチ資料の参考事例15件と作成のコツをまとめる。会社の使命、事業、組織、社員紹介、福利厚生、募集要項の順で網羅するのが基本の型とされる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "採用ピッチ資料の作成のコツ",
+   "url": "https://crexgroup.com/ja/recruit/branding/recruiting-pitch-deck-creation-tips/",
+   "publisher": "CREX",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1362",
+  "kind": "pain",
+  "title": "記事を増やす前に募集要項を整える",
+  "summary": "採用広報の解説では、社員インタビューなどの記事は応募の判断材料を届ける役割で、応募を受けるのは募集要項ページ。記事だけ増やしても、受け皿が弱いと応募にはつながらない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "採用オウンドメディアの作り方",
+   "url": "https://www.issoh.co.jp/column/details/18794/",
+   "publisher": "issoh",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1978",
+  "kind": "question",
+  "title": "採用オウンドメディアと採用サイトの違い",
+  "summary": "マネーフォワードの解説では、採用サイトは応募を受ける場所、採用オウンドメディアは会社を好きになってもらう場所。掲載料なしで自社で更新でき、記事がたまるほど検索からの訪問が増える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "採用オウンドメディアとは",
+   "url": "https://biz.moneyforward.com/payroll/basic/123355/",
+   "publisher": "マネーフォワード",
+   "date": "2026-07"
+  }
+ },
+ {
+  "id": "success-2698",
+  "kind": "success",
+  "title": "まずnoteで試し、反応を見て自社へ",
+  "summary": "採用支援サイトの解説では、予算や人手が少ない会社はnoteやWantedlyで発信して反応を見てから自社サイトに移す段階的な進め方を勧める。ただし検索の評価は自社のドメインにしかたまらない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "オウンドメディアを使った採用施策",
+   "url": "https://www.shopowner-support.net/hr/recruitment-measures/ownedmedia-recruitment-measures/",
+   "publisher": "ショップオーナーサポート",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1747",
+  "kind": "trend",
+  "official": false,
+  "title": "採用オウンドメディア運用は57.9%",
+  "summary": "TalentX社の調査として、57.9%の企業がすでに採用オウンドメディアを運用していると紹介されている。大手中心の数字とみられ、中小の町工場では記事で差をつける余地がある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "採用オウンドメディアの始め方",
+   "url": "https://rimo.app/blogs/owned-media-recruiting",
+   "publisher": "Rimo",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1363",
+  "kind": "pain",
+  "title": "実際と違う写真は辞退とミスマッチの元",
+  "summary": "同じ解説は、文章や実際の職場と違う写真、とくに素材写真を使うと、入社後のミスマッチや応募辞退につながると注意する。きれいすぎる写真より、いつもの現場が良い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "求人広告の写真の選び方",
+   "url": "https://www.baitoru.com/solution/?p=16956",
+   "publisher": "バイトル（ディップ）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1979",
+  "kind": "question",
+  "title": "地元の求人誌はまだ効く？",
+  "summary": "求人媒体会社の解説では、スーパーやコンビニに置かれる地域の求人誌は地元志向の人や紙に慣れた人に届きやすく、地域に貢献する会社として覚えてもらえる面もある。工場での効果の数字はない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "求人誌の種類と特徴",
+   "url": "https://www.baitoru.com/solution/?p=13151",
+   "publisher": "バイトル（ディップ）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2699",
+  "kind": "success",
+  "region": "overseas",
+  "title": "返信が速い人ほど選ばれる",
+  "summary": "米国。Management Science誌の研究は約1160万件のやり取りを分析し、返信を遅らせても採用は有利にならず、雇う側は一貫して返信の速い相手を選んだと報告。会社側の応募者対応にも当てはまる教訓。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Looking for work? Don't worry about seeming too eager",
+   "url": "https://today.ucsd.edu/story/looking-for-work-dont-worry-about-seeming-too-eager",
+   "publisher": "UC San Diego",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2700",
+  "kind": "success",
+  "region": "overseas",
+  "title": "応募に早く返す会社は選考も早い",
+  "summary": "米国。採用ツール会社Workableの記事は「2日ルール」として、応募に素早く返す企業は面接の日程調整や社内の評価集めも早く、選考全体が速く進むと指摘する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "The two-day rule of recruiting",
+   "url": "https://resources.workable.com/blog/two-day-rule-of-recruiting",
+   "publisher": "Workable",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1364",
+  "kind": "pain",
+  "title": "連絡が遅いと応募を取り下げられる",
+  "summary": "飲食業の採用コラムだが、応募者は連絡の遅さや対応の悪さで応募を取りやめることがあるとし、面接は連絡後できるだけ早く、1週間以内を目安にと勧める。少人数の工場ほど対応役を決めておきたい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "応募者対応のポイント",
+   "url": "https://www.inshokuten.com/recruit/knowledge/recruitmentcolumn/adopt/detail/56",
+   "publisher": "飲食店ドットコム",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1514",
+  "kind": "term",
+  "title": "二交替と三交替",
+  "summary": "三交替は24時間を約8時間ずつ3つに分け、1回は短いが勤務帯の切り替えが多い。二交替は約12時間ずつ2つで1回が長い。午後10時〜午前5時の労働にはどちらも25%以上の深夜割増が必要。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "うちの交替勤務の1週間を見せる",
+  "source": {
+   "title": "三交代勤務と二交代制の違い",
+   "url": "https://hcm-jinjer.com/?p=92506",
+   "publisher": "jinjer",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1980",
+  "kind": "question",
+  "title": "交替勤務手当はいくら？",
+  "summary": "交替勤務手当は法律で決まったものではなく会社の賃金規定で決める。時間帯ごとに1回1,000円・1,200円と分ける例もある。求人ではシフト時間と手当額をはっきり書くと疑問が減る。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "交替勤務手当に関する相談",
+   "url": "https://jinjibu.jp/qa/detl/143825/1/",
+   "publisher": "日本の人事部",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1515",
+  "kind": "term",
+  "title": "夜勤明けの休日の特例",
+  "summary": "休日は暦日（0時〜24時）で与えるのが原則だが、三交替勤務では一定の条件で夜勤明けから連続24時間を休日として扱える特例がある。求職者には「明け」が休みかどうかが気になる点。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "夜勤明けは休日になる？",
+   "url": "https://hcm-jinjer.com/blog/kintai/after-nightshift-holiday/",
+   "publisher": "jinjer",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1981",
+  "kind": "question",
+  "title": "有給の日数は取得の実績ではない",
+  "summary": "厚生労働省の求職者向け資料では、求人票の有給休暇の欄は取れる日数で取得実績ではなく、賞与や昇給は前年度の実績だと注意している。会社側は実績を書き添えると信頼につながる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "求人票の見方",
+   "url": "https://www.mhlw.go.jp/content/11800000/001227359.pdf",
+   "publisher": "厚生労働省",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1982",
+  "kind": "question",
+  "title": "工場の仕事は未経験でもできる？",
+  "summary": "求人サイトの解説では、仕分け・梱包・検品などは手順がマニュアル化されていて未経験から始めやすい。人手不足の工程では未経験者が採用されやすい。ただし現場によって中身は大きく違う。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "未経験の人が最初の1か月でやること",
+  "source": {
+   "title": "未経験から工場で働くには",
+   "url": "https://hataractive.jp/useful/5224",
+   "publisher": "ハタラクティブ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1983",
+  "kind": "question",
+  "title": "立ちっぱなしや腰痛が心配",
+  "summary": "工場バイトの口コミでは、ライン作業で長く立ちっぱなしになることや、重い物による腰痛・肩こりがつらい点として挙がる。会社側は休憩の取り方や補助具を書くと不安に答えられる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "工場バイトはきつい？",
+   "url": "https://www.baitoru.com/contents/manufacturing/3598.html",
+   "publisher": "バイトル（ディップ）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1984",
+  "kind": "question",
+  "title": "重い物を扱うか事前に聞くべき？",
+  "summary": "求人サイトのコラムは、現場によって重い荷物を扱うことがあるので、取り扱う物を事前に確かめるよう求職者に勧めている。求人票に重さと頻度を書いておけば、この質問に先に答えられる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "工場の仕事の選び方",
+   "url": "https://www.baitoru.com/contents/list/detail/id=3489",
+   "publisher": "バイトル（ディップ）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1985",
+  "kind": "question",
+  "title": "工場の面接では何を聞かれる？",
+  "summary": "製造業の面接解説では、志望動機から製造業や応募先への関心と長く働く意欲を見られるとする。経験や資格を応募先の仕事に結び付けて話すとよい。会社側は面接で聞くことを事前に示せる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "面接で聞くことを先に公開する",
+  "source": {
+   "title": "製造業の面接でよく聞かれる質問",
+   "url": "https://crexgroup.com/ja/manufacturing/human/manufacturing-interview-questions/",
+   "publisher": "CREX",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1986",
+  "kind": "question",
+  "title": "作業着の会社の面接、服装は？",
+  "summary": "面接の解説では、作業着が制服の工場でもラフすぎる服装は避けるのが無難とされる。会社側が「私服で可」「見学時は動きやすい服で」と案内しておくと、応募の心理的な壁が下がる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "工場の面接の服装",
+   "url": "https://townwork.net/magazine/?p=116978",
+   "publisher": "タウンワーク",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2701",
+  "kind": "success",
+  "title": "新卒の説明会と面接をやめた町工場",
+  "summary": "2026年8月のITmediaの記事。大阪の中小製造業2社の採用の工夫を紹介。うち1社は採用難の中で会社説明会と新卒の面接をやめ、別の方法で人を見極める形に切り替えた。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "面接をやめて何で人を見るか",
+  "source": {
+   "title": "採用難なのに「新卒の面接」「会社説明会」を廃止、なぜ？",
+   "url": "https://www.itmedia.co.jp/business/articles/2608/03/news009.html",
+   "publisher": "ITmedia ビジネスオンライン",
+   "date": "2026-08"
+  }
+ },
+ {
+  "id": "success-2702",
+  "kind": "success",
+  "title": "採れない時は現場と要件を見直す",
+  "summary": "同記事の後半。大阪の製造業は採用の必要性を経営陣と確かめ、現場と人物像をすり合わせてから人材データベースでスカウト。採れないときは市場の状況を現場と共有して要件を一緒に直している。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "採用難なのに「新卒の面接」「会社説明会」を廃止、なぜ？（2/2）",
+   "url": "https://www.itmedia.co.jp/business/articles/2608/03/news009_2.html",
+   "publisher": "ITmedia ビジネスオンライン",
+   "date": "2026-08"
+  }
+ },
+ {
+  "id": "success-2703",
+  "kind": "success",
+  "title": "求人票の添削で応募0件→3件",
+  "summary": "採用支援サービスの導入事例。建設業の会社が求人票を専門家に添削してもらい、ハローワーク経由の応募が0件から3件に増えた。業種は違うが、町工場でも同じ見直しが使える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "導入事例",
+   "url": "https://www.fmclub.jp/case/yamauchikoumuten",
+   "publisher": "FMクラブ",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1365",
+  "kind": "pain",
+  "title": "中小がやりがちなダメな求人票",
+  "summary": "採用支援会社のブログは、中小企業がやりがちなダメな求人票の例を解説する。仕事内容が抽象的、会社の良さが書かれていないなど、ハローワーク求人で応募が来ない典型が並ぶ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業がやりがちなダメな求人票を解説！",
+   "url": "https://www.fmclub.jp/blog/saiyou/2",
+   "publisher": "FMクラブ",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2704",
+  "kind": "success",
+  "title": "社員紹介は今いる社員の満足度から",
+  "summary": "J-CASTの記事（2025年1月）。社員の知人を紹介してもらうリファラル採用の注目が高まっており、成功のコツは今いる社員の満足度を高めることだとする。不満がある職場は紹介されない。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "社員が友人を誘いたくなる職場か",
+  "source": {
+   "title": "「リファラル採用」の注目度高まる 成功のコツは",
+   "url": "https://www.j-cast.com/2025/01/14500308.html?p=all",
+   "publisher": "J-CAST",
+   "date": "2025-01"
+  }
+ },
+ {
+  "id": "success-2705",
+  "kind": "success",
+  "title": "紹介で入った人はギャップが少ない",
+  "summary": "freeeの解説では、社員が仕事や雰囲気を事前に伝えられるため、紹介で入った人は入社後のギャップが少なく定着しやすい。会社の課題も正直に伝えることが大切とされる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "リファラル採用とは",
+   "url": "https://www.freee.co.jp/kb/kb-payroll/what-is-referral-hiring/",
+   "publisher": "freee",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2706",
+  "kind": "success",
+  "title": "退職者の穴を全社員に知らせて採用",
+  "summary": "TKCの記事の事例。ベテランの経理担当が辞めることになり全社員に告知したところ、社員から元同僚の紹介があり採用が決まった。小さな会社ほど社員の人脈は頼れる採用経路になる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "中小企業の人材確保",
+   "url": "https://tkc.jp/cc/senkei/201812_special02",
+   "publisher": "TKC",
+   "date": "2018-12"
+  }
+ },
+ {
+  "id": "buyer-1349",
+  "kind": "buyer",
+  "title": "工場ごとの権限設定で採用管理を選ぶ",
+  "summary": "製造業向けの採用管理システムの比較記事では、工場や拠点ごとに細かく権限を分けられることと操作の記録が残ることを選ぶポイントに挙げる。複数拠点の会社向けの視点。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "製造業界向け採用管理システム比較7選",
+   "url": "https://boxil.jp/mag/a8983/",
+   "publisher": "BOXIL",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1366",
+  "kind": "pain",
+  "title": "3Dも渡したのに図面だけで作られた",
+  "summary": "客先は3Dデータも渡したが、加工側は汎用機で図面だけを見て作り、不良扱いで再製作に。どのデータが正かを決めずに渡すと、図面どおりに作っても揉める。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "図面と3Dが食い違ったとき、どちらで作るか",
+  "source": {
+   "title": "加工現場と設計者のずれ（連載記事）",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1808/15/news018.html",
+   "publisher": "MONOist（ITmedia）",
+   "date": "2018-08"
+  }
+ },
+ {
+  "id": "pain-1367",
+  "kind": "pain",
+  "title": "公差を緩めても値段が下がらない",
+  "summary": "加工の値段は材料・加工方法・工程・時間で決まる。公差だけ緩めても工程が変わらなければ安くならず、社外加工では効果が見えにくいと設計者の記事が指摘。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "公差を緩めて安くなる所・ならない所",
+  "source": {
+   "title": "公差を緩くすればコストダウンできるわけではない（3D設計推進者の眼27）",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1801/24/news018.html",
+   "publisher": "MONOist（ITmedia）",
+   "date": "2018-01"
+  }
+ },
+ {
+  "id": "question-1987",
+  "kind": "question",
+  "title": "薄い筒に厳しい真円度は付けられる？",
+  "summary": "肉厚0.2mmほどの薄い円筒に厳しい真円度を求めても、削ると歪んでしまう。加工屋の連載は、できるだけ肉を厚くしてほしいと書く。答えには薄さの目安と代わりの手を。",
+  "industries": [
+   "切削加工",
+   "精密機器"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "薄肉部品を頼む前に知ってほしいこと",
+  "source": {
+   "title": "ザ・切削加工屋泣かせの形状コレクション（江戸川発！切削加工のキホン1）",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1201/10/news011.html",
+   "publisher": "MONOist（ITmedia）",
+   "date": "2012-01"
+  }
+ },
+ {
+  "id": "question-1988",
+  "kind": "question",
+  "title": "アンダーカット部品は一体で作るべき？",
+  "summary": "一方向から削れない形は段取り替えが増えて高くなる。簡単な部品に分けて組み立てる構成にすると安くなる場合がある、と加工屋の連載。分割案を図で示すと伝わる。",
+  "industries": [
+   "切削加工",
+   "組立"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "一体で削るか分けるか、費用の比べ方",
+  "source": {
+   "title": "まだあるよ。加工屋泣かせの形状コレクション（切削加工のキホン2）",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1202/01/news009.html",
+   "publisher": "MONOist（ITmedia）",
+   "date": "2012-02"
+  }
+ },
+ {
+  "id": "buyer-1350",
+  "kind": "buyer",
+  "title": "公差表を加工先と先に取り交わす",
+  "summary": "会社独自の公差表を加工会社と事前に交わしておくと「特別な公差ではない」と合意でき、見積もりが無用に上がりにくい、と設計者の連載。初回取引の前に渡すとよい。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "初めての加工先に渡しておく資料",
+  "source": {
+   "title": "公差を緩くすればコストダウンできるわけではない（3D設計推進者の眼27）",
+   "url": "https://monoist.itmedia.co.jp/mn/articles/1801/24/news018.html",
+   "publisher": "MONOist（ITmedia）",
+   "date": "2018-01"
+  }
+ },
+ {
+  "id": "question-1989",
+  "kind": "question",
+  "title": "成形品の外観、どこまで気にする？",
+  "summary": "ゲート痕・突き出しピン痕・ウェルドなどは、設計の基本ルールでかなり避けられる。まず外観が大事な面を決めて伝えるのが先、とプロトラブズの寄稿。",
+  "industries": [
+   "樹脂成形"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "見える面を先に決めると成形品が良くなる",
+  "source": {
+   "title": "プロトラブズ Design Tips（射出成形の外観）",
+   "url": "https://news.mynavi.jp/techplus/kikaku/protolabs_tips-3/",
+   "publisher": "マイナビニュース TECH+（プロトラブズ寄稿）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2707",
+  "kind": "success",
+  "title": "見積時に成形しにくい所の修正案を出す",
+  "summary": "プロトラブズは見積もりの段階で、肉厚変更など金型・成形上の問題点と修正案を無料で示すサービスを紹介。設計の手戻りを先に減らす提案は相談のきっかけになる。",
+  "industries": [
+   "樹脂成形",
+   "金型"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "見積書と一緒に直し案を返す理由",
+  "source": {
+   "title": "プロトラブズ Design Tips",
+   "url": "https://news.mynavi.jp/techplus/kikaku/protolabs_tips-5/",
+   "publisher": "マイナビニュース TECH+（プロトラブズ寄稿）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1990",
+  "kind": "question",
+  "title": "金型を後で直す前提なら形はどうする？",
+  "summary": "型を直すとき、穴を広げる・リブを足すほうが易しく逆は難しい。変更が見込まれるなら、穴は大きめ、リブや壁は小さめで始めるとよい、とプロトラブズの寄稿。",
+  "industries": [
+   "金型",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "設計変更に強い成形品の最初の形",
+  "source": {
+   "title": "プロトラブズ Design Tips（金型修正）",
+   "url": "https://news.mynavi.jp/techplus/article/protolabs-19/",
+   "publisher": "マイナビニュース TECH+（プロトラブズ寄稿）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1516",
+  "kind": "term",
+  "title": "ショートショット（充填不足）",
+  "summary": "樹脂が型の奥まで届かず、薄い部分などが欠ける不良。成形は充填・固化収縮・離型の順に進み、薄すぎる所はここでつまずく。設計で肉厚を確保して防ぐ。",
+  "industries": [
+   "樹脂成形"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "プロトラブズ Design Tips",
+   "url": "https://news.mynavi.jp/techplus/article/protolabs-52/",
+   "publisher": "マイナビニュース TECH+（プロトラブズ寄稿）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1991",
+  "kind": "question",
+  "title": "めっき鋼材をステンレスボルトで締めていい？",
+  "summary": "亜鉛めっき鋼材をステンレスボルトで締めると、接触部の亜鉛が先に腐る異種金属接触腐食が起こりうる。同じ材料にするか、塗装や樹脂で絶縁するのが対策と日建連Q&A。",
+  "industries": [
+   "建材・金物",
+   "表面処理",
+   "ねじ・締結部品"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "ボルトの材質を部材と合わせる理由",
+  "source": {
+   "title": "鉄骨工事Q&A A-7-12",
+   "url": "https://www.nikkenren.com/kenchiku/sekou/steel_frame_Q%26A/A-7-12.pdf",
+   "publisher": "日本建設業連合会",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1368",
+  "kind": "pain",
+  "title": "都市・工業地域では異種金属腐食が速い",
+  "summary": "日建連のQ&Aは、めっき鋼材とステンレスの組み合わせによる腐食が、都市や工業地域で進みやすいという試験結果を紹介。屋外の使用場所を聞かずに材料を決めると危ない。",
+  "industries": [
+   "建材・金物",
+   "表面処理"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "使う場所で変わる、さびにくい組み合わせ",
+  "source": {
+   "title": "鉄骨工事Q&A A-7-12",
+   "url": "https://www.nikkenren.com/kenchiku/sekou/steel_frame_Q&A/A-7-12.pdf",
+   "publisher": "日本建設業連合会",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1517",
+  "kind": "term",
+  "title": "「K」記号だけで完全溶込み？",
+  "summary": "土木では慣例でK形の記号だけで完全溶込み溶接を表していたが、意味を知らない関係者がいたと国交省資料。JIS Z 3021に沿い開先深さと溶接深さを書くのが対策。",
+  "industries": [
+   "溶接",
+   "製缶"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "溶接記号の慣例が通じないときの書き方",
+  "source": {
+   "title": "溶接に関する資料",
+   "url": "https://www.cgr.mlit.go.jp/pdf/yousetsu.pdf",
+   "publisher": "国土交通省 中国地方整備局",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1369",
+  "kind": "pain",
+  "title": "図面の慣例が外注先に通じない",
+  "summary": "社内や業界の慣例で書いた記号は、受け手が同じ意味に読むとは限らない。国交省資料では溶接記号の慣例を知らない関係者がいたことが問題に。規格どおりの表記が安全。",
+  "industries": [
+   "溶接",
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "社内ルールの図面を外に出す前の点検",
+  "source": {
+   "title": "溶接に関する資料",
+   "url": "https://www.cgr.mlit.go.jp/pdf/yousetsu.pdf",
+   "publisher": "国土交通省 中国地方整備局",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1992",
+  "kind": "question",
+  "title": "溶接記号の表と裏はどう決まる？",
+  "summary": "矢が指す側が表、反対側が裏。これを取り違えた指示がよくある、と鉄骨製作会社の資料。答えには基線の上下と表裏の対応を図で示すとよい。",
+  "industries": [
+   "溶接",
+   "製缶"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "溶接記号に関する資料",
+   "url": "https://showacd.co.jp/wp-content/uploads/d3edf1589aa70a1b0a33eb3ac6165349.pdf",
+   "publisher": "鉄骨製作会社の技術資料（PDF）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1993",
+  "kind": "question",
+  "title": "完全溶込みとすみ肉の境目は書く？",
+  "summary": "途中で溶接の種類が切り替わる所は範囲の指定が抜けがち。切り替え区間を設けて範囲を書くとよい、と鉄骨製作会社の資料。",
+  "industries": [
+   "溶接",
+   "製缶"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "溶接記号に関する資料",
+   "url": "https://showacd.co.jp/wp-content/uploads/d3edf1589aa70a1b0a33eb3ac6165349.pdf",
+   "publisher": "鉄骨製作会社の技術資料（PDF）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1370",
+  "kind": "pain",
+  "title": "裏当て金を残すと検査しにくい",
+  "summary": "裏当て金を残したまま完全溶込みを指定すると、非破壊検査で欠陥を見つけにくい。検査できるかも含めて指示を決めるべき、と鉄骨製作会社の資料。",
+  "industries": [
+   "溶接",
+   "製缶"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "溶接の指示は検査方法とセットで",
+  "source": {
+   "title": "溶接記号に関する資料",
+   "url": "https://showacd.co.jp/wp-content/uploads/d3edf1589aa70a1b0a33eb3ac6165349.pdf",
+   "publisher": "鉄骨製作会社の技術資料（PDF）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1994",
+  "kind": "question",
+  "title": "溶接記号は全部の箇所に書く？",
+  "summary": "全箇所に書くと図面が読みにくくなる。左右対称の部材なら半分を省くなど配置を工夫する、と鉄骨製作会社の資料。省略のルールは図面に注記する。",
+  "industries": [
+   "溶接",
+   "製缶"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "溶接記号に関する資料",
+   "url": "https://showacd.co.jp/wp-content/uploads/d3edf1589aa70a1b0a33eb3ac6165349.pdf",
+   "publisher": "鉄骨製作会社の技術資料（PDF）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1518",
+  "kind": "term",
+  "title": "溶込み深さと溶接深さは別物",
+  "summary": "部分溶込み溶接で使う言葉。JIS Z 3021:2010には両者の記載誤りを直す正誤票が出ている。規格の正誤票まで確かめると図面の言葉がそろう。",
+  "industries": [
+   "溶接"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "JIS Z 3021:2010 正誤票",
+   "url": "https://webdesk.jsa.or.jp/pdf/errata/jis_z_03021_000_000_2010_cor_1_201105_j_ch.pdf",
+   "publisher": "日本規格協会",
+   "date": "2011-05"
+  }
+ },
+ {
+  "id": "term-1519",
+  "kind": "term",
+  "title": "コイルばねの仕様はJIS B 2704-2",
+  "summary": "コイルばねの製品仕様と測定・試験方法は JIS B 2704-2:2018 で決まっている。ばねを頼むときは、この規格の項目に沿って仕様を書くと漏れが減る。",
+  "industries": [
+   "ばね・線材"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "ばねの発注書に書く項目の一覧",
+  "source": {
+   "title": "JIS B 2704-2 コイルばね 第2部 製品仕様及び測定・試験方法",
+   "url": "https://webdesk.jsa.or.jp/pdf/jisnintei/jisgenan_voice/JIS_B2704-2_コイルばね－第2部：製品仕様及び測定・試験方法_加工後_.pdf",
+   "publisher": "日本規格協会",
+   "date": "2018"
+  }
+ },
+ {
+  "id": "trend-1748",
+  "kind": "trend",
+  "official": true,
+  "title": "歯車のかみ合い精度JISが改正",
+  "summary": "両歯面かみ合い誤差を扱う JIS B 1702-2 が2022年に改正され、ISO 1328-2:2020 に対応した。古い等級で書いた図面は読み替えが要る。",
+  "industries": [
+   "歯車"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "新旧JISの歯車等級の読み替え",
+  "source": {
+   "title": "JIS B 1702-2:2022",
+   "url": "https://webdesk.jsa.or.jp/preview/pre_jis_b_01702_002_000_2022_j_ed10_ch.pdf",
+   "publisher": "日本規格協会",
+   "date": "2022"
+  }
+ },
+ {
+  "id": "term-1520",
+  "kind": "term",
+  "title": "樹脂歯車の精度は別の規格",
+  "summary": "射出成形のプラスチック歯車の精度は JIS B 1702-3 で定められている。金属歯車の等級をそのまま樹脂歯車に書くと話が合わない。",
+  "industries": [
+   "歯車",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "JIS B 1702-3:2020",
+   "url": "https://webdesk.jsa.or.jp/preview/pre_jis_b_01702_003_000_2020_j_ed10_ch.pdf",
+   "publisher": "日本規格協会",
+   "date": "2020"
+  }
+ },
+ {
+  "id": "pain-1371",
+  "kind": "pain",
+  "title": "フットプリント違いで部品が載らない",
+  "summary": "部品とパッド配置が合わない誤ったフットプリントは、設計レビューでも見逃されることがあるとAltiumの記事。基板ができてから気づくと作り直しになる。",
+  "industries": [
+   "基板実装",
+   "電子部品"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "基板を頼む前の部品データ確認",
+  "source": {
+   "title": "PCBアセンブリのリワークとスクラップの最も一般的な原因",
+   "url": "https://resources.altium.com/jp/p/most-common-causes-pcb-assembly-rework-and-scrap",
+   "publisher": "Altium（日本語ブログ）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1372",
+  "kind": "pain",
+  "title": "マスクやシルクの不備で基板廃棄",
+  "summary": "パッド間のはんだマスクのダムが無くショートする、シルク印刷がパッドの金属面を覆う。どちらも基板を捨てる原因になるとAltiumの記事。",
+  "industries": [
+   "基板実装",
+   "電子部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "PCBアセンブリのリワークとスクラップの最も一般的な原因",
+   "url": "https://resources.altium.com/jp/p/most-common-causes-pcb-assembly-rework-and-scrap",
+   "publisher": "Altium（日本語ブログ）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1373",
+  "kind": "pain",
+  "title": "部品ライブラリの乱れが遅れを生む",
+  "summary": "Altiumの記事は、部品ライブラリの管理不足が基板の失敗の大きな原因で、1つの不一致フットプリントが数週間の遅れにつながった例を挙げる。",
+  "industries": [
+   "基板実装",
+   "電子部品"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "部品データの管理で試作を早くする",
+  "source": {
+   "title": "一貫したPCBレイアウト設計のためのECADライブラリ管理",
+   "url": "https://resources.altium.com/jp/p/how-to-manage-ecad-libraries-consistent-pcb-layout-design",
+   "publisher": "Altium（日本語ブログ）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1995",
+  "kind": "question",
+  "title": "基板の作り直しを防ぐ確認は？",
+  "summary": "IPC準拠のフットプリント、シミュレーション、3Dの干渉チェックで製造前に見つけるのが基本とAltium。実装会社の設計ガイドを先に見ることも勧める。",
+  "industries": [
+   "基板実装"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "実装を頼む前の3つのチェック",
+  "source": {
+   "title": "PCBアセンブリのリワークとスクラップの最も一般的な原因",
+   "url": "https://resources.altium.com/jp/p/most-common-causes-pcb-assembly-rework-and-scrap",
+   "publisher": "Altium（日本語ブログ）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1521",
+  "kind": "term",
+  "title": "水抜き穴（光造形の中空品）",
+  "summary": "中空に造形すると、中に固まっていない樹脂が残る。抜くための穴を設計に入れておくことが推奨されている。入れ忘れると後処理で困る。",
+  "industries": [
+   "3Dプリンタ"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "3Dモデルの設計仕様（Form 4世代）",
+   "url": "https://formlabs.com/jp/support/Design-specifications-for-3D-models-Form-4-generation/",
+   "publisher": "Formlabs（日本語サポート）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1522",
+  "kind": "term",
+  "title": "SUS303は削りやすいが錆びやすい",
+  "summary": "SUS303は硫黄などを加えて削りやすくしたステンレスで、SUS304より耐食性が劣る。水まわりなど錆が問題の部品に304のつもりで303を選ぶと困る。",
+  "industries": [
+   "切削加工",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "SUS303と304、どちらを選ぶか",
+  "source": {
+   "title": "The Differences Between SUS303 and SUS304",
+   "url": "https://de.meviy.misumi-ec.com/info/en/?p=26414",
+   "publisher": "ミスミ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1996",
+  "kind": "question",
+  "title": "ステンレス薄板を切ると反る？",
+  "summary": "ミスミの商品説明では、SUS303の薄板をシャーリング切断すると、薄い・細長い形で反りやねじれが出ることがあるとする。平らさが要るなら切り方も指定する。",
+  "industries": [
+   "板金",
+   "金属加工"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "SUS303 薄板（商品ページ）",
+   "url": "https://jp.misumi-ec.com/vona2/detail/110310110699/",
+   "publisher": "ミスミ",
+   "date": null
+  }
+ },
+ {
+  "id": "question-1997",
+  "kind": "question",
+  "title": "削った後の平らさを保つ材料は？",
+  "summary": "ミスミの試験資料では、焼鈍（焼きなまし）材は通常のSUS303/304より加工後の平面度のばらつきが安定していた。歪みが困る部品は材料の状態まで指定する。",
+  "industries": [
+   "切削加工",
+   "金属加工"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "材料の手配で歪みを減らす",
+  "source": {
+   "title": "ステンレス焼鈍材の加工試験（PDF）",
+   "url": "https://jp.misumi-ec.com/pdf/fa/2014/p2_1765.pdf",
+   "publisher": "ミスミ",
+   "date": "2014"
+  }
+ },
+ {
+  "id": "question-1998",
+  "kind": "question",
+  "title": "ばねの許容荷重は寿命保証？",
+  "summary": "ミスミのカタログでは、許容荷重は使う上の目安で寿命の保証ではないと明記。繰り返し回数が大事な用途は、寿命の条件を仕様として伝える必要がある。",
+  "industries": [
+   "ばね・線材"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "ばねの寿命は何を伝えれば決まる？",
+  "source": {
+   "title": "コイルばね（商品ページ）",
+   "url": "https://jp.misumi-ec.com/vona2/detail/221000746844/",
+   "publisher": "ミスミ",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1374",
+  "kind": "pain",
+  "title": "成分は規格内でも組織が違うことも",
+  "summary": "新潟県工業技術総合研究所の事例では、成分はSUS304の規格内なのに金属組織が通常と違い、腐食の調査が行われた。成分表だけで材料を安心しきれない場合がある。",
+  "industries": [
+   "金属加工",
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "材料証明書で分かること・分からないこと",
+  "source": {
+   "title": "技術相談事例（ステンレスの腐食調査）",
+   "url": "https://www.pref.niigata.lg.jp/uploaded/attachment/430745.pdf",
+   "publisher": "新潟県工業技術総合研究所",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1375",
+  "kind": "pain",
+  "title": "面粗さの指示が加工時間を決める",
+  "summary": "長崎県の樹脂切削の設計資料は、面粗度をどう決めるかが加工時間に大きく響き、コストを左右すると説明。全面に細かい値を書くと時間とお金がかかる。",
+  "industries": [
+   "切削加工",
+   "プラスチック加工品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "樹脂部品の面粗さはどこまで要る？",
+  "source": {
+   "title": "樹脂切削加工の設計ポイント（PDF）",
+   "url": "https://www.pref.nagasaki.jp/shared/uploads/2024/09/1726017546.pdf",
+   "publisher": "長崎県",
+   "date": "2024-09"
+  }
+ },
+ {
+  "id": "question-1999",
+  "kind": "question",
+  "title": "樹脂の削り部品、面粗さは全部書く？",
+  "summary": "必要な場所だけに面粗度を指定し、必要以上に厳しくしないことでコストを抑えられる、と長崎県の資料。答えには「機能で選ぶ」面の例を入れる。",
+  "industries": [
+   "切削加工",
+   "プラスチック加工品"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "樹脂切削加工の設計ポイント（PDF）",
+   "url": "https://www.pref.nagasaki.jp/shared/uploads/2024/09/1726017546.pdf",
+   "publisher": "長崎県",
+   "date": "2024-09"
+  }
+ },
+ {
+  "id": "pain-1376",
+  "kind": "pain",
+  "title": "検図しても凡ミスが減らない",
+  "summary": "日刊工業新聞社は「検図負担軽減と凡ミス退治」をテーマにしたセミナーを2025年12月に案内。図面の記載ミスは多くの設計部門の悩みであることがうかがえる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "図面の凡ミスを減らす確認の順番",
+  "source": {
+   "title": "セミナー案内：検図負担軽減と凡ミス退治",
+   "url": "https://corp.nikkan.co.jp/uploads/seminar/file2_7738.pdf",
+   "publisher": "日刊工業新聞社",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "term-1523",
+  "kind": "term",
+  "title": "陥没ゆるみ",
+  "summary": "ボルトの座面が当たる部材がへこみ、締めた力が抜けてゆるむこと。座面にかかる圧力を部材が耐えられる値以下にすると防げる。",
+  "industries": [
+   "ねじ・締結部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "技術資料（ねじ締結）",
+   "url": "https://orist.jp/technicalsheet/3019.PDF",
+   "publisher": "大阪産業技術研究所",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1377",
+  "kind": "pain",
+  "title": "同じトルクで締め直してゆるむ",
+  "summary": "点検のたびに締め直すうちにトルク係数が増え、当初と同じトルクでは締付け力が下がってゆるんだ事例が報告されている。トルクだけで管理する落とし穴。",
+  "industries": [
+   "ねじ・締結部品",
+   "装置"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "締付けトルクの数字だけでは足りない理由",
+  "source": {
+   "title": "ボルト締結に関する講演資料",
+   "url": "https://www.fml.t.u-tokyo.ac.jp/~izumi/Bolt/WS081216.pdf",
+   "publisher": "東京大学（泉研究室）",
+   "date": "2008-12"
+  }
+ },
+ {
+  "id": "question-2000",
+  "kind": "question",
+  "title": "鋳物の座面は鋳肌のままでいい？",
+  "summary": "鋳肌のままだと出っ張りだけが当たり、抜き勾配があると軸が傾いて面圧が偏る。座面は寸法精度・粗さ・直角度を指定する、と明治大学の講義資料。",
+  "industries": [
+   "鋳造",
+   "ねじ・締結部品"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "ボルトの当たる面を加工する理由",
+  "source": {
+   "title": "要素設計 第14回 講義ノート（2015）",
+   "url": "https://www.isc.meiji.ac.jp/~mcelab/yohso_sekkei/docs/2015_yohso_sekkei_14_note.pdf",
+   "publisher": "明治大学",
+   "date": "2015"
+  }
+ },
+ {
+  "id": "question-2001",
+  "kind": "question",
+  "title": "ねじ穴は止まり穴より通し穴？",
+  "summary": "押さえボルトのねじ穴も、できるだけ通し穴にすると加工しやすく切りくずも出やすい、と明治大学の講義資料。止まり穴にする理由がなければ通し穴を勧める。",
+  "industries": [
+   "ねじ・締結部品",
+   "切削加工"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "要素設計 第14回 講義ノート（2015）",
+   "url": "https://www.isc.meiji.ac.jp/~mcelab/yohso_sekkei/docs/2015_yohso_sekkei_14_note.pdf",
+   "publisher": "明治大学",
+   "date": "2015"
+  }
+ },
+ {
+  "id": "term-1524",
+  "kind": "term",
+  "title": "リーマボルト",
+  "summary": "下穴をボルトの呼び径と同じ寸法にして、はめあいで位置決めもするボルト。普通の通しボルトより穴の精度が要り、加工費も上がる。",
+  "industries": [
+   "ねじ・締結部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "要素設計 第14回 講義ノート（2015）",
+   "url": "https://www.isc.meiji.ac.jp/~mcelab/yohso_sekkei/docs/2015_yohso_sekkei_14_note.pdf",
+   "publisher": "明治大学",
+   "date": "2015"
+  }
+ },
+ {
+  "id": "term-1525",
+  "kind": "term",
+  "title": "異種金属接触腐食（電食）",
+  "summary": "電位の違う金属が水分などを介して触れると、電位の低い側が溶けて腐る現象。アルミとステンレス、亜鉛めっきとステンレスなどの組み合わせで起きやすい。",
+  "industries": [
+   "金属加工",
+   "表面処理",
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "違う金属を組み合わせるときの注意",
+  "source": {
+   "title": "技術研究報告 2008",
+   "url": "https://takenaka.co.jp/rd/contents/gihou/gihou_2008/pdf/1_ronbun/03_R030.pdf",
+   "publisher": "竹中工務店",
+   "date": "2008"
+  }
+ },
+ {
+  "id": "success-2708",
+  "kind": "success",
+  "title": "見積フォームで材質・数量を聞く",
+  "summary": "製造業サイトの見積フォームは、連絡先に加え材質、数量（試作か量産か）、希望納期、表面処理・熱処理の有無、図面添付を聞くとよいとWeb制作会社のコラム。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "source": {
+   "title": "製造業の見積フォームのコラム",
+   "url": "https://www.issoh.co.jp/md/column/19928",
+   "publisher": "Web制作会社のコラム",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1351",
+  "kind": "buyer",
+  "title": "加工依頼に添える情報は決まっている",
+  "summary": "大学の設計工作部門は、依頼時に材質、寸法公差・表面粗さ・幾何公差などの精度、希望納期、特殊工具の要否を求める。発注側の書き漏れを防ぐ一覧になる。",
+  "industries": [
+   "切削加工",
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "依頼のときにそろえる5つの情報",
+  "source": {
+   "title": "工作依頼の流れ",
+   "url": "https://www.ofc.titech.ac.jp/~sekkei/documents/flowchart.pdf",
+   "publisher": "東京工業大学 設計工作部門",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1378",
+  "kind": "pain",
+  "title": "外注先を変えたら色と艶が違う",
+  "summary": "塗装会社の解説では、外注先を変えた初回ロットで色・艶が違う例が多い。図面と色番号しか渡さず、膜厚・硬化条件・色見本が引き継がれないのが原因とする。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "article_idea"
+  ],
+  "articleIdea": "塗装の外注先を変えるときに渡すもの",
+  "source": {
+   "title": "金属塗装会社の技術解説",
+   "url": "https://pr.mono.ipros.com/en/kinzokutoso/product/detail/2001661452/",
+   "publisher": "金属塗装会社（イプロス掲載）",
+   "date": null
+  }
+ },
+ {
+  "id": "question-2002",
+  "kind": "question",
+  "title": "色ムラの合否はどう決める？",
+  "summary": "目で見る判定だけだと再発しやすい。標準見本と数値の記録を合わせて使い、合否の基準を現場で共有する、と塗装会社の解説。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "金属塗装会社の技術解説",
+   "url": "https://pr.mono.ipros.com/en/kinzokutoso/product/detail/2001654401/",
+   "publisher": "金属塗装会社（イプロス掲載）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1379",
+  "kind": "pain",
+  "title": "Oリングがきつすぎて樹脂が割れる",
+  "summary": "ゴム製品会社の資料は、Oリングの面圧が高すぎて樹脂カバーが壊れた例や、防振ゴムが低温で破損した例を挙げる。ゴムは相手部品と使用温度まで含めて設計する。",
+  "industries": [
+   "ゴム",
+   "樹脂成形"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "ゴム部品は相手と温度も伝えて頼む",
+  "source": {
+   "title": "ゴム製品の設計事例",
+   "url": "https://pr.mono.ipros.com/inaki/product/detail/2000724159/",
+   "publisher": "イプロス ものづくり",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2709",
+  "kind": "success",
+  "title": "技術ブログ経由の引き合いが3.2倍",
+  "summary": "イプロス掲載のツール会社の事例によると、ある精密機械メーカーがSEO記事と社内で更新できる仕組みを入れ、技術ブログ経由のリード獲得数が3.2倍になった。",
+  "industries": [
+   "精密機器",
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "技術解説記事を問い合わせにつなぐ",
+  "source": {
+   "title": "技術ブログ導入事例",
+   "url": "https://mono.ipros.com/product/detail/2001516404",
+   "publisher": "イプロス ものづくり",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2710",
+  "kind": "success",
+  "title": "設計者向けのコストダウン冊子",
+  "summary": "機械加工会社が、設計段階のコスト削減事例や設計が原因のトラブル解説をまとめた無料冊子を配り、資料請求から相談につなげている。",
+  "industries": [
+   "切削加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "shiori_tip"
+  ],
+  "articleIdea": "失敗例集を資料にして配る",
+  "source": {
+   "title": "コストダウン事例集（無料冊子）",
+   "url": "https://www.ipros.com/product/detail/2000167265/",
+   "publisher": "イプロス ものづくり",
+   "date": null
+  }
+ },
+ {
+  "id": "question-2003",
+  "kind": "question",
+  "title": "光造形品を洗いすぎると変形する？",
+  "summary": "薄い部品はIPAなどの洗浄液に長く浸すと変形するおそれがある。後処理の条件も依頼先に確かめておくと安心。",
+  "industries": [
+   "3Dプリンタ"
+  ],
+  "useFor": [
+   "question_example"
+  ],
+  "source": {
+   "title": "3Dモデルの設計仕様（Form 4世代）",
+   "url": "https://formlabs.com/jp/support/Design-specifications-for-3D-models-Form-4-generation/",
+   "publisher": "Formlabs（日本語サポート）",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1526",
+  "kind": "term",
+  "title": "板金の曲げは塑性変形",
+  "summary": "板金の曲げは、板を元に戻らないところまで変形させて形を作る加工。加工方法によって曲げられる形や寸法の制約が変わるので、設計の前に確かめる。",
+  "industries": [
+   "板金"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "板金曲げとは何ですか？基本、手当、ヒント",
+   "url": "https://www.rapiddirect.com/ja/blog/how-to-bend-sheet-metal/",
+   "publisher": "RapidDirect（日本語ブログ）",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1352",
+  "kind": "buyer",
+  "title": "異種金属は同材か絶縁で組む",
+  "summary": "日建連のQ&Aは、異種金属接触腐食の対策として、同じ材料を使う、塗装や樹脂で絶縁する、を挙げる。発注時に「ボルト材質は部材と合わせて」と一言添えると防げる。",
+  "industries": [
+   "建材・金物",
+   "ねじ・締結部品"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "鉄骨工事Q&A A-7-12",
+   "url": "https://www.nikkenren.com/kenchiku/sekou/steel_frame_Q%26A/A-7-12.pdf",
+   "publisher": "日本建設業連合会",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1527",
+  "kind": "term",
+  "title": "ばか穴（通しボルトの下穴）",
+  "summary": "通しボルトでは、呼び径より少し大きい下穴をあけ、ねじの締め付け力だけで部材を留める。位置決めの精度は出ないので、位置が大事ならピンやリーマボルトを使う。",
+  "industries": [
+   "ねじ・締結部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "要素設計 第14回 講義ノート（2015）",
+   "url": "https://www.isc.meiji.ac.jp/~mcelab/yohso_sekkei/docs/2015_yohso_sekkei_14_note.pdf",
+   "publisher": "明治大学",
+   "date": "2015"
+  }
+ },
+ {
+  "id": "pain-1380",
+  "kind": "pain",
+  "title": "公差を書くだけで見積が積み上がる",
+  "summary": "加工会社によっては、図面にサイズ公差や幾何公差が書いてあるだけで見積もりを積み上げるところもある。必要な所に絞って書かないと、値段が理由なく上がる。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "公差を書きすぎた図面の見積もりの話",
+  "source": {
+   "title": "書籍抜粋（公差設計）",
+   "url": "https://pubdata.nikkan.co.jp/uploads/book/pdf_file57c912d044c42.pdf",
+   "publisher": "日刊工業新聞社",
+   "date": null
+  }
+ },
+ {
+  "id": "question-2004",
+  "kind": "question",
+  "title": "ボルトの座面が小さいとどうなる？",
+  "summary": "小さい座面で強く締めると、当たる部分に力が集中して部材がへこみ、振動などで締め付け力が抜けてゆるむ。座面を広げる、座金を使うなどの対策を答えに入れる。",
+  "industries": [
+   "ねじ・締結部品",
+   "機械部品"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "source": {
+   "title": "技術資料（ねじ締結）",
+   "url": "https://orist.jp/technicalsheet/3019.PDF",
+   "publisher": "大阪産業技術研究所",
+   "date": null
+  }
+ },
+ {
+  "id": "question-2005",
+  "kind": "question",
+  "title": "指定色にすると納期は延びる？",
+  "summary": "指定色は塗料の調達状況で納期が変わる。発注前に候補色の在庫と納期を確かめ、外から見えない部分は標準色に合わせるとよい、と塗装会社の解説。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "色指定と納期・費用の関係",
+  "source": {
+   "title": "金属塗装会社の技術解説",
+   "url": "https://pr.mono.ipros.com/en/kinzokutoso/product/detail/2001661454/",
+   "publisher": "金属塗装会社（イプロス掲載）",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1381",
+  "kind": "pain",
+  "title": "同じ色番号なのに色が違う",
+  "summary": "塗料メーカーの廃番・統合で後継品に変わると、色番号が同じでも樹脂や顔料が変わり、艶や隠ぺい性の差で色が違って見えることがある、と塗装会社の解説。",
+  "industries": [
+   "塗装"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "リピート品の色が合わないときの確認",
+  "source": {
+   "title": "金属塗装会社の技術解説",
+   "url": "https://pr.mono.ipros.com/en/kinzokutoso/product/detail/2001644668/",
+   "publisher": "金属塗装会社（イプロス掲載）",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1353",
+  "kind": "buyer",
+  "title": "試作の型から量産プレスへつなぐ",
+  "summary": "試作用の型と量産のプレス・板金を社内で一貫して受ける会社もあり、量産を見すえた試作で移行が楽になるとうたう。会社の宣伝なので、実績は個別に確かめる。",
+  "industries": [
+   "プレス",
+   "板金",
+   "金型"
+  ],
+  "useFor": [
+   "question_example",
+   "shiori_tip"
+  ],
+  "source": {
+   "title": "試作・量産一貫対応の紹介",
+   "url": "https://pr.mono.ipros.com/kakushinkogyo/product/detail/2001586204/",
+   "publisher": "プレス加工会社（イプロス掲載）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2711",
+  "kind": "success",
+  "region": "overseas",
+  "title": "隠れたチャンピオンは狭く深く",
+  "summary": "ドイツ：ハーマン・サイモンが名付けた「隠れたチャンピオン」は、狭い分野で世界上位に入り、一般には無名な会社。小さくても分野を絞れば勝てると示す。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "うちが「この分野なら負けない」と言える一つのこと",
+  "source": {
+   "title": "Hidden champions",
+   "url": "https://en.wikipedia.org/wiki/Hidden_champions",
+   "publisher": "Wikipedia",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2712",
+  "kind": "success",
+  "region": "overseas",
+  "title": "世界一でなく「この分野で一番」",
+  "summary": "ドイツ：隠れたチャンピオンの定義は世界3位以内か大陸で1位、売上50億ユーロ未満。町工場も「◯◯材の薄物加工なら県内一」のように範囲を決めて語れる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "範囲を絞った「一番」の言い方を考える",
+  "source": {
+   "title": "Hidden Champions",
+   "url": "https://www.deutschland.de/en/topic/business/globalization-world-trade/hidden-champions",
+   "publisher": "deutschland.de",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2713",
+  "kind": "success",
+  "region": "overseas",
+  "title": "無名でも顧客には知られている",
+  "summary": "ドイツ：中堅の家族経営で無名な会社ほど、狭い分野で世界を押さえているという考え方。一般の知名度より、発注する人に見つけてもらえるかが大事。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "知名度ゼロでも発注者に見つかる書き方",
+  "source": {
+   "title": "There's a German idea that explains why the most globally dominant companies are ones you've never heard of",
+   "url": "https://siliconcanals.com/k-theres-a-german-idea-that-explains-why-the-most-globally-dominant-companies-in-their-field-are-ones-youve-never-heard-of-quiet-family-run-mid-sized-firms-that-would-rather-own-an-obscu/",
+   "publisher": "Silicon Canals",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2714",
+  "kind": "success",
+  "region": "overseas",
+  "title": "「広さより深さ」の戦い方",
+  "summary": "ドイツ：隠れたチャンピオンを調べた研究は「広さより深さ」を特徴に挙げる。品目を増やすより、一つの技術を掘り下げて説明できる会社が強い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "一つの加工を深掘りする連載記事",
+  "source": {
+   "title": "Erfolgsstrategien unbekannter Weltmarktführer",
+   "url": "https://www.bpb.de/shop/zeitschriften/apuz/archiv/537713/erfolgsstrategien-unbekannter-weltmarktfuehrer-ergebnisse-einer-empirischen-untersuchung/",
+   "publisher": "bpb（ドイツ連邦政治教育センター）",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2715",
+  "kind": "success",
+  "region": "overseas",
+  "title": "ニッチ戦略の7つの教訓",
+  "summary": "ドイツ：コンサル会社サイモン・クチャーは、隠れたチャンピオンから学ぶニッチ戦略の教訓をまとめている。小さな会社でも市場を自分で定義することが出発点。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "うちの市場を一文で定義してみる",
+  "source": {
+   "title": "Seven lessons from hidden champions for your niche strategy",
+   "url": "https://www.simon-kucher.com/en/insights/seven-lessons-hidden-champions-your-niche-strategy",
+   "publisher": "Simon-Kucher",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2716",
+  "kind": "success",
+  "region": "overseas",
+  "title": "特別なことより当たり前を徹底",
+  "summary": "ドイツ：サイモンは、隠れたチャンピオンは主に常識を実行しているだけで、それが簡単だが難しいと語る。納期・品質・連絡の速さを具体的に書くことが強みになる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "当たり前を守る仕組みを見せる記事",
+  "source": {
+   "title": "Hermann Simon on lessons for companies from the world champion",
+   "url": "https://english.ckgsb.edu.cn/knowledge/article/hermann-simon-on-lessons-for-companies-from-the-world-champion/",
+   "publisher": "CKGSB Knowledge",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1749",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "独の産業広報は戦略が課題",
+  "summary": "ドイツ：産業コミュニケーション連盟bvikの2026年調査（2025年秋、282人）では、営業のデジタル化の中心に広報があると感じる人は53％にとどまる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Trendbarometer Industriekommunikation 2026",
+   "url": "https://collectivebrain.de/trendbarometer-industriekommunikation-2026-ki-b2b-mittelstand/",
+   "publisher": "Collective Brain",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1750",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "独B2B広報は物語とAIへ",
+  "summary": "ドイツ：bvikの2025年の調査は、産業向けの広報で物語（ストーリーテリング）とAIが大きな流れになっていると報告。技術の説明に人の話を添えることが求められる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "source": {
+   "title": "bvik-Trendbarometer 2025: Storytelling, KI und DEI",
+   "url": "https://www.wuv.de/Themen/Media/Storytelling-KI-und-DEI-Das-B2B-Marketing-im-Umbruch",
+   "publisher": "W&V",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "pain-1382",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "B2Bサイトは利用者に分かりにくい",
+  "summary": "ドイツ：IT誌CIOは、B2Bのサイトが利用者にとって謎だらけで、求める情報にたどり着けないと報じた。製品・加工ごとに整理されていないサイトは選ばれにくい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "知りたい情報に3クリックで届く構成",
+  "source": {
+   "title": "B2B-Websites sind Usern ein Rätsel",
+   "url": "https://www.cio.de/article/3656777/b2b-websites-sind-usern-ein-raetsel.html",
+   "publisher": "CIO",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1383",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "独中堅の4割はAIに出てこない",
+  "summary": "ドイツ：コレクティブ・ブレイン社が193社・986件のAI回答を調べた2026年の自社調査で、中堅の約4割がAIの答えに名前が出なかった。代表性はないと注意書きあり。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "AIに聞いたらうちは出てくるか試す",
+  "source": {
+   "title": "KI-Sichtbarkeits-Report Mittelstand 2026",
+   "url": "https://collectivebrain.de/ki-sichtbarkeits-report/",
+   "publisher": "Collective Brain",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "buyer-1354",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "購買の37％がAIで部品を調べる",
+  "summary": "ドイツ：ECCケルンとdotSourceの2026年1月の調査として、調達担当の37％が主要部品の情報をChatGPTなどのAIで集めると紹介されている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "AIに聞かれそうな質問にそのまま答える記事",
+  "source": {
+   "title": "Fachlich führend, in der KI-Suche unsichtbar?",
+   "url": "https://www.unternehmeredition.de/?p=90354",
+   "publisher": "Unternehmeredition",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1751",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "AIでの引用を数える時代",
+  "summary": "ドイツ語版：コンダクター社の2026年報告は、AIの回答で引用・言及される回数を、検索順位と同じくらいきちんと測るべき指標だとしている。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Der 2026 AEO / GEO Benchmarks Report",
+   "url": "https://www.conductor.com/de/academy/aeo-geo-benchmarks-report/",
+   "publisher": "Conductor",
+   "date": "2026"
+  }
+ },
+ {
+  "id": "trend-1752",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "AIはブランドへの信頼で選ぶ",
+  "summary": "ドイツ：デジタル経済連盟BVDWの2026年の資料は、AI時代の見つかりやすさは、AIが会社や内容を信頼できると判断するかで決まると整理している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Die neue Systemlogik digitaler Wertschöpfung",
+   "url": "https://www.bvdw.org/wp-content/uploads/2026/05/Die-neue-Systemlogik-digitaler-Wertschoepfung.pdf",
+   "publisher": "BVDW",
+   "date": "2026-05"
+  }
+ },
+ {
+  "id": "buyer-1355",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "購買はAIでも受託先を探す",
+  "summary": "ドイツ：受託加工向けSEOの解説では、技術系の購買担当はGoogleに加えChatGPTやPerplexityでも新しい受託先を探すとしている（制作者の解説）。",
+  "industries": [
+   "切削加工",
+   "板金",
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "AIに勧められる受託先になるには",
+  "source": {
+   "title": "SEO für Lohnfertiger",
+   "url": "https://www.alexanderpeterhihler.com/seo/lohnfertiger/",
+   "publisher": "Alexander Peter Hihler",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1753",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "図面を上げて発注する時代",
+  "summary": "ドイツ：部品調達サービスFACTUREEの白書は、図面アップロードでの発注はまだ標準ではないが、受託加工会社がネットの製造仲介から新しい引き合いを得られると述べる。",
+  "industries": [
+   "切削加工",
+   "板金",
+   "機械部品"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "仲介サイトと自社サイトの使い分け",
+  "source": {
+   "title": "Die Zukunft der Teilebeschaffung（FACTUREE Whitepaper）",
+   "url": "https://responses.direktabo.de/uploads/files/13890/6ec170035c_FACTUREE_Whitepaper_Die_Zukunft_der_Teilebeschaffung.pdf",
+   "publisher": "FACTUREE",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2717",
+  "kind": "success",
+  "region": "overseas",
+  "title": "問い合わせの入口を複数用意",
+  "summary": "ドイツ：中小向けWeb支援会社は、気軽な見積もり依頼、折り返し電話、日程予約などの入口と、無料チェックリストの配布で問い合わせを増やせるとすすめる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "図面チェックリストを無料で配る",
+  "source": {
+   "title": "12 Tipps für mehr Anfragen auf deiner Website",
+   "url": "https://sellwerk.de/wissenswert/tipps-fuer-mehr-website-anfragen",
+   "publisher": "Sellwerk",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1356",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "購買の8割が検索エンジンを使う",
+  "summary": "ドイツ語圏：Wer liefert was の2019年購買担当調査（719人）では、検索エンジン利用が80.7％、B2Bの業者検索サイトが72.3％。回答者は主に中小企業。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Umfrage von Wer liefert was: Beruf des Einkäufers wird digitaler",
+   "url": "https://www.horizont.net/schweiz/nachrichten/umfrage-von-wer-liefert-was-beruf-des-einkaeufers-wird-digitaler-und-strategischer-179027",
+   "publisher": "Horizont",
+   "date": "2019"
+  }
+ },
+ {
+  "id": "pain-1384",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "検索結果がずれると購買は困る",
+  "summary": "ドイツ：IT誌CIOの調査記事では、業者探しの検索サービスを3分の2が「関係ない結果が多く非効率」と感じていた。用語や対応範囲をはっきり書けば選ばれやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "対応できる材質・サイズを表で示す",
+  "source": {
+   "title": "Business-Suchmaschinen werden immer wichtiger",
+   "url": "https://www.cio.de/article/3658186/business-suchmaschinen-werden-immer-wichtiger.html",
+   "publisher": "CIO",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1385",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "94％がB2Bのネット体験に不満",
+  "summary": "ドイツ：サナ・コマース社の調査では、B2Bの購買担当の94％がネットでの買い物体験が不十分だと答えた（同社発表）。情報不足のサイトは機会を逃す。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "B2B-Einkauf im digitalen Wandel",
+   "url": "https://info.sana-commerce.com/rs/908-SKZ-106/images/B2B-Einkauf-im-digitalen-Wandel-DE.pdf",
+   "publisher": "Sana Commerce",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1357",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "購買の決め手はまず品質",
+  "summary": "スイス：IT系業界誌は、購買で最後に効くのは品質だと伝えた。価格より先に、品質をどう保証するかを書くことが大切。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "question_example",
+   "writer_hint"
+  ],
+  "articleIdea": "検査の流れを写真付きで見せる",
+  "source": {
+   "title": "Qualität ist beim Einkauf das Killerkriterium",
+   "url": "https://www.itreseller.ch/Artikel/79478/Qualitaet_ist_beim_Einkauf_das_Killerkriterium.html",
+   "publisher": "IT Reseller",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1358",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "図面部品は品質が決め手",
+  "summary": "ドイツ：FACTUREEが依頼した中堅メーカーの技術者・購買への調査は、業者探し・品質・納期の守りやすさを扱い、図面部品では品質が決め手と伝える。",
+  "industries": [
+   "切削加工",
+   "板金",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "source": {
+   "title": "Qualität als entscheidender Faktor für Zeichnungsteile",
+   "url": "https://www.produktion.de/smarte-beschaffung-von-zeichnungsteilen-by-facturee/qualitaet-als-entscheidender-faktor-fuer-zeichnungsteile/1644668",
+   "publisher": "Produktion",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1359",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "購買はまず会社情報を見る",
+  "summary": "ドイツ：ライプツィヒ工科大学の2021年調査では、購買が重視する情報は会社の基本情報が1位、法令順守の情報が2位、その後に環境・社会の情報が続いた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "会社概要ページに書くべき項目",
+  "source": {
+   "title": "Digi-Studie 2021",
+   "url": "https://fww.htwk-leipzig.de/fileadmin/portal/f_wiwi/fakultaet/personen/PROF/mueller_h_scm/Digi-Studie_2021.pdf",
+   "publisher": "HTWK Leipzig",
+   "date": "2021"
+  }
+ },
+ {
+  "id": "buyer-1360",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "担当者の直通電話が喜ばれる",
+  "summary": "ドイツ：業者検索サイトに載った購買担当の声として、適切な担当者の電話番号が載っているのが特に役立ったという。誰に聞けばよいかを示すと連絡が来やすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "技術の相談窓口を顔と名前で紹介",
+  "source": {
+   "title": "lieferanten.de",
+   "url": "https://lieferanten.de/",
+   "publisher": "lieferanten.de",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2718",
+  "kind": "success",
+  "region": "overseas",
+  "title": "言われた通りだけでは替えがきく",
+  "summary": "ドイツ：産業誌は、仕様書をこなすだけの協力会社は替えがきき、安値に負けやすいと指摘。顧客の先を考えて提案する会社が選ばれる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "図面を受けたときに提案したことの記事",
+  "source": {
+   "title": "Alleinstellung statt Preiskampf",
+   "url": "https://www.industrial-production.de/wirtschaft---unternehmen/alleinstellung-statt-preiskampf.htm",
+   "publisher": "Industrial Production",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2719",
+  "kind": "success",
+  "region": "overseas",
+  "title": "部品屋から開発の相棒へ",
+  "summary": "ドイツ：締結部品などの中堅協力会社は、取引先の圧力と安値競争の中で自前の開発力を持ち、部品の供給者から開発の相棒へ変わってきたと産業誌が紹介。",
+  "industries": [
+   "ねじ・締結部品",
+   "機械部品",
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "設計段階から相談に乗った事例",
+  "source": {
+   "title": "Verbindungstechnik: Schließ- und Verbindungssysteme",
+   "url": "https://www.industrial-production.de/trennen---verbinden/verbindungstechnik---schliess--und-verbindungssysteme.htm",
+   "publisher": "Industrial Production",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1754",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "手工業の協力会社に成功例集",
+  "summary": "ドイツ：ドイツ手工業中央連盟（ZDH）は、手工業の協力会社がデジタル化や新しい商売の形に取り組む良い例を紹介している。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "source": {
+   "title": "Best Practice: handwerkliche Zulieferbetriebe",
+   "url": "https://www.zdh.de/ueber-uns/fachbereich-gewerbefoerderung/zulieferwesen/best-practice-handwerkliche-zulieferbetriebe/",
+   "publisher": "ZDH",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "trend-1755",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "自動盤も量より総合力へ",
+  "summary": "ドイツ：自動盤加工についての業界記事（2026年1月）は、市場が設備の空きではなく総合力を求める方向に動いていると論じる。多軸機や難削材への対応を見せる必要。",
+  "industries": [
+   "切削加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Milliardenmarkt Langdrehen",
+   "url": "https://xpert.digital/milliardenmarkt-langdrehen/",
+   "publisher": "Xpert.Digital",
+   "date": "2026-01"
+  }
+ },
+ {
+  "id": "term-1528",
+  "kind": "term",
+  "region": "overseas",
+  "title": "延長された作業台とは",
+  "summary": "ドイツ：「verlängerte Werkbank（延長された作業台）」は、言われた加工だけを請け負う下請けを指す言い方。脱するには開発力やデジタル化が必要と論じられる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Alleinstellung statt Preiskampf",
+   "url": "https://www.industrial-production.de/wirtschaft---unternehmen/alleinstellung-statt-preiskampf.htm",
+   "publisher": "Industrial Production",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1756",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "伊の産地は輸出の4分の1",
+  "summary": "イタリア：SACEとアンブロセッティの調査によると、国内に160の産地（ディストレット）があり、製造業輸出の約25％、2023年に約1500億ユーロを担う。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "産地の一員としての強みを語る",
+  "source": {
+   "title": "Italian industrial districts（SACE / Ambrosetti study）",
+   "url": "https://www.esteri.it/en/?p=126013",
+   "publisher": "イタリア外務・国際協力省",
+   "date": "2023"
+  }
+ },
+ {
+  "id": "success-2720",
+  "kind": "success",
+  "region": "overseas",
+  "title": "産地の土地の力を海外へ",
+  "summary": "イタリア：欧州経営誌の研究は、産地の中小が地元に根ざしつつ世界に売る「グローカル」なやり方で戦い、地域の蓄積が強みになると論じる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "地域の産地とうちの関係を書く",
+  "source": {
+   "title": "Territory-based knowledge management in international marketing processes",
+   "url": "https://emeraldinsight.com/insight/content/doi/10.1108/EBR-06-2019-0129/full/html",
+   "publisher": "European Business Review",
+   "date": "2020"
+  }
+ },
+ {
+  "id": "trend-1757",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "州が中小にデジタル輸出を指導",
+  "summary": "イタリア：エミリア＝ロマーニャ州はイタリア貿易振興機構と組み、製造業の中小にデジタル輸出の研修と短い個別相談を行った。予算は21万ユーロ。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Emilia-Romagna Go Digital: learning export",
+   "url": "https://interregeurope.eu/good-practices/emilia-romagna-go-digital-learning-export",
+   "publisher": "Interreg Europe",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1386",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "小さい会社ほど多経路が難しい",
+  "summary": "イタリア：2024年の研究は、中堅メーカーが店頭・営業・ネットを組み合わせる売り方へ移る中、小さい会社ほど人手不足で対応しにくいと指摘。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Multichannel marketing in Italian manufacturing firms",
+   "url": "https://link.springer.com/article/10.1007/s43039-024-00099-2",
+   "publisher": "Italian Journal of Marketing",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "success-2721",
+  "kind": "success",
+  "region": "overseas",
+  "title": "下請けの見えなさを変える本",
+  "summary": "イタリア：『下請けのマーケティング』は、ブレンボなど協力会社として成長した会社の事例で、見えにくい下請けの価値を伝える方法を描く（書評より）。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "下請けの仕事を誇りをもって紹介",
+  "source": {
+   "title": "Riscoprire i terzisti per salvare la manifattura in crisi",
+   "url": "https://bollettinoadapt.it/wp-content/uploads/2024/12/paolomanfredi.nova100.ilsole24ore.com-Riscoprire-i-terzisti-per-salvare-la-manifattura-in-crisi-Un-libro-e-alcune-suggestioni.pdf",
+   "publisher": "Bollettino ADAPT（Nova24 転載）",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "success-2722",
+  "kind": "success",
+  "region": "overseas",
+  "title": "下請けも顧客体験を磨く",
+  "summary": "イタリア：『下請けのマーケティング』英語版の目次には、柔軟さ、組織、マーケティングの変化、顧客体験の重視が並ぶ。受託でも売り方は工夫できる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "見積もりから納品までの体験を見直す",
+  "source": {
+   "title": "Il marketing dei terzisti（English ebook）",
+   "url": "https://italypost.it/wp-content/uploads/2024/11/Ebook_Il-marketing-dei-terzisti-ENG.epub",
+   "publisher": "Post Editori / ItalyPost",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "success-2723",
+  "kind": "success",
+  "region": "overseas",
+  "title": "単品から部分組立の供給へ",
+  "summary": "イタリア：ヴェネツィエ・ポスト紙は、協力会社の進む道として単品部品から部分組立の供給へ移ること、そのために自社の名前を持ち最終市場を知ることを挙げる。",
+  "industries": [
+   "組立",
+   "機械部品",
+   "金属加工"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "加工から組立までまとめて請ける話",
+  "source": {
+   "title": "Venezie Post",
+   "url": "https://veneziepost.it/?p=211679",
+   "publisher": "Venezie Post",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2724",
+  "kind": "success",
+  "region": "overseas",
+  "title": "認証は発注元の売り物にもなる",
+  "summary": "イタリア：シンボラ財団などの報告は、受託会社が品質認証を付加価値として示し、発注元がそれを自分の顧客に見せられると指摘。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "取得した認証が発注者の役に立つ理由",
+  "source": {
+   "title": "Italy Land of Quality（sintesi）",
+   "url": "https://www.farmindustria.it/app/uploads/2019/10/2.-ItalyLandOfQuality_Sintesi_16-ottobre_2.pdf",
+   "publisher": "Symbola / Farmindustria",
+   "date": "2019"
+  }
+ },
+ {
+  "id": "success-2725",
+  "kind": "success",
+  "region": "overseas",
+  "title": "建築事務所向けにサイトを作る",
+  "summary": "イタリア：家族経営の家具職人の会社は、一般客でなく建築設計事務所に信頼される協力先になるようサイトを作り直した（制作会社の事例）。",
+  "industries": [
+   "木工",
+   "建材・金物"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "設計事務所が知りたいことを書く",
+  "source": {
+   "title": "Dante Galli case study",
+   "url": "https://www.ekeria.com/en/case-studies/dante-galli",
+   "publisher": "Ekeria",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2726",
+  "kind": "success",
+  "region": "overseas",
+  "title": "ブログ欄でサイトを動かす",
+  "summary": "イタリア：家族経営の工業系の会社が、サイトにブログ欄を足して更新を続けられるようにした（制作会社の事例）。止まったサイトは信用を落とす。",
+  "industries": [
+   "熱処理",
+   "金属加工"
+  ],
+  "useFor": [
+   "shiori_tip",
+   "article_idea"
+  ],
+  "articleIdea": "月1本の現場ブログを始める",
+  "source": {
+   "title": "Web marketing for SMEs: the case of Induzione Lombarda",
+   "url": "https://www.ekeria.com/en/case-studies/induzione-lombarda",
+   "publisher": "Ekeria",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2727",
+  "kind": "success",
+  "region": "overseas",
+  "title": "家族の価値と透明性を語る",
+  "summary": "イタリア：老舗の菓子メーカー、ヴィチェンツィ社は、家族の価値・伝統・デジタル化・環境への取り組みを一つの物語にまとめて発信している（同社記事）。",
+  "industries": [
+   "食品製造"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "創業からの歩みを物語で書く",
+  "source": {
+   "title": "How to communicate goodness: Vicenzi Group's digital strategy",
+   "url": "https://www.vicenzi.it/en/how-to-communicate-goodness-vicenzi-groups-digital-strategy/",
+   "publisher": "Vicenzi",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "success-2728",
+  "kind": "success",
+  "region": "overseas",
+  "title": "長寿企業は歴史をネットで語る",
+  "summary": "イタリアほか：2025年の研究は、200年以上続く家族企業のサイトを分析し、会社の歴史を物語として伝えることが期待感の支えになるとした。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "会社の年表を写真で振り返る",
+  "source": {
+   "title": "Exploring corporate heritage through digital narrative",
+   "url": "https://ojs.sijm.it/index.php/sinergie/article/view/1877",
+   "publisher": "Sinergie Italian Journal of Management",
+   "date": "2025"
+  }
+ },
+ {
+  "id": "success-2729",
+  "kind": "success",
+  "region": "overseas",
+  "title": "工房から知られた名前へ",
+  "summary": "イタリア：ソファ工房ベルト・サロッティは、職人の工房のまま広く知られる名前になった例として紹介されている。発信の積み重ねが小さな工房の名を上げる。",
+  "industries": [
+   "木工",
+   "繊維"
+  ],
+  "useFor": [
+   "article_idea"
+  ],
+  "articleIdea": "工房の日常を発信し続ける",
+  "source": {
+   "title": "Berto Salotti: from artisan business to renowned brand",
+   "url": "https://designwanted.com/berto-salotti-artisan-business-renowned-brand/",
+   "publisher": "DesignWanted",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1758",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "伊の金属産地は80億ユーロ",
+  "summary": "イタリア：フォーブス伊版は、ブレシアの金属産地の規模を80億ユーロと紹介。ルメッツァーネの蛇口・バルブ・鍋は、80年代から新興国との競争にさらされてきた。",
+  "industries": [
+   "金属加工",
+   "機械部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Distretto dei metalli bresciano vale 8 miliardi di euro",
+   "url": "https://forbes.it/2024/01/16/distretto-metalli-bresciano-vale-8-miliardi-euro/",
+   "publisher": "Forbes Italia",
+   "date": "2024-01"
+  }
+ },
+ {
+  "id": "trend-1759",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "伊ではデジタル輸出を公費で支援",
+  "summary": "イタリア：貿易振興機構ICEの2024年の北イタリア向け研修は、デジタル時代に海外へ出たい小規模・中小企業向け。オンラインとブレシアでの対面を組み合わせる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Innovazione per esportare – Nord Italia",
+   "url": "https://exportraining.ice.it/wp-content/uploads/2024/03/Circolare-Innovazione-per-esportare_Nord-Italia-.pdf",
+   "publisher": "ICE（イタリア貿易振興機構）",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "pain-1387",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "デジタルの成熟が信頼の条件",
+  "summary": "イタリア：アジェンダ・デジターレ誌は、中小が海外の取引先に信頼されるにはデジタル面の成熟が欠かせず、経営者の考え方が差を生むと論じる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Digitalizzazione delle PMI: perché la cultura imprenditoriale fa la differenza",
+   "url": "https://agendadigitale.eu/industry-4-0/digitalizzazione-delle-pmi-perche-la-cultura-imprenditoriale-fa-la-differenza",
+   "publisher": "Agenda Digitale",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2730",
+  "kind": "success",
+  "region": "overseas",
+  "title": "ポーランドの受託は独語対応",
+  "summary": "ポーランド：1970年創業の切削・溶接の中小は、欧州の提携募集でポーランド語・英語・ドイツ語での対応を売りにしている。相手の言葉で話せることが入口になる。",
+  "industries": [
+   "切削加工",
+   "溶接"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "英語ページに何を書くか",
+  "source": {
+   "title": "Polish manufacturer of precision metal components offers CNC machining",
+   "url": "https://een.ec.europa.eu/partnering-opportunities/polish-manufacturer-precision-metal-components-offers-cnc-machining",
+   "publisher": "Enterprise Europe Network",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2731",
+  "kind": "success",
+  "region": "overseas",
+  "title": "工程丸ごと引き受けますと示す",
+  "summary": "ポーランド：ある受託会社は、切削・ワイヤ放電・仕上げ・検査の一部または全部を引き受ける形を提案している。どこまで任せられるかを明示するのが売り方。",
+  "industries": [
+   "切削加工",
+   "放電加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "一貫対応の範囲を図で示す",
+  "source": {
+   "title": "Polish company specializes in CNC precision machining of metals and plastics",
+   "url": "https://een.ec.europa.eu/partnering-opportunities/polish-company-specializes-cnc-precision-machining-metals-and-plastics",
+   "publisher": "Enterprise Europe Network",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2732",
+  "kind": "success",
+  "region": "overseas",
+  "title": "競合は客の内製と海外安値",
+  "summary": "ポーランド：2拠点の板金・プレス会社は、競合を「顧客の社内加工」と「低コスト国の業者」と書いている。内製より頼む理由を説明するのが要。",
+  "industries": [
+   "板金",
+   "プレス",
+   "溶接"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "内製より外注が得になる場面",
+  "source": {
+   "title": "Polish metal fabrication company specializing in stamping, forming, welding and precision CNC components",
+   "url": "https://www.dub.de/en/listing/polish-metal-fabrication-company-specializing-in-stamping-forming-welding-and/",
+   "publisher": "DUB.de",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2733",
+  "kind": "success",
+  "region": "overseas",
+  "title": "チェコは航空の実績を示す",
+  "summary": "チェコ：精密部品の中堅は、航空分野の取引先名を実績として示し、仕様付きの見積もり依頼から関係が始まると説明している。",
+  "industries": [
+   "切削加工",
+   "航空宇宙"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "見積もりに必要な情報を案内",
+  "source": {
+   "title": "Czech company providing precision CNC machine services",
+   "url": "https://int.een.ec.europa.eu/partnering-opportunities/czech-company-providing-precision-cnc-machine-services-such-turning",
+   "publisher": "Enterprise Europe Network",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2734",
+  "kind": "success",
+  "region": "overseas",
+  "title": "小ロット・複雑品を売りにする",
+  "summary": "チェコ：ある受託会社は、顧客指定の小ロットで複雑な切削部品と部分組立が専門だと明記。ロットや難しさに関係なく応えると言い切っている。",
+  "industries": [
+   "切削加工",
+   "組立"
+  ],
+  "useFor": [
+   "writer_hint",
+   "question_example"
+  ],
+  "articleIdea": "小ロットの依頼が歓迎だと書く",
+  "source": {
+   "title": "Czech company offering complete contract manufacturing and outsourcing",
+   "url": "https://een.ec.europa.eu/partnering-opportunities/czech-company-offering-complete-contract-manufacturing-and-outsourcing",
+   "publisher": "Enterprise Europe Network",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2735",
+  "kind": "success",
+  "region": "overseas",
+  "title": "仲介団体が業者を選んでつなぐ",
+  "summary": "チェコ：チェコ製造業者協会（CZECHMA）は、窓口を一つにして業者を選び、手続きも引き受けると案内。100社以上を審査済みと自らうたう。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "CzechMA leaflet",
+   "url": "https://www.czechtradeoffices.com/getattachment/5a843315-e37d-411c-886a-a614bb936937/CzechMA_letak.pdf",
+   "publisher": "CzechTrade",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2736",
+  "kind": "success",
+  "region": "overseas",
+  "title": "輸出先の国名を並べて示す",
+  "summary": "チェコ：ズノイモの機械会社は、欧州の完成品メーカー向けに部品を作り、ドイツ・フランス・オランダ・スウェーデン・スイスへの輸出を明記している。",
+  "industries": [
+   "機械部品",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "納入先の業界を一覧にする",
+  "source": {
+   "title": "Znojemské strojírny s.r.o.",
+   "url": "https://exporters.czechtrade.cz/en/znojemske-strojirny-s-r-o",
+   "publisher": "CzechTrade",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2737",
+  "kind": "success",
+  "region": "overseas",
+  "title": "北欧の受託展示会で出会う",
+  "summary": "北欧：受託加工の会社は、スウェーデンのElmia Subcontractorやフィンランドのアリハンキンタなど受託専門の展示会で取引先と出会うことが多い。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "展示会の前後にブログで告知・報告",
+  "source": {
+   "title": "Elmia Subcontractor 2022",
+   "url": "https://tradewithestonia.com/elmia-subcontractor-2022/",
+   "publisher": "Trade with Estonia",
+   "date": "2022"
+  }
+ },
+ {
+  "id": "trend-1760",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "北欧の協力で競争力を高める",
+  "summary": "フィンランド：受託展示会アリハンキンタは、北欧の協力が持続的な競争力の機会を開くと発信。国を越えて受託会社同士が組む動きがある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Nordic cooperation opens opportunities for sustainable competitiveness",
+   "url": "https://alihankinta.fi/newfront/news/nordic-cooperation-opens-opportunities-for-sustainable-competitiveness",
+   "publisher": "Alihankinta",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2738",
+  "kind": "success",
+  "region": "overseas",
+  "title": "精密加工と一貫を一言で示す",
+  "summary": "フィンランド：ある受託会社は「精密加工と一貫した製造工程に強い北欧の受託先」と自社を一言で紹介している。一文で言える立ち位置が大切。",
+  "industries": [
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "うちを一言で言うキャッチ",
+  "source": {
+   "title": "KL Mechanics Oy（Alihankinta exhibitor）",
+   "url": "https://alihankinta.fi/exhibitor/kl-mechanics-oy",
+   "publisher": "Alihankinta",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1761",
+  "kind": "trend",
+  "official": true,
+  "region": "overseas",
+  "title": "独はバルトの金属品を買い増し",
+  "summary": "フィンランド・バルト：ドイツ貿易・投資振興機関GTAIは、ドイツ企業がこの地域から金属製品を買う量を増やしていると報じた。",
+  "industries": [
+   "金属加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Deutsche Firmen kaufen zunehmend Metallerzeugnisse aus der Region",
+   "url": "https://www.gtai.de/de/trade/finnland/wirtschaftsumfeld/deutsche-firmen-kaufen-zunehmend-metallerzeugnisse-aus-der-region-1869922",
+   "publisher": "GTAI",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2739",
+  "kind": "success",
+  "region": "overseas",
+  "title": "リトアニアは北欧向けに売る",
+  "summary": "リトアニア：板金の会社は、穴あけ・曲げ・溶接・粉体塗装の受託を、デンマーク・フィンランド・ノルウェー・スウェーデン向けに提案している。",
+  "industries": [
+   "板金",
+   "塗装",
+   "溶接"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "対応できる工程を一覧で示す",
+  "source": {
+   "title": "Lithuanian metalwork components manufacturer, assembler and metalworking",
+   "url": "https://int.een.ec.europa.eu/partnering-opportunities/lithuanian-metalwork-components-manufacturer-assembler-and-metalworking",
+   "publisher": "Enterprise Europe Network",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1762",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "エストニア発の板金発注サイト",
+  "summary": "エストニア：Fractoryは、CADデータから金属部品の見積もり・発注ができる仕組み。加工会社は空いた機械の時間をここからの仕事で埋められる。",
+  "industries": [
+   "板金",
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "発注サイトと自社直取引の違い",
+  "source": {
+   "title": "Fractory raises $9M to rethink manufacturing supply chain for metalworks",
+   "url": "https://techcrunch.com/2021/09/06/fractory-raises-9m-to-rethink-the-manufacturing-supply-chain-for-metalworks/",
+   "publisher": "TechCrunch",
+   "date": "2021-09"
+  }
+ },
+ {
+  "id": "trend-1763",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "製造仲介は設計会社の手間を減らす",
+  "summary": "欧州：調査会社ABIリサーチは、受託製造の仲介サイトが設計会社の調達の手間を減らし、加工側にも利点がある「双方得」の仕組みだと分析。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Contract manufacturing platforms to alleviate...（A Win-Win for Challenging Times）",
+   "url": "https://www.abiresearch.com/market-research/insight/7779965-contract-manufacturing-platforms-to-allevi?hsLang=en",
+   "publisher": "ABI Research",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1361",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "独語圏の57％が東欧から調達",
+  "summary": "ドイツ語圏：インヴェルト社の2023年調査（約95社）では、57％がすでに東欧から調達し、32％が数年内に東欧へ近場調達を計画。注目国はチェコとポーランド。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "INVERTO Nearshoring Study 2023",
+   "url": "https://www.inverto.com/wp-content/uploads/2023/10/INVERTO-Nearshoring-Study-2023-new.pdf",
+   "publisher": "INVERTO",
+   "date": "2023-10"
+  }
+ },
+ {
+  "id": "buyer-1362",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "チェコは精密な切削で選ばれる",
+  "summary": "中東欧：スイスの輸出振興機関の解説は、中東欧の業者の多くが英語、時にドイツ語を話し、チェコは公差の厳しい精密な切削に強いとする。",
+  "industries": [
+   "切削加工"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "うちが得意な公差を数字で示す",
+  "source": {
+   "title": "Which industries in Poland, Czech Republic, Slovakia and Hungary have the highest potential from sourcing perspective?",
+   "url": "https://www.s-ge.com/es/node/99118",
+   "publisher": "Switzerland Global Enterprise",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1388",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "東欧でも熟練工が足りない",
+  "summary": "中東欧：エマージング・ヨーロッパ誌は、近場生産の流れで中欧の経済が変わる一方、特に熟練職の人手不足が強まっていると伝える。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "How nearshoring is reinventing Central Europe's economy",
+   "url": "https://emerging-europe.com/how-nearshoring-is-reshaping-central-europes-economy/",
+   "publisher": "Emerging Europe",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1389",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "ポーランド中小は従来の手段頼み",
+  "summary": "ポーランド：工業系中小574社の調査研究（2019〜20年）は、デジタル販促の使い方と業績の関係を調べた。多くは従来の連絡手段に頼るとの指摘もある。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Digital marketing tools in industrial SMEs（ERSJ）",
+   "url": "https://ersj.eu/journal/3509",
+   "publisher": "European Research Studies Journal",
+   "date": "2024"
+  }
+ },
+ {
+  "id": "pain-1390",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "ネット輸出の壁は資金不足",
+  "summary": "ポーランド：PwCが同国の省庁向けに行った調査は、ネットでの輸出の壁として、海外展開に投資する資金の不足などを挙げた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Expanding digital export in Poland",
+   "url": "https://cee.pwc.com/future-of-government-cee/entrepreneurship-and-smes-in-CEE/expanding-digital-export-in-poland.html",
+   "publisher": "PwC",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1363",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "欧州の技術者はデータシートを重視",
+  "summary": "欧州：エレクトール誌とTREW社の1200人超の調査では、判断に最も役立つ情報はデータシート（86％）。仕様を一覧にした資料を用意するのが近道。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "加工仕様を1枚の資料にまとめる",
+  "source": {
+   "title": "Decoding Engineer Preferences: Insights into Technical Buying Behavior in Europe",
+   "url": "https://www.elektormagazine.com/articles/decoding-engineer-preferences-insights-into-technical-buying-behavior-in-europe",
+   "publisher": "Elektor",
+   "date": "2023"
+  }
+ },
+ {
+  "id": "buyer-1364",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "技術者は業界誌と業者サイトで調べる",
+  "summary": "欧州：同じ調査では、技術者が製品を調べる先は1位がネットの技術誌、2位が業者のサイト、3位が紙の技術誌だった。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Decoding Engineer Preferences European Research Report",
+   "url": "https://www.trewmarketing.com/decoding-engineer-preferences-european-research-report",
+   "publisher": "TREW Marketing",
+   "date": "2023"
+  }
+ },
+ {
+  "id": "pain-1391",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "技術者のAIへの信頼は低め",
+  "summary": "欧州：エレクトールとTREWの調査で、生成AIへの信頼は10点中平均4.14点。AIで見つけても最後は業者サイトの確かな情報で確かめると考えられる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "根拠のある数字をサイトに載せる",
+  "source": {
+   "title": "How do engineers in Europe really buy?",
+   "url": "https://www.eenewseurope.com/en/how-do-engineers-in-europe-really-buy-new-webinar-reveals-fresh-insights",
+   "publisher": "eeNews Europe",
+   "date": null
+  }
+ },
+ {
+  "id": "buyer-1365",
+  "kind": "buyer",
+  "region": "overseas",
+  "title": "技術者は製品・用途別の整理を好む",
+  "summary": "英国・欧州：調査会社の記事によると、技術者はネットの技術誌と業者サイトを主に使い、業者サイトでは製品や用途ごとに整理された内容を好む。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "shiori_tip"
+  ],
+  "articleIdea": "加工方法別・業界別のページ分け",
+  "source": {
+   "title": "Online tech publications and supplier websites are the primary sources engineers turn to",
+   "url": "https://www.djsresearch.co.uk/EngineeringMarketResearchInsightsAndFindings/article/Online-tech-publications-and-supplier-websites-are-the-primary-sources-engineers-turn-to-when-researching-products-finds-survey-05532",
+   "publisher": "DJS Research",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1392",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "独中小の29％は採用ページなし",
+  "summary": "ドイツ：ドイツ経済研究所（IW）の話として、中小の29％は有料の求人広告も自社の採用ページも持たないと人事誌が報じた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "採用ページに載せる仕事の一日",
+  "source": {
+   "title": "Interview Studie Indeed/KOFA: Wege zur Rekrutierung von Engpasstalenten",
+   "url": "https://www.personalwirtschaft.de/news/recruiting/interview-studie-indeed-kofa-wege-zur-rekrutierung-von-engpasstalenten-100083/",
+   "publisher": "Personalwirtschaft",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1393",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "独中堅は給与面で大手に負ける",
+  "summary": "ドイツ：求人サイトStepStoneの2025年報告は、中堅の採用担当の最大の悩みを応募者の給与の希望に応えることとし、仕事の魅力をはっきり示す求人をすすめる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "給与以外の働く魅力を書く",
+  "source": {
+   "title": "Recruiting im Mittelstand & KMU",
+   "url": "https://www.stepstone.de/e-recruiting/hr-wissen/recruiting/recruiting-mittelstand-kmu",
+   "publisher": "StepStone",
+   "date": "2025-01"
+  }
+ },
+ {
+  "id": "pain-1394",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "独中堅社長のSNS発信は1割",
+  "summary": "ドイツ：In A Nutshell社とミュンヘン大学の調査として、LinkedInで積極的に発信する中堅企業の社長は約10人に1人だと報じられた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "社長が書くコラムを始める",
+  "source": {
+   "title": "Nur jeder zehnte CEO im Mittelstand nutzt LinkedIn",
+   "url": "https://www.it-daily.net/it-management/projekt-personal/nur-jeder-zehnte-ceo-im-mittelstand-nutzt-linkedin",
+   "publisher": "it-daily.net",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1395",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "化学系中堅のSNS活用は28％",
+  "summary": "ドイツ：同じ調査で、化学・素材の中堅企業でLinkedInを使っているのは28％。調査した著者は「よい値ではない」と述べている。",
+  "industries": [
+   "化学・塗料・接着剤"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Chemie-Mittelstand und Social Media",
+   "url": "https://chemanager-online.com/de/news/chemie-mittelstand-und-social-media",
+   "publisher": "CHEManager",
+   "date": "2024-07"
+  }
+ },
+ {
+  "id": "success-2740",
+  "kind": "success",
+  "region": "overseas",
+  "title": "社長は自分より変化を語る",
+  "summary": "ドイツ：2026年4月の調査LinkedIndexは、LinkedInでうまくいく社長は自分を売り込むより、率いている会社の変化について語っていると伝えた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint",
+   "article_idea"
+  ],
+  "articleIdea": "社長が工場の変化を語る記事",
+  "source": {
+   "title": "CEOs auf LinkedIn: LinkedIndex 2026",
+   "url": "https://www.ingenieur.de/karriere/arbeitsleben/fuehrung/ceos-auf-linkedin-linkedindex-2026-zeigt-erfolgsstrategien-und-ranking-der-top-manager/",
+   "publisher": "ingenieur.de",
+   "date": "2026-04"
+  }
+ },
+ {
+  "id": "success-2741",
+  "kind": "success",
+  "region": "overseas",
+  "title": "社員の発信が会社の力に",
+  "summary": "ドイツ：生産系の業界誌は、LinkedInで会社の力になるのは社員だと論じる。現場の人の言葉は会社の公式発表より信頼されやすい。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "article_idea",
+   "writer_hint"
+  ],
+  "articleIdea": "職人本人が語るインタビュー",
+  "source": {
+   "title": "LinkedIn: Darum sind die Mitarbeiter die Power der Firmen",
+   "url": "https://www.produktion.de/schwerpunkte/industrie-management/linkedin-darum-sind-die-mitarbeiter-die-power-der-firmen-107.html",
+   "publisher": "Produktion",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2742",
+  "kind": "success",
+  "region": "overseas",
+  "title": "違いを示せる会社が納得される",
+  "summary": "ドイツ：生産系の業界誌は、産業企業が納得されるかどうかは他社との違いをはっきり示せるかで決まると論じる。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "他社と違う3つの点を書き出す",
+  "source": {
+   "title": "Differenzierung entscheidet, ob Industrieunternehmen überzeugen",
+   "url": "https://www.produktion.de/wirtschaft/differenzierung-entscheidet-ob-industrieunternehmen-ueberzeugen/1746939",
+   "publisher": "Produktion",
+   "date": null
+  }
+ },
+ {
+  "id": "trend-1764",
+  "kind": "trend",
+  "official": false,
+  "region": "overseas",
+  "title": "EUの製品パスポートに中小が要望",
+  "summary": "EU：中小企業の団体SBSなどは2026年5月、デジタル製品パスポート登録の決まりについて、費用を低く、高度なデジタル環境がなくても使えるよう求める声明を出した。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Common Statement on DPP Registry Implementing Act",
+   "url": "https://sbs-sme.eu/wp-content/uploads/2026/05/2026-05-27-SBS-EBC-SMEunited-Common-Statement-on-DPP-Registry-Implementing-Act_FINAL.pdf",
+   "publisher": "SBS / EBC / SMEunited",
+   "date": "2026-05"
+  }
+ },
+ {
+  "id": "pain-1396",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "製品データの負担は下請けへ",
+  "summary": "EU：オランダの途上国輸入促進センターCBIは、買い手が法的な義務を協力会社に回し、その費用が公平に払われないことが多いと指摘。",
+  "industries": [
+   "繊維"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "The Digital Product Passport brings greater transparency to the European apparel market",
+   "url": "https://www.cbi.eu/news/digital-product-passport-brings-greater-transparency-european-apparel-market",
+   "publisher": "CBI",
+   "date": null
+  }
+ },
+ {
+  "id": "term-1529",
+  "kind": "term",
+  "region": "overseas",
+  "title": "デジタル製品パスポートとは",
+  "summary": "EU：製品の材料や原産地、環境の数値をQRコードなどで示す仕組み。電池では2027年2月18日から求められるとする解説がある。材料の証明を出せる体制が問われる。",
+  "industries": [
+   "電子部品"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Digital Product Passport: what manufacturers must do",
+   "url": "https://mybusinessfuture.com/en/digital-product-passport-what-manufacturers-must-do/",
+   "publisher": "MyBusinessFuture",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2743",
+  "kind": "success",
+  "region": "overseas",
+  "title": "独の中堅メーカーで問い合わせ増",
+  "summary": "ドイツ：シュトゥットガルトの産業向け制作会社は、ポンプ車メーカーの事例で問い合わせ360％増と自社サイトで発表している（自己申告の数字）。",
+  "industries": [
+   "産業機械"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Case Study: Industrie-Marketing（ostend.digital）",
+   "url": "https://ostend.digital/?p=39008",
+   "publisher": "ostend.digital",
+   "date": null
+  }
+ },
+ {
+  "id": "success-2744",
+  "kind": "success",
+  "region": "overseas",
+  "title": "伝える手段をそろえて伸びる",
+  "summary": "ドイツ：経済誌は、産業系の中堅企業が展示会・営業・ネットなどの伝え方を一つにそろえることで成長していると紹介。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "展示会の話をブログでも伝える",
+  "source": {
+   "title": "Synergien im B2B-Sektor",
+   "url": "https://www.wirtschaftsforum.de/news/synergien-im-b2b-sektor-wie-der-industrielle-mittelstand-durch-integrierte-kommunikationsstrategien-waechst",
+   "publisher": "Wirtschaftsforum",
+   "date": null
+  }
+ },
+ {
+  "id": "pain-1397",
+  "kind": "pain",
+  "region": "overseas",
+  "title": "母国語でないと買わない人も",
+  "summary": "欧州：調査会社CSAの「読めなければ買わない」調査（2020年、消費者向け）では、65％が質が低くても自国語の情報を好み、40％は他言語のみの商品を買わないと答えた。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "articleIdea": "海外向けには英語の要約を1ページ",
+  "source": {
+   "title": "Can't read, won't buy",
+   "url": "https://www.tcworld.info/news/cant-read-wont-buy-1061",
+   "publisher": "tcworld",
+   "date": "2020"
+  }
+ },
+ {
+  "id": "success-2745",
+  "kind": "success",
+  "region": "overseas",
+  "title": "多言語は市場を選んで作る",
+  "summary": "ドイツ：業者検索サイトのVisable社は、サイトの多言語化は手間との釣り合いで考え、見込み客の多い国の言葉から始めるのがよいと解説する。",
+  "industries": [
+   "all"
+  ],
+  "useFor": [
+   "writer_hint"
+  ],
+  "source": {
+   "title": "Multi-language website",
+   "url": "https://www.visable.com/en_uk/magazine/basics/-multi-language-website",
+   "publisher": "Visable",
+   "date": null
+  }
  }
 ]
