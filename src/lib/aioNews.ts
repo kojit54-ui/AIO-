@@ -29,10 +29,22 @@ export interface AioNewsItem {
 }
 
 /** 知識表を最後に見直した日。docs/AIO.md の「最終更新」と同じ日にする（テストで確かめる） */
-export const AIO_NEWS_UPDATED = "2026-11-15";
+export const AIO_NEWS_UPDATED = "2026-11-22";
 
 /** 新しい順に並べる */
 export const AIO_NEWS: AioNewsItem[] = [
+  {
+    id: "2026-11-12-google-gemini-4-hydrogen",
+    date: "2026-11-12",
+    source: "official",
+    sourceName: "Google 公式ブログ",
+    url: "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+    title: "GoogleのAIモードが、新しいAIに切り替わりました",
+    forClient:
+      "Google が、検索のAI（AIモードと、AIによる概要の一部）を新しいものに切り替えたと発表しました。いくつもの条件がまじった質問や、打ち間違いのある質問も読み取りやすくなり、より幅広いサイトを紹介することを目指すそうです。「〇〇県で、小ロットの金属加工を急ぎで頼める会社は？」のような、お客様の具体的な聞き方に、そのまま答えている記事が、これまで以上に大切になります。",
+    point: "qa",
+    soWeAsk: "お客様が実際にどんな言葉で相談してくるか",
+  },
   {
     id: "2026-11-10-chatgpt-business-hub",
     date: "2026-11-10",
